@@ -1,9 +1,13 @@
-site_name: YCRC Documentation
+site_name: Yale Center for Research Computing
 
-theme: material
+theme:
+  name: material
+  custom_dir: 'theme'
+  primary: '#0e4c92'
+  accent: '#0e4c92'
+
+extra_css:
+  - 'stylesheets/extra.css'
 
 markdown_extensions:
   - codehilite
-
-
-
