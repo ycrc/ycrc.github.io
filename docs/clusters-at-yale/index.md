@@ -4,13 +4,13 @@
 
 ![](/sites/default/files/images/cluster.png)
 
-Broadly speaking, a compute cluster is a collection of computers (nodes). Our clusters are only accessible remotely. You will primarily connect to a computer that we call a **login node**, which is meant exclusively for maintinaing your connection to the cluster. From this computer, you will be able to view your files and dispatch jobs to one or several other computers across the cluster that we call **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](/node/4093).
+Broadly speaking, a compute cluster is a collection of computers which we call nodes. Our clusters are only accessible remotely. You will primarily connect to a computer that we call a **login node**, which is meant exclusively for maintinaing your connection to the cluster. From this computer, you will be able to view your files and dispatch jobs to one or several other computers across the cluster that we call **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](docs/clusters-at-yale/clusters/index.md).
 
 ### Request an Account
 
 The first step in gaining access to our clusters is requesting an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the [account request page](/node/3822).
 
-### <a>Log in</a>
+### Log in
 
 All of Yale's clusters are accessed via a protocol called secure shell (ssh). You can use ssh directly, or via a graphical ssh tool. The details vary depending on the operating system of the computer in front of you. If you want to access the clusters from outside Yale, you must use the [Yale VPN.](/node/8841)
 
