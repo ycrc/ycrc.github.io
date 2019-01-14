@@ -1,23 +1,26 @@
 site_name: Yale Center for Research Computing
 
 theme:
-  name: material
-  custom_dir: 'theme'
-  primary: '#0e4c92'
-  accent: '#0e4c92'
+    name: material
+    custom_dir: 'theme'
+    primary: '#0e4c92'
+    accent: '#0e4c92'
+    logo:
+        icon: 'library_books'
+    favicon: '/assets/images/favicon.ico'
 
-  feature:
-    tabs: true
+    feature:
+        tabs: true
 
 extra_css:
-  - 'stylesheets/extra.css'
+    - 'stylesheets/extra.css'
 
 markdown_extensions:
-  - codehilite
+    - codehilite
 
 
 nav:
-  - Support:
+    - Support:
         - index.md
         - Clusters at Yale:
             - clusters-at-yale/index.md
