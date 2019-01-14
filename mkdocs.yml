@@ -6,8 +6,34 @@ theme:
   primary: '#0e4c92'
   accent: '#0e4c92'
 
+  feature:
+    tabs: true
+
 extra_css:
   - 'stylesheets/extra.css'
 
 markdown_extensions:
   - codehilite
+
+
+nav:
+  - Support:
+        - index.md
+        - Clusters at Yale:
+            - clusters-at-yale/index.md
+            - Accessing the Clusters:
+                - clusters-at-yale/access/index.md
+                - SSH from MacOS or Linux: clusters-at-yale/access/maclinux.md
+                - SSH from Windows: clusters-at-yale/access/windows.md
+                - Access from Off-Campus (VPN): clusters-at-yale/access/vpn.md
+            - Applications & Software:
+                - clusters-at-yale/applications/index.md
+                - Loading Software with Modules: clusters-at-yale/applications/modules.md
+            - Job Scheduling:
+                - clusters-at-yale/job-scheduling/index.md
+                - Running Jobs with Slurm: clusters-at-yale/job-scheduling/slurm.md
+            - Data & Storage:
+                - clusters-at-yale/data/index.md
+                - Transferring Data: clusters-at-yale/data/transfer.md
+            - Clusters:
+                - clusters-at-yale/clusters/index.md

@@ -72,7 +72,7 @@ Here is an example script.sh that runs a job on one CPU on single node:
 #SBATCH --mem-per-cpu=6000 
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=_email_
+#SBATCH --mail-user=<email>
 
 ./myprog -p 20 arg1 arg2 arg3 ...
 ```
@@ -81,20 +81,20 @@ Here is an example script.sh that runs a job on one CPU on single node:
 
 As shown in the above example, "directives" are comprised of `#SBATCH` followed by Slurm options. Most commonly used options include:
 
-|Full Option|Abbreviated|Description|
+|Full Option<img width=100/>|Abbreviated|Description|
 |--- |--- |--- |
-|`--job-name=name`|`-J name`|Custom job name|
-|`--partition=name`|`-p partition`|Partition to run on|
-|`--nodes=#`|`-N #`|Total number of nodes|
-|`--ntasks=#`|`-n #`|Number of "tasks". For use with distributed parallelism. See below.|
-|`--cpus-per-task=#`|`-c #`|# of CPUs allocated to each task. For use with shared memory parallelism.|
-|`--ntasks-per-node=#`||Number of "tasks" per node. For use with distributed parallelism. See below.|
-|`--time=[[DD-]HH:]MM:SS`|`-t [[DD-]HH:]MM:SS`|Maximum walltime of the job in Days-Hours:Minutes:Sec|
-|`--constraint=node_type`|`-C node_type`|specific node architecture (if applicable)|
-|`--mem-per-cpu=#`||Memory requested per CPU in MB|
-|`--mem=#`||Memory requested per node in MB|
-|`--mail-user=_email_`||Mail address (alternatively, put your email address in ~/.forward)|
-|`--mail-type=ALL`||Send emails to user on all job events|
+|`--job-name`|`-J`|Custom job name|
+|`--partition`|`-p`|Partition to run on|
+|`--nodes`|`-N`|Total number of nodes|
+|`--ntasks`|`-n`|Number of "tasks". For use with distributed parallelism. See below.|
+|`--cpus-per-task`|`-c`|# of CPUs allocated to each task. For use with shared memory parallelism.|
+|`--ntasks-per-node`||Number of "tasks" per node. For use with distributed parallelism. See below.|
+|`--time`|`-t `|Maximum walltime of the job in the format D-HH:MM:SS (e.g. `--time=1-` for one day or `--time=4:00:00` for 4 hours)|
+|`--constraint`|`-C`|specific node architecture (if applicable)|
+|`--mem-per-cpu`||Memory requested per CPU in MB|
+|`--mem`||Memory requested per node in MB|
+|`--mail-user`||Mail address (alternatively, put your email address in ~/.forward)|
+|`--mail-type`||Control emails to user on job events. Use `ALL` to receive email notications at the beginning and end of the job.|
 
 Additional options can be found on in the [official Slurm documentation](http://slurm.schedmd.com/documentation.html).
 

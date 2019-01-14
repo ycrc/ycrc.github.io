@@ -1,8 +1,73 @@
-.branding{
-    font-family: "YaleNew", Georgia, "Times New Roman", Times, serif;
+/*
+Yale Blue: #0e4c92;
+*/
+
+@font-face {
+  font-family: YaleNew;
+  src: url(/assets/fonts/YaleNew/YaleNew-Roman.otf);
 }
 
+@font-face {
+  font-family: YaleNew;
+  src: url(/assets/fonts/YaleNew/YaleNew-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: YaleNew;
+  src: url(/assets/fonts/YaleNew/YaleNew-Italic.otf);
+  font-style: italic;
+}
+
+.branding{
+    font-family: "YaleNew", Georgia, "Times New Roman", Times, serif;
+    font-size: 2em;
+}
+
+
+.branding em{
+    font-size: .75em;
+}
+
+
+/* Colors */
 .md-header{
     background-color: white;
     color: #0e4c92;
+}
+
+.md-search input:hover{
+    background-color: #bdbdbd;
+}
+
+.md-typeset a {
+      color: #0e4c92;
+}
+
+
+.md-nav__link:active,
+.md-nav__link--active {
+    color: #0e4c92;
+}
+
+
+.md-tabs {
+    background-color: #0e4c92;
+}
+
+
+/* Full Width */
+@media only screen and (min-width: 76.25em) {
+  .md-main__inner {
+    max-width: none;
+  }
+  .md-sidebar--primary {
+    left: 25px;
+  }
+  .md-sidebar--secondary {
+    right: 25px;
+    margin-left:;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
