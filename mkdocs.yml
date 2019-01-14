@@ -17,6 +17,7 @@ extra_css:
 
 markdown_extensions:
     - codehilite
+    - attr_list
 
 
 nav:
@@ -25,11 +26,12 @@ nav:
         - Clusters at Yale:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
+            - clusters-at-yale/troubleshoot.md
             - Accessing the Clusters:
                 - clusters-at-yale/access/index.md
-                - SSH from MacOS or Linux: clusters-at-yale/access/maclinux.md
-                - SSH from Windows: clusters-at-yale/access/windows.md
-                - Access from Off-Campus (VPN): clusters-at-yale/access/vpn.md
+                - clusters-at-yale/access/vpn.md
+                - clusters-at-yale/access/x11.md
+                - clusters-at-yale/access/vnc.md
             - Applications & Software:
                 - clusters-at-yale/applications/index.md
                 - Loading Software with Modules: clusters-at-yale/applications/modules.md
