@@ -1,5 +1,8 @@
 /*
-Yale Blue: #0e4c92;
+Yale Blue: #00356b;
+Yale Blue Medium: #286dc0;
+Yale Blue Lightest: #63aaff;
+Yale Orange Accent: #bd5319;
 */
 
 @font-face {
@@ -33,7 +36,7 @@ Yale Blue: #0e4c92;
 /* Colors */
 .md-header{
     background-color: white;
-    color: #0e4c92;
+    color: #00356b;
 }
 
 .md-search input:hover{
@@ -41,18 +44,27 @@ Yale Blue: #0e4c92;
 }
 
 .md-typeset a {
-      color: #0e4c92;
+    color: #286dc0;
 }
 
+.md-typeset a:hover {
+    color: #63aaff;
+}
 
 .md-nav__link:active,
 .md-nav__link--active {
-    color: #0e4c92;
+    color: #286dc0;
+}
+
+.md-nav__link:hover,
+.md-nav__link:active:hover,
+.md-nav__link--active{
+    color: #63aaff;
 }
 
 
 .md-tabs {
-    background-color: #0e4c92;
+    background-color: #00356b;
 }
 
 
