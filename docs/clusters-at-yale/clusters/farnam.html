@@ -1,0 +1,443 @@
+<h3>About</h3>
+<p><img alt="Louise Whitman Farnam" src="/sites/default/files/images/Louise_Whitman_Farnam.jpg" style="margin:0px 0px 20px 20px; width:200px; float:right" /></p>
+<p>The Farnam Cluster is named for <a href="http://archives.yalealumnimagazine.com/issues/2006_09/old_yale.html">Louise Whitman Farnam</a>, the first woman to graduate from the Yale School of Medicine, class of 1916. It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.</p>
+
+<h3>Logging in</h3>
+<p>If you are a first time user, make sure to read the <a href="/node/4183#access">pertinent links from our user guide about using ssh</a>. Once you have <a href="http://gold.hpc.yale.internal/cgi-bin/sshkeys.py">submitted a copy of your public key to us</a>, you should be able to ssh to <code>farnam.hpc.yale.edu</code> .  As with the other Yale clusters, there are two login nodes. You will be randomly placed on one of them, so if you have a <code>screen</code> or <code>tmux</code> session missing you might have to ssh to the other login node.</p>
+
+<a name="scheduling-jobs"></a>
+<h3>Scheduling jobs</h3>
+<p>Farnam uses the <a href="/node/9761">Slurm</a> job scheduler. Please see our documentation or the official slurm documentation for more information about slurm. The partitions available for general use are <code>general</code> (the default), <code>interactive</code> (for interactive jobs), <code>bigmem</code> (for single-node large memory jobs), <code>gpu</code> &amp; <code>gpu_devel</code> (for GPU work), and <code>scavenge</code>. Partitions that contain PI purchased hardware are all prefixed with <code>pi_</code>. Access to these partitions are allowed at the discretion of the owner.</p>
+
+<a name="gpus"></a>
+<h4>GPUs</h4>
+<p>The <code>gpu</code> and <code>gpu_devel</code> partitions contain nodes with Nvidia GPUs. The gputest partition is intended to test your code before running on the gpu partition where you may need to wait a while before it begins executing. There are currently <a href="http://www.nvidia.com/object/tesla-k80.html">Nvidia Tesla K80</a> and <a href="https://www.nvidia.com/en-us/geforce/products/10series/geforce-gtx-1080-ti/">Nvidia GTX 1080Ti</a> GPUs available on Farnam for general use. To request specific GPUs, you have to specify a gres (Generic RESource) type your job request. For example, <code>--gres=gpu:k80:1</code> or <code>--gres=gpu:1080ti:1</code>. The nodes with 1080Ti GPUs have 1.2 TB of fast SSD mounted at <code>/tmp</code>. For additional info on GPUs and slurm, please see our <a href="/node/9761#requesting-gpus">slurm page</a>. Please note that GPU nodes belonging to PIs are available via the <code>scavenge</code> partition.</p>
+
+<h4>Scavenge</h4>
+<p> The <code>scavenge</code> partition allows access to unused nodes across the cluster. However, a <code>scavenge</code> job will be preempted (killed) if another job submitted to another partition can only be scheduled by killing a <code>scavenge</code> job. We recommend that all jobs run on <code>scavenge</code> be either short-lived or capable of checkpointing their state.</p>
+
+<h4>Job Monitoring</h4>
+<p>You can monitor your job allocations and the nodes they&#39;re running on <a href="http://cluster.ycrc.yale.edu/farnam">via this site</a> while on the Yale network. Please note, this site only shows what was allocated, not the current performance or usage of the job(s)</p>
+
+<h4>Memory</h4>
+<p>The memory you request for your job is enforced; you will encounter errors if you attempt to use more. You should use <code>--mem-per-cpu</code> to specify an adequate amount of RAM when submitting jobs to avoid running into problems. The default value is 5120MB per cpu.</p>
+
+<a name="partitions"></a>
+<h3>Partitions</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Partition</th>
+      <th>m620</th>
+      <th>m915</th>
+      <th>nx360h</th>
+      <th>nx360b</th>
+      <th>GPX XT4</th>
+      <th>3850X6</th>
+      <th>Resource Limits Per User</th>
+      <th>Walltime default/max (days)</th>
+    </tr>
+    <tr>
+      <th>Host Names</th>
+      <th>c09-c12</th>
+      <th>c24-c25</th>
+      <th>c13-c23</th>
+      <th>c26-c29</th>
+      <th>gpu</th>
+      <th>bigmem</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>interactive</td>
+      <td>34</td>
+      <td>&nbsp;</td>
+      <td>94</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>20 CPUs,<br />256 GB RAM</td>
+      <td>1/2</td>
+    </tr>
+    <tr>
+      <td>general</td>
+      <td>34</td>
+      <td>&nbsp;</td>
+      <td>94</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>100 CPUs,<br />640 GB RAM</td>
+      <td>1/30</td>
+    </tr>
+    <tr>
+      <td>scavenge</td>
+      <td>all</td>
+      <td>&nbsp;</td>
+      <td>all</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>400 CPUs,<br />2560 GB RAM</td>
+      <td>1/7</td>
+    </tr>
+    <tr>
+      <td>gpu_devel</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>1 job</td>
+      <td>10min/2hrs</td>
+    </tr>
+    <tr>
+      <td>gpu</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>2</td>
+      <td>&nbsp;</td>
+      <td>10</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/2</td>
+    </tr>
+    <tr>
+      <td>bigmem</td>
+      <td>&nbsp;</td>
+      <td>9</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>2</td>
+      <td>2 jobs, 32 CPUs,<br />1532 GB RAM</td>
+      <td>1/7</td>
+    </tr>
+    <tr>
+      <td>pi_breaker</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>24</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_cryoem</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>10</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/&#x221e;</td>
+    </tr>
+    <tr>
+      <td>pi_deng</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_gerstein</td>
+      <td>&nbsp;</td>
+      <td>2</td>
+      <td>&nbsp;</td>
+      <td>11</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_gerstein_gpu</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_gruen</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_jadi</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>2</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_kleinstein</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>3</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_krauthammer</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_ma</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>2</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_ohern</td>
+      <td>6</td>
+      <td>&nbsp;</td>
+      <td>3</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_sigworth</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_sindelar</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_strobel</td>
+      <td>&nbsp;</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_townsend</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>5</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+    <tr>
+      <td>pi_zhao</td>
+      <td>17</td>
+      <td>1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>1/14</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="software"></a>
+<h3>Software</h3>
+<p>See our documentation <a href="/node/3769">on modules</a> and <a href="/node/15836">our list of currently installed packages</a>. Here are libraries available in our default modules for Python and R:</p>
+
+<ul>
+  <li><a href="/node/13921">Python-2.7.13</a></li>
+  <li><a href="/node/14346">R-3.4.1</a></li>
+</ul>
+
+<p><strong>Note</strong>: Some caution is necessary when compiling your own software on Farnam (including your your personal R libraries). Depending on what <a href="https://en.wikipedia.org/wiki/SIMD">CPU SIMD instruction sets</a> your code expects to be available, it may not run on older nodes. For example, the newest nodes understand avx and avx2 vectorized instruction sets. Some older nodes only understand avx. You can get a full list of the CPU features available to you on a node by running <code>lscpu</code> and examining the Flags section.</p>
+<p>We specify some instruction sets, cpu types, and cpu codenames as slurm features (listed below for each node type) which you can require for your job with the <code>--constraint</code> or <code>-C</code> option. For more information on how to use constraints to control which nodes your jobs will run on, <a href="/node/9761#features-and-constraints">see our slurm page</a>.</p>
+<p> Except where noted, we have compiled software targeting the lowest commonly understood instruction set so software loaded with <code>module load</code> will run anywhere. If you believe your software will significantly benefit from being compiled differently please let us know.</p>
+
+<a name="compute-hardware"></a>
+<h3>Compute Hardware</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Node Type</th>
+      <th>Processor</th>
+      <th>Features*</th>
+      <th>Cores</th>
+      <th>RAM**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dell PowerEdge M620</td>
+      <td>(2) <a href="https://ark.intel.com/products/64595/Intel-Xeon-Processor-E5-2670-20M-Cache-2_60-GHz-8_00-GTs-Intel-QPI">E5-2670</a></td>
+      <td>sandybridge, sse4_2, avx, <span style="white-space:nowrap">E5-2670</span></td>
+      <td>16</td>
+      <td>121GB</td>
+    </tr>
+    <tr>
+      <td>Dell PowerEdge M915</td>
+      <td>(4) <a href="http://products.amd.com/en-us/search/CPU/AMD-Opteron%E2%84%A2/AMD-Opteron%E2%84%A2-6200-Series-Processor/6276/29">AMD Opteron 6276</a></td>
+      <td>bulldozer, sse4_2, avx, <span style="white-space:nowrap">opteron-6276</span></td>
+      <td>32</td>
+      <td>507GB</td>
+    </tr>
+      <td>Lenovo nx360h</td>
+      <td>(2) <a href="https://ark.intel.com/products/81706/Intel-Xeon-Processor-E5-2660-v3-25M-Cache-2_60-GHz">E5-2660 v3</a></td>
+      <td>haswell, v3, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2660_v3</span></td>
+      <td>20</td>
+      <td>121GB</td>
+    </tr>
+    <tr>
+      <td>Lenovo nx360h w/GPUs</td>
+      <td>(2) <a href="https://ark.intel.com/products/81706/Intel-Xeon-Processor-E5-2660-v3-25M-Cache-2_60-GHz">E5-2660 v3</a>,<br />(2) <a href="http://www.nvidia.com/object/tesla-k80.html">Nvidia K80</a></td>
+      <td>haswell, v3, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2660_v3</span></td>
+      <td>20</td>
+      <td>121GB</td>
+    </tr>
+    <tr>
+      <td>Lenovo nx360b</td>
+      <td>(2) <a href="https://ark.intel.com/products/91754/Intel-Xeon-Processor-E5-2680-v4-35M-Cache-2_40-GHz">E5-2680 v4</a></td>
+      <td>broadwell, v4, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2680_v4</span></td>
+      <td>28</td>
+      <td>246GB</td>
+    </tr>
+    <tr>
+      <td>Lenovo nx360b w/GPUs</td>
+      <td>(2) <a href="https://ark.intel.com/products/91772/Intel-Xeon-Processor-E5-2660-v4-35M-Cache-2_00-GHz">E5-2660 v4</a>,<br />(2) <a href="http://www.nvidia.com/object/tesla-p100.html">Nvidia P100</a></td></td>
+      <td>broadwell, v4, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2660_v4</span></td>
+      <td>28</td>
+      <td>246GB</td>
+    </tr>
+    <tr>
+      <td>Thinkmate GPX XT4 (gputest)</td>
+      <td>(2) <a href="https://ark.intel.com/products/92980/Intel-Xeon-Processor-E5-2623-v4-10M-Cache-2_60-GHz">E5-2623 v4</a>,<br />(4) <a href="https://www.nvidia.com/en-us/geforce/products/10series/geforce-gtx-1080-ti/">Nvidia 1080Ti</a></td>
+      <td>broadwell, v4, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2623_v4</span></td>
+      <td>8</td>
+      <td>58GB</td>
+    </tr>
+    <tr>
+      <td>Thinkmate GPX XT4</td>
+      <td>(2) <a href="https://ark.intel.com/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">E5-2637 v4</a>,<br />(4) <a href="https://www.nvidia.com/en-us/geforce/products/10series/geforce-gtx-1080-ti/">Nvidia 1080Ti</a></td>
+      <td>broadwell, v4, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2637_v4</span></td>
+      <td>8</td>
+      <td>121GB</td>
+    </tr>
+    <tr>
+      <td>Thinkmate GPX XT4 (pi_gerstein_gpu)</td>
+      <td>(2) <a href="https://ark.intel.com/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">E5-2637 v4</a>,<br />(4) <a href="https://www.nvidia.com/en-us/titan/titan-v/#specs">Nvidia TITAN V</a></td>
+      <td>broadwell, v4, sse4_2, avx, avx2, <span style="white-space:nowrap">E5-2637_v4</span></td>
+      <td>8</td>
+      <td>121GB</td>
+    </tr>
+    <tr>
+      <td>Lenovo 3850X6</td>
+      <td>(4) <a href="https://ark.intel.com/products/84676/Intel-Xeon-Processor-E7-4809-v3-20M-Cache-2_00-GHz">E7-4809 v3</a></td>
+      <td>haswell, v3, sse4_2, avx, avx2, <span style="white-space:nowrap">E7-4809_v3</span></td>
+      <td>32</td>
+      <td>1507GB</td>
+    </tr>
+    <tr>
+      <td>Lenovo 3850X6 (pi_gerstein)</td>
+      <td>(4) <a href="https://ark.intel.com/products/93814/Intel-Xeon-Processor-E7-4820-v4-25M-Cache-2_00-GHz">E7-4820 v4</a></td>
+      <td>broadwell, v3, sse4_2, avx, avx2, <span style="white-space:nowrap">E7-4820_v4</span></td>
+      <td>40</td>
+      <td>1507GB</td>
+    </tr>
+  </tbody>
+</table>
+<p>*For more info on how to use features, please see the <a href="/node/9761#features-and-constraints">slurm documentation</a>.</p>
+<p>**The RAM listed here is the amount available for allocation to jobs. We reserve some RAM for system and administrative services.</p>
+
+<a name="genomes"></a>
+<h3>Genomes</h3>
+<p>We install commonly used genomes, built in a variety of formats, here:</p>
+<pre>/gpfs/ysm/datasets/genomes</pre>
+<p>Please let us know if you&#39;d like us to install additional genomes or formats.</p>
+
+<a name="singularity"></a>
+<h3>Singularity</h3>
+<p>We store <a href="/node/16281">singularity</a> images for general use here:</p>
+<pre>/gpfs/ysm/apps/singularity/img</pre>
+<p>Please let us know if you&#39;d like us to keeps a read-only copy of an image here for general use.</p>
+
+<a name="storage"></a>
+<h3>Storage</h3>
+<p>Farnam has 2.5 Petabytes of GPFS parallel file storage, split across the mounts <code>/gpfs/ysm</code>(where most data are) and <code>/gpfs/slayman</code> (PI storage). Farnam also mounts <a href="/node/3800">Grace</a> and <a href="/node/3797">Omega</a>  storage at <code>/gpfs/loomis</code></p>
+<p>The script <code>/gpfs/ysm/bin/groupquota</code> will give your current storage usage &amp; limits. Note that the usage details only updated once daily.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/gpfs/ysm/home</td>
+<td>125GB/user</td>
+</tr>
+<tr>
+<td>/gpfs/ysm/project</td>
+<td>4TB/group</td>
+</tr>
+<tr>
+<td>/gpfs/ysm/scratch60</td>
+<td>10TB/group</td>
+</tr>
+</tbody>
+</table>
+<p>[[nid:4228]]</p>

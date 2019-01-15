@@ -83,3 +83,17 @@ Yale Orange Accent: #bd5319;
     transform: none;
   }
 }
+
+/* images */
+.cluster-img {
+    width: auto;
+    float: left;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    height: 100%;
+    max-height: 15vh;
+  }
+
+hr {
+    clear: both;
+  }

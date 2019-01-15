@@ -16,7 +16,11 @@ extra_css:
     - 'stylesheets/extra.css'
 
 markdown_extensions:
+    - admonition
     - codehilite
+    - pymdownx.details
+    - pymdownx.keys
+
 
 
 nav:
@@ -41,3 +45,7 @@ nav:
                 - Transferring Data: clusters-at-yale/data/transfer.md
             - Clusters:
                 - clusters-at-yale/clusters/index.md
+                - Grace: clusters-at-yale/clusters/grace.md
+                - Farnam: clusters-at-yale/clusters/farnam.md
+                - Ruddle: clusters-at-yale/clusters/ruddle.md
+                - Milgram: clusters-at-yale/clusters/milgram.md
