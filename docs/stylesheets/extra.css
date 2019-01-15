@@ -67,6 +67,16 @@ Yale Orange Accent: #bd5319;
     background-color: #00356b;
 }
 
+/* Sizing */
+
+img.medium{
+  max-width: 600px;
+}
+
+img.large{
+  max-width: 900px;
+}
+
 
 /* Full Width */
 @media only screen and (min-width: 76.25em) {
