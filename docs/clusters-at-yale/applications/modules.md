@@ -1,4 +1,6 @@
-There are many software packages installed on the Yale clusters in addition to those installed in the standard system directories. This software has been [custom built](/clusters-at-yale/easybuild) for use on our clusters at the request of our users. In order to manage these additional packages, the clusters use _module files_. These module files allow you to easily specify which versions of which packages you want use.
+# Load Software with Modules
+
+There are many software packages installed on the Yale clusters in addition to those installed in the standard system directories. This software has been [custom built](/clusters-at-yale/applications/easybuild) for use on our clusters at the request of our users. In order to manage these additional packages, the clusters use _module files_. These module files allow you to easily specify which versions of which packages you want use.
 
 ## List All Loaded Modules
 

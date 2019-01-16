@@ -8,13 +8,13 @@ ssh netid@clustername.hpc.yale.edu
 
 If you have a public key and are familiar with key pairs, upload your ssh key below. Please allow up to fifteen minutes for the key to propogate before logging in.
 
-*   [Upload your SSH key here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN)
-*   [Troubleshoot Login](/clusters-at-yale/troubleshoot)
+* [Upload your SSH key here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN)
+* [Troubleshoot Login](/clusters-at-yale/troubleshoot)
 
 For additional information, see below.
 
-*   [Off Campus Access to the Clusters](vpn)
-*   Graphical Interfaces: [X11 Forwarding](x11) and [VNC](vnc)
+* [Off Campus Access to the Clusters](vpn)
+* Graphical Interfaces: [X11 Forwarding](x11) and [VNC](vnc)
 
 ## Connect from macOS and Linux
 

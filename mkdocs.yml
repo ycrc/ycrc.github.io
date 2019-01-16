@@ -15,6 +15,9 @@ theme:
 extra_css:
     - 'stylesheets/extra.css'
 
+extra_javascript:
+    - 'js/extra.js'
+
 markdown_extensions:
     - admonition
     - codehilite
@@ -37,7 +40,7 @@ nav:
                 - clusters-at-yale/access/vnc.md
             - Applications & Software:
                 - clusters-at-yale/applications/index.md
-                - Load Software with Modules: clusters-at-yale/applications/modules.md
+                - clusters-at-yale/applications/modules.md
                 - Guides:
                     - clusters-at-yale/applications/guides/index.md
                     - clusters-at-yale/applications/guides/conda.md
@@ -47,6 +50,7 @@ nav:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/slurm.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
+                - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/dsq.md
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:
