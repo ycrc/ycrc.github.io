@@ -8,20 +8,17 @@ Broadly speaking, a compute cluster is a collection of networked computers which
 
 ## Request an Account
 
-The first step in gaining access to our clusters is requesting an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request).
+The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request).
 
 ## Log in
 
-All of Yale's clusters are accessed via a protocol called secure shell (ssh). You can use ssh directly, or via a graphical ssh tool. The details vary depending on the operating system of the computer in front of you. If you want to access the clusters from outside Yale, you must use the [Yale VPN.](access/vpn.md)
+All of Yale's clusters are accessed via a protocol called secure shell (ssh).  Once you have an account, look at [our SSH instructions](access) to log on to the system.
 
-For specifics on ssh and how to connect to the clusters with your application and operating system of choice, please see our documentation:
-
-* [Login from macOS or Linux](access/maclinux.md)
-* [Login from Windows](access/windows.md)
+If you want to access the clusters from outside Yale, you must use the [Yale VPN.](access/vpn.md)
 
 ## Schedule a Job
 
-On our clusters, you control your jobs using a job scheduling system called slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for large and long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [slurm documentation](job-scheduling/slurm.md) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more info.
+On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling/slurm.md) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
 
 ## Linux
 
@@ -32,11 +29,13 @@ A basically familiarity with Linux commands is required for interacting with the
 
 ## Move Your Files
 
-You will likely find it necessary to copy files between your local machines and the clusters. Just as with logging in, there are different ways to do this, depending on your local operating system. See the documentation on [transferring files](data/transfer.md) for more information.
+You will likely find it necessary to copy files between your local machines and the clusters. Just as with logging in, there are different ways to do this, depending on your local operating system. See the documentation on [transferring data](data/transfer.md) for more information.
 
 ## Use Software
 
-To best serve the diverse needs of all the software that a scientist needs in an HPC environment, we use a module system to manage software. This allows you to swap between different application and versions of those applications with relative ease and focus on getting your work done, not compiling software. See the [Modules documentation](applications/modules.md) in our User Guide for more information. If you find software that you'd like to use that isn't available, let us know and we will do our best to make it available.
+To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the [Modules documentation](applications/modules.md) in our User Guide for more information. 
+
+We also provide assistance for installing less commonly used packages. See our [Applications & Software documentation](applications) for more details.
 
 ## Rules of the road
 
@@ -50,7 +49,7 @@ Use of the clusters is also governed by our [official guidelines](https://resear
 
 ## Hands on Training
 
-We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse [our catalog of training](https://research.computing.yale.edu/node/4186) to see what is available.
+We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse [our catalog of training](https://research.computing.yale.edu/training/ycrc-bootcamps) to see what is available.
 
 ## Need Additional Help?
 

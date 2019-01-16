@@ -22,8 +22,6 @@ markdown_extensions:
     - pymdownx.keys
     - attr_list
 
-
-
 nav:
     - Support:
         - index.md
@@ -31,20 +29,27 @@ nav:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
             - clusters-at-yale/troubleshoot.md
-            - Accessing the Clusters:
+            - Access the Clusters:
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/vpn.md
                 - clusters-at-yale/access/x11.md
                 - clusters-at-yale/access/vnc.md
             - Applications & Software:
                 - clusters-at-yale/applications/index.md
-                - Loading Software with Modules: clusters-at-yale/applications/modules.md
+                - Load Software with Modules: clusters-at-yale/applications/modules.md
+                - Guides:
+                    - clusters-at-yale/applications/guides/index.md
+                    - clusters-at-yale/applications/guides/conda.md
+                    - clusters-at-yale/applications/guides/singularity.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
-                - Running Jobs with Slurm: clusters-at-yale/job-scheduling/slurm.md
+                - clusters-at-yale/job-scheduling/slurm.md
+                - clusters-at-yale/job-scheduling/resource-requests.md
+                - clusters-at-yale/job-scheduling/dsq.md
+                - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:
                 - clusters-at-yale/data/index.md
-                - Transferring Data: clusters-at-yale/data/transfer.md
+                - Transfer Data: clusters-at-yale/data/transfer.md
             - Clusters:
                 - clusters-at-yale/clusters/index.md
                 - Grace: clusters-at-yale/clusters/grace.md

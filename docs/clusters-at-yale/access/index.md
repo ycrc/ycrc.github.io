@@ -1,4 +1,4 @@
-# Logging on to the Clusters
+# Log on to the Clusters
 
 We use `ssh` with ssh key pairs to log in to the clusters, e.g.
 

@@ -6,7 +6,7 @@ If you are having trouble logging in, please check the following:
 2.  Accounts are only created for you on the clusters as you requested them. To get access to additional clusters, submit another [account request](https://research.computing.yale.edu/account-request).
 3.  Verify that you are attempting to ssh to the correct hostname. Please see the [cluster page](/clusters-at-yale/clusters) for a list of login addresses.
 4.  Verify that your ssh keys are setup correctly. Make sure your public key is uploaded to the [ssh key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). If you are on Windows, make sure you have pointed MobaXterm to your private ssh key and if you are on macOS or Linux, your private key needs to be in `${HOME}/.ssh`.
-5.  We use ssh keys to authenticate logins to the clusters, and not NetID passwords. If you are asked for a "passphrase" upon logging in, this is the ssh key passphrase you configured when first creating your key. If you have forgotten your passphrase, you will need to create and upload a new ssh key pair (see [SSH Guide](/clusters-at-yale/access)).
+5.  We use ssh keys to authenticate logins to the clusters, and not NetID passwords. If you are asked for a "passphrase" upon logging in, this is the ssh key passphrase you configured when first creating your key. If you have forgotten your passphrase, you will need to create and upload a new ssh key pair (see our [SSH Guide](/clusters-at-yale/access)).
 6.  Make sure you are accessing the cluster from either Yale's campus networks (ethernet or YaleSecure for wireless) or [Yale's VPN](http://its.yale.edu/services/wifi-and-networks/vpn-campus-access) if you are off-campus.
 7.  The home directory should only be write-able by your NetID. If you recently modified the permissions to your home directory, contact us at [hpc@yale.edu](mailto:hpc@yale.edu) and we can fix the permissions for you.
 8.  If you get an error like "could not resolve hostname" make sure that you are using the Yale DNS servers (130.132.1.9,10,11). External DNS servers do not list our clusters.
@@ -20,14 +20,16 @@ If all of the above check out ok, please [contact us](mailto:hpc@yale.edu) and
 
 If you are seeing the following error:
 
-<pre>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 ....
 Offending key in /home/user/.ssh/known_hosts:34
 ...
-</pre>
+
+```
 
 This error means that the host keys on the cluster have changed. This may be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please [contact us](mailto:hpc@yale.edu) if you receive this error.
 
