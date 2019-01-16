@@ -55,8 +55,9 @@ nav:
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:
                 - clusters-at-yale/data/index.md
+                - clusters-at-yale/data/cluster-storage.md
                 - Transfer Data: clusters-at-yale/data/transfer.md
-            - Clusters:
+            - The Clusters:
                 - clusters-at-yale/clusters/index.md
                 - Grace: clusters-at-yale/clusters/grace.md
                 - clusters-at-yale/clusters/farnam.md
