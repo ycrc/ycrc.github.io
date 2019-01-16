@@ -9,7 +9,7 @@ ssh netid@clustername.hpc.yale.edu
 If you have a public key and are familiar with key pairs, upload your ssh key below. Please allow up to fifteen minutes for the key to propogate before logging in.
 
 *   [Upload your SSH key here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN)
-*   [Troubleshoot Login](/clusters-at-yale/troubshoot)
+*   [Troubleshoot Login](/clusters-at-yale/troubleshoot)
 
 For additional information, see below.
 
@@ -64,8 +64,8 @@ Copy and paste the output to [Yale HPC ssh key installer](http://gold.hpc.yale.i
 
 Once your public key has been installed, you may use ssh in a terminal to access the appropriate cluster. You need to know 2 things to log into a cluster.
 
-1.  the hostname of the cluster login node
-2.  your netid
+1.  The hostname of the cluster login node
+2.  Your netid
 
 You can find the hostnames of the cluster login nodes [here.](/clusters-at-yale/clusters) Open a terminal window and connect to the login node using the syntax:
 
@@ -79,10 +79,10 @@ For example, if your netid is `ra359` and you wish to log into the Grace cluster
 ssh ra359@grace.hpc.yale.edu
 ```
 
-Check out our [Sample Linux/Mac SSH Configuration](/node/12401) for tips on maintaining connections and adding tab complete to your ssh commands.
+Check out our [Sample Linux/Mac SSH Configuration](sample-config) for tips on maintaining connections and adding tab complete to your ssh commands.
 
 
-### Mac: Storing Passphrase and Using SSH Agent Forwarding
+### Mac: Store Passphrase and Use SSH Agent Forwarding
 
 By default, macOS won't always remember your ssh key passphase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and enable agent forwarding, enter the following command on your local machine (just once):
 
