@@ -1,60 +1,58 @@
 # Run Jobs with Slurm
 
-Slurm is used to submit jobs to a specified set of compute resources, which are variously called queues or partitions. Slurm uses the term partition. Partitions, their defaults, limits and purposes are listed on [each cluster page](/node/4093). To see more details about how jobs are scheduled see our [Job Scheduling documentation](/fairshare).
+Slurm is used to submit jobs to a specified set of compute resources, which are variously called queues or partitions. Slurm uses the term partition. Partitions, their defaults, limits and purposes are listed on [each cluster page](/clusters-at-yale/clusters). To see more details about how jobs are scheduled see our [Job Scheduling documentation](/clusters-at-yale/job-scheduling/fairshare).
 
-Please be a good cluster citizen. Do not run jobs on login nodes (e.g. grace1, farnam2), as these can impact the sessions and connectivity of everyone else on the cluster. We also sometimes find jobs on the clusters that allocate resources incorrectly for the job that is running. Please see our [Measuring Memory and CPU Usage](/node/3765) for examples of how to measure the resources your jobs use. If you find yourself wondering how best to schedule a job feel free to [email us](mailto:hpc@yale.edu?Subject=Job%20help) or come to [office hours](/node/4227). Efficient jobs help you get your work done faster and free resources for others as well.
+Please be a good cluster citizen. Do not run jobs on login nodes (e.g. grace1, farnam2), as these can impact the sessions and connectivity of everyone else on the cluster. We also sometimes find jobs on the clusters that allocate resources incorrectly for the job that is running. Please see our [Measuring Memory and CPU Usage](/clusters-at-yale/job-scheduling/resource-usage) for examples of how to measure the resources your jobs use. If you find yourself wondering how best to schedule a job feel free to [email us](mailto:hpc@yale.edu?Subject=Job%20help) or come to [office hours](/). Efficient jobs help you get your work done faster and free resources for others as well.
 
-### Common Slurm Commands
+## Common Slurm Commands
 
 Submit a submission script (see below for details)
 
-```
+``` bash
 sbatch <script>
 ```
 
 List queued and running jobs
 
-```
+``` bash
 squeue -u$USER
 ```
 
 Cancel a queued job or kill a running job
 
-```
+``` bash
 scancel <job_id>
 ```
 
 Check status of individual job (including failed or completed)
 
-```
+``` bash
 sacct -j <job_id>
 ```
 
-<a name="interactive-jobs"></a>
-
-### Interactive Jobs
+## Interactive Jobs
 
 Interactive jobs can be used for testing and troubleshooting code. By requesting an interactive job, you will be allocated resources and logged onto the node in a shell.
 
-```
+``` bash
 srun --pty -p interactive bash
 ```
 
 This will assign a free node to you, allocating the requested number of CPUs, walltime, and memory, and put you within a shell on that node. You can run any number of commands within that shell. To free the allocated node, exit from the shell.
 
-When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/node/12826) alleviate this. When using `tmux`, please be sure to keep track of your allocations and free those no longer needed!
+!!!tip
+    When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/applications/guides/tmux) alleviate this. When using `tmux`, please be sure to keep track of your allocations and free those no longer needed!
 
 To use a GUI application (such as Matlab), when in an interactive job, use the `--x11` flag:
 
-```
+``` bash
 srun --pty --x11 -p interactive [additional slurm options] bash
 ```
 
-Note that for X11 forwarding to work, you need to have your local machine setup properly. Please see our [X11 setup guide](/node/3803) for more info.
+!!!warning
+    For X11 forwarding to work, you need to have your local machine setup properly. Please see our [X11 setup guide](/clusters-at-yale/access/x11) for more info.
 
-<a name="batch-jobs"></a>
-
-### Batch Jobs
+## Batch Jobs
 
 To submit a job via Slurm, you first write a simple shell script called a "submission script" that wraps your job. A submission script is comprised of three parts:
 
@@ -64,7 +62,7 @@ To submit a job via Slurm, you first write a simple shell script called a "submi
 
 Here is an example script.sh that runs a job on one CPU on single node:
 
-```
+``` bash
 #!/bin/bash
 #SBATCH --partition=general
 #SBATCH --job-name=my_job
@@ -77,7 +75,7 @@ Here is an example script.sh that runs a job on one CPU on single node:
 ./myprog -p 20 arg1 arg2 arg3 ...
 ```
 
-### Directives
+## Directives
 
 As shown in the above example, "directives" are comprised of `#SBATCH` followed by Slurm options. Most commonly used options include:
 
@@ -98,20 +96,10 @@ As shown in the above example, "directives" are comprised of `#SBATCH` followed 
 
 Additional options can be found on in the [official Slurm documentation](http://slurm.schedmd.com/documentation.html).
 
-### Resource Limit Enforcement
+## Resource Limit Enforcement
 
 Slurm uses the linux cgroup feature to enforce limits on CPUs, GPUs, and memory. Jobs are only permitted to run on a node if they have a valid allocation, and only within the limits specified by that limitation. Thus, if you request a single core from slurm (the default) and start a job that runs 20 parallel threads, those threads will be packed into a single CPU, and run very slowly. Similarly, if you do not explicitly request memory, your job will be granted a fairly modest default per CPU, and if your job attempts to exceed that amount, it will be killed.
 
-### Using Private Partitions
+## Using Private Partitions
 
 If you have special permission to submit to a partition that belongs to another group, you may be asked to assign a special "account" to your jobs in that partition. You will be given the name of this account when you get access the partition and then simple add the `-A <account>` flag to your submission command or as an additional directive in your submission script.
-
-
-### Migrating from another queuing system to Slurm
-
-Most commands and batch script can be easily converted to slurm. SchedMD created a ["rosetta stone"](http://slurm.schedmd.com/rosetta.pdf) showing equivalent operations in various batch queuing systems. Here are some specific hints:
-
-Migrating from Torque:
-
-*   You do not need to change directory by doing cd $PBS_O_WORKDIR. Slurm runs jobs in the submission directory by default
-*   You must have an interpreter command as the first line of your slurm batch script. Usually #!/bin/bash is what you want.

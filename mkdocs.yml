@@ -32,6 +32,7 @@ nav:
             - Access the Clusters:
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/vpn.md
+                - clusters-at-yale/access/mfa.md
                 - clusters-at-yale/access/x11.md
                 - clusters-at-yale/access/vnc.md
             - Applications & Software:
@@ -41,6 +42,7 @@ nav:
                     - clusters-at-yale/applications/guides/index.md
                     - clusters-at-yale/applications/guides/conda.md
                     - clusters-at-yale/applications/guides/singularity.md
+                    - clusters-at-yale/applications/guides/tmux.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/slurm.md
@@ -53,6 +55,6 @@ nav:
             - Clusters:
                 - clusters-at-yale/clusters/index.md
                 - Grace: clusters-at-yale/clusters/grace.md
-                - Farnam: clusters-at-yale/clusters/farnam.md
+                - clusters-at-yale/clusters/farnam.md
                 - Ruddle: clusters-at-yale/clusters/ruddle.md
                 - Milgram: clusters-at-yale/clusters/milgram.md
