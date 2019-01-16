@@ -77,6 +77,15 @@ img.large{
   max-width: 900px;
 }
 
+img.cluster-portrait {
+  width: auto;
+  float: left;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  height: 100%;
+  max-height: 15vh;
+}
+
 
 /* Full Width */
 @media only screen and (min-width: 76.25em) {
@@ -94,16 +103,7 @@ img.large{
   }
 }
 
-/* images */
-.cluster-img {
-    width: auto;
-    float: left;
-    padding-right: 1%;
-    padding-bottom: 1%;
-    height: 100%;
-    max-height: 15vh;
-  }
-
+/* hr to force text below floating image */
 hr {
     clear: both;
   }
