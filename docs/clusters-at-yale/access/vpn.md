@@ -2,7 +2,7 @@
 
 Yale's clusters can only be accessed on the Yale network. Therefore, in order to access a cluster from off campus, you will need to first connect to Yale's VPN. We recommend the Cisco AnyConnect VPN Client, which can be downloaded from the [ITS Software Library](http://software.yale.edu/software/cisco-vpn-anyconnect).
 
-More information about Yale's VPN can be found on the [ITS website](http://its.yale.edu/services/internet-phones-and-television/campus-access/vpn/vpn).
+More information about Yale's VPN can be found on the [ITS website](https://yale.service-now.com/it?id=service_offering&sys_id=c4684dcd6fbb31007ee2abcf9f3ee4f2).
 
 ### Connect via VPN
 
@@ -24,4 +24,4 @@ Depending on what you choose you will be prompted to authenticate via a second a
 
 Once you successfully authenticate with MFA, you will be connected to the VPN and should be able to log in the clusters via SSH as usual.
 
-More information about MFA at Yale can be found on the [ITS website](http://its.yale.edu/secure-computing/identity-and-access-management/multifactor-authentication-yale).
+More information about MFA at Yale can be found on the [ITS website](https://cybersecurity.yale.edu/topic/use-yales-multifactor-authentication-mfa-service).

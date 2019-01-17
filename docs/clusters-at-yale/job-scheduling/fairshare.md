@@ -1,4 +1,4 @@
-# Factors Affecting Job Scheduling
+# Factors Affecting Scheduling
 
 ## Job Priority Score
 
@@ -34,4 +34,4 @@ sprio -j <job_id>
 
 In addition to the main scheduling cycle, where jobs are run in the order of priority and availability of resources, all jobs are also considered for "backfill". Backfill is a mechanism which will let jobs with lower priority score start before high priority jobs if they can fit in around them. For example, if a higher priority job needs 4 nodes with 20 cores on each node and it will have to wait 30 hours for those resources to be available, if a lower priority job only needs a couple cores for an hour, Slurm will run that job in the meantime.
 
-For this reason, it is important to request accurate walltime limits for your jobs. If your job only requires 2 hours to run, but you request 24 hours, the likelihood that your job will be backfilled is greatly lowered. Moreover, for performance reasons, the backfill scheduler on Grace only looks at the top 10 jobs by each user. Therefore, if you bundle similar jobs into job arrays (see [dSQ](dsq)), the backfill cycle will consider more of your jobs since entire job arrays only count as one job for the limit accounting.
+For this reason, it is important to request accurate walltime limits for your jobs. If your job only requires 2 hours to run, but you request 24 hours, the likelihood that your job will be backfilled is greatly lowered. Moreover, for performance reasons, the backfill scheduler on Grace only looks at the top 10 jobs by each user. Therefore, if you bundle similar jobs into job arrays (see [dSQ](/clusters-at-yale/job-scheduling/dsq)), the backfill cycle will consider more of your jobs since entire job arrays only count as one job for the limit accounting.
