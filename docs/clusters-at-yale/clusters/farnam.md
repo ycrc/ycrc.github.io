@@ -34,7 +34,7 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions. The column names in the partitions tables refer to the node types in the nodes table above.
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm.md).
 
 ### Public Partitions
 
@@ -100,7 +100,7 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## Storage
 
-Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where home, project and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
+Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
 You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage details only update once daily.
 
