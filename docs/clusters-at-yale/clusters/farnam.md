@@ -1,6 +1,6 @@
 # Farnam
 
-![Louise](/img/Louise_Whitman_Farnam.jpg){: .cluster-portrait}
+![Louise](/img/Louise-Whitman-Farnam.jpg){: .cluster-portrait}
 
 The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealumnimagazine.com/issues/2006_09/old_yale.html), the first woman to graduate from the Yale School of Medicine, class of 1916. It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.
 
