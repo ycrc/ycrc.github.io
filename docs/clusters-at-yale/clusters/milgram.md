@@ -2,9 +2,9 @@
 
 ![Stanley](/img/Stanley-Milgram.jpg){: .cluster-portrait}
 
-Milgram is a HIPAA aligned Department of Psychology cluster intended for use on projects that may involve sensitive data. This applies to both storage and computation. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
-
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment on obedience to authority figures.
+
+Milgram is a HIPAA aligned Department of Psychology cluster intended for use on projects that may involve sensitive data. This applies to both storage and computation. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
 
 !!! note
     Connections to Milgram can only be made from the HIPAA VPN (`access.yale.edu/hipaa`). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
