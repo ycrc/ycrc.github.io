@@ -46,12 +46,12 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 
 | Partition   | User Limits                 | Walltime default/max | Node type (number)                  |
 |-------------|-----------------------------|----------------------|-------------------------------------|
-| interactive | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)              |
 | general*    | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)              |
-| scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
+| interactive | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)              |
+| bigmem      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                |
 | gpu_devel   | 1 job                       | 10min/2hr            | GPX XT4 1080Ti (1)                  |
 | gpu         | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h K80 (2), GPX XT4 1080Ti (10) |
-| bigmem      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                |
+| scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
 
 *default
 
@@ -77,7 +77,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_strobel      | 1d/14d               | m915 (1)                                             |
 | pi_townsend     | 1d/14d               | nx360h (5)                                           |
 | pi_zhao         | 1d/14d               | m620 (17), m915 (1)                                  |
- 
+
 ## Public Datasets
 
 We host datasets of general interest in a loosely organized directory tree in `/gpfs/ysm/datasets`:

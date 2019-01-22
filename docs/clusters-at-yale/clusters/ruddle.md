@@ -32,10 +32,10 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 
 | Partition   | User Limits          | Walltime default/max | Node type (number)    |
 |-------------|----------------------|----------------------|-----------------------|
-| interactive | 20 CPUs, 256 G RAM   | 1d/2d                | nx360h (155)          |
 | general*    | 300 CPUs, 1800 G RAM | 7d/30d               | nx360h (155)          |
-| scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                   |
+| interactive | 20 CPUs, 256 G RAM   | 1d/2d                | nx360h (155)          |
 | bigmem      | 32 CPUs, 1507 G RAM  | 1d/7d                | m915 (12), 3850X6 (2) |
+| scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                   |
 
 *default
 

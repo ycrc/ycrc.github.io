@@ -33,11 +33,11 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 | Partition    | Group Limits           | User Limits             | Walltime default/max | Node type (number)    |
 |--------------|------------------------|-------------------------|----------------------|-----------------------|
 | short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | nx360b (48), R730 (9) |
-| interactive  | none                   | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | R730 (1)              |
-| long         | none                   | 1188 CPUs, 5940 G RAM   | 1h/2d                | nx360b (48), R730 (9) |
-| verylong     | none                   | 792 CPUs, 3960 G RAM    | 1h/7d                | nx360b (48), R730 (9) |
-| education    | none                   | none                    | 1h/6h                | R730 (2)              |
-| scavenge     | none                   | none                    | none                 | nx360b (48), R730 (9) |
+| interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | R730 (1)              |
+| long         |                        | 1188 CPUs, 5940 G RAM   | 1h/2d                | nx360b (48), R730 (9) |
+| verylong     |                        | 792 CPUs, 3960 G RAM    | 1h/7d                | nx360b (48), R730 (9) |
+| education    |                        |                         | 1h/6h                | R730 (2)              |
+| scavenge     |                        |                         | none                 | nx360b (48), R730 (9) |
 
 *default
 
