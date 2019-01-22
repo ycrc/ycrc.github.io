@@ -4,7 +4,7 @@
 
 ![](/img/cluster.png)
 
-Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the **login node**. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](clusters/index.md).
+Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the **login node**. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](clusters/index).
 
 ## Request an Account
 
@@ -14,11 +14,11 @@ The first step in gaining access to our clusters is to request an account. There
 
 All of Yale's clusters are accessed via a protocol called secure shell (ssh).  Once you have an account, look at [our SSH instructions](access) to log on to the system.
 
-If you want to access the clusters from outside Yale, you must use the [Yale VPN.](access/vpn.md)
+If you want to access the clusters from outside Yale, you must use the [Yale VPN.](access/vpn)
 
 ## Schedule a Job
 
-On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling/slurm.md) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
+On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling/slurm) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
 
 ## Linux
 
@@ -29,11 +29,11 @@ A basically familiarity with Linux commands is required for interacting with the
 
 ## Move Your Files
 
-You will likely find it necessary to copy files between your local machines and the clusters. Just as with logging in, there are different ways to do this, depending on your local operating system. See the documentation on [transferring data](data/transfer.md) for more information.
+You will likely find it necessary to copy files between your local machines and the clusters. Just as with logging in, there are different ways to do this, depending on your local operating system. See the documentation on [transferring data](data/transfer) for more information.
 
 ## Use Software
 
-To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the [Modules documentation](applications/modules.md) in our User Guide for more information. 
+To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the [Modules documentation](applications/modules) in our User Guide for more information. 
 
 We also provide assistance for installing less commonly used packages. See our [Applications & Software documentation](applications) for more details.
 

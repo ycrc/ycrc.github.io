@@ -1,6 +1,6 @@
 # Ruddle
 
-![Ruddle](/img/Frank-Ruddle.jpg){: .cluster-portrait}
+![Frank](/img/Frank-Ruddle.jpg){: .cluster-portrait}
 
 Ruddle is intended for use only on projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/); Please do not use this cluster for other projects. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
 
@@ -26,16 +26,18 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm.md). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
 
-All the node types listed are described in more detail in the [Compute Node Configurations](#compute-node-configurations) table.
+All the node types listed are described in more detail in the [hardware](#hardware) table.
 
-| Partition   | User Limits                 | Walltime default/max | Node type (number)    |
-|-------------|-----------------------------|----------------------|-----------------------|
-| interactive | 20 CPUs, 256 G RAM          | 1d/2d                | nx360h (155)          |
-| general     | 300 CPUs, 1800 G RAM        | 7d/30d               | nx360h (155)          |
-| scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                   |
-| bigmem      | 32 CPUs, 1507 G RAM         | 1d/7d                | m915 (12), 3850X6 (2) |
+| Partition   | User Limits          | Walltime default/max | Node type (number)    |
+|-------------|----------------------|----------------------|-----------------------|
+| interactive | 20 CPUs, 256 G RAM   | 1d/2d                | nx360h (155)          |
+| general*    | 300 CPUs, 1800 G RAM | 7d/30d               | nx360h (155)          |
+| scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                   |
+| bigmem      | 32 CPUs, 1507 G RAM  | 1d/7d                | m915 (12), 3850X6 (2) |
+
+*default
 
 ## Access Sequencing Data
 
@@ -45,8 +47,8 @@ To avoid duplication of data and to save space that counts against your quotas, 
 ln -s /path/to/sequece_data /path/to/your_link
 ```
 
-!!! danger
-    Original sequence data are deleted pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files.
+!!! tip
+    Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/clusters-at-yale/applications/guides/archived-sequencing).
 
 To find the location of the sequence files on the storage, look at the URL that you were sent from YCGA.
 
@@ -66,8 +68,6 @@ The path on the cluster to the data is:
 ```
 /gpfs/ycga/sequencers/panfs/sequencers2/sequencerV/runs/131107_D00306_0096... etc
 ```
-
-If you need to retrieve archived sequencing data, please see our [guide on how to do so](/clusters-at-yale/applications/guides/archived-sequencing).
 
 ## Public Datasets
 
@@ -106,8 +106,8 @@ You can check your current storage usage & limits by running the `getquota` comm
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-|Partition  | Root Directory        | Storage     | File Count | Backups |
-|-----------|-----------------------|-------------|------------|---------|
+|Partition  | Root Directory         | Storage     | File Count | Backups |
+|-----------|------------------------|-------------|------------|---------|
 | home      | `/gpfs/ycga/home`      | 125G/user   | 500,000    | Yes     |
 | project   | `/gpfs/ycga/project`   | 4T/group    | 5,000,000  | No      |
 | scratch60 | `/gpfs/ycga/scratch60` | 10T/group   | 5,000,000  | No      |

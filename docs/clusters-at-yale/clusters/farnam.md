@@ -34,22 +34,24 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm.md).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm).
 
 ### Public Partitions
 
 The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
 
-All the node types listed are described in more detail in the [Compute Node Configurations](#compute-node-configurations) table.
+All the node types listed are described in more detail in the [hardware](#hardware) table.
 
 | Partition   | User Limits                 | Walltime default/max | Node type (number)                  |
 |-------------|-----------------------------|----------------------|-------------------------------------|
 | interactive | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)              |
-| general     | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)              |
+| general*    | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)              |
 | scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
 | gpu_devel   | 1 job                       | 10min/2hr            | GPX XT4 1080Ti (1)                  |
 | gpu         | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h K80 (2), GPX XT4 1080Ti (10) |
 | bigmem      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                |
+
+*default
 
 ### Private Partitions
 
