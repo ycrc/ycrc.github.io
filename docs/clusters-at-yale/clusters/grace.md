@@ -102,6 +102,6 @@ You can check your current storage usage & limits by running the `getquota` comm
 
 |Partition  | Root Directory            | Storage     | File Count | Backups |
 |-----------|---------------------------|-------------|------------|---------|
-| home      | `/gpfs/loomis/home.grace` | 100G/user   | 500,000    | Yes     |
+| home      | `/gpfs/loomis/home.grace` | 100G/user   | 200,000    | Yes     |
 | project   | `/gpfs/loomis/project`    | 1T/group    | 5,000,000  | No      |
 | scratch60 | `/gpfs/loomis/scratch60`  | 10T/group   | 5,000,000  | No      |
