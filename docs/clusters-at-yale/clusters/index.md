@@ -4,8 +4,8 @@
 
 We maintain and support 5 compute clusters, with roughly 29,000 cores total. Please click on cluster names for more information. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](/files/Facilities_Equipment-YCRC_20180705.docx).
 
-| Cluster Name          | Approx. Core Count | Login Address<img width=150/> | Monitor Dashboard                                                                                        | Purpose                                                  |
-|-----------------------|--------------------|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| Cluster Name       | Approx. Core Count | Login Address<img width=150/> | Monitor Dashboard                                                                                        | Purpose                                                  |
+|--------------------|--------------------|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
 | [Grace](grace)     | 13,500             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general                                                  |
 | [Farnam](farnam)   | 5,200              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |
 | [Omega](omega)     | 6,500              | `omega.hpc.yale.edu`          | [cluster.ycrc.yale.edu/omega](http://cluster.ycrc.yale.edu/omega/)                                       | highly parallel, tightly coupled                         |
