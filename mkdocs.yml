@@ -69,10 +69,11 @@ nav:
                 - clusters-at-yale/data/permissions.md
             - The Clusters:
                 - clusters-at-yale/clusters/index.md
-                - Grace: clusters-at-yale/clusters/grace.md
+                - clusters-at-yale/clusters/grace.md
                 - clusters-at-yale/clusters/farnam.md
-                - Ruddle: clusters-at-yale/clusters/ruddle.md
-                - Milgram: clusters-at-yale/clusters/milgram.md
+                - clusters-at-yale/clusters/ruddle.md
+                - clusters-at-yale/clusters/omega.md
+                - clusters-at-yale/clusters/milgram.md
         - Research Data:
             - data/index.md
             - data/archive.md

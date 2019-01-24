@@ -26,7 +26,7 @@ Milgram is made up of a couple kinds of compute nodes. The Features column below
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The short partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The long and verylong partitions are meant for jobs with projected walltimes that are too long to run in short. For courses using the cluster we set aside the education partition. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The short partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The long and verylong partitions are meant for jobs with projected walltimes that are too long to run in short. For courses using the cluster we set aside the education partition. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
@@ -39,13 +39,13 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 | education    |                        |                         | 1h/6h                | R730 (2)              |
 | scavenge     |                        |                         | none                 | nx360b (48), R730 (9) |
 
-*default
+\* default
 
 ## Storage
 
 `/gpfs/milgram` is Milgram's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage details only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

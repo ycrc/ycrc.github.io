@@ -40,7 +40,7 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 ### Public Partitions
 
-The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
+The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
@@ -53,7 +53,7 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 | gpu         | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h K80 (2), GPX XT4 1080Ti (10) |
 | scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
 
-*default
+\* default
 
 ### Private Partitions
 
@@ -106,7 +106,7 @@ If you would like us to host a dataset or questions about what is currently avai
 
 Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage details only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

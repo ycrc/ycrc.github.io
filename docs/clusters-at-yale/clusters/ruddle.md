@@ -26,7 +26,7 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
@@ -37,7 +37,7 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 | bigmem      | 32 CPUs, 1507 G RAM  | 1d/7d                | m915 (12), 3850X6 (2) |
 | scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                   |
 
-*default
+\* default
 
 ## Access Sequencing Data
 
@@ -101,7 +101,7 @@ If you would like us to host a dataset or questions about what is currently avai
 
 Ruddle has access to two filesystems. `/gpfs/ycga` is Ruddle's filesystem where home, project, and scratch60 directories are located. `/ycga-ba` stores legacy data. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage details only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily..
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

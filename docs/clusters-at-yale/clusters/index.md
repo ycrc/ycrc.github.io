@@ -12,7 +12,6 @@ We maintain and support 5 compute clusters, with roughly 29,000 cores total. Ple
 | [Ruddle](ruddle)   | 3,800              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 | [Milgram](milgram) | 1,600              | `milgram.hpc.yale.edu`        | [monitor1.milgram.hpc.yale.internal:4001](http://monitor1.milgram.hpc.yale.internal:4001) (on HIPAA VPN) | Psychology dept. HIPAA cluster                           |
 
-
 ## Storage
 
 We maintain several high performance storage systems which amount to about 9 PB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always contain the home directory of the cluster you are on.

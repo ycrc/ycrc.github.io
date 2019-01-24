@@ -43,7 +43,7 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 ### Public Partitions
 
-The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is a permission-only place to run large parallel jobs. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Slurm documentation](/clusters-at-yale/job-scheduling/scavenge).
+The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is reserved for tightly-coupled parallel and access is by special request only. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
@@ -55,10 +55,11 @@ All the node types listed are described in more detail in the [hardware](#hardwa
 | bigmem      |                             | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (1)                                      |
 | gpu_devel   |                             | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | nx360h k80 (1)                                  |
 | gpu         | 32 CPUs, 256 G RAM          | 6 nodes                     | 1h/1d                | nx360b p100 (6), nx360h k80 (3), sd530 v100 (1) |
-| mpi         | 900 CPUs                    | 640 CPUs                    | 1h/7d                | sd530 (35)                                      |
+| mpi**       | 900 CPUs                    | 640 CPUs                    | 1h/7d                | sd530 (35)                                      |
 | scavenge    |                             | 6400 CPUs                   | 1h/1d                | all                                             |
 
-*default
+\* default  
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description.
 
 ### Private Partitions
 
@@ -95,7 +96,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 
 Grace has access to a number of GPFS filesystems. `/gpfs/loomis` is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage details only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
