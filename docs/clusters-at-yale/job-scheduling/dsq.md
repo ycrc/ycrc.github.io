@@ -1,10 +1,11 @@
 # Submit Arrays with dSQ
+
 [Dead Simple Queue](https://github.com/ycrc/dsq) is a light-weight successor to SimpleQueue. It wraps around slurm's [sbatch](https://slurm.schedmd.com/sbatch.html) to help you submit independent jobs as job arrays. It has several advantages over SimpleQueue:
 
-*   Your job will adapt during the run to the available resources. As more cpus and/or memory are available, it will grow up (up to the per-user limit)
-*   Your job will only use the resources needed to complete remaining jobs. It will shrink as your jobs finish, giving you and your peers better access to compute resources.
-*   When run on the scavenge partition, only the subjobs are preempted, and the job as a whole will continue. You can then use dSQAutopsy to create a new job file that has only the jobs that didn't complete.
-*   All you need is Python 2.7 or higher (Python 3 works too!)
+* Your job will adapt during the run to the available resources. As more cpus and/or memory are available, it will grow up (up to the per-user limit)
+* Your job will only use the resources needed to complete remaining jobs. It will shrink as your jobs finish, giving you and your peers better access to compute resources.
+* When run on the scavenge partition, only the subjobs are preempted, and the job as a whole will continue. You can then use dSQAutopsy to create a new job file that has only the jobs that didn't complete.
+* All you need is Python 2.7 or higher (Python 3 works too!)
 
 dSQ is _not_ recommended for situations where the initialiazation of the job takes most of its execution time and it is re-usable. These situations are much better handled by a worker-based job handler.
 
@@ -39,7 +40,7 @@ On Grace, Omega or Milgram:
 module load Tools/dSQ
 ```
 
-`dSQ.py` takes a few arguments, then passes the rest directly to sbatch, either by writing a script to stdout that you should capture to a file. Unlike SimpleQueue, **the resources you request will be given to each job in the array (each line in your job file)**, e.g. requesting 2 GB of RAM with dSQ will run each individual job with a separate 2 GB of RAM available. Without specifying any additional sbatch arguments, some defaults will be set. run `sbatch --help` or see https://slurm.schedmd.com/sbatch.html for more info on sbatch options.
+`dSQ.py` takes a few arguments, then passes the rest directly to sbatch, either by writing a script to stdout that you should capture to a file. Unlike SimpleQueue, **the resources you request will be given to each job in the array (each line in your job file)**, e.g. requesting 2 GB of RAM with dSQ will run each individual job with a separate 2 GB of RAM available. Without specifying any additional sbatch arguments, some defaults will be set. run `sbatch --help` or see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for more info on sbatch options.
 
 ```
 dSQ.py --jobfile jobfile [dSQ args] [slurm args] > run.sh
@@ -75,13 +76,13 @@ After creating the batch script, take a look at its contents. It should look qui
 #SBATCH --mail-user=<youremail>@yale.edu
 #SBATCH --ntasks=1
 
-/ysm-gpfs/apps/software/dSQ/0.92/dSQBatch.py joblist.txt</youremail> 
+/ysm-gpfs/apps/software/dSQ/0.92/dSQBatch.py joblist.txt</youremail>
 ```
 
 ## Step 3: Submit Batch Script
 
 ```
-sbatch run.sh 
+sbatch run.sh
 ```
 
 ## Manage Your dSQ Job
@@ -102,29 +103,29 @@ You can monitor the status of your jobs in Slurm by using `squeue -u <netid>`.
 
 dSQ creates a file named `job_<jobid>_status.tsv`, which will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:
 
-*   Job_ID: the zero-based line number from your job file
-*   Exit_Code: exit code returned from your job (non-zero number generally indicates a failed job)
-*   Time_Started: time started, formatted as year-month-day hour:minute:second
-*   Time_Ended: time started, formatted as year-month-day hour:minute:second
-*   Time_Elapsed: in seconds
-*   Job: the line from your job file
+* Job_ID: the zero-based line number from your job file
+* Exit_Code: exit code returned from your job (non-zero number generally indicates a failed job)
+* Time_Started: time started, formatted as year-month-day hour:minute:second
+* Time_Ended: time started, formatted as year-month-day hour:minute:second
+* Time_Elapsed: in seconds
+* Job: the line from your job file
 
 Additionally, Slurm will honor the `-e,--error` and `-i,--input` arguments you provide to capture stdout and stderr. By default both standard output and standard error are directed to a file of the name "slurm-%j.out", where the "%j" is replaced with the job allocation number and array index, which is conveniently also the 0-based line number from your job file. We recommend inspecting these outputs for troubleshooting individual failed jobss.
 
 ## dSQAutopsy
 
 Once the dSQ job is finished, you can use dSQAutopsy to create both a report of the run, as well as a new jobsfile that contains just the jobss that failed.
-```
 
+```
 $ dSQAutopsy --help
 usage: dSQAutopsy jobsfile status.tsv
 
 Dead Simple Queue Autopsy v0.9
 https://github.com/ycrc/dSQ
-A helper script for analyzing the success state of your jobss after a dSQ 
-run has completed. Specify the jobsfile and the status.tsv file generated 
-by the dSQ job and dSQAutopsy will print the jobss that didn't run or 
-completed with non-zero exit codes. It will also report count of each to 
+A helper script for analyzing the success state of your jobss after a dSQ
+run has completed. Specify the jobsfile and the status.tsv file generated
+by the dSQ job and dSQAutopsy will print the jobss that didn't run or
+completed with non-zero exit codes. It will also report count of each to
 stderr.
 
 positional arguments:

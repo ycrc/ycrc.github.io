@@ -21,7 +21,6 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |[Steve Weston](https://research.computing.yale.edu/about/staff/stephen-weston)||[via email](mailto: stephen.weston@yale.edu)||[Grace](/node/3800)/[Omega](/node/3797)/[Milgram](/node/4451), R, Python, Deep learning|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|| [via email](mailto:giuseppe.amatulli@yale.edu)||Geo-Computation, GIS and Remote Sensing, Forestry|
 
-
 ### Email
 
 To submit requests, concerns or questions via email please send to hpc@yale.edu and your communication will be logged directly with our system. An automated response will be sent back with a tracking number. Replies to your communication will be addressed from YCRC Support and will include the tracking number for reference. Any additional communication, as either replies from you or initiated by us, will be tracked in the system and can easily be referenced by the tracking number.

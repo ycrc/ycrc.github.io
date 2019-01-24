@@ -51,7 +51,7 @@ Then use ssh to connect to a node your job is running on from the `NODELIST` col
 
 ```
 [be59@farnam1 ~]$ ssh c13n03
-[be59@c13n03 ~]$ 
+[be59@c13n03 ~]$
 ```
 
 Once you are on the compute node, run either `ps` or `top`.
@@ -107,11 +107,11 @@ You can also use the more flexible [`sacct`](https://slurm.schedmd.com/sacct.htm
 ```
 [rdb9@farnam1 ~]$ export SACCT_FORMAT="JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32"
 [rdb9@farnam1 ~]$ sacct -j 21294645
-               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES 
--------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- -------------------------------- 
-            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1 
-     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1 
-          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1 
+               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES
+-------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------
+            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1
+     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1
+          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1
 ```
 
 You should look at the MaxRSS value to see your memory usage.

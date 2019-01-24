@@ -2,7 +2,7 @@
 
 We use a scheduler called "Slurm" to submit jobs to the compute nodes.
 
-*   [Submit Jobs with Slurm](/node/9761)
+* [Submit Jobs with Slurm](/node/9761)
 
 Here is a pdf from the Slurm folks giving you [similar commands in several schedulers](https://slurm.schedmd.com/rosetta.pdf)
 

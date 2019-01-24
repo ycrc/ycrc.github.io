@@ -26,7 +26,6 @@ ntasks-per-node * nodes >= ntasks
 
 For the most predictable performance for hybrid codes, you will need to use all three of the `--ntasks`, `--cpus-per-task`, and `--nodes` flags, where `--ntasks` equals the number of MPI tasks, `--cpus-per-task` equals the number of OMP_NUM_THREADS and `--nodes` is the number of nodes required to fit `--ntasks * --cpus-per-task`.
 
-
 ## Request GPUs
 
 Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specifc documentation regarding the node configurations that include gpus. In order for your job to be able to access gpus, you must request them as a slurm "Generic Resource" or gres. You spcify the gres configuration per-node for a job with the `--gres` flag, optionally a type of resource, and a number of gpus. For example, to request one nvidia p100 for each node in your job, you would use the flag `--gres=gpu:p100:1`. In cases where there are multiple gpus on a node, it is often a good idea to also specify the `--gres-flags=enforce-binding` flag, which tells slurm to force CPU(s) your job is allocated to share a PCIe Host Bridge with the GPU(s). Depending on your application, this can lead to improved performance, especially in transferring data to and from the GPU.

@@ -30,11 +30,11 @@ Finally, to exit, you can type `exit` or <kbd>Ctrl</kbd>+<kbd>d</kbd>
 Using tmux on the cluster allows you to create interactive allocations that you can detach from. Normally, if you get an interactive allocation (e.g. srun --pty) then disconnect from the cluster, for example by putting your laptop to sleep, your allocation will be terminated and your job killed. Using tmux, you can detach gracefully and tmux will maintain your allocation. Here is how to do this correctly:
 
 1. ssh to your cluster of choice
-2. Start tmux
-3. Inside your tmux session, submit an interactive job with srun. See the [slurm page](/clusters-at-yale/job-scheduling#interactive-jobs) for more details
-4. Inside your job allocation (on a compute node), start your application (e.g. matlab)
-5. Detach from tmux by typing <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd> 
-6. Later, on the same login node, reattach by running `tmux attach`
+1. Start tmux
+1. Inside your tmux session, submit an interactive job with srun. See the [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs) for more details
+1. Inside your job allocation (on a compute node), start your application (e.g. matlab)
+1. Detach from tmux by typing <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd>
+1. Later, on the same login node, reattach by running `tmux attach`
 
 Make sure to:
 

@@ -21,7 +21,7 @@ Some file transfer clients attempt new and sometimes multiple concurrent connect
 ```
 File->SiteManager
 New Site
-In host 
+In host
 (new site will be highlighted, change to your cluster name)
 In the general tab on the right side, put:
 Host: yourcluster.hpc.yale.edu
@@ -35,16 +35,15 @@ check limit number of simultaneous connections
 Make sure maximum is 1
 click ok
 
-Now to connect, 
+Now to connect,
 file->sitemanager
 select the site you created
 click connect
 ```
 
-## Here are some alternatives programs that reuse the login:
+## Other Client Recommendations
 
-*   Windows: WinSCP
-*   Mac: Cyberduck
+* Cyberduck (Windows/macOS)
 
 ## Troubleshoot MFA
 
@@ -52,14 +51,14 @@ If you are having problems initially registering Duo, please contact the [Yale I
 
 If you have successfully used MFA connect to a cluster before, but cannot now, first please check the following:
 
-*   Verify that your ssh client is using the correct login node
-*   Verify you are attempting to connect from a Yale machine or via the proper VPN
+* Verify that your ssh client is using the correct login node
+* Verify you are attempting to connect from a Yale machine or via the proper VPN
 
 If all of this is true, please contact us at [hpc@yale.edu](mailto:hpc@yale.edu). Include the following information (and anything else you think is helpful):
 
-*   Your netid
-*   Have you ever successfully used ssh and Duo to connect to a cluster?
-*   How long have you been having problems?
-*   Where are you trying to connect from? (fully qualified hostname/IP, if possible)
-*   Are you using a VPN?
-*   What is the error message you see?
+* Your netid
+* Have you ever successfully used ssh and Duo to connect to a cluster?
+* How long have you been having problems?
+* Where are you trying to connect from? (fully qualified hostname/IP, if possible)
+* Are you using a VPN?
+* What is the error message you see?

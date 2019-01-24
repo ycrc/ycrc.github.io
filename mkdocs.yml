@@ -43,9 +43,17 @@ nav:
                 - clusters-at-yale/applications/modules.md
                 - Guides:
                     - clusters-at-yale/applications/guides/index.md
+                    - clusters-at-yale/applications/guides/cesm.md
                     - clusters-at-yale/applications/guides/conda.md
+                    - clusters-at-yale/applications/guides/deep-learning-gpus.md
+                    - clusters-at-yale/applications/guides/gaussian.md
+                    - clusters-at-yale/applications/guides/gpus-cuda.md
+                    - clusters-at-yale/applications/guides/jupyter.md
+                    - clusters-at-yale/applications/guides/matlab.md
+                    - clusters-at-yale/applications/guides/r.md
                     - clusters-at-yale/applications/guides/singularity.md
                     - clusters-at-yale/applications/guides/tmux.md
+                    - clusters-at-yale/applications/guides/vasp.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/slurm.md
@@ -57,10 +65,17 @@ nav:
             - Data & Storage:
                 - clusters-at-yale/data/index.md
                 - clusters-at-yale/data/cluster-storage.md
-                - Transfer Data: clusters-at-yale/data/transfer.md
+                - clusters-at-yale/data/transfer.md
+                - clusters-at-yale/data/permissions.md
             - The Clusters:
                 - clusters-at-yale/clusters/index.md
                 - Grace: clusters-at-yale/clusters/grace.md
                 - clusters-at-yale/clusters/farnam.md
                 - Ruddle: clusters-at-yale/clusters/ruddle.md
                 - Milgram: clusters-at-yale/clusters/milgram.md
+        - Research Data:
+            - data/index.md
+            - data/archive.md
+            - data/google-drive.md
+        - national-hpcs.md
+        - online-tutorials.md

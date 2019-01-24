@@ -22,8 +22,7 @@ Currently Loaded Modules:
    S:  Module is Sticky, requires --force to unload or purge
 ```
 
-The takeaway here is that you should try to use modules that match their `foss` or `intel` identifiers. 
-
+The takeaway here is that you should try to use modules that match their `foss` or `intel` identifiers.
 
 ## Environment Variables
 

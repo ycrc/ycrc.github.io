@@ -64,8 +64,8 @@ Copy and paste the output to [Yale HPC ssh key installer](http://gold.hpc.yale.i
 
 Once your public key has been installed, you may use ssh in a terminal to access the appropriate cluster. You need to know 2 things to log into a cluster.
 
-1.  The hostname of the cluster login node
-2.  Your netid
+1. The hostname of the cluster login node
+1. Your netid
 
 You can find the hostnames of the cluster login nodes [here.](/clusters-at-yale/clusters) Open a terminal window and connect to the login node using the syntax:
 
@@ -80,7 +80,6 @@ ssh ra359@grace.hpc.yale.edu
 ```
 
 Check out our [Sample Linux/Mac SSH Configuration](sample-config) for tips on maintaining connections and adding tab complete to your ssh commands.
-
 
 ### Mac: Store Passphrase and Use SSH Agent Forwarding
 
@@ -108,24 +107,24 @@ We recommend using [MobaXterm](https://mobaxterm.mobatek.net/) to connect to the
 
 To get up and running, generate an ssh keypair if you haven't already:
 
-*   From the top menu choose Tools -> MobaKeyGen (SSH key generator).
-*   Leave all defaults and click the generate button.
-*   Wiggle your mouse.
-*   Save your public key as id_rsa.pub.
-*   Save your private key as id_rsa.ppk (this one is secret, don't give it to other people).
-*   Copy the text of your public key and paste it into the text box after you log into [the SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
-*   Your key will be synced out to the clusters in a few minutes.
+* From the top menu choose Tools -> MobaKeyGen (SSH key generator).
+* Leave all defaults and click the generate button.
+* Wiggle your mouse.
+* Save your public key as id_rsa.pub.
+* Save your private key as id_rsa.ppk (this one is secret, don't give it to other people).
+* Copy the text of your public key and paste it into the text box after you log into [the SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
+* Your key will be synced out to the clusters in a few minutes.
 
 ### Connect
 
 To make a new connection to one of the clusters
 
-*   From the top menu select Sessions -> New Session.
-*   Click the SSH icon in the top left.
-*   Enter the cluster login node address (e.g. farnam.hpc.yale.edu) as the Remote Host.
-*   Check "Specify Username" and Enter your netID as the the username.
-*   Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
-*   Click OK.
+* From the top menu select Sessions -> New Session.
+* Click the SSH icon in the top left.
+* Enter the cluster login node address (e.g. farnam.hpc.yale.edu) as the Remote Host.
+* Check "Specify Username" and Enter your netID as the the username.
+* Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
+* Click OK.
 
 ![Sample SSH Configuration](/img/ssh_connection.png)
 

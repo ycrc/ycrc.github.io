@@ -19,10 +19,9 @@ Use this space to keep intermediate files that can be regenerated/reconstituted 
 
 ## Other Storage Options
 
-If you or your group finds these quotas don't accommodate your needs, please see the [off-cluster research data storage options](/resources/storage).
+If you or your group finds these quotas don't accommodate your needs, please see the [off-cluster research data storage options](/data).
 
 Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) about purchasing cluster storage.
-
 
 ## Retrieve Data from Home Backups
 

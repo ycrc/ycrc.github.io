@@ -15,29 +15,29 @@ Then take the text below and replace `NETID` with your yale netid. Lines that be
 ControlMaster auto
 ControlPath ~/.ssh/tmp/%h_%p_%r
 
-# If you use a ssh key that is named something other than id_rsa, 
+# If you use a ssh key that is named something other than id_rsa,
 # specify it like this
-# IdentityFile ~/.ssh/other_key_rsa 
+# IdentityFile ~/.ssh/other_key_rsa
 
 #uncomment the ForwardX11 options to enable X11 Forwarding by default (no -Y necessary)
 Host farnam
      HostName farnam.hpc.yale.edu
-     User NETID 
+     User NETID
 #     ForwardX11 yes
 
 Host ruddle
      HostName ruddle.hpc.yale.edu
-     User NETID 
+     User NETID
 #     ForwardX11 yes
 
 Host grace
      HostName grace.hpc.yale.edu
-     User NETID 
+     User NETID
 #     ForwardX11 yes
 
 Host omega
      Hostname omega.hpc.yale.edu
-     User NETID 
+     User NETID
 #     ForwardX11 yes
 
 ```

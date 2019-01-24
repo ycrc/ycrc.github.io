@@ -6,13 +6,13 @@ As an alternative to X11 Forwarding, using VNC to access the cluster is anothe
 
 1.  Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, `ssh -Y netid@cluster`, or if on Windows, follow our [X11 forwarding guide](/clusters-at-yale/access/x11).
 
-2.  Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling/slurm) for more information). For this description, we’ll assume you were given node c04n03:
+1.  Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling/slurm) for more information). For this description, we’ll assume you were given node c04n03:
 
 ```
 srun --pty --x11 -p interactive bash
 ```
 
-3.  On that node, run the VNCserver. You’ll see something like:
+1.  On that node, run the VNCserver. You’ll see something like:
 
 ```
 c04n03$ vncserver
@@ -60,12 +60,12 @@ In MobaXterm, create a new Session (available in the menu bar) and then select t
 
 To fill out the VNC Session setup, click the "Network settings" tab and check the box for "Connect through SSH gateway (jump host). Then fill out the boxes as follows:
 
-*   Remote hostname or IP Address: name of the node running your VNC server (e.g. c01n01)
-*   Port: 5900 + the `DISPLAY` number from above (e.g. 5901 for `DISPLAY = 1`)
-*   Gateway SSH server: ssh address of the cluster (e.g. grace.hpc.yale.edu)
-*   Port: 22 (should be default)
-*   User: netid
-*   Use private key: check this box and click to point to your private key file you use to connect to the cluster
+* Remote hostname or IP Address: name of the node running your VNC server (e.g. c01n01)
+* Port: 5900 + the `DISPLAY` number from above (e.g. 5901 for `DISPLAY = 1`)
+* Gateway SSH server: ssh address of the cluster (e.g. grace.hpc.yale.edu)
+* Port: 22 (should be default)
+* User: netid
+* Use private key: check this box and click to point to your private key file you use to connect to the cluster
 
 When you are done, click OK. If promoted for a password for "localhost", provide the vncserver password you specified in the previous step.
 

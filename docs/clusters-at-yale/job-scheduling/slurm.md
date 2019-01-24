@@ -56,9 +56,9 @@ srun --pty --x11 -p interactive [additional slurm options] bash
 
 To submit a job via Slurm, you first write a simple shell script called a "submission script" that wraps your job. A submission script is comprised of three parts:
 
-1.  The program that should run the script. This is normally `#!/bin/bash`.
-2.  The "directives" that tell the scheduler how to setup the computational resources for your job.**These lines must appear before any other commands or definitions, otherwise they will be ignored.**
-3.  The actual "script" portion, which are the commands you want executed during your job.
+1. The program that should run the script. This is normally `#!/bin/bash`.
+1. The "directives" that tell the scheduler how to setup the computational resources for your job.**These lines must appear before any other commands or definitions, otherwise they will be ignored.**
+1. The actual "script" portion, which are the commands you want executed during your job.
 
 Here is an example script.sh that runs a job on one CPU on single node:
 
@@ -67,7 +67,7 @@ Here is an example script.sh that runs a job on one CPU on single node:
 #SBATCH --partition=general
 #SBATCH --job-name=my_job
 #SBATCH --ntasks=1 --nodes=1
-#SBATCH --mem-per-cpu=6000 
+#SBATCH --mem-per-cpu=6000
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email>

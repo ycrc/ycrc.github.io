@@ -47,6 +47,5 @@ restore –n 20 ...
 
 !!! tip
     When retrieving data
-
     - Untar/unquip as a job on a compute node, **not a login node**
     - Allocate sufficient resources to your job, e.g. `–c 20 --mem=100G`

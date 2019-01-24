@@ -33,7 +33,7 @@ You will likely find it necessary to copy files between your local machines and 
 
 ## Use Software
 
-To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the [Modules documentation](applications/modules) in our User Guide for more information. 
+To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the [Modules documentation](applications/modules) in our User Guide for more information.
 
 We also provide assistance for installing less commonly used packages. See our [Applications & Software documentation](applications) for more details.
 
@@ -41,9 +41,9 @@ We also provide assistance for installing less commonly used packages. See our [
 
 Before you begin using the cluster, here are some important things to remember:
 
-*   Do not run jobs or do real work on the login node. Always allocate a compute node and run programs there.
-*   Never give your password or ssh key to anyone else.
-*   Do not store any protected or regulated data on the cluster (e.g. PHI data)
+* Do not run jobs or do real work on the login node. Always allocate a compute node and run programs there.
+* Never give your password or ssh key to anyone else.
+* Do not store any protected or regulated data on the cluster (e.g. PHI data)
 
 Use of the clusters is also governed by our [official guidelines](https://research.computing.yale.edu/services/high-performance-computing/hpc-principles6).
 
@@ -51,7 +51,7 @@ Use of the clusters is also governed by our [official guidelines](https://resear
 
 We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse [our catalog of training](https://research.computing.yale.edu/training/ycrc-bootcamps) to see what is available.
 
-## Need Additional Help?
+## Get Additional Help
 
 If you have additional questions/comments, please [contact the HPC team](mailto:hpc@yale.edu). If possible, please include the following information:
 

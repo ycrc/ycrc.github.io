@@ -4,7 +4,7 @@ Yale's clusters can only be accessed on the Yale network. Therefore, in order to
 
 More information about Yale's VPN can be found on the [ITS website](https://yale.service-now.com/it?id=service_offering&sys_id=c4684dcd6fbb31007ee2abcf9f3ee4f2).
 
-### Connect via VPN
+## Connect via VPN
 
 You will need to connect via the VPN client using the profile "access.yale.edu".
 
@@ -18,9 +18,9 @@ Authentication for the VPN requires multi-factor authentication via Duo in addit
 
 Depending on what you choose you will be prompted to authenticate via a second authentication method.
 
-*   If you type "push", simply tap "Approve" on your mobile device.
-*   If you type "sms" you will receive a text message with your passcode. Enter the passcode you received to authenticate.
-*   If you type "phone", follow the prompts when you are called.
+* If you type "push", simply tap "Approve" on your mobile device.
+* If you type "sms" you will receive a text message with your passcode. Enter the passcode you received to authenticate.
+* If you type "phone", follow the prompts when you are called.
 
 Once you successfully authenticate with MFA, you will be connected to the VPN and should be able to log in the clusters via SSH as usual.
 
