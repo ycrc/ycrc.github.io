@@ -16,7 +16,7 @@ This allows you to proofread and see your changes with formatting without affect
 
 ### Deploying
 
-To deploy your local changes to the site:
+To deploy your local changes to the site (from the root directory of the repo):
 
 ``` bash
 mkdocs gh-deploy

@@ -40,7 +40,7 @@ Again, please delete any data you have copied off the Omega storage spaces or de
 
 If you had an account on Omega but don't use either of Grace or Farnam, you can use Globus to transfer data from the `yale#omega` endpoint.
 
-Please see our [data transfer documentation](/cluster-at-yale/data/transfer)  for instructions on transferring to local storage.
+Please see our [data transfer documentation](/clusters-at-yale/data/transfer)  for instructions on transferring to local storage.
 
 Please see our [Google Drive documentation](/data/google-drive) for instructions on transferring to Google Drive.
 

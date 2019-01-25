@@ -153,4 +153,4 @@ conda env create -f my_project_environment.yml
 
 ## Conda Documentation
 
-Please see the excellent [Conda documentation](anaconda navigator user guide) on the official Anaconda website for some additional troubleshooting information and features provided by conda.
+Please see the excellent [Conda documentation](https://docs.anaconda.com/anaconda/user-guide/) on the official Anaconda website for some additional troubleshooting information and features provided by conda.

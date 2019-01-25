@@ -4,7 +4,7 @@
 
 ![](/img/cluster.png)
 
-Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the **login node**. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](clusters/index).
+Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the **login node**. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to submit these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available [here](clusters).
 
 ## Request an Account
 
@@ -18,7 +18,7 @@ If you want to access the clusters from outside Yale, you must use the [Yale VPN
 
 ## Schedule a Job
 
-On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling/slurm) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
+On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
 
 ## Linux
 

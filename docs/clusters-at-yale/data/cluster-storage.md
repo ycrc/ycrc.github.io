@@ -23,7 +23,7 @@ Use this space to keep intermediate files that can be regenerated/reconstituted 
 
 ### Prevent Large Numbers of Small Files
 
-Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using [tar](online-tutorials/#how-create-and-extract-a-tar-or-targz-archive)) collections of files no longer in use.
+Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using [tar](/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive)) collections of files no longer in use.
 
 ## Backups and Snapshots
 
