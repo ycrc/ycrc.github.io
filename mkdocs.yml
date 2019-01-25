@@ -1,5 +1,6 @@
 site_name: Yale Center for Research Computing
 remote_branch: master
+strict: true
 
 theme:
     name: material
