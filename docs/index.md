@@ -12,18 +12,18 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 
 |Specialist<img width=150/>|Day|Hours<img width=100/>|Office|Areas of Focus|
 |--- |--- |--- |--- |--- |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|Mon|10am-Noon|225|[Grace](/node/3800)/[Omega](/node/3797)/[Milgram](/node/4451), Astronomy, G&G, MPI, Python|
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|216|[Grace](/node/3800)/[Omega](/node/3797)/[Milgram](/node/4451), Physics, Python|
-|[Jason Ignatius](https://research.computing.yale.edu/about/staff/jason-ignatius)|Tues|2-4pm|216|[Farnam](/node/9721)/[Ruddle](/node/4298), Life Sciences, Bioinformatics, PacBio|
-|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/node/9721)/[Ruddle](/node/4298), Life Sciences, Bioinformatics, Python|
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/node/9721)/[Ruddle](/node/4298), Life Sciences, Bioinformatics, Python|
-|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/node/3800)/[Omega](/node/3797), MPI, GPUs, Matlab|
-|[Steve Weston](https://research.computing.yale.edu/about/staff/stephen-weston)||[via email](mailto: stephen.weston@yale.edu)||[Grace](/node/3800)/[Omega](/node/3797)/[Milgram](/node/4451), R, Python, Deep learning|
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|Mon|10am-Noon|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|216|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Physics, Python|
+|[Jason Ignatius](https://research.computing.yale.edu/about/staff/jason-ignatius)|Tues|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, PacBio|
+|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
+|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
+|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), MPI, GPUs, Matlab|
+|[Steve Weston](https://research.computing.yale.edu/about/staff/stephen-weston)||[via email](mailto: stephen.weston@yale.edu)||[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), R, Python, Deep learning|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|| [via email](mailto:giuseppe.amatulli@yale.edu)||Geo-Computation, GIS and Remote Sensing, Forestry|
 
 ### Email
 
-To submit requests, concerns or questions via email please send to hpc@yale.edu and your communication will be logged directly with our system. An automated response will be sent back with a tracking number. Replies to your communication will be addressed from YCRC Support and will include the tracking number for reference. Any additional communication, as either replies from you or initiated by us, will be tracked in the system and can easily be referenced by the tracking number.
+To submit requests, concerns or questions via email please send to [hpc@yale.edu](mailto:hpc@yale.edu) and your communication will be logged directly with our system. An automated response will be sent back with a tracking number. Replies to your communication will be addressed from YCRC Support and will include the tracking number for reference. Any additional communication, as either replies from you or initiated by us, will be tracked in the system and can easily be referenced by the tracking number.
 
 ### Web Interface
 

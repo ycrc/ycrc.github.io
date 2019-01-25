@@ -44,7 +44,7 @@ See our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm) for more d
 
 ### Batch Mode
 
-To run R in batch mode, you create a [batch script](/cluster-at-yale/job-scheduling/slurm). In that script, you would invoke your R script in batch mode.
+To run R in batch mode, you create a [batch script](/clusters-at-yale/job-scheduling/slurm). In that script, you would invoke your R script in batch mode.
 
 ```
 #!/bin/bash

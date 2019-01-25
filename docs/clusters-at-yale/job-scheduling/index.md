@@ -6,7 +6,7 @@ We use a scheduler called "Slurm" to submit jobs to the compute nodes.
 
 Here is a pdf from the Slurm folks giving you [similar commands in several schedulers](https://slurm.schedmd.com/rosetta.pdf)
 
-If your jobs are taking a long time to start, see our [Job Scheduling documentation](/fairshare) to review the factors that affect the order in which jobs start.
+If your jobs are taking a long time to start, see our [Job Scheduling documentation](/clsuters-at-yale/fairshare) to review the factors that affect the order in which jobs start.
 
 If you are submitting a large number of similar jobs, please look at the [Dead Simple Queue](/node/12756) tool for bundling your jobs.
 

@@ -45,7 +45,7 @@ Before you begin using the cluster, here are some important things to remember:
 * Never give your password or ssh key to anyone else.
 * Do not store any protected or regulated data on the cluster (e.g. PHI data)
 
-Use of the clusters is also governed by our [official guidelines](https://research.computing.yale.edu/services/high-performance-computing/hpc-principles6).
+Use of the clusters is also governed by our [official guidelines](https://research.computing.yale.edu/services/high-performance-computing/hpc-principles).
 
 ## Hands on Training
 
