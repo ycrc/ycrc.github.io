@@ -17,8 +17,8 @@ theme:
 extra_css:
     - 'stylesheets/extra.css'
 
-#extra_javascript:
-#    - 'js/extra.js'
+extra_javascript:
+    - 'js/extra.js'
 
 markdown_extensions:
     - admonition
