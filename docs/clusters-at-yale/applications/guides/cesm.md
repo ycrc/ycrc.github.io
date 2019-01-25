@@ -88,7 +88,7 @@ srun --pty -c 4 -p interactive bash
 ./$CASE.$mach.build
 ```
 
-For more details on interactive jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm#interactive-jobs).
+For more details on interactive jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs).
 
 During the build, CESM will create a corresponding directory in your scratch or project directory at
 
@@ -113,7 +113,7 @@ Once the build is complete, which can take 5-15 minutes, you can submit your cas
 ./$CASE.$mach.submit
 ```
 
-For more details on monitoring your submitted jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm).
+For more details on monitoring your submitted jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling).
 
 ### Troubleshoot Your Run
 
@@ -177,5 +177,5 @@ Then you can submit by running the submit script
 
 * I recommend referencing the User Guides listed at the top of this page.
 * [CESM User Forum](https://bb.cgd.ucar.edu)
-* [Our Slurm Documentation](/clusters-at-yale/job-scheduling/slurm)
+* [Our Slurm Documentation](/clusters-at-yale/job-scheduling)
 * CESM is a very widely used package, you can often find answers by simply using Google. Just make sure that the solutions you find correspond to the approximate version of CESM you are using. CESM changes in subtle but significant ways between versions.

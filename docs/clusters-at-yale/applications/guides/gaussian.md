@@ -22,7 +22,7 @@ To run Gaussian interactively, you need to create an interactive session on a co
 srun --pty -c 4  -p interactive -t 4:00:00 bash
 ```
 
-See our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm) for more detailed information on requesting resources for interactive jobs.
+See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.
 
 ## Gaussian in parallel
 
@@ -40,7 +40,7 @@ When included in a submission script, par_g09 will set the following Gaussian in
 
 It is highly recommended that users run 1 Linda worker per node with `%NProcShared=8` on the Omega cluster. (This is the default behavior of `par_g09`.) However, users may easily override the value of `%NProcShared` by supplying the optional num_proc_shared argument to `par_g09`. (Of course, both variables may be overridden by including them in the Gaussian input file.)
 
-On the Grace cluster, there are up to 20 processors and 128 GB of memory per node, so it may often work well to use just a single node with many shared-memory processors, in which case you can simply modify the Gaussian input file and skip the use of the `par_g09` script. If you do wish to use multiple nodes on the Grace cluster, please pay careful attention to the [Slurm parameters](/clusters-at-yale/job-scheduling/slurm) you use, particular to the setting of `--mem-per-cpu` to ensure that each of the nodes you request has sufficient resources available.
+On the Grace cluster, there are up to 20 processors and 128 GB of memory per node, so it may often work well to use just a single node with many shared-memory processors, in which case you can simply modify the Gaussian input file and skip the use of the `par_g09` script. If you do wish to use multiple nodes on the Grace cluster, please pay careful attention to the [Slurm parameters](/clusters-at-yale/job-scheduling) you use, particular to the setting of `--mem-per-cpu` to ensure that each of the nodes you request has sufficient resources available.
 
 ## GaussView
 

@@ -45,7 +45,7 @@ srun --pty --x11 -c 4 -p interactive -t 4:00:00 bash
 
 Once your interactive session starts, you can load the appropriate module file and start Matlab as described above.
 
-See our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm) for more detailed information on requesting resources for interactive jobs.
+See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.
 
 ### Batch Mode (without a GUI)
 

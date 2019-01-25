@@ -11,7 +11,7 @@ Omega data can be accessed from the other clusters at the following paths until 
 
 You can run the `mydirectories` command from the clusters for the proper paths of your directories. Note that Omega logins have been disable for most users, so you will need follow the instructions below to access your data. **Those users who still have access to Omega, your scratch space will become read-and-delete-only on Monday, December 3, 2018\. To continue to compute, please redirect your job output to your Grace project or scratch60 spaces.** Gaussian users, see below for tips on redirecting Gaussian's output.
 
-If you are a PI and would like access to data owned by any former group members, please send us an email at hpc@yale.edu and we can assist you.
+If you are a PI and would like access to data owned by any former group members, please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) and we can assist you.
 
 ## Review Usage
 
@@ -42,6 +42,6 @@ If you had an account on Omega but don't use either of Grace or Farnam, you can 
 
 Please see our [data transfer documentation](/cluster-at-yale/data/transfer)  for instructions on transferring to local storage.
 
-Please see our [Google Drive documentation](/google-drive) for instructions on transferring to Google Drive.
+Please see our [Google Drive documentation](/data/google-drive) for instructions on transferring to Google Drive.
 
 Again, please delete any data you have copied off the Omega storage spaces or determined you no longer need, which you should be able to do from the Globus interface.

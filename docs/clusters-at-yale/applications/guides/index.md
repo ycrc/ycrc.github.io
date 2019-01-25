@@ -1,19 +1,5 @@
-# Software Guides
+# Overview
 
-Guides for running certain things on our clusters. See also our list of [external resources for tutorials on Python, R, advanced unix commands and more](/node/16151).
+We provide guides for running certain software packages on our clusters. If you have tips for running a commonly used software and would like to contribute them to our Software Guides, email us at [hpc@yale.edu](mailto:hpc@yale.edu).
 
-### Running Specific Applications on the Clusters
-
-* [Python](/node/14571)
-* [MATLAB](/node/3772)
-* [R](/node/3761)
-
-* [Jupyter Notebooks](/node/15412)
-* [Gaussian](/node/3770)
-* [CESM/CAM](/node/15741)
-* [VASP](/node/15686)
-
-### GPUs
-
-* [GPUs and CUDA](/node/3771)
-* [GPUs with Python Deep Learning](/node/13261)
+Also checkout our list of recommended [online tutorials on Python, R, unix commands and more](/online-tutorials).

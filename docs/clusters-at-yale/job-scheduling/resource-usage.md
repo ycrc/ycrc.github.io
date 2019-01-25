@@ -2,7 +2,7 @@
 
 ## General Note
 
-Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the [Slurm documentation](/clusters-at-yale/job-scheduling/slurm) and the [clusters page](/clusters-at-yale/clusters) (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.
+Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the [Slurm documentation](/clusters-at-yale/job-scheduling) and the [clusters page](/clusters-at-yale/clusters) (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.
 
 ## Future Jobs
 

@@ -37,12 +37,15 @@ nav:
             - Access the Clusters:
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/vpn.md
-                - clusters-at-yale/access/mfa.md
                 - clusters-at-yale/access/x11.md
                 - clusters-at-yale/access/vnc.md
+                - clusters-at-yale/access/mfa.md
+                - clusters-at-yale/access/sample-config.md
             - Applications & Software:
                 - clusters-at-yale/applications/index.md
+                - clusters-at-yale/applications/compile.md
                 - clusters-at-yale/applications/modules.md
+                - clusters-at-yale/applications/easybuild.md
                 - Guides:
                     - clusters-at-yale/applications/guides/index.md
                     - clusters-at-yale/applications/guides/cesm.md
@@ -58,7 +61,6 @@ nav:
                     - clusters-at-yale/applications/guides/vasp.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
-                - clusters-at-yale/job-scheduling/slurm.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
@@ -70,6 +72,7 @@ nav:
                 - clusters-at-yale/data/cluster-storage.md
                 - clusters-at-yale/data/transfer.md
                 - clusters-at-yale/data/permissions.md
+                - clusters-at-yale/data/archived-sequencing.md
             - The Clusters:
                 - clusters-at-yale/clusters/index.md
                 - clusters-at-yale/clusters/grace.md

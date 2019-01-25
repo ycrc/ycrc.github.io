@@ -1,6 +1,6 @@
-# EasyBuild
+# Toolchains and EasyBuild
 
-We use a build and installation framework called [EasyBuild](https://easybuild.readthedocs.io/en/latest/) that connects the software we compile and maintain on the clusters with the [module system](modules) that makes it available to you.
+We use a build and installation framework called [EasyBuild](https://easybuild.readthedocs.io/en/latest/) that connects the software we compile and maintain on the clusters with the [module system](/clusters-at-yale/applications/modules) that makes it available to you.
 
 ## Toolchains
 

@@ -40,11 +40,11 @@ srun --pty -p interactive -t 4:00:00 bash
 
 Once your interactive session starts, you can load the appropriate module file and start R as described above.
 
-See our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm) for more detailed information on requesting resources for interactive jobs.
+See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.
 
 ### Batch Mode
 
-To run R in batch mode, you create a [batch script](/clusters-at-yale/job-scheduling/slurm). In that script, you would invoke your R script in batch mode.
+To run R in batch mode, you create a [batch script](/clusters-at-yale/job-scheduling). In that script, you would invoke your R script in batch mode.
 
 ```
 #!/bin/bash

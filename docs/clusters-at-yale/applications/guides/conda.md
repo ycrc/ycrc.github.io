@@ -93,7 +93,7 @@ source activate my_project
 
 #### In a Submission Script
 
-To make sure that you are running in your project environment in a submission script, make sure to include the following lines in your submission script before running any other commands or scripts (but after your [Slurm directives](/clusters-at-yale/job-scheduling/slurm#directives)):
+To make sure that you are running in your project environment in a submission script, make sure to include the following lines in your submission script before running any other commands or scripts (but after your [Slurm directives](/clusters-at-yale/job-scheduling#directives)):
 
 ``` bash
 # Grace, Omega

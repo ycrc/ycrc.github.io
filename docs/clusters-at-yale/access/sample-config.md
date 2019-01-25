@@ -1,6 +1,6 @@
-# Sample Config File
+# Example .ssh/config
 
-The following configuration is an example ssh client configuration file (linux and mac only) specific to our clusters. It allows you to use tab completion of the clusters, sans the .hpc.yale.edu suffixes (i.e. `ssh farnam` works). It will also allow you to re-use and multiplex authenticated sessions. Practically this means clusters that require [Duo MFA](mfa) will not need you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
+The following configuration is an example ssh client configuration file (linux and mac only) specific to our clusters. It allows you to use tab completion of the clusters, sans the .hpc.yale.edu suffixes (i.e. `ssh farnam` works). It will also allow you to re-use and multiplex authenticated sessions. Practically this means clusters that require [Duo MFA](/clusters-at-yale/access/mfa) will not need you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
 
 For this to work, you need to create the directory `~/.ssh/tmp`:
 

@@ -8,7 +8,7 @@ For all other software, we encourage users to attempt to install their own softw
 
 - Pre-compiles binaries
 - Make/Cmake
-- Create Containers and port Docker to the clusters - [Singularity](guides/singularity)
+- [Singularity](guides/singularity): create containers and port Docker containers to the clusters
 
 We provide [guides for certain software packages and languages](guides) as well.
 

@@ -1,21 +1,7 @@
 # Overview
 
-## Transfer Files and Data
+Each cluster has a small amount of space dedicated to home directories, meant for notes and scripts. There are also project and scratch spaces for larger and more numerous files. Each group is given a free allocation in each of these storage locations (see the [individual cluster pages](/clusters-at-yale/clusters) for details). Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) about purchasing additional cluster storage if your needs exceed your free allocation.
 
-Push your bits and bytes to and from the clusters.
+## Other Storage Options
 
-* [Transfer files to a Cluster](/node/3753)
-* [Transfer files via Globus](/node/9786)
-* [Cleaning Out Omega Data](/node/15616)
-
-## Managing Data
-
-Each cluster has a small amount of space dedicated to home directories, meant for notes and scripts. There are project and scratch60 spaces for larger and more numerous files.
-
-* [Cluster Data Storage](/node/4228)
-* [Off-Cluster Research Data Storage](/node/15771)
-* [Google Drive, Team Drive and Globus Google Connector](/node/16713)
-* [Setup Directories for Collaboration](/node/16101)
-* [Using Archive (Tape) Storage](/node/16497)
-
-To purchase additional project space above your original allocation, contact us at [hpc@yale.edu](mailto:hpc@yale.edu).
+If you or your group finds the HPC storage do not accommodate your needs, please see the [off-cluster research data storage](/data) page for other options.

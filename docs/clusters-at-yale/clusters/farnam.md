@@ -36,7 +36,7 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling).
 
 ### Public Partitions
 

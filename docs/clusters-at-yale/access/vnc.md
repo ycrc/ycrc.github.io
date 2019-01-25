@@ -6,7 +6,7 @@ As an alternative to X11 Forwarding, using VNC to access the cluster is anothe
 
 1.  Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, `ssh -Y netid@cluster`, or if on Windows, follow our [X11 forwarding guide](/clusters-at-yale/access/x11).
 
-1.  Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling/slurm) for more information). For this description, we’ll assume you were given node c04n03:
+1.  Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling) for more information). For this description, we’ll assume you were given node c04n03:
 
 ```
 srun --pty --x11 -p interactive bash

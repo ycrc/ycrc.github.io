@@ -26,7 +26,7 @@ Milgram is made up of a couple kinds of compute nodes. The Features column below
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling/slurm). The short partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The long and verylong partitions are meant for jobs with projected walltimes that are too long to run in short. For courses using the cluster we set aside the education partition. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The short partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The long and verylong partitions are meant for jobs with projected walltimes that are too long to run in short. For courses using the cluster we set aside the education partition. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
