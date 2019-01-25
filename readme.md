@@ -2,6 +2,26 @@
 
 ## Deployment Procedure
 
+All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
+
+### Testing
+
+To test out changes you've made, run:
+
+``` bash
+mkdocs serve
+```
+
+This allows you to proofread and see your changes with formatting without affecting the live version of the site.
+
+### Deploying
+
+To deploy your local changes to the site:
+
+``` bash
+mkdocs gh-deploy
+```
+
 ## Style Guide
 
 ### Headings
