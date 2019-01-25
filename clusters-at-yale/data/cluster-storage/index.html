@@ -1317,7 +1317,7 @@
 <p>Use this space to keep intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>. This space is not backed up, and you may be asked to delete files younger than 60 days old if this space fills up.</p>
 <h2 id="hpc-storage-best-practices">HPC Storage Best Practices</h2>
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
-<p>Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using <a href="online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>) collections of files no longer in use.</p>
+<p>Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using <a href="/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>) collections of files no longer in use.</p>
 <h2 id="backups-and-snapshots">Backups and Snapshots</h2>
 <h3 id="retrieve-data-from-home-backups">Retrieve Data from Home Backups</h3>
 <p>Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> with your netid and the list of files/directories you would like restored.</p>
@@ -1396,6 +1396,8 @@
       <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/extra.js"></script>
       
     
     

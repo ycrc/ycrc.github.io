@@ -22,6 +22,8 @@ function load_navpane() {
 
     var nav = document.getElementsByClassName("md-nav__toggle");
     for(var i = 0; i < nav.length; i++) {
-       nav.item(i).checked = true;
+       if(nav.item(i).getAttribute("data-md-toggle").length <= 7){
+            nav.item(i).checked = true;
+        }
     }
 }

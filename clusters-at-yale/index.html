@@ -1281,14 +1281,14 @@
                 <h1 id="getting-started">Getting Started</h1>
 <h2 id="hpc-clusters">HPC Clusters</h2>
 <p><img alt="" src="/img/cluster.png" /></p>
-<p>Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the <strong>login node</strong>. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to submit these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available <a href="clusters/index">here</a>.</p>
+<p>Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateway to the cluster is the <strong>login node</strong>. From this node, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to submit these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available <a href="clusters">here</a>.</p>
 <h2 id="request-an-account">Request an Account</h2>
 <p>The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the <a href="https://research.computing.yale.edu/account-request">account request page</a>.</p>
 <h2 id="log-in">Log in</h2>
 <p>All of Yale's clusters are accessed via a protocol called secure shell (ssh).  Once you have an account, look at <a href="access">our SSH instructions</a> to log on to the system.</p>
 <p>If you want to access the clusters from outside Yale, you must use the <a href="access/vpn">Yale VPN.</a></p>
 <h2 id="schedule-a-job">Schedule a Job</h2>
-<p>On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling/slurm">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc">HPC bootcamp</a> for more details.</p>
+<p>On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc">HPC bootcamp</a> for more details.</p>
 <h2 id="linux">Linux</h2>
 <p>A basically familiarity with Linux commands is required for interacting with the clusters. We periodically run an <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Bootcamp</a> to get you started. There are also many excellent beginner tutorials available for free online, including the following:</p>
 <ul>
@@ -1396,6 +1396,8 @@
       <script src="../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
       
     
     
