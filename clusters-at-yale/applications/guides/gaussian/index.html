@@ -401,18 +401,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
-      Multi-factor Authentication
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
       Graphical Interfaces (X11)
     </a>
@@ -427,6 +415,30 @@
   <li class="md-nav__item">
     <a href="../../../access/vnc/" title="VNC" class="md-nav__link">
       VNC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
+      Multi-factor Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../access/sample-config/" title="Example .ssh/config" class="md-nav__link">
+      Example .ssh/config
     </a>
   </li>
 
@@ -475,8 +487,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../compile/" title="Build Software" class="md-nav__link">
+      Build Software
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../modules/" title="Load Software with Modules" class="md-nav__link">
       Load Software with Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">
+      Toolchains and EasyBuild
     </a>
   </li>
 
@@ -490,13 +526,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-3" type="checkbox" id="nav-1-2-5-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-5" type="checkbox" id="nav-1-2-5-5" checked>
     
-    <label class="md-nav__link" for="nav-1-2-5-3">
+    <label class="md-nav__link" for="nav-1-2-5-5">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-1-2-5-3">
+      <label class="md-nav__title" for="nav-1-2-5-5">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -508,8 +544,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Software Guides" class="md-nav__link">
-      Software Guides
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
     </a>
   </li>
 
@@ -733,19 +769,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../job-scheduling/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../job-scheduling/slurm/" title="Run Jobs with Slurm" class="md-nav__link">
+    <a href="../../../job-scheduling/" title="Run Jobs with Slurm" class="md-nav__link">
       Run Jobs with Slurm
     </a>
   </li>
@@ -783,6 +807,18 @@
   <li class="md-nav__item">
     <a href="../../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
       Factors Affecting Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
+      Scavenge Partition
     </a>
   </li>
 
@@ -883,6 +919,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
+      Ruddle Archived Sequence Data
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -913,8 +961,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../clusters/" title="Cluster Overview" class="md-nav__link">
-      Cluster Overview
+    <a href="../../../clusters/" title="HPC Resources" class="md-nav__link">
+      HPC Resources
     </a>
   </li>
 
@@ -1154,7 +1202,7 @@
 </pre></div>
 
 
-<p>See our <a href="/clusters-at-yale/job-scheduling/slurm">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
+<p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h2 id="gaussian-in-parallel">Gaussian in parallel</h2>
 <p>To run Gaussian in parallel, you may find it simplest to use the script <code>par_g09</code> instead of executing Gaussian directly. <code>par_g09</code> takes 1 optional argument and is used as shown here:</p>
 <div class="codehilite"><pre><span></span>par_g09 <span class="o">[</span>num_proc_shared<span class="o">]</span> &lt; g09_input &gt; g09_output
@@ -1165,10 +1213,10 @@
 <p><code>%LindaWorkers</code>: List of nodes that will act as parallel workers during parallel portions of the Gaussian computations. The list is created automatically based on the nodes allocated to the particular job. Workers communicate using the Network Linda system provided with the Gaussian software.</p>
 <p><code>%NProcShared</code>: Number of shared-memory processes per Linda worker.</p>
 <p>It is highly recommended that users run 1 Linda worker per node with <code>%NProcShared=8</code> on the Omega cluster. (This is the default behavior of <code>par_g09</code>.) However, users may easily override the value of <code>%NProcShared</code> by supplying the optional num_proc_shared argument to <code>par_g09</code>. (Of course, both variables may be overridden by including them in the Gaussian input file.)</p>
-<p>On the Grace cluster, there are up to 20 processors and 128 GB of memory per node, so it may often work well to use just a single node with many shared-memory processors, in which case you can simply modify the Gaussian input file and skip the use of the <code>par_g09</code> script. If you do wish to use multiple nodes on the Grace cluster, please pay careful attention to the <a href="/clusters-at-yale/job-scheduling/slurm">Slurm parameters</a> you use, particular to the setting of <code>--mem-per-cpu</code> to ensure that each of the nodes you request has sufficient resources available.</p>
+<p>On the Grace cluster, there are up to 20 processors and 128 GB of memory per node, so it may often work well to use just a single node with many shared-memory processors, in which case you can simply modify the Gaussian input file and skip the use of the <code>par_g09</code> script. If you do wish to use multiple nodes on the Grace cluster, please pay careful attention to the <a href="/clusters-at-yale/job-scheduling">Slurm parameters</a> you use, particular to the setting of <code>--mem-per-cpu</code> to ensure that each of the nodes you request has sufficient resources available.</p>
 <h2 id="gaussview">GaussView</h2>
 <p>In connection with Gaussian, we have also installed GaussView 5, Gaussian Inc.'s advanced and powerful graphical interface for Gaussian. With GaussView, you can import or build the molecular structures that interest you; set up, launch, monitor and control Gaussian calculations; and retrieve and view the results, all without ever leaving the application. GaussView 5 includes many new features designed to make working with large systems of chemical interest convenient and straightforward. It also provides full support for all of the new modeling methods and features in Gaussian 09.</p>
-<p>In order to use GaussView, you must run an X Server on your desktop or laptop, and you must enable X forwarding when logging into the cluster. See our <a href="/cluster-at-yale/access/x11">X11 forwarding documentation</a> for instructions.</p>
+<p>In order to use GaussView, you must run an X Server on your desktop or laptop, and you must enable X forwarding when logging into the cluster. See our <a href="/clusters-at-yale/access/x11">X11 forwarding documentation</a> for instructions.</p>
 <p>Loading the module file for Gaussian sets up your environment for GaussView as well. Then you can type the command <code>gv</code>. GaussView 5 may not be compatible with certain versions of the X servers you may run on your desktop or laptop. If you encounter problems, these can often be overcome by starting GaussView with the command <code>gv -mesagl</code> or <code>gv -soft</code>.</p>
                 
                   

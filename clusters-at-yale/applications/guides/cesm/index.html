@@ -401,18 +401,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
-      Multi-factor Authentication
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
       Graphical Interfaces (X11)
     </a>
@@ -427,6 +415,30 @@
   <li class="md-nav__item">
     <a href="../../../access/vnc/" title="VNC" class="md-nav__link">
       VNC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
+      Multi-factor Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../access/sample-config/" title="Example .ssh/config" class="md-nav__link">
+      Example .ssh/config
     </a>
   </li>
 
@@ -475,8 +487,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../compile/" title="Build Software" class="md-nav__link">
+      Build Software
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../modules/" title="Load Software with Modules" class="md-nav__link">
       Load Software with Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">
+      Toolchains and EasyBuild
     </a>
   </li>
 
@@ -490,13 +526,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-3" type="checkbox" id="nav-1-2-5-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-5" type="checkbox" id="nav-1-2-5-5" checked>
     
-    <label class="md-nav__link" for="nav-1-2-5-3">
+    <label class="md-nav__link" for="nav-1-2-5-5">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-1-2-5-3">
+      <label class="md-nav__title" for="nav-1-2-5-5">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -508,8 +544,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Software Guides" class="md-nav__link">
-      Software Guides
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
     </a>
   </li>
 
@@ -855,19 +891,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../job-scheduling/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../job-scheduling/slurm/" title="Run Jobs with Slurm" class="md-nav__link">
+    <a href="../../../job-scheduling/" title="Run Jobs with Slurm" class="md-nav__link">
       Run Jobs with Slurm
     </a>
   </li>
@@ -905,6 +929,18 @@
   <li class="md-nav__item">
     <a href="../../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
       Factors Affecting Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
+      Scavenge Partition
     </a>
   </li>
 
@@ -1005,6 +1041,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
+      Ruddle Archived Sequence Data
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1035,8 +1083,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../clusters/" title="Cluster Overview" class="md-nav__link">
-      Cluster Overview
+    <a href="../../../clusters/" title="HPC Resources" class="md-nav__link">
+      HPC Resources
     </a>
   </li>
 
@@ -1448,7 +1496,7 @@ create_newcase -case Test_Sim -compset<span class="o">=</span>B2000 -res<span cl
 </pre></div>
 
 
-<p>For more details on interactive jobs, see our <a href="/clusters-at-yale/job-scheduling/slurm#interactive-jobs">Slurm documentation</a>.</p>
+<p>For more details on interactive jobs, see our <a href="/clusters-at-yale/job-scheduling#interactive-jobs">Slurm documentation</a>.</p>
 <p>During the build, CESM will create a corresponding directory in your scratch or project directory at</p>
 <div class="codehilite"><pre><span></span># On Omega
 ls ~/scratch/CESM/$CASE
@@ -1466,7 +1514,7 @@ ls ~/project/CESM/$CASE
 </pre></div>
 
 
-<p>For more details on monitoring your submitted jobs, see our <a href="/clusters-at-yale/job-scheduling/slurm">Slurm documentation</a>.</p>
+<p>For more details on monitoring your submitted jobs, see our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a>.</p>
 <h3 id="troubleshoot-your-run">Troubleshoot Your Run</h3>
 <p>If your run doesn’t complete, there are a few places to look to identify the error. CESM writes to multiple log files for the different components and you will likely have to look in a few to find the root cause of your error.</p>
 <h4 id="slurm-log">Slurm Log</h4>
@@ -1512,7 +1560,7 @@ ls ~/project/CESM/$CASE
 <ul>
 <li>I recommend referencing the User Guides listed at the top of this page.</li>
 <li><a href="https://bb.cgd.ucar.edu">CESM User Forum</a></li>
-<li><a href="/clusters-at-yale/job-scheduling/slurm">Our Slurm Documentation</a></li>
+<li><a href="/clusters-at-yale/job-scheduling">Our Slurm Documentation</a></li>
 <li>CESM is a very widely used package, you can often find answers by simply using Google. Just make sure that the solutions you find correspond to the approximate version of CESM you are using. CESM changes in subtle but significant ways between versions.</li>
 </ul>
                 
@@ -1535,7 +1583,7 @@ ls ~/project/CESM/$CASE
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../" title="Software Guides" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1544,7 +1592,7 @@ ls ~/project/CESM/$CASE
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Software Guides
+                Overview
               </span>
             </div>
           </a>
