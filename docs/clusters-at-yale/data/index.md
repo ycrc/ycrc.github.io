@@ -18,4 +18,4 @@ Each cluster has a small amount of space dedicated to home directories, meant fo
 * [Setup Directories for Collaboration](/node/16101)
 * [Using Archive (Tape) Storage](/node/16497)
 
-To purchase additional project space above your original allocation, contact us at [hpc@yale.edu](hpc@yale.edu).
+To purchase additional project space above your original allocation, contact us at [hpc@yale.edu](mailto:hpc@yale.edu).

@@ -46,6 +46,6 @@ On the Grace cluster, there are up to 20 processors and 128 GB of memory per nod
 
 In connection with Gaussian, we have also installed GaussView 5, Gaussian Inc.'s advanced and powerful graphical interface for Gaussian. With GaussView, you can import or build the molecular structures that interest you; set up, launch, monitor and control Gaussian calculations; and retrieve and view the results, all without ever leaving the application. GaussView 5 includes many new features designed to make working with large systems of chemical interest convenient and straightforward. It also provides full support for all of the new modeling methods and features in Gaussian 09.
 
-In order to use GaussView, you must run an X Server on your desktop or laptop, and you must enable X forwarding when logging into the cluster. See our [X11 forwarding documentation](/cluster-at-yale/access/x11) for instructions.
+In order to use GaussView, you must run an X Server on your desktop or laptop, and you must enable X forwarding when logging into the cluster. See our [X11 forwarding documentation](/clusters-at-yale/access/x11) for instructions.
 
 Loading the module file for Gaussian sets up your environment for GaussView as well. Then you can type the command `gv`. GaussView 5 may not be compatible with certain versions of the X servers you may run on your desktop or laptop. If you encounter problems, these can often be overcome by starting GaussView with the command `gv -mesagl` or `gv -soft`.
