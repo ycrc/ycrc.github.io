@@ -88,7 +88,7 @@ srun --pty -c 4 -p interactive bash
 ./$CASE.$mach.build
 ```
 
-For more details on interactive jobs, see our [Slurm documentation](/node/9761).
+For more details on interactive jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling/slurm#interactive-jobs).
 
 During the build, CESM will create a corresponding directory in your scratch or project directory at
 
