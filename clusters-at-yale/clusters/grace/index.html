@@ -1,0 +1,1705 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Grace - Yale Center for Research Computing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#grace" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+
+      <!-- Link to home -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.."
+            title="Yale Center for Research Computing"
+            class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">library_books</i>
+          
+        </a>
+      </div>
+
+      <!-- Button to toggle drawer -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
+      </div>
+
+      <!-- Header title -->
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic branding" >
+                <a href="http://research.computing.yale.edu">
+                  <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
+                </a>
+              </span>
+              <span class="md-header-nav__topic">
+                Grace
+              </span>
+            
+          
+        </div>
+      </div>
+
+      <!-- Button to open search dialogue -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+
+            <!-- Search interface -->
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+
+      <!-- Repository containing source -->
+      
+
+    </div>
+
+
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Tabs with outline -->
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/news-events">News & Events</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/research">Research</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/services">Services</a></li>
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
+          Support
+        </a>
+      
+    </li>
+  
+
+      
+
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Yale Center for Research Computing" class="md-nav__button md-logo">
+      
+        <i class="md-icon">library_books</i>
+      
+    </a>
+    Yale Center for Research Computing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Clusters at Yale
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Clusters at Yale
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://research.computing.yale.edu/account-request" title="Request an Account" class="md-nav__link">
+      Request an Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshoot/" title="Troubleshoot Login" class="md-nav__link">
+      Troubleshoot Login
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+    
+    <label class="md-nav__link" for="nav-1-2-4">
+      Access the Clusters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-4">
+        Access the Clusters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/" title="Log on to the Clusters" class="md-nav__link">
+      Log on to the Clusters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">
+      Access from Off Campus (VPN)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
+      Multi-factor Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
+      Graphical Interfaces (X11)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vnc/" title="VNC" class="md-nav__link">
+      VNC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5">
+    
+    <label class="md-nav__link" for="nav-1-2-5">
+      Applications & Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-5">
+        Applications & Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/modules/" title="Load Software with Modules" class="md-nav__link">
+      Load Software with Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-3" type="checkbox" id="nav-1-2-5-3">
+    
+    <label class="md-nav__link" for="nav-1-2-5-3">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-5-3">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/" title="Software Guides" class="md-nav__link">
+      Software Guides
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/cesm/" title="CESM/CAM" class="md-nav__link">
+      CESM/CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/conda/" title="Conda" class="md-nav__link">
+      Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+      Deep Learning with GPUs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/gaussian/" title="Gaussian" class="md-nav__link">
+      Gaussian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+      GPUs and CUDA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+      Jupyter Notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/matlab/" title="MATLAB" class="md-nav__link">
+      MATLAB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/r/" title="R" class="md-nav__link">
+      R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/singularity/" title="Singularity" class="md-nav__link">
+      Singularity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/tmux/" title="tmux" class="md-nav__link">
+      tmux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/vasp/" title="VASP" class="md-nav__link">
+      VASP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
+    
+    <label class="md-nav__link" for="nav-1-2-6">
+      Job Scheduling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-6">
+        Job Scheduling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/slurm/" title="Run Jobs with Slurm" class="md-nav__link">
+      Run Jobs with Slurm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">
+      Request Compute Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">
+      Monitor CPU and Memory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
+      Factors Affecting Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/dsq/" title="Submit Arrays with dSQ" class="md-nav__link">
+      Submit Arrays with dSQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/slurm-examples/" title="Submission Script Examples" class="md-nav__link">
+      Submission Script Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+    
+    <label class="md-nav__link" for="nav-1-2-7">
+      Data & Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-7">
+        Data & Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/cluster-storage/" title="Cluster Storage" class="md-nav__link">
+      Cluster Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/transfer/" title="Transfer Data" class="md-nav__link">
+      Transfer Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
+      Manage Permissions for Sharing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8" checked>
+    
+    <label class="md-nav__link" for="nav-1-2-8">
+      The Clusters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-8">
+        The Clusters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Cluster Overview" class="md-nav__link">
+      Cluster Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Grace
+      </label>
+    
+    <a href="./" title="Grace" class="md-nav__link md-nav__link--active">
+      Grace
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" title="Hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute-node-configurations" title="Compute Node Configurations" class="md-nav__link">
+    Compute Node Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-partitions" title="Slurm Partitions" class="md-nav__link">
+    Slurm Partitions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" title="Public Partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-partitions" title="Private Partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" title="Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../farnam/" title="Farnam" class="md-nav__link">
+      Farnam
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ruddle/" title="Ruddle" class="md-nav__link">
+      Ruddle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../omega/" title="Omega" class="md-nav__link">
+      Omega
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../milgram/" title="Milgram" class="md-nav__link">
+      Milgram
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Research Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Research Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/" title="Data Storage Options" class="md-nav__link">
+      Data Storage Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/archive/" title="Archive Your Data" class="md-nav__link">
+      Archive Your Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/google-drive/" title="Google Drive" class="md-nav__link">
+      Google Drive
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../national-hpcs/" title="National HPCs" class="md-nav__link">
+      National HPCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../online-tutorials/" title="Online Tutorials" class="md-nav__link">
+      Online Tutorials
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" title="Hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute-node-configurations" title="Compute Node Configurations" class="md-nav__link">
+    Compute Node Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-partitions" title="Slurm Partitions" class="md-nav__link">
+    Slurm Partitions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" title="Public Partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-partitions" title="Private Partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" title="Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="grace">Grace</h1>
+<p><img alt="Grace" class="cluster-portrait" src="/img/Grace-Hopper.jpg" /></p>
+<p>The Grace cluster is is named for the computer scientist and United States Navy Rear Admiral <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Murray Hopper</a>, who received her Ph.D. in Mathematics from Yale in 1934.</p>
+<p>Grace is a shared-use resource for the <a href="https://fas.yale.edu">Faculty of Arts and Sciences</a> (FAS). It consists of a variety of compute nodes networked over low-latency InfiniBand and mounts several shared filesystems.</p>
+<hr />
+<h2 id="hardware">Hardware</h2>
+<p>Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
+See the <a href="/clusters-at-yale/applications/compile">guide on how to compile software</a> for specific guidance.</p>
+</div>
+<h3 id="compute-node-configurations">Compute Node Configurations</h3>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>Node Type</th>
+<th>CPU</th>
+<th>CPU Cores</th>
+<th>RAM</th>
+<th>GPU</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80</td>
+<td>IBM nx360i</td>
+<td>2x E5-2660 v2</td>
+<td>20</td>
+<td>121G</td>
+<td></td>
+<td>ivybridge, v2, sse4_2, avx, E5-2660_v2</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Lenovo nx360h</td>
+<td>2x E5-2660 v3</td>
+<td>20</td>
+<td>121G</td>
+<td></td>
+<td>haswell, v3, sse4_2, avx, avx2, E5-2660_v3</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Lenovo nx360h</td>
+<td>2x E5-2660 v3</td>
+<td>20</td>
+<td>247G</td>
+<td></td>
+<td>haswell, v3, sse4_2, avx, avx2, E5-2660_v3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Lenovo nx360h w/ GPUs</td>
+<td>2x E5-2660 v3</td>
+<td>20</td>
+<td>121G</td>
+<td>2x k80 (2GPUs/k80)</td>
+<td>haswell, v3, sse4_2, avx, avx2, E5-2660_v3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Lenovo nx360h w/ GPUs</td>
+<td>2x E5-2660 v3</td>
+<td>20</td>
+<td>247G</td>
+<td>1x k80 (2GPUs/k80)</td>
+<td>haswell, v3, sse4_2, avx, avx2, E5-2660_v3</td>
+</tr>
+<tr>
+<td>161</td>
+<td>Lenovo nx360b</td>
+<td>2x E5-2660 v4</td>
+<td>28</td>
+<td>247G</td>
+<td></td>
+<td>broadwell, v4, sse4_2, avx, avx2, E5-2660_v4</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Lenovo nx360b</td>
+<td>2x E5-2660 v4</td>
+<td>28</td>
+<td>247</td>
+<td>1x p100</td>
+<td>broadwell, v4, sse4_2, avx, avx2, E5-2660_v4</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Lenovo sd530</td>
+<td>2x Gold 6136</td>
+<td>24</td>
+<td>90G</td>
+<td></td>
+<td>skylake, sse4_2, avx, avx2, avx512, 6136</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Lenovo sd530</td>
+<td>2x Gold 6136</td>
+<td>24</td>
+<td>176G</td>
+<td></td>
+<td>skylake, sse4_2, avx, avx2, avx512, 6126</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Lenovo sd530 w/ GPUs</td>
+<td>2x Gold 6136</td>
+<td>24</td>
+<td>90G</td>
+<td>2x v100</td>
+<td>skylake, sse4_2, avx, avx2, avx512, 6136</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Lenovo sd530</td>
+<td>2x Gold 6136</td>
+<td>24</td>
+<td>751G</td>
+<td></td>
+<td>skylake, sse4_2, avx, avx2, avx512, 6136</td>
+</tr>
+<tr>
+<td>1</td>
+<td>IBM x3850i</td>
+<td>4x E7-4820 v2</td>
+<td>32</td>
+<td>1003G</td>
+<td></td>
+<td>ivybridge, v2, sse4_2, avx, E7-4820_v2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Lenovo x3850h</td>
+<td>4x E7-4809 v2</td>
+<td>32</td>
+<td>2011G</td>
+<td></td>
+<td>haswell, v3, sse4_2, avx, avx2, E7-4809_v3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Lenovo x3850b</td>
+<td>4x E7-4820 v4</td>
+<td>40</td>
+<td>1507G</td>
+<td></td>
+<td>broadwell, v4, sse4_2, avx, avx2, E7-4820_v4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Thinkmate GPX XT4</td>
+<td>2x E5-2637 v4</td>
+<td>8</td>
+<td>121G</td>
+<td>4x 1080ti</td>
+<td>broadwell, v4, sse4_2, avx, avx2, E5-2637_v4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Penguin XE2118GT</td>
+<td>2x Gold 6136</td>
+<td>24</td>
+<td>183G</td>
+<td>4x p100</td>
+<td>skylake, sse4_2, avx, avx2, avx512, 6136</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slurm-partitions">Slurm Partitions</h2>
+<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling/slurm">Slurm</a>.</p>
+<h3 id="public-partitions">Public Partitions</h3>
+<p>The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is reserved for tightly-coupled parallel and access is by special request only. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p>All the node types listed are described in more detail in the <a href="#hardware">hardware</a> table.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Group Limits</th>
+<th>User Limits</th>
+<th>Walltime default/max</th>
+<th>Node type (number)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>day*</td>
+<td>900 CPUs</td>
+<td>640 CPUs</td>
+<td>1h/1d</td>
+<td>nx360i (49), nx360h (32), nx360b (72)</td>
+</tr>
+<tr>
+<td>week</td>
+<td>250 CPUs</td>
+<td>100 CPUs</td>
+<td>1h/7d</td>
+<td>nx360h (48), nx360b (7)</td>
+</tr>
+<tr>
+<td>interactive</td>
+<td></td>
+<td>1 job, 4 CPUs, 32 G RAM</td>
+<td>1h/6h</td>
+<td>nx360i (2)</td>
+</tr>
+<tr>
+<td>bigmem</td>
+<td></td>
+<td>40 CPUs, 1500 G RAM</td>
+<td>1h/1d</td>
+<td>x3850b (1)</td>
+</tr>
+<tr>
+<td>gpu_devel</td>
+<td></td>
+<td>1 job, 10 CPUs, 60 G RAM</td>
+<td>10min/4hr</td>
+<td>nx360h k80 (1)</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>32 CPUs, 256 G RAM</td>
+<td>6 nodes</td>
+<td>1h/1d</td>
+<td>nx360b p100 (6), nx360h k80 (3), sd530 v100 (1)</td>
+</tr>
+<tr>
+<td>mpi**</td>
+<td>900 CPUs</td>
+<td>640 CPUs</td>
+<td>1h/7d</td>
+<td>sd530 (35)</td>
+</tr>
+<tr>
+<td>scavenge</td>
+<td></td>
+<td>6400 CPUs</td>
+<td>1h/1d</td>
+<td>all</td>
+</tr>
+</tbody>
+</table>
+<p>* default<br />
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> for access if your workload fits this description.</p>
+<h3 id="private-partitions">Private Partitions</h3>
+<p>Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Walltime default/max</th>
+<th>Node type (number)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pi_altonji</td>
+<td>1d/28d</td>
+<td>nx360h (2)</td>
+</tr>
+<tr>
+<td>pi_anticevic</td>
+<td>1d/100d</td>
+<td>nx360h (16), nx360b (20)</td>
+</tr>
+<tr>
+<td>pi_anticevic_bigmem</td>
+<td>1d/100d</td>
+<td>x3850h (1)</td>
+</tr>
+<tr>
+<td>pi_anticevic_fs</td>
+<td>1d/100d</td>
+<td>nx360h (3)</td>
+</tr>
+<tr>
+<td>pi_anticevic_gpu</td>
+<td>1d/100d</td>
+<td>nx360h k80 (8)</td>
+</tr>
+<tr>
+<td>pi_balou</td>
+<td>1d/28d</td>
+<td>nx360b (30)</td>
+</tr>
+<tr>
+<td>pi_berry</td>
+<td>1d/28d</td>
+<td>nx360h (1)</td>
+</tr>
+<tr>
+<td>pi_cowles</td>
+<td>1d/28d</td>
+<td>nx360h (14)</td>
+</tr>
+<tr>
+<td>pi_cowles_nopreempt</td>
+<td>1d/28d</td>
+<td>nx360h (10)</td>
+</tr>
+<tr>
+<td>pi_gelernter</td>
+<td>1d/28d</td>
+<td>nx360b (1)</td>
+</tr>
+<tr>
+<td>pi_gerstein</td>
+<td>1d/28d</td>
+<td>x3850i (1), nx360h (32)</td>
+</tr>
+<tr>
+<td>pi_glahn</td>
+<td>1d/100d</td>
+<td>nx360h (1)</td>
+</tr>
+<tr>
+<td>pi_hammes_schiffer</td>
+<td>1d/28d</td>
+<td>sd530 (17), GPX XT4 1080ti (1)</td>
+</tr>
+<tr>
+<td>pi_holland</td>
+<td>1d/28d</td>
+<td>nx360h (2)</td>
+</tr>
+<tr>
+<td>pi_jetz</td>
+<td>1d/28d</td>
+<td>nx360b (2)</td>
+</tr>
+<tr>
+<td>pi_kaminski</td>
+<td>1d/28d</td>
+<td>nx360h (8)</td>
+</tr>
+<tr>
+<td>pi_mak</td>
+<td>1d/28d</td>
+<td>nx360h (8)</td>
+</tr>
+<tr>
+<td>pi_manohar</td>
+<td>1d/180d</td>
+<td>nx360b (8), x3850b (2),  nx360b p100 (1)</td>
+</tr>
+<tr>
+<td>pi_ohern</td>
+<td>1d/28d</td>
+<td>nx360i (16), nx360b (3), XE2118GT p100 (9)</td>
+</tr>
+<tr>
+<td>pi_owen_miller</td>
+<td>1d/28d</td>
+<td>nx360b (5)</td>
+</tr>
+<tr>
+<td>pi_poland</td>
+<td>1d/28d</td>
+<td>nx360b (10)</td>
+</tr>
+<tr>
+<td>pi_seto</td>
+<td>1d/28d</td>
+<td>nx360b (1), sd530(3)</td>
+</tr>
+<tr>
+<td>pi_som</td>
+<td>1d/28d</td>
+<td>nx360i (4)</td>
+</tr>
+<tr>
+<td>pi_tsmith</td>
+<td>1d/28d</td>
+<td>nx360h (1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="storage">Storage</h2>
+<p>Grace has access to a number of GPFS filesystems. <code>/gpfs/loomis</code> is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation.</p>
+<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Note that the per-user usage breakdown only update once daily.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Files stored in <code>scratch60</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Root Directory</th>
+<th>Storage</th>
+<th>File Count</th>
+<th>Backups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>home</td>
+<td><code>/gpfs/loomis/home.grace</code></td>
+<td>100G/user</td>
+<td>200,000</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>project</td>
+<td><code>/gpfs/loomis/project</code></td>
+<td>1T/group</td>
+<td>5,000,000</td>
+<td>No</td>
+</tr>
+<tr>
+<td>scratch60</td>
+<td><code>/gpfs/loomis/scratch60</code></td>
+<td>10T/group</td>
+<td>5,000,000</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Cluster Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Cluster Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../farnam/" title="Farnam" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Farnam
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

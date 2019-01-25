@@ -1,0 +1,1391 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Submit Arrays with dSQ - Yale Center for Research Computing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#submit-arrays-with-dsq" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+
+      <!-- Link to home -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.."
+            title="Yale Center for Research Computing"
+            class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">library_books</i>
+          
+        </a>
+      </div>
+
+      <!-- Button to toggle drawer -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
+      </div>
+
+      <!-- Header title -->
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic branding" >
+                <a href="http://research.computing.yale.edu">
+                  <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
+                </a>
+              </span>
+              <span class="md-header-nav__topic">
+                Submit Arrays with dSQ
+              </span>
+            
+          
+        </div>
+      </div>
+
+      <!-- Button to open search dialogue -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+
+            <!-- Search interface -->
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+
+      <!-- Repository containing source -->
+      
+
+    </div>
+
+
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Tabs with outline -->
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/news-events">News & Events</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/research">Research</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/services">Services</a></li>
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
+          Support
+        </a>
+      
+    </li>
+  
+
+      
+
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Yale Center for Research Computing" class="md-nav__button md-logo">
+      
+        <i class="md-icon">library_books</i>
+      
+    </a>
+    Yale Center for Research Computing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Support
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Support
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-1-2">
+      Clusters at Yale
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        Clusters at Yale
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://research.computing.yale.edu/account-request" title="Request an Account" class="md-nav__link">
+      Request an Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshoot/" title="Troubleshoot Login" class="md-nav__link">
+      Troubleshoot Login
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+    
+    <label class="md-nav__link" for="nav-1-2-4">
+      Access the Clusters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-4">
+        Access the Clusters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/" title="Log on to the Clusters" class="md-nav__link">
+      Log on to the Clusters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">
+      Access from Off Campus (VPN)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
+      Multi-factor Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
+      Graphical Interfaces (X11)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vnc/" title="VNC" class="md-nav__link">
+      VNC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5">
+    
+    <label class="md-nav__link" for="nav-1-2-5">
+      Applications & Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-5">
+        Applications & Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/modules/" title="Load Software with Modules" class="md-nav__link">
+      Load Software with Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-3" type="checkbox" id="nav-1-2-5-3">
+    
+    <label class="md-nav__link" for="nav-1-2-5-3">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-1-2-5-3">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/" title="Software Guides" class="md-nav__link">
+      Software Guides
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/cesm/" title="CESM/CAM" class="md-nav__link">
+      CESM/CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/conda/" title="Conda" class="md-nav__link">
+      Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+      Deep Learning with GPUs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/gaussian/" title="Gaussian" class="md-nav__link">
+      Gaussian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+      GPUs and CUDA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+      Jupyter Notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/matlab/" title="MATLAB" class="md-nav__link">
+      MATLAB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/r/" title="R" class="md-nav__link">
+      R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/singularity/" title="Singularity" class="md-nav__link">
+      Singularity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/tmux/" title="tmux" class="md-nav__link">
+      tmux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/guides/vasp/" title="VASP" class="md-nav__link">
+      VASP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6" checked>
+    
+    <label class="md-nav__link" for="nav-1-2-6">
+      Job Scheduling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-6">
+        Job Scheduling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../slurm/" title="Run Jobs with Slurm" class="md-nav__link">
+      Run Jobs with Slurm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource-requests/" title="Request Compute Resources" class="md-nav__link">
+      Request Compute Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">
+      Monitor CPU and Memory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
+      Factors Affecting Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Submit Arrays with dSQ
+      </label>
+    
+    <a href="./" title="Submit Arrays with dSQ" class="md-nav__link md-nav__link--active">
+      Submit Arrays with dSQ
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-job-file" title="Step 1: Job File" class="md-nav__link">
+    Step 1: Job File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-batch-script" title="Step 2: Create Batch Script" class="md-nav__link">
+    Step 2: Create Batch Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-submit-batch-script" title="Step 3: Submit Batch Script" class="md-nav__link">
+    Step 3: Submit Batch Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-your-dsq-job" title="Manage Your dSQ Job" class="md-nav__link">
+    Manage Your dSQ Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsq-output" title="dSQ Output" class="md-nav__link">
+    dSQ Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsqautopsy" title="dSQAutopsy" class="md-nav__link">
+    dSQAutopsy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../slurm-examples/" title="Submission Script Examples" class="md-nav__link">
+      Submission Script Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+    
+    <label class="md-nav__link" for="nav-1-2-7">
+      Data & Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-7">
+        Data & Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/cluster-storage/" title="Cluster Storage" class="md-nav__link">
+      Cluster Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/transfer/" title="Transfer Data" class="md-nav__link">
+      Transfer Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
+      Manage Permissions for Sharing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+    
+    <label class="md-nav__link" for="nav-1-2-8">
+      The Clusters
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-8">
+        The Clusters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/" title="Cluster Overview" class="md-nav__link">
+      Cluster Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/grace/" title="Grace" class="md-nav__link">
+      Grace
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/farnam/" title="Farnam" class="md-nav__link">
+      Farnam
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/ruddle/" title="Ruddle" class="md-nav__link">
+      Ruddle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/omega/" title="Omega" class="md-nav__link">
+      Omega
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/milgram/" title="Milgram" class="md-nav__link">
+      Milgram
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Research Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        Research Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/" title="Data Storage Options" class="md-nav__link">
+      Data Storage Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/archive/" title="Archive Your Data" class="md-nav__link">
+      Archive Your Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/google-drive/" title="Google Drive" class="md-nav__link">
+      Google Drive
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../national-hpcs/" title="National HPCs" class="md-nav__link">
+      National HPCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../online-tutorials/" title="Online Tutorials" class="md-nav__link">
+      Online Tutorials
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-job-file" title="Step 1: Job File" class="md-nav__link">
+    Step 1: Job File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-batch-script" title="Step 2: Create Batch Script" class="md-nav__link">
+    Step 2: Create Batch Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-submit-batch-script" title="Step 3: Submit Batch Script" class="md-nav__link">
+    Step 3: Submit Batch Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-your-dsq-job" title="Manage Your dSQ Job" class="md-nav__link">
+    Manage Your dSQ Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsq-output" title="dSQ Output" class="md-nav__link">
+    dSQ Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsqautopsy" title="dSQAutopsy" class="md-nav__link">
+    dSQAutopsy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="submit-arrays-with-dsq">Submit Arrays with dSQ</h1>
+<p><a href="https://github.com/ycrc/dsq">Dead Simple Queue</a> is a light-weight successor to SimpleQueue. It wraps around slurm's <a href="https://slurm.schedmd.com/sbatch.html">sbatch</a> to help you submit independent jobs as job arrays. It has several advantages over SimpleQueue:</p>
+<ul>
+<li>Your job will adapt during the run to the available resources. As more cpus and/or memory are available, it will grow up (up to the per-user limit)</li>
+<li>Your job will only use the resources needed to complete remaining jobs. It will shrink as your jobs finish, giving you and your peers better access to compute resources.</li>
+<li>When run on the scavenge partition, only the subjobs are preempted, and the job as a whole will continue. You can then use dSQAutopsy to create a new job file that has only the jobs that didn't complete.</li>
+<li>All you need is Python 2.7 or higher (Python 3 works too!)</li>
+</ul>
+<p>dSQ is <em>not</em> recommended for situations where the initialiazation of the job takes most of its execution time and it is re-usable. These situations are much better handled by a worker-based job handler.</p>
+<h2 id="step-1-job-file">Step 1: Job File</h2>
+<p>First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with <code>#</code> will be ignored when submitting your job array. <strong>Note:</strong> slurm jobs begin in the directory from which your job was submitted.</p>
+<p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that each job needs 4 GB of RAM, and will run in less than 10 minutes.</p>
+<p>You'll create a file with the "tasks" you want to run, one per line. Each task corresponds to what you might otherwise have run as a single job. A task can be a simple command invocation, or a sequence of commands. You can call the task file anything, but for this example assume it's called "joblist.txt" and contains:</p>
+<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">load</span> <span class="n">bowtie2</span> <span class="n">samtools</span>; <span class="n">bowtie2</span> -<span class="n">p</span> <span class="mi">8</span> --<span class="n">local</span> --<span class="n">rg-id</span> <span class="n">sample1</span> --<span class="n">rg</span> <span class="n">SM:sample1</span> --<span class="n">rg</span> <span class="n">LB:sci_seq</span> --<span class="n">rg</span> <span class="n">PL:ILLUMINA</span> -<span class="o">x</span> <span class="n">my_genome</span> -<span class="n">U</span> <span class="n">sample1</span>.<span class="n">fastq</span> - | <span class="n">samtools</span> <span class="n">view</span> -<span class="n">Shu</span> - | <span class="n">samtools</span> <span class="nb">sort</span>  - <span class="n">sample1</span>
+<span class="k">module</span> <span class="n">load</span> <span class="n">bowtie2</span> <span class="n">samtools</span>; <span class="n">bowtie2</span> -<span class="n">p</span> <span class="mi">8</span> --<span class="n">local</span> --<span class="n">rg-id</span> <span class="n">sample2</span> --<span class="n">rg</span> <span class="n">SM:sample2</span> --<span class="n">rg</span> <span class="n">LB:sci_seq</span> --<span class="n">rg</span> <span class="n">PL:ILLUMINA</span> -<span class="o">x</span> <span class="n">my_genome</span> -<span class="n">U</span> <span class="n">sample2</span>.<span class="n">fastq</span> - | <span class="n">samtools</span> <span class="n">view</span> -<span class="n">Shu</span> - | <span class="n">samtools</span> <span class="nb">sort</span>  - <span class="n">sample2</span>
+...
+<span class="k">module</span> <span class="n">load</span> <span class="n">bowtie2</span> <span class="n">samtools</span>; <span class="n">bowtie2</span> -<span class="n">p</span> <span class="mi">8</span> --<span class="n">local</span> --<span class="n">rg-id</span> <span class="n">sample1000</span> --<span class="n">rg</span> <span class="n">SM:sample1000</span> --<span class="n">rg</span> <span class="n">LB:sci_seq</span> --<span class="n">rg</span> <span class="n">PL:ILLUMINA</span> -<span class="o">x</span> <span class="n">my_genome</span> -<span class="n">U</span> <span class="n">sample1000</span>.<span class="n">fastq</span> - | <span class="n">samtools</span> <span class="n">view</span> -<span class="n">Shu</span> - | <span class="n">samtools</span> <span class="nb">sort</span>  - <span class="n">sample1000</span>
+</pre></div>
+
+
+<h2 id="step-2-create-batch-script">Step 2: Create Batch Script</h2>
+<p>Load Dead Simple Queue onto your path with:</p>
+<p>On Farnam or Ruddle:</p>
+<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">load</span> <span class="n">dSQ</span>
+</pre></div>
+
+
+<p>On Grace, Omega or Milgram:</p>
+<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">load</span> <span class="n">Tools</span><span class="o">/</span><span class="n">dSQ</span>
+</pre></div>
+
+
+<p><code>dSQ.py</code> takes a few arguments, then passes the rest directly to sbatch, either by writing a script to stdout that you should capture to a file. Unlike SimpleQueue, <strong>the resources you request will be given to each job in the array (each line in your job file)</strong>, e.g. requesting 2 GB of RAM with dSQ will run each individual job with a separate 2 GB of RAM available. Without specifying any additional sbatch arguments, some defaults will be set. run <code>sbatch --help</code> or see the <a href="https://slurm.schedmd.com/sbatch.html">official Slurm documentation</a> for more info on sbatch options.</p>
+<div class="codehilite"><pre><span></span><span class="n">dSQ</span><span class="p">.</span><span class="n">py</span> <span class="o">--</span><span class="n">jobfile</span> <span class="n">jobfile</span> <span class="p">[</span><span class="n">dSQ</span> <span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="n">slurm</span> <span class="n">args</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">run</span><span class="p">.</span><span class="n">sh</span>
+
+<span class="n">Required</span> <span class="n">dSQ</span> <span class="nl">arguments</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">jobfile</span> <span class="n">JOBFILE</span>   <span class="n">Job</span> <span class="n">file</span><span class="p">,</span> <span class="n">one</span> <span class="n">job</span> <span class="n">per</span> <span class="n">line</span>
+
+<span class="n">Optional</span> <span class="n">dSQ</span> <span class="nl">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="n">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">version</span>             <span class="n">show</span> <span class="n">program</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">version</span> <span class="n">number</span> <span class="n">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">submit</span>              <span class="n">Submit</span> <span class="n">the</span> <span class="n">job</span> <span class="n">array</span> <span class="n">on</span> <span class="n">the</span> <span class="n">fly</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">printing</span> <span class="n">to</span> <span class="n">stdout</span><span class="p">.</span>
+  <span class="o">--</span><span class="n">max</span><span class="o">-</span><span class="n">jobs</span> <span class="n">MAX_JOBS</span>
+                        <span class="n">Maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">simultaneously</span> <span class="n">running</span> <span class="n">jobs</span> <span class="n">from</span> <span class="n">the</span> <span class="n">job</span> <span class="n">array</span>
+</pre></div>
+
+
+<p>In the example above, we want walltime of 10 minutes and memory=4GB per task. Our invocation would be:</p>
+<div class="codehilite"><pre><span></span>dSQ --jobfile joblist.txt  --mem-per-cpu=4g -t 10:00 &gt; run.sh
+</pre></div>
+
+
+<p>After creating the batch script, take a look at its contents. It should look quite familiar.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH -p general</span>
+<span class="c1">#SBATCH -t 10:00</span>
+<span class="c1">#SBATCH --mem-per-cpu=4g</span>
+<span class="c1">#SBATCH --array=0-999</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=&lt;youremail&gt;@yale.edu</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+
+/ysm-gpfs/apps/software/dSQ/0.92/dSQBatch.py joblist.txt&lt;/youremail&gt;
+</pre></div>
+</td></tr></table>
+
+<h2 id="step-3-submit-batch-script">Step 3: Submit Batch Script</h2>
+<div class="codehilite"><pre><span></span>sbatch run.sh
+</pre></div>
+
+
+<h2 id="manage-your-dsq-job">Manage Your dSQ Job</h2>
+<p>You can refer to any portion of your job with <code>jobid_index</code> syntax, or the entire array with its jobid. The index Dead Simple Queue uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2. You can also specify ranges.</p>
+<div class="codehilite"><pre><span></span>#to cancel job 4 for array job 14567
+scancel 14567_4
+
+#to cancel jobs 3,5 and 10-20 for job 14567:
+scancel 14567_[3,5,10-20]
+</pre></div>
+
+
+<h2 id="dsq-output">dSQ Output</h2>
+<p>You can monitor the status of your jobs in Slurm by using <code>squeue -u &lt;netid&gt;</code>.</p>
+<p>dSQ creates a file named <code>job_&lt;jobid&gt;_status.tsv</code>, which will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:</p>
+<ul>
+<li>Job_ID: the zero-based line number from your job file</li>
+<li>Exit_Code: exit code returned from your job (non-zero number generally indicates a failed job)</li>
+<li>Time_Started: time started, formatted as year-month-day hour:minute:second</li>
+<li>Time_Ended: time started, formatted as year-month-day hour:minute:second</li>
+<li>Time_Elapsed: in seconds</li>
+<li>Job: the line from your job file</li>
+</ul>
+<p>Additionally, Slurm will honor the <code>-e,--error</code> and <code>-i,--input</code> arguments you provide to capture stdout and stderr. By default both standard output and standard error are directed to a file of the name "slurm-%j.out", where the "%j" is replaced with the job allocation number and array index, which is conveniently also the 0-based line number from your job file. We recommend inspecting these outputs for troubleshooting individual failed jobss.</p>
+<h2 id="dsqautopsy">dSQAutopsy</h2>
+<p>Once the dSQ job is finished, you can use dSQAutopsy to create both a report of the run, as well as a new jobsfile that contains just the jobss that failed.</p>
+<div class="codehilite"><pre><span></span>$ dSQAutopsy --help
+usage: dSQAutopsy jobsfile status.tsv
+
+Dead Simple Queue Autopsy v0.9
+https://github.com/ycrc/dSQ
+A helper script <span class="k">for</span> analyzing the success state of your jobss after a dSQ
+run has completed. Specify the jobsfile and the status.tsv file generated
+by the dSQ job and dSQAutopsy will print the jobss that didn<span class="s1">&#39;t run or</span>
+<span class="s1">completed with non-zero exit codes. It will also report count of each to</span>
+<span class="s1">stderr.</span>
+
+<span class="s1">positional arguments:</span>
+<span class="s1">  jobsfile       jobs file, one jobs per line</span>
+<span class="s1">  statusfile     The status.tsv file generated from your dSQ run</span>
+
+<span class="s1">optional arguments:</span>
+<span class="s1">  -h, --help     show this help message and exit</span>
+<span class="s1">  -v, --version  show program&#39;</span>s version number and <span class="nb">exit</span>
+</pre></div>
+
+
+<p>You can conveniently redirect the report and the failed jobss to separate files:</p>
+<div class="codehilite"><pre><span></span>dSQAutopsy jobsfile.txt job_2629186_status.tsv &gt; failedjobs.txt 2&gt; report.txt
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../fairshare/" title="Factors Affecting Scheduling" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Factors Affecting Scheduling
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../slurm-examples/" title="Submission Script Examples" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Submission Script Examples
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
