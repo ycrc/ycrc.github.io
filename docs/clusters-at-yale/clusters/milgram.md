@@ -19,6 +19,8 @@ Milgram is made up of a couple kinds of compute nodes. The Features column below
     Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
     See the [guide on how to compile software](/clusters-at-yale/applications/compile) for specific guidance.
 
+### Compute Node Configurations
+
 | Count | Node Type     | CPU           | CPU Cores | RAM   | Features                                     |
 |-------|---------------|---------------|-----------|-------|----------------------------------------------|
 | 12    | Dell R730     | 2x E5-2660 v3 | 20        | 121G  | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
