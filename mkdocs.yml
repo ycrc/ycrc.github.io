@@ -1,4 +1,5 @@
 site_name: Yale Center for Research Computing
+remote_branch: master
 
 theme:
     name: material
