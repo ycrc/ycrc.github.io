@@ -68,6 +68,6 @@ Now you can easily monitor its CPU and memory utilization without ever taking yo
 
 Your view will look something like this:
 
-![tmux](/img/tmux_ben.png)
+![tmux](/img/tmux-ben.png)
 
 To switch back and forth between panes, type <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>o</kbd>

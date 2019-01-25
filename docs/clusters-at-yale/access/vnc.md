@@ -73,7 +73,7 @@ If the VNC server looks very pixelated and your mouse movements seem laggy, try 
 
 Example Configuration:
 
-![VPN with MFA.](/img/moba_vnc.png){: .large}
+![VPN with MFA.](/img/moba-vnc.png){: .large}
 
 ## Cleaning Up
 

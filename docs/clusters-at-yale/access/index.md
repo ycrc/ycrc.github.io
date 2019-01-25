@@ -6,7 +6,7 @@ We use `ssh` with ssh key pairs to log in to the clusters, e.g.
 ssh netid@clustername.hpc.yale.edu
 ```
 
-If you have a public key and are familiar with key pairs, upload your ssh key below. Please allow up to fifteen minutes for the key to propogate before logging in.
+If you have a public key and are familiar with key pairs, upload your ssh key below. Please allow up to ten minutes for the key to propagate before logging in.
 
 * [Upload your SSH key here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN)
 * [Troubleshoot Login](/clusters-at-yale/troubleshoot)
@@ -111,7 +111,7 @@ To get up and running, generate an ssh keypair if you haven't already:
 * Leave all defaults and click the generate button.
 * Wiggle your mouse.
 * Save your public key as id_rsa.pub.
-* Save your private key as id_rsa.ppk (this one is secret, don't give it to other people).
+* Save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
 * Copy the text of your public key and paste it into the text box after you log into [the SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
 * Your key will be synced out to the clusters in a few minutes.
 
@@ -126,6 +126,6 @@ To make a new connection to one of the clusters
 * Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
 * Click OK.
 
-![Sample SSH Configuration](/img/ssh_connection.png)
+![Sample SSH Configuration](/img/ssh-connection.png)
 
 In the future, your session should be saved in the sessions bar on the left in the main window.
