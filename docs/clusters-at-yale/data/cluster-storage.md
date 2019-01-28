@@ -33,3 +33,16 @@ Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) with your netid and the list o
 
 ### Retrieve Data from Snapshots (Farnam & Milgram)
 
+Farnam and Milgram all run snapshots nightly on portions of their filesystems so that you can retrieve mistakenly modified or removed files for yourself. As long as your files existed in the form you want them in before the most recent midnight, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below.
+
+| File set                   | Snapshot Prefix                              |
+|----------------------------|----------------------------------------------|
+| `/gpfs/ysm`                | `/gpfs/ysm/.snapshots`                       |
+| `/gpfs/slaymanpi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
+| `/gpfs/milgram/home`       | `/gpfs/milgram/home/.snapshots`              |
+| `/gpfs/milgram/project`    | `/gpfs/milgram/project/groupname/.snapshots` |
+
+For example, if you wanted to recover the most recent snapshot of the file `/gpfs/ysm/home/rdb9/scripts/doit.sh`, its path would be `/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/home/rdb9/scripts/doit.sh`. Similarly, the file `/gpfs/milgram/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) could be recovered at `/gpfs/milgram/project/bjornson/.snapshots/$(date +%Y%m%d-0000)/rdb9/doit.sh` .
+
+!!! info
+    Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.
