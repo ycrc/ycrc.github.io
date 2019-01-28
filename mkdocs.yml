@@ -1,4 +1,5 @@
 site_name: Yale Center for Research Computing
+site_url: https://docs.ycrc.yale.edu
 remote_branch: master
 strict: true
 
