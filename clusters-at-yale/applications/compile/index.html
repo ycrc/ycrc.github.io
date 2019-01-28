@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/applications/compile/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -107,7 +109,7 @@
 
       <!-- Link to home -->
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../.."
+        <a href="https://docs.ycrc.yale.edu"
             title="Yale Center for Research Computing"
             class="md-header-nav__button md-logo">
           
@@ -252,7 +254,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../.." title="Yale Center for Research Computing" class="md-nav__button md-logo">
+    <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo">
       
         <i class="md-icon">library_books</i>
       
@@ -521,22 +523,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conventions" title="conventions" class="md-nav__link">
-    conventions
+  <a href="#conventions" title="Conventions" class="md-nav__link">
+    Conventions
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-install" title="Local Install" class="md-nav__link">
+    Local Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#autotools" title="autotools" class="md-nav__link">
-    autotools
+  <a href="#autotools-configuremake" title="Autotools (configure/make)" class="md-nav__link">
+    Autotools (configure/make)
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure" title="configure" class="md-nav__link">
+    configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-install" title="make install" class="md-nav__link">
+    make install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmake" title="cmake" class="md-nav__link">
-    cmake
+  <a href="#cmake" title="CMake" class="md-nav__link">
+    CMake
   </a>
   
 </li>
@@ -1159,22 +1201,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conventions" title="conventions" class="md-nav__link">
-    conventions
+  <a href="#conventions" title="Conventions" class="md-nav__link">
+    Conventions
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-install" title="Local Install" class="md-nav__link">
+    Local Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#autotools" title="autotools" class="md-nav__link">
-    autotools
+  <a href="#autotools-configuremake" title="Autotools (configure/make)" class="md-nav__link">
+    Autotools (configure/make)
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure" title="configure" class="md-nav__link">
+    configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-install" title="make install" class="md-nav__link">
+    make install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmake" title="cmake" class="md-nav__link">
-    cmake
+  <a href="#cmake" title="CMake" class="md-nav__link">
+    CMake
   </a>
   
 </li>
@@ -1197,13 +1279,44 @@
                 
                 
                 <h1 id="build-software">Build Software</h1>
-<p>How to get software up and running on the clusters. only if you have to.</p>
-<h2 id="caveat-emptor">caveat emptor</h2>
-<p>native compile on nodes</p>
-<h2 id="conventions">conventions</h2>
-<p>prefix, what compiler to use</p>
-<h2 id="autotools">autotools</h2>
-<h2 id="cmake">cmake</h2>
+<p>How to get software you need up and running on the clusters.</p>
+<h2 id="caveat-emptor"><em>caveat emptor</em></h2>
+<p>We usually recommend either use existing <a href="">software modules</a>, <a href="">Anaconda</a>, <a href="">Singularity</a>, or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.</p>
+<p>When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.</p>
+<p>Each of the cluster pages (see the <a href="/clusters-at-yale/clusters">clusters index</a> for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.</p>
+<h2 id="conventions">Conventions</h2>
+<h3 id="local-install">Local Install</h3>
+<p>Because you don't have admin/root/sudo privileges on the clusters, you won't be able to use <code>sudo</code> and a package manager like <code>apt</code>, <code>yum</code>, etc.; You will need to adapt install instructions to allow for what is called a local or user install. If you prefer or require this method, you should create a singularity container image (see our <a href="/clusters-at-yale/applications/guides/singularity/">Singularity guide</a>), then run it on the cluster.</p>
+<p>For things to work smoothly you will need to choose and stick with a prefix, or path to your installed applications and libraries. We recommend this be either in your home or project directory, something like <code>~/software</code> or <code>/path/to/project/software</code>. Make sure you have created it before continuing.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you choose a project directory prefix, it will be easier to share your applications with lab mates or other cluster users. Just make sure to use the true path (the one returned by <code>mydirectories</code>).</p>
+</div>
+<p>Once you've chosen a prefix you will want to add any directory with executables you want to run to your <code>PATH</code> environment variable, and any directores with libraries that your application(s) link to your <code>LD_LIBRARY_PATH</code> environment variable. Each of these tell your shell where to look when you call your application without specifying an absolute path to it. To set these variables permanently, add the following to the end of your <code>~/.bashrc</code> file:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># local installs</span>
+<span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+
+
+<p>For the remainder of the guide we'll use the <code>$MY_PREFIX</code> variable to refer to the prefix. See below or your application's install instructions for exactly how to specify your prefix at build/install time.</p>
+<h3 id="dependencies">Dependencies</h3>
+<p>You will need to develop a build strategy that works for you and stay consistent. If you're happy using libraries and <a href="/clusters-at-yale/applications/easybuild/#toolchains">toolchains</a> that are already available on the cluster as dependencies (recommended), feel free to create <a href="/clusters-at-yale/applications/modules/#module-collections">module collections</a> that serve as your environments. If you prefer to completely build your own software tree, that is ok too. Whichever route you choose, try to stick with the same version of dependencies (e.g. MPI, zlib, numpy) and compiler you're using (e.g. GCC, intel). We find that unless absolutely necessary, the newest version of a compiler or library might not be the most compatible with a wide array of scientific software so you may want to step back a few versions or try using what was available at the time your application was being developed.</p>
+<h2 id="autotools-configuremake">Autotools (<code>configure</code>/<code>make</code>)</h2>
+<p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
+<h3 id="configure"><code>configure</code></h3>
+<p>If you are instructed to run <code>./configure</code> to generate a Makefile, specify your prefix with the <code>--prefix</code> option. This creates a file, usually named <code>Makefile</code> that is a recipe for <code>make</code> to use to build your application.</p>
+<div class="codehilite"><pre><span></span>./configure --prefix<span class="o">=</span><span class="nv">$MY_PREFIX</span>
+</pre></div>
+
+
+<h3 id="make-install"><code>make install</code></h3>
+<p>If your configure ran properly, <code>make install</code> should properly place your application in your prefix directory. If there is no install target specified for your application, you can either run <code>make</code> and copy the application to your <code>$MY_PREFIX/bin</code> directory or build it somewhere in <code>$MY_PREFIX</code> and add its relevant paths to your <code>PATH</code> and/or <code>LD_LIBRARY_PATH</code> environment variables in your <code>~/.bashrc</code> file as shown in the <a href="#local-install">local install</a> section.</p>
+<h2 id="cmake">CMake</h2>
+<p><a href="https://en.wikipedia.org/wiki/CMake">CMake</a> is a popular cross-platform build system. On a linux system, CMake will create a <code>Makefile</code> in a step analogous to <code>./configure</code>. It is common to create a build directory then run the <code>cmake</code> and <code>make</code> commands from there. Below is what installing to your <code>$MY_DIRECTORY</code> prefix might look like with CMake. CMake instructions also tend to link together the build process onto on line with <code>&amp;&amp;</code>, which tells your shell to only continue to the next command if the previous one exited without error.</p>
+<div class="codehilite"><pre><span></span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$MY_PREFIX</span> .. <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+</pre></div>
                 
                   
                 
