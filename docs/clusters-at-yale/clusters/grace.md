@@ -47,16 +47,16 @@ The day partition is where most batch jobs should run, and is the default if you
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
-| Partition   | Group Limits                | User Limits                 | Walltime default/max | Node type (number)                              |
-|-------------|-----------------------------|-----------------------------|----------------------|-------------------------------------------------|
-| day*        | 900 CPUs                    | 640 CPUs                    | 1h/1d                | nx360i (49), nx360h (32), nx360b (72)           |
-| week        | 250 CPUs                    | 100 CPUs                    | 1h/7d                | nx360h (48), nx360b (7)                         |
-| interactive |                             | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | nx360i (2)                                      |
-| bigmem      |                             | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (1)                                      |
-| gpu_devel   |                             | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | nx360h k80 (1)                                  |
-| gpu         | 32 CPUs, 256 G RAM          | 6 nodes                     | 1h/1d                | nx360b p100 (6), nx360h k80 (3), sd530 v100 (1) |
-| mpi**       | 900 CPUs                    | 640 CPUs                    | 1h/7d                | sd530 (35)                                      |
-| scavenge    |                             | 6400 CPUs                   | 1h/1d                | all                                             |
+| Partition   | Group Limits       | User Limits                 | Walltime default/max | Node type (number)                              |
+|-------------|--------------------|-----------------------------|----------------------|-------------------------------------------------|
+| day*        | 900 CPUs           | 640 CPUs                    | 1h/1d                | nx360i (49), nx360h (32), nx360b (72)           |
+| week        | 250 CPUs           | 100 CPUs                    | 1h/7d                | nx360h (48), nx360b (7)                         |
+| interactive |                    | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | nx360i (2)                                      |
+| bigmem      |                    | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (1)                                      |
+| gpu_devel   |                    | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | nx360h k80 (1)                                  |
+| gpu         | 32 CPUs, 256 G RAM | 6 nodes                     | 1h/1d                | nx360b p100 (6), nx360h k80 (3), sd530 v100 (1) |
+| mpi**       | 900 CPUs           | 640 CPUs                    | 1h/7d                | sd530 (35)                                      |
+| scavenge    |                    | 6400 CPUs                   | 1h/1d                | all                                             |
 
 \* default  
 ** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description.
