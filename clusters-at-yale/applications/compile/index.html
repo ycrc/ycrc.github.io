@@ -1281,7 +1281,7 @@
                 <h1 id="build-software">Build Software</h1>
 <p>How to get software you need up and running on the clusters.</p>
 <h2 id="caveat-emptor"><em>caveat emptor</em></h2>
-<p>We usually recommend either use existing <a href="">software modules</a>, <a href="">Anaconda</a>, <a href="">Singularity</a>, or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.</p>
+<p>We usually recommend either use existing <a href="/clusters-at-yale/applications/modules">software modules</a>, <a href="/clusters-at-yale/applications/guides/conda">Anaconda</a>, <a href="/clusters-at-yale/applications/guides/singularity">Singularity</a>, or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.</p>
 <p>When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.</p>
 <p>Each of the cluster pages (see the <a href="/clusters-at-yale/clusters">clusters index</a> for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.</p>
 <h2 id="conventions">Conventions</h2>
@@ -1307,7 +1307,8 @@
 <p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
 <h3 id="configure"><code>configure</code></h3>
 <p>If you are instructed to run <code>./configure</code> to generate a Makefile, specify your prefix with the <code>--prefix</code> option. This creates a file, usually named <code>Makefile</code> that is a recipe for <code>make</code> to use to build your application.</p>
-<div class="codehilite"><pre><span></span>./configure --prefix<span class="o">=</span><span class="nv">$MY_PREFIX</span>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
+./configure --prefix<span class="o">=</span><span class="nv">$MY_PREFIX</span>
 </pre></div>
 
 
@@ -1315,7 +1316,8 @@
 <p>If your configure ran properly, <code>make install</code> should properly place your application in your prefix directory. If there is no install target specified for your application, you can either run <code>make</code> and copy the application to your <code>$MY_PREFIX/bin</code> directory or build it somewhere in <code>$MY_PREFIX</code> and add its relevant paths to your <code>PATH</code> and/or <code>LD_LIBRARY_PATH</code> environment variables in your <code>~/.bashrc</code> file as shown in the <a href="#local-install">local install</a> section.</p>
 <h2 id="cmake">CMake</h2>
 <p><a href="https://en.wikipedia.org/wiki/CMake">CMake</a> is a popular cross-platform build system. On a linux system, CMake will create a <code>Makefile</code> in a step analogous to <code>./configure</code>. It is common to create a build directory then run the <code>cmake</code> and <code>make</code> commands from there. Below is what installing to your <code>$MY_DIRECTORY</code> prefix might look like with CMake. CMake instructions also tend to link together the build process onto on line with <code>&amp;&amp;</code>, which tells your shell to only continue to the next command if the previous one exited without error.</p>
-<div class="codehilite"><pre><span></span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$MY_PREFIX</span> .. <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$MY_PREFIX</span> .. <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
 </pre></div>
                 
                   
