@@ -7,7 +7,7 @@
 To begin a `tmux` session named myproject, type
 
 ``` bash
-    tmux new -s myproject
+tmux new -s myproject
 ```
 
 You should see a bar across the bottom of your terminal window now that gives you some information about your session. If you are disconnected or detached from this session, anything you were doing will still be there waiting when you reattach
