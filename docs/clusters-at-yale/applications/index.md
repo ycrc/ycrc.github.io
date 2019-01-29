@@ -13,5 +13,3 @@ For all other software, we encourage users to attempt to install their own softw
 We provide [guides for certain software packages and languages](guides) as well.
 
 If you run into issues with your software installations, the YCRC staff can assist at hpc@yale.edu.
-
-
