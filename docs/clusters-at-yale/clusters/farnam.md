@@ -44,14 +44,14 @@ The general partition is where most batch jobs should run, and is the default if
 
 All the node types listed are described in more detail in the [hardware](#hardware) table.
 
-| Partition   | User Limits                 | Walltime default/max | Node type (number)                  |
-|-------------|-----------------------------|----------------------|-------------------------------------|
-| general*    | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)              |
-| interactive | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)              |
-| bigmem      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                |
-| gpu_devel   | 1 job                       | 10min/2hr            | GPX XT4 1080Ti (1)                  |
-| gpu         | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h K80 (2), GPX XT4 1080Ti (10) |
-| scavenge    | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
+| Partition   | Group Limits         | User Limits                 | Walltime default/max | Node type (number)                  |
+|-------------|----------------------|-----------------------------|----------------------|-------------------------------------|
+| general*    | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)              |
+| interactive |                      | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)              |
+| bigmem      |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                |
+| gpu_devel   |                      | 1 job                       | 10min/2hr            | GPX XT4 1080Ti (1)                  |
+| gpu         |                      | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h K80 (2), GPX XT4 1080Ti (10) |
+| scavenge    |                      | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                 |
 
 \* default
 
