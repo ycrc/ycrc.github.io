@@ -1,5 +1,9 @@
+
+
+// Autoexpand Sidebar
 document.addEventListener("DOMContentLoaded", function() {
     load_navpane();
+    display_system_status()
 });
 
 function load_navpane() {
@@ -26,4 +30,36 @@ function load_navpane() {
             nav.item(i).checked = true;
         }
     }
-}
+};
+
+// display system status
+function display_system_status() {
+
+    var url = 'http://research.computing.yale.edu/current-system-status';
+
+    feednami.load(url,function(result){
+        if(result.error) {
+            console.log(result.error);
+        } else {
+
+            var entries = result.feed.entries;
+            if (entries.length) {
+                var status_color = '#ffcc00'; // yellow
+
+                for(var i = 0; i < entries.length; i++){
+                    entry = entries[i];
+
+                    var status = "System Status: <a href='" + entry.link + "'>" + entry.title + "</a>";
+                    document.getElementById("system-status-message").innerHTML = status;
+                    document.getElementById("system-status-message").setAttribute("style", "display: block");
+                }
+
+            }  else{
+                var status_color = '#52BA5D'; // green
+            }
+        }
+
+        document.getElementById("status-icon").setAttribute("style", "background:"+ status_color);
+
+    });
+};

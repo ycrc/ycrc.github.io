@@ -34,8 +34,10 @@
       {% for nav_item in nav %}
         {% include "partials/tabs-item.html" %}
       {% endfor %}
-
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+      <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
     </ul>
   </div>
 </nav>
+
+<div id="system-status-message"></div>

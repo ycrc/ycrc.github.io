@@ -6,20 +6,20 @@ Yale Orange Accent: #bd5319;
 */
 
 @font-face {
-  font-family: YaleNew;
-  src: url(/assets/fonts/YaleNew/YaleNew-Roman.otf);
+    font-family: YaleNew;
+    src: url(/assets/fonts/YaleNew/YaleNew-Roman.otf);
 }
 
 @font-face {
-  font-family: YaleNew;
-  src: url(/assets/fonts/YaleNew/YaleNew-Bold.otf);
-  font-weight: bold;
+    font-family: YaleNew;
+    src: url(/assets/fonts/YaleNew/YaleNew-Bold.otf);
+    font-weight: bold;
 }
 
 @font-face {
-  font-family: YaleNew;
-  src: url(/assets/fonts/YaleNew/YaleNew-Italic.otf);
-  font-style: italic;
+    font-family: YaleNew;
+    src: url(/assets/fonts/YaleNew/YaleNew-Italic.otf);
+    font-style: italic;
 }
 
 .branding{
@@ -67,40 +67,79 @@ Yale Orange Accent: #bd5319;
     background-color: #00356b;
 }
 
+/* Status */
+
+
+.status {
+    float: right;
+}
+
+.status .md-tabs__link{
+    opacity:1.0;
+    margin-left:20px;
+}
+
+.status #status-icon{
+     border-radius: 50%;
+     display: inline-block;
+     height: 12px;
+     margin-left: 4px;
+     margin-right: 4px;
+     width: 12px;
+}
+
+#system-status-message{
+    display: none;
+    width:50%;
+    margin: 20px auto 0px auto;
+    font-size: 1.25em;
+    padding: 10px;
+    background: #fcf8e3;
+    border:1px solid #faebcc;
+    border-radius: 5px;
+}
+
+#system-status-message a{
+    color: #8a6d3b;
+}
+#system-status-message a:hover{
+    opacity: 0.7;
+}
+
 /* Sizing */
 
 img.medium{
-  max-width: 600px;
+    max-width: 600px;
 }
 
 img.large{
-  max-width: 900px;
+    max-width: 900px;
 }
 
 img.cluster-portrait {
-  width: auto;
-  float: left;
-  padding-right: 1%;
-  padding-bottom: 1%;
-  height: 100%;
-  max-height: 15vh;
+    width: auto;
+    float: left;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    height: 100%;
+    max-height: 15vh;
 }
 
 
 /* Full Width */
 @media only screen and (min-width: 76.25em) {
-  .md-main__inner {
-    max-width: none;
-  }
-  .md-sidebar--primary {
-    left: 25px;
-  }
-  .md-sidebar--secondary {
-    right: 25px;
-    margin-left:;
-    -webkit-transform: none;
-    transform: none;
-  }
+    .md-main__inner {
+        max-width: none;
+    }
+    .md-sidebar--primary {
+        left: 25px;
+    }
+    .md-sidebar--secondary {
+        right: 25px;
+        margin-left:;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
 /* hr to force text below floating image */
