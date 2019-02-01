@@ -1,19 +1,17 @@
 # Data Storage Options
 
-Below are a few options for storing your research data.
-
 ## Google Drive via Eliapps
 
-**Capacity: Unlimited. Cost: Free - 5TB max file size
-No sensitive data (e.g. ePHI, HIPAA)
+**Capacity: Unlimited. Cost: Free - 5TB max file size  
+No sensitive data (e.g. ePHI, HIPAA)  
 Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/data/google-drive)**
 
 Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an Eliapps (Google Apps for Education) account have unlimited (yes, unlimited) storage at no cost in the associated Google Drive account. Moreover, Eliapps users can request Team Drives, which are Google Drive shared spaces where all files in a Team Drive belong to the team instead to any individual. For more information on Google Drive through Eliapps, see our [Google Drive documentation](/data/google-drive) for more information.
 
 ## Storage @ Yale
 
-**Capacity: As requested. Cost: See below
-No sensitive data (e.g. ePHI, HIPAA) for cluster mounts
+**Capacity: As requested. Cost: See below  
+No sensitive data (e.g. ePHI, HIPAA) for cluster mounts  
 Can be mounted on the cluster or computers on campus**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
@@ -28,8 +26,8 @@ To request a share, press the “Request this Service” button in the right sid
 
 ## Box at Yale
 
-**Capacity: 50GB per user. Cost: Free. 15 GB max file size.
-Sensitive data (e.g. ePHI, HIPAA) only in Secure Box
+**Capacity: 50GB per user. Cost: Free. 15 GB max file size.  
+Sensitive data (e.g. ePHI, HIPAA) only in Secure Box  
 Can be mounted on your local machine and transferred with [`rclone`](https://rclone.org/)**
 
 All members of the Yale community have access to a share at Box at Yale. Box is another cloud-based file sharing and storage service. You can upload and access your data using the web portal and sync data with your local machines via Box Sync.

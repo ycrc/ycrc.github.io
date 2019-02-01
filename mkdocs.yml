@@ -49,19 +49,19 @@ nav:
                 - clusters-at-yale/applications/compile.md
                 - clusters-at-yale/applications/modules.md
                 - clusters-at-yale/applications/easybuild.md
-                - Guides:
-                    - clusters-at-yale/applications/guides/index.md
-                    - clusters-at-yale/applications/guides/cesm.md
-                    - clusters-at-yale/applications/guides/conda.md
-                    - clusters-at-yale/applications/guides/deep-learning-gpus.md
-                    - clusters-at-yale/applications/guides/gaussian.md
-                    - clusters-at-yale/applications/guides/gpus-cuda.md
-                    - clusters-at-yale/applications/guides/jupyter.md
-                    - clusters-at-yale/applications/guides/matlab.md
-                    - clusters-at-yale/applications/guides/r.md
-                    - clusters-at-yale/applications/guides/singularity.md
-                    - clusters-at-yale/applications/guides/tmux.md
-                    - clusters-at-yale/applications/guides/vasp.md
+            - Software Guides:
+                - clusters-at-yale/guides/index.md
+                - clusters-at-yale/guides/cesm.md
+                - clusters-at-yale/guides/conda.md
+                - clusters-at-yale/guides/deep-learning-gpus.md
+                - clusters-at-yale/guides/gaussian.md
+                - clusters-at-yale/guides/gpus-cuda.md
+                - clusters-at-yale/guides/jupyter.md
+                - clusters-at-yale/guides/matlab.md
+                - clusters-at-yale/guides/r.md
+                - clusters-at-yale/guides/singularity.md
+                - clusters-at-yale/guides/tmux.md
+                - clusters-at-yale/guides/vasp.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/resource-requests.md

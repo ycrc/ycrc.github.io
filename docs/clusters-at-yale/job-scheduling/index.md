@@ -41,7 +41,7 @@ srun --pty -p interactive bash
 This will assign a free node to you, allocating the requested number of CPUs, walltime, and memory, and put you within a shell on that node. You can run any number of commands within that shell. To free the allocated node, exit from the shell.
 
 !!!tip
-    When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/applications/guides/tmux) alleviate this. When using `tmux`, please be sure to keep track of your allocations and free those no longer needed!
+    When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/guides/tmux) alleviate this. When using `tmux`, please be sure to keep track of your allocations and free those no longer needed!
 
 To use a GUI application (such as Matlab), when in an interactive job, use the `--x11` flag:
 

@@ -8,7 +8,7 @@ With a small amount of configuration, you can use a compute node to run a [jupyt
 
 ## Start the Server
 
-Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `source activate` an environment if you're using [Anaconda Python](/clusters-at-yale/applications/guides/conda). Save your edited version of this script on the cluster, and submit it with `sbatch`.
+Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `source activate` an environment if you're using [Anaconda Python](/clusters-at-yale/guides/conda). Save your edited version of this script on the cluster, and submit it with `sbatch`.
 
 ```
 #!/bin/bash

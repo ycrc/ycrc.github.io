@@ -44,7 +44,7 @@ module purge
 
 ### Create Your Python Environment
 
-You will want to create a virtual environment for your GPU enabled code. For more details on Conda environments, see our [Conda documentation](/clusters-at-yale/applications/guides/conda).
+You will want to create a virtual environment for your GPU enabled code. For more details on Conda environments, see our [Conda documentation](/clusters-at-yale/guides/conda).
 
 ``` bash
 # create conda environment for deep learning/neural networks
