@@ -239,11 +239,13 @@
   
 
       
-
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+      <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
     </ul>
   </div>
 </nav>
+
+<div id="system-status-message"></div>
       
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -515,174 +517,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-5" type="checkbox" id="nav-1-2-5-5">
-    
-    <label class="md-nav__link" for="nav-1-2-5-5">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-1-2-5-5">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/cesm/" title="CESM/CAM" class="md-nav__link">
-      CESM/CAM
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/conda/" title="Conda" class="md-nav__link">
-      Conda
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
-      Deep Learning with GPUs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/gaussian/" title="Gaussian" class="md-nav__link">
-      Gaussian
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
-      GPUs and CUDA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
-      Jupyter Notebooks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/matlab/" title="MATLAB" class="md-nav__link">
-      MATLAB
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/r/" title="R" class="md-nav__link">
-      R
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/singularity/" title="Singularity" class="md-nav__link">
-      Singularity
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/tmux/" title="tmux" class="md-nav__link">
-      tmux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../clusters-at-yale/applications/guides/vasp/" title="VASP" class="md-nav__link">
-      VASP
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -698,10 +532,178 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
     
     <label class="md-nav__link" for="nav-1-2-6">
-      Job Scheduling
+      Software Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-6">
+        Software Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/cesm/" title="CESM/CAM" class="md-nav__link">
+      CESM/CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/conda/" title="Conda" class="md-nav__link">
+      Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+      Deep Learning with GPUs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/gaussian/" title="Gaussian" class="md-nav__link">
+      Gaussian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+      GPUs and CUDA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+      Jupyter Notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/matlab/" title="MATLAB" class="md-nav__link">
+      MATLAB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/r/" title="R" class="md-nav__link">
+      R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/singularity/" title="Singularity" class="md-nav__link">
+      Singularity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/tmux/" title="tmux" class="md-nav__link">
+      tmux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clusters-at-yale/guides/vasp/" title="VASP" class="md-nav__link">
+      VASP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+    
+    <label class="md-nav__link" for="nav-1-2-7">
+      Job Scheduling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-7">
         Job Scheduling
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -803,13 +805,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
     
-    <label class="md-nav__link" for="nav-1-2-7">
+    <label class="md-nav__link" for="nav-1-2-8">
       Data & Storage
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-1-2-7">
+      <label class="md-nav__title" for="nav-1-2-8">
         Data & Storage
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -887,13 +889,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9">
     
-    <label class="md-nav__link" for="nav-1-2-8">
+    <label class="md-nav__link" for="nav-1-2-9">
       The Clusters
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-1-2-8">
+      <label class="md-nav__title" for="nav-1-2-9">
         The Clusters
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1183,15 +1185,14 @@
                 
                 
                 <h1 id="data-storage-options">Data Storage Options</h1>
-<p>Below are a few options for storing your research data.</p>
 <h2 id="google-drive-via-eliapps">Google Drive via Eliapps</h2>
-<p><strong>Capacity: Unlimited. Cost: Free - 5TB max file size
-No sensitive data (e.g. ePHI, HIPAA)
+<p><strong>Capacity: Unlimited. Cost: Free - 5TB max file size<br />
+No sensitive data (e.g. ePHI, HIPAA)<br />
 Can be mounted on <a href="https://www.google.com/drive/download/">your local machine</a> and transferred to via <a href="/data/google-drive">Globus Google Drive Connector</a></strong></p>
 <p>Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an Eliapps (Google Apps for Education) account have unlimited (yes, unlimited) storage at no cost in the associated Google Drive account. Moreover, Eliapps users can request Team Drives, which are Google Drive shared spaces where all files in a Team Drive belong to the team instead to any individual. For more information on Google Drive through Eliapps, see our <a href="/data/google-drive">Google Drive documentation</a> for more information.</p>
 <h2 id="storage-yale">Storage @ Yale</h2>
-<p><strong>Capacity: As requested. Cost: See below
-No sensitive data (e.g. ePHI, HIPAA) for cluster mounts
+<p><strong>Capacity: As requested. Cost: See below<br />
+No sensitive data (e.g. ePHI, HIPAA) for cluster mounts<br />
 Can be mounted on the cluster or computers on campus</strong></p>
 <p>Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.</p>
 <ul>
@@ -1202,8 +1203,8 @@ Can be mounted on the cluster or computers on campus</strong></p>
 <p>For most up to date pricing information, see the <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=fc22e7c9dbbf7a802de17ecfbf961971&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
 <p>To request a share, press the “Request this Service” button in the right sidebar on the <a href="https://yale.service-now.com/it?id=service_offering&amp;sys_id=f4688dcd6fbb31007ee2abcf9f3ee400">Storage@Yale website</a>. If you would like to request a share that is mounted on the HPC clusters, fill out the <a href="https://research.computing.yale.edu/storageyale-request-form">Storage@Yale Request Form</a> on the YCRC website. If you elect to use archive tier storage, be cognizant of <a href="/data/archive">its performance characteristics</a>.</p>
 <h2 id="box-at-yale">Box at Yale</h2>
-<p><strong>Capacity: 50GB per user. Cost: Free. 15 GB max file size.
-Sensitive data (e.g. ePHI, HIPAA) only in Secure Box
+<p><strong>Capacity: 50GB per user. Cost: Free. 15 GB max file size.<br />
+Sensitive data (e.g. ePHI, HIPAA) only in Secure Box<br />
 Can be mounted on your local machine and transferred with <a href="https://rclone.org/"><code>rclone</code></a></strong></p>
 <p>All members of the Yale community have access to a share at Box at Yale. Box is another cloud-based file sharing and storage service. You can upload and access your data using the web portal and sync data with your local machines via Box Sync.</p>
 <p>To access, navigate to <a href="http://yale.box.com">yale.box.com</a> and login with your yale.edu account.</p>
@@ -1285,6 +1286,8 @@ Can be mounted on your local machine and transferred with <a href="https://rclon
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
       
     
     

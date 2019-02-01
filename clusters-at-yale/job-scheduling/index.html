@@ -239,11 +239,13 @@
   
 
       
-
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+      <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
     </ul>
   </div>
 </nav>
+
+<div id="system-status-message"></div>
       
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -517,6 +519,11 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
           
           
           
@@ -524,14 +531,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5-5" type="checkbox" id="nav-1-2-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
     
-    <label class="md-nav__link" for="nav-1-2-5-5">
-      Guides
+    <label class="md-nav__link" for="nav-1-2-6">
+      Software Guides
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-1-2-5-5">
-        Guides
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-6">
+        Software Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -542,7 +549,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/" title="Overview" class="md-nav__link">
+    <a href="../guides/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -554,7 +561,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/cesm/" title="CESM/CAM" class="md-nav__link">
+    <a href="../guides/cesm/" title="CESM/CAM" class="md-nav__link">
       CESM/CAM
     </a>
   </li>
@@ -566,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/conda/" title="Conda" class="md-nav__link">
+    <a href="../guides/conda/" title="Conda" class="md-nav__link">
       Conda
     </a>
   </li>
@@ -578,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+    <a href="../guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
       Deep Learning with GPUs
     </a>
   </li>
@@ -590,7 +597,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/gaussian/" title="Gaussian" class="md-nav__link">
+    <a href="../guides/gaussian/" title="Gaussian" class="md-nav__link">
       Gaussian
     </a>
   </li>
@@ -602,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+    <a href="../guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
       GPUs and CUDA
     </a>
   </li>
@@ -614,7 +621,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+    <a href="../guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
       Jupyter Notebooks
     </a>
   </li>
@@ -626,7 +633,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/matlab/" title="MATLAB" class="md-nav__link">
+    <a href="../guides/matlab/" title="MATLAB" class="md-nav__link">
       MATLAB
     </a>
   </li>
@@ -638,7 +645,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/r/" title="R" class="md-nav__link">
+    <a href="../guides/r/" title="R" class="md-nav__link">
       R
     </a>
   </li>
@@ -650,7 +657,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/singularity/" title="Singularity" class="md-nav__link">
+    <a href="../guides/singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -662,7 +669,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/tmux/" title="tmux" class="md-nav__link">
+    <a href="../guides/tmux/" title="tmux" class="md-nav__link">
       tmux
     </a>
   </li>
@@ -674,14 +681,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../applications/guides/vasp/" title="VASP" class="md-nav__link">
+    <a href="../guides/vasp/" title="VASP" class="md-nav__link">
       VASP
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -699,13 +701,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7" checked>
     
-    <label class="md-nav__link" for="nav-1-2-6">
+    <label class="md-nav__link" for="nav-1-2-7">
       Job Scheduling
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-1-2-6">
+      <label class="md-nav__title" for="nav-1-2-7">
         Job Scheduling
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -880,13 +882,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
     
-    <label class="md-nav__link" for="nav-1-2-7">
+    <label class="md-nav__link" for="nav-1-2-8">
       Data & Storage
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-1-2-7">
+      <label class="md-nav__title" for="nav-1-2-8">
         Data & Storage
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -964,13 +966,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9">
     
-    <label class="md-nav__link" for="nav-1-2-8">
+    <label class="md-nav__link" for="nav-1-2-9">
       The Clusters
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-1-2-8">
+      <label class="md-nav__title" for="nav-1-2-9">
         The Clusters
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1259,7 +1261,7 @@
 <p>This will assign a free node to you, allocating the requested number of CPUs, walltime, and memory, and put you within a shell on that node. You can run any number of commands within that shell. To free the allocated node, exit from the shell.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using <a href="/clusters-at-yale/applications/guides/tmux"><code>tmux</code></a> alleviate this. When using <code>tmux</code>, please be sure to keep track of your allocations and free those no longer needed!</p>
+<p>When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using <a href="/clusters-at-yale/guides/tmux"><code>tmux</code></a> alleviate this. When using <code>tmux</code>, please be sure to keep track of your allocations and free those no longer needed!</p>
 </div>
 <p>To use a GUI application (such as Matlab), when in an interactive job, use the <code>--x11</code> flag:</p>
 <div class="codehilite"><pre><span></span>srun --pty --x11 -p interactive <span class="o">[</span>additional slurm options<span class="o">]</span> bash
@@ -1389,7 +1391,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../applications/guides/vasp/" title="VASP" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../guides/vasp/" title="VASP" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1445,6 +1447,8 @@
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../js/extra.js"></script>
+      
+        <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
       
     
     
