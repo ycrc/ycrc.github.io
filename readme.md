@@ -1,5 +1,7 @@
 # Readme
 
+All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
+
 ## Setup
 
 * Clone the repo from `https://github.com/ycrc/ycrc.github.io`
@@ -14,8 +16,6 @@ conda install --yes --file requirements.txt
 ```
 
 ## Deployment Procedure
-
-All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
 
 ### Test
 
