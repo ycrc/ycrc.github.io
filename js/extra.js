@@ -36,7 +36,7 @@ function load_navpane() {
 function display_system_status() {
 
     //feed to parse
-    var feed = 'https://research.computing.yale.edu/current-system-status';
+    var feed = 'https://cors.io?https://research.computing.yale.edu/current-system-status';
     var status = [];
     $.get(feed, function (data) {
 
