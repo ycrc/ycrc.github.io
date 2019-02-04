@@ -7,7 +7,7 @@ Milgram is named for Dr. Stanley Milgram, a psychologist who researched the beha
 Milgram is a HIPAA aligned Department of Psychology cluster intended for use on projects that may involve sensitive data. This applies to both storage and computation. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
 
 !!! note
-    Connections to Milgram can only be made from the HIPAA VPN (`access.yale.edu/hipaa`). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
+    Connections to Milgram can only be made from the HIPAA VPN (`access.yale.edu/hipaa`). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions. If your group has a workstation (see [list](/clusters-at-yale/clusters/milgram-workstations)), you can connect using one of those.
 
 - - -
 

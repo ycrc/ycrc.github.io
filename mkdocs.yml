@@ -87,5 +87,6 @@ nav:
             - data/index.md
             - data/archive.md
             - data/google-drive.md
+        - user-group.md
         - national-hpcs.md
         - online-tutorials.md
