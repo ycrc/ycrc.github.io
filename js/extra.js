@@ -35,31 +35,27 @@ function load_navpane() {
 // display system status
 function display_system_status() {
 
-    var url = 'http://research.computing.yale.edu/current-system-status';
+    //feed to parse
+    var feed = 'https://research.computing.yale.edu/current-system-status';
+    var status = [];
+    $.get(feed, function (data) {
 
-    feednami.load(url,function(result){
-        if(result.error) {
-            console.log(result.error);
-        } else {
+        $(data).find("item").each(function () {
+            var result = $(this);
+            status.push("<a href='" + result.find("link").text() + "'>" + result.find("title").text() + "</a>");
+        });
 
-            var entries = result.feed.entries;
-            if (entries.length) {
-                var status_color = '#ffcc00'; // yellow
+        if (status.length > 0){
 
-                for(var i = 0; i < entries.length; i++){
-                    entry = entries[i];
+            var status_color = '#ffcc00'; // yellow
+            document.getElementById("system-status-message").innerHTML = "System Status: " + status.join(', ');
+            document.getElementById("system-status-message").setAttribute("style", "display: block");
 
-                    var status = "System Status: <a href='" + entry.link + "'>" + entry.title + "</a>";
-                    document.getElementById("system-status-message").innerHTML = status;
-                    document.getElementById("system-status-message").setAttribute("style", "display: block");
-                }
-
-            }  else{
-                var status_color = '#52BA5D'; // green
-            }
+        } else{
+            var status_color = '#52BA5D'; // green
         }
 
-        document.getElementById("status-icon").setAttribute("style", "background:"+ status_color);
+            document.getElementById("status-icon").setAttribute("style", "background:"+ status_color);
 
     });
 };
