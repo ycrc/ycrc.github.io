@@ -21,7 +21,7 @@ extra_css:
 
 extra_javascript:
     - 'js/extra.js'
-    - 'https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js'
+    - 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
 
 markdown_extensions:
     - admonition
