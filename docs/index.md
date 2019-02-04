@@ -16,7 +16,7 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |Specialist<img width=150/>|Day|Hours<img width=100/>|Office|Areas of Focus|
 |--- |--- |--- |--- |--- |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|Mon|10am-Noon|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|216|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Physics, Python|
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Physics, Python|
 |[Jason Ignatius](https://research.computing.yale.edu/about/staff/jason-ignatius)|Tues|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, PacBio|
 |[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
