@@ -42,7 +42,7 @@ function display_system_status() {
 
         $(data).find("item").each(function () {
             var result = $(this);
-            status.push("<a href='" + result.find("link").text() + "'>" + result.find("title").text() + "</a>");
+            status.push("<a href='https://research.computing.yale.edu/system-status'>" + result.find("title").text() + "</a>");
         });
 
         if (status.length > 0){
