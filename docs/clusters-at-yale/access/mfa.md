@@ -9,7 +9,7 @@ You will need upload your [ssh public key to our site](http://gold.hpc.yale.inte
 
 Once you've set up Duo and your key is registered, you can finally log in. Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option. We recommend choosing Duo Push (option 1). If you chose this option you should receive a notification on your phone. Once approved, you should be allowed to continue to log in.
 
-!!!tip
+!!!note
     You can set up more than one phone for Duo. For example, you can set up your smartphone plus your office landline. That way, if you forget or lose your phone, you can still authenticate. For instructions on how to add additional phones go [here](http://its.yale.edu/sites/default/files/imce/pdfs/MFA%20Adding%20a%20new%20device%2008312015.pdf).
 
 ## File Transfer Clients and Duo MFA

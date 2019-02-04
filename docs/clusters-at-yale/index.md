@@ -37,7 +37,7 @@ To best serve the diverse needs of all our researhcers, we use a module system t
 
 We also provide assistance for installing less commonly used packages. See our [Applications & Software documentation](applications) for more details.
 
-## Rules of the road
+## Rules of the Road
 
 Before you begin using the cluster, here are some important things to remember:
 
@@ -53,7 +53,7 @@ We offer several courses that will assist you with your work on our clusters. Th
 
 ## Get Additional Help
 
-If you have additional questions/comments, please [contact the HPC team](mailto:hpc@yale.edu). If possible, please include the following information:
+If you have additional questions/comments, please [contact the YCRC team](mailto:hpc@yale.edu). If possible, please include the following information:
 
 * Your netid
 * Cluster

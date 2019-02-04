@@ -75,7 +75,7 @@ Example Configuration:
 
 ![VPN with MFA.](/img/moba-vnc.png){: .large}
 
-## Cleaning Up
+## Clean Up
 
 When you are all finished, you can kill the vncserver by doing this in the same shell you used to start it (replace :1 by your display number):
 

@@ -6,9 +6,9 @@ You should also feel free to install things for yourself. For Python environment
 
 For all other software, we encourage users to attempt to install their own software into their directories. Here are instructions for common software procedures.
 
-- Pre-compiles binaries
-- Make/Cmake
-- [Singularity](guides/singularity): create containers and port Docker containers to the clusters
+- [Make](/clusters-at-yale/applications/compile/#autotools-configuremake)
+- [Cmake](/clusters-at-yale/applications/compile/#cmake)
+- [Singularity](/clusters-at-yale/guides/singularity): create containers and port Docker containers to the clusters
 
 We provide [guides for certain software packages and languages](guides) as well.
 
