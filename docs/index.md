@@ -6,6 +6,9 @@ The Yale Center for Research Computing provides support for research computing a
 
 To best serve the research community, we hold office hours and are also available through a support tracking system.
 
+!!! info "Troubleshooting Login Issues"
+    If you are experiencing issues logging into one of the clusters, please first check the current [System Status](http://research.computing.yale.edu/system-status) for known issues and use the [Troubleshoot Login guide](/clusters-at-yale/troubleshoot) to address common issues before seeking additional assistance.
+
 ### In Person
 
 The YCRC is located on the second floor of [160 Saint Ronan Street](https://research.computing.yale.edu/about/location). Visitor parking is available upon request. There are also [Red, Orange, Blue and Green shuttle stops](https://yaleshuttle.doublemap.com/map) within a block of our center.
