@@ -28,7 +28,7 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
-All the node types listed are described in more detail in the [hardware](#hardware) table.
+The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
 | Partition   | User Limits          | Walltime default/max | Node type (number)    |
 |-------------|----------------------|----------------------|-----------------------|

@@ -45,7 +45,7 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is reserved for tightly-coupled parallel and access is by special request only. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
-All the node types listed are described in more detail in the [hardware](#hardware) table.
+The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
 | Partition   | Group Limits       | User Limits                 | Walltime default/max | Node type (number)                              |
 |-------------|--------------------|-----------------------------|----------------------|-------------------------------------------------|
