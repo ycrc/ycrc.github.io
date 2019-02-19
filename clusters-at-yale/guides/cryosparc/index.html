@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/applications/compile/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Build Software - Yale Center for Research Computing</title>
+        <title>cryoSPARCv2 on Farnam - Yale Center for Research Computing</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#build-software" tabindex="1" class="md-skip">
+      <a href="#cryosparcv2-on-farnam" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -136,7 +136,7 @@
                 </a>
               </span>
               <span class="md-header-nav__topic">
-                Build Software
+                cryoSPARCv2 on Farnam
               </span>
             
           
@@ -214,11 +214,9 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 <!-- Tabs with outline -->
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
@@ -231,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link">
           Support
         </a>
       
@@ -270,12 +268,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       Support
@@ -303,12 +299,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
     
     <label class="md-nav__link" for="nav-1-2">
       Clusters at Yale
@@ -456,12 +450,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5">
     
     <label class="md-nav__link" for="nav-1-2-5">
       Applications & Software
@@ -479,7 +471,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Overview" class="md-nav__link">
+    <a href="../../applications/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -489,123 +481,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Build Software
-      </label>
-    
-    <a href="./" title="Build Software" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../applications/compile/" title="Build Software" class="md-nav__link">
       Build Software
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#caveat-emptor" title="caveat emptor" class="md-nav__link">
-    caveat emptor
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#illegal-instruction-instructions" title="Illegal Instruction Instructions" class="md-nav__link">
-    Illegal Instruction Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conventions" title="Conventions" class="md-nav__link">
-    Conventions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-install" title="Local Install" class="md-nav__link">
-    Local Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autotools-configuremake" title="Autotools (configure/make)" class="md-nav__link">
-    Autotools (configure/make)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configure" title="configure" class="md-nav__link">
-    configure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-install" title="make install" class="md-nav__link">
-    make install
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cmake" title="CMake" class="md-nav__link">
-    CMake
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -615,7 +495,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../modules/" title="Load Software with Modules" class="md-nav__link">
+    <a href="../../applications/modules/" title="Load Software with Modules" class="md-nav__link">
       Load Software with Modules
     </a>
   </li>
@@ -627,7 +507,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">
+    <a href="../../applications/easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">
       Toolchains and EasyBuild
     </a>
   </li>
@@ -663,7 +543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/" title="Overview" class="md-nav__link">
+    <a href="../" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -675,7 +555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/cesm/" title="CESM/CAM" class="md-nav__link">
+    <a href="../cesm/" title="CESM/CAM" class="md-nav__link">
       CESM/CAM
     </a>
   </li>
@@ -687,7 +567,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/conda/" title="Conda" class="md-nav__link">
+    <a href="../conda/" title="Conda" class="md-nav__link">
       Conda
     </a>
   </li>
@@ -699,7 +579,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+    <a href="../deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
       Deep Learning with GPUs
     </a>
   </li>
@@ -711,7 +591,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/gaussian/" title="Gaussian" class="md-nav__link">
+    <a href="../gaussian/" title="Gaussian" class="md-nav__link">
       Gaussian
     </a>
   </li>
@@ -723,7 +603,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+    <a href="../gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
       GPUs and CUDA
     </a>
   </li>
@@ -735,7 +615,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+    <a href="../jupyter/" title="Jupyter Notebooks" class="md-nav__link">
       Jupyter Notebooks
     </a>
   </li>
@@ -747,7 +627,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/matlab/" title="MATLAB" class="md-nav__link">
+    <a href="../matlab/" title="MATLAB" class="md-nav__link">
       MATLAB
     </a>
   </li>
@@ -759,7 +639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/r/" title="R" class="md-nav__link">
+    <a href="../r/" title="R" class="md-nav__link">
       R
     </a>
   </li>
@@ -771,7 +651,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/singularity/" title="Singularity" class="md-nav__link">
+    <a href="../singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -783,7 +663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/tmux/" title="tmux" class="md-nav__link">
+    <a href="../tmux/" title="tmux" class="md-nav__link">
       tmux
     </a>
   </li>
@@ -795,7 +675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/vasp/" title="VASP" class="md-nav__link">
+    <a href="../vasp/" title="VASP" class="md-nav__link">
       VASP
     </a>
   </li>
@@ -1221,16 +1101,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caveat-emptor" title="caveat emptor" class="md-nav__link">
-    caveat emptor
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#illegal-instruction-instructions" title="Illegal Instruction Instructions" class="md-nav__link">
-    Illegal Instruction Instructions
+  <a href="#1-set-up-environment" title="1. Set up Environment" class="md-nav__link">
+    1. Set up Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-directories-download-installers" title="2. Set up Directories, Download installers" class="md-nav__link">
+    2. Set up Directories, Download installers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-the-server-and-worker" title="3. Install the Server and Worker" class="md-nav__link">
+    3. Install the Server and Worker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configure-for-farnam" title="4. Configure for Farnam" class="md-nav__link">
+    4. Configure for Farnam
   </a>
   
 </li>
@@ -1241,62 +1142,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conventions" title="Conventions" class="md-nav__link">
-    Conventions
+  <a href="#run" title="Run" class="md-nav__link">
+    Run
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#local-install" title="Local Install" class="md-nav__link">
-    Local Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#autotools-configuremake" title="Autotools (configure/make)" class="md-nav__link">
-    Autotools (configure/make)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configure" title="configure" class="md-nav__link">
-    configure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-install" title="make install" class="md-nav__link">
-    make install
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cmake" title="CMake" class="md-nav__link">
-    CMake
+  <a href="#database-errors" title="Database errors" class="md-nav__link">
+    Database errors
   </a>
   
 </li>
@@ -1318,53 +1172,118 @@
               
                 
                 
-                <h1 id="build-software">Build Software</h1>
-<p>How to get software you need up and running on the clusters.</p>
-<h2 id="caveat-emptor"><em>caveat emptor</em></h2>
-<p>We recommend either use existing <a href="/clusters-at-yale/applications/modules">software modules</a>, <a href="/clusters-at-yale/guides/conda">Anaconda</a>, <a href="/clusters-at-yale/guides/singularity">Singularity</a>, or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.</p>
-<p>When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.</p>
-<p>Each of the cluster pages (see the <a href="/clusters-at-yale/clusters">clusters index</a> for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.</p>
-<h3 id="illegal-instruction-instructions">Illegal Instruction Instructions</h3>
-<p>You may find that software compiled on newer compute nodes will fail with the error <code>Illegal instruction (core dumped)</code>. This includes R/Python libraries that include code that compiles from source. To remedy this issue make sure to always either:</p>
-<ul>
-<li>Build or install software on the oldest available nodes (right now those are <a href="http://docs.ycrc.yale.edu/clusters-at-yale/clusters/farnam/#compute-node-configurations">m620 on Farnam</a> and <a href="http://docs.ycrc.yale.edu/clusters-at-yale/clusters/grace/#compute-node-configurations">nx360i on Grace</a>).</li>
-<li>Require that your jobs running the software in question request similar hardware to their build environment. If your software needs newer instructions using <code>avx2</code> as a constraint will probably work.</li>
-</ul>
-<p>Either way, you will want to control where your jobs run with <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">job constraints</a>.</p>
-<h2 id="conventions">Conventions</h2>
-<h3 id="local-install">Local Install</h3>
-<p>Because you don't have admin/root/sudo privileges on the clusters, you won't be able to use <code>sudo</code> and a package manager like <code>apt</code>, <code>yum</code>, etc.; You will need to adapt install instructions to allow for what is called a local or user install. If you prefer or require this method, you should create a singularity container image (see our <a href="/clusters-at-yale/guides/singularity/">Singularity guide</a>), then run it on the cluster.</p>
-<p>For things to work smoothly you will need to choose and stick with a prefix, or path to your installed applications and libraries. We recommend this be either in your home or project directory, something like <code>~/software</code> or <code>/path/to/project/software</code>. Make sure you have created it before continuing.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you choose a project directory prefix, it will be easier to share your applications with lab mates or other cluster users. Just make sure to use the true path (the one returned by <code>mydirectories</code>).</p>
-</div>
-<p>Once you've chosen a prefix you will want to add any directory with executables you want to run to your <code>PATH</code> environment variable, and any directores with libraries that your application(s) link to your <code>LD_LIBRARY_PATH</code> environment variable. Each of these tell your shell where to look when you call your application without specifying an absolute path to it. To set these variables permanently, add the following to the end of your <code>~/.bashrc</code> file:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># local installs</span>
-<span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+                <h1 id="cryosparcv2-on-farnam">cryoSPARCv2 on Farnam</h1>
+<p>Getting cryoSPARC set up and running on the YCRC clusters is something of a task. This guide is meant for intermediate/advanced users. If enought people can convince Structura bio (<a href="https://discuss.cryosparc.com/t/external-authentication-methods/2736">see ticket here</a>) to make cryoSPARC more cluster-friendly we could have a single instance running that you'd just log in to with your Yale credentials. Until then, venture below at your own peril.</p>
+<h2 id="install">Install</h2>
+<p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are gently modified from the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>. </p>
+<h3 id="1-set-up-environment">1. Set up Environment</h3>
+<p>First allocate an interactive job on a compute node to run the install on. </p>
+<div class="codehilite"><pre><span></span>srun --cpus-per-task <span class="m">2</span> --pty -p interactive bash
 </pre></div>
 
 
-<p>For the remainder of the guide we'll use the <code>$MY_PREFIX</code> variable to refer to the prefix. See below or your application's install instructions for exactly how to specify your prefix at build/install time.</p>
-<h3 id="dependencies">Dependencies</h3>
-<p>You will need to develop a build strategy that works for you and stay consistent. If you're happy using libraries and <a href="/clusters-at-yale/applications/easybuild/#toolchains">toolchains</a> that are already available on the cluster as dependencies (recommended), feel free to create <a href="/clusters-at-yale/applications/modules/#module-collections">module collections</a> that serve as your environments. If you prefer to completely build your own software tree, that is ok too. Whichever route you choose, try to stick with the same version of dependencies (e.g. MPI, zlib, numpy) and compiler you're using (e.g. GCC, intel). We find that unless absolutely necessary, the newest version of a compiler or library might not be the most compatible with a wide array of scientific software so you may want to step back a few versions or try using what was available at the time your application was being developed.</p>
-<h2 id="autotools-configuremake">Autotools (<code>configure</code>/<code>make</code>)</h2>
-<p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
-<h3 id="configure"><code>configure</code></h3>
-<p>If you are instructed to run <code>./configure</code> to generate a Makefile, specify your prefix with the <code>--prefix</code> option. This creates a file, usually named <code>Makefile</code> that is a recipe for <code>make</code> to use to build your application.</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
-./configure --prefix<span class="o">=</span><span class="nv">$MY_PREFIX</span>
+<p>Then, set the following environment variables to suit your install. We filled in some defaults for you.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># where to install cryosparc2 and its sample database</span>
+<span class="nv">install_path</span><span class="o">=</span><span class="k">$(</span> readlink -f <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project <span class="k">)</span>/software/cryosparc2
+
+<span class="c1"># the license ID you got from Structura</span>
+<span class="nv">license_id</span><span class="o">=</span>
+
+<span class="c1"># your email</span>
+<span class="nv">my_email</span><span class="o">=</span><span class="k">$(</span>head -n1 ~/.forward<span class="k">)</span>
+
+<span class="c1"># slurm partition to submit your cryosparc jobs to</span>
+<span class="c1"># not sure you can change at runtime?</span>
+<span class="nv">partition</span><span class="o">=</span>gpu
 </pre></div>
 
 
-<h3 id="make-install"><code>make install</code></h3>
-<p>If your configure ran properly, <code>make install</code> should properly place your application in your prefix directory. If there is no install target specified for your application, you can either run <code>make</code> and copy the application to your <code>$MY_PREFIX/bin</code> directory or build it somewhere in <code>$MY_PREFIX</code> and add its relevant paths to your <code>PATH</code> and/or <code>LD_LIBRARY_PATH</code> environment variables in your <code>~/.bashrc</code> file as shown in the <a href="#local-install">local install</a> section.</p>
-<h2 id="cmake">CMake</h2>
-<p><a href="https://en.wikipedia.org/wiki/CMake">CMake</a> is a popular cross-platform build system. On a linux system, CMake will create a <code>Makefile</code> in a step analogous to <code>./configure</code>. It is common to create a build directory then run the <code>cmake</code> and <code>make</code> commands from there. Below is what installing to your <code>$MY_DIRECTORY</code> prefix might look like with CMake. CMake instructions also tend to link together the build process onto on line with <code>&amp;&amp;</code>, which tells your shell to only continue to the next command if the previous one exited without error.</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
-mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$MY_PREFIX</span> .. <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+<h3 id="2-set-up-directories-download-installers">2. Set up Directories, Download installers</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># your username</span>
+<span class="nv">my_name</span><span class="o">=</span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+<span class="c1"># a temp password</span>
+<span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
+
+<span class="c1"># load the right CUDA</span>
+module load CUDA/9.0.176
+
+<span class="c1"># set up some more paths</span>
+<span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/database
+<span class="nv">worker_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
+<span class="nv">ssd_path</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/cryosparc2_cache
+
+<span class="c1"># go get the installers</span>
+mkdir -p <span class="nv">$install_path</span>
+<span class="nb">cd</span> <span class="nv">$install_path</span>
+curl -sL https://get.cryosparc.com/download/master-latest/<span class="nv">$license_id</span> &gt; cryosparc2_master.tar.gz
+curl -sL https://get.cryosparc.com/download/worker-latest/<span class="nv">$license_id</span> &gt; cryosparc2_worker.tar.gz
+
+tar -xf cryosparc2_master.tar.gz
+tar -xf cryosparc2_worker.tar.gz
+</pre></div>
+
+
+<h3 id="3-install-the-server-and-worker">3. Install the Server and Worker</h3>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_master
+./install.sh --license <span class="nv">$license_id</span> --hostname <span class="k">$(</span>hostname<span class="k">)</span> --dbpath <span class="nv">$db_path</span> --yes
+<span class="nb">source</span> ~/.bashrc
+
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
+./install.sh --license <span class="nv">$license_id</span> --cudapath <span class="nv">$CUDA_HOME</span> --yes
+<span class="nb">source</span> ~/.bashrc
+</pre></div>
+
+
+<h3 id="4-configure-for-farnam">4. Configure for Farnam</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Farnam cluster setup</span>
+mkdir -p <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs
+cat <span class="s">&lt;&lt; EOF &gt; cluster_info.json</span>
+<span class="s">{</span>
+<span class="s">    &quot;name&quot; : &quot;farnam&quot;,</span>
+<span class="s">    &quot;worker_bin_path&quot; : &quot;${install_path}/cryosparc2_worker/bin/cryosparcw&quot;,</span>
+<span class="s">    &quot;cache_path&quot; : &quot;/tmp/{{ cryosparc_username }}/cryosparc_cache&quot;,</span>
+<span class="s">    &quot;send_cmd_tpl&quot; : &quot;{{ command }}&quot;,</span>
+<span class="s">    &quot;qsub_cmd_tpl&quot; : &quot;sbatch {{ script_path_abs }}&quot;,</span>
+<span class="s">    &quot;qstat_cmd_tpl&quot; : &quot;squeue -j {{ cluster_job_id }}&quot;,</span>
+<span class="s">    &quot;qdel_cmd_tpl&quot; : &quot;scancel {{ cluster_job_id }}&quot;,</span>
+<span class="s">    &quot;qinfo_cmd_tpl&quot; : &quot;sinfo&quot;</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cat <span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
+<span class="s">#!/usr/bin/env bash</span>
+<span class="s">#SBATCH --job-name cryosparc_{{ project_uid }}_{{ job_uid }}</span>
+<span class="s">#SBATCH -c {{ num_cpu }}</span>
+<span class="s">#SBATCH --gres=gpu:{{ num_gpu }}</span>
+<span class="s">#SBATCH -p ${partition}</span>
+<span class="s">#SBATCH --mem={{ (ram_gb*1024)|int }}</span>
+<span class="s">#SBATCH -o {{ job_dir_abs }}</span>
+<span class="s">#SBATCH -e {{ job_dir_abs }}</span>
+
+<span class="s">module load CUDA/9.0.176</span>
+<span class="s">mkdir -p /tmp/${USER}/cryosparc2_cache</span>
+<span class="s">{{ run_cmd }}</span>
+<span class="s">EOF</span>
+</pre></div>
+
+
+<h2 id="run">Run</h2>
+<div class="codehilite"><pre><span></span>srun --cpus-per-task <span class="m">2</span> --pty -p interactive bash
+<span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span> <span class="nv">$base_dir</span>/config.sh
+<span class="nb">source</span> <span class="nv">$base_dir</span>/config.sh
+cryosparcm start
+cryosparcm status
+
+<span class="c1"># run the output from the following command on your local linux/mac machine</span>
+<span class="nb">echo</span> <span class="s2">&quot;ssh -N -L </span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2">:</span><span class="nv">$master_host</span><span class="s2">:</span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">@farnam.hpc.yale.edu&quot;</span>
+</pre></div>
+
+
+<h2 id="database-errors">Database errors</h2>
+<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
 </pre></div>
                 
                   
@@ -1382,41 +1301,6 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Overview
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../modules/" title="Load Software with Modules" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Load Software with Modules
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
