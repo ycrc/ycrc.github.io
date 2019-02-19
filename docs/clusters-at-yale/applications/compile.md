@@ -4,11 +4,20 @@ How to get software you need up and running on the clusters.
 
 ## *caveat emptor*
 
-We usually recommend either use existing [software modules](/clusters-at-yale/applications/modules), [Anaconda](/clusters-at-yale/guides/conda), [Singularity](/clusters-at-yale/guides/singularity), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
+We recommend either use existing [software modules](/clusters-at-yale/applications/modules), [Anaconda](/clusters-at-yale/guides/conda), [Singularity](/clusters-at-yale/guides/singularity), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
 
 When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.
 
 Each of the cluster pages (see the [clusters index](/clusters-at-yale/clusters) for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.
+
+### Illegal Instruction Instructions
+
+You may find that software compiled on newer compute nodes will fail with the error `Illegal instruction (core dumped)`. This includes R/Python libraries that include code that compiles from source. To remedy this issue make sure to always either:
+
+* Build or install software on the oldest available nodes (right now those are [m620 on Farnam](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/farnam/#compute-node-configurations) and [nx360i on Grace](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/grace/#compute-node-configurations)).
+* Require that your jobs running the software in question request similar hardware to their build environment. If your software needs newer instructions using `avx2` as a constraint will probably work.
+
+Either way, you will want to control where your jobs run with [job constraints](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints).
 
 ## Conventions
 
