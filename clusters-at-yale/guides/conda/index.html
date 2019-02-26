@@ -1443,7 +1443,7 @@
                 
                 
                 <h1 id="conda">Conda</h1>
-<p>For researchers who have Python package requirements beyond the most common packages (Numpy, Scipy, Pandas), we recommend using <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda Python</a>. Using Anaconda's <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python libraries and applications for different projects.</p>
+<p>For researchers who have Python or R package requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a>. Using Anaconda's <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python or R libraries and applications for different projects.</p>
 <p>Many other software applications have also started to use Conda as a package manager. It has become a popular choice for managing pipelines that involve several tools, especially with multiple languages.</p>
 <h2 id="the-miniconda-module">The Miniconda Module</h2>
 <p>For your convenience, we provide a relatively recent version of <a href="https://conda.io/miniconda.html">Miniconda</a> (a minimal set of Anaconda libraries) as a module. It serves to bootstrap your personal environments. By using this module, you do not need to download your own copy of Conda, which will prevent unnecessary file and storage usage in your directories.</p>
@@ -1460,8 +1460,8 @@ module load miniconda
 
 <p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/clusters-at-yale/applications/modules">module documentation</a> for more details.</p>
 <h3 id="install-to-your-project-directory">Install to Your Project Directory</h3>
-<p>Conda will look in the directory/directories specified in the environment variable <code>CONDA_ENVS_PATH</code> for places to find and install environments. If you want your environments stored in a directory where your quotas are higher, for example, <code>~/project/conda_envs</code>, you would need to set this variable to something like. We set this by default for you on Farnam and Ruddle.</p>
-<p>To match this behavior on Grace:</p>
+<p>Conda will look in the directory/directories specified in the environment variable <code>CONDA_ENVS_PATH</code> for places to find and install environments. If you want your environments stored in a directory where your quotas are higher, for example, <code>~/project/conda_envs</code>, you would need to set this variable to something like. We set this by default for you on Grace, Farnam and Ruddle.</p>
+<p>To match this behavior on Milgram:</p>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export CONDA_ENVS_PATH=~/project/conda_envs:</span><span class="nv">$CONDA_ENVS_PATH</span><span class="s2">&quot;</span> &gt;&gt; ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
 </pre></div>
@@ -1469,7 +1469,7 @@ module load miniconda
 
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
 <p>To create an environment (saved to the first location in <code>$CONDA_ENVS_PATH</code> or to <code>~/.conda/envs</code>) use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. You should give your environments names that are meaningful to you, so you can more easily keep track of which serves which project or purpose. You can also use environments manage groups of packages that have conflicting prerequisites.</p>
-<p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable, we also recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
+<p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable for Python, we also recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For added reproducibility and control, specify versions of packages to be installed using <code>conda</code> with <code>packagename=version</code> syntax. E.g. <code>numpy=1.14</code></p>
