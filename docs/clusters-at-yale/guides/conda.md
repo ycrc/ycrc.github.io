@@ -1,6 +1,6 @@
 # Conda
 
-For researchers who have Python package requirements beyond the most common packages (Numpy, Scipy, Pandas), we recommend using [Anaconda Python](https://www.anaconda.com/what-is-anaconda/). Using Anaconda's [Conda](https://conda.io/projects/conda/en/latest/index.html) package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python libraries and applications for different projects.
+For researchers who have Python or R package requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using [Anaconda](https://www.anaconda.com/what-is-anaconda/). Using Anaconda's [Conda](https://conda.io/projects/conda/en/latest/index.html) package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python or R libraries and applications for different projects.
 
 Many other software applications have also started to use Conda as a package manager. It has become a popular choice for managing pipelines that involve several tools, especially with multiple languages.
 
@@ -26,9 +26,9 @@ You can save this to your default module collection by using `module save`. See 
 
 ### Install to Your Project Directory
 
-Conda will look in the directory/directories specified in the environment variable `CONDA_ENVS_PATH` for places to find and install environments. If you want your environments stored in a directory where your quotas are higher, for example, `~/project/conda_envs`, you would need to set this variable to something like. We set this by default for you on Farnam and Ruddle.
+Conda will look in the directory/directories specified in the environment variable `CONDA_ENVS_PATH` for places to find and install environments. If you want your environments stored in a directory where your quotas are higher, for example, `~/project/conda_envs`, you would need to set this variable to something like. We set this by default for you on Grace, Farnam and Ruddle.
 
-To match this behavior on Grace:
+To match this behavior on Milgram:
 
 ``` bash
 echo "export CONDA_ENVS_PATH=~/project/conda_envs:$CONDA_ENVS_PATH" >> ~/.bashrc
@@ -39,7 +39,7 @@ source ~/.bashrc
 
 To create an environment (saved to the first location in `$CONDA_ENVS_PATH` or to `~/.conda/envs`) use the [`conda create`](https://docs.conda.io/projects/conda/en/latest/commands/create.html) command. You should give your environments names that are meaningful to you, so you can more easily keep track of which serves which project or purpose. You can also use environments manage groups of packages that have conflicting prerequisites.
 
-Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable, we also recommend against heavily mixing the use of `conda` and `pip` to install applications. If needed, try to get as much installed with `conda`, then use `pip` to get the rest of the way to your desired environment.
+Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable for Python, we also recommend against heavily mixing the use of `conda` and `pip` to install applications. If needed, try to get as much installed with `conda`, then use `pip` to get the rest of the way to your desired environment.
 
 !!! tip
     For added reproducibility and control, specify versions of packages to be installed using `conda` with `packagename=version` syntax. E.g. `numpy=1.14`
