@@ -37,7 +37,7 @@ module avail cuda
 
 ## Drivers
 
-The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are as follows ([borrowed from this post](https://stackoverflow.com/questions/30820513/what-is-version-of-cuda-for-nvidia-304-125/30820690#30820690)):
+The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are as follows ([borrowed from this nvidia developer site](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)):
 
 ```
 CUDA 10.0: 410.48
