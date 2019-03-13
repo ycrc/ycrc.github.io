@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/parallel/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>VNC - Yale Center for Research Computing</title>
+        <title>GNU Parallel - Yale Center for Research Computing</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#vnc" tabindex="1" class="md-skip">
+      <a href="#gnu-parallel" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -136,7 +136,7 @@
                 </a>
               </span>
               <span class="md-header-nav__topic">
-                VNC
+                GNU Parallel
               </span>
             
           
@@ -214,11 +214,9 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 <!-- Tabs with outline -->
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
@@ -231,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link">
           Support
         </a>
       
@@ -270,12 +268,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       Support
@@ -303,12 +299,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2">
     
     <label class="md-nav__link" for="nav-1-2">
       Clusters at Yale
@@ -360,12 +354,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
     
     <label class="md-nav__link" for="nav-1-2-4">
       Access the Clusters
@@ -383,7 +375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Log on to the Clusters" class="md-nav__link">
+    <a href="../../access/" title="Log on to the Clusters" class="md-nav__link">
       Log on to the Clusters
     </a>
   </li>
@@ -395,7 +387,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">
+    <a href="../../access/vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">
       Access from Off Campus (VPN)
     </a>
   </li>
@@ -407,7 +399,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
+    <a href="../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
       Graphical Interfaces (X11)
     </a>
   </li>
@@ -417,83 +409,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        VNC
-      </label>
-    
-    <a href="./" title="VNC" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../access/vnc/" title="VNC" class="md-nav__link">
       VNC
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setup-vncserver-on-a-cluster" title="Setup vncserver on a Cluster" class="md-nav__link">
-    Setup vncserver on a Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-from-your-local-machine-laptopdesktop" title="Connect from your local machine (laptop/desktop)" class="md-nav__link">
-    Connect from your local machine (laptop/desktop)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macoslinux" title="macOs/Linux" class="md-nav__link">
-    macOs/Linux
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" title="Windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clean-up" title="Clean Up" class="md-nav__link">
-    Clean Up
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -503,7 +423,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mfa/" title="Multi-factor Authentication" class="md-nav__link">
+    <a href="../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
       Multi-factor Authentication
     </a>
   </li>
@@ -515,7 +435,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sample-config/" title="Example .ssh/config" class="md-nav__link">
+    <a href="../../access/sample-config/" title="Example .ssh/config" class="md-nav__link">
       Example .ssh/config
     </a>
   </li>
@@ -623,7 +543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/" title="Overview" class="md-nav__link">
+    <a href="../" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -635,7 +555,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/cesm/" title="CESM/CAM" class="md-nav__link">
+    <a href="../cesm/" title="CESM/CAM" class="md-nav__link">
       CESM/CAM
     </a>
   </li>
@@ -647,7 +567,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/conda/" title="Conda" class="md-nav__link">
+    <a href="../conda/" title="Conda" class="md-nav__link">
       Conda
     </a>
   </li>
@@ -659,7 +579,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
+    <a href="../deep-learning-gpus/" title="Deep Learning with GPUs" class="md-nav__link">
       Deep Learning with GPUs
     </a>
   </li>
@@ -671,7 +591,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/gaussian/" title="Gaussian" class="md-nav__link">
+    <a href="../gaussian/" title="Gaussian" class="md-nav__link">
       Gaussian
     </a>
   </li>
@@ -683,7 +603,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+    <a href="../gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
       GPUs and CUDA
     </a>
   </li>
@@ -695,7 +615,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+    <a href="../jupyter/" title="Jupyter Notebooks" class="md-nav__link">
       Jupyter Notebooks
     </a>
   </li>
@@ -707,7 +627,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/matlab/" title="MATLAB" class="md-nav__link">
+    <a href="../matlab/" title="MATLAB" class="md-nav__link">
       MATLAB
     </a>
   </li>
@@ -719,7 +639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/r/" title="R" class="md-nav__link">
+    <a href="../r/" title="R" class="md-nav__link">
       R
     </a>
   </li>
@@ -731,7 +651,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/singularity/" title="Singularity" class="md-nav__link">
+    <a href="../singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -743,7 +663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/tmux/" title="tmux" class="md-nav__link">
+    <a href="../tmux/" title="tmux" class="md-nav__link">
       tmux
     </a>
   </li>
@@ -755,7 +675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/vasp/" title="VASP" class="md-nav__link">
+    <a href="../vasp/" title="VASP" class="md-nav__link">
       VASP
     </a>
   </li>
@@ -1181,30 +1101,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-vncserver-on-a-cluster" title="Setup vncserver on a Cluster" class="md-nav__link">
-    Setup vncserver on a Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-from-your-local-machine-laptopdesktop" title="Connect from your local machine (laptop/desktop)" class="md-nav__link">
-    Connect from your local machine (laptop/desktop)
+  <a href="#basic-examples" title="Basic Examples" class="md-nav__link">
+    Basic Examples
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macoslinux" title="macOs/Linux" class="md-nav__link">
-    macOs/Linux
+  <a href="#loop" title="Loop" class="md-nav__link">
+    Loop
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows" title="Windows" class="md-nav__link">
-    Windows
+  <a href="#nested-loop" title="Nested Loop" class="md-nav__link">
+    Nested Loop
   </a>
   
 </li>
@@ -1215,9 +1128,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clean-up" title="Clean Up" class="md-nav__link">
-    Clean Up
+  <a href="#advanced-examples" title="Advanced Examples" class="md-nav__link">
+    Advanced Examples
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#md5sum" title="md5sum" class="md-nav__link">
+    md5sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-sweep" title="Parameter Sweep" class="md-nav__link">
+    Parameter Sweep
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1238,78 +1171,101 @@
               
                 
                 
-                <h1 id="vnc">VNC</h1>
-<p>As an alternative to X11 Forwarding, using VNC to access the cluster is another way to run graphically intensive applications.</p>
-<h2 id="setup-vncserver-on-a-cluster">Setup vncserver on a Cluster</h2>
-<ol>
-<li>
-<p>Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, <code>ssh -Y netid@cluster</code>, or if on Windows, follow our <a href="/clusters-at-yale/access/x11">X11 forwarding guide</a>.</p>
-</li>
-<li>
-<p>Start an interactive job on cluster with the <code>--x11</code> flag (see <a href="/clusters-at-yale/job-scheduling">Slurm</a> for more information). For this description, we’ll assume you were given node c04n03:</p>
-</li>
-</ol>
-<div class="codehilite"><pre><span></span>srun --pty --x11 -p interactive bash
+                <h1 id="gnu-parallel">GNU Parallel</h1>
+<p><a href="https://www.gnu.org/software/parallel/">GNU Parallel</a> a simple but powerful way to run independent tasks in parallel.  Although it is possible to run on multiple nodes, it is simplest to run on multiple cpus of a single node, and that is what we will consider here.  Note that what is presented here just scratches the surface of what parallel can do.</p>
+<h2 id="basic-examples">Basic Examples</h2>
+<h3 id="loop">Loop</h3>
+<p>Let's parallelize the following bash loop that prints the letters <code>a</code> through <code>f</code> using bash's <a href="https://www.gnu.org/software/bash/manual/bashref.html#Brace-Expansion">brace expansion</a>:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> letter in <span class="o">{</span>a..f<span class="o">}</span><span class="p">;</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$letter</span>
+<span class="k">done</span>
 </pre></div>
 
 
-<ol>
-<li>On that node, run the VNCserver. You’ll see something like:</li>
-</ol>
-<div class="codehilite"><pre><span></span>c04n03$ vncserver
-
-New <span class="s1">&#39;c31n02.grace.hpc.yale.internal:1 (kln26)&#39;</span> desktop is c31n02.grace.hpc.yale.internal:1
-
-Creating default startup script /home/fas/hpcprog/kln26/.vnc/xstartup
-Starting applications specified in /home/fas/hpcprog/kln26/.vnc/xstartup
-Log file is /home/fas/hpcprog/kln26/.vnc/c31n02.grace.hpc.yale.internal:1.log
+<p>... which produces the following output:</p>
+<div class="codehilite"><pre><span></span>a
+b
+c
+d
+e
+f
 </pre></div>
 
 
-<p>The :1 means that your DISPLAY is :1. You’ll need that later, so note it. The first time you run "vncserver", you’ll also be asked to select a password for allowing access.</p>
-<p>On MacOS, if connecting with TurboVNC throws a security exception such as "javax.net.ssl.SSLHandshakeException", try adding the SecurityTypes option when starting vncserver on the cluster:</p>
-<div class="codehilite"><pre><span></span>vncserver -SecurityTypes VNC,OTP,UnixLogin,None
+<p>To achieve the same result, <code>parallel</code> starts some number of workers and then runs tasks on them.  The number of workers and tasks need not be the same. You specify the number of workers with <code>-j</code>. The tasks can be generated with a list of arguments specified after the separator <code>:::</code>. For parallel to perform well, you should allocate at least the same number of CPUs as workers with the slurm option <code>--cpus-per-task</code> or more simply <code>-c</code>.</p>
+<div class="codehilite"><pre><span></span>srun --pty -p interactive -c <span class="m">4</span> bash
+module load parallel
+parallel -j <span class="m">4</span> <span class="s2">&quot;echo {}&quot;</span> ::: <span class="o">{</span>a..f<span class="o">}</span>
 </pre></div>
 
 
-<h2 id="connect-from-your-local-machine-laptopdesktop">Connect from your local machine (laptop/desktop)</h2>
-<h3 id="macoslinux">macOs/Linux</h3>
-<p>From a shell on your local machine, run the following ssh command:</p>
-<div class="codehilite"><pre><span></span>ssh -Y -L7777:c04n03:5901 YourNetID@cluster_login_node
+<p>This runs four workers that each run <code>echo</code>, filling in the argument <code>{}</code> with the next item in the list. This produces the output:</p>
+<h3 id="nested-loop">Nested Loop</h3>
+<p>Let's parallelize the following nested bash loop.</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> letter in <span class="o">{</span>a..c<span class="o">}</span>
+<span class="k">do</span>
+    <span class="k">for</span> number in <span class="o">{</span><span class="m">1</span>..7..2<span class="o">}</span>
+    <span class="k">do</span>
+        <span class="nb">echo</span> <span class="nv">$letter</span> <span class="nv">$number</span>
+    <span class="k">done</span>
+<span class="k">done</span>
 </pre></div>
 
 
-<p>This will set up a tunnel from your local port 7777 to port 5901 on c04n03. You will need to customize this command to your situation. The 5901 is for display :1. In general, you should put 5900+DISPLAY. The 7777 is arbitrary; any number above 3000 will likely work. You’ll need the number you chose for the next step.</p>
-<p>On your local machine, start the vncviewer application. Depending on your local operating system, you may need to install this. We recommend TurboVNC for Mac.</p>
-<p>When you start the viewer, you’ll need to tell it which host and port to attach to. You want to specify the local end of the tunnel. In the above case, that would be localhost::7777. Exactly how you specify this will depend a bit on which viewer you use. E.g:</p>
-<div class="codehilite"><pre><span></span>vncviewer localhost::7777
+<p>... which produces the following output:</p>
+<div class="codehilite"><pre><span></span>a <span class="m">1</span>
+a <span class="m">2</span>
+a <span class="m">3</span>
+b <span class="m">1</span>
+b <span class="m">2</span>
+b <span class="m">3</span>
+c <span class="m">1</span>
+c <span class="m">2</span>
+c <span class="m">3</span>
 </pre></div>
 
 
-<p>You should be prompted for the password you set when you started the server.</p>
-<p>Now you are in a GUI environment and can run IGV or any other rich GUI application.</p>
-<div class="codehilite"><pre><span></span>/home/bioinfo/software/IGV/IGV_2.2.0/igv.sh
+<p>You can use the <code>:::</code> separator with <code>parallel</code> to specify multiple lists of parameters you would like to iterate over. Then you can refer to them by one-based index, e.g. list one is <code>{1}</code>. Using these, you can ask parallel to execute combinations of parameters. Here is a way to recreate the result of the serial bash loop above:</p>
+<div class="codehilite"><pre><span></span>parallel -j <span class="m">4</span> <span class="s2">&quot;echo {1} {2}&quot;</span> ::: <span class="o">{</span>a..c<span class="o">}</span> ::: <span class="o">{</span><span class="m">1</span>..3<span class="o">}</span>
 </pre></div>
 
 
-<h3 id="windows">Windows</h3>
-<p>In MobaXterm, create a new Session (available in the menu bar) and then select the VNC session.</p>
-<p>To fill out the VNC Session setup, click the "Network settings" tab and check the box for "Connect through SSH gateway (jump host). Then fill out the boxes as follows:</p>
-<ul>
-<li>Remote hostname or IP Address: name of the node running your VNC server (e.g. c01n01)</li>
-<li>Port: 5900 + the <code>DISPLAY</code> number from above (e.g. 5901 for <code>DISPLAY = 1</code>)</li>
-<li>Gateway SSH server: ssh address of the cluster (e.g. grace.hpc.yale.edu)</li>
-<li>Port: 22 (should be default)</li>
-<li>User: netid</li>
-<li>Use private key: check this box and click to point to your private key file you use to connect to the cluster</li>
-</ul>
-<p>When you are done, click OK. If promoted for a password for "localhost", provide the vncserver password you specified in the previous step.</p>
-<p>If the VNC server looks very pixelated and your mouse movements seem laggy, try clicking the "Toggle scaling" button at the top of the VNC window.</p>
-<p>Example Configuration:</p>
-<p><img alt="VPN with MFA." class="large" src="/img/moba-vnc.png" /></p>
-<h2 id="clean-up">Clean Up</h2>
-<p>When you are all finished, you can kill the vncserver by doing this in the same shell you used to start it (replace :1 by your display number):</p>
-<div class="codehilite"><pre><span></span>vncserver -kill :1
+<h2 id="advanced-examples">Advanced Examples</h2>
+<h3 id="md5sum"><code>md5sum</code></h3>
+<p>You have a number of files scattered throughout a directory tree.  Their names end with fastq.gz, e.g. d1/d3/sample3.fastq.gz.  You'd like to run md5sum on each, and put the output in a file in the same directory, with a filename ending with .md5sum, e.g. d1/d3/sample3.md5sum.
+Here is a script that will do that in parallel, using 16 cpus on one node of the cluster:</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -c 16</span>
+
+module load parallel
+parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> --plus <span class="s2">&quot;echo {}; md5sum {} &gt; {/fastq.gz/md5sum.new}&quot;</span> ::: <span class="k">$(</span>find . -name <span class="s2">&quot;*.fastq.gz&quot;</span> -print<span class="k">)</span>
+</pre></div>
+
+
+<p>The <code>$(find . -name "*.fastq.gz" -print)</code> portion of the command returns all of the files of interest. They will be plugged into the {} in the md5sum command. <code>{/fastq.gz/md5sum.new}</code> does a string replacement on the filename, producing the desired output filename.  String
+replacement requires the --plus flag to parallel, which enables a number of powerful string manipulation features. Finally, we pass <code>-j ${SLURM_CPUS_PER_TASK}</code> so that parallel will use all of the allocated cpus, however many there are.</p>
+<h3 id="parameter-sweep">Parameter Sweep</h3>
+<p>You want to run a simulation program that takes a number of input parameters, and you want to sample a variety of values for each parameter.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -c 16</span>
+module load parallel
+parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> simulate <span class="o">{</span><span class="m">1</span><span class="o">}</span> <span class="o">{</span><span class="m">2</span><span class="o">}</span> <span class="o">{</span><span class="m">3</span><span class="o">}</span> ::: <span class="o">{</span><span class="m">1</span>..5<span class="o">}</span> ::: <span class="m">2</span> <span class="m">16</span> ::: <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span>
+</pre></div>
+
+
+<p>This will run 100 jobs, each with parameters that vary as :</p>
+<div class="codehilite"><pre><span></span>simulate <span class="m">1</span> <span class="m">2</span> <span class="m">5</span>
+simulate <span class="m">1</span> <span class="m">2</span> <span class="m">10</span>
+simulate <span class="m">1</span> <span class="m">2</span> <span class="m">15</span>
+...
+simulate <span class="m">5</span> <span class="m">16</span> <span class="m">45</span>
+simulate <span class="m">5</span> <span class="m">16</span> <span class="m">50</span>
+</pre></div>
+
+
+<p>If <code>simulate</code> doesn't create unique output based on parameters, you can use redirection so you can review results from each task. You'll need to use quotes so that the &gt; is seen as part of the command:</p>
+<div class="codehilite"><pre><span></span>parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> <span class="s2">&quot;simulate {1} {2} {3} &gt; results_{1}_{2}_{3}.out&quot;</span> ::: <span class="k">$(</span>seq <span class="m">1</span> <span class="m">5</span><span class="k">)</span> ::: <span class="m">2</span> <span class="m">16</span> ::: <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span>
 </pre></div>
                 
                   
@@ -1327,41 +1283,6 @@ Log file is /home/fas/hpcprog/kln26/.vnc/c31n02.grace.hpc.yale.internal:1.log
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../x11/" title="Graphical Interfaces (X11)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Graphical Interfaces (X11)
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../mfa/" title="Multi-factor Authentication" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Multi-factor Authentication
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
