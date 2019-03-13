@@ -59,7 +59,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 
 ## Storage
 
-`/gpfs/loomis` is Omega's primary filesystem where home, scratch, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
+`/gpfs/loomis` is Omega's primary filesystem where home, and scratch60 directories are located. You can also access Grace's project space (if you have a Grace account) from Omega. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
 
 You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
@@ -69,5 +69,4 @@ You can check your current storage usage & limits by running the `getquota` comm
 |Partition  | Root Directory                | Storage     | File Count | Backups |
 |-----------|-------------------------------|-------------|------------|---------|
 | home      | `/gpfs/loomis/home.omega`     | 300G/group  | 500,000    | Yes     |
-| scratch   | `/gpfs/loomis/scratch.omega`  | 3T/group    | 5,000,000  | No      |
 | scratch60 | `/gpfs/loomis/scratch60`      | 20T/group   | 5,000,000  | No      |
