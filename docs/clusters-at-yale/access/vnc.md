@@ -4,17 +4,17 @@ As an alternative to X11 Forwarding, using VNC to access the cluster is anothe
 
 ## Setup vncserver on a Cluster
 
-1.  Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, `ssh -Y netid@cluster`, or if on Windows, follow our [X11 forwarding guide](/clusters-at-yale/access/x11).
+1. Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, `ssh -Y netid@cluster`, or if on Windows, follow our [X11 forwarding guide](/clusters-at-yale/access/x11).
 
-1.  Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling) for more information). For this description, we’ll assume you were given node c04n03:
+1. Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling) for more information). For this description, we’ll assume you were given node c04n03:
 
-```
+``` bash
 srun --pty --x11 -p interactive bash
 ```
 
 1.  On that node, run the VNCserver. You’ll see something like:
 
-```
+``` bash
 c04n03$ vncserver
 
 New 'c31n02.grace.hpc.yale.internal:1 (kln26)' desktop is c31n02.grace.hpc.yale.internal:1
@@ -25,6 +25,12 @@ Log file is /home/fas/hpcprog/kln26/.vnc/c31n02.grace.hpc.yale.internal:1.log
 ```
 
 The :1 means that your DISPLAY is :1\. You’ll need that later, so note it. The first time you run "vncserver", you’ll also be asked to select a password for allowing access.
+
+On MacOS, if connecting with TurboVNC throws a security exception such as "javax.net.ssl.SSLHandshakeException", try adding the SecurityTypes option when starting vncserver on the cluster:
+
+``` bash
+vncserver -SecurityTypes VNC,OTP,UnixLogin,None
+```
 
 ## Connect from your local machine (laptop/desktop)
 
