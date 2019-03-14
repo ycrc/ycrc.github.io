@@ -1284,7 +1284,7 @@
 <p>Farnam is a shared-use resource for the <a href="https://medicine.yale.edu">Yale School of Medicine</a> (YSM). It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.</p>
 <hr />
 <h2 id="hardware">Hardware</h2>
-<p>Farnam is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs.</p>
+<p>Farnam is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the <code>--gres</code> flag, e.g. <code>--gres=gpu:gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node. See the <a href="clusters-at-yale/job-scheduling/resource-requests/#request-gpus">Request Compute Resources page</a> for more info.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
@@ -1337,7 +1337,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2660 v3</td>
 <td>20</td>
 <td>121G</td>
-<td>2x K80 (2GPUs/K80)</td>
+<td>2x k80 (2GPUs/k80)</td>
 <td>haswell, v3, sse4_2, avx, avx2, E5-2660_v3</td>
 </tr>
 <tr>
@@ -1355,7 +1355,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2660 v4</td>
 <td>28</td>
 <td>246G</td>
-<td>2x P100</td>
+<td>2x p100</td>
 <td>broadwell, v4, sse4_2, avx, avx2, E5-2660_v4</td>
 </tr>
 <tr>
@@ -1382,7 +1382,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2623 v4</td>
 <td>8</td>
 <td>58G</td>
-<td>4x 1080Ti</td>
+<td>4x gtx1080ti</td>
 <td>broadwell, v4, sse4_2, avx, avx2, E5-2623_v4</td>
 </tr>
 <tr>
@@ -1391,7 +1391,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2637 v4</td>
 <td>8</td>
 <td>121G</td>
-<td>4x 1080Ti</td>
+<td>4x gtx1080ti</td>
 <td>broadwell, v4, sse4_2, avx, avx2, E5-2637_v4</td>
 </tr>
 <tr>
@@ -1400,7 +1400,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2637 v4</td>
 <td>8</td>
 <td>121G</td>
-<td>4x TITAN V</td>
+<td>4x titanv</td>
 <td>broadwell, v4, sse4_2, avx, avx2, E5-2637_v4</td>
 </tr>
 <tr>
@@ -1465,14 +1465,14 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td></td>
 <td>1 job</td>
 <td>10min/2hr</td>
-<td>GPX XT4 1080Ti (1)</td>
+<td>GPX XT4 gtx1080ti (1)</td>
 </tr>
 <tr>
 <td>gpu</td>
 <td></td>
 <td>32 CPUs, 256 G RAM</td>
 <td>1d/2d</td>
-<td>nx360h K80 (2), GPX XT4 1080Ti (10)</td>
+<td>nx360h k80 (2), GPX XT4 gtx1080ti (10)</td>
 </tr>
 <tr>
 <td>scavenge</td>
@@ -1503,7 +1503,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <tr>
 <td>pi_cryoem</td>
 <td>1d/∞</td>
-<td>GPX XT4 1080Ti (10)</td>
+<td>GPX XT4 gtx1080ti (10)</td>
 </tr>
 <tr>
 <td>pi_deng</td>
@@ -1518,7 +1518,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <tr>
 <td>pi_gerstein_gpu</td>
 <td>1d/14d</td>
-<td>nx360h K80 (3), nx360b P100 (2), GPX XT4 TITAN V (1)</td>
+<td>nx360h k80 (3), nx360b p100 (2), GPX XT4 titanv (1)</td>
 </tr>
 <tr>
 <td>pi_gruen</td>
