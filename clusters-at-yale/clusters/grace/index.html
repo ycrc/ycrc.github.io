@@ -1270,7 +1270,7 @@
 <p>Grace is a shared-use resource for the <a href="https://fas.yale.edu">Faculty of Arts and Sciences</a> (FAS). It consists of a variety of compute nodes networked over low-latency InfiniBand and mounts several shared filesystems.</p>
 <hr />
 <h2 id="hardware">Hardware</h2>
-<p>Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs.</p>
+<p>Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the <code>--gres</code> flag, e.g. <code>--gres=gpu:p100:1</code> would request one Tesla P100 GPU per node. See the <a href="clusters-at-yale/job-scheduling/resource-requests/#request-gpus">Request Compute Resources page</a> for more info.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
@@ -1422,7 +1422,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>2x E5-2637 v4</td>
 <td>8</td>
 <td>121G</td>
-<td>4x 1080ti</td>
+<td>4x gtx1080ti</td>
 <td>broadwell, v4, sse4_2, avx, avx2, E5-2637_v4</td>
 </tr>
 <tr>
@@ -1586,7 +1586,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <tr>
 <td>pi_hammes_schiffer</td>
 <td>1d/28d</td>
-<td>sd530 (17), GPX XT4 1080ti (1)</td>
+<td>sd530 (17), GPX XT4 gtx1080ti (1)</td>
 </tr>
 <tr>
 <td>pi_holland</td>
