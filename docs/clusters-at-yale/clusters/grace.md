@@ -10,7 +10,7 @@ Grace is a shared-use resource for the [Faculty of Arts and Sciences](https://fa
 
 ## Hardware
 
-Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs.
+Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
 
 !!! Warning
     Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
@@ -34,7 +34,7 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 | 1     | IBM x3850i             | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, v2, sse4_2, avx, E7-4820_v2       |
 | 1     | Lenovo x3850h          | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, v3, sse4_2, avx, avx2, E7-4809_v3   |
 | 4     | Lenovo x3850b          | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, v4, sse4_2, avx, avx2, E7-4820_v4 |
-| 1     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x 1080ti          | broadwell, v4, sse4_2, avx, avx2, E5-2637_v4 |
+| 1     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, v4, sse4_2, avx, avx2, E5-2637_v4 |
 | 9     | Penguin XE2118GT       | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, sse4_2, avx, avx2, avx512, 6136     |
 
 ## Slurm Partitions
@@ -79,7 +79,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_gelernter        | 1d/28d               | nx360b (1)                                 |
 | pi_gerstein         | 1d/28d               | x3850i (1), nx360h (32)                    |
 | pi_glahn            | 1d/100d              | nx360h (1)                                 |
-| pi_hammes_schiffer  | 1d/28d               | sd530 (17), GPX XT4 1080ti (1)             |
+| pi_hammes_schiffer  | 1d/28d               | sd530 (17), GPX XT4 gtx1080ti (1)          |
 | pi_holland          | 1d/28d               | nx360h (2)                                 |
 | pi_jetz             | 1d/28d               | nx360b (2)                                 |
 | pi_kaminski         | 1d/28d               | nx360h (8)                                 |
