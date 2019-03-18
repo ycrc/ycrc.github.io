@@ -68,7 +68,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_gerstein_gpu | 1d/14d               | nx360h k80 (3), nx360b p100 (2), GPX XT4 titanv (1)  |
 | pi_gruen        | 1d/14d               | nx360b (1)                                           |
 | pi_jadi         | 1d/14d               | nx360b (2)                                           |
-| pi_kleinstein   | 1d/14d               | m915 (1), nx360b (3)                                 |
+| pi_kleinstein   | 1d/14d               | m915 (1), nx360h (3)                                 |
 | pi_krauthammer  | 1d/14d               | nx360h (1)                                           |
 | pi_ma           | 1d/14d               | nx360h (2)                                           |
 | pi_ohern        | 1d/14d               | m620 (6), nx360h (3)                                 |
