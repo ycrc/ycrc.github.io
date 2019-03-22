@@ -28,13 +28,13 @@ module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample1000 --rg SM:sa
 
 Load Dead Simple Queue onto your path with:
 
-On Farnam or Ruddle:
+On Farnam, Milgram Ruddle:
 
 ```
 module load dSQ
 ```
 
-On Grace, Omega or Milgram:
+On Grace or Omega:
 
 ```
 module load Tools/dSQ
