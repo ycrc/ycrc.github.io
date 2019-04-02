@@ -28,7 +28,10 @@ For the most predictable performance for hybrid codes, you will need to use all 
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specifc documentation regarding the node configurations that include gpus. In order for your job to be able to access gpus, you must request them as a slurm "Generic Resource" or gres. You spcify the gres configuration per-node for a job with the `--gres` flag, optionally a type of resource, and a number of gpus. For example, to request one nvidia p100 for each node in your job, you would use the flag `--gres=gpu:p100:1`. In cases where there are multiple gpus on a node, it is often a good idea to also specify the `--gres-flags=enforce-binding` flag, which tells slurm to force CPU(s) your job is allocated to share a PCIe Host Bridge with the GPU(s). Depending on your application, this can lead to improved performance, especially in transferring data to and from the GPU.
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specifc documentation regarding the node configurations that include gpus. In order for your job to be able to access gpus, you must request them as a slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of gpus. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a p100 for each node in your job you would use the flag `--gres=gpu:p100:1`. 
+
+!!!tip
+    As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not magically speed up code that can only use one at a time.
 
 For more documentation on using GPUs on our clusters, please see [Python Deep Learning with GPUs](/clusters-at-yale/guides/deep-learning-gpus) and [GPUs and CUDA](/clusters-at-yale/guides/gpus-cuda).
 
