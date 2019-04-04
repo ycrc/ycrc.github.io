@@ -912,15 +912,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-all-members-of-a-group-eg-othergroup" title="Share a Directory with All Members of a Group (e.g. othergroup)" class="md-nav__link">
-    Share a Directory with All Members of a Group (e.g. othergroup)
+  <a href="#share-a-directory-with-all-members-of-a-group" title="Share a Directory with All Members of a Group" class="md-nav__link">
+    Share a Directory with All Members of a Group
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-a-particular-person-eg-netid-aa111" title="Share a Directory with a Particular Person (e.g. netid aa111)" class="md-nav__link">
-    Share a Directory with a Particular Person (e.g. netid aa111)
+  <a href="#share-a-directory-with-a-particular-person" title="Share a Directory with a Particular Person" class="md-nav__link">
+    Share a Directory with a Particular Person
   </a>
   
 </li>
@@ -1203,15 +1203,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-all-members-of-a-group-eg-othergroup" title="Share a Directory with All Members of a Group (e.g. othergroup)" class="md-nav__link">
-    Share a Directory with All Members of a Group (e.g. othergroup)
+  <a href="#share-a-directory-with-all-members-of-a-group" title="Share a Directory with All Members of a Group" class="md-nav__link">
+    Share a Directory with All Members of a Group
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-a-particular-person-eg-netid-aa111" title="Share a Directory with a Particular Person (e.g. netid aa111)" class="md-nav__link">
-    Share a Directory with a Particular Person (e.g. netid aa111)
+  <a href="#share-a-directory-with-a-particular-person" title="Share a Directory with a Particular Person" class="md-nav__link">
+    Share a Directory with a Particular Person
   </a>
   
 </li>
@@ -1242,39 +1242,25 @@
 <h2 id="home-directories">Home Directories</h2>
 <p><strong>Do not give your home directory group write permissions. This will break your ability to log into the cluster.</strong>  If you need to share something in your home directory, either move it your project directory or ask <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> for assistance.</p>
 <h2 id="shared-group-directories">Shared Group Directories</h2>
-<p>Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (such as for protecting programs) or read and write permissions for shared data directories. For example:</p>
-<div class="codehilite"><pre><span></span>/gpfs/loomis/home/fas/nagai/programs
-# or
-/gpfs/loomis/project/fas/nagai/data
-</pre></div>
-
-
-<p>If interested, email us at [hpc@yale.edu] to request such a directory.</p>
+<p>Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for shared data directories.</p>
+<p>If interested, email us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> to request such a directory.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
-<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command setfacl is very useful for this, but can be complicated to use.  Here are some simple scenarios.  We recommend that you create the shared directory in your project dir, rather than home.</p>
-<h3 id="share-a-directory-with-all-members-of-a-group-eg-othergroup">Share a Directory with All Members of a Group (e.g. othergroup)</h3>
+<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command <code>setfacl</code> is useful for this, but can be complicated to use.  Here are some simple scenarios.  We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch60</code> directories, rather than <code>home</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your <code>~/project</code> and <code>~/scratch60</code> directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you're interested in) to get their true paths. Give these true to people you are sharing with.</p>
+</div>
+<h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
+<p>To share a new directory called <code>shared</code> with group <code>othergroup</code>:</p>
 <div class="codehilite"><pre><span></span>mkdir shared
+setfacl -d -m g:othergroup:rwx shared
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>setfacl -m g:othergroup:rwx shared
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>setfacl -d -m g:othergroup:rwx shared
-</pre></div>
-
-
-<h3 id="share-a-directory-with-a-particular-person-eg-netid-aa111">Share a Directory with a Particular Person (e.g. netid aa111)</h3>
+<h3 id="share-a-directory-with-a-particular-person">Share a Directory with a Particular Person</h3>
+<p>To share a new directory called <code>shared</code> with a person with netid <code>aa111</code>:</p>
 <div class="codehilite"><pre><span></span>mkdir shared
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>setfacl -m u:aa111:rwx shared
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>setfacl -d -m u:aa111:rwx shared
+setfacl -d -m u:aa111:rwx shared
 </pre></div>
                 
                   
