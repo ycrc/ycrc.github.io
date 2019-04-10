@@ -30,6 +30,6 @@ To submit requests, concerns or questions via email please send to [hpc@yale.edu
 
 ### Web Interface
 
-Alternatively, a [web interface](https://hpc.research.yale.edu/support) is available for both initiating and tracking a request or concern. After navigating to the website, you can select to log a new ticket or track an existing one. After your selection you will be able to login with CAS. If creating a new ticket, a new ticket form will appear where you can log your request or concern. If selecting an existing issue, a list of open items, assigned to you, will appear. Status of your request or concern can be viewed by selecting the tracking number.
+Alternatively, a [web interface](https://support.ycrc.yale.edu) is available for both initiating and tracking a request or concern. After navigating to the website, you can select to log a new ticket or track an existing one. After your selection you will be able to login with CAS. If creating a new ticket, a new ticket form will appear where you can log your request or concern. If selecting an existing issue, a list of open items, assigned to you, will appear. Status of your request or concern can be viewed by selecting the tracking number.
 
 If you have any questions or feedback, we would be happy to hear from you.
