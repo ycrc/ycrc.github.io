@@ -15,7 +15,7 @@ module load Apps/Octave/4.2.1
 module load Octave/4.2.1-foss-2016b
 ```
 
-You will need to update your scripts to load modules using their new names. Note that these are new installations of the same software (not redirects to the old installations), so please let us know if anything isn't working as expected.
+You will need to update your scripts to load modules using their new names. Note that these are new installations of the same software (not redirects to the old installations), so please let us know if anything isn't working as expected. Any software you have compiled for yourself will likely need to be recompiled with the new modules.
 
 ### Python and R
 
