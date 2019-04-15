@@ -43,7 +43,7 @@ nav:
                 - clusters-at-yale/access/x11.md
                 - clusters-at-yale/access/vnc.md
                 - clusters-at-yale/access/mfa.md
-                - clusters-at-yale/access/sample-config.md
+                - clusters-at-yale/access/advanced-config.md
             - Applications & Software:
                 - clusters-at-yale/applications/index.md
                 - clusters-at-yale/applications/compile.md

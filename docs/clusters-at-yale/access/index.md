@@ -1,26 +1,35 @@
 # Log on to the Clusters
 
-We use `ssh` with ssh key pairs to log in to the clusters, e.g.
+We use SSH with SSH key pairs to log in to the clusters. You must be on campus to access the clusters or our SSH key uploader. For off-campus access you need to use the [Yale VPN](vpn).
 
-```
-ssh netid@clustername.hpc.yale.edu
-```
+## Quick Start
 
-If you have a public key and are familiar with key pairs, upload your ssh key below. Please allow up to ten minutes for the key to propagate before logging in.
+* Send us your public SSH key with our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). Allow up to ten minutes for it to propagate.
 
-* [Upload your SSH key here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN)
-* [Troubleshoot Login](/clusters-at-yale/troubleshoot)
+* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`
 
-For additional information, see below.
+* Login Node addresses and other useful info can be found on [the clusters page](/clusters-at-yale/clusters)
 
-* [Off Campus Access to the Clusters](vpn)
-* Graphical Interfaces: [X11 Forwarding](x11) and [VNC](vnc)
+* To use graphical programs on the clusters, please see our guides on [X11 Forwarding](x11) and [VNC](vnc)
 
-## Connect from macOS and Linux
+**If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [email us](mailto:hpc@yale.edu) if you're still having issues.
 
-### Generate Your Key Pair
+## What are SSH keys
 
-A key pair is required to connect to a cluster. A key pair consists of a private key and a public key. The private key remains on your desktop/laptop and should never be shared with anyone. Your public key is installed in `~/.ssh/authorized_keys` on the cluster. In order for someone to access your account on the cluster, they must possess your private key and its associated passphrase.
+SSH (Secure Shell) keys are a set of two pieces of information that you use to identify yourself and encrypt communication to and from a server. Usually this takes the form of two files: a public key (often saved as `id_rsa.pub`) and a private key (`id_rsa` or `id_rsa.ppk`). To use an analogy, your public key is like a lock and your private key is what unlocks it. It is ok for others to see the lock (public key), but anyone who knows the private key can open your lock (and impersonate you).
+
+When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.
+
+We use an automated system to distribute your public key onto the clusters, [which you can log in to here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) It is only accessible on campus or through the [Yale VPN](vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
+
+!!! warning
+    Keep your private key(s) private! With them others can assume your identity on servers where you have authorized them. **We will never ask for your private key**.
+
+For further reading we recommend starting with the Wikipedia articles about [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) and [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge-response_authentication).
+
+## macOS and Linux
+
+### Generate Your Key Pair on macOS and Linux
 
 To generate a new key pair, first open a terminal/xterm session. If you are on macOS, open Applications -> Utilities -> Terminal.
 
@@ -34,7 +43,7 @@ Your terminal should respond:
 
 ```
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/#yourusername#/.ssh/id_rsa):
+Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):
 
 ```
 
@@ -44,81 +53,56 @@ Press Enter to accept the default value. Your terminal should respond:
 Enter passphrase (empty for no passphrase):
 ```
 
-Choose a secure passphrase. Your passphrase will prevent access to your account in the event your private key is stolen. The response will be:
+Choose a secure passphrase. Your passphrase will prevent access to your account in the event your private key is stolen. You will not see any characters appear on the screen as you type. The response will be:
 
 ```
 Enter same passphrase again:
 ```
 
-Enter the passphrase again. The key pair is generated and written to a directory called `.ssh` in your home directory. The public key is stored in `~/.ssh/id_rsa.pub`. If you forget your passphrase, it cannot be recovered. Instead, you will need to generate and upload a new ssh key pair.
+Enter the passphrase again. The key pair is generated and written to a directory called `.ssh` in your home directory. The public key is stored in `~/.ssh/id_rsa.pub`. If you forget your passphrase, it cannot be recovered. Instead, you will need to generate and upload a new SSH key pair.
 
-Next, install your public ssh key on the cluster. Run the following command in a terminal:
+Next, upload your public SSH key on the cluster. Run the following command in a terminal:
 
 ```
 cat ~/.ssh/id_rsa.pub
 ```
 
-Copy and paste the output to [Yale HPC ssh key installer](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py) (only accessible on campus or through the Yale VPN). It may take up to 15 minutes after uploading for your key to be pushed to the clusters. Note that you should never send the private key file to anyone!
+Copy and paste the output to our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
 
-### Connect
+### Connect on macOS and Linux
 
-Once your public key has been installed, you may use ssh in a terminal to access the appropriate cluster. You need to know 2 things to log into a cluster.
-
-1. The hostname of the cluster login node
-1. Your netid
-
-You can find the hostnames of the cluster login nodes [here.](/clusters-at-yale/clusters) Open a terminal window and connect to the login node using the syntax:
+Once your key has been copied to the appropriate places on the clusters, you can log in with the command:
 
 ```
-ssh netid@login-node
+ssh netid@clustername.hpc.yale.edu
 ```
 
-For example, if your netid is `ra359` and you wish to log into the Grace cluster:
+Check out our [Advanced SSH Configuration](advanced-config) for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.
 
-```
-ssh ra359@grace.hpc.yale.edu
-```
-
-Check out our [Sample Linux/Mac SSH Configuration](sample-config) for tips on maintaining connections and adding tab complete to your ssh commands.
-
-### Mac: Store Passphrase and Use SSH Agent Forwarding
-
-By default, macOS won't always remember your ssh key passphase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and enable agent forwarding, enter the following command on your local machine (just once):
-
-```
-ssh-add -K ~/.ssh/[your-private-key]
-
-```
-
-and add the following to your `~/.ssh/config` file (create this file if it doesn't exist).
-
-```
-Host *
-    UseKeychain yes
-    AddKeystoAgent yes
-    ForwardAgent yes
-```
-
-## Connect from Windows
+## Windows
 
 We recommend using [MobaXterm](https://mobaxterm.mobatek.net/) to connect to the clusters. You can download, extract & install MobaXterm from [this page](https://mobaxterm.mobatek.net/download-home-edition.html). We recommend using the "Installer Edition", but make sure to extract the zip file before running the installer.
 
-### Generate Your Key Pair
+You can also use one of the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) distributions and follow the Linux instructions above. However, you will probably run into issues if you try to use any graphical applications.
 
-To get up and running, generate an ssh keypair if you haven't already:
+### Generate Your Key Pair on Windows
 
+First, generate an SSH key pair if you haven't already:
+
+* Open MobaXterm.
 * From the top menu choose Tools -> MobaKeyGen (SSH key generator).
 * Leave all defaults and click the generate button.
 * Wiggle your mouse.
 * Save your public key as id_rsa.pub.
 * Save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
-* Copy the text of your public key and paste it into the text box after you log into [the SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
+* Copy the text of your public key and paste it into the text box in our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
 * Your key will be synced out to the clusters in a few minutes.
 
-### Connect
+### Connect with on Windows
 
-To make a new connection to one of the clusters
+To make a new connection to one of the clusters:
 
+* Open MobaXterm.
 * From the top menu select Sessions -> New Session.
 * Click the SSH icon in the top left.
 * Enter the cluster login node address (e.g. farnam.hpc.yale.edu) as the Remote Host.

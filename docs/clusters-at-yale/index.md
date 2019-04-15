@@ -12,7 +12,7 @@ The first step in gaining access to our clusters is to request an account. There
 
 ## Log in
 
-All of Yale's clusters are accessed via a protocol called secure shell (ssh).  Once you have an account, look at [our SSH instructions](access) to log on to the system.
+All of Yale's clusters are accessed via a protocol called secure shell (SSH). Once you have an account, go to our [Log on to the Clusters page](access) login information and configuration.
 
 If you want to access the clusters from outside Yale, you must use the [Yale VPN.](access/vpn)
 
