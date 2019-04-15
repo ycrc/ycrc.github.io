@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/sample-config/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Example .ssh/config - Yale Center for Research Computing</title>
+        <title>Advanced SSH Configuration - Yale Center for Research Computing</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#example-sshconfig" tabindex="1" class="md-skip">
+      <a href="#advanced-ssh-configuration" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -136,7 +136,7 @@
                 </a>
               </span>
               <span class="md-header-nav__topic">
-                Example .ssh/config
+                Advanced SSH Configuration
               </span>
             
           
@@ -451,9 +451,45 @@
       
     
     
-    <a href="./" title="Example .ssh/config" class="md-nav__link md-nav__link--active">
-      Example .ssh/config
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Advanced SSH Configuration
+      </label>
+    
+    <a href="./" title="Advanced SSH Configuration" class="md-nav__link md-nav__link--active">
+      Advanced SSH Configuration
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-ssh-config" title="Example SSH config" class="md-nav__link">
+    Example SSH config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-passphrase-and-use-ssh-agent-on-macos" title="Store Passphrase and Use SSH Agent on macOS" class="md-nav__link">
+    Store Passphrase and Use SSH Agent on macOS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1114,6 +1150,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-ssh-config" title="Example SSH config" class="md-nav__link">
+    Example SSH config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-passphrase-and-use-ssh-agent-on-macos" title="Store Passphrase and Use SSH Agent on macOS" class="md-nav__link">
+    Store Passphrase and Use SSH Agent on macOS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1125,47 +1184,68 @@
               
                 
                 
-                <h1 id="example-sshconfig">Example .ssh/config</h1>
-<p>The following configuration is an example ssh client configuration file (linux and mac only) specific to our clusters. It allows you to use tab completion of the clusters, sans the .hpc.yale.edu suffixes (i.e. <code>ssh farnam</code> works). It will also allow you to re-use and multiplex authenticated sessions. Practically this means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not need you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
-<p>For this to work, you need to create the directory <code>~/.ssh/tmp</code>:</p>
-<div class="codehilite"><pre><span></span>mkdir -p ~/.ssh/tmp
-</pre></div>
-
-
-<p>Then take the text below and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored. Save this file as <code>~/.ssh/config</code> (or add it to the file that already exists).</p>
-<div class="codehilite"><pre><span></span>#re-use your connections with multi-factor authentication (Ruddle)
-ControlMaster auto
-ControlPath ~/.ssh/tmp/%h_%p_%r
+                <h1 id="advanced-ssh-configuration">Advanced SSH Configuration</h1>
+<h2 id="example-ssh-config">Example SSH <code>config</code></h2>
+<p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh farnam</code> or <code>scp ~/my_file farnam:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
+<p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
+<div class="codehilite"><pre><span></span># To re-use your connections with multi-factor authentication (e.g. Ruddle)
+# Uncomment the two lines below
+#ControlMaster auto
+#ControlPath ~/.ssh/tmp/%h_%p_%r
 
 # If you use a ssh key that is named something other than id_rsa,
-# specify your private key like this:
+# you can specify your private key like this:
 # IdentityFile ~/.ssh/other_key_rsa
 
-#uncomment the ForwardX11 options to enable X11 Forwarding by default (no -Y necessary)
+# Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
+# On a Mac you still need xquartz installed
+Host *.hpc.yale.edu farnam grace milgram ruddle
+    User NETID
+#   ForwardX11 yes
+
 Host farnam
      HostName farnam.hpc.yale.edu
-     User NETID
-#     ForwardX11 yes
-
-Host ruddle
-     HostName ruddle.hpc.yale.edu
-     User NETID
-#     ForwardX11 yes
 
 Host grace
      HostName grace.hpc.yale.edu
-     User NETID
-#     ForwardX11 yes
 
-Host omega
-     Hostname omega.hpc.yale.edu
-     User NETID
-#     ForwardX11 yes
+Host milgram
+     Hostname milgram.hpc.yale.edu
+
+Host ruddle
+     HostName ruddle.hpc.yale.edu
 </pre></div>
 
 
-<p>For more info, run:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For multiplexing to work, the <code>~/.ssh/tmp</code> directory must exist. Create it with <code>mkdir -p ~/.ssh/tmp</code></p>
+</div>
+<p>For more info on ssh configuration, run:</p>
 <div class="codehilite"><pre><span></span>man ssh_config
+</pre></div>
+
+
+<h2 id="store-passphrase-and-use-ssh-agent-on-macos">Store Passphrase and Use SSH Agent on macOS</h2>
+<p>By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):</p>
+<div class="codehilite"><pre><span></span>ssh-add -K ~/.ssh/id_rsa
+</pre></div>
+
+
+<p>Or whatever your private key file is named.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
+</div>
+<p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.hpc.yale.edu ...</code> rule if it does).</p>
+<div class="codehilite"><pre><span></span>Host *.hpc.yale.edu farnam grace milgram ruddle
+    UseKeychain yes
+    AddKeystoAgent yes
+</pre></div>
+
+
+<p>You can view a list of the keys currently in your agent with:</p>
+<div class="codehilite"><pre><span></span>ssh-add -L
 </pre></div>
                 
                   
