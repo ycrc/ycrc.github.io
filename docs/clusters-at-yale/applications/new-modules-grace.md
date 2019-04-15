@@ -6,7 +6,7 @@ During the August 2019 Grace scheduled maintenance, we will be switching the def
 
 ### Module Names
 
-The new module collection is built using a tool called "EasyBuild", which uses a system of "toolchains" to more transparently constrain software dependencies and compatibility. See [this page](/node/16575) for more information on EasyBuild and toolchains. As such, modules will no longer be prefixed with a category such as "Apps" or "Langs", but instead will have a suffix describing its toolchain (if applicable).
+The new module collection is built using a tool called "EasyBuild", which uses a system of "toolchains" to more transparently constrain software dependencies and compatibility. See [this page](/clusters-at-yale/applications/easybuild) for more information on EasyBuild and toolchains. As such, modules will no longer be prefixed with a category such as "Apps" or "Langs", but instead will have a suffix describing its toolchain (if applicable).
 
 ``` bash
 # old:
@@ -19,7 +19,7 @@ You will need to update your scripts to load modules using their new names. Note
 
 ### Python and R
 
-With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install [a personal Python or R environment using conda](/node/14571) which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, we are happy to help--just email us at hpc@yale.edu.
+With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install [a personal Python or R environment using conda](/clusters-at-yale/guides/conda) which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, we are happy to help--just email us at hpc@yale.edu.
 
 ## To Try and/or Switch to the New Collection
 
