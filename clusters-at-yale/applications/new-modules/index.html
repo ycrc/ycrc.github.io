@@ -1162,7 +1162,7 @@
 <p>During the December 10-12, 2018 Milgram scheduled maintenance, we will be switching the default module collection. This upgrade will make the cluster more consistent with our other clusters' software environments and allow us to resolve software installation requests more quickly. The old software collection will be available for the time being (see below), but all new software installations will go into the new collection.</p>
 <h2 id="key-differences">Key Differences</h2>
 <h3 id="module-names">Module Names</h3>
-<p>The new module collection is built using a tool called "EasyBuild", which uses a system of "toolchains" to more transparently constrain software dependencies and compatibility. See <a href="/node/16575">this page</a> for more information on EasyBuild and toolchains. As such, modules will no longer be prefixed with a category such as "Apps" or "Langs", but instead will have a suffix describing its toolchain (if applicable).</p>
+<p>The new module collection is built using a tool called "EasyBuild", which uses a system of "toolchains" to more transparently constrain software dependencies and compatibility. See <a href="/clusters-at-yale/applications/easybuild">this page</a> for more information on EasyBuild and toolchains. As such, modules will no longer be prefixed with a category such as "Apps" or "Langs", but instead will have a suffix describing its toolchain (if applicable).</p>
 <div class="codehilite"><pre><span></span><span class="c1"># old:</span>
 module load Apps/Octave/4.2.1
 <span class="c1"># new: </span>
@@ -1172,7 +1172,7 @@ module load Octave/4.2.1-foss-2016b
 
 <p>You will need to update your scripts to load modules using their new names. Note that these are new installations of the same software (not redirects to the old installations), so please let us know if anything isn't working as expected.</p>
 <h3 id="python-and-r">Python and R</h3>
-<p>With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install <a href="/node/14571">a personal Python or R environment using conda</a> which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, we are happy to help--just email us at hpc@yale.edu.</p>
+<p>With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install <a href="clusters-at-yale/guides/conda">a personal Python or R environment using conda</a> which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, we are happy to help--just email us at hpc@yale.edu.</p>
 <h2 id="to-try-andor-switch-to-the-new-collection">To Try and/or Switch to the New Collection</h2>
 <p>To try the new collection and see if all the software you require is available (email us if anything is missing!), run the following command:</p>
 <div class="codehilite"><pre><span></span><span class="nb">source</span> /apps/bin/try_new_modules.sh
@@ -1188,7 +1188,7 @@ module save
 
 
 <p>Then you should see all the old software if you run "module avail". To then remove the old software collection from your list, run:</p>
-<div class="codehilite"><pre><span></span>module unuse /gpfs/milgram/apps/hpc/Modules
+<div class="codehilite"><pre><span></span>module unuse /gpfs/milgapps/hpc/Modules
 module save
 </pre></div>
 
