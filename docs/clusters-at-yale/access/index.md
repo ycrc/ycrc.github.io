@@ -8,7 +8,7 @@ We use SSH with SSH key pairs to log in to the clusters. You must be on campus t
 
 * Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`
 
-* Login Node addresses and other useful info can be found on [the clusters page](/clusters-at-yale/clusters)
+* Login node addresses and other useful info can be found on [the clusters page](/clusters-at-yale/clusters)
 
 * To use graphical programs on the clusters, please see our guides on [X11 Forwarding](x11) and [VNC](vnc)
 
