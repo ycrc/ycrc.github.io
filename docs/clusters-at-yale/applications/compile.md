@@ -14,7 +14,7 @@ Each of the cluster pages (see the [clusters index](/clusters-at-yale/clusters) 
 
 You may find that software compiled on newer compute nodes will fail with the error `Illegal instruction (core dumped)`. This includes R/Python libraries that include code that compiles from source. To remedy this issue make sure to always either:
 
-* Build or install software on the oldest available nodes (right now those are [m620 on Farnam](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/farnam/#compute-node-configurations) and [nx360i on Grace](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/grace/#compute-node-configurations)).
+* Build or install software on the oldest available nodes (right now those are [`sandybridge` on Farnam](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/farnam/#compute-node-configurations) and [`ivybridge` on Grace](http://docs.ycrc.yale.edu/clusters-at-yale/clusters/grace/#compute-node-configurations)).
 * Require that your jobs running the software in question request similar hardware to their build environment. If your software needs newer instructions using `avx2` as a constraint will probably work.
 
 Either way, you will want to control where your jobs run with [job constraints](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints).
