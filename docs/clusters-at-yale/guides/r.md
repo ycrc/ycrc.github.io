@@ -2,6 +2,14 @@
 
 ## Load R
 
+### Your Own R Environment
+
+We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our [Conda page](/cluster-at-yale/guides/conda).
+
+### System Environment
+
+We also provide a basic R installing on some of the clusters which you can use. However, if you find it is missing packages you need, we recommend setting up your own environment as described above.
+
 Run one of the commands below, which will list available versions and the corresponding module files:
 
 ```
@@ -53,6 +61,3 @@ To run R in batch mode, you create a [batch script](/clusters-at-yale/job-schedu
 R --slave -f myscript.R
 ```
 
-## Install Additional R Packages
-
-Our R module has some of the most commonly used packages pre-installed, such as Rmpi. If you need additional R packages not already included, we recommend installing them into your own directories using the `install.package()` R function. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) if you run into issues.

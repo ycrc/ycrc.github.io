@@ -56,6 +56,13 @@ If you want a good starting point for interactive development of scientific Pyth
 conda create -n py37_dev python=3.7 numpy scipy pandas matplotlib ipython jupyter
 ```
 
+For R:
+
+```bash
+conda create -n r_env r-essentials r-base
+```
+
+
 ### Conda Channels
 
 There are also community-lead collections of unofficial packages that you can use with `conda` called channels. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/). 
@@ -104,6 +111,26 @@ module load miniconda
 source activate env_name
 python analyses.py
 ```
+
+### Find and Install Additional Packages
+
+You can search [Anaconda Cloud](https://anaconda.org/) for any packages you would like to install. Once in your conda environment, you can install any additional packages using `conda install`:
+
+#### Python
+
+```
+conda install numpy
+```
+
+#### R
+
+All R packages are prepended with `r-`.
+
+```
+conda install r-ggplot2
+```
+
+A list of officially supported R packages can be found [here](https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/), but many additional packages are also available (e.g. via the `conda-forge` channel) and can be found using search on [Anaconda Cloud](https://anaconda.org/).
 
 ## Troubleshoot
 
