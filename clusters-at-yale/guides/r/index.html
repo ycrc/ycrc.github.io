@@ -678,6 +678,26 @@
     Load R
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-own-r-environment" title="Your Own R Environment" class="md-nav__link">
+    Your Own R Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-environment" title="System Environment" class="md-nav__link">
+    System Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -704,13 +724,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-additional-r-packages" title="Install Additional R Packages" class="md-nav__link">
-    Install Additional R Packages
-  </a>
   
 </li>
       
@@ -1185,6 +1198,26 @@
     Load R
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-own-r-environment" title="Your Own R Environment" class="md-nav__link">
+    Your Own R Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-environment" title="System Environment" class="md-nav__link">
+    System Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1214,13 +1247,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#install-additional-r-packages" title="Install Additional R Packages" class="md-nav__link">
-    Install Additional R Packages
-  </a>
-  
-</li>
-      
       
       
       
@@ -1240,6 +1266,10 @@
                 
                 <h1 id="r">R</h1>
 <h2 id="load-r">Load R</h2>
+<h3 id="your-own-r-environment">Your Own R Environment</h3>
+<p>We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our <a href="/cluster-at-yale/guides/conda">Conda page</a>.</p>
+<h3 id="system-environment">System Environment</h3>
+<p>We also provide a basic R installing on some of the clusters which you can use. However, if you find it is missing packages you need, we recommend setting up your own environment as described above.</p>
 <p>Run one of the commands below, which will list available versions and the corresponding module files:</p>
 <div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">avail</span> <span class="n">R</span>
 </pre></div>
@@ -1283,9 +1313,6 @@ R --slave -f myscript.R
 R --slave -f myscript.R
 </pre></div>
 </td></tr></table>
-
-<h2 id="install-additional-r-packages">Install Additional R Packages</h2>
-<p>Our R module has some of the most commonly used packages pre-installed, such as Rmpi. If you need additional R packages not already included, we recommend installing them into your own directories using the <code>install.package()</code> R function. Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> if you run into issues.</p>
                 
                   
                 

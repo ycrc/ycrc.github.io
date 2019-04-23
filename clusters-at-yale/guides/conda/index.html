@@ -671,6 +671,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find-and-install-additional-packages" title="Find and Install Additional Packages" class="md-nav__link">
+    Find and Install Additional Packages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" title="R" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1352,6 +1379,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find-and-install-additional-packages" title="Find and Install Additional Packages" class="md-nav__link">
+    Find and Install Additional Packages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" title="R" class="md-nav__link">
+    R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1484,6 +1538,11 @@ module load miniconda
 </pre></div>
 
 
+<p>For R:</p>
+<div class="codehilite"><pre><span></span>conda create -n r_env r-essentials r-base
+</pre></div>
+
+
 <h3 id="conda-channels">Conda Channels</h3>
 <p>There are also community-lead collections of unofficial packages that you can use with <code>conda</code> called channels. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>. </p>
 <p>You could use the Conda Forge channel to install <a href="http://briansimulator.org/">Brian2</a></p>
@@ -1523,6 +1582,20 @@ python analyses.py
 </pre></div>
 
 
+<h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
+<p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> for any packages you would like to install. Once in your conda environment, you can install any additional packages using <code>conda install</code>:</p>
+<h4 id="python">Python</h4>
+<div class="codehilite"><pre><span></span>conda install numpy
+</pre></div>
+
+
+<h4 id="r">R</h4>
+<p>All R packages are prepended with <code>r-</code>.</p>
+<div class="codehilite"><pre><span></span>conda install r-ggplot2
+</pre></div>
+
+
+<p>A list of officially supported R packages can be found <a href="https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/">here</a>, but many additional packages are also available (e.g. via the <code>conda-forge</code> channel) and can be found using search on <a href="https://anaconda.org/">Anaconda Cloud</a>.</p>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="permission-denied">"Permission Denied"</h3>
 <p>If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment or activated an existing one first.</p>
