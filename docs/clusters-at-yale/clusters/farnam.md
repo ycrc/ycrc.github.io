@@ -18,21 +18,21 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 ### Compute Node Configurations
 
-| Count | Node Type                     | CPU                 | CPU Cores | RAM   |         GPU        | Features                                     |
-|-------|-------------------------------|---------------------|-----------|-------|--------------------|----------------------------------------------|
-| 59    | Dell PowerEdge M620           | 2x E5-2670          | 16        | 121G  |                    | sandybridge, sse4_2, avx, E5-2670            |
-| 14    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  |                    | bulldozer, sse4_2, avx, opteron-6276         |
-| 117   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 5     | Lenovo nx360h w/GPUs          | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 38    | Lenovo nx360b                 | 2x E5-2680 v4       | 28        | 246G  |                    | broadwell, v4, sse4_2, avx, avx2, E5-2680_v4 |
-| 3     | Lenovo nx360b w/GPUs          | 2x E5-2660 v4       | 28        | 246G  | 2x p100            | broadwell, v4, sse4_2, avx, avx2, E5-2660_v4 |
-| 2     | Lenovo sd530                  | 2x Gold 6132        | 28        | 184G  |                    | skylake, sse4_2, avx, avx2, avx512, 6132     |
-| 1     | Lenovo sd530                  | 2x Gold 6132        | 28        | 751G  |                    | skylake, sse4_2, avx, avx2, avx512, 6132     |
-| 1     | Thinkmate GPX XT4 (gpu_devel) | 2x E5-2623 v4       | 8         | 58G   | 4x gtx1080ti       | broadwell, v4, sse4_2, avx, avx2, E5-2623_v4 |
-| 20    | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, v4, sse4_2, avx, avx2, E5-2637_v4 |
-| 1     | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x titanv          | broadwell, v4, sse4_2, avx, avx2, E5-2637_v4 |
-| 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G |                    | haswell, v3, sse4_2, avx, avx2, E7-4809_v3   |
-| 1     | Lenovo 3850X6                 | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, v3, sse4_2, avx, avx2, E7-4820_v4 |
+| Count | Node Type                     | CPU                 | CPU Cores | RAM   |         GPU        | Features                                      |
+|-------|-------------------------------|---------------------|-----------|-------|--------------------|-----------------------------------------------|
+| 59    | Dell PowerEdge M620           | 2x E5-2670          | 16        | 121G  |                    | sandybridge, E5-2670, nogpu, standard, oldest |
+| 14    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  |                    | bulldozer, opteron-6276                       |
+| 117   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard    |
+| 5     | Lenovo nx360h w/GPUs          | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision    |
+| 38    | Lenovo nx360b                 | 2x E5-2680 v4       | 28        | 246G  |                    | broadwell, avx2, E5-2680_v4, nogpu, standard  |
+| 3     | Lenovo nx360b w/GPUs          | 2x E5-2660 v4       | 28        | 246G  | 2x p100            | broadwell, avx2, E5-2660_v4, doubleprecision  |
+| 2     | Lenovo sd530                  | 2x Gold 6132        | 28        | 184G  |                    | skylake, avx2, avx512, 6132, nogpu, standard  |
+| 1     | Lenovo sd530                  | 2x Gold 6132        | 28        | 751G  |                    | skylake, avx2, avx512, 6132, nogpu            |
+| 1     | Thinkmate GPX XT4 (gpu_devel) | 2x E5-2623 v4       | 8         | 58G   | 4x gtx1080ti       | broadwell, avx2, E5-2623_v4, singleprecision  |
+| 20    | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision  |
+| 1     | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x titanv          | broadwell, avx2, E5-2637_v4, singleprecision  |
+| 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G |                    | haswell, avx2, E7-4809_v3, nogpu              |
+| 1     | Lenovo 3850X6                 | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu            |
 
 ## Slurm Partitions
 

@@ -28,7 +28,7 @@ For the most predictable performance for hybrid codes, you will need to use all 
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specifc documentation regarding the node configurations that include gpus. In order for your job to be able to access gpus, you must request them as a slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of gpus. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a p100 for each node in your job you would use the flag `--gres=gpu:p100:1`. 
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specific documentation regarding the node configurations that include GPUs. In order for your job to be able to access gpus, you must request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag `--gres=gpu:p100:1`. Some codes require double-precision capable GPUs--if so, see the next section for using "features" to request any node with compatible GPUs.
 
 !!!tip
     As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not magically speed up code that can only use one at a time.
@@ -37,20 +37,31 @@ For more documentation on using GPUs on our clusters, please see [Python Deep Le
 
 ## Features and Constraints
 
-You may want to run programs that require more specific hardware than slurm may be willing to allocate to your job. To ensure your job runs on specific types of nodes, use the `--constraint` flag. You can use the processor type (e.g. `E5-2660_v3`) or processor codename (e.g. `haswell`) to limit your job to specific node types. You can also specify an instruction set (e.g. `avx`) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.
+You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the `--constraint` flag.
 
-```
+You can use the processor codename (e.g. `haswell`) or processor type (e.g. `E5-2660_v3`) to limit your job to specific node types. You can also specify an instruction set (e.g. `avx2`) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.
+
+``` bash
+
 # run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)
 sbatch --constraint=haswell submit.sh
 
 # only run on nodes with E5-2660 v4 CPUs
 sbatch --constraint=E5-2660_v4 submit.sh
 
-# run on any node that understands avx instructions
-# Your job could also run on an avx2 node
-sbatch --constraint=avx submit.sh
+# run on any node that understands avx2 instructions
+# Your job may also launch on an avx512 node
+sbatch --constraint=avx2 submit.sh
 
 ```
+
+We also have keyword features to help you constrain your jobs to certain categories of nodes.
+
+- `oldest`: the oldest generation of node on the cluster. Use this constraint when compiling code if you wish to ensure it can run on any standard node on the cluster.
+- `nogpu`: nodes without GPUs.
+- `standard`: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.
+- `singleprecision`: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).
+- `doubleprecision`: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).
 
 !!!tip
     Use the command `scontrol show node <hostname>`, replacing `<hostname>` with the node's name you're interested in, to see more information about the node including its features.

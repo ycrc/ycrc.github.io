@@ -12,7 +12,7 @@ An example Slurm command to request an interactive job on the gpu partition with
 srun --pty --x11 -p gpu -c 10 -t 24:00:00 --gres=gpu:2 --gres-flags=enforce-binding bash
 ```
 
-The `--gres=gpu:2` option asks for two gpus, and the `--gres-flags=enforce-binding` option ensures you get two GPUs on the same card, and that the CPUs you are allocated are on the same bus as your GPU.
+The `--gres=gpu:2` option asks for two gpus, and the `--gres-flags=enforce-binding` option ensures you get two GPUs on the same card, and that the CPUs you are allocated are on the same bus as your GPU. Note that the `--gres` count is per node, not per task or core.
 
 To submit a batch job, include the following directives (in addition to your core, time, etc requests):
 
@@ -26,6 +26,22 @@ To submit a batch job, include the following directives (in addition to your cor
     Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs found running in a GPU partition without a GPU will be terminated without warning.
 
 You can check the available GPUs and their current usage with the command [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface).
+
+## Request Specific GPUs
+
+To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the `--gres` flag. 
+
+``` bash
+#SBATCH --gres=gpu:p100:1
+```
+
+Some codes require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the `doubleprecision` feature (e.g. K80, P100 or V100).
+
+``` bash
+#SBATCH -C doubleprecision
+```
+
+Conversely, you can use the `singleprecision` feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).
 
 ## Software
 

@@ -18,11 +18,11 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 ### Compute Node Configurations
 
-| Count | Node Type                     | CPU                 | CPU Cores | RAM   | Features                                   |
-|-------|-------------------------------|---------------------|-----------|-------|--------------------------------------------|
-| 12    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  | bulldozer, sse4_2, avx, opteron-6276       |
-| 155   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  | haswell, v3, sse4_2, avx, avx2, E5-2660_v3 |
-| 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G | haswell, v3, sse4_2, avx, avx2, E7-4809_v3 |
+| Count | Node Type                     | CPU                 | CPU Cores | RAM   | Features                          |
+|-------|-------------------------------|---------------------|-----------|-------|-----------------------------------|
+| 12    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  | bulldozer, opteron-6276           |
+| 155   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  | haswell, avx2, E5-2660_v3, oldest |
+| 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G | haswell, avx2, E7-4809_v3         |
 
 ## Slurm Partitions
 

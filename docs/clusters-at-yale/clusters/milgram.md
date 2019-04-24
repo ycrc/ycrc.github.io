@@ -21,10 +21,10 @@ Milgram is made up of a couple kinds of compute nodes. The Features column below
 
 ### Compute Node Configurations
 
-| Count | Node Type     | CPU           | CPU Cores | RAM   | Features                                     |
-|-------|---------------|---------------|-----------|-------|----------------------------------------------|
-| 12    | Dell R730     | 2x E5-2660 v3 | 20        | 121G  | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 48    | Lenovo nx360b | 2x E5-2660 v4 | 28        | 250G  | broadwell, v4, sse4_2, avx, avx2, E5-2660_v4 |
+| Count | Node Type     | CPU           | CPU Cores | RAM   | Features                          |
+|-------|---------------|---------------|-----------|-------|-----------------------------------|
+| 12    | Dell R730     | 2x E5-2660 v3 | 20        | 121G  | haswell, E5-2660_v3, oldest       |
+| 48    | Lenovo nx360b | 2x E5-2660 v4 | 28        | 250G  | broadwell, E5-2660_v4             |
 
 ## Slurm Partitions
 

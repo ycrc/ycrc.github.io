@@ -18,24 +18,24 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ### Compute Node Configurations
 
-| Count | Node Type              | CPU                 | CPU Cores | RAM   |         GPU        | Features                                     |
-|-------|------------------------|---------------------|-----------|-------|--------------------|----------------------------------------------|
-| 80    | IBM nx360i             | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, v2, sse4_2, avx, E5-2660_v2       |
-| 136   | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 20    | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 6     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 8     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, v3, sse4_2, avx, avx2, E5-2660_v3   |
-| 161   | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, v4, sse4_2, avx, avx2, E5-2660_v4 |
-| 7     | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247   | 1x p100            | broadwell, v4, sse4_2, avx, avx2, E5-2660_v4 |
-| 53    | Lenovo sd530           | 2x Gold 6136        | 24        | 90G   |                    | skylake, sse4_2, avx, avx2, avx512, 6136     |
-| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 176G  |                    | skylake, sse4_2, avx, avx2, avx512, 6126     |
-| 1     | Lenovo sd530 w/ GPUs   | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, sse4_2, avx, avx2, avx512, 6136     |
-| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 751G  |                    | skylake, sse4_2, avx, avx2, avx512, 6136     |
-| 1     | IBM x3850i             | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, v2, sse4_2, avx, E7-4820_v2       |
-| 1     | Lenovo x3850h          | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, v3, sse4_2, avx, avx2, E7-4809_v3   |
-| 4     | Lenovo x3850b          | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, v4, sse4_2, avx, avx2, E7-4820_v4 |
-| 1     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, v4, sse4_2, avx, avx2, E5-2637_v4 |
-| 9     | Penguin XE2118GT       | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, sse4_2, avx, avx2, avx512, 6136     |
+| Count | Node Type              | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
+|-------|------------------------|---------------------|-----------|-------|--------------------|------------------------------------------------|
+| 80    | IBM nx360i             | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
+| 136   | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 20    | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 6     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 8     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 161   | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
+| 7     | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247   | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
+| 53    | Lenovo sd530           | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
+| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
+| 1     | Lenovo sd530 w/ GPUs   | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 751G  |                    | skylake,  avx2, avx512, 6136, nogpu            |
+| 1     | IBM x3850i             | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
+| 1     | Lenovo x3850h          | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
+| 4     | Lenovo x3850b          | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
+| 1     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
+| 9     | Penguin XE2118GT       | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
 
 ## Slurm Partitions
 
