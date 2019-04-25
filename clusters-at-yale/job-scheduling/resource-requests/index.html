@@ -1283,26 +1283,35 @@
 <h3 id="346-hybrid-mpiopenmp-programs">3. Hybrid (MPI+OpenMP) programs</h3>
 <p>For the most predictable performance for hybrid codes, you will need to use all three of the <code>--ntasks</code>, <code>--cpus-per-task</code>, and <code>--nodes</code> flags, where <code>--ntasks</code> equals the number of MPI tasks, <code>--cpus-per-task</code> equals the number of OMP_NUM_THREADS and <code>--nodes</code> is the number of nodes required to fit <code>--ntasks * --cpus-per-task</code>.</p>
 <h2 id="request-gpus">Request GPUs</h2>
-<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specifc documentation regarding the node configurations that include gpus. In order for your job to be able to access gpus, you must request them as a slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the <code>--gres</code> flag and a number of gpus. If you are agnostic about the kind of GPU your job gets, <code>--gres=gpu:1</code> will allocate one of any kind of GPU per node. To specifically request, for example, a p100 for each node in your job you would use the flag <code>--gres=gpu:p100:1</code>. </p>
+<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specific documentation regarding the node configurations that include GPUs. In order for your job to be able to access gpus, you must request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the <code>--gres</code> flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, <code>--gres=gpu:1</code> will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag <code>--gres=gpu:p100:1</code>. Some codes require double-precision capable GPUs--if so, see the next section for using "features" to request any node with compatible GPUs.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not magically speed up code that can only use one at a time.</p>
 </div>
 <p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/deep-learning-gpus">Python Deep Learning with GPUs</a> and <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
 <h2 id="features-and-constraints">Features and Constraints</h2>
-<p>You may want to run programs that require more specific hardware than slurm may be willing to allocate to your job. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag. You can use the processor type (e.g. <code>E5-2660_v3</code>) or processor codename (e.g. <code>haswell</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.</p>
-<div class="codehilite"><pre><span></span># run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)
-sbatch --constraint=haswell submit.sh
+<p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
+<p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx2</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)</span>
+sbatch --constraint<span class="o">=</span>haswell submit.sh
 
-# only run on nodes with E5-2660 v4 CPUs
-sbatch --constraint=E5-2660_v4 submit.sh
+<span class="c1"># only run on nodes with E5-2660 v4 CPUs</span>
+sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 
-# run on any node that understands avx instructions
-# Your job could also run on an avx2 node
-sbatch --constraint=avx submit.sh
+<span class="c1"># run on any node that understands avx2 instructions</span>
+<span class="c1"># Your job may also launch on an avx512 node</span>
+sbatch --constraint<span class="o">=</span>avx2 submit.sh
 </pre></div>
 
 
+<p>We also have keyword features to help you constrain your jobs to certain categories of nodes.</p>
+<ul>
+<li><code>oldest</code>: the oldest generation of node on the cluster. Use this constraint when compiling code if you wish to ensure it can run on any standard node on the cluster.</li>
+<li><code>nogpu</code>: nodes without GPUs.</li>
+<li><code>standard</code>: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.</li>
+<li><code>singleprecision</code>: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).</li>
+<li><code>doubleprecision</code>: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Use the command <code>scontrol show node &lt;hostname&gt;</code>, replacing <code>&lt;hostname&gt;</code> with the node's name you're interested in, to see more information about the node including its features.</p>

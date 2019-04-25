@@ -645,6 +645,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-specific-gpus" title="Request Specific GPUs" class="md-nav__link">
+    Request Specific GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software" title="Software" class="md-nav__link">
     Software
   </a>
@@ -1168,6 +1175,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-specific-gpus" title="Request Specific GPUs" class="md-nav__link">
+    Request Specific GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software" title="Software" class="md-nav__link">
     Software
   </a>
@@ -1207,7 +1221,7 @@
 </pre></div>
 
 
-<p>The <code>--gres=gpu:2</code> option asks for two gpus, and the <code>--gres-flags=enforce-binding</code> option ensures you get two GPUs on the same card, and that the CPUs you are allocated are on the same bus as your GPU.</p>
+<p>The <code>--gres=gpu:2</code> option asks for two gpus, and the <code>--gres-flags=enforce-binding</code> option ensures you get two GPUs on the same card, and that the CPUs you are allocated are on the same bus as your GPU. Note that the <code>--gres</code> count is per node, not per task or core.</p>
 <p>To submit a batch job, include the following directives (in addition to your core, time, etc requests):</p>
 <div class="codehilite"><pre><span></span><span class="c1">#SBATCH -p gpu</span>
 <span class="c1">#SBATCH --gres=gpu:1</span>
@@ -1220,6 +1234,18 @@
 <p>Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs found running in a GPU partition without a GPU will be terminated without warning.</p>
 </div>
 <p>You can check the available GPUs and their current usage with the command <a href="https://developer.nvidia.com/nvidia-system-management-interface">nvidia-smi</a>.</p>
+<h2 id="request-specific-gpus">Request Specific GPUs</h2>
+<p>To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the <code>--gres</code> flag. </p>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH --gres=gpu:p100:1</span>
+</pre></div>
+
+
+<p>Some codes require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the <code>doubleprecision</code> feature (e.g. K80, P100 or V100).</p>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH -C doubleprecision</span>
+</pre></div>
+
+
+<p>Conversely, you can use the <code>singleprecision</code> feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).</p>
 <h2 id="software">Software</h2>
 <p>CUDA and cuDNN are available as modules where applicable. On your cluster of choice use toolkit is installed on the GPU nodes. To see what is available, type:</p>
 <div class="codehilite"><pre><span></span>module avail cuda

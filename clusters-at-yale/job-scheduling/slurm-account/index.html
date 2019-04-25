@@ -38,7 +38,7 @@
     
     
       
-        <title>Coordinating a Slurm Account - Yale Center for Research Computing</title>
+        <title>Slurm Account Coordinator - Yale Center for Research Computing</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#coordinating-a-slurm-account" tabindex="1" class="md-skip">
+      <a href="#slurm-account-coordinator" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -136,7 +136,7 @@
                 </a>
               </span>
               <span class="md-header-nav__topic">
-                Coordinating a Slurm Account
+                Slurm Account Coordinator
               </span>
             
           
@@ -1135,6 +1135,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hold-and-release-jobs" title="Hold and Release Jobs" class="md-nav__link">
+    Hold and Release Jobs
+  </a>
+  
+</li>
+      
       
       
       
@@ -1152,8 +1159,8 @@
               
                 
                 
-                <h1 id="coordinating-a-slurm-account">Coordinating a Slurm Account</h1>
-<p>On the clusters the YCRC maintains, we map your linux user and group to your slurm user and account, which is what actually gives you permission to submit to the various partitions available on the clusters. By changing the slurm accounts associated with your user, you can modify access to partitions. As a coordinator of an account, you have permission to modify users' association with that account and modify jobs running that are associated with that account. Below are some useful example commands where we use an example user with the name "be59" where you are the coordinator of the slurm account "cryoem".</p>
+                <h1 id="slurm-account-coordinator">Slurm Account Coordinator</h1>
+<p>On the clusters the YCRC maintains, we map your linux user and group to your Slurm user and account, which is what actually gives you permission to submit to the various partitions available on the clusters. By changing the Slurm accounts associated with your user, you can modify access to partitions. As a coordinator of an account, you have permission to modify users' association with that account and modify jobs running that are associated with that account. Below are some useful example commands where we use an example user with the name "be59" where you are the coordinator of the slurm account "cryoem".</p>
 <h2 id="addremove-users-from-an-account">Add/Remove Users From an Account</h2>
 <div class="codehilite"><pre><span></span>sacctmgr add user be59 <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># add user</span>
 sacctmgr remove user where <span class="nv">user</span><span class="o">=</span>be59 and <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># remove user</span>
@@ -1184,6 +1191,13 @@ scancel -u be59   <span class="c1"># kill all jobs by user</span>
 scancel -u be59 --state<span class="o">=</span>running  <span class="c1"># kill running jobs by user</span>
 scancel -u be59 --state<span class="o">=</span>pending  <span class="c1"># kill pending jobs by user</span>
 scancel -A cryoem  <span class="c1"># kill all jobs in the account</span>
+</pre></div>
+
+
+<h2 id="hold-and-release-jobs">Hold and Release Jobs</h2>
+<div class="codehilite"><pre><span></span>scontrol hold 1234   # by job ID
+scontrol release 1234   # remove the hold
+scontrol uhold 1234   # hold job 1234 but allow the job&#39;s owner to release it
 </pre></div>
                 
                   
