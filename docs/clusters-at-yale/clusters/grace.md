@@ -57,7 +57,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | gpu         |                    | 12 GPUs                     | 1h/1d                | nx360h k80 (3), nx360b p100 (6), sd530 v100 (1) |
 | mpi**       |                    | 18 nodes                    | 1h/1d                | sd530 (35)                                      |
 | scavenge    |                    | 6400 CPUs                   | 1h/1d                | all                                             |
-| scavenge_gpu|                    | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)     |
+| scavenge_gpu|                    | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)    |
 
 \* default  
 ** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description.
