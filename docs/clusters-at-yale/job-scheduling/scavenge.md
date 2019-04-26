@@ -27,8 +27,8 @@ sacct -j <jobid> --duplicates
 
 ## Scavenge GPUs
 
-On Grace, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
-(e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes on Grace in the [Compute Node](/clusters-at-yale/clusters/grace/#compute-node-configurations) table.
+On Grace and Farnam, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
+(e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Compute Node tables on the respective cluster pages.
 
 ## Research Available Nodes
 
