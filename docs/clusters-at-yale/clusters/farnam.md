@@ -21,18 +21,19 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 | Count | Node Type                     | CPU                 | CPU Cores | RAM   |         GPU        | Features                                      |
 |-------|-------------------------------|---------------------|-----------|-------|--------------------|-----------------------------------------------|
 | 59    | Dell PowerEdge M620           | 2x E5-2670          | 16        | 121G  |                    | sandybridge, E5-2670, nogpu, standard, oldest |
-| 14    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  |                    | bulldozer, opteron-6276                       |
+| 14    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 499G  |                    | bulldozer, opteron-6276                       |
 | 117   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard    |
 | 5     | Lenovo nx360h w/GPUs          | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision    |
-| 38    | Lenovo nx360b                 | 2x E5-2680 v4       | 28        | 246G  |                    | broadwell, avx2, E5-2680_v4, nogpu, standard  |
-| 3     | Lenovo nx360b w/GPUs          | 2x E5-2660 v4       | 28        | 246G  | 2x p100            | broadwell, avx2, E5-2660_v4, doubleprecision  |
-| 2     | Lenovo sd530                  | 2x Gold 6132        | 28        | 184G  |                    | skylake, avx2, avx512, 6132, nogpu, standard  |
-| 1     | Lenovo sd530                  | 2x Gold 6132        | 28        | 751G  |                    | skylake, avx2, avx512, 6132, nogpu            |
-| 1     | Thinkmate GPX XT4 (gpu_devel) | 2x E5-2623 v4       | 8         | 58G   | 4x gtx1080ti       | broadwell, avx2, E5-2623_v4, singleprecision  |
+| 38    | Lenovo nx360b                 | 2x E5-2680 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2680_v4, nogpu, standard  |
+| 3     | Lenovo nx360b w/GPUs          | 2x E5-2660 v4       | 28        | 247G  | 2x p100            | broadwell, avx2, E5-2660_v4, doubleprecision  |
+| 2     | Lenovo sd530                  | 2x Gold 6132        | 28        | 183G  |                    | skylake, avx2, avx512, 6132, nogpu, standard  |
+| 1     | Thinkmate GPX XT4 (gpu_devel) | 2x E5-2623 v4       | 8         | 59G   | 4x gtx1080ti       | broadwell, avx2, E5-2623_v4, singleprecision  |
 | 20    | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision  |
 | 1     | Thinkmate GPX XT4             | 2x E5-2637 v4       | 8         | 121G  | 4x titanv          | broadwell, avx2, E5-2637_v4, singleprecision  |
+| 2     | Thinkmate GPX XT4             | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision  |
 | 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G |                    | haswell, avx2, E7-4809_v3, nogpu              |
 | 1     | Lenovo 3850X6                 | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu            |
+| 1     | Lenovo sd530                  | 2x Gold 6132        | 28        | 751G  |                    | skylake, avx2, avx512, 6132, nogpu            |
 
 ## Slurm Partitions
 
@@ -44,14 +45,15 @@ The general partition is where most batch jobs should run, and is the default if
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | Group Limits         | User Limits                 | Walltime default/max | Node type (number)                     |
-|-------------|----------------------|-----------------------------|----------------------|----------------------------------------|
-| general*    | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)                 |
-| interactive |                      | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)                 |
-| bigmem      |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                   |
-| gpu_devel   |                      | 1 job                       | 10min/2hr            | GPX XT4 gtx1080ti (1)                  |
-| gpu         |                      | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h k80 (2), GPX XT4 gtx1080ti (10) |
-| scavenge    |                      | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                    |
+| Partition   | Group Limits         | User Limits                 | Walltime Default/Max | Node Type (count)                           |
+|-------------|----------------------|-----------------------------|----------------------|---------------------------------------------|
+| general*    | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | m620 (34), nx360h (94)                      |
+| interactive |                      | 20 CPUs, 256 G RAM          | 1d/2d                | m620 (34), nx360h (94)                      |
+| bigmem      |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/7d                | m915 (9), 3850X6 (2)                        |
+| gpu_devel   |                      | 1 job                       | 10min/2hr            | GPX XT4 gtx1080ti (1)                       |
+| gpu         |                      | 32 CPUs, 256 G RAM          | 1d/2d                | nx360h k80 (2), GPX XT4 gtx1080ti (10)      |
+| scavenge    |                      | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                         |
+| scavenge_gpu|                      | 32 CPUs, 256 G RAM          | 1d/2d                | all nodes with GPUs (see Compute Node table)|
 
 \* default
 
@@ -59,11 +61,12 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition       | Walltime default/max | Node type (number)                                   |
+| Partition       | Walltime Default/Max | Node Type (count)                                   |
 |-----------------|----------------------|------------------------------------------------------|
 | pi_breaker      | 1d/14d               | nx360b (24)                                          |
 | pi_cryoem       | 1d/∞                 | GPX XT4 gtx1080ti (10)                               |
 | pi_deng         | 1d/14d               | nx360b (1)                                           |
+| pi_dellaporta   | 1d/14d               | m915 (1)                                             |
 | pi_gerstein     | 1d/14d               | m915 (2), nx360b (11), sd530 (3), 3850X6 (1)         |
 | pi_gerstein_gpu | 1d/14d               | nx360h k80 (3), nx360b p100 (2), GPX XT4 titanv (1)  |
 | pi_gruen        | 1d/14d               | nx360b (1)                                           |
@@ -72,6 +75,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_krauthammer  | 1d/14d               | nx360h (1)                                           |
 | pi_ma           | 1d/14d               | nx360h (2)                                           |
 | pi_ohern        | 1d/14d               | m620 (6), nx360h (3)                                 |
+| pi_reinisch     | 1d/14d               | GPX XT4 rtx2080 (2)                                  |
 | pi_sigworth     | 1d/14d               | nx360h (1)                                           |
 | pi_sindelar     | 1d/14d               | m620 (4), m915 (1), nx360h (1)                       |
 | pi_strobel      | 1d/14d               | m915 (1)                                             |

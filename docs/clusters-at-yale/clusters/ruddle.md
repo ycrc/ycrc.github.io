@@ -20,7 +20,7 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 | Count | Node Type                     | CPU                 | CPU Cores | RAM   | Features                          |
 |-------|-------------------------------|---------------------|-----------|-------|-----------------------------------|
-| 12    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 507G  | bulldozer, opteron-6276           |
+| 12    | Dell PowerEdge M915           | 4x AMD Opteron 6276 | 32        | 499G  | bulldozer, opteron-6276           |
 | 155   | Lenovo nx360h                 | 2x E5-2660 v3       | 20        | 121G  | haswell, avx2, E5-2660_v3, oldest |
 | 2     | Lenovo 3850X6                 | 4x E7-4809 v3       | 32        | 1507G | haswell, avx2, E7-4809_v3         |
 
@@ -30,7 +30,7 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | User Limits          | Walltime default/max | Node type (number)    |
+| Partition   | User Limits          | Walltime Default/Max | Node Type (count)    |
 |-------------|----------------------|----------------------|-----------------------|
 | general*    | 300 CPUs, 1800 G RAM | 7d/30d               | nx360h (155)          |
 | interactive | 20 CPUs, 256 G RAM   | 1d/2d                | nx360h (155)          |

@@ -32,7 +32,7 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition    | Group Limits           | User Limits             | Walltime default/max | Node type (number)    |
+| Partition    | Group Limits           | User Limits             | Walltime Default/Max | Node Type (count)    |
 |--------------|------------------------|-------------------------|----------------------|-----------------------|
 | short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | nx360b (48), R730 (9) |
 | interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | R730 (1)              |

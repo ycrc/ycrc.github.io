@@ -18,24 +18,26 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ### Compute Node Configurations
 
-| Count | Node Type              | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
-|-------|------------------------|---------------------|-----------|-------|--------------------|------------------------------------------------|
-| 80    | IBM nx360i             | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
-| 136   | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 20    | Lenovo nx360h          | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 6     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 8     | Lenovo nx360h w/ GPUs  | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 161   | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
-| 7     | Lenovo nx360b          | 2x E5-2660 v4       | 28        | 247   | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
-| 53    | Lenovo sd530           | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
-| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
-| 1     | Lenovo sd530 w/ GPUs   | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
-| 1     | Lenovo sd530           | 2x Gold 6136        | 24        | 751G  |                    | skylake,  avx2, avx512, 6136, nogpu            |
-| 1     | IBM x3850i             | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
-| 1     | Lenovo x3850h          | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
-| 4     | Lenovo x3850b          | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
-| 3     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
-| 9     | Penguin XE2118GT       | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| Count | Node Type                | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
+|-------|--------------------------|---------------------|-----------|-------|--------------------|------------------------------------------------|
+| 80    | IBM nx360i               | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
+| 136   | Lenovo nx360h            | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 20    | Lenovo nx360h            | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 6     | Lenovo nx360h w/ GPUs    | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 8     | Lenovo nx360h w/ GPUs    | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 161   | Lenovo nx360b            | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
+| 7     | Lenovo nx360b w/ GPUs    | 2x E5-2660 v4       | 28        | 247G  | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
+| 1     | Thinkmate GPX XT4        | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
+| 1     | Lenovo sd530             | 2x Gold 6126        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
+| 53    | Lenovo sd530             | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
+| 1     | Lenovo sd530 w/ GPUs     | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| 9     | Penguin XE2118GT w/ GPUs | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| 3     | Lenovo sd530             | 2x Gold 6142        | 36        | 183G  |                    | skylake, avx2, avx512, 6142, nogpu, standard   |
+| 2     | Thinkmate GPX XT4        | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision   |
+| 1     | IBM x3850i               | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
+| 1     | Lenovo x3850h            | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
+| 4     | Lenovo x3850b            | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
+| 1     | Lenovo sd530             | 2x Gold 6136        | 24        | 751G  |                    | skylake, avx2, avx512, 6136, nogpu             |
 
 ## Slurm Partitions
 
@@ -47,7 +49,7 @@ The day partition is where most batch jobs should run, and is the default if you
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | Group Limits       | User Limits                 | Walltime default/max | Node type (count)                               |
+| Partition   | Group Limits       | User Limits                 | Walltime Default/Max | Node Type (count)                               |
 |-------------|--------------------|-----------------------------|----------------------|-------------------------------------------------|
 | day*        | 900 CPUs           | 640 CPUs                    | 1h/1d                | nx360i (49), nx360h (32), nx360b (72)           |
 | week        | 250 CPUs           | 100 CPUs                    | 1h/7d                | nx360h (48), nx360b (7)                         |
@@ -66,7 +68,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition           | Walltime default/max | Node type (count)                          |
+| Partition           | Walltime Default/Max | Node Type (count)                          |
 |---------------------|----------------------|--------------------------------------------|
 | pi_altonji          | 1d/28d               | nx360h (2)                                 |
 | pi_anticevic        | 1d/100d              | nx360h (16), nx360b (20)                   |
