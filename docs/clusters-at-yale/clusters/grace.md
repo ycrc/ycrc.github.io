@@ -47,15 +47,15 @@ The day partition is where most batch jobs should run, and is the default if you
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | Group Limits       | User Limits                 | Walltime default/max | Node type (number)                              |
+| Partition   | Group Limits       | User Limits                 | Walltime default/max | Node type (count)                               |
 |-------------|--------------------|-----------------------------|----------------------|-------------------------------------------------|
 | day*        | 900 CPUs           | 640 CPUs                    | 1h/1d                | nx360i (49), nx360h (32), nx360b (72)           |
 | week        | 250 CPUs           | 100 CPUs                    | 1h/7d                | nx360h (48), nx360b (7)                         |
-| interactive |                    | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | nx360i (2)                                      |
-| bigmem      |                    | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (1)                                      |
+| interactive |                    | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | nx360i (2), sd530 (1)                           |
+| bigmem      |                    | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (2)                                      |
 | gpu_devel   |                    | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | nx360h k80 (1)                                  |
 | gpu         |                    | 12 GPUs                     | 1h/1d                | nx360h k80 (3), nx360b p100 (6), sd530 v100 (1) |
-| mpi**       |                    | 18 nodes                    | 1h/1d                | sd530 (35)                                      |
+| mpi**       |                    | 18 nodes                    | 1h/1d                | sd530 (33)                                      |
 | scavenge    |                    | 6400 CPUs                   | 1h/1d                | all                                             |
 | scavenge_gpu|                    | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)    |
 
@@ -66,7 +66,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition           | Walltime default/max | Node type (number)                         |
+| Partition           | Walltime default/max | Node type (count)                          |
 |---------------------|----------------------|--------------------------------------------|
 | pi_altonji          | 1d/28d               | nx360h (2)                                 |
 | pi_anticevic        | 1d/100d              | nx360h (16), nx360b (20)                   |
@@ -89,7 +89,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_ohern            | 1d/28d               | nx360i (16), nx360b (3), XE2118GT p100 (9) |
 | pi_owen_miller      | 1d/28d               | nx360b (5)                                 |
 | pi_poland           | 1d/28d               | nx360b (10)                                |
-| pi_seto             | 1d/28d               | nx360b (1), sd530(3)                       |
+| pi_seto             | 1d/28d               | sd530(3)                                   |
 | pi_som              | 1d/28d               | nx360i (4)                                 |
 | pi_tsmith           | 1d/28d               | nx360h (1)                                 |
 
