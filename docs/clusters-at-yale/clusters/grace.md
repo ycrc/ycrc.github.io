@@ -34,7 +34,7 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 | 1     | IBM x3850i             | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
 | 1     | Lenovo x3850h          | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
 | 4     | Lenovo x3850b          | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
-| 1     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
+| 3     | Thinkmate GPX XT4      | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
 | 9     | Penguin XE2118GT       | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
 
 ## Slurm Partitions
@@ -80,7 +80,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_gelernter        | 1d/28d               | nx360b (1)                                 |
 | pi_gerstein         | 1d/28d               | x3850i (1), nx360h (32)                    |
 | pi_glahn            | 1d/100d              | nx360h (1)                                 |
-| pi_hammes_schiffer  | 1d/28d               | sd530 (17), GPX XT4 gtx1080ti (1)          |
+| pi_hammes_schiffer  | 1d/28d               | sd530 (17), GPX XT4 gtx1080ti (3)          |
 | pi_holland          | 1d/28d               | nx360h (2)                                 |
 | pi_jetz             | 1d/28d               | nx360b (2)                                 |
 | pi_kaminski         | 1d/28d               | nx360h (8)                                 |
