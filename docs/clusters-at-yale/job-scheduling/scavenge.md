@@ -25,7 +25,12 @@ When a scavenge job is requeued after preemption, it retains the same job id. Ho
 sacct -j <jobid> --duplicates
 ```
 
-## Researching available nodes
+## Scavenge GPUs
+
+On Grace, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
+(e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes on Grace in the [Compute Node](/clusters-at-yale/clusters/grace/#compute-node-configurations) table.
+
+## Research Available Nodes
 
 If you are interested in specific hardware and its availability, you can use the `sinfo` command to query how many of each type of node is available and what features it lists. For example:
 
