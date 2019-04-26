@@ -814,8 +814,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#researching-available-nodes" title="Researching available nodes" class="md-nav__link">
-    Researching available nodes
+  <a href="#scavenge-gpus" title="Scavenge GPUs" class="md-nav__link">
+    Scavenge GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-available-nodes" title="Research Available Nodes" class="md-nav__link">
+    Research Available Nodes
   </a>
   
 </li>
@@ -1187,8 +1194,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#researching-available-nodes" title="Researching available nodes" class="md-nav__link">
-    Researching available nodes
+  <a href="#scavenge-gpus" title="Scavenge GPUs" class="md-nav__link">
+    Scavenge GPUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-available-nodes" title="Research Available Nodes" class="md-nav__link">
+    Research Available Nodes
   </a>
   
 </li>
@@ -1230,7 +1244,10 @@
 </pre></div>
 
 
-<h2 id="researching-available-nodes">Researching available nodes</h2>
+<h2 id="scavenge-gpus">Scavenge GPUs</h2>
+<p>On Grace, we also have a <code>scavenge_gpu</code> partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
+(e.g. preemption, time limit), <code>scavenge_gpu</code> behaves the same as the normal scavenge partition. You can see the full count of GPU nodes on Grace in the <a href="/clusters-at-yale/clusters/grace/#compute-node-configurations">Compute Node</a> table.</p>
+<h2 id="research-available-nodes">Research Available Nodes</h2>
 <p>If you are interested in specific hardware and its availability, you can use the <code>sinfo</code> command to query how many of each type of node is available and what features it lists. For example:</p>
 <div class="codehilite"><pre><span></span>sinfo -e -o <span class="s2">&quot;%.6D|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
 </pre></div>
