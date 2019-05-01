@@ -18,26 +18,26 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ### Compute Node Configurations
 
-| Count | Node Type                | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
-|-------|--------------------------|---------------------|-----------|-------|--------------------|------------------------------------------------|
-| 80    | IBM nx360i               | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
-| 136   | Lenovo nx360h            | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 20    | Lenovo nx360h            | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 6     | Lenovo nx360h w/ GPUs    | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 8     | Lenovo nx360h w/ GPUs    | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 161   | Lenovo nx360b            | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
-| 7     | Lenovo nx360b w/ GPUs    | 2x E5-2660 v4       | 28        | 247G  | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
-| 1     | Thinkmate GPX XT4        | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
-| 1     | Lenovo sd530             | 2x Gold 6126        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
-| 53    | Lenovo sd530             | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
-| 1     | Lenovo sd530 w/ GPUs     | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
-| 9     | Penguin XE2118GT w/ GPUs | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
-| 3     | Lenovo sd530             | 2x Gold 6142        | 36        | 183G  |                    | skylake, avx2, avx512, 6142, nogpu, standard   |
-| 2     | Thinkmate GPX XT4        | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision   |
-| 1     | IBM x3850i               | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
-| 1     | Lenovo x3850h            | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
-| 4     | Lenovo x3850b            | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
-| 1     | Lenovo sd530             | 2x Gold 6136        | 24        | 751G  |                    | skylake, avx2, avx512, 6136, nogpu             |
+| Count | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
+|-------|---------------------|-----------|-------|--------------------|------------------------------------------------|
+| 80    | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
+| 136   | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 20    | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
+| 6     | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 8     | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
+| 161   | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
+| 7     | 2x E5-2660 v4       | 28        | 247G  | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
+| 1     | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
+| 1     | 2x Gold 6126        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
+| 53    | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
+| 1     | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| 9     | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
+| 3     | 2x Gold 6142        | 36        | 183G  |                    | skylake, avx2, avx512, 6142, nogpu, standard   |
+| 2     | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision   |
+| 1     | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
+| 1     | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
+| 4     | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
+| 1     | 2x Gold 6136        | 24        | 751G  |                    | skylake, avx2, avx512, 6136, nogpu             |
 
 ## Slurm Partitions
 
@@ -56,7 +56,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | interactive |              | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | E5-2660_v2 (2), 6126 (1)                               |
 | bigmem      |              | 40 CPUs, 1500 G RAM         | 1h/1d                | E7-4820_v4 1507G (2)                                   |
 | gpu_devel   |              | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | E5-2660_v3 k80 (1)                                     |
-| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 (5), E5-2660_v4 p100 (6), 6136 v100 (1) |
+| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 ([]()), E5-2660_v4 p100 (6), 6136 v100 (1) |
 | mpi**       |              | 18 nodes                    | 1h/1d                | 6136 (33)                                              |
 | scavenge    |              | 6400 CPUs                   | 1h/1d                | all                                                    |
 | scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |

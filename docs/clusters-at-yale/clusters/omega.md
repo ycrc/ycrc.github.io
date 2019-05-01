@@ -17,12 +17,12 @@ The cluster is made up of several kinds of compute nodes. The Features column be
 
 ### Compute Node Configurations
 
-| Count | Node Type              | CPU                 | CPU Cores  | RAM   | Features                          |
-|-------|------------------------|---------------------|------------|-------|-----------------------------------|
-| 668   | HP ProLiant BL460c     | X5560               | 8          | 32G   | nehalem,sse4_2,X5560              |
-| 32    | HP ProLiant BL460c     | X5560               | 8          | 44G   | nehalem,sse4_2,X5560,extramem     |
-| 4     | HP ProLiant SL250s     | E5-2650             | 16         | 121G  | sandybridge,sse4_2,avx,E5-2650    |
-| 60    | HP ProLiant SL230s     | E5-2620             | 12         | 59G   | sandybridge,sse4_2,avx,E5-2620    |
+| Count | CPU                 | CPU Cores  | RAM   | Features                          |
+|-------|---------------------|------------|-------|-----------------------------------|
+| 668   | X5560               | 8          | 32G   | nehalem,sse4_2,X5560              |
+| 32    | X5560               | 8          | 44G   | nehalem,sse4_2,X5560,extramem     |
+| 4     | E5-2650             | 16         | 121G  | sandybridge,sse4_2,avx,E5-2650    |
+| 60    | E5-2620             | 12         | 59G   | sandybridge,sse4_2,avx,E5-2620    |
 
 ## Slurm Partitions
 
