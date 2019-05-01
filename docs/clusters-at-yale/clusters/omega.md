@@ -34,13 +34,13 @@ The day partition is where most batch jobs should run, and is the default if you
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   |  User Limits                 | Walltime default/max | Node type (number)                   |
+| Partition   |  User Limits                 | Walltime default/max | Node Type (count)                    |
 |-------------|-----------------------------|-----------------------|--------------------------------------|
-| day*        | 128 nodes                   | 1h/1d                 | BL460c (218)                         |
-| week        | 64 nodes                    | 1h/7d                 | BL460c (46), BL460c-extramem (16)    |
-| interactive | 1 job, 8 CPUs, 1 node       | 1h/4h                 | BL460c (2)                           |
-| shared**    |                             | 1h/1d                 | BL460c (2)                           |
-| bigmem      |                             | 1h/1d                 | SL250s (4)                           |
+| day*        | 128 nodes                   | 1h/1d                 | X5560 (218)                          |
+| week        | 64 nodes                    | 1h/7d                 | X5560 (46), X5560 44G (16)           |
+| interactive | 1 job, 8 CPUs, 1 node       | 1h/4h                 | X5560 (2)                            |
+| shared**    |                             | 1h/1d                 | X5560 (2)                            |
+| bigmem      |                             | 1h/1d                 | E5-2650 (4)                          |
 | scavenge    |                             | 1h/7d                 | all                                  |
 
 \* default partition  
@@ -50,12 +50,12 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition           | Walltime default/max | Node type (number)                   |
-|---------------------|----------------------|--------------------------------------|
-| astro               | 1h/28d               | BL460c (112), BL460c-extramem (16)   |
-| geo                 | 1h/7d                | BL460c (207)                         |
-| hep                 | 1h/7d                | BL460c (47)                          |
-| esi                 | 1h/28d               | SL230s (60)                          |
+| Partition           | Walltime default/max | Node Type (count)           |
+|---------------------|----------------------|-----------------------------|
+| astro               | 1h/28d               | X5560 (112), X5560 44G (16) |
+| geo                 | 1h/7d                | X5560 (207)                 |
+| hep                 | 1h/7d                | X5560 (47)                  |
+| esi                 | 1h/28d               | E5-2620 (60)                |
 
 ## Storage
 

@@ -30,12 +30,12 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | User Limits          | Walltime Default/Max | Node Type (count)    |
-|-------------|----------------------|----------------------|-----------------------|
-| general*    | 300 CPUs, 1800 G RAM | 7d/30d               | nx360h (155)          |
-| interactive | 20 CPUs, 256 G RAM   | 1d/2d                | nx360h (155)          |
-| bigmem      | 32 CPUs, 1507 G RAM  | 1d/7d                | m915 (12), 3850X6 (2) |
-| scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                   |
+| Partition   | User Limits          | Walltime Default/Max | Node Type (count)                       |
+|-------------|----------------------|----------------------|-----------------------------------------|
+| general*    | 300 CPUs, 1800 G RAM | 7d/30d               | E5-2660_v3 (155)                        |
+| interactive | 20 CPUs, 256 G RAM   | 1d/2d                | E5-2660_v3 (155)                        |
+| bigmem      | 32 CPUs, 1507 G RAM  | 1d/7d                | opteron-6276 (12), E7-4809_v3 1507G (2) |
+| scavenge    | 800 CPUs, 5120 G RAM | 1d/7d                | all                                     |
 
 \* default
 

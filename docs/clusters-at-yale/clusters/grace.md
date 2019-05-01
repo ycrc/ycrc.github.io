@@ -49,17 +49,17 @@ The day partition is where most batch jobs should run, and is the default if you
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | Group Limits       | User Limits                 | Walltime Default/Max | Node Type (count)                               |
-|-------------|--------------------|-----------------------------|----------------------|-------------------------------------------------|
-| day*        | 900 CPUs           | 640 CPUs                    | 1h/1d                | nx360i (49), nx360h (32), nx360b (72)           |
-| week        | 250 CPUs           | 100 CPUs                    | 1h/7d                | nx360h (48), nx360b (7)                         |
-| interactive |                    | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | nx360i (2), sd530 (1)                           |
-| bigmem      |                    | 40 CPUs, 1500 G RAM         | 1h/1d                | x3850b (2)                                      |
-| gpu_devel   |                    | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | nx360h k80 (1)                                  |
-| gpu         |                    | 12 GPUs                     | 1h/1d                | nx360h k80 (3), nx360b p100 (6), sd530 v100 (1) |
-| mpi**       |                    | 18 nodes                    | 1h/1d                | sd530 (33)                                      |
-| scavenge    |                    | 6400 CPUs                   | 1h/1d                | all                                             |
-| scavenge_gpu|                    | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)    |
+| Partition   | Group Limits | User Limits                 | Walltime Default/Max | Node Type (count)                                      |
+|-------------|--------------|-----------------------------|----------------------|--------------------------------------------------------| 
+| day*        | 900 CPUs     | 640 CPUs                    | 1h/1d                | E5-2660_v2 (52), E5-2660_v3 (32), E5-2660_v4 (72)      |
+| week        | 250 CPUs     | 100 CPUs                    | 1h/7d                | E5-2660_v3 (48), E5-2660_v4 (7)                        |
+| interactive |              | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | E5-2660_v2 (2), 6126 (1)                               |
+| bigmem      |              | 40 CPUs, 1500 G RAM         | 1h/1d                | E7-4820_v4 1507G (2)                                   |
+| gpu_devel   |              | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | E5-2660_v3 k80 (1)                                     |
+| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 (5), E5-2660_v4 p100 (6), 6136 v100 (1) |
+| mpi**       |              | 18 nodes                    | 1h/1d                | 6136 (33)                                              |
+| scavenge    |              | 6400 CPUs                   | 1h/1d                | all                                                    |
+| scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
 
 \* default  
 ** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description.
@@ -68,32 +68,31 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition           | Walltime Default/Max | Node Type (count)                          |
-|---------------------|----------------------|--------------------------------------------|
-| pi_altonji          | 1d/28d               | nx360h (2)                                 |
-| pi_anticevic        | 1d/100d              | nx360h (16), nx360b (20)                   |
-| pi_anticevic_bigmem | 1d/100d              | x3850h (1)                                 |
-| pi_anticevic_fs     | 1d/100d              | nx360h (3)                                 |
-| pi_anticevic_gpu    | 1d/100d              | nx360h k80 (8)                             |
-| pi_balou            | 1d/28d               | nx360b (30)                                |
-| pi_berry            | 1d/28d               | nx360h (1)                                 |
-| pi_cowles           | 1d/28d               | nx360h (14)                                |
-| pi_cowles_nopreempt | 1d/28d               | nx360h (10)                                |
-| pi_gelernter        | 1d/28d               | nx360b (1)                                 |
-| pi_gerstein         | 1d/28d               | x3850i (1), nx360h (32)                    |
-| pi_glahn            | 1d/100d              | nx360h (1)                                 |
-| pi_hammes_schiffer  | 1d/28d               | sd530 (17), GPX XT4 gtx1080ti (3)          |
-| pi_holland          | 1d/28d               | nx360h (2)                                 |
-| pi_jetz             | 1d/28d               | nx360b (2)                                 |
-| pi_kaminski         | 1d/28d               | nx360h (8)                                 |
-| pi_mak              | 1d/28d               | nx360h (8)                                 |
-| pi_manohar          | 1d/180d              | nx360b (8), x3850b (2),  nx360b p100 (1)   |
-| pi_ohern            | 1d/28d               | nx360i (16), nx360b (3), XE2118GT p100 (9) |
-| pi_owen_miller      | 1d/28d               | nx360b (5)                                 |
-| pi_poland           | 1d/28d               | nx360b (10)                                |
-| pi_seto             | 1d/28d               | sd530(3)                                   |
-| pi_som              | 1d/28d               | nx360i (4)                                 |
-| pi_tsmith           | 1d/28d               | nx360h (1)                                 |
+| Partition           | Walltime Default/Max | Node Type (count)                                                      |
+|---------------------|----------------------|------------------------------------------------------------------------|
+| pi_altonji          | 1d/28d               | E5-2660_v3 (2)                                                         |
+| pi_anticevic        | 1d/100d              | E5-2660_v3 (16), E5-2660_v4 (20)                                       |
+| pi_anticevic_bigmem | 1d/100d              | E7-4809_v3 2011G (1)                                                   |
+| pi_anticevic_fs     | 1d/100d              | E5-2660_v3 (3)                                                         |
+| pi_anticevic_gpu    | 1d/100d              | E5-2660_v3 k80 (8)                                                     |
+| pi_balou            | 1d/28d               | E5-2660_v4 (30)                                                        |
+| pi_berry            | 1d/28d               | E5-2660_v3 (1)                                                         |
+| pi_cowles           | 1d/28d               | E5-2660_v3 (14)                                                        |
+| pi_cowles_nopreempt | 1d/28d               | E5-2660_v3 (10)                                                        |
+| pi_gelernter        | 1d/28d               | E5-2660_v4 (1)                                                         |
+| pi_gerstein         | 1d/28d               | E5-2660_v3 (32), E7-4820_v2 1003G (1)                                  |
+| pi_glahn            | 1d/100d              | E5-2660_v3 (1)                                                         |
+| pi_hammes_schiffer  | 1d/28d               | 6136 (16), 6136 751G (1), 5122 gtx1080ti (1), E5-2637_v4 gtx1080ti (2) |
+| pi_holland          | 1d/28d               | E5-2660_v3 (2)                                                         |
+| pi_jetz             | 1d/28d               | E5-2660_v4 (2)                                                         |
+| pi_kaminski         | 1d/28d               | E5-2660_v3 (8)                                                         |
+| pi_mak              | 1d/28d               | E5-2660_v4 (8)                                                         |
+| pi_manohar          | 1d/180d              | E5-2660_v4 (8), E5-2660_v4 p100 (1), E7-4820_v2 1507G (2)              |
+| pi_ohern            | 1d/28d               | E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100 (9)                         |
+| pi_owen_miller      | 1d/28d               | E5-2660_v4 (5)                                                         |
+| pi_poland           | 1d/28d               | E5-2660_v4 (10)                                                        |
+| pi_seto             | 1d/28d               | 6142 (3)                                                               |
+| pi_tsmith           | 1d/28d               | E5-2660_v3 (1)                                                         |
 
 ## Storage
 
