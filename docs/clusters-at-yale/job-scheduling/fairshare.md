@@ -4,7 +4,7 @@
 
 ### Fairshare
 
-We have "fairshare" systems on our clusters, which means that jobs have a "priority" score that is affected by the amount of CPU hours used in the past few weeks. If a group has used a large amount of CPU hours, their jobs are given a lower priority score and therefore will take longer to start if the cluster is busy. Regardless of a job's prority, the scheduler still considers all jobs for backfill (see below).
+To ensure well-balanced access to cluster resources, we institute a fairshare system on our clusters. In practice this means jobs have a priority score that dictates when it can be run in relation to other jobs. This score is affected by the amount of CPU-equivalent hours used by a group in the past few weeks. The number of CPU-equivalents allocated to a job is defined as the larger of (a) the number of requested cores and (b) the total amount of requested memory divided by the default memory per core (usually 5G/core). If a group has used a large amount of CPU-equivalent hours, their jobs are given a lower priority score and therefore will take longer to start if the cluster is busy. Regardless of a job's prority, the scheduler still considers all jobs for backfill (see below).
 
 To see all pending jobs sorted by priority (jobs with higher priority at the top), use the following `squeue` command:
 
