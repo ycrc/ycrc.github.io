@@ -56,7 +56,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | interactive |              | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | E5-2660_v2 (2), 6126 (1)                               |
 | bigmem      |              | 40 CPUs, 1500 G RAM         | 1h/1d                | E7-4820_v4 1507G (2)                                   |
 | gpu_devel   |              | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | E5-2660_v3 k80 (1)                                     |
-| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 ([]()), E5-2660_v4 p100 (6), 6136 v100 (1) |
+| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 (5), E5-2660_v4 p100 (6), 6136 v100 (1) |
 | mpi**       |              | 18 nodes                    | 1h/1d                | 6136 (33)                                              |
 | scavenge    |              | 6400 CPUs                   | 1h/1d                | all                                                    |
 | scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
