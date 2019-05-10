@@ -29,7 +29,7 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 | 2     | 2x Gold 6132        | 28        | 183G  |                    | skylake, avx2, avx512, 6132, nogpu, standard  |
 | 1     | 2x E5-2623 v4       | 8         | 59G   | 4x gtx1080ti       | broadwell, avx2, E5-2623_v4, singleprecision  |
 | 21    | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision  |
-| 1     | 2x E5-2637 v4       | 8         | 121G  | 4x titanv          | broadwell, avx2, E5-2637_v4, singleprecision  |
+| 1     | 2x E5-2637 v4       | 8         | 121G  | 4x titanv          | broadwell, avx2, E5-2637_v4, doubleprecision  |
 | 2     | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision  |
 | 2     | 4x E7-4809 v3       | 32        | 1507G |                    | haswell, avx2, E7-4809_v3, nogpu              |
 | 1     | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu            |
