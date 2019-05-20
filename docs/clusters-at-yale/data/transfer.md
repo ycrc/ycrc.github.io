@@ -71,6 +71,24 @@ Then once you establish your connection, you will prompted with a "Partial authe
 * "sms" to receive a verification passcode via text message
 * "phone" to receive a phone call
 
+## Object Storage Transfers
+
+To move data to and from object stores such as AWS S3, or GCP cloud storage, we recommend using rclone. It is installed as 
+a module on all of the clusters.  You can use to to copy files, sync directories, etc.  See <http://rclone.org>
+
+To begin, configure a connection by running
+```
+rclone configure
+```
+You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that 
+configuration, you can use that connection name to copy files:
+```
+rclone copy localpath/myfile mys3:bucketname/
+rclone sync localpath/mydir mys3:bucketname/remotedir
+```
+
+We recommend that you protect your configurations with a password.  You'll see that as an option when you run rclone config.
+  
 ## Large Transfers (Globus)
 
 For larger transfers both within Yale and to external collaborators, we recommend using Globus. Globus is a file transfer service that is efficient and easy to use. It has several advantages:
