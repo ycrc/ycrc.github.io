@@ -1,11 +1,10 @@
 # Readme
 
-All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. 
+All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
 
 
 ## Setup
 
-* We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
 * Clone the repo from `https://github.com/ycrc/ycrc.github.io`
 * Switch to the src branch. DO NOT make changes the master branch, it is for the compiled site only: `git checkout src`
 
