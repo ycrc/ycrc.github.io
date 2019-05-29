@@ -1436,7 +1436,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 </tbody>
 </table>
 <h2 id="slurm-partitions">Slurm Partitions</h2>
-<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>.</p>
+<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>. The default resource requests for all jobs is 1 core and 5GB of memory, unless otherwise specified.</p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is reserved for tightly-coupled parallel and access is by special request only. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p>The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the <a href="#hardware">hardware</a> table.</p>
@@ -1517,7 +1517,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 </tbody>
 </table>
 <p>* default<br />
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> for access if your workload fits this description.</p>
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> for access if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.</p>
 <h3 id="private-partitions">Private Partitions</h3>
 <p>Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.</p>
 <table>
@@ -1590,7 +1590,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>E5-2660_v3 (1)</td>
 </tr>
 <tr>
-<td>pi_hammes_schiffer</td>
+<td>pi_hammes_schiffer*</td>
 <td>1d/28d</td>
 <td>6136 (16), 6136 751G (1), 5122 gtx1080ti (1), E5-2637_v4 gtx1080ti (2)</td>
 </tr>
@@ -1646,6 +1646,7 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 </tr>
 </tbody>
 </table>
+<p>* The default memory request on this partition is 3.75GB per core.  </p>
 <h2 id="storage">Storage</h2>
 <p>Grace has access to a number of GPFS filesystems. <code>/gpfs/loomis</code> is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation.</p>
 <p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Note that the per-user usage breakdown only update once daily.</p>
