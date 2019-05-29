@@ -21,7 +21,6 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), MPI, GPUs, Matlab|
-|[Steve Weston](https://research.computing.yale.edu/about/staff/stephen-weston)||[via email](mailto: stephen.weston@yale.edu)||[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), R, Python, Deep learning|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|| [via email](mailto:giuseppe.amatulli@yale.edu)||Geo-Computation, GIS and Remote Sensing, Forestry|
 
 ### Email
