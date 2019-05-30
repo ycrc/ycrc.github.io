@@ -41,7 +41,7 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5GB of memory, unless otherwise specified.
 
 ### Public Partitions
 
@@ -62,7 +62,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
 
 \* default  
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description.
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
 
 ### Private Partitions
 
@@ -82,7 +82,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_gelernter        | 1d/28d               | E5-2660_v4 (1)                                                         |
 | pi_gerstein         | 1d/28d               | E5-2660_v3 (32), E7-4820_v2 1003G (1)                                  |
 | pi_glahn            | 1d/100d              | E5-2660_v3 (1)                                                         |
-| pi_hammes_schiffer  | 1d/28d               | 6136 (16), 6136 751G (1), 5122 gtx1080ti (1), E5-2637_v4 gtx1080ti (2) |
+| pi_hammes_schiffer* | 1d/28d               | 6136 (16), 6136 751G (1), 5122 gtx1080ti (1), E5-2637_v4 gtx1080ti (2) |
 | pi_holland          | 1d/28d               | E5-2660_v3 (2)                                                         |
 | pi_jetz             | 1d/28d               | E5-2660_v4 (2)                                                         |
 | pi_kaminski         | 1d/28d               | E5-2660_v3 (8)                                                         |
@@ -93,6 +93,8 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_poland           | 1d/28d               | E5-2660_v4 (10)                                                        |
 | pi_seto             | 1d/28d               | 6142 (3)                                                               |
 | pi_tsmith           | 1d/28d               | E5-2660_v3 (1)                                                         |
+
+\* The default memory request on this partition is 3.75GB per core.  
 
 ## Storage
 

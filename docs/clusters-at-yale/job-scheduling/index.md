@@ -98,7 +98,7 @@ Additional options can be found on in the [official Slurm documentation](http://
 
 ## Resource Limit Enforcement
 
-Slurm uses the linux cgroup feature to enforce limits on CPUs, GPUs, and memory. Jobs are only permitted to run on a node if they have a valid allocation, and only within the limits specified by that limitation. Thus, if you request a single core from slurm (the default) and start a job that runs 20 parallel threads, those threads will be packed into a single CPU, and run very slowly. Similarly, if you do not explicitly request memory, your job will be granted a fairly modest default per CPU, and if your job attempts to exceed that amount, it will be killed.
+Slurm uses the linux cgroup feature to enforce limits on CPUs, GPUs, and memory. Jobs are only permitted to run on a node if they have a valid allocation, and only within the limits specified by that limitation. Thus, if you request a single core from slurm (the default) and start a job that runs 20 parallel threads, those threads will be packed into a single CPU, and run very slowly. Similarly, if you do not explicitly request memory, your job will be granted 5G of RAM per CPU, and if your job attempts to exceed that amount, it will be killed.
 
 ## Using Private Partitions
 

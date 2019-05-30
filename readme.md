@@ -2,6 +2,7 @@
 
 All the source files for the site are stored in the branch `src`. **Never** directly modify files in the `master` branch. We use [mkdocs](https://www.mkdocs.org/) to build the site; the required python packages are in `requirements.txt`.
 
+
 ## Setup
 
 * Clone the repo from `https://github.com/ycrc/ycrc.github.io`
@@ -38,6 +39,10 @@ To deploy your local changes to the site (from the root directory of the repo):
 ``` bash
 mkdocs gh-deploy
 ```
+
+## Add a New Page
+
+If your contribute a new page (as opposed to editing an existing one) and want it to show up in the navigation sidebar, you need to edit the `mkdocs.yml` file in the root of this branch and add the page to the `nav:` section. The filename (without the .md) will be the url location and the page title (what shows in the sidebar) will be the first H1 mkdocs finds on your page -- so choose wisely.
 
 ## Style Guide
 

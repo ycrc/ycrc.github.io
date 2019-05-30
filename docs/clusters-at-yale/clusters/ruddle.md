@@ -2,6 +2,8 @@
 
 ![Frank](/img/Frank-Ruddle.jpg){: .cluster-portrait}
 
+** NOTICE: We plan to permanently decommission the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
+
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
 Ruddle is intended for use only on projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/); Please do not use this cluster for other projects. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
@@ -26,7 +28,7 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5GB of memory per core. The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
