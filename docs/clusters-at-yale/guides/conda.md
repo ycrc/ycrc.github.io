@@ -65,7 +65,7 @@ conda create -n r_env r-essentials r-base
 
 ### Conda Channels
 
-There are also community-lead collections of unofficial packages that you can use with `conda` called channels. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/). 
+There are also community-lead collections of unofficial packages that you can use with `conda` called channels. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/). See the [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
 
 You could use the Conda Forge channel to install [Brian2](http://briansimulator.org/)
 
@@ -76,8 +76,10 @@ conda create -n brian2 --channel conda-forge brian2
 Bioconda provides recent versions of various bioinformatics tools, for example:
 
 ``` bash
-conda create -n bioinfo --channel bioconda biopython bedtools bowtie2 repeatmasker
+conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
 ```
+
+Channel priority decreases from left to right - the first argument is higher priority than the second. 
 
 ### Using Your Environment
 
