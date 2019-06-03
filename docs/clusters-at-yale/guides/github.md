@@ -1,4 +1,4 @@
-# Version control with `git` and GitHub
+# Version Control with GitHub
 
 Whether developing large frameworks or simply working on small scripts, version control is an important tool to 
 ensure that your work is never lost. 
