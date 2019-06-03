@@ -6,10 +6,10 @@ We maintain and support 5 compute clusters, with roughly 29,000 cores total. Ple
 
 | Cluster Name       | Approx. Core Count | Login Address<img width=150/> | Monitor Dashboard                                                                                        | Purpose                                                  |
 |--------------------|--------------------|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [Grace](grace)     | 13,500             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general                                                  |
-| [Farnam](farnam)   | 5,200              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |
-| [Omega](omega)     | 6,500              | `omega.hpc.yale.edu`          | [cluster.ycrc.yale.edu/omega](http://cluster.ycrc.yale.edu/omega/)                                       | highly parallel, tightly coupled                         |
-| [Ruddle](ruddle)   | 3,800              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
+| [Grace](grace)     | 11,500             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general                                                  |
+| [Farnam](farnam)   | 5,400              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |
+| [Omega](omega)     | 6,400              | `omega.hpc.yale.edu`          | [cluster.ycrc.yale.edu/omega](http://cluster.ycrc.yale.edu/omega/)                                       | highly parallel, tightly coupled                         |
+| [Ruddle](ruddle)   | 3,500              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 | [Milgram](milgram) | 1,600              | `milgram.hpc.yale.edu`        | [monitor1.milgram.hpc.yale.internal:4001](http://monitor1.milgram.hpc.yale.internal:4001) (on HIPAA VPN) | HIPAA                                                    |
 
 ## Storage
