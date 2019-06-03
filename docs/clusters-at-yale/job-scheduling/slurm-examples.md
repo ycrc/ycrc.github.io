@@ -72,7 +72,6 @@ mpirun hello_hybrid.mpi
 #SBATCH --cpus-per-task=2
 #SBATCH --gres=gpu:k80:2
 #SBATCH --partition=gpu
-#SBATCH --gres-flags=enforce-binding
 #SBATCH --time=10:00
 
 module load CUDA

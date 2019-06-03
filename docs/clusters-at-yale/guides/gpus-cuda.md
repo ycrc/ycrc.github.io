@@ -9,17 +9,16 @@ To access the GPU nodes you must request them with the scheduler.
 An example Slurm command to request an interactive job on the gpu partition with X forwarding and 1/2 of a GPU node (10 cores and 1 K80):
 
 ``` bash
-srun --pty --x11 -p gpu -c 10 -t 24:00:00 --gres=gpu:2 --gres-flags=enforce-binding bash
+srun --pty --x11 -p gpu -c 10 -t 24:00:00 --gres=gpu:2 bash
 ```
 
-The `--gres=gpu:2` option asks for two gpus, and the `--gres-flags=enforce-binding` option ensures you get two GPUs on the same card, and that the CPUs you are allocated are on the same bus as your GPU. Note that the `--gres` count is per node, not per task or core.
+The `--gres=gpu:2` option asks for two gpus. Note that the `--gres` count is **per node**, not per task or core.
 
 To submit a batch job, include the following directives (in addition to your core, time, etc requests):
 
 ``` bash
 #SBATCH -p gpu
 #SBATCH --gres=gpu:1
-#SBATCH --gres-flags=enforce-binding
 ```
 
 !!!warning
