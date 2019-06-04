@@ -26,6 +26,7 @@ extra_javascript:
 markdown_extensions:
     - admonition
     - codehilite
+    - footnotes
     - pymdownx.details
     - pymdownx.keys
     - attr_list
@@ -55,7 +56,6 @@ nav:
                 - clusters-at-yale/guides/conda.md
                 - clusters-at-yale/guides/deep-learning-gpus.md
                 - clusters-at-yale/guides/gaussian.md
-                - clusters-at-yale/guides/github.md
                 - clusters-at-yale/guides/gpus-cuda.md
                 - clusters-at-yale/guides/jupyter.md
                 - clusters-at-yale/guides/matlab.md
@@ -63,6 +63,7 @@ nav:
                 - clusters-at-yale/guides/singularity.md
                 - clusters-at-yale/guides/tmux.md
                 - clusters-at-yale/guides/vasp.md
+                - clusters-at-yale/guides/github.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/resource-requests.md

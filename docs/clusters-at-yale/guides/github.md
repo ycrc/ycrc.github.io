@@ -2,9 +2,14 @@
 
 Whether developing large frameworks or simply working on small scripts, version control is an important tool to 
 ensure that your work is never lost. 
-We recommend using `git` for its flexibility and versatility.
-Here we will cover the basics of version control and how to use `git` and GitHub to establish best-practices for 
-research. 
+We recommend using `git` for its flexibility and versatility and [GitHub](https://github.com) for its 
+power in enabling 
+research and collaboration. [^1]
+
+Here we will cover the basics of version control and how to use `git` and GitHub. 
+
+[^1]: We do not recommend the use of <https://git.yale.edu>, which is an internal-only tool not designed 
+for research use.
 
 ## What is version control?
 
