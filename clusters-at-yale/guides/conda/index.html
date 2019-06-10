@@ -1567,13 +1567,17 @@ module load miniconda
 </pre></div>
 
 
-<p>Channel priority decreases from left to right - the first argument is higher priority than the second. </p>
+<p>Channel priority decreases from left to right - the first argument is higher priority than the second.</p>
 <h3 id="using-your-environment">Using Your Environment</h3>
 <p>To use the applications in your environment, make sure you have the <code>miniconda</code> module loaded then run the following:</p>
 <div class="codehilite"><pre><span></span><span class="nb">source</span> activate env_name
 </pre></div>
 
 
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>We do not recommend putting <code>source activate</code> commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling <code>source deactivate</code> before rerunning <code>source activate env_name</code>.</p>
 <h4 id="interactive">Interactive</h4>
 <p>Your conda environments will <strong>not</strong> follow you into job allocations, so make sure to activate them after your <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> begins.</p>
 <h4 id="in-a-job-script">In a Job Script</h4>
