@@ -62,7 +62,6 @@ For R:
 conda create -n r_env r-essentials r-base
 ```
 
-
 ### Conda Channels
 
 There are also community-lead collections of unofficial packages that you can use with `conda` called channels. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/). See the [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
@@ -79,7 +78,7 @@ Bioconda provides recent versions of various bioinformatics tools, for example:
 conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
 ```
 
-Channel priority decreases from left to right - the first argument is higher priority than the second. 
+Channel priority decreases from left to right - the first argument is higher priority than the second.
 
 ### Using Your Environment
 
@@ -88,6 +87,9 @@ To use the applications in your environment, make sure you have the `miniconda` 
 ``` bash
 source activate env_name
 ```
+
+!!! warning
+  We do not recommend putting `source activate` commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling `source deactivate` before rerunning `source activate env_name`.
 
 #### Interactive
 
