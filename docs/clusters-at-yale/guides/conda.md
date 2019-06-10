@@ -89,7 +89,7 @@ source activate env_name
 ```
 
 !!! warning
-  We do not recommend putting `source activate` commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling `source deactivate` before rerunning `source activate env_name`.
+    We do not recommend putting `source activate` commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling `source deactivate` before rerunning `source activate env_name`.
 
 #### Interactive
 
