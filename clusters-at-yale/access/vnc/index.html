@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.750b69bd.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -444,6 +472,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#open-ondemand" title="Open OnDemand" class="md-nav__link">
+    Open OnDemand
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#setup-vncserver-on-a-cluster" title="Setup vncserver on a Cluster" class="md-nav__link">
@@ -1193,6 +1228,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#open-ondemand" title="Open OnDemand" class="md-nav__link">
+    Open OnDemand
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-vncserver-on-a-cluster" title="Setup vncserver on a Cluster" class="md-nav__link">
     Setup vncserver on a Cluster
   </a>
@@ -1252,6 +1294,8 @@
                 
                 <h1 id="vnc">VNC</h1>
 <p>As an alternative to X11 Forwarding, using VNC to access the cluster is another way to run graphically intensive applications.</p>
+<h2 id="open-ondemand">Open OnDemand</h2>
+<p>On Grace and Farnam we have web dashboards set up that can run VNC for you as a job and forward your session back to you via your browser. Give them a try at <a href="https://ood-grace.hpc.yale.edu">ood-grace.hpc.yale.edu</a> and <a href="https://ood-farnam.hpc.yale.edu">ood-farnam.hpc.yale.edu</a> under the "interactive apps" drop-down menu item.</p>
 <h2 id="setup-vncserver-on-a-cluster">Setup vncserver on a Cluster</h2>
 <ol>
 <li>
@@ -1386,27 +1430,19 @@ Log file is /home/fas/hpcprog/kln26/.vnc/c31n02.grace.hpc.yale.internal:1.log
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
