@@ -2,6 +2,10 @@
 
 As an alternative to X11 Forwarding, using VNC to access the cluster is another way to run graphically intensive applications.
 
+## Open OnDemand
+
+On Grace and Farnam we have web dashboards set up that can run VNC for you as a job and forward your session back to you via your browser. Give them a try at [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu) and [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) under the "interactive apps" drop-down menu item.
+
 ## Setup vncserver on a Cluster
 
 1. Connect to the cluster with X11 forwarding enabled. If on Linux or Mac, `ssh -Y netid@cluster`, or if on Windows, follow our [X11 forwarding guide](/clusters-at-yale/access/x11).
