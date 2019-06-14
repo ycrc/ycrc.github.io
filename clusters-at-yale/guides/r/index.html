@@ -710,8 +710,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#your-own-r-environment" title="Your Own R Environment" class="md-nav__link">
-    Your Own R Environment
+  <a href="#create-your-own-r-environment" title="Create Your Own R Environment" class="md-nav__link">
+    Create Your Own R Environment
   </a>
   
 </li>
@@ -1242,8 +1242,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#your-own-r-environment" title="Your Own R Environment" class="md-nav__link">
-    Your Own R Environment
+  <a href="#create-your-own-r-environment" title="Create Your Own R Environment" class="md-nav__link">
+    Create Your Own R Environment
   </a>
   
 </li>
@@ -1306,26 +1306,26 @@
                 
                 <h1 id="r">R</h1>
 <h2 id="load-r">Load R</h2>
-<h3 id="your-own-r-environment">Your Own R Environment</h3>
-<p>We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our <a href="/cluster-at-yale/guides/conda">Conda page</a>.</p>
+<h3 id="create-your-own-r-environment">Create Your Own R Environment</h3>
+<p>We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our <a href="/clusters-at-yale/guides/conda">Conda page</a>.</p>
 <h3 id="system-environment">System Environment</h3>
 <p>We also provide a basic R installing on some of the clusters which you can use. However, if you find it is missing packages you need, we recommend setting up your own environment as described above.</p>
 <p>Run one of the commands below, which will list available versions and the corresponding module files:</p>
-<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">avail</span> <span class="n">R</span>
+<div class="codehilite"><pre><span></span>module avail R
 </pre></div>
 
 
 <p>Load the appropriate module file. For example, to run version 3.4.1:</p>
-<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">load</span>  <span class="n">R</span><span class="o">/</span><span class="mf">3.4.1</span><span class="o">-</span><span class="n">foss-2016b</span>
+<div class="codehilite"><pre><span></span>module load  R/3.4.1-foss-2016b
 </pre></div>
 
 
 <p>The module load command sets up your environment, including the PATH to find the proper version of R.</p>
 <h2 id="run-r">Run R</h2>
 <p>To run R, launch it using the <code>R</code> command.</p>
-<div class="codehilite"><pre><span></span># launch an R session
+<div class="codehilite"><pre><span></span><span class="c1"># launch an R session</span>
 R
-# or to launch a script
+<span class="c1"># or to launch a script</span>
 R --slave -f myscript.R
 </pre></div>
 
@@ -1336,7 +1336,7 @@ R --slave -f myscript.R
 </div>
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run R interactively, you need to launch an interactive session on a compute node. For example</p>
-<div class="codehilite"><pre><span></span>srun --pty -p interactive -t 4:00:00 bash
+<div class="codehilite"><pre><span></span>srun --pty -p interactive -t <span class="m">4</span>:00:00 bash
 </pre></div>
 
 
@@ -1344,15 +1344,11 @@ R --slave -f myscript.R
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h3 id="batch-mode">Batch Mode</h3>
 <p>To run R in batch mode, you create a <a href="/clusters-at-yale/job-scheduling">batch script</a>. In that script, you would invoke your R script in batch mode.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -J my_r_program</span>
 
 R --slave -f myscript.R
 </pre></div>
-</td></tr></table>
                 
                   
                 
