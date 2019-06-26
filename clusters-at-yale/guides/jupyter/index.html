@@ -678,13 +678,48 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-the-server" title="Start the Server" class="md-nav__link">
-    Start the Server
+  <a href="#set-up-an-environment" title="Set up an environment" class="md-nav__link">
+    Set up an environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-ondemand" title="Open OnDemand" class="md-nav__link">
+    Open OnDemand
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-setup" title="Job Setup" class="md-nav__link">
+    Job Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-method" title="Traditional Method" class="md-nav__link">
+    Traditional Method
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-server" title="Start the Server" class="md-nav__link">
+    Start the Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#start-the-tunnel" title="Start the Tunnel" class="md-nav__link">
     Start the Tunnel
   </a>
@@ -703,6 +738,11 @@
   <a href="#windows" title="Windows" class="md-nav__link">
     Windows
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1221,13 +1261,48 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#start-the-server" title="Start the Server" class="md-nav__link">
-    Start the Server
+  <a href="#set-up-an-environment" title="Set up an environment" class="md-nav__link">
+    Set up an environment
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#open-ondemand" title="Open OnDemand" class="md-nav__link">
+    Open OnDemand
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-setup" title="Job Setup" class="md-nav__link">
+    Job Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-method" title="Traditional Method" class="md-nav__link">
+    Traditional Method
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-server" title="Start the Server" class="md-nav__link">
+    Start the Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#start-the-tunnel" title="Start the Tunnel" class="md-nav__link">
     Start the Tunnel
   </a>
@@ -1246,6 +1321,11 @@
   <a href="#windows" title="Windows" class="md-nav__link">
     Windows
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1279,57 +1359,36 @@
                 
                 
                 <h1 id="jupyter-notebooks">Jupyter Notebooks</h1>
-<p>With a small amount of configuration, you can use a compute node to run a <a href="https://jupyter-notebook.readthedocs.io/en/stable/">jupyter notebook</a> and access it from your local machine. You will need to be on campus or logged in to the VPN for your connections to work. The main steps are:</p>
+<p>You can use a compute node to run a <a href="https://jupyter-notebook.readthedocs.io/en/stable/">jupyter notebook</a> and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.</p>
+<p>Before you get started, you will need to be on campus or logged in to the <a href="/clusters-at-yale/access/vpn.md">Yale VPN</a> and you will need to set up a jupyter environment.</p>
+<h2 id="set-up-an-environment">Set up an environment</h2>
+<p>We recommend you use <a href="/clusters-at-yale/guides/conda">conda</a> to manage your jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
+<div class="codehilite"><pre><span></span>module load miniconda
+conda create -yn notebook_env anaconda <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
+</pre></div>
+
+
+<p>You can then load this environment for jupyter where we indicate below.</p>
+<h2 id="open-ondemand">Open OnDemand</h2>
+<p>On <a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/farnam.md">Farnam</a> we run a web portal to the clusters which can also run a jupyter notebook for you. You can access the jupyter app via <a href="https://ood-grace.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new">ood-grace.hpc.yale.edu</a> or <a href="https://ood-farnam.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new">ood-farnam.hpc.yale.edu</a></p>
+<h3 id="job-setup">Job Setup</h3>
+<p>In the job submission form there is a text area called "Environment Setup (drag text area to enlarge)". Here you must enter the commands that activate an environment with <code>jupyter</code> in it. We make a default available, but if you want to use any specialized software you should create a new conda environment and activate it here. For example, if you ran the command above, you would paste the following into the text box:</p>
+<div class="codehilite"><pre><span></span>module load miniconda
+<span class="nb">source</span> activate notebook_env
+</pre></div>
+
+
+<h2 id="traditional-method">Traditional Method</h2>
+<p>If you want finer control over your notebook job, you can manually configure a jupyter notebook and connect manually.</p>
+<p>The main steps are:</p>
 <ol>
 <li>Start a jupyter notebook job.</li>
 <li>Start an ssh tunnel.</li>
 <li>Use your local browser to connect.</li>
 </ol>
-<h2 id="start-the-server">Start the Server</h2>
-<p>Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains <code>jupyter-notebook</code> or <code>source activate</code> an environment if you're using <a href="/clusters-at-yale/guides/conda">Anaconda Python</a>. Save your edited version of this script on the cluster, and submit it with <code>sbatch</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<h3 id="start-the-server">Start the Server</h3>
+<p>Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains <code>jupyter-notebook</code> or <code>source activate</code> an environment if you're using . Save your edited version of this script on the cluster, and submit it with <code>sbatch</code>.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition general</span>
 <span class="c1">#SBATCH --nodes 1</span>
 <span class="c1">#SBATCH --ntasks-per-node 1</span>
@@ -1347,13 +1406,13 @@
 
 <span class="c1"># print tunneling instructions jupyter-log</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;</span>
-<span class="s2">MacOS or linux terminal command to create your ssh tunnel:</span>
+<span class="s2">For more info and how to connect from windows,</span>
+<span class="s2">   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/</span>
+
+<span class="s2">MacOS or linux terminal command to create your ssh tunnel</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.hpc.yale.edu</span>
 
-<span class="s2">For more info and how to connect from windows,</span>
-<span class="s2">   see research.computing.yale.edu/jupyter-nb</span>
-<span class="s2">Here is the MobaXterm info:</span>
-
+<span class="s2">Windows MobaXterm info</span>
 <span class="s2">Forwarded port:same as remote port</span>
 <span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"></span>
@@ -1366,20 +1425,21 @@
 <span class="s2">&quot;</span>
 
 <span class="c1"># load modules or conda environments here</span>
-<span class="c1"># e.g. farnam:</span>
-<span class="c1"># module load Python/2.7.13-foss-2016b</span>
+<span class="c1"># uncomment the following two lines to use your conda environment called notebook_env</span>
+<span class="c1"># module load miniconda</span>
+<span class="c1"># source activate notebook_env</span>
 
 <span class="c1"># DON&#39;T USE ADDRESS BELOW.</span>
 <span class="c1"># DO USE TOKEN BELOW</span>
 jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span> --ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
 </pre></div>
-</td></tr></table>
 
-<h2 id="start-the-tunnel">Start the Tunnel</h2>
-<p>Once you have submitted your job and it starts, your notebook server will be ready for you to connect. You can run <code>squeue -u$(whoami)</code> to check. You will see an "R" in the ST or status column for your notebook job if it is running. If you see a "PD" in the status column, you will have to wait for your job to start running to connect. The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.</p>
-<h3 id="macos-and-linux">MacOS and Linux</h3>
+
+<h3 id="start-the-tunnel">Start the Tunnel</h3>
+<p>Once you have submitted your job and it starts, your notebook server will be ready for you to connect. You can run <code>squeue -u${USER}</code> to check. You will see an "R" in the ST or status column for your notebook job if it is running. If you see a "PD" in the status column, you will have to wait for your job to start running to connect. The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.</p>
+<h4 id="macos-and-linux">MacOS and Linux</h4>
 <p>On a Mac or Linux machine, you can start the tunnel with an SSH command. You can check the output from the job you started to get the specifc info you need.</p>
-<h3 id="windows">Windows</h3>
+<h4 id="windows">Windows</h4>
 <p>On a windows machine, we recommend you use MobaXterm. See our guide on <a href="/clusters-at-yale/access">connecting with MobaXterm</a> for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:</p>
 <ol>
 <li>Under Tools choose "MobaSSHTunnel (port forwarding)".</li>
@@ -1393,7 +1453,7 @@ jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${<
 <h2 id="browse-the-notebook">Browse the Notebook</h2>
 <p>Finally, open a web browser on your local machine and enter the address <code>http://localhost:port</code> where port is the one specified in your log file. The address Jupyter creates by default (the one with the name of a compute node) will not work outside the cluster's network. Since version 5 of jupyter, the notebook will automatically generate a token that allows you to authenticate when you connect. It is long, and will be at the end of the url jupyter generates. It will look something like</p>
 <p><code>http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**</code></p>
-<p>If you run into trouble or need help, as always just shoot us an email at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>.</p>
+<p>If you run into trouble or need help, send us an email at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>.</p>
                 
                   
                 
