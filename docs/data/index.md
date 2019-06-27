@@ -6,7 +6,7 @@
 No sensitive data (e.g. ePHI, HIPAA)  
 Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/data/google-drive)**
 
-Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an Eliapps (Google Apps for Education) account have unlimited (yes, unlimited) storage at no cost in the associated Google Drive account. Moreover, Eliapps users can request Team Drives, which are Google Drive shared spaces where all files in a Team Drive belong to the team instead to any individual. For more information on Google Drive through Eliapps, see our [Google Drive documentation](/data/google-drive) for more information.
+Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an Eliapps (Google Apps for Education) account have unlimited (yes, unlimited) storage at no cost in the associated Google Drive account. Moreover, Eliapps users can request Shared Drives, which are Google Drive shared spaces where all files in a Shared Drive belong to the team instead to any individual. For more information on Google Drive through Eliapps, see our [Google Drive documentation](/data/google-drive) for more information.
 
 ## Storage @ Yale
 

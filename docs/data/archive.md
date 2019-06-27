@@ -10,7 +10,7 @@ Not every file created during a project needs to be archived. If you proactively
 
 ## Compress Your Data
 
-Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Team Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or [tar](/online-tutorials), portions of your data for ease of storage and retrieval.
+Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or [tar](/online-tutorials), portions of your data for ease of storage and retrieval.
 
 ## Tips for S@Y Archive Tier (or Any Tape Archive)
 
