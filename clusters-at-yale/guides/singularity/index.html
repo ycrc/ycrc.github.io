@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -1453,19 +1481,19 @@
 <p>Images are the file(s) you use to run your container. Singularity images are single files that usually end in <code>.simg</code> or <code>.img</code> and are read-only by default, meaning changes you make to the environment inside the container are not persistent.</p>
 <h2 id="use-a-pre-existing-container">Use a Pre-existing Container</h2>
 <p>If someone has already built a container that suits your needs, you can use it directly. You can either copy the singularity image file directly with <code>scp</code>, <code>rsync</code>, or <a href="/clusters-at-yale/data/transfer/#large-transfers-globus">globus</a>. You can also use <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://singularityhub.github.io/containers/registry/singularity-hub-registry/">Singularity Hub</a> images hosted on their respective registries. Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
-<div class="codehilite"><pre><span></span># set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity
-# e.g. 
-export SINGULARITY_CACHEDIR=~/project/.singularity
+<div class="codehilite"><pre><span></span># <span class="nv">set</span> <span class="nv">SINGULARITY_CACHEDIR</span> <span class="k">if</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">pull</span> <span class="nv">files</span> <span class="ss">(</span><span class="nv">which</span> <span class="nv">can</span> <span class="nv">get</span> <span class="nv">big</span><span class="ss">)</span> <span class="nv">somewhere</span> <span class="nv">other</span> <span class="nv">than</span> $<span class="nv">HOME</span><span class="o">/</span>.<span class="nv">singularity</span>
+# <span class="nv">e</span>.<span class="nv">g</span>. 
+<span class="nv">export</span> <span class="nv">SINGULARITY_CACHEDIR</span><span class="o">=~/</span><span class="nv">project</span><span class="o">/</span>.<span class="nv">singularity</span>
 </pre></div>
 
 
 <p>Here are some examples of getting containers already built by someone else with singularity:</p>
-<div class="codehilite"><pre><span></span># from Docker Hub (https://hub.docker.com/)
-singularity build ubuntu-18.10.simg docker://ubuntu:18.10
-singularity build tensorflow-10.0-py3.simg docker://tensorflow/tensorflow:1.10.0-py3
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="k">from</span> <span class="n">Docker</span> <span class="n">Hub</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hub</span><span class="p">.</span><span class="n">docker</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="p">)</span>
+<span class="n">singularity</span> <span class="n">build</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mi">18</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="n">simg</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="n">ubuntu</span><span class="p">:</span><span class="mi">18</span><span class="p">.</span><span class="mi">10</span>
+<span class="n">singularity</span> <span class="n">build</span> <span class="n">tensorflow</span><span class="o">-</span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py3</span><span class="p">.</span><span class="n">simg</span> <span class="n">docker</span><span class="p">:</span><span class="o">//</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">tensorflow</span><span class="p">:</span><span class="mi">1</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py3</span>
 
-# from Singularity Hub (https://singularity-hub.org/)
-singularity build bioconvert-latest.simg shub://biokit/bioconvert:latest
+<span class="o">#</span> <span class="k">from</span> <span class="n">Singularity</span> <span class="n">Hub</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">singularity</span><span class="o">-</span><span class="n">hub</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="p">)</span>
+<span class="n">singularity</span> <span class="n">build</span> <span class="n">bioconvert</span><span class="o">-</span><span class="n">latest</span><span class="p">.</span><span class="n">simg</span> <span class="n">shub</span><span class="p">:</span><span class="o">//</span><span class="n">biokit</span><span class="o">/</span><span class="n">bioconvert</span><span class="p">:</span><span class="n">latest</span>
 </pre></div>
 
 
@@ -1530,7 +1558,7 @@ singularity build bioconvert-latest.simg shub://biokit/bioconvert:latest
 
 <h3 id="building">Building</h3>
 <p>To finally build your container after saving your recipe file as <code>my_app.def</code>, for example, you would run</p>
-<div class="codehilite"><pre><span></span>singularity build my_app.simg my_app.def
+<div class="codehilite"><pre><span></span><span class="n">singularity</span> <span class="n">build</span> <span class="n">my_app</span><span class="p">.</span><span class="n">simg</span> <span class="n">my_app</span><span class="p">.</span><span class="n">def</span>
 </pre></div>
 
 
@@ -1538,26 +1566,26 @@ singularity build bioconvert-latest.simg shub://biokit/bioconvert:latest
 <p>Once you have a container image, you can run it as a part of a batch job, or interactively.</p>
 <h3 id="interactively">Interactively</h3>
 <p>To get a shell in a container so you can interactively work in its environment:</p>
-<div class="codehilite"><pre><span></span>singularity shell --shell /bin/bash containername.simg
+<div class="codehilite"><pre><span></span><span class="n">singularity</span> <span class="n">shell</span> <span class="c1">--shell /bin/bash containername.simg</span>
 </pre></div>
 
 
 <h3 id="in-a-job-script">In a Job Script</h3>
 <p>You can also run applications from your container non-interactively as you would in a batch job. If I wanted to run a script called <code>my_script.py</code> using my container's python:</p>
-<div class="codehilite"><pre><span></span>singularity exec containername.simg python my_script.py
+<div class="codehilite"><pre><span></span><span class="nv">singularity</span> <span class="k">exec</span> <span class="nv">containername</span>.<span class="nv">simg</span> <span class="nv">python</span> <span class="nv">my_script</span>.<span class="nv">py</span>
 </pre></div>
 
 
 <h2 id="environment-variables">Environment Variables</h2>
 <p>If you are unsure if you are running inside or outside your container, you can run:</p>
-<div class="codehilite"><pre><span></span>echo $SINGULARITY_NAME
+<div class="codehilite"><pre><span></span><span class="n">echo</span> <span class="err">$</span><span class="n">SINGULARITY_NAME</span>
 </pre></div>
 
 
 <p>If you get back text, you are in your container.</p>
 <p>If you'd like to pass environment variables into your container, you can do so by defining them prefixed with <code>SINGULARITYENV_</code> . For Example:</p>
-<div class="codehilite"><pre><span></span>export SINGULARITYENV_BLASTDB=/home/me/db/blast
-singularity exec my_blast_image.simg env | grep BLAST
+<div class="codehilite"><pre><span></span><span class="nv">export</span> <span class="nv">SINGULARITYENV_BLASTDB</span><span class="o">=/</span><span class="nv">home</span><span class="o">/</span><span class="nv">me</span><span class="o">/</span><span class="nv">db</span><span class="o">/</span><span class="nv">blast</span>
+<span class="nv">singularity</span> <span class="k">exec</span> <span class="nv">my_blast_image</span>.<span class="nv">simg</span> <span class="nv">env</span> <span class="o">|</span> <span class="nv">grep</span> <span class="nv">BLAST</span>
 </pre></div>
 
 
@@ -1567,13 +1595,13 @@ singularity exec my_blast_image.simg env | grep BLAST
 <p>MPI support for Singularity is relatively straight-forward. The only thing to watch is to make sure that you are using the same version of MPI inside your container as you are on the cluster.</p>
 <h3 id="gpus">GPUs</h3>
 <p>You can use gpu-accelerated code inside your container, which will need most everything also installed in your container (e.g. CUDA, cuDNN). In order for your applications to have access to the right drivers on the host machine, use the <code>--nv</code> flag. For example:</p>
-<div class="codehilite"><pre><span></span>singularity exec --nv tensorflow-10.0-py3.simg python ./my-tf-model.py
+<div class="codehilite"><pre><span></span><span class="nv">singularity</span> <span class="k">exec</span> <span class="o">--</span><span class="nv">nv</span> <span class="nv">tensorflow</span><span class="o">-</span><span class="mi">10</span>.<span class="mi">0</span><span class="o">-</span><span class="nv">py3</span>.<span class="nv">simg</span> <span class="nv">python</span> .<span class="o">/</span><span class="nv">my</span><span class="o">-</span><span class="nv">tf</span><span class="o">-</span><span class="nv">model</span>.<span class="nv">py</span>
 </pre></div>
 
 
 <h3 id="home-directories">Home Directories</h3>
 <p>Sometimes the maintainer of a docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the <code>--contain</code> option. Unfortunately, you will also then have to explicitly tell Singularity about the paths that you want to use from inside the container with the <a href="https://www.sylabs.io/guides/2.6/user-guide/bind_paths_and_mounts.html"><code>--bind</code></a> option.</p>
-<div class="codehilite"><pre><span></span>singularity shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.simg
+<div class="codehilite"><pre><span></span><span class="n">singularity</span> <span class="n">shell</span> <span class="c1">--shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.simg</span>
 </pre></div>
                 
                   
@@ -1638,27 +1666,19 @@ singularity exec my_blast_image.simg env | grep BLAST
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -1300,7 +1328,7 @@
 
 
 <p>In the example above, we want walltime of 10 minutes and memory=4GB per task. Our invocation would be:</p>
-<div class="codehilite"><pre><span></span>dSQ --jobfile joblist.txt  --mem-per-cpu=4g -t 10:00 &gt; run.sh
+<div class="codehilite"><pre><span></span><span class="n">dSQ</span> <span class="c1">--jobfile joblist.txt  --mem-per-cpu=4g -t 10:00 &gt; run.sh</span>
 </pre></div>
 
 
@@ -1332,17 +1360,17 @@
 </td></tr></table>
 
 <h2 id="step-3-submit-batch-script">Step 3: Submit Batch Script</h2>
-<div class="codehilite"><pre><span></span>sbatch run.sh
+<div class="codehilite"><pre><span></span><span class="n">sbatch</span> <span class="n">run</span><span class="p">.</span><span class="n">sh</span>
 </pre></div>
 
 
 <h2 id="manage-your-dsq-job">Manage Your dSQ Job</h2>
 <p>You can refer to any portion of your job with <code>jobid_index</code> syntax, or the entire array with its jobid. The index Dead Simple Queue uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2. You can also specify ranges.</p>
-<div class="codehilite"><pre><span></span>#to cancel job 4 for array job 14567
-scancel 14567_4
+<div class="codehilite"><pre><span></span>#<span class="nv">to</span> <span class="nv">cancel</span> <span class="nv">job</span> <span class="mi">4</span> <span class="k">for</span> <span class="nv">array</span> <span class="nv">job</span> <span class="mi">14567</span>
+<span class="nv">scancel</span> <span class="mi">14567</span><span class="nv">_4</span>
 
-#to cancel jobs 3,5 and 10-20 for job 14567:
-scancel 14567_[3,5,10-20]
+#<span class="nv">to</span> <span class="nv">cancel</span> <span class="nv">jobs</span> <span class="mi">3</span>,<span class="mi">5</span> <span class="nv">and</span> <span class="mi">10</span><span class="o">-</span><span class="mi">20</span> <span class="k">for</span> <span class="nv">job</span> <span class="mi">14567</span>:
+<span class="nv">scancel</span> <span class="mi">14567</span><span class="nv">_</span>[<span class="mi">3</span>,<span class="mi">5</span>,<span class="mi">10</span><span class="o">-</span><span class="mi">20</span>]
 </pre></div>
 
 
@@ -1360,29 +1388,29 @@ scancel 14567_[3,5,10-20]
 <p>Additionally, Slurm will honor the <code>-e,--error</code> and <code>-i,--input</code> arguments you provide to capture stdout and stderr. By default both standard output and standard error are directed to a file of the name "slurm-%j.out", where the "%j" is replaced with the job allocation number and array index, which is conveniently also the 0-based line number from your job file. We recommend inspecting these outputs for troubleshooting individual failed jobss.</p>
 <h2 id="dsqautopsy">dSQAutopsy</h2>
 <p>Once the dSQ job is finished, you can use dSQAutopsy to create both a report of the run, as well as a new jobsfile that contains just the jobss that failed.</p>
-<div class="codehilite"><pre><span></span>$ dSQAutopsy --help
-usage: dSQAutopsy jobsfile status.tsv
+<div class="codehilite"><pre><span></span>$ <span class="nv">dSQAutopsy</span> <span class="o">--</span><span class="nv">help</span>
+<span class="nv">usage</span>: <span class="nv">dSQAutopsy</span> <span class="nv">jobsfile</span> <span class="nv">status</span>.<span class="nv">tsv</span>
 
-Dead Simple Queue Autopsy v0.9
-https://github.com/ycrc/dSQ
-A helper script <span class="k">for</span> analyzing the success state of your jobss after a dSQ
-run has completed. Specify the jobsfile and the status.tsv file generated
-by the dSQ job and dSQAutopsy will print the jobss that didn<span class="s1">&#39;t run or</span>
-<span class="s1">completed with non-zero exit codes. It will also report count of each to</span>
-<span class="s1">stderr.</span>
+<span class="nv">Dead</span> <span class="nv">Simple</span> <span class="nv">Queue</span> <span class="nv">Autopsy</span> <span class="nv">v0</span>.<span class="mi">9</span>
+<span class="nv">https</span>:<span class="o">//</span><span class="nv">github</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ycrc</span><span class="o">/</span><span class="nv">dSQ</span>
+<span class="nv">A</span> <span class="nv">helper</span> <span class="nv">script</span> <span class="k">for</span> <span class="nv">analyzing</span> <span class="nv">the</span> <span class="nv">success</span> <span class="nv">state</span> <span class="nv">of</span> <span class="nv">your</span> <span class="nv">jobss</span> <span class="nv">after</span> <span class="nv">a</span> <span class="nv">dSQ</span>
+<span class="nv">run</span> <span class="nv">has</span> <span class="nv">completed</span>. <span class="nv">Specify</span> <span class="nv">the</span> <span class="nv">jobsfile</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">status</span>.<span class="nv">tsv</span> <span class="nv">file</span> <span class="nv">generated</span>
+<span class="nv">by</span> <span class="nv">the</span> <span class="nv">dSQ</span> <span class="nv">job</span> <span class="nv">and</span> <span class="nv">dSQAutopsy</span> <span class="nv">will</span> <span class="nv">print</span> <span class="nv">the</span> <span class="nv">jobss</span> <span class="nv">that</span> <span class="nv">didn</span><span class="s1">&#39;</span><span class="s">t run or</span>
+<span class="nv">completed</span> <span class="nv">with</span> <span class="nv">non</span><span class="o">-</span><span class="nv">zero</span> <span class="k">exit</span> <span class="nv">codes</span>. <span class="nv">It</span> <span class="nv">will</span> <span class="nv">also</span> <span class="nv">report</span> <span class="nv">count</span> <span class="nv">of</span> <span class="nv">each</span> <span class="nv">to</span>
+<span class="nv">stderr</span>.
 
-<span class="s1">positional arguments:</span>
-<span class="s1">  jobsfile       jobs file, one jobs per line</span>
-<span class="s1">  statusfile     The status.tsv file generated from your dSQ run</span>
+<span class="nv">positional</span> <span class="nv">arguments</span>:
+  <span class="nv">jobsfile</span>       <span class="nv">jobs</span> <span class="nv">file</span>, <span class="nv">one</span> <span class="nv">jobs</span> <span class="nv">per</span> <span class="nv">line</span>
+  <span class="nv">statusfile</span>     <span class="nv">The</span> <span class="nv">status</span>.<span class="nv">tsv</span> <span class="nv">file</span> <span class="nv">generated</span> <span class="nv">from</span> <span class="nv">your</span> <span class="nv">dSQ</span> <span class="nv">run</span>
 
-<span class="s1">optional arguments:</span>
-<span class="s1">  -h, --help     show this help message and exit</span>
-<span class="s1">  -v, --version  show program&#39;</span>s version number and <span class="nb">exit</span>
+<span class="nv">optional</span> <span class="nv">arguments</span>:
+  <span class="o">-</span><span class="nv">h</span>, <span class="o">--</span><span class="nv">help</span>     <span class="k">show</span> <span class="nv">this</span> <span class="nv">help</span> <span class="nv">message</span> <span class="nv">and</span> <span class="k">exit</span>
+  <span class="o">-</span><span class="nv">v</span>, <span class="o">--</span><span class="nv">version</span>  <span class="k">show</span> <span class="nv">program</span><span class="s1">&#39;</span><span class="s">s version number and exit</span>
 </pre></div>
 
 
 <p>You can conveniently redirect the report and the failed jobss to separate files:</p>
-<div class="codehilite"><pre><span></span>dSQAutopsy jobsfile.txt job_2629186_status.tsv &gt; failedjobs.txt 2&gt; report.txt
+<div class="codehilite"><pre><span></span><span class="n">dSQAutopsy</span> <span class="n">jobsfile</span><span class="p">.</span><span class="n">txt</span> <span class="n">job_2629186_status</span><span class="p">.</span><span class="n">tsv</span> <span class="o">&gt;</span> <span class="n">failedjobs</span><span class="p">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">report</span><span class="p">.</span><span class="n">txt</span>
 </pre></div>
                 
                   
@@ -1447,27 +1475,19 @@ by the dSQ job and dSQAutopsy will print the jobss that didn<span class="s1">&#3
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
