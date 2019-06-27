@@ -23,6 +23,7 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Bioinformatics, Python|
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), MPI, GPUs, Matlab|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|| [via email](mailto:giuseppe.amatulli@yale.edu)||Geo-Computation, GIS and Remote Sensing, Forestry|
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|| [via email](mailto:mikhael.guy@yale.edu)||SRSC Software and Mathematica|
 
 ### Email
 
