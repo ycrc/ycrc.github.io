@@ -1,16 +1,48 @@
 # Jupyter Notebooks
 
-With a small amount of configuration, you can use a compute node to run a [jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. You will need to be on campus or logged in to the VPN for your connections to work. The main steps are:
+You can use a compute node to run a [jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.
+
+Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn.md) and you will need to set up a jupyter environment.
+
+## Set up an environment
+
+We recommend you use [conda](/clusters-at-yale/guides/conda) to manage your jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
+
+``` bash
+module load miniconda
+conda create -yn notebook_env anaconda python=3
+```
+
+You can then load this environment for jupyter where we indicate below.
+
+## Open OnDemand
+
+On [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam.md) we run a web portal to the clusters which can also run a jupyter notebook for you. You can access the jupyter app via [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new) or [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new)
+
+### Job Setup
+
+In the job submission form there is a text area called "Environment Setup (drag text area to enlarge)". Here you must enter the commands that activate an environment with `jupyter` in it. We make a default available, but if you want to use any specialized software you should create a new conda environment and activate it here. For example, if you ran the command above, you would paste the following into the text box:
+
+``` bash
+module load miniconda
+source activate notebook_env
+```
+
+## Traditional Method
+
+If you want finer control over your notebook job, you can manually configure a jupyter notebook and connect manually.
+
+The main steps are:
 
 1. Start a jupyter notebook job.
 1. Start an ssh tunnel.
 1. Use your local browser to connect.
 
-## Start the Server
+### Start the Server
 
-Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `source activate` an environment if you're using [Anaconda Python](/clusters-at-yale/guides/conda). Save your edited version of this script on the cluster, and submit it with `sbatch`.
+Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `source activate` an environment if you're using . Save your edited version of this script on the cluster, and submit it with `sbatch`.
 
-```
+``` bash
 #!/bin/bash
 #SBATCH --partition general
 #SBATCH --nodes 1
@@ -29,13 +61,13 @@ cluster=$(hostname -f | awk -F"." '{print $2}')
 
 # print tunneling instructions jupyter-log
 echo -e "
-MacOS or linux terminal command to create your ssh tunnel:
+For more info and how to connect from windows,
+   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/
+
+MacOS or linux terminal command to create your ssh tunnel
 ssh -N -L ${port}:${node}:${port} ${user}@${cluster}.hpc.yale.edu
 
-For more info and how to connect from windows,
-   see research.computing.yale.edu/jupyter-nb
-Here is the MobaXterm info:
-
+Windows MobaXterm info
 Forwarded port:same as remote port
 Remote server: ${node}
 Remote port: ${port}
@@ -48,8 +80,9 @@ localhost:${port}  (prefix w/ https:// if using password)
 "
 
 # load modules or conda environments here
-# e.g. farnam:
-# module load Python/2.7.13-foss-2016b
+# uncomment the following two lines to use your conda environment called notebook_env
+# module load miniconda
+# source activate notebook_env
 
 # DON'T USE ADDRESS BELOW.
 # DO USE TOKEN BELOW
@@ -57,15 +90,15 @@ jupyter-notebook --no-browser --port=${port} --ip=${node}
 
 ```
 
-## Start the Tunnel
+### Start the Tunnel
 
-Once you have submitted your job and it starts, your notebook server will be ready for you to connect. You can run `squeue -u$(whoami)` to check. You will see an "R" in the ST or status column for your notebook job if it is running. If you see a "PD" in the status column, you will have to wait for your job to start running to connect. The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.
+Once you have submitted your job and it starts, your notebook server will be ready for you to connect. You can run `squeue -u${USER}` to check. You will see an "R" in the ST or status column for your notebook job if it is running. If you see a "PD" in the status column, you will have to wait for your job to start running to connect. The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.
 
-### MacOS and Linux
+#### MacOS and Linux
 
 On a Mac or Linux machine, you can start the tunnel with an SSH command. You can check the output from the job you started to get the specifc info you need.
 
-### Windows
+#### Windows
 
 On a windows machine, we recommend you use MobaXterm. See our guide on [connecting with MobaXterm](/clusters-at-yale/access) for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:
 
@@ -83,4 +116,4 @@ Finally, open a web browser on your local machine and enter the address `http://
 
 `http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**`
 
-If you run into trouble or need help, as always just shoot us an email at [hpc@yale.edu](mailto:hpc@yale.edu).
+If you run into trouble or need help, send us an email at [hpc@yale.edu](mailto:hpc@yale.edu).

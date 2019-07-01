@@ -2,9 +2,9 @@
 
 ## Load R
 
-### Your Own R Environment
+### Create Your Own R Environment
 
-We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our [Conda page](/cluster-at-yale/guides/conda).
+We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our [Conda page](/clusters-at-yale/guides/conda).
 
 ### Installing Non-Conda Packages
 
@@ -38,13 +38,13 @@ We also provide a basic R installing on some of the clusters which you can use. 
 
 Run one of the commands below, which will list available versions and the corresponding module files:
 
-```
+``` bash
 module avail R
 ```
 
 Load the appropriate module file. For example, to run version 3.4.1:
 
-```
+``` bash
 module load  R/3.4.1-foss-2016b
 ```
 
@@ -54,7 +54,7 @@ The module load command sets up your environment, including the PATH to find the
 
 To run R, launch it using the `R` command.
 
-```
+``` bash
 # launch an R session
 R
 # or to launch a script
@@ -68,7 +68,7 @@ R --slave -f myscript.R
 
 To run R interactively, you need to launch an interactive session on a compute node. For example
 
-```
+``` bash
 srun --pty -p interactive -t 4:00:00 bash
 ```
 
@@ -80,10 +80,9 @@ See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detaile
 
 To run R in batch mode, you create a [batch script](/clusters-at-yale/job-scheduling). In that script, you would invoke your R script in batch mode.
 
-```
+``` bash
 #!/bin/bash
 #SBATCH -J my_r_program
 
 R --slave -f myscript.R
 ```
-

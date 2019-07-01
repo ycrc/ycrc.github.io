@@ -19,9 +19,11 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), Physics, Python|
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|Tues|9-11am|222|[Farnam](/clusters-at-yale/clusters/farnam), Life Sciences, Structural Biology|
 |[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Bioinformatics, Python|
+|[David Huberdeau, Ph.D.](https://research.computing.yale.edu/about/staff/david-huberdeau)|Thurs, Fri|11am-Noon|216|[Milgram](/clusters-at-yale/clusters/milgram), Matlab, XNAT, Brain Imaging|
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Bioinformatics, Python|
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), MPI, GPUs, Matlab|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|| [via email](mailto:giuseppe.amatulli@yale.edu)||Geo-Computation, GIS and Remote Sensing, Forestry|
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|| [via email](mailto:mikhael.guy@yale.edu)||SRSC Software and Mathematica|
 
 ### Email
 
