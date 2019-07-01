@@ -6,6 +6,32 @@
 
 We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our [Conda page](/cluster-at-yale/guides/conda).
 
+### Installing Non-Conda Packages
+
+If there are packages that you need that are not available via Conda, you can 
+install them into your local space. We recommend using the `project` 
+directory, since these files can get large. 
+
+First, you will need to change the default install path:
+
+```sh
+export R_LIBS=$HOME/project/r_libs
+mkdir $R_LIBS
+```
+
+Then you can launch your R installation and install packages 
+(`lattice` for example) directly:
+
+```sh
+$ R
+
+> install.packages("lattice", repos="http://cran.r-project.org")
+
+```
+
+Finally, make sure to add `export R_LIBS=$HOME/project/r_libs` to your .bashrc 
+file to automatically load that variable every time you log in.
+
 ### System Environment
 
 We also provide a basic R installing on some of the clusters which you can use. However, if you find it is missing packages you need, we recommend setting up your own environment as described above.
