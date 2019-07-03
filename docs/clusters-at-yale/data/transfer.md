@@ -2,11 +2,31 @@
 
 Transferring files can be done using several methods. The most common are described below.
 
+## Data Transfer Nodes
+
+Each cluster (except for Milgram) has a dedicated "data transfer" node that is specially networked for high speed transfers both on and off-campus using the Yale Science Network. These transfer nodes are also the hosts of our [Globus service](#large-transfers-globus), which enables resilient transfers of large amounts of data. From the login node of a cluster, you can ssh to the transfer node:
+
+```
+ssh transfer
+```
+
+If you are initiating a longer running transfer and are not using [Globus](#large-transfers-globus), you can initiate the transfer in a [tmux](/clusters-at-yale/guides/tmux/) session to protect against network interruptions.
+
+You may also use the transfer node to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. Note that you still must be on-campus or the [VPN](/clusters-at-yale/access/vpn/) to access the transfer nodes.
+
+| Cluster   | Transfer Node                          |
+|-----------|----------------------------------------|
+| Grace     | `transfer-grace.hpc.yale.edu`          |
+| Farnam    | `transfer-farnam.hpc.yale.edu`         |
+| Ruddle    | `transfer-ruddle.hpc.yale.edu`         |
+| Omega     | `transfer-omega.hpc.yale.edu`          |
+| Milgram   | use login node: `milgram.hpc.yale.edu` |
+
 ## scp/rsync (macOS/Linux only)
 
-Linux and Apple macOS users can use [scp](https://linux.die.net/man/1/scp) or [rsync](http://linux.die.net/man/1/rsync) to transfer files to/from a cluster. You will need the hostname of the [cluster login nodes](/clusters-at-yale/clusters) to transfer files.
+Linux and Apple macOS users can use [scp](https://linux.die.net/man/1/scp) or [rsync](http://linux.die.net/man/1/rsync) to transfer files to/from a cluster. You will need the hostname of the cluster transfer node (see above) to transfer files.
 
-Note that you must have your ssh keys properly configured to use the commands outlined below. See the [Cluster Access documentation](/clusters-at-yale/access) for more info.
+Note that you must have your ssh keys properly setup to use the commands outlined below. See the [Cluster Access documentation](/clusters-at-yale/access) for more info.
 
 scp and sftp are both used from a Terminal window. The basic syntax of `scp` is
 
@@ -14,26 +34,26 @@ scp and sftp are both used from a Terminal window. The basic syntax of `scp` is
 scp [from] [to]
 ```
 
-The “from” portion can be a filename or a directory/folder. The “to” portion will contain your netid, the hostname of the cluster login node, and the destination directory/folder.
+The “from” portion can be a filename or a directory/folder. The “to” portion will contain your netid, the hostname of the cluster transfer node (or login node for Milgram), and the destination directory/folder.
 
 ### Transfer a File from Your Computer to a Cluster
 
 Assuming the user’s netid is `ra359`, the following is run on your computer's local terminal.
 
 ```
-scp myfile.txt ra359@grace.hpc.yale.edu:/home/fas/admins/ra359/test
+scp myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test
 ```
 
 In this example, `myfile.txt` is copied to the directory `/home/fas/admins/ra359/test:` on Grace. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
 
 ```
-scp /home/xyz/myfile.txt ra359@grace.hpc.yale.edu:/home/fas/admins/ra359/test
+scp /home/xyz/myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test
 ```
 
 ### Transfer a Directory to a Cluster
 
 ```
-scp -r mydirectory ra359@grace.hpc.yale.edu:/home/fas/admins/ra359/test
+scp -r mydirectory ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test
 ```
 
 In this example, the contents of `mydirectory` are transferred. The `-r` indicates that the copy is recursive.
@@ -43,19 +63,19 @@ In this example, the contents of `mydirectory` are transferred. The `-r` indicat
 Assuming you would like the files copied to your current directory:
 
 ```
-scp ra359@grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt .
+scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt .
 ```
 
 Note that `.` represents your current working directory.
 To specify the destination, simply replace the `.` with the full path:
 
 ```
-scp ra359@grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt /path/myfolder
+scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt /path/myfolder
 ```
 
 ## FTP Client
 
-You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/) or [FileZilla (Linux)](https://filezilla-project.org/). You will need to configure the client with your netid as the username, the cluster login node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.
+You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/) or [FileZilla (Linux)](https://filezilla-project.org/). You will need to configure the client with your netid as the username, the cluster transfer node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.
 
 ![Cyberduck sample configuration.](/img/cyberduck.png)
 
@@ -73,22 +93,23 @@ Then once you establish your connection, you will prompted with a "Partial authe
 
 ## Object Storage Transfers
 
-To move data to and from object stores such as AWS S3, or GCP cloud storage, we recommend using rclone. It is installed as 
-a module on all of the clusters.  You can use to to copy files, sync directories, etc.  See <http://rclone.org>
+To move data to and from object stores such as AWS S3, or GCP cloud storage, we recommend using rclone. It is installed as a module on all of the clusters.  You can use to to copy files, sync directories, etc.  See <http://rclone.org>
 
 To begin, configure a connection by running
-```
+
+```bash
 rclone configure
 ```
-You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that 
-configuration, you can use that connection name to copy files:
-```
+
+You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can use that connection name to copy files:
+
+```bash
 rclone copy localpath/myfile mys3:bucketname/
 rclone sync localpath/mydir mys3:bucketname/remotedir
 ```
 
 We recommend that you protect your configurations with a password.  You'll see that as an option when you run rclone config.
-  
+
 ## Large Transfers (Globus)
 
 For larger transfers both within Yale and to external collaborators, we recommend using Globus. Globus is a file transfer service that is efficient and easy to use. It has several advantages:
@@ -103,26 +124,28 @@ We have set up Globus endpoints on most of the Yale clusters. Globus uses gridft
 
 ### ​Get Started with Globus
 
-1.  In a browser, go to www.globus.org.
-1.  Click on "Login".
-1.  Use the pulldown to select Yale in the list of organizations and click "Continue".
-1.  If you are not already logged into CAS, you will be asked for netid and password.
-1.  You'll see a transfer panel with dual panes. Enter an endpoint name in the left endpoint box, e.g. yale#grace.
-1.  The file browser will show you the directories in the root directory that Globus is exporting, normally /
-1.  Browse to any directory you can normally access, such as your home directory.
-1.  Enter another endpoint name in the right endpoint box, and browse to your chosen directory.
-1.  Select one or more files in either the left or right box, and click the < or > button to transfer the files in that direction.
+1. In a browser, go to www.globus.org.
+1. Click on "Login".
+1. Use the pulldown to select Yale in the list of organizations and click "Continue".
+1. If you are not already logged into CAS, you will be asked for netid and password.
+1. You'll see a transfer panel with dual panes. Enter an endpoint name in the left endpoint box, e.g. yale#grace.
+1. The file browser will show you the directories in the root directory that Globus is exporting, normally /
+1. Browse to any directory you can normally access, such as your home directory.
+1. Enter another endpoint name in the right endpoint box, and browse to your chosen directory.
+1. Select one or more files in either the left or right box, and click the < or > button to transfer the files in that direction.
 
 For more information, see the [official Globus Documentation](https://docs.globus.org).
 
-#### Cluster Endpoints
+### Cluster Endpoints
 
-We currently support endpoints for the following clusters
+We currently support endpoints for the following clusters.
 
-* Grace: `yale#grace`
-* Farnam: `yale#farnam`
-* Omega: `yale#omega`
-* Ruddle: `yale#ruddle`
+| Cluster   | Globus Endpoint       |
+|-----------|-----------------------|
+| Grace     | `yale#grace`          |
+| Farnam    | `yale#farnam`         |
+| Ruddle    | `yale#ruddle`         |
+| Omega     | `yale#omega`          |
 
 All of these endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
 
