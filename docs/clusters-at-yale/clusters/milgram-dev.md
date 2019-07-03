@@ -81,7 +81,7 @@ There is a `data` fileset on `/gpfs/milgram` designed to host shared, public dat
 
 The appointed curators for each dataset has the following responsibilities.
 
-#### Manage Datasets and Reset Permissions####
+#### Manage Datasets and Reset Permissions
 
 The curator for a specific fileset is the only user with `write` access to that directory. It is their responsibility to manage the data in that directory.
 
@@ -101,20 +101,12 @@ cd /gpfs/milgram/data/[destination_for_data]
 chmod -R ugo-w .
 ```
 
-
-#### Request Access for New User####
+#### Request Access for New User
 
 The curator is responsible for fielding access requests to their directory. Once a new user has been given permission to access the directory, the curator themselves will submit a permission change request to hpc@yale.edu.
 
-#### Appropriate Data Only####
+#### Appropriate Data Only
 
-The data fileset should only be used for raw datasets. Approval must be requested from Avram Holmes to add data products generated at Yale to the fileset. Intermediate data products and temporary files (such as slurm logs) should *never* be placed in the data directory.
-
-
-
-
-
-
-
+The data fileset should only be used for raw datasets. Approval must be requested from ????? to add data products generated at Yale to the fileset. Intermediate data products and temporary files (such as slurm logs) should *never* be placed in the data directory.
 
 
