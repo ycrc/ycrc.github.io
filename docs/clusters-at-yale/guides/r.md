@@ -2,35 +2,33 @@
 
 ## Load R
 
-### Create Your Own R Environment
+### Conda-based R Environments
 
-We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. You can find detailed instructions on our [Conda page](/clusters-at-yale/guides/conda).
-
-### Installing Non-Conda Packages
-
-If there are packages that you need that are not available via Conda, you can 
-install them into your local space. We recommend using the `project` 
-directory, since these files can get large. 
-
-First, you will need to change the default install path:
+We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. 
+You can find detailed instructions on our [Conda page](/clusters-at-yale/guides/conda).
+The conda package repository has many (though not all) of the common R packages that can be installed with the typical conda syntax:
 
 ```sh
-export R_LIBS=$HOME/project/r_libs
-mkdir $R_LIBS
+# Source the conda environment
+$ source activate my_r_env
+
+# Install the lattice package (r-lattice) from the r channel (-c r)
+(my_r_env)$ conda install -c r r-lattice 
+
 ```
-
-Then you can launch your R installation and install packages 
-(`lattice` for example) directly:
+If there are packages that conda does not provide, you can install them locally from within R using the `install.packages` function.
+To install a package (`lattice` for example) directly, simply run:
 
 ```sh
-$ R
+$ module load Tools/miniconda
+$ source activate my_r_env
+(my_r_env)$ R
 
 > install.packages("lattice", repos="http://cran.r-project.org")
 
 ```
 
-Finally, make sure to add `export R_LIBS=$HOME/project/r_libs` to your .bashrc 
-file to automatically load that variable every time you log in.
+Each conda environment manages a unique `$R_LIBS` directory so that there is no conflict between installations.
 
 ### System Environment
 
@@ -50,6 +48,29 @@ module load  R/3.4.1-foss-2016b
 
 The module load command sets up your environment, including the PATH to find the proper version of R.
 
+This installation includes the most commonly used packages, but if something specific is required, packages can be installed into your local space.
+To get started load the R module and start R:
+
+```bash
+$ module load R/3.4.1-foss-2016b
+$ R
+> install.packages("lattice", repos="http://cran.r-project.org")
+
+```
+
+This will throw a warning like:
+
+```bash
+Warning in install.packages("lattice") :
+'lib = "/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library"' is not writable
+Would you like to create a personal library
+~/R/x86_64-unknown-linux-gnu-library/3.3
+to install packages into?  (y/n) 
+```
+
+This will install the `lattice` package locally and will then be available to load into an R session.
+
+
 ## Run R
 
 To run R, launch it using the `R` command.
@@ -60,6 +81,8 @@ R
 # or to launch a script
 R --slave -f myscript.R
 ```
+
+
 
 !!!warning
     The R program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive or batch job (see below).
