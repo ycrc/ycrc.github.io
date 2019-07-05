@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -789,8 +817,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job-scheduling/dsq/" title="Submit Arrays with dSQ" class="md-nav__link">
-      Submit Arrays with dSQ
+    <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
+      Submit Job Arrays with dSQ
     </a>
   </li>
 
@@ -1264,15 +1292,15 @@
 </div>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> with group <code>othergroup</code>:</p>
-<div class="codehilite"><pre><span></span>mkdir shared
-setfacl -d -m g:othergroup:rwx shared
+<div class="codehilite"><pre><span></span><span class="n">mkdir</span> <span class="n">shared</span>
+<span class="n">setfacl</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">m</span> <span class="k">g</span><span class="p">:</span><span class="n">othergroup</span><span class="p">:</span><span class="n">rwx</span> <span class="n">shared</span>
 </pre></div>
 
 
 <h3 id="share-a-directory-with-a-particular-person">Share a Directory with a Particular Person</h3>
 <p>To share a new directory called <code>shared</code> with a person with netid <code>aa111</code>:</p>
-<div class="codehilite"><pre><span></span>mkdir shared
-setfacl -d -m u:aa111:rwx shared
+<div class="codehilite"><pre><span></span><span class="n">mkdir</span> <span class="n">shared</span>
+<span class="n">setfacl</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">m</span> <span class="n">u</span><span class="p">:</span><span class="n">aa111</span><span class="p">:</span><span class="n">rwx</span> <span class="n">shared</span>
 </pre></div>
                 
                   
@@ -1337,27 +1365,19 @@ setfacl -d -m u:aa111:rwx shared
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
