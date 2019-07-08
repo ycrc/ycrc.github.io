@@ -63,15 +63,17 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 
 * [Fantastic resource for anyone interested in Python](http://www.automatetheboringstuff.com)
 
-### multiprocessing
+### Parallel Programming with Python
 
 * [Quick Tutorial: Python Multiprocessing](https://further-reading.net/2017/01/quick-tutorial-python-multiprocessing/)
 * [Parallel Programming with Python](https://chryswoods.com/parallel_python/index.html)
+* [YCRC tutorial course material](http://docs.ycrc.yale.edu/parallel_python/)
 
 ### mpi4py
 
 * [Documentation for mpi4py](https://mpi4py.readthedocs.io/en/stable/tutorial.html)
-* [Yale Bootcamp and course material](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-python-mpi-parallel-programming)
+* [YCRC mpi4py tutorial video](https://research.computing.yale.edu/ycrc-bootcamp-python-mpi-parallel-programming-video)
+* [YCRC mpi4py example scripts](https://github.com/ycrc/mpi4py-examples)
 
 ## R
 
@@ -87,3 +89,16 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 ### foreach + dompi
 
 * [Introduction to doMPI](https://cran.r-project.org/web/packages/doMPI/vignettes/doMPI.pdf)
+
+## Singularity
+
+### Documentation
+
+* [Sylabs Docs Page](https://sylabs.io/docs/)
+* [Singularity Google Groups](https://groups.google.com/a/lbl.gov/forum/#!forum/singularity)
+
+### Tutorials
+
+* [NIH tutorial](https://singularity-tutorial.github.io)
+* [YCRC container tutorial](http://docs.ycrc.yale.edu/containers-bootcamp)
+* [NVIDIA tutorial for using GPUs](https://devblogs.nvidia.com/docker-compatibility-singularity-hpc/)
