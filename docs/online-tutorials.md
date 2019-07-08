@@ -72,6 +72,7 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 ### mpi4py
 
 * [Documentation for mpi4py](https://mpi4py.readthedocs.io/en/stable/tutorial.html)
+* [YCRC mpi4py tutorial](https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf)
 * [YCRC mpi4py tutorial video](https://research.computing.yale.edu/ycrc-bootcamp-python-mpi-parallel-programming-video)
 * [YCRC mpi4py example scripts](https://github.com/ycrc/mpi4py-examples)
 
