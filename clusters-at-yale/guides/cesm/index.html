@@ -611,8 +611,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-cesm" title="Running CESM" class="md-nav__link">
-    Running CESM
+  <a href="#run-cesm" title="Run CESM" class="md-nav__link">
+    Run CESM
   </a>
   
     <nav class="md-nav">
@@ -653,8 +653,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#building-your-case" title="Building your case" class="md-nav__link">
-    Building your case
+  <a href="#build-your-case" title="Build Your Case" class="md-nav__link">
+    Build Your Case
   </a>
   
     <nav class="md-nav">
@@ -1328,8 +1328,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-cesm" title="Running CESM" class="md-nav__link">
-    Running CESM
+  <a href="#run-cesm" title="Run CESM" class="md-nav__link">
+    Run CESM
   </a>
   
     <nav class="md-nav">
@@ -1370,8 +1370,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#building-your-case" title="Building your case" class="md-nav__link">
-    Building your case
+  <a href="#build-your-case" title="Build Your Case" class="md-nav__link">
+    Build Your Case
   </a>
   
     <nav class="md-nav">
@@ -1494,22 +1494,21 @@ module save
 
 <h2 id="input-data">Input Data</h2>
 <p>To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your <code>create_newcase</code> line to Kaylea (<a href="mailto:kaylea.nelson@yale.edu">kaylea.nelson@yale.edu</a>) and she will download that data for you.</p>
-<h2 id="running-cesm">Running CESM</h2>
+<h2 id="run-cesm">Run CESM</h2>
 <p>CESM needs to be rebuilt separately for each run. As a result, running CESM is more complicated than a standard piece of software where you would just run the executable.</p>
 <h3 id="create-your-case">Create Your Case</h3>
-<p>Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as <code>$CASE</code> s through out the rest of the guide.</p>
-<div class="codehilite"><pre><span></span>create_newcase -case &lt;case_name&gt; -compset<span class="o">=</span>&lt;compset&gt; -res<span class="o">=</span>&lt;resolution&gt; -mach<span class="o">=</span>&lt;machine&gt;
-<span class="c1"># substitute your case name for &quot;$CASE&quot; below</span>
-<span class="nb">cd</span> &lt;case_name&gt;
+<p>Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as <code>$CASE</code>  through out the rest of the guide.</p>
+<div class="codehilite"><pre><span></span>create_newcase -case <span class="nv">$CASE</span> -compset<span class="o">=</span>&lt;compset&gt; -res<span class="o">=</span>&lt;resolution&gt; -mach<span class="o">=</span>&lt;machine&gt;
+<span class="nb">cd</span> <span class="nv">$CASE</span>
 </pre></div>
 
 
 <p>The mach parameters for Grace and Omega are <code>yalegrace</code> and <code>omega</code>, respectively. For example</p>
 <div class="codehilite"><pre><span></span><span class="c1"># on Grace</span>
-create_newcase -case Test_Sim -compset<span class="o">=</span>B2000 -res<span class="o">=</span>f19_f19 -mach<span class="o">=</span>yalegrace
+create_newcase -case <span class="nv">$CASE</span> -compset<span class="o">=</span>B2000 -res<span class="o">=</span>f19_f19 -mach<span class="o">=</span>yalegrace
 <span class="c1"># on Omega</span>
-create_newcase -case Test_Sim -compset<span class="o">=</span>B2000 -res<span class="o">=</span>f19_f19 -mach<span class="o">=</span>omega
-<span class="nb">cd</span> Test_Sim
+create_newcase -case <span class="nv">$CASE</span> -compset<span class="o">=</span>B2000 -res<span class="o">=</span>f19_f19 -mach<span class="o">=</span>omega
+<span class="nb">cd</span> <span class="nv">$CASE</span>
 </pre></div>
 
 
@@ -1527,9 +1526,10 @@ create_newcase -case Test_Sim -compset<span class="o">=</span>B2000 -res<span cl
 </pre></div>
 
 
-<h3 id="building-your-case">Building your case</h3>
+<h3 id="build-your-case">Build Your Case</h3>
 <p>After you run the setup script, there will be a set of the scripts in your case directory that start with your case name. To compile your simulation executable, first move to an interactive job and then run the build script corresponding to your case.</p>
 <div class="codehilite"><pre><span></span>srun --pty -c <span class="m">4</span> -p interactive bash
+module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the appropriate module for your CESM version</span>
 ./<span class="nv">$CASE</span>.<span class="nv">$mach</span>.build
 </pre></div>
 
@@ -1572,10 +1572,11 @@ ls ~/project/CESM/$CASE
 <p>Look at the end of the last couple logs listed and look for an indication of the error.</p>
 <h4 id="resolve-errors">Resolve Errors</h4>
 <p>Once you have identified the lines in the logs corresponding to your error:</p>
-<p>If your log says something like “Disk quota exceeded”, your group is out of space in the fileset you are writing to. You can run the <code>getquota</code> script to get details on your disk usage. Your group will need to reduce their usage before you will be able to run successfully.</p>
-<p>If it looks like a model error and you don’t know how to fix it, I strongly recommend Googling your error and/or looking in the <a href="https://bb.cgd.ucar.edu">CESM forums</a>. If you still can’t resolve your error, you can come by Kaylea’s office hours, posted outside KGL 227.</p>
+<p>If your log says something like <code>Disk quota exceeded</code>, your group is out of space in the fileset you are writing to. You can run the <code>getquota</code> script to get details on your disk usage. Your group will need to reduce their usage before you will be able to run successfully.</p>
+<p>If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the <a href="https://bb.cgd.ucar.edu">CESM forums</a>.</p>
+<p>If you are still experiencing issues, you can email <a href="mailto:kaylea.nelson@yale.edu">Kaylea Nelson</a> or come by her G&amp;G office hours on Tuesdays (9am-5pm) in KGL 227.</p>
 <h2 id="alternative-submission-parameters">Alternative Submission Parameters</h2>
-<p>By default, the submission script will submit to the week partition for 7 days or the geo partition on Omega depending on your group. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace and 7 days on Omega. For example:</p>
+<p>By default, the submission script will submit to the "week" partition for 7 days or the "geo" partition on Omega depending on your group. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace and 7 days on Omega. For example:</p>
 <div class="codehilite"><pre><span></span><span class="c1">## day partition</span>
 <span class="c1">#SBATCH --partition=day</span>
 <span class="c1">#SBATCH --time=1-</span>
@@ -1588,7 +1589,7 @@ ls ~/project/CESM/$CASE
 </pre></div>
 
 
-<p>Note that is your submission script was configured to submit to the geo partition on Omega, you will need to modify the <code>#SBATCH -A pi_&lt;group_name&gt;</code> to be just <code>#SBATCH -A &lt;group_name&gt;</code> to submit to any other partition.</p>
+<p>Note that is your submission script was configured to submit to the "geo" partition on Omega, you will need to modify the <code>#SBATCH -A pi_&lt;group_name&gt;</code> to be just <code>#SBATCH -A &lt;group_name&gt;</code> to submit to any other partition.</p>
 <p>Then you can submit by running the submit script</p>
 <div class="codehilite"><pre><span></span>./<span class="nv">$CASE</span>.<span class="nv">$mach</span>.submit
 </pre></div>
@@ -1596,7 +1597,7 @@ ls ~/project/CESM/$CASE
 
 <h2 id="further-reading">Further Reading</h2>
 <ul>
-<li>I recommend referencing the User Guides listed at the top of this page.</li>
+<li>We recommend referencing the User Guides listed at the top of this page.</li>
 <li><a href="https://bb.cgd.ucar.edu">CESM User Forum</a></li>
 <li><a href="/clusters-at-yale/job-scheduling">Our Slurm Documentation</a></li>
 <li>CESM is a very widely used package, you can often find answers by simply using Google. Just make sure that the solutions you find correspond to the approximate version of CESM you are using. CESM changes in subtle but significant ways between versions.</li>
