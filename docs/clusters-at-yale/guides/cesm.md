@@ -35,28 +35,27 @@ module save
 
 To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your `create_newcase` line to Kaylea ([kaylea.nelson@yale.edu](mailto:kaylea.nelson@yale.edu)) and she will download that data for you.
 
-## Running CESM
+## Run CESM
 
 CESM needs to be rebuilt separately for each run. As a result, running CESM is more complicated than a standard piece of software where you would just run the executable.
 
 ### Create Your Case
 
-Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as `$CASE` s through out the rest of the guide.
+Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as `$CASE`  through out the rest of the guide.
 
 ``` bash
-create_newcase -case <case_name> -compset=<compset> -res=<resolution> -mach=<machine>
-# substitute your case name for "$CASE" below
-cd <case_name>
+create_newcase -case $CASE -compset=<compset> -res=<resolution> -mach=<machine>
+cd $CASE
 ```
 
 The mach parameters for Grace and Omega are `yalegrace` and `omega`, respectively. For example
 
 ``` bash
 # on Grace
-create_newcase -case Test_Sim -compset=B2000 -res=f19_f19 -mach=yalegrace
+create_newcase -case $CASE -compset=B2000 -res=f19_f19 -mach=yalegrace
 # on Omega
-create_newcase -case Test_Sim -compset=B2000 -res=f19_f19 -mach=omega
-cd Test_Sim
+create_newcase -case $CASE -compset=B2000 -res=f19_f19 -mach=omega
+cd $CASE
 ```
 
 ### Setup Your Case
@@ -79,12 +78,13 @@ If you are using CESM 1.1.X (e.g. 1.1.1) or CESM 1.2.X (e.g. 1.2.2), set up your
 ./cesm_setup
 ```
 
-### Building your case
+### Build Your Case
 
 After you run the setup script, there will be a set of the scripts in your case directory that start with your case name. To compile your simulation executable, first move to an interactive job and then run the build script corresponding to your case.
 
 ``` bash
 srun --pty -c 4 -p interactive bash
+module load <module-name> # <module-name> = the appropriate module for your CESM version
 ./$CASE.$mach.build
 ```
 
@@ -145,13 +145,15 @@ Look at the end of the last couple logs listed and look for an indication of the
 
 Once you have identified the lines in the logs corresponding to your error:
 
-If your log says something like “Disk quota exceeded”, your group is out of space in the fileset you are writing to. You can run the `getquota` script to get details on your disk usage. Your group will need to reduce their usage before you will be able to run successfully.
+If your log says something like `Disk quota exceeded`, your group is out of space in the fileset you are writing to. You can run the `getquota` script to get details on your disk usage. Your group will need to reduce their usage before you will be able to run successfully.
 
-If it looks like a model error and you don’t know how to fix it, I strongly recommend Googling your error and/or looking in the [CESM forums](https://bb.cgd.ucar.edu). If you still can’t resolve your error, you can come by Kaylea’s office hours, posted outside KGL 227.
+If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the [CESM forums](https://bb.cgd.ucar.edu).
+
+If you are still experiencing issues, you can email [Kaylea Nelson](mailto:kaylea.nelson@yale.edu) or come by her G&G office hours on Tuesdays (9am-5pm) in KGL 227.
 
 ## Alternative Submission Parameters
 
-By default, the submission script will submit to the week partition for 7 days or the geo partition on Omega depending on your group. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace and 7 days on Omega. For example:
+By default, the submission script will submit to the "week" partition for 7 days or the "geo" partition on Omega depending on your group. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace and 7 days on Omega. For example:
 
 ``` bash
 ## day partition
@@ -165,7 +167,7 @@ By default, the submission script will submit to the week partition for 7 days o
 #SBATCH --time=1-
 ```
 
-Note that is your submission script was configured to submit to the geo partition on Omega, you will need to modify the `#SBATCH -A pi_<group_name>` to be just `#SBATCH -A <group_name>` to submit to any other partition.
+Note that is your submission script was configured to submit to the "geo" partition on Omega, you will need to modify the `#SBATCH -A pi_<group_name>` to be just `#SBATCH -A <group_name>` to submit to any other partition.
 
 Then you can submit by running the submit script
 
@@ -175,7 +177,7 @@ Then you can submit by running the submit script
 
 ## Further Reading
 
-* I recommend referencing the User Guides listed at the top of this page.
+* We recommend referencing the User Guides listed at the top of this page.
 * [CESM User Forum](https://bb.cgd.ucar.edu)
 * [Our Slurm Documentation](/clusters-at-yale/job-scheduling)
 * CESM is a very widely used package, you can often find answers by simply using Google. Just make sure that the solutions you find correspond to the approximate version of CESM you are using. CESM changes in subtle but significant ways between versions.
