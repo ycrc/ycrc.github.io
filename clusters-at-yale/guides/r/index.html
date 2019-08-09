@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -1291,14 +1319,14 @@
                 <h1 id="r">R</h1>
 <h2 id="load-r">Load R</h2>
 <h3 id="conda-based-r-environments">Conda-based R Environments</h3>
-<p>We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. 
+<p>We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies.
 You can find detailed instructions on our <a href="/clusters-at-yale/guides/conda">Conda page</a>.
 The conda package repository has many (though not all) of the common R packages that can be installed with the typical conda syntax:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Source the conda environment</span>
 $ <span class="nb">source</span> activate my_r_env
 
 <span class="c1"># Install the lattice package (r-lattice) from the r channel (-c r)</span>
-<span class="o">(</span>my_r_env<span class="o">)</span>$ conda install -c r r-lattice 
+<span class="o">(</span>my_r_env<span class="o">)</span>$ conda install -c r r-lattice
 </pre></div>
 
 
@@ -1339,11 +1367,17 @@ $ R
 <span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library&quot;&#39;</span> is not writable
 Would you like to create a personal library
 ~/R/x86_64-unknown-linux-gnu-library/3.3
-to install packages into?  <span class="o">(</span>y/n<span class="o">)</span> 
+to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 </pre></div>
 
 
 <p>This will install the <code>lattice</code> package locally and will then be available to load into an R session.</p>
+<p>Alternatively, you can install R packages from the command line using:</p>
+<div class="codehilite"><pre><span></span>conda install -c <span class="o">[</span>channel-name<span class="o">]</span> <span class="o">[</span>package-name<span class="o">]</span>
+</pre></div>
+
+
+<p>You can search for available packages on the <a href="https://anaconda.org">conda</a> website.</p>
 <h2 id="run-r">Run R</h2>
 <p>To run R, launch it using the <code>R</code> command.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># launch an R session</span>
@@ -1435,27 +1469,19 @@ R --slave -f myscript.R
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
