@@ -4,7 +4,7 @@
 
 ### Conda-based R Environments
 
-We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies. 
+We recommend setting up your own R installation using Conda so you can manage your own packages and dependencies.
 You can find detailed instructions on our [Conda page](/clusters-at-yale/guides/conda).
 The conda package repository has many (though not all) of the common R packages that can be installed with the typical conda syntax:
 
@@ -13,7 +13,7 @@ The conda package repository has many (though not all) of the common R packages 
 $ source activate my_r_env
 
 # Install the lattice package (r-lattice) from the r channel (-c r)
-(my_r_env)$ conda install -c r r-lattice 
+(my_r_env)$ conda install -c r r-lattice
 
 ```
 If there are packages that conda does not provide, you can install them locally from within R using the `install.packages` function.
@@ -65,11 +65,17 @@ Warning in install.packages("lattice") :
 'lib = "/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library"' is not writable
 Would you like to create a personal library
 ~/R/x86_64-unknown-linux-gnu-library/3.3
-to install packages into?  (y/n) 
+to install packages into?  (y/n)
 ```
 
 This will install the `lattice` package locally and will then be available to load into an R session.
 
+Alternatively, you can install R packages from the command line using:
+
+```bash
+conda install -c [channel-name] [package-name]
+```
+You can search for available packages on the [conda](https://anaconda.org) website.
 
 ## Run R
 
