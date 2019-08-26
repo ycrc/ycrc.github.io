@@ -209,7 +209,7 @@ While there are a few different ways this can be achieved, we recommend using <c
 specific R environment with the required packages and libraries.</p>
 <p>In particular, you will need <code>Rmpi</code>, <code>doMC</code>, and <code>doMPI</code>. The first two can be installed via conda, 
 while the last one must be installed manually.</p>
-<p>To get started, load the <code>miniconda</code> module and create a new environement using the <code>conda-forge</code> 
+<p>To get started, load the <code>miniconda</code> module and create a new environment using the <code>conda-forge</code> 
 channel:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># load the miniconda module</span>
 module load miniconda
@@ -225,12 +225,14 @@ conda create --name parallel_r -c conda-forge r-base r-essentials r-doMC r-Rmpi
 <p>This will produce an environment that is nearly ready to-go. 
 The last step is to install <code>doMPI</code>, which at the moment is not available via <code>conda</code>.
 We can use the <code>install.packages</code> method from within R to get this final piece:</p>
-<div class="codehilite"><pre><span></span>$ R
+<div class="codehilite"><pre><span></span><span class="o">(</span>parallel_r<span class="o">)</span> $ R
 &gt; install.packages<span class="o">(</span><span class="s1">&#39;doMPI&#39;</span><span class="o">)</span>
 </pre></div>
 
 
-<p>Once this is complete, you should have a fully functional parallel-enabled R environment.</p>
+<p>It's important that this last step is performed on a login node so that it doesn't interfere with 
+the SLURM scheduler. 
+Once this is complete, you should have a fully functional parallel-enabled R environment.</p>
 <p>To test it, we can create a simple R script named <code>ex1.R</code></p>
 <div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
 
