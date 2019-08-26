@@ -77,6 +77,74 @@ conda install -c [channel-name] [package-name]
 ```
 You can search for available packages on the [conda](https://anaconda.org) website.
 
+### Parallel R
+
+It is often desireable to use R in parallel across multiple nodes. 
+While there are a few different ways this can be achieved, we recommend using `conda` to set up a 
+specific R environment with the required packages and libraries.
+
+In particular, you will need `Rmpi`, `doMC`, and `doMPI`. The first two can be installed via conda, 
+while the last one must be installed manually.
+
+To get started, load the `miniconda` module and create a new environement using the `conda-forge` 
+channel:
+
+```bash
+# load the miniconda module
+module load miniconda
+
+# create the environment with the required packages
+conda create --name parallel_r -c conda-forge r-base r-essentials r-doMC r-Rmpi
+
+# activate the environment
+source activate parallel_r
+```
+
+This will produce an environment that is nearly ready to-go. 
+The last step is to install `doMPI`, which at the moment is not available via `conda`.
+We can use the `install.packages` method from within R to get this final piece:
+```bash
+$ R
+> install.packages('doMPI')
+```
+Once this is complete, you should have a fully functional parallel-enabled R environment.
+
+To test it, we can create a simple R script named `ex1.R`
+
+```R
+library("Rmpi")
+
+n<-mpi.comm.size(0)
+me<-mpi.comm.rank(0)
+
+mpi.barrier(0)
+val<-777
+mpi.bcast(val, 1, 0, 0)
+print(paste("me", me, "val", val))
+mpi.barrier(0)
+
+mpi.quit()
+
+```
+
+Then we can launch it with an sbatch script (`ex1.sh`):
+
+```sh
+#!/bin/bash
+
+#SBATCH -n 4 -N 4 -t 5:00
+#SBATCH --mail-type=none
+
+module purge
+module load miniconda
+
+source activate parallel_r
+
+mpirun R --slave -f ex1.R
+```
+
+This script should execute a simple broadcast and complete in a few seconds. 
+
 ## Run R
 
 To run R, launch it using the `R` command.
