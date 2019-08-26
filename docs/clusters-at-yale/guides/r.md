@@ -86,7 +86,7 @@ specific R environment with the required packages and libraries.
 In particular, you will need `Rmpi`, `doMC`, and `doMPI`. The first two can be installed via conda, 
 while the last one must be installed manually.
 
-To get started, load the `miniconda` module and create a new environement using the `conda-forge` 
+To get started, load the `miniconda` module and create a new environment using the `conda-forge` 
 channel:
 
 ```bash
@@ -104,9 +104,11 @@ This will produce an environment that is nearly ready to-go.
 The last step is to install `doMPI`, which at the moment is not available via `conda`.
 We can use the `install.packages` method from within R to get this final piece:
 ```bash
-$ R
+(parallel_r) $ R
 > install.packages('doMPI')
 ```
+It's important that this last step is performed on a login node so that it doesn't interfere with 
+the SLURM scheduler. 
 Once this is complete, you should have a fully functional parallel-enabled R environment.
 
 To test it, we can create a simple R script named `ex1.R`
