@@ -54,7 +54,6 @@ nav:
                 - clusters-at-yale/guides/index.md
                 - clusters-at-yale/guides/cesm.md
                 - clusters-at-yale/guides/conda.md
-                - clusters-at-yale/guides/deep-learning-gpus.md
                 - clusters-at-yale/guides/gaussian.md
                 - clusters-at-yale/guides/gpus-cuda.md
                 - clusters-at-yale/guides/jupyter.md
