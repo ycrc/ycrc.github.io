@@ -51,3 +51,42 @@ module save
 ```
 
 We will be deprecating the old software at a TBD date, so we encourage you to contact us if anything is missing or not working for you in the new collection.
+
+
+## Lmod Warning
+
+Some users have experienced warnings at login due to the module change impacting their default module 
+environment. 
+This warning looks like:
+
+```sh
+Last login: Thu Aug 29 14:53:22 EDT 2019 on pts/61
+Lmod Warning:  One or more modules in your default collection have changed: "StdEnv".
+To see the contents of this collection execute:
+  $ module describe default
+To rebuild the collection, do a module reset, then load the modules you wish, then execute:
+  $ module save default
+If you no longer want this module collection execute:
+  $ rm ~/.lmod.d/default
+
+For more information execute 'module help' or see http://lmod.readthedocs.org/
+No change in modules loaded.
+
+```
+
+To resolve this warning, you will need to save a new default module environment. 
+Load all the modules from the new module list that you wish to have loaded at login, for example:
+
+```sh
+module load R
+module load dSQ
+
+```
+
+Then save that module environment:
+
+```sh
+module save
+```
+
+Then when you log out and log back in the warning should be gone.
