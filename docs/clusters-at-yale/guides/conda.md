@@ -15,10 +15,6 @@ Note: If you are on Milgram and run out of space in your home directory for Cond
 ### Load the Miniconda Module
 
 ``` bash
-# Grace, Omega
-module load Tools/miniconda
-
-# all Others
 module load miniconda
 ```
 
@@ -106,10 +102,7 @@ To make sure that you are running in your project environment in a submission sc
 #SBATCH --cpus-per-task 4
 #SBATCH --mem-per-cpu=6000
 
-# Grace, Omega
-module load Tools/miniconda
 
-# All other clusters
 module load miniconda
 
 source activate env_name

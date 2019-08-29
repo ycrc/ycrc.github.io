@@ -1,34 +1,27 @@
 # GPUs and CUDA
 
-We currently have GPUs available for general use on [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam). See cluster pages for hardware and queue/partition specifics.
+There are GPUs available for general use on [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam). See cluster pages for hardware and queue/partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.
 
-## Access the GPU Nodes
+## Requesting GPU Nodes
 
-To access the GPU nodes you must request them with the scheduler.
-
-An example Slurm command to request an interactive job on the gpu partition with X forwarding and 1/2 of a GPU node (10 cores and 1 K80):
+To access the GPU nodes you must request them with slurm. Here is an example command to request a 2 hour interactive job for testing or developing code interactively:
 
 ``` bash
-srun --pty --x11 -p gpu -c 10 -t 24:00:00 --gres=gpu:2 bash
+srun --pty -p gpu_devel -c 2 -t 2:00:00 --gres=gpu:1 bash
 ```
 
-The `--gres=gpu:2` option asks for two gpus. Note that the `--gres` count is **per node**, not per task or core.
-
-To submit a batch job, include the following directives (in addition to your core, time, etc requests):
+or, if the `gpu_devel` and `gpu` partitions are busy, try to scavenge some private GPUs:
 
 ``` bash
-#SBATCH -p gpu
-#SBATCH --gres=gpu:1
+srun --pty -p scavenge_gpu -c 2 -t 2:00:00 --gres=gpu:1 bash
 ```
 
-!!!warning
-    Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs found running in a GPU partition without a GPU will be terminated without warning.
+!!! note
+    The `--gres` option specifies resources **per node**, not per task or core. In a two node job, `--gres=gpu:2` would result in a total of four GPUs allocated to you.
 
-You can check the available GPUs and their current usage with the command [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface).
+### Specific GPUs
 
-## Request Specific GPUs
-
-To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the `--gres` flag. 
+To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the `--gres` flag.
 
 ``` bash
 #SBATCH --gres=gpu:p100:1
@@ -42,38 +35,85 @@ Some codes require double-precision capable GPUs. If applicable, you can request
 
 Conversely, you can use the `singleprecision` feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).
 
+## Monitor Activity and Drivers
+
+The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on [this nvidia developer site](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
+
+You can check the available GPUs, their current usage, installed version of the nvidia drivers, and more with the command [`nvidia-smi`](https://developer.nvidia.com/nvidia-system-management-interface). Either in an interactive job or after connecting to a node running your job with `ssh`,  `nvidia-smi` output should look something like this:
+
+``` bash
+[user@gpu01 ~]$ nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 418.87.00    Driver Version: 418.87.00    CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 108...  On   | 00000000:02:00.0 Off |                  N/A |
+| 23%   34C    P8     9W / 250W |      1MiB / 11178MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
+
+Here we see that the node `gpu01` is running driver version 418.87.00 and CUDA version 10.1\. There are no processes using the GPU allocated to this job.
+
 ## Software
 
-CUDA and cuDNN are available as modules where applicable. On your cluster of choice use toolkit is installed on the GPU nodes. To see what is available, type:
+### CUDA and cuDNN modules
+
+We have seen varying degrees of success in using the runtime CUDA and cuDNN libraries supplied by various conda channels. If that works for you there may be no need to load additional modules. If not, find the corresponding CUDA and cuDNN combination for your desired environment and load or request those modules. To list all the CUDA and cuDNN modules available:
 
 ``` bash
-module avail cuda
+module avail cuda/
+module avail cudnn/
 ```
 
-## Drivers
+### Tensorflow
 
-The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are as follows ([borrowed from this nvidia developer site](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)):
+You can find hints about the correct version of Tensorflow from their [tested build configurations](https://www.tensorflow.org/install/source#tested_build_configurations). You can also test your install with a simple script that imports Tensorflow (run on a GPU node). If you an `ImportError` that mentions missing libraries like `libcublas.so.9.0`, for example, that means that Tensorflow is probably expecting CUDA v 9.0 but cannot find it.
 
-```
-CUDA 10.0: 410.48
-CUDA  9.2: 396.xx
-CUDA  9.1: 390.xx
-CUDA  9.0: 384.xx
-CUDA  8.0: 375.xx
-CUDA  7.5: 352.xx
-CUDA  7.0: 346.xx
-CUDA  6.5: 340.xx
-CUDA  6.0: 331.xx
-```
+### PyTorch
 
-To check the insalled version of the nvidia drivers, you can also use `nvidia-smi`:
+As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. If not make sure you have the version of cuda referenced on the PyTorch site [in their install instructions](https://pytorch.org/get-started/locally/). They also provide [instructions on installing previous versions](https://pytorch.org/get-started/previous-versions/) compatible with older versions of CUDA.
+
+### Create an Example Tensorflow-GPU Environment
 
 ``` bash
-[user@gpu01 ~]$ nvidia-smi 
-Tue Jan 16 10:31:45 2018       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 375.66                 Driver Version: 375.66                    |
-...
+# example modules for tensorflow 1.12
+module purge
+module load cuDNN/7.1.4-CUDA-9.0.176
+module load miniconda
 ```
 
-Here we see that the node gpu01 is running driver version 375.66\. It can run CUDA 8 but not CUDA 9 yet.
+Then save your modules as a collection.
+
+``` bash
+# save module environment
+module save cuda90
+```
+
+Now create a virtual environment for your GPU enabled code. For more details on Conda environments, see our [Conda documentation](/clusters-at-yale/guides/conda).
+
+``` bash
+# create conda environment for deep learning/neural networks
+conda create -y -n tensorflow112 python=3.6 anaconda
+source activate tensorflow112
+
+#install libraries
+pip install keras tensorflow-gpu==1.12
+```
+
+## Use Your Environment
+
+To re-enter your environment you only need the following:
+
+``` bash
+module restore cuda90
+source activate tensorflow112
+```

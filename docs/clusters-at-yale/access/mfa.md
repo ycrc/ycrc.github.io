@@ -51,6 +51,8 @@ If you are having problems initially registering Duo, please contact the [Yale I
 
 If you have successfully used MFA connect to a cluster before, but cannot now, first please check the following:
 
+* Test MFA using [http://access.yale.edu](http://access.yale.edu)
+ 
 * Verify that your ssh client is using the correct login node
 * Verify you are attempting to connect from a Yale machine or via the proper VPN
 
