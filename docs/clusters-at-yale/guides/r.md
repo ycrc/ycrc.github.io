@@ -20,7 +20,7 @@ If there are packages that conda does not provide, you can install them locally 
 To install a package (`lattice` for example) directly, simply run:
 
 ```sh
-$ module load Tools/miniconda
+$ module load miniconda
 $ source activate my_r_env
 (my_r_env)$ R
 

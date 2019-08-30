@@ -100,7 +100,7 @@ The first step required for use of MDCE is to develop a parallel Matlab program 
 
 For the single-node case, you simply run ordinary Matlab as described above (either interactively or in batch mode) and make use of the PCT commands using the "local" cluster configuration. This capability is enabled for any Matlab invocation on any of the clusters, and there are no limitations on the number of concurrent PCT users in this case. If you intend to run on a single node, therefore, please do not use MDCE, since that would consume some of our limited quantity of multi-node MDCE licenses.
 
-For the multi-node case, you must run an MDCE server that is private to your job. We provide a script (yale_mdce_start.sh) that starts the server and the Matlab workers (known as "labs") for you. The yale_mdce_start.sh script has parameters that allow you to control the number of labs on each node, subject to license availability. (For details, see the comments in the file runit.sh shown later on this page.) The MDCE server will be terminated automatically when your cluster job ends, though we also provide a script (yale_mdce_stop.sh) to terminate it earlier if you wish. The yale_mdce scripts will be in your PATH once you have loaded a Matlab module file (e.g., Apps/Matlab/R2015a). To use the yale_mdce_start.sh script, you need to load module files for both Matlab and OpenMPI (see the runit.sh script below for an example).
+For the multi-node case, you must run an MDCE server that is private to your job. We provide a script (yale_mdce_start.sh) that starts the server and the Matlab workers (known as "labs") for you. The yale_mdce_start.sh script has parameters that allow you to control the number of labs on each node, subject to license availability. (For details, see the comments in the file runit.sh shown later on this page.) The MDCE server will be terminated automatically when your cluster job ends, though we also provide a script (yale_mdce_stop.sh) to terminate it earlier if you wish. The yale_mdce scripts will be in your PATH once you have loaded a Matlab module file (e.g., MATLAB/2016b). To use the yale_mdce_start.sh script, you need to load module files for both Matlab and OpenMPI (see the runit.sh script below for an example).
 
 We have also developed a template batch script (runit.sh) that you can submit to the job scheduler to run your parallel Matlab program. The script loads module files, invokes yale_mdce_start.sh, and then runs Matlab in batch mode. You can copy the template and and customize it to meet your needs. If you prefer to run interactively, you can start an ordinary multi-node interactive session (similar to what's shown above) and run the setup commands in runit.sh by hand.
 
@@ -115,7 +115,7 @@ We have also developed a template batch script (runit.sh) that you can submit to
 #SBATCH --partition=day
 
 # Load Matlab and MPI module files
-module load Apps/Matlab/R2015a MPI/OpenMPI
+module load MATLAB/2016b MPI/OpenMPI
 
 # Invoke yale_mdce_start.sh to set up a job manager and MDCE server
 # Note: yale_mdce_start.sh and runscript.m are in the MDCE_SCRIPTS subdirectory of the root Matlab directory (e.g., /home/apps/fas/Apps/Matlab on Omega).

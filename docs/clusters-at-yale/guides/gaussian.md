@@ -15,7 +15,7 @@ When running Gaussian, it is recommended that users request exclusive access to 
 Before running Gaussian, you must set up a number of environment variables. This is accomplished most easily by loading the Gaussian module file using:
 
 ``` bash
-module load Apps/Gaussian
+module load Gaussian
 ```
 
 To run Gaussian interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using
