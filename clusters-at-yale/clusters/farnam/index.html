@@ -1339,33 +1339,19 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <th>CPU Cores</th>
 <th>RAM</th>
 <th>GPU</th>
+<th>vRAM/GPU</th>
 <th>Features</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>59</td>
-<td>2x E5-2670</td>
-<td>16</td>
-<td>121G</td>
-<td></td>
-<td>sandybridge, E5-2670, nogpu, standard, oldest</td>
-</tr>
-<tr>
-<td>14</td>
-<td>4x AMD Opteron 6276</td>
-<td>32</td>
-<td>499G</td>
-<td></td>
-<td>bulldozer, opteron-6276</td>
-</tr>
-<tr>
 <td>117</td>
-<td>2x E5-2660 v3</td>
+<td>2x E5-2660_v3</td>
 <td>20</td>
 <td>121G</td>
 <td></td>
-<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+<td></td>
+<td>haswell,avx2,E5-2660_v3,nogpu,standard</td>
 </tr>
 <tr>
 <td>5</td>
@@ -1373,31 +1359,17 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>20</td>
 <td>121G</td>
 <td>2x k80 (2GPUs/k80)</td>
+<td>12G</td>
 <td>haswell, avx2, E5-2660_v3, doubleprecision</td>
 </tr>
 <tr>
-<td>38</td>
-<td>2x E5-2680 v4</td>
-<td>28</td>
-<td>247G</td>
-<td></td>
-<td>broadwell, avx2, E5-2680_v4, nogpu, standard</td>
-</tr>
-<tr>
-<td>3</td>
-<td>2x E5-2660 v4</td>
-<td>28</td>
-<td>247G</td>
-<td>2x p100</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
-</tr>
-<tr>
 <td>2</td>
-<td>2x Gold 6132</td>
-<td>28</td>
-<td>183G</td>
+<td>4x E7-4809_v3</td>
+<td>32</td>
+<td>1507G</td>
 <td></td>
-<td>skylake, avx2, avx512, 6132, nogpu, standard</td>
+<td></td>
+<td>haswell, avx2, E7-4809_v3, nogpu</td>
 </tr>
 <tr>
 <td>1</td>
@@ -1405,15 +1377,8 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>8</td>
 <td>59G</td>
 <td>4x gtx1080ti</td>
+<td>11G</td>
 <td>broadwell, avx2, E5-2623_v4, singleprecision</td>
-</tr>
-<tr>
-<td>21</td>
-<td>2x E5-2637 v4</td>
-<td>8</td>
-<td>121G</td>
-<td>4x gtx1080ti</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
 </tr>
 <tr>
 <td>1</td>
@@ -1421,44 +1386,103 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>8</td>
 <td>121G</td>
 <td>4x titanv</td>
+<td>12G</td>
 <td>broadwell, avx2, E5-2637_v4, doubleprecision</td>
 </tr>
 <tr>
-<td>2</td>
-<td>2x Gold 5122</td>
+<td>21</td>
+<td>2x E5-2637 v4</td>
 <td>8</td>
-<td>183G</td>
-<td>4x rtx2080</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
+<td>121G</td>
+<td>4x gtx1080ti</td>
+<td>11G</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
 </tr>
 <tr>
-<td>2</td>
-<td>4x E7-4809 v3</td>
-<td>32</td>
-<td>1507G</td>
+<td>3</td>
+<td>2x E5-2660 v4</td>
+<td>28</td>
+<td>247G</td>
+<td>2x p100</td>
+<td>16G</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>38</td>
+<td>2x E5-2680_v4</td>
+<td>28</td>
+<td>247G</td>
 <td></td>
-<td>haswell, avx2, E7-4809_v3, nogpu</td>
+<td></td>
+<td>broadwell, avx2, E5-2680_v4, nogpu, standard</td>
 </tr>
 <tr>
 <td>1</td>
-<td>4x E7-4820 v4</td>
+<td>4x E7-4820_v4</td>
 <td>40</td>
 <td>1507G</td>
+<td></td>
 <td></td>
 <td>broadwell, avx2, E7-4820_v4, nogpu</td>
 </tr>
 <tr>
+<td>2</td>
+<td>2x 5122</td>
+<td>8</td>
+<td>183G</td>
+<td>4x rtx2080</td>
+<td>8G</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
+</tr>
+<tr>
 <td>1</td>
-<td>2x Gold 6132</td>
+<td>2x 6132</td>
 <td>28</td>
 <td>751G</td>
 <td></td>
+<td></td>
 <td>skylake, avx2, avx512, 6132, nogpu</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2x 6132</td>
+<td>28</td>
+<td>183G</td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6132, nogpu, standard</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2x 6240</td>
+<td>36</td>
+<td>750G</td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2x 6240</td>
+<td>36</td>
+<td>372G</td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2x 6240</td>
+<td>36</td>
+<td>183G</td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
 </tr>
 </tbody>
 </table>
 <h2 id="slurm-partitions">Slurm Partitions</h2>
-<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>. The default resource requests for all jobs is 1 core and 5GB of memory per core.</p>
+<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>. The default resource requests for all jobs is 1 core and 5G of memory per core.</p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes--only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p>The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the <a href="#hardware">hardware</a> table.</p>
@@ -1478,21 +1502,21 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <td>400 CPUs, 2560 G RAM</td>
 <td>200 CPUs, 1280 G RAM</td>
 <td>1d/30d</td>
-<td>E5-2670 (32), E5-2660_v3 (99)</td>
+<td>E5-2660_v3 (93), 6240 (19)</td>
 </tr>
 <tr>
 <td>interactive</td>
 <td></td>
 <td>20 CPUs, 256 G RAM</td>
 <td>1d/2d</td>
-<td>E5-2670 (32), E5-2660_v3 (99)</td>
+<td>E5-2660_v3 (93)</td>
 </tr>
 <tr>
 <td>bigmem</td>
 <td></td>
 <td>2 jobs, 32 CPUs, 1532 G RAM</td>
 <td>1d/7d</td>
-<td>E7-4809_v3 1507G (2), opteron-6276 (7)</td>
+<td>E7-4809_v3 (2)</td>
 </tr>
 <tr>
 <td>gpu_devel</td>
@@ -1530,101 +1554,106 @@ See the <a href="/clusters-at-yale/applications/compile">guide on how to compile
 <table>
 <thead>
 <tr>
-<th>Partition</th>
-<th>Walltime Default/Max</th>
-<th>Node Type (count)</th>
+<th align="left">Partition</th>
+<th align="left">Walltime Default/Max</th>
+<th align="left">Node Type (count)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>pi_breaker</td>
-<td>1d/14d</td>
-<td>E5-2680_v4 (24)</td>
+<td align="left">pi_breaker</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2680_v4 (24)</td>
 </tr>
 <tr>
-<td>pi_cryoem</td>
-<td>1d/∞</td>
-<td>E5-2637_v4 gtx1080ti (10)</td>
+<td align="left">pi_cryoem</td>
+<td align="left">1d / 365d</td>
+<td align="left">E5-2637_v4 gtx1080ti (10)</td>
 </tr>
 <tr>
-<td>pi_deng</td>
-<td>1d/14d</td>
-<td>E5-2680_v4 (1)</td>
+<td align="left">pi_deng</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2680_v4 p100 (1)</td>
 </tr>
 <tr>
-<td>pi_dellaporta</td>
-<td>1d/14d</td>
-<td>opteron-6276 (1)</td>
+<td align="left">pi_dunn</td>
+<td align="left">1d / 14d</td>
+<td align="left">6240 (1)</td>
 </tr>
 <tr>
-<td>pi_gerstein</td>
-<td>1d/14d</td>
-<td>opteron-6276 (2), E5-2680_v4 (11), E7-4820_v4 1507G (1), 6132 (2), 6132 751G (1)</td>
+<td align="left">pi_edwards</td>
+<td align="left">1d / 14d</td>
+<td align="left">6240 (1)</td>
 </tr>
 <tr>
-<td>pi_gerstein_gpu</td>
-<td>1d/14d</td>
-<td>E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1)</td>
+<td align="left">pi_gerstein</td>
+<td align="left">1d / 14d</td>
+<td align="left">E7-4820_v4 (1), E5-2680_v4 (11), 6132 751G (1), 6132 (2)</td>
 </tr>
 <tr>
-<td>pi_gruen</td>
-<td>1d/14d</td>
-<td>E5-2680_v4 (1)</td>
+<td align="left">pi_gerstein_gpu</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1)</td>
 </tr>
 <tr>
-<td>pi_jadi</td>
-<td>1d/14d</td>
-<td>E5-2680_v4 (2)</td>
+<td align="left">pi_gruen</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2680_v4 (1)</td>
 </tr>
 <tr>
-<td>pi_kleinstein</td>
-<td>1d/14d</td>
-<td>opteron-6276 (1), E5-2660_v3 (3)</td>
+<td align="left">pi_jadi</td>
+<td align="left">1d / 365d</td>
+<td align="left">E5-2680_v4 (2)</td>
 </tr>
 <tr>
-<td>pi_krauthammer</td>
-<td>1d/14d</td>
-<td>E5-2660_v3 (1)</td>
+<td align="left">pi_jetz</td>
+<td align="left">1d / 14d</td>
+<td align="left">6240 372G (4), 6240 750G (4)</td>
 </tr>
 <tr>
-<td>pi_ma</td>
-<td>1d/14d</td>
-<td>E5-2660_v3 (2)</td>
+<td align="left">pi_kleinstein</td>
+<td align="left">1d / 14d</td>
+<td align="left">6240 (1), E5-2660_v3 (3)</td>
 </tr>
 <tr>
-<td>pi_ohern</td>
-<td>1d/14d</td>
-<td>E5-2670 (6), E5-2660_v3 (5)</td>
+<td align="left">pi_krauthammer</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 (1)</td>
 </tr>
 <tr>
-<td>pi_reinisch</td>
-<td>1d/14d</td>
-<td>5122 rtx2080 (2)</td>
+<td align="left">pi_ma</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 (2)</td>
 </tr>
 <tr>
-<td>pi_sigworth</td>
-<td>1d/14d</td>
-<td>E5-2660_v3 (1)</td>
+<td align="left">pi_ohern</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 (5)</td>
 </tr>
 <tr>
-<td>pi_sindelar</td>
-<td>1d/14d</td>
-<td>opteron-6276 (1), E5-2670 (4), E5-2660_v3 (1), E5-2637_v4 gtx1080ti (1)</td>
+<td align="left">pi_reinisch</td>
+<td align="left">1d / 14d</td>
+<td align="left">5122 gpu:4 (2)</td>
 </tr>
 <tr>
-<td>pi_strobel</td>
-<td>1d/14d</td>
-<td>opteron-6276 (1)</td>
+<td align="left">pi_sigworth</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 (1)</td>
 </tr>
 <tr>
-<td>pi_townsend</td>
-<td>1d/14d</td>
-<td>E5-2660_v3 (5)</td>
+<td align="left">pi_sindelar</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)</td>
 </tr>
 <tr>
-<td>pi_zhao</td>
-<td>1d/14d</td>
-<td>E5-2670 (17), opteron-6276 (1)</td>
+<td align="left">pi_townsend</td>
+<td align="left">1d / 14d</td>
+<td align="left">E5-2660_v3 (5)</td>
+</tr>
+<tr>
+<td align="left">pi_zhao</td>
+<td align="left">1d / 14d</td>
+<td align="left">6240 (2)</td>
 </tr>
 </tbody>
 </table>
