@@ -20,7 +20,7 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 | Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                         |
 |-------|---------------|-----------|-------|--------------------|----------|--------------------------------------------------|
-|   117 | 2x E5-2660_v3 |        20 |  121G |                    |          | haswell,avx2,E5-2660_v3,nogpu,standard           |
+|   117 | 2x E5-2660_v3 |        20 |  121G |                    |          | haswell, avx2, E5-2660_v3, nogpu, standard       |
 |     5 | 2x E5-2660 v3 |        20 |  121G | 2x k80 (2GPUs/k80) |      12G | haswell, avx2, E5-2660_v3, doubleprecision       |
 |     2 | 4x E7-4809_v3 |        32 | 1507G |                    |          | haswell, avx2, E7-4809_v3, nogpu                 |
 |     1 | 2x E5-2623 v4 |         8 |   59G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2623_v4, singleprecision     |
