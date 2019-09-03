@@ -78,7 +78,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_krauthammer  | 1d / 14d               | E5-2660_v3 (1)                                                 |
 | pi_ma           | 1d / 14d               | E5-2660_v3 (2)                                                 |
 | pi_ohern        | 1d / 14d               | E5-2660_v3 (5)                                                 |
-| pi_reinisch     | 1d / 14d               | 5122 gpu:4 (2)                                                 |
+| pi_reinisch     | 1d / 14d               | 5122 rtx2080 (2)                                               |
 | pi_sigworth     | 1d / 14d               | E5-2660_v3 (1)                                                 |
 | pi_sindelar     | 1d / 14d               | E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)                       |
 | pi_townsend     | 1d / 14d               | E5-2660_v3 (5)                                                 |
