@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -1333,10 +1305,9 @@
 </ol>
 <p>Here is an example script.sh that runs a job on one CPU on single node:</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=general</span>
 <span class="c1">#SBATCH --job-name=my_job</span>
 <span class="c1">#SBATCH --ntasks=1 --nodes=1</span>
-<span class="c1">#SBATCH --mem-per-cpu=6000</span>
+<span class="c1">#SBATCH --mem-per-cpu=5G</span>
 <span class="c1">#SBATCH --time=12:00:00</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 <span class="c1">#SBATCH --mail-user=&lt;email&gt;</span>
@@ -1399,12 +1370,12 @@
 <tr>
 <td><code>--mem-per-cpu</code></td>
 <td></td>
-<td>Memory requested per CPU in MB</td>
+<td>Memory requested per CPU (e.g. <code>10G</code> for 10 GB)</td>
 </tr>
 <tr>
 <td><code>--mem</code></td>
 <td></td>
-<td>Memory requested per node in MB</td>
+<td>Memory requested per node (e.g. <code>40G</code> for 40 GB)</td>
 </tr>
 <tr>
 <td><code>--mail-user</code></td>
@@ -1418,7 +1389,7 @@
 </tr>
 </tbody>
 </table>
-<p>Additional options can be found on in the <a href="http://slurm.schedmd.com/documentation.html">official Slurm documentation</a>.</p>
+<p>Additional options can be found on in the <a href="http://slurm.schedmd.com/documentation.html">official Slurm documentation</a>. The lists of available partitions can be found on the <a href="/clusters-at-yale/clusters/">cluster pages</a>. If you don't specify a partition, your job will be placed into the default partition for your cluster (as indicated on the cluster page).</p>
 <h2 id="resource-limit-enforcement">Resource Limit Enforcement</h2>
 <p>Slurm uses the linux cgroup feature to enforce limits on CPUs, GPUs, and memory. Jobs are only permitted to run on a node if they have a valid allocation, and only within the limits specified by that limitation. Thus, if you request a single core from slurm (the default) and start a job that runs 20 parallel threads, those threads will be packed into a single CPU, and run very slowly. Similarly, if you do not explicitly request memory, your job will be granted 5G of RAM per CPU, and if your job attempts to exceed that amount, it will be killed.</p>
 <h2 id="using-private-partitions">Using Private Partitions</h2>
@@ -1486,19 +1457,27 @@
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
