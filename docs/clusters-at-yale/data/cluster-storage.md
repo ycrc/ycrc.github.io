@@ -13,11 +13,11 @@ Home storage is a small amount of space to store your scripts, notes, final prod
 
 ### Project
 
-In general, project storage is intended to be the primary storage location for HPC research data in active use.
+In general, project storage is intended to be the primary storage location for HPC research data in active use. Project space is available via the `project` link in your home directory or via the absolute path `/gpfs/<filesystem>/project/<group>/<netid>`.
 
 ### 60-Day Scratch (`scratch60`)
 
-Use this space to keep intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**. This space is not backed up, and you may be asked to delete files younger than 60 days old if this space fills up.
+Use this space to keep intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**. This space is not backed up, and you may be asked to delete files younger than 60 days old if this space fills up. Scratch space is available via the `scratch60` link in your home directory or via the absolute path `/gpfs/<filesystem>/scratch60/<group>/<netid>`.
 
 ## HPC Storage Best Practices
 

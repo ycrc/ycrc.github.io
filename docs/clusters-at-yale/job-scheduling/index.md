@@ -64,10 +64,9 @@ Here is an example script.sh that runs a job on one CPU on single node:
 
 ``` bash
 #!/bin/bash
-#SBATCH --partition=general
 #SBATCH --job-name=my_job
 #SBATCH --ntasks=1 --nodes=1
-#SBATCH --mem-per-cpu=6000
+#SBATCH --mem-per-cpu=5G
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email>
@@ -89,12 +88,12 @@ As shown in the above example, "directives" are comprised of `#SBATCH` followed 
 |`--ntasks-per-node`||Number of "tasks" per node. For use with distributed parallelism. See below.|
 |`--time`|`-t `|Maximum walltime of the job in the format D-HH:MM:SS (e.g. `--time=1-` for one day or `--time=4:00:00` for 4 hours)|
 |`--constraint`|`-C`|specific node architecture (if applicable)|
-|`--mem-per-cpu`||Memory requested per CPU in MB|
-|`--mem`||Memory requested per node in MB|
+|`--mem-per-cpu`||Memory requested per CPU (e.g. `10G` for 10 GB)|
+|`--mem`||Memory requested per node (e.g. `40G` for 40 GB)|
 |`--mail-user`||Mail address (alternatively, put your email address in ~/.forward)|
 |`--mail-type`||Control emails to user on job events. Use `ALL` to receive email notications at the beginning and end of the job.|
 
-Additional options can be found on in the [official Slurm documentation](http://slurm.schedmd.com/documentation.html).
+Additional options can be found on in the [official Slurm documentation](http://slurm.schedmd.com/documentation.html). The lists of available partitions can be found on the [cluster pages](/clusters-at-yale/clusters/). If you don't specify a partition, your job will be placed into the default partition for your cluster (as indicated on the cluster page).
 
 ## Resource Limit Enforcement
 
