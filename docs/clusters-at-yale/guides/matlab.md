@@ -73,7 +73,7 @@ Here's a script for Grace:
 #SBATCH -t 24:00:00
 #SBATCH -p day
 
-module load Apps/Matlab/R2016b
+module load MATLAB/2016b
 matlab -nodisplay -nosplash -r YourFunction < /dev/null
 
 ```
@@ -115,7 +115,7 @@ We have also developed a template batch script (runit.sh) that you can submit to
 #SBATCH --partition=day
 
 # Load Matlab and MPI module files
-module load MATLAB/2016b MPI/OpenMPI
+module load MATLAB/2016b OpenMPI/2.1.2-GCC-6.4.0-2.28
 
 # Invoke yale_mdce_start.sh to set up a job manager and MDCE server
 # Note: yale_mdce_start.sh and runscript.m are in the MDCE_SCRIPTS subdirectory of the root Matlab directory (e.g., /home/apps/fas/Apps/Matlab on Omega).
