@@ -4,7 +4,7 @@ Dear Ruddle Users,
 
 We retired the old storage system mounted at /ycga-ba on September 16, 2019.
 
-All YCGA-generated primary sequence data that were on /ycga-ba were already archived to tape and removed.
+All YCGA-generated primary sequence data on /ycga-ba were already archived to tape and removed. Please note that no other data were migrated to any other storage system.
 
 This shutdown impacted all locations on /ycga-ba, including:
 
