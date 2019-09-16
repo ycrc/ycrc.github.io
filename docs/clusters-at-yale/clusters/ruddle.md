@@ -2,7 +2,7 @@
 
 ![Frank](/img/Frank-Ruddle.jpg){: .cluster-portrait}
 
-** NOTICE: We plan to permanently decommission the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
+** NOTICE: We permanently decommissioned the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
 
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
