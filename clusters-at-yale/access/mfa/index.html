@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -1251,26 +1279,26 @@
 <h2 id="file-transfer-clients-and-duo-mfa">File Transfer Clients and Duo MFA</h2>
 <p>Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Here are some application-specific tips on how to avoid having to authenticate for each new connection:</p>
 <h3 id="filezilla">FileZilla</h3>
-<div class="codehilite"><pre><span></span>File-&gt;SiteManager
-New Site
-In host
-(new site will be highlighted, change to your cluster name)
-In the general tab on the right side, put:
-Host: yourcluster.hpc.yale.edu
-Change protocol to SFTP
-set user to your netid
-set login type to &quot;Key file&quot;
-browse to and select your putty key file
-set login type to &quot;Interactive&quot;
-Go to transfer settings tab
-check limit number of simultaneous connections
-Make sure maximum is 1
-click ok
+<div class="codehilite"><pre><span></span><span class="nv">File</span><span class="o">-&gt;</span><span class="nv">SiteManager</span>
+<span class="nv">New</span> <span class="nv">Site</span>
+<span class="nv">In</span> <span class="nv">host</span>
+<span class="ss">(</span><span class="nv">new</span> <span class="nv">site</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">highlighted</span>, <span class="nv">change</span> <span class="nv">to</span> <span class="nv">your</span> <span class="nv">cluster</span> <span class="nv">name</span><span class="ss">)</span>
+<span class="nv">In</span> <span class="nv">the</span> <span class="nv">general</span> <span class="nv">tab</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">right</span> <span class="nv">side</span>, <span class="nv">put</span>:
+<span class="nv">Host</span>: <span class="nv">yourcluster</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
+<span class="nv">Change</span> <span class="nv">protocol</span> <span class="nv">to</span> <span class="nv">SFTP</span>
+<span class="nv">set</span> <span class="nv">user</span> <span class="nv">to</span> <span class="nv">your</span> <span class="nv">netid</span>
+<span class="nv">set</span> <span class="nv">login</span> <span class="nv">type</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">Key file</span><span class="s2">&quot;</span>
+<span class="nv">browse</span> <span class="nv">to</span> <span class="nv">and</span> <span class="nv">select</span> <span class="nv">your</span> <span class="nv">putty</span> <span class="nv">key</span> <span class="nv">file</span>
+<span class="nv">set</span> <span class="nv">login</span> <span class="nv">type</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">Interactive</span><span class="s2">&quot;</span>
+<span class="nv">Go</span> <span class="nv">to</span> <span class="nv">transfer</span> <span class="nv">settings</span> <span class="nv">tab</span>
+<span class="nv">check</span> <span class="nv">limit</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">simultaneous</span> <span class="nv">connections</span>
+<span class="nv">Make</span> <span class="nv">sure</span> <span class="nv">maximum</span> <span class="nv">is</span> <span class="mi">1</span>
+<span class="nv">click</span> <span class="nv">ok</span>
 
-Now to connect,
-file-&gt;sitemanager
-select the site you created
-click connect
+<span class="nv">Now</span> <span class="nv">to</span> <span class="k">connect</span>,
+<span class="nv">file</span><span class="o">-&gt;</span><span class="nv">sitemanager</span>
+<span class="nv">select</span> <span class="nv">the</span> <span class="nv">site</span> <span class="nv">you</span> <span class="nv">created</span>
+<span class="nv">click</span> <span class="k">connect</span>
 </pre></div>
 
 
@@ -1362,27 +1390,19 @@ click connect
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
