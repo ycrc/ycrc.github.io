@@ -62,7 +62,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
 
 \* default  
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
 
 ### Private Partitions
 
