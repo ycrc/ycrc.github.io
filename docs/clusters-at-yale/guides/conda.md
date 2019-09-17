@@ -20,14 +20,23 @@ module load miniconda
 
 You can save this to your default module collection by using `module save`. See our [module documentation](/clusters-at-yale/applications/modules) for more details.
 
-### Install to Your Project Directory
+### Default Install Locations
 
-Conda will look in the directory/directories specified in the environment variable `CONDA_ENVS_PATH` for places to find and install environments. If you want your environments stored in a directory where your quotas are higher, for example, `~/project/conda_envs`, you would need to set this variable to something like. We set this by default for you on Grace, Farnam and Ruddle.
+By default on [Grace](/clusters-at-yale/clusters/grace), [Farnam](/clusters-at-yale/clusters/farnam) and [Ruddle](/clusters-at-yale/clusters/ruddle) we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for cached packages and environments.
 
-To match this behavior on Milgram:
+To match this behavior on [Milgram](/clusters-at-yale/clusters/milgram):
 
 ``` bash
 echo "export CONDA_ENVS_PATH=~/project/conda_envs:$CONDA_ENVS_PATH" >> ~/.bashrc
+echo "export CONDA_PKGS_DIRS=~/project/conda_pkgs:$CONDA_PKGS_DIRS" >> ~/.bashrc
+source ~/.bashrc
+```
+
+To revert to using the default locations:
+
+```bash
+echo "export CONDA_ENVS_PATH=~/.conda/envs​:$CONDA_ENVS_PATH​" >> ~/.bashrc
+echo "export CONDA_PKGS_DIRS=~/.conda/pkgs​:$CONDA_PKGS_DIRS​" >> ~/.bashrc
 source ~/.bashrc
 ```
 
