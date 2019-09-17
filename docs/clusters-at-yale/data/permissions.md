@@ -12,18 +12,20 @@ If interested, email us at [hpc@yale.edu](mailto:hpc@yale.edu) to request such a
 
 ## Share With Specific Users or Other Groups
 
-It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command `setfacl` is useful for this, but can be complicated to use.  Here are some simple scenarios.  We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`.
+It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios.  
 
 !!!warning
-    Your `~/project` and `~/scratch60` directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you're interested in) to get their true paths. Give these true to people you are sharing with.
+    Your `~/project` and `~/scratch60` directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get their true paths. Give these true to people you are sharing with.
 
 ### Share a Directory with All Members of a Group
 
-To share a new directory called `shared` with group `othergroup`:
+To share a new directory called `shared` in your project directory with group `othergroup`:
 
 ```
+setfacl -m "g:othergroup:rx" $(readlink -f ~/project)
+cd ~/project
 mkdir shared
-setfacl -d -m g:othergroup:rwx shared
+setfacl -m "g:othergroup:rwx" shared
 ```
 
 ### Share a Directory with a Particular Person
@@ -31,6 +33,22 @@ setfacl -d -m g:othergroup:rwx shared
 To share a new directory called `shared` with a person with netid `aa111`:
 
 ```
+setfacl -m "u:aa111:rx" $(readlink -f ~/project)
+cd ~/project
 mkdir shared
-setfacl -d -m u:aa111:rwx shared
+setfacl -m "u:aa111:rwx" shared
+```
+
+### Remove Sharing of a Directory
+
+To remove sharing of a directory called `shared` to a group `othergroup`:
+
+```
+setfacl -R -x "g:othergroup" shared
+```
+
+To remove sharing of a directory called `shared` to a person with netid `aa111`:
+
+```
+setfacl -R -x "u:aa111" shared
 ```
