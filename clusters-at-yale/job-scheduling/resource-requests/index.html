@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -231,7 +259,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -247,7 +275,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -770,7 +798,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" title="Request Cores and Nodes" class="md-nav__link">
+  <a href="#request-cores-and-nodes" class="md-nav__link">
     Request Cores and Nodes
   </a>
   
@@ -778,28 +806,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-ntasks-vs-cpus-per-task" title="--ntasks vs --cpus-per-task" class="md-nav__link">
+  <a href="#-ntasks-vs-cpus-per-task" class="md-nav__link">
     --ntasks vs --cpus-per-task
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#146-multi-threaded-multi-process-programs" title="1. Multi-threaded &amp; multi-process programs" class="md-nav__link">
+  <a href="#146-multi-threaded-multi-process-programs" class="md-nav__link">
     1. Multi-threaded &amp; multi-process programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#246-mpi-programs" title="2. MPI programs" class="md-nav__link">
+  <a href="#246-mpi-programs" class="md-nav__link">
     2. MPI programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#346-hybrid-mpiopenmp-programs" title="3. Hybrid (MPI+OpenMP) programs" class="md-nav__link">
+  <a href="#346-hybrid-mpiopenmp-programs" class="md-nav__link">
     3. Hybrid (MPI+OpenMP) programs
   </a>
   
@@ -811,14 +839,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-gpus" title="Request GPUs" class="md-nav__link">
+  <a href="#request-gpus" class="md-nav__link">
     Request GPUs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-and-constraints" title="Features and Constraints" class="md-nav__link">
+  <a href="#features-and-constraints" class="md-nav__link">
     Features and Constraints
   </a>
   
@@ -867,18 +895,6 @@
   <li class="md-nav__item">
     <a href="../scavenge/" title="Scavenge Partition" class="md-nav__link">
       Scavenge Partition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../mpi/" title="MPI Partition" class="md-nav__link">
-      MPI Partition
     </a>
   </li>
 
@@ -1219,7 +1235,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" title="Request Cores and Nodes" class="md-nav__link">
+  <a href="#request-cores-and-nodes" class="md-nav__link">
     Request Cores and Nodes
   </a>
   
@@ -1227,28 +1243,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-ntasks-vs-cpus-per-task" title="--ntasks vs --cpus-per-task" class="md-nav__link">
+  <a href="#-ntasks-vs-cpus-per-task" class="md-nav__link">
     --ntasks vs --cpus-per-task
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#146-multi-threaded-multi-process-programs" title="1. Multi-threaded &amp; multi-process programs" class="md-nav__link">
+  <a href="#146-multi-threaded-multi-process-programs" class="md-nav__link">
     1. Multi-threaded &amp; multi-process programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#246-mpi-programs" title="2. MPI programs" class="md-nav__link">
+  <a href="#246-mpi-programs" class="md-nav__link">
     2. MPI programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#346-hybrid-mpiopenmp-programs" title="3. Hybrid (MPI+OpenMP) programs" class="md-nav__link">
+  <a href="#346-hybrid-mpiopenmp-programs" class="md-nav__link">
     3. Hybrid (MPI+OpenMP) programs
   </a>
   
@@ -1260,14 +1276,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-gpus" title="Request GPUs" class="md-nav__link">
+  <a href="#request-gpus" class="md-nav__link">
     Request GPUs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-and-constraints" title="Features and Constraints" class="md-nav__link">
+  <a href="#features-and-constraints" class="md-nav__link">
     Features and Constraints
   </a>
   
@@ -1300,7 +1316,7 @@
 <h3 id="246-mpi-programs">2. MPI programs</h3>
 <p>In Slurm, the <code>--ntasks</code> flag specifies the number of MPI tasks created for your job. Note that, even within the same job, multiple tasks do not necessarily run on a single node. Therefore, requesting the same number of CPUs as above, but with the <code>--ntasks</code> flag, could result in those CPUs being allocated on several, distinct compute nodes.</p>
 <p>For many users, differentiating between <code>--ntasks</code> and <code>--cpus-per-task</code> is sufficient. However, for more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is extremely likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
-<div class="codehilite"><pre><span></span>ntasks-per-node * nodes &gt;= ntasks
+<div class="codehilite"><pre><span></span><span class="n">ntasks</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">node</span> <span class="o">*</span> <span class="n">nodes</span> <span class="o">&gt;=</span> <span class="n">ntasks</span>
 </pre></div>
 
 
@@ -1403,27 +1419,19 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.c648116f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
