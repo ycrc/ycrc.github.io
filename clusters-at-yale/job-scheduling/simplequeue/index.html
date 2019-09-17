@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -811,6 +783,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
@@ -1233,24 +1217,24 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 
 <p>These parameters specify that the job, named genome_map, will be submitted to the general queue/partition. This job will find 80 free cores, start 80 workers on them, and begin processing tasks from the taskfile <code>tasklist.txt</code>.</p>
 <p>sqCreateScript takes a number of options. They differ somewhat from cluster to cluster, particularly the default values for queue, walltime, and memory. You can run sqCreateScript without any arguments to see the exact options on your cluster.</p>
-<div class="codehilite"><pre><span></span><span class="nv">Usage</span>:
+<div class="codehilite"><pre><span></span>Usage:
 
-  <span class="o">-</span><span class="nv">h</span>, <span class="o">--</span><span class="nv">help</span>            <span class="k">show</span> <span class="nv">this</span> <span class="nv">help</span> <span class="nv">message</span> <span class="nv">and</span> <span class="k">exit</span>
-  <span class="o">-</span><span class="nv">n</span> <span class="nv">WORKERS</span>, <span class="o">--</span><span class="nv">workers</span><span class="o">=</span><span class="nv">WORKERS</span>
-                        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">workers</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>.
-  <span class="o">-</span><span class="nv">c</span> <span class="nv">CORES</span>, <span class="o">--</span><span class="nv">cores</span><span class="o">=</span><span class="nv">CORES</span>
-                        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">cores</span> <span class="nv">to</span> <span class="nv">request</span> <span class="nv">per</span> <span class="nv">worker</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>.
-  <span class="o">-</span><span class="nv">m</span> <span class="nv">MEM</span>, <span class="o">--</span><span class="nv">mem</span><span class="o">=</span><span class="nv">MEM</span>     <span class="nv">Memory</span> <span class="nv">per</span> <span class="nv">worker</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span><span class="nv">G</span>
-  <span class="o">-</span><span class="nv">w</span> <span class="nv">WALLTIME</span>, <span class="o">--</span><span class="nv">walltime</span><span class="o">=</span><span class="nv">WALLTIME</span>
-                        <span class="nv">Walltime</span> <span class="nv">to</span> <span class="nv">request</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">Slurm</span> <span class="nv">Job</span> <span class="nv">in</span> <span class="nv">form</span>
-                        [[<span class="nv">D</span><span class="o">-</span>]<span class="nv">HH</span>:]<span class="nv">MM</span>:<span class="nv">SS</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>:<span class="mi">00</span>:<span class="mi">00</span>.
-  <span class="o">-</span><span class="nv">q</span> <span class="nv">QUEUE</span>, <span class="o">--</span><span class="nv">queue</span><span class="o">=</span><span class="nv">QUEUE</span>
-                        <span class="nv">Name</span> <span class="nv">of</span> <span class="nv">queue</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
-                        <span class="nv">general</span>
-  <span class="o">-</span><span class="nv">N</span> <span class="nv">NAME</span>, <span class="o">--</span><span class="nv">name</span><span class="o">=</span><span class="nv">NAME</span>  <span class="nv">Base</span> <span class="nv">job</span> <span class="nv">name</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
-                        <span class="nv">SimpleQueue</span>.
-  <span class="o">--</span><span class="nv">logdir</span><span class="o">=</span><span class="nv">LOGDIR</span>       <span class="nv">Name</span> <span class="nv">of</span> <span class="nv">logging</span> <span class="nv">directory</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
-                        <span class="nv">SQ_Files_</span>${<span class="nv">SLURM_JOB_ID</span>}.
+  -h, --help            show this help message and exit
+  -n WORKERS, --workers=WORKERS
+                        Number of workers to use. Not required. Defaults to 1.
+  -c CORES, --cores=CORES
+                        Number of cores to request per worker. Defaults to 1.
+  -m MEM, --mem=MEM     Memory per worker. Not required. Defaults to 1G
+  -w WALLTIME, --walltime=WALLTIME
+                        Walltime to request for the Slurm Job in form
+                        [[D-]HH:]MM:SS. Not required. Defaults to 1:00:00.
+  -q QUEUE, --queue=QUEUE
+                        Name of queue to use. Not required. Defaults to
+                        general
+  -N NAME, --name=NAME  Base job name to use. Not required. Defaults to
+                        SimpleQueue.
+  --logdir=LOGDIR       Name of logging directory. Defaults to
+                        SQ_Files_<span class="cp">${</span><span class="n">SLURM_JOB_ID</span><span class="cp">}</span>.
 </pre></div>
 
 
@@ -1297,19 +1281,27 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
