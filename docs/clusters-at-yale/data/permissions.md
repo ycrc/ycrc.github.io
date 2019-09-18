@@ -41,13 +41,13 @@ setfacl -m "u:aa111:rwx" shared
 
 ### Remove Sharing of a Directory
 
-To remove sharing of a directory called `shared` to a group `othergroup`:
+To remove a group `othergroup` from sharing of a directory called `shared`:
 
 ```
 setfacl -R -x "g:othergroup" shared
 ```
 
-To remove sharing of a directory called `shared` to a person with netid `aa111`:
+To remove a person with netid `aa111` from sharing of a directory called `shared`:
 
 ```
 setfacl -R -x "u:aa111" shared
