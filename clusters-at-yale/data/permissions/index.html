@@ -1323,12 +1323,12 @@
 
 
 <h3 id="remove-sharing-of-a-directory">Remove Sharing of a Directory</h3>
-<p>To remove sharing of a directory called <code>shared</code> to a group <code>othergroup</code>:</p>
+<p>To remove a group <code>othergroup</code> from sharing of a directory called <code>shared</code>:</p>
 <div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">x</span> <span class="ss">&quot;g:othergroup&quot;</span> <span class="n">shared</span>
 </pre></div>
 
 
-<p>To remove sharing of a directory called <code>shared</code> to a person with netid <code>aa111</code>:</p>
+<p>To remove a person with netid <code>aa111</code> from sharing of a directory called <code>shared</code>:</p>
 <div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">x</span> <span class="ss">&quot;u:aa111&quot;</span> <span class="n">shared</span>
 </pre></div>
                 
