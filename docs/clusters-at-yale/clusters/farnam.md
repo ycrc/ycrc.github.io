@@ -19,23 +19,23 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 
 ### Compute Node Configurations
 
-| Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                         |
-|-------|---------------|-----------|-------|--------------------|----------|--------------------------------------------------|
-|   117 | 2x E5-2660_v3 |        20 |  121G |                    |          | haswell, avx2, E5-2660_v3, nogpu, standard       |
-|     5 | 2x E5-2660 v3 |        20 |  121G | 2x k80 (2GPUs/k80) |      12G | haswell, avx2, E5-2660_v3, doubleprecision       |
-|     2 | 4x E7-4809_v3 |        32 | 1507G |                    |          | haswell, avx2, E7-4809_v3, nogpu                 |
-|     1 | 2x E5-2623 v4 |         8 |   59G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2623_v4, singleprecision     |
-|     1 | 2x E5-2637 v4 |         8 |  121G | 4x titanv          |      12G | broadwell, avx2, E5-2637_v4, doubleprecision     |
-|    21 | 2x E5-2637 v4 |         8 |  121G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2637_v4, singleprecision     |
-|     3 | 2x E5-2660 v4 |        28 |  247G | 2x p100            |      16G | broadwell, avx2, E5-2660_v4, doubleprecision     |
-|    38 | 2x E5-2680_v4 |        28 |  247G |                    |          | broadwell, avx2, E5-2680_v4, nogpu, standard     |
-|     1 | 4x E7-4820_v4 |        40 | 1507G |                    |          | broadwell, avx2, E7-4820_v4, nogpu               |
-|     2 | 2x 5122       |         8 |  183G | 4x rtx2080         |       8G | skylake, avx2, avx512, 5122, singleprecision     |
-|     1 | 2x 6132       |        28 |  751G |                    |          | skylake, avx2, avx512, 6132, nogpu               |
-|     2 | 2x 6132       |        28 |  183G |                    |          | skylake, avx2, avx512, 6132, nogpu, standard     |
-|     4 | 2x 6240       |        36 |  750G |                    |          | cascadelake, avx2, avx512, 6240, nogpu           |
-|     4 | 2x 6240       |        36 |  372G |                    |          | cascadelake, avx2, avx512, 6240, nogpu           |
-|    24 | 2x 6240       |        36 |  183G |                    |          | cascadelake, avx2, avx512, 6240, nogpu, standard |
+| Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                           |
+|-------|---------------|-----------|-------|--------------------|----------|----------------------------------------------------|
+|   117 | 2x E5-2660_v3 |        20 |  121G |                    |          | haswell, avx2, E5-2660_v3, nogpu, standard, oldest |
+|     5 | 2x E5-2660 v3 |        20 |  121G | 2x k80 (2GPUs/k80) |      12G | haswell, avx2, E5-2660_v3, doubleprecision         |
+|     2 | 4x E7-4809_v3 |        32 | 1507G |                    |          | haswell, avx2, E7-4809_v3, nogpu                   |
+|     1 | 2x E5-2623 v4 |         8 |   59G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2623_v4, singleprecision       |
+|     1 | 2x E5-2637 v4 |         8 |  121G | 4x titanv          |      12G | broadwell, avx2, E5-2637_v4, doubleprecision       |
+|    21 | 2x E5-2637 v4 |         8 |  121G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2637_v4, singleprecision       |
+|     3 | 2x E5-2660 v4 |        28 |  247G | 2x p100            |      16G | broadwell, avx2, E5-2660_v4, doubleprecision       |
+|    38 | 2x E5-2680_v4 |        28 |  247G |                    |          | broadwell, avx2, E5-2680_v4, nogpu, standard       |
+|     1 | 4x E7-4820_v4 |        40 | 1507G |                    |          | broadwell, avx2, E7-4820_v4, nogpu                 |
+|     2 | 2x 5122       |         8 |  183G | 4x rtx2080         |       8G | skylake, avx2, avx512, 5122, singleprecision       |
+|     1 | 2x 6132       |        28 |  751G |                    |          | skylake, avx2, avx512, 6132, nogpu                 |
+|     2 | 2x 6132       |        28 |  183G |                    |          | skylake, avx2, avx512, 6132, nogpu, standard       |
+|     4 | 2x 6240       |        36 |  750G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
+|     4 | 2x 6240       |        36 |  372G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
+|    24 | 2x 6240       |        36 |  183G |                    |          | cascadelake, avx2, avx512, 6240, nogpu, standard   |
 
 ## Slurm Partitions
 

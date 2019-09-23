@@ -22,10 +22,11 @@ Milgram is made up of a couple kinds of compute nodes. The Features column below
 
 ### Compute Node Configurations
 
-| Count | CPU           | CPU Cores | RAM   | Features                          |
-|-------|---------------|-----------|-------|-----------------------------------|
-| 12    | 2x E5-2660 v3 | 20        | 121G  | haswell, E5-2660_v3, oldest       |
-| 48    | 2x E5-2660 v4 | 28        | 250G  | broadwell, E5-2660_v4             |
+| Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                   |
+|-------|---------------|-----------|-------|--------------------|----------|--------------------------------------------|
+| 12    | 2x E5-2660 v3 | 20        | 121G  |                    |          | haswell, E5-2660_v3, nogpu, oldest         |
+| 48    | 2x E5-2660 v4 | 28        | 250G  |                    |          | broadwell, E5-2660_v4, nogpu               |
+| 5     | 2x 6240       | 36        | 372G  | 4x rtx2080ti       |       8G | cascadelake, avx512, 6240, nogpu, standard |
 
 ## Slurm Partitions
 
@@ -33,14 +34,14 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition    | Group Limits           | User Limits             | Walltime Default/Max | Node Type (count)               |
-|--------------|------------------------|-------------------------|----------------------|---------------------------------|
-| short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | E5-2660_v3 (1)                  |
-| long         |                        | 1188 CPUs, 5940 G RAM   | 1h/2d                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| verylong     |                        | 792 CPUs, 3960 G RAM    | 1h/7d                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| education    |                        |                         | 1h/6h                | E5-2660_v3 (2)                  |
-| scavenge     |                        |                         | none                 | E5-2660_v3 (9), E5-2660_v4 (48) |
+| Partition    | Group Limits           | User Limits             | Walltime Default/Max | Node Type (count)                                      |
+|--------------|------------------------|-------------------------|----------------------|--------------------------------------------------------|
+| short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5) |
+| interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | E5-2660_v3 (1)                                         |
+| long         |                        | 1188 CPUs, 5940 G RAM   | 1h/2d                | E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5) |
+| verylong     |                        | 792 CPUs, 3960 G RAM    | 1h/7d                | E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5) |
+| education    |                        |                         | 1h/6h                | E5-2660_v3 (2)                                         |
+| scavenge     |                        |                         | none                 | E5-2660_v3 (9), E5-2660_v4 (48), 6240 (5)              |
 
 \* default
 
