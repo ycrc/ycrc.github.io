@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -257,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../.." title="Support" class="md-tabs__link">
           Support
         </a>
       
@@ -273,7 +245,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -811,6 +783,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
@@ -1141,21 +1125,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#review-usage" class="md-nav__link">
+  <a href="#review-usage" title="Review Usage" class="md-nav__link">
     Review Usage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#transferring-data-from-omega-to-grace-or-farnam" class="md-nav__link">
+  <a href="#transferring-data-from-omega-to-grace-or-farnam" title="Transferring Data from Omega to Grace or Farnam" class="md-nav__link">
     Transferring Data from Omega to Grace or Farnam
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#transferring-data-from-omega-off-of-cluster-storage" class="md-nav__link">
+  <a href="#transferring-data-from-omega-off-of-cluster-storage" title="Transferring Data from Omega off of Cluster Storage" class="md-nav__link">
     Transferring Data from Omega off of Cluster Storage
   </a>
   
@@ -1181,8 +1165,8 @@
                 <h1 id="clean-out-omega-data">Clean Out Omega Data</h1>
 <p>All Omega files are now stored solely on the Loomis GPFS system. Omega data can be accessed from Grace and Farnam for copying and clean-up until February 1, 2019. <strong>If you have data on Omega that you would like to keep, you will need to move it to a new location before February 1, 2019, after which it will be permanently deleted.</strong></p>
 <p>Omega data can be accessed from the other clusters at the following paths until that date:</p>
-<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">loomis</span><span class="o">/</span><span class="n">home</span><span class="p">.</span><span class="n">omega</span><span class="o">/&lt;</span><span class="n">metagroup</span><span class="o">&gt;/&lt;</span><span class="k">group</span><span class="o">&gt;/&lt;</span><span class="n">netid</span><span class="o">&gt;</span>
-<span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">loomis</span><span class="o">/</span><span class="n">scratch</span><span class="p">.</span><span class="n">omega</span><span class="o">/&lt;</span><span class="n">metagroup</span><span class="o">&gt;/&lt;</span><span class="k">group</span><span class="o">&gt;/&lt;</span><span class="n">netid</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span>/gpfs/loomis/home.omega/&lt;metagroup&gt;/&lt;group&gt;/&lt;netid&gt;
+/gpfs/loomis/scratch.omega/&lt;metagroup&gt;/&lt;group&gt;/&lt;netid&gt;
 </pre></div>
 
 
@@ -1190,17 +1174,17 @@
 <p>If you are a PI and would like access to data owned by any former group members, please send us an email at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can assist you.</p>
 <h2 id="review-usage">Review Usage</h2>
 <p>From either Grace or Farnam, you can run the groupquota script with the <code>-c omega</code> flag to get a report of your group's storage usage on Omega.</p>
-<div class="codehilite"><pre><span></span><span class="n">getquota</span> <span class="o">-</span><span class="k">c</span> <span class="n">omega</span>
+<div class="codehilite"><pre><span></span>getquota -c omega
 </pre></div>
 
 
 <p>If you don't have an account on Grace or Farnam, you can email us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> to get a list of usage and see below for instructions on retrieving your data.</p>
 <h2 id="transferring-data-from-omega-to-grace-or-farnam">Transferring Data from Omega to Grace or Farnam</h2>
 <p>Since the Loomis is available on Grace and Farnam, there is no need to use Globus or rsync that data between transfer nodes. Instead, from the cluster where you will be storing the data moving forward, you can run an <code>rsync</code> directly between the filesets (directory trees). Once you have copied your data from Omega to your other cluster, <strong>please delete the data from the Omega directories</strong>. For example, if you would like to copy your data into a new directory in your project space:</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span><span class="nv">mkdir</span> <span class="o">~/</span><span class="nv">project</span><span class="o">/</span><span class="nv">data_from_omega</span>
-<span class="nv">rsync</span> <span class="o">-</span><span class="nv">avz</span> <span class="o">/</span><span class="nv">gpfs</span><span class="o">/</span><span class="nv">loomis</span><span class="o">/</span><span class="nv">scratch</span>.<span class="nv">omega</span><span class="o">/</span><span class="nv">fas</span><span class="o">/</span><span class="nv">hpcprog</span><span class="o">/</span><span class="nv">kln26</span><span class="o">/</span><span class="nv">simulation100</span> <span class="o">~/</span><span class="nv">project</span><span class="o">/</span><span class="nv">data_from_omega</span>
-# <span class="nv">verify</span> <span class="nv">data</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">copied</span> <span class="nv">successfully</span> <span class="nv">to</span> <span class="o">~/</span><span class="nv">project</span><span class="o">/</span><span class="nv">data_from_omega</span>, <span class="k">then</span>
-<span class="nv">rm</span> <span class="o">-</span><span class="nv">r</span> <span class="o">/</span><span class="nv">gpfs</span><span class="o">/</span><span class="nv">loomis</span><span class="o">/</span><span class="nv">scratch</span>.<span class="nv">omega</span><span class="o">/</span><span class="nv">fas</span><span class="o">/</span><span class="nv">hpcprog</span><span class="o">/</span><span class="nv">kln26</span><span class="o">/</span><span class="nv">simulation100</span>
+<div class="codehilite"><pre><span></span>&gt;mkdir ~/project/data_from_omega
+rsync -avz /gpfs/loomis/scratch.omega/fas/hpcprog/kln26/simulation100 ~/project/data_from_omega
+# verify data has been copied successfully to ~/project/data_from_omega, then
+rm -r /gpfs/loomis/scratch.omega/fas/hpcprog/kln26/simulation100
 </pre></div>
 
 
@@ -1238,19 +1222,27 @@
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

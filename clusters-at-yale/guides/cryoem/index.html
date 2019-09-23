@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -257,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../.." title="Support" class="md-tabs__link">
           Support
         </a>
       
@@ -273,7 +245,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -811,6 +783,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
@@ -1141,21 +1125,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
+  <a href="#storage" title="Storage" class="md-nav__link">
     Storage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schedule-jobs" class="md-nav__link">
+  <a href="#schedule-jobs" title="Schedule Jobs" class="md-nav__link">
     Schedule Jobs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
+  <a href="#software" title="Software" class="md-nav__link">
     Software
   </a>
   
@@ -1163,7 +1147,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#relion" class="md-nav__link">
+  <a href="#relion" title="RELION" class="md-nav__link">
     RELION
   </a>
   
@@ -1171,14 +1155,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#module" class="md-nav__link">
+  <a href="#module" title="Module" class="md-nav__link">
     Module
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-job-parameters" class="md-nav__link">
+  <a href="#example-job-parameters" title="Example Job Parameters" class="md-nav__link">
     Example Job Parameters
   </a>
   
@@ -1190,7 +1174,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eman2" class="md-nav__link">
+  <a href="#eman2" title="EMAN2" class="md-nav__link">
     EMAN2
   </a>
   
@@ -1198,14 +1182,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conda-install" class="md-nav__link">
+  <a href="#conda-install" title="Conda Install" class="md-nav__link">
     Conda Install
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#singularity-container" class="md-nav__link">
+  <a href="#singularity-container" title="Singularity Container" class="md-nav__link">
     Singularity Container
   </a>
   
@@ -1217,7 +1201,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cryosparc" class="md-nav__link">
+  <a href="#cryosparc" title="Cryosparc" class="md-nav__link">
     Cryosparc
   </a>
   
@@ -1316,19 +1300,27 @@ srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refin
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

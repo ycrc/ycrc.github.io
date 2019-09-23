@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -259,7 +231,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -275,7 +247,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -630,14 +602,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-miniconda-module" class="md-nav__link">
+  <a href="#the-miniconda-module" title="The Miniconda Module" class="md-nav__link">
     The Miniconda Module
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-your-environment" class="md-nav__link">
+  <a href="#setup-your-environment" title="Setup Your Environment" class="md-nav__link">
     Setup Your Environment
   </a>
   
@@ -645,35 +617,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-the-miniconda-module" class="md-nav__link">
+  <a href="#load-the-miniconda-module" title="Load the Miniconda Module" class="md-nav__link">
     Load the Miniconda Module
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#default-install-locations" class="md-nav__link">
+  <a href="#default-install-locations" title="Default Install Locations" class="md-nav__link">
     Default Install Locations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-conda-environment" class="md-nav__link">
+  <a href="#create-a-conda-environment" title="Create a conda Environment" class="md-nav__link">
     Create a conda Environment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#conda-channels" class="md-nav__link">
+  <a href="#conda-channels" title="Conda Channels" class="md-nav__link">
     Conda Channels
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-your-environment" class="md-nav__link">
+  <a href="#using-your-environment" title="Using Your Environment" class="md-nav__link">
     Using Your Environment
   </a>
   
@@ -681,14 +653,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive" class="md-nav__link">
+  <a href="#interactive" title="Interactive" class="md-nav__link">
     Interactive
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-a-job-script" class="md-nav__link">
+  <a href="#in-a-job-script" title="In a Job Script" class="md-nav__link">
     In a Job Script
   </a>
   
@@ -700,7 +672,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-and-install-additional-packages" class="md-nav__link">
+  <a href="#find-and-install-additional-packages" title="Find and Install Additional Packages" class="md-nav__link">
     Find and Install Additional Packages
   </a>
   
@@ -708,14 +680,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#python" title="Python" class="md-nav__link">
     Python
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
+  <a href="#r" title="R" class="md-nav__link">
     R
   </a>
   
@@ -732,7 +704,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot" class="md-nav__link">
+  <a href="#troubleshoot" title="Troubleshoot" class="md-nav__link">
     Troubleshoot
   </a>
   
@@ -740,21 +712,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
+  <a href="#permission-denied" title=""Permission Denied"" class="md-nav__link">
     "Permission Denied"
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-bash-activate-no-such-file-or-directory" class="md-nav__link">
+  <a href="#-bash-activate-no-such-file-or-directory" title=""-bash: activate: No such file or directory"" class="md-nav__link">
     "-bash: activate: No such file or directory"
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#could-not-find-environment" class="md-nav__link">
+  <a href="#could-not-find-environment" title=""could not find environment:"" class="md-nav__link">
     "could not find environment:"
   </a>
   
@@ -766,7 +738,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-conda-commands" class="md-nav__link">
+  <a href="#additional-conda-commands" title="Additional Conda Commands" class="md-nav__link">
     Additional Conda Commands
   </a>
   
@@ -774,21 +746,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-installed-packages" class="md-nav__link">
+  <a href="#list-installed-packages" title="List Installed Packages" class="md-nav__link">
     List Installed Packages
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-conda-environment" class="md-nav__link">
+  <a href="#delete-a-conda-environment" title="Delete a Conda Environment" class="md-nav__link">
     Delete a Conda Environment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-your-conda-environment" class="md-nav__link">
+  <a href="#share-your-conda-environment" title="Share your Conda Environment" class="md-nav__link">
     Share your Conda Environment
   </a>
   
@@ -1010,6 +982,18 @@
   <li class="md-nav__item">
     <a href="../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
       Scavenge Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
     </a>
   </li>
 
@@ -1350,14 +1334,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-miniconda-module" class="md-nav__link">
+  <a href="#the-miniconda-module" title="The Miniconda Module" class="md-nav__link">
     The Miniconda Module
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-your-environment" class="md-nav__link">
+  <a href="#setup-your-environment" title="Setup Your Environment" class="md-nav__link">
     Setup Your Environment
   </a>
   
@@ -1365,35 +1349,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-the-miniconda-module" class="md-nav__link">
+  <a href="#load-the-miniconda-module" title="Load the Miniconda Module" class="md-nav__link">
     Load the Miniconda Module
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#default-install-locations" class="md-nav__link">
+  <a href="#default-install-locations" title="Default Install Locations" class="md-nav__link">
     Default Install Locations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-a-conda-environment" class="md-nav__link">
+  <a href="#create-a-conda-environment" title="Create a conda Environment" class="md-nav__link">
     Create a conda Environment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#conda-channels" class="md-nav__link">
+  <a href="#conda-channels" title="Conda Channels" class="md-nav__link">
     Conda Channels
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-your-environment" class="md-nav__link">
+  <a href="#using-your-environment" title="Using Your Environment" class="md-nav__link">
     Using Your Environment
   </a>
   
@@ -1401,14 +1385,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive" class="md-nav__link">
+  <a href="#interactive" title="Interactive" class="md-nav__link">
     Interactive
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#in-a-job-script" class="md-nav__link">
+  <a href="#in-a-job-script" title="In a Job Script" class="md-nav__link">
     In a Job Script
   </a>
   
@@ -1420,7 +1404,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-and-install-additional-packages" class="md-nav__link">
+  <a href="#find-and-install-additional-packages" title="Find and Install Additional Packages" class="md-nav__link">
     Find and Install Additional Packages
   </a>
   
@@ -1428,14 +1412,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#python" title="Python" class="md-nav__link">
     Python
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
+  <a href="#r" title="R" class="md-nav__link">
     R
   </a>
   
@@ -1452,7 +1436,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot" class="md-nav__link">
+  <a href="#troubleshoot" title="Troubleshoot" class="md-nav__link">
     Troubleshoot
   </a>
   
@@ -1460,21 +1444,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
+  <a href="#permission-denied" title=""Permission Denied"" class="md-nav__link">
     "Permission Denied"
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-bash-activate-no-such-file-or-directory" class="md-nav__link">
+  <a href="#-bash-activate-no-such-file-or-directory" title=""-bash: activate: No such file or directory"" class="md-nav__link">
     "-bash: activate: No such file or directory"
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#could-not-find-environment" class="md-nav__link">
+  <a href="#could-not-find-environment" title=""could not find environment:"" class="md-nav__link">
     "could not find environment:"
   </a>
   
@@ -1486,7 +1470,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-conda-commands" class="md-nav__link">
+  <a href="#additional-conda-commands" title="Additional Conda Commands" class="md-nav__link">
     Additional Conda Commands
   </a>
   
@@ -1494,21 +1478,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#list-installed-packages" class="md-nav__link">
+  <a href="#list-installed-packages" title="List Installed Packages" class="md-nav__link">
     List Installed Packages
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#delete-a-conda-environment" class="md-nav__link">
+  <a href="#delete-a-conda-environment" title="Delete a Conda Environment" class="md-nav__link">
     Delete a Conda Environment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-your-conda-environment" class="md-nav__link">
+  <a href="#share-your-conda-environment" title="Share your Conda Environment" class="md-nav__link">
     Share your Conda Environment
   </a>
   
@@ -1631,13 +1615,13 @@ python analyses.py
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
 <p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> for any packages you would like to install. Once in your conda environment, you can install any additional packages using <code>conda install</code>:</p>
 <h4 id="python">Python</h4>
-<div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">numpy</span>
+<div class="codehilite"><pre><span></span>conda install numpy
 </pre></div>
 
 
 <h4 id="r">R</h4>
 <p>All R packages are prepended with <code>r-</code>.</p>
-<div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span>
+<div class="codehilite"><pre><span></span>conda install r-ggplot2
 </pre></div>
 
 
@@ -1649,19 +1633,19 @@ python analyses.py
 <p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the appropriate module and rerunning your <code>source activate env_name</code> command.</p>
 <h3 id="could-not-find-environment">"could not find environment:"</h3>
 <p>This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the Miniconda module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
-<div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="c1">--envs</span>
+<div class="codehilite"><pre><span></span>conda info --envs
 </pre></div>
 
 
 <h2 id="additional-conda-commands">Additional Conda Commands</h2>
 <h3 id="list-installed-packages">List Installed Packages</h3>
-<div class="codehilite"><pre><span></span><span class="k">source</span> <span class="n">activate</span> <span class="n">env_name</span>
-<span class="n">conda</span> <span class="n">list</span>
+<div class="codehilite"><pre><span></span>source activate env_name
+conda list
 </pre></div>
 
 
 <h3 id="delete-a-conda-environment">Delete a Conda Environment</h3>
-<div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">remove</span> <span class="c1">--name env_name</span>
+<div class="codehilite"><pre><span></span>conda env remove --name env_name
 </pre></div>
 
 
@@ -1735,19 +1719,27 @@ conda env create -f env_name_environment.yml
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

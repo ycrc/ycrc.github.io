@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,34 +60,6 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    
-      
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -259,7 +231,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -275,7 +247,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -570,14 +542,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#toolchains" class="md-nav__link">
+  <a href="#toolchains" title="Toolchains" class="md-nav__link">
     Toolchains
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#environment-variables" title="Environment Variables" class="md-nav__link">
     Environment Variables
   </a>
   
@@ -854,6 +826,18 @@
   <li class="md-nav__item">
     <a href="../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
       Scavenge Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
     </a>
   </li>
 
@@ -1194,14 +1178,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#toolchains" class="md-nav__link">
+  <a href="#toolchains" title="Toolchains" class="md-nav__link">
     Toolchains
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#environment-variables" title="Environment Variables" class="md-nav__link">
     Environment Variables
   </a>
   
@@ -1228,33 +1212,33 @@
 <p>We use a build and installation framework called <a href="https://easybuild.readthedocs.io/en/latest/">EasyBuild</a> that connects the software we compile and maintain on the clusters with the <a href="/clusters-at-yale/applications/modules">module system</a> that makes it available to you.</p>
 <h2 id="toolchains">Toolchains</h2>
 <p>When we install software, we use pre-defined build environments called toolchains. These are modules that include core compilers and libraries (e.g. <code>GCC</code>, <code>OpenMPI</code>, <code>zlib</code>). We do this for two main reasons. One is to try to keep our build process simpler. The other is so that you can load two different modules for software built with the same toolchain and expect everything to work. The two common toolchains you will interact with are <a href="https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain"><code>foss</code></a> and <a href="https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain"><code>intel</code></a>. Each of these have module versions corresponding to the year they were built. Toolchain name and version information is appended to the name of a module so it is clear to us and to the module system what should be compatible. An example would be <code>Python/2.7.12-foss-2016b</code>, where the software name is <code>Python</code>, version <code>2.7.12</code>, built with the <code>foss</code> toolchain version <code>2016b</code>. The easiest way to see what software a toolchain includes is to load it and then list loaded modules.</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@farnam2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">foss</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="o">[</span><span class="n">be59@farnam2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">list</span><span class="w"></span>
+<div class="codehilite"><pre><span></span>[be59@farnam2 ~]$ module load foss/2016b
+[be59@farnam2 ~]$ module list
 
-<span class="n">Currently</span><span class="w"> </span><span class="n">Loaded</span><span class="w"> </span><span class="nl">Modules</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">StdEnv</span><span class="w">                        </span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w">   </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="n">OpenMPI</span><span class="o">/</span><span class="mf">1.10.3</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
-<span class="w">  </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">GCCcore</span><span class="o">/</span><span class="mf">5.4.0</span><span class="w">                       </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="n">OpenBLAS</span><span class="o">/</span><span class="mf">0.2.18</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="o">-</span><span class="n">LAPACK</span><span class="o">-</span><span class="mf">3.6.1</span><span class="w"></span>
-<span class="w">  </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="n">binutils</span><span class="o">/</span><span class="mf">2.26</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">5.4.0</span><span class="w">         </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="n">gompi</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="w">  </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">GCC</span><span class="o">/</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w">                     </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">FFTW</span><span class="o">/</span><span class="mf">3.3.4</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="w">  </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="n">numactl</span><span class="o">/</span><span class="mf">2.0.11</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w">      </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="n">ScaLAPACK</span><span class="o">/</span><span class="mf">2.0.2</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="o">-</span><span class="n">OpenBLAS</span><span class="o">-</span><span class="mf">0.2.18</span><span class="o">-</span><span class="n">LAPACK</span><span class="o">-</span><span class="mf">3.6.1</span><span class="w"></span>
-<span class="w">  </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="n">hwloc</span><span class="o">/</span><span class="mf">1.11.3</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w">        </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="n">foss</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
+Currently Loaded Modules:
+  1) StdEnv                        (S)   7) OpenMPI/1.10.3-GCC-5.4.0-2.26
+  2) GCCcore/5.4.0                       8) OpenBLAS/0.2.18-GCC-5.4.0-2.26-LAPACK-3.6.1
+  3) binutils/2.26-GCCcore-5.4.0         9) gompi/2016b
+  4) GCC/5.4.0-2.26                     10) FFTW/3.3.4-gompi-2016b
+  5) numactl/2.0.11-GCC-5.4.0-2.26      11) ScaLAPACK/2.0.2-gompi-2016b-OpenBLAS-0.2.18-LAPACK-3.6.1
+  6) hwloc/1.11.3-GCC-5.4.0-2.26        12) foss/2016b
 
-<span class="w">  </span><span class="k">Where</span><span class="err">:</span><span class="w"></span>
-<span class="w">   </span><span class="nl">S</span><span class="p">:</span><span class="w">  </span><span class="k">Module</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Sticky</span><span class="p">,</span><span class="w"> </span><span class="n">requires</span><span class="w"> </span><span class="c1">--force to unload or purge</span>
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
 </pre></div>
 
 
 <p>The takeaway here is that you should try to use modules that match their <code>foss</code> or <code>intel</code> identifiers.</p>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>If you ever want to refer to the directory where the software from a module is stored, you can use the environment variable <code>$EBROOTMODULENAME</code> where modulename is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:</p>
-<div class="codehilite"><pre><span></span>[<span class="nv">be59</span>@<span class="nv">farnam2</span> <span class="o">~</span>]$ <span class="nv">module</span> <span class="nv">load</span> <span class="nv">SAMtools</span><span class="o">/</span><span class="mi">1</span>.<span class="mi">9</span><span class="o">-</span><span class="nv">foss</span><span class="o">-</span><span class="mi">2016</span><span class="nv">b</span>
-[<span class="nv">be59</span>@<span class="nv">farnam2</span> <span class="o">~</span>]$ <span class="nv">ls</span> <span class="mh">$EB</span><span class="nv">ROOTSAMTOOLS</span>
-<span class="nv">bin</span>  <span class="nv">easybuild</span>  <span class="k">include</span>  <span class="nv">lib</span>  <span class="nv">share</span>
-[<span class="nv">be59</span>@<span class="nv">farnam2</span> <span class="o">~</span>]$ <span class="nv">ls</span> <span class="mh">$EB</span><span class="nv">ROOTSAMTOOLS</span><span class="o">/</span><span class="nv">bin</span>
-<span class="nv">ace2sam</span>        <span class="nv">interpolate_sam</span>.<span class="nv">pl</span>  <span class="nv">md5sum</span><span class="o">-</span><span class="nv">lite</span>    <span class="nv">r2plot</span>.<span class="nv">lua</span>   <span class="nv">seq_cache_populate</span>.<span class="nv">pl</span>  <span class="nv">wgsim</span>
-<span class="nv">blast2sam</span>.<span class="nv">pl</span>   <span class="nv">maq2sam</span><span class="o">-</span><span class="nv">long</span>        <span class="nv">novo2sam</span>.<span class="nv">pl</span>    <span class="nv">sam2vcf</span>.<span class="nv">pl</span>   <span class="nv">soap2sam</span>.<span class="nv">pl</span>            <span class="nv">wgsim_eval</span>.<span class="nv">pl</span>
-<span class="nv">bowtie2sam</span>.<span class="nv">pl</span>  <span class="nv">maq2sam</span><span class="o">-</span><span class="nv">short</span>       <span class="nv">plot</span><span class="o">-</span><span class="nv">bamstats</span>  <span class="nv">samtools</span>     <span class="nv">varfilter</span>.<span class="nv">py</span>           <span class="nv">zoom2sam</span>.<span class="nv">pl</span>
-<span class="nv">export2sam</span>.<span class="nv">pl</span>  <span class="nv">md5fa</span>               <span class="nv">psl2sam</span>.<span class="nv">pl</span>     <span class="nv">samtools</span>.<span class="nv">pl</span>  <span class="nv">vcfutils</span>.<span class="nv">lua</span>
+<div class="codehilite"><pre><span></span>[be59@farnam2 ~]$ module load SAMtools/1.9-foss-2016b
+[be59@farnam2 ~]$ ls $EBROOTSAMTOOLS
+bin  easybuild  include  lib  share
+[be59@farnam2 ~]$ ls $EBROOTSAMTOOLS/bin
+ace2sam        interpolate_sam.pl  md5sum-lite    r2plot.lua   seq_cache_populate.pl  wgsim
+blast2sam.pl   maq2sam-long        novo2sam.pl    sam2vcf.pl   soap2sam.pl            wgsim_eval.pl
+bowtie2sam.pl  maq2sam-short       plot-bamstats  samtools     varfilter.py           zoom2sam.pl
+export2sam.pl  md5fa               psl2sam.pl     samtools.pl  vcfutils.lua
 </pre></div>
                 
                   
@@ -1319,19 +1303,27 @@
           Material for MkDocs</a>
       </div>
       
+        
+      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
