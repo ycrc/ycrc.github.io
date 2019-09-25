@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -789,18 +817,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
-      MPI Partition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
@@ -1273,8 +1289,6 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <th>CPU</th>
 <th>CPU Cores</th>
 <th>RAM</th>
-<th>GPU</th>
-<th>vRAM/GPU</th>
 <th>Features</th>
 </tr>
 </thead>
@@ -1284,27 +1298,14 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td>2x E5-2660 v3</td>
 <td>20</td>
 <td>121G</td>
-<td></td>
-<td></td>
-<td>haswell, E5-2660_v3, nogpu, oldest</td>
+<td>haswell, E5-2660_v3, oldest</td>
 </tr>
 <tr>
 <td>48</td>
 <td>2x E5-2660 v4</td>
 <td>28</td>
 <td>250G</td>
-<td></td>
-<td></td>
-<td>broadwell, E5-2660_v4, nogpu</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2x 6240</td>
-<td>36</td>
-<td>372G</td>
-<td>4x rtx2080ti</td>
-<td>8G</td>
-<td>cascadelake, avx512, 6240, nogpu, standard</td>
+<td>broadwell, E5-2660_v4</td>
 </tr>
 </tbody>
 </table>
@@ -1327,7 +1328,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td>1158 CPUs, 10176 G RAM</td>
 <td>772 CPUs, 6784 G RAM</td>
 <td>1h/6h</td>
-<td>E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5)</td>
+<td>E5-2660_v3 (9), E5-2660_v4 (48)</td>
 </tr>
 <tr>
 <td>interactive</td>
@@ -1341,14 +1342,14 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td></td>
 <td>1188 CPUs, 5940 G RAM</td>
 <td>1h/2d</td>
-<td>E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5)</td>
+<td>E5-2660_v3 (9), E5-2660_v4 (48)</td>
 </tr>
 <tr>
 <td>verylong</td>
 <td></td>
 <td>792 CPUs, 3960 G RAM</td>
 <td>1h/7d</td>
-<td>E5-2660_v3 (9), E5-2660_v4 (48), 6240 w/ rtx2080ti (5)</td>
+<td>E5-2660_v3 (9), E5-2660_v4 (48)</td>
 </tr>
 <tr>
 <td>education</td>
@@ -1362,7 +1363,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td></td>
 <td></td>
 <td>none</td>
-<td>E5-2660_v3 (9), E5-2660_v4 (48), 6240 (5)</td>
+<td>E5-2660_v3 (9), E5-2660_v4 (48)</td>
 </tr>
 </tbody>
 </table>
@@ -1471,27 +1472,19 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

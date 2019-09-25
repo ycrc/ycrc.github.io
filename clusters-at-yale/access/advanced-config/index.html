@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -836,18 +864,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
-      MPI Partition
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
@@ -1212,32 +1228,32 @@
 <h2 id="example-ssh-config">Example SSH <code>config</code></h2>
 <p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh farnam</code> or <code>scp ~/my_file farnam:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
 <p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
-<div class="codehilite"><pre><span></span># To re-use your connections with multi-factor authentication (e.g. Ruddle)
-# Uncomment the two lines below
-#ControlMaster auto
-#ControlPath ~/.ssh/tmp/%h_%p_%r
+<div class="codehilite"><pre><span></span># <span class="nv">To</span> <span class="nv">re</span><span class="o">-</span><span class="nv">use</span> <span class="nv">your</span> <span class="nv">connections</span> <span class="nv">with</span> <span class="nv">multi</span><span class="o">-</span><span class="nv">factor</span> <span class="nv">authentication</span> <span class="ss">(</span><span class="nv">e</span>.<span class="nv">g</span>. <span class="nv">Ruddle</span><span class="ss">)</span>
+# <span class="nv">Uncomment</span> <span class="nv">the</span> <span class="nv">two</span> <span class="nv">lines</span> <span class="nv">below</span>
+#<span class="nv">ControlMaster</span> <span class="nv">auto</span>
+#<span class="nv">ControlPath</span> <span class="o">~/</span>.<span class="nv">ssh</span><span class="o">/</span><span class="nv">tmp</span><span class="o">/%</span><span class="nv">h_</span><span class="o">%</span><span class="nv">p_</span><span class="o">%</span><span class="nv">r</span>
 
-# If you use a ssh key that is named something other than id_rsa,
-# you can specify your private key like this:
-# IdentityFile ~/.ssh/other_key_rsa
+# <span class="k">If</span> <span class="nv">you</span> <span class="nv">use</span> <span class="nv">a</span> <span class="nv">ssh</span> <span class="nv">key</span> <span class="nv">that</span> <span class="nv">is</span> <span class="nv">named</span> <span class="nv">something</span> <span class="nv">other</span> <span class="nv">than</span> <span class="nv">id_rsa</span>,
+# <span class="nv">you</span> <span class="nv">can</span> <span class="nv">specify</span> <span class="nv">your</span> <span class="nv">private</span> <span class="nv">key</span> <span class="nv">like</span> <span class="nv">this</span>:
+# <span class="nv">IdentityFile</span> <span class="o">~/</span>.<span class="nv">ssh</span><span class="o">/</span><span class="nv">other_key_rsa</span>
 
-# Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
-# On a Mac you still need xquartz installed
-Host *.hpc.yale.edu farnam grace milgram ruddle
-    User NETID
-#   ForwardX11 yes
+# <span class="nv">Uncomment</span> <span class="nv">the</span> <span class="nv">ForwardX11</span> <span class="nv">options</span> <span class="nv">line</span> <span class="nv">to</span> <span class="nv">enable</span> <span class="nv">X11</span> <span class="nv">Forwarding</span> <span class="nv">by</span> <span class="nv">default</span> <span class="ss">(</span><span class="nv">no</span> <span class="o">-</span><span class="nv">Y</span> <span class="nv">necessary</span><span class="ss">)</span>
+# <span class="nv">On</span> <span class="nv">a</span> <span class="nv">Mac</span> <span class="nv">you</span> <span class="nv">still</span> <span class="nv">need</span> <span class="nv">xquartz</span> <span class="nv">installed</span>
+<span class="nv">Host</span> <span class="o">*</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span> <span class="nv">farnam</span> <span class="nv">grace</span> <span class="nv">milgram</span> <span class="nv">ruddle</span>
+    <span class="nv">User</span> <span class="nv">NETID</span>
+#   <span class="nv">ForwardX11</span> <span class="nv">yes</span>
 
-Host farnam
-     HostName farnam.hpc.yale.edu
+<span class="nv">Host</span> <span class="nv">farnam</span>
+     <span class="nv">HostName</span> <span class="nv">farnam</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
 
-Host grace
-     HostName grace.hpc.yale.edu
+<span class="nv">Host</span> <span class="nv">grace</span>
+     <span class="nv">HostName</span> <span class="nv">grace</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
 
-Host milgram
-     Hostname milgram.hpc.yale.edu
+<span class="nv">Host</span> <span class="nv">milgram</span>
+     <span class="nv">Hostname</span> <span class="nv">milgram</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
 
-Host ruddle
-     HostName ruddle.hpc.yale.edu
+<span class="nv">Host</span> <span class="nv">ruddle</span>
+     <span class="nv">HostName</span> <span class="nv">ruddle</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
 </pre></div>
 
 
@@ -1262,9 +1278,9 @@ Host ruddle
 <p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
 </div>
 <p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.hpc.yale.edu ...</code> rule if it does).</p>
-<div class="codehilite"><pre><span></span>Host *.hpc.yale.edu farnam grace milgram ruddle
-    UseKeychain yes
-    AddKeystoAgent yes
+<div class="codehilite"><pre><span></span><span class="k">Host</span> <span class="o">*</span><span class="p">.</span><span class="n">hpc</span><span class="p">.</span><span class="n">yale</span><span class="p">.</span><span class="n">edu</span> <span class="n">farnam</span> <span class="n">grace</span> <span class="n">milgram</span> <span class="n">ruddle</span>
+    <span class="n">UseKeychain</span> <span class="n">yes</span>
+    <span class="n">AddKeystoAgent</span> <span class="n">yes</span>
 </pre></div>
 
 
@@ -1334,27 +1350,19 @@ Host ruddle
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
