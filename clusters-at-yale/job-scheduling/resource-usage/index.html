@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -60,6 +60,34 @@
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -1321,58 +1349,58 @@
 <p>Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> and the <a href="/clusters-at-yale/clusters">clusters page</a> (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.</p>
 <h2 id="future-jobs">Future Jobs</h2>
 <p>If you launch a program by putting <code>/usr/bin/time</code> in front of it, <code>time</code> will watch your program and provide statistics about the resources it used. For example:</p>
-<div class="codehilite"><pre><span></span>[be59@c01n01 ~]$ /usr/bin/time -v stress-ng --cpu 8 --timeout 10s
-stress-ng: info:  [32574] dispatching hogs: 8 cpu
-stress-ng: info:  [32574] successful run completed in 10.08s
-    Command being timed: &quot;stress-ng --cpu 8 --timeout 10s&quot;
-    User time (seconds): 80.22
-    System time (seconds): 0.04
-    Percent of CPU this job got: 795%
-    Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.09
-    Average shared text size (kbytes): 0
-    Average unshared data size (kbytes): 0
-    Average stack size (kbytes): 0
-    Average total size (kbytes): 0
-    Maximum resident set size (kbytes): 6328
-    Average resident set size (kbytes): 0
-    Major (requiring I/O) page faults: 0
-    Minor (reclaiming a frame) page faults: 30799
-    Voluntary context switches: 1380
-    Involuntary context switches: 68
-    Swaps: 0
-    File system inputs: 0
-    File system outputs: 0
-    Socket messages sent: 0
-    Socket messages received: 0
-    Signals delivered: 0
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@c01n01 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nc">time</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">stress</span><span class="o">-</span><span class="n">ng</span><span class="w"> </span><span class="c1">--cpu 8 --timeout 10s</span>
+<span class="n">stress</span><span class="o">-</span><span class="nl">ng</span><span class="p">:</span><span class="w"> </span><span class="nl">info</span><span class="p">:</span><span class="w">  </span><span class="o">[</span><span class="n">32574</span><span class="o">]</span><span class="w"> </span><span class="n">dispatching</span><span class="w"> </span><span class="nl">hogs</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="n">cpu</span><span class="w"></span>
+<span class="n">stress</span><span class="o">-</span><span class="nl">ng</span><span class="p">:</span><span class="w"> </span><span class="nl">info</span><span class="p">:</span><span class="w">  </span><span class="o">[</span><span class="n">32574</span><span class="o">]</span><span class="w"> </span><span class="n">successful</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">completed</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">10.08</span><span class="n">s</span><span class="w"></span>
+<span class="w">    </span><span class="n">Command</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="nl">timed</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">User</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">80.22</span><span class="w"></span>
+<span class="w">    </span><span class="k">System</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">0.04</span><span class="w"></span>
+<span class="w">    </span><span class="k">Percent</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">CPU</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="nl">got</span><span class="p">:</span><span class="w"> </span><span class="mi">795</span><span class="o">%</span><span class="w"></span>
+<span class="w">    </span><span class="n">Elapsed</span><span class="w"> </span><span class="p">(</span><span class="n">wall</span><span class="w"> </span><span class="n">clock</span><span class="p">)</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="nl">h</span><span class="p">:</span><span class="nl">mm</span><span class="p">:</span><span class="n">ss</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nl">m</span><span class="p">:</span><span class="n">ss</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="err">:</span><span class="mf">10.09</span><span class="w"></span>
+<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">shared</span><span class="w"> </span><span class="nc">text</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">unshared</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Maximum</span><span class="w"> </span><span class="n">resident</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">6328</span><span class="w"></span>
+<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">resident</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Major</span><span class="w"> </span><span class="p">(</span><span class="n">requiring</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="p">)</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="nl">faults</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Minor</span><span class="w"> </span><span class="p">(</span><span class="n">reclaiming</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">frame</span><span class="p">)</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="nl">faults</span><span class="p">:</span><span class="w"> </span><span class="mi">30799</span><span class="w"></span>
+<span class="w">    </span><span class="n">Voluntary</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="nl">switches</span><span class="p">:</span><span class="w"> </span><span class="mi">1380</span><span class="w"></span>
+<span class="w">    </span><span class="n">Involuntary</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="nl">switches</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="w"></span>
+<span class="w">    </span><span class="nl">Swaps</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="k">system</span><span class="w"> </span><span class="nl">inputs</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="k">system</span><span class="w"> </span><span class="nl">outputs</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Socket</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="nl">sent</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Socket</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="nl">received</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">Signals</span><span class="w"> </span><span class="nl">delivered</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 </pre></div>
 
 
 <p>To know how much RAM your job used (and what jobs like it will need in the future), look at the "Maximum resident set size"</p>
 <h2 id="running-jobs">Running Jobs</h2>
 <p>If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should <code>ssh</code> to, run:</p>
-<div class="codehilite"><pre><span></span>[be59@farnam1 ~]$ squeue -u$USER
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@farnam1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">squeue</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="err">$</span><span class="k">USER</span><span class="w"></span>
+<span class="w">             </span><span class="n">JOBID</span><span class="w"> </span><span class="k">PARTITION</span><span class="w">     </span><span class="n">NAME</span><span class="w">     </span><span class="k">USER</span><span class="w"> </span><span class="n">ST</span><span class="w">       </span><span class="nc">TIME</span><span class="w">  </span><span class="n">NODES</span><span class="w"> </span><span class="n">NODELIST</span><span class="p">(</span><span class="n">REASON</span><span class="p">)</span><span class="w"></span>
+<span class="w">          </span><span class="mi">21252409</span><span class="w">   </span><span class="k">general</span><span class="w">    </span><span class="mi">12345</span><span class="w">    </span><span class="n">be59</span><span class="w">   </span><span class="n">R</span><span class="w">      </span><span class="mi">32</span><span class="err">:</span><span class="mi">17</span><span class="w">     </span><span class="mi">17</span><span class="w"> </span><span class="n">c13n</span><span class="o">[</span><span class="n">02-04</span><span class="o">]</span><span class="p">,</span><span class="n">c14n</span><span class="o">[</span><span class="n">05-10</span><span class="o">]</span><span class="p">,</span><span class="n">c16n</span><span class="o">[</span><span class="n">03-10</span><span class="o">]</span><span class="w"></span>
 </pre></div>
 
 
 <p>Then use ssh to connect to a node your job is running on from the <code>NODELIST</code> column:</p>
-<div class="codehilite"><pre><span></span>[be59@farnam1 ~]$ ssh c13n03
-[be59@c13n03 ~]$
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@farnam1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="n">c13n03</span><span class="w"></span>
+<span class="o">[</span><span class="n">be59@c13n03 ~</span><span class="o">]</span><span class="err">$</span><span class="w"></span>
 </pre></div>
 
 
 <p>Once you are on the compute node, run either <code>ps</code> or <code>top</code>.</p>
 <h3 id="ps"><code>ps</code></h3>
 <p><code>ps</code> will give you instantaneous usage every time you run it. Here is some sample <code>ps</code> output:</p>
-<div class="codehilite"><pre><span></span>[be59@bigmem01 ~]$  ps -u$USER -o %cpu,rss,args
-%CPU   RSS COMMAND
-92.6 79446140 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
-94.5 80758040 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
-92.6 79676460 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
-92.5 81243364 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
-93.8 80799668 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@bigmem01 ~</span><span class="o">]</span><span class="err">$</span><span class="w">  </span><span class="n">ps</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="err">$</span><span class="k">USER</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">%</span><span class="n">cpu</span><span class="p">,</span><span class="n">rss</span><span class="p">,</span><span class="n">args</span><span class="w"></span>
+<span class="o">%</span><span class="n">CPU</span><span class="w">   </span><span class="n">RSS</span><span class="w"> </span><span class="n">COMMAND</span><span class="w"></span>
+<span class="mf">92.6</span><span class="w"> </span><span class="mi">79446140</span><span class="w"> </span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span><span class="w"> </span><span class="o">-</span><span class="n">dmlworker</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">distcomp_evaluate_filetask</span><span class="w"></span>
+<span class="mf">94.5</span><span class="w"> </span><span class="mi">80758040</span><span class="w"> </span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span><span class="w"> </span><span class="o">-</span><span class="n">dmlworker</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">distcomp_evaluate_filetask</span><span class="w"></span>
+<span class="mf">92.6</span><span class="w"> </span><span class="mi">79676460</span><span class="w"> </span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span><span class="w"> </span><span class="o">-</span><span class="n">dmlworker</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">distcomp_evaluate_filetask</span><span class="w"></span>
+<span class="mf">92.5</span><span class="w"> </span><span class="mi">81243364</span><span class="w"> </span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span><span class="w"> </span><span class="o">-</span><span class="n">dmlworker</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">distcomp_evaluate_filetask</span><span class="w"></span>
+<span class="mf">93.8</span><span class="w"> </span><span class="mi">80799668</span><span class="w"> </span><span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span><span class="w"> </span><span class="o">-</span><span class="n">dmlworker</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">distcomp_evaluate_filetask</span><span class="w"></span>
 </pre></div>
 
 
@@ -1384,29 +1412,29 @@ stress-ng: info:  [32574] successful run completed in 10.08s
 <p>Slurm records statistics for every job, including how much memory and CPU was used.</p>
 <h3 id="seff"><code>seff</code></h3>
 <p>After the job completes, you can run <code>seff &lt;jobid&gt;</code> to get some useful information about your job, including the memory used and what percent of your allocated memory that amounts to.</p>
-<div class="codehilite"><pre><span></span>[rdb9@farnam1 ~]$ seff 21294645
-Job ID: 21294645
-Cluster: farnam
-User/Group: rdb9/lsprog
-State: COMPLETED (exit code 0)
-Cores: 1
-CPU Utilized: 00:15:55
-CPU Efficiency: 17.04% of 01:33:23 core-walltime
-Job Wall-clock time: 01:33:23
-Memory Utilized: 446.20 MB
-Memory Efficiency: 8.71% of 5.00 GB
+<div class="codehilite"><pre><span></span>[<span class="nv">rdb9</span>@<span class="nv">farnam1</span> <span class="o">~</span>]$ <span class="nv">seff</span> <span class="mi">21294645</span>
+<span class="nv">Job</span> <span class="nv">ID</span>: <span class="mi">21294645</span>
+<span class="nv">Cluster</span>: <span class="nv">farnam</span>
+<span class="nv">User</span><span class="o">/</span><span class="nv">Group</span>: <span class="nv">rdb9</span><span class="o">/</span><span class="nv">lsprog</span>
+<span class="nv">State</span>: <span class="nv">COMPLETED</span> <span class="ss">(</span><span class="k">exit</span> <span class="nv">code</span> <span class="mi">0</span><span class="ss">)</span>
+<span class="nv">Cores</span>: <span class="mi">1</span>
+<span class="nv">CPU</span> <span class="nv">Utilized</span>: <span class="mi">00</span>:<span class="mi">15</span>:<span class="mi">55</span>
+<span class="nv">CPU</span> <span class="nv">Efficiency</span>: <span class="mi">17</span>.<span class="mi">04</span><span class="o">%</span> <span class="nv">of</span> <span class="mi">01</span>:<span class="mi">33</span>:<span class="mi">23</span> <span class="nv">core</span><span class="o">-</span><span class="nv">walltime</span>
+<span class="nv">Job</span> <span class="nv">Wall</span><span class="o">-</span><span class="nv">clock</span> <span class="nv">time</span>: <span class="mi">01</span>:<span class="mi">33</span>:<span class="mi">23</span>
+<span class="nv">Memory</span> <span class="nv">Utilized</span>: <span class="mi">446</span>.<span class="mi">20</span> <span class="nv">MB</span>
+<span class="nv">Memory</span> <span class="nv">Efficiency</span>: <span class="mi">8</span>.<span class="mi">71</span><span class="o">%</span> <span class="nv">of</span> <span class="mi">5</span>.<span class="mi">00</span> <span class="nv">GB</span>
 </pre></div>
 
 
 <h3 id="sacct"><code>sacct</code></h3>
 <p>You can also use the more flexible <a href="https://slurm.schedmd.com/sacct.html"><code>sacct</code></a> to get that info, along with other more advanced job queries. Unfortunately, the default output from <code>sacct</code> is not as useful. We recommend setting an environment variable to customize the output.</p>
-<div class="codehilite"><pre><span></span>[rdb9@farnam1 ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;
-[rdb9@farnam1 ~]$ sacct -j 21294645
-               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES
--------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------
-            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1
-     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1
-          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">rdb9@farnam1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">SACCT_FORMAT</span><span class="o">=</span><span class="ss">&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;</span><span class="w"></span>
+<span class="o">[</span><span class="n">rdb9@farnam1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">sacct</span><span class="w"> </span><span class="o">-</span><span class="n">j</span><span class="w"> </span><span class="mi">21294645</span><span class="w"></span>
+<span class="w">               </span><span class="n">JobID</span><span class="w">    </span><span class="n">JobName</span><span class="w">      </span><span class="k">User</span><span class="w">  </span><span class="k">Partition</span><span class="w">        </span><span class="n">NodeList</span><span class="w">    </span><span class="n">Elapsed</span><span class="w">      </span><span class="k">State</span><span class="w"> </span><span class="n">ExitCode</span><span class="w">     </span><span class="n">MaxRSS</span><span class="w">                        </span><span class="n">AllocTRES</span><span class="w"></span>
+<span class="c1">-------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------</span>
+<span class="w">            </span><span class="mi">21294645</span><span class="w">       </span><span class="n">bash</span><span class="w">      </span><span class="n">rdb9</span><span class="w"> </span><span class="n">interacti</span><span class="o">+</span><span class="w">          </span><span class="n">c06n09</span><span class="w">   </span><span class="mi">01</span><span class="err">:</span><span class="mi">33</span><span class="err">:</span><span class="mi">23</span><span class="w">  </span><span class="n">COMPLETED</span><span class="w">      </span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="w">               </span><span class="n">cpu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">mem</span><span class="o">=</span><span class="mi">5</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">billing</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="mf">21294645.</span><span class="n">extern</span><span class="w">     </span><span class="n">extern</span><span class="w">                               </span><span class="n">c06n09</span><span class="w">   </span><span class="mi">01</span><span class="err">:</span><span class="mi">33</span><span class="err">:</span><span class="mi">23</span><span class="w">  </span><span class="n">COMPLETED</span><span class="w">      </span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="w">       </span><span class="mi">716</span><span class="n">K</span><span class="w">    </span><span class="n">cpu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">mem</span><span class="o">=</span><span class="mi">5</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">billing</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
+<span class="w">          </span><span class="mf">21294645.0</span><span class="w">       </span><span class="n">bash</span><span class="w">                               </span><span class="n">c06n09</span><span class="w">   </span><span class="mi">01</span><span class="err">:</span><span class="mi">33</span><span class="err">:</span><span class="mi">23</span><span class="w">  </span><span class="n">COMPLETED</span><span class="w">      </span><span class="mi">0</span><span class="err">:</span><span class="mi">0</span><span class="w">    </span><span class="mi">456908</span><span class="n">K</span><span class="w">              </span><span class="n">cpu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">mem</span><span class="o">=</span><span class="mi">5</span><span class="n">G</span><span class="p">,</span><span class="n">node</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
 </pre></div>
 
 
@@ -1474,27 +1502,19 @@ Memory Efficiency: 8.71% of 5.00 GB
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
