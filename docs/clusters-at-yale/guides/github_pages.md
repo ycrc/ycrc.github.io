@@ -3,12 +3,12 @@
 A personal website is a great way to build an online presence for both academic and professional activities.
 We recommend using [Github Pages](https://guides.github.com/features/pages/) as a tool to maintain and host static websites and blogs.
 Unlike other hosting platforms, the whole website can be written using [Markdown](https://www.markdownguide.org), a wonderfully simple markup language.
-GitHub also provides a nice tutorial to get started with Markdown ([link](https://guides.github.com/features/mastering-markdown/))
+GitHub also provides a nice tutorial to get started with Markdown ([link](https://guides.github.com/features/mastering-markdown/)).
 
 To get started, you're going to need a Github account.
 You can follow the instructions on our [Github guide](./github.md) to set up a free account.
 Once you have an account, you will need to create a repository for your website.
-It's important that you name your repository `username.github.io`  where username is replaced with your actual account name.
+It's important that you name your repository `username.github.io`  where username is replaced with your actual account name (`ycrc-test` in this example).
 
 ![Create the repository](/img/ghpages_1.png)
 
