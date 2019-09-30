@@ -2,7 +2,7 @@
 
 ![Frank](/img/Frank-Ruddle.jpg){: .cluster-portrait}
 
-** NOTICE: We plan to permanently decommission the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
+** NOTICE: We permanently decommissioned the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
 
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
@@ -15,8 +15,9 @@ Ruddle is intended for use only on projects related to the [Yale Center for Geno
 Ruddle is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs.
 
 !!! Warning
-    Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
-    See the [guide on how to compile software](/clusters-at-yale/applications/compile) for specific guidance.
+    Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
+    You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm `--constraint` flag) to your job.
+    See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) and the [Build Software page](/clusters-at-yale/applications/compile) for further guidance.
 
 ### Compute Node Configurations
 

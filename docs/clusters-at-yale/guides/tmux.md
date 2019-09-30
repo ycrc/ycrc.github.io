@@ -34,12 +34,17 @@ Using tmux on the cluster allows you to create interactive allocations that you 
 1. Inside your tmux session, submit an interactive job with srun. See the [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs) for more details
 1. Inside your job allocation (on a compute node), start your application (e.g. matlab)
 1. Detach from tmux by typing <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd>
-1. Later, on the same login node, reattach by running `tmux attach`
+1. Later, on the _same_ login node, reattach by running `tmux attach`
 
 Make sure to:
 
 * run tmux on the login node, NOT on compute nodes
 * run srun inside tmux, not the reverse.
+
+!!!warning
+    Every cluster has two login nodes.  If you cannot find your tmux session, it might be running on the other node.  Check the hostname of your current login node (from either your command prompt or from running `hostname -s`), then use ssh to login to the other one.  
+    For example, if you are logged in to farnam1, use `ssh -Y farnam2` to reach the other login node.
+
 
 ### Windows and Panes
 

@@ -71,6 +71,7 @@ nav:
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/scavenge.md
+                - clusters-at-yale/job-scheduling/mpi.md
                 - clusters-at-yale/job-scheduling/dsq.md
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:

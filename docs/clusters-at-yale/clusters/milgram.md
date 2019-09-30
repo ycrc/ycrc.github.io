@@ -16,15 +16,17 @@ Milgram is a HIPAA aligned Department of Psychology cluster intended for use on 
 Milgram is made up of a couple kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs.
 
 !!! Warning
-    Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
-    See the [guide on how to compile software](/clusters-at-yale/applications/compile) for specific guidance.
+    Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
+    You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm `--constraint` flag) to your job.
+    See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) and the [Build Software page](/clusters-at-yale/applications/compile) for further guidance.
 
 ### Compute Node Configurations
 
-| Count | CPU           | CPU Cores | RAM   | Features                          |
-|-------|---------------|-----------|-------|-----------------------------------|
-| 12    | 2x E5-2660 v3 | 20        | 121G  | haswell, E5-2660_v3, oldest       |
-| 48    | 2x E5-2660 v4 | 28        | 250G  | broadwell, E5-2660_v4             |
+| Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                   |
+|-------|---------------|-----------|-------|--------------------|----------|--------------------------------------------|
+| 12    | 2x E5-2660 v3 | 20        | 121G  |                    |          | haswell, E5-2660_v3, nogpu, oldest         |
+| 48    | 2x E5-2660 v4 | 28        | 250G  |                    |          | broadwell, E5-2660_v4, nogpu               |
+| 5     | 2x 6240       | 36        | 372G  | 4x rtx2080ti       |       8G | cascadelake, avx512, 6240, nogpu, standard |
 
 ## Slurm Partitions
 
@@ -32,14 +34,15 @@ Nodes on the clusters are organized into partitions, to which you submit your jo
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition    | Group Limits           | User Limits             | Walltime Default/Max | Node Type (count)               |
-|--------------|------------------------|-------------------------|----------------------|---------------------------------|
-| short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | E5-2660_v3 (1)                  |
-| long         |                        | 1188 CPUs, 5940 G RAM   | 1h/2d                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| verylong     |                        | 792 CPUs, 3960 G RAM    | 1h/7d                | E5-2660_v3 (9), E5-2660_v4 (48) |
-| education    |                        |                         | 1h/6h                | E5-2660_v3 (2)                  |
-| scavenge     |                        |                         | none                 | E5-2660_v3 (9), E5-2660_v4 (48) |
+| Partition    | Group Limits           | User Limits             | Walltime Default/Max | Node Type (count)                         |
+|--------------|------------------------|-------------------------|----------------------|-------------------------------------------|
+| interactive  |                        | 1 job, 4 CPUs, 20 G RAM | 1h/6h                | E5-2660_v3 (2)                            |
+| short*       | 1158 CPUs, 10176 G RAM | 772 CPUs, 6784 G RAM    | 1h/6h                | E5-2660_v3 (9), E5-2660_v4 (48)           |
+| long         |                        | 1188 CPUs, 5940 G RAM   | 1h/2d                | E5-2660_v3 (9), E5-2660_v4 (48)           |
+| verylong     |                        | 792 CPUs, 3960 G RAM    | 1h/7d                | E5-2660_v3 (9), E5-2660_v4 (48)           |
+| gpu          |                        |                         | 1h/7d                | 6240 w/ rtx2080ti (5)                     |
+| education    |                        |                         | 1h/6h                | E5-2660_v3 (2)                            |
+| scavenge     |                        |                         | none                 | E5-2660_v3 (9), E5-2660_v4 (48), 6240 (5) |
 
 \* default
 

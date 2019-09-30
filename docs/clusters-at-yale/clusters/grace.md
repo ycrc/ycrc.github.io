@@ -13,8 +13,9 @@ Grace is a shared-use resource for the [Faculty of Arts and Sciences](https://fa
 Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
 
 !!! Warning
-    Care should be taken if when scheduling your job if you are running programs/libraries optimized for specific hardware.
-    See the [guide on how to compile software](/clusters-at-yale/applications/compile) for specific guidance.
+    Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
+    You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm `--constraint` flag) to your job.
+    See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) and the [Build Software page](/clusters-at-yale/applications/compile) for further guidance.
 
 ### Compute Node Configurations
 
@@ -62,7 +63,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
 
 \* default  
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. Contact us at [hpc@yale.edu](mailto:hpc@yale.edu) for access if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
 
 ### Private Partitions
 
