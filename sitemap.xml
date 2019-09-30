@@ -91,6 +91,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/github_pages/</loc>
+     <lastmod>2019-09-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/</loc>
      <lastmod>2019-09-30</lastmod>
      <changefreq>daily</changefreq>

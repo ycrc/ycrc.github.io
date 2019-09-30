@@ -1,0 +1,173 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/github_pages/"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="/assets/images/favicon.ico"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>Github Pages - Yale Center for Research Computing</title><link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css"><script src="../../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../../stylesheets/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr"><svg class="md-svg"><defs></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#github-pages" tabindex="1" class="md-skip">Skip to content </a><!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+
+      <!-- Link to home -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.ycrc.yale.edu"
+            title="Yale Center for Research Computing"
+            class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">library_books</i>
+          
+        </a>
+      </div>
+
+      <!-- Button to toggle drawer -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
+      </div>
+
+      <!-- Header title -->
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic branding" >
+                <a href="http://research.computing.yale.edu">
+                  <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
+                </a>
+              </span>
+              <span class="md-header-nav__topic">
+                Github Pages
+              </span>
+            
+          
+        </div>
+      </div>
+
+      <!-- Button to open search dialogue -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div>
+          
+        
+      </div>
+
+      <!-- Repository containing source -->
+      
+
+    </div>
+
+
+  </nav>
+</header><div class="md-container"><!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Tabs with outline -->
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/news-events">News & Events</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/research">Research</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/services">Services</a></li>
+      
+        <li class="md-tabs__item"><a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">Support</a></li>
+      
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+      <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="system-status-message"></div><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo"><i class="md-icon">library_books</i></a>Yale Center for Research Computing</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked><label class="md-nav__link" for="nav-1">Support</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-1">Support</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../.." title="Introduction" class="md-nav__link">Introduction</a></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked><label class="md-nav__link" for="nav-1-2">Clusters at Yale</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-1-2">Clusters at Yale</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../" title="Getting Started" class="md-nav__link">Getting Started</a></li><li class="md-nav__item"><a href="https://research.computing.yale.edu/account-request" title="Request an Account" class="md-nav__link">Request an Account</a></li><li class="md-nav__item"><a href="../../troubleshoot/" title="Troubleshoot Login" class="md-nav__link">Troubleshoot Login</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4"><label class="md-nav__link" for="nav-1-2-4">Access the Clusters</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-4">Access the Clusters</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../access/" title="Log on to the Clusters" class="md-nav__link">Log on to the Clusters</a></li><li class="md-nav__item"><a href="../../access/vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">Access from Off Campus (VPN)</a></li><li class="md-nav__item"><a href="../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">Graphical Interfaces (X11)</a></li><li class="md-nav__item"><a href="../../access/vnc/" title="VNC" class="md-nav__link">VNC</a></li><li class="md-nav__item"><a href="../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">Multi-factor Authentication</a></li><li class="md-nav__item"><a href="../../access/advanced-config/" title="Advanced SSH Configuration" class="md-nav__link">Advanced SSH Configuration</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5"><label class="md-nav__link" for="nav-1-2-5">Applications & Software</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-5">Applications & Software</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../applications/" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="../../applications/compile/" title="Build Software" class="md-nav__link">Build Software</a></li><li class="md-nav__item"><a href="../../applications/modules/" title="Load Software with Modules" class="md-nav__link">Load Software with Modules</a></li><li class="md-nav__item"><a href="../../applications/easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">Toolchains and EasyBuild</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6" checked><label class="md-nav__link" for="nav-1-2-6">Software Guides</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-6">Software Guides</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="../cesm/" title="CESM/CAM" class="md-nav__link">CESM/CAM</a></li><li class="md-nav__item"><a href="../conda/" title="Conda" class="md-nav__link">Conda</a></li><li class="md-nav__item"><a href="../gaussian/" title="Gaussian" class="md-nav__link">Gaussian</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><a href="./" title="Github Pages" class="md-nav__link md-nav__link--active">Github Pages</a></li><li class="md-nav__item"><a href="../gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">GPUs and CUDA</a></li><li class="md-nav__item"><a href="../jupyter/" title="Jupyter Notebooks" class="md-nav__link">Jupyter Notebooks</a></li><li class="md-nav__item"><a href="../matlab/" title="MATLAB" class="md-nav__link">MATLAB</a></li><li class="md-nav__item"><a href="../mathematica/" title="Mathematica" class="md-nav__link">Mathematica</a></li><li class="md-nav__item"><a href="../r/" title="R" class="md-nav__link">R</a></li><li class="md-nav__item"><a href="../singularity/" title="Singularity" class="md-nav__link">Singularity</a></li><li class="md-nav__item"><a href="../tmux/" title="tmux" class="md-nav__link">tmux</a></li><li class="md-nav__item"><a href="../vasp/" title="VASP" class="md-nav__link">VASP</a></li><li class="md-nav__item"><a href="../github/" title="Version Control with GitHub" class="md-nav__link">Version Control with GitHub</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7"><label class="md-nav__link" for="nav-1-2-7">Job Scheduling</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-7">Job Scheduling</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../job-scheduling/" title="Run Jobs with Slurm" class="md-nav__link">Run Jobs with Slurm</a></li><li class="md-nav__item"><a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">Request Compute Resources</a></li><li class="md-nav__item"><a href="../../job-scheduling/resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">Monitor CPU and Memory</a></li><li class="md-nav__item"><a href="../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">Factors Affecting Scheduling</a></li><li class="md-nav__item"><a href="../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">Scavenge Partition</a></li><li class="md-nav__item"><a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">MPI Partition</a></li><li class="md-nav__item"><a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">Submit Job Arrays with dSQ</a></li><li class="md-nav__item"><a href="../../job-scheduling/slurm-examples/" title="Submission Script Examples" class="md-nav__link">Submission Script Examples</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8"><label class="md-nav__link" for="nav-1-2-8">Data & Storage</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-8">Data & Storage</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../data/" title="Overview" class="md-nav__link">Overview</a></li><li class="md-nav__item"><a href="../../data/cluster-storage/" title="Cluster Storage" class="md-nav__link">Cluster Storage</a></li><li class="md-nav__item"><a href="../../data/transfer/" title="Transfer Data" class="md-nav__link">Transfer Data</a></li><li class="md-nav__item"><a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">Manage Permissions for Sharing</a></li><li class="md-nav__item"><a href="../../data/archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">Ruddle Archived Sequence Data</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9"><label class="md-nav__link" for="nav-1-2-9">The Clusters</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-1-2-9">The Clusters</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../clusters/" title="HPC Resources" class="md-nav__link">HPC Resources</a></li><li class="md-nav__item"><a href="../../clusters/grace/" title="Grace" class="md-nav__link">Grace</a></li><li class="md-nav__item"><a href="../../clusters/farnam/" title="Farnam" class="md-nav__link">Farnam</a></li><li class="md-nav__item"><a href="../../clusters/ruddle/" title="Ruddle" class="md-nav__link">Ruddle</a></li><li class="md-nav__item"><a href="../../clusters/omega/" title="Omega" class="md-nav__link">Omega</a></li><li class="md-nav__item"><a href="../../clusters/milgram/" title="Milgram" class="md-nav__link">Milgram</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3"><label class="md-nav__link" for="nav-1-3">Research Data</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-1-3">Research Data</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../../data/" title="Data Storage Options" class="md-nav__link">Data Storage Options</a></li><li class="md-nav__item"><a href="../../../data/archive/" title="Archive Your Data" class="md-nav__link">Archive Your Data</a></li><li class="md-nav__item"><a href="../../../data/google-drive/" title="Google Drive" class="md-nav__link">Google Drive</a></li></ul></nav></li><li class="md-nav__item"><a href="../../../user-group/" title="YCRC User Group" class="md-nav__link">YCRC User Group</a></li><li class="md-nav__item"><a href="../../../national-hpcs/" title="National HPCs" class="md-nav__link">National HPCs</a></li><li class="md-nav__item"><a href="../../../online-tutorials/" title="Online Tutorials" class="md-nav__link">Online Tutorials</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1 id="github-pages">Github Pages</h1>
+<p>A personal website is a great way to build an online presence for both academic and professional activities.
+We recommend using <a href="https://guides.github.com/features/pages/">Github Pages</a> as a tool to maintain and host static websites and blogs.
+Unlike other hosting platforms, the whole website can be written using <a href="https://www.markdownguide.org">Markdown</a>, a wonderfully simple markup language.
+GitHub also provides a nice tutorial to get started with Markdown (<a href="https://guides.github.com/features/mastering-markdown/">link</a>).</p>
+<p>To get started, you're going to need a Github account.
+You can follow the instructions on our <a href="../github/">Github guide</a> to set up a free account.
+Once you have an account, you will need to create a repository for your website.
+It's important that you name your repository <code>username.github.io</code>  where username is replaced with your actual account name (<code>ycrc-test</code> in this example).</p>
+<p><img alt="Create the repository" src="/img/ghpages_1.png" /></p>
+<p>Make sure to initialize the repo with a README, which will help get things started.
+After clicking "Create" your repository will look like this:</p>
+<p><img alt="Empty repository" src="/img/ghpages_2.png" /></p>
+<p>From here, you can click on "Settings" to enable Github Pages publication of your site.
+Scroll down until you see <strong>GitHub Pages</strong>:</p>
+<p><img alt="Settings" src="/img/ghpages_3.png" /></p>
+<p>GitHub provides a number of templates to help make your website look professional.
+Click on "Choose a Theme" to see examples of these themes:</p>
+<p><img alt="Choose a theme" src="/img/ghpages_4.png" /></p>
+<p>Pick one that you like and click "Select theme".
+Note, some of these themese are aimed at blogs versus project sites, pick one that best fits your desired style.
+You can change this later, so feel free to try one out and see what you think.</p>
+<p>After selecting your theme, you will be directed back to your repository where the README.md has been updated with some basics about how Markdown works and how you can start creating your website.</p>
+<p><img alt="Sample text" src="/img/ghpages_5.png" /></p>
+<p>Scroll down and commit these changes (leaving the sample text in place).</p>
+<p><img alt="Commit changes" src="/img/ghpages_6.png" /></p>
+<p>You can now take a look at how GitHub is rendering your site:</p>
+<p><img alt="Rendered website!" src="/img/ghpages_7.png" /></p>
+<p>That's it, this site is now hosted at <a href="http://ycrc-test.github.io">ycrc-test.github.io</a>!
+You now have a simple-to-edit and customize site that can be used to host your CV, detail your academic research, or showcase your independent projects.</p></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../gaussian/" title="Gaussian" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>Gaussian</span></div></a><a href="../gpus-cuda/" title="GPUs and CUDA" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>GPUs and CUDA</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script><script src="../../../js/extra.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></body></html>
