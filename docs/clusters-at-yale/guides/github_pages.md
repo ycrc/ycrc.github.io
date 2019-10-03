@@ -1,12 +1,12 @@
-# Github Pages
+# GitHub Pages
 
 A personal website is a great way to build an online presence for both academic and professional activities.
-We recommend using [Github Pages](https://guides.github.com/features/pages/) as a tool to maintain and host static websites and blogs.
-Unlike other hosting platforms, the whole website can be written using [Markdown](https://www.markdownguide.org), a wonderfully simple markup language.
-GitHub also provides a nice tutorial to get started with Markdown ([link](https://guides.github.com/features/mastering-markdown/)).
+We recommend using [GitHub Pages](https://guides.github.com/features/pages/) as a tool to maintain and host static websites and blogs.
+Unlike other hosting platforms, the whole website can be written using [Markdown](https://www.markdownguide.org), a simple widely-used markup language.
+GitHub provides a nice tutorial to get started with Markdown ([link](https://guides.github.com/features/mastering-markdown/)).
 
-To get started, you're going to need a Github account.
-You can follow the instructions on our [Github guide](./github.md) to set up a free account.
+To get started, you're going to need a GitHub account.
+You can follow the instructions on our [GitHub guide](./github.md) to set up a free account.
 Once you have an account, you will need to create a repository for your website.
 It's important that you name your repository `username.github.io`  where username is replaced with your actual account name (`ycrc-test` in this example).
 
@@ -17,7 +17,7 @@ After clicking "Create" your repository will look like this:
 
 ![Empty repository](/img/ghpages_2.png)
 
-From here, you can click on "Settings" to enable Github Pages publication of your site.
+From here, you can click on "Settings" to enable GitHub Pages publication of your site.
 Scroll down until you see **GitHub Pages**:
 
 ![Settings](/img/ghpages_3.png)
@@ -28,7 +28,7 @@ Click on "Choose a Theme" to see examples of these themes:
 ![Choose a theme](/img/ghpages_4.png)
 
 Pick one that you like and click "Select theme".
-Note, some of these themese are aimed at blogs versus project sites, pick one that best fits your desired style.
+Note, some of these themes are aimed at blogs versus project sites, pick one that best fits your desired style.
 You can change this later, so feel free to try one out and see what you think.
 
 After selecting your theme, you will be directed back to your repository where the README.md has been updated with some basics about how Markdown works and how you can start creating your website.
