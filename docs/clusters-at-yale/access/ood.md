@@ -23,6 +23,15 @@ Along the top are a pull-down menus for a File Browser, a Job Builder, a list of
 The file browser is a graphical interface to manage, upload, and download files from the clusters.
 You can drag and drop files, download entire directories, and also move files between directories all from within the web browser.
 
+## Shell
+
+You can launch a traditional command-line interface to the cluster using the Shell pull-down menu.
+This opens a terminal in a web-broswer that you can use in the exact same way as when logging into the cluster via SSH.
+
+![shell](/img/ood_shell.png)
+
+This is a convenient way to access the clusters from a computer that does not have a terminal program. 
+
 ## Remote Desktop
 Occasionally, it is helpful to use a graphical interface to explore data or manage certain programs.
 In this case, users have typically utilized VNC or X11 forwarding.
