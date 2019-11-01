@@ -42,6 +42,7 @@ nav:
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/vpn.md
                 - clusters-at-yale/access/x11.md
+                - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vnc.md
                 - clusters-at-yale/access/mfa.md
                 - clusters-at-yale/access/advanced-config.md
@@ -55,6 +56,7 @@ nav:
                 - clusters-at-yale/guides/cesm.md
                 - clusters-at-yale/guides/conda.md
                 - clusters-at-yale/guides/gaussian.md
+                - clusters-at-yale/guides/github_pages.md
                 - clusters-at-yale/guides/gpus-cuda.md
                 - clusters-at-yale/guides/jupyter.md
                 - clusters-at-yale/guides/matlab.md
@@ -70,6 +72,7 @@ nav:
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/scavenge.md
+                - clusters-at-yale/job-scheduling/mpi.md
                 - clusters-at-yale/job-scheduling/dsq.md
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:

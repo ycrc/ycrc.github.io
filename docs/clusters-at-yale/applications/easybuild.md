@@ -4,9 +4,18 @@ We use a build and installation framework called [EasyBuild](https://easybuild.r
 
 ## Toolchains
 
-When we install software, we use pre-defined build environments called toolchains. These are modules that include core compilers and libraries (e.g. `GCC`, `OpenMPI`, `zlib`). We do this for two main reasons. One is to try to keep our build process simpler. The other is so that you can load two different modules for software built with the same toolchain and expect everything to work. The two common toolchains you will interact with are [`foss`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain) and [`intel`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain). Each of these have module versions corresponding to the year they were built. Toolchain name and version information is appended to the name of a module so it is clear to us and to the module system what should be compatible. An example would be `Python/2.7.12-foss-2016b`, where the software name is `Python`, version `2.7.12`, built with the `foss` toolchain version `2016b`. The easiest way to see what software a toolchain includes is to load it and then list loaded modules.
+When we install software, we use pre-defined build environments called toolchains.
+These are modules that include core compilers and libraries (e.g. `GCC`, `OpenMPI`, `zlib`).
+We do this for two main reasons.
+One is to try to keep our build process simpler.
+The other is so that you can load two different modules for software built with the same toolchain and expect everything to work (see below for details on Toolchain Trees).
+The two common toolchains you will interact with are [`foss`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain) and [`intel`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain).
+Each of these have module versions corresponding to the year they were built.
+Toolchain name and version information is appended to the name of a module so it is clear what will be compatible.
+For example `Python/2.7.12-foss-2016b`, the software name is `Python` (version `2.7.12`) that is built with the `foss` toolchain version `2016b`.
+The easiest way to see what software a toolchain includes is to load it and then list loaded modules.
 
-```
+```bash
 [be59@farnam2 ~]$ module load foss/2016b
 [be59@farnam2 ~]$ module list
 
@@ -22,13 +31,37 @@ Currently Loaded Modules:
    S:  Module is Sticky, requires --force to unload or purge
 ```
 
-The takeaway here is that you should try to use modules that match their `foss` or `intel` identifiers.
+To summarize, you should try to use modules that use matching `foss`, `iomkl` or `intel` identifiers.
+
+## Toolchain Trees
+
+The one place toolchains can be a little complicated is that there are various levels to a given toolchain depending on how many libraries are included.
+For example, `foss/2018a` is a parent toolchain to `GCCcore/6.4.0` since `foss` includes GCC 6.4.0 as well as OpenMPI 2.1.2.
+
+### Base toolchains:
+`GCCcore` - GCC compiler  
+`iccifort` - Intel compiler (GCCcore is actually a also sub-toolchain of
+iccifort)
+
+### Toolchains with MPI:
+`gompi` - GCCcore + OpenMPI  
+`iimpi` - iccifort + Intel MPI  
+`iompi` - iccifort + OpenMPI
+
+### Full toolchains (also include math libraries):
+`foss` - gompi + OpenBLAS + ScalaPack  
+`intel` - iimpi + Intel MKL  
+`iomkl `- iompi + Intel MKL  
+
+For installations that where you will be loading additional dependencies beyond the toolchain module:
+1. Choose a full toolchain and version.
+1. Look for modules that contain that toolchain or its sub-toolchains to ensure compatibility. You can run `module display foss/2016b` to see which versions of the compiler and libraries it includes.
 
 ## Environment Variables
 
-If you ever want to refer to the directory where the software from a module is stored, you can use the environment variable `$EBROOTMODULENAME` where modulename is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:
+To refer to the directory where the software from a module is stored, you can use the environment variable `$EBROOTMODULENAME` where modulename is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:
 
-```
+```bash
 [be59@farnam2 ~]$ module load SAMtools/1.9-foss-2016b
 [be59@farnam2 ~]$ ls $EBROOTSAMTOOLS
 bin  easybuild  include  lib  share

@@ -62,6 +62,7 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 ### Intro to Python
 
 * [Fantastic resource for anyone interested in Python](http://www.automatetheboringstuff.com)
+* [LinkedIn Learning: Learning Python (Yale only)](https://www.linkedin.com/learning/learning-python-2/python-functions?u=2110361)
 
 ### Parallel Programming with Python
 
@@ -90,6 +91,10 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 ### foreach + dompi
 
 * [Introduction to doMPI](https://cran.r-project.org/web/packages/doMPI/vignettes/doMPI.pdf)
+
+## Matlab
+
+* [Mathworks Online Classses](https://matlabacademy.mathworks.com/)
 
 ## Singularity
 

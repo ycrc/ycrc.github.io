@@ -117,3 +117,11 @@ To re-enter your environment you only need the following:
 module restore cuda90
 source activate tensorflow112
 ```
+
+## Compile `.c` or `.cpp` Files with CUDA code
+
+By default, `nvcc` expects that host code is in files with a `.c` or `.cpp` extension, and device code is in files with a `.cu` extension. When you mix device code in a `.c` or `.cpp` file with host code, the device code will not be recoganized by `nvcc` unless you add this flag: `-x cu`.  
+
+``` bash
+nvcc -x cu mycuda.cpp -o mycuda.exe
+```     
