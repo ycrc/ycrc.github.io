@@ -1330,7 +1330,6 @@
                 
                 <h1 id="ruddle">Ruddle</h1>
 <p><img alt="Frank" class="cluster-portrait" src="/img/Frank-Ruddle.jpg" /></p>
-<p><strong> NOTICE: We permanently decommissioned the ycga-ba filesystem on Sept 16, 2019.</strong>  See <a href="/clusters-at-yale/clusters/ycga-ba">here</a> for details.</p>
 <p>Ruddle is named for <a href="http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html">Frank Ruddle</a>, a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.</p>
 <p>Ruddle is intended for use only on projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>; Please do not use this cluster for other projects. If you have any questions about this policy, please <a href="mailto:hpc@yale.edu">contact us</a>.</p>
 <hr />
@@ -1354,13 +1353,6 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>12</td>
-<td>4x AMD Opteron 6276</td>
-<td>32</td>
-<td>499G</td>
-<td>bulldozer, opteron-6276</td>
-</tr>
 <tr>
 <td>155</td>
 <td>2x E5-2660 v3</td>
@@ -1410,7 +1402,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td></td>
 <td>32 CPUs, 1507 G RAM</td>
 <td>1d/7d</td>
-<td>opteron-6276 (12), E7-4809_v3 1507G (2)</td>
+<td>E7-4809_v3 1507G (2)</td>
 </tr>
 <tr>
 <td>scavenge</td>
@@ -1491,7 +1483,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 
 <p>If you would like us to host a dataset or questions about what is currently available, please email hpc@yale.edu.</p>
 <h2 id="storage">Storage</h2>
-<p>Ruddle has access to two filesystems. <code>/gpfs/ycga</code> is Ruddle's filesystem where home, project, and scratch60 directories are located. <code>/ycga-ba</code> stores legacy data. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation.</p>
+<p>Ruddle's filesystem, <code>/gpfs/ycga</code>, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation. Ruddle's legacy filesystem, <code>/ycga-ba</code>, was retired. See <a href="/clusters-at-yale/clusters/ycga-ba">here</a> for details.</p>
 <p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Note that the per-user usage breakdown only update once daily..</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
