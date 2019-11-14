@@ -41,16 +41,27 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 ## Access Sequencing Data
 
-To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them:
+To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them.
 
+Normally, YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
+http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
+
+You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  You can use the ycgaFastq tool to do that:
+
+```bash
+$ /home/bioinfo/software/knightlab/bin_Mar2018/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+```
+
+If you would like to know the true location of the data on Ruddle, do this:
 ``` bash
-ln -s /path/to/sequece_data /path/to/your_link
+$ cd /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+$ ls -l
 ```
 
 !!! tip
     Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/clusters-at-yale/data/archived-sequencing).
 
-To find the location of the sequence files on the storage, look at the URL that you were sent from YCGA.
+If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:
 
 | `fullPath` Starts With    | Root Path on Ruddle                      |
 |---------------------------|------------------------------------------|
