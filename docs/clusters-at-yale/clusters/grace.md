@@ -25,8 +25,8 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 |       1 | 2x E7-4820_v2 |      32 | 1003G |                     | ivybridge,E7-4820_v2,nogpu                   |
 |     136 | 2x E5-2660_v3 |      20 | 121G  |                     | haswell,avx2,E5-2660_v3,nogpu,standard       |
 |      20 | 2x E5-2660_v3 |      20 | 247G  |                     | haswell,avx2,E5-2660_v3,nogpu,standard       |
-|       8 | 2x E5-2660_v3 |      20 | 247G  | 2x k80 (2GPUs/k80)) | haswell,avx2,E5-2660_v3,doubleprecision      |
-|       6 | 2x E5-2660_v3 |      20 | 121G  | 4x k80 (2GPUs/k80)) | haswell,avx2,E5-2660_v3,doubleprecision      |
+|       8 | 2x E5-2660_v3 |      20 | 247G  | 2x k80 (2GPUs/k80) | haswell,avx2,E5-2660_v3,doubleprecision      |
+|       6 | 2x E5-2660_v3 |      20 | 121G  | 4x k80 (2GPUs/k80) | haswell,avx2,E5-2660_v3,doubleprecision      |
 |       1 | 2x E7-4809_v3 |      32 | 2011G |                     | haswell,avx2,E7-4809_v3,nogpu                |
 |     161 | 2x E5-2660_v4 |      28 | 247G  |                     | broadwell,avx2,E5-2660_v4,nogpu,standard     |
 |       7 | 2x E5-2660_v4 |      28 | 247G  | 1x p100             | broadwell,avx2,E5-2660_v4,doubleprecision    |
