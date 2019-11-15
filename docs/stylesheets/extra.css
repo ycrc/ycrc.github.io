@@ -67,6 +67,11 @@ Yale Orange Accent: #bd5319;
     background-color: #00356b;
 }
 
+/* Tables */
+.md-typeset table:not([class]) th{
+    min-width: 0rem;
+}
+
 /* Status */
 
 
