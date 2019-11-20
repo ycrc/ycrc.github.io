@@ -2,8 +2,6 @@
 
 ![Frank](/img/Frank-Ruddle.jpg){: .cluster-portrait}
 
-** NOTICE: We permanently decommissioned the ycga-ba filesystem on Sept 16, 2019.**  See [here](/clusters-at-yale/clusters/ycga-ba) for details.
-
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
 Ruddle is intended for use only on projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/); Please do not use this cluster for other projects. If you have any questions about this policy, please [contact us](mailto:hpc@yale.edu).
@@ -23,7 +21,6 @@ Ruddle is made up of several kinds of compute nodes. The Features column below l
 
 | Count | CPU                 | CPU Cores | RAM   | Features                          |
 |-------|---------------------|-----------|-------|-----------------------------------|
-| 12    | 4x AMD Opteron 6276 | 32        | 499G  | bulldozer, opteron-6276           |
 | 155   | 2x E5-2660 v3       | 20        | 121G  | haswell, avx2, E5-2660_v3, oldest |
 | 2     | 4x E7-4809 v3       | 32        | 1507G | haswell, avx2, E7-4809_v3         |
 
@@ -37,23 +34,34 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 |-------------|-----------------------|----------------------|----------------------|-----------------------------------------|
 | general*    | 400 CPUs, 2000 G RAM  | 300 CPUs, 1800 G RAM | 7d/30d               | E5-2660_v3 (155)                        |
 | interactive |                       | 20 CPUs, 256 G RAM   | 1d/2d                | E5-2660_v3 (155)                        |
-| bigmem      |                       | 32 CPUs, 1507 G RAM  | 1d/7d                | opteron-6276 (12), E7-4809_v3 1507G (2) |
+| bigmem      |                       | 32 CPUs, 1507 G RAM  | 1d/7d                | E7-4809_v3 1507G (2)                    |
 | scavenge    |                       | 800 CPUs, 5120 G RAM | 1d/7d                | all                                     |
 
 \* default
 
 ## Access Sequencing Data
 
-To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them:
+To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them.
 
+Normally, YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
+http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
+
+You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  You can use the ycgaFastq tool to do that:
+
+```bash
+$ /home/bioinfo/software/knightlab/bin_Mar2018/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+```
+
+If you would like to know the true location of the data on Ruddle, do this:
 ``` bash
-ln -s /path/to/sequece_data /path/to/your_link
+$ cd /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+$ ls -l
 ```
 
 !!! tip
     Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/clusters-at-yale/data/archived-sequencing).
 
-To find the location of the sequence files on the storage, look at the URL that you were sent from YCGA.
+If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:
 
 | `fullPath` Starts With    | Root Path on Ruddle                      |
 |---------------------------|------------------------------------------|
@@ -102,7 +110,7 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## Storage
 
-Ruddle has access to two filesystems. `/gpfs/ycga` is Ruddle's filesystem where home, project, and scratch60 directories are located. `/ycga-ba` stores legacy data. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
+Ruddle's filesystem, `/gpfs/ycga`, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation. Ruddle's legacy filesystem, `/ycga-ba`, was retired. See [here](/clusters-at-yale/clusters/ycga-ba) for details.
 
 You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily..
 

@@ -10,9 +10,16 @@ If your Yale email account is already an Eliapps account (Gmail), then you are a
 
 [Shared Drives](https://gsuite.google.com/learning-center/products/drive/get-started-team-drive/#!/) is an additional feature on Eliapps that is available by request only (at the moment). A Shared Drive is a Google Drive space that solves a lot of ownership and permissions issues present with traditional shared Google Drive folder. Once you create a Shared Drive, e.g. for a project or research group, any data placed in that Drive are owned by the drive and the permission (which accounts can own or access the data) can be easily managed from the Shared Drive interface by drive owners. With Shared Drive, you can be sure the data will stay with research group as students and postdocs come and go. To request Shared Drive, first make sure you have an Eliapps account (see above) and then send a request to research.computing@yale.edu and we will work with ITS on your behalf to enable the feature.
 
+!!!warning
+    Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that you compress portions of your data, using zip or [tar](/online-tutorials), to keep the file count low and for ease of storage and retrieval.
+
 ### Local File Access
 
 You can upload and access your data using the web portal and sync data with your local machines via the Google File Stream software. For sync with your local machine, install [Google File Stream](https://www.google.com/drive/download/). Select the Download button on the left side under “Business” and authenticate with your Eliapps account. You will see Google Drive mounted as an additional drive on your machine.
+
+### Rclone
+
+You can also transfer data using the command line utility [Rclone](https://rclone.org/drive/). Rclone can be used to transfer data to any Google Drive account.
 
 ## Globus Google Drive Connector
 

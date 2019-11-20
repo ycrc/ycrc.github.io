@@ -19,26 +19,31 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ### Compute Node Configurations
 
-| Count | CPU                 | CPU Cores | RAM   |         GPU        | Features                                       |
-|-------|---------------------|-----------|-------|--------------------|------------------------------------------------|
-| 80    | 2x E5-2660 v2       | 20        | 121G  |                    | ivybridge, E5-2660_v2, nogpu, standard, oldest |
-| 136   | 2x E5-2660 v3       | 20        | 121G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 20    | 2x E5-2660 v3       | 20        | 247G  |                    | haswell, avx2, E5-2660_v3, nogpu, standard     |
-| 6     | 2x E5-2660 v3       | 20        | 121G  | 2x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 8     | 2x E5-2660 v3       | 20        | 247G  | 1x k80 (2GPUs/k80) | haswell, avx2, E5-2660_v3, doubleprecision     |
-| 161   | 2x E5-2660 v4       | 28        | 247G  |                    | broadwell, avx2, E5-2660_v4, nogpu, standard   |
-| 7     | 2x E5-2660 v4       | 28        | 247G  | 1x p100            | broadwell, avx2, E5-2660_v4, doubleprecision   |
-| 1     | 2x E5-2637 v4       | 8         | 121G  | 4x gtx1080ti       | broadwell, avx2, E5-2637_v4, singleprecision   |
-| 1     | 2x Gold 6126        | 24        | 176G  |                    | skylake, avx2, avx512, 6126, nogpu, standard   |
-| 53    | 2x Gold 6136        | 24        | 90G   |                    | skylake, avx2, avx512, 6136, nogpu, standard   |
-| 1     | 2x Gold 6136        | 24        | 90G   | 2x v100            | skylake, avx2, avx512, 6136, doubleprecision   |
-| 9     | 2x Gold 6136        | 24        | 183G  | 4x p100            | skylake, avx2, avx512, 6136, doubleprecision   |
-| 3     | 2x Gold 6142        | 36        | 183G  |                    | skylake, avx2, avx512, 6142, nogpu, standard   |
-| 2     | 2x Gold 5122        | 8         | 183G  | 4x rtx2080         | skylake, avx2, avx512, 5122, singleprecision   |
-| 1     | 4x E7-4820 v2       | 32        | 1003G |                    | ivybridge, E7-4820_v2, nogpu                   |
-| 1     | 4x E7-4809 v2       | 32        | 2011G |                    | haswell, avx2, E7-4809_v3, nogpu               |
-| 4     | 4x E7-4820 v4       | 40        | 1507G |                    | broadwell, avx2, E7-4820_v4, nogpu             |
-| 1     | 2x Gold 6136        | 24        | 751G  |                    | skylake, avx2, avx512, 6136, nogpu             |
+|   Count | CPU           |   Cores | RAM   | GPU                 | Features                                     |
+|--------:|:--------------|--------:|:------|:--------------------|:---------------------------------------------|
+|      80 | 2x E5-2660_v2 |      20 | 121G  |                     | ivybridge,E5-2660_v2,nogpu,standard,oldest   |
+|       1 | 2x E7-4820_v2 |      32 | 1003G |                     | ivybridge,E7-4820_v2,nogpu                   |
+|     136 | 2x E5-2660_v3 |      20 | 121G  |                     | haswell,avx2,E5-2660_v3,nogpu,standard       |
+|      20 | 2x E5-2660_v3 |      20 | 247G  |                     | haswell,avx2,E5-2660_v3,nogpu,standard       |
+|       8 | 2x E5-2660_v3 |      20 | 247G  | 2x k80              | haswell,avx2,E5-2660_v3,doubleprecision      |
+|       6 | 2x E5-2660_v3 |      20 | 121G  | 4x k80              | haswell,avx2,E5-2660_v3,doubleprecision      |
+|       1 | 2x E7-4809_v3 |      32 | 2011G |                     | haswell,avx2,E7-4809_v3,nogpu                |
+|     161 | 2x E5-2660_v4 |      28 | 247G  |                     | broadwell,avx2,E5-2660_v4,nogpu,standard     |
+|       7 | 2x E5-2660_v4 |      28 | 247G  | 1x p100             | broadwell,avx2,E5-2660_v4,doubleprecision    |
+|       4 | 2x E7-4820_v4 |      40 | 1507G |                     | broadwell,avx2,E7-4820_v4,nogpu              |
+|       1 | 2x E5-2637_v4 |       8 | 121G  | 4x gtx1080ti        | broadwell,avx2,E5-2637_v4,singleprecision    |
+|      92 | 2x 6136       |      24 | 90G   |                     | hdr,skylake,avx2,avx512,6136,nogpu,standard  |
+|      53 | 2x 6136       |      24 | 90G   |                     | edr,skylake,avx2,avx512,6136,nogpu,standard  |
+|       9 | 2x 6136       |      24 | 183G  | 4x p100             | skylake,avx2,avx512,6136,doubleprecision     |
+|       3 | 2x 6142       |      32 | 183G  |                     | skylake,avx2,avx512,6142,nogpu,standard      |
+|       2 | 2x 5122       |       8 | 183G  | 4x rtx2080          | skylake,avx2,avx512,5122,singleprecision     |
+|       1 | 2x 6126       |      24 | 176G  |                     | skylake,avx2,avx512,6126,nogpu,standard      |
+|       1 | 2x 6136       |      24 | 90G   | 2x v100             | skylake,avx2,avx512,6136,doubleprecision     |
+|       1 | 2x 6136       |      24 | 751G  |                     | skylake,avx2,avx512,6136,nogpu               |
+|     151 | 2x 6240       |      36 | 183G  |                     | cascadelake,avx2,avx512,6240,nogpu,standard  |
+|       5 | 2x 6240       |      36 | 183G  | 4x rtx2080ti        | cascadelake,avx2,avx512,6240,singleprecision |
+|       5 | 2x 6240       |      36 | 372G  | 4x v100sxm2         | cascadelake,avx2,avx512,6240,doubleprecision |
+|       2 | 2x 6240       |      36 | 1506G |                     | cascadelake,avx2,avx512,6240,nogpu           |
 
 ## Slurm Partitions
 
@@ -50,17 +55,18 @@ The day partition is where most batch jobs should run, and is the default if you
 
 The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
 
-| Partition   | Group Limits | User Limits                 | Walltime Default/Max | Node Type (count)                                      |
-|-------------|--------------|-----------------------------|----------------------|--------------------------------------------------------| 
-| day*        | 900 CPUs     | 640 CPUs                    | 1h/1d                | E5-2660_v2 (52), E5-2660_v3 (32), E5-2660_v4 (72)      |
-| week        | 250 CPUs     | 100 CPUs                    | 1h/7d                | E5-2660_v3 (48), E5-2660_v4 (7)                        |
-| interactive |              | 1 job, 4 CPUs, 32 G RAM     | 1h/6h                | E5-2660_v2 (2), 6126 (1)                               |
-| bigmem      |              | 40 CPUs, 1500 G RAM         | 1h/1d                | E7-4820_v4 1507G (2)                                   |
-| gpu_devel   |              | 1 job, 10 CPUs, 60 G RAM    | 10min/4hr            | E5-2660_v3 k80 (1)                                     |
-| gpu         |              | 12 GPUs                     | 1h/1d                | E5-2660_v3 k80 (5), E5-2660_v4 p100 (6), 6136 v100 (1) |
-| mpi**       |              | 18 nodes                    | 1h/1d                | 6136 (33)                                              |
-| scavenge    |              | 6400 CPUs                   | 1h/1d                | all                                                    |
-| scavenge_gpu|              | 20 GPUs                     | 1h/1d                | all nodes with GPUs (see Compute Node table)           |
+| Partition    | Group Limits   | User Limits          | Walltime (Default/Max)   | Node Type (count)                                                                                       |
+|:-------------|:---------------|:---------------------|:-------------------------|:--------------------------------------------------------------------------------------------------------|
+| interactive  |                | CPUs: 4, RAM: 32G    | 1h/6h                    | E5-2660_v2 (2), 6126 (1)                                                                                |
+| day*         | CPUs: 900      | CPUs: 640            | 1h/1d                    | E5-2660_v2 (62), E5-2660_v3 (44), E5-2660_v4 (72), 6240 (87)                                            |
+| week         | CPUs: 250      | CPUs: 100            | 1h/7d                    | E5-2660_v4 (7), E5-2660_v3 (36)                                                                         |
+| bigmem       |                | CPUs: 40, RAM: 1500G | 1h/1d                    | E7-4820_v4 1507G (2), 6240 1506G (2)                                                                    |
+| gpu          |                | GPUs: 12             | 1h/1d                    | E5-2660_v3 k80:4 (5), 6136 v100:2 (1), 6240 rtx2080ti:4 (5), E5-2660_v4 p100:1 (6), 6240 v100sxm2:4 (5) |
+| gpu_devel    |                | CPUs: 10             | 1h/4h                    | E5-2660_v3 k80:4 (1)                                                                                    |
+| mpi**        |                | Nodes: 32            | 1h/1d                    | 6136 (37), 6136 (76)                                                                                    |
+| scavenge     |                | CPUs: 10000          | 1h/1d                    | all                                                                                                     |
+| scavenge_gpu |                | GPUs: 30             | 1h/1d                    | all with GPUs (see Nodes table)                                                                         |
+
 
 \* default  
 ** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
@@ -69,31 +75,39 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition           | Walltime Default/Max | Node Type (count)                                                      |
-|---------------------|----------------------|------------------------------------------------------------------------|
-| pi_altonji          | 1d/28d               | E5-2660_v3 (2)                                                         |
-| pi_anticevic        | 1d/100d              | E5-2660_v3 (16), E5-2660_v4 (20)                                       |
-| pi_anticevic_bigmem | 1d/100d              | E7-4809_v3 2011G (1)                                                   |
-| pi_anticevic_fs     | 1d/100d              | E5-2660_v3 (3)                                                         |
-| pi_anticevic_gpu    | 1d/100d              | E5-2660_v3 k80 (8)                                                     |
-| pi_balou            | 1d/28d               | E5-2660_v4 (30)                                                        |
-| pi_berry            | 1d/28d               | E5-2660_v3 (1)                                                         |
-| pi_cowles           | 1d/28d               | E5-2660_v3 (14)                                                        |
-| pi_cowles_nopreempt | 1d/28d               | E5-2660_v3 (10)                                                        |
-| pi_gelernter        | 1d/28d               | E5-2660_v4 (1)                                                         |
-| pi_gerstein         | 1d/28d               | E5-2660_v3 (32), E7-4820_v2 1003G (1)                                  |
-| pi_glahn            | 1d/100d              | E5-2660_v3 (1)                                                         |
-| pi_hammes_schiffer* | 1d/28d               | 6136 (16), 6136 751G (1), 5122 gtx1080ti (1), E5-2637_v4 gtx1080ti (2) |
-| pi_holland          | 1d/28d               | E5-2660_v3 (2)                                                         |
-| pi_jetz             | 1d/28d               | E5-2660_v4 (2)                                                         |
-| pi_kaminski         | 1d/28d               | E5-2660_v3 (8)                                                         |
-| pi_mak              | 1d/28d               | E5-2660_v4 (8)                                                         |
-| pi_manohar          | 1d/180d              | E5-2660_v4 (8), E5-2660_v4 p100 (1), E7-4820_v2 1507G (2)              |
-| pi_ohern            | 1d/28d               | E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100 (9)                         |
-| pi_owen_miller      | 1d/28d               | E5-2660_v4 (5)                                                         |
-| pi_poland           | 1d/28d               | E5-2660_v4 (10)                                                        |
-| pi_seto             | 1d/28d               | 6142 (3)                                                               |
-| pi_tsmith           | 1d/28d               | E5-2660_v3 (1)                                                         |
+| Partition           | Walltime Default/Max   | Node Type (count)                                                        |
+|:--------------------|:-----------------------|:-------------------------------------------------------------------------|
+| pi_altonji          | 1h/28d                 | E5-2660_v3 (2)                                                           |
+| pi_anticevic        | 1h/100d                | E5-2660_v3 (16), E5-2660_v4 (20)                                         |
+| pi_anticevic_bigmem | 1h/100d                | E7-4809_v3 2011G (1)                                                     |
+| pi_anticevic_gpu    | 1h/100d                | E5-2660_v3 k80:2 (8)                                                     |
+| pi_anticevic_z      | 1h/100d                | E5-2660_v3 (3)                                                           |
+| pi_balou            | 1h/28d                 | E5-2660_v4 (30), 6240 (9)                                                |
+| pi_berry            | 1h/28d                 | E5-2660_v3 (1), 6240 (1)                                                 |
+| pi_cowles           | 1h/28d                 | 6240 (4), E5-2660_v3 (14)                                                |
+| pi_cowles_nopreempt | 1h/28d                 | 6240 (4), E5-2660_v3 (10)                                                |
+| pi_econ_io          | 1h/28d                 | 6240 (6)                                                                 |
+| pi_econ_lp          | 1h/28d                 | 6240 (1)                                                                 |
+| pi_esi              | 1h/28d                 | 6240 (36)                                                                |
+| pi_fedorov          | 1h/28d                 | 6136 (12)                                                                |
+| pi_gelernter        | 1h/28d                 | E5-2660_v4 (1), 6240 (1)                                                 |
+| pi_gerstein         | 1h/28d                 | E7-4820_v2 1003G (1), E5-2660_v3 (32)                                    |
+| pi_glahn            | 1h/100d                | E5-2660_v3 (1)                                                           |
+| pi_hammes_schiffer* | 1h/28d                 | 6136 751G (1), 6136 (16), E5-2637_v4 gtx1080ti:4 (1), 5122 rtx2080:4 (2) |
+| pi_hodgson          | 1h/28d                 | 6240 (1)                                                                 |
+| pi_holland          | 1h/28d                 | E5-2660_v3 (2)                                                           |
+| pi_howard           | 1h/28d                 | 6240 (1)                                                                 |
+| pi_jetz             | 1h/28d                 | E5-2660_v4 (2)                                                           |
+| pi_kaminski         | 1h/28d                 | E5-2660_v3 (8)                                                           |
+| pi_lora             | 1h/28d                 | 6136 (4)                                                                 |
+| pi_mak              | 1h/28d                 | E5-2660_v4 (3)                                                           |
+| pi_manohar          | 1h/180d                | E7-4820_v4 1507G (2), 6240 (4), E5-2660_v4 (8), E5-2660_v4 p100:1 (1)    |
+| pi_ohern            | 1h/28d                 | E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100:4 (9), 6240 (2)               |
+| pi_owen_miller      | 1h/28d                 | E5-2660_v4 (5)                                                           |
+| pi_poland           | 1h/28d                 | E5-2660_v4 (10)                                                          |
+| pi_polimanti        | 1h/28d                 | 6240 (1)                                                                 |
+| pi_seto             | 1h/28d                 | 6142 (3)                                                                 |
+| pi_tsmith           | 1h/28d                 | E5-2660_v3 (1)
 
 \* The default memory request on this partition is 3.75GB per core.  
 
