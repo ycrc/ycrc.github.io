@@ -38,7 +38,6 @@ nav:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
             - clusters-at-yale/troubleshoot.md
-            - clusters-at-yale/common_job_failures.md
             - Access the Clusters:
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/vpn.md
@@ -69,6 +68,7 @@ nav:
                 - clusters-at-yale/guides/github.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
+                - clusters-at-yale/job-scheduling/common_job_failures.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
