@@ -13,16 +13,24 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 ```
 This is stating that SLRUM detected the job hitting the maximum requested memory and then the job was killed.
 
-This can be fixed in two ways.
-First is to increase the amount of memory that is requested from SLURM:
+A program that runs out of memory can also crash generating a `Bus error (core dumped)`.
+This error means that the program is attempting to access memory that it does not have permission to reach.
+
+These errors can be fixed in two ways.
+First is to increase the amount of memory that is requested from SLURM.
+This can be done in an `sbatch` script:
 
 ```
 #SBATCH --mem-per-cpu=10G
+```
+or on the command-line using `srun`:
 
-srun --pty --mem-per-cpus=10G
+```
+srun --pty -p interactive --mem-per-cpus=10G
 ```
 
 Alternatively, the code can be inspected to see if the program can reduce the amount of memory that is being used.
+Further details about monitoring memory usage can be found [here](/clusters-at-yale/job-scheduling/resource-usage).
 
 ## Disk Quota Exceeded
 
@@ -102,3 +110,21 @@ Here we first loaded a tool from the `foss-2018a` toolchain, but then loaded a m
 
 To ensure that your jobs run successfully, only use one toolchain at a time.
 If your work requires a version of software that is not installed, email <research.computing@yale.edu> and we will work to help.
+
+## Conda Environment
+
+Conda environments provide a nice way to manage `python` and `R` packages and modules.
+This is achieved by setting environmental variables that point to the `conda` environment directory.
+However, when moving from the login node to a compute node through SLURM, these paths can get messed up.
+This can lead to `python` not locating packages that are installed within an environment.
+
+The `which` command can be used to identify which python executable is being located:
+```
+$ which python
+/gpfs/loomis/apps/avx/software/miniconda/4.7.10/bin/python
+```
+
+If this doesn't point to the conda environment,  you may need to source the environment again.
+
+To make sure that the environmental variables are correctly set up, avoid activating the conda environment on the login node.
+Instead, wait until on a compute node to activate the environment or include the `source activate my_env` statement in the SBATCH submission script.
