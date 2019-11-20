@@ -21,11 +21,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.ycrc.yale.edu/clusters-at-yale/common_job_failures/</loc>
-     <lastmod>2019-11-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
@@ -152,6 +147,11 @@
     </url>
     <url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/</loc>
+     <lastmod>2019-11-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/common_job_failures/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
