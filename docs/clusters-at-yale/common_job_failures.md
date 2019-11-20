@@ -27,7 +27,7 @@ Alternatively, the code can be inspected to see if the program can reduce the am
 ## Disk Quota Exceeded
 
 Since the clusters are shared resources, we have quotas in place to prevent any group from using too much disk space.
-More details about quotas can be found here.
+More details about quotas can be found [here](/clusters-at-yale/data/cluster-storage/).
 When a group or user reaches the quota, files cannot be created.
 Additionally, existing files will not be able to be written to.
 This will frequently kill jobs that need to write output or log files.
