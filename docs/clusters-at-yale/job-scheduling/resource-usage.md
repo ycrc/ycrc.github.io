@@ -102,7 +102,8 @@ Memory Efficiency: 8.71% of 5.00 GB
 
 ### `seff-array`
 
-For job arrays (see here for details) it is helpful to look at statistics for how resources are used by each element of the array.
+For job arrays (see [here](/clusters-at-yale/job-scheduling/dsq) for details) it is helpful to 
+look at statistics for how resources are used by each element of the array.
 The `seff-array` tool takes the job ID of the array and then calculates the distribution and average CPU and memory usage:
 
 ```
