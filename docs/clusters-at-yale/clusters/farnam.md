@@ -50,7 +50,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | Partition    | Group Limits         | User Limits                 | Walltime Default/Max | Node Type (count)                             |
 |--------------|----------------------|-----------------------------|----------------------|-----------------------------------------------|
 | general*     | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | E5-2660_v3 (93), 6240 (19)                    |
-| interactive  |                      | 20 CPUs, 256 G RAM          | 1d/2d                | E5-2660_v3 (93)                               |
+| interactive  |                      | 2 jobs, 20 CPUs, 256 G RAM  | 6hr/1d               | E5-2660_v3 (93)                               |
 | bigmem       |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/3d                | E7-4809_v3 (2)                                |
 | gpu_devel    |                      | 1 job                       | 10min/2hr            | E5-2623_v4 gtx1080ti (1)                      |
 | gpu          |                      | 32 CPUs, 256 G RAM          | 1d/2d                | E5-2660_v3 k80 (2), E5-2637_v4 gtx1080ti (10) |
