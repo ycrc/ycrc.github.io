@@ -10,7 +10,7 @@ This is a quick start guide for CESM at Yale. You will still need to read the CE
 
 ## Modules
 
-CESM 1.0.4, 1.2.2, 2.x are available on Omega and Grace. Other versions may be available on one of the clusters. To find which version are available on your cluster, run
+CESM 1.0.4, 1.2.2, 2.x are available on Grace. Other versions may be available on one of the clusters. To find which version are available on your cluster, run
 
 ``` bash
 module avail cesm
@@ -48,13 +48,11 @@ create_newcase -case $CASE -compset=<compset> -res=<resolution> -mach=<machine>
 cd $CASE
 ```
 
-The mach parameters for Grace and Omega are `yalegrace` and `omega`, respectively. For example
+The mach parameters for Grace is `yalegrace` , respectively. For example
 
 ``` bash
-# on Grace
 create_newcase -case $CASE -compset=B2000 -res=f19_f19 -mach=yalegrace
-# on Omega
-create_newcase -case $CASE -compset=B2000 -res=f19_f19 -mach=omega
+
 cd $CASE
 ```
 
@@ -93,8 +91,6 @@ For more details on interactive jobs, see our [Slurm documentation](/clusters-at
 During the build, CESM will create a corresponding directory in your scratch or project directory at
 
 ```
-# On Omega
-ls ~/scratch/CESM/$CASE
 # On Grace
 ls ~/project/CESM/$CASE
 ```
@@ -153,7 +149,7 @@ If you are still experiencing issues, you can email [Kaylea Nelson](mailto:kayle
 
 ## Alternative Submission Parameters
 
-By default, the submission script will submit to the "week" partition for 7 days or the "geo" partition on Omega depending on your group. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace and 7 days on Omega. For example:
+By default, the submission script will submit to the "week" partition for 7 days. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
 
 ``` bash
 ## day partition
@@ -166,8 +162,6 @@ By default, the submission script will submit to the "week" partition for 7 days
 #SBATCH --partition=scavenge
 #SBATCH --time=1-
 ```
-
-Note that is your submission script was configured to submit to the "geo" partition on Omega, you will need to modify the `#SBATCH -A pi_<group_name>` to be just `#SBATCH -A <group_name>` to submit to any other partition.
 
 Then you can submit by running the submit script
 

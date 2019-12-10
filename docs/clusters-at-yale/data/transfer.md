@@ -19,7 +19,6 @@ You may also use the transfer node to transfer data from your local machine usin
 | Grace     | `transfer-grace.hpc.yale.edu`          |
 | Farnam    | `transfer-farnam.hpc.yale.edu`         |
 | Ruddle    | `transfer-ruddle.hpc.yale.edu`         |
-| Omega     | `transfer-omega.hpc.yale.edu`          |
 | Milgram   | use login node: `milgram.hpc.yale.edu` |
 
 ## scp/rsync (macOS/Linux only)
@@ -145,7 +144,6 @@ We currently support endpoints for the following clusters.
 | Grace     | `yale#grace`          |
 | Farnam    | `yale#farnam`         |
 | Ruddle    | `yale#ruddle`         |
-| Omega     | `yale#omega`          |
 
 All of these endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
 

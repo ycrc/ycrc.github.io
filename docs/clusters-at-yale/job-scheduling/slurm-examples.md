@@ -42,7 +42,7 @@ mpirun hello.mpi
 ```
 
 !!! tip
-    On Omega, try to make ntasks equal to a multiple of 8.
+    On Grace's mpi partition, try to make ntasks equal to a multiple of 24.
 
 ## Hybrid (MPI+OpenMP) programs
 

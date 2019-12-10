@@ -60,14 +60,14 @@ NCORE=10
 
 which would likely spread over 4 nodes using 10 cores each and spend less time in the queue.
 
-## Omega
+## Grace mpi partition
 
-On Omega, since cores are assigned as whole 8-core nodes, `NCORE` should always be equal to 8 and then you can just request `—ntasks` in multiples of 8.
+On Grace's mpi parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `—ntasks` in multiples of 24.
 
 in your submission script:
 
 ``` bash
-#SBATCH --ntasks=16 # some multiple of 8
+#SBATCH --ntasks=48 # some multiple of 24
 ```
 
 ``` bash
@@ -77,7 +77,7 @@ mpirun -n $SLURM_NTASKS vasp_std
 in `INCAR`:
 
 ```
-NCORE=8
+NCORE=24
 ```
 
 ## Additional Reading

@@ -15,16 +15,16 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 
 |Specialist<img width=100/>|Day|Hours<img width=70/>|Office|Areas of Focus|
 |--- |--- |--- |--- |--- |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|Mon|10am-Noon|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|225|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), Physics, Python|
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|Mon|10am-Noon|225|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|Mon|2-4pm|225|[Grace](/clusters-at-yale/clusters/grace), Physics, Python|
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|Tues|9-11am|222|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Structural Biology|
 |[David Huberdeau, Ph.D.](https://research.computing.yale.edu/about/staff/david-huberdeau)|Tues<br/>Thurs|11am-Noon<br/>11am-Noon|216|[Milgram](/clusters-at-yale/clusters/milgram), Matlab, XNAT, Brain Imaging|
 |[Dong Wang, Ph.D.](https://research.computing.yale.edu/about/staff/dong-wang)|Tues|1:30-3:30pm|216|[Grace](/clusters-at-yale/clusters/grace), Physics, Matlab, Image Processing|
 |[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|Wed|10am-Noon|224|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Bioinformatics, Python, OOD Portal|
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|Wed|2pm-4pm|216|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega)/[Milgram](/clusters-at-yale/clusters/milgram), MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal|
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|Wed|2pm-4pm|216|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal|
 |[Giuseppe Amatulli, Ph.D.](https://research.computing.yale.edu/about/staff/giuseppe-amatulli)|Wed<br/>Fri|2-4pm<br/>10:30am-Noon|216|Geo-Computation, GIS and Remote Sensing, Forestry|
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)/[Milgram](/clusters-at-yale/clusters/milgram), Life Sciences, Bioinformatics, Python|
-|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace)/[Omega](/clusters-at-yale/clusters/omega), MPI, GPUs, Matlab|
+|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|Thurs|2-4pm|216|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python|
+|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace), MPI, GPUs, Matlab|
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|| [via email](mailto:mikhael.guy@yale.edu)||SRSC Software and Mathematica|
 
 ### Email

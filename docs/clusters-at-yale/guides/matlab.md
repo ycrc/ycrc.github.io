@@ -118,7 +118,7 @@ We have also developed a template batch script (runit.sh) that you can submit to
 module load MATLAB/2016b OpenMPI/2.1.2-GCC-6.4.0-2.28
 
 # Invoke yale_mdce_start.sh to set up a job manager and MDCE server
-# Note: yale_mdce_start.sh and runscript.m are in the MDCE_SCRIPTS subdirectory of the root Matlab directory (e.g., /home/apps/fas/Apps/Matlab on Omega).
+# Note: yale_mdce_start.sh and runscript.m are in the MDCE_SCRIPTS subdirectory of the root Matlab directory (e.g., /gpfs/loomis/apps/avx/software/MATLAB on Grace).
 #       The MDCE_SCRIPTS directory is added to your PATH by the Matlab module file loaded above.
 
 # Options for yale_mdce_start.sh:
