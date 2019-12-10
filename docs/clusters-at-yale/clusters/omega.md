@@ -1,15 +1,13 @@
 # Omega
 
 !!!warning
-    All of Omega's scratch space is read-and-delete-only as of Dec 3, 2018. The scratch space will be purged and all data permanently deleted on Feb 1, 2019.
+    Omega has been permanently decommissioned as of Dec 6, 2019.
+    Omega's home directories will purged on Jan 31, 2020.
+    Omega's scratch space was permanently deleted on Feb 1, 2019.
 
 Omega has now served Yale’s research community well for more than 2 years past the normal end-of-life for similar clusters. Most of its components are no longer under vendor warranty, and parts are sometimes difficult to obtain, so we are forced to support it on a best-effort basis. Last year, we developed a multi-year plan to replace Omega, which began with moving Omega’s shared resources to our Grace cluster, for which we acquired new commons nodes.
 
 We plan to continue to support groups with dedicated node allocations and other users running tightly-coupled parallel jobs on Omega until Mid 2019. The `mpi` partition on Grace contains the replacement nodes the remainder of Omega. Please test your workload on those nodes are your convenience. We will provide ample warning before the final Omega decommission.
-
-## Clean Out Omega Data
-
-All Omega files are now stored solely on the Loomis GPFS system. For groups that have migrated their workloads entirely to Grace or Farnam, their Omega data is now available from Grace and Farnam for copying and clean-up until Feb 2019. See [Cleaning Out Omega Data](/clusters-at-yale/data/omega-data) for instructions on retrieving your data.
 
 ## Hardware
 
