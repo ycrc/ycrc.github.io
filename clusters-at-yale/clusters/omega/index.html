@@ -1177,13 +1177,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clean-out-omega-data" class="md-nav__link">
-    Clean Out Omega Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hardware" class="md-nav__link">
     Hardware
   </a>
@@ -1257,12 +1250,12 @@
                 <h1 id="omega">Omega</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>All of Omega's scratch space is read-and-delete-only as of Dec 3, 2018. The scratch space will be purged and all data permanently deleted on Feb 1, 2019.</p>
+<p>Omega has been permanently decommissioned as of Dec 6, 2019.
+Omega's home directories will purged on Jan 31, 2020.
+Omega's scratch space was permanently deleted on Feb 1, 2019.</p>
 </div>
 <p>Omega has now served Yale’s research community well for more than 2 years past the normal end-of-life for similar clusters. Most of its components are no longer under vendor warranty, and parts are sometimes difficult to obtain, so we are forced to support it on a best-effort basis. Last year, we developed a multi-year plan to replace Omega, which began with moving Omega’s shared resources to our Grace cluster, for which we acquired new commons nodes.</p>
 <p>We plan to continue to support groups with dedicated node allocations and other users running tightly-coupled parallel jobs on Omega until Mid 2019. The <code>mpi</code> partition on Grace contains the replacement nodes the remainder of Omega. Please test your workload on those nodes are your convenience. We will provide ample warning before the final Omega decommission.</p>
-<h2 id="clean-out-omega-data">Clean Out Omega Data</h2>
-<p>All Omega files are now stored solely on the Loomis GPFS system. For groups that have migrated their workloads entirely to Grace or Farnam, their Omega data is now available from Grace and Farnam for copying and clean-up until Feb 2019. See <a href="/clusters-at-yale/data/omega-data">Cleaning Out Omega Data</a> for instructions on retrieving your data.</p>
 <h2 id="hardware">Hardware</h2>
 <p>The cluster is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs.</p>
 <h3 id="compute-node-configurations">Compute Node Configurations</h3>
