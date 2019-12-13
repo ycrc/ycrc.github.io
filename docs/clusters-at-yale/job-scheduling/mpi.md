@@ -2,9 +2,6 @@
 
 Grace has a special common partition called `mpi`. The `mpi` partition is a bit different from other partitions on Grace--it always allocates entire nodes to jobs submitted to the partition. Each node in the `mpi` partition are identical 24 core, 2x Skylake Gold 6136, 96GB RAM (90GB usable) nodes. While this partition is available to all Grace users, only certain types of jobs are allowed on the partition (similar to the restrictions on our GPU partitions).
 
-!!! Note
-    The `mpi` partition currently contains 33 nodes and has a nodes-per-user limit of 18 nodes. We will be adding an addition ~50 nodes later on this fall.
-
 ## Appropriate Jobs
 
 This partition is specifically designed to support jobs that use tightly-coupled MPI-enabled codes that will run across multiple nodes *and* are sensitive to sharing their nodes with other jobs. Since every node on the `mpi` partition is identical, it can support workloads that are sensitive to hardware difference across a single job. 
