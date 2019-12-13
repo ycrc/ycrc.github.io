@@ -1262,10 +1262,6 @@
                 
                 <h1 id="mpi-partition">MPI Partition</h1>
 <p>Grace has a special common partition called <code>mpi</code>. The <code>mpi</code> partition is a bit different from other partitions on Grace--it always allocates entire nodes to jobs submitted to the partition. Each node in the <code>mpi</code> partition are identical 24 core, 2x Skylake Gold 6136, 96GB RAM (90GB usable) nodes. While this partition is available to all Grace users, only certain types of jobs are allowed on the partition (similar to the restrictions on our GPU partitions).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>mpi</code> partition currently contains 33 nodes and has a nodes-per-user limit of 18 nodes. We will be adding an addition ~50 nodes later on this fall.</p>
-</div>
 <h2 id="appropriate-jobs">Appropriate Jobs</h2>
 <p>This partition is specifically designed to support jobs that use tightly-coupled MPI-enabled codes that will run across multiple nodes <em>and</em> are sensitive to sharing their nodes with other jobs. Since every node on the <code>mpi</code> partition is identical, it can support workloads that are sensitive to hardware difference across a single job. </p>
 <p>We expect most of jobs submitted to <code>mpi</code> to use all 24 cores on each node. There are occasionally instances were a tightly coupled code will use multiple nodes but less than all 24 cores due to load balancing or memory limitations. For example, some codes require power of 2 cores in the job, but 24 cores doesn't always divide evenly into those configurations. So we occasionally see jobs that use multiple nodes but only 16 of the 24 cores per node and are also acceptable submissions to the <code>mpi</code> partition. </p>
