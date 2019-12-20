@@ -2,12 +2,12 @@
 
 ## Compute
 
-We maintain and support 5 compute clusters, with roughly 29,000 cores total. Please click on cluster names for more information. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](/files/Facilities_Equipment-YCRC_20180705.docx).
+We maintain and support four compute clusters, with roughly 30,000 cores total. Please click on cluster names for more information. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](/files/Facilities_Equipment-YCRC_20180705.docx).
 
 | Cluster Name       | Approx. Core Count | Login Address<img width=150/> | Monitor Dashboard                                                                                        | Purpose                                                  |
 |--------------------|--------------------|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [Grace](grace)     | 11,500             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general and highly parallel, tightly coupled         |
-| [Farnam](farnam)   | 5,400              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |                       |
+| [Grace](grace)     | 20,000             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general and highly parallel, tightly coupled         |
+| [Farnam](farnam)   | 5,200              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |                       |
 | [Ruddle](ruddle)   | 3,500              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 | [Milgram](milgram) | 1,600              | `milgram.hpc.yale.edu`        | [monitor1.milgram.hpc.yale.internal:4001](http://monitor1.milgram.hpc.yale.internal:4001) (on HIPAA VPN) | HIPAA                                                    |
 
