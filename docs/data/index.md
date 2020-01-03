@@ -24,6 +24,9 @@ For most up to date pricing information, see the [ITS Data Rates](https://yale.s
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). If you would like to request a share that is mounted on the clusters, **specify in your request that the share be mounted from the HPC clusters**. If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 
+!!!warning
+    Cluster-mounted S@Y shares do *not* provide sufficient performance for computation. We mount the shares on the cluster for convenience but strongly recommend data be copied to project or scratch60 before running jobs.
+
 ## Box at Yale
 
 **Capacity: 50GB per user. Cost: Free. 15 GB max file size.  
