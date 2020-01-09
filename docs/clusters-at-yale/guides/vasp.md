@@ -6,17 +6,15 @@ NOTE: VASP requires a paid license. If you looking to use VASP, but your researc
 
 In Slurm, there is big difference between `--ntasks` and `--cpus-per-task` which is explained in our [Requesting Resources documentation](/clusters-at-yale/job-scheduling/resource-requests).
 
-For the purposes of VASP, `--cpu-per-tasks` should always equal `NCORE` (in your INCAR file). Then `--ntasks` should be equal to the total number of cores you want, divided by `--cpu-per-tasks`.
+For the purposes of VASP, `--ntasks-per-node` should always equal `NCORE` (in your INCAR file). Then `--nodes` should be equal to the total number of cores you want, divided by `--ntasks-per-node`.
 
-VASP has two parameters for controlling processor layouts, `NCORE` and `NPAR`, but you only need to set one of them. If you set `NCORE`, you don’t need to set `NPAR`. Instead VASP will automatically set `NPAR` to `--ntasks`. So the formula should be:
+VASP has two parameters for controlling processor layouts, `NCORE` and `NPAR`, but you only need to set one of them. If you set `NCORE`, you don’t need to set `NPAR`. Instead VASP will automatically set `NPAR`. So the formula should be:
 
 In your mpirun line, you should specify the number of MPI tasks as:
 
 ``` bash
 mpirun -n $SLURM_NTASKS vasp_std
 ```
-
-You don’t need to specify `—nodes` unless you are trying to force the tasks on a certain number of nodes (which will likely increase you wait time with minimal speed up). But regardless, `--nodes` shouldn’t be part of the total number of cpu calculation.
 
 ### Cores Layout Examples
 
@@ -25,8 +23,8 @@ If you want 40 cores (2 nodes and 20 cpus per node):
 in your submission script:
 
 ``` bash
-#SBATCH --ntasks=2
-#SBATCH --cpus-per-task=20
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=20
 ```
 
 ``` bash
@@ -44,8 +42,8 @@ You may however find that the wait time to get 20 cores on two nodes can be very
 in your submission script:
 
 ``` bash
-#SBATCH --ntasks=4
-#SBATCH --cpus-per-task=10
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=10
 ```
 
 ``` bash
@@ -62,7 +60,7 @@ which would likely spread over 4 nodes using 10 cores each and spend less time i
 
 ## Grace mpi partition
 
-On Grace's mpi parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `—ntasks` in multiples of 24.
+On Grace's mpi parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `ntasks` in multiples of 24.
 
 in your submission script:
 
@@ -80,6 +78,10 @@ in `INCAR`:
 NCORE=24
 ```
 
+## Additional Performance
+
+Some users have found that if they actually assign 2 MPI tasks per node (rather than 1), they see even better performance because the MPI tasks doesn't span the two sockets on the node. To try this, set `NCORE` to half of your nodes' core count and increase `mpirun -n` to twice the number of nodes you requested.
+ 
 ## Additional Reading
 
 Here is some documentation on how to optimally configure NCORE and NPAR:
