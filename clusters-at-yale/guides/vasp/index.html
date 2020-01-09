@@ -1319,7 +1319,7 @@
 <h2 id="vasp-and-slurm">VASP and Slurm</h2>
 <p>In Slurm, there is big difference between <code>--ntasks</code> and <code>--cpus-per-task</code> which is explained in our <a href="/clusters-at-yale/job-scheduling/resource-requests">Requesting Resources documentation</a>.</p>
 <p>For the purposes of VASP, <code>--ntasks-per-node</code> should always equal <code>NCORE</code> (in your INCAR file). Then <code>--nodes</code> should be equal to the total number of cores you want, divided by <code>--ntasks-per-node</code>.</p>
-<p>VASP has two parameters for controlling processor layouts, <code>NCORE</code> and <code>NPAR</code>, but you only need to set one of them. If you set <code>NCORE</code>, you don’t need to set <code>NPAR</code>. Instead VASP will automatically set <code>NPAR</code>. So the formula should be:</p>
+<p>VASP has two parameters for controlling processor layouts, <code>NCORE</code> and <code>NPAR</code>, but you only need to set one of them. If you set <code>NCORE</code>, you don’t need to set <code>NPAR</code>. Instead VASP will automatically set <code>NPAR</code>.</p>
 <p>In your mpirun line, you should specify the number of MPI tasks as:</p>
 <div class="codehilite"><pre><span></span>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
 </pre></div>
@@ -1360,7 +1360,7 @@
 
 <p>which would likely spread over 4 nodes using 10 cores each and spend less time in the queue.</p>
 <h2 id="grace-mpi-partition">Grace mpi partition</h2>
-<p>On Grace's mpi parttion, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
+<p>On Grace's <code>mpi</code> parttion, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
 <p>in your submission script:</p>
 <div class="codehilite"><pre><span></span><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
 </pre></div>
