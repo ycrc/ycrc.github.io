@@ -8,7 +8,7 @@ In Slurm, there is big difference between `--ntasks` and `--cpus-per-task` which
 
 For the purposes of VASP, `--ntasks-per-node` should always equal `NCORE` (in your INCAR file). Then `--nodes` should be equal to the total number of cores you want, divided by `--ntasks-per-node`.
 
-VASP has two parameters for controlling processor layouts, `NCORE` and `NPAR`, but you only need to set one of them. If you set `NCORE`, you don’t need to set `NPAR`. Instead VASP will automatically set `NPAR`. So the formula should be:
+VASP has two parameters for controlling processor layouts, `NCORE` and `NPAR`, but you only need to set one of them. If you set `NCORE`, you don’t need to set `NPAR`. Instead VASP will automatically set `NPAR`.
 
 In your mpirun line, you should specify the number of MPI tasks as:
 
@@ -60,7 +60,7 @@ which would likely spread over 4 nodes using 10 cores each and spend less time i
 
 ## Grace mpi partition
 
-On Grace's mpi parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `ntasks` in multiples of 24.
+On Grace's `mpi` parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `ntasks` in multiples of 24.
 
 in your submission script:
 
