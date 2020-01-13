@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1042,8 +1042,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get-started-with-globus" class="md-nav__link">
-    ​Get Started with Globus
+  <a href="#get-started-with-globus-using-farnam-as-an-example" class="md-nav__link">
+    Get Started with Globus (using Farnam as an example)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-data-using-globus-using-farnam-as-an-example" class="md-nav__link">
+    Sharing Data Using Globus (using Farnam as an example)
   </a>
   
 </li>
@@ -1408,8 +1415,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get-started-with-globus" class="md-nav__link">
-    ​Get Started with Globus
+  <a href="#get-started-with-globus-using-farnam-as-an-example" class="md-nav__link">
+    Get Started with Globus (using Farnam as an example)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-data-using-globus-using-farnam-as-an-example" class="md-nav__link">
+    Sharing Data Using Globus (using Farnam as an example)
   </a>
   
 </li>
@@ -1574,19 +1588,36 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <li>You can provide access to specific files or directories to non-Yale people in a secure way.</li>
 </ul>
 <p>We have set up Globus endpoints on most of the Yale clusters. Globus uses gridftp to perform transfers in parallel. Globus works a bit differently than other transfer services such as ftp or rsync. With Globus, files are always transferred between two "endpoints". One endpoint is always a Globus server, such as the ones we've set up on the clusters. The other endpoint can be a second server, or a Globus connect personal endpoint, which is a desktop application.</p>
-<h3 id="get-started-with-globus">​Get Started with Globus</h3>
+<h3 id="get-started-with-globus-using-farnam-as-an-example">Get Started with Globus (using Farnam as an example)</h3>
 <ol>
 <li>In a browser, go to www.globus.org.</li>
 <li>Click on "Login".</li>
 <li>Use the pulldown to select Yale in the list of organizations and click "Continue".</li>
-<li>If you are not already logged into CAS, you will be asked for netid and password.</li>
-<li>You'll see a transfer panel with dual panes. Enter an endpoint name in the left endpoint box, e.g. yale#grace.</li>
-<li>The file browser will show you the directories in the root directory that Globus is exporting, normally /</li>
-<li>Browse to any directory you can normally access, such as your home directory.</li>
-<li>Enter another endpoint name in the right endpoint box, and browse to your chosen directory.</li>
+<li>If you are not already logged into CAS, you will be asked for netid and password.<ol>
+<li>If you have never logged in before: do not associate with another account unless you are familiar with doing this</li>
+<li>If you have never logged in before: select 'non-profit research or educational purposes'</li>
+<li>If you have never logged in before: click on 'Allow' for allowing Globus Web App</li>
+</ol>
+</li>
+<li>In the column on the left side, click on the 'ENDPOINTS' icon (a circle circled by another circle)</li>
+<li>Use the text bar to search for yale#farnam</li>
+<li>Click on 'yale#farnam' "Managed Public Endpoint" to get to the File Manager Overview tab</li>
+<li>Click on 'Open in File Manager' (option is on the right-hand side of the screen)</li>
+<li>You'll see a transfer panel with dual panes with your Farnam data on the left. Enter an endpoint name in the right endpoint box (eg: your personal endpoint)</li>
 <li>Select one or more files in either the left or right box, and click the &lt; or &gt; button to transfer the files in that direction.</li>
 </ol>
-<p>For more information, see the <a href="https://docs.globus.org">official Globus Documentation</a>.</p>
+<h3 id="sharing-data-using-globus-using-farnam-as-an-example">Sharing Data Using Globus (using Farnam as an example)</h3>
+<ol>
+<li>Follow the instructions above until you have the Farnam endpoint opened in the file manager</li>
+<li>Click on the icon that shows a folder with two shoulder-to-head silhouettes in front of it</li>
+<li>Click on 'Add a Shared Endpoint'</li>
+<li>Click on 'Browse' to find and select the path you want to share</li>
+<li>Add other details as desired and click on 'Create Share'</li>
+<li>Click on 'Add Permissions -- Share With'</li>
+<li>Under 'Username or Email' enter the e-mail address of the person that you want to share the data with, then click on 'Save', then click on 'Add Permission'</li>
+<li>Do not select 'write' unless you want the person you are sharing the data with to be able to write to the share. </li>
+</ol>
+<p>For more information, please see the <a href="https://docs.globus.org">official Globus Documentation</a>.</p>
 <h3 id="cluster-endpoints">Cluster Endpoints</h3>
 <p>We currently support endpoints for the following clusters.</p>
 <table>
@@ -1620,6 +1651,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <p>Among Globus' greatest features is the ability to allow collaborators at other institutions access to specific files or directories. This is done by creating a "shared endpoint" and setting the permissions on that endpoint. Please the <a href="https://docs.globus.org/how-to/share-files/">official Globus documentation</a> on sharing for detailed instructions.</p>
                 
                   
+                
                 
               
               
@@ -1687,7 +1719,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
