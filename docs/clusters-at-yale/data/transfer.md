@@ -121,19 +121,35 @@ For larger transfers both within Yale and to external collaborators, we recommen
 
 We have set up Globus endpoints on most of the Yale clusters. Globus uses gridftp to perform transfers in parallel. Globus works a bit differently than other transfer services such as ftp or rsync. With Globus, files are always transferred between two "endpoints". One endpoint is always a Globus server, such as the ones we've set up on the clusters. The other endpoint can be a second server, or a Globus connect personal endpoint, which is a desktop application.
 
-### ​Get Started with Globus
+### Get Started with Globus (using Farnam as an example)
 
 1. In a browser, go to www.globus.org.
 1. Click on "Login".
 1. Use the pulldown to select Yale in the list of organizations and click "Continue".
 1. If you are not already logged into CAS, you will be asked for netid and password.
-1. You'll see a transfer panel with dual panes. Enter an endpoint name in the left endpoint box, e.g. yale#grace.
-1. The file browser will show you the directories in the root directory that Globus is exporting, normally /
-1. Browse to any directory you can normally access, such as your home directory.
-1. Enter another endpoint name in the right endpoint box, and browse to your chosen directory.
+    1. If you have never logged in before: do not associate with another account unless you are familiar with doing this
+    1. If you have never logged in before: select 'non-profit research or educational purposes'
+    1. If you have never logged in before: click on 'Allow' for allowing Globus Web App
+1. In the column on the left side, click on the 'ENDPOINTS' icon (a circle circled by another circle)
+1. Use the text bar to search for yale#farnam
+1. Click on 'yale#farnam' "Managed Public Endpoint" to get to the File Manager Overview tab
+1. Click on 'Open in File Manager' (option is on the right-hand side of the screen)
+1. You'll see a transfer panel with dual panes with your Farnam data on the left. Enter an endpoint name in the right endpoint box (eg: your personal endpoint)
 1. Select one or more files in either the left or right box, and click the < or > button to transfer the files in that direction.
 
-For more information, see the [official Globus Documentation](https://docs.globus.org).
+### Sharing Data Using Globus (using Farnam as an example)
+
+1. Follow the instructions above until you have the Farnam endpoint opened in the file manager
+1. Click on the icon that shows a folder with two shoulder-to-head silhouettes in front of it
+1. Click on 'Add a Shared Endpoint'
+1. Click on 'Browse' to find and select the path you want to share
+1. Add other details as desired and click on 'Create Share'
+1. Click on 'Add Permissions -- Share With'
+1. Under 'Username or Email' enter the e-mail address of the person that you want to share the data with, then click on 'Save', then click on 'Add Permission'
+1. Do not select 'write' unless you want the person you are sharing the data with to be able to write to the share. 
+
+
+For more information, please see the [official Globus Documentation](https://docs.globus.org).
 
 ### Cluster Endpoints
 
