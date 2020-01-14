@@ -62,6 +62,7 @@ nav:
                 - clusters-at-yale/guides/matlab.md
                 - clusters-at-yale/guides/mathematica.md
                 - clusters-at-yale/guides/r.md
+                - clusters-at-yale/guides/rclone.md
                 - clusters-at-yale/guides/singularity.md
                 - clusters-at-yale/guides/tmux.md
                 - clusters-at-yale/guides/vasp.md
