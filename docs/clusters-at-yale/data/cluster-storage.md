@@ -1,23 +1,32 @@
 # Cluster Storage
 
-Each research group is provided with storage space for research data on the GPFS parallel filesytems on the clusters. The storage is separated into three tiers: home, project, and scratch. You can monitor your storage usage by running the `getquota` command on a cluster.
+Each research group is provided with storage space for research data. The storage is separated into three tiers: home, project, and scratch. You can monitor your storage usage by running the `getquota` command on a cluster. Except for on the Milgram cluster, no sensitive data can be stored on any cluster storage.
 
 !!!warning
-    The _only_ storage backed up on every cluster is `home`.
+    The _only_ storage backed up on every cluster is `home`. Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups
 
 ## HPC Storage Locations
 
 ### Home
 
-Home storage is a small amount of space to store your scripts, notes, final products (e.g. figures), etc. Home storage is backed up daily.
+Home storage (backed-up daily) is a small amount of personal space to store your own scripts, notes, final products (e.g. figures), etc. Your home storage is for you only: please do not share this storage with other people. Home storage is backed up daily.
+
+When running the getquota command, the usage and file count values for home are for your own usage.
+
 
 ### Project
 
-In general, project storage is intended to be the primary storage location for HPC research data in active use. Project space is available via the `project` link in your home directory or via the absolute path `/gpfs/<filesystem>/project/<group>/<netid>`.
+Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group. 
+
+Project space is available to all the members of our group via the `project` link in the home directories, or via the absolute path: `/gpfs/<filesystem>/project/<group>/<netid>`
+
 
 ### 60-Day Scratch (`scratch60`)
 
-Use this space to keep intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**. This space is not backed up, and you may be asked to delete files younger than 60 days old if this space fills up. Scratch space is available via the `scratch60` link in your home directory or via the absolute path `/gpfs/<filesystem>/scratch60/<group>/<netid>`.
+Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**, ..and you may be asked to delete files younger than 60 days old if this space fills up. 
+
+Scratch space is available via the `scratch60` link in your home directory, or via the absolute path: `/gpfs/<filesystem>/scratch60/<group>/<netid>`.
+
 
 ## HPC Storage Best Practices
 
