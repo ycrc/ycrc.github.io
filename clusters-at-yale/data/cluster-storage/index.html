@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1407,18 +1407,21 @@
                 
                 
                 <h1 id="cluster-storage">Cluster Storage</h1>
-<p>Each research group is provided with storage space for research data on the GPFS parallel filesytems on the clusters. The storage is separated into three tiers: home, project, and scratch. You can monitor your storage usage by running the <code>getquota</code> command on a cluster.</p>
+<p>Each research group is provided with storage space for research data. The storage is separated into three tiers: home, project, and scratch. You can monitor your storage usage by running the <code>getquota</code> command on a cluster. Except for on the Milgram cluster, no sensitive data can be stored on any cluster storage.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The <em>only</em> storage backed up on every cluster is <code>home</code>.</p>
+<p>The <em>only</em> storage backed up on every cluster is <code>home</code>. Please see our <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups">HPC Policies</a> page for additional information about backups</p>
 </div>
 <h2 id="hpc-storage-locations">HPC Storage Locations</h2>
 <h3 id="home">Home</h3>
-<p>Home storage is a small amount of space to store your scripts, notes, final products (e.g. figures), etc. Home storage is backed up daily.</p>
+<p>Home storage (backed-up daily) is a small amount of personal space to store your own scripts, notes, final products (e.g. figures), etc. Your home storage is for you only: please do not share this storage with other people. Home storage is backed up daily.</p>
+<p>When running the getquota command, the usage and file count values for home are for your own usage.</p>
 <h3 id="project">Project</h3>
-<p>In general, project storage is intended to be the primary storage location for HPC research data in active use. Project space is available via the <code>project</code> link in your home directory or via the absolute path <code>/gpfs/&lt;filesystem&gt;/project/&lt;group&gt;/&lt;netid&gt;</code>.</p>
+<p>Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group. </p>
+<p>Project space is available to all the members of our group via the <code>project</code> link in the home directories, or via the absolute path: <code>/gpfs/&lt;filesystem&gt;/project/&lt;group&gt;/&lt;netid&gt;</code></p>
 <h3 id="60-day-scratch-scratch60">60-Day Scratch (<code>scratch60</code>)</h3>
-<p>Use this space to keep intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>. This space is not backed up, and you may be asked to delete files younger than 60 days old if this space fills up. Scratch space is available via the <code>scratch60</code> link in your home directory or via the absolute path <code>/gpfs/&lt;filesystem&gt;/scratch60/&lt;group&gt;/&lt;netid&gt;</code>.</p>
+<p>Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>, ..and you may be asked to delete files younger than 60 days old if this space fills up. </p>
+<p>Scratch space is available via the <code>scratch60</code> link in your home directory, or via the absolute path: <code>/gpfs/&lt;filesystem&gt;/scratch60/&lt;group&gt;/&lt;netid&gt;</code>.</p>
 <h2 id="hpc-storage-best-practices">HPC Storage Best Practices</h2>
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
 <p>Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using <a href="/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>) collections of files no longer in use.</p>
@@ -1460,6 +1463,7 @@
 </div>
                 
                   
+                
                 
               
               
@@ -1527,7 +1531,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
