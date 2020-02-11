@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gaussian" tabindex="1" class="md-skip">
+      <a href="#gaussian" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1288,28 +1288,28 @@
                 
                 <h1 id="gaussian">Gaussian</h1>
 <p><a href="http://www.gaussian.com/">Gaussian</a> is an electronic structure modeling program that Yale has licensed for its HPC clusters. The latest version of Gaussian is Gaussian 16, which also includes GaussView 6. Older versions of both applications are also available. To see a full list of available versions of Gaussian on the cluster, run:</p>
-<div class="codehilite"><pre><span></span>module avail gaussian
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module avail gaussian
+</code></pre></div>
 
 
 <h2 id="running-gaussian-on-the-cluster">Running Gaussian on the Cluster</h2>
 <p>The examples here are for Gaussian 16. In most cases, you could run the older version Gaussian 09 by replacing "g16" with "g09" wherever it occurs.</p>
 <p>When running Gaussian, it is recommended that users request exclusive access to allocated nodes (e.g., by requesting all the cpus on the node) and that they specify the largest possible memory allocation for the number of nodes requested. In addition, in most cases, the scratch storage location (set by the environment variable <code>GAUSS_SCRDIR</code>) should be on the local parallel scratch file system (e.g., scratch60)  of the cluster, rather than in the user’s home directory. (This is the default in the Gaussian module files.)</p>
 <p>Before running Gaussian, you must set up a number of environment variables. This is accomplished most easily by loading the Gaussian module file using:</p>
-<div class="codehilite"><pre><span></span>module load Gaussian
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module load Gaussian
+</code></pre></div>
 
 
 <p>To run Gaussian interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using</p>
-<div class="codehilite"><pre><span></span>srun --pty -c <span class="m">4</span>  -p interactive -t <span class="m">4</span>:00:00 bash
-</pre></div>
+<div class="codehilite"><pre><span></span><code>srun --pty -c <span class="m">4</span>  -p interactive -t <span class="m">4</span>:00:00 bash
+</code></pre></div>
 
 
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h2 id="gaussian-in-parallel">Gaussian in Parallel</h2>
 <p>To run Gaussian in parallel, you may find it simplest to use the script <code>par_g16</code> instead of executing Gaussian directly. <code>par_g16</code> takes 1 optional argument and is used as shown here:</p>
-<div class="codehilite"><pre><span></span>par_g16 <span class="o">[</span>num_proc_shared<span class="o">]</span> &lt; g16_input &gt; g16_output
-</pre></div>
+<div class="codehilite"><pre><span></span><code>par_g16 <span class="o">[</span>num_proc_shared<span class="o">]</span> &lt; g16_input &gt; g16_output
+</code></pre></div>
 
 
 <p>When included in a submission script, par_g16 will set the following Gaussian input variables:</p>
@@ -1379,9 +1379,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1391,7 +1391,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
