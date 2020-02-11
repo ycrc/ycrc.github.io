@@ -474,6 +474,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-browser" class="md-nav__link">
     File Browser
   </a>
@@ -496,7 +503,7 @@
       
         <li class="md-nav__item">
   <a href="#interactive-apps" class="md-nav__link">
-    Interactive apps
+    Interactive Apps
   </a>
   
     <nav class="md-nav">
@@ -510,8 +517,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
+  <a href="#rstudio-desktop" class="md-nav__link">
+    RStudio Desktop
   </a>
   
 </li>
@@ -1276,6 +1283,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-browser" class="md-nav__link">
     File Browser
   </a>
@@ -1298,7 +1312,7 @@
       
         <li class="md-nav__item">
   <a href="#interactive-apps" class="md-nav__link">
-    Interactive apps
+    Interactive Apps
   </a>
   
     <nav class="md-nav">
@@ -1312,8 +1326,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
+  <a href="#rstudio-desktop" class="md-nav__link">
+    RStudio Desktop
   </a>
   
 </li>
@@ -1344,6 +1358,19 @@
 <p>We have recently built a new way to access the clusters called <a href="https://openondemand.org">Open OnDemand</a>.
 This is a web-portal that provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).
 Currently, this is only available for Farnam and Grace.</p>
+<p>On this page:</p>
+<ul>
+<li><a href="#Access">Access</a></li>
+<li><a href="#File-Browser">File Browser</a></li>
+<li><a href="#Shell">Shell</a></li>
+<li><a href="#Remote-Desktop">Remote Desktop</a></li>
+<li><a href="#Interactive-Apps">Interactive Apps</a><ul>
+<li><a href="#Jupyter-Notebooks">Jupyter Notebooks</a></li>
+<li><a href="#RStudio-Desktop">RStudio Desktop</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="access"><a name="Access"></a>Access</h2>
 <p>To get started, navigate to either</p>
 <div class="codehilite"><pre><span></span><code><span class="err">ood-grace.hpc.yale.edu</span>
 <span class="err">ood-farnam.hpc.yale.edu</span>
@@ -1354,16 +1381,16 @@ Currently, this is only available for Farnam and Grace.</p>
 You will then be greeted with a welcome page showing the standard Message of the Day:</p>
 <p><img alt="welcome" src="/img/ood_welcome.png" /></p>
 <p>Along the top are a pull-down menus for a File Browser, a Job Builder, a list of Interactive Apps, and a Shell.</p>
-<h2 id="file-browser">File Browser</h2>
+<h2 id="file-browser"><a name="File-Browser"></a>File Browser</h2>
 <p><img alt="file_browser" src="/img/ood_filebrowser.png" />
 The file browser is a graphical interface to manage, upload, and download files from the clusters.
 You can drag and drop files, download entire directories, and also move files between directories all from within the web browser. You can also view and edit files from the browser. </p>
-<h2 id="shell">Shell</h2>
+<h2 id="shell"><a name="Shell"></a>Shell</h2>
 <p>You can launch a traditional command-line interface to the cluster using the Shell pull-down menu.
 This opens a terminal in a web-broswer that you can use in the exact same way as when logging into the cluster via SSH.</p>
 <p><img alt="shell" src="/img/ood_shell.png" /></p>
 <p>This is a convenient way to access the clusters from a computer that does not have a terminal program. </p>
-<h2 id="remote-desktop">Remote Desktop</h2>
+<h2 id="remote-desktop"><a name="Remote-Desktop"></a>Remote Desktop</h2>
 <p>Occasionally, it is helpful to use a graphical interface to explore data or manage certain programs.
 In this case, users have typically utilized VNC or X11 forwarding.
 Both of these tools have complications, either in complexity of setup or in performance.
@@ -1373,16 +1400,16 @@ The Remote Desktop option from OOD simplifies the configuration of a VNC desktop
 <p>Once you launch the job, you will be presented with a notification that your job has been queued.
 Depending on the resources requested, your job should be scheduled in a minute or so.
 Then you will see the option to launch the Remote Desktop:</p>
-<p><img alt="starting" src="/img//ood_remote_starting.png" /></p>
+<p><img alt="starting" src="/img/ood_remote_starting.png" /></p>
 <p>After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab:</p>
 <p><img alt="desktop" src="/img/ood_remote_desktop.png" /></p>
 <p>From here you can launch any graphical program that you might need.</p>
-<h2 id="interactive-apps">Interactive apps</h2>
+<h2 id="interactive-apps"><a name="Interactive-Apps"></a>Interactive Apps</h2>
 <p>We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand.
 Currently, we have apps for Matlab, RStudio, Jupyter Notebook, and Mathematica.
 We are working to develop more apps in the future.
 The process for launching each of these is very similar, so we will focus on two of them (Jupyter Notebooks and RStudio) as two examples.</p>
-<h3 id="jupyter-notebooks">Jupyter Notebooks</h3>
+<h3 id="jupyter-notebooks"><a name="Jupyter-Notebooks"></a>Jupyter Notebooks</h3>
 <p>One of the most common uses of Open OnDemand is the Jupyter Notebook interface for Python and R.
 <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebooks</a> are a flexible way to interactively work with code and plots presented in-line together.</p>
 <p>To launch a Jupyter session through Open OnDemand, click on the Interactive Apps pull-down menu and select Jupyter Notebook:</p>
@@ -1394,7 +1421,7 @@ Make sure to select one that has jupyter installed (follow the steps <a href="..
 <p>After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), the job will be scheduled and will launch when it is ready.
 This will open the standard Jupyter interface where you can start working with notebooks.</p>
 <p><img alt="jupyter_running" src="/img/ood_jupyter_running.png" /></p>
-<h3 id="rstudio">RStudio</h3>
+<h3 id="rstudio-desktop"><a name="RStudio-Desktop"></a>RStudio Desktop</h3>
 <p>Another useful app provided by Open OnDemand is RStudio Desktop. To use the App, you need to select an RStudio version and an R version, among other resource requirements for your job.</p>
 <p><img alt="rstudio_request" src="/img/ood_rstudio.png" /></p>
 <p>Once your job starts runing, you will see a button 'Launch Rstudio Desktop'. Click the button and RStudio Desktop will be opened in the browser.</p>
