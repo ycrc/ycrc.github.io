@@ -701,19 +701,6 @@
     Open OnDemand
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#job-setup" class="md-nav__link">
-    Job Setup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1320,19 +1307,6 @@
     Open OnDemand
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#job-setup" class="md-nav__link">
-    Job Setup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1419,13 +1393,6 @@ conda create -yn notebook_env anaconda <span class="nv">python</span><span class
 <p>You can then load this environment for jupyter where we indicate below.</p>
 <h2 id="open-ondemand">Open OnDemand</h2>
 <p>On <a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/farnam.md">Farnam</a> we run a web portal to the clusters which can also run a jupyter notebook for you. Please check the <a href="/clusters-at-yale/access/ood/#Jupyter-Notebooks">OOD Jupyter Notebook user guide</a> for more information.</p>
-<h3 id="job-setup">Job Setup</h3>
-<p>In the job submission form there is a text area called "Environment Setup (drag text area to enlarge)". Here you must enter the commands that activate an environment with <code>jupyter</code> in it. We make a default available, but if you want to use any specialized software you should create a new conda environment and activate it here. For example, if you ran the command above, you would paste the following into the text box:</p>
-<div class="codehilite"><pre><span></span><code>module load miniconda
-<span class="nb">source</span> activate notebook_env
-</code></pre></div>
-
-
 <h2 id="traditional-method">Traditional Method</h2>
 <p>If you want finer control over your notebook job, you can manually configure a jupyter notebook and connect manually.</p>
 <p>The main steps are:</p>
