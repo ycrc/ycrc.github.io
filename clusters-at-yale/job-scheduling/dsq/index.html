@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#submit-job-arrays-with-dsq" tabindex="0" class="md-skip">
+      <a href="#submit-job-arrays-with-dsq" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1347,22 +1347,22 @@
 <p>First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with <code>#</code> will be ignored when submitting your job array. <strong>Note:</strong> slurm jobs start in the directory from which your job was submitted.</p>
 <p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that each job needs 4 GB of RAM, and will run in less than 10 minutes.</p>
 <p>Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:</p>
-<div class="codehilite"><pre><span></span><code>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
+<div class="codehilite"><pre><span></span>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
 module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample2
 ...
 module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1000
-</code></pre></div>
+</pre></div>
 
 
 <h2 id="step-2-generate-batch-script-with-dsq">Step 2: Generate Batch Script with <code>dsq</code></h2>
 <p>On YCRC clusters you can load Dead Simple Queue onto your path with:</p>
-<div class="codehilite"><pre><span></span><code>module load dSQ
-</code></pre></div>
+<div class="codehilite"><pre><span></span>module load dSQ
+</pre></div>
 
 
 <p>You can also download or clone this repo and use the scripts directly.</p>
 <p><code>dsq</code> takes a few arguments, then writes a job submission script (default) or can directly submit a job for you. <strong>The resources you request will be given to each job in the array (each line in your job file)</strong>, e.g. requesting 2 GB of RAM with dSQ will run each individual job with a separate 2 GB of RAM available. Run <code>sbatch --help</code> or see the <a href="https://slurm.schedmd.com/sbatch.html">official Slurm documentation</a> for more info on sbatch options. dSQ will set a default job name of dsq-jobfile (your job file name without the file extension). dSQ will also set the job output file name pattern to dsq-jobfile-%A_%a-%N.out, which will capture each of your jobs' output to a file with the job's ID(%A), its array index or zero-based line number(%a), and the host name of the node it ran on (%N). If you are handling output in each of your jobs, set this to <code>/dev/null</code>, which will stop these files from being created.</p>
-<div class="codehilite"><pre><span></span><code>Required Arguments:
+<div class="codehilite"><pre><span></span>Required Arguments:
   --job-file jobs.txt   Job file, one self-contained job per line.
 
 Optional Arguments:
@@ -1376,38 +1376,38 @@ Optional Arguments:
                         Slurm output file pattern. There will be one file per line in your job file. To suppress slurm out files, set this to /dev/null. Defaults to dsq-jobfile-%A_%a-%N.out
   --batch-file sub_script.sh
                         Name for batch script file. Defaults to dsq-jobfile-YYYY-MM-DD.sh
-</code></pre></div>
+</pre></div>
 
 
 <p>In the example above, we want walltime of 10 minutes and memory=4GB per job. Our invocation would be:</p>
-<div class="codehilite"><pre><span></span><code>dsq --job-file joblist.txt --mem-per-cpu 4g -t <span class="m">10</span>:00 --mail-type ALL
-</code></pre></div>
+<div class="codehilite"><pre><span></span>dsq --job-file joblist.txt --mem-per-cpu 4g -t <span class="m">10</span>:00 --mail-type ALL
+</pre></div>
 
 
 <p>Which will create a file called <code>dsq-joblist-yyyy-mm-dd.sh</code>, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. It should look quite familiar.</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --array 0-999</span>
 <span class="c1">#SBATCH --output dsq-joblist-%A_%3a-%N.out</span>
 <span class="c1">#SBATCH --job-name dsq-joblist</span>
 <span class="c1">#SBATCH --mem-per-cpu 4g -t 10:00 --mail-type ALL</span>
 
 /ysm-gpfs/apps/software/dSQ/version/dSQBatch.py /path/to/my/joblist.txt
-</code></pre></div>
+</pre></div>
 
 
 <h2 id="step-3-submit-batch-script">Step 3: Submit Batch Script</h2>
-<div class="codehilite"><pre><span></span><code>sbatch dsq-joblist-yyyy-mm-dd.sh
-</code></pre></div>
+<div class="codehilite"><pre><span></span>sbatch dsq-joblist-yyyy-mm-dd.sh
+</pre></div>
 
 
 <h2 id="manage-your-dsq-job">Manage Your dSQ Job</h2>
 <p>You can refer to any portion of your job with <code>jobid_index</code> syntax, or the entire array with its jobid. The index Dead Simple Queue uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2. You can also specify ranges.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># to cancel job 4 for array job 14567</span>
+<div class="codehilite"><pre><span></span><span class="c1"># to cancel job 4 for array job 14567</span>
 scancel 14567_4
 
 <span class="c1"># to cancel jobs 10-20 for job 14567:</span>
 scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o">]</span>
-</code></pre></div>
+</pre></div>
 
 
 <h2 id="dsq-output">dSQ Output</h2>
@@ -1424,16 +1424,15 @@ scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o
 </ul>
 <h2 id="dsqautopsy">dSQAutopsy</h2>
 <p>Once the dSQ job is finished, you can use dSQAutopsy to create both a report of the run, as well as a new jobsfile that contains just the jobss that failed.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">dsqa jobsfile.txt job_2629186_status.tsv</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">dsqa jobsfile.txt job_2629186_status.tsv</span>
+</pre></div>
 
 
 <p>You can conveniently redirect the report and the failed jobss to separate files:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">dsqa jobsfile.txt job_2629186_status.tsv &gt; failedjobs.txt 2&gt; report.txt</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">dsqa jobsfile.txt job_2629186_status.tsv &gt; failedjobs.txt 2&gt; report.txt</span>
+</pre></div>
                 
                   
-                
                 
               
               
@@ -1489,9 +1488,9 @@ scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1501,7 +1500,7 @@ scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

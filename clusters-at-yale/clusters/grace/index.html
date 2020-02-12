@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#grace" tabindex="0" class="md-skip">
+      <a href="#grace" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1531,12 +1531,28 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td align="left">skylake,avx2,avx512,6136,nogpu</td>
 </tr>
 <tr>
-<td align="right">151</td>
+<td align="right">131</td>
 <td align="left">2x 6240</td>
 <td align="right">36</td>
 <td align="left">183G</td>
 <td align="left"></td>
 <td align="left">cascadelake,avx2,avx512,6240,nogpu,standard</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td align="left">2x 8260</td>
+<td align="right">96</td>
+<td align="left">183G</td>
+<td align="left"></td>
+<td align="left">cascadelake,avx2,avx512,8260,nogpu</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">2x 6240</td>
+<td align="right">36</td>
+<td align="left">372G</td>
+<td align="left">4x v100</td>
+<td align="left">cascadelake,avx2,avx512,6240,doubleprecision</td>
 </tr>
 <tr>
 <td align="right">5</td>
@@ -1547,20 +1563,20 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td align="left">cascadelake,avx2,avx512,6240,singleprecision</td>
 </tr>
 <tr>
-<td align="right">5</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">372G</td>
-<td align="left">4x v100sxm2</td>
-<td align="left">cascadelake,avx2,avx512,6240,doubleprecision</td>
-</tr>
-<tr>
 <td align="right">2</td>
 <td align="left">2x 6240</td>
 <td align="right">36</td>
 <td align="left">1506G</td>
 <td align="left"></td>
 <td align="left">cascadelake,avx2,avx512,6240,nogpu</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">2x 6254</td>
+<td align="right">36</td>
+<td align="left">1506G</td>
+<td align="left">4x rtx4000 2x rtx8000 2x v100</td>
+<td align="left">cascadelake,avx2,avx512,6254</td>
 </tr>
 </tbody>
 </table>
@@ -1592,14 +1608,14 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td align="left">CPUs: 900</td>
 <td align="left">CPUs: 640</td>
 <td align="left">1h/1d</td>
-<td align="left">E5-2660_v2 (62), E5-2660_v3 (44), E5-2660_v4 (72), 6240 (87)</td>
+<td align="left">E5-2660_v2 (38), E5-2660_v3 (44), E5-2660_v4 (72), 6240 (59)</td>
 </tr>
 <tr>
 <td align="left">week</td>
 <td align="left">CPUs: 250</td>
 <td align="left">CPUs: 100</td>
 <td align="left">1h/7d</td>
-<td align="left">E5-2660_v4 (7), E5-2660_v3 (36)</td>
+<td align="left">E5-2660_v3 (36), E5-2660_v4 (7)</td>
 </tr>
 <tr>
 <td align="left">bigmem</td>
@@ -1611,9 +1627,9 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">gpu</td>
 <td align="left"></td>
-<td align="left">GPUs: 12</td>
+<td align="left">GPUs: 24</td>
 <td align="left">1h/1d</td>
-<td align="left">E5-2660_v3 k80:4 (5), 6136 v100:2 (1), 6240 rtx2080ti:4 (5), E5-2660_v4 p100:1 (6), 6240 v100sxm2:4 (5)</td>
+<td align="left">E5-2660_v3 k80:4 (5), E5-2660_v4 p100:1 (6), 6136 v100:2 (1), 6240 v100:4 (5), 6240 rtx2080ti:4 (5)</td>
 </tr>
 <tr>
 <td align="left">gpu_devel</td>
@@ -1696,12 +1712,12 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_cowles</td>
 <td align="left">1h/28d</td>
-<td align="left">6240 (4), E5-2660_v3 (14)</td>
+<td align="left">E5-2660_v3 (14)</td>
 </tr>
 <tr>
 <td align="left">pi_cowles_nopreempt</td>
 <td align="left">1h/28d</td>
-<td align="left">6240 (4), E5-2660_v3 (10)</td>
+<td align="left">E5-2660_v3 (10)</td>
 </tr>
 <tr>
 <td align="left">pi_econ_io</td>
@@ -1711,7 +1727,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_econ_lp</td>
 <td align="left">1h/28d</td>
-<td align="left">6240 (1)</td>
+<td align="left">6240 (5)</td>
 </tr>
 <tr>
 <td align="left">pi_esi</td>
@@ -1731,7 +1747,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_gerstein</td>
 <td align="left">1h/28d</td>
-<td align="left">E7-4820_v2 1003G (1), E5-2660_v3 (32)</td>
+<td align="left">E5-2660_v3 (32), E7-4820_v2 1003G (1)</td>
 </tr>
 <tr>
 <td align="left">pi_glahn</td>
@@ -1739,9 +1755,9 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td align="left">E5-2660_v3 (1)</td>
 </tr>
 <tr>
-<td align="left">pi_hammes_schiffer*</td>
+<td align="left">pi_hammes_schiffer</td>
 <td align="left">1h/28d</td>
-<td align="left">6136 751G (1), 6136 (16), E5-2637_v4 gtx1080ti:4 (1), 5122 rtx2080:4 (2)</td>
+<td align="left">E5-2637_v4 gtx1080ti:4 (1), 6136 751G (1), 6136 (16), 5122 rtx2080:4 (2)</td>
 </tr>
 <tr>
 <td align="left">pi_hodgson</td>
@@ -1769,6 +1785,16 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td align="left">E5-2660_v3 (8)</td>
 </tr>
 <tr>
+<td align="left">pi_lederman</td>
+<td align="left">1h/28d</td>
+<td align="left">6254 1506G rtx4000:4,rtx8000:2,v100:2 (1)</td>
+</tr>
+<tr>
+<td align="left">pi_levine</td>
+<td align="left">1h/28d</td>
+<td align="left">8260 (20)</td>
+</tr>
+<tr>
 <td align="left">pi_lora</td>
 <td align="left">1h/28d</td>
 <td align="left">6136 (4)</td>
@@ -1781,12 +1807,12 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_manohar</td>
 <td align="left">1h/180d</td>
-<td align="left">E7-4820_v4 1507G (2), 6240 (4), E5-2660_v4 (8), E5-2660_v4 p100:1 (1)</td>
+<td align="left">E5-2660_v4 (8), 6240 (4), E7-4820_v4 1507G (2), E5-2660_v4 p100:1 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_ohern</td>
 <td align="left">1h/28d</td>
-<td align="left">E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100:4 (9), 6240 (2)</td>
+<td align="left">E5-2660_v4 (3), 6136 p100:4 (9), 6240 (2), E5-2660_v2 (16)</td>
 </tr>
 <tr>
 <td align="left">pi_owen_miller</td>
@@ -1796,7 +1822,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_poland</td>
 <td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (10)</td>
+<td align="left">E5-2660_v4 (10), 6240 (8)</td>
 </tr>
 <tr>
 <td align="left">pi_polimanti</td>
@@ -1860,7 +1886,6 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
                 
                   
                 
-                
               
               
                 
@@ -1915,9 +1940,9 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1927,7 +1952,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
