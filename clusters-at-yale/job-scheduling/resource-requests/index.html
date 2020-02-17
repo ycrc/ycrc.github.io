@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
@@ -259,7 +259,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -275,7 +275,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -846,7 +846,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" class="md-nav__link">
+  <a href="#request-cores-and-nodes" title="Request Cores and Nodes" class="md-nav__link">
     Request Cores and Nodes
   </a>
   
@@ -854,28 +854,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-ntasks-vs-cpus-per-task" class="md-nav__link">
+  <a href="#-ntasks-vs-cpus-per-task" title="--ntasks vs --cpus-per-task" class="md-nav__link">
     --ntasks vs --cpus-per-task
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#146-multi-threaded-multi-process-programs" class="md-nav__link">
+  <a href="#146-multi-threaded-multi-process-programs" title="1. Multi-threaded &amp; multi-process programs" class="md-nav__link">
     1. Multi-threaded &amp; multi-process programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#246-mpi-programs" class="md-nav__link">
+  <a href="#246-mpi-programs" title="2. MPI programs" class="md-nav__link">
     2. MPI programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#346-hybrid-mpiopenmp-programs" class="md-nav__link">
+  <a href="#346-hybrid-mpiopenmp-programs" title="3. Hybrid (MPI+OpenMP) programs" class="md-nav__link">
     3. Hybrid (MPI+OpenMP) programs
   </a>
   
@@ -887,14 +887,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-gpus" class="md-nav__link">
+  <a href="#request-gpus" title="Request GPUs" class="md-nav__link">
     Request GPUs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-and-constraints" class="md-nav__link">
+  <a href="#features-and-constraints" title="Features and Constraints" class="md-nav__link">
     Features and Constraints
   </a>
   
@@ -1283,7 +1283,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" class="md-nav__link">
+  <a href="#request-cores-and-nodes" title="Request Cores and Nodes" class="md-nav__link">
     Request Cores and Nodes
   </a>
   
@@ -1291,28 +1291,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-ntasks-vs-cpus-per-task" class="md-nav__link">
+  <a href="#-ntasks-vs-cpus-per-task" title="--ntasks vs --cpus-per-task" class="md-nav__link">
     --ntasks vs --cpus-per-task
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#146-multi-threaded-multi-process-programs" class="md-nav__link">
+  <a href="#146-multi-threaded-multi-process-programs" title="1. Multi-threaded &amp; multi-process programs" class="md-nav__link">
     1. Multi-threaded &amp; multi-process programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#246-mpi-programs" class="md-nav__link">
+  <a href="#246-mpi-programs" title="2. MPI programs" class="md-nav__link">
     2. MPI programs
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#346-hybrid-mpiopenmp-programs" class="md-nav__link">
+  <a href="#346-hybrid-mpiopenmp-programs" title="3. Hybrid (MPI+OpenMP) programs" class="md-nav__link">
     3. Hybrid (MPI+OpenMP) programs
   </a>
   
@@ -1324,14 +1324,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-gpus" class="md-nav__link">
+  <a href="#request-gpus" title="Request GPUs" class="md-nav__link">
     Request GPUs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-and-constraints" class="md-nav__link">
+  <a href="#features-and-constraints" title="Features and Constraints" class="md-nav__link">
     Features and Constraints
   </a>
   
@@ -1364,7 +1364,7 @@
 <h3 id="246-mpi-programs">2. MPI programs</h3>
 <p>In Slurm, the <code>--ntasks</code> flag specifies the number of MPI tasks created for your job. Note that, even within the same job, multiple tasks do not necessarily run on a single node. Therefore, requesting the same number of CPUs as above, but with the <code>--ntasks</code> flag, could result in those CPUs being allocated on several, distinct compute nodes.</p>
 <p>For many users, differentiating between <code>--ntasks</code> and <code>--cpus-per-task</code> is sufficient. However, for more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is extremely likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
-<div class="codehilite"><pre><span></span><span class="err">ntasks-per-node * nodes &gt;= ntasks</span>
+<div class="codehilite"><pre><span></span><span class="n">ntasks</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">node</span> <span class="o">*</span> <span class="n">nodes</span> <span class="o">&gt;=</span> <span class="n">ntasks</span>
 </pre></div>
 
 
@@ -1473,7 +1473,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

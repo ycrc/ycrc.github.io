@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
@@ -257,7 +257,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../.." title="Support" class="md-tabs__link">
           Support
         </a>
       
@@ -273,7 +273,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -1189,7 +1189,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-simplequeue-job" class="md-nav__link">
+  <a href="#example-simplequeue-job" title="Example SimpleQueue Job" class="md-nav__link">
     Example SimpleQueue Job
   </a>
   
@@ -1197,21 +1197,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-create-task-list" class="md-nav__link">
+  <a href="#step-1-create-task-list" title="Step 1: Create Task List" class="md-nav__link">
     Step 1: Create Task List
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-submission-script" class="md-nav__link">
+  <a href="#step-2-create-submission-script" title="Step 2: Create Submission Script" class="md-nav__link">
     Step 2: Create Submission Script
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-submit-your-job" class="md-nav__link">
+  <a href="#step-3-submit-your-job" title="Step 3: Submit Your Job" class="md-nav__link">
     Step 3: Submit Your Job
   </a>
   
@@ -1223,7 +1223,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-important-options" class="md-nav__link">
+  <a href="#other-important-options" title="Other Important Options" class="md-nav__link">
     Other Important Options
   </a>
   
@@ -1281,24 +1281,24 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 
 <p>These parameters specify that the job, named genome_map, will be submitted to the general queue/partition. This job will find 80 free cores, start 80 workers on them, and begin processing tasks from the taskfile <code>tasklist.txt</code>.</p>
 <p>sqCreateScript takes a number of options. They differ somewhat from cluster to cluster, particularly the default values for queue, walltime, and memory. You can run sqCreateScript without any arguments to see the exact options on your cluster.</p>
-<div class="codehilite"><pre><span></span>Usage:
+<div class="codehilite"><pre><span></span><span class="nv">Usage</span>:
 
-  -h, --help            show this help message and exit
-  -n WORKERS, --workers=WORKERS
-                        Number of workers to use. Not required. Defaults to 1.
-  -c CORES, --cores=CORES
-                        Number of cores to request per worker. Defaults to 1.
-  -m MEM, --mem=MEM     Memory per worker. Not required. Defaults to 1G
-  -w WALLTIME, --walltime=WALLTIME
-                        Walltime to request for the Slurm Job in form
-                        [[D-]HH:]MM:SS. Not required. Defaults to 1:00:00.
-  -q QUEUE, --queue=QUEUE
-                        Name of queue to use. Not required. Defaults to
-                        general
-  -N NAME, --name=NAME  Base job name to use. Not required. Defaults to
-                        SimpleQueue.
-  --logdir=LOGDIR       Name of logging directory. Defaults to
-                        SQ_Files_<span class="cp">${</span><span class="n">SLURM_JOB_ID</span><span class="cp">}</span>.
+  <span class="o">-</span><span class="nv">h</span>, <span class="o">--</span><span class="nv">help</span>            <span class="k">show</span> <span class="nv">this</span> <span class="nv">help</span> <span class="nv">message</span> <span class="nv">and</span> <span class="k">exit</span>
+  <span class="o">-</span><span class="nv">n</span> <span class="nv">WORKERS</span>, <span class="o">--</span><span class="nv">workers</span><span class="o">=</span><span class="nv">WORKERS</span>
+                        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">workers</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>.
+  <span class="o">-</span><span class="nv">c</span> <span class="nv">CORES</span>, <span class="o">--</span><span class="nv">cores</span><span class="o">=</span><span class="nv">CORES</span>
+                        <span class="nv">Number</span> <span class="nv">of</span> <span class="nv">cores</span> <span class="nv">to</span> <span class="nv">request</span> <span class="nv">per</span> <span class="nv">worker</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>.
+  <span class="o">-</span><span class="nv">m</span> <span class="nv">MEM</span>, <span class="o">--</span><span class="nv">mem</span><span class="o">=</span><span class="nv">MEM</span>     <span class="nv">Memory</span> <span class="nv">per</span> <span class="nv">worker</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span><span class="nv">G</span>
+  <span class="o">-</span><span class="nv">w</span> <span class="nv">WALLTIME</span>, <span class="o">--</span><span class="nv">walltime</span><span class="o">=</span><span class="nv">WALLTIME</span>
+                        <span class="nv">Walltime</span> <span class="nv">to</span> <span class="nv">request</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">Slurm</span> <span class="nv">Job</span> <span class="nv">in</span> <span class="nv">form</span>
+                        [[<span class="nv">D</span><span class="o">-</span>]<span class="nv">HH</span>:]<span class="nv">MM</span>:<span class="nv">SS</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span> <span class="mi">1</span>:<span class="mi">00</span>:<span class="mi">00</span>.
+  <span class="o">-</span><span class="nv">q</span> <span class="nv">QUEUE</span>, <span class="o">--</span><span class="nv">queue</span><span class="o">=</span><span class="nv">QUEUE</span>
+                        <span class="nv">Name</span> <span class="nv">of</span> <span class="nv">queue</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
+                        <span class="nv">general</span>
+  <span class="o">-</span><span class="nv">N</span> <span class="nv">NAME</span>, <span class="o">--</span><span class="nv">name</span><span class="o">=</span><span class="nv">NAME</span>  <span class="nv">Base</span> <span class="nv">job</span> <span class="nv">name</span> <span class="nv">to</span> <span class="nv">use</span>. <span class="nv">Not</span> <span class="nv">required</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
+                        <span class="nv">SimpleQueue</span>.
+  <span class="o">--</span><span class="nv">logdir</span><span class="o">=</span><span class="nv">LOGDIR</span>       <span class="nv">Name</span> <span class="nv">of</span> <span class="nv">logging</span> <span class="nv">directory</span>. <span class="nv">Defaults</span> <span class="nv">to</span>
+                        <span class="nv">SQ_Files_</span>${<span class="nv">SLURM_JOB_ID</span>}.
 </pre></div>
 
 
@@ -1351,7 +1351,7 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

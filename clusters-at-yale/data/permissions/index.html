@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
@@ -259,7 +259,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -275,7 +275,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -990,21 +990,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#home-directories" class="md-nav__link">
+  <a href="#home-directories" title="Home Directories" class="md-nav__link">
     Home Directories
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shared-group-directories" class="md-nav__link">
+  <a href="#shared-group-directories" title="Shared Group Directories" class="md-nav__link">
     Shared Group Directories
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#share-with-specific-users-or-other-groups" class="md-nav__link">
+  <a href="#share-with-specific-users-or-other-groups" title="Share With Specific Users or Other Groups" class="md-nav__link">
     Share With Specific Users or Other Groups
   </a>
   
@@ -1012,21 +1012,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-all-members-of-a-group" class="md-nav__link">
+  <a href="#share-a-directory-with-all-members-of-a-group" title="Share a Directory with All Members of a Group" class="md-nav__link">
     Share a Directory with All Members of a Group
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-a-particular-person" class="md-nav__link">
+  <a href="#share-a-directory-with-a-particular-person" title="Share a Directory with a Particular Person" class="md-nav__link">
     Share a Directory with a Particular Person
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#remove-sharing-of-a-directory" class="md-nav__link">
+  <a href="#remove-sharing-of-a-directory" title="Remove Sharing of a Directory" class="md-nav__link">
     Remove Sharing of a Directory
   </a>
   
@@ -1276,21 +1276,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#home-directories" class="md-nav__link">
+  <a href="#home-directories" title="Home Directories" class="md-nav__link">
     Home Directories
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shared-group-directories" class="md-nav__link">
+  <a href="#shared-group-directories" title="Shared Group Directories" class="md-nav__link">
     Shared Group Directories
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#share-with-specific-users-or-other-groups" class="md-nav__link">
+  <a href="#share-with-specific-users-or-other-groups" title="Share With Specific Users or Other Groups" class="md-nav__link">
     Share With Specific Users or Other Groups
   </a>
   
@@ -1298,21 +1298,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-all-members-of-a-group" class="md-nav__link">
+  <a href="#share-a-directory-with-all-members-of-a-group" title="Share a Directory with All Members of a Group" class="md-nav__link">
     Share a Directory with All Members of a Group
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-a-directory-with-a-particular-person" class="md-nav__link">
+  <a href="#share-a-directory-with-a-particular-person" title="Share a Directory with a Particular Person" class="md-nav__link">
     Share a Directory with a Particular Person
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#remove-sharing-of-a-directory" class="md-nav__link">
+  <a href="#remove-sharing-of-a-directory" title="Remove Sharing of a Directory" class="md-nav__link">
     Remove Sharing of a Directory
   </a>
   
@@ -1354,30 +1354,30 @@
 </div>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> in your project directory with group <code>othergroup</code>:</p>
-<div class="codehilite"><pre><span></span><span class="err">setfacl -m &quot;g:othergroup:rx&quot; $(readlink -f ~/project)</span>
-<span class="err">cd ~/project</span>
-<span class="err">mkdir shared</span>
-<span class="err">setfacl -m &quot;g:othergroup:rwx&quot; shared</span>
+<div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;g:othergroup:rx&quot;</span> <span class="err">$</span><span class="p">(</span><span class="n">readlink</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">project</span><span class="p">)</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">project</span>
+<span class="n">mkdir</span> <span class="n">shared</span>
+<span class="n">setfacl</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;g:othergroup:rwx&quot;</span> <span class="n">shared</span>
 </pre></div>
 
 
 <h3 id="share-a-directory-with-a-particular-person">Share a Directory with a Particular Person</h3>
 <p>To share a new directory called <code>shared</code> with a person with netid <code>aa111</code>:</p>
-<div class="codehilite"><pre><span></span><span class="err">setfacl -m &quot;u:aa111:rx&quot; $(readlink -f ~/project)</span>
-<span class="err">cd ~/project</span>
-<span class="err">mkdir shared</span>
-<span class="err">setfacl -m &quot;u:aa111:rwx&quot; shared</span>
+<div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;u:aa111:rx&quot;</span> <span class="err">$</span><span class="p">(</span><span class="n">readlink</span> <span class="o">-</span><span class="n">f</span> <span class="o">~/</span><span class="n">project</span><span class="p">)</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">project</span>
+<span class="n">mkdir</span> <span class="n">shared</span>
+<span class="n">setfacl</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;u:aa111:rwx&quot;</span> <span class="n">shared</span>
 </pre></div>
 
 
 <h3 id="remove-sharing-of-a-directory">Remove Sharing of a Directory</h3>
 <p>To remove a group <code>othergroup</code> from sharing of a directory called <code>shared</code>:</p>
-<div class="codehilite"><pre><span></span><span class="err">setfacl -R -x &quot;g:othergroup&quot; shared</span>
+<div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">x</span> <span class="ss">&quot;g:othergroup&quot;</span> <span class="n">shared</span>
 </pre></div>
 
 
 <p>To remove a person with netid <code>aa111</code> from sharing of a directory called <code>shared</code>:</p>
-<div class="codehilite"><pre><span></span><span class="err">setfacl -R -x &quot;u:aa111&quot; shared</span>
+<div class="codehilite"><pre><span></span><span class="n">setfacl</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">x</span> <span class="ss">&quot;u:aa111&quot;</span> <span class="n">shared</span>
 </pre></div>
                 
                   
@@ -1448,7 +1448,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

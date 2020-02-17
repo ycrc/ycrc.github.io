@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
       
     
@@ -259,7 +259,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        <a href="../../.." title="Support" class="md-tabs__link md-tabs__link--active">
           Support
         </a>
       
@@ -275,7 +275,7 @@
 
 <div id="system-status-message"></div>
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -498,7 +498,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-transfer-clients-and-duo-mfa" class="md-nav__link">
+  <a href="#file-transfer-clients-and-duo-mfa" title="File Transfer Clients and Duo MFA" class="md-nav__link">
     File Transfer Clients and Duo MFA
   </a>
   
@@ -506,7 +506,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filezilla" class="md-nav__link">
+  <a href="#filezilla" title="FileZilla" class="md-nav__link">
     FileZilla
   </a>
   
@@ -518,14 +518,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-client-recommendations" class="md-nav__link">
+  <a href="#other-client-recommendations" title="Other Client Recommendations" class="md-nav__link">
     Other Client Recommendations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot-mfa" class="md-nav__link">
+  <a href="#troubleshoot-mfa" title="Troubleshoot MFA" class="md-nav__link">
     Troubleshoot MFA
   </a>
   
@@ -1262,7 +1262,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-transfer-clients-and-duo-mfa" class="md-nav__link">
+  <a href="#file-transfer-clients-and-duo-mfa" title="File Transfer Clients and Duo MFA" class="md-nav__link">
     File Transfer Clients and Duo MFA
   </a>
   
@@ -1270,7 +1270,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filezilla" class="md-nav__link">
+  <a href="#filezilla" title="FileZilla" class="md-nav__link">
     FileZilla
   </a>
   
@@ -1282,14 +1282,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-client-recommendations" class="md-nav__link">
+  <a href="#other-client-recommendations" title="Other Client Recommendations" class="md-nav__link">
     Other Client Recommendations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot-mfa" class="md-nav__link">
+  <a href="#troubleshoot-mfa" title="Troubleshoot MFA" class="md-nav__link">
     Troubleshoot MFA
   </a>
   
@@ -1327,26 +1327,26 @@
 <h2 id="file-transfer-clients-and-duo-mfa">File Transfer Clients and Duo MFA</h2>
 <p>Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Here are some application-specific tips on how to avoid having to authenticate for each new connection:</p>
 <h3 id="filezilla">FileZilla</h3>
-<div class="codehilite"><pre><span></span><span class="k">File</span><span class="o">-&gt;</span><span class="n">SiteManager</span><span class="w"></span>
-<span class="k">New</span><span class="w"> </span><span class="n">Site</span><span class="w"></span>
-<span class="ow">In</span><span class="w"> </span><span class="k">host</span><span class="w"></span>
-<span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">highlighted</span><span class="p">,</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">cluster</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
-<span class="ow">In</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">general</span><span class="w"> </span><span class="n">tab</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="n">side</span><span class="p">,</span><span class="w"> </span><span class="nl">put</span><span class="p">:</span><span class="w"></span>
-<span class="k">Host</span><span class="err">:</span><span class="w"> </span><span class="n">yourcluster</span><span class="p">.</span><span class="n">hpc</span><span class="p">.</span><span class="n">yale</span><span class="p">.</span><span class="n">edu</span><span class="w"></span>
-<span class="n">Change</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">SFTP</span><span class="w"></span>
-<span class="k">set</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">netid</span><span class="w"></span>
-<span class="k">set</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="ss">&quot;Key file&quot;</span><span class="w"></span>
-<span class="k">browse</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">putty</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">file</span><span class="w"></span>
-<span class="k">set</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="ss">&quot;Interactive&quot;</span><span class="w"></span>
-<span class="k">Go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="n">tab</span><span class="w"></span>
-<span class="k">check</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">simultaneous</span><span class="w"> </span><span class="n">connections</span><span class="w"></span>
-<span class="n">Make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">click</span><span class="w"> </span><span class="n">ok</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><span class="nv">File</span><span class="o">-&gt;</span><span class="nv">SiteManager</span>
+<span class="nv">New</span> <span class="nv">Site</span>
+<span class="nv">In</span> <span class="nv">host</span>
+<span class="ss">(</span><span class="nv">new</span> <span class="nv">site</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">highlighted</span>, <span class="nv">change</span> <span class="nv">to</span> <span class="nv">your</span> <span class="nv">cluster</span> <span class="nv">name</span><span class="ss">)</span>
+<span class="nv">In</span> <span class="nv">the</span> <span class="nv">general</span> <span class="nv">tab</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">right</span> <span class="nv">side</span>, <span class="nv">put</span>:
+<span class="nv">Host</span>: <span class="nv">yourcluster</span>.<span class="nv">hpc</span>.<span class="nv">yale</span>.<span class="nv">edu</span>
+<span class="nv">Change</span> <span class="nv">protocol</span> <span class="nv">to</span> <span class="nv">SFTP</span>
+<span class="nv">set</span> <span class="nv">user</span> <span class="nv">to</span> <span class="nv">your</span> <span class="nv">netid</span>
+<span class="nv">set</span> <span class="nv">login</span> <span class="nv">type</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">Key file</span><span class="s2">&quot;</span>
+<span class="nv">browse</span> <span class="nv">to</span> <span class="nv">and</span> <span class="nv">select</span> <span class="nv">your</span> <span class="nv">putty</span> <span class="nv">key</span> <span class="nv">file</span>
+<span class="nv">set</span> <span class="nv">login</span> <span class="nv">type</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">Interactive</span><span class="s2">&quot;</span>
+<span class="nv">Go</span> <span class="nv">to</span> <span class="nv">transfer</span> <span class="nv">settings</span> <span class="nv">tab</span>
+<span class="nv">check</span> <span class="nv">limit</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">simultaneous</span> <span class="nv">connections</span>
+<span class="nv">Make</span> <span class="nv">sure</span> <span class="nv">maximum</span> <span class="nv">is</span> <span class="mi">1</span>
+<span class="nv">click</span> <span class="nv">ok</span>
 
-<span class="n">Now</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">connect</span><span class="p">,</span><span class="w"></span>
-<span class="k">file</span><span class="o">-&gt;</span><span class="n">sitemanager</span><span class="w"></span>
-<span class="k">select</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">created</span><span class="w"></span>
-<span class="n">click</span><span class="w"> </span><span class="k">connect</span><span class="w"></span>
+<span class="nv">Now</span> <span class="nv">to</span> <span class="k">connect</span>,
+<span class="nv">file</span><span class="o">-&gt;</span><span class="nv">sitemanager</span>
+<span class="nv">select</span> <span class="nv">the</span> <span class="nv">site</span> <span class="nv">you</span> <span class="nv">created</span>
+<span class="nv">click</span> <span class="k">connect</span>
 </pre></div>
 
 
@@ -1444,7 +1444,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
