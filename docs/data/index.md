@@ -20,7 +20,7 @@ Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares ca
 * Archive (long term storage): $3.60/TB/month
 * Enhanced (higher performance): $33.87/TB/month
 
-For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=fc22e7c9dbbf7a802de17ecfbf961971&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
+For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). If you would like to request a share that is mounted on the clusters, **specify in your request that the share be mounted from the HPC clusters**. If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 
