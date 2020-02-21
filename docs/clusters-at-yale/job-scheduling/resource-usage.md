@@ -8,7 +8,7 @@ Making sure your jobs use the right amount of RAM and the right number of CPUs h
 
 If you launch a program by putting `/usr/bin/time` in front of it, `time` will watch your program and provide statistics about the resources it used. For example:
 
-```
+``` bash
 [be59@c01n01 ~]$ /usr/bin/time -v stress-ng --cpu 8 --timeout 10s
 stress-ng: info:  [32574] dispatching hogs: 8 cpu
 stress-ng: info:  [32574] successful run completed in 10.08s
@@ -77,6 +77,10 @@ Once you are on the compute node, run either `ps` or `top`.
 `top` runs interactively and shows you live usage statistics. You can press <kbd>u</kbd>, enter your netid, then <kbd>enter</kbd> to filter just your processes. For Memory usage, the number you are interested in is RES. In the case below, the YEPNEE.exe programs are each consuming ~600MB of memory and each fully utilizing one CPU. You can press <kbd>?</kbd> for help and <kbd>q</kbd> to quit.
 
 ![](/img/top.png)
+
+### ClusterShell
+
+For multi-node jobs `clush` can be very useful. Please see our guide on [how to set up and use ClusterShell](/clusters-at-yale/guides/clustershell/).
 
 ## Completed Jobs
 

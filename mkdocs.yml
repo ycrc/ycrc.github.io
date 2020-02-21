@@ -54,6 +54,7 @@ nav:
             - Software Guides:
                 - clusters-at-yale/guides/index.md
                 - clusters-at-yale/guides/cesm.md
+                - clusters-at-yale/guides/clustershell.md
                 - clusters-at-yale/guides/conda.md
                 - clusters-at-yale/guides/gaussian.md
                 - clusters-at-yale/guides/github_pages.md
