@@ -613,6 +613,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../guides/clustershell/" title="ClusterShell" class="md-nav__link">
+      ClusterShell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../guides/conda/" title="Conda" class="md-nav__link">
       Conda
     </a>
@@ -889,6 +901,13 @@
           <li class="md-nav__item">
   <a href="#top" title="top" class="md-nav__link">
     top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustershell" title="ClusterShell" class="md-nav__link">
+    ClusterShell
   </a>
   
 </li>
@@ -1338,6 +1357,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#clustershell" title="ClusterShell" class="md-nav__link">
+    ClusterShell
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1399,30 +1425,30 @@
 <p>Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> and the <a href="/clusters-at-yale/clusters">clusters page</a> (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.</p>
 <h2 id="future-jobs">Future Jobs</h2>
 <p>If you launch a program by putting <code>/usr/bin/time</code> in front of it, <code>time</code> will watch your program and provide statistics about the resources it used. For example:</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">be59@c01n01 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="nc">time</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">stress</span><span class="o">-</span><span class="n">ng</span><span class="w"> </span><span class="c1">--cpu 8 --timeout 10s</span>
-<span class="n">stress</span><span class="o">-</span><span class="nl">ng</span><span class="p">:</span><span class="w"> </span><span class="nl">info</span><span class="p">:</span><span class="w">  </span><span class="o">[</span><span class="n">32574</span><span class="o">]</span><span class="w"> </span><span class="n">dispatching</span><span class="w"> </span><span class="nl">hogs</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="n">cpu</span><span class="w"></span>
-<span class="n">stress</span><span class="o">-</span><span class="nl">ng</span><span class="p">:</span><span class="w"> </span><span class="nl">info</span><span class="p">:</span><span class="w">  </span><span class="o">[</span><span class="n">32574</span><span class="o">]</span><span class="w"> </span><span class="n">successful</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">completed</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">10.08</span><span class="n">s</span><span class="w"></span>
-<span class="w">    </span><span class="n">Command</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="nl">timed</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="k">User</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">80.22</span><span class="w"></span>
-<span class="w">    </span><span class="k">System</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">0.04</span><span class="w"></span>
-<span class="w">    </span><span class="k">Percent</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">CPU</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">job</span><span class="w"> </span><span class="nl">got</span><span class="p">:</span><span class="w"> </span><span class="mi">795</span><span class="o">%</span><span class="w"></span>
-<span class="w">    </span><span class="n">Elapsed</span><span class="w"> </span><span class="p">(</span><span class="n">wall</span><span class="w"> </span><span class="n">clock</span><span class="p">)</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="p">(</span><span class="nl">h</span><span class="p">:</span><span class="nl">mm</span><span class="p">:</span><span class="n">ss</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nl">m</span><span class="p">:</span><span class="n">ss</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="err">:</span><span class="mf">10.09</span><span class="w"></span>
-<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">shared</span><span class="w"> </span><span class="nc">text</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">unshared</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Maximum</span><span class="w"> </span><span class="n">resident</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">6328</span><span class="w"></span>
-<span class="w">    </span><span class="n">Average</span><span class="w"> </span><span class="n">resident</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="p">(</span><span class="n">kbytes</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Major</span><span class="w"> </span><span class="p">(</span><span class="n">requiring</span><span class="w"> </span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="p">)</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="nl">faults</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Minor</span><span class="w"> </span><span class="p">(</span><span class="n">reclaiming</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">frame</span><span class="p">)</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="nl">faults</span><span class="p">:</span><span class="w"> </span><span class="mi">30799</span><span class="w"></span>
-<span class="w">    </span><span class="n">Voluntary</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="nl">switches</span><span class="p">:</span><span class="w"> </span><span class="mi">1380</span><span class="w"></span>
-<span class="w">    </span><span class="n">Involuntary</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="nl">switches</span><span class="p">:</span><span class="w"> </span><span class="mi">68</span><span class="w"></span>
-<span class="w">    </span><span class="nl">Swaps</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="k">system</span><span class="w"> </span><span class="nl">inputs</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="k">File</span><span class="w"> </span><span class="k">system</span><span class="w"> </span><span class="nl">outputs</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Socket</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="nl">sent</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Socket</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="nl">received</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">Signals</span><span class="w"> </span><span class="nl">delivered</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><span class="o">[</span>be59@c01n01 ~<span class="o">]</span>$ /usr/bin/time -v stress-ng --cpu <span class="m">8</span> --timeout 10s
+stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> dispatching hogs: <span class="m">8</span> cpu
+stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> successful run completed in <span class="m">10</span>.08s
+    Command being timed: <span class="s2">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span>
+    User <span class="nb">time</span> <span class="o">(</span>seconds<span class="o">)</span>: <span class="m">80</span>.22
+    System <span class="nb">time</span> <span class="o">(</span>seconds<span class="o">)</span>: <span class="m">0</span>.04
+    Percent of CPU this job got: <span class="m">795</span>%
+    Elapsed <span class="o">(</span>wall clock<span class="o">)</span> <span class="nb">time</span> <span class="o">(</span>h:mm:ss or m:ss<span class="o">)</span>: <span class="m">0</span>:10.09
+    Average shared text size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">0</span>
+    Average unshared data size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">0</span>
+    Average stack size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">0</span>
+    Average total size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">0</span>
+    Maximum resident <span class="nb">set</span> size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">6328</span>
+    Average resident <span class="nb">set</span> size <span class="o">(</span>kbytes<span class="o">)</span>: <span class="m">0</span>
+    Major <span class="o">(</span>requiring I/O<span class="o">)</span> page faults: <span class="m">0</span>
+    Minor <span class="o">(</span>reclaiming a frame<span class="o">)</span> page faults: <span class="m">30799</span>
+    Voluntary context switches: <span class="m">1380</span>
+    Involuntary context switches: <span class="m">68</span>
+    Swaps: <span class="m">0</span>
+    File system inputs: <span class="m">0</span>
+    File system outputs: <span class="m">0</span>
+    Socket messages sent: <span class="m">0</span>
+    Socket messages received: <span class="m">0</span>
+    Signals delivered: <span class="m">0</span>
 </pre></div>
 
 
@@ -1458,6 +1484,8 @@
 <h3 id="top"><code>top</code></h3>
 <p><code>top</code> runs interactively and shows you live usage statistics. You can press <kbd>u</kbd>, enter your netid, then <kbd>enter</kbd> to filter just your processes. For Memory usage, the number you are interested in is RES. In the case below, the YEPNEE.exe programs are each consuming ~600MB of memory and each fully utilizing one CPU. You can press <kbd>?</kbd> for help and <kbd>q</kbd> to quit.</p>
 <p><img alt="" src="/img/top.png" /></p>
+<h3 id="clustershell">ClusterShell</h3>
+<p>For multi-node jobs <code>clush</code> can be very useful. Please see our guide on <a href="/clusters-at-yale/guides/clustershell/">how to set up and use ClusterShell</a>.</p>
 <h2 id="completed-jobs">Completed Jobs</h2>
 <p>Slurm records statistics for every job, including how much memory and CPU was used.</p>
 <h3 id="seff"><code>seff</code></h3>
