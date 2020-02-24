@@ -1,10 +1,8 @@
 # Serving Research Data Externally
 
-If you need to serve research data externally (outside of Yale), it can be a challenge, since most Yale servers have internal IP addresses that are not externally accessible.  A common example is hosting tracks for the UCSC Genome Browser, which requires loading data onto an http server that is publically accessible.
+You can use a static website to serve data publicly to collaborators or services that need to see the data via http. A common example of this is hosting tracks for the UCSC Genome Browser. 
 
-The best way we have found to do this is to use ITS's [spinup](http://spinup.internal.yale.edu) service.  Create a "static website", giving it an appropriate website name.  The static website is just an S3 bucket with a webserver and a public IP and hostname.  
+To set one up, first get an account on ITS's [Spinup](http://spinup.internal.yale.edu) service. After that, follow their [instructions on creating a static website](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/905969895/How+do+I+use+a+Spinup+static+website), giving it an appropriate website name. Then use an [S3 transfer tool](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/829292599/How+do+I+use+a+Spinup+S3+bucket) like AWS CLI, CrossFTP, or Cyberduck to transfer your files.
 
-Then, use any S3 tool to upload your files to the static website.  The FAQ on the spinup FAQ for S3 buckets lists a number of suggested upload tools and explains how to use them, including the AWS CLI, CrossFTP, and Cyberduck.  
-
-Note that there will be a modest cost for storing the data (a few cents per GB per month).
-
+!!! info
+    There will be a cost for storing the data (a few cents per GB per month), which you can use Yale charging instructions to pay for.
