@@ -165,7 +165,7 @@ All of these endpoints provide access to all files you normally have access to, 
 
 ### Google Drive Endpoints
 
-See our [Google Drive Documentation](/data/google-drive) for instructions for using Globus to transfer data to Eliapps Google Drive.
+See our [Google Drive Documentation](/data/google-drive) for instructions for using Globus to transfer data to EliApps Google Drive.
 
 ### Setup an Endpoint on Your Own Computer
 
