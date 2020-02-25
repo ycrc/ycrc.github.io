@@ -17,16 +17,7 @@ You can then load this environment for jupyter where we indicate below.
 
 ## Open OnDemand
 
-On [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam.md) we run a web portal to the clusters which can also run a jupyter notebook for you. You can access the jupyter app via [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new) or [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu/pun/sys/dashboard/batch_connect/sys/bc_ycrc_jupyter/session_contexts/new)
-
-### Job Setup
-
-In the job submission form there is a text area called "Environment Setup (drag text area to enlarge)". Here you must enter the commands that activate an environment with `jupyter` in it. We make a default available, but if you want to use any specialized software you should create a new conda environment and activate it here. For example, if you ran the command above, you would paste the following into the text box:
-
-``` bash
-module load miniconda
-source activate notebook_env
-```
+On [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam.md) we run a web portal to the clusters which can also run a jupyter notebook for you. Please check the [OOD Jupyter Notebook user guide](/clusters-at-yale/access/ood/#Jupyter-Notebooks) for more information.
 
 ## Traditional Method
 
