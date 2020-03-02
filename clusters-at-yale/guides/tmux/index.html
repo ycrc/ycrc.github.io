@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#tmux" tabindex="0" class="md-skip">
+      <a href="#tmux" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1326,17 +1326,17 @@
 <p><code>tmux</code> is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. <code>tmux</code> is a great way to save an interactive session between connections you make to the clusters. You can reconnect to the session from a workstation in your lab or from your laptop from home!</p>
 <h2 id="get-started">Get Started</h2>
 <p>To begin a <code>tmux</code> session named myproject, type</p>
-<div class="codehilite"><pre><span></span><code>tmux new -s myproject
-</code></pre></div>
+<div class="codehilite"><pre><span></span>tmux new -s myproject
+</pre></div>
 
 
 <p>You should see a bar across the bottom of your terminal window now that gives you some information about your session. If you are disconnected or detached from this session, anything you were doing will still be there waiting when you reattach</p>
 <p>The most important shortcut to remember is <kbd>Ctrl</kbd>+<kbd>b</kbd> (hold the ctrl or control key, then type "b"). This is how you signal to <code>tmux</code> that the following keystroke is meant for it and not the session you are working in. For example: if you want to gracefully detach from your session, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd>, then <kbd>d</kbd> for detach. To reattach to our sample <code>tmux</code> session after detatching, type:</p>
-<div class="codehilite"><pre><span></span><code>tmux attach -t myproject
+<div class="codehilite"><pre><span></span>tmux attach -t myproject
 <span class="c1">#If you are lazy and have only one session running,</span>
 <span class="c1">#This works too:</span>
 tmux a
-</code></pre></div>
+</pre></div>
 
 
 <p>Lines starting with a "#" denote a commented line, which aren't read as code</p>
@@ -1364,20 +1364,20 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
 <h3 id="windows-and-panes">Windows and Panes</h3>
 <p><code>tmux</code> allows you to create, toggle between and manipulate panes and windows in your session. A window is the whole screen that <code>tmux</code> displays to you. Panes are subdivisions in the curent window, where each runs an independent terminal. Especially at first, you probably won't need more than one pane at a time. Multiple windows can be created and run off-screen. Here is an example where this may be useful.</p>
 <p>Say you just submitted an interactive job that is running on a compute node inside your <code>tmux</code> session.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ tmux new -s analysis
+<div class="codehilite"><pre><span></span><span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ tmux new -s analysis
 <span class="c1"># I am in my tmux session now</span>
 <span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ srun --pty -p interactive bash
 <span class="o">[</span>be59@c23n08 ~<span class="o">]</span>$ ./my_fancy_analysis.sh
-</code></pre></div>
+</pre></div>
 
 
 <p>Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running <code>top</code> there. Split your window by typing:</p>
 <p><kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>%</kbd></p>
 <p><code>ssh</code> into the compute node you are working on, then run top to watch your work as it runs all from the same window.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># I&#39;m in a new pane now.</span>
+<div class="codehilite"><pre><span></span><span class="c1"># I&#39;m in a new pane now.</span>
 <span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ ssh c23n08
 <span class="o">[</span>be59@c23n08 ~<span class="o">]</span>$ top
-</code></pre></div>
+</pre></div>
 
 
 <p>Your view will look something like this:</p>
@@ -1385,7 +1385,6 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
 <p>To switch back and forth between panes, type <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>o</kbd></p>
                 
                   
-                
                 
               
               
@@ -1441,9 +1440,9 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1453,7 +1452,7 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

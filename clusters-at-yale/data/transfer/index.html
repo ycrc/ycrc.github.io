@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#transfer-data" tabindex="0" class="md-skip">
+      <a href="#transfer-data" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1518,8 +1518,8 @@
 <p>Transferring files can be done using several methods. The most common are described below.</p>
 <h2 id="data-transfer-nodes">Data Transfer Nodes</h2>
 <p>Each cluster (except for Milgram) has a dedicated "data transfer" node that is specially networked for high speed transfers both on and off-campus using the Yale Science Network. These transfer nodes are also the hosts of our <a href="#large-transfers-globus">Globus service</a>, which enables resilient transfers of large amounts of data. From the login node of a cluster, you can ssh to the transfer node:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">ssh transfer</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">ssh transfer</span>
+</pre></div>
 
 
 <p>If you are initiating a longer running transfer and are not using <a href="#large-transfers-globus">Globus</a>, you can initiate the transfer in a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session to protect against network interruptions.</p>
@@ -1554,38 +1554,38 @@
 <p>Linux and Apple macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a> to transfer files to/from a cluster. You will need the hostname of the cluster transfer node (see above) to transfer files.</p>
 <p>Note that you must have your ssh keys properly setup to use the commands outlined below. See the <a href="/clusters-at-yale/access">Cluster Access documentation</a> for more info.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
-<div class="codehilite"><pre><span></span><code><span class="n">scp</span><span class="w"> </span><span class="o">[</span><span class="n">from</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">to</span><span class="o">]</span><span class="w"></span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">scp</span><span class="w"> </span><span class="o">[</span><span class="n">from</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">to</span><span class="o">]</span><span class="w"></span>
+</pre></div>
 
 
 <p>The “from” portion can be a filename or a directory/folder. The “to” portion will contain your netid, the hostname of the cluster transfer node (or login node for Milgram), and the destination directory/folder.</p>
 <h3 id="transfer-a-file-from-your-computer-to-a-cluster">Transfer a File from Your Computer to a Cluster</h3>
 <p>Assuming the user’s netid is <code>ra359</code>, the following is run on your computer's local terminal.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">scp myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">scp myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
+</pre></div>
 
 
 <p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/fas/admins/ra359/test:</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">scp /home/xyz/myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">scp /home/xyz/myfile.txt ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
+</pre></div>
 
 
 <h3 id="transfer-a-directory-to-a-cluster">Transfer a Directory to a Cluster</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">scp -r mydirectory ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">scp -r mydirectory ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/test</span>
+</pre></div>
 
 
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h3 id="transfer-files-from-the-cluster-to-your-computer">Transfer Files from the Cluster to Your Computer</h3>
 <p>Assuming you would like the files copied to your current directory:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt .</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt .</span>
+</pre></div>
 
 
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt /path/myfolder</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">scp ra359@transfer-grace.hpc.yale.edu:/home/fas/admins/ra359/myfile.txt /path/myfolder</span>
+</pre></div>
 
 
 <h2 id="ftp-client">FTP Client</h2>
@@ -1603,14 +1603,14 @@ To specify the destination, simply replace the <code>.</code> with the full path
 <h2 id="object-storage-transfers">Object Storage Transfers</h2>
 <p>To move data to and from object stores such as AWS S3, or GCP cloud storage, we recommend using rclone. It is installed as a module on all of the clusters.  You can use to to copy files, sync directories, etc.  See <a href="http://rclone.org">http://rclone.org</a></p>
 <p>To begin, configure a connection by running</p>
-<div class="codehilite"><pre><span></span><code>rclone configure
-</code></pre></div>
+<div class="codehilite"><pre><span></span>rclone configure
+</pre></div>
 
 
 <p>You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can use that connection name to copy files:</p>
-<div class="codehilite"><pre><span></span><code>rclone copy localpath/myfile mys3:bucketname/
+<div class="codehilite"><pre><span></span>rclone copy localpath/myfile mys3:bucketname/
 rclone sync localpath/mydir mys3:bucketname/remotedir
-</code></pre></div>
+</pre></div>
 
 
 <p>We recommend that you protect your configurations with a password.  You'll see that as an option when you run rclone config.</p>
@@ -1688,7 +1688,6 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
                 
                   
                 
-                
               
               
                 
@@ -1743,9 +1742,9 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1755,7 +1754,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

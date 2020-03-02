@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#log-on-to-the-clusters" tabindex="0" class="md-skip">
+      <a href="#log-on-to-the-clusters" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1435,37 +1435,37 @@
 <h3 id="generate-your-key-pair-on-macos-and-linux">Generate Your Key Pair on macOS and Linux</h3>
 <p>To generate a new key pair, first open a terminal/xterm session. If you are on macOS, open Applications -&gt; Utilities -&gt; Terminal.</p>
 <p>Generate your public and private ssh keys. Type the following into the terminal window:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">ssh-keygen</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">ssh-keygen</span>
+</pre></div>
 
 
 <p>Your terminal should respond:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Generating public/private rsa key pair.</span>
+<div class="codehilite"><pre><span></span><span class="err">Generating public/private rsa key pair.</span>
 <span class="err">Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):</span>
-</code></pre></div>
+</pre></div>
 
 
 <p>Press Enter to accept the default value. Your terminal should respond:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Enter passphrase (empty for no passphrase):</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">Enter passphrase (empty for no passphrase):</span>
+</pre></div>
 
 
 <p>Choose a secure passphrase. Your passphrase will prevent access to your account in the event your private key is stolen. You will not see any characters appear on the screen as you type. The response will be:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Enter same passphrase again:</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">Enter same passphrase again:</span>
+</pre></div>
 
 
 <p>Enter the passphrase again. The key pair is generated and written to a directory called <code>.ssh</code> in your home directory. The public key is stored in <code>~/.ssh/id_rsa.pub</code>. If you forget your passphrase, it cannot be recovered. Instead, you will need to generate and upload a new SSH key pair.</p>
 <p>Next, upload your public SSH key on the cluster. Run the following command in a terminal:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">cat ~/.ssh/id_rsa.pub</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">cat ~/.ssh/id_rsa.pub</span>
+</pre></div>
 
 
 <p>Copy and paste the output to our <a href="http://gold.hpc.yale.internal/cgi-bin/sshkeys.py">SSH key uploader</a>.</p>
 <h3 id="connect-on-macos-and-linux">Connect on macOS and Linux</h3>
 <p>Once your key has been copied to the appropriate places on the clusters, you can log in with the command:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">ssh netid@clustername.hpc.yale.edu</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">ssh netid@clustername.hpc.yale.edu</span>
+</pre></div>
 
 
 <p>Check out our <a href="advanced-config">Advanced SSH Configuration</a> for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.</p>
@@ -1499,7 +1499,6 @@
 <p>In the future, your session should be saved in the sessions bar on the left in the main window.</p>
                 
                   
-                
                 
               
               
@@ -1555,9 +1554,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1567,7 +1566,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

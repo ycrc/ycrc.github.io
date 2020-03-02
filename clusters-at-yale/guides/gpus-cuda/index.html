@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gpus-and-cuda" tabindex="0" class="md-skip">
+      <a href="#gpus-and-cuda" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1436,13 +1436,13 @@
 <p>There are GPUs available for general use on <a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/farnam">Farnam</a>. See cluster pages for hardware and queue/partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
 <h2 id="requesting-gpu-nodes">Requesting GPU Nodes</h2>
 <p>To access the GPU nodes you must request them with slurm. Here is an example command to request a 2 hour interactive job for testing or developing code interactively:</p>
-<div class="codehilite"><pre><span></span><code>srun --pty -p gpu_devel -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
-</code></pre></div>
+<div class="codehilite"><pre><span></span>srun --pty -p gpu_devel -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
+</pre></div>
 
 
 <p>or, if the <code>gpu_devel</code> and <code>gpu</code> partitions are busy, try to scavenge some private GPUs:</p>
-<div class="codehilite"><pre><span></span><code>srun --pty -p scavenge_gpu -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
-</code></pre></div>
+<div class="codehilite"><pre><span></span>srun --pty -p scavenge_gpu -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
+</pre></div>
 
 
 <div class="admonition note">
@@ -1451,20 +1451,20 @@
 </div>
 <h3 id="specific-gpus">Specific GPUs</h3>
 <p>To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the <code>--gres</code> flag.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#SBATCH --gres=gpu:p100:1</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH --gres=gpu:p100:1</span>
+</pre></div>
 
 
 <p>Some codes require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the <code>doubleprecision</code> feature (e.g. K80, P100 or V100).</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#SBATCH -C doubleprecision</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH -C doubleprecision</span>
+</pre></div>
 
 
 <p>Conversely, you can use the <code>singleprecision</code> feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).</p>
 <h2 id="monitor-activity-and-drivers">Monitor Activity and Drivers</h2>
 <p>The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on <a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">this nvidia developer site</a>.</p>
 <p>You can check the available GPUs, their current usage, installed version of the nvidia drivers, and more with the command <a href="https://developer.nvidia.com/nvidia-system-management-interface"><code>nvidia-smi</code></a>. Either in an interactive job or after connecting to a node running your job with <code>ssh</code>,  <code>nvidia-smi</code> output should look something like this:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span>user@gpu01 ~<span class="o">]</span>$ nvidia-smi
+<div class="codehilite"><pre><span></span><span class="o">[</span>user@gpu01 ~<span class="o">]</span>$ nvidia-smi
 +-----------------------------------------------------------------------------+
 <span class="p">|</span> NVIDIA-SMI <span class="m">418</span>.87.00    Driver Version: <span class="m">418</span>.87.00    CUDA Version: <span class="m">10</span>.1     <span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
@@ -1481,16 +1481,16 @@
 <span class="p">|</span><span class="o">=============================================================================</span><span class="p">|</span>
 <span class="p">|</span>  No running processes found                                                 <span class="p">|</span>
 +-----------------------------------------------------------------------------+
-</code></pre></div>
+</pre></div>
 
 
 <p>Here we see that the node <code>gpu01</code> is running driver version 418.87.00 and CUDA version 10.1. There are no processes using the GPU allocated to this job.</p>
 <h2 id="software">Software</h2>
 <h3 id="cuda-and-cudnn-modules">CUDA and cuDNN modules</h3>
 <p>We have seen varying degrees of success in using the runtime CUDA and cuDNN libraries supplied by various conda channels. If that works for you there may be no need to load additional modules. If not, find the corresponding CUDA and cuDNN combination for your desired environment and load or request those modules. To list all the CUDA and cuDNN modules available:</p>
-<div class="codehilite"><pre><span></span><code>module avail cuda/
+<div class="codehilite"><pre><span></span>module avail cuda/
 module avail cudnn/
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="tensorflow">Tensorflow</h3>
@@ -1498,43 +1498,42 @@ module avail cudnn/
 <h3 id="pytorch">PyTorch</h3>
 <p>As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. If not make sure you have the version of cuda referenced on the PyTorch site <a href="https://pytorch.org/get-started/locally/">in their install instructions</a>. They also provide <a href="https://pytorch.org/get-started/previous-versions/">instructions on installing previous versions</a> compatible with older versions of CUDA.</p>
 <h3 id="create-an-example-tensorflow-gpu-environment">Create an Example Tensorflow-GPU Environment</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># example modules for tensorflow 1.12</span>
+<div class="codehilite"><pre><span></span><span class="c1"># example modules for tensorflow 1.12</span>
 module purge
 module load cuDNN/7.1.4-CUDA-9.0.176
 module load miniconda
-</code></pre></div>
+</pre></div>
 
 
 <p>Then save your modules as a collection.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># save module environment</span>
+<div class="codehilite"><pre><span></span><span class="c1"># save module environment</span>
 module save cuda90
-</code></pre></div>
+</pre></div>
 
 
 <p>Now create a virtual environment for your GPU enabled code. For more details on Conda environments, see our <a href="/clusters-at-yale/guides/conda">Conda documentation</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># create conda environment for deep learning/neural networks</span>
+<div class="codehilite"><pre><span></span><span class="c1"># create conda environment for deep learning/neural networks</span>
 conda create -y -n tensorflow112 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6 anaconda
 <span class="nb">source</span> activate tensorflow112
 
 <span class="c1">#install libraries</span>
 pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span>.12
-</code></pre></div>
+</pre></div>
 
 
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To re-enter your environment you only need the following:</p>
-<div class="codehilite"><pre><span></span><code>module restore cuda90
+<div class="codehilite"><pre><span></span>module restore cuda90
 <span class="nb">source</span> activate tensorflow112
-</code></pre></div>
+</pre></div>
 
 
 <h2 id="compile-c-or-cpp-files-with-cuda-code">Compile <code>.c</code> or <code>.cpp</code> Files with CUDA code</h2>
 <p>By default, <code>nvcc</code> expects that host code is in files with a <code>.c</code> or <code>.cpp</code> extension, and device code is in files with a <code>.cu</code> extension. When you mix device code in a <code>.c</code> or <code>.cpp</code> file with host code, the device code will not be recoganized by <code>nvcc</code> unless you add this flag: <code>-x cu</code>.  </p>
-<div class="codehilite"><pre><span></span><code>nvcc -x cu mycuda.cpp -o mycuda.exe
-</code></pre></div>
+<div class="codehilite"><pre><span></span>nvcc -x cu mycuda.cpp -o mycuda.exe
+</pre></div>
                 
                   
-                
                 
               
               
@@ -1590,9 +1589,9 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1602,7 +1601,7 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
