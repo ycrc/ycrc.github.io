@@ -1,6 +1,6 @@
-# Conda
+# Python with Conda
 
-For researchers who have Python or R package requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using [Anaconda](https://www.anaconda.com/what-is-anaconda/). Using Anaconda's [Conda](https://conda.io/projects/conda/en/latest/index.html) package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python or R libraries and applications for different projects.
+For researchers who have Python (or R package--see bottom) requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using [Anaconda](https://www.anaconda.com/what-is-anaconda/). Using Anaconda's [Conda](https://conda.io/projects/conda/en/latest/index.html) package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python libraries and applications for different projects.
 
 Many other software applications have also started to use Conda as a package manager. It has become a popular choice for managing pipelines that involve several tools, especially with multiple languages.
 
@@ -22,23 +22,7 @@ You can save this to your default module collection by using `module save`. See 
 
 ### Default Install Locations
 
-By default on [Grace](/clusters-at-yale/clusters/grace), [Farnam](/clusters-at-yale/clusters/farnam) and [Ruddle](/clusters-at-yale/clusters/ruddle) we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for cached packages and environments.
-
-To match this behavior on [Milgram](/clusters-at-yale/clusters/milgram):
-
-``` bash
-echo "export CONDA_ENVS_PATH=~/project/conda_envs:$CONDA_ENVS_PATH" >> ~/.bashrc
-echo "export CONDA_PKGS_DIRS=~/project/conda_pkgs:$CONDA_PKGS_DIRS" >> ~/.bashrc
-source ~/.bashrc
-```
-
-To revert to using the default locations:
-
-```bash
-echo "export CONDA_ENVS_PATH=~/.conda/envs​:$CONDA_ENVS_PATH​" >> ~/.bashrc
-echo "export CONDA_PKGS_DIRS=~/.conda/pkgs​:$CONDA_PKGS_DIRS​" >> ~/.bashrc
-source ~/.bashrc
-```
+By default on all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
 
 ### Create a `conda` Environment
 
@@ -59,12 +43,6 @@ If you want a good starting point for interactive development of scientific Pyth
 
 ``` bash
 conda create -n py37_dev python=3.7 numpy scipy pandas matplotlib ipython jupyter
-```
-
-For R:
-
-```bash
-conda create -n r_env r-essentials r-base
 ```
 
 ### Conda Channels
@@ -98,7 +76,7 @@ source activate env_name
 
 #### Interactive
 
-Your conda environments will **not** follow you into job allocations, so make sure to activate them after your [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs) begins.
+Your conda environments will **not** follow you into job allocations. Make sure to activate them after your [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs) begins.
 
 #### In a Job Script
 
@@ -128,29 +106,19 @@ You can search [Anaconda Cloud](https://anaconda.org/) for any packages you woul
 conda install numpy
 ```
 
-#### R
-
-All R packages are prepended with `r-`.
-
-```
-conda install r-ggplot2
-```
-
-A list of officially supported R packages can be found [here](https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/), but many additional packages are also available (e.g. via the `conda-forge` channel) and can be found using search on [Anaconda Cloud](https://anaconda.org/).
-
 ## Troubleshoot
 
 ### "Permission Denied"
 
-If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment or activated an existing one first.
+If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment and activated it or activated an existing one first.
 
 ### "-bash: activate: No such file or directory"
 
-If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the appropriate module and rerunning your `source activate env_name` command.
+If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the `minconda` module and rerunning your `source activate env_name` command.
 
 ### "could not find environment:"
 
-This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the Miniconda module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:
+This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the `miniconda` module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:
 
 ```
 conda info --envs
@@ -181,3 +149,21 @@ conda env export > env_name_environment.yml
 # on another machine or account, run
 conda env create -f env_name_environment.yml
 ```
+
+## Conda for R
+
+Conda can also be used under certain circumstances to install and manage R packages. All R packages are prepended with `r-`.
+
+Create new environment:
+
+```bash
+conda create -n r_env r-essentials r-base
+```
+
+Install additional packages:
+
+```bash
+conda install r-ggplot2
+```
+
+A list of officially supported R packages can be found [here](https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/), but many additional packages are also available (e.g. via the `conda-forge` channel) and can be found using search on [Anaconda Cloud](https://anaconda.org/).
