@@ -38,7 +38,7 @@
     
     
       
-        <title>Conda - Yale Center for Research Computing</title>
+        <title>Python with Conda - Yale Center for Research Computing</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#conda" tabindex="1" class="md-skip">
+      <a href="#python-with-conda" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -164,7 +164,7 @@
                 </a>
               </span>
               <span class="md-header-nav__topic">
-                Conda
+                Python with Conda
               </span>
             
           
@@ -636,11 +636,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Conda
+        Python with Conda
       </label>
     
-    <a href="./" title="Conda" class="md-nav__link md-nav__link--active">
-      Conda
+    <a href="./" title="Python with Conda" class="md-nav__link md-nav__link--active">
+      Python with Conda
     </a>
     
       
@@ -738,13 +738,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -820,6 +813,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-for-r" class="md-nav__link">
+    Conda for R
+  </a>
   
 </li>
       
@@ -1506,13 +1506,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1591,6 +1584,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda-for-r" class="md-nav__link">
+    Conda for R
+  </a>
+  
+</li>
+      
       
       
       
@@ -1608,8 +1608,8 @@
               
                 
                 
-                <h1 id="conda">Conda</h1>
-<p>For researchers who have Python or R package requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a>. Using Anaconda's <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python or R libraries and applications for different projects.</p>
+                <h1 id="python-with-conda">Python with Conda</h1>
+<p>For researchers who have Python (or R package--see bottom) requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a>. Using Anaconda's <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python libraries and applications for different projects.</p>
 <p>Many other software applications have also started to use Conda as a package manager. It has become a popular choice for managing pipelines that involve several tools, especially with multiple languages.</p>
 <h2 id="the-miniconda-module">The Miniconda Module</h2>
 <p>For your convenience, we provide a relatively recent version of <a href="https://conda.io/miniconda.html">Miniconda</a> (a minimal set of Anaconda libraries) as a module. It serves to bootstrap your personal environments. By using this module, you do not need to download your own copy of Conda, which will prevent unnecessary file and storage usage in your directories.</p>
@@ -1622,21 +1622,7 @@
 
 <p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/clusters-at-yale/applications/modules">module documentation</a> for more details.</p>
 <h3 id="default-install-locations">Default Install Locations</h3>
-<p>By default on <a href="/clusters-at-yale/clusters/grace">Grace</a>, <a href="/clusters-at-yale/clusters/farnam">Farnam</a> and <a href="/clusters-at-yale/clusters/ruddle">Ruddle</a> we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for cached packages and environments.</p>
-<p>To match this behavior on <a href="/clusters-at-yale/clusters/milgram">Milgram</a>:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export CONDA_ENVS_PATH=~/project/conda_envs:</span><span class="nv">$CONDA_ENVS_PATH</span><span class="s2">&quot;</span> &gt;&gt; ~/.bashrc
-<span class="nb">echo</span> <span class="s2">&quot;export CONDA_PKGS_DIRS=~/project/conda_pkgs:</span><span class="nv">$CONDA_PKGS_DIRS</span><span class="s2">&quot;</span> &gt;&gt; ~/.bashrc
-<span class="nb">source</span> ~/.bashrc
-</pre></div>
-
-
-<p>To revert to using the default locations:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export CONDA_ENVS_PATH=~/.conda/envs​:</span><span class="nv">$CONDA_ENVS_PATH</span><span class="s2">​&quot;</span> &gt;&gt; ~/.bashrc
-<span class="nb">echo</span> <span class="s2">&quot;export CONDA_PKGS_DIRS=~/.conda/pkgs​:</span><span class="nv">$CONDA_PKGS_DIRS</span><span class="s2">​&quot;</span> &gt;&gt; ~/.bashrc
-<span class="nb">source</span> ~/.bashrc
-</pre></div>
-
-
+<p>By default on all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
 <p>To create an environment (saved to the first location in <code>$CONDA_ENVS_PATH</code> or to <code>~/.conda/envs</code>) use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. You should give your environments names that are meaningful to you, so you can more easily keep track of which serves which project or purpose. You can also use environments manage groups of packages that have conflicting prerequisites.</p>
 <p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable for Python, we also recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
@@ -1651,11 +1637,6 @@
 
 <p>If you want a good starting point for interactive development of scientific Python scripts:</p>
 <div class="codehilite"><pre><span></span>conda create -n py37_dev <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 numpy scipy pandas matplotlib ipython jupyter
-</pre></div>
-
-
-<p>For R:</p>
-<div class="codehilite"><pre><span></span>conda create -n r_env r-essentials r-base
 </pre></div>
 
 
@@ -1683,7 +1664,7 @@
 <p>We do not recommend putting <code>source activate</code> commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling <code>source deactivate</code> before rerunning <code>source activate env_name</code>.</p>
 </div>
 <h4 id="interactive">Interactive</h4>
-<p>Your conda environments will <strong>not</strong> follow you into job allocations, so make sure to activate them after your <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> begins.</p>
+<p>Your conda environments will <strong>not</strong> follow you into job allocations. Make sure to activate them after your <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> begins.</p>
 <h4 id="in-a-job-script">In a Job Script</h4>
 <p>To make sure that you are running in your project environment in a submission script, make sure to include the following lines in your submission script before running any other commands or scripts (but after your <a href="/clusters-at-yale/job-scheduling#directives">Slurm directives</a>):</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -1707,20 +1688,13 @@ python analyses.py
 </pre></div>
 
 
-<h4 id="r">R</h4>
-<p>All R packages are prepended with <code>r-</code>.</p>
-<div class="codehilite"><pre><span></span><span class="err">conda install r-ggplot2</span>
-</pre></div>
-
-
-<p>A list of officially supported R packages can be found <a href="https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/">here</a>, but many additional packages are also available (e.g. via the <code>conda-forge</code> channel) and can be found using search on <a href="https://anaconda.org/">Anaconda Cloud</a>.</p>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="permission-denied">"Permission Denied"</h3>
-<p>If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment or activated an existing one first.</p>
+<p>If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment and activated it or activated an existing one first.</p>
 <h3 id="-bash-activate-no-such-file-or-directory">"-bash: activate: No such file or directory"</h3>
-<p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the appropriate module and rerunning your <code>source activate env_name</code> command.</p>
+<p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the <code>minconda</code> module and rerunning your <code>source activate env_name</code> command.</p>
 <h3 id="could-not-find-environment">"could not find environment:"</h3>
-<p>This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the Miniconda module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
+<p>This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the <code>miniconda</code> module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
 <div class="codehilite"><pre><span></span><span class="err">conda info --envs</span>
 </pre></div>
 
@@ -1744,6 +1718,21 @@ conda env <span class="nb">export</span> &gt; env_name_environment.yml
 <span class="c1"># on another machine or account, run</span>
 conda env create -f env_name_environment.yml
 </pre></div>
+
+
+<h2 id="conda-for-r">Conda for R</h2>
+<p>Conda can also be used under certain circumstances to install and manage R packages. All R packages are prepended with <code>r-</code>.</p>
+<p>Create new environment:</p>
+<div class="codehilite"><pre><span></span>conda create -n r_env r-essentials r-base
+</pre></div>
+
+
+<p>Install additional packages:</p>
+<div class="codehilite"><pre><span></span>conda install r-ggplot2
+</pre></div>
+
+
+<p>A list of officially supported R packages can be found <a href="https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/">here</a>, but many additional packages are also available (e.g. via the <code>conda-forge</code> channel) and can be found using search on <a href="https://anaconda.org/">Anaconda Cloud</a>.</p>
                 
                   
                 
