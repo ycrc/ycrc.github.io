@@ -31,7 +31,7 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 
 To submit requests, concerns or questions via email please send to [hpc@yale.edu](mailto:hpc@yale.edu) and your communication will be logged directly with our system. An automated response will be sent back with a tracking number. Replies to your communication will be addressed from YCRC Support and will include the tracking number for reference. Any additional communication, as either replies from you or initiated by us, will be tracked in the system and can easily be referenced by the tracking number.
 
-### Q+A Platform
+### Q&A Platform
 
 The YCRC recently joined a Q&A platform at [askcyberinfrastructure.org](http://ask.cyberinfrastructure.org). Feel free to post questions about the clusters there and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
 
