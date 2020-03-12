@@ -33,7 +33,7 @@ To submit requests, concerns or questions via email please send to [hpc@yale.edu
 
 ### Q+A Platform
 
-The YCRC recently joined a Q&A platform at [askcyberinfrastructure.org](http://askcyberinfrastructure.org). Feel free to post questions about the clusters there and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [askcyberinfrastructure.org/c/yale](http://askcyberinfrastructure.org/c/yale).
+The YCRC recently joined a Q&A platform at [askcyberinfrastructure.org](http://ask.cyberinfrastructure.org). Feel free to post questions about the clusters there and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [askcyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
 
 ### Web Interface
 
