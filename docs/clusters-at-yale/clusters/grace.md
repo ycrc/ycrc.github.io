@@ -65,7 +65,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | bigmem       |                | CPUs: 40, RAM: 1500G | 1h/1d                    | E7-4820_v4 1507G (2), 6240 1506G (2)                                                                |
 | gpu          |                | GPUs: 24             | 1h/1d                    | E5-2660_v3 k80:4 (5), E5-2660_v4 p100:1 (6), 6136 v100:2 (1), 6240 v100:4 (5), 6240 rtx2080ti:4 (5) |
 | gpu_devel    |                | CPUs: 10             | 1h/4h                    | E5-2660_v3 k80:4 (1)                                                                                |
-| mpi**        |                | Nodes: 32            | 1h/1d                    | 6136 (37), 6136 (76)                                                                                |
+| mpi**        | Nodes: 48      | Nodes: 32            | 1h/1d                    | 6136 (113)                                                                                          |
 | scavenge     |                | CPUs: 10000          | 1h/1d                    | all                                                                                                 |
 | scavenge_gpu |                | GPUs: 30             | 1h/1d                    | all with GPUs (see Nodes table)                                                                     |
 
