@@ -11,6 +11,11 @@ To best serve the research community, we hold office hours and are also availabl
 
 ### In Person
 
+!!! warning
+    Consistent with University guidance in response to COVID-19, the office hours will be held remotely, and the building will be locked.
+
+    Research support staff will be available online during regular business hours (Monday - Friday, 9:00 am to 5:00 pm), however, we ask that you either contact a staff member individually via email to set up a virtual appointment, or email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) with details about your request and we will have one of our staff members reach out to you.
+
 The YCRC is located on the second floor of [160 Saint Ronan Street](https://research.computing.yale.edu/about/location). Visitor parking is available upon request. There are also [Red, Orange, Blue and Green shuttle stops](https://yaleshuttle.doublemap.com/map) within a block of our center.
 
 |Specialist<img width=100/>|Day|Hours<img width=70/>|Office|Areas of Focus|
