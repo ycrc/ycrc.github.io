@@ -16,6 +16,10 @@ theme:
     feature:
         tabs: true
 
+plugins:
+  - search
+  - git-revision-date-localized
+
 extra_css:
     - 'stylesheets/extra.css'
 
