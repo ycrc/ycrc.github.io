@@ -1,5 +1,5 @@
 !!! attention "COVID-19/SARS-CoV-2 Research"
-    If you doing computational research related to COVID-19/SARS-CoV-2 on an HPC cluster and experience any long wait times for jobs to run, [please let us know](mailto:hpc@yale.edu?subject=COVID-19%20Research).
+    If you doing computational research related to COVID-19/SARS-CoV-2 on an HPC cluster and experience any long wait times for jobs to run, [please let us know](mailto:hpc@yale.edu).
 
 # Introduction
 
