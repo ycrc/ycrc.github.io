@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#common-job-failures" tabindex="1" class="md-skip">
+      <a href="#common-job-failures" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -321,8 +321,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../.." title="Index" class="md-nav__link">
+      Index
     </a>
   </li>
 
@@ -1330,9 +1330,9 @@ Here we will outline some of these common failure modes and detail steps to corr
 <h2 id="running-out-of-memory">Running out of memory</h2>
 <p>Jobs can often fail due to an insufficient amount of memory being requested.
 Depending on the job, this failure might present in a SLURM error:</p>
-<div class="codehilite"><pre><span></span><span class="n">slurmstepd</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Detected</span> <span class="mi">1</span> <span class="n">oom</span><span class="o">-</span><span class="n">kill</span> <span class="n">event</span><span class="o">(</span><span class="n">s</span><span class="o">).</span>
+<div class="codehilite"><pre><span></span><code><span class="n">slurmstepd</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Detected</span> <span class="mi">1</span> <span class="n">oom</span><span class="o">-</span><span class="n">kill</span> <span class="n">event</span><span class="o">(</span><span class="n">s</span><span class="o">).</span>
 <span class="n">Some</span> <span class="n">of</span> <span class="n">your</span> <span class="n">processes</span> <span class="n">may</span> <span class="n">have</span> <span class="n">been</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">cgroup</span> <span class="n">out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">memory</span> <span class="n">handler</span><span class="o">.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>This is stating that SLRUM detected the job hitting the maximum requested memory and then the job was killed.</p>
@@ -1341,13 +1341,13 @@ This error means that the program is attempting to access memory that it does no
 <p>These errors can be fixed in two ways.
 First is to increase the amount of memory that is requested from SLURM.
 This can be done in an <code>sbatch</code> script:</p>
-<div class="codehilite"><pre><span></span><span class="err">#SBATCH --mem-per-cpu=10G</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">#SBATCH --mem-per-cpu=10G</span>
+</code></pre></div>
 
 
 <p>or on the command-line using <code>srun</code>:</p>
-<div class="codehilite"><pre><span></span><span class="err">srun --pty -p interactive --mem-per-cpus=10G</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">srun --pty -p interactive --mem-per-cpus=10G</span>
+</code></pre></div>
 
 
 <p>Alternatively, the code can be inspected to see if the program can reduce the amount of memory that is being used.
@@ -1359,7 +1359,7 @@ When a group or user reaches the quota, files cannot be created.
 Additionally, existing files will not be able to be written to.
 This will frequently kill jobs that need to write output or log files.</p>
 <p>To inspect your quota, we have developed a tool called <code>getquota</code>:</p>
-<div class="codehilite"><pre><span></span>$ getquota
+<div class="codehilite"><pre><span></span><code>$ getquota
 This script shows information about your quotas on the current gpfs filesystem.
 If you plan to poll this sort of information extensively, please contact us
 <span class="k">for</span> <span class="nb">help</span> at hpc@yale.edu
@@ -1387,7 +1387,7 @@ Fileset       Type    Usage <span class="o">(</span>GB<span class="o">)</span>  
 home.grace    USR               <span class="m">39</span>         <span class="m">100</span>       <span class="m">190</span>,055       <span class="m">200</span>,000 Yes        No
 project       GRP              <span class="m">707</span>        <span class="m">6144</span>     <span class="m">1</span>,611,981     <span class="m">5</span>,000,000 No         No
 scratch60     GRP             <span class="m">4054</span>       <span class="m">20480</span>       <span class="m">987</span>,336     <span class="m">5</span>,000,000 No         <span class="m">60</span> days
-</pre></div>
+</code></pre></div>
 
 
 <p>There are different quotas for <code>$HOME</code>, <code>$PROJECT</code>, and <code>$SCRATCH60</code>.
@@ -1400,7 +1400,7 @@ If your home-space is at max capacity, please investigate whether some files can
 These are collections of software tools that are all built using the same compilers to ensure that they work properly together.
 If modules from different toolchains are loaded at the same time, conflicts can arise that lead to jobs not running successfully.</p>
 <p>A sign that incompatible modules are being loaded is a print-out highlighting modules being 'reloaded':</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">tl397@grace2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">STAR</span><span class="o">/</span><span class="mf">2.6.0</span><span class="n">c</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2018</span><span class="n">a</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">tl397@grace2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">STAR</span><span class="o">/</span><span class="mf">2.6.0</span><span class="n">c</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2018</span><span class="n">a</span><span class="w"></span>
 <span class="o">[</span><span class="n">tl397@grace2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">TopHat</span><span class="o">/</span><span class="mf">2.1.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
 
 <span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">reloaded</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="nl">change</span><span class="p">:</span><span class="w"></span>
@@ -1416,7 +1416,7 @@ If modules from different toolchains are loaded at the same time, conflicts can 
 <span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">hwloc</span><span class="o">/</span><span class="mf">1.11.8</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">hwloc</span><span class="o">/</span><span class="mf">1.11.3</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
 <span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="n">numactl</span><span class="o">/</span><span class="mf">2.0.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">numactl</span><span class="o">/</span><span class="mf">2.0.11</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
 <span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="n">zlib</span><span class="o">/</span><span class="mf">1.2.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">zlib</span><span class="o">/</span><span class="mf">1.2.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">5.4.0</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Here we first loaded a tool from the <code>foss-2018a</code> toolchain, but then loaded a module from the incompatible <code>foss-2016b</code> toolchain.</p>
@@ -1428,9 +1428,9 @@ This is achieved by setting environmental variables that point to the <code>cond
 However, when moving from the login node to a compute node through SLURM, these paths can get messed up.
 This can lead to <code>python</code> not locating packages that are installed within an environment.</p>
 <p>The <code>which</code> command can be used to identify which python executable is being located:</p>
-<div class="codehilite"><pre><span></span>$ which python
+<div class="codehilite"><pre><span></span><code>$ which python
 /gpfs/loomis/apps/avx/software/miniconda/4.7.10/bin/python
-</pre></div>
+</code></pre></div>
 
 
 <p>If this doesn't point to the conda environment,  you may need to source the environment again.</p>
@@ -1438,6 +1438,7 @@ This can lead to <code>python</code> not locating packages that are installed wi
 Instead, wait until on a compute node to activate the environment or include the <code>source activate my_env</code> statement in the SBATCH submission script.</p>
                 
                   
+                
                 
               
               
@@ -1493,9 +1494,9 @@ Instead, wait until on a compute node to activate the environment or include the
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1505,9 +1506,9 @@ Instead, wait until on a compute node to activate the environment or include the
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       

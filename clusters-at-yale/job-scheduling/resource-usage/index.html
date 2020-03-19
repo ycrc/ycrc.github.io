@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#monitor-cpu-and-memory" tabindex="1" class="md-skip">
+      <a href="#monitor-cpu-and-memory" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -321,8 +321,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Introduction" class="md-nav__link">
-      Introduction
+    <a href="../../.." title="Index" class="md-nav__link">
+      Index
     </a>
   </li>
 
@@ -1437,7 +1437,7 @@
 <p>Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> and the <a href="/clusters-at-yale/clusters">clusters page</a> (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.</p>
 <h2 id="future-jobs">Future Jobs</h2>
 <p>If you launch a program by putting <code>/usr/bin/time</code> in front of it, <code>time</code> will watch your program and provide statistics about the resources it used. For example:</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>be59@c01n01 ~<span class="o">]</span>$ /usr/bin/time -v stress-ng --cpu <span class="m">8</span> --timeout 10s
+<div class="codehilite"><pre><span></span><code><span class="o">[</span>be59@c01n01 ~<span class="o">]</span>$ /usr/bin/time -v stress-ng --cpu <span class="m">8</span> --timeout 10s
 stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> dispatching hogs: <span class="m">8</span> cpu
 stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> successful run completed in <span class="m">10</span>.08s
     Command being timed: <span class="s2">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span>
@@ -1461,35 +1461,35 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
     Socket messages sent: <span class="m">0</span>
     Socket messages received: <span class="m">0</span>
     Signals delivered: <span class="m">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>To know how much RAM your job used (and what jobs like it will need in the future), look at the "Maximum resident set size"</p>
 <h2 id="running-jobs">Running Jobs</h2>
 <p>If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should <code>ssh</code> to, run:</p>
-<div class="codehilite"><pre><span></span><span class="err">[be59@farnam1 ~]$ squeue -u$USER</span>
+<div class="codehilite"><pre><span></span><code><span class="err">[be59@farnam1 ~]$ squeue -u$USER</span>
 <span class="err">             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)</span>
 <span class="err">          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Then use ssh to connect to a node your job is running on from the <code>NODELIST</code> column:</p>
-<div class="codehilite"><pre><span></span><span class="err">[be59@farnam1 ~]$ ssh c13n03</span>
+<div class="codehilite"><pre><span></span><code><span class="err">[be59@farnam1 ~]$ ssh c13n03</span>
 <span class="err">[be59@c13n03 ~]$</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Once you are on the compute node, run either <code>ps</code> or <code>top</code>.</p>
 <h3 id="ps"><code>ps</code></h3>
 <p><code>ps</code> will give you instantaneous usage every time you run it. Here is some sample <code>ps</code> output:</p>
-<div class="codehilite"><pre><span></span><span class="err">[be59@bigmem01 ~]$  ps -u$USER -o %cpu,rss,args</span>
-<span class="err">%CPU   RSS COMMAND</span>
-<span class="err">92.6 79446140 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask</span>
-<span class="err">94.5 80758040 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask</span>
-<span class="err">92.6 79676460 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask</span>
-<span class="err">92.5 81243364 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask</span>
-<span class="err">93.8 80799668 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">be59</span><span class="p">@</span><span class="n">bigmem01</span> <span class="o">~</span><span class="p">]</span>$  <span class="n">ps</span> <span class="o">-</span><span class="n">u</span>$<span class="n">USER</span> <span class="o">-</span><span class="n">o</span> <span class="c">%cpu,rss,args</span>
+<span class="c">%CPU   RSS COMMAND</span>
+<span class="mf">92.6</span> <span class="mi">79446140</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+<span class="mf">94.5</span> <span class="mi">80758040</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+<span class="mf">92.6</span> <span class="mi">79676460</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+<span class="mf">92.5</span> <span class="mi">81243364</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+<span class="mf">93.8</span> <span class="mi">80799668</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+</code></pre></div>
 
 
 <p><code>ps</code> reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.</p>
@@ -1502,7 +1502,7 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 <p>Slurm records statistics for every job, including how much memory and CPU was used.</p>
 <h3 id="seff"><code>seff</code></h3>
 <p>After the job completes, you can run <code>seff &lt;jobid&gt;</code> to get some useful information about your job, including the memory used and what percent of your allocated memory that amounts to.</p>
-<div class="codehilite"><pre><span></span><span class="err">[rdb9@farnam1 ~]$ seff 21294645</span>
+<div class="codehilite"><pre><span></span><code><span class="err">[rdb9@farnam1 ~]$ seff 21294645</span>
 <span class="err">Job ID: 21294645</span>
 <span class="c">Cluster: farnam</span>
 <span class="err">User/Group: rdb9/lsprog</span>
@@ -1513,14 +1513,14 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 <span class="err">Job Wall-clock time: 01:33:23</span>
 <span class="err">Memory Utilized: 446.20 MB</span>
 <span class="err">Memory Efficiency: 8.71% of 5.00 GB</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="seff-array"><code>seff-array</code></h3>
 <p>For job arrays (see <a href="/clusters-at-yale/job-scheduling/dsq">here</a> for details) it is helpful to 
 look at statistics for how resources are used by each element of the array.
 The <code>seff-array</code> tool takes the job ID of the array and then calculates the distribution and average CPU and memory usage:</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">tl397@grace1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">seff</span><span class="o">-</span><span class="k">array</span><span class="w"> </span><span class="mi">43283382</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">tl397@grace1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">seff</span><span class="o">-</span><span class="k">array</span><span class="w"> </span><span class="mi">43283382</span><span class="w"></span>
 <span class="o">==========</span><span class="w"> </span><span class="nf">Max</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">Usage</span><span class="w"> </span><span class="o">==========</span><span class="w"></span>
 <span class="err">#</span><span class="w"> </span><span class="n">NumSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span><span class="w"> </span><span class="nf">Min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">896.29</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="nf">Max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">900.48</span><span class="w"> </span><span class="n">MB</span><span class="w"></span>
 <span class="err">#</span><span class="w"> </span><span class="n">Mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">897.77</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="n">Variance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.40</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w">                   </span><span class="n">SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.63</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="n">Median</span><span class="w"> </span><span class="mf">897.78</span><span class="w"> </span><span class="n">MB</span><span class="w"></span>
@@ -1556,7 +1556,7 @@ The <code>seff-array</code> tool takes the job ID of the array and then calculat
 <span class="n">The</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="n">runtime</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">45.0</span><span class="p">.</span><span class="w"></span>
 <span class="n">Requesting</span><span class="w"> </span><span class="k">less</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">allow</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">quickly</span><span class="p">.</span><span class="w"></span>
 <span class="o">********************************************************************************</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>This shows how efficiently the resource request was for all the jobs in an array.
@@ -1565,19 +1565,20 @@ However, the requested runtime was for an hour, while the jobs only ran for six 
 These jobs could have been scheduled more quickly if a more accurate runtime was specified.</p>
 <h3 id="sacct"><code>sacct</code></h3>
 <p>You can also use the more flexible <a href="https://slurm.schedmd.com/sacct.html"><code>sacct</code></a> to get that info, along with other more advanced job queries. Unfortunately, the default output from <code>sacct</code> is not as useful. We recommend setting an environment variable to customize the output.</p>
-<div class="codehilite"><pre><span></span><span class="err">[rdb9@farnam1 ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="err">[rdb9@farnam1 ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;</span>
 <span class="err">[rdb9@farnam1 ~]$ sacct -j 21294645</span>
 <span class="err">               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES</span>
 <span class="err">-------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------</span>
 <span class="err">            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1</span>
 <span class="err">     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1</span>
 <span class="err">          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You should look at the MaxRSS value to see your memory usage.</p>
                 
                   
+                
                 
               
               
@@ -1633,9 +1634,9 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1645,9 +1646,9 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
