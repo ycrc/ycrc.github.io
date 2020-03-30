@@ -1554,7 +1554,7 @@
 <h2 id="use-a-pre-existing-container">Use a Pre-existing Container</h2>
 <p>If someone has already built a container that suits your needs, you can use it directly. You can either copy the singularity image file directly with <code>scp</code>, <code>rsync</code>, or <a href="/clusters-at-yale/data/transfer/#large-transfers-globus">globus</a>. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a>, <a href="https://singularityhub.github.io/containers/registry/singularity-hub-registry/">Singularity Hub</a>, and <a href="https://cloud.sylabs.io/library">Sylabs Container Library</a>. Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity</span>
-<span class="c1"># e.g. </span>
+<span class="c1"># e.g.</span>
 <span class="nb">export</span> <span class="nv">SINGULARITY_CACHEDIR</span><span class="o">=</span>~/scratch60/.singularity
 </code></pre></div>
 
@@ -1570,7 +1570,22 @@ singularity build bioconvert-latest.sif shub://biokit/bioconvert:latest
 
 
 <h2 id="build-your-own-container">Build Your Own Container</h2>
-<p>You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file. Singularity definition files are similar to Docker's <code>Dockerfile</code>, but use different syntax. To build a container from a definition file, you need administrative privileges on a Linux machine where <a href="https://sylabs.io/guides/3.4/user-guide/installation.html">Singularity is installed</a>. If you don't have such an environment available, <a href="mailto:hpc@yale.edu?subject=Singularity Help">get in touch with us</a> for help getting set up. For full definition files and more documentation please see <a href="https://sylabs.io/guides/3.4/user-guide/definition_files.html">the singularity site</a>.</p>
+<p>You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file.
+Singularity definition files are similar to Docker's <code>Dockerfile</code>, but use different syntax.
+To build a container from a definition file, you need administrative privileges on a Linux machine where <a href="https://sylabs.io/guides/3.5/user-guide/installation.html">Singularity is installed</a>.</p>
+<p>Sylabs provides a cloud-based container building platform (<a href="https://cloud.sylabs.io/builder">link</a>).
+This web-interface allows for the uploading and building of customized containers in the cloud.
+Additionally, users can generate a token to allow remote building from the command-line:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># login to the remote platform with their token:</span>
+singularity remote login
+
+<span class="c1"># launch a remote build of a local definition file (my_container.def)</span>
+singularity build --remote my_container.sif my_container.def
+</code></pre></div>
+
+
+<p>This can be performed from any compute note on the clusters without elevated privileges.</p>
+<p>For full definition files and more documentation please see <a href="https://sylabs.io/guides/3.4/user-guide/definition_files.html">the singularity site</a>.</p>
 <h3 id="header">Header</h3>
 <p>Every container definition must begin with a header that defines what image to start with, or bootstrap from. This can be an official Linux distribution or someone else's container that gets you nearly what you want.</p>
 <p>To start from Ubuntu Bionic Beaver (18.04 LTS):</p>
@@ -1684,7 +1699,7 @@ singularity <span class="nb">exec</span> my_blast_image.sif env <span class="p">
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: November 13, 2019
+                        Last update: March 30, 2020
                       
                     </small>
                   </div>
