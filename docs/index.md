@@ -35,16 +35,10 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|Fri|1:30-3:30pm|217|[Grace](/clusters-at-yale/clusters/grace), MPI, GPUs, Matlab|
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|| [via email](mailto:mikhael.guy@yale.edu)||SRSC Software and Mathematica|
 
-### Email
+### Web and Email Support
 
-To submit requests, concerns or questions via email please send to [hpc@yale.edu](mailto:hpc@yale.edu) and your communication will be logged directly with our system. An automated response will be sent back with a tracking number. Replies to your communication will be addressed from YCRC Support and will include the tracking number for reference. Any additional communication, as either replies from you or initiated by us, will be tracked in the system and can easily be referenced by the tracking number.
+To submit requests, concerns, or questions please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Our system will send an automated response with a link to your ticket. From there we'll track your message and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Critical feedback is much appreciated.
 
 ### Q&A Platform
 
 The YCRC recently joined a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Feel free to post questions about the clusters there and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
-
-### Web Interface
-
-Alternatively, a [web interface](https://support.ycrc.yale.edu) is available for both initiating and tracking a request or concern. After navigating to the website, you can select to log a new ticket or track an existing one. After your selection you will be able to login with CAS. If creating a new ticket, a new ticket form will appear where you can log your request or concern. If selecting an existing issue, a list of open items, assigned to you, will appear. Status of your request or concern can be viewed by selecting the tracking number.
-
-If you have any questions or feedback, we would be happy to hear from you.
