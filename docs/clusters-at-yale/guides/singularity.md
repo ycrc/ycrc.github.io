@@ -17,7 +17,7 @@ If someone has already built a container that suits your needs, you can use it d
 
 ``` bash
 # set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity
-# e.g. 
+# e.g.
 export SINGULARITY_CACHEDIR=~/scratch60/.singularity
 ```
 
@@ -34,7 +34,27 @@ singularity build bioconvert-latest.sif shub://biokit/bioconvert:latest
 
 ## Build Your Own Container
 
-You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file. Singularity definition files are similar to Docker's `Dockerfile`, but use different syntax. To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.4/user-guide/installation.html). If you don't have such an environment available, [get in touch with us](mailto:hpc@yale.edu?subject=Singularity Help) for help getting set up. For full definition files and more documentation please see [the singularity site](https://sylabs.io/guides/3.4/user-guide/definition_files.html).
+You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file.
+Singularity definition files are similar to Docker's `Dockerfile`, but use different syntax.
+To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.5/user-guide/installation.html).
+
+Sylabs provides a cloud-based container building platform ([link](https://cloud.sylabs.io/builder)).
+This web-interface allows for the uploading and building of customized containers in the cloud.
+Additionally, users can generate a token to allow remote building from the command-line:
+
+```bash
+# login to the remote platform with their token:
+singularity remote login
+
+# launch a remote build of a local definition file (my_container.def)
+singularity build --remote my_container.sif my_container.def
+
+```
+This can be performed from any compute note on the clusters without elevated privileges.
+
+
+For full definition files and more documentation please see [the singularity site](https://sylabs.io/guides/3.4/user-guide/definition_files.html).
+
 
 ### Header
 
