@@ -7,6 +7,7 @@ Currently, this is only available for Farnam and Grace.
 On this page:
 
 * [Access](#Access)
+    * [DUO Everywhere for OOD Ruddle](#Ruddle)
 * [File Browser](#File-Browser)
 * [Shell](#Shell)
 * [Remote Desktop](#Remote-Desktop)
@@ -16,11 +17,12 @@ On this page:
 
 ## <a name="Access"></a>Access
 
-To get started, navigate to either
+To get started, navigate to one of 
 
 ```
 ood-grace.hpc.yale.edu
 ood-farnam.hpc.yale.edu
+ood-ruddle.hpc.yale.edu
 ```
 
 and CAS authenticate with your netID/password.
@@ -29,6 +31,12 @@ You will then be greeted with a welcome page showing the standard Message of the
 ![welcome](/img/ood_welcome.png)
 
 Along the top are a pull-down menus for a File Browser, a Job Builder, a list of Interactive Apps, and a Shell.
+
+### <a name="Ruddle"></a>DUO Everywhere for OOD Ruddle
+
+Any user who wants to use ood-ruddle must enroll in the early pilot of DUO Everywhere to enable multifactor authentication for CAS. This means that when you use CAS to authenticate, you will also need to do a DUO authentication, even if you are on campus or on the VPN. However, note that you can  optionally save the DUO authentication for 90 days. 
+
+To enroll in DUO Everywhere, please email netal.patel@yale.edu with your NetID and your selected deployment date. The deployment date should be any day from Monday to Thursday.
 
 ## <a name="File-Browser"></a>File Browser 
 
