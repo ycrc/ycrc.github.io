@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#vasp" tabindex="0" class="md-skip">
+      <a href="#vasp" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1357,58 +1357,58 @@
 <p>For the purposes of VASP, <code>--ntasks-per-node</code> should always equal <code>NCORE</code> (in your INCAR file). Then <code>--nodes</code> should be equal to the total number of cores you want, divided by <code>--ntasks-per-node</code>.</p>
 <p>VASP has two parameters for controlling processor layouts, <code>NCORE</code> and <code>NPAR</code>, but you only need to set one of them. If you set <code>NCORE</code>, you don’t need to set <code>NPAR</code>. Instead VASP will automatically set <code>NPAR</code>.</p>
 <p>In your mpirun line, you should specify the number of MPI tasks as:</p>
-<div class="codehilite"><pre><span></span><code>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
-</code></pre></div>
+<div class="codehilite"><pre><span></span>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
+</pre></div>
 
 
 <h3 id="cores-layout-examples">Cores Layout Examples</h3>
 <p>If you want 40 cores (2 nodes and 20 cpus per node):</p>
 <p>in your submission script:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#SBATCH --nodes=2</span>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH --nodes=2</span>
 <span class="c1">#SBATCH --ntasks-per-node=20</span>
-</code></pre></div>
+</pre></div>
 
 
-<div class="codehilite"><pre><span></span><code>mpirun -n <span class="m">2</span> vasp_std
-</code></pre></div>
+<div class="codehilite"><pre><span></span>mpirun -n <span class="m">2</span> vasp_std
+</pre></div>
 
 
 <p>in <code>INCAR</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">NCORE=20</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">NCORE=20</span>
+</pre></div>
 
 
 <p>You may however find that the wait time to get 20 cores on two nodes can be very long since cores request via <code>--cpus-per-task</code> can’t span multiple nodes. Instead you might want to try breaking it up into smaller chunks. Therefore, try:</p>
 <p>in your submission script:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#SBATCH --nodes=4</span>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH --nodes=4</span>
 <span class="c1">#SBATCH --ntasks-per-node=10</span>
-</code></pre></div>
+</pre></div>
 
 
-<div class="codehilite"><pre><span></span><code>mpirun -n <span class="m">4</span> vasp_std
-</code></pre></div>
+<div class="codehilite"><pre><span></span>mpirun -n <span class="m">4</span> vasp_std
+</pre></div>
 
 
 <p>in <code>INCAR</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">NCORE=10</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">NCORE=10</span>
+</pre></div>
 
 
 <p>which would likely spread over 4 nodes using 10 cores each and spend less time in the queue.</p>
 <h2 id="grace-mpi-partition">Grace mpi partition</h2>
 <p>On Grace's <code>mpi</code> parttion, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
 <p>in your submission script:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
+</pre></div>
 
 
-<div class="codehilite"><pre><span></span><code>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
-</code></pre></div>
+<div class="codehilite"><pre><span></span>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
+</pre></div>
 
 
 <p>in <code>INCAR</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">NCORE=24</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="err">NCORE=24</span>
+</pre></div>
 
 
 <h2 id="additional-performance">Additional Performance</h2>
@@ -1422,17 +1422,6 @@
 </ul>
                 
                   
-                
-                
-                  
-                  <hr>
-                  <div class="md-source-date">
-                    <small>
-                      
-                        Last update: January 9, 2020
-                      
-                    </small>
-                  </div>
                 
               
               
@@ -1488,9 +1477,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1500,9 +1489,9 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
