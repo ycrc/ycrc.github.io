@@ -17,7 +17,7 @@ You can then load this environment for jupyter where we indicate below.
 
 ## Open OnDemand
 
-On [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam.md) we run a web portal to the clusters which can also run a jupyter notebook for you. Please check the [OOD Jupyter Notebook user guide](/clusters-at-yale/access/ood/#Jupyter-Notebooks) for more information.
+Once you have installed jupyter and any other packages you want to use into a conda environment, you can start a notebook server as a job via [Open OnDemand](/clusters-at-yale/access/ood/#jupyter-notebooks).
 
 ## Traditional Method
 
