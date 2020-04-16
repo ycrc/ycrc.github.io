@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#advanced-ssh-configuration" tabindex="1" class="md-skip">
+      <a href="#advanced-ssh-configuration" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1020,6 +1020,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../data/globus/" title="Large Transfers with Globus" class="md-nav__link">
+      Large Transfers with Globus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
       Manage Permissions for Sharing
     </a>
@@ -1300,7 +1312,7 @@
 <h2 id="example-ssh-config">Example SSH <code>config</code></h2>
 <p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh farnam</code> or <code>scp ~/my_file farnam:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
 <p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
-<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="k">To</span> <span class="n">re</span><span class="o">-</span><span class="n">use</span> <span class="n">your</span> <span class="n">connections</span> <span class="k">with</span> <span class="n">multi</span><span class="o">-</span><span class="n">factor</span> <span class="n">authentication</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="k">g</span><span class="p">.</span> <span class="n">Ruddle</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span> <span class="k">To</span> <span class="n">re</span><span class="o">-</span><span class="n">use</span> <span class="n">your</span> <span class="n">connections</span> <span class="k">with</span> <span class="n">multi</span><span class="o">-</span><span class="n">factor</span> <span class="n">authentication</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="k">g</span><span class="p">.</span> <span class="n">Ruddle</span><span class="p">)</span>
 <span class="o">#</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">two</span> <span class="n">lines</span> <span class="n">below</span>
 <span class="o">#</span><span class="n">ControlMaster</span> <span class="n">auto</span>
 <span class="o">#</span><span class="n">ControlPath</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">tmp</span><span class="o">/%</span><span class="n">h_</span><span class="o">%</span><span class="n">p_</span><span class="o">%</span><span class="n">r</span>
@@ -1326,7 +1338,7 @@
 
 <span class="k">Host</span> <span class="n">ruddle</span>
      <span class="n">HostName</span> <span class="n">ruddle</span><span class="p">.</span><span class="n">hpc</span><span class="p">.</span><span class="n">yale</span><span class="p">.</span><span class="n">edu</span>
-</pre></div>
+</code></pre></div>
 
 
 <div class="admonition warning">
@@ -1334,14 +1346,14 @@
 <p>For multiplexing to work, the <code>~/.ssh/tmp</code> directory must exist. Create it with <code>mkdir -p ~/.ssh/tmp</code></p>
 </div>
 <p>For more info on ssh configuration, run:</p>
-<div class="codehilite"><pre><span></span>man ssh_config
-</pre></div>
+<div class="codehilite"><pre><span></span><code>man ssh_config
+</code></pre></div>
 
 
 <h2 id="store-passphrase-and-use-ssh-agent-on-macos">Store Passphrase and Use SSH Agent on macOS</h2>
 <p>By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):</p>
-<div class="codehilite"><pre><span></span>ssh-add -K ~/.ssh/id_rsa
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-add -K ~/.ssh/id_rsa
+</code></pre></div>
 
 
 <p>Or whatever your private key file is named.</p>
@@ -1350,17 +1362,28 @@
 <p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
 </div>
 <p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.hpc.yale.edu ...</code> rule if it does).</p>
-<div class="codehilite"><pre><span></span><span class="err">Host *.hpc.yale.edu farnam grace milgram ruddle</span>
+<div class="codehilite"><pre><span></span><code><span class="err">Host *.hpc.yale.edu farnam grace milgram ruddle</span>
 <span class="err">    UseKeychain yes</span>
 <span class="err">    AddKeystoAgent yes</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You can view a list of the keys currently in your agent with:</p>
-<div class="codehilite"><pre><span></span>ssh-add -L
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-add -L
+</code></pre></div>
                 
                   
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        Last update: April 15, 2019
+                      
+                    </small>
+                  </div>
                 
               
               
@@ -1416,9 +1439,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1428,9 +1451,9 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
