@@ -1,8 +1,7 @@
 # Open OnDemand
 
-We have recently built a new way to access the clusters called [Open OnDemand](https://openondemand.org) (OOD).
-This is a web-portal that provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).
-Currently, this is only available for Farnam and Grace.
+[Open OnDemand](https://openondemand.org) (OOD) is platform for accessing the clusters that only requires a web browser.
+This web-portal provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).
 
 ## Access
 
@@ -44,12 +43,12 @@ This opens a terminal in a web-browser that you can use in the exact same way as
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 ## Interactive Apps
 
-We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, Matlab, RStudio, Jupyter Notebook, and Mathematica.
+We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, and Jupyter Notebook.
 
 ### Remote Desktop
 
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
-In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](docs/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The Matlab, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
+In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](docs/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
 
 Use the form to request resources and decide what partition your job should run on (use `interactive` or your lab's partition).
 
