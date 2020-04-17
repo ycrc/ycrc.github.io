@@ -9,8 +9,8 @@ Open OnDemand is available on the following clusters using your NetID credential
 
 | Cluster                                     | OOD site                                                   |
 |---------------------------------------------|------------------------------------------------------------|
-| [Farnam](/clusters-at-yale/clusters/farnam) | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
-| [Grace](/clusters-at-yale/clusters/grace)   | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
+| [Grace](/clusters-at-yale/clusters/grace) | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
+| [Farnam](/clusters-at-yale/clusters/farnam)   | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
 | [Ruddle](/clusters-at-yale/clusters/ruddle)\* | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
 ### DUO Everywhere for OOD Ruddle
