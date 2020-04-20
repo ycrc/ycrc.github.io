@@ -5,7 +5,7 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 ## Access
 
-If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's [https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn/] (VPN). 
+If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
 Open OnDemand is available on the following clusters using your NetID credentials (CAS login).
 
