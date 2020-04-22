@@ -1564,6 +1564,33 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td></td>
 <td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
 </tr>
+<tr>
+<td>3</td>
+<td>2x 6240</td>
+<td>36</td>
+<td>1507G</td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2x 5222</td>
+<td>8</td>
+<td>183G</td>
+<td>4x rtx5000</td>
+<td>16G</td>
+<td>cascadelake, avx2, avx512, 5222, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2x 6242</td>
+<td>32</td>
+<td>1001G</td>
+<td>2x rtx8000</td>
+<td>48G</td>
+<td>cascadelake, avx2, avx512, 6242, doubleprecision</td>
+</tr>
 </tbody>
 </table>
 <h2 id="slurm-partitions">Slurm Partitions</h2>
@@ -1601,7 +1628,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <td></td>
 <td>2 jobs, 32 CPUs, 1532 G RAM</td>
 <td>1d/3d</td>
-<td>E7-4809_v3 (2)</td>
+<td>E7-4809_v3 (2), 6240 (3)</td>
 </tr>
 <tr>
 <td>gpu_devel</td>
@@ -1641,6 +1668,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <th align="left">Partition</th>
 <th align="left">Walltime Default/Max</th>
+<th align="left">User Limits</th>
 <th align="left">Node Type (count)</th>
 </tr>
 </thead>
@@ -1648,96 +1676,121 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <tr>
 <td align="left">pi_breaker</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2680_v4 (24)</td>
 </tr>
 <tr>
 <td align="left">pi_cryoem</td>
 <td align="left">1d / 365d</td>
+<td align="left">2 jobs, 12 GPUs</td>
 <td align="left">E5-2637_v4 gtx1080ti (10)</td>
 </tr>
 <tr>
 <td align="left">pi_deng</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2680_v4 p100 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_dunn</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">6240 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_edwards</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">6240 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_gerstein</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E7-4820_v4 (1), E5-2680_v4 (11), 6132 751G (1), 6132 (2)</td>
 </tr>
 <tr>
 <td align="left">pi_gerstein_gpu</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1)</td>
 </tr>
 <tr>
 <td align="left">pi_gruen</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2680_v4 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_jadi</td>
 <td align="left">1d / 365d</td>
+<td align="left"></td>
 <td align="left">E5-2680_v4 (2)</td>
 </tr>
 <tr>
 <td align="left">pi_jetz</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">6240 372G (4), 6240 750G (4)</td>
 </tr>
 <tr>
 <td align="left">pi_kleinstein</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">6240 (1), E5-2660_v3 (3)</td>
 </tr>
 <tr>
 <td align="left">pi_krauthammer</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_ma</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 (2)</td>
 </tr>
 <tr>
 <td align="left">pi_ohern</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 (5)</td>
 </tr>
 <tr>
 <td align="left">pi_reinisch</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">5122 rtx2080 (2)</td>
 </tr>
 <tr>
 <td align="left">pi_sigworth</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_sindelar</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)</td>
+</tr>
+<tr>
+<td align="left">pi_tomography</td>
+<td align="left">1d / 4d</td>
+<td align="left">2 jobs, 12 GPUs</td>
+<td align="left">5222 rtx5000 (9), 6242 rtx8000 (1)</td>
 </tr>
 <tr>
 <td align="left">pi_townsend</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">E5-2660_v3 (5)</td>
 </tr>
 <tr>
 <td align="left">pi_zhao</td>
 <td align="left">1d / 14d</td>
+<td align="left"></td>
 <td align="left">6240 (2)</td>
 </tr>
 </tbody>
@@ -1813,7 +1866,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: December 4, 2019
+                        Last update: April 22, 2020
                       
                     </small>
                   </div>
