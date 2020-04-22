@@ -36,6 +36,9 @@ Farnam is made up of several kinds of compute nodes. The Features column below l
 |     4 | 2x 6240       |        36 |  750G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
 |     4 | 2x 6240       |        36 |  372G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
 |    24 | 2x 6240       |        36 |  183G |                    |          | cascadelake, avx2, avx512, 6240, nogpu, standard   |
+|     3 | 2x 6240       |        36 | 1507G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
+|     9 | 2x 5222       |         8 |  183G | 4x rtx5000         |      16G | cascadelake, avx2, avx512, 5222, doubleprecision   |
+|     1 | 2x 6242       |        32 | 1001G | 2x rtx8000         |      48G | cascadelake, avx2, avx512, 6242, doubleprecision   |
 
 ## Slurm Partitions
 
@@ -51,7 +54,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 |--------------|----------------------|-----------------------------|----------------------|-----------------------------------------------|
 | general*     | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | E5-2660_v3 (93), 6240 (19)                    |
 | interactive  |                      | 2 jobs, 20 CPUs, 256 G RAM  | 6hr/1d               | E5-2660_v3 (93)                               |
-| bigmem       |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/3d                | E7-4809_v3 (2)                                |
+| bigmem       |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/3d                | E7-4809_v3 (2), 6240 (3)                      |
 | gpu_devel    |                      | 1 job                       | 10min/2hr            | E5-2623_v4 gtx1080ti (1)                      |
 | gpu          |                      | 32 CPUs, 256 G RAM          | 1d/2d                | E5-2660_v3 k80 (2), E5-2637_v4 gtx1080ti (10) |
 | scavenge     |                      | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                           |
@@ -63,27 +66,28 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
 
-| Partition       | Walltime Default/Max   | Node Type (count)                                              |
-|:----------------|:-----------------------|:---------------------------------------------------------------|
-| pi_breaker      | 1d / 14d               | E5-2680_v4 (24)                                                |
-| pi_cryoem       | 1d / 365d              | E5-2637_v4 gtx1080ti (10)                                      |
-| pi_deng         | 1d / 14d               | E5-2680_v4 p100 (1)                                            |
-| pi_dunn         | 1d / 14d               | 6240 (1)                                                       |
-| pi_edwards      | 1d / 14d               | 6240 (1)                                                       |
-| pi_gerstein     | 1d / 14d               | E7-4820_v4 (1), E5-2680_v4 (11), 6132 751G (1), 6132 (2)       |
-| pi_gerstein_gpu | 1d / 14d               | E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1) |
-| pi_gruen        | 1d / 14d               | E5-2680_v4 (1)                                                 |
-| pi_jadi         | 1d / 365d              | E5-2680_v4 (2)                                                 |
-| pi_jetz         | 1d / 14d               | 6240 372G (4), 6240 750G (4)                                   |
-| pi_kleinstein   | 1d / 14d               | 6240 (1), E5-2660_v3 (3)                                       |
-| pi_krauthammer  | 1d / 14d               | E5-2660_v3 (1)                                                 |
-| pi_ma           | 1d / 14d               | E5-2660_v3 (2)                                                 |
-| pi_ohern        | 1d / 14d               | E5-2660_v3 (5)                                                 |
-| pi_reinisch     | 1d / 14d               | 5122 rtx2080 (2)                                               |
-| pi_sigworth     | 1d / 14d               | E5-2660_v3 (1)                                                 |
-| pi_sindelar     | 1d / 14d               | E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)                       |
-| pi_townsend     | 1d / 14d               | E5-2660_v3 (5)                                                 |
-| pi_zhao         | 1d / 14d               | 6240 (2)                                                       |
+| Partition       | Walltime Default/Max   |User Limits      | Node Type (count)                                              |
+|:----------------|:-----------------------|:----------------|:---------------------------------------------------------------|
+| pi_breaker      | 1d / 14d               |                 | E5-2680_v4 (24)                                                |
+| pi_cryoem       | 1d / 365d              | 2 jobs, 12 GPUs | E5-2637_v4 gtx1080ti (10)                                      |
+| pi_deng         | 1d / 14d               |                 | E5-2680_v4 p100 (1)                                            |
+| pi_dunn         | 1d / 14d               |                 | 6240 (1)                                                       |
+| pi_edwards      | 1d / 14d               |                 | 6240 (1)                                                       |
+| pi_gerstein     | 1d / 14d               |                 | E7-4820_v4 (1), E5-2680_v4 (11), 6132 751G (1), 6132 (2)       |
+| pi_gerstein_gpu | 1d / 14d               |                 | E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1) |
+| pi_gruen        | 1d / 14d               |                 | E5-2680_v4 (1)                                                 |
+| pi_jadi         | 1d / 365d              |                 | E5-2680_v4 (2)                                                 |
+| pi_jetz         | 1d / 14d               |                 | 6240 372G (4), 6240 750G (4)                                   |
+| pi_kleinstein   | 1d / 14d               |                 | 6240 (1), E5-2660_v3 (3)                                       |
+| pi_krauthammer  | 1d / 14d               |                 | E5-2660_v3 (1)                                                 |
+| pi_ma           | 1d / 14d               |                 | E5-2660_v3 (2)                                                 |
+| pi_ohern        | 1d / 14d               |                 | E5-2660_v3 (5)                                                 |
+| pi_reinisch     | 1d / 14d               |                 | 5122 rtx2080 (2)                                               |
+| pi_sigworth     | 1d / 14d               |                 | E5-2660_v3 (1)                                                 |
+| pi_sindelar     | 1d / 14d               |                 | E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)                       |
+| pi_tomography   | 1d / 4d                | 2 jobs, 12 GPUs | 5222 rtx5000 (9), 6242 rtx8000 (1)                             |
+| pi_townsend     | 1d / 14d               |                 | E5-2660_v3 (5)                                                 |
+| pi_zhao         | 1d / 14d               |                 | 6240 (2)                                                       |
 
 ## Public Datasets
 
