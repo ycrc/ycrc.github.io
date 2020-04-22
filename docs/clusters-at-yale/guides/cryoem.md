@@ -34,8 +34,8 @@ Because RELION reserves one worker (slurm task) for orchestrating an MPI-based j
 
 ``` bash
 #!/bin/bash
-#SBATCH --partition=general --ntasks 1 -c2 -C avx2 --job-name=class3D_hetero_01 --output="class3D_hetero_01-%j.out"
-#SBATCH packjob
+#SBATCH --partition=general --ntasks 1 -c2 -C avx2 --job-name=class3D_hetero_01 --mem=10G --output="class3D_hetero_01-%j.out"
+#SBATCH hetjob
 #SBATCH --partition=gpu --ntasks 4 -c2 -N1 --mem=120G --gres=gpu:4 
 
 module load RELION
