@@ -67,7 +67,7 @@ Next, upload your public SSH key on the cluster. Run the following command in a 
 cat ~/.ssh/id_rsa.pub
 ```
 
-Copy and paste the output to our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
+Copy and paste the output to our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
 
 ### Connect on macOS and Linux
 
@@ -91,10 +91,11 @@ First, generate an SSH key pair if you haven't already:
 
 * Open MobaXterm.
 * From the top menu choose Tools -> MobaKeyGen (SSH key generator).
-* Leave all defaults and click the generate button.
+* Leave all defaults and click the "Generate" button.
 * Wiggle your mouse.
-* Save your public key as id_rsa.pub.
-* Save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
+* Click "Save public key" and save your public key as id_rsa.pub.
+* Choose a secure passphrase and enter into the two relevant fields. Your passphrase will prevent access to your account in the event your private key is stolen.
+* Click "Save private key" and save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
 * Copy the text of your public key and paste it into the text box in our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
 * Your key will be synced out to the clusters in a few minutes.
 

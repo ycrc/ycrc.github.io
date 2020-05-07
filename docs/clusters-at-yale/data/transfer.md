@@ -30,7 +30,7 @@ On [Farnam](https://ood-farnam.hpc.yale.edu), [Grace](https://ood-grace.hpc.yale
 
 ### MobaXterm (Windows)
 
-[MobaXterm](/clusters-at-yale/access/#windows) is an all-in-one graphical client for Windows that includes a drag-and-drop transfer pane for each server you connect to by default.
+[MobaXterm](/clusters-at-yale/access/#windows) is an all-in-one graphical client for Windows that includes a transfer pane for each cluster you connect to. Once you have established a connection to the cluster, click on the "Sftp" tab in the left sidebar to see your files on the cluster. You can drag-and-drop data into and out of this page to upload and download, respectively.
 
 ### Cyberduck
 

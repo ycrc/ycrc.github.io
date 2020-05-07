@@ -2,11 +2,12 @@
 
 Yale's clusters can only be accessed on the Yale network. Therefore, in order to access a cluster from off campus, you will need to first connect to Yale's VPN. More information about Yale's VPN can be found on the [ITS website](https://yale.service-now.com/it?id=service_offering&sys_id=c4684dcd6fbb31007ee2abcf9f3ee4f2).
 
-## Windows and macOS
+## VPN Software
+### Windows and macOS
 
 We recommend the Cisco AnyConnect VPN Client, which can be downloaded from the [ITS Software Library](http://software.yale.edu/software/cisco-vpn-anyconnect).
 
-## Linux
+### Linux
 
 On Linux, you can use [openconnect](http://www.infradead.org/openconnect) to connect to one of Yale's VPNs. If you are using the standard Gnome-based distros, use the commands below to install.
 
