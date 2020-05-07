@@ -63,11 +63,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | Partition    | Group Limits   | User Limits                | Walltime (Default/Max)   | Node Type (count)                                                                                                         |
 |:-------------|:---------------|:---------------------------|:-------------------------|:--------------------------------------------------------------------------------------------------------------------------|
 | bigmem       |                | CPUs: 40, RAM: 1500G       | 1h/1d                    | E7-4820_v4 1507G (2), 6240 1503G (1), 6240 1506G (2)                                                                      |
-| chem251l     |                |                            | 1h/28d                   | E5-2660_v2 (2)                                                                                                            |
-| chem426      |                |                            | 1h/28d                   | E5-2660_v2 (6)                                                                                                            |
 | covid        |                |                            | 1h/1d                    | E5-2660_v4 (72), 6240 (67), E5-2660_v2 (35), E5-2660_v3 (44), 6240 (68)                                                   |
-| cpsc424      |                |                            | 1h/28d                   | E5-2660_v2 (16)                                                                                                           |
-| cpsc424_gpu  |                | CPUs: 5, GPUs: 1, RAM: 32G | 1h/28d                   | E5-2660_v3 k80:4 (3)                                                                                                      |
 | day*         | CPUs: 900      | CPUs: 640                  | 1h/1d                    | E5-2660_v4 (72), 6240 (67), E5-2660_v2 (35), E5-2660_v3 (44), 6240 (68)                                                   |
 | gpu          |                | GPUs: 24                   | 1h/1d                    | 6240 rtx2080ti:4 (1), 6136 v100:2 (2), 6240 v100:4 (5), 6240 rtx2080ti:4 (4), E5-2660_v3 k80:4 (3), E5-2660_v4 p100:1 (6) |
 | gpu_devel    |                | CPUs: 10                   | 1h/4h                    | E5-2660_v3 k80:4 (1)                                                                                                      |
@@ -98,11 +94,11 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_econ_io          | 1h/28d                 | 6240 (6)                                                                 |
 | pi_econ_lp          | 1h/28d                 | 6240 (5)                                                                 |
 | pi_esi              | 1h/28d                 | 6240 (36)                                                                |
-| pi_fedorov          | 1h/28d                 | 6136 (12)                                                                |
+| pi_fedorov*         | 1h/28d                 | 6136 (12)                                                                |
 | pi_gelernter        | 1h/28d                 | E5-2660_v4 (1), 6240 (1)                                                 |
 | pi_gerstein         | 1h/28d                 | E7-4820_v2 1003G (1), E5-2660_v3 (32)                                    |
 | pi_glahn            | 1h/100d                | E5-2660_v3 (1)                                                           |
-| pi_hammes_schiffer  | 1h/28d                 | E5-2637_v4 gtx1080ti:4 (1), 6136 751G (1), 6136 (16), 5122 rtx2080:4 (2) |
+| pi_hammes_schiffer* | 1h/28d                 | E5-2637_v4 gtx1080ti:4 (1), 6136 751G (1), 6136 (16), 5122 rtx2080:4 (2) |
 | pi_hodgson          | 1h/28d                 | 6240 (1)                                                                 |
 | pi_holland          | 1h/28d                 | E5-2660_v2 (2), E5-2660_v3 (2), 6240 (8)                                 |
 | pi_howard           | 1h/28d                 | 6240 (1)                                                                 |
@@ -110,7 +106,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_kaminski         | 1h/28d                 | E5-2660_v3 (8)                                                           |
 | pi_lederman         | 1h/28d                 | 6254 1506G rtx4000:4,rtx8000:2,v100:2 (1)                                |
 | pi_levine           | 1h/28d                 | 8260 (20)                                                                |
-| pi_lora             | 1h/28d                 | 6136 (4)                                                                 |
+| pi_lora*            | 1h/28d                 | 6136 (4)                                                                 |
 | pi_mak              | 1h/28d                 | E5-2660_v4 (3)                                                           |
 | pi_manohar          | 1h/180d                | E7-4820_v4 1507G (2), E5-2660_v4 (8), E5-2660_v4 p100:1 (1), 6240 (4)    |
 | pi_ohern            | 1h/28d                 | E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100:4 (9), 6240 (2)               |
