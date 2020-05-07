@@ -26,24 +26,6 @@ srun --pty -c 4  -p interactive -t 4:00:00 bash
 
 See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.
 
-## Gaussian in Parallel
-
-To run Gaussian in parallel, you may find it simplest to use the script `par_g16` instead of executing Gaussian directly. `par_g16` takes 1 optional argument and is used as shown here:
-
-``` bash
-par_g16 [num_proc_shared] < g16_input > g16_output
-```
-
-When included in a submission script, par_g16 will set the following Gaussian input variables:
-
-`%LindaWorkers`: List of nodes that will act as parallel workers during parallel portions of the Gaussian computations. The list is created automatically based on the nodes allocated to the particular job. Workers communicate using the Network Linda system provided with the Gaussian software.
-
-`%NProcShared`: Number of shared-memory processes per Linda worker.
-
-It is highly recommended that users run 1 Linda worker per node with `%NProcShared=NN` where `NN` is the number of cpus requested per node. (The default is `%NProcShared=1`.) Of course, both variables may be overridden by including them in the Gaussian input file.)
-
-On YCRC clusters, there are generally more than 20 processors and 128 GB of memory per node, so it may often work well to use a predetermined number of cores on a single node, in which case you can simply modify the Gaussian input file and skip the use of the `par_g16` script. If you do wish to use multiple nodes on the clusters, please pay careful attention to the [Slurm parameters](/clusters-at-yale/job-scheduling) you use (especially `--mem-per-cpu`) to ensure that each of the nodes you request has sufficient resources available.
-
 ## GaussView
 
 In connection with Gaussian 16, we have also installed GaussView 6, Gaussian Inc.'s most advanced and powerful graphical interface for Gaussian. With GaussView, you can import or build the molecular structures that interest you; set up, launch, monitor and control Gaussian calculations; and retrieve and view the results, all without ever leaving the application. GaussView 6 includes many new features designed to make working with large systems of chemical interest convenient and straightforward. It also provides full support for all of the new modeling methods and features in Gaussian 16.

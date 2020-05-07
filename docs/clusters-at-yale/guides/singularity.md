@@ -13,7 +13,7 @@ Images are the file(s) you use to run your container. Singularity images are sin
 
 ## Use a Pre-existing Container
 
-If someone has already built a container that suits your needs, you can use it directly. You can either copy the singularity image file directly with `scp`, `rsync`, or [globus](/clusters-at-yale/data/transfer/#large-transfers-globus). You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that [can be transferred](docs/clusters-at-yale/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
 ``` bash
 # set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity

@@ -37,7 +37,9 @@ The YCRC is located on the second floor of [160 Saint Ronan Street](https://rese
 
 ### Web and Email Support
 
-To submit requests, concerns, or questions please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Our system will send an automated response with a link to your ticket. From there we'll track your message and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Critical feedback is much appreciated.
+To submit requests, issues, or questions please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Your login credentials are your email and a password of your choosing, not your CAS password.
+
+Once received, our system will send an automated response to your inquiry with a link to a ticket. From there we'll track your ticket and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.
 
 ### Q&A Platform
 

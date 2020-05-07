@@ -9,7 +9,7 @@ We maintain and support four compute clusters, with roughly 30,000 cores total. 
 | [Grace](grace)     | 20,000             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general and highly parallel, tightly coupled         |
 | [Farnam](farnam)   | 5,200              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |                       |
 | [Ruddle](ruddle)   | 3,500              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
-| [Milgram](milgram) | 1,600              | `milgram.hpc.yale.edu`        | [monitor1.milgram.hpc.yale.internal:4001](http://monitor1.milgram.hpc.yale.internal:4001) (on HIPAA VPN) | HIPAA                                                    |
+| [Milgram](milgram) | 1,600              | `milgram.hpc.yale.edu`        | [cluster.ycrc.yale.edu/milgram](http://cluster.ycrc.yale.edu/milgram/) | HIPAA                                                    |
 
 ## Storage
 

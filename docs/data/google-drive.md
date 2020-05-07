@@ -1,6 +1,6 @@
 # Google Drive
 
-Through Yale Google Apps for Education (EliApps), researchers have free, unlimited Google Drive storage. The Globus Google Drive connector allows you to create a Globus endpoint that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.
+Through Yale Google Apps for Education (EliApps), researchers have free Google Drive storage with very few limits on storage. The Globus Google Drive connector allows you to create a Globus endpoint that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.
 
 ## EliApps
 
@@ -26,7 +26,7 @@ You can upload and access your data using the web portal and sync data with your
 
 ### Rclone
 
-You can also transfer data using the command line utility [Rclone](https://rclone.org/drive/). Rclone can be used to transfer data to any Google Drive account.
+You can also transfer data using the command line utility [Rclone](/clusters-at-yale/data/transfer/#rclone). Rclone can be used to transfer data to any Google Drive account.
 
 ## Globus Google Drive Connector
 
