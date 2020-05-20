@@ -1016,15 +1016,15 @@
     HPC Storage Best Practices
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#staging-data" class="md-nav__link">
     Staging Data
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#prevent-large-numbers-of-small-files" class="md-nav__link">
@@ -1390,15 +1390,15 @@
     HPC Storage Best Practices
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#staging-data" class="md-nav__link">
     Staging Data
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#prevent-large-numbers-of-small-files" class="md-nav__link">
@@ -1473,7 +1473,7 @@
 <p>Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>, ..and you may be asked to delete files younger than 60 days old if this space fills up.</p>
 <p>Scratch space is available via the <code>scratch60</code> link in your home directory, or via the absolute path: <code>/gpfs/&lt;filesystem&gt;/scratch60/&lt;group&gt;/&lt;netid&gt;</code>.</p>
 <h2 id="hpc-storage-best-practices">HPC Storage Best Practices</h2>
-<h2 id="staging-data">Staging Data</h2>
+<h3 id="staging-data">Staging Data</h3>
 <p>Large datasets are often stored off-site, either on departmental servers or Storage@Yale.
 Efficient processing of these data can be achieved through temporary staging on the high-performance parallel filesystem.
 The <em>permanent</em> copy of the data remains on the off-site storage, while a <em>working</em>  copy is placed in <code>scrach60</code>, for example.
