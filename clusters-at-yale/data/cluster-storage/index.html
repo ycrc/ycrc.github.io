@@ -1016,6 +1016,13 @@
     HPC Storage Best Practices
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-data" class="md-nav__link">
+    Staging Data
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1383,6 +1390,13 @@
     HPC Storage Best Practices
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-data" class="md-nav__link">
+    Staging Data
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1453,14 +1467,30 @@
 <p>Home storage (backed-up daily) is a small amount of personal space to store your own scripts, notes, final products (e.g. figures), etc. Your home storage is for you only: please do not share this storage with other people. Home storage is backed up daily.</p>
 <p>When running the getquota command, the usage and file count values for home are for your own usage.</p>
 <h3 id="project">Project</h3>
-<p>Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group. </p>
+<p>Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group.</p>
 <p>Project space is available to all the members of our group via the <code>project</code> link in the home directories, or via the absolute path: <code>/gpfs/&lt;filesystem&gt;/project/&lt;group&gt;/&lt;netid&gt;</code></p>
 <h3 id="60-day-scratch-scratch60">60-Day Scratch (<code>scratch60</code>)</h3>
-<p>Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>, ..and you may be asked to delete files younger than 60 days old if this space fills up. </p>
+<p>Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. <strong>Files older than 60 days will be deleted automatically</strong>, ..and you may be asked to delete files younger than 60 days old if this space fills up.</p>
 <p>Scratch space is available via the <code>scratch60</code> link in your home directory, or via the absolute path: <code>/gpfs/&lt;filesystem&gt;/scratch60/&lt;group&gt;/&lt;netid&gt;</code>.</p>
 <h2 id="hpc-storage-best-practices">HPC Storage Best Practices</h2>
+<h2 id="staging-data">Staging Data</h2>
+<p>Large datasets are often stored off-site, either on departmental servers or Storage@Yale.
+Efficient processing of these data can be achieved through temporary staging on the high-performance parallel filesystem.
+The <em>permanent</em> copy of the data remains on the off-site storage, while a <em>working</em>  copy is placed in <code>scrach60</code>, for example.
+These data can then be processed efficiently and the output files transmitted back to the off-site storage.
+A sample workflow would be:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># copy data to temporary cluster storage</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+<span class="c1"># process data on cluster</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ sbatch data_processing.sh
+<span class="c1"># return results to permanent storage for safe-keeping</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
+</code></pre></div>
+
+
+<p>The <em>working</em> copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit.</p>
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
-<p>Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using <a href="/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>) collections of files no longer in use.</p>
+<p>Parallel filesystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using <a href="/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>) collections of files no longer in use.</p>
 <h2 id="backups-and-snapshots">Backups and Snapshots</h2>
 <h3 id="retrieve-data-from-home-backups">Retrieve Data from Home Backups</h3>
 <p>Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> with your netid and the list of files/directories you would like restored.</p>
@@ -1506,7 +1536,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: January 15, 2020
+                        Last update: May 20, 2020
                       
                     </small>
                   </div>
