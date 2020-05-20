@@ -1383,10 +1383,10 @@
 <p>Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for shared data directories.</p>
 <p>If interested, email us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> to request such a directory.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
-<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command <code>setfacl</code> is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch60</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch60</code>, you need first share your <code>project</code> or <code>scratch60</code>, and then share the sub-directory. Here are some simple scenarios.  </p>
+<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command <code>setfacl</code> is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch60</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch60</code>, you need first share your <code>project</code> or <code>scratch60</code>, and then share the sub-directory. Here are some simple scenarios. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Your <code>~/project</code> and <code>~/scratch60</code> directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get their true paths. Give these true to people you are sharing with.</p>
+<p>Your <code>~/project</code> and <code>~/scratch60</code> directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get their true paths. Otherwise you will receive errors related to read permissions for your home-space.</p>
 </div>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> in your project directory with group <code>othergroup</code>:</p>
@@ -1424,7 +1424,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: September 18, 2019
+                        Last update: May 20, 2020
                       
                     </small>
                   </div>
