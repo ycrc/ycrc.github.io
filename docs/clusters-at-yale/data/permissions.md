@@ -12,10 +12,10 @@ If interested, email us at [hpc@yale.edu](mailto:hpc@yale.edu) to request such a
 
 ## Share With Specific Users or Other Groups
 
-It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios.  
+It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios. 
 
 !!!warning
-    Your `~/project` and `~/scratch60` directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get their true paths. Give these true to people you are sharing with.
+    Your `~/project` and `~/scratch60` directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get their true paths. Otherwise you will receive errors related to read permissions for your home-space.
 
 ### Share a Directory with All Members of a Group
 
