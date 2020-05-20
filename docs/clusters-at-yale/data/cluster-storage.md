@@ -30,7 +30,7 @@ Scratch space is available via the `scratch60` link in your home directory, or v
 
 ## HPC Storage Best Practices
 
-## Staging Data
+### Staging Data
 
 Large datasets are often stored off-site, either on departmental servers or Storage@Yale.
 Efficient processing of these data can be achieved through temporary staging on the high-performance parallel filesystem.
