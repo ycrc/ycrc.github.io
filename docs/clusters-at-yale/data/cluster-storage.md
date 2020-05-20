@@ -16,23 +16,43 @@ When running the getquota command, the usage and file count values for home are 
 
 ### Project
 
-Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group. 
+Project storage (not backed-up!), intended to be the primary storage location for HPC research data in active use, is shared by your entire research group.
 
 Project space is available to all the members of our group via the `project` link in the home directories, or via the absolute path: `/gpfs/<filesystem>/project/<group>/<netid>`
 
 
 ### 60-Day Scratch (`scratch60`)
 
-Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**, ..and you may be asked to delete files younger than 60 days old if this space fills up. 
+Scratch storage (not backed-up!), intended to be the storage location for temporary data, is shared by your entire research group. Scratch space is best used for intermediate files that can be regenerated/reconstituted if necessary. **Files older than 60 days will be deleted automatically**, ..and you may be asked to delete files younger than 60 days old if this space fills up.
 
 Scratch space is available via the `scratch60` link in your home directory, or via the absolute path: `/gpfs/<filesystem>/scratch60/<group>/<netid>`.
 
 
 ## HPC Storage Best Practices
 
+## Staging Data
+
+Large datasets are often stored off-site, either on departmental servers or Storage@Yale.
+Efficient processing of these data can be achieved through temporary staging on the high-performance parallel filesystem.
+The _permanent_ copy of the data remains on the off-site storage, while a _working_  copy is placed in `scrach60`, for example.
+These data can then be processed efficiently and the output files transmitted back to the off-site storage.
+A sample workflow would be:
+
+```sh
+# copy data to temporary cluster storage
+[netID@cluster ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
+# process data on cluster
+[netID@cluster ~]$ sbatch data_processing.sh
+# return results to permanent storage for safe-keeping
+[netID@cluster ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
+
+```
+The _working_ copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit.
+
+
 ### Prevent Large Numbers of Small Files
 
-Parallel fileystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using [tar](/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive)) collections of files no longer in use.
+Parallel filesystems, like the ones attached to our clusters, perform poorly with very large numbers of small files. For this reason, there are file count limits on all accounts to provide a safety net against excessive file creation. However, we expect users to manage their own file counts by altering workflows to reduce file creation, deleting unneeded files, and compressing (using [tar](/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive)) collections of files no longer in use.
 
 ## Backups and Snapshots
 
