@@ -10,10 +10,20 @@ This is a quick start guide for CESM at Yale. You will still need to read the CE
 
 ## Modules
 
-CESM 1.0.4, 1.2.2, 2.x are available on Grace. Other versions may be available on one of the clusters. To find which version are available on your cluster, run
+CESM 1.0.4, 1.2.2, 2.x are available on Grace.
+
+For CESM 2.1.0, load the following modules
 
 ``` bash
-module avail cesm
+module load CESM/2.1.0-iomkl-2018a
+```
+
+For older versions of CESM, you will need to use the old modules. These old version of CESM do not work with the new modules
+
+``` bash
+module use /apps/hpc/Modules
+module use /apps/hpc.rhel7/Modules
+module avail CESM
 ```
 
 Once you have located your module, run
@@ -22,7 +32,9 @@ Once you have located your module, run
 module load <module-name>
 ```
 
-with the module name from above. The module will configure your environment with the Intel compiler, OpenMPI and NetCDF libraries as well as set the location of the Yale’s repository of CESM input data.
+with the module name from above. 
+
+With either module, the module will configure your environment with the Intel compiler, OpenMPI and NetCDF libraries as well as set the location of the Yale’s repository of CESM input data.
 
 If you will be primarily using CESM, you can avoid rerunning the module load command every time you login by saving it to your default environment:
 
@@ -33,7 +45,7 @@ module save
 
 ## Input Data
 
-To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your `create_newcase` line to Kaylea ([kaylea.nelson@yale.edu](mailto:kaylea.nelson@yale.edu)) and she will download that data for you.
+To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your `create_newcase` line to the YCRC ([hpc@yale.edu](mailto:hpc@yale.edu)) and they will download that data for you.
 
 ## Run CESM
 
@@ -48,10 +60,10 @@ create_newcase -case $CASE -compset=<compset> -res=<resolution> -mach=<machine>
 cd $CASE
 ```
 
-The mach parameters for Grace is `yalegrace` , respectively. For example
+The mach parameters for Grace is `yalegrace` for CESM 1.x and `gracempi` for CESM 2.x , respectively. For example
 
 ``` bash
-create_newcase -case $CASE -compset=B2000 -res=f19_f19 -mach=yalegrace
+create_newcase --case $CASE --compset=B1850 --res=f09_g17 --mach=gracempi
 
 cd $CASE
 ```
@@ -62,51 +74,67 @@ If you are making any changes to the namelist files (such as increasing the dura
 
 #### CESM 1.0.X
 
-If you are using CESM 1.0.X (e.g. 1.0.4), set up your case with
-
 ``` bash
 ./configure -case
 ```
 
 #### CESM 1.1.X and CESM 1.2.X
 
-If you are using CESM 1.1.X (e.g. 1.1.1) or CESM 1.2.X (e.g. 1.2.2), set up your case with
-
 ``` bash
 ./cesm_setup
 ```
+
+#### CESM 2.X
+
+``` bash
+./case.setup
+```
+
 
 ### Build Your Case
 
 After you run the setup script, there will be a set of the scripts in your case directory that start with your case name. To compile your simulation executable, first move to an interactive job and then run the build script corresponding to your case.
 
 ``` bash
+# CESM 1.x
 srun --pty -c 4 -p interactive bash
 module load <module-name> # <module-name> = the appropriate module for your CESM version
 ./$CASE.$mach.build
 ```
 
+``` bash
+# CESM 2.x
+srun --pty -c 4 -p interactive bash
+module load <module-name> # <module-name> = the appropriate module for your CESM version
+./case.build
+```
+
 For more details on interactive jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs).
 
-During the build, CESM will create a corresponding directory in your scratch or project directory at
+During the build, CESM will create a corresponding directory in your scratch60 or project directory at
 
 ```
-# On Grace
-ls ~/project/CESM/$CASE
+ls ~/scratch60/CESM/$CASE
 ```
 
 This directory will contain all the outputs from your simulation as well as logs and the cesm.exe executable.
 
 #### Common Build Issues
 
-Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded.
+Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run `module purge` before the `module load` to ensure a reproducible environment.
 
 ### Submit Your Case
 
 Once the build is complete, which can take 5-15 minutes, you can submit your case with the submit script.
 
 ``` bash
+# CESM 1.x
 ./$CASE.$mach.submit
+```
+
+``` bash
+# CESM 2.x
+./case.submit
 ```
 
 For more details on monitoring your submitted jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling).
@@ -124,7 +152,7 @@ In your case directory, there will be a file that looks like `slurm-<job_id>.log
 If the last few lines of the slurm log direct you to look at `cpl.log.<some_number>` file, change directory to your case “run” directory in your scratch directory:
 
 ``` bash
-cd ~/scratch/CESM/$CASE/run
+cd ~/scratch60/CESM/$CASE/run
 ```
 
 The pointer to the cpl file is often misleading as I have found the error is usually located in one of the other logs. Instead look in the `cesm.log.xxxxxx` file. Towards the end there may be an error or it may signify which component was running. Then look in the log corresponding to that component to track down the issue.
@@ -145,22 +173,22 @@ If your log says something like `Disk quota exceeded`, your group is out of spac
 
 If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the [CESM forums](https://bb.cgd.ucar.edu).
 
-If you are still experiencing issues, you can email [Kaylea Nelson](mailto:kaylea.nelson@yale.edu) or come by her G&G office hours on Tuesdays (9am-5pm) in KGL 227.
+If you are still experiencing issues, you can email [hpc@yale.edu](mailto:hpc@yale.edu).
 
 ## Alternative Submission Parameters
 
-By default, the submission script will submit to the "week" partition for 7 days. Sometimes the wait times can be very long in the week partition, so you can either submit day or scavenge partition. To change this, edit your case’s run script and change the partition and time lines. The maximum walltime in the day partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
-
-``` bash
-## day partition
-#SBATCH --partition=day
-#SBATCH --time=1-
-```
+By default, the submission script will submit to the "mpi" partition for 1 day. To change this, edit your case’s `run` script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
 
 ``` bash
 ## scavenge partition
 #SBATCH --partition=scavenge
 #SBATCH --time=1-
+```
+
+``` bash
+## day partition
+#SBATCH --partition=pi_fedorov
+#SBATCH --time=7-
 ```
 
 Then you can submit by running the submit script
