@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cluster-storage" tabindex="1" class="md-skip">
+      <a href="#cluster-storage" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -184,7 +184,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1054,8 +1054,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#retrieve-data-from-snapshots-farnam-milgram" class="md-nav__link">
-    Retrieve Data from Snapshots (Farnam &amp; Milgram)
+  <a href="#retrieve-data-from-snapshots-milgram" class="md-nav__link">
+    Retrieve Data from Snapshots (Milgram)
   </a>
   
 </li>
@@ -1428,8 +1428,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#retrieve-data-from-snapshots-farnam-milgram" class="md-nav__link">
-    Retrieve Data from Snapshots (Farnam &amp; Milgram)
+  <a href="#retrieve-data-from-snapshots-milgram" class="md-nav__link">
+    Retrieve Data from Snapshots (Milgram)
   </a>
   
 </li>
@@ -1479,13 +1479,13 @@ Efficient processing of these data can be achieved through temporary staging on 
 The <em>permanent</em> copy of the data remains on the off-site storage, while a <em>working</em>  copy is placed in <code>scrach60</code>, for example.
 These data can then be processed efficiently and the output files transmitted back to the off-site storage.
 A sample workflow would be:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># copy data to temporary cluster storage</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># copy data to temporary cluster storage</span>
 <span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
 <span class="c1"># process data on cluster</span>
 <span class="o">[</span>netID@cluster ~<span class="o">]</span>$ sbatch data_processing.sh
 <span class="c1"># return results to permanent storage for safe-keeping</span>
 <span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
-</pre></div>
+</code></pre></div>
 
 
 <p>The <em>working</em> copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit.</p>
@@ -1494,8 +1494,8 @@ A sample workflow would be:</p>
 <h2 id="backups-and-snapshots">Backups and Snapshots</h2>
 <h3 id="retrieve-data-from-home-backups">Retrieve Data from Home Backups</h3>
 <p>Contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> with your netid and the list of files/directories you would like restored.</p>
-<h3 id="retrieve-data-from-snapshots-farnam-milgram">Retrieve Data from Snapshots (Farnam &amp; Milgram)</h3>
-<p>Farnam and Milgram all run snapshots nightly on portions of their filesystems so that you can retrieve mistakenly modified or removed files for yourself. As long as your files existed in the form you want them in before the most recent midnight, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below.</p>
+<h3 id="retrieve-data-from-snapshots-milgram">Retrieve Data from Snapshots (Milgram)</h3>
+<p>Milgram runs snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or removed files for yourself. As long as your files existed in the form you want them in before the most recent midnight, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below.</p>
 <table>
 <thead>
 <tr>
@@ -1504,10 +1504,6 @@ A sample workflow would be:</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>/gpfs/ysm</code></td>
-<td><code>/gpfs/ysm/.snapshots</code></td>
-</tr>
 <tr>
 <td><code>/gpfs/slayman/pi/gerstein</code></td>
 <td><code>/gpfs/slayman/pi/gerstein/.snapshots</code></td>
@@ -1522,13 +1518,24 @@ A sample workflow would be:</p>
 </tr>
 </tbody>
 </table>
-<p>For example, if you wanted to recover the most recent snapshot of the file <code>/gpfs/ysm/home/rdb9/scripts/doit.sh</code>, its path would be <code>/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/home/rdb9/scripts/doit.sh</code>. Similarly, the file <code>/gpfs/milgram/project/bjornson/rdb9/doit.sh</code> (a file in the bjornson group's project directory owned by rdb9) could be recovered at <code>/gpfs/milgram/project/bjornson/.snapshots/$(date +%Y%m%d-0000)/rdb9/doit.sh</code> .</p>
+<p>For example, if you wanted to recover the file <code>/gpfs/milgram/project/bjornson/rdb9/doit.sh</code> (a file in the bjornson group's project directory owned by rdb9) it would be found at <code>/gpfs/milgram/project/bjornson/.snapshots/$(date +%Y%m%d-0000)/rdb9/doit.sh</code> .</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the <code>.snapshots</code> directory.</p>
 </div>
                 
                   
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        Last update: May 23, 2020
+                      
+                    </small>
+                  </div>
                 
               
               
@@ -1584,9 +1591,9 @@ A sample workflow would be:</p>
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1596,9 +1603,9 @@ A sample workflow would be:</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
         <script src="../../../js/extra.js"></script>
       
