@@ -39,6 +39,17 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 \* default
 
+## YCGA Data Retention Policy
+
+Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus.   Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).
+
+- 45 days after sequencing, the raw bcl files are deleted.
+- 60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.
+- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  [Instructions for retrieving archived data](/clusters-at-yale/data/archived-sequencing).
+
+All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the tape archive.
+Disaster recovery is provided by the data stored on the tape library.
+
 ## Access Sequencing Data
 
 To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them.
