@@ -1,0 +1,6 @@
+# Serving Research Data Externally
+
+If you need to serve research data externally, it can be a challenge, since most Yale servers have internal IP addresses that are not externally accessible.  A common example is hosting tracks for the UCSC Genome Browser, which requires loading data onto an http server that is publically accessible.
+
+The best way we have found to do this is to use ITS's spinup service.  spinup.internal.yale.edu.  Create a "static website", giving it an appropriate website name.  Then, use any S3 tool to upload your files to the static website.  The FAQ on the spinup page lists a number of suggested tools.  Note that there will be a modest cost for storing the data (a few cents per GB per month).
+
