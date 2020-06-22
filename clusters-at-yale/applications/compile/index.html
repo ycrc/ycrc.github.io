@@ -1,40 +1,19 @@
 
 
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/applications/compile/">
       
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
       
@@ -42,21 +21,18 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
-    
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
@@ -64,61 +40,45 @@
     
       
         
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-133385440-1", "docs.ycrc.yale.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
   </head>
   
+  
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#build-software" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <!--
-  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
   deal in the Software without restriction, including without limitation the
   rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
   sell copies of the Software, and to permit persons to whom the Software is
   furnished to do so, subject to the following conditions:
+
   The above copyright notice and this permission notice shall be included in
   all copies or substantial portions of the Software.
+
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
   FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
@@ -132,69 +92,65 @@
 <header class="md-header" data-md-component="header">
 
   <!-- Top-level navigation -->
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
+  <nav class="md-header-nav md-grid" aria-label="Header">
 
-      <!-- Link to home -->
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://docs.ycrc.yale.edu"
-            title="Yale Center for Research Computing"
-            class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">library_books</i>
-          
-        </a>
-      </div>
+    <!-- Link to home -->
+    <a
+      href="https://docs.ycrc.yale.edu"
+      title="Yale Center for Research Computing"
+      class="md-header-nav__button md-logo"
+      aria-label="Yale Center for Research Computing"
+    >
+      
+  <img src="../../../img/papers.svg" alt="logo">
 
-      <!-- Button to toggle drawer -->
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button"
-            for="__drawer"></label>
-      </div>
+    </a>
 
-      <!-- Header title -->
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title"
-            data-md-component="title">
-          
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis branding">
+            <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
             
-              <span class="md-header-nav__topic branding" >
-                <a href="http://research.computing.yale.edu">
-                  <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
-                </a>
-              </span>
-              <span class="md-header-nav__topic">
-                Build Software
-              </span>
+              Build Software
             
-          
+          </span>
         </div>
-      </div>
+    </div>
 
-      <!-- Button to open search dialogue -->
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button"
-                for="__search"></label>
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
 
-            <!-- Search interface -->
-            
+      <!-- Search interface -->
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -202,25 +158,20 @@
     </div>
   </div>
 </div>
-          
-        
-      </div>
+    
 
-      <!-- Repository containing source -->
-      
-
-    </div>
-
-
+    <!-- Repository containing source -->
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
-        <!--
+        
+          <!--
   Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -246,7 +197,7 @@
 
 
 <!-- Tabs with outline -->
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
@@ -274,20 +225,21 @@
 </nav>
 
 <div id="system-status-message"></div>
+        
       
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing">
       
-        <i class="md-icon">library_books</i>
-      
+  <img src="../../../img/papers.svg" alt="logo">
+
     </a>
     Yale Center for Research Computing
   </label>
@@ -303,13 +255,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       Support
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Support" data-md-level="1">
       <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Support
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -336,13 +294,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
     
     <label class="md-nav__link" for="nav-1-2">
       Clusters at Yale
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Clusters at Yale" data-md-level="2">
       <label class="md-nav__title" for="nav-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Clusters at Yale
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -391,13 +355,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
     
     <label class="md-nav__link" for="nav-1-2-4">
       Access the Clusters
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="Access the Clusters" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Access the Clusters
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -501,13 +471,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5" checked>
     
     <label class="md-nav__link" for="nav-1-2-5">
       Applications & Software
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="Applications & Software" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Applications & Software
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -534,13 +510,16 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Build Software
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="./" title="Build Software" class="md-nav__link md-nav__link--active">
@@ -548,13 +527,18 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -562,7 +546,7 @@
     caveat emptor
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="caveat emptor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -582,7 +566,7 @@
     Conventions
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Conventions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -609,7 +593,7 @@
     Autotools (configure/make)
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Autotools (configure/make)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -637,10 +621,6 @@
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -685,13 +665,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
     
     <label class="md-nav__link" for="nav-1-2-6">
       Software Guides
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="Software Guides" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Software Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -901,13 +887,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
     
     <label class="md-nav__link" for="nav-1-2-7">
       Job Scheduling
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="Job Scheduling" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Job Scheduling
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1045,13 +1037,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
     
     <label class="md-nav__link" for="nav-1-2-8">
       Data & Storage
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="Data & Storage" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Data & Storage
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1141,13 +1139,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9">
     
     <label class="md-nav__link" for="nav-1-2-9">
       The Clusters
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="The Clusters" data-md-level="3">
       <label class="md-nav__title" for="nav-1-2-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         The Clusters
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1230,13 +1234,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
     
     <label class="md-nav__link" for="nav-1-3">
       Research Data
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Research Data" data-md-level="2">
       <label class="md-nav__title" for="nav-1-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Research Data
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1347,13 +1357,18 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1361,7 +1376,7 @@
     caveat emptor
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="caveat emptor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1381,7 +1396,7 @@
     Conventions
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Conventions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1408,7 +1423,7 @@
     Autotools (configure/make)
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Autotools (configure/make)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1437,10 +1452,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -1452,6 +1463,9 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
+                
+                
+                  
                 
                 
                 <h1 id="build-software">Build Software</h1>
@@ -1476,11 +1490,11 @@
 <p>If you choose a project directory prefix, it will be easier to share your applications with lab mates or other cluster users. Just make sure to use the true path (the one returned by <code>mydirectories</code>).</p>
 </div>
 <p>Once you've chosen a prefix you will want to add any directory with executables you want to run to your <code>PATH</code> environment variable, and any directores with libraries that your application(s) link to your <code>LD_LIBRARY_PATH</code> environment variable. Each of these tell your shell where to look when you call your application without specifying an absolute path to it. To set these variables permanently, add the following to the end of your <code>~/.bashrc</code> file:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># local installs</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># local installs</span>
 <span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/bin:<span class="nv">$PATH</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$MY_PREFIX</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>For the remainder of the guide we'll use the <code>$MY_PREFIX</code> variable to refer to the prefix. See below or your application's install instructions for exactly how to specify your prefix at build/install time.</p>
@@ -1490,19 +1504,30 @@
 <p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
 <h3 id="configure"><code>configure</code></h3>
 <p>If you are instructed to run <code>./configure</code> to generate a Makefile, specify your prefix with the <code>--prefix</code> option. This creates a file, usually named <code>Makefile</code> that is a recipe for <code>make</code> to use to build your application.</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
 ./configure --prefix<span class="o">=</span><span class="nv">$MY_PREFIX</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="make-install"><code>make install</code></h3>
 <p>If your configure ran properly, <code>make install</code> should properly place your application in your prefix directory. If there is no install target specified for your application, you can either run <code>make</code> and copy the application to your <code>$MY_PREFIX/bin</code> directory or build it somewhere in <code>$MY_PREFIX</code> and add its relevant paths to your <code>PATH</code> and/or <code>LD_LIBRARY_PATH</code> environment variables in your <code>~/.bashrc</code> file as shown in the <a href="#local-install">local install</a> section.</p>
 <h2 id="cmake">CMake</h2>
 <p><a href="https://en.wikipedia.org/wiki/CMake">CMake</a> is a popular cross-platform build system. On a linux system, CMake will create a <code>Makefile</code> in a step analogous to <code>./configure</code>. It is common to create a build directory then run the <code>cmake</code> and <code>make</code> commands from there. Below is what installing to your <code>$MY_DIRECTORY</code> prefix might look like with CMake. CMake instructions also tend to link together the build process onto on line with <code>&amp;&amp;</code>, which tells your shell to only continue to the next command if the previous one exited without error.</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
 mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$MY_PREFIX</span> .. <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
-</pre></div>
+</code></pre></div>
                 
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: November 1, 2019
+    
+  </small>
+</div>
                   
                 
               
@@ -1520,34 +1545,34 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../" title="Overview" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 Overview
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../modules/" title="Load Software with Modules" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../modules/" title="Load Software with Modules" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 Load Software with Modules
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1558,11 +1583,10 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -1571,9 +1595,18 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
       
     </div>
     
-      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs", "instant"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
         <script src="../../../js/extra.js"></script>
       
