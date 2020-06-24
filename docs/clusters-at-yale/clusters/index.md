@@ -13,13 +13,13 @@ We maintain and support four compute clusters, with roughly 30,000 cores total. 
 
 ## Storage
 
-We maintain several high performance storage systems which amount to about 9 PB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always contain the home directory of the cluster you are on.
+We maintain several high performance storage systems which amount to about 11 PB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into.
 
-| Filesystem    | Size   | Mounting Clusters        |
-|---------------|--------|--------------------------|
-| /gpfs/loomis  | 2.6 PB | Grace\*, Farnam |
-| /gpfs/ysm     | 1.5 PB | Grace, Farnam\*   |
-| /gpfs/slayman | 1.0 PB | Grace, Farnam     |
-| /gpfs/ycga    | 2.0 PB | Ruddle\*                 |
-| /ycga-ba      | 1.1 PB | Ruddle                   |
-| /gpfs/milgram | 1.1 PB | Milgram\*                |
+| Filesystem    | Size    | Mounting Clusters     |
+|---------------|---------|-----------------------|
+| /gpfs/gibbs   | 2.7 PiB | Grace, Farnam, Ruddle |
+| /gpfs/loomis  | 2.6 PiB | Grace\*, Farnam       |
+| /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       |
+| /gpfs/slayman | 1.0 PiB | Grace, Farnam         |
+| /gpfs/ycga    | 2.0 PiB | Ruddle\*              |
+| /gpfs/milgram | 1.1 PiB | Milgram\*             |
