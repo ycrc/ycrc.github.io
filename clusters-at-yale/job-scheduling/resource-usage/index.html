@@ -1542,7 +1542,7 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 </code></pre></div>
 
 
-<p><code>ps</code> reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.</p>
+<p><code>ps</code> reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GiB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.</p>
 <h3 id="top"><code>top</code></h3>
 <p><code>top</code> runs interactively and shows you live usage statistics. You can press <kbd>u</kbd>, enter your netid, then <kbd>enter</kbd> to filter just your processes. For Memory usage, the number you are interested in is RES. In the case below, the YEPNEE.exe programs are each consuming ~600MB of memory and each fully utilizing one CPU. You can press <kbd>?</kbd> for help and <kbd>q</kbd> to quit.</p>
 <p><img alt="" src="/img/top.png" /></p>
@@ -1562,7 +1562,7 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 <span class="err">CPU Efficiency: 17.04% of 01:33:23 core-walltime</span>
 <span class="err">Job Wall-clock time: 01:33:23</span>
 <span class="err">Memory Utilized: 446.20 MB</span>
-<span class="err">Memory Efficiency: 8.71% of 5.00 GB</span>
+<span class="err">Memory Efficiency: 8.71% of 5.00 GiB</span>
 </code></pre></div>
 
 
@@ -1610,7 +1610,7 @@ The <code>seff-array</code> tool takes the job ID of the array and then calculat
 
 
 <p>This shows how efficiently the resource request was for all the jobs in an array.
-In this example, we see that the average memory usage was just under 1GB, which is reasonable for the 2GB requested.
+In this example, we see that the average memory usage was just under 1GiB, which is reasonable for the 2GiB requested.
 However, the requested runtime was for an hour, while the jobs only ran for six minutes.
 These jobs could have been scheduled more quickly if a more accurate runtime was specified.</p>
 <h3 id="sacct"><code>sacct</code></h3>
@@ -1634,7 +1634,7 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
 <div class="md-source-date">
   <small>
     
-      Last update: February 21, 2020
+      Last update: July 9, 2020
     
   </small>
 </div>

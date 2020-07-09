@@ -1385,7 +1385,7 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 <li><code>tasklist.txt.ROGUES</code>: The simple queue system attempts to ensure that all tasks launched eventually exit (normally or abnormally). If it fails to get confirmation that a task has exited, information about the command will be written to this file. This information can be used to hunt down and kill run away processes.</li>
 </ul>
 <h2 id="other-important-options">Other Important Options</h2>
-<p>If your individual tasks need more than the default memory allocated on your cluster, you can specify a different value using -m. For example: <code>sqCreateScript -m 10g -n 4 ... tasklist &gt; run.sh</code> would request 10GB of RAM for each of your workers.</p>
+<p>If your individual tasks need more than the default memory allocated on your cluster, you can specify a different value using -m. For example: <code>sqCreateScript -m 10g -n 4 ... tasklist &gt; run.sh</code> would request 10GiB of RAM for each of your workers.</p>
 <p>If your jobs are themselves multithreaded, you can request that your workers have multiple cores using the -c option: <code>sqCreateScript -c 20 -n 4 ... tasklist &gt; run.sh</code> This would create 4 workers, each having access to 20 cores.</p>
                 
                   
@@ -1395,7 +1395,7 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 <div class="md-source-date">
   <small>
     
-      Last update: January 24, 2019
+      Last update: July 9, 2020
     
   </small>
 </div>
