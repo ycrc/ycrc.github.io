@@ -167,25 +167,7 @@ module load miniconda
 conda remove --name env_name --all
 ```
 
-### Undo the last set of changes
-
-Conda keeps a history of all the changes made to your environment so you can revert to a previous state. To list the history of each change to an environment:
-
-``` bash
-module load miniconda
-conda activate my_env
-conda list --revisions
-```
-
-To restore to revision 4 in `my_env`:
-
-``` bash
-module load miniconda
-conda activate my_env
-conda install --revision=4
-```
-
-### Share your Conda Environment
+### Save and Export Environments
 
 If you want to share or back up a Conda environment, you can export it to a file. To do so you need to run the following, replacing `env_name` with the desired environment.
 
