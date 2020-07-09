@@ -789,15 +789,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#undo-the-last-set-of-changes" class="md-nav__link">
-    Undo the last set of changes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#share-your-conda-environment" class="md-nav__link">
-    Share your Conda Environment
+  <a href="#save-and-export-environments" class="md-nav__link">
+    Save and Export Environments
   </a>
   
 </li>
@@ -1612,15 +1605,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#undo-the-last-set-of-changes" class="md-nav__link">
-    Undo the last set of changes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#share-your-conda-environment" class="md-nav__link">
-    Share your Conda Environment
+  <a href="#save-and-export-environments" class="md-nav__link">
+    Save and Export Environments
   </a>
   
 </li>
@@ -1778,22 +1764,7 @@ conda remove --name env_name --all
 </code></pre></div>
 
 
-<h3 id="undo-the-last-set-of-changes">Undo the last set of changes</h3>
-<p>Conda keeps a history of all the changes made to your environment so you can revert to a previous state. To list the history of each change to an environment:</p>
-<div class="codehilite"><pre><span></span><code>module load miniconda
-conda activate my_env
-conda list --revisions
-</code></pre></div>
-
-
-<p>To restore to revision 4 in <code>my_env</code>:</p>
-<div class="codehilite"><pre><span></span><code>module load miniconda
-conda activate my_env
-conda install --revision<span class="o">=</span><span class="m">4</span>
-</code></pre></div>
-
-
-<h3 id="share-your-conda-environment">Share your Conda Environment</h3>
+<h3 id="save-and-export-environments">Save and Export Environments</h3>
 <p>If you want to share or back up a Conda environment, you can export it to a file. To do so you need to run the following, replacing <code>env_name</code> with the desired environment.</p>
 <div class="codehilite"><pre><span></span><code>module load miniconda
 conda activate env_name
