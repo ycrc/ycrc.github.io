@@ -13,7 +13,7 @@
       
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -1391,7 +1391,7 @@
                 <h1 id="rclone">Rclone</h1>
 <p><code>rclone</code> is a command line program to sync files and directories to and from all major cloud storage sites and services. You can use <code>rclone</code> to sync files and directories between Yale clusters and Yale Box, google drive, etc. The following instructions covers basics to setup and use <code>rclone</code> on Yale clusters. For more information about Rclone, please visit its website at <a href="https://rclone.org">https://rclone.org</a>. </p>
 <h2 id="setup-rclone-on-yale-clusters">Setup Rclone on Yale clusters</h2>
-<p>You need to run <code>rclone config</code> at least once to receive authorization for access to the cloud service which you are configuring. Since <code>rclone config</code> will bring up a browser to authorize the cloud service, you will need X Windows on the host where you run <code>rclone config</code>. This means, to setup <code>rclone</code> on one of the Yale clusters, you need to login to the cluster with <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/">X11 forwarding</a>. However X11 forwarding is extremly slow and you may have problems of brining up the browser smoothly. A better way is to run VNC on the cluster and setup a tunnel to access the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/">remote VNC desktop</a> on the cluster. A third way, which is the best, is to use the Remote Desktop App from the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">OnDemand portal</a>. Once Remote Desktop starts runing on OOD, open a terminal and do the following.</p>
+<p>You need to run <code>rclone config</code> at least once to receive authorization for access to the cloud service which you are configuring. Since <code>rclone config</code> will bring up a browser to authorize the cloud service, you will need X Windows on the host where you run <code>rclone config</code>. This means, to setup <code>rclone</code> on one of the Yale clusters, you need to login to the cluster with <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/">X11 forwarding</a>. However X11 forwarding is extremly slow and you may have problems of brining up the browser smoothly. A better way is to run VNC on the cluster and setup a tunnel to access the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/">remote VNC desktop</a> on the cluster. A third way, which is the best, is to use the Remote Desktop App from the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">OnDemand portal</a>. Once Remote Desktop starts runing, do the following in the terminal:</p>
 <p>The example below is a screen dump from setting up <code>rclone</code> on Farnam for Yale Box.</p>
 <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">pl543@transfer-farnam ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">Rclone</span><span class="w"></span>
 <span class="o">[</span><span class="n">pl543@transfer-farnam ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">rclone</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
@@ -1489,7 +1489,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: June 16, 2020
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2020</span>
     
   </small>
 </div>
@@ -1561,14 +1561,14 @@
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.4a5ba8d6.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
