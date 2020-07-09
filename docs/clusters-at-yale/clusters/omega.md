@@ -24,7 +24,7 @@ The cluster is made up of several kinds of compute nodes. The Features column be
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 4GB of memory.
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 4GiB of memory.
 
 ### Public Partitions
 

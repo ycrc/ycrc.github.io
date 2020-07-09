@@ -70,7 +70,7 @@ Once you are on the compute node, run either `ps` or `top`.
 93.8 80799668 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
 ```
 
-`ps` reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.
+`ps` reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GiB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.
 
 ### `top`
 
@@ -101,7 +101,7 @@ CPU Utilized: 00:15:55
 CPU Efficiency: 17.04% of 01:33:23 core-walltime
 Job Wall-clock time: 01:33:23
 Memory Utilized: 446.20 MB
-Memory Efficiency: 8.71% of 5.00 GB
+Memory Efficiency: 8.71% of 5.00 GiB
 ```
 
 ### `seff-array`
@@ -151,7 +151,7 @@ Requesting less time would allow jobs to run more quickly.
 ```
 
 This shows how efficiently the resource request was for all the jobs in an array.
-In this example, we see that the average memory usage was just under 1GB, which is reasonable for the 2GB requested.
+In this example, we see that the average memory usage was just under 1GiB, which is reasonable for the 2GiB requested.
 However, the requested runtime was for an hour, while the jobs only ran for six minutes.
 These jobs could have been scheduled more quickly if a more accurate runtime was specified.
 

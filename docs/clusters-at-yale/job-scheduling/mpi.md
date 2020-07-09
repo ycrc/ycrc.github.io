@@ -1,6 +1,6 @@
 # MPI Partition
 
-Grace has a special common partition called `mpi`. The `mpi` partition is a bit different from other partitions on Grace--it always allocates entire nodes to jobs submitted to the partition. Each node in the `mpi` partition are identical 24 core, 2x Skylake Gold 6136, 96GB RAM (90GB usable) nodes. While this partition is available to all Grace users, only certain types of jobs are allowed on the partition (similar to the restrictions on our GPU partitions).
+Grace has a special common partition called `mpi`. The `mpi` partition is a bit different from other partitions on Grace--it always allocates entire nodes to jobs submitted to the partition. Each node in the `mpi` partition are identical 24 core, 2x Skylake Gold 6136, 96GiB RAM (90GiB usable) nodes. While this partition is available to all Grace users, only certain types of jobs are allowed on the partition (similar to the restrictions on our GPU partitions).
 
 ## Appropriate Jobs
 

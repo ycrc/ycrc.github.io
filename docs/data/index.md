@@ -2,7 +2,7 @@
 
 ## Google Drive via EliApps
 
-**Capacity: Unlimited. Cost: Free - 5TB max file size  
+**Capacity: Unlimited. Cost: Free - 5TiB max file size  
 No sensitive data (e.g. ePHI, HIPAA)  
 Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/data/google-drive)**
 
@@ -16,9 +16,9 @@ Can be mounted on the cluster or computers on campus (but not both)**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
 
-* Standard (daily use): $10.78/TB/month
-* Archive (long term storage): $3.60/TB/month
-* Enhanced (higher performance): $33.87/TB/month
+* Standard (daily use): $10.78/TiB/month
+* Archive (long term storage): $3.60/TiB/month
+* Enhanced (higher performance): $33.87/TiB/month
 
 For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
@@ -29,7 +29,7 @@ To request a share, press the “Request this Service” button in the right sid
 
 ## Box at Yale
 
-**Capacity: 50GB per user. Cost: Free. 15 GB max file size.  
+**Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.  
 Sensitive data (e.g. ePHI, HIPAA) only in Secure Box  
 Can be mounted on your local machine and transferred with [`rclone`](https://rclone.org/)**
 

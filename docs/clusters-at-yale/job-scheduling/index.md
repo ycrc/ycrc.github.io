@@ -88,8 +88,8 @@ As shown in the above example, "directives" are comprised of `#SBATCH` followed 
 |`--ntasks-per-node`||Number of "tasks" per node. For use with distributed parallelism. See below.|
 |`--time`|`-t `|Maximum walltime of the job in the format D-HH:MM:SS (e.g. `--time=1-` for one day or `--time=4:00:00` for 4 hours)|
 |`--constraint`|`-C`|specific node architecture (if applicable)|
-|`--mem-per-cpu`||Memory requested per CPU (e.g. `10G` for 10 GB)|
-|`--mem`||Memory requested per node (e.g. `40G` for 40 GB)|
+|`--mem-per-cpu`||Memory requested per CPU (e.g. `10G` for 10 GiB)|
+|`--mem`||Memory requested per node (e.g. `40G` for 40 GiB)|
 |`--mail-user`||Mail address (alternatively, put your email address in ~/.forward)|
 |`--mail-type`||Control emails to user on job events. Use `ALL` to receive email notications at the beginning and end of the job.|
 

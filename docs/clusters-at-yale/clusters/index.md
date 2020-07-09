@@ -13,7 +13,7 @@ We maintain and support four compute clusters, with roughly 30,000 cores total. 
 
 ## Storage
 
-We maintain several high performance storage systems which amount to about 11 PB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into.
+We maintain several high performance storage systems which amount to about 11 PiB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into.
 
 | Filesystem    | Size    | Mounting Clusters     |
 |---------------|---------|-----------------------|

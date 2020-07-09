@@ -16,8 +16,8 @@ If your Yale email account is already an EliApps account (Gmail), then you are a
 | Limit type                                | Limit   |
 |-------------------------------------------|---------|
 | Number of files and folders               | 400,000 |
-| Daily upload cap                          | 750 GB  |
-| Max individual file size                  | 5 TB    |
+| Daily upload cap                          | 750 GiB  |
+| Max individual file size                  | 5 TiB    |
 | Max number of nested folders              | 20      |
 
 ### Local File Access

@@ -52,7 +52,7 @@ Grace is made up of several kinds of compute nodes. The Features column below li
 
 ## Slurm Partitions
 
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5GB of memory, unless otherwise specified.
+Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5GiB of memory, unless otherwise specified.
 
 ### Public Partitions
 
@@ -74,7 +74,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 | week         | CPUs: 250      | CPUs: 100                  | 1h/7d                    | E5-2660_v3 (36), E5-2660_v4 (7)                                                                                           |
 
 \* default  
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description. The default memory request on the mpi partition in 3.75GB per core.
+** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description. The default memory request on the mpi partition in 3.75GiB per core.
 
 ### Private Partitions
 
@@ -116,7 +116,7 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 | pi_seto             | 1h/28d                 | 6142 (3)                                                                 |
 | pi_tsmith           | 1h/28d                 | E5-2660_v3 (1)                                                           |
 
-\* The default memory request on this partition is 3.75GB per core.  
+\* The default memory request on this partition is 3.75GiB per core.  
 
 ## Storage
 

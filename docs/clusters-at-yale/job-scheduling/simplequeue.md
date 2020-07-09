@@ -86,6 +86,6 @@ Assuming that all goes well, tasks from the tasklist file will be scheduled auto
 
 ## Other Important Options
 
-If your individual tasks need more than the default memory allocated on your cluster, you can specify a different value using -m. For example: `sqCreateScript -m 10g -n 4 ... tasklist > run.sh` would request 10GB of RAM for each of your workers.
+If your individual tasks need more than the default memory allocated on your cluster, you can specify a different value using -m. For example: `sqCreateScript -m 10g -n 4 ... tasklist > run.sh` would request 10GiB of RAM for each of your workers.
 
 If your jobs are themselves multithreaded, you can request that your workers have multiple cores using the -c option: `sqCreateScript -c 20 -n 4 ... tasklist > run.sh` This would create 4 workers, each having access to 20 cores.

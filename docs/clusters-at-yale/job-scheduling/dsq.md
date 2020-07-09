@@ -19,7 +19,7 @@ dSQ is _not_ recommended for situations where the initialization of the job take
 
 First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with `#` will be ignored when submitting your job array. **Note:** slurm jobs start in the directory from which your job was submitted.
 
-For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with `bowtie2` and convert to bam files with `samtools`. Given some initial testing, you think that each job needs 4 GB of RAM, and will run in less than 10 minutes.
+For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with `bowtie2` and convert to bam files with `samtools`. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 10 minutes.
 
 Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:
 
@@ -40,7 +40,7 @@ module load dSQ
 
 You can also download or clone this repo and use the scripts directly.
 
-`dsq` takes a few arguments, then writes a job submission script (default) or can directly submit a job for you. **The resources you request will be given to each job in the array (each line in your job file)**, e.g. requesting 2 GB of RAM with dSQ will run each individual job with a separate 2 GB of RAM available. Run `sbatch --help` or see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for more info on sbatch options. dSQ will set a default job name of dsq-jobfile (your job file name without the file extension). dSQ will also set the job output file name pattern to dsq-jobfile-%A_%a-%N.out, which will capture each of your jobs' output to a file with the job's ID(%A), its array index or zero-based line number(%a), and the host name of the node it ran on (%N). If you are handling output in each of your jobs, set this to `/dev/null`, which will stop these files from being created.
+`dsq` takes a few arguments, then writes a job submission script (default) or can directly submit a job for you. **The resources you request will be given to each job in the array (each line in your job file)**, e.g. requesting 2 GiB of RAM with dSQ will run each individual job with a separate 2 GiB of RAM available. Run `sbatch --help` or see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for more info on sbatch options. dSQ will set a default job name of dsq-jobfile (your job file name without the file extension). dSQ will also set the job output file name pattern to dsq-jobfile-%A_%a-%N.out, which will capture each of your jobs' output to a file with the job's ID(%A), its array index or zero-based line number(%a), and the host name of the node it ran on (%N). If you are handling output in each of your jobs, set this to `/dev/null`, which will stop these files from being created.
 
 ``` text
 Required Arguments:
@@ -61,7 +61,7 @@ Optional Arguments:
   --submit              Submit the job array on the fly instead of creating a submission script.
 ```
 
-In the example above, we want walltime of 10 minutes and memory=4GB per job. Our invocation would be:
+In the example above, we want walltime of 10 minutes and memory=4GiB per job. Our invocation would be:
 
 ``` bash
 dsq --job-file joblist.txt --mem-per-cpu 4g -t 10:00 --mail-type ALL

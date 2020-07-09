@@ -49,7 +49,7 @@ If you plan to poll this sort of information extensively, please contact us
 for help at hpc@yale.edu
 
 ## Usage Details for hpcprog (as of Nov 20 2019 05:00)
-Fileset       User  Usage (GB) File Count
+Fileset       User  Usage (GiB) File Count
 ------------- ----- ---------- -------------
 project       ahs3          82        33,788
 project       cag94          0             1
@@ -66,7 +66,7 @@ scratch60     pl543          0             6
 scratch60     tl397      13056       282,212
 
 ## Quota Summary for hpcprog (as of right now)
-Fileset       Type    Usage (GB)   Quota (GB)  File Count    File Limit    Backup    Purged
+Fileset       Type    Usage (GiB)   Quota (GiB)  File Count    File Limit    Backup    Purged
 ------------- ------- ------------ ----------- ------------- ------------- --------- ---------
 home.grace    USR               39         100       190,055       200,000 Yes        No
 project       GRP              707        6144     1,611,981     5,000,000 No         No
@@ -74,7 +74,7 @@ scratch60     GRP             4054       20480       987,336     5,000,000 No   
 
 ```
 There are different quotas for `$HOME`, `$PROJECT`, and `$SCRATCH60`.
-In addition to a disk usage quota (in GB), there is a File Count quota that limits the number of files that can be created.
+In addition to a disk usage quota (in GiB), there is a File Count quota that limits the number of files that can be created.
 If your account is running into any of these quotas, jobs may not run successfully.
 
 As the $HOME space is backed up, there is a much smaller quota for each user.
