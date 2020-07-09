@@ -13,11 +13,11 @@
       
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
       
-        <title>Python with Conda - Yale Center for Research Computing</title>
+        <title>Conda - Yale Center for Research Computing</title>
       
     
     
@@ -57,7 +57,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-with-conda" class="md-skip">
+        <a href="#conda" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Python with Conda
+              Conda
             
           </span>
         </div>
@@ -607,6 +607,217 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Conda
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Conda" class="md-nav__link md-nav__link--active">
+      Conda
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-miniconda-module" class="md-nav__link">
+    The Miniconda Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults-we-set" class="md-nav__link">
+    Defaults We Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-your-environment" class="md-nav__link">
+    Setup Your Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Your Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-the-miniconda-module" class="md-nav__link">
+    Load the miniconda Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-conda-environment" class="md-nav__link">
+    Create a conda Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-channels" class="md-nav__link">
+    Conda Channels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-your-environment" class="md-nav__link">
+    Use Your Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Your Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive" class="md-nav__link">
+    Interactive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-a-job-script" class="md-nav__link">
+    In a Job Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-and-install-additional-packages" class="md-nav__link">
+    Find and Install Additional Packages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot" class="md-nav__link">
+    Troubleshoot
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshoot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-version-doesnt-match-the-module-loaded" class="md-nav__link">
+    Conda version doesn't match the module loaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied" class="md-nav__link">
+    Permission Denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bash-conda-no-such-file-or-directory" class="md-nav__link">
+    bash: conda: No such file or directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#could-not-find-environment" class="md-nav__link">
+    Could not find environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-conda-commands" class="md-nav__link">
+    Additional Conda Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Conda Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-installed-packages" class="md-nav__link">
+    List Installed Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-conda-environment" class="md-nav__link">
+    Delete a Conda Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undo-the-last-set-of-changes" class="md-nav__link">
+    Undo the last set of changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#share-your-conda-environment" class="md-nav__link">
+    Share your Conda Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../gaussian/" title="Gaussian" class="md-nav__link">
@@ -679,216 +890,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Python with Conda
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Python with Conda" class="md-nav__link md-nav__link--active">
-      Python with Conda
+  <li class="md-nav__item">
+    <a href="../parallel/" title="Parallel" class="md-nav__link">
+      Parallel
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-miniconda-module" class="md-nav__link">
-    The Miniconda Module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-your-environment" class="md-nav__link">
-    Setup Your Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Your Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#load-the-miniconda-module" class="md-nav__link">
-    Load the Miniconda Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-install-locations" class="md-nav__link">
-    Default Install Locations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-conda-environment" class="md-nav__link">
-    Create a conda Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conda-channels" class="md-nav__link">
-    Conda Channels
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-your-environment" class="md-nav__link">
-    Using Your Environment
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Your Environment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interactive" class="md-nav__link">
-    Interactive
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-a-job-script" class="md-nav__link">
-    In a Job Script
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find-and-install-additional-packages" class="md-nav__link">
-    Find and Install Additional Packages
-  </a>
-  
-    <nav class="md-nav" aria-label="Find and Install Additional Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshoot" class="md-nav__link">
-    Troubleshoot
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshoot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
-    "Permission Denied"
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-bash-activate-no-such-file-or-directory" class="md-nav__link">
-    "-bash: activate: No such file or directory"
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#could-not-find-environment" class="md-nav__link">
-    "could not find environment:"
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-conda-commands" class="md-nav__link">
-    Additional Conda Commands
-  </a>
-  
-    <nav class="md-nav" aria-label="Additional Conda Commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-installed-packages" class="md-nav__link">
-    List Installed Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-a-conda-environment" class="md-nav__link">
-    Delete a Conda Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#share-your-conda-environment" class="md-nav__link">
-    Share your Conda Environment
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-for-r" class="md-nav__link">
-    Conda for R
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1468,6 +1474,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#defaults-we-set" class="md-nav__link">
+    Defaults We Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-your-environment" class="md-nav__link">
     Setup Your Environment
   </a>
@@ -1477,14 +1490,7 @@
         
           <li class="md-nav__item">
   <a href="#load-the-miniconda-module" class="md-nav__link">
-    Load the Miniconda Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default-install-locations" class="md-nav__link">
-    Default Install Locations
+    Load the miniconda Module
   </a>
   
 </li>
@@ -1503,12 +1509,17 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#using-your-environment" class="md-nav__link">
-    Using Your Environment
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-your-environment" class="md-nav__link">
+    Use Your Environment
   </a>
   
-    <nav class="md-nav" aria-label="Using Your Environment">
+    <nav class="md-nav" aria-label="Use Your Environment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1525,28 +1536,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#find-and-install-additional-packages" class="md-nav__link">
     Find and Install Additional Packages
   </a>
-  
-    <nav class="md-nav" aria-label="Find and Install Additional Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1564,22 +1557,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
-    "Permission Denied"
+  <a href="#conda-version-doesnt-match-the-module-loaded" class="md-nav__link">
+    Conda version doesn't match the module loaded
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-bash-activate-no-such-file-or-directory" class="md-nav__link">
-    "-bash: activate: No such file or directory"
+  <a href="#permission-denied" class="md-nav__link">
+    Permission Denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bash-conda-no-such-file-or-directory" class="md-nav__link">
+    bash: conda: No such file or directory
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#could-not-find-environment" class="md-nav__link">
-    "could not find environment:"
+    Could not find environment
   </a>
   
 </li>
@@ -1612,6 +1612,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#undo-the-last-set-of-changes" class="md-nav__link">
+    Undo the last set of changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#share-your-conda-environment" class="md-nav__link">
     Share your Conda Environment
   </a>
@@ -1620,13 +1627,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-for-r" class="md-nav__link">
-    Conda for R
-  </a>
   
 </li>
       
@@ -1646,63 +1646,84 @@
                   
                 
                 
-                <h1 id="python-with-conda">Python with Conda</h1>
-<p>For researchers who have Python (or R package--see bottom) requirements beyond the most common packages (e.g. Numpy, Scipy, Pandas), we recommend using <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a>. Using Anaconda's <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> package manager, you can create and manage packages and environments. These allow you to easily switch between versions of Python libraries and applications for different projects.</p>
-<p>Many other software applications have also started to use Conda as a package manager. It has become a popular choice for managing pipelines that involve several tools, especially with multiple languages.</p>
+                <h1 id="conda">Conda</h1>
+<p><a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the <a href="/clusters-at-yale/applications/modules">modules</a> that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">Conda's official command-line reference</a> and <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">the offical docs for managing environments</a> for detailed instructions. Here we present essential instructions and site-specific info.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Mixing modules and conda-managed software is almost never a good idea. When constructing an environment for your work you should load either modules or a conda environment. If you get stuck, you <a href="/#get-help">can always ask us for help</a>.</p>
+</div>
 <h2 id="the-miniconda-module">The Miniconda Module</h2>
-<p>For your convenience, we provide a relatively recent version of <a href="https://conda.io/miniconda.html">Miniconda</a> (a minimal set of Anaconda libraries) as a module. It serves to bootstrap your personal environments. By using this module, you do not need to download your own copy of Conda, which will prevent unnecessary file and storage usage in your directories.</p>
-<p>Note: If you are on Milgram and run out of space in your home directory for Conda, you can either reinstall your environment in your project space (see below) or contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> for help with your home quota.</p>
+<p>For your convenience, we provide a relatively recent version of <a href="https://conda.io/miniconda.html">Miniconda</a> as a module. This is a read-only environment from which you can create your own. We set some defaults for you in this module, and we keep it relatively up-to-date so you don't have to. If you are using Conda-installed packages, this should be the only module you load in your jobs.</p>
+<p>Note: If you are on Milgram and run out of space in your home directory for Conda, you can either reinstall your environment in your project space (see below) or <a href="/#web-and-email-support">contact us</a> for help with your home quota.</p>
+<h2 id="defaults-we-set">Defaults We Set</h2>
+<p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
+<p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span> <span class="s">&#39;({name})&#39;</span>
+<span class="nt">auto_activate_base</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">channels</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bioconda</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+</code></pre></div>
+
+
 <h2 id="setup-your-environment">Setup Your Environment</h2>
-<h3 id="load-the-miniconda-module">Load the Miniconda Module</h3>
+<h3 id="load-the-miniconda-module">Load the <code>miniconda</code> Module</h3>
 <div class="codehilite"><pre><span></span><code>module load miniconda
 </code></pre></div>
 
 
 <p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/clusters-at-yale/applications/modules">module documentation</a> for more details.</p>
-<h3 id="default-install-locations">Default Install Locations</h3>
-<p>By default on all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
-<p>To create an environment (saved to the first location in <code>$CONDA_ENVS_PATH</code> or to <code>~/.conda/envs</code>) use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. You should give your environments names that are meaningful to you, so you can more easily keep track of which serves which project or purpose. You can also use environments manage groups of packages that have conflicting prerequisites.</p>
-<p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although often unavoidable for Python, we also recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
+<p>To create an environment use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. Environment files are saved to the first path in <code>$CONDA_ENVS_PATH</code>, or where you specify with the <code>--prefix</code> option. You should give your environments names that are meaningful to you, so you can more easily keep track of their purposes.</p>
+<p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although sometimes unavoidable for Python, we recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For added reproducibility and control, specify versions of packages to be installed using <code>conda</code> with <code>packagename=version</code> syntax. E.g. <code>numpy=1.14</code></p>
 </div>
 <p>For example, if you have a legacy application that needs Python 2 and OpenBLAS:</p>
-<div class="codehilite"><pre><span></span><code>conda create -n legacy_application <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 openblas
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda create -n legacy_application <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 openblas
 </code></pre></div>
 
 
-<p>If you want a good starting point for interactive development of scientific Python scripts:</p>
-<div class="codehilite"><pre><span></span><code>conda create -n py37_dev <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 numpy scipy pandas matplotlib ipython jupyter
+<p>If you want a good starting point for interactive data science in R/Python Jupyter Notebooks:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter r-irkernel r-ggplot2 r-tidyverse
 </code></pre></div>
 
 
 <h3 id="conda-channels">Conda Channels</h3>
-<p>There are also community-lead collections of unofficial packages that you can use with <code>conda</code> called channels. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">conda docs</a> for more info about managing channels.</p>
-<p>You could use the Conda Forge channel to install <a href="http://briansimulator.org/">Brian2</a></p>
-<div class="codehilite"><pre><span></span><code>conda create -n brian2 --channel conda-forge brian2
+<p>Community-lead collections of packages that you can install with <code>conda</code> are provided with channels. Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
+<p>You can create a new environment called <code>brian2</code> (specified with the <code>-n</code> option) and install <a href="http://briansimulator.org/">Brian2</a> into it with the following:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda create -n brian2 brian2
+<span class="c1"># normally you would need this:</span>
+<span class="c1"># conda create -n brian2 --channel conda-forge brian2</span>
 </code></pre></div>
 
 
-<p>Bioconda provides recent versions of various bioinformatics tools, for example:</p>
-<div class="codehilite"><pre><span></span><code>conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
+<p>You can also install packages from Bioconda, for example:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
+<span class="c1"># normally you would need this:</span>
+<span class="c1"># conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker</span>
 </code></pre></div>
 
 
-<p>Channel priority decreases from left to right - the first argument is higher priority than the second.</p>
-<h3 id="using-your-environment">Using Your Environment</h3>
-<p>To use the applications in your environment, make sure you have the <code>miniconda</code> module loaded then run the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">source</span> activate env_name
+<h2 id="use-your-environment">Use Your Environment</h2>
+<p>To use the applications in your environment, run the following:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda activate env_name
 </code></pre></div>
 
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>We do not recommend putting <code>source activate</code> commands in  your .bashrc file. This can lead to issues in interactive or batch jobs. If you do have issues with an environment in an interactive or batch job, trying re-entering the environment by calling <code>source deactivate</code> before rerunning <code>source activate env_name</code>.</p>
+<p>We recommend <em>against</em> putting <code>source activate</code> or <code>conda activate</code> commands in  your <code>~/.bashrc</code> file. This can lead to issues in interactive or batch jobs. If you have issues with an environment, trying re-loading the environment by calling <code>conda deactivate</code> before rerunning <code>conda activate env_name</code>.</p>
 </div>
 <h4 id="interactive">Interactive</h4>
-<p>Your conda environments will <strong>not</strong> follow you into job allocations. Make sure to activate them after your <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> begins.</p>
+<p>Your Conda environments <strong>will not follow you</strong> into job allocations. Make sure to activate them after your <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> begins.</p>
 <h4 id="in-a-job-script">In a Job Script</h4>
 <p>To make sure that you are running in your project environment in a submission script, make sure to include the following lines in your submission script before running any other commands or scripts (but after your <a href="/clusters-at-yale/job-scheduling#directives">Slurm directives</a>):</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -1714,63 +1735,72 @@
 
 module load miniconda
 
-<span class="nb">source</span> activate env_name
+conda activate env_name
 python analyses.py
 </code></pre></div>
 
 
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
-<p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> for any packages you would like to install. Once in your conda environment, you can install any additional packages using <code>conda install</code>:</p>
-<h4 id="python">Python</h4>
-<div class="codehilite"><pre><span></span><code><span class="err">conda install numpy</span>
+<p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> or use <a href="https://docs.conda.io/projects/conda/en/latest/commands/search.html"><code>conda search</code></a> to find the names of packages you would like to install:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda search numpy
 </code></pre></div>
 
 
 <h2 id="troubleshoot">Troubleshoot</h2>
-<h3 id="permission-denied">"Permission Denied"</h3>
-<p>If you get a permission denied error while trying to conda or pip install a package, make sure you have created an environment and activated it or activated an existing one first.</p>
-<h3 id="-bash-activate-no-such-file-or-directory">"-bash: activate: No such file or directory"</h3>
-<p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the <code>minconda</code> module and rerunning your <code>source activate env_name</code> command.</p>
-<h3 id="could-not-find-environment">"could not find environment:"</h3>
-<p>This error means that the version of Anaconda/Miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the <code>miniconda</code> module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">conda info --envs</span>
+<h3 id="conda-version-doesnt-match-the-module-loaded">Conda version doesn't match the module loaded</h3>
+<p>If you have run <code>conda init</code> in the past, you may be locked to an old version of <code>conda</code>. You can run the following to fix this:</p>
+<div class="codehilite"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
+</code></pre></div>
+
+
+<h3 id="permission-denied">Permission Denied</h3>
+<p>If you get a permission denied error when running <code>conda install</code> or <code>pip install</code> for a package, make sure you have created an environment and activated it or activated an existing one first.</p>
+<h3 id="bash-conda-no-such-file-or-directory">bash: conda: No such file or directory</h3>
+<p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the <code>minconda</code> module and rerunning your <code>conda activate env_name</code> command.</p>
+<h3 id="could-not-find-environment">Could not find environment</h3>
+<p>This error means that the version of miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the <code>miniconda</code> module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda info --envs
 </code></pre></div>
 
 
 <h2 id="additional-conda-commands">Additional Conda Commands</h2>
 <h3 id="list-installed-packages">List Installed Packages</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">source activate env_name</span>
-<span class="err">conda list</span>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda list --name env_name
 </code></pre></div>
 
 
 <h3 id="delete-a-conda-environment">Delete a Conda Environment</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">conda env remove --name env_name</span>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda remove --name env_name --all
+</code></pre></div>
+
+
+<h3 id="undo-the-last-set-of-changes">Undo the last set of changes</h3>
+<p>Conda keeps a history of all the changes made to your environment so you can revert to a previous state. To list the history of each change to an environment:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda activate my_env
+conda list --revisions
+</code></pre></div>
+
+
+<p>To restore to revision 4 in <code>my_env</code>:</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda activate my_env
+conda install --revision<span class="o">=</span><span class="m">4</span>
 </code></pre></div>
 
 
 <h3 id="share-your-conda-environment">Share your Conda Environment</h3>
-<p>If you want to share or back up a conda environment, you can export it to a file. To do so you need to run the following, replacing <code>env_name</code> with the desired environment.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">source</span> activate env_name
+<p>If you want to share or back up a Conda environment, you can export it to a file. To do so you need to run the following, replacing <code>env_name</code> with the desired environment.</p>
+<div class="codehilite"><pre><span></span><code>module load miniconda
+conda activate env_name
 conda env <span class="nb">export</span> &gt; env_name_environment.yml
 <span class="c1"># on another machine or account, run</span>
 conda env create -f env_name_environment.yml
 </code></pre></div>
-
-
-<h2 id="conda-for-r">Conda for R</h2>
-<p>Conda can also be used under certain circumstances to install and manage R packages. All R packages are prepended with <code>r-</code>.</p>
-<p>Create new environment:</p>
-<div class="codehilite"><pre><span></span><code>conda create -n r_env r-essentials r-base
-</code></pre></div>
-
-
-<p>Install additional packages:</p>
-<div class="codehilite"><pre><span></span><code>conda install r-ggplot2
-</code></pre></div>
-
-
-<p>A list of officially supported R packages can be found <a href="https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs/">here</a>, but many additional packages are also available (e.g. via the <code>conda-forge</code> channel) and can be found using search on <a href="https://anaconda.org/">Anaconda Cloud</a>.</p>
                 
                   
                     
@@ -1779,7 +1809,7 @@ conda env create -f env_name_environment.yml
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2020</span>
+      Last update: March 11, 2020
     
   </small>
 </div>
@@ -1802,7 +1832,7 @@ conda env create -f env_name_environment.yml
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../mathematica/" title="Mathematica" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../clustershell/" title="ClusterShell" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1811,19 +1841,19 @@ conda env create -f env_name_environment.yml
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Mathematica
+                ClusterShell
               </div>
             </div>
           </a>
         
         
-          <a href="../r/" title="R" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../gaussian/" title="Gaussian" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                R
+                Gaussian
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1851,14 +1881,14 @@ conda env create -f env_name_environment.yml
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
