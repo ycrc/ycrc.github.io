@@ -99,6 +99,7 @@ To run R in batch mode, create a plain-text batch script to submit. In that scri
 #SBATCH --mem=10G
 #SBATCH -t 4:00:00
 
+module load R/3.6.1-foss-2018b
 R --slave -f myscript.R
 ```
 
