@@ -8,9 +8,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Yale Center for Research Computing Documentation Pages">
+      
       
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/rclone/">
       
+      
+        <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
@@ -102,7 +106,7 @@
       aria-label="Yale Center for Research Computing"
     >
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
 
@@ -161,6 +165,19 @@
     
 
     <!-- Repository containing source -->
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+      </div>
     
   </nav>
 </header>
@@ -238,11 +255,24 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing">
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
     Yale Center for Research Computing
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -1396,6 +1426,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/ycrc/ycrc.github.io/blob/src/docs/clusters-at-yale/guides/rclone.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
                 
                   
                 
@@ -1404,94 +1438,90 @@
 <p><code>rclone</code> is a command line program to sync files and directories to and from all major cloud storage sites and services. You can use <code>rclone</code> to sync files and directories between Yale clusters and Yale Box, google drive, etc. The following instructions covers basics to setup and use <code>rclone</code> on Yale clusters. For more information about Rclone, please visit its website at <a href="https://rclone.org">https://rclone.org</a>. </p>
 <h2 id="setup-rclone-on-yale-clusters">Setup Rclone on Yale clusters</h2>
 <p>You need to run <code>rclone config</code> at least once to receive authorization for access to the cloud service which you are configuring. Since <code>rclone config</code> will bring up a browser to authorize the cloud service, you will need X Windows on the host where you run <code>rclone config</code>. This means, to setup <code>rclone</code> on one of the Yale clusters, you need to login to the cluster with <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/">X11 forwarding</a>. However X11 forwarding is extremly slow and you may have problems of brining up the browser smoothly. A better way is to run VNC on the cluster and setup a tunnel to access the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/">remote VNC desktop</a> on the cluster. A third way, which is the best, is to use the Remote Desktop App from the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">OnDemand portal</a>. Once Remote Desktop starts runing, do the following in the terminal:</p>
-<p>The example below is a screen dump from setting up <code>rclone</code> on Farnam for Yale Box.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">pl543@transfer-farnam ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">Rclone</span><span class="w"></span>
-<span class="o">[</span><span class="n">pl543@transfer-farnam ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">rclone</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
-<span class="mi">2019</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">21</span><span class="w"> </span><span class="mi">09</span><span class="err">:</span><span class="mi">14</span><span class="err">:</span><span class="mi">05</span><span class="w"> </span><span class="nl">NOTICE</span><span class="p">:</span><span class="w"> </span><span class="n">Config</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="ss">&quot;/home/pl543/.config/rclone/rclone.conf&quot;</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">found</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">defaults</span><span class="w"></span>
-<span class="k">No</span><span class="w"> </span><span class="n">remotes</span><span class="w"> </span><span class="k">found</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">one</span><span class="w"></span>
-<span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">Set</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">password</span><span class="w"></span>
-<span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="n">Quit</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
-<span class="n">n</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="n">q</span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
-<span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">Type</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">storage</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">configure</span><span class="p">.</span><span class="w"></span>
-<span class="n">Enter</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="k">value</span><span class="p">.</span><span class="w"> </span><span class="n">Press</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">).</span><span class="w"></span>
-<span class="nf">Choose</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">below</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">own</span><span class="w"> </span><span class="k">value</span><span class="w"></span>
-<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="n">Fichier</span><span class="w"></span>
-<span class="w">   </span><span class="err">\</span><span class="w"> </span><span class="ss">&quot;fichier&quot;</span><span class="w"></span>
-<span class="o">[</span><span class="n">snip</span><span class="o">]</span><span class="w"></span>
-<span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Box</span><span class="w"></span>
-<span class="w">   </span><span class="err">\</span><span class="w"> </span><span class="ss">&quot;box&quot;</span><span class="w"></span>
-<span class="o">[</span><span class="n">snip</span><span class="o">]</span><span class="w"></span>
-<span class="n">Storage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">box</span><span class="w"></span>
-<span class="o">**</span><span class="w"> </span><span class="n">See</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="n">backend</span><span class="w"> </span><span class="k">at</span><span class="err">:</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">rclone</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">box</span><span class="o">/</span><span class="w"> </span><span class="o">**</span><span class="w"></span>
+<p>The example below is a screen dump from setting up <code>rclone</code> on Farnam for Yale Box.
+<div class="highlight"><pre><span></span><code>[pl543@transfer-farnam ~]$ module load Rclone
+[pl543@transfer-farnam ~]$ rclone config
+2019/10/21 09:14:05 NOTICE: Config file &quot;/home/pl543/.config/rclone/rclone.conf&quot; not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&gt; n
+name&gt; remote
+Type of storage to configure.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ &quot;fichier&quot;
+[snip]
+ 6 / Box
+   \ &quot;box&quot;
+[snip]
+Storage&gt; box
+** See help for box backend at: https://rclone.org/box/ **
 
-<span class="n">Box</span><span class="w"> </span><span class="n">App</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="n">Id</span><span class="p">.</span><span class="w"></span>
-<span class="n">Leave</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="n">normally</span><span class="p">.</span><span class="w"></span>
-<span class="n">Enter</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="k">value</span><span class="p">.</span><span class="w"> </span><span class="n">Press</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">).</span><span class="w"></span>
-<span class="n">client_id</span><span class="o">&gt;</span><span class="w"> </span>
-<span class="n">Box</span><span class="w"> </span><span class="n">App</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="n">Secret</span><span class="w"></span>
-<span class="n">Leave</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="n">normally</span><span class="p">.</span><span class="w"></span>
-<span class="n">Enter</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="k">value</span><span class="p">.</span><span class="w"> </span><span class="n">Press</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">(</span><span class="ss">&quot;&quot;</span><span class="p">).</span><span class="w"></span>
-<span class="n">client_secret</span><span class="o">&gt;</span><span class="w"> </span>
-<span class="n">Edit</span><span class="w"> </span><span class="n">advanced</span><span class="w"> </span><span class="n">config</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="w"></span>
-<span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">Yes</span><span class="w"></span>
-<span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">No</span><span class="w"></span>
-<span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
-<span class="n">Remote</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
-<span class="k">Use</span><span class="w"> </span><span class="n">auto</span><span class="w"> </span><span class="n">config</span><span class="vm">?</span><span class="w"></span>
-<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Say</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">sure</span><span class="w"></span>
-<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Say</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">headless</span><span class="w"> </span><span class="n">machine</span><span class="w"></span>
-<span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">Yes</span><span class="w"></span>
-<span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">No</span><span class="w"></span>
-<span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
-<span class="k">If</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">open</span><span class="w"> </span><span class="n">automatically</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="nl">link</span><span class="p">:</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="err">:</span><span class="mi">53682</span><span class="o">/</span><span class="n">auth</span><span class="w"></span>
-<span class="nf">Log</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">authorize</span><span class="w"> </span><span class="n">rclone</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">access</span><span class="w"></span>
-<span class="n">Waiting</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">code</span><span class="p">...</span><span class="w"></span>
-<span class="p">(</span><span class="ow">In</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="n">opened</span><span class="p">,</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">Yale</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="w"> </span><span class="n">You</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">redirect</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">CAS</span><span class="w"> </span><span class="n">authentication</span><span class="p">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">while</span><span class="p">.)</span><span class="w"></span>
-<span class="n">Got</span><span class="w"> </span><span class="n">code</span><span class="w"></span>
-<span class="c1">--------------------</span>
-<span class="o">[</span><span class="n">remote</span><span class="o">]</span><span class="w"></span>
-<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">box</span><span class="w"></span>
-<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;access_token&quot;</span><span class="err">:</span><span class="ss">&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;</span><span class="p">,</span><span class="ss">&quot;token_type&quot;</span><span class="err">:</span><span class="ss">&quot;bearer&quot;</span><span class="p">,</span><span class="ss">&quot;refresh_token&quot;</span><span class="err">:</span><span class="ss">&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;</span><span class="p">,</span><span class="ss">&quot;expiry&quot;</span><span class="err">:</span><span class="ss">&quot;2019-10-21T11:00:36.839586736-04:00&quot;</span><span class="err">}</span><span class="w"></span>
-<span class="c1">--------------------</span>
-<span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">Yes</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">OK</span><span class="w"></span>
-<span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="n">Edit</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="k">Delete</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">y</span><span class="o">/</span><span class="n">e</span><span class="o">/</span><span class="n">d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
-<span class="k">Current</span><span class="w"> </span><span class="nl">remotes</span><span class="p">:</span><span class="w"></span>
+Box App Client Id.
+Leave blank normally.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+client_id&gt; 
+Box App Client Secret
+Leave blank normally.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+client_secret&gt; 
+Edit advanced config? (y/n)
+y) Yes
+n) No
+y/n&gt; n
+Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes
+n) No
+y/n&gt; y
+If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
+Log in and authorize rclone for access
+Waiting for code...
+(In the browser opened, login with your Yale email and password. You will be redirect to CAS authentication. This may take a while.)
+Got code
+--------------------
+[remote]
+type = box
+token = {&quot;access_token&quot;:&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;,&quot;token_type&quot;:&quot;bearer&quot;,&quot;refresh_token&quot;:&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;,&quot;expiry&quot;:&quot;2019-10-21T11:00:36.839586736-04:00&quot;}
+--------------------
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt; y
+Current remotes:
 
-<span class="n">Name</span><span class="w">                 </span><span class="n">Type</span><span class="w"></span>
-<span class="o">====</span><span class="w">                 </span><span class="o">====</span><span class="w"></span>
-<span class="n">remote</span><span class="w">               </span><span class="n">box</span><span class="w"></span>
+Name                 Type
+====                 ====
+remote               box
 
-<span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="n">Edit</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="k">Delete</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="n">Rename</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">Copy</span><span class="w"> </span><span class="n">remote</span><span class="w"></span>
-<span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">Set</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">password</span><span class="w"></span>
-<span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="n">Quit</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
-<span class="n">e</span><span class="o">/</span><span class="n">n</span><span class="o">/</span><span class="n">d</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="n">q</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"></span>
-</code></pre></div>
-
-
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&gt; q
+</code></pre></div></p>
 <p><code>rclone setup</code> creates a file that stores all the config of <code>rclone</code>. You can check the file name with <code>rclone config file</code>. The config file can be copied to other clusters so that you can use <code>rclone</code> on the other clusters without running <code>rclone config</code> again.</p>
 <p>Setting up <code>rclone</code> for "Google Drive" follows a similar procedure. </p>
 <h2 id="use-rclone-on-yale-clusters">Use Rclone on Yale clusters</h2>
 <h3 id="list-files">List files</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">rclone ls remote:/</span>
+<div class="highlight"><pre><span></span><code>rclone ls remote:/
 </code></pre></div>
-
 
 <h3 id="copy-files">Copy files</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">rclone copy remote:/path/to/filename .</span>
-<span class="err">rclone copy filename remote:/path/to/</span>
+<div class="highlight"><pre><span></span><code>rclone copy remote:/path/to/filename .
+rclone copy filename remote:/path/to/
 </code></pre></div>
 
-
 <h3 id="help">Help</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">rclone help</span>
+<div class="highlight"><pre><span></span><code>rclone help
 </code></pre></div>
                 
                   
@@ -1518,54 +1548,99 @@
         </div>
       </main>
       
-        
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../r/" title="R" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                R
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../singularity/" title="Singularity" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Singularity
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+      <div>
+        <a href="https://www.yale.edu" title="Yale" target="_blank">
+          <img alt="Yale Logo" src="/img/yale-white.png" height="60" style="padding: 8px; height: 60px;">
+	</a>
       </div>
+ 
+      <!-- Accessability/Privacy information -->
+      <div class="md-footer-copyright">
+        <a href="https://usability.yale.edu/web-accessibility/accessibility-yale">Accessibility at Yale</a>
+           · 
+        <a title="Yale Privacy policy" href="http://www.yale.edu/privacy-policy">Privacy policy</a>
+          
+      </div>
+
+      <!-- Social links -->
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://ycrc.yale.edu" target="_blank" rel="noopener" title="ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7H17z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://help.ycrc.yale.edu/" target="_blank" rel="noopener" title="help.ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://research.computing.yale.edu/system-status" target="_blank" rel="noopener" title="research.computing.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 002 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0016.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 00-1 1 1 1 0 001 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 001-1 1 1 0 00-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67H3z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/ycrc" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/yalecrc" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

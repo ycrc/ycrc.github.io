@@ -8,9 +8,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Yale Center for Research Computing Documentation Pages">
+      
       
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-usage/">
       
+      
+        <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
@@ -102,7 +106,7 @@
       aria-label="Yale Center for Research Computing"
     >
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
 
@@ -161,6 +165,19 @@
     
 
     <!-- Repository containing source -->
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+      </div>
     
   </nav>
 </header>
@@ -238,11 +255,24 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing">
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
     Yale Center for Research Computing
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -1478,6 +1508,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/ycrc/ycrc.github.io/blob/src/docs/clusters-at-yale/job-scheduling/resource-usage.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
                 
                   
                 
@@ -1487,7 +1521,7 @@
 <p>Making sure your jobs use the right amount of RAM and the right number of CPUs helps you and others using the clusters use these resources more effeciently, and in turn get work done more quickly. Below are some examples of how to measure your CPU and RAM (aka memory) usage so you can make this happen. Be sure to check the <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> and the <a href="/clusters-at-yale/clusters">clusters page</a> (especially the partitions and hardware sections) to make sure you are submitting the right jobs to the right hardware.</p>
 <h2 id="future-jobs">Future Jobs</h2>
 <p>If you launch a program by putting <code>/usr/bin/time</code> in front of it, <code>time</code> will watch your program and provide statistics about the resources it used. For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span>be59@c01n01 ~<span class="o">]</span>$ /usr/bin/time -v stress-ng --cpu <span class="m">8</span> --timeout 10s
+<div class="highlight"><pre><span></span><code><span class="o">[</span>be59@c01n01 ~<span class="o">]</span>$ /usr/bin/time -v stress-ng --cpu <span class="m">8</span> --timeout 10s
 stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> dispatching hogs: <span class="m">8</span> cpu
 stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span class="o">]</span> successful run completed in <span class="m">10</span>.08s
     Command being timed: <span class="s2">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span>
@@ -1513,34 +1547,30 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
     Signals delivered: <span class="m">0</span>
 </code></pre></div>
 
-
 <p>To know how much RAM your job used (and what jobs like it will need in the future), look at the "Maximum resident set size"</p>
 <h2 id="running-jobs">Running Jobs</h2>
 <p>If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should <code>ssh</code> to, run:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[be59@farnam1 ~]$ squeue -u$USER</span>
-<span class="err">             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)</span>
-<span class="err">          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]</span>
+<div class="highlight"><pre><span></span><code>[be59@farnam1 ~]$ squeue -u$USER
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
 </code></pre></div>
-
 
 <p>Then use ssh to connect to a node your job is running on from the <code>NODELIST</code> column:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[be59@farnam1 ~]$ ssh c13n03</span>
-<span class="err">[be59@c13n03 ~]$</span>
+<div class="highlight"><pre><span></span><code>[be59@farnam1 ~]$ ssh c13n03
+[be59@c13n03 ~]$
 </code></pre></div>
-
 
 <p>Once you are on the compute node, run either <code>ps</code> or <code>top</code>.</p>
 <h3 id="ps"><code>ps</code></h3>
 <p><code>ps</code> will give you instantaneous usage every time you run it. Here is some sample <code>ps</code> output:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">be59</span><span class="p">@</span><span class="n">bigmem01</span> <span class="o">~</span><span class="p">]</span>$  <span class="n">ps</span> <span class="o">-</span><span class="n">u</span>$<span class="n">USER</span> <span class="o">-</span><span class="n">o</span> <span class="c">%cpu,rss,args</span>
-<span class="c">%CPU   RSS COMMAND</span>
-<span class="mf">92.6</span> <span class="mi">79446140</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
-<span class="mf">94.5</span> <span class="mi">80758040</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
-<span class="mf">92.6</span> <span class="mi">79676460</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
-<span class="mf">92.5</span> <span class="mi">81243364</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
-<span class="mf">93.8</span> <span class="mi">80799668</span> <span class="o">/</span><span class="n">gpfs</span><span class="o">/</span><span class="n">ysm</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">hpc</span><span class="o">/</span><span class="n">Apps</span><span class="o">/</span><span class="n">Matlab</span><span class="o">/</span><span class="n">R2016b</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">glnxa64</span><span class="o">/</span><span class="n">MATLAB</span> <span class="o">-</span><span class="n">dmlworker</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span> <span class="n">distcomp_evaluate_filetask</span>
+<div class="highlight"><pre><span></span><code>[be59@bigmem01 ~]$  ps -u$USER -o %cpu,rss,args
+%CPU   RSS COMMAND
+92.6 79446140 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
+94.5 80758040 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
+92.6 79676460 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
+92.5 81243364 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
+93.8 80799668 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
 </code></pre></div>
-
 
 <p><code>ps</code> reports memory used in kilobytes, so each of the 5 matlab processes is using ~77GiB of RAM. They are also using most of 5 cores, so future jobs like this should request 5 CPUs.</p>
 <h3 id="top"><code>top</code></h3>
@@ -1552,62 +1582,60 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 <p>Slurm records statistics for every job, including how much memory and CPU was used.</p>
 <h3 id="seff"><code>seff</code></h3>
 <p>After the job completes, you can run <code>seff &lt;jobid&gt;</code> to get some useful information about your job, including the memory used and what percent of your allocated memory that amounts to.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[rdb9@farnam1 ~]$ seff 21294645</span>
-<span class="err">Job ID: 21294645</span>
-<span class="c">Cluster: farnam</span>
-<span class="err">User/Group: rdb9/lsprog</span>
-<span class="c">State: COMPLETED (exit code 0)</span>
-<span class="c">Cores: 1</span>
-<span class="err">CPU Utilized: 00:15:55</span>
-<span class="err">CPU Efficiency: 17.04% of 01:33:23 core-walltime</span>
-<span class="err">Job Wall-clock time: 01:33:23</span>
-<span class="err">Memory Utilized: 446.20 MB</span>
-<span class="err">Memory Efficiency: 8.71% of 5.00 GiB</span>
+<div class="highlight"><pre><span></span><code>[rdb9@farnam1 ~]$ seff 21294645
+Job ID: 21294645
+Cluster: farnam
+User/Group: rdb9/lsprog
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:15:55
+CPU Efficiency: 17.04% of 01:33:23 core-walltime
+Job Wall-clock time: 01:33:23
+Memory Utilized: 446.20 MB
+Memory Efficiency: 8.71% of 5.00 GiB
 </code></pre></div>
-
 
 <h3 id="seff-array"><code>seff-array</code></h3>
 <p>For job arrays (see <a href="/clusters-at-yale/job-scheduling/dsq">here</a> for details) it is helpful to 
 look at statistics for how resources are used by each element of the array.
 The <code>seff-array</code> tool takes the job ID of the array and then calculates the distribution and average CPU and memory usage:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">tl397@grace1 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">seff</span><span class="o">-</span><span class="k">array</span><span class="w"> </span><span class="mi">43283382</span><span class="w"></span>
-<span class="o">==========</span><span class="w"> </span><span class="nf">Max</span><span class="w"> </span><span class="n">Memory</span><span class="w"> </span><span class="k">Usage</span><span class="w"> </span><span class="o">==========</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="n">NumSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span><span class="w"> </span><span class="nf">Min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">896.29</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="nf">Max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">900.48</span><span class="w"> </span><span class="n">MB</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="n">Mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">897.77</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="n">Variance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.40</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w">                   </span><span class="n">SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.63</span><span class="w"> </span><span class="n">MB</span><span class="p">;</span><span class="w"> </span><span class="n">Median</span><span class="w"> </span><span class="mf">897.78</span><span class="w"> </span><span class="n">MB</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="err">∎</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nf">count</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">  </span><span class="mf">806.6628</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">896.7108</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   2</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">896.7108</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">897.1296</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   9</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">897.1296</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">897.5484</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">  21</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">897.5484</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">897.9672</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">  34</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">897.9672</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">898.3860</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">  15</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">898.3860</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">898.8048</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   4</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">898.8048</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">899.2236</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   1</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">899.2236</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">899.6424</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   3</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎</span><span class="w"></span>
-<span class="w">  </span><span class="mf">899.6424</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">900.0612</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="w">  </span><span class="mf">900.0612</span><span class="w"> </span><span class="o">-</span><span class="w">   </span><span class="mf">900.4800</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="o">[</span><span class="n">   1</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">requested</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="mi">2000</span><span class="n">MB</span><span class="p">.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>[tl397@grace1 ~]$ seff-array 43283382
+========== Max Memory Usage ==========
+# NumSamples = 90; Min = 896.29 MB; Max = 900.48 MB
+# Mean = 897.77 MB; Variance = 0.40 MB;                   SD = 0.63 MB; Median 897.78 MB
+# each ∎ represents a count of 1
+  806.6628 -   896.7108 MB [   2]: ∎∎
+  896.7108 -   897.1296 MB [   9]: ∎∎∎∎∎∎∎∎∎
+  897.1296 -   897.5484 MB [  21]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  897.5484 -   897.9672 MB [  34]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  897.9672 -   898.3860 MB [  15]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  898.3860 -   898.8048 MB [   4]: ∎∎∎∎
+  898.8048 -   899.2236 MB [   1]: ∎
+  899.2236 -   899.6424 MB [   3]: ∎∎∎
+  899.6424 -   900.0612 MB [   0]:
+  900.0612 -   900.4800 MB [   1]: ∎
+The requested memory was 2000MB.
 
-<span class="o">==========</span><span class="w"> </span><span class="n">Elapsed</span><span class="w"> </span><span class="nc">Time</span><span class="w"> </span><span class="o">==========</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="n">NumSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span><span class="w"> </span><span class="nf">Min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">03</span><span class="err">:</span><span class="mf">25.0</span><span class="p">;</span><span class="w"> </span><span class="nf">Max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">07</span><span class="err">:</span><span class="mf">24.0</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="n">Mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">45.0</span><span class="p">;</span><span class="w"> </span><span class="n">SD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">01</span><span class="err">:</span><span class="mf">39.0</span><span class="p">;</span><span class="w"> </span><span class="n">Median</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">44.0</span><span class="w"></span>
-<span class="err">#</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="err">∎</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="nf">count</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">03</span><span class="err">:</span><span class="mf">5.0</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">03</span><span class="err">:</span><span class="mf">48.0</span><span class="w"> </span><span class="o">[</span><span class="n">  30</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">03</span><span class="err">:</span><span class="mf">48.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">11.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">11.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">34.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">34.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">57.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mf">57.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">20.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">20.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">43.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">43.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">6.0</span><span class="w">  </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">6.0</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">29.0</span><span class="w"> </span><span class="o">[</span><span class="n">   0</span><span class="o">]</span><span class="err">:</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">29.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">52.0</span><span class="w"> </span><span class="o">[</span><span class="n">  30</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="mi">00</span><span class="err">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">52.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">07</span><span class="err">:</span><span class="mf">15.0</span><span class="w"> </span><span class="o">[</span><span class="n">  28</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="err">∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎</span><span class="w"></span>
-<span class="o">********************************************************************************</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">requested</span><span class="w"> </span><span class="n">runtime</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="mi">01</span><span class="err">:</span><span class="mi">00</span><span class="err">:</span><span class="mf">00.</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="n">runtime</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="mi">00</span><span class="err">:</span><span class="mi">05</span><span class="err">:</span><span class="mf">45.0</span><span class="p">.</span><span class="w"></span>
-<span class="n">Requesting</span><span class="w"> </span><span class="k">less</span><span class="w"> </span><span class="nc">time</span><span class="w"> </span><span class="n">would</span><span class="w"> </span><span class="n">allow</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">quickly</span><span class="p">.</span><span class="w"></span>
-<span class="o">********************************************************************************</span><span class="w"></span>
+========== Elapsed Time ==========
+# NumSamples = 90; Min = 00:03:25.0; Max = 00:07:24.0
+# Mean = 00:05:45.0; SD = 00:01:39.0; Median 00:06:44.0
+# each ∎ represents a count of 1
+00:03:5.0  - 00:03:48.0 [  30]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+00:03:48.0 - 00:04:11.0 [   0]:
+00:04:11.0 - 00:04:34.0 [   0]:
+00:04:34.0 - 00:04:57.0 [   0]:
+00:04:57.0 - 00:05:20.0 [   0]:
+00:05:20.0 - 00:05:43.0 [   0]:
+00:05:43.0 - 00:06:6.0  [   0]:
+00:06:6.0  - 00:06:29.0 [   0]:
+00:06:29.0 - 00:06:52.0 [  30]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+00:06:52.0 - 00:07:15.0 [  28]: ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+********************************************************************************
+The requested runtime was 01:00:00.
+The average runtime was 00:05:45.0.
+Requesting less time would allow jobs to run more quickly.
+********************************************************************************
 </code></pre></div>
-
 
 <p>This shows how efficiently the resource request was for all the jobs in an array.
 In this example, we see that the average memory usage was just under 1GiB, which is reasonable for the 2GiB requested.
@@ -1615,15 +1643,14 @@ However, the requested runtime was for an hour, while the jobs only ran for six 
 These jobs could have been scheduled more quickly if a more accurate runtime was specified.</p>
 <h3 id="sacct"><code>sacct</code></h3>
 <p>You can also use the more flexible <a href="https://slurm.schedmd.com/sacct.html"><code>sacct</code></a> to get that info, along with other more advanced job queries. Unfortunately, the default output from <code>sacct</code> is not as useful. We recommend setting an environment variable to customize the output.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[rdb9@farnam1 ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;</span>
-<span class="err">[rdb9@farnam1 ~]$ sacct -j 21294645</span>
-<span class="err">               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES</span>
-<span class="err">-------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------</span>
-<span class="err">            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1</span>
-<span class="err">     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1</span>
-<span class="err">          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1</span>
+<div class="highlight"><pre><span></span><code>[rdb9@farnam1 ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;
+[rdb9@farnam1 ~]$ sacct -j 21294645
+               JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES
+-------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------
+            21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1
+     21294645.extern     extern                               c06n09   01:33:23  COMPLETED      0:0       716K    cpu=1,mem=5G,node=1,billing=1
+          21294645.0       bash                               c06n09   01:33:23  COMPLETED      0:0    456908K              cpu=1,mem=5G,node=1
 </code></pre></div>
-
 
 <p>You should look at the MaxRSS value to see your memory usage.</p>
                 
@@ -1651,54 +1678,99 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
         </div>
       </main>
       
-        
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../resource-requests/" title="Request Compute Resources" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Request Compute Resources
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../fairshare/" title="Factors Affecting Scheduling" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Factors Affecting Scheduling
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+      <div>
+        <a href="https://www.yale.edu" title="Yale" target="_blank">
+          <img alt="Yale Logo" src="/img/yale-white.png" height="60" style="padding: 8px; height: 60px;">
+	</a>
       </div>
+ 
+      <!-- Accessability/Privacy information -->
+      <div class="md-footer-copyright">
+        <a href="https://usability.yale.edu/web-accessibility/accessibility-yale">Accessibility at Yale</a>
+           · 
+        <a title="Yale Privacy policy" href="http://www.yale.edu/privacy-policy">Privacy policy</a>
+          
+      </div>
+
+      <!-- Social links -->
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://ycrc.yale.edu" target="_blank" rel="noopener" title="ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7H17z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://help.ycrc.yale.edu/" target="_blank" rel="noopener" title="help.ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://research.computing.yale.edu/system-status" target="_blank" rel="noopener" title="research.computing.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 002 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0016.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 00-1 1 1 1 0 001 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 001-1 1 1 0 00-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67H3z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/ycrc" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/yalecrc" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

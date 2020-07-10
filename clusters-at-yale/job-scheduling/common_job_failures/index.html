@@ -8,9 +8,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Yale Center for Research Computing Documentation Pages">
+      
       
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/common_job_failures/">
       
+      
+        <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
@@ -102,7 +106,7 @@
       aria-label="Yale Center for Research Computing"
     >
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
 
@@ -161,6 +165,19 @@
     
 
     <!-- Repository containing source -->
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+      </div>
     
   </nav>
 </header>
@@ -238,11 +255,24 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing">
       
-  <img src="../../../img/papers.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
     Yale Center for Research Computing
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ycrc/ycrc.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github/ycrc/docs
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -1370,6 +1400,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/ycrc/ycrc.github.io/blob/src/docs/clusters-at-yale/job-scheduling/common_job_failures.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
                 
                   
                 
@@ -1380,25 +1414,20 @@ Here we will outline some of these common failure modes and detail steps to corr
 <h2 id="running-out-of-memory">Running out of memory</h2>
 <p>Jobs can often fail due to an insufficient amount of memory being requested.
 Depending on the job, this failure might present in a SLURM error:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">slurmstepd</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Detected</span> <span class="mi">1</span> <span class="n">oom</span><span class="o">-</span><span class="n">kill</span> <span class="n">event</span><span class="o">(</span><span class="n">s</span><span class="o">).</span>
-<span class="n">Some</span> <span class="n">of</span> <span class="n">your</span> <span class="n">processes</span> <span class="n">may</span> <span class="n">have</span> <span class="n">been</span> <span class="n">killed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">cgroup</span> <span class="n">out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">memory</span> <span class="n">handler</span><span class="o">.</span>
+<p><div class="highlight"><pre><span></span><code>slurmstepd: error: Detected 1 oom-kill event(s).
+Some of your processes may have been killed by the cgroup out-of-memory handler.
 </code></pre></div>
-
-
-<p>This is stating that SLRUM detected the job hitting the maximum requested memory and then the job was killed.</p>
+This is stating that SLRUM detected the job hitting the maximum requested memory and then the job was killed.</p>
 <p>A program that runs out of memory can also crash generating a <code>Bus error (core dumped)</code>.
 This error means that the program is attempting to access memory that it does not have permission to reach.</p>
 <p>These errors can be fixed in two ways.
 First is to increase the amount of memory that is requested from SLURM.
 This can be done in an <code>sbatch</code> script:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">#SBATCH --mem-per-cpu=10G</span>
+<p><div class="highlight"><pre><span></span><code>#SBATCH --mem-per-cpu=10G
 </code></pre></div>
-
-
-<p>or on the command-line using <code>srun</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">srun --pty -p interactive --mem-per-cpus=10G</span>
+or on the command-line using <code>srun</code>:</p>
+<div class="highlight"><pre><span></span><code>srun --pty -p interactive --mem-per-cpus=10G
 </code></pre></div>
-
 
 <p>Alternatively, the code can be inspected to see if the program can reduce the amount of memory that is being used.
 Further details about monitoring memory usage can be found <a href="/clusters-at-yale/job-scheduling/resource-usage">here</a>.</p>
@@ -1409,38 +1438,36 @@ When a group or user reaches the quota, files cannot be created.
 Additionally, existing files will not be able to be written to.
 This will frequently kill jobs that need to write output or log files.</p>
 <p>To inspect your quota, we have developed a tool called <code>getquota</code>:</p>
-<div class="codehilite"><pre><span></span><code>$ getquota
+<p><div class="highlight"><pre><span></span><code>$ getquota
 This script shows information about your quotas on the current gpfs filesystem.
 If you plan to poll this sort of information extensively, please contact us
-<span class="k">for</span> <span class="nb">help</span> at hpc@yale.edu
+for help at hpc@yale.edu
 
-<span class="c1">## Usage Details for hpcprog (as of Nov 20 2019 05:00)</span>
-Fileset       User  Usage <span class="o">(</span>GiB<span class="o">)</span> File Count
+## Usage Details for hpcprog (as of Nov 20 2019 05:00)
+Fileset       User  Usage (GiB) File Count
 ------------- ----- ---------- -------------
-project       ahs3          <span class="m">82</span>        <span class="m">33</span>,788
-project       cag94          <span class="m">0</span>             <span class="m">1</span>
-project       kln26        <span class="m">366</span>       <span class="m">533</span>,998
-project       njc2           <span class="m">0</span>             <span class="m">1</span>
-project       pl543        <span class="m">115</span>       <span class="m">259</span>,212
-project       tl397        <span class="m">370</span>       <span class="m">529</span>,026
+project       ahs3          82        33,788
+project       cag94          0             1
+project       kln26        366       533,998
+project       njc2           0             1
+project       pl543        115       259,212
+project       tl397        370       529,026
 ----
-scratch60     ahs3           <span class="m">0</span>            <span class="m">89</span>
-scratch60     cag94          <span class="m">0</span>             <span class="m">1</span>
-scratch60     kln26       <span class="m">2510</span>       <span class="m">714</span>,703
-scratch60     njc2           <span class="m">0</span>             <span class="m">1</span>
-scratch60     pl543          <span class="m">0</span>             <span class="m">6</span>
-scratch60     tl397      <span class="m">13056</span>       <span class="m">282</span>,212
+scratch60     ahs3           0            89
+scratch60     cag94          0             1
+scratch60     kln26       2510       714,703
+scratch60     njc2           0             1
+scratch60     pl543          0             6
+scratch60     tl397      13056       282,212
 
-<span class="c1">## Quota Summary for hpcprog (as of right now)</span>
-Fileset       Type    Usage <span class="o">(</span>GiB<span class="o">)</span>   Quota <span class="o">(</span>GiB<span class="o">)</span>  File Count    File Limit    Backup    Purged
+## Quota Summary for hpcprog (as of right now)
+Fileset       Type    Usage (GiB)   Quota (GiB)  File Count    File Limit    Backup    Purged
 ------------- ------- ------------ ----------- ------------- ------------- --------- ---------
-home.grace    USR               <span class="m">39</span>         <span class="m">100</span>       <span class="m">190</span>,055       <span class="m">200</span>,000 Yes        No
-project       GRP              <span class="m">707</span>        <span class="m">6144</span>     <span class="m">1</span>,611,981     <span class="m">5</span>,000,000 No         No
-scratch60     GRP             <span class="m">4054</span>       <span class="m">20480</span>       <span class="m">987</span>,336     <span class="m">5</span>,000,000 No         <span class="m">60</span> days
+home.grace    USR               39         100       190,055       200,000 Yes        No
+project       GRP              707        6144     1,611,981     5,000,000 No         No
+scratch60     GRP             4054       20480       987,336     5,000,000 No         60 days
 </code></pre></div>
-
-
-<p>There are different quotas for <code>$HOME</code>, <code>$PROJECT</code>, and <code>$SCRATCH60</code>.
+There are different quotas for <code>$HOME</code>, <code>$PROJECT</code>, and <code>$SCRATCH60</code>.
 In addition to a disk usage quota (in GiB), there is a File Count quota that limits the number of files that can be created.
 If your account is running into any of these quotas, jobs may not run successfully.</p>
 <p>As the $HOME space is backed up, there is a much smaller quota for each user.
@@ -1450,26 +1477,24 @@ If your home-space is at max capacity, please investigate whether some files can
 These are collections of software tools that are all built using the same compilers to ensure that they work properly together.
 If modules from different toolchains are loaded at the same time, conflicts can arise that lead to jobs not running successfully.</p>
 <p>A sign that incompatible modules are being loaded is a print-out highlighting modules being 'reloaded':</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">tl397@grace2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">STAR</span><span class="o">/</span><span class="mf">2.6.0</span><span class="n">c</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2018</span><span class="n">a</span><span class="w"></span>
-<span class="o">[</span><span class="n">tl397@grace2 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">load</span><span class="w"> </span><span class="n">TopHat</span><span class="o">/</span><span class="mf">2.1.1</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code>[tl397@grace2 ~]$ module load STAR/2.6.0c-foss-2018a
+[tl397@grace2 ~]$ module load TopHat/2.1.1-foss-2016b
 
-<span class="n">The</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">reloaded</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="nl">change</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">FFTW</span><span class="o">/</span><span class="mf">3.3.7</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2018</span><span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">FFTW</span><span class="o">/</span><span class="mf">3.3.4</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="w">  </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">GCC</span><span class="o">/</span><span class="mf">6.4.0</span><span class="o">-</span><span class="mf">2.28</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GCC</span><span class="o">/</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
-<span class="w">  </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="n">GCCcore</span><span class="o">/</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">GCCcore</span><span class="o">/</span><span class="mf">5.4.0</span><span class="w"></span>
-<span class="w">  </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">OpenBLAS</span><span class="o">/</span><span class="mf">0.2.20</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">6.4.0</span><span class="o">-</span><span class="mf">2.28</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">OpenBLAS</span><span class="o">/</span><span class="mf">0.2.18</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="o">-</span><span class="n">LAPACK</span><span class="o">-</span><span class="mf">3.6.1</span><span class="w"></span>
-<span class="w">  </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="n">OpenMPI</span><span class="o">/</span><span class="mf">2.1.2</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">6.4.0</span><span class="o">-</span><span class="mf">2.28</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">OpenMPI</span><span class="o">/</span><span class="mf">1.10.3</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
-<span class="w">  </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="n">ScaLAPACK</span><span class="o">/</span><span class="mf">2.0.2</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2018</span><span class="n">a</span><span class="o">-</span><span class="n">OpenBLAS</span><span class="o">-</span><span class="mf">0.2.20</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ScaLAPACK</span><span class="o">/</span><span class="mf">2.0.2</span><span class="o">-</span><span class="n">gompi</span><span class="o">-</span><span class="mi">2016</span><span class="n">b</span><span class="o">-</span><span class="n">OpenBLAS</span><span class="o">-</span><span class="mf">0.2.18</span><span class="o">-</span><span class="n">LAPACK</span><span class="o">-</span><span class="mf">3.6.1</span><span class="w"></span>
-<span class="w">  </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="n">binutils</span><span class="o">/</span><span class="mf">2.28</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">binutils</span><span class="o">/</span><span class="mf">2.26</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">5.4.0</span><span class="w"></span>
-<span class="w">  </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="n">foss</span><span class="o">/</span><span class="mi">2018</span><span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">foss</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="w">  </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="n">gompi</span><span class="o">/</span><span class="mi">2018</span><span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">gompi</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span><span class="w"></span>
-<span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">hwloc</span><span class="o">/</span><span class="mf">1.11.8</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">hwloc</span><span class="o">/</span><span class="mf">1.11.3</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
-<span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="n">numactl</span><span class="o">/</span><span class="mf">2.0.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">numactl</span><span class="o">/</span><span class="mf">2.0.11</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">5.4.0</span><span class="o">-</span><span class="mf">2.26</span><span class="w"></span>
-<span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="n">zlib</span><span class="o">/</span><span class="mf">1.2.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">6.4.0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">zlib</span><span class="o">/</span><span class="mf">1.2.11</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">5.4.0</span><span class="w"></span>
+The following have been reloaded with a version change:
+  1) FFTW/3.3.7-gompi-2018a =&gt; FFTW/3.3.4-gompi-2016b
+  2) GCC/6.4.0-2.28 =&gt; GCC/5.4.0-2.26
+  3) GCCcore/6.4.0 =&gt; GCCcore/5.4.0
+  4) OpenBLAS/0.2.20-GCC-6.4.0-2.28 =&gt; OpenBLAS/0.2.18-GCC-5.4.0-2.26-LAPACK-3.6.1
+  5) OpenMPI/2.1.2-GCC-6.4.0-2.28 =&gt; OpenMPI/1.10.3-GCC-5.4.0-2.26
+  6) ScaLAPACK/2.0.2-gompi-2018a-OpenBLAS-0.2.20 =&gt; ScaLAPACK/2.0.2-gompi-2016b-OpenBLAS-0.2.18-LAPACK-3.6.1
+  7) binutils/2.28-GCCcore-6.4.0 =&gt; binutils/2.26-GCCcore-5.4.0
+  8) foss/2018a =&gt; foss/2016b
+  9) gompi/2018a =&gt; gompi/2016b
+ 10) hwloc/1.11.8-GCCcore-6.4.0 =&gt; hwloc/1.11.3-GCC-5.4.0-2.26
+ 11) numactl/2.0.11-GCCcore-6.4.0 =&gt; numactl/2.0.11-GCC-5.4.0-2.26
+ 12) zlib/1.2.11-GCCcore-6.4.0 =&gt; zlib/1.2.11-GCCcore-5.4.0
 </code></pre></div>
-
-
-<p>Here we first loaded a tool from the <code>foss-2018a</code> toolchain, but then loaded a module from the incompatible <code>foss-2016b</code> toolchain.</p>
+Here we first loaded a tool from the <code>foss-2018a</code> toolchain, but then loaded a module from the incompatible <code>foss-2016b</code> toolchain.</p>
 <p>To ensure that your jobs run successfully, only use one toolchain at a time.
 If your work requires a version of software that is not installed, email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#101;&#115;&#101;&#97;&#114;&#99;&#104;&#46;&#99;&#111;&#109;&#112;&#117;&#116;&#105;&#110;&#103;&#64;&#121;&#97;&#108;&#101;&#46;&#101;&#100;&#117;">&#114;&#101;&#115;&#101;&#97;&#114;&#99;&#104;&#46;&#99;&#111;&#109;&#112;&#117;&#116;&#105;&#110;&#103;&#64;&#121;&#97;&#108;&#101;&#46;&#101;&#100;&#117;</a> and we will work to help.</p>
 <h2 id="conda-environment">Conda Environment</h2>
@@ -1477,12 +1502,10 @@ If your work requires a version of software that is not installed, email <a href
 This is achieved by setting environmental variables that point to the <code>conda</code> environment directory.
 However, when moving from the login node to a compute node through SLURM, these paths can get messed up.
 This can lead to <code>python</code> not locating packages that are installed within an environment.</p>
-<p>The <code>which</code> command can be used to identify which python executable is being located:</p>
-<div class="codehilite"><pre><span></span><code>$ which python
+<p>The <code>which</code> command can be used to identify which python executable is being located:
+<div class="highlight"><pre><span></span><code>$ which python
 /gpfs/loomis/apps/avx/software/miniconda/4.7.10/bin/python
-</code></pre></div>
-
-
+</code></pre></div></p>
 <p>If this doesn't point to the conda environment,  you may need to source the environment again.</p>
 <p>To make sure that the environmental variables are correctly set up, avoid activating the conda environment on the login node.
 Instead, wait until on a compute node to activate the environment or include the <code>source activate my_env</code> statement in the SBATCH submission script.</p>
@@ -1511,54 +1534,99 @@ Instead, wait until on a compute node to activate the environment or include the
         </div>
       </main>
       
-        
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../" title="Run Jobs with Slurm" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Run Jobs with Slurm
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../resource-requests/" title="Request Compute Resources" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Request Compute Resources
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+      <div>
+        <a href="https://www.yale.edu" title="Yale" target="_blank">
+          <img alt="Yale Logo" src="/img/yale-white.png" height="60" style="padding: 8px; height: 60px;">
+	</a>
       </div>
+ 
+      <!-- Accessability/Privacy information -->
+      <div class="md-footer-copyright">
+        <a href="https://usability.yale.edu/web-accessibility/accessibility-yale">Accessibility at Yale</a>
+           · 
+        <a title="Yale Privacy policy" href="http://www.yale.edu/privacy-policy">Privacy policy</a>
+          
+      </div>
+
+      <!-- Social links -->
       
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://ycrc.yale.edu" target="_blank" rel="noopener" title="ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7H17z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://help.ycrc.yale.edu/" target="_blank" rel="noopener" title="help.ycrc.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://research.computing.yale.edu/system-status" target="_blank" rel="noopener" title="research.computing.yale.edu" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 002 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0016.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 00-1 1 1 1 0 001 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 001-1 1 1 0 00-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67H3z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/ycrc" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/yalecrc" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
   </div>
 </footer>
