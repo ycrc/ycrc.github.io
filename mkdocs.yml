@@ -3,8 +3,8 @@ site_description: Yale Center for Research Computing Documentation Pages
 site_author: YCRC
 site_url: https://docs.ycrc.yale.edu
 repo_name: github/ycrc/docs
-repo_url: https://github.com/ycrc/ycrc.github.io/
-edit_uri: blob/src/docs/
+repo_url: https://github.com/ycrc/ycrc.github.io/tree/src
+edit_uri: docs/
 google_analytics: ['UA-133385440-1', 'docs.ycrc.yale.edu']
 remote_branch: master
 strict: true
@@ -91,6 +91,7 @@ nav:
                 - clusters-at-yale/guides/jupyter.md
                 - clusters-at-yale/guides/matlab.md
                 - clusters-at-yale/guides/mathematica.md
+                - clusters-at-yale/guides/python.md
                 - clusters-at-yale/guides/parallel.md
                 - clusters-at-yale/guides/r.md
                 - clusters-at-yale/guides/rclone.md
