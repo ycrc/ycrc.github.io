@@ -1,5 +1,10 @@
 site_name: Yale Center for Research Computing
+site_description: Yale Center for Research Computing Documentation Pages
+site_author: YCRC
 site_url: https://docs.ycrc.yale.edu
+repo_name: github/ycrc/docs
+repo_url: https://github.com/ycrc/ycrc.github.io/
+edit_uri: blob/src/docs/
 google_analytics: ['UA-133385440-1', 'docs.ycrc.yale.edu']
 remote_branch: master
 strict: true
@@ -9,7 +14,7 @@ theme:
     custom_dir: 'theme'
     primary: '#0e4c92'
     accent: '#0e4c92'
-    logo: 'img/papers.svg'
+    logo: 'img/manual.svg'
     favicon: 'assets/images/favicon.ico'
 
     features:
@@ -20,6 +25,20 @@ plugins:
   - search
   - git-revision-date-localized
 
+extra:
+  social:
+    - icon: material/home-circle
+      link: https://ycrc.yale.edu
+    - icon: material/help-circle
+      link: http://help.ycrc.yale.edu/
+    - icon: material/heart-pulse
+      link: https://research.computing.yale.edu/system-status
+    - icon: fontawesome/brands/github
+      link: https://github.com/ycrc
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yalecrc
+
+
 extra_css:
     - 'stylesheets/extra.css'
 
@@ -29,14 +48,17 @@ extra_javascript:
 
 markdown_extensions:
     - admonition
+    - attr_list
     - codehilite
     - footnotes
     - pymdownx.details
-    - pymdownx.keys
-    - attr_list
     - pymdownx.emoji:
         emoji_index: !!python/name:materialx.emoji.twemoji
         emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.snippets
+    - pymdownx.superfences
 
 nav:
     - Support:
