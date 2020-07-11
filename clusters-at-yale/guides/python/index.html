@@ -785,31 +785,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
+  <a href="#conda-based-python-environments" class="md-nav__link">
+    Conda-based Python Environments
   </a>
-  
-    <nav class="md-nav" aria-label="Conda-based R Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-conda-packages" class="md-nav__link">
-    Install Conda Packages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-r" class="md-nav__link">
-    Run R
+  <a href="#run-python" class="md-nav__link">
+    Run Python
   </a>
   
-    <nav class="md-nav" aria-label="Run R">
+    <nav class="md-nav" aria-label="Run Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -827,21 +814,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
+  <a href="#jupyter-notebooks" class="md-nav__link">
+    Jupyter Notebooks
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parallel-r-with-conda" class="md-nav__link">
-    Parallel R with Conda
-  </a>
   
 </li>
       
@@ -1460,31 +1440,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
+  <a href="#conda-based-python-environments" class="md-nav__link">
+    Conda-based Python Environments
   </a>
-  
-    <nav class="md-nav" aria-label="Conda-based R Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-conda-packages" class="md-nav__link">
-    Install Conda Packages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-r" class="md-nav__link">
-    Run R
+  <a href="#run-python" class="md-nav__link">
+    Run Python
   </a>
   
-    <nav class="md-nav" aria-label="Run R">
+    <nav class="md-nav" aria-label="Run Python">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1502,21 +1469,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
+  <a href="#jupyter-notebooks" class="md-nav__link">
+    Jupyter Notebooks
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parallel-r-with-conda" class="md-nav__link">
-    Parallel R with Conda
-  </a>
   
 </li>
       
@@ -1553,118 +1513,45 @@
 <div class="highlight"><pre><span></span><code>module load Python/3.7.0-foss-2018b
 </code></pre></div>
 
+<p>To show installed Python packages and their versions for the <code>Python/3.7.0-foss-2018b</code> module:</p>
+<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> Python/3.7.0-foss-2018b
+</code></pre></div>
+
 <h3 id="install-packages">Install Packages</h3>
-<p>The software modules include many commonly used packages, but you can install additional packages locally, <em>i.e.</em> to your home directory. We recommend you install packages in an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the slurm option <code>-C oldest</code>. This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster. If there is a missing library your package of interest needs you should be able to load its module. If you cannot find a dependency or have trouble installing an R package, <a href="/#web-and-email-support">please get in touch with us</a>.</p>
-<p>To get started load the R module and start R:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
-module load R/3.6.1-foss-2018b
-R
-<span class="c1"># in R</span>
-&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
-</code></pre></div>
-
-<p>This will throw a warning like:</p>
-<div class="highlight"><pre><span></span><code>Warning in install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span> :
-<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library&quot;&#39;</span> is not writable
-Would you like to create a personal library
-~/R/x86_64-unknown-linux-gnu-library/3.6
-to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
-</code></pre></div>
-
-<p>This will install the <code>lattice</code> package to your <code>~/R/x86_64-unknown-linux-gnu-library/3.6</code> directory. There is a separate directory for R packages for each minor version of R, so packages installed with v 3.4 will not be visible from v 3.6.</p>
-<h2 id="conda-based-r-environments">Conda-based R Environments</h2>
-<p>If there isn't a module available for the version of R you want, you can set up your own R installation using <a href="/clusters-at-yale/guides/conda">Conda</a>. With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
-<h3 id="install-conda-packages">Install Conda Packages</h3>
-<p>Most of the time the best way to install R packages for your Conda R environment is via <code>conda</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Source the conda environment</span>
-conda activate my_r_env
-
-<span class="c1"># Install the lattice package (r-lattice) from the r channel (-c r)</span>
-conda install r-lattice
-</code></pre></div>
-
-<p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well. When you install packages with <code>install.packages</code> Make sure to load your C</p>
-<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
+<p>We recommend <em><em>against</em></em> installing python packages with <code>pip</code> after having loaded the Python module. Doing so installs them to your home directory in a way that does not make it clear to other python installs what environment the packages you installed belong to. Instead we recommend using <a href="https://docs.python.org/3/library/venv.html">virtualenv</a> or <a href="/clusters-at-yale/guides/conda/">Conda</a> environments. We like conda because of all the additional pre-compiled software it makes available.</p>
+<h2 id="conda-based-python-environments">Conda-based Python Environments</h2>
+<p>You can easily set up multiple Python installations side-by-side using the <code>conda</code> command. With Conda you can manage your own packages and dependencies for Python, R, etc. See our guide for more detailed instructions. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># install once</span>
 module load miniconda
-<span class="nb">source</span> activate my_r_env
-R
-<span class="c1"># in R</span>
-&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
+conda create -n py3_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span> numpy scipy matplotlib ipython jupyter jupyterlab
+<span class="c1"># use later</span>
+module purge <span class="o">&amp;&amp;</span> module load miniconda
+conda activate py3_env
 </code></pre></div>
 
-<h2 id="run-r">Run R</h2>
-<p>We will kill R jobs on the login nodes that are using excessive resources. To be a good cluster citizen, launch your R computation in jobs. See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on submitting jobs.</p>
+<h2 id="run-python">Run Python</h2>
+<p>We will kill Python jobs on the login nodes that are using excessive resources. To be a good cluster citizen, launch your computation in jobs. See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on submitting jobs.</p>
 <h3 id="interactive-job">Interactive Job</h3>
-<p>To run R interactively, first launch an interactive job on a compute node. If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
+<p>To run Python interactively, first launch an interactive job on a compute node. If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
 <div class="highlight"><pre><span></span><code>srun --pty -p interactive --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00 bash
 </code></pre></div>
 
-<p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering <code>R</code> on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.</p>
+<p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start <code>python</code> or <code>ipython</code> on your command prompt. If you are happy with your Python commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
-<p>To run R in batch mode, create a plain-text batch script to submit. In that script, you can run your R script. In this case <code>myscript.R</code> is in the same directory as the batch script, batch script contents shown below.</p>
+<p>To run Python in batch mode, create a plain-text batch script to submit. In that script, you call your Python script. In this case <code>myscript.py</code> is in the same directory as the batch script, batch script contents shown below.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH -J my_r_program</span>
+<span class="c1">#SBATCH -J my_python_program</span>
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH -t 4:00:00</span>
 
-R --slave -f myscript.R
-</code></pre></div>
-
-<p>To actually submit the job, run <code>sbatch my_r_job.sh</code> where the batch script above was saved as <code>my_r_job.sh</code>.</p>
-<h3 id="rstudio">RStudio</h3>
-<p>You can run RStudio via X11 forwarding in an interactive job, but we recommend using the RStudio app via <a href="/clusters-at-yale/access/ood/#interactive-apps">Open Ondemand</a> instead.</p>
-<h2 id="parallel-r-with-conda">Parallel R with Conda</h2>
-<p>On a cluster you may want to use R in parallel across multiple nodes. While there are a few different ways this can be achieved, we recommend using <code>conda</code> to set up a specific R environment with the required packages and libraries.</p>
-<p>In particular, you will need <code>Rmpi</code>, <code>doMC</code>, and <code>doMPI</code>. The first two can be installed via conda, while the last one must be installed manually.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># load the miniconda module</span>
 module load miniconda
-
-<span class="c1"># create the environment with the required packages</span>
-conda create --name parallel_r r-base r-essentials r-doMC r-Rmpi
-
-<span class="c1"># activate the environment</span>
-conda activate parallel_r
+conda activate py3_env
+python myscript.R
 </code></pre></div>
 
-<p>This will produce an environment that is nearly ready to-go. 
-The last step is to install <code>doMPI</code>, which at the moment is not available via <code>conda</code>.
-We can use the <code>install.packages</code> method from within R to get this final piece:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>parallel_r<span class="o">)</span> $ R
-&gt; install.packages<span class="o">(</span><span class="s1">&#39;doMPI&#39;</span><span class="o">)</span>
-</code></pre></div>
-It's important that this last step is performed on a login node so that it doesn't interfere with 
-the SLURM scheduler. 
-Once this is complete, you should have a fully functional parallel-enabled R environment.</p>
-<p>To test it, we can create a simple R script named <code>ex1.R</code></p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
-
-<span class="n">n</span><span class="o">&lt;-</span><span class="nf">mpi.comm.size</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-<span class="n">me</span><span class="o">&lt;-</span><span class="nf">mpi.comm.rank</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-
-<span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-<span class="n">val</span><span class="o">&lt;-</span><span class="m">777</span>
-<span class="nf">mpi.bcast</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;me&quot;</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="s">&quot;val&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
-<span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-
-<span class="nf">mpi.quit</span><span class="p">()</span>
-</code></pre></div>
-
-<p>Then we can launch it with an sbatch script (<code>ex1.sh</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH -n 4 -N 4 -t 5:00</span>
-<span class="c1">#SBATCH --mail-type=none</span>
-
-module purge
-module load miniconda
-
-<span class="nb">source</span> activate parallel_r
-
-mpirun R --slave -f ex1.R
-</code></pre></div>
-
-<p>This script should execute a simple broadcast and complete in a few seconds. </p>
+<p>To actually submit the job, run <code>sbatch my_py_job.sh</code> where the batch script above was saved as <code>my_py_job.sh</code>.</p>
+<h3 id="jupyter-notebooks">Jupyter Notebooks</h3>
+<p>You can run Jupyter notebooks &amp; JupyterLab by submitting your notebook server as a job. See our <a href="/clusters-at-yale/guides/jupyter">page dedicated to Jupyter</a> for more info.</p>
                 
                   
                     
@@ -1673,7 +1560,7 @@ mpirun R --slave -f ex1.R
 <div class="md-source-date">
   <small>
     
-      Last update: July 10, 2020
+      Last update: July 11, 2020
     
   </small>
 </div>
