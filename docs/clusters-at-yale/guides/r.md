@@ -17,7 +17,13 @@ module avail R/3
 To load version 3.6.1:
 
 ``` bash
-module load  R/3.6.1-foss-2018b
+module load R/3.6.1-foss-2018b
+```
+
+To show installed R packages and their versions for the `R/3.6.1-foss-2018b` module:
+
+``` bash
+module help R/3.6.1-foss-2018b
 ```
 
 ### Install Packages
