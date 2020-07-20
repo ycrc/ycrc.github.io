@@ -57,8 +57,10 @@ markdown_extensions:
         emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.inlinehilite
     - pymdownx.keys
-    - pymdownx.snippets
+    - pymdownx.snippets:
+        check_paths: true
     - pymdownx.superfences
+    - pymdownx.tabbed
 
 nav:
     - Support:

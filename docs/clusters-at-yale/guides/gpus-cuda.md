@@ -27,7 +27,7 @@ To request a specific type of GPU (e.g. a P100) for each node in your job, you s
 #SBATCH --gres=gpu:p100:1
 ```
 
-Some codes require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the `doubleprecision` feature (e.g. K80, P100 or V100).
+Some applications require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the `doubleprecision` feature (e.g. K80, P100 or V100).
 
 ``` bash
 #SBATCH -C doubleprecision

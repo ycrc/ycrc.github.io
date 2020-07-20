@@ -2,33 +2,32 @@
 
 ## Request Cores and Nodes
 
-Slurm is very explicit in how one requests cores and nodes. While extremely powerful, the three flags, `--nodes`, `--ntasks`, and `--cpus-per-task` can be a bit confusing at first. We attempt to disambiguate them below.
+Slurm is very explicit in how one requests cores and nodes. The three options `--nodes` or `-N`, `--ntasks` or `-n`, and `--cpus-per-task` or `-c` can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.
 
-### `--ntasks` vs `--cpus-per-task`
+### Multi-thread, Multi-process, and MPI
 
-The term "task" in this context can be thought of as a "process". Therefore, a multi-process program (e.g. MPI) is comprised of multiple tasks. And a multi-threaded program is comprised of a single task, which can in turn use multiple CPUs. In Slurm, tasks are requested with the `--ntasks` flag. CPUs, for the multithreaded programs, are requested with the `--cpus-per-task` flag.
+The majority of applications in the world were written to use one or more cores on a single computer. They usually achieve this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node.
 
-### 1\. Multi-threaded & multi-process programs
 
-To request CPUs for your multi-threaded program, use the `--cpus-per-task` flag. Individual tasks cannot be split across multiple compute nodes, so requesting a number of CPUs with `--cpus-per-task` flag will always result in all your CPUs allocated on the same compute node.
+MPI programs translate what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using `--ntasks=4` (or `-n 4`) and `--cpus-per-task=4` (or `-c 4`) achieves the same job allocation by luck, but you should only use `--cpus-per-task` when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessable.
 
-### 2\. MPI programs
+Some MPI programs are also multi-threaded, so each process can use multiple CPUs. Only these applications can use `--ntasks` *and* `--cpus-per-task` to run faster.
 
-In Slurm, the `--ntasks` flag specifies the number of MPI tasks created for your job. Note that, even within the same job, multiple tasks do not necessarily run on a single node. Therefore, requesting the same number of CPUs as above, but with the `--ntasks` flag, could result in those CPUs being allocated on several, distinct compute nodes.
+#### MPI Applications
 
-For many users, differentiating between `--ntasks` and `--cpus-per-task` is sufficient. However, for more control over how Slurm lays out your job, you can add the `--nodes` and `--ntasks-per-node` flags. `--nodes` specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is extremely likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set `--nodes=1` (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set `--ntasks-per-node=1`. Note that the following must be true:
+For more control over how Slurm lays out your job, you can add the `--nodes` and `--ntasks-per-node` flags. `--nodes` specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set `--nodes=1` (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set `--ntasks-per-node=1`. Note that the following must be true:
 
 ```
 ntasks-per-node * nodes >= ntasks
 ```
 
-### 3\. Hybrid (MPI+OpenMP) programs
+#### Hybrid (MPI+OpenMP) Applications
 
-For the most predictable performance for hybrid codes, you will need to use all three of the `--ntasks`, `--cpus-per-task`, and `--nodes` flags, where `--ntasks` equals the number of MPI tasks, `--cpus-per-task` equals the number of OMP_NUM_THREADS and `--nodes` is the number of nodes required to fit `--ntasks * --cpus-per-task`.
+For the most predictable performance for hybrid applications, you will need to use all three of the `--ntasks`, `--cpus-per-task`, and `--nodes` flags, where `--ntasks` equals the number of MPI tasks, `--cpus-per-task` equals the number of `OMP_NUM_THREADS` and `--nodes` is the number of nodes required to fit `--ntasks * --cpus-per-task`.
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the cluster-specific documentation regarding the node configurations that include GPUs. In order for your job to be able to access gpus, you must request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag `--gres=gpu:p100:1`. Some codes require double-precision capable GPUs--if so, see the next section for using "features" to request any node with compatible GPUs.
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters-at-yale/clusters) regarding node configurations that include GPUs. In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs *_and_* request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag `--gres=gpu:p100:1`. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs.
 
 !!!tip
     As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not magically speed up code that can only use one at a time.

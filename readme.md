@@ -54,15 +54,36 @@ If your contribute a new page (as opposed to editing an existing one) and want i
 
 ### Pages, Filenames and Links
 
-* filenames for pages should have dashes, no underscores, for whitespace.
+* Filenames for pages should have dashes, no underscores, for whitespace.
 * When linking to another internal page, don't include the `.md` file extension. We have experienced inconsistent behavior with it.
 * This: `See our [X11 forwarding documentation](/cluster-at-yale/access/x11) for instructions.` Not this `See our [X11 forwarding](/cluster-at-yale/access/x11) documentation for instructions.` or this `See our [X11 forwarding Documentation](/cluster-at-yale/access/x11) for instructions.`
 * `Guides` subpages are in alphabetical order.
 
 ### Code Snippets
 
-* When using code fencing (e.g. ```), specify the langauge after the first set of backticks, if applicable.  This will provide proper code coloring.
-* When giving an example of a command, don't include the command prompt (e.g. `$`) unless you trying to make a clarification about what nodes you are on.
+* Specify the language when when using code fencing (i.e. ```).  This will provide proper code coloring.
+
+All multi-line code formatted text in the docs can easily be copy/pasted to someone's command prompt. With this in mind,
+
+* Don't include the command prompt (e.g. `$`) in example commands, unless you trying to make a clarification about what nodes you are on.
+* Show examples with dummy values rather than using `[varname]` or `<option>` . The failure messages will be more useful, and redirects can be destructive.
+* If you provide a file worth downloading and also display it, place it in `docs/files` and use [https://facelessuser.github.io/pymdown-extensions/extensions/snippets/#snippets-notation](snippets) to include it. 
+
+example from `docs/clusters-at-yale/job-scheduling.md`:
+
+~~~ markdown
+
+Here is an example submission script that prints some job information and exits:
+
+``` bash
+--8<-- "docs/files/example_job.sh"
+```
+
+Save [this file](/files/example_job.sh) as `example_job.sh`, then submit it with:
+
+~~~
+
+
 
 ### Other Conventions
 
