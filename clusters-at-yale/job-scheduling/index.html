@@ -891,22 +891,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-jobs" class="md-nav__link">
-    Interactive Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-jobs" class="md-nav__link">
-    Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#directives" class="md-nav__link">
-    Directives
+  <a href="#common-job-request-options" class="md-nav__link">
+    Common Job Request Options
   </a>
   
 </li>
@@ -919,8 +905,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-private-partitions" class="md-nav__link">
-    Using Private Partitions
+  <a href="#interactive-jobs" class="md-nav__link">
+    Interactive Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphical-applications" class="md-nav__link">
+    Graphical applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-jobs" class="md-nav__link">
+    Batch Jobs
   </a>
   
 </li>
@@ -1394,22 +1400,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-jobs" class="md-nav__link">
-    Interactive Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-jobs" class="md-nav__link">
-    Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#directives" class="md-nav__link">
-    Directives
+  <a href="#common-job-request-options" class="md-nav__link">
+    Common Job Request Options
   </a>
   
 </li>
@@ -1422,8 +1414,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-private-partitions" class="md-nav__link">
-    Using Private Partitions
+  <a href="#interactive-jobs" class="md-nav__link">
+    Interactive Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphical-applications" class="md-nav__link">
+    Graphical applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-jobs" class="md-nav__link">
+    Batch Jobs
   </a>
   
 </li>
@@ -1449,69 +1461,47 @@
                 
                 
                 <h1 id="run-jobs-with-slurm">Run Jobs with Slurm</h1>
-<p>Slurm is used to submit jobs to a specified set of compute resources, which are variously called queues or partitions. Slurm uses the term partition. Partitions, their defaults, limits and purposes are listed on <a href="/clusters-at-yale/clusters">each cluster page</a>. To see more details about how jobs are scheduled see our information on <a href="/clusters-at-yale/job-scheduling/fairshare">factors affecting scheduling priority</a>.</p>
-<p>Please be a good cluster citizen. Do not run jobs on login nodes (e.g. grace1, farnam2), as these can impact the sessions and connectivity of everyone else on the cluster. We also sometimes find jobs on the clusters that allocate resources incorrectly for the job that is running. Please see our documentation on <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitoring CPU and Memory Usage</a> for examples of how to measure the resources your jobs use. If you find yourself wondering how best to schedule a job feel free to <a href="mailto:hpc@yale.edu?Subject=Job%20help">email us</a> or come to <a href="/">office hours</a>. Efficient jobs help you get your work done faster and free resources for others as well.</p>
+<p>Performing computational work at scale in a shared environment involves organizing everyone's work into jobs and scheduling them. We use <a href="https://slurm.schedmd.com/overview.html">Slurm</a> to schedule and manage jobs on the <a href="/clusters-at-yale/clusters">YCRC clusters</a>. </p>
+<p>Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs <code>srun</code> and <code>sbatch</code> or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on <a href="/clusters-at-yale/clusters">each cluster page</a>. Once submitted, jobs wait in a queue and are subject to several <a href="/clusters-at-yale/job-scheduling/fairshare">factors affecting scheduling priority</a>. When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.</p>
+<div class="admonition info">
+<p class="admonition-title">Please be a good cluster citizen.</p>
+<ul>
+<li>Do not run heavy computation on on login nodes (e.g. <code>grace1</code>, <code>farnam2</code>). Doing so negatively impacts everyone's ability to interact with the cluster.</li>
+<li>Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitoring CPU and Memory Usage</a> for how to measure job resource usage. </li>
+</ul>
+</div>
+<p>If you find yourself wondering how best to schedule a job, please <a href="/#get-help">contact us</a> for some help.</p>
 <h2 id="common-slurm-commands">Common Slurm Commands</h2>
-<p>Submit a submission script (see below for details)</p>
-<div class="highlight"><pre><span></span><code>sbatch &lt;script&gt;
+<p>For an exhaustive list of commands and their official manuals, see the <a href="https://slurm.schedmd.com/man_index.html">SchedMD Man Pages</a>. Below are some of the most common commands used to interact with the scheduler.</p>
+<p>Submit a script called <code>my_job.sh</code> as a job (see below for details):</p>
+<div class="highlight"><pre><span></span><code>sbatch my_job.sh
 </code></pre></div>
 
-<p>List queued and running jobs</p>
+<p>List your queued and running jobs:</p>
 <div class="highlight"><pre><span></span><code>squeue -u<span class="nv">$USER</span>
 </code></pre></div>
 
-<p>Cancel a queued job or kill a running job</p>
-<div class="highlight"><pre><span></span><code>scancel &lt;job_id&gt;
+<p>Cancel a queued job or kill a running job, <em>e.g.</em> a job with ID 12345:</p>
+<div class="highlight"><pre><span></span><code>scancel <span class="m">12345</span>
 </code></pre></div>
 
-<p>Check status of individual job (including failed or completed)</p>
-<div class="highlight"><pre><span></span><code>sacct -j &lt;job_id&gt;
+<p>Check status of a job, <em>e.g.</em> a job with ID 12345:</p>
+<div class="highlight"><pre><span></span><code>sacct -j <span class="m">12345</span>
 </code></pre></div>
 
-<h2 id="interactive-jobs">Interactive Jobs</h2>
-<p>Interactive jobs can be used for testing and troubleshooting code. By requesting an interactive job, you will be allocated resources and logged onto the node in a shell.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p interactive bash
+<p>Check how efficiently a job ran, <em>e.g.</em> a job with ID 12345:</p>
+<p><div class="highlight"><pre><span></span><code>seff <span class="m">12345</span>
 </code></pre></div>
-
-<p>This will assign a free node to you, allocating the requested number of CPUs, walltime, and memory, and put you within a shell on that node. You can run any number of commands within that shell. To free the allocated node, exit from the shell.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>When using an interactive shell under slurm, your job is vulnerable to being killed if you lose your network connection. We recommend using <a href="/clusters-at-yale/guides/tmux"><code>tmux</code></a> alleviate this. When using <code>tmux</code>, please be sure to keep track of your allocations and free those no longer needed!</p>
-</div>
-<p>To use a GUI application (such as Matlab), when in an interactive job, use the <code>--x11</code> flag:</p>
-<div class="highlight"><pre><span></span><code>srun --pty --x11 -p interactive <span class="o">[</span>additional slurm options<span class="o">]</span> bash
-</code></pre></div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For X11 forwarding to work, you need to have your local machine setup properly. Please see our <a href="/clusters-at-yale/access/x11">X11 setup guide</a> for more info.</p>
-</div>
-<h2 id="batch-jobs">Batch Jobs</h2>
-<p>To submit a job via Slurm, you first write a simple shell script called a "submission script" that wraps your job. A submission script is comprised of three parts:</p>
-<ol>
-<li>The program that should run the script. This is normally <code>#!/bin/bash</code>.</li>
-<li>The "directives" that tell the scheduler how to setup the computational resources for your job.<strong>These lines must appear before any other commands or definitions, otherwise they will be ignored.</strong></li>
-<li>The actual "script" portion, which are the commands you want executed during your job.</li>
-</ol>
-<p>Here is an example script.sh that runs a job on one CPU on single node:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --job-name=my_job</span>
-<span class="c1">#SBATCH --ntasks=1 --nodes=1</span>
-<span class="c1">#SBATCH --mem-per-cpu=5G</span>
-<span class="c1">#SBATCH --time=12:00:00</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;email&gt;</span>
-
-./myprog -p <span class="m">20</span> arg1 arg2 arg3 ...
-</code></pre></div>
-
-<h2 id="directives">Directives</h2>
-<p>As shown in the above example, "directives" are comprised of <code>#SBATCH</code> followed by Slurm options. Most commonly used options include:</p>
+See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU and Memory page</a> for more on tracking the resources your job actually uses.</p>
+<p><a id="directives"></a></p>
+<h2 id="common-job-request-options">Common Job Request Options</h2>
+<p>These options modify the size, length and behavior of jobs you submit. They can be specified when calling <code>srun</code> or <code>sbatch</code>, or saved to a <a href="#batch-jobs">batch script</a>. Options specified on the command line to <code>sbatch</code> will override those in a batch script. See our <a href="/clusters-at-yale/job-scheduling/resource-requests">Request Compute Resources page</a> for discussion on the differences between <code>--ntasks</code> and <code>--cpus-per-task</code>, constraints, GPUs, etc. If options are left unspecified defaults are used.</p>
 <table>
 <thead>
 <tr>
-<th>Full Option<img width=100/></th>
-<th>Abbreviated</th>
+<th>Long Option<img width=120/></th>
+<th>Short Option</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1519,70 +1509,136 @@
 <tr>
 <td><code>--job-name</code></td>
 <td><code>-J</code></td>
-<td>Custom job name</td>
+<td>Name of script</td>
+<td>Custom job name.</td>
+</tr>
+<tr>
+<td><code>--output</code></td>
+<td><code>-o</code></td>
+<td><code>"slurm-%j.out"</code></td>
+<td>Where to save <code>stdout</code> and <code>stderr</code> from the job. See <a href="https://slurm.schedmd.com/sbatch.html#SECTION_%3CB%3Efilename-pattern%3C/B%3E">filename patterns</a> for more formatting options.</td>
 </tr>
 <tr>
 <td><code>--partition</code></td>
 <td><code>-p</code></td>
-<td>Partition to run on</td>
+<td>Varies by cluster</td>
+<td>Partition to run on. See individual <a href="/clusters-at-yale/clusters/">cluster pages</a> for details.</td>
 </tr>
 <tr>
-<td><code>--nodes</code></td>
-<td><code>-N</code></td>
-<td>Total number of nodes</td>
-</tr>
-<tr>
-<td><code>--ntasks</code></td>
-<td><code>-n</code></td>
-<td>Number of "tasks". For use with distributed parallelism. See below.</td>
-</tr>
-<tr>
-<td><code>--cpus-per-task</code></td>
-<td><code>-c</code></td>
-<td># of CPUs allocated to each task. For use with shared memory parallelism.</td>
-</tr>
-<tr>
-<td><code>--ntasks-per-node</code></td>
-<td></td>
-<td>Number of "tasks" per node. For use with distributed parallelism. See below.</td>
+<td><code>--account</code></td>
+<td><code>-A</code></td>
+<td>your group name</td>
+<td>Specify if you have access to multiple private partitions.</td>
 </tr>
 <tr>
 <td><code>--time</code></td>
 <td><code>-t</code></td>
-<td>Maximum walltime of the job in the format D-HH:MM:SS (e.g. <code>--time=1-</code> for one day or <code>--time=4:00:00</code> for 4 hours)</td>
+<td>Varies by partition</td>
+<td>Time limit for the job in D-HH:MM:SS, e.g. <code>-t 1-</code> is one day, <code>-t 4:00:00</code> is 4 hours.</td>
 </tr>
 <tr>
-<td><code>--constraint</code></td>
-<td><code>-C</code></td>
-<td>specific node architecture (if applicable)</td>
+<td><code>--nodes</code></td>
+<td><code>-N</code></td>
+<td><code>1</code></td>
+<td>Total number of nodes.</td>
+</tr>
+<tr>
+<td><code>--ntasks</code></td>
+<td><code>-n</code></td>
+<td><code>1</code></td>
+<td>Number of tasks (MPI workers).</td>
+</tr>
+<tr>
+<td><code>--ntasks-per-node</code></td>
+<td></td>
+<td>Scheduler decides</td>
+<td>Number of tasks per node.</td>
+</tr>
+<tr>
+<td><code>--cpus-per-task</code></td>
+<td><code>-c</code></td>
+<td><code>1</code></td>
+<td>Number of CPUs for each task. Use this for threads/cores in single-node jobs.</td>
 </tr>
 <tr>
 <td><code>--mem-per-cpu</code></td>
 <td></td>
-<td>Memory requested per CPU (e.g. <code>10G</code> for 10 GiB)</td>
+<td><code>5G</code></td>
+<td>Memory requested per CPU in MiB. Add <code>G</code> to specify GiB (e.g. <code>10G</code>).</td>
 </tr>
 <tr>
 <td><code>--mem</code></td>
 <td></td>
-<td>Memory requested per node (e.g. <code>40G</code> for 40 GiB)</td>
+<td></td>
+<td>Memory requested per node in MiB. Add <code>G</code> to specify GiB (e.g. <code>10G</code>).</td>
+</tr>
+<tr>
+<td><code>--constraint</code></td>
+<td><code>-C</code></td>
+<td></td>
+<td><a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">Constraints</a> on node features. To limit kinds of nodes to run on.</td>
 </tr>
 <tr>
 <td><code>--mail-user</code></td>
 <td></td>
-<td>Mail address (alternatively, put your email address in ~/.forward)</td>
+<td>Your Yale email</td>
+<td>Mail address (alternatively, put your email address in ~/.forward).</td>
 </tr>
 <tr>
 <td><code>--mail-type</code></td>
 <td></td>
-<td>Control emails to user on job events. Use <code>ALL</code> to receive email notications at the beginning and end of the job.</td>
+<td>None</td>
+<td>Send email when jobs change state. Use <code>ALL</code> to receive email notifications at the beginning and end of the job.</td>
 </tr>
 </tbody>
 </table>
-<p>Additional options can be found on in the <a href="http://slurm.schedmd.com/documentation.html">official Slurm documentation</a>. The lists of available partitions can be found on the <a href="/clusters-at-yale/clusters/">cluster pages</a>. If you don't specify a partition, your job will be placed into the default partition for your cluster (as indicated on the cluster page).</p>
 <h2 id="resource-limit-enforcement">Resource Limit Enforcement</h2>
-<p>Slurm uses the linux cgroup feature to enforce limits on CPUs, GPUs, and memory. Jobs are only permitted to run on a node if they have a valid allocation, and only within the limits specified by that limitation. Thus, if you request a single core from slurm (the default) and start a job that runs 20 parallel threads, those threads will be packed into a single CPU, and run very slowly. Similarly, if you do not explicitly request memory, your job will be granted 5G of RAM per CPU, and if your job attempts to exceed that amount, it will be killed.</p>
-<h2 id="using-private-partitions">Using Private Partitions</h2>
-<p>If you have special permission to submit to a partition that belongs to another group, you may be asked to assign a special "account" to your jobs in that partition. You will be given the name of this account when you get access the partition and then simple add the <code>-A &lt;account&gt;</code> flag to your submission command or as an additional directive in your submission script.</p>
+<p>Being a good cluster citizen means not over-allocating resources to a job. However, under-allocating resources can severly impact its performance and success. Slurm strictly enforces limits on the CPUs, GPUs, and memory you request. If you try to use more memory than your job was allocated, your applications will probably <a href="/clusters-at-yale/job-scheduling/common_job_failures/#running-out-of-memory">die with strange-sounding error codes</a>. If you request a single CPU and start an application that runs many parallel threads, those threads will be forced to share one CPU and run very slowly (probably slower than a single-threaded version of the same program!).</p>
+<h2 id="interactive-jobs">Interactive Jobs</h2>
+<p>Interactive jobs can be used for testing and troubleshooting code. Requesting an interactive job will allocate resources and log you into a shell on a compute node. For example:</p>
+<div class="highlight"><pre><span></span><code>srun --pty -t <span class="m">2</span>:00:00 --mem<span class="o">=</span>8G -p interactive bash
+</code></pre></div>
+
+<p>This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type <code>exit</code> or <kbd>Ctrl</kbd>+<kbd>d</kbd> </p>
+<div class="admonition tip">
+<p class="admonition-title">Use <code>tmux</code> with Interactive Sessions</p>
+<p>Remote sessions are vulnerable to being killed if you lose your network connection. We recommend using <a href="/clusters-at-yale/guides/tmux"><code>tmux</code></a> alleviate this. When using <code>tmux</code> with interactive jobs, please take extra care to stop jobs that are no longer needed.</p>
+</div>
+<h3 id="graphical-applications">Graphical applications</h3>
+<p>Many graphical applications are well served with the <a href="/clusters-at-yale/access/ood/#remote-desktop">Open OnDemand Remote Desktop app</a>. If you would like to use X11 forwarding, first make sure it is <a href="/clusters-at-yale/access/x11">installed and configured</a>. Then, add the <code>--x11</code> flag to an interactive job request:</p>
+<div class="highlight"><pre><span></span><code>srun --pty --x11 -p interactive bash
+</code></pre></div>
+
+<h2 id="batch-jobs">Batch Jobs</h2>
+<p>You can submit a script as a batch job, <em>i.e.</em> one that can be run non-interactively in batches. These scripts are comprised of three parts:</p>
+<ol>
+<li>A <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">hashbang</a> line specifying the program that runs the script. This is normally <code>#!/bin/bash</code>.</li>
+<li>Directives that list job request options. These lines must appear before any other commands or definitions, otherwise they will be ignored.</li>
+<li>The commands or applications you want executed during your job.</li>
+</ol>
+<p>Here is an example submission script that prints some job information and exits:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=example_job</span>
+<span class="c1">#SBATCH --out=&quot;slurm-%j.out&quot;</span>
+<span class="c1">#SBATCH --time=01:00</span>
+<span class="c1">#SBATCH --nodes=1 --ntasks=1 --cpus-per-node=2</span>
+<span class="c1">#SBATCH --mem-per-cpu=5G</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="nv">mem_bytes</span><span class="o">=</span><span class="k">$(</span>&lt;/sys/fs/cgroup/memory/slurm/uid_<span class="si">${</span><span class="nv">SLURM_JOB_UID</span><span class="si">}</span>/job_<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/memory.limit_in_bytes<span class="k">)</span>
+<span class="nv">mem_gbytes</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$mem_bytes</span> <span class="o">/</span> <span class="m">1024</span> <span class="o">**</span><span class="m">3</span> <span class="k">))</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Starting at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Job submitted to the </span><span class="si">${</span><span class="nv">SLURM_JOB_PARTITION</span><span class="si">}</span><span class="s2"> partition, the default partition on </span><span class="si">${</span><span class="nv">SLURM_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Job name: </span><span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span><span class="s2">, Job ID: </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;  I have </span><span class="si">${</span><span class="nv">SLURM_CPUS_ON_NODE</span><span class="si">}</span><span class="s2"> CPUs and </span><span class="si">${</span><span class="nv">mem_gbytes</span><span class="si">}</span><span class="s2">GiB of RAM on compute node </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p>Save <a href="/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
+<div class="highlight"><pre><span></span><code>sbatch example_job.sh
+</code></pre></div>
+
+<p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID.</p>
                 
                   
                     
@@ -1591,7 +1647,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: July 9, 2020
+      Last update: July 20, 2020
     
   </small>
 </div>
