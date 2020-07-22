@@ -127,8 +127,8 @@ You can check your current storage usage & limits by running the `getquota` comm
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-|Partition  | Root Directory            | Storage     | File Count | Backups |
-|-----------|---------------------------|-------------|------------|---------|
-| home      | `/gpfs/loomis/home.grace` | 100G/user   | 200,000    | Yes     |
-| project   | `/gpfs/loomis/project`    | 1T/group    | 5,000,000  | No      |
-| scratch60 | `/gpfs/loomis/scratch60`  | 20T/group   | 5,000,000  | No      |
+|Partition  | Root Directory            | Storage                                 | File Count | Backups |
+|-----------|---------------------------|-----------------------------------------|------------|---------|
+| home      | `/gpfs/loomis/home.grace` | 125GiB/user                             | 500,000    | Yes     |
+| project   | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      |
+| scratch60 | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      |
