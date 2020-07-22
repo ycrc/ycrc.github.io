@@ -948,6 +948,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-memory-ram" class="md-nav__link">
+    Request Memory (RAM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#request-gpus" class="md-nav__link">
     Request GPUs
   </a>
@@ -1439,6 +1446,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-memory-ram" class="md-nav__link">
+    Request Memory (RAM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#request-gpus" class="md-nav__link">
     Request GPUs
   </a>
@@ -1474,10 +1488,14 @@
                 
                 <h1 id="request-compute-resources">Request Compute Resources</h1>
 <h2 id="request-cores-and-nodes">Request Cores and Nodes</h2>
-<p>Slurm is very explicit in how one requests cores and nodes. The three options <code>--nodes</code> or <code>-N</code>, <code>--ntasks</code> or <code>-n</code>, and <code>--cpus-per-task</code> or <code>-c</code> can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.</p>
+<p>When <a href="/clusters-at-yale/job-scheduling/">running jobs with Slurm</a>, you must be explicit about requesting CPU cores and nodes. See our page on <a href="/clusters-at-yale/job-scheduling/resource-usage/">monitoring usage</a> for tips on verifying your jobs are using the resources you expect. The three options <code>--nodes</code> or <code>-N</code>, <code>--ntasks</code> or <code>-n</code>, and <code>--cpus-per-task</code> or <code>-c</code> can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your application references threads or cores but makes no mention of MPI, only use <code>--cpus-per-task</code> to request CPUs. You cannot request more cores than there are on a single compute node where your job runs.</p>
+</div>
 <h3 id="multi-thread-multi-process-and-mpi">Multi-thread, Multi-process, and MPI</h3>
-<p>The majority of applications in the world were written to use one or more cores on a single computer. They usually achieve this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node.</p>
-<p>MPI programs translate what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using <code>--ntasks=4</code> (or <code>-n 4</code>) and <code>--cpus-per-task=4</code> (or <code>-c 4</code>) achieves the same job allocation by luck, but you should only use <code>--cpus-per-task</code> when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessable.</p>
+<p>The majority of applications in the world were written to use one or more cores on a single computer.  Most can only use one core, and do not benefit from being given more cores. The best way to speed these applications up is to run many separate jobs at once, using <a href="/clusters-at-yale/job-scheduling/dsq/">Dead Simple Queue</a> or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>. </p>
+<p>If an application is able to use multiple cores, it usually achieves this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node. MPI translates what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, Slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using <code>--ntasks=4</code> (or <code>-n 4</code>) and <code>--cpus-per-task=4</code> (or <code>-c 4</code>) achieves the same job allocation by luck, but you should only use <code>--cpus-per-task</code> when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessable.</p>
 <p>Some MPI programs are also multi-threaded, so each process can use multiple CPUs. Only these applications can use <code>--ntasks</code> <em>and</em> <code>--cpus-per-task</code> to run faster.</p>
 <h4 id="mpi-applications">MPI Applications</h4>
 <p>For more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
@@ -1486,11 +1504,14 @@
 
 <h4 id="hybrid-mpiopenmp-applications">Hybrid (MPI+OpenMP) Applications</h4>
 <p>For the most predictable performance for hybrid applications, you will need to use all three of the <code>--ntasks</code>, <code>--cpus-per-task</code>, and <code>--nodes</code> flags, where <code>--ntasks</code> equals the number of MPI tasks, <code>--cpus-per-task</code> equals the number of <code>OMP_NUM_THREADS</code> and <code>--nodes</code> is the number of nodes required to fit <code>--ntasks * --cpus-per-task</code>.</p>
+<h2 id="request-memory-ram">Request Memory (RAM)</h2>
+<p>Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and <a href="/clusters-at-yale/job-scheduling/common_job_failures/#running-out-of-memory">you will get errors</a>. Make sure you either request the right amount of memory per core on each node in your job with <code>--mem-per-cpu</code> or memory per node in your job with <code>--mem</code>. You can request more memory than you think you might need for an example job, then <a href="/clusters-at-yale/job-scheduling/resource-usage/">make note of its actual usage</a> to better tune future requests for similar jobs.</p>
 <h2 id="request-gpus">Request GPUs</h2>
-<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters-at-yale/clusters">individual cluster pages</a> regarding node configurations that include GPUs. In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs <em><em>and</em></em> request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the <code>--gres</code> flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, <code>--gres=gpu:1</code> will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag <code>--gres=gpu:p100:1</code>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs.</p>
+<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters-at-yale/clusters">individual cluster pages</a> regarding node configurations that include GPUs. The Slurm options <code>--mem</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. </p>
+<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs <em><em>and</em></em> request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the <code>--gres</code> flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, <code>--gres=gpu:1</code> will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag <code>--gres=gpu:p100:1</code>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not magically speed up code that can only use one at a time.</p>
+<p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time.</p>
 </div>
 <p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/deep-learning-gpus">Python Deep Learning with GPUs</a> and <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
 <h2 id="features-and-constraints">Features and Constraints</h2>
@@ -1527,7 +1548,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: July 20, 2020
+      Last update: July 22, 2020
     
   </small>
 </div>
