@@ -859,8 +859,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job-scheduling/common_job_failures/" title="Common Job Failures" class="md-nav__link">
-      Common Job Failures
+    <a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">
+      Request Compute Resources
     </a>
   </li>
 
@@ -871,8 +871,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">
-      Request Compute Resources
+    <a href="../../job-scheduling/common-job-failures/" title="Common Job Failures" class="md-nav__link">
+      Common Job Failures
     </a>
   </li>
 
@@ -1994,8 +1994,8 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 </table>
 <p>* The default memory request on this partition is 3.75GiB per core.  </p>
 <h2 id="storage">Storage</h2>
-<p>Grace has access to a number of GPFS filesystems. <code>/gpfs/loomis</code> is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation.</p>
-<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Note that the per-user usage breakdown only update once daily.</p>
+<p>Grace has access to a number of filesystems. <code>/gpfs/loomis</code> is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/cluster-storage">Cluster Storage</a> documentation.</p>
+<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. If you want to share data in your project directory, see the <a href="/clusters-at-yale/data/permissions/">permissions</a> page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Files stored in <code>scratch60</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.</p>
@@ -2042,7 +2042,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <div class="md-source-date">
   <small>
     
-      Last update: July 22, 2020
+      Last update: July 23, 2020
     
   </small>
 </div>
