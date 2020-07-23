@@ -1696,7 +1696,7 @@ module save
 </code></pre></div>
 
 <h2 id="input-data">Input Data</h2>
-<p>To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your <code>create_newcase</code> line to the YCRC (<a href="mailto:hpc@yale.edu">hpc@yale.edu</a>) and they will download that data for you.</p>
+<p>To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory. If your build fails due to missing inputdata, <a href="/#get-help">contact us</a> with your <code>create_newcase</code> line and we will download that data for you.</p>
 <h2 id="run-cesm">Run CESM</h2>
 <p>CESM needs to be rebuilt separately for each run. As a result, running CESM is more complicated than a standard piece of software where you would just run the executable.</p>
 <h3 id="create-your-case">Create Your Case</h3>
@@ -1777,7 +1777,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <p>Once you have identified the lines in the logs corresponding to your error:</p>
 <p>If your log says something like <code>Disk quota exceeded</code>, your group is out of space in the fileset you are writing to. You can run the <code>getquota</code> script to get details on your disk usage. Your group will need to reduce their usage before you will be able to run successfully.</p>
 <p>If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the <a href="https://bb.cgd.ucar.edu">CESM forums</a>.</p>
-<p>If you are still experiencing issues, you can email <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>.</p>
+<p>If you are still experiencing issues, <a href="/#get-help">contact us</a>.</p>
 <h2 id="alternative-submission-parameters">Alternative Submission Parameters</h2>
 <p>By default, the submission script will submit to the "mpi" partition for 1 day. To change this, edit your case’s <code>run</code> script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## scavenge partition</span>
@@ -1809,7 +1809,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: May 22, 2020
+      Last update: July 23, 2020
     
   </small>
 </div>
