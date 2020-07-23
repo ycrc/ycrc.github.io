@@ -407,9 +407,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remote-host-identification-has-changed-warning" class="md-nav__link">
-    "REMOTE HOST IDENTIFICATION HAS CHANGED!" Warning
+  <a href="#checklist" class="md-nav__link">
+    Checklist
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-ssh-errors" class="md-nav__link">
+    Common SSH Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Common SSH Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-publickey" class="md-nav__link">
+    Permission denied (publickey)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-host-identification-has-changed" class="md-nav__link">
+    REMOTE HOST IDENTIFICATION HAS CHANGED!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1350,9 +1377,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remote-host-identification-has-changed-warning" class="md-nav__link">
-    "REMOTE HOST IDENTIFICATION HAS CHANGED!" Warning
+  <a href="#checklist" class="md-nav__link">
+    Checklist
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-ssh-errors" class="md-nav__link">
+    Common SSH Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Common SSH Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-publickey" class="md-nav__link">
+    Permission denied (publickey)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-host-identification-has-changed" class="md-nav__link">
+    REMOTE HOST IDENTIFICATION HAS CHANGED!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1377,21 +1431,31 @@
                 
                 
                 <h1 id="troubleshoot-login">Troubleshoot Login</h1>
-<p>If you are having trouble logging in, please check the following:</p>
-<ol>
-<li>Check the status page to make sure that your cluster is online: <a href="http://research.computing.yale.edu/system-status">System Status</a>.</li>
-<li>Accounts are only created for you on the clusters as you requested them. To get access to additional clusters, submit another <a href="https://research.computing.yale.edu/account-request">account request</a>.</li>
-<li>Verify that you are attempting to ssh to the correct hostname. Please see the <a href="/clusters-at-yale/clusters">cluster page</a> for a list of login addresses.</li>
-<li>Verify that your ssh keys are setup correctly. Make sure your public key is uploaded to the <a href="http://gold.hpc.yale.internal/cgi-bin/sshkeys.py">ssh key uploader</a>. It will take a few minutes for newly uploaded keys to appear on the clusters. If you are on Windows, make sure you have pointed MobaXterm to your private ssh key and if you are on macOS or Linux, your private key needs to be in <code>${HOME}/.ssh</code>.</li>
-<li>We use ssh keys to authenticate logins to the clusters, and not NetID passwords. If you are asked for a "passphrase" upon logging in, this is the ssh key passphrase you configured when first creating your key. If you have forgotten your passphrase, you will need to create and upload a new ssh key pair (see our <a href="/clusters-at-yale/access">SSH Guide</a>).</li>
-<li>Make sure you are accessing the cluster from either Yale's campus networks (ethernet or YaleSecure for wireless) or <a href="/clusters-at-yale/access/vpn/">Yale's VPN</a> if you are off-campus.</li>
-<li>The home directory should only be write-able by your NetID. If you recently modified the permissions to your home directory, contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can fix the permissions for you.</li>
-<li>If you get an error like "could not resolve hostname" make sure that you are using the Yale DNS servers (130.132.1.9,10,11). External DNS servers do not list our clusters.</li>
-<li>If you are using Ruddle, they require Duo MFA on your smartphone. If Duo is not working for you, try testing it on this ITS site: <a href="http://access.yale.edu/mfa">http://access.yale.edu/mfa</a>. If that doesn't work, contact the Yale Help Desk.</li>
-</ol>
-<p>If all of the above check out ok, please <a href="mailto:hpc@yale.edu">contact us</a> and we will investigate further. Please include your netid and the cluster you are attempting to connect to in your email.</p>
-<hr />
-<h2 id="remote-host-identification-has-changed-warning">"REMOTE HOST IDENTIFICATION HAS CHANGED!" Warning</h2>
+<h2 id="checklist">Checklist</h2>
+<p>If you are having trouble logging into a cluster, please use the checklist below to check for common issues:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Make sure you have submitted an <a href="https://research.computing.yale.edu/support/hpc/account-request">account request</a> and have gotten word that we created your account for the cluster.</li>
+<li class="task-list-item"><input type="checkbox"/> Make sure that the cluster is online in the <a href="http://research.computing.yale.edu/system-status">System Status</a> page.</li>
+<li class="task-list-item"><input type="checkbox"/> Check the hostname for the cluster. See the <a href="/clusters-at-yale/clusters">clusters page</a> for a list.</li>
+<li class="task-list-item"><input type="checkbox"/> Verify that your <a href="http://localhost:8000/clusters-at-yale/access/#what-are-ssh-keys">ssh keys</a> are setup correctly<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Check for your public key in the <a href="http://gold.hpc.yale.internal/cgi-bin/sshkeys.py">ssh key uploader</a>. If you recently uploaded one, it will take a few minutes appear on the cluster. </li>
+<li class="task-list-item"><input type="checkbox"/> If you are using <a href="/clusters-at-yale/access/#macos-and-linux">macOS or Linux</a>, make sure your private key is in <code>~/.ssh</code>.</li>
+<li class="task-list-item"><input type="checkbox"/> If you are <a href="/clusters-at-yale/access/#windows">using Windows</a>, make sure you have pointed MobaXterm to your private ssh key (ends in .pem)</li>
+<li class="task-list-item"><input type="checkbox"/> If you are asked for a passphrase when logging in, this is the ssh key passphrase you set when first creating your key pair. If you have forgotten this passphrase, you need to create a new key pair and upload a new public key.</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Make sure your computer is either on Yale's campus network (ethernet or YaleSecure wireless) or <a href="/clusters-at-yale/access/vpn/">Yale's VPN</a>.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> If you get an error like <code>could not resolve hostname</code> you may have lost connection to the Yale network. If you are sure you have not, make sure that you are also using the Yale DNS servers (130.132.1.9,10,11).</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox"/> Your home directory should only be writable by you. If you recently modified the permissions to your home directory and can't log in, <a href="/#get-help">contact us</a> and we can fix the permissions for you.</li>
+<li class="task-list-item"><input type="checkbox"/> If you are using <a href="/clusters-at-yale/clusters/ruddle">Ruddle</a>, we require Duo MFA for every login. If following our <a href="/clusters-at-yale/access/mfa/#troubleshoot-mfa">MFA Troubleshooting steps</a> doesn't  work, contact the <a href="https://yale.service-now.com/it?id=get_help">ITS Help Desk</a>.</li>
+</ul>
+<p>If none of the above solve your issue, please <a href="/#get-help">contact us</a> with your netid and the cluster you are attempting to connect to.</p>
+<h2 id="common-ssh-errors">Common SSH Errors</h2>
+<h4 id="permission-denied-publickey">Permission denied (publickey)</h4>
+<p>This message means that the clusters don't (yet) have they key you are using to authenticate. Make sure you have an account on the cluster you're connecting, that you have <a href="/clusters-at-yale/access/#what-are-ssh-keys">created an ssh key pair</a>, and uploaded the <a href="http://gold.hpc.yale.internal/cgi-bin/sshkeys.py">public key</a>. If you recently uploaded one, it will take a few minutes appear on the cluster.</p>
+<h4 id="remote-host-identification-has-changed">REMOTE HOST IDENTIFICATION HAS CHANGED!</h4>
 <p>If you are seeing the following error:</p>
 <div class="highlight"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -1402,8 +1466,8 @@ Offending key in /home/user/.ssh/known_hosts:34
 ...
 </code></pre></div>
 
-<p>This error means that the host keys on the cluster have changed. This may be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please <a href="mailto:hpc@yale.edu">contact us</a> if you receive this error.</p>
-<p>If the host keys have indeed changed on the server you are connecting to, you can edit <code>~/.ssh/known_hosts</code> and remove the offending line. In the example above, line 34 in <code>~/.ssh/known_hosts</code> would have to be deleted before you re-connect.</p>
+<p>This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please <a href="/#get-help">contact us</a> if you receive this error.</p>
+<p>If the host keys have indeed changed on the server you are connecting to, you can edit <code>~/.ssh/known_hosts</code> and remove the offending line. In the example above, you would need to delete line 34 in <code>~/.ssh/known_hosts</code> before you re-connect.</p>
                 
                   
                     
@@ -1412,7 +1476,7 @@ Offending key in /home/user/.ssh/known_hosts:34
 <div class="md-source-date">
   <small>
     
-      Last update: May 7, 2020
+      Last update: July 23, 2020
     
   </small>
 </div>
