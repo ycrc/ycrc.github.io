@@ -4,4 +4,4 @@ Each cluster has a small amount of space dedicated to home directories, meant fo
 
 ## Other Storage Options
 
-If you or your group finds the HPC storage do not accommodate your needs, please see the [off-cluster research data storage](/data) page for other options.
+If you or your group finds the HPC storage do not accommodate your needs, please see the [off-cluster research data storage](/data) page or the [ITS Storage Finder](https://storage-finder.yale.edu).

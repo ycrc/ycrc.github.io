@@ -29,7 +29,7 @@ For the most predictable performance for hybrid applications, you will need to u
 
 ## Request Memory (RAM)
 
-Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and [you will get errors](/clusters-at-yale/job-scheduling/common_job_failures/#running-out-of-memory). Make sure you either request the right amount of memory per core on each node in your job with `--mem-per-cpu` or memory per node in your job with `--mem`. You can request more memory than you think you might need for an example job, then [make note of its actual usage](/clusters-at-yale/job-scheduling/resource-usage/) to better tune future requests for similar jobs.
+Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and [you will get errors](/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory). Make sure you either request the right amount of memory per core on each node in your job with `--mem-per-cpu` or memory per node in your job with `--mem`. You can request more memory than you think you might need for an example job, then [make note of its actual usage](/clusters-at-yale/job-scheduling/resource-usage/) to better tune future requests for similar jobs.
 
 ## Request GPUs
 
