@@ -48,7 +48,7 @@ The limits listed below are for all running jobs combined. Per-node limits are b
 
 ## Storage
 
-`/gpfs/milgram` is Milgram's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
+`/gpfs/milgram` is Milgram's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation.
 
 You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
