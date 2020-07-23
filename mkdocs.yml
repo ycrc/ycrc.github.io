@@ -61,6 +61,8 @@ markdown_extensions:
         check_paths: true
     - pymdownx.superfences
     - pymdownx.tabbed
+    - pymdownx.tasklist:
+        clickable_checkbox: true
 
 nav:
     - Support:
