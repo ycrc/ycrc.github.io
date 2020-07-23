@@ -103,8 +103,8 @@ nav:
                 - clusters-at-yale/guides/github.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
-                - clusters-at-yale/job-scheduling/common_job_failures.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
+                - clusters-at-yale/job-scheduling/common-job-failures.md
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/scavenge.md
