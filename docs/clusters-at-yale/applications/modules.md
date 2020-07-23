@@ -30,7 +30,7 @@ module avail python
     You can get a brief description of a module and the url to the software's homepage by running:
     `module help <modulename>`
 
-If you don't find a commonly used software you require in the list of modules feel free to send us a software installation request to hpc@yale.edu. Otherwise, check out [our installation guides](/clusters-at-yale/applications) to install it for yourself.
+If you don't find a commonly used software you require in the list of modules feel free [contact us](/#get-help) with a software installation request. Otherwise, check out [our installation guides](/clusters-at-yale/applications) to install it for yourself.
 
 ## Load and Unload Modules
 

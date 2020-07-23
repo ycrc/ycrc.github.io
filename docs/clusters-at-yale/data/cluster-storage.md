@@ -121,3 +121,7 @@ For example, if you wanted to recover the file `/gpfs/milgram/project/bjornson/r
 
 !!! info "Snapshot sizes"
     Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.
+
+## Other Storage Options
+
+If you or your group finds HPC storage does not accommodate your needs, please see the [off-cluster research data storage](/data) page or the [ITS Storage Finder](https://storage-finder.yale.edu).

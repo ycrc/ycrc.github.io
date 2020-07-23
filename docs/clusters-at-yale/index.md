@@ -53,7 +53,7 @@ We offer several courses that will assist you with your work on our clusters. Th
 
 ## Get Additional Help
 
-If you have additional questions/comments, please [contact the YCRC team](mailto:hpc@yale.edu). If possible, please include the following information:
+If you have additional questions/comments, please [contact us](/#get-help). If possible, please include the following information:
 
 * Your netid
 * Cluster

@@ -2,7 +2,7 @@
 
 [Singularity](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459) is a linux container technology that is well suited to use in shared-user environments such as the [clusters](/clusters-at-yale/clusters) we maintain at Yale. It is similar to [Docker](https://docs.docker.com/); You can bring with you a stack of software, libraries, and a Linux operating system that is independent of the host computer you run the container on. This can be very useful if you want to share your software environment with other researchers or yourself across several computers. Because Singularity containers run as the user that started them and mount home directories by default, you can usually see the data you're interested in working on that is stored on a host computer without any extra work.
 
-Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official [user guide for Singularity](https://sylabs.io/guides/3.4/user-guide). We are happy to help, just [email us](mailto:hpc@yale.edu?subject=Singularity Help) with your questions.
+Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official [user guide for Singularity](https://sylabs.io/guides/3.4/user-guide). We are happy to help, just [contact us](/#get-help) with your questions.
 
 !!!warning
     On the Yale clusters, **Singularity is not installed on login nodes.** You will need to run it from compute nodes.

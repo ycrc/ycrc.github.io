@@ -8,7 +8,7 @@ Yale researchers may use the Data Management Planning Tool ([DMPtool](https://dm
 
 Quarterly | [Application & Info](https://portal.xsede.org/allocations/announcements)
 
-[Startup Allocations](https://portal.xsede.org/allocations/startup) are readily available on XSEDE resources (typically approved within 2 weeks) for benchmarking and planning runs. For even lower commitment allocations (e.g. to just explore the resource), YCRC staff members have "Campus Champions" allocations on all XSEDE resources that can be shared upon request. Send an email to [hpc@yale.edu](mailto:hpc@yale.edu) for access.
+[Startup Allocations](https://portal.xsede.org/allocations/startup) are readily available on XSEDE resources (typically approved within 2 weeks) for benchmarking and planning runs. For even lower commitment allocations (e.g. to just explore the resource), YCRC staff members have "Campus Champions" allocations on all XSEDE resources that can be shared upon request. [Contact us](/#get-help) for access.
 
 XSEDE resources include the following. Up to date information is available at [xsede.org](https://www.xsede.org/ecosystem/resources):
 

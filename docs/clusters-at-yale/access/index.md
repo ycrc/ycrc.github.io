@@ -12,7 +12,7 @@ We use SSH with SSH key pairs to log in to the clusters. You must be on campus t
 
 * To use graphical programs on the clusters, please see our guides on [X11 Forwarding](x11) and [VNC](vnc).
 
-**If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [email us](mailto:hpc@yale.edu) if you're still having issues.
+**If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [contact us](/#get-help) if you're still having issues.
 
 ## What are SSH keys
 

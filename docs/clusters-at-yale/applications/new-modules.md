@@ -19,7 +19,7 @@ You will need to update your scripts to load modules using their new names. Note
 
 ### Python and R
 
-With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install [a personal Python or R environment using conda](clusters-at-yale/guides/conda) which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, we are happy to help--just email us at hpc@yale.edu.
+With the growth of users on our clusters, installing and maintaining central versions of Python and R with all the requested packages has become extremely complicated and unsustainable. As such, our recommendation is now to install [a personal Python or R environment using conda](clusters-at-yale/guides/conda) which will install the packages of your choosing into your directory. If you run into any difficulty with these environments, please [contact us](/#get-help).
 
 ## To Try and/or Switch to the New Collection
 

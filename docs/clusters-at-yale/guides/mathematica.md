@@ -55,4 +55,4 @@ Go to `Evaluate/Parallel Kernel Configuration` in the Mathematica window and cha
 
 ## Request Help or Access to Wolfram Alpha Pro
 
-If you need any assistance with your Mathematica program, you can reach out the YCRC Mathematica expert Misha Guy at [hpc@yale.edu](mailto:hpc@yale.edu).
+If you need any assistance with your Mathematica program, [contact us](/#get-help).

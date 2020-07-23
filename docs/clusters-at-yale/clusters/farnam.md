@@ -111,7 +111,7 @@ We host datasets of general interest in a loosely organized directory tree in `/
     └── Saccharomyces_cerevisiae
 ```
 
-If you would like us to host a dataset or questions about what is currently available, please email hpc@yale.edu.
+If you would like us to host a dataset or questions about what is currently available, please [contact us](/#get-help).
 
 ## Storage
 

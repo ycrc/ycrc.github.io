@@ -23,7 +23,7 @@ If you have successfully used MFA connect to a cluster before, but cannot now, f
 * Verify that your ssh client is using the correct login node
 * Verify you are attempting to connect from a Yale machine or via the proper VPN
 
-If all of this is true, please contact us at [hpc@yale.edu](mailto:hpc@yale.edu). Include the following information (and anything else you think is helpful):
+If all of this is true, please [contact us](/#get-help). Include the following information (and anything else you think is helpful):
 
 * Your netid
 * Have you ever successfully used ssh and Duo to connect to a cluster?

@@ -107,4 +107,4 @@ Finally, open a web browser on your local machine and enter the address `http://
 
 `http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**`
 
-If you run into trouble or need help, send us an email at [hpc@yale.edu](mailto:hpc@yale.edu).
+If you run into trouble or need help, [contact us](/#get-help).
