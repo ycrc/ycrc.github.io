@@ -11,7 +11,7 @@ Once you've set up Duo and your key is registered, you can finally log in. Use s
 
 ## File Transfer and Duo MFA
 
-Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a [config file](/clusters-at-yale/access/sample-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our [section on the Transfer Data page](/clusters-at-yale/data/transfer/#cyberduck-on-ruddle).
+Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our [section on the Transfer Data page](/clusters-at-yale/data/transfer/#cyberduck-on-ruddle).
 
 ## Troubleshoot MFA
 
@@ -23,7 +23,7 @@ If you have successfully used MFA connect to a cluster before, but cannot now, f
 * Verify that your ssh client is using the correct login node
 * Verify you are attempting to connect from a Yale machine or via the proper VPN
 
-If all of this is true, please contact us at [hpc@yale.edu](mailto:hpc@yale.edu). Include the following information (and anything else you think is helpful):
+If all of this is true, please [contact us](/#get-help). Include the following information (and anything else you think is helpful):
 
 * Your netid
 * Have you ever successfully used ssh and Duo to connect to a cluster?

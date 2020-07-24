@@ -2,13 +2,13 @@
 
 ## Home Directories
 
-**Do not give your home directory group write permissions. This will break your ability to log into the cluster.**  If you need to share something in your home directory, either move it your project directory or ask [hpc@yale.edu](mailto:hpc@yale.edu) for assistance.
+**Do not give your home directory group write permissions. This will break your ability to log into the cluster.**  If you need to share something in your home directory, either move it your project directory or [contact us](/#get-help) for assistance.
 
 ## Shared Group Directories
 
 Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for shared data directories.
 
-If interested, email us at [hpc@yale.edu](mailto:hpc@yale.edu) to request such a directory.
+If interested, [contact us](/#get-help) to request such a directory.
 
 ## Share With Specific Users or Other Groups
 

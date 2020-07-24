@@ -10,7 +10,7 @@ Grace is a shared-use resource for the [Faculty of Arts and Sciences](https://fa
 
 ## Hardware
 
-Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
+Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
 
 !!! Warning
     Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
@@ -120,15 +120,15 @@ Private partitions contain nodes acquired by specific research groups. Full acce
 
 ## Storage
 
-Grace has access to a number of GPFS filesystems. `/gpfs/loomis` is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/cluster-storage) documentation.
+Grace has access to a number of filesystems. `/gpfs/loomis` is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your project directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-|Partition  | Root Directory            | Storage     | File Count | Backups |
-|-----------|---------------------------|-------------|------------|---------|
-| home      | `/gpfs/loomis/home.grace` | 100G/user   | 200,000    | Yes     |
-| project   | `/gpfs/loomis/project`    | 1T/group    | 5,000,000  | No      |
-| scratch60 | `/gpfs/loomis/scratch60`  | 20T/group   | 5,000,000  | No      |
+|Partition  | Root Directory            | Storage                                 | File Count | Backups |
+|-----------|---------------------------|-----------------------------------------|------------|---------|
+| home      | `/gpfs/loomis/home.grace` | 125GiB/user                             | 500,000    | Yes     |
+| project   | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      |
+| scratch60 | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      |

@@ -1,8 +1,12 @@
 # Log on to the Clusters
 
-We use SSH with SSH key pairs to log in to the clusters. You must be on campus to access the clusters or our SSH key uploader. For off-campus access you need to use the [Yale VPN](vpn).
+You must be on the campus network to access the clusters. For off-campus access you need to use the [Yale VPN](vpn).
 
-## Quick Start
+## Open OnDemand
+
+If you're just getting started or prefer a more graphical interface, Open OnDemand (OOD) is an excellent way to access the clusters. For hostnames and more instructions see our [Open OnDemand](/clusters-at-yale/access/ood) page.
+
+## SSH Quick Start
 
 * Send us your public SSH key with our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). Allow up to ten minutes for it to propagate.
 
@@ -12,7 +16,7 @@ We use SSH with SSH key pairs to log in to the clusters. You must be on campus t
 
 * To use graphical programs on the clusters, please see our guides on [X11 Forwarding](x11) and [VNC](vnc).
 
-**If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [email us](mailto:hpc@yale.edu) if you're still having issues.
+**If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [contact us](/#get-help) if you're still having issues.
 
 ## What are SSH keys
 

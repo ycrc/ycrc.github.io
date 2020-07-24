@@ -10,8 +10,8 @@ We expect most of jobs submitted to `mpi` to use all 24 cores on each node. Ther
 
 Jobs that do not require exclusive nodes, even if they use `mpirun` to launch, will run fine and experience normal wait times in the day and week (and scavenge) partitions. As such, we ask you to protect the special `mpi` partition nodes for the more resource sensitive jobs listed above and, therefore, submit any jobs that will not be using whole node(s) to the other partitions.​ If smaller or single core jobs are submitted to the `mpi` partition, they may be cancelled without warning. As with our GPU partitions, if you would like to make use of available cores on any `mpi` nodes for small jobs, the scavenge partition is the correct way to do that.
 
-If you have any questions about whether your workload is appropriate for the `mpi` partition, please contact us at [hpc@yale.edu](mailto:hpc@yale.edu).
+If you have any questions about whether your workload is appropriate for the `mpi` partition, please [contact us](/#get-help).
 
 ## Core Layouts
 
-Please review the [Request Compute Resources](/clusters-at-yale/job-scheduling/resource-requests) documentation for the appropriate Slurm flags for different types of core and node layouts. If you have any questions, feel free to email us at [hpc@yale.edu](mailto:hpc@yale.edu).
+Please review the [Request Compute Resources](/clusters-at-yale/job-scheduling/resource-requests) documentation for the appropriate Slurm flags for different types of core and node layouts. If you have any questions, feel free to [contact us](/#get-help).

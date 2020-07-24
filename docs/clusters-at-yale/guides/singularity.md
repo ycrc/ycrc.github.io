@@ -2,7 +2,7 @@
 
 [Singularity](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459) is a linux container technology that is well suited to use in shared-user environments such as the [clusters](/clusters-at-yale/clusters) we maintain at Yale. It is similar to [Docker](https://docs.docker.com/); You can bring with you a stack of software, libraries, and a Linux operating system that is independent of the host computer you run the container on. This can be very useful if you want to share your software environment with other researchers or yourself across several computers. Because Singularity containers run as the user that started them and mount home directories by default, you can usually see the data you're interested in working on that is stored on a host computer without any extra work.
 
-Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official [user guide for Singularity](https://sylabs.io/guides/3.4/user-guide). We are happy to help, just [email us](mailto:hpc@yale.edu?subject=Singularity Help) with your questions.
+Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official [user guide for Singularity](https://sylabs.io/guides/3.4/user-guide). We are happy to help, just [contact us](/#get-help) with your questions.
 
 !!!warning
     On the Yale clusters, **Singularity is not installed on login nodes.** You will need to run it from compute nodes.
@@ -13,7 +13,7 @@ Images are the file(s) you use to run your container. Singularity images are sin
 
 ## Use a Pre-existing Container
 
-If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that [can be transferred](docs/clusters-at-yale/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that [can be transferred](/clusters-at-yale/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
 ``` bash
 # set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity
@@ -36,7 +36,7 @@ singularity build bioconvert-latest.sif shub://biokit/bioconvert:latest
 
 You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file.
 Singularity definition files are similar to Docker's `Dockerfile`, but use different syntax.
-To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.5/user-guide/installation.html).
+To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps).
 
 Sylabs provides a cloud-based container building platform ([link](https://cloud.sylabs.io/builder)).
 This web-interface allows for the uploading and building of customized containers in the cloud.

@@ -45,7 +45,7 @@ module save
 
 ## Input Data
 
-To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory, so if your build fails due to missing inputdata, send your `create_newcase` line to the YCRC ([hpc@yale.edu](mailto:hpc@yale.edu)) and they will download that data for you.
+To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory. If your build fails due to missing inputdata, [contact us](/#get-help) with your `create_newcase` line and we will download that data for you.
 
 ## Run CESM
 
@@ -173,7 +173,7 @@ If your log says something like `Disk quota exceeded`, your group is out of spac
 
 If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the [CESM forums](https://bb.cgd.ucar.edu).
 
-If you are still experiencing issues, you can email [hpc@yale.edu](mailto:hpc@yale.edu).
+If you are still experiencing issues, [contact us](/#get-help).
 
 ## Alternative Submission Parameters
 

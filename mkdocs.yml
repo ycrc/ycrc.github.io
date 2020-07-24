@@ -61,19 +61,21 @@ markdown_extensions:
         check_paths: true
     - pymdownx.superfences
     - pymdownx.tabbed
+    - pymdownx.tasklist:
+        clickable_checkbox: true
 
 nav:
     - Support:
         - index.md
-        - Clusters at Yale:
+        - Cluster Computing at Yale:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
             - clusters-at-yale/troubleshoot.md
             - Access the Clusters:
                 - clusters-at-yale/access/index.md
+                - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vpn.md
                 - clusters-at-yale/access/x11.md
-                - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vnc.md
                 - clusters-at-yale/access/mfa.md
                 - clusters-at-yale/access/advanced-config.md
@@ -104,8 +106,8 @@ nav:
                 - clusters-at-yale/guides/github.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
-                - clusters-at-yale/job-scheduling/common_job_failures.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
+                - clusters-at-yale/job-scheduling/common-job-failures.md
                 - clusters-at-yale/job-scheduling/resource-usage.md
                 - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/scavenge.md
@@ -115,7 +117,6 @@ nav:
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:
                 - clusters-at-yale/data/index.md
-                - clusters-at-yale/data/cluster-storage.md
                 - clusters-at-yale/data/transfer.md
                 - clusters-at-yale/data/globus.md
                 - clusters-at-yale/data/permissions.md

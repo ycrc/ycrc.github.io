@@ -8,7 +8,7 @@ If your Yale email account is already an EliApps account (Gmail), then you are a
 
 ### Google Shared Drives (formerly Team Drive)
 
-[Shared Drives](https://gsuite.google.com/learning-center/products/drive/get-started-team-drive/#!/) is an additional feature for EliApps that is available by request only (at the moment). A Shared Drive is a Google Drive space that solves a lot of ownership and permissions issues present with traditional shared Google Drive folder. Once you create a Shared Drive, e.g. for a project or research group, any data placed in that Drive are owned by the drive and the permission (which accounts can own or access the data) can be easily managed from the Shared Drive interface by drive owners. With Shared Drive, you can be sure the data will stay with research group as students and postdocs come and go. To request Shared Drive, first make sure you have an EliApps account (see above) then send us a request to research.computing@yale.edu. We will work with ITS on your behalf to enable the feature. Although they don't have a total size quota, there are [limits for Google Shared Drives](https://support.google.com/a/answer/7338880?hl=en). Some are listed below.
+[Shared Drives](https://gsuite.google.com/learning-center/products/drive/get-started-team-drive/#!/) is an additional feature for EliApps that is available by request only (at the moment). A Shared Drive is a Google Drive space that solves a lot of ownership and permissions issues present with traditional shared Google Drive folder. Once you create a Shared Drive, e.g. for a project or research group, any data placed in that Drive are owned by the drive and the permission (which accounts can own or access the data) can be easily managed from the Shared Drive interface by drive owners. With Shared Drive, you can be sure the data will stay with research group as students and postdocs come and go. To request Shared Drive, first make sure you have an EliApps account (see above) then [contact us](/#get-help). We will work with ITS on your behalf to enable the feature. Although they don't have a total size quota, there are [limits for Google Shared Drives](https://support.google.com/a/answer/7338880?hl=en). Some are listed below.
 
 !!! warning
      To keep file counts low (and for easier data retrieval) we *highly* recommended that you archive your data using zip or [tar](/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive).
@@ -16,8 +16,8 @@ If your Yale email account is already an EliApps account (Gmail), then you are a
 | Limit type                                | Limit   |
 |-------------------------------------------|---------|
 | Number of files and folders               | 400,000 |
-| Daily upload cap                          | 750 GiB  |
-| Max individual file size                  | 5 TiB    |
+| Daily upload cap                          | 750 GiB |
+| Max individual file size                  | 5 TiB   |
 | Max number of nested folders              | 20      |
 
 ### Local File Access
