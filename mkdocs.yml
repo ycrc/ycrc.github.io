@@ -73,9 +73,9 @@ nav:
             - clusters-at-yale/troubleshoot.md
             - Access the Clusters:
                 - clusters-at-yale/access/index.md
+                - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vpn.md
                 - clusters-at-yale/access/x11.md
-                - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vnc.md
                 - clusters-at-yale/access/mfa.md
                 - clusters-at-yale/access/advanced-config.md
