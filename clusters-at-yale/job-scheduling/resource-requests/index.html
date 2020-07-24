@@ -1501,7 +1501,7 @@
 <p class="admonition-title">Tip</p>
 <p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time.</p>
 </div>
-<p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/deep-learning-gpus">Python Deep Learning with GPUs</a> and <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
+<p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
 <h2 id="features-and-constraints">Features and Constraints</h2>
 <p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
 <p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx2</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.</p>
@@ -1536,7 +1536,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: July 23, 2020
+      Last update: July 24, 2020
     
   </small>
 </div>

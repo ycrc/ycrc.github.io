@@ -1561,7 +1561,7 @@ This opens a terminal in a web-browser that you can use in the exact same way as
 <p>We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, and Jupyter Notebook.</p>
 <h3 id="remote-desktop">Remote Desktop</h3>
 <p>Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
-In the past your options were to use <a href="/clusters-at-yale/access/vnc">VNC</a> or <a href="docs/clusters-at-yale/access/x11">X11 forwarding</a>. These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.</p>
+In the past your options were to use <a href="/clusters-at-yale/access/vnc">VNC</a> or <a href="/clusters-at-yale/access/x11">X11 forwarding</a>. These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.</p>
 <p>Use the form to request resources and decide what partition your job should run on (use <code>interactive</code> or your lab's partition).</p>
 <p><img alt="remote_desktop" src="/img/ood_remote.png" /></p>
 <p>Once you launch the job, you will be presented with a notification that your job has been queued.
@@ -1576,7 +1576,7 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>One of the most common uses of Open OnDemand is the Jupyter Notebook interface for Python and R.
 <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebooks</a> provide a flexible way to interactively work with code and plots presented in-line together. To get started choose Jupyter Notebook from the Interactive Apps menu on the dashboard.</p>
 <p><img alt="jupyter_form" src="/img/ood_jupyter_form.png" /></p>
-<p>Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/guides/jupyter.md">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
+<p>Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you have installed and want to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">Jupyter Lab</a> replace <code>/tree?</code> with <code>/lab</code> in the url to your Jupyter job.</p>
@@ -1589,7 +1589,7 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <div class="md-source-date">
   <small>
     
-      Last update: April 20, 2020
+      Last update: July 24, 2020
     
   </small>
 </div>

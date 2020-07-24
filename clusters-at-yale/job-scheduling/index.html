@@ -1442,7 +1442,7 @@
 <ul>
 <li>Do not run heavy computation on on login nodes (e.g. <code>grace1</code>, <code>farnam2</code>). Doing so negatively impacts everyone's ability to interact with the cluster.</li>
 <li>Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitoring CPU and Memory Usage</a> for how to measure job resource usage.</li>
-<li>If you plan to run many similar jobs, use our <a href="Dead Simple Queue">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a></li>
+<li>If you plan to run many similar jobs, use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a></li>
 </ul>
 </div>
 <p>If you find yourself wondering how best to schedule a job, please <a href="/#get-help">contact us</a> for some help.</p>
@@ -1619,7 +1619,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <div class="highlight"><pre><span></span><code>sbatch example_job.sh
 </code></pre></div>
 
-<p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our <a href="Dead Simple Queue">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>.</p>
+<p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>.</p>
                 
                   
                     
@@ -1628,7 +1628,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <div class="md-source-date">
   <small>
     
-      Last update: July 22, 2020
+      Last update: July 24, 2020
     
   </small>
 </div>
