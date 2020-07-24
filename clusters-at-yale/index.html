@@ -327,17 +327,17 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
     
     <label class="md-nav__link" for="nav-1-2">
-      Clusters at Yale
+      Cluster Computing at Yale
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Clusters at Yale" data-md-level="2">
+    <nav class="md-nav" aria-label="Cluster Computing at Yale" data-md-level="2">
       <label class="md-nav__title" for="nav-1-2">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Clusters at Yale
+        Cluster Computing at Yale
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -418,8 +418,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#move-your-files" class="md-nav__link">
-    Move Your Files
+  <a href="#transfer-your-files" class="md-nav__link">
+    Transfer Your Files
   </a>
   
 </li>
@@ -432,8 +432,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rules-of-the-road" class="md-nav__link">
-    Rules of the Road
+  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
+    Be a Good Cluster Citizen
   </a>
   
 </li>
@@ -446,8 +446,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-additional-help" class="md-nav__link">
-    Get Additional Help
+  <a href="#get-help" class="md-nav__link">
+    Get Help
   </a>
   
 </li>
@@ -1436,8 +1436,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#move-your-files" class="md-nav__link">
-    Move Your Files
+  <a href="#transfer-your-files" class="md-nav__link">
+    Transfer Your Files
   </a>
   
 </li>
@@ -1450,8 +1450,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rules-of-the-road" class="md-nav__link">
-    Rules of the Road
+  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
+    Be a Good Cluster Citizen
   </a>
   
 </li>
@@ -1464,8 +1464,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-additional-help" class="md-nav__link">
-    Get Additional Help
+  <a href="#get-help" class="md-nav__link">
+    Get Help
   </a>
   
 </li>
@@ -1493,41 +1493,41 @@
                 <h1 id="getting-started">Getting Started</h1>
 <h2 id="hpc-clusters">HPC Clusters</h2>
 <p><a class="cluster-diagram" href="/img/clusters.png"><img alt="" src="/img/cluster.png" /></a></p>
-<p>Broadly speaking, a compute cluster is a collection of networked computers which we call nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you will be able to view your files and dispatch jobs to one or several other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to submit these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers that keeps track of all files on a large array of disks, so that you can access and edit your data from any compute node. Detailed information about each of our clusters is available <a href="clusters">here</a>.</p>
+<p>Broadly speaking, a high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to manage these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. See our summary of the <a href="/clusters-at-yale/clusters">compute and storage hardware</a> we maintain, from which you can navigate to a detailed description of each cluster.</p>
 <h2 id="request-an-account">Request an Account</h2>
 <p>The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the <a href="https://research.computing.yale.edu/account-request">account request page</a>.</p>
 <h2 id="log-in">Log in</h2>
-<p>All of Yale's clusters are accessed via a protocol called secure shell (SSH). Once you have an account, go to our <a href="access">Log on to the Clusters page</a> login information and configuration.</p>
-<p>If you want to access the clusters from outside Yale, you must use the <a href="access/vpn">Yale VPN.</a></p>
+<p>Once you have an account, go to our <a href="access">Log on to the Clusters page</a> login information and configuration.</p>
+<p>If you want to access the clusters from outside Yale's network, you must use the <a href="access/vpn">Yale VPN.</a></p>
 <h2 id="schedule-a-job">Schedule a Job</h2>
-<p>On our clusters, you control your jobs using a job scheduling system called Slurm that dedicates and manages compute resources for you. Schedulers are usually used in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time to make sure your jobs will behave as expected. The other way, which is the preferred way for long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc">HPC bootcamp</a> for more details.</p>
+<p>On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc">HPC bootcamp</a> for more details.</p>
 <h2 id="linux">Linux</h2>
 <p>A basically familiarity with Linux commands is required for interacting with the clusters. We periodically run an <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Bootcamp</a> to get you started. There are also many excellent beginner tutorials available for free online, including the following:</p>
 <ul>
 <li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a></li>
 <li><a href="http://rik.smith-unna.com/command_line_bootcamp/">Interactive Command Line Bootcamp</a></li>
 </ul>
-<h2 id="move-your-files">Move Your Files</h2>
-<p>You will likely find it necessary to copy files between your local machines and the clusters. Just as with logging in, there are different ways to do this, depending on your local operating system. See the documentation on <a href="data/transfer">transferring data</a> for more information.</p>
+<h2 id="transfer-your-files">Transfer Your Files</h2>
+<p>You will likely want to copy files between your computer and the clusters. There are a couple methods available to you, and the best for each situation usually depends on the size and number of files you would like to transfer. See our <a href="data/transfer">transferring data</a> page for more information.</p>
 <h2 id="use-software">Use Software</h2>
-<p>To best serve the diverse needs of all our researhcers, we use a module system to manage the most commonly used software. This allows you to swap between different applications and versions of those applications with relative ease and focus on getting your work done. See the <a href="applications/modules">Modules documentation</a> in our User Guide for more information.</p>
+<p>To best serve the diverse needs of all our researchers, we use <a href="/clusters-at-yale/applications/modules">software modules</a> to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease.</p>
 <p>We also provide assistance for installing less commonly used packages. See our <a href="applications">Applications &amp; Software documentation</a> for more details.</p>
-<h2 id="rules-of-the-road">Rules of the Road</h2>
-<p>Before you begin using the cluster, here are some important things to remember:</p>
+<h2 id="be-a-good-cluster-citizen">Be a Good Cluster Citizen</h2>
+<p>While using HPC resources, here are some important things to remember:</p>
 <ul>
-<li>Do not run jobs or do real work on the login node. Always allocate a compute node and run programs there.</li>
+<li>Do not run jobs or computation on a login node, instead <a href="/clusters-at-yale/job-scheduling/">submit jobs</a>.</li>
 <li>Never give your password or ssh key to anyone else.</li>
-<li>Do not store any protected or regulated data on the cluster (e.g. PHI data)</li>
+<li>Do not store any <a href="https://cybersecurity.yale.edu/protectyourdata">high risk data</a> on the clusters, except <a href="/clusters-at-yale/clusters/milgram">Milgram</a>.</li>
 </ul>
 <p>Use of the clusters is also governed by our <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-principles">official guidelines</a>.</p>
 <h2 id="hands-on-training">Hands on Training</h2>
-<p>We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse <a href="https://research.computing.yale.edu/training/ycrc-bootcamps">our catalog of training</a> to see what is available.</p>
-<h2 id="get-additional-help">Get Additional Help</h2>
-<p>If you have additional questions/comments, please <a href="/#get-help">contact us</a>. If possible, please include the following information:</p>
+<p>We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse <a href="https://research.computing.yale.edu/training">our catalog of training</a> to see what is available.</p>
+<h2 id="get-help">Get Help</h2>
+<p>If you have additional questions/comments, please <a href="/#get-help">contact us</a>. Where applicable, please include the following information:</p>
 <ul>
 <li>Your netid</li>
 <li>Cluster</li>
-<li>Queue/partition name</li>
+<li>Partition name</li>
 <li>Job ID(s)</li>
 <li>Error messages</li>
 <li>Command used to submit the job(s)</li>
@@ -1542,7 +1542,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: July 23, 2020
+      Last update: July 24, 2020
     
   </small>
 </div>
