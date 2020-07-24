@@ -39,7 +39,7 @@ This method is usually a little more involved, and is easier if you can inspect 
 
 ## Disk Quotas
 
-Since the clusters are shared resources, we have quotas in place to enforce fair use of storage. More details about quotas can be found [here](/clusters-at-yale/data/index/). When you or your group reach a quota, you can't write to existing files or create new ones. Any jobs that depend on creating or writing files that count toward the affected quota will fail. To inspect your current usage, run the command `getquota`. Remember, your home quota is yours but your project, scratch60, and any purchased storage quotas are shared across your group.
+Since the clusters are shared resources, we have [quotas in place](/clusters-at-yale/data) to enforce fair use of storage. When you or your group reach a quota, you can't write to existing files or create new ones. Any jobs that depend on creating or writing files that count toward the affected quota will fail. To inspect your current usage, run the command `getquota`. Remember, your home quota is yours but your project, scratch60, and any purchased storage quotas are shared across your group.
 
 ### Archive Files
 
