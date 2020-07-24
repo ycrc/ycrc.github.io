@@ -13,7 +13,7 @@ Images are the file(s) you use to run your container. Singularity images are sin
 
 ## Use a Pre-existing Container
 
-If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that [can be transferred](docs/clusters-at-yale/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that [can be transferred](/clusters-at-yale/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/), [Singularity Hub](https://singularityhub.github.io/containers/registry/singularity-hub-registry/), and [Sylabs Container Library](https://cloud.sylabs.io/library). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
 ``` bash
 # set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity
@@ -36,7 +36,7 @@ singularity build bioconvert-latest.sif shub://biokit/bioconvert:latest
 
 You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file.
 Singularity definition files are similar to Docker's `Dockerfile`, but use different syntax.
-To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.5/user-guide/installation.html).
+To build a container from a definition file, you need administrative privileges on a Linux machine where [Singularity is installed](https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps).
 
 Sylabs provides a cloud-based container building platform ([link](https://cloud.sylabs.io/builder)).
 This web-interface allows for the uploading and building of customized containers in the cloud.

@@ -40,7 +40,7 @@ In order for your job to be able to access gpus, you must submit your job to a p
 !!! tip
     As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time.
 
-For more documentation on using GPUs on our clusters, please see [Python Deep Learning with GPUs](/clusters-at-yale/guides/deep-learning-gpus) and [GPUs and CUDA](/clusters-at-yale/guides/gpus-cuda).
+For more documentation on using GPUs on our clusters, please see [GPUs and CUDA](/clusters-at-yale/guides/gpus-cuda).
 
 ## Features and Constraints
 

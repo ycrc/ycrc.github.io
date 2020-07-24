@@ -10,7 +10,7 @@ Grace is a shared-use resource for the [Faculty of Arts and Sciences](https://fa
 
 ## Hardware
 
-Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
+Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:p100:1` would request one Tesla P100 GPU per node. See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
 
 !!! Warning
     Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.

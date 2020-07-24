@@ -50,7 +50,7 @@ We have deployed a selection of common graphical programs as Interactive Apps on
 ### Remote Desktop
 
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
-In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](docs/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
+In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
 
 Use the form to request resources and decide what partition your job should run on (use `interactive` or your lab's partition).
 
@@ -78,7 +78,7 @@ One of the most common uses of Open OnDemand is the Jupyter Notebook interface f
 
 ![jupyter_form](/img/ood_jupyter_form.png)
 
-Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/guides/jupyter.md) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
+Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
 !!! tip
     If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) replace `/tree?` with `/lab` in the url to your Jupyter job.

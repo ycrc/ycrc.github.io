@@ -8,7 +8,7 @@ Submitting a job involves specifying a resource request then running one or more
 
     - Do not run heavy computation on on login nodes (e.g. `grace1`, `farnam2`). Doing so negatively impacts everyone's ability to interact with the cluster.
     - Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on [Monitoring CPU and Memory Usage](/clusters-at-yale/job-scheduling/resource-usage) for how to measure job resource usage.
-    - If you plan to run many similar jobs, use our [Dead Simple Queue](Dead Simple Queue) tool or [job arrays](https://slurm.schedmd.com/job_array.html)
+    - If you plan to run many similar jobs, use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html)
 
 If you find yourself wondering how best to schedule a job, please [contact us](/#get-help) for some help.
 
@@ -112,5 +112,5 @@ Save [this file](/files/example_job.sh) as `example_job.sh`, then submit it with
 sbatch example_job.sh
 ```
 
-When the job finishes the output should be stored in a file called `slurm-jobid.out`, where `jobid` is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our [Dead Simple Queue](Dead Simple Queue) tool or [job arrays](https://slurm.schedmd.com/job_array.html).
+When the job finishes the output should be stored in a file called `slurm-jobid.out`, where `jobid` is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html).
 

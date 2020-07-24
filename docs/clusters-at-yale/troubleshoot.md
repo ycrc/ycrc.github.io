@@ -7,7 +7,7 @@ If you are having trouble logging into a cluster, please use the checklist below
 - [ ] Make sure you have submitted an [account request](https://research.computing.yale.edu/support/hpc/account-request) and have gotten word that we created your account for the cluster.
 - [ ] Make sure that the cluster is online in the [System Status](http://research.computing.yale.edu/system-status) page.
 - [ ] Check the hostname for the cluster. See the [clusters page](/clusters-at-yale/clusters) for a list.
-- [ ] Verify that your [ssh keys](http://localhost:8000/clusters-at-yale/access/#what-are-ssh-keys) are setup correctly
+- [ ] Verify that your [ssh keys](/clusters-at-yale/access/#what-are-ssh-keys) are setup correctly
     - [ ] Check for your public key in the [ssh key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). If you recently uploaded one, it will take a few minutes appear on the cluster. 
     - [ ] If you are using [macOS or Linux](/clusters-at-yale/access/#macos-and-linux), make sure your private key is in `~/.ssh`.
     - [ ] If you are [using Windows](/clusters-at-yale/access/#windows), make sure you have pointed MobaXterm to your private ssh key (ends in .pem)

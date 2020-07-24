@@ -24,7 +24,7 @@ NERSC, Argonne Leadership Computing Facility (ALCF), Oak Ridge Leadership Comput
 
 ### INCITE
 
-Due in June | [Application & Info](http://www.doeleadershipcomputing.org/incite-program/)
+Due in June | [Application & Info](https://www.doeleadershipcomputing.org/getting-started)
 
 ### ALCC
 

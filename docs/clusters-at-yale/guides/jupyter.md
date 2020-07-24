@@ -2,7 +2,7 @@
 
 You can use a compute node to run a [jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.
 
-Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn.md) and you will need to set up a jupyter environment.
+Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn) and you will need to set up a jupyter environment.
 
 ## Set up an environment
 
