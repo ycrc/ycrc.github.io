@@ -67,7 +67,7 @@ markdown_extensions:
 nav:
     - Support:
         - index.md
-        - Clusters at Yale:
+        - Cluster Computing at Yale:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
             - clusters-at-yale/troubleshoot.md
