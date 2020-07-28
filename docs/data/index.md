@@ -10,22 +10,25 @@ Google Drive is a cloud service for file storage, document editing and sharing. 
 
 ## Storage @ Yale
 
+!!! warning "Cluster I/O Performance"
+    Cluster-mounted S@Y shares do *not* provide sufficient performance for use in jobs. We mount the shares on the cluster for convenience but strongly recommend data be copied to [Project](/clusters-at-yale/data/#project) or [Scratch60](/clusters-at-yale/data/#60-day-scratch) before running jobs.
+
 **Capacity: As requested. Cost: See below  
 No sensitive data (e.g. ePHI, HIPAA) for cluster mounts  
 Can be mounted on the cluster or computers on campus (but not both)**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
 
-* Standard (daily use): $10.78/TiB/month
-* Archive (long term storage): $3.60/TiB/month
-* Enhanced (higher performance): $33.87/TiB/month
+| Type        | Use                                                                           | Price           |
+|-------------|-------------------------------------------------------------------------------|-----------------|
+|Object Tier  |Good for staging data between cloud and clusters                               |$12/TiB/month    |
+|Active Tier  |Daily use, still copy to cluster before using in jobs                          |$10.78/TiB/month |
+|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/) |$3.60/TiB/month  |
 
 For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). If you would like to request a share that is mounted on the clusters, **specify in your request that the share be mounted from the HPC clusters**. If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 
-!!!warning
-    Cluster-mounted S@Y shares do *not* provide sufficient performance for computation. We mount the shares on the cluster for convenience but strongly recommend data be copied to project or scratch60 before running jobs.
 
 ## Box at Yale
 
