@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1489,27 +1489,27 @@
                 
                 
                 <h1 id="jupyter-notebooks">Jupyter Notebooks</h1>
-<p>You can use a compute node to run a <a href="https://jupyter-notebook.readthedocs.io/en/stable/">jupyter notebook</a> and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.</p>
-<p>Before you get started, you will need to be on campus or logged in to the <a href="/clusters-at-yale/access/vpn">Yale VPN</a> and you will need to set up a jupyter environment.</p>
+<p>You can use a compute node to run a <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter notebook</a> and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.</p>
+<p>Before you get started, you will need to be on campus or logged in to the <a href="/clusters-at-yale/access/vpn">Yale VPN</a> and you will need to set up a Jupyter environment.</p>
 <h2 id="set-up-an-environment">Set up an environment</h2>
-<p>We recommend you use <a href="/clusters-at-yale/guides/conda">conda</a> to manage your jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
+<p>We recommend you use <a href="/clusters-at-yale/guides/conda">Conda</a> to manage your Jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda create -yn notebook_env anaconda <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
 
-<p>You can then load this environment for jupyter where we indicate below.</p>
+<p>You can then load this environment for Jupyter where we indicate below.</p>
 <h2 id="open-ondemand">Open OnDemand</h2>
-<p>Once you have installed jupyter and any other packages you want to use into a conda environment, you can start a notebook server as a job via <a href="/clusters-at-yale/access/ood/#jupyter-notebooks">Open OnDemand</a>.</p>
+<p>Once you have installed Jupyter and any other packages you want to use into a Conda environment, you can start a notebook server as a job via <a href="/clusters-at-yale/access/ood/#jupyter-notebooks">Open OnDemand</a>.<br><br> <strong>We strongly encourage using Open OnDemand unless you have specific requirements otherwise.</strong></p>
 <h2 id="traditional-method">Traditional Method</h2>
-<p>If you want finer control over your notebook job, you can manually configure a jupyter notebook and connect manually.</p>
+<p>If you want finer control over your notebook job, you can manually configure a Jupyter notebook and connect manually.</p>
 <p>The main steps are:</p>
 <ol>
-<li>Start a jupyter notebook job.</li>
+<li>Start a Jupyter notebook job.</li>
 <li>Start an ssh tunnel.</li>
 <li>Use your local browser to connect.</li>
 </ol>
 <h3 id="start-the-server">Start the Server</h3>
-<p>Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains <code>jupyter-notebook</code> or <code>source activate</code> an environment if you're using . Save your edited version of this script on the cluster, and submit it with <code>sbatch</code>.</p>
+<p>Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains <code>jupyter-notebook</code> or <code>conda activate</code> an environment if you're using <a href="/clusters-at-yale/guides/conda">Conda</a>. Save your edited version of this script on the cluster, and submit it with <code>sbatch</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition general</span>
 <span class="c1">#SBATCH --nodes 1</span>
@@ -1561,7 +1561,7 @@ jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${<
 <h4 id="macos-and-linux">MacOS and Linux</h4>
 <p>On a Mac or Linux machine, you can start the tunnel with an SSH command. You can check the output from the job you started to get the specifc info you need.</p>
 <h4 id="windows">Windows</h4>
-<p>On a windows machine, we recommend you use MobaXterm. See our guide on <a href="/clusters-at-yale/access">connecting with MobaXterm</a> for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:</p>
+<p>On a Windows machine, we recommend you use MobaXterm. See our guide on <a href="/clusters-at-yale/access">connecting with MobaXterm</a> for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:</p>
 <ol>
 <li>Under Tools choose "MobaSSHTunnel (port forwarding)".</li>
 <li>Click the "New SSH Tunnel" button.</li>
@@ -1583,7 +1583,7 @@ jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${<
 <div class="md-source-date">
   <small>
     
-      Last update: July 24, 2020
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2020</span>
     
   </small>
 </div>
@@ -1699,15 +1699,15 @@ jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${<
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
