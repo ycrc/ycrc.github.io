@@ -1,37 +1,37 @@
 # Jupyter Notebooks
 
-You can use a compute node to run a [jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.
+You can use a compute node to run a [Jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.
 
-Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn) and you will need to set up a jupyter environment.
+Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn) and you will need to set up a Jupyter environment.
 
 ## Set up an environment
 
-We recommend you use [conda](/clusters-at-yale/guides/conda) to manage your jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
+We recommend you use [Conda](/clusters-at-yale/guides/conda) to manage your Jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
 
 ``` bash
 module load miniconda
 conda create -yn notebook_env anaconda python=3
 ```
 
-You can then load this environment for jupyter where we indicate below.
+You can then load this environment for Jupyter where we indicate below.
 
 ## Open OnDemand
 
-Once you have installed jupyter and any other packages you want to use into a conda environment, you can start a notebook server as a job via [Open OnDemand](/clusters-at-yale/access/ood/#jupyter-notebooks).
+Once you have installed Jupyter and any other packages you want to use into a Conda environment, you can start a notebook server as a job via [Open OnDemand](/clusters-at-yale/access/ood/#jupyter-notebooks).<br><br> **We strongly encourage using Open OnDemand unless you have specific requirements otherwise.**
 
 ## Traditional Method
 
-If you want finer control over your notebook job, you can manually configure a jupyter notebook and connect manually.
+If you want finer control over your notebook job, you can manually configure a Jupyter notebook and connect manually.
 
 The main steps are:
 
-1. Start a jupyter notebook job.
+1. Start a Jupyter notebook job.
 1. Start an ssh tunnel.
 1. Use your local browser to connect.
 
 ### Start the Server
 
-Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `source activate` an environment if you're using . Save your edited version of this script on the cluster, and submit it with `sbatch`.
+Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `conda activate` an environment if you're using [Conda](/clusters-at-yale/guides/conda). Save your edited version of this script on the cluster, and submit it with `sbatch`.
 
 ``` bash
 #!/bin/bash
@@ -91,7 +91,7 @@ On a Mac or Linux machine, you can start the tunnel with an SSH command. You can
 
 #### Windows
 
-On a windows machine, we recommend you use MobaXterm. See our guide on [connecting with MobaXterm](/clusters-at-yale/access) for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:
+On a Windows machine, we recommend you use MobaXterm. See our guide on [connecting with MobaXterm](/clusters-at-yale/access) for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:
 
 1. Under Tools choose "MobaSSHTunnel (port forwarding)".
 1. Click the "New SSH Tunnel" button.
