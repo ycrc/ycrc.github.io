@@ -1,7 +1,7 @@
 # Checkpointing
 
 DMTCP "Distributed Multithreaded Checkpointing" allows you to easily save the state of your running job and restart it from 
-that point.  This can be very useful if your job fails for any number of reasons: it exceeds the time limit, is preempted from scavenge, etc.
+that point.  This can be very useful if your job fails for any number of reasons: it exceeds the time limit, is preempted from scavenge, the compute node crashes, etc.
 
 DMTCP does not require any changes to your code or recompilation.  It should work on most sequential or multithreaded/multiprocessing programs as is.
 
@@ -9,7 +9,7 @@ DMTCP does not require any changes to your code or recompilation.  It should wor
 module load DMTCP
 ```
 
-## launching your job under DMTCP
+## Running your job interactively under DMTCP
 
 For this simple example, we'll use this python script count.py
 ``` python
@@ -39,6 +39,33 @@ $ dmtcp_restart -i 5 *.dmtcp
 ```
 
 In practice, you'll most likely want to use DMTCP to checkpoint batch jobs, rather than interactive sessions.     
+
+## Using checkpointing with a batch job
+
+This script will submit the job under DMTCP's checkpointing.  Here we use a more reasonable checkpoint interval of 300 seconds.  You will want to experiment to see
+how long it takes to write your application's checkpoint file, and tune your interval accordingly.  
+
+```
+#!/bin/bash
+
+module load DMTCP
+
+rm -f *.dmtcp # maybe not the best idea...
+
+dmtcp_launch -i 300 python count.py
+```
+
+Then, if the job fails, you can resubmit it with this script:
+```
+#!/bin/bash
+
+module load DMTCP
+
+dmtcp_restart -i 300 *.dmtcp
+```
+
+Note that we are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
+the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.
 
 ## Arranging for your job to automatically restart when preempted
 
@@ -85,24 +112,28 @@ $ scontrol requeue <jobid>
 
 Because the script specified --requeue, the job will be returned to pending.  Slurm automatically sets a "Begin Time" a couple of minutes
 in the future, so the job will pend until then, at which point it will
-begin running again.  This time the script will invoke dmtcp_restart, and will continue from the checkpoint.  If you look at the output,
+begin running again, so be patient.  This time the script will invoke dmtcp_restart, and will continue from the checkpoint.  If you look at the output,
 you'll see from the numbers that the job backed up to the previous checkpoint and restarted.  
 You can requeue the job several times, and each time it will restart from the last checkpoint.
 
 You should be able to adapt this script to your own job by loading any required modules and 
 replacing "python count.py" with your program's invocation.
 
-This example is much more advanced that the simple first example. Some notes:
+This example is much more complicated than our previous examples. Some notes:
 
 * DMTCP uses a "controller" to manage the checkpointing.  In the simple example, dmtcp_launch transparently started a controller on the
-default port 7779.  In this case, we explicitly start a "controller" on a random port and communicate it via an enviroment variable.
+default port 7779.  In this case, we explicitly start a "controller" on a random port and communicate the port number via an environment variable.
 This prevents collisions if multiple DMTCP sessions run on the same node.
 
-* The -j flag to dmtcp_launch tells it to join the existing controller.  
+* The -j flag to dmtcp_launch tells it to join the existing controller.
+
+* On initial launch we remove existing checkpoint files.  This may not be a good idea in practice. 
 
 * The env var SLURM_RESTART_COUNT is used to determine if this is a restart or not.
 
 ## Using DMTCP with a parallel execution
+
+DMTCP can checkpoint multithreaded/multiprocess parallel applications.  
 In this example we run NAMD (a molecular dynamics simulation), using 6 threads on 6 cpus.  We also restart automatically on preemption,
 as above.
 
@@ -145,7 +176,7 @@ fi
 
 * dmtcp reopens files when recovering from checkpoints, so most file writes should just work.  However, when requeuing jobs as shown above,
 you should take care to do `#SBATCH --open-mode=append`
-* keep in mind that recovery from checkpoints does implybacking up to the point of the previous checkpoint.  If your program is continuously 
+* keep in mind that recovery from checkpoints does imply backing up to the point of the previous checkpoint.  If your program is continuously 
 writing output, the output since the last checkpoint will be replicated.  For many programs (like NAMD) the output is really just logging, so this is not a problem.
 * by default, dmtcp compresses checkpoint files.  For large files this can take a long time.  You can turn off comporession with `dmtcp_launch --no-gzip`.
 
