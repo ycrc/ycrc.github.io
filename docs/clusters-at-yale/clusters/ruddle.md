@@ -8,40 +8,19 @@ Ruddle is intended for use only on projects related to the [Yale Center for Geno
 
 - - -
 
-## Hardware
+## Partitions and Hardware
 
-Ruddle is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs.
+Ruddle is made up of several kinds of compute nodes. We group them into (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
 
-!!! Warning
-    Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
-    You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm `--constraint` flag) to your job.
-    See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) and the [Build Software page](/clusters-at-yale/applications/compile) for further guidance.
+### Public Partitions
 
-### Compute Node Configurations
+See each tab below for more information about the available common use partitions.
 
-| Count | CPU                 | CPU Cores | RAM   | Features                          |
-|-------|---------------------|-----------|-------|-----------------------------------|
-| 155   | 2x E5-2660 v3       | 20        | 121G  | haswell, avx2, E5-2660_v3, oldest |
-| 2     | 4x E7-4809 v3       | 32        | 1507G | haswell, avx2, E7-4809_v3         |
-
-## Slurm Partitions
-
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5GiB of memory per core. The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
-
-The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
-
-| Partition   | Group Limits          | User Limits          | Walltime Default/Max | Node Type (count)                       |
-|-------------|-----------------------|----------------------|----------------------|-----------------------------------------|
-| general*    | 400 CPUs, 2000 G RAM  | 300 CPUs, 1800 G RAM | 7d/30d               | E5-2660_v3 (155)                        |
-| interactive |                       | 20 CPUs, 256 G RAM   | 1d/2d                | E5-2660_v3 (155)                        |
-| bigmem      |                       | 32 CPUs, 1507 G RAM  | 1d/7d                | E7-4809_v3 1507G (2)                    |
-| scavenge    |                       | 800 CPUs, 5120 G RAM | 1d/7d                | all                                     |
-
-\* default
+--8<-- "snippets/ruddle_partitions.md"
 
 ## YCGA Data Retention Policy
 
-Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus.   Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).
+Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus. Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).
 
 - 45 days after sequencing, the raw bcl files are deleted.
 - 60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.
@@ -123,7 +102,7 @@ If you would like us to host a dataset or questions about what is currently avai
 
 Ruddle's filesystem, `/gpfs/ycga`, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation. Ruddle's old [`ycga-ba` filesystem](/clusters-at-yale/clusters/ycga-ba) has been retired.
 
-You can check your current storage usage & limits by running the `getquota` command. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your project directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
+You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

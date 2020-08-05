@@ -8,86 +8,15 @@ Farnam is a shared-use resource for the [Yale School of Medicine](https://medici
 
 - - -
 
-## Hardware
+## Partitions and Hardware
 
-Farnam is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the `--constraints` flag (see our [Slurm documentation](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the `--gres` flag, e.g. `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node. See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) for more info.
-
-!!! Warning
-    Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
-    You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm `--constraint` flag) to your job.
-    See the [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) and the [Build Software page](/clusters-at-yale/applications/compile) for further guidance.
-
-### Compute Node Configurations
-
-| Count | CPU           | CPU Cores | RAM   |         GPU        | vRAM/GPU | Features                                           |
-|-------|---------------|-----------|-------|--------------------|----------|----------------------------------------------------|
-|   117 | 2x E5-2660_v3 |        20 |  121G |                    |          | haswell, avx2, E5-2660_v3, nogpu, standard, oldest |
-|     5 | 2x E5-2660 v3 |        20 |  121G | 2x k80 (2GPUs/k80) |      12G | haswell, avx2, E5-2660_v3, doubleprecision         |
-|     2 | 4x E7-4809_v3 |        32 | 1507G |                    |          | haswell, avx2, E7-4809_v3, nogpu                   |
-|     1 | 2x E5-2623 v4 |         8 |   59G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2623_v4, singleprecision       |
-|     1 | 2x E5-2637 v4 |         8 |  121G | 4x titanv          |      12G | broadwell, avx2, E5-2637_v4, doubleprecision       |
-|    21 | 2x E5-2637 v4 |         8 |  121G | 4x gtx1080ti       |      11G | broadwell, avx2, E5-2637_v4, singleprecision       |
-|     3 | 2x E5-2660 v4 |        28 |  247G | 2x p100            |      16G | broadwell, avx2, E5-2660_v4, doubleprecision       |
-|    38 | 2x E5-2680_v4 |        28 |  247G |                    |          | broadwell, avx2, E5-2680_v4, nogpu, standard       |
-|     1 | 4x E7-4820_v4 |        40 | 1507G |                    |          | broadwell, avx2, E7-4820_v4, nogpu                 |
-|     2 | 2x 5122       |         8 |  183G | 4x rtx2080         |       8G | skylake, avx2, avx512, 5122, singleprecision       |
-|     1 | 2x 6132       |        28 |  751G |                    |          | skylake, avx2, avx512, 6132, nogpu                 |
-|     2 | 2x 6132       |        28 |  183G |                    |          | skylake, avx2, avx512, 6132, nogpu, standard       |
-|     4 | 2x 6240       |        36 |  750G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
-|     4 | 2x 6240       |        36 |  372G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
-|    24 | 2x 6240       |        36 |  183G |                    |          | cascadelake, avx2, avx512, 6240, nogpu, standard   |
-|     3 | 2x 6240       |        36 | 1507G |                    |          | cascadelake, avx2, avx512, 6240, nogpu             |
-|     9 | 2x 5222       |         8 |  183G | 4x rtx5000         |      16G | cascadelake, avx2, avx512, 5222, doubleprecision   |
-|     1 | 2x 6242       |        32 | 1001G | 2x rtx8000         |      48G | cascadelake, avx2, avx512, 6242, doubleprecision   |
-
-## Slurm Partitions
-
-Nodes on the clusters are organized into partitions, to which you submit your jobs with [Slurm](/clusters-at-yale/job-scheduling). The default resource requests for all jobs is 1 core and 5G of memory per core.
+Farnam is made up of several kinds of compute nodes. We group them into  (sometimes overlapping)  [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
 
 ### Public Partitions
 
-The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes--only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
+See each tab below for more information about the available common use partitions.
 
-The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the [hardware](#hardware) table.
-
-| Partition    | Group Limits         | User Limits                 | Walltime Default/Max | Node Type (count)                             |
-|--------------|----------------------|-----------------------------|----------------------|-----------------------------------------------|
-| general*     | 400 CPUs, 2560 G RAM | 200 CPUs, 1280 G RAM        | 1d/30d               | E5-2660_v3 (93), 6240 (19)                    |
-| interactive  |                      | 2 jobs, 20 CPUs, 256 G RAM  | 6hr/1d               | E5-2660_v3 (93)                               |
-| bigmem       |                      | 2 jobs, 32 CPUs, 1532 G RAM | 1d/3d                | E7-4809_v3 (2), 6240 (3)                      |
-| gpu_devel    |                      | 1 job                       | 10min/2hr            | E5-2623_v4 gtx1080ti (1)                      |
-| gpu          |                      | 32 CPUs, 256 G RAM          | 1d/2d                | E5-2660_v3 k80 (2), E5-2637_v4 gtx1080ti (10) |
-| scavenge     |                      | 800 CPUs, 5120 G RAM        | 1d/7d                | all                                           |
-| scavenge_gpu |                      | 32 CPUs, 256 G RAM          | 1d/2d                | all nodes with GPUs (see Compute Node table)  |
-
-\* default
-
-### Private Partitions
-
-Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.
-
-| Partition       | Walltime Default/Max   |User Limits      | Node Type (count)                                              |
-|:----------------|:-----------------------|:----------------|:---------------------------------------------------------------|
-| pi_breaker      | 1d / 14d               |                 | E5-2680_v4 (24)                                                |
-| pi_cryoem       | 1d / 365d              | 2 jobs, 12 GPUs | E5-2637_v4 gtx1080ti (10)                                      |
-| pi_deng         | 1d / 14d               |                 | E5-2680_v4 p100 (1)                                            |
-| pi_dunn         | 1d / 14d               |                 | 6240 (1)                                                       |
-| pi_edwards      | 1d / 14d               |                 | 6240 (1)                                                       |
-| pi_gerstein     | 1d / 14d               |                 | E7-4820_v4 (1), E5-2680_v4 (11), 6132 751G (1), 6132 (2)       |
-| pi_gerstein_gpu | 1d / 14d               |                 | E5-2660_v3 k80 (3), E5-2680_v4 p100 (2), E5-2637_v4 titanv (1) |
-| pi_gruen        | 1d / 14d               |                 | E5-2680_v4 (1)                                                 |
-| pi_jadi         | 1d / 365d              |                 | E5-2680_v4 (2)                                                 |
-| pi_jetz         | 1d / 14d               |                 | 6240 372G (4), 6240 750G (4)                                   |
-| pi_kleinstein   | 1d / 14d               |                 | 6240 (1), E5-2660_v3 (3)                                       |
-| pi_krauthammer  | 1d / 14d               |                 | E5-2660_v3 (1)                                                 |
-| pi_ma           | 1d / 14d               |                 | E5-2660_v3 (2)                                                 |
-| pi_ohern        | 1d / 14d               |                 | E5-2660_v3 (5)                                                 |
-| pi_reinisch     | 1d / 14d               |                 | 5122 rtx2080 (2)                                               |
-| pi_sigworth     | 1d / 14d               |                 | E5-2660_v3 (1)                                                 |
-| pi_sindelar     | 1d / 14d               |                 | E5-2637_v4 gtx1080ti (1), E5-2660_v3 (1)                       |
-| pi_tomography   | 1d / 4d                | 2 jobs, 12 GPUs | 5222 rtx5000 (9), 6242 rtx8000 (1)                             |
-| pi_townsend     | 1d / 14d               |                 | E5-2660_v3 (5)                                                 |
-| pi_zhao         | 1d / 14d               |                 | 6240 (2)                                                       |
+--8<-- "snippets/farnam_partitions.md"
 
 ## Public Datasets
 
@@ -97,13 +26,16 @@ We host datasets of general interest in a loosely organized directory tree in `/
 ├── cryoem
 ├── db
 │   ├── annovar
-│   └── blast
+│   ├── blast
+│   ├── busco
+│   └── Pfam
 └── genomes
     ├── 1000Genomes
     ├── 10xgenomics
     ├── Aedes_aegypti
     ├── Chelonoidis_nigra
     ├── Danio_rerio
+    ├── Drosophila_melanogaster
     ├── hisat2
     ├── Homo_sapiens
     ├── Mus_musculus
@@ -115,9 +47,9 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## Storage
 
-Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation.
+Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where Home, Project, and Scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your project directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
+You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
