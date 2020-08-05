@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1160,29 +1160,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
   </a>
   
-    <nav class="md-nav" aria-label="Hardware">
+    <nav class="md-nav" aria-label="Partitions and Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#compute-node-configurations" class="md-nav__link">
-    Compute Node Configurations
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-partitions" class="md-nav__link">
-    Slurm Partitions
-  </a>
   
 </li>
       
@@ -1388,29 +1381,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
   </a>
   
-    <nav class="md-nav" aria-label="Hardware">
+    <nav class="md-nav" aria-label="Partitions and Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#compute-node-configurations" class="md-nav__link">
-    Compute Node Configurations
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-partitions" class="md-nav__link">
-    Slurm Partitions
-  </a>
   
 </li>
       
@@ -1467,89 +1453,236 @@
 <p>Ruddle is named for <a href="http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html">Frank Ruddle</a>, a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.</p>
 <p>Ruddle is intended for use only on projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>; Please do not use this cluster for other projects. If you have any questions about this policy, please <a href="/#get-help">contact us</a>.</p>
 <hr />
-<h2 id="hardware">Hardware</h2>
-<p>Ruddle is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
-You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm <code>--constraint</code> flag) to your job.
-See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">Request Compute Resources page</a> and the <a href="/clusters-at-yale/applications/compile">Build Software page</a> for further guidance.</p>
-</div>
-<h3 id="compute-node-configurations">Compute Node Configurations</h3>
+<h2 id="partitions-and-hardware">Partitions and Hardware</h2>
+<p>Ruddle is made up of several kinds of compute nodes. We group them into (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
+<h3 id="public-partitions">Public Partitions</h3>
+<p>See each tab below for more information about the available common use partitions.</p>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">general</label><div class="tabbed-content">
+<p>Use the general partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=7-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the general partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
-<th>Count</th>
-<th>CPU</th>
-<th>CPU Cores</th>
-<th>RAM</th>
-<th>Features</th>
+<th>Limit</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>155</td>
-<td>2x E5-2660 v3</td>
-<td>20</td>
-<td>121G</td>
-<td>haswell, avx2, E5-2660_v3, oldest</td>
+<td>Max job time limit</td>
+<td><code>30-00:00:00</code></td>
 </tr>
 <tr>
+<td>Maximum CPUs per user</td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1800G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>154</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
+<p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the interactive partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>2-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>256G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>154</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">bigmem</label><div class="tabbed-content">
+<p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>32</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1507G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td>2</td>
-<td>4x E7-4809 v3</td>
+<td>E7-4809_v3</td>
 <td>32</td>
-<td>1507G</td>
+<td>1507</td>
 <td>haswell, avx2, E7-4809_v3</td>
 </tr>
 </tbody>
 </table>
-<h2 id="slurm-partitions">Slurm Partitions</h2>
-<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>. The default resource requests for all jobs is 1 core and 5GiB of memory per core. The general partition is where most batch jobs should run, and is the default if you don't specify a partition. The interactive partition is dedicated to jobs with which you need ongoing interaction. The bigmem partition contains our largest memory nodes; only jobs that cannot be satisfied by general should run here. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
-<p>The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the <a href="#hardware">hardware</a> table.</p>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">scavenge</label><div class="tabbed-content">
+<p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
-<th>Partition</th>
-<th>Group Limits</th>
-<th>User Limits</th>
-<th>Walltime Default/Max</th>
-<th>Node Type (count)</th>
+<th>Limit</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>general*</td>
-<td>400 CPUs, 2000 G RAM</td>
-<td>300 CPUs, 1800 G RAM</td>
-<td>7d/30d</td>
-<td>E5-2660_v3 (155)</td>
+<td>Max job time limit</td>
+<td><code>7-00:00:00</code></td>
 </tr>
 <tr>
-<td>interactive</td>
-<td></td>
-<td>20 CPUs, 256 G RAM</td>
-<td>1d/2d</td>
-<td>E5-2660_v3 (155)</td>
+<td>Maximum CPUs per user</td>
+<td><code>300</code></td>
 </tr>
 <tr>
-<td>bigmem</td>
-<td></td>
-<td>32 CPUs, 1507 G RAM</td>
-<td>1d/7d</td>
-<td>E7-4809_v3 1507G (2)</td>
-</tr>
-<tr>
-<td>scavenge</td>
-<td></td>
-<td>800 CPUs, 5120 G RAM</td>
-<td>1d/7d</td>
-<td>all</td>
+<td>Maximum memory per user</td>
+<td><code>1800G</code></td>
 </tr>
 </tbody>
 </table>
-<p>* default</p>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>1507</td>
+<td>haswell, avx2, E7-4809_v3</td>
+</tr>
+<tr>
+<td>154</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <h2 id="ycga-data-retention-policy">YCGA Data Retention Policy</h2>
-<p>Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus.   Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).</p>
+<p>Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus. Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).</p>
 <ul>
 <li>45 days after sequencing, the raw bcl files are deleted.</li>
 <li>60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.</li>
@@ -1629,7 +1762,7 @@ $ ls -l
 <p>If you would like us to host a dataset or questions about what is currently available, please <a href="/#get-help">contact us</a>.</p>
 <h2 id="storage">Storage</h2>
 <p>Ruddle's filesystem, <code>/gpfs/ycga</code>, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/index">Cluster Storage</a> documentation. Ruddle's old <a href="/clusters-at-yale/clusters/ycga-ba"><code>ycga-ba</code> filesystem</a> has been retired.</p>
-<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. If you want to share data in your project directory, see the <a href="/clusters-at-yale/data/permissions/">permissions</a> page.</p>
+<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Your <code>~/project</code> and <code>~/scratch60</code> directories are shortcuts. Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. If you want to share data in your Project or Scratch directory, see the <a href="/clusters-at-yale/data/permissions/">permissions</a> page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Files stored in <code>scratch60</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.</p>
@@ -1676,7 +1809,7 @@ $ ls -l
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2020</span>
+      Last update: August 5, 2020
     
   </small>
 </div>
@@ -1792,15 +1925,15 @@ $ ls -l
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

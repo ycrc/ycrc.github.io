@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1136,31 +1136,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
   </a>
   
-    <nav class="md-nav" aria-label="Hardware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compute-node-configurations" class="md-nav__link">
-    Compute Node Configurations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-partitions" class="md-nav__link">
-    Slurm Partitions
-  </a>
-  
-    <nav class="md-nav" aria-label="Slurm Partitions">
+    <nav class="md-nav" aria-label="Partitions and Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1387,31 +1367,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    Hardware
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
   </a>
   
-    <nav class="md-nav" aria-label="Hardware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compute-node-configurations" class="md-nav__link">
-    Compute Node Configurations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-partitions" class="md-nav__link">
-    Slurm Partitions
-  </a>
-  
-    <nav class="md-nav" aria-label="Slurm Partitions">
+    <nav class="md-nav" aria-label="Partitions and Hardware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1465,525 +1425,2758 @@
 <p>The Grace cluster is is named for the computer scientist and United States Navy Rear Admiral <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Murray Hopper</a>, who received her Ph.D. in Mathematics from Yale in 1934.</p>
 <p>Grace is a shared-use resource for the <a href="https://fas.yale.edu">Faculty of Arts and Sciences</a> (FAS). It consists of a variety of compute nodes networked over low-latency InfiniBand and mounts several shared filesystems.</p>
 <hr />
-<h2 id="hardware">Hardware</h2>
-<p>Grace is made up of several kinds of compute nodes. The Features column below lists the features that can be used to request different node types using the <code>--constraints</code> flag (see our <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints">Slurm documentation</a> for more details). The RAM listed below is the amount of memory available for jobs. GPUs listed can be requested with the <code>--gres</code> flag, e.g. <code>--gres=gpu:p100:1</code> would request one Tesla P100 GPU per node. See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">Request Compute Resources page</a> for more info.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Care should be taken when scheduling your job if you are running programs/libraries optimized for specific hardware.
-You can narrow which nodes can run your job by requesting the features from the Node Configurations table as constraints (slurm <code>--constraint</code> flag) to your job.
-See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">Request Compute Resources page</a> and the <a href="/clusters-at-yale/applications/compile">Build Software page</a> for further guidance.</p>
-</div>
-<h3 id="compute-node-configurations">Compute Node Configurations</h3>
-<table>
-<thead>
-<tr>
-<th align="right">Count</th>
-<th align="left">CPU</th>
-<th align="right">Cores</th>
-<th align="left">RAM</th>
-<th align="left">GPU</th>
-<th align="left">Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">80</td>
-<td align="left">2x E5-2660_v2</td>
-<td align="right">20</td>
-<td align="left">121G</td>
-<td align="left"></td>
-<td align="left">ivybridge,E5-2660_v2,nogpu,standard,oldest</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x E7-4820_v2</td>
-<td align="right">32</td>
-<td align="left">1003G</td>
-<td align="left"></td>
-<td align="left">ivybridge,E7-4820_v2,nogpu</td>
-</tr>
-<tr>
-<td align="right">136</td>
-<td align="left">2x E5-2660_v3</td>
-<td align="right">20</td>
-<td align="left">121G</td>
-<td align="left"></td>
-<td align="left">haswell,avx2,E5-2660_v3,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">20</td>
-<td align="left">2x E5-2660_v3</td>
-<td align="right">20</td>
-<td align="left">247G</td>
-<td align="left"></td>
-<td align="left">haswell,avx2,E5-2660_v3,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">2x E5-2660_v3</td>
-<td align="right">20</td>
-<td align="left">247G</td>
-<td align="left">2x k80</td>
-<td align="left">haswell,avx2,E5-2660_v3,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="left">2x E5-2660_v3</td>
-<td align="right">20</td>
-<td align="left">121G</td>
-<td align="left">4x k80</td>
-<td align="left">haswell,avx2,E5-2660_v3,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x E7-4809_v3</td>
-<td align="right">32</td>
-<td align="left">2011G</td>
-<td align="left"></td>
-<td align="left">haswell,avx2,E7-4809_v3,nogpu</td>
-</tr>
-<tr>
-<td align="right">161</td>
-<td align="left">2x E5-2660_v4</td>
-<td align="right">28</td>
-<td align="left">247G</td>
-<td align="left"></td>
-<td align="left">broadwell,avx2,E5-2660_v4,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">7</td>
-<td align="left">2x E5-2660_v4</td>
-<td align="right">28</td>
-<td align="left">247G</td>
-<td align="left">1x p100</td>
-<td align="left">broadwell,avx2,E5-2660_v4,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td align="left">2x E7-4820_v4</td>
-<td align="right">40</td>
-<td align="left">1507G</td>
-<td align="left"></td>
-<td align="left">broadwell,avx2,E7-4820_v4,nogpu</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x E5-2637_v4</td>
-<td align="right">8</td>
-<td align="left">121G</td>
-<td align="left">4x gtx1080ti</td>
-<td align="left">broadwell,avx2,E5-2637_v4,singleprecision</td>
-</tr>
-<tr>
-<td align="right">136</td>
-<td align="left">2x 6136</td>
-<td align="right">24</td>
-<td align="left">90G</td>
-<td align="left"></td>
-<td align="left">hdr,skylake,avx2,avx512,6136,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">16</td>
-<td align="left">2x 6136</td>
-<td align="right">24</td>
-<td align="left">90G</td>
-<td align="left"></td>
-<td align="left">edr,skylake,avx2,avx512,6136,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">9</td>
-<td align="left">2x 6136</td>
-<td align="right">24</td>
-<td align="left">183G</td>
-<td align="left">4x p100</td>
-<td align="left">skylake,avx2,avx512,6136,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">3</td>
-<td align="left">2x 6142</td>
-<td align="right">32</td>
-<td align="left">183G</td>
-<td align="left"></td>
-<td align="left">skylake,avx2,avx512,6142,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="left">2x 6136</td>
-<td align="right">24</td>
-<td align="left">90G</td>
-<td align="left">2x v100</td>
-<td align="left">skylake,avx2,avx512,6136,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="left">2x 5122</td>
-<td align="right">8</td>
-<td align="left">183G</td>
-<td align="left">4x rtx2080</td>
-<td align="left">skylake,avx2,avx512,5122,singleprecision</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x 6126</td>
-<td align="right">24</td>
-<td align="left">176G</td>
-<td align="left"></td>
-<td align="left">skylake,avx2,avx512,6126,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x 6136</td>
-<td align="right">24</td>
-<td align="left">751G</td>
-<td align="left"></td>
-<td align="left">skylake,avx2,avx512,6136,nogpu</td>
-</tr>
-<tr>
-<td align="right">131</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">183G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,6240,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">76</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">181G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,6240,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">20</td>
-<td align="left">2x 8260</td>
-<td align="right">96</td>
-<td align="left">183G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,8260,nogpu</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">371G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,6240,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">5</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">183G</td>
-<td align="left">4x rtx2080ti</td>
-<td align="left">cascadelake,avx2,avx512,6240,singleprecision</td>
-</tr>
-<tr>
-<td align="right">5</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">372G</td>
-<td align="left">4x v100</td>
-<td align="left">cascadelake,avx2,avx512,6240,doubleprecision</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">1506G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,6240,nogpu</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x 6240</td>
-<td align="right">36</td>
-<td align="left">1503G</td>
-<td align="left"></td>
-<td align="left">cascadelake,avx2,avx512,6240,nogpu,standard</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">2x 6254</td>
-<td align="right">36</td>
-<td align="left">1506G</td>
-<td align="left">4x rtx4000 2x rtx8000 2x v100</td>
-<td align="left">cascadelake,avx2,avx512,6254</td>
-</tr>
-</tbody>
-</table>
-<h2 id="slurm-partitions">Slurm Partitions</h2>
-<p>Nodes on the clusters are organized into partitions, to which you submit your jobs with <a href="/clusters-at-yale/job-scheduling">Slurm</a>. The default resource requests for all jobs is 1 core and 5GiB of memory, unless otherwise specified.</p>
+<h2 id="partitions-and-hardware">Partitions and Hardware</h2>
+<p>Grace is made up of several kinds of compute nodes. We group them into (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
 <h3 id="public-partitions">Public Partitions</h3>
-<p>The day partition is where most batch jobs should run, and is the default if you don't specify a partition. The week partition is smaller, but allows for longer jobs. The interactive partition should only be used for testing or compiling software. The bigmem partition contains our largest memory node; only jobs that cannot be satisfied by general should run here. The gpu_devel partition is a single node meant for testing or compiling GPU accelerated code, and the gpu partition is where normal GPU jobs should run. The mpi partition is reserved for tightly-coupled parallel and access is by special request only. The scavenge partition allows you to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
-<p>The limits listed below are for all running jobs combined. Per-node limits are bound by the node types, as described in the <a href="#hardware">hardware</a> table.</p>
+<p>See each tab below for more information about the available common use partitions.</p>
+<div class="tabbed-set" data-tabs="1:9"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the day partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Partition</th>
-<th align="left">Group Limits</th>
-<th align="left">User Limits</th>
-<th align="left">Walltime (Default/Max)</th>
-<th align="left">Node Type (count)</th>
+<th>Limit</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">bigmem</td>
-<td align="left"></td>
-<td align="left">CPUs: 40, RAM: 1500G</td>
-<td align="left">1h/1d</td>
-<td align="left">E7-4820_v4 1507G (2), 6240 1503G (1), 6240 1506G (2)</td>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
 </tr>
 <tr>
-<td align="left">covid</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">1h/1d</td>
-<td align="left">E5-2660_v4 (72), 6240 (67), E5-2660_v2 (35), E5-2660_v3 (44), 6240 (68)</td>
+<td>Maximum CPUs per group</td>
+<td><code>900</code></td>
 </tr>
 <tr>
-<td align="left">day*</td>
-<td align="left">CPUs: 900</td>
-<td align="left">CPUs: 640</td>
-<td align="left">1h/1d</td>
-<td align="left">E5-2660_v4 (72), 6240 (67), E5-2660_v2 (35), E5-2660_v3 (44), 6240 (68)</td>
-</tr>
-<tr>
-<td align="left">gpu</td>
-<td align="left"></td>
-<td align="left">GPUs: 24</td>
-<td align="left">1h/1d</td>
-<td align="left">6240 rtx2080ti:4 (1), 6136 v100:2 (2), 6240 v100:4 (5), 6240 rtx2080ti:4 (4), E5-2660_v3 k80:4 (3), E5-2660_v4 p100:1 (6)</td>
-</tr>
-<tr>
-<td align="left">gpu_devel</td>
-<td align="left"></td>
-<td align="left">CPUs: 10</td>
-<td align="left">1h/4h</td>
-<td align="left">E5-2660_v3 k80:4 (1)</td>
-</tr>
-<tr>
-<td align="left">interactive</td>
-<td align="left"></td>
-<td align="left">CPUs: 4, RAM: 32G</td>
-<td align="left">1h/6h</td>
-<td align="left">E5-2660_v2 (2), 6126 (1)</td>
-</tr>
-<tr>
-<td align="left">mpi**</td>
-<td align="left">Nodes: 48</td>
-<td align="left">Nodes: 32</td>
-<td align="left">1h/1d</td>
-<td align="left">6136 (120)</td>
-</tr>
-<tr>
-<td align="left">scavenge</td>
-<td align="left"></td>
-<td align="left">CPUs: 10000</td>
-<td align="left">1h/1d</td>
-<td align="left">all</td>
-</tr>
-<tr>
-<td align="left">scavenge_gpu</td>
-<td align="left"></td>
-<td align="left">GPUs: 30</td>
-<td align="left">1h/1d</td>
-<td align="left">all with GPUs (see Nodes table)</td>
-</tr>
-<tr>
-<td align="left">week</td>
-<td align="left">CPUs: 250</td>
-<td align="left">CPUs: 100</td>
-<td align="left">1h/7d</td>
-<td align="left">E5-2660_v3 (36), E5-2660_v4 (7)</td>
+<td>Maximum CPUs per user</td>
+<td><code>640</code></td>
 </tr>
 </tbody>
 </table>
-<p>* default<br />
-** The mpi partition is reserved for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description. The default memory request on the mpi partition in 3.75GiB per core.</p>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>135</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>51</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
+<td>44</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>72</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
+<p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the interactive partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>32G</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Maximum submitted jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6126</td>
+<td>24</td>
+<td>176</td>
+<td>skylake, avx2, avx512, 6126, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">week</label><div class="tabbed-content">
+<p>Use the week partition for jobs that need a longer runtime than day allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the week partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>250</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>100</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>36</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>7</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu</label><div class="tabbed-content">
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gres</code> option in order to use them. For example, <code>--gres=gpu:gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>24</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu_devel</label><div class="tabbed-content">
+<p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the gpu_devel partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>04:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td>Maximum submitted jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">bigmem</label><div class="tabbed-content">
+<p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>40</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1500G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td>broadwell, avx2, E7-4820_v4, nogpu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">mpi</label><div class="tabbed-content">
+<p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=92160
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the mpi partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per group</td>
+<td><code>48</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per user</td>
+<td><code>32</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>120</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">scavenge</label><div class="tabbed-content">
+<p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>10000</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E7-4820_v4, nogpu</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>7</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>78</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
+<td>136</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>20</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>161</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 8260, nogpu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4820_v2</td>
+<td>32</td>
+<td>1003</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E7-4820_v2, nogpu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>2011</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E7-4809_v3, nogpu</td>
+</tr>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>k80</td>
+<td>2</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>5</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>7</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6136</td>
+<td>24</td>
+<td>751</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6136, nogpu</td>
+</tr>
+<tr>
+<td>136</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td></td>
+<td></td>
+<td></td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+<tr>
+<td>16</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td></td>
+<td></td>
+<td></td>
+<td>edr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6142</td>
+<td>32</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6142, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>121</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
+<td>183</td>
+<td>p100</td>
+<td>4</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>183</td>
+<td>rtx2080</td>
+<td>4</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>1506</td>
+<td>rtx4000,rtx8000,v100</td>
+<td>4,2,2</td>
+<td>8,48,16</td>
+<td>cascadelake, avx2, avx512, 6254</td>
+</tr>
+<tr>
+<td>207</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><label for="__tabbed_1_9">scavenge_gpu</label><div class="tabbed-content">
+<p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge_gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>30</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+</tr>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>k80</td>
+<td>2</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>5</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+<tr>
+<td>7</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>121</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
+<td>183</td>
+<td>p100</td>
+<td>4</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>183</td>
+<td>rtx2080</td>
+<td>4</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>1506</td>
+<td>rtx4000,rtx8000,v100</td>
+<td>4,2,2</td>
+<td>8,48,16</td>
+<td>cascadelake, avx2, avx512, 6254</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <h3 id="private-partitions">Private Partitions</h3>
-<p>Private partitions contain nodes acquired by specific research groups. Full access to these partitions is granted at the discretion of the owner. Contact us if your group would like to purchase nodes.</p>
+<p>With few exceptions, jobs submitted to <code>pi_</code> partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
+<details class="summary"><summary>PI Partitions (click to expand)</summary><div class="tabbed-set" data-tabs="2:34"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_altonji</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_altonji partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Partition</th>
-<th align="left">Walltime Default/Max</th>
-<th align="left">Node Type (count)</th>
+<th>Limit</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">pi_altonji</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (2)</td>
-</tr>
-<tr>
-<td align="left">pi_anticevic</td>
-<td align="left">1h/100d</td>
-<td align="left">E5-2660_v3 (16), E5-2660_v4 (20)</td>
-</tr>
-<tr>
-<td align="left">pi_anticevic_bigmem</td>
-<td align="left">1h/100d</td>
-<td align="left">E7-4809_v3 2011G (1)</td>
-</tr>
-<tr>
-<td align="left">pi_anticevic_gpu</td>
-<td align="left">1h/100d</td>
-<td align="left">E5-2660_v3 k80:2 (8)</td>
-</tr>
-<tr>
-<td align="left">pi_anticevic_z</td>
-<td align="left">1h/100d</td>
-<td align="left">E5-2660_v3 (3)</td>
-</tr>
-<tr>
-<td align="left">pi_balou</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (30), 6240 (9)</td>
-</tr>
-<tr>
-<td align="left">pi_berry</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (1), 6240 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_cowles</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (14)</td>
-</tr>
-<tr>
-<td align="left">pi_cowles_nopreempt</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (10)</td>
-</tr>
-<tr>
-<td align="left">pi_econ_io</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (6)</td>
-</tr>
-<tr>
-<td align="left">pi_econ_lp</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (5)</td>
-</tr>
-<tr>
-<td align="left">pi_esi</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (36)</td>
-</tr>
-<tr>
-<td align="left">pi_fedorov*</td>
-<td align="left">1h/28d</td>
-<td align="left">6136 (12)</td>
-</tr>
-<tr>
-<td align="left">pi_gelernter</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (1), 6240 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_gerstein</td>
-<td align="left">1h/28d</td>
-<td align="left">E7-4820_v2 1003G (1), E5-2660_v3 (32)</td>
-</tr>
-<tr>
-<td align="left">pi_glahn</td>
-<td align="left">1h/100d</td>
-<td align="left">E5-2660_v3 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_hammes_schiffer*</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2637_v4 gtx1080ti:4 (1), 6136 751G (1), 6136 (16), 5122 rtx2080:4 (2)</td>
-</tr>
-<tr>
-<td align="left">pi_hodgson</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_holland</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v2 (2), E5-2660_v3 (2), 6240 (8)</td>
-</tr>
-<tr>
-<td align="left">pi_howard</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_jetz</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (2)</td>
-</tr>
-<tr>
-<td align="left">pi_kaminski</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (8)</td>
-</tr>
-<tr>
-<td align="left">pi_lederman</td>
-<td align="left">1h/28d</td>
-<td align="left">6254 1506G rtx4000:4,rtx8000:2,v100:2 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_levine</td>
-<td align="left">1h/28d</td>
-<td align="left">8260 (20)</td>
-</tr>
-<tr>
-<td align="left">pi_lora*</td>
-<td align="left">1h/28d</td>
-<td align="left">6136 (4)</td>
-</tr>
-<tr>
-<td align="left">pi_mak</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (3)</td>
-</tr>
-<tr>
-<td align="left">pi_manohar</td>
-<td align="left">1h/180d</td>
-<td align="left">E7-4820_v4 1507G (2), E5-2660_v4 (8), E5-2660_v4 p100:1 (1), 6240 (4)</td>
-</tr>
-<tr>
-<td align="left">pi_ohern</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v2 (16), E5-2660_v4 (3), 6136 p100:4 (9), 6240 (2)</td>
-</tr>
-<tr>
-<td align="left">pi_owen_miller</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (5)</td>
-</tr>
-<tr>
-<td align="left">pi_poland</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v4 (10), 6240 (8)</td>
-</tr>
-<tr>
-<td align="left">pi_polimanti</td>
-<td align="left">1h/28d</td>
-<td align="left">6240 (1)</td>
-</tr>
-<tr>
-<td align="left">pi_seto</td>
-<td align="left">1h/28d</td>
-<td align="left">6142 (3)</td>
-</tr>
-<tr>
-<td align="left">pi_tsmith</td>
-<td align="left">1h/28d</td>
-<td align="left">E5-2660_v3 (1)</td>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
 </table>
-<p>* The default memory request on this partition is 3.75GiB per core.  </p>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">pi_anticevic</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_anticevic partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>100-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>20</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">pi_anticevic_bigmem</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_anticevic_bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>100-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>2011</td>
+<td>haswell, avx2, E7-4809_v3, nogpu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">pi_anticevic_gpu</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_anticevic_gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>100-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>k80</td>
+<td>2</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">pi_anticevic_z</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_anticevic_z partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>100-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">pi_balou</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_balou partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">pi_berry</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_berry partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">pi_cowles</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_cowles partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>120</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per user</td>
+<td><code>5</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">pi_cowles_nopreempt</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_cowles_nopreempt partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>120</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per user</td>
+<td><code>5</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">pi_econ_io</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_econ_io partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><label for="__tabbed_2_11">pi_econ_lp</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_econ_lp partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">pi_esi</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_esi partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>648</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>36</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><label for="__tabbed_2_13">pi_fedorov</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_fedorov partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_14" name="__tabbed_2" type="radio" /><label for="__tabbed_2_14">pi_gelernter</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_gelernter partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_15" name="__tabbed_2" type="radio" /><label for="__tabbed_2_15">pi_gerstein</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_gerstein partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4820_v2</td>
+<td>32</td>
+<td>1003</td>
+<td>ivybridge, E7-4820_v2, nogpu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_16" name="__tabbed_2" type="radio" /><label for="__tabbed_2_16">pi_glahn</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_glahn partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>100-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><label for="__tabbed_2_17">pi_hammes_schiffer</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_hammes_schiffer partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6136</td>
+<td>24</td>
+<td>751</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6136, nogpu</td>
+</tr>
+<tr>
+<td>16</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td></td>
+<td></td>
+<td></td>
+<td>edr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>121</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>183</td>
+<td>rtx2080</td>
+<td>4</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_18" name="__tabbed_2" type="radio" /><label for="__tabbed_2_18">pi_hodgson</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_hodgson partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_19" name="__tabbed_2" type="radio" /><label for="__tabbed_2_19">pi_holland</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_holland partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_20" name="__tabbed_2" type="radio" /><label for="__tabbed_2_20">pi_howard</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_howard partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_21" name="__tabbed_2" type="radio" /><label for="__tabbed_2_21">pi_jetz</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_jetz partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_22" name="__tabbed_2" type="radio" /><label for="__tabbed_2_22">pi_kaminski</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_kaminski partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_23" name="__tabbed_2" type="radio" /><label for="__tabbed_2_23">pi_lederman</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_lederman partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>1506</td>
+<td>rtx4000,rtx8000,v100</td>
+<td>4,2,2</td>
+<td>8,48,16</td>
+<td>cascadelake, avx2, avx512, 6254</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_24" name="__tabbed_2" type="radio" /><label for="__tabbed_2_24">pi_levine</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=1952
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_levine partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 8260, nogpu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_25" name="__tabbed_2" type="radio" /><label for="__tabbed_2_25">pi_lora</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_lora partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_26" name="__tabbed_2" type="radio" /><label for="__tabbed_2_26">pi_mak</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_mak partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_27" name="__tabbed_2" type="radio" /><label for="__tabbed_2_27">pi_manohar</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_manohar partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>180-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E7-4820_v4, nogpu</td>
+</tr>
+<tr>
+<td>8</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_28" name="__tabbed_2" type="radio" /><label for="__tabbed_2_28">pi_ohern</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_ohern partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
+<td>3</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
+<td>183</td>
+<td>p100</td>
+<td>4</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_29" name="__tabbed_2" type="radio" /><label for="__tabbed_2_29">pi_owen_miller</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_owen_miller partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_30" name="__tabbed_2" type="radio" /><label for="__tabbed_2_30">pi_panda</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_panda partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_31" name="__tabbed_2" type="radio" /><label for="__tabbed_2_31">pi_poland</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_poland partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>10</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_32" name="__tabbed_2" type="radio" /><label for="__tabbed_2_32">pi_polimanti</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_polimanti partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_seto</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_seto partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>6142</td>
+<td>32</td>
+<td>183</td>
+<td>skylake, avx2, avx512, 6142, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_34" name="__tabbed_2" type="radio" /><label for="__tabbed_2_34">pi_tsmith</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_tsmith partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 <h2 id="storage">Storage</h2>
 <p>Grace has access to a number of filesystems. <code>/gpfs/loomis</code> is Grace's primary filesystem where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our <a href="/clusters-at-yale/data/index">Cluster Storage</a> documentation.</p>
-<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. If you want to share data in your project directory, see the <a href="/clusters-at-yale/data/permissions/">permissions</a> page.</p>
+<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. Your <code>~/project</code> and <code>~/scratch60</code> directories are shortcuts. Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. If you want to share data in your Project or Scratch directory, see the <a href="/clusters-at-yale/data/permissions/">permissions</a> page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Files stored in <code>scratch60</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.</p>
@@ -2030,7 +4223,7 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 24, 2020</span>
+      Last update: August 5, 2020
     
   </small>
 </div>
@@ -2146,15 +4339,15 @@ See the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-an
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
