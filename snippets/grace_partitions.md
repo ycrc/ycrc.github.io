@@ -115,7 +115,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Max job time limit|`2-00:00:00`|
     |Maximum GPUs per user|`24`|
 
     **Available Compute Nodes**
