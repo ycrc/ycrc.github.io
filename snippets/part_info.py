@@ -29,6 +29,7 @@ commons = {
     "development": "Use the development partition for jobs where you are interactively developing code.",
     "education": "Use the education partition for course work.",
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
+    "transfer": "Use the transfer partition to stage data for your jobs to and from [cluster storage](/clusters-at-yale/data/#staging-data).",
     "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
