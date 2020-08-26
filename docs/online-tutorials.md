@@ -8,7 +8,6 @@ Note: You can learn more about most commands you come across by typing "man [com
 
 * [Practical Introduction to Linux](https://ycrc.github.io/PIL/), ([Video](https://research.computing.yale.edu/ycrc-bootcamp-practical-introduction-linux)) *Recommended
 * [Unix for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/index.html)
-* [Interactive command-line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/)
 * [Introduction to Bash](http://cs.lmu.edu/~ray/notes/bash/)
 
 ### awk (text extraction/parsing)
