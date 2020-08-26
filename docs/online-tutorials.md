@@ -44,7 +44,7 @@ Sed (Stream EDitor) is a useful tool for making substitutions in a text file. Th
 
 ### How create and extract a tar or tar.gz archive
 
-The command you are looking for is likely: `tar xvf archive.tar` , but see the following for details.
+The command you are looking for is likely: `tar xvf archive.tar`, but see the following for details.
 
 * [Creating and extracting from a tar file](https://www.howtogeek.com/248780/how-to-compress-and-extract-files-using-the-tar-command-on-linux/)
 
@@ -81,12 +81,13 @@ The command you are looking for is likely: `tar xvf archive.tar` , but see the f
 
 ### Intro to R
 
-* [Brief Intro to R](http://www.r-tutor.com/r-introduction)
+* [Brief intro to R](http://www.r-tutor.com/r-introduction)
 * [Thorough intro to R](https://www.cyclismo.org/tutorial/R/)
+* [Another thorough intro to R](https://r-coder.com/learn-r/)
 
 ### foreach
 
-* [Using the foreach package, by Steve Weston](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.pdf)
+* [Using the foreach package, by Steve Weston](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
 
 ### foreach + dompi
 
