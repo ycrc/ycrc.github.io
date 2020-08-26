@@ -110,6 +110,9 @@ def tres_to_english(tres_type, tres_string):
         per = " per user"
     elif tres_type.endswith("A"):
         per = " per group"
+    else:
+        per = " per job"
+
     if tres_type.startswith("MaxJobs"):
         limit_name = "Maximum running jobs" + per
         english.append([limit_name, tres_string])
@@ -157,7 +160,7 @@ def get_defaults_and_limits(part_hardware):
         sacct_dict = dict(zip(sacct[0].split("|"), sacct[1].split("|")))
         limit_names = [
             "".join(x)
-            for x in product(["MaxTRES", "MaxJobs", "MaxSubmit"], ["PA", "PU"])
+            for x in list(product(["MaxTRES", "MaxJobs", "MaxSubmit"], ["PA", "PU"]))+["MaxTRES"]
         ]
         for limit in ["MaxWall"] + limit_names:
             if limit in sacct_dict:
