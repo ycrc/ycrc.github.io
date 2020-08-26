@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -1443,7 +1443,7 @@
 <p>Farnam is made up of several kinds of compute nodes. We group them into  (sometimes overlapping)  <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">general</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">general</label><div class="tabbed-content">
 <p>Use the general partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1503,7 +1503,7 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
 </tr>
 <tr>
-<td>87</td>
+<td>85</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
@@ -1561,14 +1561,68 @@
 </thead>
 <tbody>
 <tr>
+<td>99</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard, oldest</td>
+</tr>
+<tr>
 <td>18</td>
 <td>6240</td>
 <td>36</td>
 <td>183</td>
 <td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
 </tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">transfer</label><div class="tabbed-content">
+<p>Use the transfer partition to stage data for your jobs to and from <a href="/clusters-at-yale/data/#staging-data">cluster storage</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the transfer partition are subject to the following limits:</p>
+<table>
+<thead>
 <tr>
-<td>99</td>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per job</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Nodes</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
@@ -1577,7 +1631,7 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">gpu</label><div class="tabbed-content">
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gres</code> option in order to use them. For example, <code>--gres=gpu:gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1653,7 +1707,17 @@
 <td>haswell, avx2, E5-2660_v3, doubleprecision</td>
 </tr>
 <tr>
+<td>1</td>
+<td>E5-2623_v4</td>
 <td>8</td>
+<td>59</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2623_v4, singleprecision</td>
+</tr>
+<tr>
+<td>9</td>
 <td>E5-2637_v4</td>
 <td>8</td>
 <td>121</td>
@@ -1665,7 +1729,7 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1725,7 +1789,7 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1790,7 +1854,7 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1872,6 +1936,16 @@
 <td>broadwell, avx2, E7-4820_v4, nogpu</td>
 </tr>
 <tr>
+<td>117</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard, oldest</td>
+</tr>
+<tr>
 <td>5</td>
 <td>E5-2660_v3</td>
 <td>20</td>
@@ -1880,16 +1954,6 @@
 <td>4</td>
 <td>12</td>
 <td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>3</td>
-<td>E5-2680_v4</td>
-<td>28</td>
-<td>247</td>
-<td>p100</td>
-<td>2</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2680_v4, doubleprecision</td>
 </tr>
 <tr>
 <td>38</td>
@@ -1922,14 +1986,14 @@
 <td>broadwell, avx2, E5-2623_v4, singleprecision</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5122</td>
-<td>8</td>
-<td>183</td>
-<td>rtx2080</td>
 <td>4</td>
-<td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
+<td>6240</td>
+<td>36</td>
+<td>1507</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
 </tr>
 <tr>
 <td>1</td>
@@ -1942,16 +2006,6 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>183</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
-</tr>
-<tr>
 <td>8</td>
 <td>5222</td>
 <td>8</td>
@@ -1960,6 +2014,26 @@
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx2, avx512, 5222, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6242</td>
+<td>32</td>
+<td>1001</td>
+<td>rtx8000</td>
+<td>2</td>
+<td>48</td>
+<td>cascadelake, avx2, avx512, 6242, doubleprecision</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240</td>
 </tr>
 <tr>
 <td>24</td>
@@ -1982,6 +2056,36 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu</td>
 </tr>
 <tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>750</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+</tr>
+<tr>
+<td>3</td>
+<td>E5-2680_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>2</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2680_v4, doubleprecision</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6132</td>
+<td>28</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6132, nogpu, standard</td>
+</tr>
+<tr>
 <td>20</td>
 <td>E5-2637_v4</td>
 <td>8</td>
@@ -2002,69 +2106,29 @@
 <td>broadwell, avx2, E5-2637_v4, doubleprecision</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6242</td>
-<td>32</td>
-<td>1001</td>
-<td>rtx8000</td>
 <td>2</td>
-<td>48</td>
-<td>cascadelake, avx2, avx512, 6242, doubleprecision</td>
-</tr>
-<tr>
-<td>117</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, avx2, E5-2660_v3, nogpu, standard, oldest</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6132</td>
-<td>28</td>
+<td>5122</td>
+<td>8</td>
 <td>183</td>
-<td></td>
-<td></td>
-<td></td>
-<td>skylake, avx2, avx512, 6132, nogpu, standard</td>
-</tr>
-<tr>
+<td>rtx2080</td>
 <td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>1507</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
 </tr>
 <tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>372</td>
-<td>v100</td>
+<td>183</td>
+<td>rtx2080ti</td>
 <td>4</td>
-<td>16</td>
-<td>cascadelake, avx2, avx512, 6240</td>
-</tr>
-<tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>750</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -2132,16 +2196,6 @@
 <td>haswell, avx2, E5-2660_v3, doubleprecision</td>
 </tr>
 <tr>
-<td>3</td>
-<td>E5-2680_v4</td>
-<td>28</td>
-<td>247</td>
-<td>p100</td>
-<td>2</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2680_v4, doubleprecision</td>
-</tr>
-<tr>
 <td>1</td>
 <td>E5-2623_v4</td>
 <td>8</td>
@@ -2152,14 +2206,24 @@
 <td>broadwell, avx2, E5-2623_v4, singleprecision</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5122</td>
-<td>8</td>
-<td>183</td>
-<td>rtx2080</td>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
 <td>4</td>
-<td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240</td>
+</tr>
+<tr>
+<td>3</td>
+<td>E5-2680_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>2</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2680_v4, doubleprecision</td>
 </tr>
 <tr>
 <td>20</td>
@@ -2182,14 +2246,14 @@
 <td>broadwell, avx2, E5-2637_v4, doubleprecision</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>v100</td>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>183</td>
+<td>rtx2080</td>
 <td>4</td>
-<td>16</td>
-<td>cascadelake, avx2, avx512, 6240</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision</td>
 </tr>
 </tbody>
 </table>
@@ -2416,7 +2480,7 @@
 <td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>183</td>
+<td>1507</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2426,7 +2490,7 @@
 <td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>1507</td>
+<td>183</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2684,18 +2748,18 @@
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td>haswell, avx2, E5-2660_v3, nogpu, standard, oldest</td>
-</tr>
-<tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
 <td>183</td>
 <td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+</tr>
+<tr>
+<td>3</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -3245,15 +3309,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
