@@ -27,7 +27,7 @@
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |135|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard|
-    |51|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
+    |60|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
     |44|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
     |72|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
@@ -95,6 +95,36 @@
     |36|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
     |7|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
+=== "transfer"
+
+    Use the transfer partition to stage data for your jobs to and from [cluster storage](/clusters-at-yale/data/#staging-data).
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the transfer partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Max job time limit|`1-00:00:00`|
+    |Maximum running jobs per user|`2`|
+    |Maximum CPUs per job|`1`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |2|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
+
 === "gpu"
 
     Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
@@ -124,12 +154,11 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
-    |4|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision|
-    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
+    |5|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
     |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision|
     |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision|
+    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
 
 === "gpu_devel"
 
@@ -161,8 +190,8 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
     |1|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision|
+    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
 
 === "bigmem"
 
@@ -255,33 +284,32 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
-    |4|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu|
+    |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision|
-    |7|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
-    |8|6240|36|372||||cascadelake, avx2, avx512, 6240, nogpu, standard|
-    |78|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
-    |136|E5-2660_v3|20|121||||haswell, avx2, E5-2660_v3, nogpu, standard|
-    |20|E5-2660_v3|20|247||||haswell, avx2, E5-2660_v3, nogpu, standard|
-    |161|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
-    |20|8260|96|183||||cascadelake, avx2, avx512, 8260, nogpu|
-    |1|E7-4820_v2|32|1003||||ivybridge, E7-4820_v2, nogpu|
-    |1|E7-4809_v3|32|2011||||haswell, avx2, E7-4809_v3, nogpu|
-    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision|
-    |5|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
-    |7|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision|
-    |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu|
     |136|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard|
     |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard|
     |3|6142|32|183||||skylake, avx2, avx512, 6142, nogpu, standard|
+    |207|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard|
+    |8|6240|36|372||||cascadelake, avx2, avx512, 6240, nogpu, standard|
+    |1|E7-4820_v2|32|1003||||ivybridge, E7-4820_v2, nogpu|
+    |1|E7-4809_v3|32|2011||||haswell, avx2, E7-4809_v3, nogpu|
+    |4|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu|
+    |78|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
+    |136|E5-2660_v3|20|121||||haswell, avx2, E5-2660_v3, nogpu, standard|
+    |20|E5-2660_v3|20|247||||haswell, avx2, E5-2660_v3, nogpu, standard|
+    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision|
+    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
+    |161|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
+    |7|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision|
+    |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu|
     |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision|
     |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision|
     |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision|
     |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254|
-    |207|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard|
-    |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision|
+    |20|8260|96|183||||cascadelake, avx2, avx512, 8260, nogpu|
     |1|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, standard|
     |2|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu|
+    |7|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
 
 === "scavenge_gpu"
 
@@ -312,17 +340,16 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision|
-    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
     |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision|
-    |5|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
+    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision|
     |7|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision|
     |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision|
     |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision|
     |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision|
     |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254|
     |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision|
+    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision|
 
 ### Private Partitions
 With few exceptions, jobs submitted to `pi_` partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
@@ -378,8 +405,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |16|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
         |20|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
+        |16|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_anticevic_bigmem"
 
@@ -485,8 +512,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |30|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
         |9|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard|
+        |30|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_berry"
 
@@ -512,8 +539,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard|
         |1|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
+        |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard|
 
     === "pi_cowles"
 
@@ -700,8 +727,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard|
+        |1|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_gerstein"
 
@@ -727,8 +754,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |32|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
         |1|E7-4820_v2|32|1003|ivybridge, E7-4820_v2, nogpu|
+        |32|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_glahn"
 
@@ -782,8 +809,8 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu|
         |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard|
+        |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu|
         |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision|
         |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision|
 
@@ -1081,10 +1108,10 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |16|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
         |3|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
-        |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision|
         |2|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard|
+        |16|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
+        |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision|
 
     === "pi_owen_miller"
 
