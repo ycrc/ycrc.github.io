@@ -1,8 +1,10 @@
+# Yale Courses on the Clusters
+
 The YCRC Grace and Farnam clusters can be made available for Yale courses with a suitable computational component.
 
 ## For Students
 
-If you are taking a course that makes use of one of the YCRC clusters, you will be granted a **temporary** account on that cluster, with the name <courseID>_<netid>. This account has special access to a modest storage allocation for your course and, in some cases, dedicated compute resource in a partition named after the course ID.
+If you are taking a course that makes use of one of the YCRC clusters, you will be granted a **temporary** account on that cluster, with the name courseID_netid. This account has special access to a modest storage allocation for your course and, in some cases, dedicated compute resource in a partition named after the course ID.
 
 All accounts associated with the course are temporary and will be deleted two weeks after the last day of exams for that semester.  If you require continued access to the cluster for research purposes after your course ends, you must submit a [new account request](https://research.computing.yale.edu/support/hpc/account-request) for a research account. In the Special Requests field, let us know if you need any transferred from your temporarily course account (before it is deleted at the end of the semester).
 
