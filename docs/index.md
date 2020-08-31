@@ -3,7 +3,7 @@
 
 # Introduction
 
-The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computational intensive research such as Geo-Spatial Computation and Data Visualization.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
+The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationaly intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
 
 ## Get Help
 
