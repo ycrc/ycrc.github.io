@@ -81,25 +81,19 @@ We can help you purchase more storage for use on the clusters at roughly $200/Ti
 
 ### Staging Data
 
-Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc. If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must stage your data. Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example. When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
-
-A sample workflow using `rsync` would be:
-
-``` bash
-# copy data to temporary cluster storage
-[netID@cluster ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
-# process data on cluster
-[netID@cluster ~]$ sbatch data_processing.sh
-# return results to permanent storage for safe-keeping
-[netID@cluster ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
-```
-
-The _working_ copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit. See the [Archive Data](/data/archive/) and [Transfer Data](/clusters-at-yale/data/transfer/) pages for more ways to move data efficiently to and from the clusters.
-
+Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
+If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
+Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example.
+Both `grace` and `farnam` have dedicated `transfer` partitions where you can submit long-running transfer jobs. 
+When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
+Please see [Staging Data](/clusters-at-yale/data/staging/) for more details and examples.
 
 ### Prevent Large Numbers of Small Files
 
-The parallel filesystems the clusters use perform poorly with very large numbers of small files. This is one reason we enforce file count quotas. If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation. Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
+The parallel filesystems the clusters use perform poorly with very large numbers of small files.
+This is one reason we enforce file count quotas.
+If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
 
 ## Backups and Snapshots
 
