@@ -1,4 +1,4 @@
-# Scheduling jobs with dependency 
+# Jobs with Dependencies
 
 SLURM offers a tool which can help string jobs together via dependencies. 
 When submitting a job, you can specify that it should wait to run until a specified job has finished. 

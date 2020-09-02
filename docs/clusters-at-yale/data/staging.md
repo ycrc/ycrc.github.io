@@ -1,9 +1,7 @@
-# Staging Data
+# Stage Data
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
-If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must stage your data.
-Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example.
-When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
+Since the _permanent_ home of the data remains on off-cluster storage, you need to [transfer](/clusters-at-yale/data/transfer/) a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transmit the results to a more permanent location.
 
 A sample workflow using `rsync` would be:
 
@@ -16,13 +14,15 @@ A sample workflow using `rsync` would be:
 [netID@cluster ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
 ```
 
-The _working_ copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit.
+The _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days).
 See the [Archive Data](/data/archive/) and [Transfer Data](/clusters-at-yale/data/transfer/) pages for more ways to move data efficiently to and from the clusters.
 
 ## Transfer Partition
-Both `grace` and `farnam` have dedicated data-transfer partitions (named `transfer`) designed for staging data onto the cluster.
-All users are able to submit jobs to these partitions.
+Both Grace and Farnam have dedicated data transfer partitions (named `transfer`) designed for staging data onto the cluster.
+All users are able to submit jobs to these partitions. Note each users is limited to running two transfer jobs at one time.
+If your workflow requires more simultaneuous transfers, contact us for assistance.
 
+### Interactive Transfers
 We recommend using `tmux` to launch interactive transfers so that you are able to log out and leave the job running in the background.
 
 ```bash
@@ -37,7 +37,8 @@ You can then type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detac
 This will leave your transfer running in the background inside the `tmux` session.
 For more details about how to use `tmux`, look at our guide [here](/clusters-at-yale/guides/tmux).
 
-Batch transfer jobs are also possible.
+### Transfers as Batch Jobs
+
 A sample `sbatch` script for an `rsync` transfer is show here:
 
 ```sh
@@ -61,7 +62,7 @@ There are `sbatch` options that allow you to hold a job from running until a pre
 These are called Job Dependencies, and they allow you to include a data-staging step as part of your data processing pipe-line.
 
 Consider a workflow where we would like to process data located on a remote server.
-We can break this into two separate SLURM jobs: a transfer job followed by a processing job.
+We can break this into two separate Slurm jobs: a transfer job followed by a processing job.
 
 ### transfer.sbatch
 
@@ -96,7 +97,7 @@ python $HOME/process_script.py $HOME/scratch60/data
 
 ```
 
-First we would submit the transfer job to SLURM:
+First we would submit the transfer job to Slurm:
 
 ```bash
 $ sbatch transfer.sbatch
@@ -109,7 +110,7 @@ Then we can pass this jobID as a dependency for the processing job:
 $ sbatch --dependency=afterok:12345678 process.sbatch
 Submitted batch job 12345679
 ```
-SLURM will now hold the processing job until the transfer finishes:
+Slurm will now hold the processing job until the transfer finishes:
 
 ```bash
 $ squeue
@@ -118,9 +119,9 @@ JOBID    PARTITION  NAME       USER   ST      TIME  NODES NODELIST(REASON)
 12345678  transfer  transfer   netID  R       0:15      1 c01n04
 ```
 
-## Storage@Yale transfers
+## Storage@Yale Transfers
 
-Storage@Yale shares are only mounted on the transfer partition, enabling you to stage data from these remove servers.
+Storage@Yale shares are mounted on the transfer partition, enabling you to stage data from these remove servers.
 The process is somewhat simpler than the above example because we do not need to `rsync` the data, and can instead use `cp` directly.
 
 Here, we have modified the `transfer.sbatch` file from above:
