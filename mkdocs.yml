@@ -119,6 +119,7 @@ nav:
                 - clusters-at-yale/data/transfer.md
                 - clusters-at-yale/data/globus.md
                 - clusters-at-yale/data/permissions.md
+                - clusters-at-yale/data/staging.md
                 - clusters-at-yale/data/archived-sequencing.md
             - The Clusters:
                 - clusters-at-yale/clusters/index.md
