@@ -1605,7 +1605,7 @@ JOBID    PARTITION  NAME       USER   ST      TIME  NODES NODELIST<span class="o
 </code></pre></div>
 
 <h2 id="storageyale-transfers">Storage@Yale Transfers</h2>
-<p>Storage@Yale shares are only mounted on the transfer partition, enabling you to stage data from these remove servers.
+<p>Storage@Yale shares are mounted on the transfer partition, enabling you to stage data from these remove servers.
 The process is somewhat simpler than the above example because we do not need to <code>rsync</code> the data, and can instead use <code>cp</code> directly.</p>
 <p>Here, we have modified the <code>transfer.sbatch</code> file from above:</p>
 <h3 id="transfersbatch_1">transfer.sbatch</h3>
