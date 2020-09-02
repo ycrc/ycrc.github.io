@@ -11,7 +11,7 @@
         <meta name="description" content="Yale Center for Research Computing Documentation Pages">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/scavenge/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/data/staging/">
       
       
         <meta name="author" content="YCRC">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Scavenge Partition - Yale Center for Research Computing</title>
+        <title>Staging Data - Yale Center for Research Computing</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scavenge-partition" class="md-skip">
+        <a href="#staging-data" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Scavenge Partition
+              Staging Data
             
           </span>
         </div>
@@ -820,12 +820,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
     
     <label class="md-nav__link" for="nav-1-2-7">
       Job Scheduling
@@ -849,7 +847,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Run Jobs with Slurm" class="md-nav__link">
+    <a href="../../job-scheduling/" title="Run Jobs with Slurm" class="md-nav__link">
       Run Jobs with Slurm
     </a>
   </li>
@@ -861,7 +859,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../resource-requests/" title="Request Compute Resources" class="md-nav__link">
+    <a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">
       Request Compute Resources
     </a>
   </li>
@@ -873,7 +871,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../common-job-failures/" title="Common Job Failures" class="md-nav__link">
+    <a href="../../job-scheduling/common-job-failures/" title="Common Job Failures" class="md-nav__link">
       Common Job Failures
     </a>
   </li>
@@ -885,7 +883,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">
+    <a href="../../job-scheduling/resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">
       Monitor CPU and Memory
     </a>
   </li>
@@ -897,7 +895,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
+    <a href="../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
       Factors Affecting Scheduling
     </a>
   </li>
@@ -907,80 +905,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Scavenge Partition
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Scavenge Partition" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
       Scavenge Partition
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#automatically-requeue-preempted-jobs" class="md-nav__link">
-    Automatically Requeue Preempted Jobs
-  </a>
-  
-    <nav class="md-nav" aria-label="Automatically Requeue Preempted Jobs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#track-history-of-a-requeued-job" class="md-nav__link">
-    Track History of a Requeued Job
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scavenge-gpus" class="md-nav__link">
-    Scavenge GPUs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#research-available-nodes" class="md-nav__link">
-    Research Available Nodes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -990,7 +919,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../dependency/" title="Scheduling jobs with dependency" class="md-nav__link">
+    <a href="../../job-scheduling/dependency/" title="Scheduling jobs with dependency" class="md-nav__link">
       Scheduling jobs with dependency
     </a>
   </li>
@@ -1002,7 +931,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mpi/" title="MPI Partition" class="md-nav__link">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
       MPI Partition
     </a>
   </li>
@@ -1014,7 +943,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
+    <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
       Submit Job Arrays with dSQ
     </a>
   </li>
@@ -1026,7 +955,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../slurm-examples/" title="Submission Script Examples" class="md-nav__link">
+    <a href="../../job-scheduling/slurm-examples/" title="Submission Script Examples" class="md-nav__link">
       Submission Script Examples
     </a>
   </li>
@@ -1041,10 +970,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8" checked>
     
     <label class="md-nav__link" for="nav-1-2-8">
       Data & Storage
@@ -1068,7 +999,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data/" title="Cluster Storage" class="md-nav__link">
+    <a href="../" title="Cluster Storage" class="md-nav__link">
       Cluster Storage
     </a>
   </li>
@@ -1080,7 +1011,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data/transfer/" title="Transfer Data" class="md-nav__link">
+    <a href="../transfer/" title="Transfer Data" class="md-nav__link">
       Transfer Data
     </a>
   </li>
@@ -1092,7 +1023,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data/globus/" title="Large Transfers with Globus" class="md-nav__link">
+    <a href="../globus/" title="Large Transfers with Globus" class="md-nav__link">
       Large Transfers with Globus
     </a>
   </li>
@@ -1104,7 +1035,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
+    <a href="../permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
       Manage Permissions for Sharing
     </a>
   </li>
@@ -1114,11 +1045,100 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../data/staging/" title="Staging Data" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Staging Data
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Staging Data" class="md-nav__link md-nav__link--active">
       Staging Data
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-partition" class="md-nav__link">
+    Transfer Partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-job-dependencies" class="md-nav__link">
+    Transfer Job Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Job Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfersbatch" class="md-nav__link">
+    transfer.sbatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processsbatch" class="md-nav__link">
+    process.sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storageyale-transfers" class="md-nav__link">
+    Storage@Yale transfers
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage@Yale transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfersbatch_1" class="md-nav__link">
+    transfer.sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1128,7 +1148,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data/archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
+    <a href="../archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
       Ruddle Archived Sequence Data
     </a>
   </li>
@@ -1379,16 +1399,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automatically-requeue-preempted-jobs" class="md-nav__link">
-    Automatically Requeue Preempted Jobs
+  <a href="#transfer-partition" class="md-nav__link">
+    Transfer Partition
   </a>
   
-    <nav class="md-nav" aria-label="Automatically Requeue Preempted Jobs">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-job-dependencies" class="md-nav__link">
+    Transfer Job Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Job Dependencies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#track-history-of-a-requeued-job" class="md-nav__link">
-    Track History of a Requeued Job
+  <a href="#transfersbatch" class="md-nav__link">
+    transfer.sbatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processsbatch" class="md-nav__link">
+    process.sbatch
   </a>
   
 </li>
@@ -1399,16 +1433,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scavenge-gpus" class="md-nav__link">
-    Scavenge GPUs
+  <a href="#storageyale-transfers" class="md-nav__link">
+    Storage@Yale transfers
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage@Yale transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfersbatch_1" class="md-nav__link">
+    transfer.sbatch
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#research-available-nodes" class="md-nav__link">
-    Research Available Nodes
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1424,7 +1464,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/job-scheduling/scavenge.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/data/staging.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1432,37 +1472,114 @@
                   
                 
                 
-                <h1 id="scavenge-partition">Scavenge Partition</h1>
-<p>A scavenge partition is available on all of our clusters. It allows you to (a) run jobs outside of your normal limits (e.g. <code>QOSMaxCpuPerUserLimit</code>) and (b) use unutilized cores, if available, in any private partition on the cluster. You can also use the scavenge partition to get access to unused cores in special purpose partitions, such as the "gpu" or "mpi" partitions, and unused GPUs in private partitions.</p>
-<p>However, any job running in the scavenge partition is subject to preemption if any node in use by the job is required for a job in the node's normal partition. This means that your job may be killed without advance notice, so you should only run jobs in the scavenge partition that either have checkpoint capabilities or that can otherwise be restarted with minimal loss of progress.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Not all jobs are a good fit for the scavenge partition, such as jobs with long startup times or jobs that run a long time between checkpoint operations.</p>
-</div>
-<h2 id="automatically-requeue-preempted-jobs">Automatically Requeue Preempted Jobs</h2>
-<p>If you would like your job to be automatically added back to the queue if preempted, you can add the <code>--requeue</code> flag to your submission script.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --requeue</span>
+                <h1 id="staging-data">Staging Data</h1>
+<p>Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
+If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must stage your data.
+Since the <em>permanent</em> copy of the data remains on off-cluster storage, you can <a href="/clusters-at-yale/data/transfer/">transfer</a> a working copy to <code>scrach60</code>, for example.
+When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.</p>
+<p>A sample workflow using <code>rsync</code> would be:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># copy data to temporary cluster storage</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+<span class="c1"># process data on cluster</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ sbatch data_processing.sh
+<span class="c1"># return results to permanent storage for safe-keeping</span>
+<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
 </code></pre></div>
 
-<p>Be aware that your job, when started from a requeue, will still re-run the entire original submission script. It will only resume progress if your program has the its own ability to checkpoint and restart from previous progress.</p>
-<h3 id="track-history-of-a-requeued-job">Track History of a Requeued Job</h3>
-<p>When a scavenge job is requeued after preemption, it retains the same job id. However, this can make it difficult to track the history of the job (how many times it was requeued, how long it ran for each time). To view the full history of your job use the <code>--duplicates</code> flag for the <code>sacct</code> command.</p>
-<div class="highlight"><pre><span></span><code>sacct -j &lt;jobid&gt; --duplicates
+<p>The <em>working</em> copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit.
+See the <a href="/data/archive/">Archive Data</a> and <a href="/clusters-at-yale/data/transfer/">Transfer Data</a> pages for more ways to move data efficiently to and from the clusters.</p>
+<h2 id="transfer-partition">Transfer Partition</h2>
+<p>Both <code>grace</code> and <code>farnam</code> have dedicated data-transfer partitions (named <code>transfer</code>) designed for staging data onto the cluster.
+All users are able to submit jobs to these partitions.</p>
+<p>We recommend using <code>tmux</code> to launch interactive transfers so that you are able to log out and leave the job running in the background.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># enter tmux shell</span>
+<span class="o">[</span>netID@grace1 ~<span class="o">]</span>$ tmux
+<span class="c1"># launch transfer job</span>
+<span class="o">[</span>netID@grace1 ~<span class="o">]</span>$ srun --pty --partition transfer --cpus-per-task<span class="o">=</span><span class="m">1</span> --time<span class="o">=</span><span class="m">6</span>:00:00 bash
+<span class="c1"># start transfer</span>
+<span class="o">[</span>netID@c01n03 ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+</code></pre></div>
+You can then type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detach from the <code>tmux</code> session.
+This will leave your transfer running in the background inside the <code>tmux</code> session.
+For more details about how to use <code>tmux</code>, look at our guide <a href="/clusters-at-yale/guides/tmux">here</a>.</p>
+<p>Batch transfer jobs are also possible.
+A sample <code>sbatch</code> script for an <code>rsync</code> transfer is show here:</p>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --partition=transfer</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --job-name=my_transfer</span>
+<span class="c1">#SBATCH --output=transfer.txt</span>
+
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+</code></pre></div>
+This will launch a batch job that will transfer data from <code>remote.host.yale.edu</code> to your scratch60 directory.
+Note, this will only work if you have set up password-less logins on the remote host.</p>
+<h2 id="transfer-job-dependencies">Transfer Job Dependencies</h2>
+<p>There are <code>sbatch</code> options that allow you to hold a job from running until a previous job finishes.
+These are called Job Dependencies, and they allow you to include a data-staging step as part of your data processing pipe-line.</p>
+<p>Consider a workflow where we would like to process data located on a remote server.
+We can break this into two separate SLURM jobs: a transfer job followed by a processing job.</p>
+<h3 id="transfersbatch">transfer.sbatch</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --partition=transfer</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --job-name=my_transfer</span>
+
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
 </code></pre></div>
 
-<h2 id="scavenge-gpus">Scavenge GPUs</h2>
-<p>On Grace and Farnam, we also have a <code>scavenge_gpu</code> partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
-(e.g. preemption, time limit), <code>scavenge_gpu</code> behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Compute Node tables on the respective cluster pages.</p>
-<h2 id="research-available-nodes">Research Available Nodes</h2>
-<p>If you are interested in specific hardware and its availability, you can use the <code>sinfo</code> command to query how many of each type of node is available and what features it lists. For example:</p>
-<div class="highlight"><pre><span></span><code>sinfo -e -o <span class="s2">&quot;%.6D|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
+<h3 id="processsbatch">process.sbatch</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --partition=day</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --job-name=my_process</span>
+
+module purge
+module load miniconda
+
+conda activate my_env
+
+python <span class="nv">$HOME</span>/process_script.py <span class="nv">$HOME</span>/scratch60/data
 </code></pre></div>
 
-<p>will show you the kinds of nodes available, and</p>
-<div class="highlight"><pre><span></span><code>sinfo -e -o <span class="s2">&quot;%.6D|%T|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
+<p>First we would submit the transfer job to SLURM:</p>
+<div class="highlight"><pre><span></span><code>$ sbatch transfer.sbatch
+Submitted batch job <span class="m">12345678</span>
 </code></pre></div>
 
-<p>will break out how many nodes in each state (e.g. allocated, mixed, idle) there are. For more options see the official <a href="https://slurm.schedmd.com/sinfo.html"><code>sinfo</code> documentation</a>.</p>
+<p>Then we can pass this jobID as a dependency for the processing job:</p>
+<p><div class="highlight"><pre><span></span><code>$ sbatch --dependency<span class="o">=</span>afterok:12345678 process.sbatch
+Submitted batch job <span class="m">12345679</span>
+</code></pre></div>
+SLURM will now hold the processing job until the transfer finishes:</p>
+<div class="highlight"><pre><span></span><code>$ squeue
+JOBID    PARTITION  NAME       USER   ST      TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="m">12345679</span>       day  process    netID  PD      <span class="m">0</span>:00      <span class="m">1</span> <span class="o">(</span>Dependency<span class="o">)</span>
+<span class="m">12345678</span>  transfer  transfer   netID  R       <span class="m">0</span>:15      <span class="m">1</span> c01n04
+</code></pre></div>
+
+<h2 id="storageyale-transfers">Storage@Yale transfers</h2>
+<p>Storage@Yale shares are only mounted on the transfer partition, enabling you to stage data from these remove servers.
+The process is somewhat simpler than the above example because we do not need to <code>rsync</code> the data, and can instead use <code>cp</code> directly.</p>
+<p>Here, we have modified the <code>transfer.sbatch</code> file from above:</p>
+<h3 id="transfersbatch_1">transfer.sbatch</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --partition=transfer</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --job-name=my_transfer</span>
+
+cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/scratch60/
+</code></pre></div>
+
+<p>This will transfer <code>data</code> from the Storage@Yale share to <code>scratch60</code> where it can be processed on any of the compute nodes.</p>
                 
                   
                     
@@ -1471,7 +1588,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2020</span>
     
   </small>
 </div>

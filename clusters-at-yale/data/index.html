@@ -1191,6 +1191,18 @@
 
 
   <li class="md-nav__item">
+    <a href="staging/" title="Staging Data" class="md-nav__link">
+      Staging Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
       Ruddle Archived Sequence Data
     </a>
@@ -1630,19 +1642,17 @@ scratch60     GRP             4054       20480       987,336     5,000,000 No   
 <p>We can help you purchase more storage for use on the clusters at roughly $200/TiB with a 5 years support term and a minimum purchase of 10 TiB. Please <a href="/#get-help">contact us</a> with your requirements and budget.</p>
 <h2 id="hpc-storage-best-practices">HPC Storage Best Practices</h2>
 <h3 id="staging-data">Staging Data</h3>
-<p>Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc. If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must stage your data. Since the <em>permanent</em> copy of the data remains on off-cluster storage, you can <a href="/clusters-at-yale/data/transfer/">transfer</a> a working copy to <code>scrach60</code>, for example. When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.</p>
-<p>A sample workflow using <code>rsync</code> would be:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># copy data to temporary cluster storage</span>
-<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
-<span class="c1"># process data on cluster</span>
-<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ sbatch data_processing.sh
-<span class="c1"># return results to permanent storage for safe-keeping</span>
-<span class="o">[</span>netID@cluster ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
-</code></pre></div>
-
-<p>The <em>working</em> copy of the data can then be removed manually or left to be deleted when it reaches the 60-day limit. See the <a href="/data/archive/">Archive Data</a> and <a href="/clusters-at-yale/data/transfer/">Transfer Data</a> pages for more ways to move data efficiently to and from the clusters.</p>
+<p>Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
+If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
+Since the <em>permanent</em> copy of the data remains on off-cluster storage, you can <a href="/clusters-at-yale/data/transfer/">transfer</a> a working copy to <code>scrach60</code>, for example.
+Both <code>grace</code> and <code>farnam</code> have dedicated <code>transfer</code> partitions where you can submit long-running transfer jobs. 
+When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
+Please see <a href="/clusters-at-yale/data/staging/">Staging Data</a> for more details and examples.</p>
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
-<p>The parallel filesystems the clusters use perform poorly with very large numbers of small files. This is one reason we enforce file count quotas. If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation. Delete unneeded files between jobs and compress or <a href="/data/archive/">archive</a> collections of files.</p>
+<p>The parallel filesystems the clusters use perform poorly with very large numbers of small files.
+This is one reason we enforce file count quotas.
+If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+Delete unneeded files between jobs and compress or <a href="/data/archive/">archive</a> collections of files.</p>
 <h2 id="backups-and-snapshots">Backups and Snapshots</h2>
 <h3 id="retrieve-data-from-home-backups">Retrieve Data from Home Backups</h3>
 <p><a href="/#get-help">Contact us</a> with your netid and the list of files/directories you would like restored.</p>
@@ -1685,7 +1695,7 @@ scratch60     GRP             4054       20480       987,336     5,000,000 No   
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2020</span>
     
   </small>
 </div>
