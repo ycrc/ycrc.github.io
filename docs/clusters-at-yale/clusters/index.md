@@ -13,11 +13,11 @@ We maintain and support four compute clusters, listed below. Please click on clu
 
 ## Storage
 
-We maintain several high performance storage systems which amount to about 11 PiB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/clusters-at-yale/data/index) page.
+We maintain several high performance storage systems which amount to about 12.5 PiB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/clusters-at-yale/data/index) page.
 
 | Filesystem    | Size    | Mounting Clusters     |
 |---------------|---------|-----------------------|
-| /gpfs/gibbs   | 2.7 PiB | Grace, Farnam, Ruddle |
+| /gpfs/gibbs   | 4.1 PiB | Grace, Farnam, Ruddle |
 | /gpfs/loomis  | 2.6 PiB | Grace\*, Farnam       |
 | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       |
 | /gpfs/slayman | 1.0 PiB | Grace, Farnam         |

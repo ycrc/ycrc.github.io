@@ -75,7 +75,7 @@ The per-user breakdown is only generated periodically, and the summary at the bo
 
 ## Get More Storage
 
-We can help you purchase more storage for use on the clusters at roughly $200/TiB with a 5 years support term and a minimum purchase of 10 TiB. Please [contact us](/#get-help) with your requirements and budget.
+Additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed. Please note that, as with existing project storage, this storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
 
 ## HPC Storage Best Practices
 
