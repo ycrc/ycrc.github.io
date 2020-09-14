@@ -70,7 +70,7 @@ conda install r-lattice
 
 ```
 
-If there are packages that conda does not provide, you can install using the `install.packages` function, but this may occasionally not work as well. When you install packages with `install.packages` Make sure to load your C
+If there are packages that conda does not provide, you can install using the `install.packages` function, but this may occasionally not work as well. When you install packages with `install.packages` Make sure to load your Conda environment first.
 
 ``` bash
 srun --pty -C oldest -p interactive bash
