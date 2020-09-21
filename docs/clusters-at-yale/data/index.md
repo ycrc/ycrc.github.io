@@ -11,19 +11,25 @@ Along with access to the compute clusters we provide each research group with cl
 
 Quota: 125 GiB and 500,000 files per person
 
-Your home directory is where your sessions begin by default. Its intended use is for storing scripts, notes, final products (e.g. figures), etc.  Its path is `/home/netid` (where `netid` is your Yale netid) on every cluster. Home storage is backed up daily. If you would like to restore files please [contact us](/#get-help) with your netid and the list of files/directories you would like restored.
+Your home directory is where your sessions begin by default. Its intended use is for storing scripts, notes, final products (e.g. figures), etc.  Its path is `/home/netid` (where `netid` is your Yale netid) on every cluster. Home storage is backed up daily. If you would like to restore files, please [contact us](/#get-help) with your netid and the list of files/directories you would like restored.
 
 ### Project
 
 Quota: 1 TiB and 5,000,000 files per group, expanded to 4 TiB on request
 
-Project storage is intended for storing datasets and other files that you would like for your group to all have access to. You can also [share data with people more granularly](/clusters-at-yale/data/permissions/). It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project is not backed up.
+Project storage is intended for storing datasets and other files that you would like for your group to all have access to. You can also [share data with people more granularly](/clusters-at-yale/data/permissions/). It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project storage is not backed up.
 
 We create a symlink, or shortcut, in every home directory called `project`, but the true path to your project directory is different. You can get it by running the `mydirectories` command or with
 
 ``` bash
 readlink -f ~/project
 ```
+
+#### Purchased Storage
+
+Quota: varies
+
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up. See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. Purchased storage, if applicable, is located at in the  `/gpfs/<filesystem>/pi/` directory under the group's name. 
 
 ### 60-Day Scratch
 
@@ -39,7 +45,7 @@ readlink -f ~/scratch60
 
 ### Check Your Quotas
 
-To inspect your current usage, run the command `getquota`. It will output something like the following:
+To inspect your current usage, run the command `getquota`. Here is an example output of the command:
 
 ``` text
 This script shows information about your quotas on the current gpfs filesystem.
@@ -71,11 +77,13 @@ project       GRP              707        6144     1,611,981     5,000,000 No   
 scratch60     GRP             4054       20480       987,336     5,000,000 No         60 days
 ```
 
-The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time.
+The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
 ## Get More Storage
 
-Additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed. Please note that, as with existing project storage, this storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
+Additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
+
+Please note that, as with existing project storage, this storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
 
 ## HPC Storage Best Practices
 
