@@ -2,7 +2,7 @@
 
 ## Home Directories
 
-**Do not give your home directory group write permissions. This will break your ability to log into the cluster.**  If you need to share something in your home directory, either move it your project directory or [contact us](/#get-help) for assistance.
+**Do not give your home directory group write permissions. This will break your ability to log into the cluster.**  If you need to share files currently located in your home directory, either move it your project directory or [contact us](/#get-help) for assistance finding an appropriate location.
 
 ## Shared Group Directories
 
