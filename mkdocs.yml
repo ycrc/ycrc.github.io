@@ -72,6 +72,7 @@ nav:
             - Request an Account: https://research.computing.yale.edu/account-request
             - clusters-at-yale/troubleshoot.md
             - Access the Clusters:
+                - clusters-at-yale/access/accounts.md
                 - clusters-at-yale/access/index.md
                 - clusters-at-yale/access/ood.md
                 - clusters-at-yale/access/vpn.md

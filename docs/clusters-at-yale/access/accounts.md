@@ -20,5 +20,3 @@ When an account is deactivated, logins and scheduler access are disabled, the ho
 
 Every group must have a PI with a valid affiliation with Yale. If your PI has left Yale, you may be asked to identify a new faculty sponsor for your account in order to continue accessing the cluster.
 
-
-
