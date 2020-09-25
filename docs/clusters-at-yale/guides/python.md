@@ -8,7 +8,7 @@ We provide a Python as a [software module](/clusters-at-yale/applications/module
 
 ### Find and Load Python
 
-Find the available versions of R version 3 with:
+Find the available versions of Python version 3 with:
 
 ``` bash
 module avail Python/3
@@ -69,7 +69,7 @@ To run Python in batch mode, create a plain-text batch script to submit. In that
 
 module load miniconda
 conda activate py3_env
-python myscript.R
+python myscript.py
 ```
 
 To actually submit the job, run `sbatch my_py_job.sh` where the batch script above was saved as `my_py_job.sh`.
