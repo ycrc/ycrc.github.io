@@ -69,7 +69,7 @@ To run Python in batch mode, create a plain-text batch script to submit. In that
 
 module load miniconda
 conda activate py3_env
-python myscript.R
+python myscript.py
 ```
 
 To actually submit the job, run `sbatch my_py_job.sh` where the batch script above was saved as `my_py_job.sh`.
