@@ -8,7 +8,7 @@ We provide a Python as a [software module](/clusters-at-yale/applications/module
 
 ### Find and Load Python
 
-Find the available versions of R version 3 with:
+Find the available versions of Python version 3 with:
 
 ``` bash
 module avail Python/3
