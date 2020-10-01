@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -1440,6 +1440,10 @@
 <li>Log out and log back in to your Mac to reset some variables</li>
 <li>When using ssh to log in to the clusters, use the <code>-Y</code> option to enable X11 forwarding. Example: <code>ssh -Y rdb9@ruddle.hpc.yale.edu</code></li>
 </ol>
+<p>Note: if you get the error "cannot open display", please open an X-Quartz terminal and run the following command, and then log in to the cluster from the X-Quartz terminal:</p>
+<div class="highlight"><pre><span></span><code>launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+</code></pre></div>
+
 <h2 id="on-windows">On Windows</h2>
 <p>We recommend <a href="/clusters-at-yale/access/#windows">MobaXterm</a> for connecting to the clusters from Windows. It is configured for X11 forwarding out of the box and should require no additional configuration or software.</p>
 <h2 id="quick-test">Quick Test</h2>
@@ -1458,7 +1462,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: April 16, 2020
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2020</span>
     
   </small>
 </div>
@@ -1575,14 +1579,14 @@
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7f4f3c92.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9b3611bd.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
