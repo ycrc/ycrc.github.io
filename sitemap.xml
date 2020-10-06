@@ -1,247 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://docs.ycrc.yale.edu/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/troubleshoot/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/accounts/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/compile/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/modules/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/easybuild/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/cesm/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/clustershell/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/gaussian/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/github_pages/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/matlab/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/mathematica/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/python/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/parallel/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/r/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/rclone/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/singularity/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/vasp/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/github/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-requests/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/common-job-failures/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-usage/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/fairshare/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/scavenge/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/mpi/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/transfer/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/staging/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/globus/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/permissions/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/data/archived-sequencing/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/clusters/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/clusters/grace/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/clusters/farnam/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/clusters/ruddle/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/clusters-at-yale/clusters/milgram/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/data/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/data/archive/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/data/google-drive/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/data/external/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/user-group/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/national-hpcs/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.ycrc.yale.edu/online-tutorials/</loc>
-     <lastmod>2020-10-01</lastmod>
+     <lastmod>2020-10-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
