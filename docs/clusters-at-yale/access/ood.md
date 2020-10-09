@@ -13,13 +13,14 @@ Open OnDemand is available on the following clusters using your NetID credential
 |---------------------------------------------|------------------------------------------------------------|
 | [Grace](/clusters-at-yale/clusters/grace) | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
 | [Farnam](/clusters-at-yale/clusters/farnam)   | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
+| [Milgram](/clusters-at-yale/clusters/milgram)\* | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
 | [Ruddle](/clusters-at-yale/clusters/ruddle)\* | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
-### DUO Everywhere for OOD Ruddle
+### DUO Everywhere for OOD Milgram and Ruddle
 
-If you want access to ood-ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force [Multi-Factor Authentication](/clusters-at-yale/access/mfa) (MFA) for CAS on every login, even on-campus.
+If you want access to Open OnDemand for Milgram or Ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force [Multi-Factor Authentication](/clusters-at-yale/access/mfa) (MFA) for CAS on every login, even on-campus.
 
-To enroll in DUO Everywhere, please email [netal.patel@yale.edu](mailto:netal.patel@yale.edu) indicating you want to use OnDemand on Ruddle. Include your your NetID and your desired deployment date. The deployment date should be any day from Monday to Thursday.
+To enroll in DUO Everywhere, please email [netal.patel@yale.edu](mailto:netal.patel@yale.edu) indicating you want to use OnDemand and the cluster you will be using. Include your your NetID and your desired deployment date. The deployment date should be any day from Monday to Thursday.
 
 ## The Dashboard
 

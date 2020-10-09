@@ -4,7 +4,7 @@ As an alternative to X11 Forwarding, using VNC to access the cluster is anothe
 
 ## Open OnDemand
 
-On Grace and Farnam we have web dashboards set up that can run VNC for you as a job and forward your session back to you via your browser. Give them a try at [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu) and [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) under the "interactive apps" drop-down menu item.
+On the clusters, we have web dashboards set up that can run VNC for you as a job and forward your session back to you via your browser using [Open OnDemand](/clusters-at-yale/access/ood/#jupyter-notebooks). To use the Remote Desktop tab, browse under the "interactive apps" drop-down menu item. <br/ > **We strongly encourage using Open OnDemand unless you have specific requirements otherwise.**
 
 ## Setup vncserver on a Cluster
 
