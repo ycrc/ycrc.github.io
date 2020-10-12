@@ -3,7 +3,7 @@
 
 # Introduction
 
-The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationaly intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
+The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
 
 ## Get Help
 
@@ -39,4 +39,4 @@ Once received, our system will send an automated response with a link to a ticke
 
 ### Q&A Platform
 
-The YCRC recently joined a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Feel free to post questions about the clusters there and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
+The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Post questions about the clusters and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
