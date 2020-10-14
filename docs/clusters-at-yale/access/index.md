@@ -8,7 +8,7 @@ If you're just getting started or prefer a more graphical interface, Open OnDema
 
 ## SSH Quick Start
 
-* Send us your public SSH key with our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). Allow up to ten minutes for it to propagate.
+* Send us your public SSH key with our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Allow up to ten minutes for it to propagate.
 
 * Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`.
 
@@ -24,7 +24,7 @@ SSH (Secure Shell) keys are a set of two pieces of information that you use to i
 
 When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.
 
-We use an automated system to distribute your public key onto the clusters, [which you can log in to here](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). It is only accessible on campus or through the [Yale VPN](vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
+We use an automated system to distribute your public key onto the clusters, [which you can log in to here](https://sshkeys.hpc.yale.edu/). It is only accessible on campus or through the [Yale VPN](vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
 
 !!! warning
     Keep your private keys private! Anyone who has them can assume your identity on any server where your keys are authorized. **We will never ask for your private key**.
@@ -71,7 +71,7 @@ Next, upload your public SSH key on the cluster. Run the following command in a 
 cat ~/.ssh/id_rsa.pub
 ```
 
-Copy and paste the output to our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
+Copy and paste the output to our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
 
 ### Connect on macOS and Linux
 
@@ -100,7 +100,7 @@ First, generate an SSH key pair if you haven't already:
 * Click "Save public key" and save your public key as id_rsa.pub.
 * Choose a secure passphrase and enter into the two relevant fields. Your passphrase will prevent access to your account in the event your private key is stolen.
 * Click "Save private key" and save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
-* Copy the text of your public key and paste it into the text box in our [SSH key uploader](http://gold.hpc.yale.internal/cgi-bin/sshkeys.py).
+* Copy the text of your public key and paste it into the text box in our [SSH key uploader](https://sshkeys.hpc.yale.edu/).
 * Your key will be synced out to the clusters in a few minutes.
 
 ### Connect with Windows
