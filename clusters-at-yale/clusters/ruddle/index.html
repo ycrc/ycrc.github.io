@@ -1722,6 +1722,15 @@ http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/sample_dir_001</p>
 <div class="highlight"><pre><span></span><code>$ /home/bioinfo/software/knightlab/bin_Mar2018/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 </code></pre></div>
 
+<p>ycgaFastq can also be used to retrieve data that has been archived to tape.  The simplest way to do that is to provide
+the sample submitter's netid and the flowcell (run) name:</p>
+<div class="highlight"><pre><span></span><code>$ ycgaFastq rdb9 AHFH66DSXX
+</code></pre></div>
+
+<p>If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run as been archived and deleted:
+<div class="highlight"><pre><span></span><code>$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+</code></pre></div></p>
+<p>ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the <a href="http://campuspress.yale.edu/knightlab/ruddle/ycgafastq">documentation</a> or contact us.</p>
 <p>If you would like to know the true location of the data on Ruddle, do this:
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
 $ ls -l
@@ -1833,7 +1842,7 @@ $ ls -l
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2020</span>
     
   </small>
 </div>
