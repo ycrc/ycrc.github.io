@@ -43,6 +43,20 @@ You can use that link to download your data in a browser, but if you plan to pro
 $ /home/bioinfo/software/knightlab/bin_Mar2018/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 ```
 
+ycgaFastq can also be used to retrieve data that has been archived to tape.  The simplest way to do that is to provide
+the sample submitter's netid and the flowcell (run) name:
+
+```bash
+$ ycgaFastq rdb9 AHFH66DSXX
+```
+
+If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run as been archived and deleted:
+```bash
+$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+```
+
+ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the [documentation](http://campuspress.yale.edu/knightlab/ruddle/ycgafastq) or contact us.
+
 If you would like to know the true location of the data on Ruddle, do this:
 ``` bash
 $ cd /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
