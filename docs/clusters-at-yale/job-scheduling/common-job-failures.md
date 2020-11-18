@@ -53,6 +53,21 @@ If you are *_sure_* you no longer need some files or direcories, you can delete 
 
 If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/clusters-at-yale/data/index/#get-more-storage).
 
+## Rate Limits
+
+We rate-limit job submissions to **200 jobs per hour** on each cluster. This limit helps even out load on the scheduler and encourages good practice. When you hit this limit, you will get an error when submitting new jobs that looks like this:
+
+``` text
+sbatch: error: Reached jobs per hour limit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+```
+
+You will then need to wait until your submission rate drops. 
+
+### Use Job Arrays
+
+To avoid hitting this limit and make large numbers of jobs more manageable, you should use [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) or [job arrays](https://slurm.schedmd.com/job_array.html). If you need help adapting your workflow to `dsq` or job arrays [contact us](/#get-help).
+
 ## Software Modules
 
 We build and organize [software modules](/clusters-at-yale/applications/modules) on the cluster using [toolchains](/clusters-at-yale/applications/easybuild/#toolchains). The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, *e.g.* `foss-2018b` or `intel-2018a`. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. 

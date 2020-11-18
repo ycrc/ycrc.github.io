@@ -15,6 +15,8 @@ Milgram is named for Dr. Stanley Milgram, a psychologist who researched the beha
 
 Milgram is made up of several kinds of compute nodes. We group them into  (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
 
+--8<-- "snippets/submission_rate_limit.md"
+
 ### Public Partitions
 
 See each tab below for more information about the available common use partitions.
