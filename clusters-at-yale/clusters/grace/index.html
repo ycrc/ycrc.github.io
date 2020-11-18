@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1451,6 +1451,10 @@
 <hr />
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>Grace is made up of several kinds of compute nodes. We group them into (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
+<div class="admonition warning">
+<p class="admonition-title">Job Submission Rate Limits</p>
+<p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
+</div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
 <div class="tabbed-set" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
@@ -1476,11 +1480,11 @@
 </tr>
 <tr>
 <td>Maximum CPUs per group</td>
-<td><code>900</code></td>
+<td><code>1500</code></td>
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>640</code></td>
+<td><code>750</code></td>
 </tr>
 </tbody>
 </table>
@@ -1498,32 +1502,39 @@
 </thead>
 <tbody>
 <tr>
-<td>135</td>
-<td>6240</td>
-<td>36</td>
-<td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
-<td>60</td>
+<td>48</td>
 <td>E5-2660_v2</td>
 <td>20</td>
 <td>121</td>
 <td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
 </tr>
 <tr>
-<td>44</td>
+<td>40</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
 <td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
 </tr>
 <tr>
-<td>72</td>
+<td>79</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
 <td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>67</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
+</tr>
+<tr>
+<td>60</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
@@ -1592,7 +1603,7 @@
 <td>6126</td>
 <td>24</td>
 <td>176</td>
-<td>skylake, avx2, avx512, 6126, nogpu, standard</td>
+<td>skylake, avx2, avx512, 6126, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
@@ -1642,18 +1653,18 @@
 </thead>
 <tbody>
 <tr>
+<td>8</td>
+<td>6240</td>
 <td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
+</tr>
+<tr>
+<td>34</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
 <td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
-</tr>
-<tr>
-<td>7</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
 </tr>
 </tbody>
 </table>
@@ -1767,27 +1778,7 @@
 <td>v100</td>
 <td>2</td>
 <td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
-</tr>
-<tr>
-<td>5</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td>k80</td>
-<td>4</td>
-<td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>6</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, common</td>
 </tr>
 <tr>
 <td>4</td>
@@ -1797,7 +1788,7 @@
 <td>v100</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
 </tr>
 <tr>
 <td>5</td>
@@ -1807,7 +1798,27 @@
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, common</td>
+</tr>
+<tr>
+<td>5</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, common</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, common</td>
 </tr>
 </tbody>
 </table>
@@ -1865,23 +1876,23 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
-</tr>
-<tr>
-<td>1</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
 <td>k80</td>
 <td>4</td>
 <td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
 </tr>
 </tbody>
 </table>
@@ -1931,25 +1942,25 @@
 </thead>
 <tbody>
 <tr>
-<td>2</td>
-<td>E7-4820_v4</td>
-<td>40</td>
-<td>1507</td>
-<td>broadwell, avx2, E7-4820_v4, nogpu</td>
-</tr>
-<tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
 <td>1506</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 <tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
 <td>1506</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td>broadwell, avx2, E7-4820_v4, nogpu, common</td>
 </tr>
 </tbody>
 </table>
@@ -2003,7 +2014,7 @@
 <td>6136</td>
 <td>24</td>
 <td>90</td>
-<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -2056,14 +2067,24 @@
 </thead>
 <tbody>
 <tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+<td>128</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>161</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2073,7 +2094,167 @@
 <td>v100</td>
 <td>2</td>
 <td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, common</td>
+</tr>
+<tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>1506</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, common</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, common</td>
+</tr>
+<tr>
+<td>76</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4820_v2</td>
+<td>32</td>
+<td>1003</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E7-4820_v2, nogpu, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>2011</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E7-4809_v3, nogpu, pi</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E7-4820_v4, nogpu, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1507</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E7-4820_v4, nogpu, pi</td>
+</tr>
+<tr>
+<td>73</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
+<td>20</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>k80</td>
+<td>2</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6136</td>
+<td>24</td>
+<td>751</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6136, nogpu, pi</td>
 </tr>
 <tr>
 <td>136</td>
@@ -2083,7 +2264,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, common</td>
 </tr>
 <tr>
 <td>16</td>
@@ -2106,136 +2287,6 @@
 <td>skylake, avx2, avx512, 6142, nogpu, standard</td>
 </tr>
 <tr>
-<td>207</td>
-<td>6240</td>
-<td>36</td>
-<td>183</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
-<td>8</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E7-4820_v2</td>
-<td>32</td>
-<td>1003</td>
-<td></td>
-<td></td>
-<td></td>
-<td>ivybridge, E7-4820_v2, nogpu</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E7-4809_v3</td>
-<td>32</td>
-<td>2011</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, avx2, E7-4809_v3, nogpu</td>
-</tr>
-<tr>
-<td>4</td>
-<td>E7-4820_v4</td>
-<td>40</td>
-<td>1507</td>
-<td></td>
-<td></td>
-<td></td>
-<td>broadwell, avx2, E7-4820_v4, nogpu</td>
-</tr>
-<tr>
-<td>78</td>
-<td>E5-2660_v2</td>
-<td>20</td>
-<td>121</td>
-<td></td>
-<td></td>
-<td></td>
-<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
-</tr>
-<tr>
-<td>136</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
-</tr>
-<tr>
-<td>20</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>247</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
-</tr>
-<tr>
-<td>8</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>247</td>
-<td>k80</td>
-<td>2</td>
-<td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>6</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td>k80</td>
-<td>4</td>
-<td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>161</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td></td>
-<td></td>
-<td></td>
-<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
-</tr>
-<tr>
-<td>7</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6136</td>
-<td>24</td>
-<td>751</td>
-<td></td>
-<td></td>
-<td></td>
-<td>skylake, avx2, avx512, 6136, nogpu</td>
-</tr>
-<tr>
 <td>1</td>
 <td>E5-2637_v4</td>
 <td>8</td>
@@ -2243,7 +2294,7 @@
 <td>gtx1080ti</td>
 <td>4</td>
 <td>11</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, pi</td>
 </tr>
 <tr>
 <td>9</td>
@@ -2253,7 +2304,7 @@
 <td>p100</td>
 <td>4</td>
 <td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2263,7 +2314,7 @@
 <td>rtx2080</td>
 <td>4</td>
 <td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
+<td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2273,47 +2324,47 @@
 <td>rtx4000,rtx8000,v100</td>
 <td>4,2,2</td>
 <td>8,48,16</td>
-<td>cascadelake, avx2, avx512, 6254</td>
+<td>cascadelake, avx2, avx512, 6254, pi</td>
 </tr>
 <tr>
-<td>20</td>
-<td>8260</td>
-<td>96</td>
+<td>131</td>
+<td>6240</td>
+<td>36</td>
 <td>183</td>
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 8260, nogpu</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 <tr>
-<td>1</td>
+<td>4</td>
 <td>6240</td>
 <td>36</td>
-<td>1506</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
 </tr>
 <tr>
 <td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>1506</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu</td>
-</tr>
-<tr>
-<td>7</td>
 <td>6240</td>
 <td>36</td>
 <td>183</td>
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, pi</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
@@ -2373,77 +2424,7 @@
 <td>v100</td>
 <td>2</td>
 <td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
-</tr>
-<tr>
-<td>8</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>247</td>
-<td>k80</td>
-<td>2</td>
-<td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>6</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>121</td>
-<td>k80</td>
-<td>4</td>
-<td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
-</tr>
-<tr>
-<td>7</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>121</td>
-<td>gtx1080ti</td>
-<td>4</td>
-<td>11</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
-</tr>
-<tr>
-<td>9</td>
-<td>6136</td>
-<td>24</td>
-<td>183</td>
-<td>p100</td>
-<td>4</td>
-<td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
-</tr>
-<tr>
-<td>2</td>
-<td>5122</td>
-<td>8</td>
-<td>183</td>
-<td>rtx2080</td>
-<td>4</td>
-<td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6254</td>
-<td>36</td>
-<td>1506</td>
-<td>rtx4000,rtx8000,v100</td>
-<td>4,2,2</td>
-<td>8,48,16</td>
-<td>cascadelake, avx2, avx512, 6254</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, common</td>
 </tr>
 <tr>
 <td>4</td>
@@ -2453,7 +2434,7 @@
 <td>v100</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx2, avx512, 6240, doubleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
 </tr>
 <tr>
 <td>5</td>
@@ -2463,7 +2444,87 @@
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, common</td>
+</tr>
+<tr>
+<td>8</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>247</td>
+<td>k80</td>
+<td>2</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>121</td>
+<td>k80</td>
+<td>4</td>
+<td>12</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>6</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>121</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, pi</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
+<td>183</td>
+<td>p100</td>
+<td>4</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>183</td>
+<td>rtx2080</td>
+<td>4</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>1506</td>
+<td>rtx4000,rtx8000,v100</td>
+<td>4,2,2</td>
+<td>8,48,16</td>
+<td>cascadelake, avx2, avx512, 6254, pi</td>
 </tr>
 </tbody>
 </table>
@@ -2552,18 +2613,18 @@
 </thead>
 <tbody>
 <tr>
-<td>20</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
-</tr>
-<tr>
 <td>16</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>247</td>
 <td>haswell, avx2, E5-2660_v3, nogpu, standard</td>
+</tr>
+<tr>
+<td>16</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
 </tr>
 </tbody>
 </table>
@@ -2608,7 +2669,7 @@
 <td>E7-4809_v3</td>
 <td>32</td>
 <td>2011</td>
-<td>haswell, avx2, E7-4809_v3, nogpu</td>
+<td>haswell, avx2, E7-4809_v3, nogpu, pi</td>
 </tr>
 </tbody>
 </table>
@@ -2656,14 +2717,14 @@
 </thead>
 <tbody>
 <tr>
-<td>8</td>
+<td>7</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>247</td>
 <td>k80</td>
 <td>2</td>
 <td>12</td>
-<td>haswell, avx2, E5-2660_v3, doubleprecision</td>
+<td>haswell, avx2, E5-2660_v3, doubleprecision, pi</td>
 </tr>
 </tbody>
 </table>
@@ -2749,18 +2810,18 @@
 </thead>
 <tbody>
 <tr>
-<td>9</td>
-<td>6240</td>
-<td>36</td>
-<td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
 <td>30</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
 <td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -2812,7 +2873,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -2963,7 +3024,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3008,7 +3069,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3057,7 +3118,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3102,7 +3163,7 @@
 <td>6136</td>
 <td>24</td>
 <td>90</td>
-<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3147,7 +3208,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3199,10 +3260,10 @@
 <td>E7-4820_v2</td>
 <td>32</td>
 <td>1003</td>
-<td>ivybridge, E7-4820_v2, nogpu</td>
+<td>ivybridge, E7-4820_v2, nogpu, pi</td>
 </tr>
 <tr>
-<td>32</td>
+<td>30</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>121</td>
@@ -3299,6 +3360,16 @@
 </thead>
 <tbody>
 <tr>
+<td>1</td>
+<td>6136</td>
+<td>24</td>
+<td>751</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx2, avx512, 6136, nogpu, pi</td>
+</tr>
+<tr>
 <td>16</td>
 <td>6136</td>
 <td>24</td>
@@ -3310,23 +3381,13 @@
 </tr>
 <tr>
 <td>1</td>
-<td>6136</td>
-<td>24</td>
-<td>751</td>
-<td></td>
-<td></td>
-<td></td>
-<td>skylake, avx2, avx512, 6136, nogpu</td>
-</tr>
-<tr>
-<td>1</td>
 <td>E5-2637_v4</td>
 <td>8</td>
 <td>121</td>
 <td>gtx1080ti</td>
 <td>4</td>
 <td>11</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, pi</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3336,7 +3397,7 @@
 <td>rtx2080</td>
 <td>4</td>
 <td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision</td>
+<td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
 </tr>
 </tbody>
 </table>
@@ -3381,7 +3442,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3433,7 +3494,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
@@ -3478,7 +3539,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3623,7 +3684,7 @@
 <td>rtx4000,rtx8000,v100</td>
 <td>4,2,2</td>
 <td>8,48,16</td>
-<td>cascadelake, avx2, avx512, 6254</td>
+<td>cascadelake, avx2, avx512, 6254, pi</td>
 </tr>
 </tbody>
 </table>
@@ -3668,7 +3729,7 @@
 <td>8260</td>
 <td>96</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 8260, nogpu</td>
+<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
 </tr>
 </tbody>
 </table>
@@ -3713,7 +3774,7 @@
 <td>6136</td>
 <td>24</td>
 <td>90</td>
-<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3813,7 +3874,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>broadwell, avx2, E7-4820_v4, nogpu</td>
+<td>broadwell, avx2, E7-4820_v4, nogpu, pi</td>
 </tr>
 <tr>
 <td>8</td>
@@ -3833,7 +3894,7 @@
 <td>p100</td>
 <td>1</td>
 <td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3843,7 +3904,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -3891,6 +3952,16 @@
 </thead>
 <tbody>
 <tr>
+<td>15</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>121</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
+</tr>
+<tr>
 <td>3</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -3901,26 +3972,6 @@
 <td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
 </tr>
 <tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>183</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
-<td>16</td>
-<td>E5-2660_v2</td>
-<td>20</td>
-<td>121</td>
-<td></td>
-<td></td>
-<td></td>
-<td>ivybridge, E5-2660_v2, nogpu, standard, oldest</td>
-</tr>
-<tr>
 <td>9</td>
 <td>6136</td>
 <td>24</td>
@@ -3928,7 +3979,17 @@
 <td>p100</td>
 <td>4</td>
 <td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>183</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -4021,14 +4082,34 @@
 </thead>
 <tbody>
 <tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>372</td>
+<td>rtx2080ti</td>
+<td>8</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6254, pi</td>
+</tr>
+<tr>
 <td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
+</tr>
+<tr>
+<td>3</td>
 <td>6240</td>
 <td>36</td>
 <td>183</td>
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, pi</td>
 </tr>
 </tbody>
 </table>
@@ -4069,18 +4150,18 @@
 </thead>
 <tbody>
 <tr>
-<td>8</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
-</tr>
-<tr>
 <td>10</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
 <td>broadwell, avx2, E5-2660_v4, nogpu, standard</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
@@ -4125,7 +4206,7 @@
 <td>6240</td>
 <td>36</td>
 <td>183</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -4271,7 +4352,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2020</span>
     
   </small>
 </div>
@@ -4387,15 +4468,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
