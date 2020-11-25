@@ -200,7 +200,7 @@ def iprint(i, toprint):
 
 def sort_hardware(partition_hardware):
 
-    print(partition_hardware)
+#    print(partition_hardware)
     nodes_by_gen = {}
     for node_type in partition_hardware:
         node_gen = node_type['Node Features'].split(',')[0]
