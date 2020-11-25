@@ -26,11 +26,12 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |48|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
-    |40|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
-    |79|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
-    |67|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+[{'Nodes': '48', 'CPU Type': 'E5-2660_v2', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E5-2660_v2, nogpu, standard, oldest'}, {'Nodes': '40', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '79', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '67', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}, {'Nodes': '60', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}]
     |60|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+    |67|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |79|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
+    |40|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
+    |48|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
 
 === "interactive"
 
@@ -62,8 +63,9 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
+[{'Nodes': '2', 'CPU Type': 'E5-2660_v2', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E5-2660_v2, nogpu, standard, oldest'}, {'Nodes': '1', 'CPU Type': '6126', 'CPUs/Node': '24', 'Memory/Node (GiB)': '176', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'skylake, avx2, avx512, 6126, nogpu, standard, pi'}]
     |1|6126|24|176|skylake, avx2, avx512, 6126, nogpu, standard, pi|
+    |2|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
 
 === "week"
 
@@ -93,6 +95,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
+[{'Nodes': '34', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '8', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}]
     |8|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |34|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
@@ -124,6 +127,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
+[{'Nodes': '2', 'CPU Type': 'E5-2660_v2', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E5-2660_v2, nogpu, standard, oldest'}]
     |2|E5-2660_v2|20|121|ivybridge, E5-2660_v2, nogpu, standard, oldest|
 
 === "gpu"
@@ -155,11 +159,12 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
+[{'Nodes': '5', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': 'k80', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, common'}, {'Nodes': '6', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, common'}, {'Nodes': '2', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': 'v100', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, common'}, {'Nodes': '4', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'v100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'cascadelake, avx2, avx512, 6240, doubleprecision, common'}, {'Nodes': '5', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6240, singleprecision, common'}]
     |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
     |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
-    |5|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
+    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
     |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
+    |5|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
 === "gpu_devel"
 
@@ -191,8 +196,9 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
+[{'Nodes': '1', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': 'k80', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, common'}, {'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'v100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'cascadelake, avx2, avx512, 6240, doubleprecision, common'}]
     |1|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
+    |1|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
 === "bigmem"
 
@@ -222,6 +228,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
+[{'Nodes': '2', 'CPU Type': 'E7-4820_v4', 'CPUs/Node': '40', 'Memory/Node (GiB)': '1507', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E7-4820_v4, nogpu, common'}, {'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}, {'Nodes': '2', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, common'}]
     |1|6240|36|1506|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |2|6240|36|1506|cascadelake, avx2, avx512, 6240, nogpu, common|
     |2|E7-4820_v4|40|1507|broadwell, avx2, E7-4820_v4, nogpu, common|
@@ -254,7 +261,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |120|6136|24|90|hdr, skylake, avx2, avx512, 6136, nogpu, standard, common|
+[{'Nodes': '120', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'hdr, skylake, avx2, avx512, 6136, nogpu, standard, common'}]
 
 === "scavenge"
 
@@ -285,36 +292,35 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |128|E5-2660_v3|20|121||||haswell, avx2, E5-2660_v3, nogpu, standard|
-    |161|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
-    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
-    |20|8260|96|183||||cascadelake, avx2, avx512, 8260, nogpu, pi|
-    |1|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |2|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, common|
-    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
+[{'Nodes': '1', 'CPU Type': 'E7-4809_v3', 'CPUs/Node': '32', 'Memory/Node (GiB)': '2011', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E7-4809_v3, nogpu, pi'}, {'Nodes': '2', 'CPU Type': 'E7-4820_v4', 'CPUs/Node': '40', 'Memory/Node (GiB)': '1507', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E7-4820_v4, nogpu, common'}, {'Nodes': '2', 'CPU Type': 'E7-4820_v4', 'CPUs/Node': '40', 'Memory/Node (GiB)': '1507', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E7-4820_v4, nogpu, pi'}, {'Nodes': '128', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '161', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '6', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, common'}, {'Nodes': '2', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': 'v100', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, common'}, {'Nodes': '136', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'hdr, skylake, avx2, avx512, 6136, nogpu, standard, common'}, {'Nodes': '16', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'edr, skylake, avx2, avx512, 6136, nogpu, standard'}, {'Nodes': '20', 'CPU Type': '8260', 'CPUs/Node': '96', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 8260, nogpu, pi'}, {'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}, {'Nodes': '76', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}, {'Nodes': '1', 'CPU Type': 'E7-4820_v2', 'CPUs/Node': '32', 'Memory/Node (GiB)': '1003', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E7-4820_v2, nogpu, pi'}, {'Nodes': '73', 'CPU Type': 'E5-2660_v2', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E5-2660_v2, nogpu, standard, oldest'}, {'Nodes': '20', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '8', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': 'k80', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, pi'}, {'Nodes': '6', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': 'k80', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, common'}, {'Nodes': '1', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, pi'}, {'Nodes': '1', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '751', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'skylake, avx2, avx512, 6136, nogpu, pi'}, {'Nodes': '3', 'CPU Type': '6142', 'CPUs/Node': '32', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'skylake, avx2, avx512, 6142, nogpu, standard'}, {'Nodes': '1', 'CPU Type': 'E5-2637_v4', 'CPUs/Node': '8', 'Memory/Node (GiB)': '121', 'GPU Type': 'gtx1080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'broadwell, avx2, E5-2637_v4, singleprecision, pi'}, {'Nodes': '9', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '183', 'GPU Type': 'p100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, pi'}, {'Nodes': '2', 'CPU Type': '5122', 'CPUs/Node': '8', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '8', 'Node Features': 'skylake, avx2, avx512, 5122, singleprecision, pi'}, {'Nodes': '1', 'CPU Type': '6254', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': 'rtx4000,rtx8000,v100', 'GPUs/Node': '4,2,2', 'vRAM/GPU (GB)': '8,48,16', 'Node Features': 'cascadelake, avx2, avx512, 6254, pi'}, {'Nodes': '131', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}, {'Nodes': '4', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'v100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'cascadelake, avx2, avx512, 6240, doubleprecision, common'}, {'Nodes': '2', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, common'}, {'Nodes': '2', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6240, singleprecision, pi'}, {'Nodes': '8', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}, {'Nodes': '5', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6240, singleprecision, common'}]
+    |8|6240|36|372||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+    |131|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |76|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
-    |1|E7-4820_v2|32|1003||||ivybridge, E7-4820_v2, nogpu, pi|
-    |1|E7-4809_v3|32|2011||||haswell, avx2, E7-4809_v3, nogpu, pi|
-    |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, common|
-    |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, pi|
-    |73|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
-    |20|E5-2660_v3|20|247||||haswell, avx2, E5-2660_v3, nogpu, standard|
-    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
-    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
-    |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
-    |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
-    |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu, pi|
-    |136|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, common|
-    |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard|
+    |1|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |20|8260|96|183||||cascadelake, avx2, avx512, 8260, nogpu, pi|
+    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
+    |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
+    |2|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, common|
+    |2|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
+    |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
     |3|6142|32|183||||skylake, avx2, avx512, 6142, nogpu, standard|
-    |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
+    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
+    |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu, pi|
     |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
-    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
-    |131|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
-    |2|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
-    |8|6240|36|372||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+    |161|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
+    |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, common|
+    |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, pi|
+    |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
+    |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
+    |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
+    |20|E5-2660_v3|20|247||||haswell, avx2, E5-2660_v3, nogpu, standard|
+    |128|E5-2660_v3|20|121||||haswell, avx2, E5-2660_v3, nogpu, standard|
+    |1|E7-4809_v3|32|2011||||haswell, avx2, E7-4809_v3, nogpu, pi|
+    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
+    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
+    |73|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
+    |1|E7-4820_v2|32|1003||||ivybridge, E7-4820_v2, nogpu, pi|
 
 === "scavenge_gpu"
 
@@ -345,20 +351,21 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
+[{'Nodes': '6', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, common'}, {'Nodes': '2', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': 'v100', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, common'}, {'Nodes': '4', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'v100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'cascadelake, avx2, avx512, 6240, doubleprecision, common'}, {'Nodes': '8', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': 'k80', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, pi'}, {'Nodes': '6', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': 'k80', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, common'}, {'Nodes': '1', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, pi'}, {'Nodes': '1', 'CPU Type': 'E5-2637_v4', 'CPUs/Node': '8', 'Memory/Node (GiB)': '121', 'GPU Type': 'gtx1080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'broadwell, avx2, E5-2637_v4, singleprecision, pi'}, {'Nodes': '9', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '183', 'GPU Type': 'p100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, pi'}, {'Nodes': '2', 'CPU Type': '5122', 'CPUs/Node': '8', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '8', 'Node Features': 'skylake, avx2, avx512, 5122, singleprecision, pi'}, {'Nodes': '1', 'CPU Type': '6254', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': 'rtx4000,rtx8000,v100', 'GPUs/Node': '4,2,2', 'vRAM/GPU (GB)': '8,48,16', 'Node Features': 'cascadelake, avx2, avx512, 6254, pi'}, {'Nodes': '5', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6240, singleprecision, common'}]
     |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
+    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
     |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
-    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
-    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
-    |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
-    |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
-    |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
+    |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common|
     |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
-    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
+    |6|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
+    |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
+    |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
+    |8|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
+    |6|E5-2660_v3|20|121|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
 ### Private Partitions
-With few exceptions, jobs submitted to `pi_` partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
+With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
 
 ??? summary "PI Partitions (click to expand)"
     === "pi_altonji"
@@ -385,6 +392,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '2', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |2|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_anticevic"
@@ -411,8 +419,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |16|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
+[{'Nodes': '16', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '16', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}]
         |16|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
+        |16|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_anticevic_bigmem"
 
@@ -438,6 +447,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': 'E7-4809_v3', 'CPUs/Node': '32', 'Memory/Node (GiB)': '2011', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E7-4809_v3, nogpu, pi'}]
         |1|E7-4809_v3|32|2011|haswell, avx2, E7-4809_v3, nogpu, pi|
 
     === "pi_anticevic_gpu"
@@ -466,6 +476,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
+[{'Nodes': '7', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': 'k80', 'GPUs/Node': '2', 'vRAM/GPU (GB)': '12', 'Node Features': 'haswell, avx2, E5-2660_v3, doubleprecision, pi'}]
         |7|E5-2660_v3|20|247|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
 
     === "pi_anticevic_z"
@@ -492,6 +503,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '3', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |3|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_balou"
@@ -518,8 +530,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |30|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
+[{'Nodes': '30', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '9', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |9|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+        |30|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_berry"
 
@@ -545,8 +558,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
+[{'Nodes': '1', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+        |1|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_cowles"
 
@@ -574,6 +588,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '14', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |14|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_cowles_nopreempt"
@@ -602,6 +617,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '10', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |10|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_econ_io"
@@ -628,6 +644,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '6', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |6|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_econ_lp"
@@ -654,6 +671,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '5', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |5|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_esi"
@@ -681,6 +699,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '36', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |36|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_fedorov"
@@ -707,7 +726,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |12|6136|24|90|hdr, skylake, avx2, avx512, 6136, nogpu, standard, common|
+[{'Nodes': '12', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'hdr, skylake, avx2, avx512, 6136, nogpu, standard, common'}]
 
     === "pi_gelernter"
 
@@ -733,6 +752,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
         |1|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
@@ -760,8 +780,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|E7-4820_v2|32|1003|ivybridge, E7-4820_v2, nogpu, pi|
+[{'Nodes': '1', 'CPU Type': 'E7-4820_v2', 'CPUs/Node': '32', 'Memory/Node (GiB)': '1003', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E7-4820_v2, nogpu, pi'}, {'Nodes': '30', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |30|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
+        |1|E7-4820_v2|32|1003|ivybridge, E7-4820_v2, nogpu, pi|
 
     === "pi_glahn"
 
@@ -787,6 +808,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |1|E5-2660_v3|20|247|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_hammes_schiffer"
@@ -815,10 +837,10 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
+[{'Nodes': '16', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'edr, skylake, avx2, avx512, 6136, nogpu, standard'}, {'Nodes': '1', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '751', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'skylake, avx2, avx512, 6136, nogpu, pi'}, {'Nodes': '1', 'CPU Type': 'E5-2637_v4', 'CPUs/Node': '8', 'Memory/Node (GiB)': '121', 'GPU Type': 'gtx1080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'broadwell, avx2, E5-2637_v4, singleprecision, pi'}, {'Nodes': '2', 'CPU Type': '5122', 'CPUs/Node': '8', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '8', 'Node Features': 'skylake, avx2, avx512, 5122, singleprecision, pi'}]
         |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu, pi|
-        |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard|
-        |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
         |2|5122|8|183|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
+        |1|E5-2637_v4|8|121|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
 
     === "pi_hodgson"
 
@@ -844,6 +866,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_holland"
@@ -870,8 +893,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |2|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
+[{'Nodes': '2', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}, {'Nodes': '8', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}]
         |8|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |2|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_howard"
 
@@ -897,6 +921,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_jetz"
@@ -923,6 +948,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '2', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}]
         |2|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_kaminski"
@@ -949,6 +975,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '8', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |8|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
     === "pi_lederman"
@@ -977,6 +1004,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': '6254', 'CPUs/Node': '36', 'Memory/Node (GiB)': '1506', 'GPU Type': 'rtx4000,rtx8000,v100', 'GPUs/Node': '4,2,2', 'vRAM/GPU (GB)': '8,48,16', 'Node Features': 'cascadelake, avx2, avx512, 6254, pi'}]
         |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
 
     === "pi_levine"
@@ -1003,6 +1031,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '20', 'CPU Type': '8260', 'CPUs/Node': '96', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 8260, nogpu, pi'}]
         |20|8260|96|183|cascadelake, avx2, avx512, 8260, nogpu, pi|
 
     === "pi_lora"
@@ -1029,7 +1058,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |4|6136|24|90|hdr, skylake, avx2, avx512, 6136, nogpu, standard, common|
+[{'Nodes': '4', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '90', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'hdr, skylake, avx2, avx512, 6136, nogpu, standard, common'}]
 
     === "pi_mak"
 
@@ -1055,6 +1084,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '3', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}]
         |3|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_manohar"
@@ -1083,10 +1113,11 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, pi|
-        |8|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
-        |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
+[{'Nodes': '2', 'CPU Type': 'E7-4820_v4', 'CPUs/Node': '40', 'Memory/Node (GiB)': '1507', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E7-4820_v4, nogpu, pi'}, {'Nodes': '8', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '1', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': 'p100', 'GPUs/Node': '1', 'vRAM/GPU (GB)': '16', 'Node Features': 'broadwell, avx2, E5-2660_v4, doubleprecision, pi'}, {'Nodes': '4', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |4|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+        |8|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
+        |2|E7-4820_v4|40|1507||||broadwell, avx2, E7-4820_v4, nogpu, pi|
+        |1|E5-2660_v4|28|247|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
 
     === "pi_ohern"
 
@@ -1114,10 +1145,11 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |15|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
-        |3|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
-        |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
+[{'Nodes': '15', 'CPU Type': 'E5-2660_v2', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'ivybridge, E5-2660_v2, nogpu, standard, oldest'}, {'Nodes': '3', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '9', 'CPU Type': '6136', 'CPUs/Node': '24', 'Memory/Node (GiB)': '183', 'GPU Type': 'p100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'skylake, avx2, avx512, 6136, doubleprecision, pi'}, {'Nodes': '2', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |2|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+        |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
+        |3|E5-2660_v4|28|247||||broadwell, avx2, E5-2660_v4, nogpu, standard|
+        |15|E5-2660_v2|20|121||||ivybridge, E5-2660_v2, nogpu, standard, oldest|
 
     === "pi_owen_miller"
 
@@ -1143,6 +1175,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '5', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}]
         |5|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_panda"
@@ -1171,6 +1204,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': '6254', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '8', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6254, pi'}, {'Nodes': '2', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': 'v100', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '16', 'Node Features': 'cascadelake, avx2, avx512, 6240, doubleprecision, common'}, {'Nodes': '3', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': 'rtx2080ti', 'GPUs/Node': '4', 'vRAM/GPU (GB)': '11', 'Node Features': 'cascadelake, avx2, avx512, 6240, singleprecision, pi'}]
         |1|6254|36|372|rtx2080ti|8|11|cascadelake, avx2, avx512, 6254, pi|
         |2|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
         |3|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
@@ -1199,8 +1233,9 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |10|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
+[{'Nodes': '10', 'CPU Type': 'E5-2660_v4', 'CPUs/Node': '28', 'Memory/Node (GiB)': '247', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'broadwell, avx2, E5-2660_v4, nogpu, standard'}, {'Nodes': '8', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '372', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, pi'}]
         |8|6240|36|372|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |10|E5-2660_v4|28|247|broadwell, avx2, E5-2660_v4, nogpu, standard|
 
     === "pi_polimanti"
 
@@ -1226,6 +1261,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': '6240', 'CPUs/Node': '36', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'cascadelake, avx2, avx512, 6240, nogpu, standard, common'}]
         |1|6240|36|183|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
     === "pi_seto"
@@ -1252,6 +1288,7 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '3', 'CPU Type': '6142', 'CPUs/Node': '32', 'Memory/Node (GiB)': '183', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'skylake, avx2, avx512, 6142, nogpu, standard'}]
         |3|6142|32|183|skylake, avx2, avx512, 6142, nogpu, standard|
 
     === "pi_tsmith"
@@ -1278,5 +1315,6 @@ With few exceptions, jobs submitted to `pi_` partitions are not considered when 
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
+[{'Nodes': '1', 'CPU Type': 'E5-2660_v3', 'CPUs/Node': '20', 'Memory/Node (GiB)': '121', 'GPU Type': '', 'GPUs/Node': '', 'vRAM/GPU (GB)': '', 'Node Features': 'haswell, avx2, E5-2660_v3, nogpu, standard'}]
         |1|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, nogpu, standard|
 
