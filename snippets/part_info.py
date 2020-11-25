@@ -24,21 +24,20 @@ vram_dict = {
 commons = {
     "general*": "Use the general partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "day*": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
-    "short*": "Use the short partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "interactive": "Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
-    "development": "Use the development partition for jobs where you are interactively developing code.",
-    "education": "Use the education partition for course work.",
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
     "transfer": "Use the transfer partition to stage data for your jobs to and from [cluster storage](/clusters-at-yale/data/#staging-data).",
     "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
+    "gpu_commons": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
     "mpi": "Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description.",
-    "long": "Use the long partition for jobs that need a longer runtime than short allows.",
-    "verylong": "Use the verylong partition for jobs that need a longer runtime than long allows.",
     "scavenge": "Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
+    "scavenge_all": "Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
     "scavenge_gpu": "Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
 }
+
+additional_pi = ['short', 'long', 'verylong']
 
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
@@ -52,6 +51,21 @@ tres_translate = {
     "gres/gpu": "Maximum GPUs",
 }
 
+with open('/etc/yalehpc', 'r') as f:    
+    cluster = f.readline().split('=')[1].replace('"', '').rstrip()
+
+milgram = False
+if cluster == 'milgram':
+    milgram = True
+
+
+### special milgram logic to be removed later ###
+
+if milgram:
+    del commons["scavenge"]
+    del commons["gpu"]
+
+### end milgram
 
 def get_part_hardware():
 
@@ -72,6 +86,7 @@ def get_part_hardware():
     ).split("\n"):
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
         if line_dict["partition"] != "":
+            partition_name = line_dict["partition"]
             mem = int(line_dict["memory"]) / 1024
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
@@ -96,9 +111,11 @@ def get_part_hardware():
                         ",".join(gpu_mem),
                         ", ".join(line_dict["features"].split(",")),
                     ],
-                )
+                   )
             )
-            part_hardware[line_dict["partition"]].append(table_dict)
+
+            part_hardware[partition_name].append(table_dict)
+
     return part_hardware, parts_with_gpus
 
 
@@ -190,7 +207,14 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     else:
         cols = out_cols
 
-    iprint(0 + i, f'=== "{partition.rstrip("*")}"\n')
+    partition_displayname = partition
+    ### milgram logic t o removed later ###
+    if milgram and partition_displayname in ['scavenge', 'gpu']:
+        partition_displayname = "psych_"+partition
+    ### end milgram ###
+
+
+    iprint(0 + i, f'=== "{partition_displayname.rstrip("*")}"\n')
     if partition in commons:
         iprint(1 + i, commons[partition] + "\n")
     iprint(1 + i, "**Request Defaults**\n")
@@ -243,11 +267,16 @@ for part in commons:
             defaults[part],
             limits[part],
         )
-pi_parts = [part for part in part_hardware if part.startswith("pi_")]
+
+pi_parts = [part for part in part_hardware if (part.startswith("pi_") or part.startswith("psych_"))]
+pi_parts += additional_pi
+if milgram:
+    pi_parts += ['scavenge', 'gpu']
+
 if len(pi_parts) > 0:
     print("### Private Partitions")
     print(
-        "With few exceptions, jobs submitted to `pi_` partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).\n"
+        "With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).\n"
     )
     print('??? summary "PI Partitions (click to expand)"')
     for part in sorted(pi_parts):
