@@ -200,6 +200,26 @@ def iprint(i, toprint):
     indent = "    " * i
     print(indent + toprint)
 
+def sort_hardware(partition_hardware):
+
+    print(partition_hardware)
+    nodes_by_gen = {}
+    for node_type in partition_hardware:
+        node_gen = node_type['Node Features'].split(',')[0]
+        if node_gen not in nodes_by_gen.keys():
+            nodes_by_gen[node_gen] = []
+
+        if 'standard' in node_type['Node Features']:
+            nodes_by_gen[node_gen].insert(0, node_type)
+        else:
+            nodes_by_gen[node_gen].append(node_type)
+
+    sorted_hardware = []
+    for gen in ['cascadelake', 'skylake', 'broadwell', 'haswell', 'ivybridge']:
+        if gen in nodes_by_gen.keys():
+            sorted_hardware += nodes_by_gen[gen]
+
+    return sorted_hardware
 
 def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     if has_gpus:
@@ -250,7 +270,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     )
     iprint(1 + i, "|" + "|".join(cols) + "|")
     iprint(1 + i, "|" + "|".join(["---"] * len(cols)) + "|")
-    for line in part_hardware[partition]:
+    for line in sort_hardware(part_hardware[partition]):
         iprint(1 + i, "|" + "|".join([line[col] for col in cols]) + "|")
     print("")
 
