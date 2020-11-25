@@ -37,8 +37,6 @@ commons = {
     "scavenge_gpu": "Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
 }
 
-additional_pi = ['short', 'long', 'verylong']
-
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
@@ -289,9 +287,8 @@ for part in commons:
         )
 
 pi_parts = [part for part in part_hardware if (part.startswith("pi_") or part.startswith("psych_"))]
-pi_parts += additional_pi
 if milgram:
-    pi_parts += ['scavenge', 'gpu']
+    pi_parts += ['short', 'long', 'verylong', 'gpu', 'scavenge']
 
 if len(pi_parts) > 0:
     print("### Private Partitions")
