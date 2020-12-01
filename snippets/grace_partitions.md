@@ -222,9 +222,9 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6240|16|1494|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |1|6240|36|1506|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |2|6240|36|1506|cascadelake, avx2, avx512, 6240, nogpu, common|
+    |2|6234|16|1494|cascadelake, avx2, avx512, nogpu, 6234, common|
     |2|E7-4820_v4|40|1507|broadwell, avx2, E7-4820_v4, nogpu, common|
 
 === "mpi"
@@ -285,17 +285,17 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|6240|16|1494||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |131|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |76|6240|36|183||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |8|6240|36|372||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |1|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
     |2|6240|36|1506||||cascadelake, avx2, avx512, 6240, nogpu, common|
     |2|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
+    |1|6254|36|1506|rtx4000,rtx8000,v100|4,2,2|8,48,16|cascadelake, avx2, avx512, 6254, pi|
     |20|8260|96|183||||cascadelake, avx2, avx512, 8260, nogpu, pi|
     |4|6240|36|372|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
     |5|6240|36|183|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
+    |2|6234|16|1494||||cascadelake, avx2, avx512, nogpu, 6234, common|
     |3|6142|32|183||||skylake, avx2, avx512, 6142, nogpu, standard|
     |1|6136|24|751||||skylake, avx2, avx512, 6136, nogpu, pi|
     |9|6136|24|183|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
