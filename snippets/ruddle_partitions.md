@@ -26,7 +26,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |154|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, oldest|
+    |154|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, oldest|
 
 === "interactive"
 
@@ -56,7 +56,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |154|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, oldest|
+    |154|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, oldest|
 
 === "bigmem"
 
@@ -78,7 +78,7 @@
     |---|---|
     |Max job time limit|`7-00:00:00`|
     |Maximum CPUs per user|`32`|
-    |Maximum memory per user|`1507G`|
+    |Maximum memory per user|`1505G`|
 
     **Available Compute Nodes**
 
@@ -86,7 +86,7 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|E7-4809_v3|32|1507|haswell, avx2, E7-4809_v3|
+    |2|E7-4809_v3|32|1505|haswell, avx2, E7-4809_v3|
 
 === "scavenge"
 
@@ -116,6 +116,6 @@
 
     |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|E7-4809_v3|32|1507|haswell, avx2, E7-4809_v3|
-    |154|E5-2660_v3|20|121|haswell, avx2, E5-2660_v3, oldest|
+    |2|E7-4809_v3|32|1505|haswell, avx2, E7-4809_v3|
+    |154|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, oldest|
 
