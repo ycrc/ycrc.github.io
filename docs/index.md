@@ -18,6 +18,11 @@ To submit requests, issues, or questions please send us an email at [hpc@yale.ed
 
 Once received, our system will send an automated response with a link to a ticket. From there we'll track your ticket and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.
 
+### YouTube Channel
+
+The [YCRC YouTube channel](https://ycrc.yale.edu/youtube) features recorded tutorials and workshops that cover a wide range of computing topics.
+New videos are added regularly and suggestions for topics can be submitted by emailing [hpc@yale.edu](mailto:hpc@yale.edu).
+
 ### In Person Support
 
 !!! question "Zoom Office Hours"
@@ -30,7 +35,7 @@ Once received, our system will send an automated response with a link to a ticke
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python, R|
 |[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python, OOD Portal|
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|[SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica|
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace), Physics, Python|
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace), Physics, Python, MPI|
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal|
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace), MPI, GPUs, Matlab|
