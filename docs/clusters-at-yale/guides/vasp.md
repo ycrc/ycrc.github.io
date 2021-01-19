@@ -1,6 +1,7 @@
 # VASP
 
-NOTE: VASP requires a paid license. If you looking to use VASP, but your research group has not purchased a license, please do not use the cluster installations without first [contacting us](/#get-help). Thank you for your cooperation.
+!!! note 
+    VASP requires a paid license. If you wish to use VASP on the cluster and your research group has purchased a license, please [contact us](/#get-help) to gain access to the cluster installation. Thank you for your cooperation.
 
 ## VASP and Slurm
 
