@@ -13,7 +13,7 @@ Milgram is named for Dr. Stanley Milgram, a psychologist who researched the beha
 
 ## System Status and Monitoring
 
-For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page](http://cluster.ycrc.yale.edu/milgram/).
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/milgram/).
 
 ## Partitions and Hardware
 
