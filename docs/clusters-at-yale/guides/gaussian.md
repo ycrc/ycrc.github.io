@@ -1,5 +1,8 @@
 # Gaussian
 
+!!! note 
+    Access to Gaussian on the Yale clusters is free, but available by request only. To gain access to the installations of Gaussian, please [contact us](/#get-help) to be added to the `gaussian` group.
+
 [Gaussian](http://www.gaussian.com/) is an electronic structure modeling program that Yale has licensed for its HPC clusters. The latest version of Gaussian is Gaussian 16, which also includes GaussView 6. Older versions of both applications are also available. To see a full list of available versions of Gaussian on the cluster, run:
 
 ``` bash

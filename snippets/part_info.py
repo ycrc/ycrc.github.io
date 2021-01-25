@@ -5,7 +5,7 @@ from collections import defaultdict
 from itertools import product
 from subprocess import check_output
 
-# Links for CPUs/GPUs
+## Globals ##
 
 # GPU memory dict
 vram_dict = {
@@ -20,6 +20,7 @@ vram_dict = {
     "rtx5000": "16",
     "rtx8000": "48",
 }
+
 # Commons partitions, their display order
 commons = {
     "general*": "Use the general partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
@@ -37,6 +38,9 @@ commons = {
     "scavenge_gpu": "Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
 }
 
+# look for MemSpecLimit in slurm node config
+mem_spec_limit = 6144
+milgram = False
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
@@ -49,21 +53,17 @@ tres_translate = {
     "gres/gpu": "Maximum GPUs",
 }
 
-with open('/etc/yalehpc', 'r') as f:    
-    cluster = f.readline().split('=')[1].replace('"', '').rstrip()
+## Functions ##
 
-milgram = False
-if cluster == 'milgram':
-    milgram = True
-
-
-### special milgram logic to be removed later ###
-
-if milgram:
-    del commons["scavenge"]
-    del commons["gpu"]
-
-### end milgram
+def get_cluster_name():
+    cluster = ""
+    with open("/etc/yalehpc", "r") as hpcenv:
+        for line in hpcenv:
+            if line.startswith("export cluster"):
+                cluster = line.split("=")[1].strip(' \n"')
+                return cluster
+    if cluster == "":
+        sys.exit(1, "Couldn't find /etc/yalehpc, exiting.")
 
 def get_part_hardware():
 
@@ -85,7 +85,7 @@ def get_part_hardware():
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
         if line_dict["partition"] != "":
             partition_name = line_dict["partition"]
-            mem = int(line_dict["memory"]) / 1024
+            mem = int(line_dict["memory"]) / 1024 - mem_spec_limit
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
             gpu_mem = []
@@ -109,7 +109,7 @@ def get_part_hardware():
                         ",".join(gpu_mem),
                         ", ".join(line_dict["features"].split(",")),
                     ],
-                   )
+                )
             )
 
             part_hardware[partition_name].append(table_dict)
@@ -175,7 +175,8 @@ def get_defaults_and_limits(part_hardware):
         sacct_dict = dict(zip(sacct[0].split("|"), sacct[1].split("|")))
         limit_names = [
             "".join(x)
-            for x in list(product(["MaxTRES", "MaxJobs", "MaxSubmit"], ["PA", "PU"]))+["MaxTRES"]
+            for x in list(product(["MaxTRES", "MaxJobs", "MaxSubmit"], ["PA", "PU"]))
+            + ["MaxTRES"]
         ]
         for limit in ["MaxWall"] + limit_names:
             if limit in sacct_dict:
@@ -198,26 +199,27 @@ def iprint(i, toprint):
     indent = "    " * i
     print(indent + toprint)
 
+
 def sort_hardware(partition_hardware):
 
-#    print(partition_hardware)
     nodes_by_gen = {}
     for node_type in partition_hardware:
-        node_gen = node_type['Node Features'].split(',')[0]
+        node_gen = node_type["Node Features"].split(",")[0]
         if node_gen not in nodes_by_gen.keys():
             nodes_by_gen[node_gen] = []
 
-        if 'standard' in node_type['Node Features']:
+        if "standard" in node_type["Node Features"]:
             nodes_by_gen[node_gen].insert(0, node_type)
         else:
             nodes_by_gen[node_gen].append(node_type)
 
     sorted_hardware = []
-    for gen in ['cascadelake', 'skylake', 'broadwell', 'haswell', 'ivybridge']:
+    for gen in ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]:
         if gen in nodes_by_gen.keys():
             sorted_hardware += nodes_by_gen[gen]
 
     return sorted_hardware
+
 
 def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     if has_gpus:
@@ -226,11 +228,11 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
         cols = out_cols
 
     partition_displayname = partition
-    ### milgram logic t o removed later ###
-    if milgram and partition_displayname in ['scavenge', 'gpu']:
-        partition_displayname = "psych_"+partition
-    ### end milgram ###
 
+    ### milgram logic to be removed later ###
+    if milgram and partition_displayname in ["scavenge", "gpu"]:
+        partition_displayname = "psych_" + partition
+    ### end milgram ###
 
     iprint(0 + i, f'=== "{partition_displayname.rstrip("*")}"\n')
     if partition in commons:
@@ -273,6 +275,22 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     print("")
 
 
+
+cluster_name = get_cluster_name()
+### job memory logic shifting from setting RealMemory directly to RealMemory - MemSpecLimit ###
+# default is 6144, set above
+if cluster_name in ["farnam","grace", "milgram"]:
+    mem_spec_limit = 0 
+### end new memory ###
+
+### milgram logic to be removed later ###
+if cluster_name == "milgram":
+    milgram = True
+if milgram:
+    del commons["scavenge"]
+    del commons["gpu"]
+### end milgram ###
+
 part_hardware, parts_with_gpus = get_part_hardware()
 defaults, limits = get_defaults_and_limits(part_hardware)
 for part in commons:
@@ -286,9 +304,16 @@ for part in commons:
             limits[part],
         )
 
-pi_parts = [part for part in part_hardware if (part.startswith("pi_") or part.startswith("psych_"))]
+pi_parts = [
+    part
+    for part in part_hardware
+    if (part.startswith("pi_") or part.startswith("psych_"))
+]
+
+### milgram logic to be removed later ###
 if milgram:
-    pi_parts += ['short', 'long', 'verylong', 'gpu', 'scavenge']
+    pi_parts += ["short", "long", "verylong", "gpu", "scavenge"]
+### end milgram ###
 
 if len(pi_parts) > 0:
     print("### Private Partitions")
