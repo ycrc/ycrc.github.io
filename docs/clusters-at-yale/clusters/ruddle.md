@@ -9,6 +9,10 @@ Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/fra
 
 - - -
 
+## System Status and Monitoring
+
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page](http://cluster.ycrc.yale.edu/farnam/).
+
 ## Partitions and Hardware
 
 Ruddle is made up of several kinds of compute nodes. We group them into (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
