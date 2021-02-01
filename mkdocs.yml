@@ -84,7 +84,7 @@ nav:
                 - clusters-at-yale/applications/index.md
                 - clusters-at-yale/applications/compile.md
                 - clusters-at-yale/applications/modules.md
-                - clusters-at-yale/applications/easybuild.md
+                - clusters-at-yale/applications/toolchains.md
             - Software Guides:
                 - clusters-at-yale/guides/index.md
                 - clusters-at-yale/guides/cesm.md

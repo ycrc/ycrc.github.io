@@ -70,7 +70,7 @@ To avoid hitting this limit and make large numbers of jobs more manageable, you 
 
 ## Software Modules
 
-We build and organize [software modules](/clusters-at-yale/applications/modules) on the cluster using [toolchains](/clusters-at-yale/applications/easybuild/#toolchains). The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, *e.g.* `foss-2018b` or `intel-2018a`. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. 
+We build and organize [software modules](/clusters-at-yale/applications/modules) on the cluster using [toolchains](/clusters-at-yale/applications/toolchains/#toolchains). The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, *e.g.* `foss-2018b` or `intel-2018a`. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. 
 
 ```
 The following have been reloaded with a version change:
