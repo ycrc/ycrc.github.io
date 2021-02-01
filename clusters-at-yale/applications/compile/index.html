@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -689,7 +689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../easybuild/" title="Toolchains and EasyBuild" class="md-nav__link">
+    <a href="../toolchains/" title="Toolchains and EasyBuild" class="md-nav__link">
       Toolchains and EasyBuild
     </a>
   </li>
@@ -1568,7 +1568,7 @@
 
 <p>For the remainder of the guide we'll use the <code>$MY_PREFIX</code> variable to refer to the prefix. See below or your application's install instructions for exactly how to specify your prefix at build/install time.</p>
 <h3 id="dependencies">Dependencies</h3>
-<p>You will need to develop a build strategy that works for you and stay consistent. If you're happy using libraries and <a href="/clusters-at-yale/applications/easybuild/#toolchains">toolchains</a> that are already available on the cluster as dependencies (recommended), feel free to create <a href="/clusters-at-yale/applications/modules/#module-collections">module collections</a> that serve as your environments. If you prefer to completely build your own software tree, that is ok too. Whichever route you choose, try to stick with the same version of dependencies (e.g. MPI, zlib, numpy) and compiler you're using (e.g. GCC, intel). We find that unless absolutely necessary, the newest version of a compiler or library might not be the most compatible with a wide array of scientific software so you may want to step back a few versions or try using what was available at the time your application was being developed.</p>
+<p>You will need to develop a build strategy that works for you and stay consistent. If you're happy using libraries and <a href="/clusters-at-yale/applications/toolchains/#toolchains">toolchains</a> that are already available on the cluster as dependencies (recommended), feel free to create <a href="/clusters-at-yale/applications/modules/#module-collections">module collections</a> that serve as your environments. If you prefer to completely build your own software tree, that is ok too. Whichever route you choose, try to stick with the same version of dependencies (e.g. MPI, zlib, numpy) and compiler you're using (e.g. GCC, intel). We find that unless absolutely necessary, the newest version of a compiler or library might not be the most compatible with a wide array of scientific software so you may want to step back a few versions or try using what was available at the time your application was being developed.</p>
 <h2 id="autotools-configuremake">Autotools (<code>configure</code>/<code>make</code>)</h2>
 <p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
 <h3 id="configure"><code>configure</code></h3>
@@ -1592,7 +1592,7 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
     
   </small>
 </div>
@@ -1708,8 +1708,8 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
