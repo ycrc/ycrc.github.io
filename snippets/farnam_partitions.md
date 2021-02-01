@@ -225,27 +225,27 @@
     |---|---|---|---|---|---|---|---|
     |5|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |19|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |3|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi|
-    |8|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, pi|
-    |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi|
-    |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi|
+    |3|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi|
+    |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
+    |4|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi|
+    |4|6240|36|748||||cascadelake, avx2, avx512, 6240, nogpu, pi|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
     |1|6240|48|370||||cascadelake, avx2, avx512, 6240, pi, nogpu|
     |3|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common|
-    |4|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi|
-    |4|6240|36|748||||cascadelake, avx2, avx512, 6240, nogpu, pi|
+    |8|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, pi|
+    |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi|
     |2|6132|28|181||||skylake, avx2, avx512, 6132, nogpu, standard, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
     |1|6132|28|749||||skylake, avx2, avx512, 6132, nogpu, pi|
     |38|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
     |1|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
-    |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
+    |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
     |20|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
+    |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
     |18|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
     |99|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
     |2|E7-4809_v3|32|1505||||haswell, avx2, E7-4809_v3, nogpu, common|
@@ -287,9 +287,9 @@
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
     |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
+    |20|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
-    |20|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |3|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
     |2|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
@@ -323,6 +323,36 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |---|---|---|---|---|
         |24|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
 
+    === "pi_cryo_realtime"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+
+        ``` text
+        --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        !!! warning "GPU jobs need GPUs!"
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        **Job Limits**
+
+        Jobs submitted to the pi_cryo_realtime partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Max job time limit|`14-00:00:00`|
+        |Maximum GPUs per user|`12`|
+        |Maximum running jobs per user|`2`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |---|---|---|---|---|---|---|---|
+        |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+
     === "pi_cryoem"
 
         **Request Defaults**
@@ -351,7 +381,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+        |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
 
     === "pi_deng"
 
@@ -457,8 +487,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
         |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+        |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
 
     === "pi_falcone"
 
@@ -486,9 +516,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
+        |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi|
         |1|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi|
         |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
-        |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi|
 
     === "pi_gerstein"
 

@@ -1,6 +1,6 @@
 # Load Software with Modules
 
-There are many software packages installed on the Yale clusters in addition to those installed in the standard system directories. This software has been [specifically installed](/clusters-at-yale/applications/easybuild) for use on our clusters at the request of our users. In order to manage these additional packages, the clusters use "module files". These module files allow you to easily specify which versions of which packages you want use.
+There are many software packages installed on the Yale clusters in addition to those installed in the standard system directories. This software has been [specifically installed](/clusters-at-yale/applications/toolchains) for use on our clusters at the request of our users. In order to manage these additional packages, the clusters use "module files". These module files allow you to easily specify which versions of which packages you want use.
 
 ## List All Loaded Modules
 
@@ -60,7 +60,7 @@ module unload R
 ```
 
 !!!warning
-    Mixing and matching certain software can be tricky due to the way we build our software and modules. In short, make sure that the `foss` or `intel` in your module names match if they are present. For more information, see our [EasyBuild page](/clusters-at-yale/applications/easybuild).
+    Mixing and matching certain software can be tricky due to the way we build our software and modules. In short, make sure that the `foss` or `intel` in your module names match if they are present. For more information, see our [EasyBuild page](/clusters-at-yale/applications/toolchains).
 
 ### Module Collections
 
