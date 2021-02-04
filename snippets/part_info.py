@@ -39,12 +39,12 @@ commons = {
 }
 
 # look for MemSpecLimit in slurm node config
-mem_spec_limit = 6144
+mem_spec_limit = 6 #GiB
 milgram = False
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
-out_cols = ["Nodes", "CPU Type", "CPUs/Node", "Memory/Node (GiB)", "Node Features"]
+out_cols = ["Count", "CPU Type", "CPUs/Node", "Memory/Node (GiB)", "Node Features"]
 out_cols_gpu = out_cols[:4] + ["GPU Type", "GPUs/Node", "vRAM/GPU (GB)"] + out_cols[4:]
 tres_translate = {
     "cpu": "Maximum CPUs",
@@ -200,6 +200,54 @@ def iprint(i, toprint):
     print(indent + toprint)
 
 
+def collapse_memory_differences(partition_hardware):
+
+    nodes_by_features = {}
+    # group by features
+    for node_type in partition_hardware:
+        features = node_type["Node Features"]
+        if features not in nodes_by_features.keys():
+            nodes_by_features[features] = []
+        nodes_by_features[features].append(node_type)
+
+    collapsed_partition_hardware = []
+    #find minimum reported memory for similar node type
+    for similar_nodes in nodes_by_features.values():
+
+        memory_bins = {}
+        for node_subtype in similar_nodes:
+            memory = node_subtype["Memory/Node (GiB)"]
+
+            if len(memory_bins) == 0:
+                memory_bins = {memory: [node_subtype]}
+            else:
+                new_bin = True
+                for memory_bin in memory_bins:
+                    #if the difference is less that 2GiB, add nodes to list
+                    if abs(int(memory) - int(memory_bin)) < 2:
+                        memory_bins[memory_bin].append(node_subtype)
+                        # replace key with new minimum
+                        if int(memory) < int(memory_bin):
+                            memory_bins[memory] = memory_bins.pop(memory_bin)
+                        new_bin = False
+                        break
+                if new_bin:
+                    memory_bins[memory] = [node_subtype]
+
+        for min_memory, similar_nodes in memory_bins.items():
+            new_count = 0
+            for node_subtype in similar_nodes:
+                new_count += int(node_subtype['Count'])
+
+            # override node type with new count and memory
+            collapsed_node_type = similar_nodes[0]
+            collapsed_node_type["Count"] = str(new_count)
+            collapsed_node_type["Memory/Node (GiB)"] = min_memory
+            collapsed_partition_hardware.append(collapsed_node_type)
+
+    return collapsed_partition_hardware
+
+
 def sort_hardware(partition_hardware):
 
     nodes_by_gen = {}
@@ -272,8 +320,12 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     )
     iprint(1 + i, "|" + "|".join(cols) + "|")
     iprint(1 + i, "|" + "|".join(["---"] * len(cols)) + "|")
+
+    part_hardware[partition] = collapse_memory_differences(part_hardware[partition])
+
     for line in sort_hardware(part_hardware[partition]):
         iprint(1 + i, "|" + "|".join([line[col] for col in cols]) + "|")
+
     print("")
 
 
@@ -281,7 +333,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
 cluster_name = get_cluster_name()
 ### job memory logic shifting from setting RealMemory directly to RealMemory - MemSpecLimit ###
 # default is 6144, set above
-if cluster_name in ["farnam","grace", "milgram"]:
+if cluster_name in ["farnam", "milgram"]:
     mem_spec_limit = 0 
 ### end new memory ###
 
