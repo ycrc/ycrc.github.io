@@ -205,6 +205,8 @@ def sort_hardware(partition_hardware):
     nodes_by_gen = {}
     for node_type in partition_hardware:
         node_gen = node_type["Node Features"].split(",")[0]
+        if node_gen in ['hdr','edr']:
+            node_gen = node_type['Node Features'].split(', ')[1] 
         if node_gen not in nodes_by_gen.keys():
             nodes_by_gen[node_gen] = []
 
