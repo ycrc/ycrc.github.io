@@ -11,7 +11,7 @@
         <meta name="description" content="Yale Center for Research Computing Documentation Pages">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/github/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/applications/lifecycle/">
       
       
         <meta name="author" content="YCRC">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Version Control with GitHub - Yale Center for Research Computing</title>
+        <title>Module Lifecycle - Yale Center for Research Computing</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#version-control-with-github" class="md-skip">
+        <a href="#software-module-lifecycle" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Version Control with GitHub
+              Module Lifecycle
             
           </span>
         </div>
@@ -508,10 +508,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5" checked>
     
     <label class="md-nav__link" for="nav-1-2-5">
       Applications & Software
@@ -535,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../applications/" title="Overview" class="md-nav__link">
+    <a href="../" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -547,7 +549,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../applications/compile/" title="Build Software" class="md-nav__link">
+    <a href="../compile/" title="Build Software" class="md-nav__link">
       Build Software
     </a>
   </li>
@@ -559,7 +561,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../applications/modules/" title="Software Modules" class="md-nav__link">
+    <a href="../modules/" title="Software Modules" class="md-nav__link">
       Software Modules
     </a>
   </li>
@@ -571,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../applications/toolchains/" title="Module Toolchains" class="md-nav__link">
+    <a href="../toolchains/" title="Module Toolchains" class="md-nav__link">
       Module Toolchains
     </a>
   </li>
@@ -581,11 +583,127 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../applications/lifecycle/" title="Module Lifecycle" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Module Lifecycle
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Module Lifecycle" class="md-nav__link md-nav__link--active">
       Module Lifecycle
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deprecated-modules" class="md-nav__link">
+    Deprecated Modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-support" class="md-nav__link">
+    Toolchain Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spring-2021-deprecation-cycle" class="md-nav__link">
+    Spring 2021 Deprecation Cycle
+  </a>
+  
+    <nav class="md-nav" aria-label="Spring 2021 Deprecation Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grace-and-milgram" class="md-nav__link">
+    Grace and Milgram
+  </a>
+  
+    <nav class="md-nav" aria-label="Grace and Milgram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-software-will-be-removed-by-may-31-2021" class="md-nav__link">
+    Deprecated Software (will be removed by May 31, 2021):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-software" class="md-nav__link">
+    Supported Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farnam-and-ruddle" class="md-nav__link">
+    Farnam and Ruddle
+  </a>
+  
+    <nav class="md-nav" aria-label="Farnam and Ruddle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-software-will-be-removed-by-may-31-2021_1" class="md-nav__link">
+    Deprecated Software (will be removed by May 31, 2021):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-software_1" class="md-nav__link">
+    Supported Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -598,12 +716,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6">
     
     <label class="md-nav__link" for="nav-1-2-6">
       Software Guides
@@ -627,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Overview" class="md-nav__link">
+    <a href="../../guides/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -639,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../cesm/" title="CESM/CAM" class="md-nav__link">
+    <a href="../../guides/cesm/" title="CESM/CAM" class="md-nav__link">
       CESM/CAM
     </a>
   </li>
@@ -651,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../clustershell/" title="ClusterShell" class="md-nav__link">
+    <a href="../../guides/clustershell/" title="ClusterShell" class="md-nav__link">
       ClusterShell
     </a>
   </li>
@@ -663,7 +779,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../conda/" title="Conda" class="md-nav__link">
+    <a href="../../guides/conda/" title="Conda" class="md-nav__link">
       Conda
     </a>
   </li>
@@ -675,7 +791,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../gaussian/" title="Gaussian" class="md-nav__link">
+    <a href="../../guides/gaussian/" title="Gaussian" class="md-nav__link">
       Gaussian
     </a>
   </li>
@@ -687,7 +803,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../github_pages/" title="GitHub Pages" class="md-nav__link">
+    <a href="../../guides/github_pages/" title="GitHub Pages" class="md-nav__link">
       GitHub Pages
     </a>
   </li>
@@ -699,7 +815,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
+    <a href="../../guides/gpus-cuda/" title="GPUs and CUDA" class="md-nav__link">
       GPUs and CUDA
     </a>
   </li>
@@ -711,7 +827,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+    <a href="../../guides/jupyter/" title="Jupyter Notebooks" class="md-nav__link">
       Jupyter Notebooks
     </a>
   </li>
@@ -723,7 +839,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../matlab/" title="MATLAB" class="md-nav__link">
+    <a href="../../guides/matlab/" title="MATLAB" class="md-nav__link">
       MATLAB
     </a>
   </li>
@@ -735,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mathematica/" title="Mathematica" class="md-nav__link">
+    <a href="../../guides/mathematica/" title="Mathematica" class="md-nav__link">
       Mathematica
     </a>
   </li>
@@ -747,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../python/" title="Python" class="md-nav__link">
+    <a href="../../guides/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -759,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../parallel/" title="Parallel" class="md-nav__link">
+    <a href="../../guides/parallel/" title="Parallel" class="md-nav__link">
       Parallel
     </a>
   </li>
@@ -771,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../r/" title="R" class="md-nav__link">
+    <a href="../../guides/r/" title="R" class="md-nav__link">
       R
     </a>
   </li>
@@ -783,7 +899,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../rclone/" title="Rclone" class="md-nav__link">
+    <a href="../../guides/rclone/" title="Rclone" class="md-nav__link">
       Rclone
     </a>
   </li>
@@ -795,7 +911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../singularity/" title="Singularity" class="md-nav__link">
+    <a href="../../guides/singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -807,7 +923,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tmux/" title="tmux" class="md-nav__link">
+    <a href="../../guides/tmux/" title="tmux" class="md-nav__link">
       tmux
     </a>
   </li>
@@ -819,7 +935,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vasp/" title="VASP" class="md-nav__link">
+    <a href="../../guides/vasp/" title="VASP" class="md-nav__link">
       VASP
     </a>
   </li>
@@ -829,95 +945,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Version Control with GitHub
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Version Control with GitHub" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../guides/github/" title="Version Control with GitHub" class="md-nav__link">
       Version Control with GitHub
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-version-control" class="md-nav__link">
-    What is version control?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-git-and-how-does-it-work" class="md-nav__link">
-    What is git and how does it work?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-create-a-git-repository" class="md-nav__link">
-    How to create a git repository
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-git" class="md-nav__link">
-    Configuring git
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-remote-repositories-on-github" class="md-nav__link">
-    Working with remote repositories on GitHub
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#educational-github" class="md-nav__link">
-    Educational GitHub
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources-and-links" class="md-nav__link">
-    Resources and links
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1418,51 +1450,83 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-version-control" class="md-nav__link">
-    What is version control?
+  <a href="#deprecated-modules" class="md-nav__link">
+    Deprecated Modules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-git-and-how-does-it-work" class="md-nav__link">
-    What is git and how does it work?
+  <a href="#toolchain-support" class="md-nav__link">
+    Toolchain Support
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-create-a-git-repository" class="md-nav__link">
-    How to create a git repository
+  <a href="#spring-2021-deprecation-cycle" class="md-nav__link">
+    Spring 2021 Deprecation Cycle
+  </a>
+  
+    <nav class="md-nav" aria-label="Spring 2021 Deprecation Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grace-and-milgram" class="md-nav__link">
+    Grace and Milgram
+  </a>
+  
+    <nav class="md-nav" aria-label="Grace and Milgram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-software-will-be-removed-by-may-31-2021" class="md-nav__link">
+    Deprecated Software (will be removed by May 31, 2021):
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-git" class="md-nav__link">
-    Configuring git
+        
+          <li class="md-nav__item">
+  <a href="#supported-software" class="md-nav__link">
+    Supported Software
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-remote-repositories-on-github" class="md-nav__link">
-    Working with remote repositories on GitHub
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farnam-and-ruddle" class="md-nav__link">
+    Farnam and Ruddle
+  </a>
+  
+    <nav class="md-nav" aria-label="Farnam and Ruddle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-software-will-be-removed-by-may-31-2021_1" class="md-nav__link">
+    Deprecated Software (will be removed by May 31, 2021):
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#educational-github" class="md-nav__link">
-    Educational GitHub
+        
+          <li class="md-nav__item">
+  <a href="#supported-software_1" class="md-nav__link">
+    Supported Software
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#resources-and-links" class="md-nav__link">
-    Resources and links
-  </a>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1478,7 +1542,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/github.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/applications/lifecycle.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1486,118 +1550,44 @@
                   
                 
                 
-                <h1 id="version-control-with-github">Version Control with GitHub</h1>
-<p>Whether developing large frameworks or simply working on small scripts, version control is an important tool to 
-ensure that your work is never lost. 
-We recommend using <code>git</code> for its flexibility and versatility and <a href="https://github.com">GitHub</a> for its 
-power in enabling 
-research and collaboration. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<p>Here we will cover the basics of version control and how to use <code>git</code> and GitHub. </p>
-<h2 id="what-is-version-control">What is version control?</h2>
-<p>Version contol is an easy and powerful way to track changes to your work. 
-This extends from code to writing documents (if using LaTeX/Tex). 
-It produces and saves "tagged" copies of your project so that you don't need to worry about breaking your 
-code-base.
-This provides a "coding safety net" to let you try new features while retaining the ability to roll-back to a 
-working version.</p>
-<h2 id="what-is-git-and-how-does-it-work">What is <code>git</code> and how does it work?</h2>
-<p>Git is a tool that tracks changes to a file (or set of files) through a series of snapshots called "commits" or 
-"revisions". 
-These snapshots are stored in "repositories" which contain the history of all the changes to that file. 
-This helps prevent repetative naming or <code>project_final_final2_v3.txt</code> problems. 
-It acts as a record of all the edits, along with the ability to compare the current version to previous commits. </p>
-<h2 id="how-to-create-a-git-repository">How to create a <code>git</code> repository</h2>
-<p>You can create a repository at any time by running the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /path/to/your/project
-
-<span class="c1"># initialize the repository</span>
-git init
-
-<span class="c1"># add files to be tracked</span>
-git add main.py input.txt 
-
-<span class="c1"># commit the files to the repository, creating the first snapshot</span>
-git commit -m <span class="s2">&quot;Initial Commit&quot;</span>
-</code></pre></div>
-
-<p>This sets up a repository containing a single snapshot of the project's two files.
-We can then edit these files and commit the changes into a new snapshot:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># edit files</span>
-<span class="nb">echo</span> <span class="s2">&quot;changed this file&quot;</span> &gt;&gt; input.txt
-$ git status
-On branch master
-Changes not staged <span class="k">for</span> commit:
-  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
-  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
-
-    modified:   input.txt
-
-no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
-</code></pre></div>
-Finally, we can stage <code>input.txt</code> and then commit the changes:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># stage changes for commit</span>
-git add input.txt
-git commit -m <span class="s2">&quot;modified input file&quot;</span>
-</code></pre></div>
-
-<h2 id="configuring-git">Configuring <code>git</code></h2>
-<p>It's very helpful to configure your email and username with <code>git</code>:</p>
-<p><div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
-git config --global user.email <span class="s2">&quot;your.email@yale.edu&quot;</span>
-</code></pre></div>
-This will then tag your changes with your name and email when collaborating with people on a larger 
-project. </p>
-<h2 id="working-with-remote-repositories-on-github">Working with remote repositories on GitHub</h2>
-<p>We recommend using an off-site repository like <a href="https://github.com">GitHub</a> that provides a secure and co-located 
-backup of your local repositories. </p>
-<p>To start, create a repository on GitHub by going to <a href="https://github.com/new">https://github.com/new</a> and providing a name and 
-choose either public or private access.
-Then you can connect your local repository to the GitHub repo (named <code>my_new_repo</code>):</p>
-<div class="highlight"><pre><span></span><code>git remote add origin git@github.com:user_name/my_new_repo.git
-git push -u origin master
-</code></pre></div>
-
-<p>Alternatively, a repository can be created on GitHub and then cloned to your local machine:
-<div class="highlight"><pre><span></span><code>$ git clone git@github.com:user_name/my_new_repo.git
-Cloning into <span class="s1">&#39;my_new_repo&#39;</span>...
-remote: Enumerating objects: <span class="m">3</span>, <span class="k">done</span>.
-remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
-remote: Total <span class="m">3</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, pack-reused <span class="m">0</span>
-Receiving objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
-</code></pre></div>
-This creates a new directory (<code>my_new_repo</code>) where you can place all your code.</p>
-<p>After making any changes and commiting them to the local repository, you can "push" them to a remote repository:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># commit to local repository</span>
-git commit -m <span class="s2">&quot;new changes&quot;</span>
-
-<span class="c1"># push commits to remote repository on GitHub</span>
-git push
-</code></pre></div>
-
-<h2 id="educational-github">Educational GitHub</h2>
-<p>All students and research staff are able to request free Educational discounts from GitHub. 
-This provides a "Pro" account for free, including unlimited private repositories. </p>
-<p>To get started, create a free GitHub account with your Yale email address. 
-Then go to <a href="https://education.github.com">https://education.github.com</a> and request the educational discount. 
-It normally takes less than 24 hours for them to grant the discount.</p>
-<p>Educational discounts are also available for teams and collaborations. 
-This is perfect for a research group or collaboration and can include non-Yale affiliated people. </p>
-<h2 id="resources-and-links">Resources and links</h2>
+                <h1 id="software-module-lifecycle">Software Module Lifecycle</h1>
+<p>To keep the YCRC cluster <a href="/clusters-at-yale/applications/modules">software modules</a> catalogs tidy, relevant, and up to date, we periodically <a href="https://en.wikipedia.org/wiki/Deprecation#Software">deprecate</a> and introduce modules.</p>
+<h2 id="deprecated-modules">Deprecated Modules</h2>
+<p>The two major criteria we use to decide which modules to deprecate are:</p>
 <ul>
-<li><a href="https://research.computing.yale.edu/training/ycrc-bootcamps/version-control-git">YCRC Version Control Bootcamp</a></li>
-<li><a href="https://education.github.com">Educational GitHub</a></li>
-<li><a href="http://try.github.io">GitHub's Try-it</a></li>
-<li><a href="https://play.instruqt.com/public/topics/getting-started-with-git">Instruqt Getting Started With Git</a></li>
+<li>A software module has not been used much in the past year</li>
+<li>We are ending support for the toolchain with which a module was built</li>
 </ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>We do not recommend the use of <a href="https://git.yale.edu">https://git.yale.edu</a>, which is an internal-only tool not designed 
-for research use.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>As we deprecate modules, every time you load a module that has been marked for removal a warning message will appear. The message state when the module will no appear in the module list. If you see such a message, we recommend you update your project to use a supported module as soon as possible or <a href="/#get-help">contacting us</a> for help. </p>
+<h2 id="toolchain-support">Toolchain Support</h2>
+<p>The YCRC maintains a rolling two <a href="/clusters-at-yale/applications/toolchains">toolchain</a> version support model. At any given time on a cluster, we aim to support two versions of each of the major toolchains, <a href="/clusters-at-yale/applications/toolchains/#free-open-source-software-foss"><code>foss</code></a> and <a href="/clusters-at-yale/applications/toolchains/#intel"><code>intel</code></a>. The two versions are separated by two years and new software is typically installed with the later version. When we introduce a new toolchain version, we phase out support for the oldest by marking software in that toolchain for deprecation. A few months later, software in the oldest toolchain version will be removed from the module list and no longer supported by the YCRC.</p>
+<h2 id="spring-2021-deprecation-cycle">Spring 2021 Deprecation Cycle</h2>
+<p>In February 2021, we are marking modules built with unsupported toolchains as deprecated. Below is a list of the toolchains we are removing and introducing. If a module you are using is marked for removal but there is not a newer module available, please <a href="/#get-help">contact us</a> before May to install a replacement. If you must use an older version of a software for reproducibility purposes, please <a href="/#get-help">contact us</a> so we can discuss how to properly support your project.</p>
+<h3 id="grace-and-milgram"><a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/milgram">Milgram</a></h3>
+<h4 id="deprecated-software-will-be-removed-by-may-31-2021">Deprecated Software (will be removed by May 31, 2021):</h4>
+<ul>
+<li>Modules built with a 2016b toolchain, GCCcore/5.x, or iccifort/2016.3.210</li>
+<li>Unused modules</li>
+</ul>
+<h4 id="supported-software">Supported Software</h4>
+<ul>
+<li>Modules built with a 2018a toolchain, GCCcore/6.4.0 or iccifort/2018.1.163</li>
+<li>Modules built with a 2018b toolchain, GCCcore/7.3.0 or iccifort/2018.3.222 (Grace only)</li>
+<li>Modules built with a 2020b toolchain, GCCcore/10.2.0 or iccifort/2020.4.304 (new)</li>
+<li>Commonly used modules not otherwise deprecated</li>
+</ul>
+<h3 id="farnam-and-ruddle"><a href="/clusters-at-yale/clusters/farnam">Farnam</a> and <a href="/clusters-at-yale/clusters/ruddle">Ruddle</a></h3>
+<h4 id="deprecated-software-will-be-removed-by-may-31-2021_1">Deprecated Software (will be removed by May 31, 2021):</h4>
+<ul>
+<li>Modules built with 2016a, 2016b, 2017a, or 2017b toolchains or GCCcore/4.x, GCCcore/5.x, GCCcore/6.x</li>
+<li>Unused modules</li>
+</ul>
+<h4 id="supported-software_1">Supported Software</h4>
+<ul>
+<li>Modules built with a 2018b toolchain or GCCcore/7.3.0</li>
+<li>Modules built with a 2020b toolchain or GCCcore/10.2.0 (new)</li>
+<li>Commonly used modules not otherwise deprecated</li>
+</ul>
                 
                   
                     
@@ -1606,7 +1596,7 @@ for research use.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump b
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2021</span>
     
   </small>
 </div>
