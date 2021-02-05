@@ -1,73 +1,61 @@
-# Toolchains and EasyBuild
+# Software Module Toolchains
 
-We use a build and installation framework called [EasyBuild](https://easybuild.readthedocs.io/en/latest/) that connects the software we compile and maintain on the clusters with the [module system](/clusters-at-yale/applications/modules) that makes it available to you.
+The YCRC uses a framework called [EasyBuild](https://easybuild.readthedocs.io/en/latest/) to build and install the software you access via the [module system](/clusters-at-yale/applications/modules).
 
 ## Toolchains
 
-When we install software, we use pre-defined build environments called toolchains.
-These are modules that include core compilers and libraries (e.g. `GCC`, `OpenMPI`, `zlib`).
-We do this for two main reasons.
-One is to try to keep our build process simpler.
-The other is so that you can load two different modules for software built with the same toolchain and expect everything to work (see below for details on Toolchain Trees).
-The two common toolchains you will interact with are [`foss`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain) and [`intel`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain).
-Each of these have module versions corresponding to the year they were built.
-Toolchain name and version information is appended to the name of a module so it is clear what will be compatible.
-For example `Python/2.7.12-foss-2016b`, the software name is `Python` (version `2.7.12`) that is built with the `foss` toolchain version `2016b`.
-The easiest way to see what software a toolchain includes is to load it and then list loaded modules.
+When we install software, we use pre-defined build environment modules called toolchains. These are modules that include dependencies like compilers and libraries such as GCC, OpenMPI, CUDA, etc. We do this to keep our build process simpler, and to ensure that sets of software modules loaded together function properly. The two groups of toolchains we use on the YCRC clusters are [`foss`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain) and [`intel`](https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain), which hierarchically include some shared sub-toolchains. Toolchains will have versions associated with the version of the compiler and/or when the toolchain was composed. Toolchain names and versions are appended as suffixes in module names. This tells you that a module was built with that toolchain and which other modules are compatible with it. The YCRC maintains a rolling two toolchain version support model. The toolchain versions supported on each cluster are listed in the [Module Lifecycle] documentation.
+
+### Free Open Source Software (`foss`)
+
+The `foss` toolchains are versioned with a yearletter scheme, e.g. `foss/2018b` is the second `foss` toolchain composed in 2018. Software modules that were built with a sub-toolchain, e.g. `GCCcore`, are still safe to load with their parents as long as their versions match. Below is a tree depicting which toolchains inherit each other.
+
+``` text
+foss: gompi + FFTW, OpenBLAS, ScaLAPACK
+└── gompi: GCC + OpenMPI
+    └── GCC: GCCcore + zlib, binutils
+        └── GCCcore: GNU Compiler Collection
+
+fosscuda: gompic + FFTW, OpenBLAS, ScaLAPACK
+└── gompic: gcccuda + CUDA-enabled OpenMPI
+    └── gcccuda: GCC + CUDA
+        └── GCC: GCCcore + zlib, binutils
+            └── GCCcore: GNU Compiler Collection
+```
+
+### Intel
+
+The YCRC licenses Intel Parallel Studio XE (Intel oneAPI Base & HPC Toolkit coming soon). The `intel` and `iomkl` toolchains are versioned with a yearletter scheme, e.g. `intel/2018b` is the second `intel` toolchain composed in 2018. The major difference between `iomkl` and `intel` is MPI - `intel` uses Intel's MPI implementation and `iomkl` uses OpenMPI. Below is a tree depicting which toolchains inherit each other.
+
+``` text
+iomkl: iompi + Intel Math Kernel Library
+└── iompi: iccifort + OpenMPI
+    └── iccifort: Intel compilers
+        └── GCCcore: GNU Compiler Collection
+intel: iimpi + Intel Math Kernel Library
+└── iimpi: iccifort + Intel MPI
+    └── iccifort: Intel C/C++/Fortran compilers
+        └── GCCcore: GNU Compiler Collection
+```
+
+## What Versions Match?
+
+To see what versions of sub-toolchains are compatible with their parents, load a `foss` or `intel` module of interest and run `module list`.
 
 ```bash
-[be59@farnam2 ~]$ module load foss/2016b
-[be59@farnam2 ~]$ module list
+[netid@node ~]$ module load foss/2018b
+[netid@node ~]$ module list
 
 Currently Loaded Modules:
-  1) StdEnv                        (S)   7) OpenMPI/1.10.3-GCC-5.4.0-2.26
-  2) GCCcore/5.4.0                       8) OpenBLAS/0.2.18-GCC-5.4.0-2.26-LAPACK-3.6.1
-  3) binutils/2.26-GCCcore-5.4.0         9) gompi/2016b
-  4) GCC/5.4.0-2.26                     10) FFTW/3.3.4-gompi-2016b
-  5) numactl/2.0.11-GCC-5.4.0-2.26      11) ScaLAPACK/2.0.2-gompi-2016b-OpenBLAS-0.2.18-LAPACK-3.6.1
-  6) hwloc/1.11.3-GCC-5.4.0-2.26        12) foss/2016b
+  1) StdEnv                       (S)   8) OpenMPI/3.1.1-GCC-7.3.0-2.30
+  2) GCCcore/7.3.0                      9) OpenBLAS/0.3.1-GCC-7.3.0-2.30
+  3) binutils/2.30-GCCcore-7.3.0       10) gompi/2018b
+  4) GCC/7.3.0-2.30                    11) FFTW/3.3.8-gompi-2018b
+  5) zlib/1.2.11-GCCcore-7.3.0         12) ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1
+  6) numactl/2.0.11-GCCcore-7.3.0      13) foss/2018b
+  7) hwloc/1.11.10-GCCcore-7.3.0
 
   Where:
    S:  Module is Sticky, requires --force to unload or purge
 ```
-
-To summarize, you should try to use modules that use matching `foss`, `iomkl` or `intel` identifiers.
-
-## Toolchain Trees
-
-The one place toolchains can be a little complicated is that there are various levels to a given toolchain depending on how many libraries are included.
-For example, `foss/2018a` is a parent toolchain to `GCCcore/6.4.0` since `foss` includes GCC 6.4.0 as well as OpenMPI 2.1.2.
-
-### Base toolchains:
-`GCCcore` - GCC compiler  
-`iccifort` - Intel compiler (GCCcore is actually a also sub-toolchain of
-iccifort)
-
-### Toolchains with MPI:
-`gompi` - GCCcore + OpenMPI  
-`iimpi` - iccifort + Intel MPI  
-`iompi` - iccifort + OpenMPI
-
-### Full toolchains (also include math libraries):
-`foss` - gompi + OpenBLAS + ScalaPack  
-`intel` - iimpi + Intel MKL  
-`iomkl `- iompi + Intel MKL  
-
-For installations that where you will be loading additional dependencies beyond the toolchain module:
-1. Choose a full toolchain and version.
-1. Look for modules that contain that toolchain or its sub-toolchains to ensure compatibility. You can run `module display foss/2016b` to see which versions of the compiler and libraries it includes.
-
-## Environment Variables
-
-To refer to the directory where the software from a module is stored, you can use the environment variable `$EBROOTMODULENAME` where modulename is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:
-
-```bash
-[be59@farnam2 ~]$ module load SAMtools/1.9-foss-2016b
-[be59@farnam2 ~]$ ls $EBROOTSAMTOOLS
-bin  easybuild  include  lib  share
-[be59@farnam2 ~]$ ls $EBROOTSAMTOOLS/bin
-ace2sam        interpolate_sam.pl  md5sum-lite    r2plot.lua   seq_cache_populate.pl  wgsim
-blast2sam.pl   maq2sam-long        novo2sam.pl    sam2vcf.pl   soap2sam.pl            wgsim_eval.pl
-bowtie2sam.pl  maq2sam-short       plot-bamstats  samtools     varfilter.py           zoom2sam.pl
-export2sam.pl  md5fa               psl2sam.pl     samtools.pl  vcfutils.lua
-```
+Here you see that `foss/2018b` includes `GCCcore/7.3.0`, so modules with either the `foss-2018b` or `GCCcore-7.3.0` should be compatible.
