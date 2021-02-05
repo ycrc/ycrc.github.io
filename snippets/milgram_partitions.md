@@ -23,7 +23,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |18|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
@@ -55,13 +55,13 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |2|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
 
 === "gpu_commons"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:rtx5000:2` would request 2 GeForce RTX 5000 GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
 
     **Request Defaults**
 
@@ -86,7 +86,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |2|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, common|
 
@@ -116,7 +116,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |18|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |2|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, common|
@@ -149,10 +149,10 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
-        |4|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
+        |5|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
+        |5|6240|36|352|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, common|
 
     === "long"
 
@@ -176,9 +176,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |48|E5-2660_v4|28|247|broadwell, E5-2660_v4|
+        |24|E5-2660_v4|28|247|broadwell, E5-2660_v4|
 
     === "psych_scavenge"
 
@@ -204,11 +204,11 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
-        |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4|
-        |4|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
+        |5|6240|36|372|rtx2080ti|4|11|cascadelake, 6240|
+        |5|6240|36|352|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, common|
+        |46|E5-2660_v4|28|247||||broadwell, E5-2660_v4|
 
     === "short"
 
@@ -236,9 +236,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |48|E5-2660_v4|28|247|broadwell, E5-2660_v4|
+        |24|E5-2660_v4|28|247|broadwell, E5-2660_v4|
 
     === "verylong"
 
@@ -262,7 +262,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |48|E5-2660_v4|28|247|broadwell, E5-2660_v4|
+        |24|E5-2660_v4|28|247|broadwell, E5-2660_v4|
 
