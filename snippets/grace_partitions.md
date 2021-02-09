@@ -26,10 +26,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |67|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |60|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
-    |1|E5-2660_v4|28|245|broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
-    |78|E5-2660_v4|28|245|broadwell, avx2, E5-2660_v4, nogpu, standard, common|
+    |127|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |79|E5-2660_v4|28|245|broadwell, avx2, E5-2660_v4, nogpu, standard, common|
     |14|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, common|
     |32|E5-2660_v2|20|119|ivybridge, E5-2660_v2, nogpu, standard, oldest, common|
 
@@ -63,7 +61,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |1|6126|24|174|skylake, avx2, avx512, 6126, nogpu, standard, pi|
+    |1|6126|24|174|skylake, avx2, avx512, 6126, nogpu, standard, common|
     |2|E5-2660_v2|20|119|ivybridge, E5-2660_v2, nogpu, standard, oldest, common|
 
 === "week"
@@ -94,7 +92,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |8|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+    |8|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |30|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, common|
 
 === "transfer"
@@ -289,15 +287,15 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |67|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
-    |148|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+    |151|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |64|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common|
     |20|8260|96|181||||cascadelake, avx2, avx512, 8260, nogpu, pi|
     |4|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
     |2|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common|
-    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
     |2|6234|16|1505||||cascadelake, avx2, avx512, nogpu, 6234, common|
+    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
+    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi|
     |3|6142|32|181||||skylake, avx2, avx512, 6142, nogpu, standard, pi|
     |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard, pi|
     |120|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, common|
@@ -306,8 +304,8 @@
     |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |1|6136|24|749||||skylake, avx2, avx512, 6136, nogpu, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
-    |83|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
-    |78|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, common|
+    |82|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
+    |79|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, common|
     |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, common|
     |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
@@ -580,7 +578,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |8|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |8|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
         |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
 
     === "pi_cowles"
@@ -850,7 +848,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |8|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |8|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
         |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
         |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard, pi|
         |1|6136|24|749||||skylake, avx2, avx512, 6136, nogpu, pi|
@@ -907,7 +905,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |8|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |8|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
         |2|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, pi|
 
     === "pi_howard"
@@ -1208,7 +1206,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|6254|36|370|rtx2080ti|8|11|cascadelake, avx2, avx512, 6254, pi|
+        |1|6254|36|370|rtx2080ti|8|11|cascadelake, avx2, avx512, 6254, singleprecision, pi|
         |2|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, pi|
         |3|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
 
@@ -1236,7 +1234,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |8|6240|36|370|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |8|6240|36|370|cascadelake, avx2, avx512, 6240, nogpu, pi|
         |10|E5-2660_v4|28|245|broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
 
     === "pi_polimanti"
