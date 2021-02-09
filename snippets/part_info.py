@@ -333,7 +333,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
 cluster_name = get_cluster_name()
 ### job memory logic shifting from setting RealMemory directly to RealMemory - MemSpecLimit ###
 # default is 6144, set above
-if cluster_name in ["farnam", "milgram"]:
+if cluster_name in ["farnam", "milgram", "grace"]:
     mem_spec_limit = 0 
 ### end new memory ###
 
