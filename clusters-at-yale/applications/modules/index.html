@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -809,6 +809,18 @@
   <li class="md-nav__item">
     <a href="../../guides/conda/" title="Conda" class="md-nav__link">
       Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/cryoem/" title="Cryo-EM on Farnam" class="md-nav__link">
+      Cryo-EM on Farnam
     </a>
   </li>
 
@@ -1665,21 +1677,14 @@
 </div>
 <h3 id="module-collections">Module Collections</h3>
 <h4 id="save-collections">Save Collections</h4>
-<p>It can be a pain to enter a long list of modules every time you return to a project. Module collections allow you to create sets of modules to load together. This method is particularly useful if you have two or more module sets that may conflict with one another.</p>
-<p>To save a default collection, load all of your desired modules and then run:</p>
-<div class="highlight"><pre><span></span><code>module save
-</code></pre></div>
-
-<p>To save a named collection, add a name to your save command after loading your modules:</p>
+<p>It can be a pain to enter a long list of modules every time you return to a project. Module collections allow you to create sets of modules to load together. This method is particularly useful if you have two or more module sets that may <a href="/clusters-at-yale/applications/toolchains/#what-versions-match">conflict</a> with one another.</p>
+<p>Save a collection of modules by first loading all the modules you want to save together then run:</p>
 <div class="highlight"><pre><span></span><code>module save environment_name
 </code></pre></div>
 
+<p>(replace <code>environment_name</code> with something more meaningful to you)</p>
 <h4 id="restore-collections">Restore Collections</h4>
-<p>To load your default collection, run:</p>
-<div class="highlight"><pre><span></span><code>module restore
-</code></pre></div>
-
-<p>To load a named collection add its name to your command:</p>
+<p>Load a collection with <code>module restore</code>:</p>
 <div class="highlight"><pre><span></span><code>module restore environment_name
 </code></pre></div>
 
@@ -1719,7 +1724,7 @@ maq2sam-long        plot-bamstats       seq_cache_populate.pl
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2021</span>
     
   </small>
 </div>
@@ -1835,8 +1840,8 @@ maq2sam-long        plot-bamstats       seq_cache_populate.pl
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
