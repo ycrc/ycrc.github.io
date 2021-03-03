@@ -81,29 +81,19 @@ module purge
 
 #### Save Collections
 
-It can be a pain to enter a long list of modules every time you return to a project. Module collections allow you to create sets of modules to load together. This method is particularly useful if you have two or more module sets that may conflict with one another.
+It can be a pain to enter a long list of modules every time you return to a project. Module collections allow you to create sets of modules to load together. This method is particularly useful if you have two or more module sets that may [conflict](/clusters-at-yale/applications/toolchains/#what-versions-match) with one another.
 
-To save a default collection, load all of your desired modules and then run:
-
-``` bash
-module save
-```
-
-To save a named collection, add a name to your save command after loading your modules:
+Save a collection of modules by first loading all the modules you want to save together then run:
 
 ``` bash
 module save environment_name
 ```
 
+(replace `environment_name` with something more meaningful to you)
+
 #### Restore Collections
 
-To load your default collection, run:
-
-``` bash
-module restore
-```
-
-To load a named collection add its name to your command:
+Load a collection with `module restore`:
 
 ``` bash
 module restore environment_name
