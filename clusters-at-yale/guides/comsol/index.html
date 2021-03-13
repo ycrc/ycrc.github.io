@@ -11,7 +11,7 @@
         <meta name="description" content="Yale Center for Research Computing Documentation Pages">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryoem/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/comsol/">
       
       
         <meta name="author" content="YCRC">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Cryo-EM on Farnam - Yale Center for Research Computing</title>
+        <title>COMSOL - Yale Center for Research Computing</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cryogenic-electron-microscopy-cryo-em-data-processing-on-farnam" class="md-skip">
+        <a href="#comsol" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Cryo-EM on Farnam
+              COMSOL
             
           </span>
         </div>
@@ -661,11 +661,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../comsol/" title="COMSOL" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        COMSOL
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="COMSOL" class="md-nav__link md-nav__link--active">
       COMSOL
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-comsol-on-grace" class="md-nav__link">
+    Use COMSOL on Grace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-of-comsol-the-cluster" class="md-nav__link">
+    Details of COMSOL the Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-compatibility" class="md-nav__link">
+    Backward Compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-available-license" class="md-nav__link">
+    Limitations of Available License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -685,141 +748,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Cryo-EM on Farnam
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Cryo-EM on Farnam" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../cryoem/" title="Cryo-EM on Farnam" class="md-nav__link">
       Cryo-EM on Farnam
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
-    Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#schedule-jobs" class="md-nav__link">
-    Schedule Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    Software
-  </a>
-  
-    <nav class="md-nav" aria-label="Software">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#relion" class="md-nav__link">
-    RELION
-  </a>
-  
-    <nav class="md-nav" aria-label="RELION">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#module" class="md-nav__link">
-    Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-job-parameters" class="md-nav__link">
-    Example Job Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eman2" class="md-nav__link">
-    EMAN2
-  </a>
-  
-    <nav class="md-nav" aria-label="EMAN2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conda-install" class="md-nav__link">
-    Conda Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#singularity-container" class="md-nav__link">
-    Singularity Container
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cryosparc" class="md-nav__link">
-    Cryosparc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-software" class="md-nav__link">
-    Other Software
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1488,97 +1421,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
-    Storage
+  <a href="#use-comsol-on-grace" class="md-nav__link">
+    Use COMSOL on Grace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schedule-jobs" class="md-nav__link">
-    Schedule Jobs
+  <a href="#details-of-comsol-the-cluster" class="md-nav__link">
+    Details of COMSOL the Cluster
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    Software
-  </a>
-  
-    <nav class="md-nav" aria-label="Software">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#relion" class="md-nav__link">
-    RELION
-  </a>
-  
-    <nav class="md-nav" aria-label="RELION">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#module" class="md-nav__link">
-    Module
+  <a href="#backward-compatibility" class="md-nav__link">
+    Backward Compatibility
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#example-job-parameters" class="md-nav__link">
-    Example Job Parameters
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-available-license" class="md-nav__link">
+    Limitations of Available License
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eman2" class="md-nav__link">
-    EMAN2
-  </a>
-  
-    <nav class="md-nav" aria-label="EMAN2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conda-install" class="md-nav__link">
-    Conda Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#singularity-container" class="md-nav__link">
-    Singularity Container
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cryosparc" class="md-nav__link">
-    Cryosparc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-software" class="md-nav__link">
-    Other Software
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1594,7 +1460,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/cryoem.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/comsol.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1602,49 +1468,49 @@
                   
                 
                 
-                <h1 id="cryogenic-electron-microscopy-cryo-em-data-processing-on-farnam">Cryogenic Electron Microscopy (Cryo-EM) Data Processing on Farnam</h1>
-<p>Below is a work in progress collection of general hints, tips and tricks for running your work on <a href="/clusters-at-yale/clusters/farnam">Farnam</a>. As always, if anything below is unclear or could use updating, please let us know <a href="/#get-help">during office hours, via email or through our web ticketing system</a>.</p>
-<h2 id="storage">Storage</h2>
-<p>Be wary of you and your group's storage quotas. Run <code>getquota</code> from time to time to make sure there isn't usage you aren't expecting. We strongly recommend that you archive raw data off-cluster, as <strong>only home directories are backed up</strong>. Let us know if you need extra space and we can work with you to find a solution that is right for your project and your group.</p>
-<p>On most GPU nodes there is a fast SSD mounted at <code>/tmp</code>. You can use this as a fast local cache if your program can take advantage of it.</p>
-<h2 id="schedule-jobs">Schedule Jobs</h2>
-<p>Many Cryo-EM applications can make use of GPUs as co-processors. In order to use a GPU on Farnam you must allocate a job on a partition with GPUs available and explicitly request GPU(s). Make sure to familiarize yourself with our documentation on <a href="/clusters-at-yale/job-scheduling/">scheduling jobs</a> and <a href="/clusters-at-yale/job-scheduling/resource-requests/">requesting specific resources</a>.</p>
-<p>There are four <a href="/clusters-at-yale/clusters/farnam/#public-partitions">partitions</a> that give you access to GPUs. The gpu, gpu_devel and savenge_gpu partitions are all for general use. The use of the <code>pi_cryoem</code> and <code>pi_tomo</code> partitions are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI (<a href="https://cryoem.yale.edu/contact">See here for contact info</a>) for access.</p>
-<h2 id="software">Software</h2>
-<p>Many Cryo-EM applications are meant to be viewed and interacted with in real-time. This mode of working is not ideal for the way most HPC clusters are set up, so where possible try to prototype a job you would like to run with a smaller dataset or subset of your data. Then develop a script to submit with <code>sbatch</code>.</p>
-<h3 id="relion">RELION</h3>
-<p>The <a href="https://www3.mrc-lmb.cam.ac.uk/relion//index.php/Main_Page">RELION</a> pipeline operates in two modes. You can use it as a more familiar and beginner-friendly graphical interface, or call the programs involved directly. Once you are comfortable, using the commands directly in scripts submitted with <code>sbatch</code> will allow you to get the most work done the fastest.</p>
-<p>The authors provide up-to-date hints about performance on their <a href="Benchmrks &amp; computer hardware">https://www3.mrc-lmb.cam.ac.uk/relion/index.php/Benchmarks_&amp;_computer_hardware</a> page. If you need technical help (jobs submit fine but having other issues) you should search and submit to their <a href="http://www.jiscmail.ac.uk/CCPEM">mailing list</a>.</p>
-<h4 id="module">Module</h4>
-<p>We have GPU-enabled versions of RELION available on Farnam as <a href="/clusters-at-yale/applications/modules/">software modules</a>. To check witch versions are available, run <code>module avail relion</code>. To see specific notes about a particular install, you can use <code>module help</code>, e.g. <code>module help RELION/3.0.5-fosscuda-2018b</code> . </p>
-<h4 id="example-job-parameters">Example Job Parameters</h4>
-<p>RELION reserves one worker (slurm task) for orchestrating an MPI-based job, which they call the "master". This can lead to inefficient jobs where there are tasks that could be using a GPU but are stuck being the master process. You can request a better layout for your job with a <a href="https://slurm.schedmd.com/heterogeneous_jobs.html">heterogenous job</a>, allocating CPUs on a cpu-only compute node for the task that will not use GPUs. Here is an example 3D refinement job submission script (replace <code>choose_a_version</code> with the version you want to use):</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=general --ntasks 1 -c2 --job-name=class3D_hetero_01 --mem=10G --output=&quot;class3D_hetero_01-%j.out&quot;</span>
-<span class="c1">#SBATCH hetjob</span>
-<span class="c1">#SBATCH --partition=gpu --ntasks 4 -c2 -N1 --mem-per-cpu=16G --gpus-per-task=1 </span>
-
-module load RELION/choose_a_version
-
-srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refine_mpi --o hetero/refine3D/job0001 ... --dont_combine_weights_via_disc --j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> --gpu
-</code></pre></div>
-
-<p>This job submission request will result in RELION using a single task/worker on a general purpose CPU node, and efficiently find four GPUs even if they aren't all available on the same compute node. Each GPU node task/worker will have a dedicated GPU, two CPU cores, and 30GiB total memory. </p>
-<h3 id="eman2">EMAN2</h3>
-<p>EMAN2 has always been a bit of a struggle for us to install properly on the clusters. Below are a few options</p>
-<h4 id="conda-install">Conda Install</h4>
-<p>The EMAN2 authors offer some instructions on how to get EMAN2 running in a cluster environment on <a href="https://blake.bcm.edu/emanwiki/EMAN2/Install/BinaryInstallAnaconda/2.3#Linux_Clusters">their install page</a>. The default install may work as well if you avoid using MPI.</p>
-<h4 id="singularity-container">Singularity Container</h4>
-<p>At present, we have a mostly working <a href="/clusters-at-yale/guides/singularity/">singularity container</a> for EMAN2.3 available here: </p>
-<p><code>/gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif</code></p>
-<p>To run a program from EMAN2 using this container you would use a command like:</p>
-<div class="highlight"><pre><span></span><code>singularity <span class="nb">exec</span> /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
-</code></pre></div>
-
-<h3 id="cryosparc">Cryosparc</h3>
-<p>We have a <a href="/clusters-at-yale/guides/cryosparc/">whole separate page</a> about this one, it is a bit involved.</p>
-<h3 id="other-software">Other Software</h3>
-<p>We have CCP4, Phenix and some other <a href="/clusters-at-yale/applications/modules.md">software modules</a> of interest installed. Run <code>module avail</code> and the software name to search for them. If you can't find one you need, please <a href="/#get-help">contact us</a>.</p>
+                <h1 id="comsol">COMSOL</h1>
+<p>YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please <a href="/#get-help">contact us</a>.</p>
+<h2 id="use-comsol-on-grace">Use COMSOL on Grace</h2>
+<p>To use COMSOL on Grace, load the COMSOL module by running <code>module load COMSOL/5.2a-classkit</code>. For more information on our modules, please see our <a href="/cluster-at-yale/applications/modules">software modules</a> documentation. </p>
+<p>COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on Grace's <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
+<h2 id="details-of-comsol-the-cluster">Details of COMSOL the Cluster</h2>
+<p>Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.</p>
+<p>COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependancies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.</p>
+<p>The following models might be solved using our COMSOL package both in stationary and time dependent studies.</p>
+<ol>
+<li>
+<p><em>AC/DC.</em> <em>Electric Currents and Electrostatics</em> in 1D, 2D, 3D models. <em>Magnetic Fields</em> in 2D.</p>
+</li>
+<li>
+<p><em>Acoustics.</em> <em>Pressure acoustics in frequency domain</em> in 1D, 2D, 3D models.</p>
+</li>
+<li>
+<p><em>Chemical Species Transport.</em> <em>Transport of Diluted Species</em> in 1D, 2D, 3D models. Transport and reactions of the species dissolved in a gas, liquid, or solid can be handled with this interface. The driving forces for transport can be diffusion, convection when coupled to a flow field, and migration, when coupled to an electric field. <em>Moisture Transport</em> in 1D, 2D, 3D is used to model moisture transfer in a porous medium.</p>
+</li>
+<li>
+<p><em>Fluid Flow.</em> <em>Single Phase Laminar and Turbulent Flow</em> including non-isothermal flow in 2D, 3D models. <em>Fluid-Structure Interaction</em> in 2D, 3D models for both fixed geometry and deformed solid.</p>
+</li>
+<li>
+<p><em>Heat Transfer</em> in 1D, 2D, 3D models. <em>HT in Solids and Fluids. HT in porous media including non-equilibrium</em> transfer. <em>Bioheat</em> transfer. <em>Surface to Surface Radiation. Joule Heating. HT in thin structures</em> (2D, 3D) like shells, films, fractures. <em>Conjugate HT</em> from laminar and turbulent flows (2D, 3D). <em>Heat and moisture</em> transport. <em>Thermoelastic</em> effect.</p>
+</li>
+<li>
+<p><em>Plasma</em> in 1D. <em>Equilibrium DC Discharges</em> that are sustained by a static or slow-varying electric field where induction currents and fluid flow effects are negligible.</p>
+</li>
+<li>
+<p><em>Structural Mechanics</em> in 2D, 3D models. <em>Solid Mechanics (elastic). Plate Truss</em> in 2D. <em>Beam, Truss</em> (2D, 3D). <em>Membrane</em> (2D axisymmetric, 3D). <em>Shell</em> (3D). <em>Thermal stress. Thermal expansion. Piezoelectricity.</em></p>
+</li>
+<li>
+<p><em>General Mathematics equations</em> in 1D, 2D, 3D models. <em>Classic PDE. Coefficient based and general form PDE. Wave form PDE. Weak form PDE. Ordinary differential equations and algebraic equations. Deformed geometry and moving mesh. Curvilinear coordinates.</em> </p>
+</li>
+</ol>
+<p>All above models can be used in the Multiphysics approach of coupling them together. They can be solved in Full Couple mode or by using Segregated Solver (solving one physical model and using resulting field to model another, and so on).</p>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<p>COMSOL is not backwards compatible. If you have a project file from a newer version of COMSOL (e.g. 5.3), it will not open in 5.2a. However, in some circumstances, we can assist with porting the project file back to version 5.2a. If you have any questions about this, please <a href="/#get-help">contact us</a>.</p>
+<h2 id="limitations-of-available-license">Limitations of Available License</h2>
+<p>Please note that some commonly used COMSOL features such as CAD Import Module, Material Library,  and MatLab Link are not included in the license. </p>
+<p>You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.</p>
+<p>More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please <a href="/#get-help">contact us</a> iif you feel you need to utilize MatLab.</p>
+<p>Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to <a href="/#get-help">contact us</a> to use our more general license with very limited number of licensed seats.</p>
                 
                   
                     
@@ -1653,7 +1519,7 @@ srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refin
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2021</span>
     
   </small>
 </div>
