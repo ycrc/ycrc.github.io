@@ -90,6 +90,7 @@ nav:
                 - clusters-at-yale/guides/index.md
                 - clusters-at-yale/guides/cesm.md
                 - clusters-at-yale/guides/clustershell.md
+                - clusters-at-yale/guides/comsol.md
                 - clusters-at-yale/guides/conda.md
                 - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
                 - clusters-at-yale/guides/gaussian.md
