@@ -26,7 +26,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |18|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |85|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
@@ -58,7 +58,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |18|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
     |97|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
@@ -89,7 +89,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |2|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
 
@@ -122,11 +122,10 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |5|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, common|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
-    |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+    |8|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |2|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
 === "gpu_devel"
@@ -156,7 +155,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
 
@@ -187,7 +186,7 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |3|6240|36|1505|cascadelake, avx2, avx512, 6240, nogpu, common|
     |2|6234|16|1507|cascadelake, avx2, avx512, 6234, nogpu, common|
@@ -221,13 +220,12 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |5|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
-    |19|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |18|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common|
+    |6|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi|
     |3|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi|
-    |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
     |4|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi|
     |4|6240|36|748||||cascadelake, avx2, avx512, 6240, nogpu, pi|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
@@ -235,17 +233,17 @@
     |3|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common|
     |8|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, pi|
     |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi|
+    |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
     |2|6132|28|181||||skylake, avx2, avx512, 6132, nogpu, standard, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
     |1|6132|28|749||||skylake, avx2, avx512, 6132, nogpu, pi|
     |38|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
-    |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |1|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
-    |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |20|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
-    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
+    |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
+    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
+    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
+    |1|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
+    |11|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
     |18|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
     |99|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
     |2|E7-4809_v3|32|1505||||haswell, avx2, E7-4809_v3, nogpu, common|
@@ -279,17 +277,16 @@
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-    |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
     |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
-    |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-    |20|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
-    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
+    |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common|
+    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
+    |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
+    |11|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
     |3|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
     |2|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
 
@@ -319,7 +316,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |24|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
 
@@ -349,9 +346,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+        |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
 
     === "pi_cryoem"
 
@@ -379,9 +376,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+        |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
 
     === "pi_deng"
 
@@ -407,7 +404,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
 
@@ -433,7 +430,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, pi|
 
@@ -459,7 +456,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
 
@@ -485,10 +482,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common|
-        |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
+        |2|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
 
     === "pi_falcone"
 
@@ -514,7 +510,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi|
         |1|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi|
@@ -542,7 +538,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|6132|28|181|skylake, avx2, avx512, 6132, nogpu, standard, pi|
         |1|6132|28|749|skylake, avx2, avx512, 6132, nogpu, pi|
@@ -573,10 +569,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
-        |1|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
+        |2|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi|
         |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi|
         |3|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
 
@@ -602,7 +597,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |1|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
 
@@ -628,7 +623,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
 
@@ -654,7 +649,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |4|6240|36|370|cascadelake, avx2, avx512, 6240, nogpu, pi|
         |4|6240|36|748|cascadelake, avx2, avx512, 6240, nogpu, pi|
@@ -681,7 +676,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |1|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
         |3|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
@@ -708,7 +703,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |1|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
 
@@ -734,7 +729,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
 
@@ -760,7 +755,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |1|6240|48|370|cascadelake, avx2, avx512, 6240, pi, nogpu|
 
@@ -786,7 +781,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |5|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
 
@@ -814,7 +809,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
 
@@ -842,7 +837,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
         |1|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
@@ -871,10 +866,10 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi|
-        |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common|
+        |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi|
         |1|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
 
     === "pi_tomography"
@@ -903,7 +898,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |7|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, pi|
         |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi|
@@ -930,7 +925,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |5|E5-2660_v3|20|119|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, pi|
 
@@ -956,7 +951,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
-        |Nodes|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, pi|
 
