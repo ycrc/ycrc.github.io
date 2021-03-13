@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -1501,7 +1501,7 @@
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1546,7 +1546,7 @@
 <td>6240</td>
 <td>36</td>
 <td>181</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
@@ -1608,12 +1608,58 @@
 <td>6240</td>
 <td>36</td>
 <td>181</td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">gpu_commons</label><div class="tabbed-content">
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">week</label><div class="tabbed-content">
+<p>Use the week partition for jobs that need a longer runtime than day allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the week partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu_commons</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gres</code> option in order to use them. For example, <code>--gres=gpu:gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1668,12 +1714,12 @@
 <td>rtx5000</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx2, avx512, 5222, common</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">scavenge_all</label><div class="tabbed-content">
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">scavenge_all</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1724,7 +1770,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
 </tr>
 <tr>
 <td>2</td>
@@ -1734,7 +1780,7 @@
 <td>rtx5000</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx2, avx512, 5222, common</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common</td>
 </tr>
 </tbody>
 </table>
@@ -1785,24 +1831,14 @@
 </thead>
 <tbody>
 <tr>
-<td>5</td>
+<td>10</td>
 <td>6240</td>
 <td>36</td>
 <td>372</td>
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, 6240</td>
-</tr>
-<tr>
-<td>5</td>
-<td>6240</td>
-<td>36</td>
-<td>352</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx2, avx512, 6240, common</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi</td>
 </tr>
 </tbody>
 </table>
@@ -1843,11 +1879,11 @@
 </thead>
 <tbody>
 <tr>
-<td>24</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
-<td>broadwell, E5-2660_v4</td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -1895,24 +1931,14 @@
 </thead>
 <tbody>
 <tr>
-<td>5</td>
+<td>10</td>
 <td>6240</td>
 <td>36</td>
 <td>372</td>
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, 6240</td>
-</tr>
-<tr>
-<td>5</td>
-<td>6240</td>
-<td>36</td>
-<td>352</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx2, avx512, 6240, common</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi</td>
 </tr>
 <tr>
 <td>46</td>
@@ -1922,7 +1948,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>broadwell, E5-2660_v4</td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -1979,11 +2005,11 @@
 </thead>
 <tbody>
 <tr>
-<td>24</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
-<td>broadwell, E5-2660_v4</td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -2024,11 +2050,11 @@
 </thead>
 <tbody>
 <tr>
-<td>24</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
-<td>broadwell, E5-2660_v4</td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -2200,8 +2226,8 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
