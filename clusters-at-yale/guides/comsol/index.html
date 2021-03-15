@@ -705,13 +705,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations-of-available-license" class="md-nav__link">
-    Limitations of Available License
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#details-of-comsol-the-cluster" class="md-nav__link">
     Details of COMSOL the Cluster
   </a>
@@ -721,6 +714,13 @@
         <li class="md-nav__item">
   <a href="#backward-compatibility" class="md-nav__link">
     Backward Compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-available-license" class="md-nav__link">
+    Limitations of Available License
   </a>
   
 </li>
@@ -1428,13 +1428,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations-of-available-license" class="md-nav__link">
-    Limitations of Available License
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#details-of-comsol-the-cluster" class="md-nav__link">
     Details of COMSOL the Cluster
   </a>
@@ -1444,6 +1437,13 @@
         <li class="md-nav__item">
   <a href="#backward-compatibility" class="md-nav__link">
     Backward Compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-available-license" class="md-nav__link">
+    Limitations of Available License
   </a>
   
 </li>
@@ -1478,14 +1478,8 @@
 comsol -np $SLURM_CPUS_PER_TASK &amp;
 </code></pre></div>
 
-<h2 id="limitations-of-available-license">Limitations of Available License</h2>
-<p>Please note that some commonly used COMSOL features such as CAD Import Module, Material Library,  and MatLab Link are not included in the license. </p>
-<p>You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.</p>
-<p>More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please <a href="/#get-help">contact us</a> if you feel you need to utilize MatLab.</p>
-<p>Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to <a href="/#get-help">contact us</a> to use our more general license with very limited number of licensed seats.</p>
 <h2 id="details-of-comsol-the-cluster">Details of COMSOL the Cluster</h2>
 <p>Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.</p>
-<p>COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependancies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.</p>
 <p>The following models might be solved using our COMSOL package both in stationary and time dependent studies.</p>
 <ol>
 <li>
@@ -1516,6 +1510,12 @@ comsol -np $SLURM_CPUS_PER_TASK &amp;
 <p>All above models can be used in the Multiphysics approach of coupling them together. They can be solved in Full Couple mode or by using Segregated Solver (solving one physical model and using resulting field to model another, and so on).</p>
 <h2 id="backward-compatibility">Backward Compatibility</h2>
 <p>COMSOL is not backwards compatible. If you have a project file from a newer version of COMSOL (e.g. 5.3), it will not open in 5.2a. However, in some circumstances, we can assist with porting the project file back to version 5.2a. If you have any questions about this, please <a href="/#get-help">contact us</a>.</p>
+<h2 id="limitations-of-available-license">Limitations of Available License</h2>
+<p>Please note that some commonly used COMSOL features such as CAD Import Module, Material Library, and MatLab Link are not included in the license. </p>
+<p>COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependancies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.</p>
+<p>You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.</p>
+<p>More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please <a href="/#get-help">contact us</a> if you feel you need to utilize MatLab.</p>
+<p>Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to <a href="/#get-help">contact us</a> to use our more general license with very limited number of licensed seats.</p>
                 
                   
                     
