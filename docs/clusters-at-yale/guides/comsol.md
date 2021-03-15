@@ -8,6 +8,24 @@ To use COMSOL on Grace, load the COMSOL module by running `module load COMSOL/5.
 
 COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on Grace's [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
+To launch COMSOL in your Remote Desktop, open the terminal application in the session and enter the following commands:
+
+```
+module load COMSOL/5.2a-classkit
+comsol -np $SLURM_CPUS_PER_TASK &
+```
+
+
+## Limitations of Available License
+
+Please note that some commonly used COMSOL features such as CAD Import Module, Material Library,  and MatLab Link are not included in the license. 
+
+You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.
+
+More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please [contact us](/#get-help) if you feel you need to utilize MatLab.
+
+Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to [contact us](/#get-help) to use our more general license with very limited number of licensed seats.
+
 ## Details of COMSOL the Cluster
 
 Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.
@@ -38,12 +56,4 @@ All above models can be used in the Multiphysics approach of coupling them toget
 
 COMSOL is not backwards compatible. If you have a project file from a newer version of COMSOL (e.g. 5.3), it will not open in 5.2a. However, in some circumstances, we can assist with porting the project file back to version 5.2a. If you have any questions about this, please [contact us](/#get-help).
 
-## Limitations of Available License
 
-Please note that some commonly used COMSOL features such as CAD Import Module, Material Library,  and MatLab Link are not included in the license. 
-
-You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.
-
-More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please [contact us](/#get-help) iif you feel you need to utilize MatLab.
-
-Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to [contact us](/#get-help) to use our more general license with very limited number of licensed seats.
