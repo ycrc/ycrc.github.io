@@ -153,6 +153,36 @@
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
 
 ??? summary "PI Partitions (click to expand)"
+    === "psych_day"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+
+        ``` text
+        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the psych_day partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Max job time limit|`1-00:00:00`|
+        |Maximum CPUs per group|`500`|
+        |Maximum memory per group|`2500G`|
+        |Maximum CPUs per user|`350`|
+        |Maximum memory per user|`1750G`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |46|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+
     === "psych_gpu"
 
         **Request Defaults**
@@ -167,7 +197,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
             Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
-        Jobs submitted to the gpu partition are subject to the following limits:
+        Jobs submitted to the psych_gpu partition are subject to the following limits:
 
         |Limit|Value|
         |---|---|
@@ -180,32 +210,6 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi|
-
-    === "long"
-
-        **Request Defaults**
-
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
-
-        ``` text
-        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-        ```
-
-        **Job Limits**
-
-        Jobs submitted to the long partition are subject to the following limits:
-
-        |Limit|Value|
-        |---|---|
-        |Max job time limit|`2-00:00:00`|
-
-        **Available Compute Nodes**
-
-        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
-        |---|---|---|---|---|
-        |46|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
     === "psych_scavenge"
 
@@ -221,7 +225,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
             Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
-        Jobs submitted to the scavenge partition are subject to the following limits:
+        Jobs submitted to the psych_scavenge partition are subject to the following limits:
 
         |Limit|Value|
         |---|---|
@@ -234,39 +238,9 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi|
-        |46|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
-    === "short"
-
-        **Request Defaults**
-
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
-
-        ``` text
-        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-        ```
-
-        **Job Limits**
-
-        Jobs submitted to the short partition are subject to the following limits:
-
-        |Limit|Value|
-        |---|---|
-        |Max job time limit|`06:00:00`|
-        |Maximum CPUs per group|`1158`|
-        |Maximum memory per group|`10176G`|
-        |Maximum CPUs per user|`772`|
-        |Maximum memory per user|`6784G`|
-
-        **Available Compute Nodes**
-
-        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
-        |---|---|---|---|---|
-        |46|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
-
-    === "verylong"
+    === "psych_week"
 
         **Request Defaults**
 
@@ -278,7 +252,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Job Limits**
 
-        Jobs submitted to the verylong partition are subject to the following limits:
+        Jobs submitted to the psych_week partition are subject to the following limits:
 
         |Limit|Value|
         |---|---|
