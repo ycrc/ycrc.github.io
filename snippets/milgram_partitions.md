@@ -16,7 +16,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`324`|
 
     **Available Compute Nodes**
@@ -45,7 +45,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`06:00:00`|
+    |Maximum job time limit|`06:00:00`|
     |Maximum CPUs per user|`4`|
     |Maximum memory per user|`32G`|
     |Maximum running jobs per user|`1`|
@@ -77,7 +77,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`7-00:00:00`|
+    |Maximum job time limit|`7-00:00:00`|
 
     **Available Compute Nodes**
 
@@ -107,7 +107,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`2-00:00:00`|
+    |Maximum job time limit|`2-00:00:00`|
     |Maximum GPUs per user|`4`|
 
     **Available Compute Nodes**
@@ -138,7 +138,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
 
     **Available Compute Nodes**
 
@@ -169,7 +169,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`1-00:00:00`|
+        |Maximum job time limit|`1-00:00:00`|
         |Maximum CPUs per group|`500`|
         |Maximum memory per group|`2500G`|
         |Maximum CPUs per user|`350`|
@@ -201,7 +201,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`7-00:00:00`|
+        |Maximum job time limit|`7-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -229,7 +229,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`7-00:00:00`|
+        |Maximum job time limit|`7-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -256,7 +256,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`7-00:00:00`|
+        |Maximum job time limit|`7-00:00:00`|
+        |Maximum CPUs in use|`448`|
 
         **Available Compute Nodes**
 
