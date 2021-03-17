@@ -1,12 +1,12 @@
 # COMSOL
 
-YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
+YCRC has COMSOL Multiphysics 5.2a available on Grace and Farnam. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
 
-## Use COMSOL on Grace
+## Use COMSOL
 
-To use COMSOL on Grace, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/clusters-at-yale/applications/modules) documentation. 
+To use COMSOL on the cluster, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/clusters-at-yale/applications/modules) documentation. 
 
-COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on Grace's [Open OnDemand web portal](/clusters-at-yale/access/ood/).
+COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
 To launch COMSOL in your Remote Desktop, open the terminal application in the session and enter the following commands:
 
