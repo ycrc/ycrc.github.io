@@ -100,6 +100,7 @@ nav:
                 - clusters-at-yale/guides/matlab.md
                 - clusters-at-yale/guides/mathematica.md
                 - clusters-at-yale/guides/python.md
+                - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
                 - clusters-at-yale/guides/parallel.md
                 - clusters-at-yale/guides/r.md
                 - clusters-at-yale/guides/rclone.md
