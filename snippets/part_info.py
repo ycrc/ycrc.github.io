@@ -39,7 +39,6 @@ commons = {
 }
 
 # look for MemSpecLimit in slurm node config
-mem_spec_limit = 6 #GiB
 milgram = False
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
@@ -85,7 +84,7 @@ def get_part_hardware():
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
         if line_dict["partition"] != "":
             partition_name = line_dict["partition"]
-            mem = int(line_dict["memory"]) / 1024 - mem_spec_limit
+            mem = int(line_dict["memory"]) / 1024
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
             gpu_mem = []
@@ -331,11 +330,6 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
 
 
 cluster_name = get_cluster_name()
-### job memory logic shifting from setting RealMemory directly to RealMemory - MemSpecLimit ###
-# default is 6144, set above
-if cluster_name in ["farnam", "milgram", "grace"]:
-    mem_spec_limit = 0 
-### end new memory ###
 
 ### milgram logic to be removed later ###
 if cluster_name == "milgram":
