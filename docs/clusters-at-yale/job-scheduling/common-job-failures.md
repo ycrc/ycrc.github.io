@@ -30,7 +30,7 @@ In a batch script:
 In an interactive job:
 
 ``` bash
-srun --pty -p interactive --mem-per-cpu=8G
+srun --pty -p interactive --mem-per-cpu=8G bash
 ```
 
 ### Use Less Memory
