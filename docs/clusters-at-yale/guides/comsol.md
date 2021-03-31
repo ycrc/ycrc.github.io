@@ -53,4 +53,4 @@ You cannot import geometry designed by external CAD program like SolidWorks, Aut
 
 More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please [contact us](/#get-help) if you feel you need to utilize MatLab.
 
-Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to [contact us](/#get-help) to use our more general license with very limited number of licensed seats.
+Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL on your local computer, please [contact us](/#get-help) to use our more general license with very limited number of licensed seats.
