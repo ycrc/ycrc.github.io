@@ -1259,8 +1259,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#psychology-partition-name-changes" class="md-nav__link">
-    Psychology Partition Name Changes
+  <a href="#psychology-partitions-name-changes" class="md-nav__link">
+    Psychology Partitions Name Changes
   </a>
   
 </li>
@@ -1468,8 +1468,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#psychology-partition-name-changes" class="md-nav__link">
-    Psychology Partition Name Changes
+  <a href="#psychology-partitions-name-changes" class="md-nav__link">
+    Psychology Partitions Name Changes
   </a>
   
 </li>
@@ -1537,13 +1537,17 @@
 <p class="admonition-title">Job Submission Rate Limits</p>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
 </div>
-<h3 id="psychology-partition-name-changes">Psychology Partition Name Changes</h3>
+<h3 id="psychology-partitions-name-changes">Psychology Partitions Name Changes</h3>
 <p>To bring the Psychology private partitions in agreement with existing YCRC naming conventions, the partitions have been renamed as follows. These changes make it more clear to all Milgram users which partitions are for common use and which are reserved for Psychology users.</p>
-<p>gpu -&gt; psych_gpu
-scavenge -&gt; psych_scavenge</p>
+<ul>
+<li>gpu -&gt; psych_gpu</li>
+<li>scavenge -&gt; psych_scavenge</li>
+</ul>
 <p>We have also consolidated the short, long and verylong partitions into two partitions. As with the previous paradigm, all non-gpu nodes are be available to these partitions, but psych_week usage is limited to 1/3 of the total cores count.</p>
-<p>psych_day: for jobs with a walltime of less than or equal to 24 hours
-psych_week: for jobs with a walltime less than or equal to 7 days.</p>
+<ul>
+<li>psych_day: for jobs with a walltime of less than or equal to 24 hours</li>
+<li>psych_week: for jobs with a walltime less than or equal to 7 days.</li>
+</ul>
 <p>Starting on April 8th, regardless of which name you use (previous or new version), your jobs are redirected to the appropriate "new" partition (as seen when running <code>squeue</code>). At a later date, we plan to deactivate the old partition names, so we recommend that you update your scripts to use the new names at your earliest convenience.</p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
