@@ -21,6 +21,20 @@ Milgram is made up of several kinds of compute nodes. We group them into  (somet
 
 --8<-- "snippets/submission_rate_limit.md"
 
+### Psychology Partition Name Changes
+
+To bring the Psychology private partitions in agreement with existing YCRC naming conventions, the partitions have been renamed as follows. These changes make it more clear to all Milgram users which partitions are for common use and which are reserved for Psychology users.
+
+gpu -> psych_gpu
+scavenge -> psych_scavenge
+
+We have also consolidated the short, long and verylong partitions into two partitions. As with the previous paradigm, all non-gpu nodes are be available to these partitions, but psych_week usage is limited to 1/3 of the total cores count.
+
+psych_day: for jobs with a walltime of less than or equal to 24 hours
+psych_week: for jobs with a walltime less than or equal to 7 days.
+
+Starting on April 8th, regardless of which name you use (previous or new version), your jobs are redirected to the appropriate "new" partition (as seen when running `squeue`). At a later date, we plan to deactivate the old partition names, so we recommend that you update your scripts to use the new names at your earliest convenience.
+
 ### Public Partitions
 
 See each tab below for more information about the available common use partitions.
