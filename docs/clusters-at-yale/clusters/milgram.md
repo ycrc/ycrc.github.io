@@ -21,7 +21,7 @@ Milgram is made up of several kinds of compute nodes. We group them into  (somet
 
 --8<-- "snippets/submission_rate_limit.md"
 
-### Psychology Partition Name Changes
+### Psychology Partitions Name Changes
 
 To bring the Psychology private partitions in agreement with existing YCRC naming conventions, the partitions have been renamed as follows. These changes make it more clear to all Milgram users which partitions are for common use and which are reserved for Psychology users.
 
