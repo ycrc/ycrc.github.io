@@ -1259,6 +1259,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#psychology-partition-name-changes" class="md-nav__link">
+    Psychology Partition Name Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#public-partitions" class="md-nav__link">
     Public Partitions
   </a>
@@ -1461,6 +1468,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#psychology-partition-name-changes" class="md-nav__link">
+    Psychology Partition Name Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#public-partitions" class="md-nav__link">
     Public Partitions
   </a>
@@ -1523,6 +1537,14 @@
 <p class="admonition-title">Job Submission Rate Limits</p>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
 </div>
+<h3 id="psychology-partition-name-changes">Psychology Partition Name Changes</h3>
+<p>To bring the Psychology private partitions in agreement with existing YCRC naming conventions, the partitions have been renamed as follows. These changes make it more clear to all Milgram users which partitions are for common use and which are reserved for Psychology users.</p>
+<p>gpu -&gt; psych_gpu
+scavenge -&gt; psych_scavenge</p>
+<p>We have also consolidated the short, long and verylong partitions into two partitions. As with the previous paradigm, all non-gpu nodes are be available to these partitions, but psych_week usage is limited to 1/3 of the total cores count.</p>
+<p>psych_day: for jobs with a walltime of less than or equal to 24 hours
+psych_week: for jobs with a walltime less than or equal to 7 days.</p>
+<p>Starting on April 8th, regardless of which name you use (previous or new version), your jobs are redirected to the appropriate "new" partition (as seen when running <code>squeue</code>). At a later date, we plan to deactivate the old partition names, so we recommend that you update your scripts to use the new names at your earliest convenience.</p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
 <div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
@@ -2093,7 +2115,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 8, 2021</span>
     
   </small>
 </div>
