@@ -25,7 +25,7 @@ Milgram is made up of several kinds of compute nodes. We group them into  (somet
 
 To bring the Psychology private partitions in agreement with existing YCRC naming conventions, the partitions have been renamed as follows. These changes make it more clear to all Milgram users which partitions are for common use and which are reserved for Psychology users.
 
-*  gpu -> psych_gpu
+* gpu -> psych_gpu
 * scavenge -> psych_scavenge
 
 We have also consolidated the short, long and verylong partitions into two partitions. As with the previous paradigm, all non-gpu nodes are be available to these partitions, but psych_week usage is limited to 1/3 of the total cores count.
