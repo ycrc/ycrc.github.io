@@ -4,12 +4,12 @@
 
 We maintain and support four compute clusters, listed below. Please click on cluster names for more information. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](https://research.computing.yale.edu/sites/default/files/files/Facilities%20and%20Equipment%20Document-2020-02-27.docx).
 
-| Cluster Name       | Approx. Core Count | Login Address<img width=200/> | Monitor Dashboard                                                                                        | Purpose                                                  |
-|--------------------|--------------------|-------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [Grace](grace)     | 24,000             | `grace.hpc.yale.edu`          | [cluster.ycrc.yale.edu/grace](http://cluster.ycrc.yale.edu/grace/)                                       | general and highly parallel, tightly coupled         |
-| [Farnam](farnam)   | 5,700              | `farnam.hpc.yale.edu`         | [cluster.ycrc.yale.edu/farnam](http://cluster.ycrc.yale.edu/farnam/)                                     | medical/life science                                     |                       |
-| [Ruddle](ruddle)   | 3,200              | `ruddle.hpc.yale.edu`         | [cluster.ycrc.yale.edu/ruddle](http://cluster.ycrc.yale.edu/ruddle/)                                     | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
-| [Milgram](milgram) | 2,400              | `milgram.hpc.yale.edu`        | [cluster.ycrc.yale.edu/milgram](http://cluster.ycrc.yale.edu/milgram/) | HIPAA                                                    |
+| Cluster Name       | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                  |
+|--------------------|--------------------|---------------------|-------------------------------|----------------------------------------------------------|
+| [Grace](grace)     | 24,000             | 850                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled             |
+| [Farnam](farnam)   | 5,700              | 250                 | `farnam.hpc.yale.edu`         | medical/life science                                     |
+| [Ruddle](ruddle)   | 3,200              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
+| [Milgram](milgram) | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA/sensitive data                                     |
 
 ## Storage
 
