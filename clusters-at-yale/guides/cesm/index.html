@@ -1796,9 +1796,10 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="highlight"><pre><span></span><code><span class="c1"># CESM 2.x</span>
 srun --pty -c <span class="m">4</span> -p interactive bash
 module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the appropriate module for your CESM version</span>
-./case.build
+./case.build --skip-provenance-check
 </code></pre></div>
 
+<p>Note the <code>--skip-provenance-check</code> flag is required with CESM 2.x due to the changes made to port the code to Grace.</p>
 <p>For more details on interactive jobs, see our <a href="/clusters-at-yale/job-scheduling#interactive-jobs">Slurm documentation</a>.</p>
 <p>During the build, CESM will create a corresponding directory in your scratch60 or project directory at</p>
 <div class="highlight"><pre><span></span><code>ls ~/scratch60/CESM/$CASE
@@ -1807,6 +1808,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <p>This directory will contain all the outputs from your simulation as well as logs and the cesm.exe executable.</p>
 <h4 id="common-build-issues">Common Build Issues</h4>
 <p>Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run <code>module purge</code> before the <code>module load</code> to ensure a reproducible environment.</p>
+<p>If you get an error saying <code>ERROR: Error gathering provenance information from manage_externals</code>, rerun the build using the suggested flag, e.g. <code>./case.build --skip-provenance-check</code>.  </p>
 <h3 id="submit-your-case">Submit Your Case</h3>
 <p>Once the build is complete, which can take 5-15 minutes, you can submit your case with the submit script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># CESM 1.x</span>
@@ -1869,7 +1871,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2021</span>
     
   </small>
 </div>
