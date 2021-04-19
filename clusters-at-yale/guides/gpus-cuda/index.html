@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -9,14 +11,13 @@
         <meta name="description" content="Yale Center for Research Computing Documentation Pages">
       
       
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/">
+      
       
         <meta name="author" content="YCRC">
       
-      
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/">
-      
-      <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -24,20 +25,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
-        
       
     
     
     
       
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
     
@@ -47,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -55,15 +52,8 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
-    
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -142,7 +132,7 @@
     <!-- Button to open search dialogue -->
     
       <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
 
       <!-- Search interface -->
@@ -151,13 +141,13 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -178,10 +168,10 @@
     
       <div class="md-header-nav__source">
         
-<a href="https://github.com/ycrc/ycrc.github.io/tree/src/" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/ycrc/ycrc.github.io/tree/src/" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     github/ycrc/docs
@@ -194,23 +184,76 @@
     
     <div class="md-container" data-md-component="container">
       
+        
       
+      
+        
+          <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to level -->
+
+
+  
+
+
+<!-- Tabs with outline -->
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/news-events">News & Events</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/research">Research</a></li>
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/services">Services</a></li>
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." class="md-tabs__link md-tabs__link--active">
+          Support
+        </a>
+      
+    </li>
+  
+
+      
+      <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
+      <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="system-status-message"></div>
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing" data-md-component="logo">
+    <a href="https://docs.ycrc.yale.edu" title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing">
       
   <img src="../../../img/manual.svg" alt="logo">
 
@@ -220,10 +263,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/ycrc/ycrc.github.io/tree/src/" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/ycrc/ycrc.github.io/tree/src/" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     github/ycrc/docs
@@ -238,463 +281,481 @@
       
 
   
-  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-  
-  
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
-      
-      <label class="md-nav__link" for="__nav_1">
+    <label class="md-nav__link" for="nav-1">
+      Support
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Support" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Support
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Support" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Support
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        Index
-      </a>
-    </li>
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
-          
-            
-  
-  
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-  
-  
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2" type="checkbox" id="nav-1-2" checked>
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
-      
-      <label class="md-nav__link" for="__nav_1_2">
+    <label class="md-nav__link" for="nav-1-2">
+      Cluster Computing at Yale
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Cluster Computing at Yale" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Cluster Computing at Yale
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Cluster Computing at Yale" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_2">
-          <span class="md-nav__icon md-icon"></span>
-          Cluster Computing at Yale
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
-        Getting Started
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://research.computing.yale.edu/account-request" class="md-nav__link">
-        Request an Account
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshoot/" class="md-nav__link">
-        Troubleshoot Login
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://research.computing.yale.edu/account-request" title="Request an Account" class="md-nav__link">
+      Request an Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshoot/" title="Troubleshoot Login" class="md-nav__link">
+      Troubleshoot Login
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_4" type="checkbox" id="__nav_1_2_4" >
-      
-      <label class="md-nav__link" for="__nav_1_2_4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-4" type="checkbox" id="nav-1-2-4">
+    
+    <label class="md-nav__link" for="nav-1-2-4">
+      Access the Clusters
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Access the Clusters" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Access the Clusters
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Access the Clusters" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_4">
-          <span class="md-nav__icon md-icon"></span>
-          Access the Clusters
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/accounts/" class="md-nav__link">
-        About Cluster Accounts
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/" class="md-nav__link">
-        Log on to the Clusters
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/ood/" class="md-nav__link">
-        Open OnDemand
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../access/accounts/" title="About Cluster Accounts" class="md-nav__link">
+      About Cluster Accounts
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/vpn/" class="md-nav__link">
-        Access from Off Campus (VPN)
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/x11/" class="md-nav__link">
-        Graphical Interfaces (X11)
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/vnc/" class="md-nav__link">
-        VNC
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../access/" title="Log on to the Clusters" class="md-nav__link">
+      Log on to the Clusters
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/mfa/" class="md-nav__link">
-        Multi-factor Authentication
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../access/advanced-config/" class="md-nav__link">
-        Advanced SSH Configuration
-      </a>
-    </li>
-  
 
-          
-        </ul>
-      </nav>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../access/ood/" title="Open OnDemand" class="md-nav__link">
+      Open OnDemand
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vpn/" title="Access from Off Campus (VPN)" class="md-nav__link">
+      Access from Off Campus (VPN)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/x11/" title="Graphical Interfaces (X11)" class="md-nav__link">
+      Graphical Interfaces (X11)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/vnc/" title="VNC" class="md-nav__link">
+      VNC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/mfa/" title="Multi-factor Authentication" class="md-nav__link">
+      Multi-factor Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../access/advanced-config/" title="Advanced SSH Configuration" class="md-nav__link">
+      Advanced SSH Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_5" type="checkbox" id="__nav_1_2_5" >
-      
-      <label class="md-nav__link" for="__nav_1_2_5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-5" type="checkbox" id="nav-1-2-5">
+    
+    <label class="md-nav__link" for="nav-1-2-5">
+      Applications & Software
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Applications & Software" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Applications & Software
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Applications & Software" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_5">
-          <span class="md-nav__icon md-icon"></span>
-          Applications & Software
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../applications/" class="md-nav__link">
-        Overview
-      </a>
-    </li>
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/compile/" title="Build Software" class="md-nav__link">
+      Build Software
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/modules/" title="Software Modules" class="md-nav__link">
+      Software Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/toolchains/" title="Module Toolchains" class="md-nav__link">
+      Module Toolchains
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../applications/lifecycle/" title="Module Lifecycle" class="md-nav__link">
+      Module Lifecycle
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
   
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../applications/compile/" class="md-nav__link">
-        Build Software
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../applications/modules/" class="md-nav__link">
-        Software Modules
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../applications/toolchains/" class="md-nav__link">
-        Module Toolchains
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../applications/lifecycle/" class="md-nav__link">
-        Module Lifecycle
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-  
-  
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-6" type="checkbox" id="nav-1-2-6" checked>
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_6" type="checkbox" id="__nav_1_2_6" checked>
-      
-      <label class="md-nav__link" for="__nav_1_2_6">
+    <label class="md-nav__link" for="nav-1-2-6">
+      Software Guides
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Software Guides" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Software Guides
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Software Guides" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_6">
-          <span class="md-nav__icon md-icon"></span>
-          Software Guides
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        Overview
-      </a>
-    </li>
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cesm/" title="CESM/CAM" class="md-nav__link">
+      CESM/CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clustershell/" title="ClusterShell" class="md-nav__link">
+      ClusterShell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../comsol/" title="COMSOL" class="md-nav__link">
+      COMSOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conda/" title="Conda" class="md-nav__link">
+      Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryoem/" title="Cryo-EM on Farnam" class="md-nav__link">
+      Cryo-EM on Farnam
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gaussian/" title="Gaussian" class="md-nav__link">
+      Gaussian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../github_pages/" title="GitHub Pages" class="md-nav__link">
+      GitHub Pages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cesm/" class="md-nav__link">
-        CESM/CAM
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../clustershell/" class="md-nav__link">
-        ClusterShell
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../comsol/" class="md-nav__link">
-        COMSOL
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda/" class="md-nav__link">
-        Conda
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cryoem/" class="md-nav__link">
-        Cryo-EM on Farnam
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gaussian/" class="md-nav__link">
-        Gaussian
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../github_pages/" class="md-nav__link">
-        GitHub Pages
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
+  <li class="md-nav__item md-nav__item--active">
     
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GPUs and CUDA
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         GPUs and CUDA
-      </a>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="GPUs and CUDA" class="md-nav__link md-nav__link--active">
+      GPUs and CUDA
+    </a>
+    
       
-        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
   
   
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#requesting-gpu-nodes" class="md-nav__link">
@@ -781,615 +842,623 @@
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyter/" class="md-nav__link">
-        Jupyter Notebooks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../matlab/" class="md-nav__link">
-        MATLAB
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mathematica/" class="md-nav__link">
-        Mathematica
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
-        Python
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../handson-ml2/" class="md-nav__link">
-        Python+TensorFlow Example
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../parallel/" class="md-nav__link">
-        Parallel
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../r/" class="md-nav__link">
-        R
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rclone/" class="md-nav__link">
-        Rclone
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../singularity/" class="md-nav__link">
-        Singularity
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tmux/" class="md-nav__link">
-        tmux
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vasp/" class="md-nav__link">
-        VASP
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../github/" class="md-nav__link">
-        Version Control with GitHub
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_7" type="checkbox" id="__nav_1_2_7" >
-      
-      <label class="md-nav__link" for="__nav_1_2_7">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jupyter/" title="Jupyter Notebooks" class="md-nav__link">
+      Jupyter Notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../matlab/" title="MATLAB" class="md-nav__link">
+      MATLAB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mathematica/" title="Mathematica" class="md-nav__link">
+      Mathematica
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../handson-ml2/" title="Python+TensorFlow Example" class="md-nav__link">
+      Python+TensorFlow Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../parallel/" title="Parallel" class="md-nav__link">
+      Parallel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../r/" title="R" class="md-nav__link">
+      R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rclone/" title="Rclone" class="md-nav__link">
+      Rclone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../singularity/" title="Singularity" class="md-nav__link">
+      Singularity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tmux/" title="tmux" class="md-nav__link">
+      tmux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vasp/" title="VASP" class="md-nav__link">
+      VASP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../github/" title="Version Control with GitHub" class="md-nav__link">
+      Version Control with GitHub
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-7" type="checkbox" id="nav-1-2-7">
+    
+    <label class="md-nav__link" for="nav-1-2-7">
+      Job Scheduling
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Job Scheduling" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Job Scheduling
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Job Scheduling" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_7">
-          <span class="md-nav__icon md-icon"></span>
-          Job Scheduling
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/" class="md-nav__link">
-        Run Jobs with Slurm
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
-        Request Compute Resources
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/common-job-failures/" class="md-nav__link">
-        Common Job Failures
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/" title="Run Jobs with Slurm" class="md-nav__link">
+      Run Jobs with Slurm
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/resource-usage/" class="md-nav__link">
-        Monitor CPU and Memory
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/fairshare/" class="md-nav__link">
-        Factors Affecting Scheduling
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
-        Scavenge Partition
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/resource-requests/" title="Request Compute Resources" class="md-nav__link">
+      Request Compute Resources
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/dependency/" class="md-nav__link">
-        Jobs with Dependencies
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/mpi/" class="md-nav__link">
-        MPI Partition
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/dsq/" class="md-nav__link">
-        Submit Job Arrays with dSQ
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/common-job-failures/" title="Common Job Failures" class="md-nav__link">
+      Common Job Failures
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/slurm-examples/" class="md-nav__link">
-        Submission Script Examples
-      </a>
-    </li>
-  
+          
+          
 
-          
-        </ul>
-      </nav>
-    </li>
-  
 
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/resource-usage/" title="Monitor CPU and Memory" class="md-nav__link">
+      Monitor CPU and Memory
+    </a>
+  </li>
+
+        
           
-            
-  
-  
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/fairshare/" title="Factors Affecting Scheduling" class="md-nav__link">
+      Factors Affecting Scheduling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/scavenge/" title="Scavenge Partition" class="md-nav__link">
+      Scavenge Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/dependency/" title="Jobs with Dependencies" class="md-nav__link">
+      Jobs with Dependencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
+      MPI Partition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/dsq/" title="Submit Job Arrays with dSQ" class="md-nav__link">
+      Submit Job Arrays with dSQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job-scheduling/slurm-examples/" title="Submission Script Examples" class="md-nav__link">
+      Submission Script Examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_8" type="checkbox" id="__nav_1_2_8" >
-      
-      <label class="md-nav__link" for="__nav_1_2_8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-8" type="checkbox" id="nav-1-2-8">
+    
+    <label class="md-nav__link" for="nav-1-2-8">
+      Data & Storage
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Data & Storage" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Data & Storage
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Data & Storage" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_8">
-          <span class="md-nav__icon md-icon"></span>
-          Data & Storage
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/" class="md-nav__link">
-        Cluster Storage
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/transfer/" class="md-nav__link">
-        Transfer Data
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/staging/" class="md-nav__link">
-        Stage Data
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../data/" title="Cluster Storage" class="md-nav__link">
+      Cluster Storage
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/globus/" class="md-nav__link">
-        Large Transfers with Globus
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/permissions/" class="md-nav__link">
-        Manage Permissions for Sharing
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../data/archived-sequencing/" class="md-nav__link">
-        Ruddle Archived Sequence Data
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../data/transfer/" title="Transfer Data" class="md-nav__link">
+      Transfer Data
+    </a>
+  </li>
 
+        
           
-        </ul>
-      </nav>
-    </li>
-  
+          
+          
 
+
+  <li class="md-nav__item">
+    <a href="../../data/staging/" title="Stage Data" class="md-nav__link">
+      Stage Data
+    </a>
+  </li>
+
+        
           
-            
-  
-  
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/globus/" title="Large Transfers with Globus" class="md-nav__link">
+      Large Transfers with Globus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/permissions/" title="Manage Permissions for Sharing" class="md-nav__link">
+      Manage Permissions for Sharing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/archived-sequencing/" title="Ruddle Archived Sequence Data" class="md-nav__link">
+      Ruddle Archived Sequence Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_9" type="checkbox" id="__nav_1_2_9" >
-      
-      <label class="md-nav__link" for="__nav_1_2_9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-2-9" type="checkbox" id="nav-1-2-9">
+    
+    <label class="md-nav__link" for="nav-1-2-9">
+      The Clusters
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="The Clusters" data-md-level="3">
+      <label class="md-nav__title" for="nav-1-2-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         The Clusters
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="The Clusters" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_2_9">
-          <span class="md-nav__icon md-icon"></span>
-          The Clusters
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/" class="md-nav__link">
-        HPC Resources
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/grace/" class="md-nav__link">
-        Grace
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/farnam/" class="md-nav__link">
-        Farnam
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../clusters/" title="HPC Resources" class="md-nav__link">
+      HPC Resources
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/ruddle/" class="md-nav__link">
-        Ruddle
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/milgram/" class="md-nav__link">
-        Milgram
-      </a>
-    </li>
-  
 
-          
-        </ul>
-      </nav>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../clusters/grace/" title="Grace" class="md-nav__link">
+      Grace
+    </a>
+  </li>
 
+        
           
-        </ul>
-      </nav>
-    </li>
-  
+          
+          
 
+
+  <li class="md-nav__item">
+    <a href="../../clusters/farnam/" title="Farnam" class="md-nav__link">
+      Farnam
+    </a>
+  </li>
+
+        
           
-            
-  
-  
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/ruddle/" title="Ruddle" class="md-nav__link">
+      Ruddle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../clusters/milgram/" title="Milgram" class="md-nav__link">
+      Milgram
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
-      
-      <label class="md-nav__link" for="__nav_1_3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Research Data
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Research Data" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Research Data
-        <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Research Data" data-md-level="2">
-        <label class="md-nav__title" for="__nav_1_3">
-          <span class="md-nav__icon md-icon"></span>
-          Research Data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../data/" class="md-nav__link">
-        Data Storage Options
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../data/archive/" class="md-nav__link">
-        Archive Your Data
-      </a>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../data/google-drive/" class="md-nav__link">
-        Google Drive
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../../data/" title="Data Storage Options" class="md-nav__link">
+      Data Storage Options
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../data/external/" class="md-nav__link">
-        Serving Research Data Externally
-      </a>
-    </li>
-  
+          
+          
 
-          
-        </ul>
-      </nav>
-    </li>
-  
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../user-group/" class="md-nav__link">
-        YCRC User Group
-      </a>
-    </li>
-  
+  <li class="md-nav__item">
+    <a href="../../../data/archive/" title="Archive Your Data" class="md-nav__link">
+      Archive Your Data
+    </a>
+  </li>
 
+        
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../national-hpcs/" class="md-nav__link">
-        National HPCs
-      </a>
-    </li>
-  
+          
+          
 
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../online-tutorials/" class="md-nav__link">
-        Online Tutorials
-      </a>
-    </li>
-  
 
+  <li class="md-nav__item">
+    <a href="../../../data/google-drive/" title="Google Drive" class="md-nav__link">
+      Google Drive
+    </a>
+  </li>
+
+        
           
-        </ul>
-      </nav>
-    </li>
-  
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../data/external/" title="Serving Research Data Externally" class="md-nav__link">
+      Serving Research Data Externally
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-group/" title="YCRC User Group" class="md-nav__link">
+      YCRC User Group
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../national-hpcs/" title="National HPCs" class="md-nav__link">
+      National HPCs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../online-tutorials/" title="Online Tutorials" class="md-nav__link">
+      Online Tutorials
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
 
     
   </ul>
@@ -1399,23 +1468,23 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#requesting-gpu-nodes" class="md-nav__link">
@@ -1507,7 +1576,7 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
+          <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -1516,15 +1585,20 @@
                   </a>
                 
                 
+                  
+                
+                
                 <h1 id="gpus-and-cuda">GPUs and CUDA</h1>
 <p>There are GPUs available for general use on <a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/farnam">Farnam</a>. See cluster pages for hardware and queue/partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
 <h2 id="requesting-gpu-nodes">Requesting GPU Nodes</h2>
 <p>To access the GPU nodes you must request them with slurm. Here is an example command to request a 2 hour interactive job for testing or developing code interactively:</p>
 <div class="highlight"><pre><span></span><code>srun --pty -p gpu_devel -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
 </code></pre></div>
+
 <p>or, if the <code>gpu_devel</code> and <code>gpu</code> partitions are busy, try to scavenge some private GPUs:</p>
 <div class="highlight"><pre><span></span><code>srun --pty -p scavenge_gpu -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
 </code></pre></div>
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>--gres</code> option specifies resources <strong>per node</strong>, not per task or core. In a two node job, <code>--gres=gpu:2</code> would result in a total of four GPUs allocated to you.</p>
@@ -1533,9 +1607,11 @@
 <p>To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the <code>--gres</code> flag.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --gres=gpu:p100:1</span>
 </code></pre></div>
+
 <p>Some applications require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the <code>doubleprecision</code> feature (e.g. K80, P100 or V100).</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH -C doubleprecision</span>
 </code></pre></div>
+
 <p>Conversely, you can use the <code>singleprecision</code> feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).</p>
 <h2 id="monitor-activity-and-drivers">Monitor Activity and Drivers</h2>
 <p>The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on <a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">this nvidia developer site</a>.</p>
@@ -1558,6 +1634,7 @@
 <span class="p">|</span>  No running processes found                                                 <span class="p">|</span>
 +-----------------------------------------------------------------------------+
 </code></pre></div>
+
 <p>Here we see that the node <code>gpu01</code> is running driver version 418.87.00 and CUDA version 10.1. There are no processes using the GPU allocated to this job.</p>
 <h2 id="software">Software</h2>
 <h3 id="cuda-and-cudnn-modules">CUDA and cuDNN modules</h3>
@@ -1565,6 +1642,7 @@
 <div class="highlight"><pre><span></span><code>module avail cuda/
 module avail cudnn/
 </code></pre></div>
+
 <h3 id="tensorflow">Tensorflow</h3>
 <p>You can find hints about the correct version of Tensorflow from their <a href="https://www.tensorflow.org/install/source#tested_build_configurations">tested build configurations</a>. You can also test your install with a simple script that imports Tensorflow (run on a GPU node). If you an <code>ImportError</code> that mentions missing libraries like <code>libcublas.so.9.0</code>, for example, that means that Tensorflow is probably expecting CUDA v 9.0 but cannot find it.</p>
 <h3 id="pytorch">PyTorch</h3>
@@ -1575,10 +1653,12 @@ module purge
 module load cuDNN/7.1.4-CUDA-9.0.176
 module load miniconda
 </code></pre></div>
+
 <p>Then save your modules as a collection.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># save module environment</span>
 module save cuda90
 </code></pre></div>
+
 <p>Now create a virtual environment for your GPU enabled code. For more details on Conda environments, see our <a href="/clusters-at-yale/guides/conda">Conda documentation</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># create conda environment for deep learning/neural networks</span>
 conda create -y -n tensorflow112 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6 anaconda
@@ -1587,11 +1667,13 @@ conda create -y -n tensorflow112 <span class="nv">python</span><span class="o">=
 <span class="c1">#install libraries</span>
 pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span>.12
 </code></pre></div>
+
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To re-enter your environment you only need the following:</p>
 <div class="highlight"><pre><span></span><code>module restore cuda90
 <span class="nb">source</span> activate tensorflow112
 </code></pre></div>
+
 <h2 id="compile-c-or-cpp-files-with-cuda-code">Compile <code>.c</code> or <code>.cpp</code> Files with CUDA code</h2>
 <p>By default, <code>nvcc</code> expects that host code is in files with a <code>.c</code> or <code>.cpp</code> extension, and device code is in files with a <code>.cu</code> extension. When you mix device code in a <code>.c</code> or <code>.cpp</code> file with host code, the device code will not be recoganized by <code>nvcc</code> unless you add this flag: <code>-x cu</code>.  </p>
 <div class="highlight"><pre><span></span><code>nvcc -x cu mycuda.cpp -o mycuda.exe
@@ -1619,7 +1701,6 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
             </article>
           </div>
         </div>
-        
       </main>
       
         <!--
@@ -1683,7 +1764,7 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
         
       
       <a href="http://help.ycrc.yale.edu/" target="_blank" rel="noopener" title="help.ycrc.yale.edu" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15.07 11.25-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-2-2 2 2 0 0 0-2 2H8a4 4 0 0 1 4-4 4 4 0 0 1 4 4 3.2 3.2 0 0 1-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>
       </a>
     
       
@@ -1692,7 +1773,7 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
         
       
       <a href="https://research.computing.yale.edu/system-status" target="_blank" rel="noopener" title="research.computing.yale.edu" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 0 0 2 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0 0 16.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 0 0-1 1 1 1 0 0 0 1 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67H3z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 4A5.5 5.5 0 002 9.5c0 .5.09 1 .22 1.5H6.3l1.27-3.37c.3-.8 1.48-.88 1.86 0L11.5 13l.59-1.42c.13-.33.48-.58.91-.58h8.78c.13-.5.22-1 .22-1.5A5.5 5.5 0 0016.5 4c-1.86 0-3.5.93-4.5 2.34C11 4.93 9.36 4 7.5 4M3 12.5a1 1 0 00-1 1 1 1 0 001 1h2.44L11 20c1 .9 1 .9 2 0l5.56-5.5H21a1 1 0 001-1 1 1 0 00-1-1h-7.6l-.93 2.3c-.4 1.01-1.55.87-1.92.03L8.5 9.5l-.96 2.33c-.15.38-.49.67-.94.67H3z"/></svg>
       </a>
     
       
@@ -1720,13 +1801,19 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
-    
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs", "instant"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
         <script src="../../../js/extra.js"></script>
       
