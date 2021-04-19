@@ -34,20 +34,15 @@ The Globus connector is configured to only allow data to be uploaded into EliApp
 
 ### Set Up Your Endpoint
 
-1. To set up your Globus Google Drive endpoint, click on the following link: [Setup Globus Google Drive Endpoint](https://collections.globus.org/systems?client_id=4c133fd7-3dd6-4dee-8726-b3111a3429a5)
+1. To set up your Globus Google Drive endpoint, click on the following link: [Setup Globus Google Drive Endpoint](https://app.globus.org/file-manager?origin_id=28ae8ae7-b2c6-47b4-badc-da9c1cab1e6e)
 1. Log into Globus, if needed.
-1. The first time you create an endpoint, you will be presented with a permissions approval page. If you are ok with the Connector manipulating your files through Globus (which is required), click the Allow button.
-1. The next page should say "Create a shared endpoint". Click on "Yale Google Drive Gateway (Google Drive)".
-1. Again, the first time you create an endpoint, you will be asked to register your Google EliApps account with Globus. Put in your EliApps account (either your email address if you are an EliApps user, or `<netid>@yale.edu` if you are no-email EliApps user) and submit the form. You will then be asked on a series of Google pages to select or login into your EliApps account and then approve Globus to write to your Google Drive.
-1. You will then be redirected back to Globus to fill out a form to "Create a Shared Endpoint". The only required field are (all others can be left blank):
-    * "Credentials" - should be prefilled with your yale account
-    * "Endpoint Display Name" - this is the name of your endpoint and the name you will use to search for the endpoint in the Globus transfer interface. We recommend including your netid or name in the endpoint so you can uniquely identify it, such as "<netid> Google Drive"
-1. After filling out the form, click the "Create Endpoint" button.
-1. If your endpoint was successfully created, you should see a page with a green checkmark and three links. Click on the middle link to start transferring data to or from your Google Drive!
+1. The first time you login to the Globus Google Drive endpoint, you will be presented with a permissions approval page. If you are ok with the Connector manipulating your files through Globus (which is required), click the Allow button.
+1. You may see your Yale EliApps account expressed in an uncommon format, such as netid@yale.edu@accounts.google.com. This is normal, and expected.
+1. After your approvals you will be directed to the Globus File Manager, with the default view of "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.
 
 ### Using Your Endpoint
 
-On the [Globus Transfer](https://www.globus.org/app/transfer) page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Endpoint field for the name of the Endpoint you created above (e.g. "<netid> Google Drive").
+On the [Globus Transfer](https://app.globus.org/file-manager) page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Endpoint field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").
 
 There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you are archiving data to Google Drive, it is much better to first compress folders that contain lots of small files (e.g. using [tar](/online-tutorials)) before transferring. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.
 
@@ -55,4 +50,4 @@ In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.
 
 ### Managing Your Endpoint
 
-To manage your endpoint, such as delete the endpoint, rename it, or share it with additional people (be aware, they will be able to access your Google Drive), go to [Manage Endpoint](https://www.globus.org/app/endpoints) on the Globus website.
+To manage your endpoint, such as delete the endpoint, rename it, or share it with additional people (be aware, they will be able to access your Google Drive), go to [Manage Endpoint](https://app.globus.org/endpoints) on the Globus website.
