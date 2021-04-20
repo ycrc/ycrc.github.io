@@ -768,6 +768,19 @@
     Submit Your Case
   </a>
   
+    <nav class="md-nav" aria-label="Submit Your Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-slurm-partition" class="md-nav__link">
+    Changing Slurm Partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1649,6 +1662,19 @@
     Submit Your Case
   </a>
   
+    <nav class="md-nav" aria-label="Submit Your Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-slurm-partition" class="md-nav__link">
+    Changing Slurm Partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1820,6 +1846,12 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 </code></pre></div>
 
 <p>For more details on monitoring your submitted jobs, see our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a>.</p>
+<h4 id="changing-slurm-partition">Changing Slurm Partition</h4>
+<p>In CESM 2.x, to change the partition in which your main jobs will run, use the following command:</p>
+<div class="highlight"><pre><span></span><code>./xmlchange <span class="nv">JOB_QUEUE</span><span class="o">=</span>scavenge --subgroup <span class="k">case</span>.run
+</code></pre></div>
+
+<p>The associated archive job will still be submitted to the day partition.</p>
 <h3 id="troubleshoot-your-run">Troubleshoot Your Run</h3>
 <p>If your run doesn’t complete, there are a few places to look to identify the error. CESM writes to multiple log files for the different components and you will likely have to look in a few to find the root cause of your error.</p>
 <h4 id="slurm-log">Slurm Log</h4>
@@ -1871,7 +1903,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2021</span>
     
   </small>
 </div>
