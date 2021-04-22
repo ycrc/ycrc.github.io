@@ -47,7 +47,13 @@ You will need to develop a build strategy that works for you and stay consistent
 
 ## Autotools (`configure`/`make`)
 
-If your application includes instructions to run `./bootstrap`, `./autogen.sh`, `./configure` or `make`, it is using the [GNU Build System](https://en.wikipedia.org/wiki/GNU_Build_System). 
+If your application includes instructions to run `./bootstrap`, `./autogen.sh`, `./configure` or `make`, it is using the [GNU Build System](https://en.wikipedia.org/wiki/GNU_Build_System).
+
+!!!warning
+    If you are using GCC 10+, you will need to load a separate Autotools module for your version of GCC; e.g.,
+    ```
+    module load Autotools/20200321-GCCcore-10.2.0
+    ```
 
 ### `configure`
 

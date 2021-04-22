@@ -143,6 +143,17 @@ Once the build is complete, which can take 5-15 minutes, you can submit your cas
 
 For more details on monitoring your submitted jobs, see our [Slurm documentation](/clusters-at-yale/job-scheduling).
 
+#### Changing Slurm Partition
+
+In CESM 2.x, to change the partition in which your main jobs will run, use the following command:
+
+```bash
+./xmlchange JOB_QUEUE=scavenge --subgroup case.run
+```
+
+The associated archive job will still be submitted to the day partition.
+
+
 ### Troubleshoot Your Run
 
 If your run doesn’t complete, there are a few places to look to identify the error. CESM writes to multiple log files for the different components and you will likely have to look in a few to find the root cause of your error.
