@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -1632,19 +1632,20 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 </tr>
 </tbody>
 </table>
-<p>The above four URLs are also called cluster OOD URLs. They are available to any users with a research account (also called a lab account) on the clusters. A research account has the same login name as one's NetID. </p>
+<p>The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. </p>
 <h3 id="duo-everywhere-for-ood-milgram-and-ruddle">DUO Everywhere for OOD Milgram and Ruddle</h3>
 <p>If you want access to Open OnDemand for Milgram or Ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> (MFA) for CAS on every login, even on-campus.</p>
 <p>To enroll in DUO Everywhere, please access the <a href="https://veritas.its.yale.edu/mfa/optin/landing">DUO Everywhere Opt-In</a> tool and follow the instructions. Once you are done with the enrollment, please email <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> indicating you have enrolled in DUO Everywhere and the cluster you will be using. We will notify you when your request is processed. After that you will be able to use OOD.</p>
 <h2 id="course-oods">Course OODs</h2>
-<p>For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account on OOD. The course URLs follow the same naming convention: coursename.ycrc.yale.edu. More information about course OODs can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
+<p>For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: coursename.ycrc.yale.edu. More information about course OODs can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-</div>
 <p>If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
 <div class="highlight"><pre><span></span><code>Error -- can&#39;t find user for cpsc424_test
 Run &#39;nginx_stage --help&#39; to see a full list of available command line options.
-</code></pre></div></p>
+</code></pre></div>
+Instead, use the course OOD URL.</p>
+</div>
 <h2 id="the-dashboard">The Dashboard</h2>
 <p>On login you will then be greeted with a welcome page showing the standard message of the day.</p>
 <p><img alt="welcome" src="/img/ood_welcome.png" /></p>
@@ -1670,13 +1671,13 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. You can find the terminal application (for loading modules and launching programs) in the "Applications" &gt; "System Tools" menu.</p>
 <p><img alt="terminal" src="/img/ood_remote_terminal.png" /></p>
 <h4 id="copypaste">Copy/Paste</h4>
-<p>Because of the way modern borowsers protect your computer's clipboard you have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.</p>
+<p>In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.</p>
 <p><img alt="clipboard" src="/img/ood_remote_clipboard.png" /></p>
 <h3 id="jupyter-notebooks">Jupyter Notebooks</h3>
 <p>One of the most common uses of Open OnDemand is the Jupyter Notebook interface for Python and R.
 <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebooks</a> provide a flexible way to interactively work with code and plots presented in-line together. To get started choose Jupyter Notebook from the Interactive Apps menu on the dashboard.</p>
 <p><img alt="jupyter_form" src="/img/ood_jupyter_form.png" /></p>
-<p>Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
+<p>Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you have installed and want to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">Jupyter Lab</a> replace <code>/tree?</code> with <code>/lab</code> in the url to your Jupyter job.</p>
@@ -1805,8 +1806,8 @@ Depending on the resources requested, you may need to wait for a bit. When the j
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
