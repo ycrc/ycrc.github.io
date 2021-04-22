@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -1550,7 +1550,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the day partition are subject to the following limits:</p>
@@ -1830,7 +1830,7 @@
 </table>
 </div>
 <input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gres</code> option in order to use them. For example, <code>--gres=gpu:gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -1838,7 +1838,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the gpu partition are subject to the following limits:</p>
@@ -1948,7 +1948,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the gpu_devel partition are subject to the following limits:</p>
@@ -2141,7 +2141,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
@@ -2180,20 +2180,20 @@
 </thead>
 <tbody>
 <tr>
-<td>135</td>
+<td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>181</td>
+<td>1505</td>
 <td></td>
 <td></td>
 <td></td>
 <td>cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>1</td>
+<td>135</td>
 <td>6240</td>
 <td>36</td>
-<td>1505</td>
+<td>181</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2220,16 +2220,6 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp</td>
 </tr>
 <tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
-</tr>
-<tr>
 <td>5</td>
 <td>6240</td>
 <td>36</td>
@@ -2238,16 +2228,6 @@
 <td>4</td>
 <td>11</td>
 <td>cascadelake, avx2, avx512, 6240, singleprecision, common, bigtmp</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2260,6 +2240,36 @@
 <td>cascadelake, avx2, avx512, nogpu, 6234, common, bigtmp</td>
 </tr>
 <tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>181</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>370</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx2, avx512, 6240, doubleprecision, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp</td>
+</tr>
+<tr>
 <td>8</td>
 <td>6240</td>
 <td>36</td>
@@ -2270,14 +2280,14 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
-<td>20</td>
-<td>8260</td>
-<td>96</td>
-<td>181</td>
+<td>16</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
+<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
 <td>3</td>
@@ -2308,16 +2318,6 @@
 <td></td>
 <td></td>
 <td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, common, bigtmp</td>
-</tr>
-<tr>
-<td>16</td>
-<td>6136</td>
-<td>24</td>
-<td>90</td>
-<td></td>
-<td></td>
-<td></td>
-<td>hdr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2390,26 +2390,6 @@
 <td>broadwell, avx2, E7-4820_v4, nogpu, common</td>
 </tr>
 <tr>
-<td>2</td>
-<td>E7-4820_v4</td>
-<td>40</td>
-<td>1505</td>
-<td></td>
-<td></td>
-<td></td>
-<td>broadwell, avx2, E7-4820_v4, nogpu, pi</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>245</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
-</tr>
-<tr>
 <td>6</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -2428,6 +2408,26 @@
 <td>4</td>
 <td>11</td>
 <td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1505</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E7-4820_v4, nogpu, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>245</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
 </tr>
 <tr>
 <td>60</td>
@@ -2510,16 +2510,6 @@
 <td>haswell, avx2, E7-4809_v3, nogpu, pi</td>
 </tr>
 <tr>
-<td>58</td>
-<td>E5-2660_v2</td>
-<td>20</td>
-<td>119</td>
-<td></td>
-<td></td>
-<td></td>
-<td>ivybridge, E5-2660_v2, nogpu, standard, oldest, common</td>
-</tr>
-<tr>
 <td>14</td>
 <td>E5-2660_v2</td>
 <td>20</td>
@@ -2528,6 +2518,16 @@
 <td></td>
 <td></td>
 <td>ivybridge, E5-2660_v2, nogpu, standard, oldest, pi</td>
+</tr>
+<tr>
+<td>58</td>
+<td>E5-2660_v2</td>
+<td>20</td>
+<td>119</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ivybridge, E5-2660_v2, nogpu, standard, oldest, common</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2551,7 +2551,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the scavenge_gpu partition are subject to the following limits:</p>
@@ -2650,16 +2650,6 @@
 <td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>245</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
-</tr>
-<tr>
 <td>6</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -2678,6 +2668,16 @@
 <td>4</td>
 <td>11</td>
 <td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>245</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, avx2, E5-2660_v4, doubleprecision, pi</td>
 </tr>
 <tr>
 <td>7</td>
@@ -2865,7 +2865,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_anticevic_gpu partition are subject to the following limits:</p>
@@ -3062,7 +3062,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_chem_chase partition are subject to the following limits:</p>
@@ -3566,7 +3566,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_hammes_schiffer partition are subject to the following limits:</p>
@@ -3903,7 +3903,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_lederman partition are subject to the following limits:</p>
@@ -4093,7 +4093,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_manohar partition are subject to the following limits:</p>
@@ -4178,7 +4178,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_ohern partition are subject to the following limits:</p>
@@ -4308,7 +4308,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gres</code></a> option.</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_panda partition are subject to the following limits:</p>
@@ -4729,8 +4729,8 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({

@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -758,26 +758,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requesting-gpu-nodes" class="md-nav__link">
-    Requesting GPU Nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Requesting GPU Nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#specific-gpus" class="md-nav__link">
-    Specific GPUs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#monitor-activity-and-drivers" class="md-nav__link">
     Monitor Activity and Drivers
   </a>
@@ -1487,26 +1467,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requesting-gpu-nodes" class="md-nav__link">
-    Requesting GPU Nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Requesting GPU Nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#specific-gpus" class="md-nav__link">
-    Specific GPUs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#monitor-activity-and-drivers" class="md-nav__link">
     Monitor Activity and Drivers
   </a>
@@ -1589,36 +1549,13 @@
                 
                 
                 <h1 id="gpus-and-cuda">GPUs and CUDA</h1>
-<p>There are GPUs available for general use on <a href="/clusters-at-yale/clusters/grace">Grace</a> and <a href="/clusters-at-yale/clusters/farnam">Farnam</a>. See cluster pages for hardware and queue/partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
-<h2 id="requesting-gpu-nodes">Requesting GPU Nodes</h2>
-<p>To access the GPU nodes you must request them with slurm. Here is an example command to request a 2 hour interactive job for testing or developing code interactively:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p gpu_devel -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
-</code></pre></div>
-
-<p>or, if the <code>gpu_devel</code> and <code>gpu</code> partitions are busy, try to scavenge some private GPUs:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p scavenge_gpu -c <span class="m">2</span> -t <span class="m">2</span>:00:00 --gres<span class="o">=</span>gpu:1 bash
-</code></pre></div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>--gres</code> option specifies resources <strong>per node</strong>, not per task or core. In a two node job, <code>--gres=gpu:2</code> would result in a total of four GPUs allocated to you.</p>
-</div>
-<h3 id="specific-gpus">Specific GPUs</h3>
-<p>To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the <code>--gres</code> flag.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --gres=gpu:p100:1</span>
-</code></pre></div>
-
-<p>Some applications require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the <code>doubleprecision</code> feature (e.g. K80, P100 or V100).</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH -C doubleprecision</span>
-</code></pre></div>
-
-<p>Conversely, you can use the <code>singleprecision</code> feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).</p>
+<p>There are GPUs available for general use on the YCRC clusters. In order to use them, you must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request them for your job</a>. See the <a href="/clusters-at-yale/clusters/grace">Grace</a>, <a href="/clusters-at-yale/clusters/farnam">Farnam</a>, and <a href="/clusters-at-yale/clusters/milgram">Milgram</a> pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
 <h2 id="monitor-activity-and-drivers">Monitor Activity and Drivers</h2>
 <p>The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on <a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">this nvidia developer site</a>.</p>
 <p>You can check the available GPUs, their current usage, installed version of the nvidia drivers, and more with the command <a href="https://developer.nvidia.com/nvidia-system-management-interface"><code>nvidia-smi</code></a>. Either in an interactive job or after connecting to a node running your job with <code>ssh</code>,  <code>nvidia-smi</code> output should look something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>user@gpu01 ~<span class="o">]</span>$ nvidia-smi
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> NVIDIA-SMI <span class="m">418</span>.87.00    Driver Version: <span class="m">418</span>.87.00    CUDA Version: <span class="m">10</span>.1     <span class="p">|</span>
+<span class="p">|</span> NVIDIA-SMI <span class="m">460</span>.32.03    Driver Version: <span class="m">460</span>.32.03    CUDA Version: <span class="m">11</span>.2     <span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
 <span class="p">|</span> GPU  Name        Persistence-M<span class="p">|</span> Bus-Id        Disp.A <span class="p">|</span> Volatile Uncorr. ECC <span class="p">|</span>
 <span class="p">|</span> Fan  Temp  Perf  Pwr:Usage/Cap<span class="p">|</span>         Memory-Usage <span class="p">|</span> GPU-Util  Compute M. <span class="p">|</span>
@@ -1635,7 +1572,7 @@
 +-----------------------------------------------------------------------------+
 </code></pre></div>
 
-<p>Here we see that the node <code>gpu01</code> is running driver version 418.87.00 and CUDA version 10.1. There are no processes using the GPU allocated to this job.</p>
+<p>Here we see that the node <code>gpu01</code> is running driver version 460.32.03 and is compatible with CUDA version 11.2. There are no processes using the GPU allocated to this job.</p>
 <h2 id="software">Software</h2>
 <h3 id="cuda-and-cudnn-modules">CUDA and cuDNN modules</h3>
 <p>We have seen varying degrees of success in using the runtime CUDA and cuDNN libraries supplied by various conda channels. If that works for you there may be no need to load additional modules. If not, find the corresponding CUDA and cuDNN combination for your desired environment and load or request those modules. To list all the CUDA and cuDNN modules available:</p>
@@ -1686,7 +1623,7 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 20, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
@@ -1802,8 +1739,8 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
