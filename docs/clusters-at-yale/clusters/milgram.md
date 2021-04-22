@@ -6,19 +6,19 @@ Milgram is a HIPAA aligned cluster intended for use on projects that may involve
 
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment.
 
-!!! info
-    Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions. If your group has a workstation (see [list](/clusters-at-yale/clusters/milgram-workstations)), you can connect using one of those.
-
 - - -
 
 ## Access the Cluster
 
-Milgram can be accessed through ssh: 
+Milgram can be accessed via ssh: 
 ```
 ssh netid@milgram.hpc.yale.edu
 ```
 
-or through its OOD web portal: [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)
+or through the Open OnDemand web portal: [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)
+
+!!! info
+    Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
 More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
 

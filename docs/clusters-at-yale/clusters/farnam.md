@@ -10,12 +10,12 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 
 ## Access the Cluster
 
-Farnam can be accessed through ssh: 
+Farnam can be accessed via ssh: 
 ```
 ssh netid@farnam.hpc.yale.edu
 ```
 
-or through its OOD web portal: [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)
+or through the Open OnDemand web portal: [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)
 
 More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
 
