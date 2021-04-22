@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -811,47 +811,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-matlab-through-ood" class="md-nav__link">
-    Running MATLAB through OOD
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parallel-matlab" class="md-nav__link">
-    Parallel MATLAB
-  </a>
-  
-    <nav class="md-nav" aria-label="Parallel MATLAB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-node" class="md-nav__link">
-    Single Node
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-nodes" class="md-nav__link">
-    Multiple Nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-matlab-with-gpu" class="md-nav__link">
-    Running MATLAB with GPU
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
     Using More than 12 Cores with Matlab
   </a>
@@ -1516,47 +1475,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-matlab-through-ood" class="md-nav__link">
-    Running MATLAB through OOD
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parallel-matlab" class="md-nav__link">
-    Parallel MATLAB
-  </a>
-  
-    <nav class="md-nav" aria-label="Parallel MATLAB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-node" class="md-nav__link">
-    Single Node
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-nodes" class="md-nav__link">
-    Multiple Nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-matlab-with-gpu" class="md-nav__link">
-    Running MATLAB with GPU
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
     Using More than 12 Cores with Matlab
   </a>
@@ -1595,7 +1513,7 @@
 </code></pre></div>
 
 <p>Load the appropriate module file. For example, to run version R2014a:</p>
-<div class="highlight"><pre><span></span><code>module load MATLAB/2020a
+<div class="highlight"><pre><span></span><code>module load MATLAB/2014a
 </code></pre></div>
 
 <p>The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.</p>
@@ -1608,7 +1526,7 @@
 <div class="highlight"><pre><span></span><code># launch the MATLAB GUI
 matlab
 # or launch the MATLAB command line prompt
-matlab -nodisplay
+maltab -nodisplay
 # or to launch a script
 matlab -nodisplay &lt; runscript.m
 </code></pre></div>
@@ -1631,7 +1549,7 @@ matlab -nodisplay &lt; runscript.m
 <div class="highlight"><pre><span></span><code>sbatch  runit.sh
 </code></pre></div>
 
-<p>Here is a script for Grace:</p>
+<p>Here's a script for Grace:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 #SBATCH -J myjob
 #SBATCH -c 4
@@ -1643,25 +1561,6 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
 </code></pre></div>
 
 <p>Unless you specify otherwise (using &gt; redirects), both output and error logs will show up in the slurm-jobid.out log file in the same directory as your submission script.</p>
-<h3 id="running-matlab-through-ood">Running MATLAB through OOD</h3>
-<p>You can run MATLAB with a GUI through the MATLAB Interactive App. This is how you launch the App. Go to the OOD dashboard, click 'Interactive Apps'-&gt;'MATLAB', and OOD MATLAB submission form will be loaded. In the form, most of the mandatory fields are filled so tha it will work een if you donAlthough the default values in the form will work, you are encouraged to check each field and customize the form for your job. You need to select the MATLAB version, fill in the number of CPU cores, amount of memory per core, number of hours, among other things, before clicking 'Launch'. If you need to use GPU, the number of GPUs per node must be greater than 0 and the partition must include at least one GPU node. It could be the 'gpu' or 'gpu-devel' partition, or any PI partition that has GPU nodes installed. </p>
-<p>Using the MATLAB Interactive App, you will be allowed to run MATLAB on a single node and you can specify up to 20 cores. </p>
-<p><img alt="matlab" src="/img/ood_matlab.png" /></p>
-<p>You can also run MATLAB without GUI through OOD Shell Access. On the OOD dashboard, click 'Clusters'-&gt;'Shell Access', then you will log on to one of the login nodes of the cluster where OOD is installed. Your login session works the same way as if you have logged on to the cluster through 'ssh'. You can submit an interactive batch job to the cluster from the login session so that you can run MATLAB from the command line, the same way as mentioned in xxxxx.</p>
-<p>More information about OOD can be found at ycrc <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">OOD user guide</a>. A training material about OOD can be found at this <a href="https://tinyurl.com/yy8mjcph">link</a>.</p>
-<h3 id="parallel-matlab">Parallel MATLAB</h3>
-<h4 id="single-node">Single Node</h4>
-<p>When you start MATLAB on a compute node, a default parallel profile called 'local' is available and ready to use. </p>
-<p><img alt="matlab_local" src="/img/ood_matlab_local.png" /></p>
-<p>The 'local' profile allows you to use as many CPU cores as the number of cores you have specified for the job that has started MATLAB. If MATLAB has been started from OOD, then the max CPU cores is specified in 'Number of CPU cores' in the submission form. You can also check the max number of CPU cores available for the 'local' profile by examing the value of 'maxNumCompThreads'. You can then start a parallel pool on the 'local' profile with <code>parpool('local', num)</code>, where 'num' is the number of cores for the parallel pool and it cannot exceed 'maxNumCompThreads'.</p>
-<p><img alt="matlab_max" src="/img/ood_matlab_max.png" /></p>
-<h4 id="multiple-nodes">Multiple Nodes</h4>
-<p>In order to run a multi-node MATLAB job, you need to setup a multi-node cluster profile. This is done by running <code>configCluster</code> in the MATLAB command window. You should run this once and only once per cluster. When it returns, you will be able to see a new profile in the panel as shown in the figure below. </p>
-<p><img alt="matlab_ycrc" src="/img/ood_matlab_ycrc.png" /></p>
-<p>Once the ycrc cluster profile is created, you can use it to submit multi-node MATLAB jobs. First, you need to get a handle of the HPC cluster defined by the ycrec clsuter profile with <code>c=parcluster</code>. Then you can query the default Slurm flags with <code>c.AdditonalProperties</code> and modifiy the value of any of the flags. For example, <code>c.AdditionalProperties.MemUsage='3gb';</code> will change the memory per CPU to 3GiB. Once you are satisfied with the Slurm settings, you can start a parallel pool and run your code within the parallel pool. The figure below shows how to run a mutl-node MATLAB job. </p>
-<p><img alt="matlab_parcluster" src="/img/ood_matlab_multiple.png" /></p>
-<p>With the handle, you can query the cluster  </p>
-<h3 id="running-matlab-with-gpu">Running MATLAB with GPU</h3>
 <h3 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with Matlab</h3>
 <p>In Matlab, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.</p>
 <div class="highlight"><pre><span></span><code>parpool(feature(&#39;NumCores&#39;));
@@ -1790,15 +1689,15 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

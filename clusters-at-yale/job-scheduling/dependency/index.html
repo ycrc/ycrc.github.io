@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1473,37 +1473,28 @@ This provides a mechanism to create simple pipelines for managing complicated wo
 <h2 id="simple-pipeline">Simple Pipeline</h2>
 <p>As a toy example, consider a two-step pipeline, first a data transfer followed by an analysis step. 
 Here we will use the <code>--dependency</code> flag for sbatch and the <code>afterok</code> type that requires a job to finish successfully before starting the second step:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ cat step1.sh
-
-<span class="c1">#!/bin/bash</span>
+<p>The first step is controlled by a <code>sbatch</code> submission script called <code>step1.sh</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=DataTransfer</span>
 <span class="c1">#SBATCH -t 30:00</span>
 
 rsync -avP remote_host:/path/to/data.csv <span class="nv">$HOME</span>/project/
-
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ cat step2.sh
-
-<span class="c1">#!/bin/bash</span>
+</code></pre></div>
+The second step is controlled by <code>step2.sh</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=DataProcess</span>
 <span class="c1">#SBATCH -t 5:00:00</span>
 
 module load miniconda
 <span class="nb">source</span> activate my_env
 python my_script.py <span class="nv">$HOME</span>/project/data.csv
-
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ sbatch step1.sh
-Submitted batch job <span class="m">56761133</span>
-
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ sbatch --dependency<span class="o">=</span>afterok:56761133 step2.sh
-Submitted batch job <span class="m">56761176</span>
-
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ squeue -u tl397
-             JOBID PARTITION     NAME          USER    ST      SUBMIT_TIME       NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-          <span class="m">56761176</span>       day   DataProcess     tl397   PD   <span class="m">2020</span>-05-27T11:55     <span class="o">(</span>Dependency<span class="o">)</span>
-          <span class="m">56761133</span>       day   DataTransfer    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
+</code></pre></div>
+When we submit the first step (using the command <code>sbatch step1.sh</code>) we obtain the jobid number for that job.
+We then submit the second step adding in the <code>--dependency</code> flag to tell Slurm that this job requires the first job to finish before it can start:</p>
+<div class="highlight"><pre><span></span><code>sbatch --dependency<span class="o">=</span>afterok:56761133 step2.sh
 </code></pre></div>
 
-<p>We see that the transfer job is running while the processing step is Pending due to <code>(Dependency)</code>. 
+<p>When the 'transfer' job finishes successfully (without an error exit code) the 'processing' step will begin.
 While this is a simple dependency structure, it is possible to have multiple dependencies or more complicated structure.</p>
 <h2 id="job-clean-up">Job Clean-up</h2>
 <p>One frequent use-case is a clean-up job that runs after all other jobs have finished. 
@@ -1542,7 +1533,7 @@ A very detailed overview, with examples in both bash and python, can also be fou
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
@@ -1658,15 +1649,15 @@ A very detailed overview, with examples in both bash and python, can also be fou
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
