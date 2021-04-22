@@ -11,7 +11,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the day partition are subject to the following limits:
@@ -130,7 +130,7 @@
 
 === "gpu"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
 
     **Request Defaults**
 
@@ -141,7 +141,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the gpu partition are subject to the following limits:
@@ -177,7 +177,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the gpu_devel partition are subject to the following limits:
@@ -272,7 +272,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the scavenge partition are subject to the following limits:
@@ -288,20 +288,20 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |135|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
+    |135|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |80|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi, bigtmp|
     |2|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp|
-    |4|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
     |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common, bigtmp|
-    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp|
     |2|6234|16|1505||||cascadelake, avx2, avx512, nogpu, 6234, common, bigtmp|
-    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
     |20|8260|96|181||||cascadelake, avx2, avx512, 8260, nogpu, pi|
+    |4|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
+    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp|
+    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
+    |16|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp|
     |3|6142|32|181||||skylake, avx2, avx512, 6142, nogpu, standard, pi, bigtmp|
     |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp|
     |132|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, common, bigtmp|
-    |16|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp|
     |1|6136|24|749||||skylake, avx2, avx512, 6136, nogpu, pi, bigtmp|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp|
     |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
@@ -309,10 +309,10 @@
     |81|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
     |80|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, common|
     |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, common|
-    |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
-    |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
+    |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
+    |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |60|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, common|
     |1|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, common, bigtmp|
     |51|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, pi|
@@ -321,8 +321,8 @@
     |6|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
     |1|E5-2660_v3|20|245|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
     |1|E7-4809_v3|32|2009||||haswell, avx2, E7-4809_v3, nogpu, pi|
-    |58|E5-2660_v2|20|119||||ivybridge, E5-2660_v2, nogpu, standard, oldest, common|
     |14|E5-2660_v2|20|119||||ivybridge, E5-2660_v2, nogpu, standard, oldest, pi|
+    |58|E5-2660_v2|20|119||||ivybridge, E5-2660_v2, nogpu, standard, oldest, common|
     |1|E7-4820_v2|32|1001||||ivybridge, E7-4820_v2, nogpu, pi|
 
 === "scavenge_gpu"
@@ -338,7 +338,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the scavenge_gpu partition are subject to the following limits:
@@ -360,9 +360,9 @@
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp|
     |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
-    |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
+    |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |7|E5-2660_v3|20|245|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi|
     |6|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
     |1|E5-2660_v3|20|245|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, common|
@@ -461,7 +461,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_anticevic_gpu partition are subject to the following limits:
@@ -568,7 +568,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_chem_chase partition are subject to the following limits:
@@ -838,7 +838,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_hammes_schiffer partition are subject to the following limits:
@@ -1002,7 +1002,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_lederman partition are subject to the following limits:
@@ -1108,7 +1108,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_manohar partition are subject to the following limits:
@@ -1139,7 +1139,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_ohern partition are subject to the following limits:
@@ -1196,7 +1196,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the pi_panda partition are subject to the following limits:

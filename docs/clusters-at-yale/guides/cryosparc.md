@@ -90,7 +90,7 @@ cat << EOF > cluster_script.sh
 #!/usr/bin/env bash
 #SBATCH --job-name cryosparc_{{ project_uid }}_{{ job_uid }}
 #SBATCH -c {{ num_cpu }}
-#SBATCH --gres=gpu:{{ num_gpu }}
+#SBATCH --gpus={{ num_gpu }}
 #SBATCH -p ${partition}
 #SBATCH --mem={{ (ram_gb*1024)|int }}
 #SBATCH -o {{ job_dir_abs }}
