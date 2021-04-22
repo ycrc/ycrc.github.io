@@ -15,7 +15,39 @@ module load COMSOL/5.2a-classkit
 comsol -np $SLURM_CPUS_PER_TASK &
 ```
 
-## Details of COMSOL the Cluster
+## Run COMSOL in Batch Mode
+
+Comsol can be run without the graphical interface assuming you have a model file and a study defined beforehand. 
+This is particularly useful for parametric sweeps or scanning over a range of values for specific parameters.
+For example:
+
+```
+comsol batch -inputfile mymodel.mph -outputfile out.mph -study std1
+```
+
+which will run the study `std1` found within the `mymodel.mph` file generated through the COMSOL GUI and save the outputs in  `out.mph`. 
+A parameter can be passed into the study like this:
+
+```
+comsol batch -inputfile  mymodel.mph -outputfile out.mph -pname L -plist 8[cm],10[cm],12[cm]
+```
+Which will run three versions of the model sequentially for each of the three values of `L` enumerated.
+When combined with [Slurm Job Arrays](/clusters-at-yale/job-scheduling/dsq/) many COMSOL jobs can be run in parallel.
+An example `dSQ` job-file would look like:
+
+```sh
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_8.mph -pname L -plist 8[cm]
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_10.mph -pname L -plist 10[cm]
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_12.mph -pname L -plist 12[cm]
+
+```
+Which would run three versions of the study using different values of `L` and save their outputs in separate files.
+Be careful to provide a different output file for each line to avoid clashes between the separate jobs.
+
+More details can be found on the [COMSOL documentation site](https://www.comsol.com/support/knowledgebase/1250).
+
+
+## Details of COMSOL on YCRC Clusters
 
 Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.
 
@@ -38,6 +70,7 @@ The following models might be solved using our COMSOL package both in stationary
 1. *General Mathematics equations* in 1D, 2D, 3D models. _Classic PDE. Coefficient based and general form PDE. Wave form PDE. Weak form PDE. Ordinary differential equations and algebraic equations. Deformed geometry and moving mesh. Curvilinear coordinates._ 
 
 All above models can be used in the Multiphysics approach of coupling them together. They can be solved in Full Couple mode or by using Segregated Solver (solving one physical model and using resulting field to model another, and so on).
+
 
 ## Backward Compatibility
 
