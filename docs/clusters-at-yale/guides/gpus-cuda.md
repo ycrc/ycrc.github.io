@@ -1,39 +1,6 @@
 # GPUs and CUDA
 
-There are GPUs available for general use on [Grace](/clusters-at-yale/clusters/grace) and [Farnam](/clusters-at-yale/clusters/farnam). See cluster pages for hardware and queue/partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.
-
-## Requesting GPU Nodes
-
-To access the GPU nodes you must request them with slurm. Here is an example command to request a 2 hour interactive job for testing or developing code interactively:
-
-``` bash
-srun --pty -p gpu_devel -c 2 -t 2:00:00 --gres=gpu:1 bash
-```
-
-or, if the `gpu_devel` and `gpu` partitions are busy, try to scavenge some private GPUs:
-
-``` bash
-srun --pty -p scavenge_gpu -c 2 -t 2:00:00 --gres=gpu:1 bash
-```
-
-!!! note
-    The `--gres` option specifies resources **per node**, not per task or core. In a two node job, `--gres=gpu:2` would result in a total of four GPUs allocated to you.
-
-### Specific GPUs
-
-To request a specific type of GPU (e.g. a P100) for each node in your job, you specify the GPU type in the `--gres` flag.
-
-``` bash
-#SBATCH --gres=gpu:p100:1
-```
-
-Some applications require double-precision capable GPUs. If applicable, you can request any node with a compatible GPU by using the `doubleprecision` feature (e.g. K80, P100 or V100).
-
-``` bash
-#SBATCH -C doubleprecision
-```
-
-Conversely, you can use the `singleprecision` feature to request nodes that have single-precision only GPUs (e.g. GTX 1080, RTX 2080).
+There are GPUs available for general use on the YCRC clusters. In order to use them, you must [request them for your job](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). See the [Grace](/clusters-at-yale/clusters/grace), [Farnam](/clusters-at-yale/clusters/farnam), and [Milgram](/clusters-at-yale/clusters/milgram) pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.
 
 ## Monitor Activity and Drivers
 
@@ -44,7 +11,7 @@ You can check the available GPUs, their current usage, installed version of the 
 ``` bash
 [user@gpu01 ~]$ nvidia-smi
 +-----------------------------------------------------------------------------+
-| NVIDIA-SMI 418.87.00    Driver Version: 418.87.00    CUDA Version: 10.1     |
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
@@ -61,7 +28,7 @@ You can check the available GPUs, their current usage, installed version of the 
 +-----------------------------------------------------------------------------+
 ```
 
-Here we see that the node `gpu01` is running driver version 418.87.00 and CUDA version 10.1\. There are no processes using the GPU allocated to this job.
+Here we see that the node `gpu01` is running driver version 460.32.03 and is compatible with CUDA version 11.2. There are no processes using the GPU allocated to this job.
 
 ## Software
 

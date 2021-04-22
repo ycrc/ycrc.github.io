@@ -133,7 +133,7 @@ singularity run --containall -B "$ML_PATH/my_mnist_model:/models/my_mnist_model"
 
 ## Heterogeneous Job Layouts
 
-If you want to allocate multiple node types in a single job, e.g. a larger first task/worker for a tf "chief" or a CPU-only parameter server. Per-task GPU spec coming soon to Grace, until then use `--gres=gpu:1` which is a _per node_ specification.
+If you want to allocate multiple node types in a single job, e.g. a larger first task/worker for a tf "chief" or a CPU-only parameter server. 
 
 ``` bash
 #!/bin/bash

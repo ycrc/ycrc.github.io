@@ -66,7 +66,7 @@ These options modify the size, length and behavior of jobs you submit. They can 
 |`--cpus-per-task`          |`-c`        |`1`                |Number of CPUs for each task. Use this for threads/cores in single-node jobs.|
 |`--mem-per-cpu`            |            |`5G`               |Memory requested per CPU in MiB. Add `G` to specify GiB (e.g. `10G`).|
 |`--mem`                    |            |                   |Memory requested per node in MiB. Add `G` to specify GiB (e.g. `10G`).|
-|`--gres`                   |            |                   |Used to [request GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus)|
+|`--gpus`                   |`-G`        |                   |Used to [request GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus)|
 |`--constraint`             |`-C`        |                   |[Constraints](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints) on node features. To limit kinds of nodes to run on.|
 |`--mail-user`              |            |Your Yale email    |Mail address (alternatively, put your email address in ~/.forward).|
 |`--mail-type`              |            |None               |Send email when jobs change state. Use `ALL` to receive email notifications at the beginning and end of the job.|
