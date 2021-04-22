@@ -8,18 +8,19 @@ This provides a mechanism to create simple pipelines for managing complicated wo
 As a toy example, consider a two-step pipeline, first a data transfer followed by an analysis step. 
 Here we will use the `--dependency` flag for sbatch and the `afterok` type that requires a job to finish successfully before starting the second step:
 
+The first step is controlled by a `sbatch` submission script called `step1.sh`:
+
 ```sh
-
-[tl397@grace1 ~]$ cat step1.sh
-
 #!/bin/bash
 #SBATCH --job-name=DataTransfer
 #SBATCH -t 30:00
 
 rsync -avP remote_host:/path/to/data.csv $HOME/project/
 
-[tl397@grace1 ~]$ cat step2.sh
+```
+The second step is controlled by `step2.sh`:
 
+```sh
 #!/bin/bash
 #SBATCH --job-name=DataProcess
 #SBATCH -t 5:00:00
@@ -28,19 +29,15 @@ module load miniconda
 source activate my_env
 python my_script.py $HOME/project/data.csv
 
-[tl397@grace1 ~]$ sbatch step1.sh
-Submitted batch job 56761133
+```
+When we submit the first step (using the command `sbatch step1.sh`) we obtain the jobid number for that job.
+We then submit the second step adding in the `--dependency` flag to tell Slurm that this job requires the first job to finish before it can start:
 
-[tl397@grace1 ~]$ sbatch --dependency=afterok:56761133 step2.sh
-Submitted batch job 56761176
-
-[tl397@grace1 ~]$ squeue -u tl397
-             JOBID PARTITION     NAME          USER    ST      SUBMIT_TIME       NODELIST(REASON)
-          56761176       day   DataProcess     tl397   PD   2020-05-27T11:55     (Dependency)
-          56761133       day   DataTransfer    tl397   R    2020-05-27T11:54     c01n08
+```sh
+sbatch --dependency=afterok:56761133 step2.sh
 ```
 
-We see that the transfer job is running while the processing step is Pending due to `(Dependency)`. 
+When the 'transfer' job finishes successfully (without an error exit code) the 'processing' step will begin.
 While this is a simple dependency structure, it is possible to have multiple dependencies or more complicated structure.
 
 ## Job Clean-up
