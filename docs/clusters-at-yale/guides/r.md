@@ -52,6 +52,22 @@ to install packages into?  (y/n)
 
 This will install the `lattice` package to your `~/R/x86_64-unknown-linux-gnu-library/3.6` directory. There is a separate directory for R packages for each minor version of R, so packages installed with v 3.4 will not be visible from v 3.6.
 
+!!!note
+    If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
+    ```
+    mkdir ~/R/x86_64-pc-linux-gnu-library/4.0
+    ```
+    You only need the general minor version such as 4.0 instead of 4.0.3.
+
+You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
+```
+# List current package locations
+> .libPaths()
+
+# Add new default location to the standard defaults, e.g. project/my_R_libs
+> .libPaths(c("/home/netID/project/my_R_libs/", .libPaths()))
+```
+
 
 ## Conda-based R Environments
 

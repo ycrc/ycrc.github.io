@@ -25,7 +25,7 @@ sbatch my_job.sh
 List your queued and running jobs:
 
 ``` bash
-squeue -u$USER
+squeue --me
 ```
 
 Cancel a queued job or kill a running job, *e.g.* a job with ID 12345:
