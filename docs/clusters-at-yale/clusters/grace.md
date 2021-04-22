@@ -9,6 +9,17 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 - - -
 
+## Access the Cluster
+
+Grace can be accessed through ssh: 
+```
+ssh netid@grace.hpc.yale.edu
+```
+
+or through its OOD web portal: [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)
+
+More information about how to a cluster can be found at [Access the Clusters](clusters-at-yale/access).
+
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/grace/).
