@@ -51,4 +51,4 @@ The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberi
 When publishing work performed on a YCRC cluster or with assistance from YCRC staff, we would greatly appreciated it if you would place an acknowledgment in your publication. If you would like to acknowledge specific individuals who you worked with, that would also be appreciated. A list of YCRC staff can found on our <a href="https://research.computing.yale.edu/about/staff">Staff page</a>. We include some example text below. 
 
 
-> We thank the Yale Center for Research Computing for guidance and use of the research computing infrastructure, specifically assistance from XXX.
+> We thank the Yale Center for Research Computing for guidance and use of the research computing infrastructure, specifically assistance from [YCRC staff member name(s)].
