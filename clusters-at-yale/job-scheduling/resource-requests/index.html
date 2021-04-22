@@ -1595,6 +1595,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
 <li><code>standard</code>: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.</li>
 <li><code>singleprecision</code>: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).</li>
 <li><code>doubleprecision</code>: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).</li>
+<li><code>bigtmp</code>: nodes with at least 1.5T of local storage in <code>/tmp</code>. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's <code>$GAUSS_SCRDIR</code>).  </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1608,7 +1609,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 24, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
