@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
       
       
     
@@ -1636,6 +1636,20 @@ to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 </code></pre></div>
 
 <p>This will install the <code>lattice</code> package to your <code>~/R/x86_64-unknown-linux-gnu-library/3.6</code> directory. There is a separate directory for R packages for each minor version of R, so packages installed with v 3.4 will not be visible from v 3.6.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
+<div class="highlight"><pre><span></span><code>mkdir ~/R/x86_64-pc-linux-gnu-library/4.0
+</code></pre></div>
+You only need the general minor version such as 4.0 instead of 4.0.3.</p>
+</div>
+<p>You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
+<div class="highlight"><pre><span></span><code># List current package locations
+&gt; .libPaths()
+
+# Add new default location to the standard defaults, e.g. project/my_R_libs
+&gt; .libPaths(c(&quot;/home/netID/project/my_R_libs/&quot;, .libPaths()))
+</code></pre></div></p>
 <h2 id="conda-based-r-environments">Conda-based R Environments</h2>
 <p>If there isn't a module available for the version of R you want, you can set up your own R installation using <a href="/clusters-at-yale/guides/conda">Conda</a>. With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
 <h3 id="install-conda-packages">Install Conda Packages</h3>
@@ -1738,7 +1752,7 @@ mpirun R --slave -f ex1.R
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
@@ -1854,15 +1868,15 @@ mpirun R --slave -f ex1.R
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
