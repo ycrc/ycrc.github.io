@@ -7,7 +7,7 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
-Open OnDemand is available on the following clusters using your NetID credentials (CAS login).
+Open OnDemand is available on the following clusters using your NetID credentials (CAS login). 
 
 | Cluster                                     | OOD site                                                   |
 |---------------------------------------------|------------------------------------------------------------|
@@ -16,11 +16,24 @@ Open OnDemand is available on the following clusters using your NetID credential
 | [Milgram](/clusters-at-yale/clusters/milgram)\* | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
 | [Ruddle](/clusters-at-yale/clusters/ruddle)\* | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
+The above four URLs are also called cluster OOD URLs. They are available to any users with a research account (also called a lab account) on the clusters. A research account has the same login name as one's NetID. 
+
 ### DUO Everywhere for OOD Milgram and Ruddle
 
 If you want access to Open OnDemand for Milgram or Ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force [Multi-Factor Authentication](/clusters-at-yale/access/mfa) (MFA) for CAS on every login, even on-campus.
 
 To enroll in DUO Everywhere, please access the [DUO Everywhere Opt-In](https://veritas.its.yale.edu/mfa/optin/landing) tool and follow the instructions. Once you are done with the enrollment, please email [hpc@yale.edu](mailto:hpc@yale.edu) indicating you have enrolled in DUO Everywhere and the cluster you will be using. We will notify you when your request is processed. After that you will be able to use OOD.
+
+## Course OODs
+
+For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account on OOD. The course URLs follow the same naming convention: coursename.ycrc.yale.edu. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+
+!!! warning 
+If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
+```
+Error -- can't find user for cpsc424_test
+Run 'nginx_stage --help' to see a full list of available command line options.
+```
 
 ## The Dashboard
 
