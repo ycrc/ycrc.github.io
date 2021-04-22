@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
       
       
     
@@ -1618,7 +1618,13 @@
 <h3 id="dependencies">Dependencies</h3>
 <p>You will need to develop a build strategy that works for you and stay consistent. If you're happy using libraries and <a href="/clusters-at-yale/applications/toolchains/#toolchains">toolchains</a> that are already available on the cluster as dependencies (recommended), feel free to create <a href="/clusters-at-yale/applications/modules/#module-collections">module collections</a> that serve as your environments. If you prefer to completely build your own software tree, that is ok too. Whichever route you choose, try to stick with the same version of dependencies (e.g. MPI, zlib, numpy) and compiler you're using (e.g. GCC, intel). We find that unless absolutely necessary, the newest version of a compiler or library might not be the most compatible with a wide array of scientific software so you may want to step back a few versions or try using what was available at the time your application was being developed.</p>
 <h2 id="autotools-configuremake">Autotools (<code>configure</code>/<code>make</code>)</h2>
-<p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>. </p>
+<p>If your application includes instructions to run <code>./bootstrap</code>, <code>./autogen.sh</code>, <code>./configure</code> or <code>make</code>, it is using the <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using GCC 10+, you will need to load a separate Autotools module for your version of GCC; e.g.,
+<div class="highlight"><pre><span></span><code>module load Autotools/20200321-GCCcore-10.2.0
+</code></pre></div></p>
+</div>
 <h3 id="configure"><code>configure</code></h3>
 <p>If you are instructed to run <code>./configure</code> to generate a Makefile, specify your prefix with the <code>--prefix</code> option. This creates a file, usually named <code>Makefile</code> that is a recipe for <code>make</code> to use to build your application.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">MY_PREFIX</span><span class="o">=</span>~/software
@@ -1640,7 +1646,7 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
@@ -1756,15 +1762,15 @@ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build <
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
