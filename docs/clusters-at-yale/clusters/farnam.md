@@ -8,6 +8,17 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 
 - - -
 
+## Access the Cluster
+
+Farnam can be accessed through ssh: 
+```
+ssh netid@farnam.hpc.yale.edu
+```
+
+or through its OOD web portal: [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)
+
+More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
+
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/farnam/).

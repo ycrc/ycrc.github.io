@@ -11,6 +11,18 @@ Milgram is named for Dr. Stanley Milgram, a psychologist who researched the beha
 
 - - -
 
+## Access the Cluster
+
+Milgram can be accessed through ssh: 
+```
+ssh netid@milgram.hpc.yale.edu
+```
+
+or through its OOD web portal: [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)
+
+More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
+
+
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/milgram/).
