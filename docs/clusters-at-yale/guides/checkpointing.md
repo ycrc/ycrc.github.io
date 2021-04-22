@@ -1,4 +1,7 @@
-# Checkpointing
+# Checkpoint Long-running Jobs
+
+When working with long-running jobs and work-flows, it becomes very important to establish checkpoints along the way.
+This will ensure that if your job is interrupted you will be able to restart it without having to go back to the begining of the job.
 
 DMTCP "Distributed Multithreaded Checkpointing" allows you to easily save the state of your running job and restart it from 
 that point.  This can be very useful if your job fails for any number of reasons: it exceeds the time limit, is preempted from scavenge, the compute node crashes, etc.
@@ -9,54 +12,51 @@ DMTCP does not require any changes to your code or recompilation.  It should wor
 module load DMTCP
 ```
 
-## Running your job interactively under DMTCP
+## Run Your Job Interactively Under DMTCP
 
-For this simple example, we'll use this python script count.py
-``` python
-import time, sys
+For this simple example, we'll use this python script `count.py`
+``` python3
+import time
 i=0
 while True:
-  print >> sys.stdout, i,
-  sys.stdout.flush()
+  print(i,flush=True)
   i+=1
   time.sleep(1)
 ```
 
-Run the script interactively:
+Run the script interactively using `dmtcp_launch`:
 
 ``` bash
-$ dmtcp_launch -i 5 python count.py 
+dmtcp_launch -i 5 python3 count.py 
 ```
 
 It will begin printing to the terminal.  In the background, DMTCP will be writing a checkpoint file every 5 seconds.  
-Let it count for a while, then kill it with ^c.
+Let it count for a while, then kill it with <kbd>Ctrl</kbd>+<kbd>c</kbd>.
 
 If you look in that directory, you'll see several files related to DMTCP. The *.dmtcp file is the checkpoint file.  
 To restart the job from the last checkpoint, do:
 
 ``` bash
-$ dmtcp_restart -i 5 *.dmtcp 
+dmtcp_restart -i 5 *.dmtcp 
 ```
 
 In practice, you'll most likely want to use DMTCP to checkpoint batch jobs, rather than interactive sessions.     
 
-## Using checkpointing with a batch job
+## Checkpoint a Batch Job
 
 This script will submit the job under DMTCP's checkpointing.  Here we use a more reasonable checkpoint interval of 300 seconds.  You will want to experiment to see
 how long it takes to write your application's checkpoint file, and tune your interval accordingly.  
 
-```
+```bash
 #!/bin/bash
 
 module load DMTCP
-
-rm -f *.dmtcp # maybe not the best idea...
 
 dmtcp_launch -i 300 python count.py
 ```
 
 Then, if the job fails, you can resubmit it with this script:
-```
+```bash
 #!/bin/bash
 
 module load DMTCP
@@ -67,7 +67,7 @@ dmtcp_restart -i 300 *.dmtcp
 Note that we are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
 the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.
 
-## Arranging for your job to automatically restart when preempted
+## Restart a Preempted job
 
 Here is an example job script that will start a job running, periodically checkpoint it, and automatically requeue the
 job if it is preempted:
@@ -107,7 +107,7 @@ Launch the job with sbatch, and watch the numbers appear in the slurm*.out file.
 Then, simulate preemption by doing:
 
 ``` bash
-$ scontrol requeue <jobid>
+$ scontrol requeue 123456789
 ```
 
 Because the script specified --requeue, the job will be returned to pending.  Slurm automatically sets a "Begin Time" a couple of minutes
@@ -131,14 +131,14 @@ This prevents collisions if multiple DMTCP sessions run on the same node.
 
 * The env var SLURM_RESTART_COUNT is used to determine if this is a restart or not.
 
-## Using DMTCP with a parallel execution
+## Parallel Execution with DMTCP
 
 DMTCP can checkpoint multithreaded/multiprocess parallel applications.  
 In this example we run NAMD (a molecular dynamics simulation), using 6 threads on 6 cpus.  We also restart automatically on preemption,
 as above.
 
 
-```
+```bash
 #!/bin/bash
 
 #SBATCH -c 6 
