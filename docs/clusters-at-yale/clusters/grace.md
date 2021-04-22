@@ -18,7 +18,7 @@ ssh netid@grace.hpc.yale.edu
 
 or through the Open OnDemand web portal: [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)
 
-More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
+More information about how to access a cluster can be found at [Access the Clusters](/clusters-at-yale/access).
 
 ## System Status and Monitoring
 

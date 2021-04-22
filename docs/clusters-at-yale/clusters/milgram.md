@@ -20,7 +20,7 @@ or through the Open OnDemand web portal: [ood-milgram.hpc.yale.edu](https://ood-
 !!! info
     Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
-More information about how to access a cluster can be found at [Access the Clusters](clusters-at-yale/access).
+More information about how to access a cluster can be found at [Access the Clusters](/clusters-at-yale/access).
 
 
 ## System Status and Monitoring
