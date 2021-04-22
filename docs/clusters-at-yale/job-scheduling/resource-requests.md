@@ -69,6 +69,7 @@ We also have keyword features to help you constrain your jobs to certain categor
 - `standard`: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.
 - `singleprecision`: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).
 - `doubleprecision`: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).
+- `bigtmp`: nodes with at least 1.5T of local storage in `/tmp`. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's `$GAUSS_SCRDIR`).  
 
 !!!tip
     Use the command `scontrol show node <hostname>`, replacing `<hostname>` with the node's name you're interested in, to see more information about the node including its features.
