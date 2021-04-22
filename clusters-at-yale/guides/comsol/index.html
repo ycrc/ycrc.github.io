@@ -705,8 +705,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-of-comsol-the-cluster" class="md-nav__link">
-    Details of COMSOL the Cluster
+  <a href="#run-comsol-in-batch-mode" class="md-nav__link">
+    Run COMSOL in Batch Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-of-comsol-on-ycrc-clusters" class="md-nav__link">
+    Details of COMSOL on YCRC Clusters
   </a>
   
 </li>
@@ -1440,8 +1447,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-of-comsol-the-cluster" class="md-nav__link">
-    Details of COMSOL the Cluster
+  <a href="#run-comsol-in-batch-mode" class="md-nav__link">
+    Run COMSOL in Batch Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-of-comsol-on-ycrc-clusters" class="md-nav__link">
+    Details of COMSOL on YCRC Clusters
   </a>
   
 </li>
@@ -1490,7 +1504,28 @@
 comsol -np $SLURM_CPUS_PER_TASK &amp;
 </code></pre></div>
 
-<h2 id="details-of-comsol-the-cluster">Details of COMSOL the Cluster</h2>
+<h2 id="run-comsol-in-batch-mode">Run COMSOL in Batch Mode</h2>
+<p>Comsol can be run without the graphical interface assuming you have a model file and a study defined beforehand. 
+This is particularly useful for parametric sweeps or scanning over a range of values for specific parameters.
+For example:</p>
+<div class="highlight"><pre><span></span><code>comsol batch -inputfile mymodel.mph -outputfile out.mph -study std1
+</code></pre></div>
+
+<p>which will run the study <code>std1</code> found within the <code>mymodel.mph</code> file generated through the COMSOL GUI and save the outputs in  <code>out.mph</code>. 
+A parameter can be passed into the study like this:</p>
+<p><div class="highlight"><pre><span></span><code>comsol batch -inputfile  mymodel.mph -outputfile out.mph -pname L -plist 8[cm],10[cm],12[cm]
+</code></pre></div>
+Which will run three versions of the model sequentially for each of the three values of <code>L</code> enumerated.
+When combined with <a href="/clusters-at-yale/job-scheduling/dsq/">Slurm Job Arrays</a> many COMSOL jobs can be run in parallel.
+An example <code>dSQ</code> job-file would look like:</p>
+<p><div class="highlight"><pre><span></span><code>module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_8.mph -pname L -plist <span class="m">8</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_10.mph -pname L -plist <span class="m">10</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_12.mph -pname L -plist <span class="m">12</span><span class="o">[</span>cm<span class="o">]</span>
+</code></pre></div>
+Which would run three versions of the study using different values of <code>L</code> and save their outputs in separate files.
+Be careful to provide a different output file for each line to avoid clashes between the separate jobs.</p>
+<p>More details can be found on the <a href="https://www.comsol.com/support/knowledgebase/1250">COMSOL documentation site</a>.</p>
+<h2 id="details-of-comsol-on-ycrc-clusters">Details of COMSOL on YCRC Clusters</h2>
 <p>Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.</p>
 <p>The following models might be solved using our COMSOL package both in stationary and time dependent studies.</p>
 <ol>
@@ -1536,7 +1571,7 @@ comsol -np $SLURM_CPUS_PER_TASK &amp;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
     
   </small>
 </div>
