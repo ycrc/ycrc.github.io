@@ -62,9 +62,13 @@ If your contribute a new page (as opposed to editing an existing one) and want i
 * Avoid the use of words that imply concepts are simple or that the reader should already understand, like "simply",  "just", "obviously", etc.. Removing these words often doesn't change the meaning at all, and results in the reader feeling less conscious of whether or not they "should" know or understand something easily. Compare the following two sentences
 
     > The latter consisted simply of six hydrocoptic marzlevanes, so fitted to the ambifacient lunar waneshaft that side fumbling was effectively prevented.
+     
     and
+    
     > We added six hydrocoptic marzlevanes to the ambifacient lunar waneshaft, which prevents side fumbling.
+    
     or
+    
     > To prevent side fumbling, we added six hydrocoptic marzlevanes to the ambifacient lunar waneshaft.
 
 ### Headings
