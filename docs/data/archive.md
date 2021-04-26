@@ -20,6 +20,8 @@ tar -cvzf archive-2021-04-26.tar.gz ./data_for_archival
 This will create a new file (`archive-2021-04-26.tar.gz`) which contains all the data from within `data_for_archival` and is compressed to minimize storage requirements.
 This file can then be transferred to any off-site backup or archive location.
 
+## List and Extract Data From Existing Archive
+
 You can list the contents of an archive file like this:
 
 ```sh
