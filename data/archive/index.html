@@ -1473,7 +1473,12 @@
 <li>Crash files such are core dumps (e.g. <code>core.*</code>, <code>matlab_crash_dump.</code>).</li>
 </ul>
 <h2 id="compress-your-data">Compress Your Data</h2>
-<p>Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or <a href="/online-tutorials">tar</a>, portions of your data for ease of storage and retrieval.</p>
+<p>Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or <a href="/online-tutorials">tar</a>, portions of your data for ease of storage and retrieval.
+For example, to create a compressed archive of a directory you can do the following:</p>
+<p><div class="highlight"><pre><span></span><code>tar -cvzf archive-2021-04-26.tar.gz ./data_for_archival
+</code></pre></div>
+This will create a new file (<code>archive-2021-04-26.tar.gz</code>) which contains all the data from within <code>data_for_archival</code> and is compressed to minimize storage requirements.
+This file can then be transferred to any off-site backup or archive location.</p>
 <h2 id="tips-for-sy-archive-tier-or-any-tape-archive">Tips for S@Y Archive Tier (or Any Tape Archive)</h2>
 <p>The archive tier of Storage@Yale is a tape-based system. To use it effectively, you need to be aware of how it works and follow some best practices.</p>
 <p>When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet on tape. In the background, the system will flush files to tape and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
@@ -1501,7 +1506,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2021</span>
     
   </small>
 </div>
