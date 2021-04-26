@@ -1479,6 +1479,21 @@ For example, to create a compressed archive of a directory you can do the follow
 </code></pre></div>
 This will create a new file (<code>archive-2021-04-26.tar.gz</code>) which contains all the data from within <code>data_for_archival</code> and is compressed to minimize storage requirements.
 This file can then be transferred to any off-site backup or archive location.</p>
+<p>You can list the contents of an archive file like this:</p>
+<p><div class="highlight"><pre><span></span><code>tar -ztvf archive-2021-04-26.tar.gz
+</code></pre></div>
+which will print the full list of every file within the archive.
+The clusters also have the <code>lz</code> tool installed that provides a shorter way to list the contents:</p>
+<div class="highlight"><pre><span></span><code>lz archive-2021-04-26.tar.gz
+</code></pre></div>
+
+<p>You can then extract a single file from a large tar-file without decompressing the full thing:</p>
+<p><div class="highlight"><pre><span></span><code>tar -zxvf archive-2021-04-26.tar.gz path/to/file.txt
+</code></pre></div>
+There is an alternative syntax that is more legible:</p>
+<p><div class="highlight"><pre><span></span><code>tar --extract --file<span class="o">=</span>archive-2021-04-26.tar.gz file.txt
+</code></pre></div>
+Either should work fine on the clusters.</p>
 <h2 id="tips-for-sy-archive-tier-or-any-tape-archive">Tips for S@Y Archive Tier (or Any Tape Archive)</h2>
 <p>The archive tier of Storage@Yale is a tape-based system. To use it effectively, you need to be aware of how it works and follow some best practices.</p>
 <p>When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet on tape. In the background, the system will flush files to tape and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
