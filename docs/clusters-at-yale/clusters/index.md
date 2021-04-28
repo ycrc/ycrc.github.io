@@ -8,8 +8,8 @@ We maintain and support four compute clusters, listed below. Please click on clu
 |--------------------|--------------------|---------------------|-------------------------------|----------------------------------------------------------|
 | [Grace](grace)     | 24,000             | 850                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled             |
 | [Farnam](farnam)   | 5,700              | 250                 | `farnam.hpc.yale.edu`         | medical/life science                                     |
-| [Ruddle](ruddle)   | 3,200              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 | [Milgram](milgram) | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA/sensitive data                                     |
+| [Ruddle](ruddle)   | 3,200              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 
 ## Storage
 
@@ -21,5 +21,5 @@ We maintain several high performance storage systems which amount to about 12.5 
 | /gpfs/loomis  | 2.6 PiB | Grace\*, Farnam       |
 | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       |
 | /gpfs/slayman | 1.0 PiB | Grace, Farnam         |
-| /gpfs/ycga    | 2.0 PiB | Ruddle\*              |
 | /gpfs/milgram | 1.1 PiB | Milgram\*             |
+| /gpfs/ycga    | 2.0 PiB | Ruddle\*              |

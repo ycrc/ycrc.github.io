@@ -10,14 +10,7 @@ Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/fra
 - - -
 ## Access the Cluster
 
-Ruddle can be accessed via ssh: 
-```
-ssh netid@ruddle.hpc.yale.edu
-```
-
-or through the Open OnDemand web portal: [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu)
-
-More information about how to access a cluster can be found at [Access the Clusters](/clusters-at-yale/access).
+Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
 
 ## System Status and Monitoring
