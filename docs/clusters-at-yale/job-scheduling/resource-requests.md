@@ -35,16 +35,17 @@ Slurm strictly enforces the memory your job can use. If you request 5GiB of memo
 
 Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters-at-yale/clusters) regarding node configurations that include GPUs. There are several `srun`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
 
-|Long Option<img width=150/>|Short Option|Description                                                                                                                  |
+|Long Option<img width=200/>|Short Option|Description                                                                                                                  |
 |---------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `--cpus-per-gpu`          |            |  Use instead of `--cpus-per-task` to specify number of CPUs per allocated GPU                                               |
 | `--gpus`                  | `-G`       |  Specify the _total number_ of GPUs required for the job either with number or type:number                                  |
 | `--gpus-per-node`         |            |  Specify the number of GPUs _per node_, either with number or type:number. New option similar to `--gres=gpu`               |
 | `--gpus-per-task`         |            |  Specify the number of GPUs _per task_, either with number or type:number                                                   |
-| `--mem-per-gpu`           |            |  Request system memory that scales per GPU. The `--mem`, `--mem-per-cpu` and `--mem-per-gpu` options are mutually exclusive |
+| `--mem-per-gpu`<sup>*</sup>          |            |  Request system memory that scales per GPU. The `--mem`, `--mem-per-cpu` and `--mem-per-gpu` options are mutually exclusive |
 
+<sup>* The `--mem-per-gpu` flag does not currently work as intended, please do not use. Request memory using `--mem` or `--mem-per-cpu` in the meantime.</sup>
 
-In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - **the default GPU request for jobs is to not request any**. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options `--mem` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use `type:number` notation. For example, to request an NVIDIA P100 .
+In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - **the default GPU request for jobs is to not request any**. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options `--mem`, `--mem-per-gpu` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use `type:number` notation. For example, to request an NVIDIA P100 .
 
 ``` text
 sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
