@@ -1571,7 +1571,7 @@
 <table>
 <thead>
 <tr>
-<th>Long Option<img width=150/></th>
+<th>Long Option<img width=200/></th>
 <th>Short Option</th>
 <th>Description</th>
 </tr>
@@ -1598,13 +1598,14 @@
 <td>Specify the number of GPUs <em>per task</em>, either with number or type:number</td>
 </tr>
 <tr>
-<td><code>--mem-per-gpu</code></td>
+<td><code>--mem-per-gpu</code><sup>*</sup></td>
 <td></td>
 <td>Request system memory that scales per GPU. The <code>--mem</code>, <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code> options are mutually exclusive</td>
 </tr>
 </tbody>
 </table>
-<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - <strong>the default GPU request for jobs is to not request any</strong>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options <code>--mem</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use <code>type:number</code> notation. For example, to request an NVIDIA P100 .</p>
+<p><sup>* The <code>--mem-per-gpu</code> flag does not currently work as intended, please do not use. Request memory using <code>--mem</code> or <code>--mem-per-cpu</code> in the meantime.</sup></p>
+<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - <strong>the default GPU request for jobs is to not request any</strong>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options <code>--mem</code>, <code>--mem-per-gpu</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use <code>type:number</code> notation. For example, to request an NVIDIA P100 .</p>
 <div class="highlight"><pre><span></span><code>sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 
@@ -1651,7 +1652,7 @@ sbatch --constraint<span class="o">=</span>avx2 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2021</span>
     
   </small>
 </div>
