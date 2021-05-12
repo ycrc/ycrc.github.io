@@ -249,11 +249,17 @@ def collapse_memory_differences(partition_hardware):
 
 def sort_hardware(partition_hardware):
 
+
+    node_gens = ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]
     nodes_by_gen = {}
+
     for node_type in partition_hardware:
-        node_gen = node_type["Node Features"].split(",")[0]
-        if node_gen in ['hdr','edr']:
-            node_gen = node_type['Node Features'].split(', ')[1] 
+
+        for feature in node_type["Node Features"].split(", "):
+            if feature in node_gens:
+                node_gen = feature
+                break
+
         if node_gen not in nodes_by_gen.keys():
             nodes_by_gen[node_gen] = []
 
@@ -263,7 +269,7 @@ def sort_hardware(partition_hardware):
             nodes_by_gen[node_gen].append(node_type)
 
     sorted_hardware = []
-    for gen in ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]:
+    for gen in node_gens:
         if gen in nodes_by_gen.keys():
             sorted_hardware += nodes_by_gen[gen]
 
