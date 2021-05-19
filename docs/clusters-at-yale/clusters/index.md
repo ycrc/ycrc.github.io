@@ -6,7 +6,7 @@ We maintain and support four compute clusters, listed below. Please click on clu
 
 | Cluster Name       | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                  |
 |--------------------|--------------------|---------------------|-------------------------------|----------------------------------------------------------|
-| [Grace](grace)     | 24,000             | 850                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled             |
+| [Grace](grace)     | 27,000             | 900                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled             |
 | [Farnam](farnam)   | 5,700              | 250                 | `farnam.hpc.yale.edu`         | medical/life science                                     |
 | [Milgram](milgram) | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA/sensitive data                                     |
 | [Ruddle](ruddle)   | 3,200              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
