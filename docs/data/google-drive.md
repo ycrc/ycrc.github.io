@@ -2,6 +2,11 @@
 
 Through Yale Google Apps for Education (EliApps), researchers have free Google Drive storage with very few limits on storage. The Globus Google Drive connector allows you to create a Globus endpoint that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.
 
+!!! warning
+    We have upgraded our Globus Google Drive connector. Existing Globus Google Drive endpoints (created prior to April 29th, 2021) will be decommissioned on Monday, July 12, 2021, at which point they will stop working.  Please [follow the instructions below](/data/google-drive/#globus-google-drive-connector) to setup a new endpoint on the upgraded system. 
+
+    Once you have created a new endpoint, you may remove the old one at [app.globus.org/endpoints?scope=administered-by-me](app.globus.org/endpoints?scope=administered-by-me).
+
 ## EliApps
 
 If your Yale email account is already an EliApps account (Gmail), then you are all set. If your Yale email is in Microsoft Office365, send an email to the [ITS helpdesk](mailto:helpdesk@yale.edu) requesting a "no-email EliApps account". Once it is created you can login to Google Drive using your EliApps account name, which will be of the form `netid@yale.edu`. The Globus connector is configured to only allow data to be uploaded into EliApps Google Drive accounts.
