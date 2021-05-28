@@ -6,9 +6,17 @@ Milgram is a HIPAA aligned cluster intended for use on projects that may involve
 
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment.
 
+## Migram Usage Policies
+
+Users wishing to use Milgram must agree to the following:
+
+* All Milgram users must have fulfilled and be current with Yale's HIPAA training requirement.
+* Since Milgram's resources are limited, we ask that you only use Milgram for work on and storage of sensitive data, and that you do your other high performance computing on our other clusters.  
+
+
 - - -
 
-## Access the Cluster
+## Access the Cluster 
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
