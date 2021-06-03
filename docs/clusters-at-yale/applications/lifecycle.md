@@ -17,11 +17,11 @@ The YCRC maintains a rolling two [toolchain](/clusters-at-yale/applications/tool
 
 ## Spring 2021 Deprecation Cycle
 
-In February 2021, we are marking modules built with unsupported toolchains as deprecated. Below is a list of the toolchains we are removing and introducing. If a module you are using is marked for removal but there is not a newer module available, please [contact us](/#get-help) before May to install a replacement. If you must use an older version of a software for reproducibility purposes, please [contact us](/#get-help) so we can discuss how to properly support your project.
+In June 2021, we are removing deprecated software and finalizing the introduction of new toolchains. If a module you used in the past is no longer available and there is not a newer module available, please [contact us](/#get-help).
 
 ### [Grace](/clusters-at-yale/clusters/grace) and [Milgram](/clusters-at-yale/clusters/milgram)
 
-#### Deprecated Software (will be removed by May 31, 2021):
+#### Removed Software:
 
 - Modules built with a 2016b toolchain, GCCcore/5.x, or iccifort/2016.3.210
 - Unused modules
@@ -35,7 +35,7 @@ In February 2021, we are marking modules built with unsupported toolchains as de
 
 ### [Farnam](/clusters-at-yale/clusters/farnam) and [Ruddle](/clusters-at-yale/clusters/ruddle)
 
-#### Deprecated Software (will be removed by May 31, 2021):
+#### Removed Software:
 
 - Modules built with 2016a, 2016b, 2017a, or 2017b toolchains or GCCcore/4.x, GCCcore/5.x, GCCcore/6.x
 - Unused modules
