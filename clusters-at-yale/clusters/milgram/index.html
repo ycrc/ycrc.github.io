@@ -1634,7 +1634,7 @@
 <td>6240</td>
 <td>36</td>
 <td>181</td>
-<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -1696,7 +1696,7 @@
 <td>6240</td>
 <td>36</td>
 <td>181</td>
-<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -1742,12 +1742,12 @@
 <td>6240</td>
 <td>36</td>
 <td>181</td>
-<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu_commons</label><div class="tabbed-content">
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1759,7 +1759,7 @@
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the gpu_commons partition are subject to the following limits:</p>
+<p>Jobs submitted to the gpu partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
@@ -1802,12 +1802,12 @@
 <td>rtx5000</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">scavenge_all</label><div class="tabbed-content">
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
@@ -1819,7 +1819,7 @@
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
 <p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the scavenge_all partition are subject to the following limits:</p>
+<p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
@@ -1858,7 +1858,17 @@
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx512, 6240, nogpu, standard, common</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
+</tr>
+<tr>
+<td>10</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -1868,7 +1878,17 @@
 <td>rtx5000</td>
 <td>4</td>
 <td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp</td>
+</tr>
+<tr>
+<td>48</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -1928,7 +1948,7 @@
 </thead>
 <tbody>
 <tr>
-<td>46</td>
+<td>48</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -1987,7 +2007,7 @@
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -2042,7 +2062,7 @@
 <td>rtx2080ti</td>
 <td>4</td>
 <td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>48</td>
@@ -2097,7 +2117,7 @@
 </thead>
 <tbody>
 <tr>
-<td>46</td>
+<td>48</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
