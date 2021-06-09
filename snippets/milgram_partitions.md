@@ -25,7 +25,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common|
+    |18|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
 
 === "interactive"
 
@@ -57,7 +57,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common|
+    |2|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
 
 === "week"
 
@@ -85,9 +85,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |4|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common|
+    |4|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
 
-=== "gpu_commons"
+=== "gpu"
 
     Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
 
@@ -103,7 +103,7 @@
         Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
-    Jobs submitted to the gpu_commons partition are subject to the following limits:
+    Jobs submitted to the gpu partition are subject to the following limits:
 
     |Limit|Value|
     |---|---|
@@ -116,9 +116,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common|
+    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp|
 
-=== "scavenge_all"
+=== "scavenge"
 
     Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
 
@@ -134,7 +134,7 @@
         Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
-    Jobs submitted to the scavenge_all partition are subject to the following limits:
+    Jobs submitted to the scavenge partition are subject to the following limits:
 
     |Limit|Value|
     |---|---|
@@ -146,8 +146,10 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |18|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common|
+    |18|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
+    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp|
+    |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
@@ -181,7 +183,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |46|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |48|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
     === "psych_gpu"
 
@@ -209,7 +211,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
 
     === "psych_scavenge"
 
@@ -237,7 +239,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
         |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
     === "psych_week"
@@ -265,5 +267,5 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |46|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |48|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
