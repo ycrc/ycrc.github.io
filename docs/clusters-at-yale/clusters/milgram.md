@@ -47,7 +47,7 @@ The Psychology short, long and verylong partitions have also been consolidated i
 * psych_day: for jobs with a walltime of less than or equal to 24 hours
 * psych_week: for jobs with a walltime less than or equal to 7 days.
 
-As of the June maintenance, short, long and verylong no longer work. scavenge_all, scavenge, gpu_commons and gpu all point the appropriate commons nodes.  At the end of June, scavenge_all and gpu_commons will be removed and no longer work. *Please update your scripts accordingly at your earliest convenience.
+As of the June maintenance, short, long and verylong no longer work. scavenge_all, scavenge, gpu_commons and gpu all point the appropriate commons nodes.  At the end of June, scavenge_all and gpu_commons will be removed and no longer work. **Please update your scripts accordingly at your earliest convenience.**
 
 ### Public Partitions
 
