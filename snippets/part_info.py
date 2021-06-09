@@ -40,7 +40,6 @@ commons = {
 
 # look for MemSpecLimit in slurm node config
 mem_spec_limit = 6 #GiB
-milgram = False
 cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
@@ -84,6 +83,8 @@ def get_part_hardware():
     ).split("\n"):
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
         if line_dict["partition"] != "":
+            if line_dict["cpus"] == "0":
+                continue
             partition_name = line_dict["partition"]
             mem = int(line_dict["memory"]) / 1024 - mem_spec_limit
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
@@ -125,6 +126,8 @@ def tres_to_english(tres_type, tres_string):
         per = " per user"
     elif tres_type.endswith("A"):
         per = " per group"
+    elif tres_type == "GrpTRES":
+        per = " in use"
     else:
         per = " per job"
 
@@ -176,7 +179,7 @@ def get_defaults_and_limits(part_hardware):
         limit_names = [
             "".join(x)
             for x in list(product(["MaxTRES", "MaxJobs", "MaxSubmit"], ["PA", "PU"]))
-            + ["MaxTRES"]
+            + ["MaxTRES", "GrpTRES"]
         ]
         for limit in ["MaxWall"] + limit_names:
             if limit in sacct_dict:
@@ -185,9 +188,9 @@ def get_defaults_and_limits(part_hardware):
                 scont_dict[limit] = ""
         if scont_dict["MaxTime"] == "UNLIMITED":
             if scont_dict["MaxWall"] != "":
-                english_limits.append(["Max job time limit", scont_dict["MaxWall"]])
+                english_limits.append(["Maximum job time limit", scont_dict["MaxWall"]])
         else:
-            english_limits.append(["Max job time limit", scont_dict["MaxTime"]])
+            english_limits.append(["Maximum job time limit", scont_dict["MaxTime"]])
         for tres in limit_names:
             if scont_dict[tres] != "":
                 english_limits += tres_to_english(tres, scont_dict[tres])
@@ -279,11 +282,6 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
 
     partition_displayname = partition
 
-    ### milgram logic to be removed later ###
-    if milgram and partition_displayname in ["scavenge", "gpu"]:
-        partition_displayname = "psych_" + partition
-    ### end milgram ###
-
     iprint(0 + i, f'=== "{partition_displayname.rstrip("*")}"\n')
     if partition in commons:
         iprint(1 + i, commons[partition] + "\n")
@@ -337,14 +335,6 @@ if cluster_name in ["farnam", "milgram", "grace"]:
     mem_spec_limit = 0 
 ### end new memory ###
 
-### milgram logic to be removed later ###
-if cluster_name == "milgram":
-    milgram = True
-if milgram:
-    del commons["scavenge"]
-    del commons["gpu"]
-### end milgram ###
-
 part_hardware, parts_with_gpus = get_part_hardware()
 defaults, limits = get_defaults_and_limits(part_hardware)
 for part in commons:
@@ -363,11 +353,6 @@ pi_parts = [
     for part in part_hardware
     if (part.startswith("pi_") or part.startswith("psych_"))
 ]
-
-### milgram logic to be removed later ###
-if milgram:
-    pi_parts += ["short", "long", "verylong", "gpu", "scavenge"]
-### end milgram ###
 
 if len(pi_parts) > 0:
     print("### Private Partitions")
