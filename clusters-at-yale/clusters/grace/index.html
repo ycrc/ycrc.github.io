@@ -1555,7 +1555,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -1637,7 +1637,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>06:00:00</code></td>
 </tr>
 <tr>
@@ -1706,7 +1706,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>7-00:00:00</code></td>
 </tr>
 <tr>
@@ -1760,7 +1760,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -1818,7 +1818,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>2-00:00:00</code></td>
 </tr>
 <tr>
@@ -1928,7 +1928,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>04:00:00</code></td>
 </tr>
 <tr>
@@ -1988,7 +1988,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -2063,7 +2063,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -2121,7 +2121,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -2197,14 +2197,14 @@
 <td>cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp</td>
 </tr>
 <tr>
-<td>8</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>181</td>
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp</td>
+<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
 </tr>
 <tr>
 <td>4</td>
@@ -2237,14 +2237,14 @@
 <td>cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
-<td>20</td>
-<td>8260</td>
-<td>96</td>
-<td>181</td>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>370</td>
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx2, avx512, 8260, nogpu, pi</td>
+<td>cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2307,16 +2307,6 @@
 <td>skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp</td>
 </tr>
 <tr>
-<td>9</td>
-<td>6136</td>
-<td>24</td>
-<td>181</td>
-<td>p100</td>
-<td>4</td>
-<td>16</td>
-<td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
-</tr>
-<tr>
 <td>2</td>
 <td>5122</td>
 <td>8</td>
@@ -2335,6 +2325,16 @@
 <td></td>
 <td></td>
 <td>skylake, avx2, avx512, 6136, nogpu, pi, bigtmp</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
+<td>181</td>
+<td>p100</td>
+<td>4</td>
+<td>16</td>
+<td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
 </tr>
 <tr>
 <td>81</td>
@@ -2367,6 +2367,16 @@
 <td>broadwell, avx2, E7-4820_v4, nogpu, common</td>
 </tr>
 <tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
+</tr>
+<tr>
 <td>2</td>
 <td>E7-4820_v4</td>
 <td>40</td>
@@ -2395,16 +2405,6 @@
 <td>1</td>
 <td>16</td>
 <td>broadwell, avx2, E5-2660_v4, doubleprecision, common</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>119</td>
-<td>gtx1080ti</td>
-<td>4</td>
-<td>11</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>52</td>
@@ -2447,6 +2447,16 @@
 <td>haswell, avx2, E5-2660_v3, nogpu, standard, common, bigtmp, oldest</td>
 </tr>
 <tr>
+<td>1</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>2009</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, avx2, E7-4809_v3, nogpu, pi, oldest</td>
+</tr>
+<tr>
 <td>8</td>
 <td>E5-2660_v3</td>
 <td>20</td>
@@ -2465,16 +2475,6 @@
 <td>4</td>
 <td>12</td>
 <td>haswell, avx2, E5-2660_v3, doubleprecision, common, oldest</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E7-4809_v3</td>
-<td>32</td>
-<td>2009</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, avx2, E7-4809_v3, nogpu, pi, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -2501,7 +2501,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
@@ -2567,6 +2567,16 @@
 <td>skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp</td>
 </tr>
 <tr>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
+<td>181</td>
+<td>rtx2080</td>
+<td>4</td>
+<td>8</td>
+<td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
+</tr>
+<tr>
 <td>9</td>
 <td>6136</td>
 <td>24</td>
@@ -2577,14 +2587,14 @@
 <td>skylake, avx2, avx512, 6136, doubleprecision, pi</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5122</td>
+<td>1</td>
+<td>E5-2637_v4</td>
 <td>8</td>
-<td>181</td>
-<td>rtx2080</td>
+<td>119</td>
+<td>gtx1080ti</td>
 <td>4</td>
-<td>8</td>
-<td>skylake, avx2, avx512, 5122, singleprecision, pi</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2605,16 +2615,6 @@
 <td>1</td>
 <td>16</td>
 <td>broadwell, avx2, E5-2660_v4, doubleprecision, common</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>119</td>
-<td>gtx1080ti</td>
-<td>4</td>
-<td>11</td>
-<td>broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp</td>
 </tr>
 <tr>
 <td>8</td>
@@ -2659,7 +2659,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2704,7 +2704,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>100-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2756,7 +2756,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>100-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2805,7 +2805,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>100-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2856,7 +2856,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>100-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2901,7 +2901,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -2953,7 +2953,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3002,7 +3002,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3063,7 +3063,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 <tr>
@@ -3116,7 +3116,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 <tr>
@@ -3169,7 +3169,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3214,7 +3214,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3259,7 +3259,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 <tr>
@@ -3308,7 +3308,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3353,7 +3353,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3405,7 +3405,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3450,7 +3450,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>100-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3499,7 +3499,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3600,7 +3600,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3645,7 +3645,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3697,7 +3697,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3742,7 +3742,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3787,7 +3787,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3836,7 +3836,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3887,7 +3887,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3932,7 +3932,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -3977,7 +3977,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4026,7 +4026,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>180-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4111,7 +4111,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4182,7 +4182,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4231,7 +4231,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4302,7 +4302,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4354,7 +4354,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4399,7 +4399,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
@@ -4444,7 +4444,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>28-00:00:00</code></td>
 </tr>
 </tbody>
