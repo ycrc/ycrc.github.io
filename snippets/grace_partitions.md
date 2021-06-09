@@ -16,7 +16,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per group|`2500`|
     |Maximum CPUs per user|`1000`|
 
@@ -50,7 +50,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`06:00:00`|
+    |Maximum job time limit|`06:00:00`|
     |Maximum CPUs per user|`4`|
     |Maximum memory per user|`32G`|
     |Maximum running jobs per user|`1`|
@@ -83,7 +83,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`7-00:00:00`|
+    |Maximum job time limit|`7-00:00:00`|
     |Maximum CPUs per group|`250`|
     |Maximum CPUs per user|`108`|
 
@@ -113,7 +113,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum running jobs per user|`2`|
     |Maximum CPUs per job|`1`|
 
@@ -145,7 +145,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`2-00:00:00`|
+    |Maximum job time limit|`2-00:00:00`|
     |Maximum GPUs per user|`24`|
 
     **Available Compute Nodes**
@@ -181,7 +181,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`04:00:00`|
+    |Maximum job time limit|`04:00:00`|
     |Maximum CPUs per user|`10`|
     |Maximum submitted jobs per user|`1`|
 
@@ -211,7 +211,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`40`|
     |Maximum memory per user|`1500G`|
 
@@ -244,7 +244,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum nodes per group|`48`|
     |Maximum nodes per user|`32`|
 
@@ -276,7 +276,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`10000`|
 
     **Available Compute Nodes**
@@ -290,34 +290,34 @@
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |135|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |2|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp|
-    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
+    |20|8260|96|181||||cascadelake, avx2, avx512, 8260, nogpu, pi|
     |4|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, doubleprecision, common|
     |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common, bigtmp|
     |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp|
-    |20|8260|96|181||||cascadelake, avx2, avx512, 8260, nogpu, pi|
+    |8|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
     |2|6234|16|1505||||cascadelake, avx2, avx512, nogpu, 6234, common, bigtmp|
     |132|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, common, bigtmp|
     |16|6136|24|90||||hdr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp|
     |3|6142|32|181||||skylake, avx2, avx512, 6142, nogpu, standard, pi, bigtmp|
     |16|6136|24|90||||edr, skylake, avx2, avx512, 6136, nogpu, standard, pi, bigtmp|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp|
-    |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
     |1|6136|24|749||||skylake, avx2, avx512, 6136, nogpu, pi, bigtmp|
+    |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |81|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, pi|
     |80|E5-2660_v4|28|245||||broadwell, avx2, E5-2660_v4, nogpu, standard, common|
     |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, common|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
     |2|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
     |52|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, common, oldest|
     |39|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, pi, oldest|
     |19|E5-2660_v3|20|245||||haswell, avx2, E5-2660_v3, nogpu, standard, pi, oldest|
     |1|E5-2660_v3|20|119||||haswell, avx2, E5-2660_v3, nogpu, standard, common, bigtmp, oldest|
+    |1|E7-4809_v3|32|2009||||haswell, avx2, E7-4809_v3, nogpu, pi, oldest|
     |8|E5-2660_v3|20|245|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi, oldest|
     |6|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common, oldest|
-    |1|E7-4809_v3|32|2009||||haswell, avx2, E7-4809_v3, nogpu, pi, oldest|
 
 === "scavenge_gpu"
 
@@ -339,7 +339,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`1-00:00:00`|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum GPUs per user|`30`|
 
     **Available Compute Nodes**
@@ -352,11 +352,11 @@
     |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, common, bigtmp|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp|
     |2|6136|24|90|v100|2|16|skylake, avx2, avx512, 6136, doubleprecision, common, bigtmp|
-    |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi|
+    |9|6136|24|181|p100|4|16|skylake, avx2, avx512, 6136, doubleprecision, pi|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, pi|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, avx2, E5-2660_v4, doubleprecision, common|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, bigtmp|
     |8|E5-2660_v3|20|245|k80|2|12|haswell, avx2, E5-2660_v3, doubleprecision, pi, oldest|
     |6|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common, oldest|
 
@@ -380,7 +380,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -406,7 +406,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`100-00:00:00`|
+        |Maximum job time limit|`100-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -433,7 +433,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`100-00:00:00`|
+        |Maximum job time limit|`100-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -461,7 +461,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`100-00:00:00`|
+        |Maximum job time limit|`100-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -487,7 +487,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`100-00:00:00`|
+        |Maximum job time limit|`100-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -513,7 +513,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -540,7 +540,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -568,7 +568,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -595,7 +595,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
         |Maximum CPUs per user|`120`|
         |Maximum nodes per user|`5`|
 
@@ -623,7 +623,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
         |Maximum CPUs per user|`120`|
         |Maximum nodes per user|`5`|
 
@@ -651,7 +651,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -677,7 +677,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -703,7 +703,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
         |Maximum CPUs per user|`648`|
 
         **Available Compute Nodes**
@@ -730,7 +730,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -756,7 +756,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -783,7 +783,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -809,7 +809,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`100-00:00:00`|
+        |Maximum job time limit|`100-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -837,7 +837,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -868,7 +868,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -894,7 +894,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -921,7 +921,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -947,7 +947,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -973,7 +973,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1001,7 +1001,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1027,7 +1027,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1053,7 +1053,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1079,7 +1079,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1107,7 +1107,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`180-00:00:00`|
+        |Maximum job time limit|`180-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1138,7 +1138,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1166,7 +1166,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1194,7 +1194,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1222,7 +1222,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1249,7 +1249,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1275,7 +1275,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -1301,7 +1301,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`28-00:00:00`|
+        |Maximum job time limit|`28-00:00:00`|
 
         **Available Compute Nodes**
 
