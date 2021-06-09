@@ -46,6 +46,31 @@ If your contribute a new page (as opposed to editing an existing one) and want i
 
 ## Style Guide
 
+### Language
+
+* Many of our pages can be a mix or purely one of four categories of documentation - [Tutorials, How-Tos, References, and Explanations](https://diataxis.fr/). Try to keep each section to one type of these, and err on the side of one kind per page where possible. Generally keep in mind who your intended audience is and what you expect them to get from your writing.
+
+    |             | [Tutorials](https://diataxis.fr/tutorials/) | [How-to guides](https://diataxis.fr/how-to-guides/) | [Reference](https://diataxis.fr/reference/)|[Explanation](https://diataxis.fr/explanation/) |
+    |:-----------:|:-------------------------------------------:|:---------------------------------------------------:|:------------------------------------------:|:----------------------------------------------:|
+    | oriented to | learning                                    | a goal                                              | information                                | understanding                                  |
+    | must        | allow the newcomer to get started           | show how to solve a specific problem                | describe the machinery                     | explain                                        |
+    | its form    | a lesson                                    | a series of steps                                   | dry description                            | discursive explanation                         |
+    | analogy     | teaching a small child how to cook          | a recipe in a cookery book                          | a reference encyclopaedia article          | an article on culinary social history          |
+
+* Use active and consistent tense.
+* Don't shy away from directly addressing the reader. e.g. "You can achieve this by" rather than "This can be achieved by"
+* Avoid the use of words that imply concepts are simple or that the reader should already understand, like "simply",  "just", "obviously", etc.. Removing these words often doesn't change the meaning at all, and results in the reader feeling less conscious of whether or not they "should" know or understand something easily. Compare the following sentences:
+
+    > The latter consisted simply of six hydrocoptic marzlevanes, so fitted to the ambifacient lunar waneshaft that side fumbling was effectively prevented.
+     
+    and
+    
+    > We added six hydrocoptic marzlevanes to the ambifacient lunar waneshaft, which prevents side fumbling.
+    
+    or
+    
+    > To prevent side fumbling, we added six hydrocoptic marzlevanes to the ambifacient lunar waneshaft.
+
 ### Headings
 
 * Always include an H1 at the top a page

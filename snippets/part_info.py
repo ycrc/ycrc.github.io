@@ -16,6 +16,7 @@ vram_dict = {
     "v100": "16",
     "rtx2080": "8",
     "rtx2080ti": "11",
+    "rtx3090": "24",
     "rtx4000": "8",
     "rtx5000": "16",
     "rtx8000": "48",
@@ -28,8 +29,8 @@ commons = {
     "interactive": "Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
     "transfer": "Use the transfer partition to stage data for your jobs to and from [cluster storage](/clusters-at-yale/data/#staging-data).",
-    "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
-    "gpu_commons": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
+    "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
+    "gpu_commons": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.",
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
     "mpi": "Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description.",
@@ -86,7 +87,7 @@ def get_part_hardware():
             if line_dict["cpus"] == "0":
                 continue
             partition_name = line_dict["partition"]
-            mem = int(line_dict["memory"]) / 1024 - mem_spec_limit
+            mem = int(line_dict["memory"]) / 1024
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
             gpu_mem = []
@@ -253,11 +254,17 @@ def collapse_memory_differences(partition_hardware):
 
 def sort_hardware(partition_hardware):
 
+
+    node_gens = ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]
     nodes_by_gen = {}
+
     for node_type in partition_hardware:
-        node_gen = node_type["Node Features"].split(",")[0]
-        if node_gen in ['hdr','edr']:
-            node_gen = node_type['Node Features'].split(', ')[1] 
+
+        for feature in node_type["Node Features"].split(", "):
+            if feature in node_gens:
+                node_gen = feature
+                break
+
         if node_gen not in nodes_by_gen.keys():
             nodes_by_gen[node_gen] = []
 
@@ -267,7 +274,7 @@ def sort_hardware(partition_hardware):
             nodes_by_gen[node_gen].append(node_type)
 
     sorted_hardware = []
-    for gen in ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]:
+    for gen in node_gens:
         if gen in nodes_by_gen.keys():
             sorted_hardware += nodes_by_gen[gen]
 
@@ -297,7 +304,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
         iprint(1 + i, '!!! warning "GPU jobs need GPUs!"')
         iprint(
             2 + i,
-            "Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.",
+            "Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.",
         )
 
     if len(limits) > 0:
@@ -329,11 +336,6 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
 
 
 cluster_name = get_cluster_name()
-### job memory logic shifting from setting RealMemory directly to RealMemory - MemSpecLimit ###
-# default is 6144, set above
-if cluster_name in ["farnam", "milgram", "grace"]:
-    mem_spec_limit = 0 
-### end new memory ###
 
 part_hardware, parts_with_gpus = get_part_hardware()
 defaults, limits = get_defaults_and_limits(part_hardware)

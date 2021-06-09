@@ -6,10 +6,22 @@ Milgram is a HIPAA aligned cluster intended for use on projects that may involve
 
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment.
 
-!!! info
-    Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions. If your group has a workstation (see [list](/clusters-at-yale/clusters/milgram-workstations)), you can connect using one of those.
+## Migram Usage Policies
+
+Users wishing to use Milgram must agree to the following:
+
+* All Milgram users must have fulfilled and be current with Yale's HIPAA training requirement.
+* Since Milgram's resources are limited, we ask that you only use Milgram for work on and storage of sensitive data, and that you do your other high performance computing on our other clusters.  
+
 
 - - -
+
+## Access the Cluster 
+
+Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
+
+!!! info
+    Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
 ## System Status and Monitoring
 
@@ -20,6 +32,22 @@ For system status messages and the schedule for upcoming maintenance, please see
 Milgram is made up of several kinds of compute nodes. We group them into  (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
 
 --8<-- "snippets/submission_rate_limit.md"
+
+### Partition Name Changes
+
+To bring the Milgram commons and Psychology private partitions in agreement with the existing YCRC naming conventions, we have renamed the following partitions. Full details of which nodes are in each partition are in the table below.
+
+* gpu -> psych_gpu
+* scavenge -> psych_scavenge
+* gpu_commons -> gpu
+* scavenge_all -> scavenge
+
+The Psychology short, long and verylong partitions have also been consolidated into two partitions:
+
+* psych_day: for jobs with a walltime of less than or equal to 24 hours
+* psych_week: for jobs with a walltime less than or equal to 7 days.
+
+As of the June maintenance, short, long and verylong no longer work. scavenge_all, scavenge, gpu_commons and gpu all point the appropriate commons nodes.  At the end of June, scavenge_all and gpu_commons will be removed and no longer work. **Please update your scripts accordingly at your earliest convenience.**
 
 ### Public Partitions
 

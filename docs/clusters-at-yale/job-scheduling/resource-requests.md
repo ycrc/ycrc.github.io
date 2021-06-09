@@ -33,12 +33,30 @@ Slurm strictly enforces the memory your job can use. If you request 5GiB of memo
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters-at-yale/clusters) regarding node configurations that include GPUs. The Slurm options `--mem` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. 
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters-at-yale/clusters) regarding node configurations that include GPUs. There are several `srun`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
 
-In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs *_and_* request them as a Slurm "Generic Resource" or gres. You specify the gres configuration per-node for a job with the `--gres` flag and a number of GPUs. If you are agnostic about the kind of GPU your job gets, `--gres=gpu:1` will allocate one of any kind of GPU per node. To specifically request, for example, a P100 for each node in your job you would use the flag `--gres=gpu:p100:1`. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs.
+|Long Option<img width=200/>|Short Option|Description                                                                                                                  |
+|---------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `--cpus-per-gpu`          |            |  Use instead of `--cpus-per-task` to specify number of CPUs per allocated GPU                                               |
+| `--gpus`                  | `-G`       |  Specify the _total number_ of GPUs required for the job either with number or type:number                                  |
+| `--gpus-per-node`         |            |  Specify the number of GPUs _per node_, either with number or type:number. New option similar to `--gres=gpu`               |
+| `--gpus-per-task`         |            |  Specify the number of GPUs _per task_, either with number or type:number                                                   |
+| `--mem-per-gpu`<sup>*</sup>          |            |  Request system memory that scales per GPU. The `--mem`, `--mem-per-cpu` and `--mem-per-gpu` options are mutually exclusive |
+
+<sup>* The `--mem-per-gpu` flag does not currently work as intended, please do not use. Request memory using `--mem` or `--mem-per-cpu` in the meantime.</sup>
+
+In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - **the default GPU request for jobs is to not request any**. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options `--mem`, `--mem-per-gpu` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use `type:number` notation. For example, to request an NVIDIA P100 .
+
+``` text
+sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
+```
 
 !!! tip
-    As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time.
+    As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:
+    
+    ``` text
+    srun --pty --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel bash
+    ```
 
 For more documentation on using GPUs on our clusters, please see [GPUs and CUDA](/clusters-at-yale/guides/gpus-cuda).
 
@@ -69,6 +87,7 @@ We also have keyword features to help you constrain your jobs to certain categor
 - `standard`: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.
 - `singleprecision`: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).
 - `doubleprecision`: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).
+- `bigtmp`: nodes with at least 1.5T of local storage in `/tmp`. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's `$GAUSS_SCRDIR`).  
 
 !!!tip
     Use the command `scontrol show node <hostname>`, replacing `<hostname>` with the node's name you're interested in, to see more information about the node including its features.

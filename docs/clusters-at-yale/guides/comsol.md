@@ -1,12 +1,12 @@
 # COMSOL
 
-YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
+YCRC has COMSOL Multiphysics 5.2a available on Grace and Farnam. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
 
-## Use COMSOL on Grace
+## Use COMSOL
 
-To use COMSOL on Grace, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/clusters-at-yale/applications/modules) documentation. 
+To use COMSOL on the cluster, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/clusters-at-yale/applications/modules) documentation. 
 
-COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on Grace's [Open OnDemand web portal](/clusters-at-yale/access/ood/).
+COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
 To launch COMSOL in your Remote Desktop, open the terminal application in the session and enter the following commands:
 
@@ -15,7 +15,39 @@ module load COMSOL/5.2a-classkit
 comsol -np $SLURM_CPUS_PER_TASK &
 ```
 
-## Details of COMSOL the Cluster
+## Run COMSOL in Batch Mode
+
+Comsol can be run without the graphical interface assuming you have a model file and a study defined beforehand. 
+This is particularly useful for parametric sweeps or scanning over a range of values for specific parameters.
+For example:
+
+```
+comsol batch -inputfile mymodel.mph -outputfile out.mph -study std1
+```
+
+which will run the study `std1` found within the `mymodel.mph` file generated through the COMSOL GUI and save the outputs in  `out.mph`. 
+A parameter can be passed into the study like this:
+
+```
+comsol batch -inputfile  mymodel.mph -outputfile out.mph -pname L -plist 8[cm],10[cm],12[cm]
+```
+Which will run three versions of the model sequentially for each of the three values of `L` enumerated.
+When combined with [Slurm Job Arrays](/clusters-at-yale/job-scheduling/dsq/) many COMSOL jobs can be run in parallel.
+An example `dSQ` job-file would look like:
+
+```sh
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_8.mph -pname L -plist 8[cm]
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_10.mph -pname L -plist 10[cm]
+module load COMSOL; comsol batch -inputfile  mymodel.mph -outputfile out_12.mph -pname L -plist 12[cm]
+
+```
+Which would run three versions of the study using different values of `L` and save their outputs in separate files.
+Be careful to provide a different output file for each line to avoid clashes between the separate jobs.
+
+More details can be found on the [COMSOL documentation site](https://www.comsol.com/support/knowledgebase/1250).
+
+
+## Details of COMSOL on YCRC Clusters
 
 Two COMSOL modules (Heat Transfer and Structural Mechanics) are included in addition to the main multiphysics engine.
 
@@ -39,6 +71,7 @@ The following models might be solved using our COMSOL package both in stationary
 
 All above models can be used in the Multiphysics approach of coupling them together. They can be solved in Full Couple mode or by using Segregated Solver (solving one physical model and using resulting field to model another, and so on).
 
+
 ## Backward Compatibility
 
 COMSOL is not backwards compatible. If you have a project file from a newer version of COMSOL (e.g. 5.3), it will not open in 5.2a. However, in some circumstances, we can assist with porting the project file back to version 5.2a. If you have any questions about this, please [contact us](/#get-help).
@@ -53,4 +86,4 @@ You cannot import geometry designed by external CAD program like SolidWorks, Aut
 
 More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please [contact us](/#get-help) if you feel you need to utilize MatLab.
 
-Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL you have to [contact us](/#get-help) to use our more general license with very limited number of licensed seats.
+Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL on your local computer, please [contact us](/#get-help) to use our more general license with very limited number of licensed seats.

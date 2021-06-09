@@ -89,7 +89,7 @@
 
 === "gpu_commons"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gres` option in order to use them. For example, `--gres=gpu:gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
 
     **Request Defaults**
 
@@ -100,7 +100,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the gpu_commons partition are subject to the following limits:
@@ -131,7 +131,7 @@
     ```
 
     !!! warning "GPU jobs need GPUs!"
-        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
 
     Jobs submitted to the scavenge_all partition are subject to the following limits:
@@ -194,7 +194,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the psych_gpu partition are subject to the following limits:
@@ -222,7 +222,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         ```
 
         !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gres`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
         **Job Limits**
 
         Jobs submitted to the psych_scavenge partition are subject to the following limits:

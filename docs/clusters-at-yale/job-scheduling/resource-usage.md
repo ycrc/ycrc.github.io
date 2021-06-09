@@ -42,7 +42,7 @@ To know how much RAM your job used (and what jobs like it will need in the futur
 If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should `ssh` to, run:
 
 ```
-[be59@farnam1 ~]$ squeue -u$USER
+[be59@farnam1 ~]$ squeue --me
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
           21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
 ```

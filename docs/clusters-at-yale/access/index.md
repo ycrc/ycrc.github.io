@@ -8,13 +8,15 @@ If you're just getting started or prefer a more graphical interface, Open OnDema
 
 ## SSH Quick Start
 
+* [Request an account](https://research.computing.yale.edu/support/hpc/account-request) (if you do not already have one).
+
 * Send us your public SSH key with our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Allow up to ten minutes for it to propagate.
 
 * Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`.
 
-* Login node addresses and other useful info can be found on [the clusters page](/clusters-at-yale/clusters).
+* Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters-at-yale/clusters).
 
-* To use graphical programs on the clusters, please see our guides on [X11 Forwarding](x11) and [VNC](vnc).
+* To use graphical programs on the clusters, please see our guides on [Open OnDemand](/clusters-at-yale/access/ood), [X11 Forwarding](x11) and [VNC](vnc).
 
 **If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [contact us](/#get-help) if you're still having issues.
 

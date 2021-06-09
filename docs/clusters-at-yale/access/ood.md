@@ -7,20 +7,36 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
-Open OnDemand is available on the following clusters using your NetID credentials (CAS login).
+Open OnDemand is available on the following clusters using your NetID credentials (CAS login). 
 
-| Cluster                                     | OOD site                                                   |
-|---------------------------------------------|------------------------------------------------------------|
-| [Grace](/clusters-at-yale/clusters/grace) | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
-| [Farnam](/clusters-at-yale/clusters/farnam)   | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
+| Cluster                                         | OOD site                                                   |
+|-------------------------------------------------|------------------------------------------------------------|
+| [Grace](/clusters-at-yale/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
+| [Farnam](/clusters-at-yale/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
 | [Milgram](/clusters-at-yale/clusters/milgram)\* | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
-| [Ruddle](/clusters-at-yale/clusters/ruddle)\* | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
+| [Ruddle](/clusters-at-yale/clusters/ruddle)\*   | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
-### DUO Everywhere for OOD Milgram and Ruddle
+<sup>\* Open OnDemand for Milgram and Ruddle requires enrollment in Duo Everywhere. See below for details.<sup>
+
+The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
+
+### DUO Everywhere for Milgram and Ruddle Open OnDemand Web Portals
 
 If you want access to Open OnDemand for Milgram or Ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force [Multi-Factor Authentication](/clusters-at-yale/access/mfa) (MFA) for CAS on every login, even on-campus.
 
 To enroll in DUO Everywhere, please access the [DUO Everywhere Opt-In](https://veritas.its.yale.edu/mfa/optin/landing) tool and follow the instructions. Once you are done with the enrollment, please email [hpc@yale.edu](mailto:hpc@yale.edu) indicating you have enrolled in DUO Everywhere and the cluster you will be using. We will notify you when your request is processed. After that you will be able to use OOD.
+
+## Course Open OnDemand Web Portals
+
+For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+
+!!! warning 
+    If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
+    ```
+    Error -- can't find user for cpsc424_test
+    Run 'nginx_stage --help' to see a full list of available command line options.
+    ```
+    Instead, use the course OOD URL.
 
 ## The Dashboard
 
@@ -68,7 +84,7 @@ Note you can share a view only link for your session if you would like to share 
 
 #### Copy/Paste
 
-Because of the way modern borowsers protect your computer's clipboard you have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
+In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
 
 ![clipboard](/img/ood_remote_clipboard.png)
 
@@ -79,7 +95,7 @@ One of the most common uses of Open OnDemand is the Jupyter Notebook interface f
 
 ![jupyter_form](/img/ood_jupyter_form.png)
 
-Make sure that you chose the right conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
+Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
 !!! tip
     If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) replace `/tree?` with `/lab` in the url to your Jupyter job.

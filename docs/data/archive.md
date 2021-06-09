@@ -11,6 +11,40 @@ Not every file created during a project needs to be archived. If you proactively
 ## Compress Your Data
 
 Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or [tar](/online-tutorials), portions of your data for ease of storage and retrieval.
+For example, to create a compressed archive of a directory you can do the following:
+
+```sh
+tar -cvzf archive-2021-04-26.tar.gz ./data_for_archival
+
+```
+This will create a new file (`archive-2021-04-26.tar.gz`) which contains all the data from within `data_for_archival` and is compressed to minimize storage requirements.
+This file can then be transferred to any off-site backup or archive location.
+
+## List and Extract Data From Existing Archive
+
+You can list the contents of an archive file like this:
+
+```sh
+tar -ztvf archive-2021-04-26.tar.gz
+```
+which will print the full list of every file within the archive.
+The clusters also have the `lz` tool installed that provides a shorter way to list the contents:
+
+```sh
+lz archive-2021-04-26.tar.gz
+```
+
+You can then extract a single file from a large tar-file without decompressing the full thing:
+
+```sh
+tar -zxvf archive-2021-04-26.tar.gz path/to/file.txt
+```
+There is an alternative syntax that is more legible:
+
+```sh
+tar --extract --file=archive-2021-04-26.tar.gz file.txt
+```
+Either should work fine on the clusters.
 
 ## Tips for S@Y Archive Tier (or Any Tape Archive)
 

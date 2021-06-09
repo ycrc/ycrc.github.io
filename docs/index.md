@@ -1,3 +1,4 @@
+
 !!! attention "COVID-19/SARS-CoV-2 Research"
     If you're doing computational research related to COVID-19/SARS-CoV-2 on an HPC cluster and experience any long wait times for jobs to run, [please let us know](mailto:hpc@yale.edu).
 
@@ -23,7 +24,7 @@ Once received, our system will send an automated response with a link to a ticke
 The [YCRC YouTube channel](https://ycrc.yale.edu/youtube) features recorded tutorials and workshops that cover a wide range of computing topics.
 New videos are added regularly and suggestions for topics can be submitted by emailing [hpc@yale.edu](mailto:hpc@yale.edu).
 
-### In Person Support
+### One-on-One Support
 
 !!! question "Zoom Office Hours"
     Consistent with University guidance in response to COVID-19, <strong>one-on-one consulting and office hours are held remotely via Zoom</strong>.
@@ -45,3 +46,10 @@ New videos are added regularly and suggestions for topics can be submitted by em
 ### Q&A Platform
 
 The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Post questions about the clusters and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
+
+## Acknowledge the YCRC
+
+When publishing work performed on a YCRC cluster or with assistance from YCRC staff, we would greatly appreciated it if you would place an acknowledgment in your publication. If you would like to acknowledge specific individuals who you worked with, that would also be appreciated. A list of YCRC staff can found on our <a href="https://research.computing.yale.edu/about/staff">Staff page</a>. We include some example text below. 
+
+
+> We thank the Yale Center for Research Computing for guidance and use of the research computing infrastructure, specifically assistance from [YCRC staff member name(s)].
