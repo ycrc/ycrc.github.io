@@ -29,7 +29,7 @@ New videos are added regularly and suggestions for topics can be submitted by em
 !!! question "Office Hours"
     Consistent with University guidance in response to COVID-19, <strong>one-on-one consulting and office hours are held remotely</strong>.
 
-Many of the research support team members hold regular office hours you can self-schedule via Google Calendar (Google/EliApps account required). When you book an appointment this way, add the topics you want to discuss in the description field. By default, Google Meet links are generated for appointments made this way. If you strongly prefer Zoom, please let us know in the description field. 
+Many of the research support team members hold regular office hours you can self-schedule via Google Calendar (Google/EliApps account required). When you book an appointment this way, add the topics you want to discuss in the description field. Google Meet links are generated for these appointments. If you strongly prefer Zoom, please let us know in the description field. 
 
 If you are unsure about who can best help, email us at [hpc@yale.edu](mailto:hpcg@yale.edu) with as much detail as possible about your request and we'll find the right person for you.
 
