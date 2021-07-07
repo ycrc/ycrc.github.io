@@ -8,7 +8,7 @@ Broadly speaking, a high performance computing (HPC) cluster is a collection of 
 
 ## Request an Account
 
-The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request).
+The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters, but all users must adhere to the YCRC [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request). 
 
 ## Log in
 
