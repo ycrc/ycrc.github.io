@@ -1455,7 +1455,7 @@
                 <h1 id="hpc-resources">HPC Resources</h1>
 <p>The YCRC maintains and supports a number of high performance computing systems for the Yale research community. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click <a href="https://research.computing.yale.edu/sites/default/files/files/Facilities%20and%20Equipment%20Document-2020-02-27.docx">here</a>. </p>
 <h2 id="compute">Compute</h2>
-<p>We maintain and support four Red Hat linux based compute clusters, listed below. Please click on cluster names for more information. </p>
+<p>We maintain and support four Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. </p>
 <table>
 <thead>
 <tr>
@@ -1498,45 +1498,66 @@
 </tbody>
 </table>
 <h2 id="storage">Storage</h2>
-<p>We maintain several high performance storage systems which amount to about 12.5 PiB total. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory <code>/home</code> will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the <a href="/clusters-at-yale/data/index">Cluster Storage</a> page.</p>
+<p>We maintain several high performance storage systems. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory <code>/home</code> will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the <a href="/clusters-at-yale/data/index">Cluster Storage</a> page.</p>
 <table>
 <thead>
 <tr>
-<th>Filesystem</th>
+<th>Storage</th>
+<th>Path</th>
 <th>Size</th>
 <th>Mounting Clusters</th>
+<th>File System Software</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>/gpfs/gibbs</td>
-<td>5.4 PiB</td>
-<td>Grace, Farnam, Ruddle</td>
-</tr>
-<tr>
+<td>Loomis</td>
 <td>/gpfs/loomis</td>
 <td>2.6 PiB</td>
 <td>Grace*, Farnam</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>Grace primary storage</td>
 </tr>
 <tr>
+<td>YSM</td>
 <td>/gpfs/ysm</td>
 <td>1.5 PiB</td>
 <td>Grace, Farnam*</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>Farnam primary storage</td>
 </tr>
 <tr>
+<td>Gibbs</td>
+<td>/gpfs/gibbs</td>
+<td>5.4 PiB</td>
+<td>Grace, Farnam, Ruddle</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>purchased project-style storage</td>
+</tr>
+<tr>
+<td>Slayman</td>
 <td>/gpfs/slayman</td>
 <td>1.0 PiB</td>
 <td>Grace, Farnam</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>purchased project-style storage</td>
 </tr>
 <tr>
+<td>Milgram</td>
 <td>/gpfs/milgram</td>
 <td>2.1 PiB</td>
 <td>Milgram*</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>Milgram primary storage</td>
 </tr>
 <tr>
+<td>YCGA</td>
 <td>/gpfs/ycga</td>
 <td>2.0 PiB</td>
 <td>Ruddle*</td>
+<td>IBM Spectrum Scale (GPFS)</td>
+<td>Ruddle primary storage</td>
 </tr>
 </tbody>
 </table>
@@ -1548,7 +1569,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2021</span>
     
   </small>
 </div>
