@@ -47,9 +47,11 @@ The Globus connector is configured to only allow data to be uploaded into EliApp
 
 ### Using Your Endpoint
 
-On the [Globus Transfer](https://app.globus.org/file-manager) page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Endpoint field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").
+On the [Globus Transfer](https://app.globus.org/file-manager) page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Collection field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").
 
-There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you are archiving data to Google Drive, it is much better to first compress folders that contain lots of small files (e.g. using [tar](/online-tutorials)) before transferring. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.
+There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.
+
+Google has a 400,000 file limit per Shared Drive, so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using [tar](/online-tutorials)) before transferring. 
 
 In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.
 
