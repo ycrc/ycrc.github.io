@@ -1,6 +1,6 @@
 # HPC Resources
 
-The YCRC maintains and supports a number of high performance computing systems for the Yale research community. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](https://research.computing.yale.edu/sites/default/files/files/Facilities%20and%20Equipment%20Document-2020-02-27.docx). 
+The YCRC maintains and supports a number of high performance computing systems for the Yale research community. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](https://research.computing.yale.edu/sites/default/files/files/Facilities%20and%20Equipment%20Document-2020-02-27.docx). Our high performance computing systems are named after [notable members of the Yale community](https://research.computing.yale.edu/about/hpc-resources).
 
 ## Compute
 
@@ -17,7 +17,7 @@ We maintain and support four Red Hat Linux compute clusters, listed below. Pleas
 
 We maintain several high performance storage systems. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/clusters-at-yale/data/index) page.
 
-| Storage  | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                         |
+| Name     | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                         |
 |----------|---------------|---------|-----------------------|---------------------------|---------------------------------|
 | Loomis   | /gpfs/loomis  | 2.6 PiB | Grace\*, Farnam       | IBM Spectrum Scale (GPFS) | Grace primary storage           |
 | YSM      | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       | IBM Spectrum Scale (GPFS) | Farnam primary storage          |
