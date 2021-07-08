@@ -1614,8 +1614,9 @@
 <li>After your approvals you will be directed to the Globus File Manager, with the default view of "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.</li>
 </ol>
 <h3 id="using-your-endpoint">Using Your Endpoint</h3>
-<p>On the <a href="https://app.globus.org/file-manager">Globus Transfer</a> page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Endpoint field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").</p>
-<p>There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you are archiving data to Google Drive, it is much better to first compress folders that contain lots of small files (e.g. using <a href="/online-tutorials">tar</a>) before transferring. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.</p>
+<p>On the <a href="https://app.globus.org/file-manager">Globus Transfer</a> page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Collection field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").</p>
+<p>There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.</p>
+<p>Google has a 400,000 file limit per Shared Drive, so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using <a href="/online-tutorials">tar</a>) before transferring. </p>
 <p>In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.</p>
 <h3 id="managing-your-endpoint">Managing Your Endpoint</h3>
 <p>To manage your endpoint, such as delete the endpoint, rename it, or share it with additional people (be aware, they will be able to access your Google Drive), go to <a href="https://app.globus.org/endpoints">Manage Endpoint</a> on the Globus website.</p>
@@ -1627,7 +1628,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2021</span>
     
   </small>
 </div>
