@@ -2,7 +2,7 @@
 
 ## MATLAB GUI
 
-If you wish to use the MATLAB GUI, we recommend use [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.
+If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.
 
 ## Command Line MATLAB
 
