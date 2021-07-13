@@ -782,19 +782,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#find-matlab" class="md-nav__link">
-    Find MATLAB
+  <a href="#matlab-gui" class="md-nav__link">
+    MATLAB GUI
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#command-line-matlab" class="md-nav__link">
+    Command Line MATLAB
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line MATLAB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-matlab" class="md-nav__link">
+    Find MATLAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-matlab" class="md-nav__link">
     Run MATLAB
   </a>
   
-    <nav class="md-nav" aria-label="Run MATLAB">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#interactive-job" class="md-nav__link">
@@ -810,15 +824,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
     Using More than 12 Cores with Matlab
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1446,19 +1460,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#find-matlab" class="md-nav__link">
-    Find MATLAB
+  <a href="#matlab-gui" class="md-nav__link">
+    MATLAB GUI
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#command-line-matlab" class="md-nav__link">
+    Command Line MATLAB
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line MATLAB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-matlab" class="md-nav__link">
+    Find MATLAB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-matlab" class="md-nav__link">
     Run MATLAB
   </a>
   
-    <nav class="md-nav" aria-label="Run MATLAB">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#interactive-job" class="md-nav__link">
@@ -1474,15 +1502,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
     Using More than 12 Cores with Matlab
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1507,17 +1535,20 @@
                 
                 
                 <h1 id="matlab">MATLAB</h1>
-<h2 id="find-matlab">Find MATLAB</h2>
+<h2 id="matlab-gui">MATLAB GUI</h2>
+<p>If you wish to use the MATLAB GUI, we recommend use <a href="/clusters-at-yale/access/ood">Open OnDemand</a>. Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.</p>
+<h2 id="command-line-matlab">Command Line MATLAB</h2>
+<h3 id="find-matlab">Find MATLAB</h3>
 <p>Run one of the commands below, which will list available versions and the corresponding module files:</p>
 <div class="highlight"><pre><span></span><code>module spider matlab
 </code></pre></div>
 
-<p>Load the appropriate module file. For example, to run version R2014a:</p>
-<div class="highlight"><pre><span></span><code>module load MATLAB/2014a
+<p>Load the appropriate module file. For example, to run version R2019a:</p>
+<div class="highlight"><pre><span></span><code>module load MATLAB/2019a
 </code></pre></div>
 
 <p>The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.</p>
-<h2 id="run-matlab">Run MATLAB</h2>
+<h3 id="run-matlab">Run MATLAB</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The MATLAB program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive or batch job (see below).</p>
@@ -1561,7 +1592,7 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
 </code></pre></div>
 
 <p>Unless you specify otherwise (using &gt; redirects), both output and error logs will show up in the slurm-jobid.out log file in the same directory as your submission script.</p>
-<h3 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with Matlab</h3>
+<h2 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with Matlab</h2>
 <p>In Matlab, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.</p>
 <div class="highlight"><pre><span></span><code>parpool(feature(&#39;NumCores&#39;));
 </code></pre></div>
@@ -1573,7 +1604,7 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 13, 2021</span>
     
   </small>
 </div>
