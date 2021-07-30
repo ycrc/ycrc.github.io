@@ -26,20 +26,20 @@ New videos are added regularly and suggestions for topics can be submitted by em
 
 ### One-on-One Support
 
-Many of the research support team members hold regular office hours you can self-schedule via Google Calendar (Google/EliApps account required). When you book an appointment this way, add the topics you want to discuss in the description field. Google Meet links are generated for these appointments. If you strongly prefer Zoom, please let us know in the description field. 
+Research support team members are available by appointment for one-on-one support.  See the table below for information about each person's area of particular focus 
+and their email address.  Please email them to set up an appointment.  If you have a general question or are unsure about who to contact, 
+you can email us at [hpc@yale.edu](mailto:hpcg@yale.edu) with as much detail as possible about your request and we'll find the right person for you.
 
-If you are unsure about who can best help, email us at [hpc@yale.edu](mailto:hpcg@yale.edu) with as much detail as possible about your request and we'll find the right person for you.
-
-| Specialist | Cluster(s) | Areas of Focus | Office Hours |
+| Specialist | Cluster(s) | Areas of Focus | Email |
 | --- | --- | --- | --- |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python | [Mon 10am-Noon](https://calendar.google.com/calendar/selfsched?sstoken=UUdEbDVXX0g4bVNhfGRlZmF1bHR8OGUwZWMyMWFlN2NjNGQyYjMzMGM1ODAyNTk3NzMxMTM) |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace)| Physics, Python, MPI | [Mon 2-4pm](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUdzcjF1Tkk5RloyfGRlZmF1bHR8Njc2Y2JmMThjZDI2Nzk2ZjdjZjlkODEzMzRlNmZhOWI) |
-|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, OOD Portal | [Wed 10am-Noon](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UU1MamtfOEMyQXFCfGRlZmF1bHR8NDU3MDNjOGY3MTg4OWExMzFlNWZkM2I1NjYzMTU4ZjE) |
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal | [Wed 2-4pm](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUJwNXdOLVdiMUtafGRlZmF1bHR8NGFlMjZjNTZiOTk4ZTAzNjNiM2NhZWJkNjNkOGY5ZmM) |
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R | [Thu 2-4pm](https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUtMa3NUSDJqd2FQfGRlZmF1bHR8ZjVmYjVlMjhhODI2YTUyMGI3NTZjNjRlNzE3OWNmYzE) |
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Structural Biology | [Email for appointment](mailto:hpc@yale.edu) |
-|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace)| MPI, GPUs, Matlab | [Email for appointment](mailto:hpc@yale.edu) |
-|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica | [Email for appointment](mailto:hpc@yale.edu) |
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python | kaylea.nelson@yale.edu |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace)| Physics, Python, MPI | thomas.langford@yale.edu |
+|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, OOD Portal | b.evans@yale.edu |
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal | ping.luo@yale.edu |
+|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R | robert.bjornson@yale.edu |
+|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Structural Biology | michael.strickler@yale.edu |
+|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace)| MPI, GPUs, Matlab | andrew.sherman@yale.edu |
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica | mikhael.guy@yale.edu |
 
 ### Q&A Platform
 
