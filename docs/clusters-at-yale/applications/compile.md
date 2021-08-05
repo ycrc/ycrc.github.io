@@ -19,6 +19,9 @@ You may find that software compiled on newer compute nodes will fail with the er
 
 Either way, you will want to control where your jobs run with [job constraints](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints).
 
+!!! warning
+    Grace's login nodes have newer architecture than the oldest nodes on the cluster. Always compile in an interactive job submitted with the `--constraint oldest` Slurm flag if you want to ensure your program will run on all generations of the compute nodes.
+
 ## Conventions
 
 ### Local Install

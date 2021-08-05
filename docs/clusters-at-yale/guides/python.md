@@ -30,6 +30,9 @@ module help Python/3.7.0-foss-2018b
 
 We recommend _*against*_ installing python packages with `pip` after having loaded the Python module. Doing so installs them to your home directory in a way that does not make it clear to other python installs what environment the packages you installed belong to. Instead we recommend using [virtualenv](https://docs.python.org/3/library/venv.html) or [Conda](/clusters-at-yale/guides/conda/) environments. We like conda because of all the additional pre-compiled software it makes available.
 
+!!! warning
+    Grace's login nodes have newer architecture than the oldest nodes on the cluster. If you do `pip` install packages, do so in an interactive job submitted with the `-C oldest` Slurm flag if you want to ensure your code will work on all generations of the compute nodes.
+
 ## Conda-based Python Environments
 
 You can easily set up multiple Python installations side-by-side using the `conda` command. With Conda you can manage your own packages and dependencies for Python, R, etc. See our guide for more detailed instructions. 
@@ -42,6 +45,7 @@ conda create -n py3_env python=3 numpy scipy matplotlib ipython jupyter jupyterl
 module purge && module load miniconda
 conda activate py3_env
 ```
+
 
 ## Run Python
 
