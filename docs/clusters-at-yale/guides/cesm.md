@@ -192,7 +192,10 @@ If you are still experiencing issues, [contact us](/#get-help).
 
 ## Alternative Submission Parameters
 
-By default, the submission script will submit to the "mpi" partition for 1 day. To change this, edit your case’s `run` script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
+By default, the submission script will submit to the "mpi" partition for 1 day. 
+
+### CESM 1.x
+To change this in CESM 1.x, edit your case’s `run` script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
 
 ``` bash
 ## scavenge partition
@@ -200,17 +203,16 @@ By default, the submission script will submit to the "mpi" partition for 1 day. 
 #SBATCH --time=1-
 ```
 
-``` bash
-## day partition
-#SBATCH --partition=pi_fedorov
-#SBATCH --time=7-
+### CESM 2.x
+To change this in CESM 2.x, use ` ./xmlchange ` in your run directory.
+
+```
+# Change partition to scavenge
+./xmlchange JOB_QUEUE=scavenge
+# Change walltime limit to 2 days (> 24 hours is only available on PI partitions)
+./xmlchange JOB_WALLCLOCK_TIME 2-00:00:00
 ```
 
-Then you can submit by running the submit script
-
-``` bash
-./$CASE.$mach.submit
-```
 
 ## Further Reading
 
