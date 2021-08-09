@@ -827,6 +827,26 @@
     Alternative Submission Parameters
   </a>
   
+    <nav class="md-nav" aria-label="Alternative Submission Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cesm-1x" class="md-nav__link">
+    CESM 1.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cesm-2x_1" class="md-nav__link">
+    CESM 2.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1721,6 +1741,26 @@
     Alternative Submission Parameters
   </a>
   
+    <nav class="md-nav" aria-label="Alternative Submission Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cesm-1x" class="md-nav__link">
+    CESM 1.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cesm-2x_1" class="md-nav__link">
+    CESM 2.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1873,19 +1913,20 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <p>If it looks like a model error and you don’t know how to fix it, we strongly recommend Googling your error and/or looking in the <a href="https://bb.cgd.ucar.edu">CESM forums</a>.</p>
 <p>If you are still experiencing issues, <a href="/#get-help">contact us</a>.</p>
 <h2 id="alternative-submission-parameters">Alternative Submission Parameters</h2>
-<p>By default, the submission script will submit to the "mpi" partition for 1 day. To change this, edit your case’s <code>run</code> script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:</p>
+<p>By default, the submission script will submit to the "mpi" partition for 1 day. </p>
+<h3 id="cesm-1x">CESM 1.x</h3>
+<p>To change this in CESM 1.x, edit your case’s <code>run</code> script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## scavenge partition</span>
 <span class="c1">#SBATCH --partition=scavenge</span>
 <span class="c1">#SBATCH --time=1-</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="c1">## day partition</span>
-<span class="c1">#SBATCH --partition=pi_fedorov</span>
-<span class="c1">#SBATCH --time=7-</span>
-</code></pre></div>
-
-<p>Then you can submit by running the submit script</p>
-<div class="highlight"><pre><span></span><code>./<span class="nv">$CASE</span>.<span class="nv">$mach</span>.submit
+<h3 id="cesm-2x_1">CESM 2.x</h3>
+<p>To change this in CESM 2.x, use <code>./xmlchange</code> in your run directory.</p>
+<div class="highlight"><pre><span></span><code># Change partition to scavenge
+./xmlchange JOB_QUEUE=scavenge
+# Change walltime limit to 2 days (&gt; 24 hours is only available on PI partitions)
+./xmlchange JOB_WALLCLOCK_TIME 2-00:00:00
 </code></pre></div>
 
 <h2 id="further-reading">Further Reading</h2>
@@ -1903,7 +1944,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2021</span>
     
   </small>
 </div>
