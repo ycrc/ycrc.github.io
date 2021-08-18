@@ -29,13 +29,13 @@ readlink -f ~/project
 
 Quota: varies
 
-Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up. See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. Purchased storage, if applicable, is located at in the  `/gpfs/<filesystem>/pi/` directory under the group's name. 
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up. See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. Purchased storage, if applicable, is located in a  `/gpfs/<filesystem>/pi/` directory under the group's name. 
 
 ### 60-Day Scratch
 
 Quota: 20 TiB and 15,000,000 files per group
 
-60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like Project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
+60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
 
 We create a symlink, or shortcut, in every home directory called `scratch60`, but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
 

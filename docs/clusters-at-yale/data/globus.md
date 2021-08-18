@@ -69,7 +69,7 @@ The Globus connector is configured to only allow data to be uploaded into EliApp
 1. The first time you login to the Globus Google Drive endpoint, you will be presented with a permissions approval page. If you are ok with the Connector manipulating your files through Globus (which is required), click the Allow button.
 1. You may see your Yale EliApps account expressed in an uncommon format, such as netid@yale.edu@accounts.google.com. This is normal, and expected.
 1. After your approvals you will be directed to the Globus File Manager, with the default view of "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.
-2. To transfer to or from your Google Drive, simply search in the Collection field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection")
+2. To transfer to or from your Google Drive, search in the Collection field for "YCRC Globus Google Drive Collection".
 
 !!! note 
     There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. You see a "Endpoint Busy" error during this time.

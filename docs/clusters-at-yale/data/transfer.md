@@ -52,9 +52,9 @@ When you connect type one of the following when prompted with a "Partial authent
 
 You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see [our Globus page](/clusters-at-yale/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
-## Command-Line Transfer Tools
+### Command-Line Transfer Tools
 
-### scp and rsync (macOS/Linux/Linux on Windows)
+#### scp and rsync (macOS/Linux/Linux on Windows)
 
 Linux and macOS users can use [scp](https://linux.die.net/man/1/scp) or [rsync](http://linux.die.net/man/1/rsync). Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.
 
@@ -105,7 +105,7 @@ scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/
 
 ## Transfer Data to/from Other Locations 
 
-### Globus
+### Globus Endpoints
 
 Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see [our Globus page](/clusters-at-yale/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 

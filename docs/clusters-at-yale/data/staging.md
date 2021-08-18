@@ -15,8 +15,6 @@ A sample workflow using `rsync` would be:
 ``` bash
 # connect to the transfer node from the login node
 [netID@cluster ~] ssh transfer
-# setup a tmux to protect your transfer from lost local connections
-[netID@transfer ~] tmux
 # copy data to temporary cluster storage
 [netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
 # process data on cluster
@@ -25,9 +23,8 @@ A sample workflow using `rsync` would be:
 [netID@transfer ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
 ```
 
-!!! note 
-    When an `rsync` is running, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detach from the `tmux` session. This will leave your transfer running in the background inside the `tmux` session. You can reattached to the session with `tmux attach` to check on the progress or move on to the next step.
-    For more details about how to use `tmux`, look at our guide [here](/clusters-at-yale/guides/tmux).
+!!! Tip 
+    To protect your transfer from network interruptions between your computer and the transfer node, launch your `rsync` inside a [tmux](/clusters-at-yale/guides/tmux/) session on the transfer node.
 
 ## Transfer Partition
 Both Grace and Farnam have dedicated data transfer partitions (named `transfer`) designed for staging data onto the cluster.
