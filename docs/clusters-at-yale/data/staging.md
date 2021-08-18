@@ -1,41 +1,38 @@
-# Stage Data
+# Stage Data for Compute Jobs
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
-Since the _permanent_ home of the data remains on off-cluster storage, you need to [transfer](/clusters-at-yale/data/transfer/) a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transmit the results to a more permanent location.
+Since the _permanent_ home of the data remains on off-cluster storage, you need to [transfer](/clusters-at-yale/data/transfer/) a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transfer the results to a more permanent location.
+
+## Temporary Storage
+
+We recommend staging data into your [Scratch60](/clusters-at-yale/data) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
+
+## Interactive Transfers
+For interactive transfers, please see our [Transfer Data](/clusters-at-yale/data/transfer/) page for a more complete list of ways to move data efficiently to and from the clusters.  
 
 A sample workflow using `rsync` would be:
 
 ``` bash
+# connect to the transfer node from the login node
+[netID@cluster ~] ssh transfer
+# setup a tmux to protect your transfer from lost local connections
+[netID@transfer ~] tmux
 # copy data to temporary cluster storage
-[netID@cluster ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
+[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
 # process data on cluster
-[netID@cluster ~]$ sbatch data_processing.sh
+[netID@transfer ~]$ sbatch data_processing.sh
 # return results to permanent storage for safe-keeping
-[netID@cluster ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
+[netID@transfer ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
 ```
 
-The _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days).
-See the [Archive Data](/data/archive/) and [Transfer Data](/clusters-at-yale/data/transfer/) pages for more ways to move data efficiently to and from the clusters.
+!!! note 
+    When an `rsync` is running, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detach from the `tmux` session. This will leave your transfer running in the background inside the `tmux` session. You can reattached to the session with `tmux attach` to check on the progress or move on to the next step.
+    For more details about how to use `tmux`, look at our guide [here](/clusters-at-yale/guides/tmux).
 
 ## Transfer Partition
 Both Grace and Farnam have dedicated data transfer partitions (named `transfer`) designed for staging data onto the cluster.
 All users are able to submit jobs to these partitions. Note each users is limited to running two transfer jobs at one time.
 If your workflow requires more simultaneuous transfers, contact us for assistance.
-
-### Interactive Transfers
-We recommend using `tmux` to launch interactive transfers so that you are able to log out and leave the job running in the background.
-
-```bash
-# enter tmux shell
-[netID@grace1 ~]$ tmux
-# launch transfer job
-[netID@grace1 ~]$ srun --pty --partition transfer --cpus-per-task=1 --time=6:00:00 bash
-# start transfer
-[netID@c01n03 ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
-```
-You can then type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detach from the `tmux` session.
-This will leave your transfer running in the background inside the `tmux` session.
-For more details about how to use `tmux`, look at our guide [here](/clusters-at-yale/guides/tmux).
 
 ### Transfers as Batch Jobs
 
@@ -121,7 +118,7 @@ JOBID    PARTITION  NAME       USER   ST      TIME  NODES NODELIST(REASON)
 
 ## Storage@Yale Transfers
 
-Storage@Yale shares are mounted on the transfer partition, enabling you to stage data from these remove servers.
+Storage@Yale shares are mounted on the transfer partition, enabling you to stage data from these remote servers.
 The process is somewhat simpler than the above example because we do not need to `rsync` the data, and can instead use `cp` directly.
 
 Here, we have modified the `transfer.sbatch` file from above:
