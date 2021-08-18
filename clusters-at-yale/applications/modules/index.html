@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -682,6 +682,47 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ml-a-convinient-tool" class="md-nav__link">
+    ml: A Convinient Tool
+  </a>
+  
+    <nav class="md-nav" aria-label="ml: A Convinient Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-module-loaded" class="md-nav__link">
+    List Module Loaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-modules" class="md-nav__link">
+    Load Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unload-modules" class="md-nav__link">
+    Unload Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-moudle-sub-commands" class="md-nav__link">
+    With moudle Sub-commands
+  </a>
   
 </li>
         
@@ -1609,6 +1650,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ml-a-convinient-tool" class="md-nav__link">
+    ml: A Convinient Tool
+  </a>
+  
+    <nav class="md-nav" aria-label="ml: A Convinient Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-module-loaded" class="md-nav__link">
+    List Module Loaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-modules" class="md-nav__link">
+    Load Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unload-modules" class="md-nav__link">
+    Unload Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-moudle-sub-commands" class="md-nav__link">
+    With moudle Sub-commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
     Environment Variables
   </a>
@@ -1718,6 +1800,33 @@
 <div class="highlight"><pre><span></span><code>module savelist
 </code></pre></div>
 
+<h2 id="ml-a-convinient-tool"><code>ml</code>: A Convinient Tool</h2>
+<p>Lmod provides a convinient tool called <code>ml</code> to simplify all of the module commands. </p>
+<h4 id="list-module-loaded">List Module Loaded</h4>
+<div class="highlight"><pre><span></span><code>ml
+</code></pre></div>
+
+<h4 id="load-modules">Load Modules</h4>
+<div class="highlight"><pre><span></span><code>ml Python/3.8.6-GCCcore-10.2.0
+</code></pre></div>
+
+<h4 id="unload-modules">Unload Modules</h4>
+<div class="highlight"><pre><span></span><code>ml -Python
+</code></pre></div>
+
+<h4 id="with-moudle-sub-commands">With <code>moudle</code> Sub-commands</h4>
+<p><code>ml</code> can be used to replace the <code>module</code> command. It can take all the sub-commands from <code>module</code> and works the same way as <code>module</code> does.</p>
+<div class="highlight"><pre><span></span><code>ml load Python R   
+ml unload Python
+ml spider Python
+ml avail
+ml whatis Python
+ml key Python
+ml purge
+ml save <span class="nb">test</span>
+ml restore <span class="nb">test</span>
+</code></pre></div>
+
 <h2 id="environment-variables">Environment Variables</h2>
 <p>To refer to the directory where the software from a module is stored, you can use the environment variable <code>$EBROOTMODULENAME</code> where MODULENAME is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node ~ <span class="o">]</span>$ module load SAMtools
@@ -1748,7 +1857,7 @@ maq2sam-long        plot-bamstats       seq_cache_populate.pl
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
     
   </small>
 </div>
@@ -1864,15 +1973,15 @@ maq2sam-long        plot-bamstats       seq_cache_populate.pl
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
