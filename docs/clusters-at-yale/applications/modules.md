@@ -109,6 +109,44 @@ To get a list of your collections, run:
 module savelist
 ```
 
+## `ml`: A Convinient Tool
+
+Lmod provides a convinient tool called `ml` to simplify all of the module commands. 
+
+#### List Module Loaded
+
+``` bash
+ml
+```
+
+#### Load Modules
+
+``` bash
+ml Python/3.8.6-GCCcore-10.2.0
+```
+
+#### Unload Modules
+
+``` bash
+ml -Python
+```
+
+#### With `moudle` Sub-commands
+
+`ml` can be used to replace the `module` command. It can take all the sub-commands from `module` and works the same way as `module` does.
+
+``` bash
+ml load Python R   
+ml unload Python
+ml spider Python
+ml avail
+ml whatis Python
+ml key Python
+ml purge
+ml save test
+ml restore test
+```
+
 ## Environment Variables
 
 To refer to the directory where the software from a module is stored, you can use the environment variable `$EBROOTMODULENAME` where MODULENAME is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:
