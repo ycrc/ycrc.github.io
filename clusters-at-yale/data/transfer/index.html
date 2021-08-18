@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1113,6 +1113,14 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#transferring-data-tofrom-your-local-machine" class="md-nav__link">
+    Transferring Data to/from Your Local Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferring Data to/from Your Local Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#graphical-transfer-tools" class="md-nav__link">
     Graphical Transfer Tools
   </a>
@@ -1154,9 +1162,14 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#large-transfers-globus" class="md-nav__link">
-    Large Transfers (Globus)
+  <a href="#large-file-transfers-globus" class="md-nav__link">
+    Large File Transfers (Globus)
   </a>
   
 </li>
@@ -1183,22 +1196,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
-    Transfer a File from Your Computer to a Cluster
+  <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
+    Example: Transfer a File from Your Computer to a Cluster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transfer-a-directory-to-a-cluster" class="md-nav__link">
-    Transfer a Directory to a Cluster
+  <a href="#example-transfer-a-directory-to-a-cluster" class="md-nav__link">
+    Example: Transfer a Directory to a Cluster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transfer-files-from-the-cluster-to-your-computer" class="md-nav__link">
-    Transfer Files from the Cluster to Your Computer
+  <a href="#example-transfer-files-from-the-cluster-to-your-computer" class="md-nav__link">
+    Example: Transfer Files from the Cluster to Your Computer
   </a>
   
 </li>
@@ -1208,10 +1221,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-data-tofrom-other-locations" class="md-nav__link">
+    Transfer Data to/from Other Locations
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Data to/from Other Locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globus" class="md-nav__link">
+    Globus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-transfer-nodes" class="md-nav__link">
+    Cluster Transfer Nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Transfer Nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    rsync
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#rclone" class="md-nav__link">
     Rclone
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1233,8 +1286,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../staging/" title="Stage Data" class="md-nav__link">
-      Stage Data
+    <a href="../staging/" title="Stage Data for Compute Jobs" class="md-nav__link">
+      Stage Data for Compute Jobs
     </a>
   </li>
 
@@ -1527,6 +1580,14 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#transferring-data-tofrom-your-local-machine" class="md-nav__link">
+    Transferring Data to/from Your Local Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferring Data to/from Your Local Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#graphical-transfer-tools" class="md-nav__link">
     Graphical Transfer Tools
   </a>
@@ -1568,9 +1629,14 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#large-transfers-globus" class="md-nav__link">
-    Large Transfers (Globus)
+  <a href="#large-file-transfers-globus" class="md-nav__link">
+    Large File Transfers (Globus)
   </a>
   
 </li>
@@ -1597,22 +1663,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
-    Transfer a File from Your Computer to a Cluster
+  <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
+    Example: Transfer a File from Your Computer to a Cluster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transfer-a-directory-to-a-cluster" class="md-nav__link">
-    Transfer a Directory to a Cluster
+  <a href="#example-transfer-a-directory-to-a-cluster" class="md-nav__link">
+    Example: Transfer a Directory to a Cluster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transfer-files-from-the-cluster-to-your-computer" class="md-nav__link">
-    Transfer Files from the Cluster to Your Computer
+  <a href="#example-transfer-files-from-the-cluster-to-your-computer" class="md-nav__link">
+    Example: Transfer Files from the Cluster to Your Computer
   </a>
   
 </li>
@@ -1622,10 +1688,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-data-tofrom-other-locations" class="md-nav__link">
+    Transfer Data to/from Other Locations
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Data to/from Other Locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globus" class="md-nav__link">
+    Globus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-transfer-nodes" class="md-nav__link">
+    Cluster Transfer Nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Transfer Nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    rsync
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#rclone" class="md-nav__link">
     Rclone
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1655,17 +1761,9 @@
                 
                 
                 <h1 id="transfer-data">Transfer Data</h1>
-<p>For all transfer methods you should already have <a href="/clusters-at-yale/access">set up your account</a> on the cluster(s) you want to tranfer data to/from.</p>
+<p>For all transfer methods, you need to have <a href="/clusters-at-yale/access">set up your account</a> on the cluster(s) you want to tranfer data to/from.</p>
 <h2 id="data-transfer-nodes">Data Transfer Nodes</h2>
-<p>Each cluster (except Milgram) has a dedicated node specially networked for high speed transfers both on and off-campus using the Yale Science Network. These transfer nodes host of our <a href="/clusters-at-yale/data/globus">Globus service</a>, enabling resilient transfers at scale. After logging in to a cluster, you can ssh to its transfer node with:</p>
-<div class="highlight"><pre><span></span><code>ssh transfer
-</code></pre></div>
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you are running a large transfer without <a href="/clusters-at-yale/data/globus">Globus</a>, run it inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.</p>
-</div>
-<p>You may also use the transfer node to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. You must still be on-campus or on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the transfer nodes.</p>
+<p>Each cluster (except Milgram) has dedicated nodes specially networked for high speed transfers both on and off-campus using the Yale Science Network. You may use transfer nodes to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. You must still be on-campus or on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the transfer nodes.</p>
 <table>
 <thead>
 <tr>
@@ -1692,15 +1790,20 @@
 </tr>
 </tbody>
 </table>
-<h2 id="graphical-transfer-tools">Graphical Transfer Tools</h2>
-<h3 id="ood-web-transfers">OOD Web Transfers</h3>
-<p>On <a href="https://ood-farnam.hpc.yale.edu">Farnam</a>, <a href="https://ood-grace.hpc.yale.edu">Grace</a>, and <a href="/clusters-at-yale/access/ood/#duo-everywhere-for-ood-ruddle">Ruddle</a> you can use their respective <a href="/clusters-at-yale/access/ood/#File-Browser">Open OnDemand</a> sites to transfer files. This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.</p>
-<h3 id="mobaxterm-windows">MobaXterm (Windows)</h3>
+<p>From the login node of any cluster (except Milgram), you can <code>ssh</code> into the transfer node. This is useful for transferring data to locations other than your local machine (see below for details).</p>
+<div class="highlight"><pre><span></span><code>[netID@cluster ~] ssh transfer
+</code></pre></div>
+
+<h2 id="transferring-data-tofrom-your-local-machine">Transferring Data to/from Your Local Machine</h2>
+<h3 id="graphical-transfer-tools">Graphical Transfer Tools</h3>
+<h4 id="ood-web-transfers">OOD Web Transfers</h4>
+<p>On each cluster, you can use their respective <a href="/clusters-at-yale/access/ood/#File-Browser">Open OnDemand</a> portals to transfer files. This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.</p>
+<h4 id="mobaxterm-windows">MobaXterm (Windows)</h4>
 <p><a href="/clusters-at-yale/access/#windows">MobaXterm</a> is an all-in-one graphical client for Windows that includes a transfer pane for each cluster you connect to. Once you have established a connection to the cluster, click on the "Sftp" tab in the left sidebar to see your files on the cluster. You can drag-and-drop data into and out of the SFTP pane to upload and download, respectively.</p>
-<h3 id="cyberduck">Cyberduck</h3>
+<h4 id="cyberduck">Cyberduck</h4>
 <p>You can also transfer files between your local computer and a cluster using an FTP client, such as <a href="https://cyberduck.io/">Cyberduck (OSX/Windows)</a>. You will need to configure the client with your netid as the username, the cluster transfer node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.</p>
 <p><img alt="Cyberduck sample configuration." src="/img/cyberduck.png" /></p>
-<h4 id="cyberduck-on-ruddle">Cyberduck on Ruddle</h4>
+<h5 id="cyberduck-on-ruddle">Cyberduck on Ruddle</h5>
 <p>Ruddle requires <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
 <p>When you connect type one of the following when prompted with a "Partial authentication success" window.</p>
 <ul>
@@ -1708,18 +1811,17 @@
 <li>"sms" to receive a verification passcode via text message</li>
 <li>"phone" to receive a phone call</li>
 </ul>
-<h3 id="large-transfers-globus">Large Transfers (Globus)</h3>
-<p>Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. We have configured endpoints for most of the Yale clusters and you can configure your computer to transfer files as well. Please see <a href="/clusters-at-yale/data/globus">our Globus page</a> for Yale-specific documentation and <a href="https://docs.globus.org/how-to">their official docs</a> to get started.</p>
+<h3 id="large-file-transfers-globus">Large File Transfers (Globus)</h3>
+<p>You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see <a href="/clusters-at-yale/data/globus">our Globus page</a> for Yale-specific documentation and <a href="https://docs.globus.org/how-to">their official docs</a> to get started.</p>
 <h2 id="command-line-transfer-tools">Command-Line Transfer Tools</h2>
 <h3 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h3>
-<p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files.</p>
-<p>Note that you must have your ssh keys properly setup to use the commands outlined below. See the <a href="/clusters-at-yale/access">Cluster Access documentation</a> for more info.</p>
+<p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
 <div class="highlight"><pre><span></span><code>scp <span class="o">[</span>from<span class="o">]</span> <span class="o">[</span>to<span class="o">]</span>
 </code></pre></div>
 
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
-<h4 id="transfer-a-file-from-your-computer-to-a-cluster">Transfer a File from Your Computer to a Cluster</h4>
+<h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
 <div class="highlight"><pre><span></span><code>scp myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
@@ -1728,12 +1830,12 @@
 <div class="highlight"><pre><span></span><code>scp /home/xyz/myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 
-<h4 id="transfer-a-directory-to-a-cluster">Transfer a Directory to a Cluster</h4>
+<h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
 <div class="highlight"><pre><span></span><code>scp -r mydirectory abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
-<h4 id="transfer-files-from-the-cluster-to-your-computer">Transfer Files from the Cluster to Your Computer</h4>
+<h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
 <div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt .
 </code></pre></div>
@@ -1743,12 +1845,32 @@ To specify the destination, simply replace the <code>.</code> with the full path
 <div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 </code></pre></div>
 
-<h3 id="rclone">Rclone</h3>
-<p>To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.) , we recommend using <a href="https://rclone.org/">Rclone</a>. It is installed as a module on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:</p>
+<h2 id="transfer-data-tofrom-other-locations">Transfer Data to/from Other Locations</h2>
+<h3 id="globus">Globus</h3>
+<p>Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see <a href="/clusters-at-yale/data/globus">our Globus page</a> for Yale-specific documentation and <a href="https://docs.globus.org/how-to">their official docs</a> to get started.</p>
+<ul>
+<li>We have configured endpoints for most of the Yale clusters and many other institutions and compute facilities have Globus endpoints. </li>
+<li>You can also use Globus to transfer data to/from Eliapps Google Drive and S3 buckets.</li>
+</ul>
+<h3 id="cluster-transfer-nodes">Cluster Transfer Nodes</h3>
+<p>You can use the cluster transfer nodes to download/upload data to locations off-cluster. For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on <a href="/clusters-at-yale/data/staging">Staging Data</a> for additional information. For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. On Milgram, which does not have a transfer node, you can initiate the transfers from a login node. However, please be mindful of that other users will also be using the login nodes for regular cluster operations.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are running a large transfer without <a href="/clusters-at-yale/data/globus">Globus</a>, run it inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.</p>
+</div>
+<h4 id="rsync">rsync</h4>
+<div class="highlight"><pre><span></span><code># connect to the transfer node from the login node
+[netID@cluster ~] ssh transfer
+# copy data to cluster storage
+[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
+</code></pre></div>
+
+<h4 id="rclone">Rclone</h4>
+<p>To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using <a href="https://rclone.org/">Rclone</a>. It is installed as a module on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:</p>
 <div class="highlight"><pre><span></span><code>rclone configure
 </code></pre></div>
 
-<p>You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can use that connection name to copy files with similar syntax to <code>scp</code> and <code>rsync</code>:</p>
+<p>You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can connect to the transfer node (using <code>ssh transfer</code> from the login node) and then use that connection name to copy files with similar syntax to <code>scp</code> and <code>rsync</code>:</p>
 <div class="highlight"><pre><span></span><code>rclone copy localpath/myfile mys3:bucketname/
 rclone sync localpath/mydir mys3:bucketname/remotedir
 </code></pre></div>
@@ -1762,7 +1884,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
     
   </small>
 </div>
@@ -1878,15 +2000,15 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

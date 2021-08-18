@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1079,8 +1079,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../clusters-at-yale/data/staging/" title="Stage Data" class="md-nav__link">
-      Stage Data
+    <a href="../../clusters-at-yale/data/staging/" title="Stage Data for Compute Jobs" class="md-nav__link">
+      Stage Data for Compute Jobs
     </a>
   </li>
 
@@ -1388,20 +1388,11 @@
                 
                 <h1 id="serving-research-data-externally">Serving Research Data Externally</h1>
 <p>You can use a static website to serve data publicly to collaborators or services that need to see the data via http. A common example of this is hosting tracks for the UCSC Genome Browser. </p>
-<p>To set one up, first get an account on ITS's <a href="http://spinup.internal.yale.edu">Spinup</a> service. After that, follow their <a href="https://yaleits.atlassian.net/wiki/spaces/spinup/pages/905969895/How+do+I+use+a+Spinup+static+website">instructions on creating a static website</a>, giving it an appropriate website name. Then use an <a href="https://yaleits.atlassian.net/wiki/spaces/spinup/pages/829292599/How+do+I+use+a+Spinup+S3+bucket">S3 transfer tool</a> like AWS CLI, CrossFTP, or Cyberduck to transfer your files.</p>
+<p>To set one up, first get an account on ITS's <a href="http://spinup.internal.yale.edu">Spinup</a> service. After that, follow their <a href="https://yaleits.atlassian.net/wiki/spaces/spinup/pages/905969895/How+do+I+use+a+Spinup+static+website">instructions on creating a static website</a>, giving it an appropriate website name. Then use an <a href="https://yaleits.atlassian.net/wiki/spaces/spinup/pages/829292599/How+do+I+use+a+Spinup+S3+bucket">S3 transfer tool</a> like AWS CLI, CrossFTP, Cyberduck, or a <a href="/clusters-at-yale/data/globus#">Globus S3 endpoint</a> to transfer your files.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>There will be a cost for storing the data (a few cents per GiB per month), which you can use Yale charging instructions to pay for.</p>
 </div>
-<h1 id="attaching-globus-to-s3">Attaching Globus to S3</h1>
-<p>The YCRC supports creating Globus S3 Endpoints. At this time, users cannot self-serve new Globus S3 Endpoints. To request a Globus S3 Endpoint, please <a href="https://docs.ycrc.yale.edu/#web-and-email-support">contact YCRC</a>. Please include in your request:</p>
-<ul>
-<li>Bucket name</li>
-<li>The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Amazon Region</a> for that bucket</li>
-<li>An initial list of Yale NetID(s) who should be able to access the bucket</li>
-<li>Please DO NOT send us the Amazon login credentials through an insecure method such as email or our ticketing system.</li>
-</ul>
-<p>After Globus S3 Endpoint creation, the user(s) will be able to further self-serve their own access controls using Globus.</p>
                 
                   
                     
@@ -1410,7 +1401,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
     
   </small>
 </div>
@@ -1526,15 +1517,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1079,8 +1079,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../clusters-at-yale/data/staging/" title="Stage Data" class="md-nav__link">
-      Stage Data
+    <a href="../../clusters-at-yale/data/staging/" title="Stage Data for Compute Jobs" class="md-nav__link">
+      Stage Data for Compute Jobs
     </a>
   </li>
 
@@ -1327,22 +1327,22 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#local-file-access" class="md-nav__link">
     Local File Access
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#rclone" class="md-nav__link">
     Rclone
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1350,33 +1350,6 @@
   <a href="#globus-google-drive-connector" class="md-nav__link">
     Globus Google Drive Connector
   </a>
-  
-    <nav class="md-nav" aria-label="Globus Google Drive Connector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-your-endpoint" class="md-nav__link">
-    Set Up Your Endpoint
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-your-endpoint" class="md-nav__link">
-    Using Your Endpoint
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-your-endpoint" class="md-nav__link">
-    Managing Your Endpoint
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1485,22 +1458,22 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#local-file-access" class="md-nav__link">
     Local File Access
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#rclone" class="md-nav__link">
     Rclone
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1508,33 +1481,6 @@
   <a href="#globus-google-drive-connector" class="md-nav__link">
     Globus Google Drive Connector
   </a>
-  
-    <nav class="md-nav" aria-label="Globus Google Drive Connector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-your-endpoint" class="md-nav__link">
-    Set Up Your Endpoint
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-your-endpoint" class="md-nav__link">
-    Using Your Endpoint
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#managing-your-endpoint" class="md-nav__link">
-    Managing Your Endpoint
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1560,11 +1506,6 @@
                 
                 <h1 id="google-drive">Google Drive</h1>
 <p>Through Yale Google Apps for Education (EliApps), researchers have free Google Drive storage with very few limits on storage. The Globus Google Drive connector allows you to create a Globus endpoint that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>We have upgraded our Globus Google Drive connector. Existing Globus Google Drive endpoints (created prior to April 29th, 2021) were decommissioned on Monday, July 12, 2021.  Please <a href="/data/google-drive/#globus-google-drive-connector">follow the instructions below</a> to setup a new endpoint on the upgraded system. </p>
-<p>Once you have created a new endpoint, you may remove the old one at <a href="app.globus.org/endpoints?scope=administered-by-me">app.globus.org/endpoints?scope=administered-by-me</a>.</p>
-</div>
 <h2 id="eliapps">EliApps</h2>
 <p>If your Yale email account is already an EliApps account (Gmail), then you are all set. If your Yale email is in Microsoft Office365, send an email to the <a href="mailto:helpdesk@yale.edu">ITS helpdesk</a> requesting a "no-email EliApps account". Once it is created you can login to Google Drive using your EliApps account name, which will be of the form <code>netid@yale.edu</code>. The Globus connector is configured to only allow data to be uploaded into EliApps Google Drive accounts.</p>
 <h3 id="google-shared-drives-formerly-team-drive">Google Shared Drives (formerly Team Drive)</h3>
@@ -1599,27 +1540,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="local-file-access">Local File Access</h3>
-<p>You can upload and access your data using the web portal and sync data with your local machines via the Google File Stream software. For sync with your local machine, install <a href="https://www.google.com/drive/download/">Google File Stream</a>. Select the Download button on the left side under “Business” and authenticate with your EliApps account. You will see Google Drive mounted as an additional drive on your machine.</p>
-<h3 id="rclone">Rclone</h3>
+<h2 id="local-file-access">Local File Access</h2>
+<p>You can upload and access your data using the web portal and sync data with your local machines via the Google File Stream software. For sync with your local machine, install <a href="https://www.google.com/drive/download/">Drive for desktop</a>. Authenticate with your EliApps account and you will see Google Drive mounted as an additional drive on your machine.</p>
+<h2 id="rclone">Rclone</h2>
 <p>You can also transfer data using the command line utility <a href="/clusters-at-yale/data/transfer/#rclone">Rclone</a>. Rclone can be used to transfer data to any Google Drive account.</p>
 <h2 id="globus-google-drive-connector">Globus Google Drive Connector</h2>
-<p>The Globus connector is configured to only allow data to be uploaded into EliApps (Yale's GSuite for Education) Google Drive accounts. If you don't have an EliApps account, request one as described above.</p>
-<h3 id="set-up-your-endpoint">Set Up Your Endpoint</h3>
-<ol>
-<li>To set up your Globus Google Drive endpoint, click on the following link: <a href="https://app.globus.org/file-manager?origin_id=28ae8ae7-b2c6-47b4-badc-da9c1cab1e6e">Setup Globus Google Drive Endpoint</a></li>
-<li>Log into Globus, if needed.</li>
-<li>The first time you login to the Globus Google Drive endpoint, you will be presented with a permissions approval page. If you are ok with the Connector manipulating your files through Globus (which is required), click the Allow button.</li>
-<li>You may see your Yale EliApps account expressed in an uncommon format, such as netid@yale.edu@accounts.google.com. This is normal, and expected.</li>
-<li>After your approvals you will be directed to the Globus File Manager, with the default view of "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.</li>
-</ol>
-<h3 id="using-your-endpoint">Using Your Endpoint</h3>
-<p>On the <a href="https://app.globus.org/file-manager">Globus Transfer</a> page, select an endpoint for each side of your transfer. To transfer to or from your Google Drive, simply search in the Collection field for the name of the Endpoint (e.g. "YCRC Globus Google Drive Collection").</p>
-<p>There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. If you click the "sync" checkbox in the Transfer Setting window on the Globus page, Globus should resume the transfer where it left off when it hit the limit.</p>
-<p>Google has a 400,000 file limit per Shared Drive, so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using <a href="/online-tutorials">tar</a>) before transferring. </p>
-<p>In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.</p>
-<h3 id="managing-your-endpoint">Managing Your Endpoint</h3>
-<p>To manage your endpoint, such as delete the endpoint, rename it, or share it with additional people (be aware, they will be able to access your Google Drive), go to <a href="https://app.globus.org/endpoints">Manage Endpoint</a> on the Globus website.</p>
+<p>You can use Globus to transfer data to/from any EliApps Google Drive as well. See our <a href="/clusters-at-yale/data/globus">Globus</a> documentation for more information.</p>
                 
                   
                     
@@ -1628,7 +1554,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
     
   </small>
 </div>
@@ -1744,15 +1670,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

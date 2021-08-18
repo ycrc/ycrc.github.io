@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1079,8 +1079,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../clusters-at-yale/data/staging/" title="Stage Data" class="md-nav__link">
-      Stage Data
+    <a href="../clusters-at-yale/data/staging/" title="Stage Data for Compute Jobs" class="md-nav__link">
+      Stage Data for Compute Jobs
     </a>
   </li>
 
@@ -1468,13 +1468,9 @@
 <h2 id="google-drive-via-eliapps">Google Drive via EliApps</h2>
 <p><strong>Capacity: Unlimited. Cost: Free - 5TiB max file size<br />
 No sensitive data (e.g. ePHI, HIPAA)<br />
-Can be mounted on <a href="https://www.google.com/drive/download/">your local machine</a> and transferred to via <a href="/data/google-drive">Globus Google Drive Connector</a></strong></p>
-<p>Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Apps for Education) account have unlimited (yes, unlimited) storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our <a href="/data/google-drive">Google Drive documentation</a> for more information.</p>
+Can be mounted on <a href="https://www.google.com/drive/download/">your local machine</a> and transferred to via <a href="/clusters-at-yale/globus">Globus Google Drive Connector</a></strong></p>
+<p>Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Workspace for Education) account have storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our <a href="/data/google-drive">Google Drive documentation</a>.</p>
 <h2 id="storage-yale">Storage @ Yale</h2>
-<div class="admonition warning">
-<p class="admonition-title">Cluster I/O Performance</p>
-<p>Cluster-mounted S@Y shares do <em>not</em> provide sufficient performance for use in jobs. We mount the shares on the cluster for convenience but strongly recommend data be copied to <a href="/clusters-at-yale/data/#project">Project</a> or <a href="/clusters-at-yale/data/#60-day-scratch">Scratch60</a> before running jobs.</p>
-</div>
 <p><strong>Capacity: As requested. Cost: See below<br />
 No sensitive data (e.g. ePHI, HIPAA) for cluster mounts<br />
 Can be mounted on the cluster or computers on campus (but not both)</strong></p>
@@ -1507,6 +1503,10 @@ Can be mounted on the cluster or computers on campus (but not both)</strong></p>
 </table>
 <p>For most up to date pricing information, see the <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
 <p>To request a share, press the “Request this Service” button in the right sidebar on the <a href="https://yale.service-now.com/it?id=service_offering&amp;sys_id=f4688dcd6fbb31007ee2abcf9f3ee400">Storage@Yale website</a>. If you would like to request a share that is mounted on the clusters, <strong>specify in your request that the share be mounted from the HPC clusters</strong>. If you elect to use archive tier storage, be cognizant of <a href="/data/archive">its performance characteristics</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Cluster I/O Performance</p>
+<p>Since cluster-mounted S@Y shares do <em>not</em> provide sufficient performance for use in jobs, they are not mounted on our compute or login nodes. To access S@Y on the clusters, connect to one of the transfer nodes to <a href="/clusters-at-yale/data/staging">stage the data</a> to <a href="/clusters-at-yale/data/#project">Project</a> or <a href="/clusters-at-yale/data/#60-day-scratch">Scratch60</a> before running jobs.</p>
+</div>
 <h2 id="box-at-yale">Box at Yale</h2>
 <p><strong>Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.<br />
 Sensitive data (e.g. ePHI, HIPAA) only in Secure Box<br />
@@ -1523,7 +1523,7 @@ Can be mounted on your local machine and transferred with <a href="https://rclon
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 28, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
     
   </small>
 </div>
@@ -1639,15 +1639,15 @@ Can be mounted on your local machine and transferred with <a href="https://rclon
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
