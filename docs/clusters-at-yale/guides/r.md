@@ -47,7 +47,7 @@ This will throw a warning like:
 
 ```bash
 Warning in install.packages("lattice") :
-'lib = "/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library"' is not writable
+'lib = "/ysm-gpfs/apps/software/R/3.6.1-foss-2018b/lib64/R/library"' is not writable
 Would you like to create a personal library
 ~/R/x86_64-unknown-linux-gnu-library/3.6
 to install packages into?  (y/n)
