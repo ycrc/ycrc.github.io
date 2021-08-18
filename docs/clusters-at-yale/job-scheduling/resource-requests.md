@@ -64,7 +64,7 @@ For more documentation on using GPUs on our clusters, please see [GPUs and CUDA]
 
 You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the `--constraint` flag.
 
-You can use the processor codename (e.g. `haswell`) or processor type (e.g. `E5-2660_v3`) to limit your job to specific node types. You can also specify an instruction set (e.g. `avx2`) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.
+You can use the processor codename (e.g. `haswell`) or processor type (e.g. `E5-2660_v3`) to limit your job to specific node types. You can also specify an instruction set (e.g. `avx512`) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.
 
 ``` bash
 
@@ -73,10 +73,6 @@ sbatch --constraint=haswell submit.sh
 
 # only run on nodes with E5-2660 v4 CPUs
 sbatch --constraint=E5-2660_v4 submit.sh
-
-# run on any node that understands avx2 instructions
-# Your job may also launch on an avx512 node
-sbatch --constraint=avx2 submit.sh
 
 ```
 
