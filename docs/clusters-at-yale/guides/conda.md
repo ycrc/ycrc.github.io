@@ -124,6 +124,16 @@ module load miniconda
 conda search numpy
 ```
 
+### Compiling Codes
+
+You may need to compile codes in a conda environment, for example, installing an R package in a conda R env. This requires you to have the GNU C compiler and its developemnt libraries ready for the conda env before compiling any codes:
+
+``` bash
+conda install gcc_linux-64
+```  
+
+Without `gcc_linux-64`, the code will be compiled using the system compiler and libraries. You will experience run-time errors when running the code in the conda environment. 
+
 ## Troubleshoot
 
 ### Conda version doesn't match the module loaded
