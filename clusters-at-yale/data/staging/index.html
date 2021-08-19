@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -991,6 +991,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../job-scheduling/scrontab/" title="Recurring Jobs" class="md-nav__link">
+      Recurring Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
       MPI Partition
     </a>
@@ -1596,8 +1608,6 @@ Since the <em>permanent</em> home of the data remains on off-cluster storage, yo
 <p>A sample workflow using <code>rsync</code> would be:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
 <span class="o">[</span>netID@cluster ~<span class="o">]</span> ssh transfer
-<span class="c1"># setup a tmux to protect your transfer from lost local connections</span>
-<span class="o">[</span>netID@transfer ~<span class="o">]</span> tmux
 <span class="c1"># copy data to temporary cluster storage</span>
 <span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
 <span class="c1"># process data on cluster</span>
@@ -1606,10 +1616,9 @@ Since the <em>permanent</em> home of the data remains on off-cluster storage, yo
 <span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
 </code></pre></div>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When an <code>rsync</code> is running, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd> followed by <kbd>d</kbd> to detach from the <code>tmux</code> session. This will leave your transfer running in the background inside the <code>tmux</code> session. You can reattached to the session with <code>tmux attach</code> to check on the progress or move on to the next step.
-For more details about how to use <code>tmux</code>, look at our guide <a href="/clusters-at-yale/guides/tmux">here</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To protect your transfer from network interruptions between your computer and the transfer node, launch your <code>rsync</code> inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node.</p>
 </div>
 <h2 id="transfer-partition">Transfer Partition</h2>
 <p>Both Grace and Farnam have dedicated data transfer partitions (named <code>transfer</code>) designed for staging data onto the cluster.
@@ -1817,15 +1826,15 @@ cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/scratch60/
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

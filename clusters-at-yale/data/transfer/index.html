@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -991,6 +991,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../job-scheduling/scrontab/" title="Recurring Jobs" class="md-nav__link">
+      Recurring Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../job-scheduling/mpi/" title="MPI Partition" class="md-nav__link">
       MPI Partition
     </a>
@@ -1174,12 +1186,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#command-line-transfer-tools" class="md-nav__link">
     Command-Line Transfer Tools
   </a>
@@ -1192,8 +1199,7 @@
     scp and rsync (macOS/Linux/Linux on Windows)
   </a>
   
-    <nav class="md-nav" aria-label="scp and rsync (macOS/Linux/Linux on Windows)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
@@ -1235,8 +1241,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#globus" class="md-nav__link">
-    Globus
+  <a href="#globus-endpoints" class="md-nav__link">
+    Globus Endpoints
   </a>
   
 </li>
@@ -1641,12 +1647,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#command-line-transfer-tools" class="md-nav__link">
     Command-Line Transfer Tools
   </a>
@@ -1659,8 +1660,7 @@
     scp and rsync (macOS/Linux/Linux on Windows)
   </a>
   
-    <nav class="md-nav" aria-label="scp and rsync (macOS/Linux/Linux on Windows)">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
@@ -1702,8 +1702,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#globus" class="md-nav__link">
-    Globus
+  <a href="#globus-endpoints" class="md-nav__link">
+    Globus Endpoints
   </a>
   
 </li>
@@ -1813,8 +1813,8 @@
 </ul>
 <h3 id="large-file-transfers-globus">Large File Transfers (Globus)</h3>
 <p>You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see <a href="/clusters-at-yale/data/globus">our Globus page</a> for Yale-specific documentation and <a href="https://docs.globus.org/how-to">their official docs</a> to get started.</p>
-<h2 id="command-line-transfer-tools">Command-Line Transfer Tools</h2>
-<h3 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h3>
+<h3 id="command-line-transfer-tools">Command-Line Transfer Tools</h3>
+<h4 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h4>
 <p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
 <div class="highlight"><pre><span></span><code>scp <span class="o">[</span>from<span class="o">]</span> <span class="o">[</span>to<span class="o">]</span>
@@ -1846,7 +1846,7 @@ To specify the destination, simply replace the <code>.</code> with the full path
 </code></pre></div>
 
 <h2 id="transfer-data-tofrom-other-locations">Transfer Data to/from Other Locations</h2>
-<h3 id="globus">Globus</h3>
+<h3 id="globus-endpoints">Globus Endpoints</h3>
 <p>Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see <a href="/clusters-at-yale/data/globus">our Globus page</a> for Yale-specific documentation and <a href="https://docs.globus.org/how-to">their official docs</a> to get started.</p>
 <ul>
 <li>We have configured endpoints for most of the Yale clusters and many other institutions and compute facilities have Globus endpoints. </li>
@@ -2000,15 +2000,15 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
