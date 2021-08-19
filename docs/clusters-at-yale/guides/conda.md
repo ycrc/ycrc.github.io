@@ -126,7 +126,7 @@ conda search numpy
 
 ### Compiling Codes
 
-You may need to compile codes in a conda environment, for example, installing an R package in a conda R env. This requires you to have the GNU C compiler and its developemnt libraries ready for the conda env before compiling any codes:
+You may need to compile codes in a conda environment, for example, installing an R package in a conda R env. This requires you to have the GNU C compiler and its development libraries installed in the conda env before compiling any codes:
 
 ``` bash
 conda install gcc_linux-64
