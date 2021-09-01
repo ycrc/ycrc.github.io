@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1062,13 +1062,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#track-scrontab-jobs" class="md-nav__link">
-    Track scrontab jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -1086,6 +1079,13 @@
           <li class="md-nav__item">
   <a href="#run-a-weekly-transfer-job" class="md-nav__link">
     Run a Weekly Transfer Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-output-from-each-run-in-a-separate-file" class="md-nav__link">
+    Capture output from each run in a separate file
   </a>
   
 </li>
@@ -1519,13 +1519,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#track-scrontab-jobs" class="md-nav__link">
-    Track scrontab jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -1543,6 +1536,13 @@
           <li class="md-nav__item">
   <a href="#run-a-weekly-transfer-job" class="md-nav__link">
     Run a Weekly Transfer Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-output-from-each-run-in-a-separate-file" class="md-nav__link">
+    Capture output from each run in a separate file
   </a>
   
 </li>
@@ -1597,12 +1597,17 @@ Lines that start with <code>#SCRON</code> are treated like the beginning of a ne
 <p>Crontab syntax is specified in five columns, to specify minutes, hours, days of the month, months, and days of the week. Especially at first you may find it easiest to use a helper application to generate your cron date fields, such as <a href="http://crontab-generator.org/">crontab-generator</a> or <a href="https://crontab.cronhub.io/">cronhub.io</a>. You can also use the short-hand syntax <code>@hourly</code>, <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code>, and <code>@yearly</code> instead of the five separate columns.</p>
 <h3 id="what-to-run">What to Run</h3>
 <p>If you're running a script it must be marked as executable. Jobs handled by scrontab do not run in a full login shell, so if you have customized your <code>.bashrc</code> file you need to add:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+<p><div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
 </code></pre></div>
-
-<p>To your script to ensure that your environment is set up correctly.</p>
-<h2 id="track-scrontab-jobs">Track scrontab jobs</h2>
+To your script to ensure that your environment is set up correctly.</p>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>The command you specify in the scrontab is executed via bash, NOT sbatch. You can list multiple commands separated by ;, and use other shell features, such as redirects.  Also, any #SBATCH directives in executed scripts will be ignored.  You must use #SCRON in the scrontab file instead.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
 <p>Your <code>scrontab</code> jobs will appear to have the same JobID every time they run until the next time you edit your <code>scrontab</code> file (they are being requeued). This means that only the most recent job will be logged to the default output file. If you want deeper history, you should redirect output in your scripts to filenames with something more unique in their names, like a date or timestamp, e.g.</p>
+</div>
 <div class="highlight"><pre><span></span><code>python my_script.py &gt; <span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%d&quot;</span><span class="k">)</span>_myjob_scrontab.out
 </code></pre></div>
 
@@ -1630,6 +1635,12 @@ sacct -Dj <span class="m">12345</span>
 <span class="c1">#SCRON --chdir /home/netid/project/to_transfer</span>
 <span class="c1">#SCRON -o transfer_log_%j.txt</span>
 <span class="m">0</span> <span class="m">20</span> * * <span class="m">3</span> ./rclone_commands.sh
+</code></pre></div>
+
+<h3 id="capture-output-from-each-run-in-a-separate-file">Capture output from each run in a separate file</h3>
+<p>Normally scrontab will clobber the output file from the previous run on each execution, since
+each execution uses the same jobid.  This can be avoided using a redirect to a date-stamped file.</p>
+<div class="highlight"><pre><span></span><code><span class="m">0</span> <span class="m">20</span> * * <span class="m">3</span> ./commands.sh &gt; myjob_<span class="k">$(</span>date +%Y%m%d%H%M<span class="k">)</span>.out
 </code></pre></div>
                 
                   
@@ -1755,15 +1766,15 @@ sacct -Dj <span class="m">12345</span>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
