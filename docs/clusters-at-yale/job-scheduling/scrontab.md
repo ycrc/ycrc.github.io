@@ -35,8 +35,10 @@ If you're running a script it must be marked as executable. Jobs handled by scro
 ``` bash
 source ~/.bashrc
 ```
-
 To your script to ensure that your environment is set up correctly.
+
+!!! info "Note"
+    The command you specify in the scrontab is executed via bash, NOT sbatch. You can list multiple commands separated by ;, and use other shell features, such as redirects.  Also, any #SBATCH directives in executed scripts will be ignored.  You must use #SCRON in the scrontab file instead.
 
 ## Tracking scrontab jobs
 
@@ -73,5 +75,14 @@ This example submits a transfer script eligible to start every Wednesday at 8:00
 #SCRON --chdir /home/netid/project/to_transfer
 #SCRON -o transfer_log_%j.txt
 0 20 * * 3 ./rclone_commands.sh
+```
+
+### Capture output from	each run in a separate file
+
+Normally scrontab will clobber the output file from the	previous run on	each execution,	since
+each execution uses the same jobid.  This can be avoided using a redirect to a date-stamped file.
+
+```bash
+0 20 * * 3 ./commands.sh > myjob_$(date +%Y%m%d%H%M).out
 ```
 
