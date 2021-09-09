@@ -1523,13 +1523,13 @@
 <p>In order to run parallel Mathematica jobs on our cluster, you will need to configure your Mathematica environment.</p>
 <p>Go to <code>Evaluate/Parallel Kernel Configuration</code> in the Mathematica window and change the following settings.</p>
 <ol>
-<li>Disable Local Kernels</li>
-<li>Go in <code>Cluster Integration</code> and first Enable it if you did not have it Enabled</li>
-<li>Click <code>Reset To Default</code></li>
-<li>From the menu in <code>Cluster Engine</code>, select <code>SLURM</code></li>
+<li>Disable <code>Local Kernels</code> if it is enabled.</li>
+<li>Go in <code>Cluster Integration</code> and first Enable it if it is not Enabled</li>
+<li>Click <code>Reset to Default</code> if you have previously configured a different <code>Cluster Engine</code> than <code>SLURM</code>. Then from the menu in <code>Cluster Engine</code>, select <code>SLURM</code></li>
 <li>Under <code>Kernels</code>, set desired number (we recommend to set it to lower number first to test)</li>
 <li>Advanced Settings under Native specification, specify time and RAM per kernel, such as  <code>—time=02:00:00 —mem=20G</code></li>
-<li>Set <code>While[Length[Kernels[]] == 0, LaunchKernels[]]</code>  to avoid a timeout issue</li>
+<li>If you are using Mathematica 12.3 and above, and if <code>RemoteKernel Objects</code> is enabled, disable it and restart Mathematica.</li>
+<li>Use <code>While[Length[Kernels[]] == 0, LaunchKernels[]]</code> to avoid a timeout issue.</li>
 </ol>
 <h2 id="request-help-or-access-to-wolfram-alpha-pro">Request Help or Access to Wolfram Alpha Pro</h2>
 <p>If you need any assistance with your Mathematica program, <a href="/#get-help">contact us</a>.</p>
@@ -1541,7 +1541,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2021</span>
     
   </small>
 </div>
