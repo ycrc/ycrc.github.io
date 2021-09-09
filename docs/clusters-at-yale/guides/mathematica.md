@@ -45,13 +45,13 @@ In order to run parallel Mathematica jobs on our cluster, you will need to confi
 
 Go to `Evaluate/Parallel Kernel Configuration` in the Mathematica window and change the following settings.
 
-1. Disable Local Kernels
-1. Go in `Cluster Integration` and first Enable it if you did not have it Enabled
-1. Click `Reset To Default`
-1. From the menu in `Cluster Engine`, select `SLURM`
+1. Disable `Local Kernels` if it is enabled.
+1. Go in `Cluster Integration` and first Enable it if it is not Enabled
+1. Click `Reset to Default` if you have previously configured a different `Cluster Engine` than `SLURM`. Then from the menu in `Cluster Engine`, select `SLURM`
 1. Under `Kernels`, set desired number (we recommend to set it to lower number first to test)
 1. Advanced Settings under Native specification, specify time and RAM per kernel, such as  `—time=02:00:00 —mem=20G`
-1. Set `While[Length[Kernels[]] == 0, LaunchKernels[]]`  to avoid a timeout issue
+1. If you are using Mathematica 12.3 and above, and if `RemoteKernel Objects` is enabled, disable it and restart Mathematica.
+1. Use `While[Length[Kernels[]] == 0, LaunchKernels[]]` to avoid a timeout issue.
 
 ## Request Help or Access to Wolfram Alpha Pro
 
