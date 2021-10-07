@@ -116,7 +116,6 @@ def get_part_hardware():
             )
 
             part_hardware[partition_name].append(table_dict)
-
     return part_hardware, parts_with_gpus
 
 
@@ -205,14 +204,14 @@ def iprint(i, toprint):
     print(indent + toprint)
 
 
-def collapse_memory_differences(partition_hardware):
+def collapse_memory_differences(partition_hardware, has_gpus):
 
-    nodes_by_features = {}
+    nodes_by_features = defaultdict(lambda: [])
     # group by features
     for node_type in partition_hardware:
         features = node_type["Node Features"]
-        if features not in nodes_by_features.keys():
-            nodes_by_features[features] = []
+        if has_gpus:
+            features = f"features, {node_type['GPU Type']}, {node_type['GPUs/Node']}"
         nodes_by_features[features].append(node_type)
 
     collapsed_partition_hardware = []
@@ -327,7 +326,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     iprint(1 + i, "|" + "|".join(cols) + "|")
     iprint(1 + i, "|" + "|".join(["---"] * len(cols)) + "|")
 
-    part_hardware[partition] = collapse_memory_differences(part_hardware[partition])
+    part_hardware[partition] = collapse_memory_differences(part_hardware[partition], has_gpus)
 
     for line in sort_hardware(part_hardware[partition]):
         iprint(1 + i, "|" + "|".join([line[col] for col in cols]) + "|")
