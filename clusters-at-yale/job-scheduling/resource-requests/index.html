@@ -1007,6 +1007,19 @@
     Request GPUs
   </a>
   
+    <nav class="md-nav" aria-label="Request GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-specific-gpu-types" class="md-nav__link">
+    Request Specific GPU Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1529,6 +1542,19 @@
     Request GPUs
   </a>
   
+    <nav class="md-nav" aria-label="Request GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-specific-gpu-types" class="md-nav__link">
+    Request Specific GPU Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1592,33 +1618,45 @@
 <tr>
 <td><code>--cpus-per-gpu</code></td>
 <td></td>
-<td>Use instead of <code>--cpus-per-task</code> to specify number of CPUs per allocated GPU</td>
+<td>Use instead of <code>--cpus-per-task</code> to specify number of CPUs per allocated GPU.</td>
 </tr>
 <tr>
 <td><code>--gpus</code></td>
 <td><code>-G</code></td>
-<td>Specify the <em>total number</em> of GPUs required for the job either with number or type:number</td>
+<td>Specify the <em>total number</em> of GPUs required for the job either with number or type:number.</td>
 </tr>
 <tr>
 <td><code>--gpus-per-node</code></td>
 <td></td>
-<td>Specify the number of GPUs <em>per node</em>, either with number or type:number. New option similar to <code>--gres=gpu</code></td>
+<td>Specify the number of GPUs <em>per node</em>, either with number or type:number. New option similar to <code>--gres=gpu</code>.</td>
 </tr>
 <tr>
 <td><code>--gpus-per-task</code></td>
 <td></td>
-<td>Specify the number of GPUs <em>per task</em>, either with number or type:number</td>
+<td>Specify the number of GPUs <em>per task</em>, either with number or type:number.</td>
 </tr>
 <tr>
 <td><code>--mem-per-gpu</code><sup>*</sup></td>
 <td></td>
 <td>Request system memory that scales per GPU. The <code>--mem</code>, <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code> options are mutually exclusive</td>
 </tr>
+<tr>
+<td><code>--constraint</code></td>
+<td><code>-C</code></td>
+<td>Request a selection of GPU types (separate types with <code>|</code>). This option requires the <code>--gpus</code> option for GPU selection.</td>
+</tr>
 </tbody>
 </table>
 <p><sup>* The <code>--mem-per-gpu</code> flag does not currently work as intended, please do not use. Request memory using <code>--mem</code> or <code>--mem-per-cpu</code> in the meantime.</sup></p>
-<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - <strong>the default GPU request for jobs is to not request any</strong>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options <code>--mem</code>, <code>--mem-per-gpu</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. To request a specific type of GPU, use <code>type:number</code> notation. For example, to request an NVIDIA P100 .</p>
+<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - <strong>the default GPU request for jobs is to not request any</strong>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options <code>--mem</code>, <code>--mem-per-gpu</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. </p>
+<h3 id="request-specific-gpu-types">Request Specific GPU Types</h3>
+<p>If your job can only run on a subset of the GPU types available in the partition, you can request one or more specific types of GPUs. </p>
+<p>To request a specific type of GPU, use <code>type:number</code> notation. For example, to request an NVIDIA P100.</p>
 <div class="highlight"><pre><span></span><code>sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
+</code></pre></div>
+
+<p>To submit your job to a number of GPU options (such as NVIDIA P100, V100 or A100), use a combination of the constraint flag (<code>-C</code>) and the <code>--gpus</code> flag (with just a number). For the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">constraint flag</a>, separate the different GPU type names with the pipe character (<code>|</code>). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.</p>
+<div class="highlight"><pre><span></span><code>sbatch -C &quot;p100|v100|a100&quot; --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 
 <div class="admonition tip">
@@ -1631,7 +1669,7 @@
 <p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
 <h2 id="features-and-constraints">Features and Constraints</h2>
 <p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
-<p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx512</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types.</p>
+<p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx512</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types. Multiple requirements ("AND") are separated by a comma (<code>,</code>) and multiple options ("OR") should be separated by the pipe character (<code>|</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)</span>
 sbatch --constraint<span class="o">=</span>haswell submit.sh
 
@@ -1639,13 +1677,14 @@ sbatch --constraint<span class="o">=</span>haswell submit.sh
 sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 </code></pre></div>
 
-<p>We also have keyword features to help you constrain your jobs to certain categories of nodes.</p>
+<p>We also have keyword features to help you constrain your jobs to certain categories of nodes.  </p>
 <ul>
 <li><code>oldest</code>: the oldest generation of node on the cluster. Use this constraint when compiling code if you wish to ensure it can run on any standard node on the cluster.</li>
 <li><code>nogpu</code>: nodes without GPUs.</li>
 <li><code>standard</code>: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.</li>
 <li><code>singleprecision</code>: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).</li>
 <li><code>doubleprecision</code>: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).</li>
+<li>GPU type (e.g. <code>v100</code>): nodes with a specific type of GPU. </li>
 <li><code>bigtmp</code>: nodes with at least 1.5T of local storage in <code>/tmp</code>. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's <code>$GAUSS_SCRDIR</code>).  </li>
 </ul>
 <div class="admonition tip">
@@ -1660,7 +1699,7 @@ sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2021</span>
     
   </small>
 </div>
