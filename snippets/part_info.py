@@ -42,7 +42,7 @@ commons = {
 
 # look for MemSpecLimit in slurm node config
 mem_spec_limit = 6 #GiB
-cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
+cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?r?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
 out_cols = ["Count", "CPU Type", "CPUs/Node", "Memory/Node (GiB)", "Node Features"]
@@ -93,6 +93,7 @@ def get_part_hardware():
             gpu_type = []
             gpu_mem = []
             gpu_num = []
+            
             if line_dict["gres"] != "(null)":
                 parts_with_gpus.add(line_dict["partition"])
                 for gpu, num in gres_regex.findall(line_dict["gres"]):
