@@ -327,7 +327,8 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     iprint(1 + i, "|" + "|".join(cols) + "|")
     iprint(1 + i, "|" + "|".join(["---"] * len(cols)) + "|")
 
-    part_hardware[partition] = collapse_memory_differences(part_hardware[partition], has_gpus)
+# this isn't working as intended, but its not currently needed.
+  #  part_hardware[partition] = collapse_memory_differences(part_hardware[partition], has_gpus)
 
     for line in sort_hardware(part_hardware[partition]):
         iprint(1 + i, "|" + "|".join([line[col] for col in cols]) + "|")
