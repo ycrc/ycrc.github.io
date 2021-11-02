@@ -6,7 +6,7 @@ Milgram is a HIPAA aligned cluster intended for use on projects that may involve
 
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment.
 
-## Migram Usage Policies
+## Milgram Usage Policies
 
 Users wishing to use Milgram must agree to the following:
 
@@ -64,8 +64,8 @@ You can check your current storage usage & limits by running the `getquota` comm
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-| Partition      | Root Directory             | Storage     | File Count   | Backups |
-|----------------|----------------------------|-------------|--------------|---------|
-| home           | `/gpfs/milgram/home`       | 20GiB/user  | 500,000      | Yes     |
-| project        | `/gpfs/milgram/project`    | varies      | varies       | No      |
-| scratch60      | `/gpfs/milgram/scratch60`  | varies      | 5,000,000    | No      |
+|Partition  | Root Directory            | Storage                                 | File Count | Backups |
+|-----------|---------------------------|-----------------------------------------|------------|---------|
+| home      | `/gpfs/milgram/home`      | 125GiB/user                             | 500,000    | Yes     |
+| project   | `/gpfs/milgram/project`   | 1TiB/group, increase to 4TiB on request | 5,000,000  | Yes      |
+| scratch60 | `/gpfs/milgram/scratch60` | 20TiB/group                             | 15,000,000 | No      |

@@ -30,6 +30,9 @@ module help R/3.6.1-foss-2018b
 
 The software modules include many commonly used packages, but you can install additional packages locally, _i.e._ to your home directory. We recommend you install packages in an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs) with the slurm option `-C oldest`. This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster. If there is a missing library your package of interest needs you should be able to load its module. If you cannot find a dependency or have trouble installing an R package, [please get in touch with us](/#web-and-email-support).
 
+!!! warning
+    Grace's login nodes have newer architecture than the oldest nodes on the cluster. Always install packages in an interactive job submitted with the `-C oldest` Slurm flag if you want to ensure your code will work on all generations of the compute nodes.
+
 To get started load the R module and start R:
 
 ```bash
@@ -44,7 +47,7 @@ This will throw a warning like:
 
 ```bash
 Warning in install.packages("lattice") :
-'lib = "/ysm-gpfs/apps/software/R/3.4.1-foss-2016b/lib64/R/library"' is not writable
+'lib = "/ysm-gpfs/apps/software/R/3.6.1-foss-2018b/lib64/R/library"' is not writable
 Would you like to create a personal library
 ~/R/x86_64-unknown-linux-gnu-library/3.6
 to install packages into?  (y/n)

@@ -1,6 +1,12 @@
 # MATLAB
 
-## Find MATLAB
+## MATLAB GUI
+
+If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.
+
+## Command Line MATLAB
+
+### Find MATLAB
 
 Run one of the commands below, which will list available versions and the corresponding module files:
 
@@ -8,15 +14,15 @@ Run one of the commands below, which will list available versions and the corres
 module spider matlab
 ```
 
-Load the appropriate module file. For example, to run version R2014a:
+Load the appropriate module file. For example, to run version R2019a:
 
 ```
-module load MATLAB/2014a
+module load MATLAB/2019a
 ```
 
 The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.
 
-## Run MATLAB
+### Run MATLAB
 
 !!!warning
     The MATLAB program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive or batch job (see below).
@@ -80,7 +86,7 @@ matlab -nodisplay -nosplash -r YourFunction < /dev/null
 
 Unless you specify otherwise (using > redirects), both output and error logs will show up in the slurm-jobid.out log file in the same directory as your submission script.
 
-### Using More than 12 Cores with Matlab
+## Using More than 12 Cores with Matlab
 
 In Matlab, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.
 

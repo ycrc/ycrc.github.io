@@ -12,7 +12,7 @@ To launch COMSOL in your Remote Desktop, open the terminal application in the se
 
 ```
 module load COMSOL/5.2a-classkit
-comsol -np $SLURM_CPUS_PER_TASK &
+comsol -np $SLURM_CPUS_ON_NODE &
 ```
 
 ## Run COMSOL in Batch Mode

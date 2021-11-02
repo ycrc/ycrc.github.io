@@ -74,16 +74,16 @@ We build and organize [software modules](/clusters-at-yale/applications/modules)
 
 ```
 The following have been reloaded with a version change:
-  1) FFTW/3.3.7-gompi-2018a => FFTW/3.3.4-gompi-2016b
-  2) GCC/6.4.0-2.28 => GCC/5.4.0-2.26
-  3) GCCcore/6.4.0 => GCCcore/5.4.0
+  1) FFTW/3.3.7-gompi-2018a => FFTW/3.3.8-gompi-2018b
+  2) GCC/6.4.0-2.28 => GCC/7.3.0-2.3.0
+  3) GCCcore/6.4.0 => GCCcore/7.3.0
 ...
 ```
 
 or
 
 ```
-GCCcore/5.4.0 exists but could not be loaded as requested.
+GCCcore/7.3.0 exists but could not be loaded as requested.
 ```
 
 ### Match or Purge Your Toolchains

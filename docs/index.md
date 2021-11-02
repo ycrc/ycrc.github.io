@@ -22,26 +22,24 @@ Once received, our system will send an automated response with a link to a ticke
 ### YouTube Channel
 
 The [YCRC YouTube channel](https://ycrc.yale.edu/youtube) features recorded tutorials and workshops that cover a wide range of computing topics.
-New videos are added regularly and suggestions for topics can be submitted by emailing [hpc@yale.edu](mailto:hpc@yale.edu).
+New videos are added regularly and suggestions for topics can be submitted by emailing [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
 ### One-on-One Support
 
-!!! question "Zoom Office Hours"
-    Consistent with University guidance in response to COVID-19, <strong>one-on-one consulting and office hours are held remotely via Zoom</strong>.
+Research support team members are available by appointment for one-on-one support.  See the table below for information about each person's area of particular focus 
+and their email address.  Please email them to set up an appointment.  If you have a general question or are unsure about who to contact, 
+you can email us at [hpc@yale.edu](mailto:hpcg@yale.edu) with as much detail as possible about your request and we'll find the right person for you.
 
-    Research support team members are online during regular business hours (Monday - Friday, 9:00 am to 5:00 pm). We ask that you email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) with details about your request and one of us will reach out to you.
-
-|Specialist|Areas of Focus|
-|--- |--- |
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python, R|
-|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Bioinformatics, Python, OOD Portal|
-|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)|[SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica|
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace), Physics, Python, MPI|
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal|
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram), Astronomy, G&G, MPI, Python|
-|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace), MPI, GPUs, Matlab|
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle), Life Sciences, Structural Biology|
-
+| Specialist | Cluster(s) | Areas of Focus | Email |
+| --- | --- | --- | --- |
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python | kaylea.nelson@yale.edu |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace)| Physics, Python, MPI | thomas.langford@yale.edu |
+|[Ben Evans, Ph.D.](https://research.computing.yale.edu/about/staff/benjamin-evans)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, OOD Portal | b.evans@yale.edu |
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal | ping.luo@yale.edu |
+|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R | robert.bjornson@yale.edu |
+|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Structural Biology | michael.strickler@yale.edu |
+|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace)| MPI, GPUs, Matlab | andrew.sherman@yale.edu |
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica | mikhael.guy@yale.edu |
 
 ### Q&A Platform
 
@@ -49,7 +47,7 @@ The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberi
 
 ## Acknowledge the YCRC
 
-When publishing work performed on a YCRC cluster or with assistance from YCRC staff, we would greatly appreciated it if you would place an acknowledgment in your publication. If you would like to acknowledge specific individuals who you worked with, that would also be appreciated. A list of YCRC staff can found on our <a href="https://research.computing.yale.edu/about/staff">Staff page</a>. We include some example text below. 
+If publishing work performed on a YCRC cluster or with assistance from YCRC staff, we greatly appreciate acknowledgement of our staff and computing time in your publication. A list of YCRC staff can be found on our [Staff page](https://research.computing.yale.edu/about/staff), and the clusters are summarized on our [HPC Resources page](/clusters-at-yale/clusters). Example acknowledgement below: 
 
 
-> We thank the Yale Center for Research Computing for guidance and use of the research computing infrastructure, specifically assistance from [YCRC staff member name(s)].
+> We thank the Yale Center for Research Computing, specifically [YCRC staff member name(s)], for guidance and assistance in computation run on the [cluster name here] cluster.

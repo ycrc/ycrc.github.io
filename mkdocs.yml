@@ -116,13 +116,14 @@ nav:
                 - clusters-at-yale/job-scheduling/fairshare.md
                 - clusters-at-yale/job-scheduling/scavenge.md
                 - clusters-at-yale/job-scheduling/dependency.md
+                - clusters-at-yale/job-scheduling/scrontab.md
                 - clusters-at-yale/job-scheduling/mpi.md
                 - clusters-at-yale/job-scheduling/dsq.md
                 - clusters-at-yale/job-scheduling/slurm-examples.md
             - Data & Storage:
                 - clusters-at-yale/data/index.md
                 - clusters-at-yale/data/transfer.md
-                - clusters-at-yale/data/staging.md
+                - "Stage Data for Compute Jobs": clusters-at-yale/data/staging.md
                 - clusters-at-yale/data/globus.md
                 - clusters-at-yale/data/permissions.md
                 - clusters-at-yale/data/archived-sequencing.md

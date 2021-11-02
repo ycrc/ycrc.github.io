@@ -8,7 +8,7 @@ Broadly speaking, a high performance computing (HPC) cluster is a collection of 
 
 ## Request an Account
 
-The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters. To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request).
+The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters, but all users must adhere to the YCRC [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). To understand which cluster is appropriate for you and to request an account, visit the [account request page](https://research.computing.yale.edu/account-request). 
 
 ## Log in
 
@@ -18,7 +18,7 @@ If you want to access the clusters from outside Yale's network, you must use the
 
 ## Schedule a Job
 
-On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling) or attend the [HPC bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/ycrc-bootcamp-practical-hpc) for more details.
+On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job **interactively**. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our [Slurm documentation](job-scheduling) or attend the [Introduction to HPC workshop](https://research.computing.yale.edu/training/introduction-hpc) for more details.
 
 ## Linux
 

@@ -22,10 +22,11 @@ It can be very useful to create shared directories that can be read and written 
 To share a new directory called `shared` in your project directory with group `othergroup`:
 
 ```
-setfacl -m "g:othergroup:rx" $(readlink -f ~/project)
+setfacl -m g:othergroup:rx $(readlink -f ~/project)
 cd ~/project
 mkdir shared
-setfacl -m "g:othergroup:rwx" shared
+setfacl -m g:othergroup:rwX shared
+setfacl -d -m g:othergroup:rwX shared
 ```
 
 ### Share a Directory with a Particular Person
@@ -33,22 +34,32 @@ setfacl -m "g:othergroup:rwx" shared
 To share a new directory called `shared` with a person with netid `aa111`:
 
 ```
-setfacl -m "u:aa111:rx" $(readlink -f ~/project)
+setfacl -m u:aa111:rx $(readlink -f ~/project)
 cd ~/project
 mkdir shared
-setfacl -m "u:aa111:rwx" shared
+setfacl -m u:aa111:rwX shared
+setfacl -d -m u:aa111:rwX shared
 ```
+
+If the shared directory already exists and contains files and directories, you should run the setfacl commands recursively, using -R:
+
+```
+setfacl -R -m u:aa111:rwX shared
+setfacl -R -d -m u:aa111:rwX shared
+```
+
+Note that only the owner of a file or directory can run setfacl on it.
 
 ### Remove Sharing of a Directory
 
 To remove a group `othergroup` from sharing of a directory called `shared`:
 
 ```
-setfacl -R -x "g:othergroup" shared
+setfacl -R -x g:othergroup shared
 ```
 
 To remove a person with netid `aa111` from sharing of a directory called `shared`:
 
 ```
-setfacl -R -x "u:aa111" shared
+setfacl -R -x u:aa111 shared
 ```

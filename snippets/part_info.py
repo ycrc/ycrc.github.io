@@ -14,6 +14,7 @@ vram_dict = {
     "titanv": "12",
     "p100": "16",
     "v100": "16",
+    "a100": "40",
     "rtx2080": "8",
     "rtx2080ti": "11",
     "rtx3090": "24",
@@ -39,7 +40,7 @@ commons = {
 
 # look for MemSpecLimit in slurm node config
 mem_spec_limit = 6 #GiB
-cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?)")
+cpu_regex = re.compile(r"^.*,(E?\d-?\d+_?v?\d?r?)")
 gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
 out_cols = ["Count", "CPU Type", "CPUs/Node", "Memory/Node (GiB)", "Node Features"]
@@ -90,6 +91,7 @@ def get_part_hardware():
             gpu_type = []
             gpu_mem = []
             gpu_num = []
+            
             if line_dict["gres"] != "(null)":
                 parts_with_gpus.add(line_dict["partition"])
                 for gpu, num in gres_regex.findall(line_dict["gres"]):
@@ -113,7 +115,6 @@ def get_part_hardware():
             )
 
             part_hardware[partition_name].append(table_dict)
-
     return part_hardware, parts_with_gpus
 
 
@@ -202,14 +203,14 @@ def iprint(i, toprint):
     print(indent + toprint)
 
 
-def collapse_memory_differences(partition_hardware):
+def collapse_memory_differences(partition_hardware, has_gpus):
 
-    nodes_by_features = {}
+    nodes_by_features = defaultdict(lambda: [])
     # group by features
     for node_type in partition_hardware:
         features = node_type["Node Features"]
-        if features not in nodes_by_features.keys():
-            nodes_by_features[features] = []
+        if has_gpus:
+            features = f"features, {node_type['GPU Type']}, {node_type['GPUs/Node']}"
         nodes_by_features[features].append(node_type)
 
     collapsed_partition_hardware = []
@@ -253,7 +254,7 @@ def collapse_memory_differences(partition_hardware):
 def sort_hardware(partition_hardware):
 
 
-    node_gens = ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge"]
+    node_gens = ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge", "epyc"]
     nodes_by_gen = {}
 
     for node_type in partition_hardware:
@@ -324,7 +325,8 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     iprint(1 + i, "|" + "|".join(cols) + "|")
     iprint(1 + i, "|" + "|".join(["---"] * len(cols)) + "|")
 
-    part_hardware[partition] = collapse_memory_differences(part_hardware[partition])
+# this isn't working as intended, but its not currently needed.
+  #  part_hardware[partition] = collapse_memory_differences(part_hardware[partition], has_gpus)
 
     for line in sort_hardware(part_hardware[partition]):
         iprint(1 + i, "|" + "|".join([line[col] for col in cols]) + "|")

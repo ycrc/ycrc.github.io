@@ -13,18 +13,10 @@ Open OnDemand is available on the following clusters using your NetID credential
 |-------------------------------------------------|------------------------------------------------------------|
 | [Grace](/clusters-at-yale/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
 | [Farnam](/clusters-at-yale/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
-| [Milgram](/clusters-at-yale/clusters/milgram)\* | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
-| [Ruddle](/clusters-at-yale/clusters/ruddle)\*   | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
-
-<sup>\* Open OnDemand for Milgram and Ruddle requires enrollment in Duo Everywhere. See below for details.<sup>
+| [Milgram](/clusters-at-yale/clusters/milgram) | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
+| [Ruddle](/clusters-at-yale/clusters/ruddle)   | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
-
-### DUO Everywhere for Milgram and Ruddle Open OnDemand Web Portals
-
-If you want access to Open OnDemand for Milgram or Ruddle, you must enroll in the early pilot of DUO Everywhere. Enrollment will force [Multi-Factor Authentication](/clusters-at-yale/access/mfa) (MFA) for CAS on every login, even on-campus.
-
-To enroll in DUO Everywhere, please access the [DUO Everywhere Opt-In](https://veritas.its.yale.edu/mfa/optin/landing) tool and follow the instructions. Once you are done with the enrollment, please email [hpc@yale.edu](mailto:hpc@yale.edu) indicating you have enrolled in DUO Everywhere and the cluster you will be using. We will notify you when your request is processed. After that you will be able to use OOD.
 
 ## Course Open OnDemand Web Portals
 
