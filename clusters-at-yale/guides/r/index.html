@@ -771,6 +771,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../mpi4py/" title="MPI Parallelism with Python" class="md-nav__link">
+      MPI Parallelism with Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../python/" title="Python" class="md-nav__link">
       Python
     </a>
@@ -929,6 +941,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-display-session" class="md-nav__link">
+    Virtual Display Session
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -980,6 +999,18 @@
   <li class="md-nav__item">
     <a href="../vasp/" title="VASP" class="md-nav__link">
       VASP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xvfb/" title="Batch-mode grapical programs with XVFB" class="md-nav__link">
+      Batch-mode grapical programs with XVFB
     </a>
   </li>
 
@@ -1592,6 +1623,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#virtual-display-session" class="md-nav__link">
+    Virtual Display Session
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1760,6 +1798,12 @@ mpirun R --slave -f ex1.R
 </code></pre></div>
 
 <p>This script should execute a simple broadcast and complete in a few seconds. </p>
+<h2 id="virtual-display-session">Virtual Display Session</h2>
+<p>It is common for R to require a display session to save certain types of figures.
+You may see a warning like "unable to start device PNG" or "unable to open connection to X11 display".
+There is a tool, <code>xvfb</code>, which can help avoid these issues.</p>
+<p>The wrapper <code>xvfb-run</code> creates a virtual display session which allows R to create these figures without an X11 session.
+See the guide for <a href="/clusters-at-yale/guides/xvfb">xvfb</a> for more details.</p>
                 
                   
                     
@@ -1768,7 +1812,7 @@ mpirun R --slave -f ex1.R
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2021</span>
     
   </small>
 </div>
