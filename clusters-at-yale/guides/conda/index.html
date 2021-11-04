@@ -752,6 +752,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mamba-the-conda-alternative" class="md-nav__link">
+    Mamba: The Conda Alternative
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1647,6 +1654,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mamba-the-conda-alternative" class="md-nav__link">
+    Mamba: The Conda Alternative
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1847,6 +1861,22 @@ conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
 <span class="c1"># conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker</span>
 </code></pre></div>
 
+<h3 id="mamba-the-conda-alternative">Mamba: The Conda Alternative</h3>
+<p>For complicated environments, <code>conda</code> can often strugle to "solve" the required set of packages in a reasonable time. 
+An alternative tool, called <code>mamba</code>, has been developed, bringing a faster dependency solver based on <code>libsolv</code>, which is used in modern RPM package managers.</p>
+<p><code>mamba</code> is a drop-in replacement for <code>conda</code> and environments can be created or new packages installed in the same way as with <code>conda</code>:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
+
+<span class="c1"># create new environment</span>
+mamba create --name env_name python numpy pandas jupyter
+
+<span class="c1"># install new pacakge into existing environment</span>
+conda activate env_name
+mamba install scipy scikit-learn
+</code></pre></div>
+
+<p>The <code>mamba</code> utility is installed in the YCRC base environment and is available for general use.
+For more details, see the <a href="https://github.com/mamba-org/mamba">Mamba GitHub page</a>.</p>
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To use the applications in your environment, run the following:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
@@ -1929,7 +1959,7 @@ conda env create -f env_name_environment.yml
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2021</span>
     
   </small>
 </div>
