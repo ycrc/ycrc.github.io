@@ -1,4 +1,4 @@
-# Batch-mode grapical programs with XVFB
+# XVFB
 
 Often there is a need to run a program with a graphical interface in batch mode.
 This can be either due to extended run-time or the desire to run many instances of the process at once. 
