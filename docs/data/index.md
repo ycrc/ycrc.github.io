@@ -4,7 +4,7 @@
 
 **Capacity: Unlimited. Cost: Free - 5TiB max file size  
 No sensitive data (e.g. ePHI, HIPAA)  
-Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/globus)**
+Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/data/globus)**
 
 Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Workspace for Education) account have storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our [Google Drive documentation](/data/google-drive).
 

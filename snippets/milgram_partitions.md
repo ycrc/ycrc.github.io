@@ -116,7 +116,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp|
+    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
 
 === "scavenge"
 
@@ -147,8 +147,8 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |18|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
-    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp|
+    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
+    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
 ### Private Partitions
@@ -211,7 +211,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
 
     === "psych_scavenge"
 
@@ -239,7 +239,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
         |48|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
     === "psych_week"
