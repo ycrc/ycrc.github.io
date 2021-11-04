@@ -108,6 +108,7 @@ nav:
                 - clusters-at-yale/guides/singularity.md
                 - clusters-at-yale/guides/tmux.md
                 - clusters-at-yale/guides/vasp.md
+                - clusters-at-yale/guides/xvfb.md
                 - clusters-at-yale/guides/github.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
