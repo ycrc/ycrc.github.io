@@ -63,7 +63,8 @@ For operation on personal machines, `mpi4py` can be installed via `conda` which 
 
 ## Cluster Resource Requests
 
-MPI utilizes Slurm tasks as the individual parallel workers. Therefore, when requesting resources (either interactively or in batch-mode) the number of tasks will determine the number of parallel workers (or to use MPI's language, the `SIZE` of the `COMM World`).
+MPI utilizes Slurm tasks as the individual parallel workers. 
+Therefore, when requesting resources (either interactively or in batch-mode) the number of tasks will determine the number of parallel workers (or to use MPI's language, the `SIZE` of the `COMM World`).
 
 To request four tasks (each with a single CPU) interactively run the following:
 
@@ -75,6 +76,7 @@ This can also be achieved in batch-mode like this:
     #SBATCH --cpus-per-task=1
     #SBATCH --ntasks=4
 
+A more detailed discussion of resource requests can be found [here](/clusters-at-yale/job-scheduling/resource-requests/) and further examples are available [here](/clusters-at-yale/job-scheduling/slurm-examples/)
 
 ## Examples
 
