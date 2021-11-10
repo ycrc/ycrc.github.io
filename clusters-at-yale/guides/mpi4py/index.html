@@ -843,7 +843,7 @@
         
           <li class="md-nav__item">
   <a href="#ex-1-rank" class="md-nav__link">
-    Ex 1: RANK
+    Ex 1: Rank
   </a>
   
 </li>
@@ -856,8 +856,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-3-broadcast" class="md-nav__link">
-    Example 3: Broadcast
+  <a href="#ex-3-broadcast" class="md-nav__link">
+    Ex 3: Broadcast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-4-scatter-and-gather" class="md-nav__link">
+    Ex 4: Scatter and Gather
   </a>
   
 </li>
@@ -1540,7 +1547,7 @@
         
           <li class="md-nav__item">
   <a href="#ex-1-rank" class="md-nav__link">
-    Ex 1: RANK
+    Ex 1: Rank
   </a>
   
 </li>
@@ -1553,8 +1560,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-3-broadcast" class="md-nav__link">
-    Example 3: Broadcast
+  <a href="#ex-3-broadcast" class="md-nav__link">
+    Ex 3: Broadcast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex-4-scatter-and-gather" class="md-nav__link">
+    Ex 4: Scatter and Gather
   </a>
   
 </li>
@@ -1585,7 +1599,13 @@
                 
                 
                 <h1 id="mpi-parallelism-with-python">MPI Parallelism with Python</h1>
-<p>There are many computational problems that can be have increased performance by running pieces in parallel. These often require communication between the different steps and need a way to send messages between processes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before venturing into MPI-based parallelism, consider whether your work can be resturctured to make use of <a href="/clusters-at-yale/job-scheduling/dsq/">dSQ</a> or more "embarrassingly parallel" workflows.
+MPI can be thought of as a "last resort" for parallel programming.</p>
+</div>
+<p>There are many computational problems that can be have increased performance by running pieces in parallel. 
+These often require communication between the different steps and need a way to send messages between processes.</p>
 <p>Examples of this include simulations of galaxy formation and electric field simulations, analysis of a single large dataset, or complex <code>search</code> or <code>sort</code> algorithms.</p>
 <h2 id="mpi-and-mpi4py">MPI and <code>mpi4py</code></h2>
 <p>There is a standard protocol, called <code>MPI</code>, that defines how messages are passed between processes, including one-to-one and broadcast communications.</p>
@@ -1620,8 +1640,8 @@
 </code></pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Conda-based MPI does not work on the cluster due to the complexity of MPI interfacing with Slurm. Make sure to use the software modules as discussed above for anything on the cluster.</p>
 </div>
 <h2 id="cluster-resource-requests">Cluster Resource Requests</h2>
@@ -1639,7 +1659,7 @@
 
 
 <h2 id="examples">Examples</h2>
-<h3 id="ex-1-rank">Ex 1: RANK</h3>
+<h3 id="ex-1-rank">Ex 1: Rank</h3>
 <p>This is a simple example where each worker reports their <code>RANK</code> and the process ID running that particular task.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
 
@@ -1706,7 +1726,7 @@
 
 
 <p>The <code>RANK=0</code> process sends the message, and the <code>RANK=1</code> process receives it. The other two processes are effectively bystanders in this example.</p>
-<h3 id="example-3-broadcast">Example 3: Broadcast</h3>
+<h3 id="ex-3-broadcast">Ex 3: Broadcast</h3>
 <p>Now we will try a slightly more complicated example that involves sending messages and data between processes.
 <div class="highlight"><pre><span></span><code><span class="c1"># Import MPI</span>
 <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
@@ -1744,7 +1764,7 @@
 </code></pre></div>
 
 
-<h1 id="mpi-example-4-scatter-and-gather">MPI Example 4: Scatter and Gather</h1>
+<h3 id="ex-4-scatter-and-gather">Ex 4: Scatter and Gather</h3>
 <p>An effective way of distributing computationally intensive tasks is to <code>scatter</code> pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are <code>gathered</code> by <code>RANK_0</code>.</p>
 <p>This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returns to the main task with a <code>Gather</code> call.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
@@ -1804,7 +1824,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
     
   </small>
 </div>
