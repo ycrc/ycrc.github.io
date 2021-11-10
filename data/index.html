@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -1351,6 +1351,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#microsoft-teamssharepoint" class="md-nav__link">
+    Microsoft Teams/SharePoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#box-at-yale" class="md-nav__link">
     Box at Yale
   </a>
@@ -1486,6 +1493,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#microsoft-teamssharepoint" class="md-nav__link">
+    Microsoft Teams/SharePoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#box-at-yale" class="md-nav__link">
     Box at Yale
   </a>
@@ -1514,7 +1528,7 @@
                 
                 <h1 id="data-storage-options">Data Storage Options</h1>
 <h2 id="google-drive-via-eliapps">Google Drive via EliApps</h2>
-<p><strong>Capacity: Unlimited. Cost: Free - 5TiB max file size<br />
+<p><strong>Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free 
 No sensitive data (e.g. ePHI, HIPAA)<br />
 Can be mounted on <a href="https://www.google.com/drive/download/">your local machine</a> and transferred to via <a href="/clusters-at-yale/data/globus">Globus Google Drive Connector</a></strong></p>
 <p>Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Workspace for Education) account have storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our <a href="/data/google-drive">Google Drive documentation</a>.</p>
@@ -1560,6 +1574,9 @@ Can be mounted on the cluster or computers on campus (but not both)</strong></p>
 <p class="admonition-title">Cluster I/O Performance</p>
 <p>Since cluster-mounted S@Y shares do <em>not</em> provide sufficient performance for use in jobs, they are not mounted on our compute or login nodes. To access S@Y on the clusters, connect to one of the transfer nodes to <a href="/clusters-at-yale/data/staging">stage the data</a> to <a href="/clusters-at-yale/data/#project">Project</a> or <a href="/clusters-at-yale/data/#60-day-scratch">Scratch60</a> before running jobs.</p>
 </div>
+<h2 id="microsoft-teamssharepoint">Microsoft Teams/SharePoint</h2>
+<p>**Capacity: 25 TB, 250 GB per file. Cost: Free</p>
+<p>You can request a Team and 25TiB of underlying SharePoint storage space from <a href="https://yale.service-now.com/it?id=support_article&amp;sys_id=bbd672721b6a141029b375d4cc4bcbf4">ITS Email And Collaboration Services</a>. For more information on The relationship between Teams, SharePoint, and OneDrive, see the official <a href="https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea">Microsoft post on the subject</a>.</p>
 <h2 id="box-at-yale">Box at Yale</h2>
 <p><strong>Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.<br />
 Sensitive data (e.g. ePHI, HIPAA) only in Secure Box<br />
@@ -1692,15 +1709,15 @@ Can be mounted on your local machine and transferred with <a href="https://rclon
       
     </div>
     
-      <script src="../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
