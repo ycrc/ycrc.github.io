@@ -31,6 +31,7 @@ To request a share, press the “Request this Service” button in the right sid
     Since cluster-mounted S@Y shares do *not* provide sufficient performance for use in jobs, they are not mounted on our compute or login nodes. To access S@Y on the clusters, connect to one of the transfer nodes to [stage the data](/clusters-at-yale/data/staging) to [Project](/clusters-at-yale/data/#project) or [Scratch60](/clusters-at-yale/data/#60-day-scratch) before running jobs.
 
 ## Microsoft Teams/SharePoint
+
 **Capacity: 25 TB, 250 GB per file. Cost: Free
 
 You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on The relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
