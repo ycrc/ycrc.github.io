@@ -1,15 +1,4 @@
-# Version Control with GitHub
-
-Whether developing large frameworks or simply working on small scripts, version control is an important tool to 
-ensure that your work is never lost. 
-We recommend using `git` for its flexibility and versatility and [GitHub](https://github.com) for its 
-power in enabling 
-research and collaboration. [^1]
-
-Here we will cover the basics of version control and how to use `git` and GitHub. 
-
-[^1]: We do not recommend the use of <https://git.yale.edu>, which is an internal-only tool not designed 
-for research use.
+# Version control with Git and GitHub
 
 ## What is version control?
 
@@ -20,10 +9,18 @@ code-base.
 This provides a "coding safety net" to let you try new features while retaining the ability to roll-back to a 
 working version.
 
+Whether developing large frameworks or simply working on small scripts, version control is an important tool to ensure that your work is never lost. 
+We recommend using `git` for its flexibility and versatility and [GitHub](https://github.com) for its power in enabling research and collaboration. [^1]
+
+Here we will cover the basics of version control and how to use `git` and GitHub. 
+
+[^1]: We do not recommend the use of <https://git.yale.edu>, which is an internal-only tool not designed 
+for research use.
+
+
 ## What is `git` and how does it work?
 
-Git is a tool that tracks changes to a file (or set of files) through a series of snapshots called "commits" or 
-"revisions". 
+Git is a tool that tracks changes to a file (or set of files) through a series of snapshots called "commits" or "revisions". 
 These snapshots are stored in "repositories" which contain the history of all the changes to that file. 
 This helps prevent repetative naming or `project_final_final2_v3.txt` problems. 
 It acts as a record of all the edits, along with the ability to compare the current version to previous commits. 
