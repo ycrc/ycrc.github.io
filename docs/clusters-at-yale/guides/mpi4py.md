@@ -76,7 +76,7 @@ This can also be achieved in batch-mode like this:
     #SBATCH --cpus-per-task=1
     #SBATCH --ntasks=4
 
-A more detailed discussion of resource requests can be found [here](/clusters-at-yale/job-scheduling/resource-requests/) and further examples are available [here](/clusters-at-yale/job-scheduling/slurm-examples/)
+A more detailed discussion of resource requests can be found [here](/clusters-at-yale/job-scheduling/resource-requests/) and further examples are available [here](/clusters-at-yale/job-scheduling/slurm-examples/).
 
 ## Examples
 
