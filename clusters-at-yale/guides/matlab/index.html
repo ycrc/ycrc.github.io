@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
       
       
     
@@ -843,7 +843,7 @@
       
         <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
-    Using More than 12 Cores with Matlab
+    Using More than 12 Cores with MATLAB
   </a>
   
 </li>
@@ -1557,7 +1557,7 @@
       
         <li class="md-nav__item">
   <a href="#using-more-than-12-cores-with-matlab" class="md-nav__link">
-    Using More than 12 Cores with Matlab
+    Using More than 12 Cores with MATLAB
   </a>
   
 </li>
@@ -1584,64 +1584,61 @@
                 
                 <h1 id="matlab">MATLAB</h1>
 <h2 id="matlab-gui">MATLAB GUI</h2>
-<p>If you wish to use the MATLAB GUI, we recommend our web portal, <a href="/clusters-at-yale/access/ood">Open OnDemand</a>. Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.</p>
+<p>If you wish to use the MATLAB GUI, we recommend our web portal, <a href="/clusters-at-yale/access/ood">Open OnDemand</a>. Once logged in, select "MATLAB" from the "Interactive Apps" list.</p>
 <h2 id="command-line-matlab">Command Line MATLAB</h2>
 <h3 id="find-matlab">Find MATLAB</h3>
 <p>Run one of the commands below, which will list available versions and the corresponding module files:</p>
-<div class="highlight"><pre><span></span><code>module spider matlab
+<div class="highlight"><pre><span></span><code>module avail matlab
 </code></pre></div>
 
 <p>Load the appropriate module file. For example, to run version R2019a:</p>
-<div class="highlight"><pre><span></span><code>module load MATLAB/2019a
+<div class="highlight"><pre><span></span><code>module load MATLAB/2021a
 </code></pre></div>
 
 <p>The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.</p>
 <h3 id="run-matlab">Run MATLAB</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The MATLAB program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive or batch job (see below).</p>
+<p>If you try to run MATLAB on a login node, it will likely crash. Instead, launch it in an interactive or batch job (see below).</p>
 </div>
-<p>To launch MATLAB, using <code>matlab</code> command.</p>
-<div class="highlight"><pre><span></span><code># launch the MATLAB GUI
+<h3 id="interactive-job">Interactive Job</h3>
+<p>To run MATLAB interactively, you need to create an interactive session on a compute node.</p>
+<p>You could start an interactive session using 4 cores, 16GiB of RAM for 4 hours with:</p>
+<div class="highlight"><pre><span></span><code>srun --pty --x11 -c 4 --mem 16G -p interactive -t 4:00:00 bash
+</code></pre></div>
+
+<p>Once your interactive session starts, you can load the appropriate module file and start MATLAB</p>
+<div class="highlight"><pre><span></span><code>module load MATLAB/2021a
+
+# launch the MATLAB GUI (needs X11 forwarding or a desktop session in OOD)
 matlab
-# or launch the MATLAB command line prompt
+
+# launch the MATLAB command line prompt
 maltab -nodisplay
-# or to launch a script
+
+# launch a script on the command line
 matlab -nodisplay &lt; runscript.m
 </code></pre></div>
 
-<h3 id="interactive-job">Interactive Job</h3>
-<p>To run Matlab interactively, you need to create an interactive session on a compute node.</p>
-<p>You could start an interactive session using 4 cores on 1 node using something like</p>
-<div class="highlight"><pre><span></span><code>srun --pty --x11 -c 4 -p interactive -t 4:00:00 bash
-</code></pre></div>
-
-<p>Once your interactive session starts, you can load the appropriate module file and start Matlab as described above.</p>
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h3 id="batch-mode-without-a-gui">Batch Mode (without a GUI)</h3>
-<p>Create a batch script containing both instructions to the scheduler and shell instructions to set up directories and start Matlab. At the point you wish to start Matlab, use a command like:</p>
-<div class="highlight"><pre><span></span><code>matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
-</code></pre></div>
-
-<p>This command will run the contents of YourFunction.m. Your batch submission script must either be in or <code>cd</code> to the directory containing YourFunction.m for this to work.</p>
-<p>Below is a sample batch script to run Matlab in batch mode on Grace. If the name of the script is runit.sh, you would submit it using</p>
-<div class="highlight"><pre><span></span><code>sbatch  runit.sh
-</code></pre></div>
-
-<p>Here's a script for Grace:</p>
+<p>Create a batch script with the <a href="/clusters-at-yale/job-scheduling/resource-requests">resource requests</a> appropriate to your MATLAB function(s) and script(s). In it load the MATLAB module version you want, then run <code>matlab</code> with the <code>-b</code> option and your function/script name. Here is an example that requests 4 CPUs and 18GiB of memory for 8 hours: </p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
-#SBATCH -J myjob
-#SBATCH -c 4
-#SBATCH -t 24:00:00
-#SBATCH -p day
+#SBATCH --job-name myjob
+#SBATCH --cpus-per-task 4
+#SBATCH --mem 18G
+#SBATCH -t 8:00:00
 
-module load MATLAB/2016b
-matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
+module load MATLAB/2021a
+# assuming you have your_script.m in the current directory
+matlab -b &quot;your_script&quot;
+
+# if using MATLAB older than R2019a
+# matlab -nojvm -nodisplay -nosplash &lt; your_script.m
 </code></pre></div>
 
-<p>Unless you specify otherwise (using &gt; redirects), both output and error logs will show up in the slurm-jobid.out log file in the same directory as your submission script.</p>
-<h2 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with Matlab</h2>
-<p>In Matlab, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.</p>
+<h2 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with MATLAB</h2>
+<p>In MATLAB, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.</p>
 <div class="highlight"><pre><span></span><code>parpool(feature(&#39;NumCores&#39;));
 </code></pre></div>
                 
@@ -1652,7 +1649,7 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 13, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
     
   </small>
 </div>
@@ -1768,8 +1765,8 @@ matlab -nodisplay -nosplash -r YourFunction &lt; /dev/null
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
