@@ -241,8 +241,12 @@ Which prints:
 
     Full Average: 10.00002060397186
 
-# Key Take-aways and Further Reading
+## Key Take-aways and Further Reading
 
 1. `MPI` is a powerful tool to set up communication worlds and send data and messages between workers
 2. The `mpi4py` module provides tools for using MPI within Python.
 3. This is just the beginning, `mpi4py` can be used for so much more...
+
+To learn more, take a look at the `mpi4py` tutorial [here](https://mpi4py.readthedocs.io/en/stable/tutorial.html).
+
+
