@@ -45,45 +45,61 @@ module avail cudnn/
 
 You can find hints about the correct version of Tensorflow from their [tested build configurations](https://www.tensorflow.org/install/source#tested_build_configurations). You can also test your install with a simple script that imports Tensorflow (run on a GPU node). If you an `ImportError` that mentions missing libraries like `libcublas.so.9.0`, for example, that means that Tensorflow is probably expecting CUDA v 9.0 but cannot find it.
 
-### PyTorch
+#### Create an Example Tensorflow-GPU Environment
 
-As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. If not make sure you have the version of cuda referenced on the PyTorch site [in their install instructions](https://pytorch.org/get-started/locally/). They also provide [instructions on installing previous versions](https://pytorch.org/get-started/previous-versions/) compatible with older versions of CUDA.
+To create a conda environment without the system CUDA:
 
-### Create an Example Tensorflow-GPU Environment
-
-``` bash
-# example modules for tensorflow 1.12
-module purge
-module load cuDNN/7.1.4-CUDA-9.0.176
+```bash
 module load miniconda
+conda create --name tf-condacuda python numpy pandas matplotlib jupyter cudatoolkit=11.2 tensorflow-gpu 
+
 ```
 
-Then save your modules as a collection.
+To create a conda environment with Tensorflow and uses the module CUDA:
 
-``` bash
-# save module environment
-module save cuda90
+```bash
+# load modules, including the system CUDA and cuDNN
+module load miniconda CUDAcore/11.2.2 cuDNN/8.1.1.33-CUDA-11.2.2
+# save module collection for furture use
+module save cuda11
+
+#create environment with required dependencies
+conda create --name tf-modulecuda python numpy pandas matplotlib jupyter -c conda-forge 
+
+# use pip to install tensorflow-gpu
+pip install tensorflow-gpu
 ```
 
-Now create a virtual environment for your GPU enabled code. For more details on Conda environments, see our [Conda documentation](/clusters-at-yale/guides/conda).
-
-``` bash
-# create conda environment for deep learning/neural networks
-conda create -y -n tensorflow112 python=3.6 anaconda
-source activate tensorflow112
-
-#install libraries
-pip install keras tensorflow-gpu==1.12
-```
-
-## Use Your Environment
+#### Use Your Environment
 
 To re-enter your environment you only need the following:
 
-``` bash
-module restore cuda90
-source activate tensorflow112
+```bash
+module load miniconda
+conda activate tf-condacuda
+
 ```
+Or if using the module-installed CUDA:
+
+``` bash
+module restore cuda11
+conda activate tf-modulecuda
+```
+
+### PyTorch
+
+As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. 
+If not make sure you have the version of CUDA referenced on the PyTorch site [in their install instructions](https://pytorch.org/get-started/locally/).
+They also provide [instructions on installing previous versions](https://pytorch.org/get-started/previous-versions/) compatible with older versions of CUDA.
+
+Following the instructions on their site, create a PyTorch environment using `conda`:
+
+```bash
+module load miniconda
+conda create --name pytorch_env pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+```
+
 
 ## Compile `.c` or `.cpp` Files with CUDA code
 
