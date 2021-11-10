@@ -16,11 +16,12 @@ Can be mounted on the cluster or computers on campus (but not both)**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
 
-| Type        | Use                                                                           | Price           |
-|-------------|-------------------------------------------------------------------------------|-----------------|
-|Object Tier  |Good for staging data between cloud and clusters                               |$12/TiB/month    |
-|Active Tier  |Daily use, still copy to cluster before using in jobs                          |$10.78/TiB/month |
-|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/) |$3.60/TiB/month  |
+| Type        | Use                                                                            | Price           |
+|-------------|--------------------------------------------------------------------------------|-----------------|
+|Object Tier  |Good for staging data between cloud and clusters                                |$12/TiB/month    |
+|Active Tier  |Daily use, still copy to cluster before using in jobs                           |$10.78/TiB/month |
+|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/)  |$3.60/TiB/month  |
+|Backup Tier  |Low-access remote object backup. [Make sure to properly archive](/data/archive/)|$4.00/TiB/month  |
 
 For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
