@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.01afc2df.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -796,6 +796,26 @@
     Tensorflow
   </a>
   
+    <nav class="md-nav" aria-label="Tensorflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-example-tensorflow-gpu-environment" class="md-nav__link">
+    Create an Example Tensorflow-GPU Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-your-environment" class="md-nav__link">
+    Use Your Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -805,22 +825,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#create-an-example-tensorflow-gpu-environment" class="md-nav__link">
-    Create an Example Tensorflow-GPU Environment
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-your-environment" class="md-nav__link">
-    Use Your Environment
-  </a>
   
 </li>
       
@@ -1541,6 +1547,26 @@
     Tensorflow
   </a>
   
+    <nav class="md-nav" aria-label="Tensorflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-example-tensorflow-gpu-environment" class="md-nav__link">
+    Create an Example Tensorflow-GPU Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-your-environment" class="md-nav__link">
+    Use Your Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1550,22 +1576,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#create-an-example-tensorflow-gpu-environment" class="md-nav__link">
-    Create an Example Tensorflow-GPU Environment
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-your-environment" class="md-nav__link">
-    Use Your Environment
-  </a>
   
 </li>
       
@@ -1630,33 +1642,42 @@ module avail cudnn/
 
 <h3 id="tensorflow">Tensorflow</h3>
 <p>You can find hints about the correct version of Tensorflow from their <a href="https://www.tensorflow.org/install/source#tested_build_configurations">tested build configurations</a>. You can also test your install with a simple script that imports Tensorflow (run on a GPU node). If you an <code>ImportError</code> that mentions missing libraries like <code>libcublas.so.9.0</code>, for example, that means that Tensorflow is probably expecting CUDA v 9.0 but cannot find it.</p>
-<h3 id="pytorch">PyTorch</h3>
-<p>As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. If not make sure you have the version of cuda referenced on the PyTorch site <a href="https://pytorch.org/get-started/locally/">in their install instructions</a>. They also provide <a href="https://pytorch.org/get-started/previous-versions/">instructions on installing previous versions</a> compatible with older versions of CUDA.</p>
-<h3 id="create-an-example-tensorflow-gpu-environment">Create an Example Tensorflow-GPU Environment</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># example modules for tensorflow 1.12</span>
-module purge
-module load cuDNN/7.1.4-CUDA-9.0.176
-module load miniconda
+<h4 id="create-an-example-tensorflow-gpu-environment">Create an Example Tensorflow-GPU Environment</h4>
+<p>To create a conda environment without the system CUDA:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create --name tf-condacuda python numpy pandas matplotlib jupyter <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.2 tensorflow-gpu 
 </code></pre></div>
 
-<p>Then save your modules as a collection.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># save module environment</span>
-module save cuda90
+<p>To create a conda environment with Tensorflow and uses the module CUDA:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># load modules, including the system CUDA and cuDNN</span>
+module load miniconda CUDAcore/11.2.2 cuDNN/8.1.1.33-CUDA-11.2.2
+<span class="c1"># save module collection for furture use</span>
+module save cuda11
+
+<span class="c1">#create environment with required dependencies</span>
+conda create --name tf-modulecuda python numpy pandas matplotlib jupyter -c conda-forge 
+
+<span class="c1"># use pip to install tensorflow-gpu</span>
+pip install tensorflow-gpu
 </code></pre></div>
 
-<p>Now create a virtual environment for your GPU enabled code. For more details on Conda environments, see our <a href="/clusters-at-yale/guides/conda">Conda documentation</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># create conda environment for deep learning/neural networks</span>
-conda create -y -n tensorflow112 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6 anaconda
-<span class="nb">source</span> activate tensorflow112
-
-<span class="c1">#install libraries</span>
-pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span>.12
-</code></pre></div>
-
-<h2 id="use-your-environment">Use Your Environment</h2>
+<h4 id="use-your-environment">Use Your Environment</h4>
 <p>To re-enter your environment you only need the following:</p>
-<div class="highlight"><pre><span></span><code>module restore cuda90
-<span class="nb">source</span> activate tensorflow112
+<p><div class="highlight"><pre><span></span><code>module load miniconda
+conda activate tf-condacuda
+</code></pre></div>
+Or if using the module-installed CUDA:</p>
+<div class="highlight"><pre><span></span><code>module restore cuda11
+conda activate tf-modulecuda
+</code></pre></div>
+
+<h3 id="pytorch">PyTorch</h3>
+<p>As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. 
+If not make sure you have the version of CUDA referenced on the PyTorch site <a href="https://pytorch.org/get-started/locally/">in their install instructions</a>.
+They also provide <a href="https://pytorch.org/get-started/previous-versions/">instructions on installing previous versions</a> compatible with older versions of CUDA.</p>
+<p>Following the instructions on their site, create a PyTorch environment using <code>conda</code>:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create --name pytorch_env pytorch torchvision torchaudio <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3 -c pytorch
 </code></pre></div>
 
 <h2 id="compile-c-or-cpp-files-with-cuda-code">Compile <code>.c</code> or <code>.cpp</code> Files with CUDA code</h2>
@@ -1671,7 +1692,7 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
     
   </small>
 </div>
@@ -1787,8 +1808,8 @@ pip install keras tensorflow-gpu<span class="o">==</span><span class="m">1</span
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
