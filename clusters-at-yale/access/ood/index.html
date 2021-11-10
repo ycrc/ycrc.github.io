@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -495,6 +495,19 @@
     File Browser
   </a>
   
+    <nav class="md-nav" aria-label="File Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customize-favorite-paths" class="md-nav__link">
+    Customize Favorite Paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -535,6 +548,13 @@
           <li class="md-nav__item">
   <a href="#jupyter-notebooks" class="md-nav__link">
     Jupyter Notebooks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-server" class="md-nav__link">
+    RStudio Server
   </a>
   
 </li>
@@ -1553,6 +1573,19 @@
     File Browser
   </a>
   
+    <nav class="md-nav" aria-label="File Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customize-favorite-paths" class="md-nav__link">
+    Customize Favorite Paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1597,6 +1630,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rstudio-server" class="md-nav__link">
+    RStudio Server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1626,7 +1666,7 @@
 <p><a href="https://openondemand.org">Open OnDemand</a> (OOD) is platform for accessing the clusters that only requires a web browser.
 This web-portal provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).</p>
 <h2 id="access">Access</h2>
-<p>If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn">VPN</a>. </p>
+<p>If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn">VPN</a>. </p>
 <p>Open OnDemand is available on the following clusters using your NetID credentials (CAS login). </p>
 <table>
 <thead>
@@ -1666,19 +1706,27 @@ Run &#39;nginx_stage --help&#39; to see a full list of available command line op
 Instead, use the course OOD URL.</p>
 </div>
 <h2 id="the-dashboard">The Dashboard</h2>
-<p>On login you will then be greeted with a welcome page showing the standard message of the day.</p>
+<p>On login you will see the OOD dashboard.</p>
 <p><img alt="welcome" src="/img/ood_welcome.png" /></p>
-<p>Along the top are a pull-down menus for a File Browser, a Job Builder, a list of Interactive Apps, and a Shell.</p>
+<p>Along the top are pull-down menus for various Apps, including File Managers, Job Composer, a Shell, a list of Interactive Apps, etc.</p>
 <h2 id="file-browser">File Browser</h2>
 <p><img alt="file_browser" src="/img/ood_filebrowser.png" /></p>
-<p>The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts, etc.</p>
-<p>You can also drag and drop files, download entire directories, and move files between directories using this interface.</p>
+<p>The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts.</p>
+<p>You can also drag-and-drop to download and upload files and directories, and move files between directories using this interface.</p>
+<h4 id="customize-favorite-paths">Customize Favorite Paths</h4>
+<p>Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list custmozed favorite paths:</p>
+<div class="highlight"><pre><span></span><code>  ood_add_path
+  ood_remove_path
+  ood_list_path
+</code></pre></div>
+
+<p>The scripts are self explanatory and will prompt you to add or remove paths to the Files pull-down menue, as well as the left pane when the file manager is opened.</p>
 <h2 id="shell">Shell</h2>
 <p>You can launch a traditional command-line interface to the cluster using the Shell pull-down menu.
 This opens a terminal in a web-browser that you can use in the exact same way as when logging into the cluster via SSH.</p>
 <p>This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.</p>
 <h2 id="interactive-apps">Interactive Apps</h2>
-<p>We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, and Jupyter Notebook.</p>
+<p>We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, RStudio Server, and Jupyter Notebook, etc.</p>
 <h3 id="remote-desktop">Remote Desktop</h3>
 <p>Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
 In the past your options were to use <a href="/clusters-at-yale/access/vnc">VNC</a> or <a href="/clusters-at-yale/access/x11">X11 forwarding</a>. These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.</p>
@@ -1687,8 +1735,7 @@ In the past your options were to use <a href="/clusters-at-yale/access/vnc">VNC<
 <p>Once you launch the job, you will be presented with a notification that your job has been queued.
 Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the Remote Desktop:</p>
 <p><img alt="starting" src="/img/ood_remote_starting.png" /></p>
-<p>Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. You can find the terminal application (for loading modules and launching programs) in the "Applications" &gt; "System Tools" menu.</p>
-<p><img alt="terminal" src="/img/ood_remote_terminal.png" /></p>
+<p>Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. </p>
 <h4 id="copypaste">Copy/Paste</h4>
 <p>In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.</p>
 <p><img alt="clipboard" src="/img/ood_remote_clipboard.png" /></p>
@@ -1699,8 +1746,24 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you have installed and want to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">Jupyter Lab</a> replace <code>/tree?</code> with <code>/lab</code> in the url to your Jupyter job.</p>
+<p>If you have installed and want to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">Jupyter Lab</a> click the <code>Start JupyterLab</code> checkbox.</p>
 </div>
+<h3 id="rstudio-server">RStudio Server</h3>
+<p>If you choose RStudio Server instead of RStudio Desktop, you may encounter the following error when trying to plot in a RStudio session:</p>
+<div class="highlight"><pre><span></span><code>Error in RStudioGD<span class="o">()</span> : 
+  Shadow graphics device error: r error <span class="m">4</span> <span class="o">(</span>R code execution error<span class="o">)</span>
+In addition: Warning message:
+In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,  :
+  unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
+</code></pre></div>
+
+<p>To fix the problem, you need to configure RStudio Server to use <code>Cairo</code> 
+as the graphic device backend. To do so, first click <code>Tools</code> from the top menu bar on 
+the RStudio Server GUI, and then select <code>Global options</code> from the pull down menu. An option window will be opened. 
+In the window, click <code>general</code> on the left panel and then click <code>Advanced</code> on the right. And then select <code>Cairo</code> 
+for the Graphics Device backend. This will set <code>Cairo</code> as the default drawing device. You only need to do this once 
+unless you have cleaned up your RStudio configuration files.</p>
+<p><img alt="rstudio_cairo" src="/img/ood_rstudio_cairo.png" /></p>
                 
                   
                     
@@ -1709,7 +1772,7 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 16, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
     
   </small>
 </div>
@@ -1825,15 +1888,15 @@ Depending on the resources requested, you may need to wait for a bit. When the j
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
