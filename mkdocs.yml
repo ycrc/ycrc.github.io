@@ -94,6 +94,7 @@ nav:
                 - clusters-at-yale/guides/conda.md
                 - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
                 - clusters-at-yale/guides/gaussian.md
+                - "GitHub": clusters-at-yale/guides/github.md
                 - clusters-at-yale/guides/github_pages.md
                 - clusters-at-yale/guides/gpus-cuda.md
                 - clusters-at-yale/guides/jupyter.md
@@ -109,8 +110,7 @@ nav:
                 - clusters-at-yale/guides/singularity.md
                 - clusters-at-yale/guides/tmux.md
                 - clusters-at-yale/guides/vasp.md
-                - clusters-at-yale/guides/xvfb.md
-                - clusters-at-yale/guides/github.md
+                - "XVFB": clusters-at-yale/guides/xvfb.md
             - Job Scheduling:
                 - clusters-at-yale/job-scheduling/index.md
                 - clusters-at-yale/job-scheduling/resource-requests.md
