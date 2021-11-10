@@ -133,6 +133,7 @@ You can use the cluster transfer nodes to download/upload data to locations off-
 To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](https://rclone.org/). It is installed as a module on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:
 
 ```bash
+module load rclone
 rclone configure
 ```
 
