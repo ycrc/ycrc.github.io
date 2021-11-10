@@ -5,7 +5,7 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 ## Access
 
-If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to Yale's [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
+If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
 Open OnDemand is available on the following clusters using your NetID credentials (CAS login). 
 
@@ -32,19 +32,31 @@ For courses on Grace and Farnam, we offer course-specific OOD URLs that allow th
 
 ## The Dashboard
 
-On login you will then be greeted with a welcome page showing the standard message of the day.
+On login you will see the OOD dashboard.
 
 ![welcome](/img/ood_welcome.png)
 
-Along the top are a pull-down menus for a File Browser, a Job Builder, a list of Interactive Apps, and a Shell.
+Along the top are pull-down menus for various Apps, including File Managers, Job Composer, a Shell, a list of Interactive Apps, etc.
 
 ## File Browser
 
 ![file_browser](/img/ood_filebrowser.png)
 
-The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts, etc.
+The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts.
 
-You can also drag and drop files, download entire directories, and move files between directories using this interface.
+You can also drag-and-drop to download and upload files and directories, and move files between directories using this interface.
+
+#### Customize Favorite Paths
+
+Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list custmozed favorite paths:
+
+``` bash
+  ood_add_path
+  ood_remove_path
+  ood_list_path
+```
+
+The scripts are self explanatory and will prompt you to add or remove paths to the Files pull-down menue, as well as the left pane when the file manager is opened.
 
 ## Shell
 
@@ -52,9 +64,10 @@ You can launch a traditional command-line interface to the cluster using the She
 This opens a terminal in a web-browser that you can use in the exact same way as when logging into the cluster via SSH.
 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
+
 ## Interactive Apps
 
-We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, and Jupyter Notebook.
+We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, RStudio Server, and Jupyter Notebook, etc.
 
 ### Remote Desktop
 
@@ -70,15 +83,14 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 
 ![starting](/img/ood_remote_starting.png)
 
-Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. You can find the terminal application (for loading modules and launching programs) in the "Applications" > "System Tools" menu.
-
-![terminal](/img/ood_remote_terminal.png)
+Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. 
 
 #### Copy/Paste
 
 In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
 
 ![clipboard](/img/ood_remote_clipboard.png)
+
 
 ### Jupyter Notebooks
 
@@ -90,4 +102,25 @@ One of the most common uses of Open OnDemand is the Jupyter Notebook interface f
 Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
 !!! tip
-    If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) replace `/tree?` with `/lab` in the url to your Jupyter job.
+    If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) click the `Start JupyterLab` checkbox.
+
+### RStudio Server
+
+If you choose RStudio Server instead of RStudio Desktop, you may encounter the following error when trying to plot in a RStudio session:
+
+``` bash
+Error in RStudioGD() : 
+  Shadow graphics device error: r error 4 (R code execution error)
+In addition: Warning message:
+In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
+  unable to open connection to X11 display ''
+```
+
+To fix the problem, you need to configure RStudio Server to use `Cairo` 
+as the graphic device backend. To do so, first click `Tools` from the top menu bar on 
+the RStudio Server GUI, and then select `Global options` from the pull down menu. An option window will be opened. 
+In the window, click `general` on the left panel and then click `Advanced` on the right. And then select `Cairo` 
+for the Graphics Device backend. This will set `Cairo` as the default drawing device. You only need to do this once 
+unless you have cleaned up your RStudio configuration files.
+
+![rstudio_cairo](/img/ood_rstudio_cairo.png)
