@@ -34,13 +34,13 @@ Courses on the clusters have their own course-specific OOD URLs, also called cou
 
 On login you will see the OOD dashboard.
 
-![welcome](/img/ood_welcome.png)
+![welcome](/img/ood_welcome.png){: .large}
 
 Along the top are pull-down menus for various Apps, including File Managers, Job Composer, a Shell, a list of Interactive Apps, etc.
 
 ## File Browser
 
-![file_browser](/img/ood_filebrowser.png)
+![file_browser](/img/ood_filebrowser.png){: .medium}
 
 The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts.
 
@@ -76,7 +76,7 @@ In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11
 
 Use the form to request resources and decide what partition your job should run on (use `interactive` or your lab's partition).
 
-![remote_desktop](/img/ood_remote.png)
+![remote_desktop](/img/ood_remote.png){: .medium}
 
 Once you launch the job, you will be presented with a notification that your job has been queued.
 Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the Remote Desktop:
@@ -97,7 +97,7 @@ In some browsers, you may have to use a special text box to copy and paste from 
 One of the most common uses of Open OnDemand is the Jupyter Notebook interface for Python and R.
 [Jupyter Notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) provide a flexible way to interactively work with code and plots presented in-line together. To get started choose Jupyter Notebook from the Interactive Apps menu on the dashboard.
 
-![jupyter_form](/img/ood_jupyter_form.png)
+![jupyter_form](/img/ood_jupyter_form.png){: .medium}
 
 Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
@@ -133,4 +133,4 @@ from the `backend` list.
 Once done, it sets `Cairo` as the default drawing device. You only need to configure the device once 
 unless you have cleaned up your RStudio configuration files.
 
-![rstudio_cairo](/img/ood_rstudio_cairo.png)
+![rstudio_cairo](/img/ood_rstudio_cairo.png){: .medium}
