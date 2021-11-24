@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -556,6 +556,26 @@
   <a href="#rstudio-server" class="md-nav__link">
     RStudio Server
   </a>
+  
+    <nav class="md-nav" aria-label="RStudio Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-user-r-package-path" class="md-nav__link">
+    Change User R Package Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-graphic-device" class="md-nav__link">
+    Configure the Graphic Device
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1635,6 +1655,26 @@
     RStudio Server
   </a>
   
+    <nav class="md-nav" aria-label="RStudio Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-user-r-package-path" class="md-nav__link">
+    Change User R Package Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-graphic-device" class="md-nav__link">
+    Configure the Graphic Device
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1696,7 +1736,7 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 </table>
 <p>The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. </p>
 <h2 id="course-open-ondemand-web-portals">Course Open OnDemand Web Portals</h2>
-<p>For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: <code>coursename.ycrc.yale.edu</code>. More information about course OODs can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
+<p>Courses on the clusters have their own course-specific OOD URLs, also called course OOD portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: <code>coursename.ycrc.yale.edu</code>. More information about course OODs can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
@@ -1749,7 +1789,13 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>If you have installed and want to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">Jupyter Lab</a> click the <code>Start JupyterLab</code> checkbox.</p>
 </div>
 <h3 id="rstudio-server">RStudio Server</h3>
-<p>If you choose RStudio Server instead of RStudio Desktop, you may encounter the following error when trying to plot in a RStudio session:</p>
+<h4 id="change-user-r-package-path">Change User R Package Path</h4>
+<p>To change the default path where packages installed by the user are stored, you need to add the following line of code in your <code>$HOME/.bashrc</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
+</code></pre></div>
+
+<h4 id="configure-the-graphic-device">Configure the Graphic Device</h4>
+<p>When you plot in a RStudio session, you may encounter the following error:</p>
 <div class="highlight"><pre><span></span><code>Error in RStudioGD<span class="o">()</span> : 
   Shadow graphics device error: r error <span class="m">4</span> <span class="o">(</span>R code execution error<span class="o">)</span>
 In addition: Warning message:
@@ -1760,8 +1806,9 @@ In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB
 <p>To fix the problem, you need to configure RStudio Server to use <code>Cairo</code> 
 as the graphic device backend. To do so, first click <code>Tools</code> from the top menu bar on 
 the RStudio Server GUI, and then select <code>Global options</code> from the pull down menu. An option window will be opened. 
-In the window, click <code>general</code> on the left panel and then click <code>Advanced</code> on the right. And then select <code>Cairo</code> 
-for the Graphics Device backend. This will set <code>Cairo</code> as the default drawing device. You only need to do this once 
+In the window, click <code>general</code> on the left panel and then click <code>Graphics</code> on the right. Choose <code>Cairo</code> 
+from the <code>backend</code> list. </p>
+<p>Once done, it sets <code>Cairo</code> as the default drawing device. You only need to configure the device once 
 unless you have cleaned up your RStudio configuration files.</p>
 <p><img alt="rstudio_cairo" src="/img/ood_rstudio_cairo.png" /></p>
                 
@@ -1772,7 +1819,7 @@ unless you have cleaned up your RStudio configuration files.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
     
   </small>
 </div>
@@ -1888,15 +1935,15 @@ unless you have cleaned up your RStudio configuration files.</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
