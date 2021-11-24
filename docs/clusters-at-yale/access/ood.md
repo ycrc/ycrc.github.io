@@ -20,7 +20,7 @@ The above four URLs are also called cluster OOD URLs. They are available to any 
 
 ## Course Open OnDemand Web Portals
 
-For courses on Grace and Farnam, we offer course-specific OOD URLs that allow the students to sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+Courses on the clusters have their own course-specific OOD URLs, also called course OOD portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
 
 !!! warning 
     If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
@@ -106,7 +106,15 @@ Make sure that you chose the right Conda environment for your from the drop-down
 
 ### RStudio Server
 
-If you choose RStudio Server instead of RStudio Desktop, you may encounter the following error when trying to plot in a RStudio session:
+#### Change User R Package Path
+To change the default path where packages installed by the user are stored, you need to add the following line of code in your `$HOME/.bashrc`:
+
+```bash
+export R_LIBS_USER=path_to_your_local_r_packages
+```
+
+#### Configure the Graphic Device
+When you plot in a RStudio session, you may encounter the following error:
 
 ``` bash
 Error in RStudioGD() : 
@@ -119,8 +127,10 @@ In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
 To fix the problem, you need to configure RStudio Server to use `Cairo` 
 as the graphic device backend. To do so, first click `Tools` from the top menu bar on 
 the RStudio Server GUI, and then select `Global options` from the pull down menu. An option window will be opened. 
-In the window, click `general` on the left panel and then click `Advanced` on the right. And then select `Cairo` 
-for the Graphics Device backend. This will set `Cairo` as the default drawing device. You only need to do this once 
+In the window, click `general` on the left panel and then click `Graphics` on the right. Choose `Cairo` 
+from the `backend` list. 
+
+Once done, it sets `Cairo` as the default drawing device. You only need to configure the device once 
 unless you have cleaned up your RStudio configuration files.
 
 ![rstudio_cairo](/img/ood_rstudio_cairo.png)
