@@ -50,7 +50,7 @@ http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
 You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  You can use the ycgaFastq tool to do that:
 
 ```bash
-$ /home/bioinfo/software/knightlab/bin_Mar2018/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+$ /home/bioinfo/software/knightlab/bin/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 ```
 
 ycgaFastq can also be used to retrieve data that has been archived to tape.  The simplest way to do that is to provide
