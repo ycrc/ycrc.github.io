@@ -37,7 +37,7 @@ Quota: 20 TiB and 15,000,000 files per group
 
 60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
 
-We create a symlink, or shortcut, in every home directory called `scratch60`, but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
+We create a symlink, or shortcut, in every home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters-at-yale/clusters/grace)), but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
 
 ``` bash
 readlink -f ~/scratch60
