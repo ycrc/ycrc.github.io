@@ -109,7 +109,7 @@ Delete unneeded files between jobs and compress or [archive](/data/archive/) col
 
 ### Retrieve Data from Home Backups
 
-[Contact us](/#get-help) with your netid and the list of files/directories you would like restored.
+[Contact us](/#get-help) with your netid and the list of files/directories you would like restored. For any data deleted in the last couple days, first try the self-service snapshots described below.
 
 ### Retrieve Data from Snapshots
 
@@ -128,7 +128,7 @@ As long as your files existed in the form you want them in before the most recen
 | `/gpfs/milgram/pi/groupname`| `/gpfs/milgram/pi/groupname/.snapshots`      |
 | `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
 
-For example, if you wanted to recover the file `/gpfs/ysm/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/project/bjornson//rdb9/doit.sh` .
+For example, if you wanted to recover the file `/gpfs/ysm/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/project/bjornson/rdb9/doit.sh` .
 
 !!! info "Snapshot Sizes"
     Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.

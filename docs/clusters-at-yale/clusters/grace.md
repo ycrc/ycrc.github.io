@@ -35,12 +35,14 @@ Grace has access to a number of filesystems. `/gpfs/loomis` is Grace's primary f
 
 You can check your current storage usage & limits by running the `getquota` command. Your `~/project`, `~/scratch60`, and `~/palmer_scratch` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
 
+For information on data recovery, see the [Backups and Snapshots](/clusters-at-yale/data/#backups-and-snapshots) documentation.
+
 !!! Warning
     Files stored in `scratch60` and `palmer_scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-|Partition       | Root Directory            | Storage                                 | File Count | Backups | Notes |
-|----------------|---------------------------|-----------------------------------------|------------|---------|-------|
-| home           | `/gpfs/loomis/home.grace` | 125GiB/user                             | 500,000    | Yes     |       |
-| project        | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      |       |
-| scratch60      | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      | decommissioning in late 2022 |
-| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | in beta, official launch early 2022 |
+|Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
+|----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
+| home           | `/gpfs/loomis/home.grace` | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
+| project        | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
+| scratch60      | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      | No        | decommissioning in late 2022 |
+| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        | in beta, official launch early 2022 |

@@ -16,7 +16,7 @@ Users wishing to use Milgram must agree to the following:
 
 - - -
 
-## Access the Cluster 
+## Access the Cluster
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
@@ -61,11 +61,13 @@ See each tab below for more information about the available common use partition
 
 You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
 
+For information on data recovery, see the [Backups and Snapshots](/clusters-at-yale/data/#backups-and-snapshots) documentation.
+
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
 
-|Partition  | Root Directory            | Storage                                 | File Count | Backups |
-|-----------|---------------------------|-----------------------------------------|------------|---------|
-| home      | `/gpfs/milgram/home`      | 125GiB/user                             | 500,000    | Yes     |
-| project   | `/gpfs/milgram/project`   | 1TiB/group, increase to 4TiB on request | 5,000,000  | Yes      |
-| scratch60 | `/gpfs/milgram/scratch60` | 20TiB/group                             | 15,000,000 | No      |
+|Partition  | Root Directory            | Storage                                 | File Count | Backups | Snapshots |
+|-----------|---------------------------|-----------------------------------------|------------|---------|-----------|
+| home      | `/gpfs/milgram/home`      | 125GiB/user                             | 500,000    | Yes     | >=2 days  |
+| project   | `/gpfs/milgram/project`   | 1TiB/group, increase to 4TiB on request | 5,000,000  | Yes     | >=2 days  |
+| scratch60 | `/gpfs/milgram/scratch60` | 20TiB/group                             | 15,000,000 | No      | No        |
