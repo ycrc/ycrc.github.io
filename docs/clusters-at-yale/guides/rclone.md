@@ -8,7 +8,6 @@ You need to run `rclone config` at least once to receive authorization for acces
 
 The example below is a screen dump from setting up `rclone` on Farnam for Yale Box.
 ```
-[pl543@transfer-farnam ~]$ module load Rclone
 [pl543@transfer-farnam ~]$ rclone config
 2019/10/21 09:14:05 NOTICE: Config file "/home/pl543/.config/rclone/rclone.conf" not found - using defaults
 No remotes found - make a new one
