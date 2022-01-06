@@ -69,8 +69,7 @@ ycgaFastq can be used in a variety of other ways to retrieve data.  For more inf
 
 If you would like to know the true location of the data on Ruddle, do this:
 ``` bash
-$ cd /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
-$ ls -l
+$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
 ```
 
 !!! tip
