@@ -199,3 +199,11 @@ mpirun R --slave -f ex1.R
 This script should execute a simple broadcast and complete in a few seconds. 
 
 
+## Virtual Display Session
+
+It is common for R to require a display session to save certain types of figures.
+You may see a warning like "unable to start device PNG" or "unable to open connection to X11 display".
+There is a tool, `xvfb`, which can help avoid these issues.
+
+The wrapper `xvfb-run` creates a virtual display session which allows R to create these figures without an X11 session.
+See the guide for [xvfb](/clusters-at-yale/guides/xvfb) for more details.

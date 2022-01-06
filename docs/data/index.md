@@ -2,9 +2,9 @@
 
 ## Google Drive via EliApps
 
-**Capacity: Unlimited. Cost: Free - 5TiB max file size  
+**Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free 
 No sensitive data (e.g. ePHI, HIPAA)  
-Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/globus)**
+Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/data/globus)**
 
 Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Workspace for Education) account have storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our [Google Drive documentation](/data/google-drive).
 
@@ -16,11 +16,12 @@ Can be mounted on the cluster or computers on campus (but not both)**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
 
-| Type        | Use                                                                           | Price           |
-|-------------|-------------------------------------------------------------------------------|-----------------|
-|Object Tier  |Good for staging data between cloud and clusters                               |$12/TiB/month    |
-|Active Tier  |Daily use, still copy to cluster before using in jobs                          |$10.78/TiB/month |
-|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/) |$3.60/TiB/month  |
+| Type        | Use                                                                            | Price           |
+|-------------|--------------------------------------------------------------------------------|-----------------|
+|Object Tier  |Good for staging data between cloud and clusters                                |$12/TiB/month    |
+|Active Tier  |Daily use, still copy to cluster before using in jobs                           |$10.78/TiB/month |
+|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/)  |$3.60/TiB/month  |
+|Backup Tier  |Low-access remote object backup. [Make sure to properly archive](/data/archive/)|$4.00/TiB/month  |
 
 For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
@@ -29,6 +30,11 @@ To request a share, press the “Request this Service” button in the right sid
 !!! note "Cluster I/O Performance"
     Since cluster-mounted S@Y shares do *not* provide sufficient performance for use in jobs, they are not mounted on our compute or login nodes. To access S@Y on the clusters, connect to one of the transfer nodes to [stage the data](/clusters-at-yale/data/staging) to [Project](/clusters-at-yale/data/#project) or [Scratch60](/clusters-at-yale/data/#60-day-scratch) before running jobs.
 
+## Microsoft Teams/SharePoint
+
+**Capacity: 25 TB, 250 GB per file. Cost: Free
+
+You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on The relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
 
 ## Box at Yale
 

@@ -1,6 +1,11 @@
 # MPI Parallelism with Python
 
-There are many computational problems that can be have increased performance by running pieces in parallel. These often require communication between the different steps and need a way to send messages between processes.
+!!!note
+    Before venturing into MPI-based parallelism, consider whether your work can be resturctured to make use of [dSQ](/clusters-at-yale/job-scheduling/dsq/) or more "embarrassingly parallel" workflows.
+    MPI can be thought of as a "last resort" for parallel programming.
+
+There are many computational problems that can be have increased performance by running pieces in parallel. 
+These often require communication between the different steps and need a way to send messages between processes.
 
 Examples of this include simulations of galaxy formation and electric field simulations, analysis of a single large dataset, or complex `search` or `sort` algorithms.
 
@@ -53,12 +58,13 @@ For operation on personal machines, `mpi4py` can be installed via `conda` which 
 
     conda create --name mpi python=3.8 mpi4py numpy scipy
 
-!!! note
+!!! warning
     Conda-based MPI does not work on the cluster due to the complexity of MPI interfacing with Slurm. Make sure to use the software modules as discussed above for anything on the cluster.
 
 ## Cluster Resource Requests
 
-MPI utilizes Slurm tasks as the individual parallel workers. Therefore, when requesting resources (either interactively or in batch-mode) the number of tasks will determine the number of parallel workers (or to use MPI's language, the `SIZE` of the `COMM World`).
+MPI utilizes Slurm tasks as the individual parallel workers. 
+Therefore, when requesting resources (either interactively or in batch-mode) the number of tasks will determine the number of parallel workers (or to use MPI's language, the `SIZE` of the `COMM World`).
 
 To request four tasks (each with a single CPU) interactively run the following:
 
@@ -70,10 +76,11 @@ This can also be achieved in batch-mode like this:
     #SBATCH --cpus-per-task=1
     #SBATCH --ntasks=4
 
+A more detailed discussion of resource requests can be found [here](/clusters-at-yale/job-scheduling/resource-requests/) and further examples are available [here](/clusters-at-yale/job-scheduling/slurm-examples/).
 
 ## Examples
 
-### Ex 1: RANK
+### Ex 1: Rank
 
 This is a simple example where each worker reports their `RANK` and the process ID running that particular task.
 
@@ -147,7 +154,7 @@ When we run this on the command line (`mpirun -n 4 python mpi_comm.py`) we get t
 
 The `RANK=0` process sends the message, and the `RANK=1` process receives it. The other two processes are effectively bystanders in this example.
 
-### Example 3: Broadcast
+### Ex 3: Broadcast
 
 Now we will try a slightly more complicated example that involves sending messages and data between processes.
 ```python
@@ -187,7 +194,7 @@ Which outputs the following:
     Rank: 3, data: {'key1': [7, 2.72, (2+3j), 3], 'key2': ('abc', 'xyz')}
     Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}
 
-# MPI Example 4: Scatter and Gather
+### Ex 4: Scatter and Gather
 
 An effective way of distributing computationally intensive tasks is to `scatter` pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are `gathered` by `RANK_0`.
 
@@ -236,8 +243,12 @@ Which prints:
 
     Full Average: 10.00002060397186
 
-# Key Take-aways and Further Reading
+## Key Take-aways and Further Reading
 
 1. `MPI` is a powerful tool to set up communication worlds and send data and messages between workers
 2. The `mpi4py` module provides tools for using MPI within Python.
 3. This is just the beginning, `mpi4py` can be used for so much more...
+
+To learn more, take a look at the `mpi4py` tutorial [here](https://mpi4py.readthedocs.io/en/stable/tutorial.html).
+
+

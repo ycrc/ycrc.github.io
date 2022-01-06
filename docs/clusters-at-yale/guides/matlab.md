@@ -2,7 +2,7 @@
 
 ## MATLAB GUI
 
-If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" dropdown.
+If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" list.
 
 ## Command Line MATLAB
 
@@ -11,13 +11,13 @@ If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](
 Run one of the commands below, which will list available versions and the corresponding module files:
 
 ```
-module spider matlab
+module avail matlab
 ```
 
 Load the appropriate module file. For example, to run version R2019a:
 
 ```
-module load MATLAB/2019a
+module load MATLAB/2021a
 ```
 
 The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.
@@ -25,70 +25,59 @@ The module load command sets up your environment, including the PATH to find the
 ### Run MATLAB
 
 !!!warning
-    The MATLAB program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive or batch job (see below).
-
-To launch MATLAB, using `matlab` command.
-
-```
-# launch the MATLAB GUI
-matlab
-# or launch the MATLAB command line prompt
-maltab -nodisplay
-# or to launch a script
-matlab -nodisplay < runscript.m
-```
+    If you try to run MATLAB on a login node, it will likely crash. Instead, launch it in an interactive or batch job (see below).
 
 ### Interactive Job
 
-To run Matlab interactively, you need to create an interactive session on a compute node.
+To run MATLAB interactively, you need to create an interactive session on a compute node.
 
-You could start an interactive session using 4 cores on 1 node using something like
+You could start an interactive session using 4 cores, 16GiB of RAM for 4 hours with:
+
+``` batch
+srun --pty --x11 -c 4 --mem 16G -p interactive -t 4:00:00 bash
+```
+
+Once your interactive session starts, you can load the appropriate module file and start MATLAB
 
 ```
-srun --pty --x11 -c 4 -p interactive -t 4:00:00 bash
+module load MATLAB/2021a
+
+# launch the MATLAB GUI (needs X11 forwarding or a desktop session in OOD)
+matlab
+
+# launch the MATLAB command line prompt
+maltab -nodisplay
+
+# launch a script on the command line
+matlab -nodisplay < runscript.m
 
 ```
-
-Once your interactive session starts, you can load the appropriate module file and start Matlab as described above.
 
 See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.
 
 ### Batch Mode (without a GUI)
 
-Create a batch script containing both instructions to the scheduler and shell instructions to set up directories and start Matlab. At the point you wish to start Matlab, use a command like:
-
-```
-matlab -nodisplay -nosplash -r YourFunction < /dev/null
-
-```
-
-This command will run the contents of YourFunction.m. Your batch submission script must either be in or `cd` to the directory containing YourFunction.m for this to work.
-
-Below is a sample batch script to run Matlab in batch mode on Grace. If the name of the script is runit.sh, you would submit it using
-
-```
-sbatch  runit.sh
-```
-
-Here's a script for Grace:
+Create a batch script with the [resource requests](/clusters-at-yale/job-scheduling/resource-requests) appropriate to your MATLAB function(s) and script(s). In it load the MATLAB module version you want, then run `matlab` with the `-b` option and your function/script name. Here is an example that requests 4 CPUs and 18GiB of memory for 8 hours: 
 
 ```
 #!/bin/bash
-#SBATCH -J myjob
-#SBATCH -c 4
-#SBATCH -t 24:00:00
-#SBATCH -p day
+#SBATCH --job-name myjob
+#SBATCH --cpus-per-task 4
+#SBATCH --mem 18G
+#SBATCH -t 8:00:00
 
-module load MATLAB/2016b
-matlab -nodisplay -nosplash -r YourFunction < /dev/null
+module load MATLAB/2021a
+# assuming you have your_script.m in the current directory
+matlab -b "your_script"
+
+# if using MATLAB older than R2019a
+# matlab -nojvm -nodisplay -nosplash < your_script.m
 
 ```
 
-Unless you specify otherwise (using > redirects), both output and error logs will show up in the slurm-jobid.out log file in the same directory as your submission script.
+## Using More than 12 Cores with MATLAB
 
-## Using More than 12 Cores with Matlab
-
-In Matlab, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.
+In MATLAB, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.
 
 ```
 parpool(feature('NumCores'));

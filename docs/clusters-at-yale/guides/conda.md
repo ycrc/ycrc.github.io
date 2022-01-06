@@ -81,6 +81,26 @@ conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
 # conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
 ```
 
+### Mamba: The Conda Alternative
+For complicated environments, `conda` can often strugle to "solve" the required set of packages in a reasonable time. 
+An alternative tool, called `mamba`, has been developed, bringing a faster dependency solver based on `libsolv`, which is used in modern RPM package managers.
+
+`mamba` is a drop-in replacement for `conda` and environments can be created or new packages installed in the same way as with `conda`:
+
+```bash
+module load miniconda
+
+# create new environment
+mamba create --name env_name python numpy pandas jupyter
+
+# install new pacakge into existing environment
+conda activate env_name
+mamba install scipy scikit-learn
+```
+
+The `mamba` utility is installed in the YCRC base environment and is available for general use.
+For more details, see the [Mamba GitHub page](https://github.com/mamba-org/mamba).
+
 ## Use Your Environment
 
 To use the applications in your environment, run the following:

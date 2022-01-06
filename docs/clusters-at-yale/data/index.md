@@ -3,7 +3,7 @@
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the `getquota` command on a cluster. No sensitive data can be stored on any cluster storage, except for [Milgram](/clusters-at-yale/clusters/milgram/).
 
 !!! warning "Backups"
-    The _only_ storage backed up on every cluster is Home. Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
+    The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
 
 ## HPC Storage Quotas
 
@@ -37,7 +37,7 @@ Quota: 20 TiB and 15,000,000 files per group
 
 60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
 
-We create a symlink, or shortcut, in every home directory called `scratch60`, but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
+We create a symlink, or shortcut, in every home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters-at-yale/clusters/grace)), but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
 
 ``` bash
 readlink -f ~/scratch60
@@ -81,9 +81,11 @@ The per-user breakdown is only generated periodically, and the summary at the bo
 
 ## Get More Storage
 
-Additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
+For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
 
-Please note that, as with existing project storage, this storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
+For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found [here](https://research.computing.yale.edu/billing-hpc-services) (CAS login required).
+
+Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
 
 ## HPC Storage Best Practices
 
@@ -109,19 +111,26 @@ Delete unneeded files between jobs and compress or [archive](/data/archive/) col
 
 [Contact us](/#get-help) with your netid and the list of files/directories you would like restored.
 
-### Retrieve Data from Snapshots (Milgram and Slayman)
+### Retrieve Data from Snapshots
 
-Milgram runs snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or removed files for yourself. As long as your files existed in the form you want them in before the most recent midnight, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below.
+Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman and Milgram) or scratch storage. There are no snapshots on the Gibbs or Palmer filesystems at this time.
+
+As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.
 
 | File set                    | Snapshot Prefix                              |
 |-----------------------------|----------------------------------------------|
-| `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
+| `/gpfs/loomis/home`         | `/gpfs/loomis/home/.snapshots`               |
+| `/gpfs/loomis/project`      | `/gpfs/loomis/project/.snapshots`            |
+| `/gpfs/ysm`                 | `/gpfs/ysm/.snapshots`                       |
+| `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
 | `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |
-| `/gpfs/milgram/project`     | `/gpfs/milgram/project/groupname/.snapshots` |
+| `/gpfs/milgram/project`     | `/gpfs/milgram/project/.snapshots`           |
+| `/gpfs/milgram/pi/groupname`| `/gpfs/milgram/pi/groupname/.snapshots`      |
+| `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
 
-For example, if you wanted to recover the file `/gpfs/milgram/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/milgram/project/bjornson/.snapshots/$(date +%Y%m%d-0000)/rdb9/doit.sh` .
+For example, if you wanted to recover the file `/gpfs/ysm/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/project/bjornson//rdb9/doit.sh` .
 
-!!! info "Snapshot sizes"
+!!! info "Snapshot Sizes"
     Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.
 
 ## Other Storage Options
