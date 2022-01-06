@@ -37,7 +37,7 @@ Quota: 20 TiB and 15,000,000 files per group
 
 60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
 
-We create a symlink, or shortcut, in every home directory called `scratch60`, but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
+We create a symlink, or shortcut, in every home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters-at-yale/clusters/grace)), but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
 
 ``` bash
 readlink -f ~/scratch60
@@ -81,9 +81,11 @@ The per-user breakdown is only generated periodically, and the summary at the bo
 
 ## Get More Storage
 
-Additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
+For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
 
-Please note that, as with existing project storage, this storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
+For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found [here](https://research.computing.yale.edu/billing-hpc-services) (CAS login required).
+
+Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
 
 ## HPC Storage Best Practices
 

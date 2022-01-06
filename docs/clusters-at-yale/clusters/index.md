@@ -8,8 +8,8 @@ We maintain and support four Red Hat Linux compute clusters, listed below. Pleas
 
 | Cluster Name       | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                   |
 |--------------------|--------------------|---------------------|-------------------------------|----------------------------------------------------------|
-| [Grace](grace)     | 27,000             | 900                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)|
-| [Farnam](farnam)   | 5,700              | 250                 | `farnam.hpc.yale.edu`         | medical and life science                                 |
+| [Grace](grace)     | 29,000             | 900                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)|
+| [Farnam](farnam)   | 6,700              | 275                 | `farnam.hpc.yale.edu`         | medical and life science                                 |
 | [Milgram](milgram) | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA and other sensitive data                           |
 | [Ruddle](ruddle)   | 3,200              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/) |
 
@@ -21,7 +21,8 @@ We maintain several high performance storage systems. Listed below are these sha
 |----------|---------------|---------|-----------------------|---------------------------|---------------------------------|
 | Loomis   | /gpfs/loomis  | 2.6 PiB | Grace\*, Farnam       | IBM Spectrum Scale (GPFS) | Grace primary storage           |
 | YSM      | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       | IBM Spectrum Scale (GPFS) | Farnam primary storage          |
-| Gibbs    | /gpfs/gibbs   | 5.4 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | purchased project-style storage |
+| Gibbs    | /gpfs/gibbs   | 8.1 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | purchased project-style storage |
 | Slayman  | /gpfs/slayman | 1.0 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage |
+| Palmer   | /vast/palmer  | 400 TiB | Grace                 | Vast                      | Grace scratch storage           |
 | Milgram  | /gpfs/milgram | 2.1 PiB | Milgram\*             | IBM Spectrum Scale (GPFS) | Milgram primary storage         |
 | YCGA     | /gpfs/ycga    | 2.0 PiB | Ruddle\*              | IBM Spectrum Scale (GPFS) | Ruddle primary storage          |
