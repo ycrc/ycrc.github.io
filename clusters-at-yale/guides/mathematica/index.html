@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -806,15 +806,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-an-interactive-job" class="md-nav__link">
-    Request an Interactive Job
+  <a href="#open-ondemand" class="md-nav__link">
+    Open OnDemand
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-mathematica" class="md-nav__link">
-    Start Mathematica
+  <a href="#interactive-job" class="md-nav__link">
+    Interactive Job
   </a>
   
 </li>
@@ -1481,15 +1481,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-an-interactive-job" class="md-nav__link">
-    Request an Interactive Job
+  <a href="#open-ondemand" class="md-nav__link">
+    Open OnDemand
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-mathematica" class="md-nav__link">
-    Start Mathematica
+  <a href="#interactive-job" class="md-nav__link">
+    Interactive Job
   </a>
   
 </li>
@@ -1529,7 +1529,11 @@
                 
                 
                 <h1 id="mathematica">Mathematica</h1>
-<h2 id="request-an-interactive-job">Request an Interactive Job</h2>
+<h2 id="open-ondemand">Open OnDemand</h2>
+<p>We strongly recommend using <a href="/clusters-at-yale/access/ood">Open OnDemand</a> to launch Mathematica. </p>
+<p>First, open OOD in a browser and navigate to the <code>Apps</code> button. Select <code>All Apps</code> from the drop-down menu and then select Mathematica from the list. Fill in your resource requests and launch your job. Once started, click <code>Launch Mathematica</code> and Mathematica will be opened in a new tab in the browser.</p>
+<h2 id="interactive-job">Interactive Job</h2>
+<p>Alternatively, you could start an interacgive session with X11 forwarding. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The Mathematica program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive job (see below).</p>
@@ -1541,7 +1545,6 @@
 
 <p>Note that if you are on macOS, you will need to install an additional program to use the GUI. See our <a href="/clusters-at-yale/access/x11">X11 Forwarding documentation</a> for instructions.</p>
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
-<h2 id="start-mathematica">Start Mathematica</h2>
 <p>To launch Mathematica, you will first need to make sure you have the correct module loaded. You can search for all available Mathematica versions:</p>
 <div class="highlight"><pre><span></span><code>module avail mathematica
 </code></pre></div>
@@ -1556,19 +1559,26 @@
 </code></pre></div>
 
 <h2 id="configure-environment-for-parallel-jobs">Configure Environment for Parallel Jobs</h2>
-<p>In order to run parallel Mathematica jobs on our cluster, you will need to configure your Mathematica environment.</p>
-<p>Go to <code>Evaluate/Parallel Kernel Configuration</code> in the Mathematica window and change the following settings.</p>
+<p>Mathematica installed on Yale HPC clusters includes our proprietary scripts to run parallel jobs in SLURM environments. These scripts are designed in a way to allow users to access up to 450 parallel kernels.</p>
+<p>When a user asks for a specific number of kernels, the wait time to get them might differ dramatically depending on requested computing resources as well as on how busy the HPC cluster is at that moment. To reduce waiting time, our scripts try to launch as many kernels as possible at the moment the user asks for them. Most of the time you will not get launched with the same number of kernels as you requested. We recommend checking the final number of parallel kernels you’ve gotten after the launching command has completed no matter if you run a Front End Mathematica session or execute Wolfram script. One of the ways to check this would be the Mathematica command <code>Length[Kernels[]]</code>.</p>
+<p>In order to run parallel Mathematica jobs on our cluster, you will need to configure your Mathematica environment. You have to do this within a Front End session. If you run Wolfram script you need to run a Front End session to set your parallel environment before executing your script.</p>
+<p>Once Mathematica is started, open a new document in the Mathematica window and go to <code>Edit</code> &gt; <code>Preferences</code>. From there, go to <code>Evaluate/Parallel</code> Kernel Configuration and change the following settings:</p>
 <ol>
-<li>Disable <code>Local Kernels</code> if it is enabled.</li>
-<li>Go in <code>Cluster Integration</code> and first Enable it if it is not Enabled</li>
-<li>Click <code>Reset to Default</code> if you have previously configured a different <code>Cluster Engine</code> than <code>SLURM</code>. Then from the menu in <code>Cluster Engine</code>, select <code>SLURM</code></li>
-<li>Under <code>Kernels</code>, set desired number (we recommend to set it to lower number first to test)</li>
-<li>Advanced Settings under Native specification, specify time and RAM per kernel, such as  <code>—time=02:00:00 —mem=20G</code></li>
-<li>If you are using Mathematica 12.3 and above, and if <code>RemoteKernel Objects</code> is enabled, disable it and restart Mathematica.</li>
-<li>Use <code>While[Length[Kernels[]] == 0, LaunchKernels[]]</code> to avoid a timeout issue.</li>
+<li>Under <code>Local Kernels</code>, disable <code>Local Kernels</code> if it is enabled</li>
+<li>Go in <code>Cluster Integration</code> and first <code>enable cluster integration</code> it if it is not enabled</li>
+<li>Under the <code>Cluster Integration</code> tab, expand the <code>Advanced Settings</code> arrow. When you configure parallel kernels for the first time, please select <code>SLURM</code> from the <code>Cluster Engine</code> pull-down menu<ul>
+<li>Matching parallel kernel versions with your master Mathematica version is important, especially if you’ve already had SLURM selected by running different Mathematica versions previously (you might see different versions in Kernel program) In this case, select Windows CCS from Cluster Engine and a red error will appear in Advanced Settings. After this select SLURM again as this should set the correct engine for you.</li>
+</ul>
+</li>
+<li>Under <code>Kernels</code>, set your desired number (we recommend to set it lower first to test)</li>
+<li>In <code>Advanced Settings</code> under <code>Native specification</code>, specify time and RAM per kernel, such as <code>—time=02:00:00 —mem=20G</code> (please note that this is RAM per one kernel)</li>
+<li>If you are using Mathematica 12.3 and above, and if <code>RemoteKernel Objects</code> is enabled, disable it and restart your Mathematica session</li>
+<li>We recommend to use these commands to start kernels and to check how many kernels have actually been launched (please keep them in the same Mathematica cell and separate by semicolons; Do not use semicolon at the end)
+<div class="highlight"><pre><span></span><code>$DefaultKernels=$ConfiguredKernels; LaunchKernels[]; Length[Kernels[]]
+</code></pre></div></li>
 </ol>
 <h2 id="request-help-or-access-to-wolfram-alpha-pro">Request Help or Access to Wolfram Alpha Pro</h2>
-<p>If you need any assistance with your Mathematica program, <a href="/#get-help">contact us</a>.</p>
+<p>If you need any assistance with your Mathematica program, <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
                 
                   
                     
@@ -1577,7 +1587,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
     
   </small>
 </div>
@@ -1693,15 +1703,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
