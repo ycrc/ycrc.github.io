@@ -81,7 +81,7 @@ Use the form to request resources and decide what partition your job should run 
 Once you launch the job, you will be presented with a notification that your job has been queued.
 Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the Remote Desktop:
 
-![starting](/img/ood_remote_starting.png)
+![starting](/img/ood_remote_starting.png){: .medium}
 
 Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. 
 
@@ -89,7 +89,7 @@ Note you can share a view only link for your session if you would like to share 
 
 In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
 
-![clipboard](/img/ood_remote_clipboard.png)
+![clipboard](/img/ood_remote_clipboard.png){: .medium}
 
 
 ### Jupyter Notebooks
