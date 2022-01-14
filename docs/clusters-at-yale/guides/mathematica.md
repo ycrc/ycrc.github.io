@@ -66,3 +66,7 @@ Once Mathematica is started, open a new document in the Mathematica window and g
 ```
 $DefaultKernels=$ConfiguredKernels; LaunchKernels[]; Length[Kernels[]]
 ```
+
+## Request Help or Access to Wolfram Alpha Pro
+
+If you need any assistance with your Mathematica program, [contact us](https://docs.ycrc.yale.edu/#get-help).
