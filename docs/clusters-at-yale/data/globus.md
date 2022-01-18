@@ -57,7 +57,7 @@ For more information, please see the [official Globus Documentation](https://doc
 
 You can set up your own endpoint for transferring data to and from your own computer with [Globus Connect Personal](https://www.globus.org/globus-connect). 
 
-To transfer or share data between two personal endpoints, you will need to request access to the YCRC's Globus Plus subscription on [this page](https://app.globus.org/groups/8f3fced6-4318-11e3-9f63-12313809f035/about).
+To transfer or share data between two personal endpoints, you will need to request access to the YCRC's Globus Plus subscription on [this page](https://app.globus.org/groups/8f3fced6-4318-11e3-9f63-12313809f035/join).
 
 
 ## Setup a Google Drive Endpoint
