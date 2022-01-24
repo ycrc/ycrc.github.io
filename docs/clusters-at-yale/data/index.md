@@ -113,7 +113,7 @@ Delete unneeded files between jobs and compress or [archive](/data/archive/) col
 
 ### Retrieve Data from Snapshots
 
-Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman and Milgram) or scratch storage. There are no snapshots on the Gibbs or Palmer filesystems at this time.
+Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage. There are no snapshots on the Gibbs or Palmer filesystems at this time.
 
 As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.
 
