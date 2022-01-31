@@ -40,12 +40,13 @@ you can email us at [hpc@yale.edu](mailto:hpcg@yale.edu) with as much detail as 
 
 | Specialist | Cluster(s) | Areas of Focus | Email |
 | --- | --- | --- | --- |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python | kaylea.nelson@yale.edu |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace)| Physics, Python, MPI | thomas.langford@yale.edu |
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal | ping.luo@yale.edu |
+|[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started | kathleen.mckiernan@yale.edu | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R | robert.bjornson@yale.edu |
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Structural Biology | michael.strickler@yale.edu |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters-at-yale/clusters/grace)| Physics, Python, MPI | thomas.langford@yale.edu |
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Farnam](/clusters-at-yale/clusters/farnam)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal | ping.luo@yale.edu |
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python | kaylea.nelson@yale.edu |
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace)| MPI, GPUs, Matlab | andrew.sherman@yale.edu |
+|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)| Life Sciences, Structural Biology | michael.strickler@yale.edu |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica | mikhael.guy@yale.edu |
 
 ### Q&A Platform
