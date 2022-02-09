@@ -1585,7 +1585,7 @@
 <p>dSQ is <em>not</em> recommended for situations where the initialization of the job takes most of its execution time and it is re-usable. These situations are much better handled by a worker-based job handler.</p>
 <h2 id="step-1-create-your-job-file">Step 1: Create Your Job File</h2>
 <p>First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with <code>#</code> will be ignored when submitting your job array. <strong>Note:</strong> slurm jobs start in the directory from which your job was submitted.</p>
-<p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 10 minutes.</p>
+<p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 20 minutes.</p>
 <p>Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:</p>
 <div class="highlight"><pre><span></span><code>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
 module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample2
@@ -1593,6 +1593,11 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1000
 </code></pre></div>
 
+<div class="admonition info">
+<p class="admonition-title">Avoid Very Short Jobs</p>
+<p>When building your job file, please bundle very short jobs (less than a minute) such that each element of the job array will run for at least 10 minutes. You can do this by putting multiple tasks on a single line, separated by a <code>;</code>. In the same vein, avoid jobs that simply check for a previous successful completion and then exit. See dSQAutopsy below for a way to completely avoid submitting these types of jobs.</p>
+<p>Our clusters are not tuned for extremely high throughput jobs. Therefore, large numbers of very short jobs put a lot of strain on both the scheduler, resulting in delays in scheduling other users' jobs, and the storage, due to large numbers of I/O operations.</p>
+</div>
 <h2 id="step-2-generate-batch-script-with-dsq">Step 2: Generate Batch Script with <code>dsq</code></h2>
 <p>On YCRC clusters you can load Dead Simple Queue onto your path with:</p>
 <div class="highlight"><pre><span></span><code>module load dSQ
@@ -1618,11 +1623,11 @@ Optional Arguments:
   --submit              Submit the job array on the fly instead of creating a submission script.
 </code></pre></div>
 
-<p>In the example above, we want walltime of 10 minutes and memory=4GiB per job. Our invocation would be:</p>
-<div class="highlight"><pre><span></span><code>dsq --job-file joblist.txt --mem-per-cpu 4g -t <span class="m">10</span>:00 --mail-type ALL
+<p>In the example above, we want walltime of 20 minutes and memory=4GiB per job. Our invocation would be:</p>
+<div class="highlight"><pre><span></span><code>dsq --job-file joblist.txt --mem-per-cpu 4g -t <span class="m">20</span>:00 --mail-type ALL
 </code></pre></div>
 
-<p>Which will create a file called <code>dsq-joblist-yyyy-mm-dd.sh</code>, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. It should look quite familiar.</p>
+<p>The <code>dsq</code> command will create a file called <code>dsq-joblist-yyyy-mm-dd.sh</code>, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. You can further modify the Slurm directives in this file before submitting.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --array 0-999</span>
 <span class="c1">#SBATCH --output dsq-joblist-%A_%3a-%N.out</span>
@@ -1692,7 +1697,7 @@ PREEMPTED      1     0
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2022</span>
     
   </small>
 </div>
