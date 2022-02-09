@@ -19,7 +19,7 @@ dSQ is _not_ recommended for situations where the initialization of the job take
 
 First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with `#` will be ignored when submitting your job array. **Note:** slurm jobs start in the directory from which your job was submitted.
 
-For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with `bowtie2` and convert to bam files with `samtools`. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 10 minutes.
+For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with `bowtie2` and convert to bam files with `samtools`. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 20 minutes.
 
 Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:
 
@@ -29,6 +29,11 @@ module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample2 --rg SM:sampl
 ...
 module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - | samtools view -Shu - | samtools sort  - sample1000
 ```
+
+!!! info "Avoid Very Short Jobs"
+    When building your job file, please bundle very short jobs (less than a minute) such that each element of the job array will run for at least 10 minutes. You can do this by putting multiple tasks on a single line, separated by a `;`. In the same vein, avoid jobs that simply check for a previous successful completion and then exit. See dSQAutopsy below for a way to completely avoid submitting these types of jobs.
+
+    Our clusters are not tuned for extremely high throughput jobs. Therefore, large numbers of very short jobs put a lot of strain on both the scheduler, resulting in delays in scheduling other users' jobs, and the storage, due to large numbers of I/O operations.
 
 ## Step 2: Generate Batch Script with `dsq`
 
@@ -61,13 +66,16 @@ Optional Arguments:
   --submit              Submit the job array on the fly instead of creating a submission script.
 ```
 
-In the example above, we want walltime of 10 minutes and memory=4GiB per job. Our invocation would be:
+In the example above, we want walltime of 20 minutes and memory=4GiB per job. Our invocation would be:
 
 ``` bash
-dsq --job-file joblist.txt --mem-per-cpu 4g -t 10:00 --mail-type ALL
+dsq --job-file joblist.txt --mem-per-cpu 4g -t 20:00 --mail-type ALL
+
 ```
 
-Which will create a file called `dsq-joblist-yyyy-mm-dd.sh`, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. It should look quite familiar.
+
+
+The `dsq` command will create a file called `dsq-joblist-yyyy-mm-dd.sh`, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. You can further modify the Slurm directives in this file before submitting.
 
 ``` bash
 #!/bin/bash
