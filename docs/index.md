@@ -46,7 +46,7 @@ include as much detail as possible about your request and we'll find the right p
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters-at-yale/clusters/grace)/[Farnam](/clusters-at-yale/clusters/farnam)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal  |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters-at-yale/clusters/grace)/[Milgram](/clusters-at-yale/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters-at-yale/clusters/grace)| MPI, GPUs, Matlab |
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle)|
+|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters-at-yale/clusters/farnam)/[Ruddle](/clusters-at-yale/clusters/ruddle) |Life Sciences, Structural Biology |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
 
 ### Q&A Platform
