@@ -102,15 +102,16 @@ Make sure that you chose the right Conda environment for your from the drop-down
 
 #### ycrc_default
 
-The `ycrc_default` conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter with:
+The `ycrc_default` conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:
 
-```
+```bash
 module load miniconda
 conda create -n env_name jupyter jupyter-lab
+ycrc_conda_env.list build  
 ```
 
-Once created, `ycrc_default` will not be updated unless you do it manually. To update `ycrc_default`, please run the following command from a shell command line:
-```
+Once created, `ycrc_default` will not be updated by OOD automatically. It must be updated by the user manually. To update `ycrc_default`, run the following command from a shell command line:
+```bash
 module load miniconda
 conda update -n  ycrc_default jupyter jupyter-lab
 ```
@@ -145,3 +146,36 @@ Once done, it sets `Cairo` as the default drawing device. You only need to confi
 unless you have cleaned up your RStudio configuration files.
 
 ![rstudio_cairo](/img/ood_rstudio_cairo.png){: .medium}
+
+### Troubleshoot OOD
+
+#### An OOD session is started and then completed immediately
+
+1. Check if your quota is full
+2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  
+3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, farnam, ruddle, milgram)
+
+#### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
+1. Make sure there is no initialization left by `conda init` in your `.bashrc`. Clean it with 
+```bash
+sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
+```
+2. Run `dbus-launch` and make sure you see the following output:
+```bash
+[pl543@grace1 ~]$ which dbus-launch
+/usr/bin/dbus-launch
+```
+#### Jupyter cannot be started properly
+1.  If you are trying to launch `jupyter-notebook`, make sure it is available in your jupyter conda environment:
+```bash
+(ycrc_default)[pl543@grace1 ~]$ which jupyter-notebook
+/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+```
+2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
+```bash
+(ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
+/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+```
+#### RStudio with Conda R
+If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
+
