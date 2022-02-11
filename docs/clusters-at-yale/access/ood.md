@@ -102,14 +102,14 @@ Make sure that you chose the right Conda environment for your from the drop-down
 
 #### ycrc_default
 
-The `ycrc_default` conda environment will be automatically built when you select it for the first time with Juputer. The commands used to build `ycrc_default` are 
+The `ycrc_default` conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter with:
 
 ```
 module load miniconda
-conda create -n ycrc_default jupyter jupyter-lab
+conda create -n env_name jupyter jupyter-lab
 ```
 
-Once created, `ycrc_default` will not be updated unless you do it manually. To update the conda env, please run the following command from a shell command line:
+Once created, `ycrc_default` will not be updated unless you do it manually. To update `ycrc_default`, please run the following command from a shell command line:
 ```
 module load miniconda
 conda update -n  ycrc_default jupyter jupyter-lab
