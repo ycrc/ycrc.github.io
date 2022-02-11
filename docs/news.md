@@ -1,5 +1,35 @@
 # News
 
+## Grace Maintenance
+_February 3-6, 2022_
+
+### Software Updates
+
+* Latest security patches applied
+* Slurm updated to version 21.08.5
+* NVIDIA driver updated to version 510.39.01 (except for nodes with K80 GPUs which are stranded at 470.82.01)
+* Singularity updated to version 3.8.5
+* Open OnDemand updated to version 2.0.20
+
+### Hardware Updates
+
+* Changes have been made to networking to improve performance of certain older compute nodes
+ 
+### Changes to Grace Home Directories
+
+During the maintenance, all home directories on Grace have been moved to our new all-flash storage filesystem, Palmer. The move is in anticipation of the decommissioning of Loomis at the end of the year and will provide a robust login experience by protecting home directory interactions from data intensive compute jobs.
+
+Due to this migration, your home directory path has changed from `/gpfs/loomis/home.grace/<netid>` to `/vast/palmer/home.grace/<netid>`.
+Your home directory can always be referenced in bash and submission scripts and from the command line with the `$HOME` variable. Please update any scripts and workflows accordingly.
+ 
+### Interactive Jobs
+
+We have added an additional way to request an interactive job. The Slurm command `salloc` can be used to start an interactive job similar to `srun --pty bash`. In addition to being a simpler command (no `--pty bash` is needed), `salloc` jobs can be used to interactively test `mpirun` executables.
+ 
+### Palmer scratch
+
+Palmer is out of beta! We have fixed the issue with Plink on Palmer, so now you can use Palmer scratch for any workloads. See [https://docs.ycrc.yale.edu/clusters-at-yale/data/index#60-day-scratch](https://docs.ycrc.yale.edu/clusters-at-yale/data/index#60-day-scratch) for more information on Palmer scratch. 
+
 ## February 2022
 
 ### Announcements
