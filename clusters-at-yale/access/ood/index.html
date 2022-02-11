@@ -604,6 +604,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshoot-ood" class="md-nav__link">
+    Troubleshoot OOD
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshoot OOD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-ood-session-is-started-and-then-completed-immediately" class="md-nav__link">
+    An OOD session is started and then completed immediately
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly" class="md-nav__link">
+    Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-cannot-be-started-properly" class="md-nav__link">
+    Jupyter cannot be started properly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-with-conda-r" class="md-nav__link">
+    RStudio with Conda R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1715,6 +1756,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshoot-ood" class="md-nav__link">
+    Troubleshoot OOD
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshoot OOD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-ood-session-is-started-and-then-completed-immediately" class="md-nav__link">
+    An OOD session is started and then completed immediately
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly" class="md-nav__link">
+    Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-cannot-be-started-properly" class="md-nav__link">
+    Jupyter cannot be started properly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio-with-conda-r" class="md-nav__link">
+    RStudio with Conda R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1822,12 +1904,13 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p><img alt="jupyter_form" class="medium" src="/img/ood_jupyter_form.png" /></p>
 <p>Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
 <h4 id="ycrc_default">ycrc_default</h4>
-<p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter with:</p>
+<p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda create -n env_name jupyter jupyter-lab
+ycrc_conda_env.list build  
 </code></pre></div>
 
-<p>Once created, <code>ycrc_default</code> will not be updated unless you do it manually. To update <code>ycrc_default</code>, please run the following command from a shell command line:
+<p>Once created, <code>ycrc_default</code> will not be updated by OOD automatically. It must be updated by the user manually. To update <code>ycrc_default</code>, run the following command from a shell command line:
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda update -n  ycrc_default jupyter jupyter-lab
 </code></pre></div></p>
@@ -1854,6 +1937,36 @@ from the <code>backend</code> list. </p>
 <p>Once done, it sets <code>Cairo</code> as the default drawing device. You only need to configure the device once 
 unless you have cleaned up your RStudio configuration files.</p>
 <p><img alt="rstudio_cairo" class="medium" src="/img/ood_rstudio_cairo.png" /></p>
+<h3 id="troubleshoot-ood">Troubleshoot OOD</h3>
+<h4 id="an-ood-session-is-started-and-then-completed-immediately">An OOD session is started and then completed immediately</h4>
+<ol>
+<li>Check if your quota is full</li>
+<li>Reset your <code>.bashrc</code> and <code>.bash_profile</code> to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  </li>
+<li>Remove the default module collection file <code>$HOME/.lmod.d/default.cluster-rhel7</code> (cluster is one of the following: grace, farnam, ruddle, milgram)</li>
+</ol>
+<h4 id="remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly">Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly</h4>
+<ol>
+<li>Make sure there is no initialization left by <code>conda init</code> in your <code>.bashrc</code>. Clean it with 
+<div class="highlight"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
+</code></pre></div></li>
+<li>Run <code>dbus-launch</code> and make sure you see the following output:
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1 ~<span class="o">]</span>$ which dbus-launch
+/usr/bin/dbus-launch
+</code></pre></div></li>
+</ol>
+<h4 id="jupyter-cannot-be-started-properly">Jupyter cannot be started properly</h4>
+<ol>
+<li>If you are trying to launch <code>jupyter-notebook</code>, make sure it is available in your jupyter conda environment:
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-notebook
+/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+</code></pre></div></li>
+<li>If you are trying to launch <code>jupyter-lab</code>, make sure it is available in your jupyter conda environment:
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-lab
+/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+</code></pre></div></li>
+</ol>
+<h4 id="rstudio-with-conda-r">RStudio with Conda R</h4>
+<p>If you see <code>NOT_FOUND</code> in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure <code>r-base r-essentials</code> are both included.</p>
                 
                   
                     
