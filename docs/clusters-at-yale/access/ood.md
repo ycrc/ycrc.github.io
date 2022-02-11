@@ -20,7 +20,7 @@ The above four URLs are also called cluster OOD URLs. They are available to any 
 
 ## Course Open OnDemand Web Portals
 
-Courses on the clusters have their own course-specific OOD URLs, also called course OOD portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+Courses on the clusters have their own course-specific OOD URLs, also called course OOD web portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
 
 !!! warning 
     If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
@@ -92,17 +92,28 @@ In some browsers, you may have to use a special text box to copy and paste from 
 ![clipboard](/img/ood_remote_clipboard.png){: .medium}
 
 
-### Jupyter Notebooks
+### Jupyter 
 
-One of the most common uses of Open OnDemand is the Jupyter Notebook interface for Python and R.
-[Jupyter Notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) provide a flexible way to interactively work with code and plots presented in-line together. To get started choose Jupyter Notebook from the Interactive Apps menu on the dashboard.
+One of the most common uses of Open OnDemand is the Jupyter interface for Python and R. You can choose either Jupyter Notebook or Jupyter Lab. By default, this app will try to launch Jupyter Notebook, unless the `Start JupyterLab` checkbox is selected. 
 
 ![jupyter_form](/img/ood_jupyter_form.png){: .medium}
 
 Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
-!!! tip
-    If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) click the `Start JupyterLab` checkbox.
+#### ycrc_default
+
+The `ycrc_default` conda environment will be automatically built when you select it for the first time with Juputer. The commands used to build `ycrc_default` are 
+
+```
+module load miniconda
+conda create -n ycrc_default jupyter jupyter-lab
+```
+
+Once created, `ycrc_default` will not be updated unless you do it manually. To update the conda env, please run the following command from a shell command line:
+```
+module load miniconda
+conda update -n  ycrc_default jupyter jupyter-lab
+```
 
 ### RStudio Server
 
