@@ -1,110 +1,31 @@
 # Jupyter Notebooks
 
-You can use a compute node to run a [Jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/) and access it from your local machine. We ask that you do not leave notebook jobs running idle for too long, as they exclude the use of computational resources other jobs could be taking advantage of.
+We provide a simple way to start [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) interfaces for Python and R using [Open OnDemand](/clusters-at-yale/access/ood/).
+Jupyter notebooks provide a flexible way to interactively work with code and plots presented in-line together.
+To get started choose Jupyter Notebook from the OOD Interactive Apps menu or click on the link on the dashboard.
 
 Before you get started, you will need to be on campus or logged in to the [Yale VPN](/clusters-at-yale/access/vpn) and you will need to set up a Jupyter environment.
 
 ## Set up an environment
 
-We recommend you use [Conda](/clusters-at-yale/guides/conda) to manage your Jupyter environments. For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
+We recommend you use [miniconda](/clusters-at-yale/guides/conda) to manage your Jupyter environments.
+You can create Conda environments from the OOD shell interface or from a terminal-based login to the clusters.
+For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
 
 ``` bash
 module load miniconda
-conda create -yn notebook_env anaconda python=3
+conda create -y -n notebook_env python jupyter numpy pandas matplotlib
 ```
 
-You can then load this environment for Jupyter where we indicate below.
+## Specify your resource request
 
-## Open OnDemand
+![jupyter_ood](/img/ood_jupyter.png){: .medium}
 
-Once you have installed Jupyter and any other packages you want to use into a Conda environment, you can start a notebook server as a job via [Open OnDemand](/clusters-at-yale/access/ood/#jupyter-notebooks).<br><br> **We strongly encourage using Open OnDemand unless you have specific requirements otherwise.**
+You can use the `ycrc_default` environment or chose one of your own from the drop-down menu.
+After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job.
+When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
-## Traditional Method
+!!! tip
+    If you have installed and want to use [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/index.html) click the `Start JupyterLab` checkbox.
 
-If you want finer control over your notebook job, you can manually configure a Jupyter notebook and connect manually.
-
-The main steps are:
-
-1. Start a Jupyter notebook job.
-1. Start an ssh tunnel.
-1. Use your local browser to connect.
-
-### Start the Server
-
-Here is a template for submitting a jupyter-notebook server as a batch job. You may need to edit some of the slurm options, including the time limit or the partition. You will also need to either load a module that contains `jupyter-notebook` or `conda activate` an environment if you're using [Conda](/clusters-at-yale/guides/conda). Save your edited version of this script on the cluster, and submit it with `sbatch`.
-
-``` bash
-#!/bin/bash
-#SBATCH --partition general
-#SBATCH --nodes 1
-#SBATCH --ntasks-per-node 1
-#SBATCH --mem-per-cpu 8G
-#SBATCH --time 1-0:00:00
-#SBATCH --job-name jupyter-notebook
-#SBATCH --output jupyter-notebook-%J.log
-
-# get tunneling info
-XDG_RUNTIME_DIR=""
-port=$(shuf -i8000-9999 -n1)
-node=$(hostname -s)
-user=$(whoami)
-cluster=$(hostname -f | awk -F"." '{print $2}')
-
-# print tunneling instructions jupyter-log
-echo -e "
-For more info and how to connect from windows,
-   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/
-
-MacOS or linux terminal command to create your ssh tunnel
-ssh -N -L ${port}:${node}:${port} ${user}@${cluster}.hpc.yale.edu
-
-Windows MobaXterm info
-Forwarded port:same as remote port
-Remote server: ${node}
-Remote port: ${port}
-SSH server: ${cluster}.hpc.yale.edu
-SSH login: $user
-SSH port: 22
-
-Use a Browser on your local machine to go to:
-localhost:${port}  (prefix w/ https:// if using password)
-"
-
-# load modules or conda environments here
-# uncomment the following two lines to use your conda environment called notebook_env
-# module load miniconda
-# source activate notebook_env
-
-# DON'T USE ADDRESS BELOW.
-# DO USE TOKEN BELOW
-jupyter-notebook --no-browser --port=${port} --ip=${node}
-
-```
-
-### Start the Tunnel
-
-Once you have submitted your job and it starts, your notebook server will be ready for you to connect. You can run `squeue -u${USER}` to check. You will see an "R" in the ST or status column for your notebook job if it is running. If you see a "PD" in the status column, you will have to wait for your job to start running to connect. The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.
-
-#### MacOS and Linux
-
-On a Mac or Linux machine, you can start the tunnel with an SSH command. You can check the output from the job you started to get the specifc info you need.
-
-#### Windows
-
-On a Windows machine, we recommend you use MobaXterm. See our guide on [connecting with MobaXterm](/clusters-at-yale/access) for instructions on how to get set up. You will need to take a look at your job's log file to get the details you need. Then start MobaXterm:
-
-1. Under Tools choose "MobaSSHTunnel (port forwarding)".
-1. Click the "New SSH Tunnel" button.
-1. Click the radio button for "Local port forwarding".
-1. Use the information in your jupyter notebook log file to fill out the boxes.
-1. Click Save.
-1. On your new tunnel, click the key symbol under the settings column and choose your ssh private key.
-1. Click the play button under the Start/Stop column.
-
-## Browse the Notebook
-
-Finally, open a web browser on your local machine and enter the address `http://localhost:port` where port is the one specified in your log file. The address Jupyter creates by default (the one with the name of a compute node) will not work outside the cluster's network. Since version 5 of jupyter, the notebook will automatically generate a token that allows you to authenticate when you connect. It is long, and will be at the end of the url jupyter generates. It will look something like
-
-`http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**`
-
-If you run into trouble or need help, [contact us](/#get-help).
+<br><br> **If there is a specific workflow which OOD does not satisfy, let us know and we can help.**
