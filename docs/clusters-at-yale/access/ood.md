@@ -48,7 +48,7 @@ You can also drag-and-drop to download and upload files and directories, and mov
 
 #### Customize Favorite Paths
 
-Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list custmozed favorite paths:
+Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list customized paths:
 
 ``` bash
   ood_add_path
