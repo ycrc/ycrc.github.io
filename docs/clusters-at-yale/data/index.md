@@ -119,7 +119,6 @@ As long as your files existed in the form you want them in before the most recen
 
 | File set                    | Snapshot Prefix                              |
 |-----------------------------|----------------------------------------------|
-| `/gpfs/loomis/home`         | `/gpfs/loomis/home/.snapshots`               |
 | `/gpfs/loomis/project`      | `/gpfs/loomis/project/.snapshots`            |
 | `/gpfs/ysm`                 | `/gpfs/ysm/.snapshots`                       |
 | `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
