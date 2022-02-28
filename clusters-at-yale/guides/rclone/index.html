@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -902,8 +902,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-rclone-on-yale-clusters" class="md-nav__link">
-    Setup Rclone on Yale clusters
+  <a href="#set-up-rclone-on-ycrc-clusters" class="md-nav__link">
+    Set up Rclone on YCRC clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -1506,8 +1513,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-rclone-on-yale-clusters" class="md-nav__link">
-    Setup Rclone on Yale clusters
+  <a href="#set-up-rclone-on-ycrc-clusters" class="md-nav__link">
+    Set up Rclone on YCRC clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -1567,81 +1581,250 @@
                 
                 
                 <h1 id="rclone">Rclone</h1>
-<p><code>rclone</code> is a command line program to sync files and directories to and from all major cloud storage sites and services. You can use <code>rclone</code> to sync files and directories between Yale clusters and Yale Box, google drive, etc. The following instructions covers basics to setup and use <code>rclone</code> on Yale clusters. For more information about Rclone, please visit its website at <a href="https://rclone.org">https://rclone.org</a>. </p>
-<h2 id="setup-rclone-on-yale-clusters">Setup Rclone on Yale clusters</h2>
-<p>You need to run <code>rclone config</code> at least once to receive authorization for access to the cloud service which you are configuring. Since <code>rclone config</code> will bring up a browser to authorize the cloud service, you will need X Windows on the host where you run <code>rclone config</code>. This means, to setup <code>rclone</code> on one of the Yale clusters, you need to login to the cluster with <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/">X11 forwarding</a>. However X11 forwarding is extremly slow and you may have problems of brining up the browser smoothly. A better way is to run VNC on the cluster and setup a tunnel to access the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vnc/">remote VNC desktop</a> on the cluster. A third way, which is the best, is to use the Remote Desktop App from the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">OnDemand portal</a>. Once Remote Desktop starts runing, do the following in the terminal:</p>
-<p>The example below is a screen dump from setting up <code>rclone</code> on Farnam for Yale Box.
-<div class="highlight"><pre><span></span><code>[pl543@transfer-farnam ~]$ rclone config
-2019/10/21 09:14:05 NOTICE: Config file &quot;/home/pl543/.config/rclone/rclone.conf&quot; not found - using defaults
+<p><code>rclone</code> is a command line tool to sync files and directories to and from all major cloud storage sites. You can use <code>rclone</code> to sync files and directories between Yale clusters and Yale Box, google drive, etc. The following instructions cover basics to setup and use <code>rclone</code> on Yale clusters. For more information about Rclone, please visit its website at <a href="https://rclone.org">https://rclone.org</a>. </p>
+<h2 id="set-up-rclone-on-ycrc-clusters">Set up Rclone on YCRC clusters</h2>
+<p>Before accessing a remote cloud storage using <code>rclone</code>, you need to run <code>rclone config</code> to configure 
+the storage for <code>rclone</code>. Since <code>rclone config</code> will try to bring up a browser for you to authorize 
+the cloud storage, we recommend you to use <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open OnDemand</a>. </p>
+<p>To run <code>rclone config</code> on OOD, first click <code>Remote Desktop</code> on OOD. 
+Once a session starts running, click <code>Connect to Remote Desktop</code> and 
+you will see a terminal on the desktop in the browser. 
+Run <code>rclone config</code> at the command line of the terminal. </p>
+<p>During configuration, you will see a message similar to the following: 
+<div class="highlight"><pre><span></span><code>If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
+Log in and authorize rclone for access
+Waiting for code...
+</code></pre></div>
+If no browser started automatically, then start Firefox manually by clicking 
+the Firefox icon on the top bar of the Remote Desktop. 
+Copy the link from the message shown on your screen and paste it to the address bar of Firefox.
+Log in with your Yale email address, respond to the DUO request, and authorize the access. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you received an error stating that your session has expired for DUO, simply paste the link and reload the page.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<p>The following examples show you how to set up rclone for Google Drive and Yale Box.
+In both examples, we name our remote cloud storage as 'remote' in the configuration. 
+You can provide any name you want. </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Google Drive</label><div class="tabbed-content">
+<p>The example below is a screen dump when setting up <code>rclone</code> on Farnam for Google Drive.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c03n06 ~<span class="o">]</span>$ rclone config
 No remotes found - make a new one
-n) New remote
-s) Set configuration password
-q) Quit config
+n<span class="o">)</span> New remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
 n/s/q&gt; n
 name&gt; remote
 Type of storage to configure.
-Enter a string value. Press Enter for the default (&quot;&quot;).
-Choose a number from below, or type in your own value
- 1 / 1Fichier
-   \ &quot;fichier&quot;
-[snip]
- 6 / Box
-   \ &quot;box&quot;
-[snip]
-Storage&gt; box
-** See help for box backend at: https://rclone.org/box/ **
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> in your own value
+ <span class="m">1</span> / 1Fichier
+   <span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+ <span class="m">2</span> / Alias <span class="k">for</span> an existing remote
+   <span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+<span class="m">15</span> / Google Drive
+   <span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+<span class="m">42</span> / seafile
+   <span class="se">\ </span><span class="s2">&quot;seafile&quot;</span>
+Storage&gt; <span class="m">15</span>
+** See <span class="nb">help</span> <span class="k">for</span> drive backend at: https://rclone.org/drive/ **
 
-Box App Client Id.
-Leave blank normally.
-Enter a string value. Press Enter for the default (&quot;&quot;).
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id <span class="k">for</span> how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_id&gt; 
-Box App Client Secret
+OAuth Client Secret
 Leave blank normally.
-Enter a string value. Press Enter for the default (&quot;&quot;).
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_secret&gt; 
-Edit advanced config? (y/n)
-y) Yes
-n) No
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> in your own value
+ <span class="m">1</span> / Full access all files, excluding Application Data Folder.
+   <span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
+ <span class="m">2</span> / Read-only access to file metadata and file contents.
+   <span class="se">\ </span><span class="s2">&quot;drive.readonly&quot;</span>
+   / Access to files created by rclone only.
+ <span class="m">3</span> <span class="p">|</span> These are visible in the drive website.
+   <span class="p">|</span> File authorization is revoked when the user deauthorizes the app.
+   <span class="se">\ </span><span class="s2">&quot;drive.file&quot;</span>
+   / Allows <span class="nb">read</span> and write access to the Application Data folder.
+ <span class="m">4</span> <span class="p">|</span> This is not visible in the drive website.
+   <span class="se">\ </span><span class="s2">&quot;drive.appfolder&quot;</span>
+   / Allows read-only access to file metadata but
+ <span class="m">5</span> <span class="p">|</span> does not allow any access to <span class="nb">read</span> or download file content.
+   <span class="se">\ </span><span class="s2">&quot;drive.metadata.readonly&quot;</span>
+scope&gt; <span class="m">1</span>
+ID of the root folder
+Leave blank normally.
+
+Fill in to access <span class="s2">&quot;Computers&quot;</span> folders <span class="o">(</span>see docs<span class="o">)</span>, or <span class="k">for</span> rclone to use
+a non root folder as its starting point.
+
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+root_folder_id&gt; 
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only <span class="k">if</span> you want use SA instead of interactive login.
+
+Leading <span class="sb">`</span>~<span class="sb">`</span> will be expanded in the file name as will environment variables such as <span class="sb">`</span><span class="si">${</span><span class="nv">RCLONE_CONFIG_DIR</span><span class="si">}</span><span class="sb">`</span>.
+
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+service_account_file&gt; 
+Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
 y/n&gt; n
 Remote config
 Use auto config?
- * Say Y if not sure
- * Say N if you are working on a remote or headless machine
-y) Yes
-n) No
+ * Say Y <span class="k">if</span> not sure
+ * Say N <span class="k">if</span> you are working on a remote or headless machine
+y<span class="o">)</span> Yes <span class="o">(</span>default<span class="o">)</span>
+n<span class="o">)</span> No
 y/n&gt; y
-If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
-Log in and authorize rclone for access
-Waiting for code...
-(In the browser opened, login with your Yale email and password. You will be redirect to CAS authentication. This may take a while.)
+If your browser doesn<span class="err">&#39;</span>t open automatically go to the following link: http://127.0.0.1:53682/auth?state<span class="o">=</span>6glRr_mpEORxHevlOaaYyw
+Log in and authorize rclone <span class="k">for</span> access
+Waiting <span class="k">for</span> code...
 Got code
+Configure this as a Shared Drive <span class="o">(</span>Team Drive<span class="o">)</span>?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; n
 --------------------
-[remote]
-type = box
-token = {&quot;access_token&quot;:&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;,&quot;token_type&quot;:&quot;bearer&quot;,&quot;refresh_token&quot;:&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;,&quot;expiry&quot;:&quot;2019-10-21T11:00:36.839586736-04:00&quot;}
+<span class="o">[</span>remote<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> drive
+<span class="nv">scope</span> <span class="o">=</span> drive
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;ya29.A0ArdaM-mBYFKBBygLSKUCkoEkE2gieODvdANCZRV6Y8QHhQF-lY74E9fr1HTLOwwLRuoQQbO9P-Jdip62YYhqjXVkmsHJEXfcuWT0KLKGdhUb9M8g2Z4XEQqoNLwZyA-FA2AAYYBqB&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;Bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;1//0dDu3r6KVakgYIARAAGA0NwF-L9IrWIuG7_f44x-uLR2vvBocf4q-KnQVhlkm18TO2Fn0GjJp-cArWfj5kY84&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-02-25T17:28:18.629507046-05</span>
+<span class="s2">:00&quot;</span><span class="o">}</span>
 --------------------
-y) Yes this is OK
-e) Edit this remote
-d) Delete this remote
+y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
 y/e/d&gt; y
 Current remotes:
 
-Name                 Type
-====                 ====
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
+remote               drive
+
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Box</label><div class="tabbed-content">
+<p>The example below is a screen dump when setting up <code>rclone</code> on Farnam for Yale Box.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c14n07 ~<span class="o">]</span>$ rclone config
+No remotes found - make a new one
+n<span class="o">)</span> New remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+n/s/q&gt; n
+name&gt; remote
+Type of storage to configure.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> in your own value
+ <span class="m">1</span> / 1Fichier
+   <span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+ <span class="m">6</span> / Box
+   <span class="se">\ </span><span class="s2">&quot;box&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+Storage&gt; box
+** See <span class="nb">help</span> <span class="k">for</span> box backend at: https://rclone.org/box/ **
+
+Box App Client Id.
+Leave blank normally.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_id&gt; 
+Box App Client Secret
+Leave blank normally.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_secret&gt; 
+Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No
+y/n&gt; n
+Remote config
+Use auto config?
+ * Say Y <span class="k">if</span> not sure
+ * Say N <span class="k">if</span> you are working on a remote or headless machine
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No
+y/n&gt; y
+If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
+Log in and authorize rclone <span class="k">for</span> access
+Waiting <span class="k">for</span> code...
+Got code
+--------------------
+<span class="o">[</span>remote<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> box
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2019-10-21T11:00:36.839586736-04:00&quot;</span><span class="o">}</span>
+--------------------
+y<span class="o">)</span> Yes this is OK
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
+Current remotes:
+
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
 remote               box
 
-e) Edit existing remote
-n) New remote
-d) Delete remote
-r) Rename remote
-c) Copy remote
-s) Set configuration password
-q) Quit config
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
 e/n/d/r/c/s/q&gt; q
-</code></pre></div></p>
-<p><code>rclone setup</code> creates a file that stores all the config of <code>rclone</code>. You can check the file name with <code>rclone config file</code>. The config file can be copied to other clusters so that you can use <code>rclone</code> on the other clusters without running <code>rclone config</code> again.</p>
-<p>Setting up <code>rclone</code> for "Google Drive" follows a similar procedure. </p>
+</code></pre></div>
+
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>if you want to use rclone for a shared google drive, you should answer 'y' when it asks whether you want to configure it as a Shared Drive.</p>
+<div class="highlight"><pre><span></span><code>Configure this as a Shared Drive <span class="o">(</span>Team Drive<span class="o">)</span>?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; y
+</code></pre></div>
+
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>rclone config</code> creates a file storing cloud storage configurations for rclone. 
+You can check the file name with <code>rclone config file</code>. The config file can be 
+copied to other clusters so that you can use <code>rclone</code> on the other clusters without running <code>rclone config</code> again.</p>
+</div>
 <h2 id="use-rclone-on-yale-clusters">Use Rclone on Yale clusters</h2>
+<p>As we have used <code>remote</code> as the name of the cloud storage in our examples above, 
+we will continue using it in the following examples. 
+You should replace it with the actual name you have picked up for the cloud storage in your configuration. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you forgot the name of the cloud storage you have configured, run <code>rclone config show</code> and the name will be shown in <code>[]</code>. 
+<div class="highlight"><pre><span></span><code>$ rclone config show
+<span class="o">[</span>remote<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> drive
+<span class="nv">scope</span> <span class="o">=</span> drive
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;mytoken&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-07-09T22:13:56.452750648-04:00&quot;</span><span class="o">}</span>
+<span class="nv">root_folder_id</span> <span class="o">=</span> myid
+</code></pre></div></p>
+</div>
 <h3 id="list-files">List files</h3>
 <div class="highlight"><pre><span></span><code>rclone ls remote:/
 </code></pre></div>
@@ -1662,7 +1845,7 @@ rclone copy filename remote:/path/to/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2022</span>
     
   </small>
 </div>
@@ -1778,15 +1961,15 @@ rclone copy filename remote:/path/to/
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
