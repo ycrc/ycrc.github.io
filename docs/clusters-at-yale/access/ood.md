@@ -59,6 +59,8 @@ When you run `ood_add_path` from a shell command line, it will prompt you to add
 
 `ood_remove_path` allows you to remove any of the paths added by you and `ood_list_path` will list all the paths added by you. 
 
+After you have customized the path configuration from a shell, go to the OOD dashbaord and click `Develop`->`Restart Web Server` on the top menu bar to make the change effective immediately.  
+
 ## Shell
 
 You can launch a traditional command-line interface to the cluster using the Shell pull-down menu.
