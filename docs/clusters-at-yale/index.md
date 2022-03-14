@@ -49,22 +49,22 @@ Once the new shell window is loaded, you will be able use this interface like yo
 Inside of the shell window, start an interactive job with the default resource requests. Once you are allocated space off the login node, load the Miniconda module and create a [Conda environment](/clusters-at-yale/guides/conda) for this exercise. This can be done like so:
 
 ``` bash
-\# Ask for an interactive session
+# Ask for an interactive session
 srun --pty -pinteractive bash
 
-\# Load the Miniconda module
+# Load the Miniconda module
 module load miniconda
 
-\# Create a test environment with Conda that contains the default Python version
+# Create a test environment with Conda that contains the default Python version
 conda create -yn tutorial_env python
 
-\# Activate the new environment
+# Activate the new environment
 conda activate tutorial_env
 
-\# Deactivate the new environment
+# Deactivate the new environment
 conda deactivate
 
-\# Exit your interactive job to free the resources
+# Exit your interactive job to free the resources
 exit
 ```
 
@@ -85,7 +85,9 @@ def message_decode_tutorial(message, c):
             holder = holder + message[letter]
     return holder
 
-message = 'gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBplS yJox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjfTsmPfo DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC'
+message = 'gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy\
+Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf\
+o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC'
 
 cypher = message_decode_tutorial(message, 10)
 
@@ -119,17 +121,17 @@ Because the partition isn't specified for this job, it will run on the cluster's
 
 ``` bash
 
-\# Navigate to the project directory
+# Navigate to the project directory
 cd project
 
-\# Use Slurm to start a batch job
+# Use Slurm to start a batch job
 sbatch batch_tutorial.sh
 
 ```
 
 Once you receive an email saying the job is complete, navigate to your scratch60 space through the shell window on Open OnDemand. Within this directory you will find a file called `decoded_example.txt`. To quickly see the file contents, use the `cat` command to print the file's contents on the standard output, revealing the decoded message like so:
 
-```
+``` bash
 
 # Navigate to your scratch60 space
 cd ../scratch60
