@@ -2,7 +2,7 @@
 
 [Mysql](https://www.mysql.com) is a popular relational database.  Because a database is usually thought of as a persistent service, it is not ordinarily run on HPC clusters, since
 allocations on an HPC cluster are temporary.  If you need a persistent mysql database server, we recommend either installing mysql on a server in your
-lab, or using ITS's Spinup service.  In either case, the mysql server can be accessed remotely from the HPC clusters.
+lab, or using ITS's [Spinup](https://spinup.internal.yale.edu) service.  In either case, the mysql server can be accessed remotely from the HPC clusters.
 
 However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
@@ -21,10 +21,11 @@ cd ~/project/mysql
 
 ### Step 2: Create two config files
 
-Put the following in ~/.my.cnfmysqld.  Note that you should change the password in both files
+Put the following in ~/.my.cnf.  Note that you should change the password in both files
 to something else.
 
 ```
+[mysqld]
 innodb_use_native_aio=0
 init-file=${HOME}/.mysqlrootpw
 
@@ -45,11 +46,11 @@ mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
 
 ### Step 4: Make a link to the mysql singularity image file
 
-The mysqld container can be found under the apps tree on each cluster.
-For example, on Grace:/gpfs/loomis/apps/singularity/ims/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:
+The mysqld image file can be found under the apps tree on each cluster.
+For example, on Grace:/gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:
 
 ```
-ln -s /gpfs/loomis/apps/singularity/ims/mysql/mysqld-5.7.21.simg mysql.simg
+ln -s /gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg mysql.simg
 ```
 
 
@@ -85,7 +86,7 @@ Version: '5.7.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Comm
 singularity exec instance://mysql /bin/bash
 ```
 
-Connect locally as root user while in the container
+Connect locally as root user while in the container, using the password you set in the config files in step 2.
 ```
 Singularity> mysql -u root -p
 Enter password:
