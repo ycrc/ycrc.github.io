@@ -44,7 +44,7 @@ mkdocs gh-deploy
 
 If your contribute a new page (as opposed to editing an existing one) and want it to show up in the navigation sidebar, you need to edit the `mkdocs.yml` file in the root of this branch and add the page to the `nav:` section. 
 
-By defauult, the filename (without the .md) will be the url location and the page title (what shows in the sidebar) will be the first H1 mkdocs finds on your page. To give the page a different title, prefix the line in `mkdocs.yml' with `"Your Title": ` (see examples already in the file for clarity).
+By default, the filename (without the .md) will be the url location and the page title (what shows in the sidebar) will be the first H1 mkdocs finds on your page. To give the page a different title, prefix the line in `mkdocs.yml' with `"Your Title": ` (see examples already in the file for clarity).
 
 ## Style Guide
 
