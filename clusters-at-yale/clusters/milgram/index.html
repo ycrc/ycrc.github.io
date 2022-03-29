@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1345,13 +1345,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#partition-name-changes" class="md-nav__link">
-    Partition Name Changes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#public-partitions" class="md-nav__link">
     Public Partitions
   </a>
@@ -1568,13 +1561,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#partition-name-changes" class="md-nav__link">
-    Partition Name Changes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#public-partitions" class="md-nav__link">
     Public Partitions
   </a>
@@ -1645,20 +1631,6 @@
 <p class="admonition-title">Job Submission Rate Limits</p>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
 </div>
-<h3 id="partition-name-changes">Partition Name Changes</h3>
-<p>To bring the Milgram commons and Psychology private partitions in agreement with the existing YCRC naming conventions, we have renamed the following partitions. Full details of which nodes are in each partition are in the table below.</p>
-<ul>
-<li>gpu -&gt; psych_gpu</li>
-<li>scavenge -&gt; psych_scavenge</li>
-<li>gpu_commons -&gt; gpu</li>
-<li>scavenge_all -&gt; scavenge</li>
-</ul>
-<p>The Psychology short, long and verylong partitions have also been consolidated into two partitions:</p>
-<ul>
-<li>psych_day: for jobs with a walltime of less than or equal to 24 hours</li>
-<li>psych_week: for jobs with a walltime less than or equal to 7 days.</li>
-</ul>
-<p>As of the June maintenance, short, long and verylong no longer work. scavenge_all, scavenge, gpu_commons and gpu all point the appropriate commons nodes.  At the end of June, scavenge_all and gpu_commons will be removed and no longer work. <strong>Please update your scripts accordingly at your earliest convenience.</strong></p>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
 <div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
@@ -1933,16 +1905,6 @@
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>10</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
 <td>2</td>
 <td>5222</td>
 <td>8</td>
@@ -1951,6 +1913,16 @@
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
+<td>10</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
 <td>48</td>
@@ -2020,7 +1992,7 @@
 </thead>
 <tbody>
 <tr>
-<td>48</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -2189,7 +2161,7 @@
 </thead>
 <tbody>
 <tr>
-<td>48</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -2254,7 +2226,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2022</span>
     
   </small>
 </div>
@@ -2370,15 +2342,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

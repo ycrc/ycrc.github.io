@@ -17,7 +17,7 @@
         <meta name="author" content="YCRC">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe0cca5b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b8ac9624.min.css">
       
       
     
@@ -44,7 +44,7 @@
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-133385440-1","docs.ycrc.yale.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
@@ -1669,7 +1669,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>30-00:00:00</code></td>
 </tr>
 <tr>
@@ -1696,7 +1696,7 @@
 </thead>
 <tbody>
 <tr>
-<td>152</td>
+<td>139</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -1723,7 +1723,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>2-00:00:00</code></td>
 </tr>
 <tr>
@@ -1750,7 +1750,7 @@
 </thead>
 <tbody>
 <tr>
-<td>152</td>
+<td>147</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -1777,7 +1777,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>7-00:00:00</code></td>
 </tr>
 <tr>
@@ -1831,7 +1831,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>7-00:00:00</code></td>
 </tr>
 <tr>
@@ -1872,7 +1872,7 @@
 <td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
-<td>152</td>
+<td>147</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -1891,7 +1891,7 @@
 </div>
 <h3 id="private-partitions">Private Partitions</h3>
 <p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
-<details class="summary"><summary>PI Partitions (click to expand)</summary><div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_hall</label><div class="tabbed-content">
+<details class="summary"><summary>PI Partitions (click to expand)</summary><div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_hall</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -1908,7 +1908,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Max job time limit</td>
+<td>Maximum job time limit</td>
 <td><code>14-00:00:00</code></td>
 </tr>
 </tbody>
@@ -1933,6 +1933,44 @@
 <td>181</td>
 <td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
 </tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">pi_hall_bigmem</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_hall_bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>14-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>2</td>
 <td>6240</td>
@@ -2202,15 +2240,15 @@ the sample submitter's netid and the flowcell (run) name:</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs", "instant"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
