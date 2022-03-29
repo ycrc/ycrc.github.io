@@ -409,6 +409,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
+    Be a Good Cluster Citizen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log-in" class="md-nav__link">
     Log in
   </a>
@@ -423,9 +430,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#use-software" class="md-nav__link">
+    Use Software
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-to-get-started" class="md-nav__link">
+    Tutorial to Get Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial to Get Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-interactive-jobs" class="md-nav__link">
+    Part 1: Interactive Jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-batch-jobs" class="md-nav__link">
+    Part 2: Batch Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -437,15 +471,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-software" class="md-nav__link">
-    Use Software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
-    Be a Good Cluster Citizen
+  <a href="#linux" class="md-nav__link">
+    Linux
   </a>
   
 </li>
@@ -900,6 +927,18 @@
   <li class="md-nav__item">
     <a href="guides/mpi4py/" title="mpi4py" class="md-nav__link">
       mpi4py
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guides/mysql/" title="Mysql" class="md-nav__link">
+      Mysql
     </a>
   </li>
 
@@ -1547,6 +1586,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
+    Be a Good Cluster Citizen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#log-in" class="md-nav__link">
     Log in
   </a>
@@ -1561,9 +1607,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#use-software" class="md-nav__link">
+    Use Software
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-to-get-started" class="md-nav__link">
+    Tutorial to Get Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial to Get Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-interactive-jobs" class="md-nav__link">
+    Part 1: Interactive Jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-batch-jobs" class="md-nav__link">
+    Part 2: Batch Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1575,15 +1648,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-software" class="md-nav__link">
-    Use Software
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
-    Be a Good Cluster Citizen
+  <a href="#linux" class="md-nav__link">
+    Linux
   </a>
   
 </li>
@@ -1628,22 +1694,6 @@
 <p>Broadly speaking, a high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to manage these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. See our summary of the <a href="/clusters-at-yale/clusters">compute and storage hardware</a> we maintain, from which you can navigate to a detailed description of each cluster.</p>
 <h2 id="request-an-account">Request an Account</h2>
 <p>The first step in gaining access to our clusters is to request an account. There are several HPC clusters available at Yale. There is no charge for using these clusters, but all users must adhere to the YCRC <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-policies">HPC Policies</a>. To understand which cluster is appropriate for you and to request an account, visit the <a href="https://research.computing.yale.edu/account-request">account request page</a>. </p>
-<h2 id="log-in">Log in</h2>
-<p>Once you have an account, go to our <a href="access">Log on to the Clusters page</a> login information and configuration.</p>
-<p>If you want to access the clusters from outside Yale's network, you must use the <a href="access/vpn">Yale VPN.</a></p>
-<h2 id="schedule-a-job">Schedule a Job</h2>
-<p>On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/introduction-hpc">Introduction to HPC workshop</a> for more details.</p>
-<h2 id="linux">Linux</h2>
-<p>Our clusters run the Linux operating system, where we support the use of the Bash shell. A basically familiarity with Linux commands is required for interacting with the clusters. We periodically run an <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Bootcamp</a> to get you started. There are also many excellent beginner tutorials available for free online, including the following:</p>
-<ul>
-<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a></li>
-<li><a href="http://rik.smith-unna.com/command_line_bootcamp/">Interactive Command Line Bootcamp</a></li>
-</ul>
-<h2 id="transfer-your-files">Transfer Your Files</h2>
-<p>You will likely want to copy files between your computer and the clusters. There are a couple methods available to you, and the best for each situation usually depends on the size and number of files you would like to transfer. See our <a href="data/transfer">transferring data</a> page for more information.</p>
-<h2 id="use-software">Use Software</h2>
-<p>To best serve the diverse needs of all our researchers, we use <a href="/clusters-at-yale/applications/modules">software modules</a> to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease.</p>
-<p>We also provide assistance for installing less commonly used packages. See our <a href="applications">Applications &amp; Software documentation</a> for more details.</p>
 <h2 id="be-a-good-cluster-citizen">Be a Good Cluster Citizen</h2>
 <p>While using HPC resources, here are some important things to remember:</p>
 <ul>
@@ -1653,6 +1703,100 @@
 <li>Do not run larger numbers of very short (less than a minute) jobs </li>
 </ul>
 <p>Use of the clusters is also governed by our <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-principles">official guidelines</a>.</p>
+<h2 id="log-in">Log in</h2>
+<p>Once you have an account, go to our <a href="access">Log on to the Clusters page</a> login information and configuration.</p>
+<p>If you want to access the clusters from outside Yale's network, you must use the <a href="access/vpn">Yale VPN.</a></p>
+<h2 id="schedule-a-job">Schedule a Job</h2>
+<p>On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/introduction-hpc">Introduction to HPC workshop</a> for more details.</p>
+<h2 id="use-software">Use Software</h2>
+<p>To best serve the diverse needs of all our researchers, we use <a href="/clusters-at-yale/applications/modules">software modules</a> to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease.</p>
+<p>We also provide assistance for installing less commonly used packages. See our <a href="applications">Applications &amp; Software documentation</a> for more details.</p>
+<h2 id="tutorial-to-get-started">Tutorial to Get Started</h2>
+<p>To begin, access the cluster through <a href="//clusters-at-yale/access/ood">Open OnDemand</a> and open the shell window. This can be done by by going to the top navigation bar, clicking on the <strong>Clusters</strong> tab and selecting the <strong>Shell Access</strong> button.</p>
+<p><img alt="cluster_navigation_bar_showing_shell_dropdown_tab" class="medium" src="/img/intro_tutorial_navbar.jpg" /></p>
+<p>Once the new shell window is loaded, you will be able use this interface like your local command interface. Now that you're setup in a shell window, you can begin the task like so:</p>
+<h3 id="part-1-interactive-jobs">Part 1: Interactive Jobs</h3>
+<p>Inside of the shell window, start an interactive job with the default resource requests. Once you are allocated space off the login node, load the Miniconda module and create a <a href="/clusters-at-yale/guides/conda">Conda environment</a> for this exercise. This can be done like so:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ask for an interactive session</span>
+srun --pty -pinteractive bash
+
+<span class="c1"># Load the Miniconda module</span>
+module load miniconda
+
+<span class="c1"># Create a test environment with Conda that contains the default Python version</span>
+conda create -yn tutorial_env python
+
+<span class="c1"># Activate the new environment</span>
+conda activate tutorial_env
+
+<span class="c1"># Deactivate the new environment</span>
+conda deactivate
+
+<span class="c1"># Exit your interactive job to free the resources</span>
+<span class="nb">exit</span>
+</code></pre></div>
+
+<h3 id="part-2-batch-jobs">Part 2: Batch Jobs</h3>
+<p>Going off of the environment we created in <strong>part 1</strong>, navigate to the <strong>Files</strong> tab in OOD and select your <strong>project</strong> directory. Click the '+ New File' button and name the file <code>message_decode_tutorial.py</code>. Once the new file is created, open this file in the OOD text editor by going to the file, clicking the three-dot <strong>more</strong> button, and selecting <strong>edit</strong> in the dropdown menu like so:</p>
+<p><img alt="file_browser_interface_showing_dropdown_options" class="medium" src="/img/intro_tutorial_textedit.jpg" /></p>
+<p>Once the text editor is open, paste this python example inside of the file:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">holder</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">letter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">holder</span> <span class="o">=</span> <span class="n">holder</span> <span class="o">+</span> <span class="n">message</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">holder</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy</span><span class="se">\</span>
+<span class="s1">Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf</span><span class="se">\</span>
+<span class="s1">o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC&#39;</span>
+
+<span class="n">cypher</span> <span class="o">=</span> <span class="n">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/scratch60/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cypher</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your scratch60 space, and will automatically be deleted should you forget to do so.</p>
+<p>From here, navigate back to your project directory and select the '+ New File' button, this time naming it <code>batch_tutorial.sh</code>. Using <a href="/clusters-at-yale/job-scheduling/#common-job-request-options">Slurm options</a> to define resource requests for this job, paste the following code inside of this file like you did the previous file:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=message_decode_tutorial</span>
+<span class="c1">#SBATCH --time=1:00</span>
+<span class="c1">#SBATCH --mem-per-cpu=2MB</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+module load miniconda
+
+<span class="nb">source</span> activate tutorial_env
+
+python message_decode_tutorial.py
+</code></pre></div>
+
+<p>Because the partition isn't specified for this job, it will run on the cluster's default partition. From there, you can go back to the shell window, navigate to your project directory and run the sbatch command to begin your batch job like so:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to the project directory</span>
+<span class="nb">cd</span> project
+
+<span class="c1"># Use Slurm to start a batch job</span>
+sbatch batch_tutorial.sh
+</code></pre></div>
+
+<p>Once you receive an email saying the job is complete, navigate to your scratch60 space through the shell window on Open OnDemand. Within this directory you will find a file called <code>decoded_example.txt</code>. To quickly see the file contents, use the <code>cat</code> command to print the file's contents on the standard output, revealing the decoded message like so:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your scratch60 space</span>
+<span class="nb">cd</span> ../scratch60
+
+<span class="c1"># Print out the decoded message</span>
+cat decoded_example.txt
+</code></pre></div>
+
+<h2 id="transfer-your-files">Transfer Your Files</h2>
+<p>You will likely want to copy files between your computer and the clusters. There are a couple methods available to you, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the <strong>Upload</strong> button and dragging and dropping your files into the upload window. For more information on this as well as other upload methods, see our <a href="data/transfer">transferring data</a> page.</p>
+<h2 id="linux">Linux</h2>
+<p>Our clusters run the Linux operating system, where we support the use of the Bash shell. A basically familiarity with Linux commands is required for interacting with the clusters. We periodically run an <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Bootcamp</a> to get you started. There are also many excellent beginner tutorials available for free online, including the following:</p>
+<ul>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a></li>
+<li><a href="http://rik.smith-unna.com/command_line_bootcamp/">Interactive Command Line Bootcamp</a></li>
+</ul>
 <h2 id="hands-on-training">Hands on Training</h2>
 <p>We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse <a href="https://research.computing.yale.edu/training">our catalog of training</a> to see what is available.</p>
 <h2 id="get-help">Get Help</h2>
@@ -1675,7 +1819,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2022</span>
     
   </small>
 </div>

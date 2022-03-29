@@ -11,7 +11,7 @@
         <meta name="description" content="Yale Center for Research Computing Documentation Pages">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/handson-ml2/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/mysql/">
       
       
         <meta name="author" content="YCRC">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Python+TensorFlow Example - Yale Center for Research Computing</title>
+        <title>Mysql - Yale Center for Research Computing</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practical-example-pythontensorflow" class="md-skip">
+        <a href="#mysql" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +123,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Python+TensorFlow Example
+              Mysql
             
           </span>
         </div>
@@ -805,11 +805,109 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../mysql/" title="Mysql" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Mysql
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Mysql" class="md-nav__link md-nav__link--active">
       Mysql
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-an-installation-directory-somewhere-and-cd-to-it" class="md-nav__link">
+    Step 1: Create an installation directory somewhere, and cd to it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-two-config-files" class="md-nav__link">
+    Step 2: Create two config files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-data-directories-for-mysql" class="md-nav__link">
+    Step 3: Create data directories for mysql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-make-a-link-to-the-mysql-singularity-image-file" class="md-nav__link">
+    Step 4: Make a link to the mysql singularity image file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet" class="md-nav__link">
+    Step 5: Start the container.  Note that this doesn't actually start the service yet.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-start-the-mysqld-server-within-the-container" class="md-nav__link">
+    Step 6: Start the mysqld server within the container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-enter-the-running-container" class="md-nav__link">
+    Step 7: Enter the running container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-add-a-database-user-and-permit-it-to-login-remotely" class="md-nav__link">
+    Step 8: Add a database user and permit it to login remotely
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-shut-the-container-down" class="md-nav__link">
+    Step 9 Shut the container down.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -841,81 +939,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Python+TensorFlow Example
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Python+TensorFlow Example" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../handson-ml2/" title="Python+TensorFlow Example" class="md-nav__link">
       Python+TensorFlow Example
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-a-notebook" class="md-nav__link">
-    Start a Notebook
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#containers-tensorflowserving" class="md-nav__link">
-    Containers - tensorflow/serving
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#heterogeneous-job-layouts" class="md-nav__link">
-    Heterogeneous Job Layouts
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1512,36 +1540,64 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#step-1-create-an-installation-directory-somewhere-and-cd-to-it" class="md-nav__link">
+    Step 1: Create an installation directory somewhere, and cd to it
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#step-2-create-two-config-files" class="md-nav__link">
+    Step 2: Create two config files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-a-notebook" class="md-nav__link">
-    Start a Notebook
+  <a href="#step-3-create-data-directories-for-mysql" class="md-nav__link">
+    Step 3: Create data directories for mysql
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#containers-tensorflowserving" class="md-nav__link">
-    Containers - tensorflow/serving
+  <a href="#step-4-make-a-link-to-the-mysql-singularity-image-file" class="md-nav__link">
+    Step 4: Make a link to the mysql singularity image file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#heterogeneous-job-layouts" class="md-nav__link">
-    Heterogeneous Job Layouts
+  <a href="#step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet" class="md-nav__link">
+    Step 5: Start the container.  Note that this doesn't actually start the service yet.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-start-the-mysqld-server-within-the-container" class="md-nav__link">
+    Step 6: Start the mysqld server within the container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-enter-the-running-container" class="md-nav__link">
+    Step 7: Enter the running container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-add-a-database-user-and-permit-it-to-login-remotely" class="md-nav__link">
+    Step 8: Add a database user and permit it to login remotely
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-shut-the-container-down" class="md-nav__link">
+    Step 9 Shut the container down.
   </a>
   
 </li>
@@ -1558,7 +1614,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/handson-ml2.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/mysql.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1566,185 +1622,130 @@
                   
                 
                 
-                <h1 id="practical-example-pythontensorflow">Practical Example: Python+TensorFlow</h1>
-<p>Notes on <a href="https://github.com/ageron/handson-ml2">handson-ml2</a> for YCRC clusters <a href="/clusters-at-yale/clusters/grace/">Grace</a> &amp; <a href="/clusters-at-yale/clusters/farnam/">Farnam</a></p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>Basic understanding of command line shell commands and syntax</li>
-<li>A Yale NetID</li>
-<li>An active <a href="https://yale.service-now.com/it?id=service_offering&amp;sys_id=c4684dcd6fbb31007ee2abcf9f3ee4f2">Yale VPN</a> connection</li>
-<li>A YCRC <a href="https://research.computing.yale.edu/support/hpc/account-request">Cluster account</a></li>
-</ul>
-<h2 id="setup">Setup</h2>
-<ol>
-<li>
-<p>Log in to <a href="/clusters-at-yale/access/ood/">OOD</a> for the cluster you have an account on with NetID and Password.</p>
-</li>
-<li>
-<p>Start a new interactive shell.</p>
-<p>"Shell" &gt; "Clustername Shell Access"</p>
-<p><img alt="shell navigation menu" src="/img/handson-ml2_00.png" /></p>
-</li>
-<li>
-<p>Start an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a>.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -c <span class="m">2</span> -p interactive bash
+                <h1 id="mysql">Mysql</h1>
+<p><a href="https://www.mysql.com">Mysql</a> is a popular relational database.  Because a database is usually thought of as a persistent service, it is not ordinarily run on HPC clusters, since
+allocations on an HPC cluster are temporary.  If you need a persistent mysql database server, we recommend either installing mysql on a server in your
+lab, or using ITS's <a href="https://spinup.internal.yale.edu">Spinup</a> service.  In either case, the mysql server can be accessed remotely from the HPC clusters.</p>
+<p>However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
+mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
+require admin privileges.  The instructions that follow walk you through the process of running a mysql server using singularity on a cluster compute node 
+without any special privileges.  It uses a singularity <a href="https://www.hpc.iastate.edu/guides/containers/mysql-server">container</a> 
+developed by Robert Grandin at Iowa State (Thanks!) </p>
+<p>All of the following must be done on an allocated compute node.  Do not do this on the login node!</p>
+<h3 id="step-1-create-an-installation-directory-somewhere-and-cd-to-it">Step 1: Create an installation directory somewhere, and cd to it</h3>
+<div class="highlight"><pre><span></span><code>mkdir ~/project/mysql
+cd ~/project/mysql
 </code></pre></div>
 
-<table>
-<thead>
-<tr>
-<th><code>srun</code> Argument</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--pty</code></td>
-<td>Start a pseudo terminal in the job</td>
-</tr>
-<tr>
-<td><code>-c 2</code></td>
-<td>Allocate two CPU cores (and default 5GiB RAM per core)</td>
-</tr>
-<tr>
-<td><code>-p interactive</code></td>
-<td>Start the job on the <code>interactive</code> partition (meant for work like this)</td>
-</tr>
-<tr>
-<td><code>bash</code></td>
-<td>Run the bash shell</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Clone the repo from <a href="/clusters-at-yale/guides/github/">GitHub</a>.</p>
-<div class="highlight"><pre><span></span><code>mkdir -p ~/repos
-<span class="nb">cd</span> ~/repos
-git clone https://github.com/ageron/handson-ml2.git
+<h3 id="step-2-create-two-config-files">Step 2: Create two config files</h3>
+<p>Put the following in ~/.my.cnf.  Note that you should change the password in both files
+to something else.</p>
+<div class="highlight"><pre><span></span><code>[mysqld]
+innodb_use_native_aio=0
+init-file=${HOME}/.mysqlrootpw
+
+[client]
+user=root
+password=&#39;my-secret-pw&#39;
 </code></pre></div>
 
-</li>
-<li>
-<p>Create the <a href="/clusters-at-yale/guides/conda/">Conda</a> environment used in the book, index it for the YCRC <a href="/clusters-at-yale/access/ood/">Open Ondemand</a> web dashboard.</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-<span class="nb">cd</span> ~/repos/handson-ml2
-<span class="c1"># environment creation will take a few minutes</span>
-conda env create -f environment.yml
-conda activate tf2
-<span class="c1"># swap out tf with gpu-enabled tf</span>
-pip uninstall tensorflow
-pip install tensorflow-gpu<span class="o">==</span><span class="m">2</span>.4.1
-ycrc_conda_env.list build
+<p>Put the following in ~/.mysqlrootpw
+<div class="highlight"><pre><span></span><code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;my-secret-pw&#39;);
+</code></pre></div></p>
+<h3 id="step-3-create-data-directories-for-mysql">Step 3: Create data directories for mysql</h3>
+<div class="highlight"><pre><span></span><code>mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
 </code></pre></div>
 
-</li>
-</ol>
-<h2 id="start-a-notebook">Start a Notebook</h2>
-<ol>
-<li>
-<p>Log in to <a href="/clusters-at-yale/access/ood/">OOD</a> for the cluster you have an account on with NetID and Password.</p>
-</li>
-<li>
-<p>Navigate to the Jupyter job submission form.</p>
-<p>"Interactive Apps" &gt; "Jupyter Notebook"</p>
-<p><img alt="interactive apps navigation menu" src="/img/handson-ml2_01.png" /></p>
-</li>
-<li>
-<p>Set up the request.</p>
-<div class="admonition warning">
-<p class="admonition-title">GPUs and their needs</p>
-<p>Not all partitions have GPUs, they must be requested explicitly, and you need to load the right version of CUDA + cuDNN.</p>
-</div>
-<p>To make this environment work properly in your jupyter job you need to</p>
-<ul>
-<li>
-<p>Choose your <code>tf2</code> environment from the "Environment Setup" dropdown</p>
-<p><img alt="conda environment choice" src="/img/handson-ml2_notebook01.png" /></p>
-</li>
-<li>
-<p>Set "Number of GPUs per node" to at least 1.</p>
-<p><img alt="GPU choice" src="/img/handson-ml2_notebook02.png" /></p>
-</li>
-<li>
-<p>Set a partition with GPUs available.</p>
-<p><img alt="GPU partition" src="/img/handson-ml2_notebook03.png" /></p>
-</li>
-<li>
-<p>Load the right cuDNN module (will also load a CUDA module). For this environment, that's <code>cuDNN/8.0.5.39-CUDA-11.1.1</code> .</p>
-<p><img alt="cuDNN module choice" src="/img/handson-ml2_notebook04.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">What version of CUDA?</p>
-<p>If you are not installing things for yourself or don't know what CUDA version you need, try importing GPU-enabled <code>tensorflow</code> and look at the output:
-<div class="highlight"><pre><span></span><code><span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">10</span> <span class="o">|</span> <span class="n">packaged</span> <span class="n">by</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">|</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Feb</span> <span class="mi">19</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">37</span><span class="p">)</span>
-<span class="p">[</span><span class="n">GCC</span> <span class="mf">9.3</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
-<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">26</span> <span class="mi">08</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">40.092738</span><span class="p">:</span> <span class="n">W</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">stream_executor</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">default</span><span class="o">/</span><span class="n">dso_loader</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span> <span class="n">Could</span> <span class="ow">not</span> <span class="n">load</span> <span class="n">dynamic</span> <span class="n">library</span><span class="s1">&#39;libcudart.so.11.0&#39;</span><span class="p">;</span> <span class="n">dlerror</span><span class="p">:</span> <span class="n">libcudart</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">11.0</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="n">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
-<span class="mi">2021</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">26</span> <span class="mi">08</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">40.092780</span><span class="p">:</span> <span class="n">I</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">stream_executor</span><span class="o">/</span><span class="n">cuda</span><span class="o">/</span><span class="n">cudart_stub</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">29</span><span class="p">]</span> <span class="n">Ignore</span> <span class="n">above</span> <span class="n">cudart</span> <span class="n">dlerror</span> <span class="k">if</span> <span class="n">you</span> <span class="n">do</span> <span class="n">nothave</span> <span class="n">a</span> <span class="n">GPU</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">on</span> <span class="n">your</span> <span class="n">machine</span><span class="o">.</span>
-</code></pre></div>
-Notice it complains about not finding <code>libcudart.so.11.0</code>. The numbers at the end of this shared object usually correspond ot a CUDA version, so here we will use CUDA 11.</p>
-</div>
-</li>
-</ul>
-<p>Then click the Launch button. Depending on how busy the cluster is your job may need to wait in the queue.</p>
-</li>
-<li>
-<p>Connect to the Jupyter Server.</p>
-<p><img alt="Jupyter job connection button" src="/img/handson-ml2_notebook05.png" /></p>
-</li>
-</ol>
-<h2 id="containers-tensorflowserving">Containers - <code>tensorflow/serving</code></h2>
-<p>You can use TensorFlow Serving to serve multiple versions of models but examples given use Ubuntu packages or Docker. YCRC clusters are RHEL and do not allow Docker, so instead we use <a href="">Singularity</a></p>
-<div class="highlight"><pre><span></span><code>docker pull tensorflow/serving
-
-<span class="nb">export</span> <span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/ml <span class="c1"># or wherever this project is</span>
-docker run -it --rm -p <span class="m">8500</span>:8500 -p <span class="m">8501</span>:8501 <span class="se">\</span>
-   -v <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
-   -e <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model <span class="se">\</span>
-   tensorflow/serving
+<h3 id="step-4-make-a-link-to-the-mysql-singularity-image-file">Step 4: Make a link to the mysql singularity image file</h3>
+<p>The mysqld image file can be found under the apps tree on each cluster.
+For example, on Grace:/gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:</p>
+<div class="highlight"><pre><span></span><code>ln -s /gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg mysql.simg
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>singularity build tf_model_server.sif docker://tensorflow/serving
-
-<span class="nb">export</span> <span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/repos/handson-ml2
-singularity run --containall -B <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
-    --env <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model tf_model_server.sif
+<h3 id="step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet">Step 5: Start the container.  Note that this doesn't actually start the service yet.</h3>
+<div class="highlight"><pre><span></span><code>singularity instance start --bind ${HOME} \
+    --bind ${PWD}/mysql/var/lib/mysql/:/var/lib/mysql \
+    --bind ${PWD}/mysql/run/mysqld:/run/mysqld \
+    ./mysql.simg mysql
 </code></pre></div>
 
-<ul>
-<li>Only need to build <code>.sif</code> file when you would run <code>docker pull</code></li>
-<li>Don't need to forward ports out of container</li>
-<li><code>--containall</code> makes singularity run more like docker, allows finer control of what files container sees</li>
-</ul>
-<h2 id="heterogeneous-job-layouts">Heterogeneous Job Layouts</h2>
-<p>If you want to allocate multiple node types in a single job, e.g. a larger first task/worker for a tf "chief" or a CPU-only parameter server. </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=gpu --time=1- --ntasks=1 --cpus-per-task=4</span>
-<span class="c1">#SBATCH --mem-per-cpu=8G --gpus-per-task=1 --job-name=tf2-cluster-chief</span>
-<span class="c1">#SBATCH hetjob</span>
-<span class="c1">#SBATCH --ntasks=8 --cpus-per-task=2 </span>
-<span class="c1">#SBATCH --mem-per-cpu=16G --gpus-per-task=1</span>
-
-module load miniconda cuDNN/8.0.5.39-CUDA-11.1.1
-conda activate tf2
-
-<span class="c1"># this python process will start on a node in the gpu partition with 4 CPUs &amp; 1 GPU</span>
-python cluster_tf.py
+<p>To check that it is running:</p>
+<div class="highlight"><pre><span></span><code>singularity instance list
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=day --time=1- --ntasks=1 --cpus-per-task=2</span>
-<span class="c1">#SBATCH --mem-per-cpu=8G --job-name=tf2-cluster-par-serv</span>
-<span class="c1">#SBATCH hetjob</span>
-<span class="c1">#SBATCH --partition=gpu --ntasks=8 --cpus-per-task=2 </span>
-<span class="c1">#SBATCH --mem-per-cpu=16G --gpus-per-task=1</span>
+<h3 id="step-6-start-the-mysqld-server-within-the-container">Step 6: Start the mysqld server within the container</h3>
+<div class="highlight"><pre><span></span><code>singularity run instance://mysql
+</code></pre></div>
 
-module load miniconda cuDNN/8.0.5.39-CUDA-11.1.1
-conda activate tf2
+<p>You'll see lots of output, but at the end you should see a message like this
+<div class="highlight"><pre><span></span><code>2022-02-21T17:16:21.104527Z 0 [Note] mysqld: ready for connections.
+Version: &#39;5.7.21&#39;  socket: &#39;/var/run/mysqld/mysqld.sock&#39;  port: 3306  MySQL Community Server (GPL)
+</code></pre></div></p>
+<h3 id="step-7-enter-the-running-container">Step 7: Enter the running container</h3>
+<div class="highlight"><pre><span></span><code>singularity exec instance://mysql /bin/bash
+</code></pre></div>
 
-<span class="c1"># this python process will start on a node in the day partition with 2 CPUs</span>
-python cluster_tf.py
+<p>Connect locally as root user while in the container, using the password you set in the config files in step 2.
+<div class="highlight"><pre><span></span><code>Singularity&gt; mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.21 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt;
+</code></pre></div></p>
+<p>Success!  The server is working!  Type exit to get out of mysql, but remain in the container:</p>
+<h3 id="step-8-add-a-database-user-and-permit-it-to-login-remotely">Step 8: Add a database user and permit it to login remotely</h3>
+<p>Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. <br />
+This is one way to do that from the container shell. </p>
+<p>You should probably substitute your name for elmerfudd and a better password for mypasswd!</p>
+<div class="highlight"><pre><span></span><code>Singularity&gt; mysql -e &quot;GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION&quot;
+Singularity&gt; mysql -e &quot;FLUSH PRIVILEGES&quot;
+</code></pre></div>
+
+<p>Type exit to leave the container.  From that compute node, but outside the singularity container, try connecting with:
+<div class="highlight"><pre><span></span><code>mysql -u elmerfudd -h 127.0.0.1 -p
+</code></pre></div></p>
+<p>Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g. c22n01) instead of 127.0.0.1
+<div class="highlight"><pre><span></span><code>mysql -u elmerfudd -h c22n01 -p
+</code></pre></div></p>
+<p>While connected, you can try actually using the server in the usual way to create a database and table:
+<div class="highlight"><pre><span></span><code>MySQL [(none)]&gt; create database rob;
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [(none)]&gt; use rob
+Database changed
+MySQL [rob]&gt; create table users (name VARCHAR(20), id INT);
+Query OK, 0 rows affected (0.11 sec)
+
+...
+</code></pre></div></p>
+<p>Success!  You've earned a reward of your choice!</p>
+<h3 id="step-9-shut-the-container-down">Step 9 Shut the container down.</h3>
+<div class="highlight"><pre><span></span><code>Singularity instance stop mysql
+</code></pre></div>
+
+<p>Now that everything is installed, the next time you want to start the server, you'll only need to do steps 5 (starting the container)
+and 6 (starting the mysql server).</p>
+<p>Note that you'll run into a problem if two mysql instances are run on the same compute node, since by default they each
+try to use port 3306.  The simplest solution is to specify a non-standard port in your .my.cnf file:</p>
+<div class="highlight"><pre><span></span><code>[mysqld]
+port=3310
+innodb_use_native_aio=0
+init-file=${HOME}/.mysqlrootpw
+
+[client]
+port=3310
+user=root
+password=&#39;my-secret-pw&#39;
 </code></pre></div>
                 
                   
@@ -1754,7 +1755,7 @@ python cluster_tf.py
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2022</span>
     
   </small>
 </div>
