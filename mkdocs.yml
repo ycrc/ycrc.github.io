@@ -71,6 +71,7 @@ nav:
         - Cluster Computing at Yale:
             - clusters-at-yale/index.md
             - Request an Account: https://research.computing.yale.edu/account-request
+            - clusters-at-yale/help-requests.md
             - clusters-at-yale/troubleshoot.md
             - Access the Clusters:
                 - clusters-at-yale/access/accounts.md

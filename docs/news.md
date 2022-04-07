@@ -1,5 +1,22 @@
 # News
 
+## March 2022
+
+### Announcements
+
+#### Snapshots
+
+Snapshots are now available on all clusters for home and project spaces. Snapshots enable self-service restoration of modified or deleted files for at least 2 days in the past. [See our User Documentation for more details on availability and instructions.](https://docs.ycrc.yale.edu/clusters-at-yale/data/#backups-and-snapshots)
+
+#### OOD File Browser Tip: Shortcuts
+
+You can add shortcuts to your favorite paths in the OOD File Browser. [See our OOD documentation for instructions on setting up shortcuts.](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#customize-favorite-paths)
+
+### Software Highlights
+
+- **R/4.1.0-foss-2020b** is now on Grace.
+- **GCC/11.2.0** is now on Grace.
+
 ## Grace Maintenance
 _February 3-6, 2022_
 
