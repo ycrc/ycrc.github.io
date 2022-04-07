@@ -1,5 +1,43 @@
 # News
 
+## Farnam Maintenance
+_April 4-7, 2022_
+
+### Software Updates
+
+- Security updates
+- Slurm updated to 21.08.6
+- NVIDIA drivers updated to 510.47.03 (note: driver for NVIDIA K80 GPUs was upgraded to 470.103.01)
+- Singularity replaced by Apptainer version 1.0.1 (note: the "singularity" command will still work as expected)
+- Open OnDemand updated to 2.0.20
+
+### Hardware Updates
+
+- Four new nodes with 4 NVIDIA GTX3090 GPUs each have been added
+
+### Changes to the `bigmem` Partition
+
+Jobs requesting less than 120G of memory are no longer allowed in the "bigmem" partition. Please submit these jobs to the general or scavenge partitions instead.
+
+## April 2022
+
+### Announcements
+
+#### Updates to R on Open OnDemand
+RStudio Server is out of beta! With the deprecation of R 3.x (see below), we will be removing RStudio Desktop with module R from Open OnDemand on June 1st.
+
+#### Improvements to R install.packages Paths
+Starting with the R 4.1.0 software module, we now automatically set an environment variable (`R_LIBS_USER`) which directs these packages to be stored in your project space. This will helps ensure that packages are not limited by home-space quotas and that packages installed for different versions of R are properly separated from each other. Previously installed packages should still be available and there should be no disruption from the change.
+
+#### Instructions for Running a MySQL Server on the Clusters
+Occasionally it could be useful for a user to run their own MySQL database server on one of the clusters.  Until now, that has not been possible, but recently we found a way using singularity.  Instructions may be found in our [new MySQL guide](https://docs.ycrc.yale.edu/clusters-at-yale/guides/mysql/).
+
+### Software Highlights
+
+- **R 3.x modules have been deprecated** on all clusters and are no longer supported. If you need to continue to use an older version of R, look at our [R conda documentation](https://docs.ycrc.yale.edu/clusters-at-yale/guides/r/#conda-based-r-environments).
+- **R/4.1.0-foss-2020b** is now available on all clusters.
+- **Seurat/4.1.0-foss-2020b-R-4.1.0** (for using the Seurat R package) is now available on all clusters.
+
 ## March 2022
 
 ### Announcements
