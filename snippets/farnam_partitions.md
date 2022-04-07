@@ -127,6 +127,7 @@
     |---|---|---|---|---|---|---|---|
     |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
     |6|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
     |8|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |2|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common, k80|
 
@@ -241,6 +242,7 @@
     |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000|
     |3|8268|48|370||||cascadelake, avx2, avx512, 8268, nogpu, pi, bigtmp|
     |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
+    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
     |1|6240|36|364|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, a100|
     |1|5222|36|750|a100|4|40|cascadelake, avx2, avx512, 5222, doubleprecision, bigtmp, a100|
     |1|6240|36|181|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, a100, bigtmp|
@@ -292,11 +294,12 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |1|6240|36|370|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
     |1|6226r|32|181|rtx3090|4|24|cascadelake, avx2, avx512, 6226r, doubleprecision, pi, rtx3090|
-    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
+    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
     |1|6240|36|364|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, a100|
     |1|5222|36|750|a100|4|40|cascadelake, avx2, avx512, 5222, doubleprecision, bigtmp, a100|
     |1|6240|36|181|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, a100, bigtmp|
