@@ -76,8 +76,8 @@ This example submits a 6-hour simulation eligible to start every day at 12:00 AM
 This example submits a transfer script eligible to start every Wednesday at 8:00 PM.
 
 ``` bash
-#SBATCH --time 1:00:00
-#SBATCH --partition transfer
+#SCRON --time 1:00:00
+#SCRON --partition transfer
 #SCRON --chdir /home/netid/project/to_transfer
 #SCRON -o transfer_log_%j.txt
 0 20 * * 3 ./rclone_commands.sh
