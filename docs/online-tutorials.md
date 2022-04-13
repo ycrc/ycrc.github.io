@@ -107,15 +107,17 @@ It is possible to run Linux terminals and applications from within a Windows ins
 
 * [Mathworks Online Classses](https://matlabacademy.mathworks.com/)
 
-## Singularity
+## Singularity / Apptainer
 
 ### Documentation
 
-* [Sylabs Docs Page](https://sylabs.io/docs/)
+Singularity has officially been renamed Apptainer, but should still work the same.
+ 
+* [Apptainer Docs Page](https://apptainer.org/docs/user/main/)
 * [Singularity Google Groups](https://groups.google.com/a/lbl.gov/forum/#!forum/singularity)
 
 ### Tutorials
 
-* [NIH tutorial on Singularity](https://singularity-tutorial.github.io)
 * [YCRC Workshop: Containers](http://docs.ycrc.yale.edu/containers-bootcamp)
+* [NIH tutorial on Singularity](https://singularity-tutorial.github.io)
 * [NVIDIA tutorial for using GPUs with Singularity](https://devblogs.nvidia.com/docker-compatibility-singularity-hpc/)
