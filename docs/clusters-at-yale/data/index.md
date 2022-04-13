@@ -17,19 +17,35 @@ Your home directory is where your sessions begin by default. Its intended use is
 
 Quota: 1 TiB and 5,000,000 files per group, expanded to 4 TiB on request
 
-Project storage is intended for storing datasets and other files that you would like for your group to all have access to. You can also [share data with people more granularly](/clusters-at-yale/data/permissions/). It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project storage is not backed up.
-
-We create a symlink, or shortcut, in every home directory called `project`, but the true path to your project directory is different. You can get it by running the `mydirectories` command or with
+Project storage is shared among all members of a specific group.
+Each group member has their own directory within their groups project directory and a symbolic link, or shortcut, to this directory is placed in your home-space called `~/project`.
+The true path of your project space can be found by running `mydirectories` or with
 
 ``` bash
 readlink -f ~/project
 ```
 
+By default, all group members' project spaces are readable by all other members of that group.
+To see your colleagues' project spaces, you need to access them via the true path, not the symbolic link in their home space.
+For example, on `Grace` you would do the following:
+
+```bash
+cd /gpfs/loomis/project/<group_name>
+```
+
+and you would see directories for each member of your group.
+
+You can also [share data with people more granularly](/clusters-at-yale/data/permissions/).
+It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project storage is not backed up.
+
+
 #### Purchased Storage
 
 Quota: varies
 
-Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up. See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. Purchased storage, if applicable, is located in a  `/gpfs/<filesystem>/pi/` directory under the group's name. 
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
+See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. 
+Purchased storage, if applicable, is located in a  `/gpfs/<filesystem>/pi/` directory under the group's name.
 
 ### 60-Day Scratch
 
@@ -81,11 +97,11 @@ The per-user breakdown is only generated periodically, and the summary at the bo
 
 ## Get More Storage
 
-For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)). 
+For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)).
 
 For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found [here](https://research.computing.yale.edu/billing-hpc-services) (CAS login required).
 
-Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process. 
+Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
 
 ## HPC Storage Best Practices
 
@@ -94,7 +110,7 @@ Please note that, as with existing project storage, purchased storage will not b
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
 Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example.
-Both `grace` and `farnam` have dedicated `transfer` partitions where you can submit long-running transfer jobs. 
+Both `grace` and `farnam` have dedicated `transfer` partitions where you can submit long-running transfer jobs.
 When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
 Please see [Staging Data](/clusters-at-yale/data/staging/) for more details and examples.
 
