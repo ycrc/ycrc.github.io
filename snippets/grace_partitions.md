@@ -26,10 +26,10 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |70|8268|48|356|cascadelake, avx512, 8268, nogpu, standard, common, bigtmp|
+    |71|8268|48|356|cascadelake, avx512, 8268, nogpu, standard, common, bigtmp|
     |110|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
     |79|E5-2660_v4|28|245|broadwell, E5-2660_v4, nogpu, standard, common|
-    |44|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |40|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "interactive"
 
@@ -83,7 +83,7 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`7-00:00:00`|
-    |Maximum CPUs per group|`250`|
+    |Maximum CPUs per group|`252`|
     |Maximum CPUs per user|`108`|
 
     **Available Compute Nodes**
@@ -153,10 +153,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
-    |6|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |4|6240|36|370|v100|4|16|cascadelake, avx512, 6240, doubleprecision, common, v100|
-    |4|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |6|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |2|6240|36|361|a100|4|40|cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100|
     |2|6136|24|90|v100|2|16|skylake, avx512, 6136, doubleprecision, common, bigtmp, v100|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, common, p100|
@@ -214,7 +213,7 @@
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`40`|
-    |Maximum memory per user|`1500G`|
+    |Maximum memory per user|`1505G`|
 
     **Available Compute Nodes**
 
@@ -285,42 +284,44 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |58|8268|48|356||||cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp|
-    |70|8268|48|356||||cascadelake, avx512, 8268, nogpu, standard, common, bigtmp|
-    |135|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |71|8268|48|356||||cascadelake, avx512, 8268, nogpu, standard, common, bigtmp|
+    |60|8268|48|356||||cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp|
     |87|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
-    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |135|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |3|6234|16|1505||||cascadelake, avx512, nogpu, 6234, pi, bigtmp|
+    |1|6254|36|370|rtx2080ti|8|11|cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti|
+    |2|6240|36|180|rtx3090|4|24|cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090|
+    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
+    |8|6240|36|370||||cascadelake, avx512, 6240, nogpu, pi, bigtmp|
     |20|8260|96|181||||cascadelake, avx512, 8260, nogpu, pi|
     |4|6240|36|370|v100|4|16|cascadelake, avx512, 6240, doubleprecision, common, v100|
     |3|6240|36|1505||||cascadelake, avx512, 6240, nogpu, common, bigtmp|
-    |2|6240|36|180|rtx3090|4|24|cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090|
-    |2|6234|16|1505||||cascadelake, avx512, nogpu, 6234, common, bigtmp|
-    |4|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
-    |3|6234|16|1505||||cascadelake, avx512, nogpu, 6234, pi, bigtmp|
-    |2|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
+    |1|6240|36|370|v100|4|16|cascadelake, avx512, 6240, doubleprecision, pi, v100|
     |2|6240|36|361|a100|4|40|cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100|
-    |8|6240|36|370||||cascadelake, avx512, 6240, nogpu, pi, bigtmp|
+    |2|6234|16|1505||||cascadelake, avx512, nogpu, 6234, common, bigtmp|
+    |4|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |3|6142|32|181||||skylake, avx512, 6142, nogpu, standard, pi, bigtmp|
     |132|6136|24|90||||hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp|
     |16|6136|24|90||||hdr, skylake, avx512, 6136, nogpu, standard, pi, bigtmp|
-    |3|6142|32|181||||skylake, avx512, 6142, nogpu, standard, pi, bigtmp|
     |16|6136|24|90||||edr, skylake, avx512, 6136, nogpu, standard, pi, bigtmp|
-    |9|6136|24|181|p100|4|16|skylake, avx512, 6136, doubleprecision, pi, p100|
-    |1|6136|24|749||||skylake, avx512, 6136, nogpu, pi, bigtmp|
     |2|6136|24|90|v100|2|16|skylake, avx512, 6136, doubleprecision, common, bigtmp, v100|
+    |1|6136|24|749||||skylake, avx512, 6136, nogpu, pi, bigtmp|
+    |9|6136|24|181|p100|4|16|skylake, avx512, 6136, doubleprecision, pi, p100|
     |2|5122|8|181|rtx2080|4|8|skylake, avx512, 5122, singleprecision, pi, rtx2080|
     |82|E5-2660_v4|28|245||||broadwell, E5-2660_v4, nogpu, standard, pi|
     |79|E5-2660_v4|28|245||||broadwell, E5-2660_v4, nogpu, standard, common|
-    |2|E7-4820_v4|40|1505||||broadwell, E7-4820_v4, nogpu, common|
     |2|E7-4820_v4|40|1505||||broadwell, E7-4820_v4, nogpu, pi|
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, pi, p100|
+    |2|E7-4820_v4|40|1505||||broadwell, E7-4820_v4, nogpu, common|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, common, p100|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti|
     |18|E5-2660_v3|20|245||||haswell, E5-2660_v3, nogpu, standard, pi, oldest|
-    |34|E5-2660_v3|20|119||||haswell, E5-2660_v3, nogpu, standard, pi, oldest|
-    |44|E5-2660_v3|20|119||||haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |44|E5-2660_v3|20|119||||haswell, E5-2660_v3, nogpu, standard, pi, oldest|
+    |40|E5-2660_v3|20|119||||haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |6|E5-2660_v3|20|119|k80|4|12|haswell, E5-2660_v3, doubleprecision, common, oldest, k80|
     |1|E7-4809_v3|32|2009||||haswell, E7-4809_v3, nogpu, pi, oldest|
     |8|E5-2660_v3|20|245|k80|2|12|haswell, E5-2660_v3, doubleprecision, pi, oldest, k80|
-    |6|E5-2660_v3|20|119|k80|4|12|haswell, E5-2660_v3, doubleprecision, common, oldest, k80|
 
 === "scavenge_gpu"
 
@@ -351,20 +352,22 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
     |4|6240|36|370|v100|4|16|cascadelake, avx512, 6240, doubleprecision, common, v100|
+    |5|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |1|6254|36|370|rtx2080ti|8|11|cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |2|6240|36|180|rtx3090|4|24|cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090|
-    |4|6240|36|181|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti|
+    |1|6240|36|370|v100|4|16|cascadelake, avx512, 6240, doubleprecision, pi, v100|
     |2|6240|36|361|a100|4|40|cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100|
-    |9|6136|24|181|p100|4|16|skylake, avx512, 6136, doubleprecision, pi, p100|
+    |4|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |2|6136|24|90|v100|2|16|skylake, avx512, 6136, doubleprecision, common, bigtmp, v100|
+    |9|6136|24|181|p100|4|16|skylake, avx512, 6136, doubleprecision, pi, p100|
     |2|5122|8|181|rtx2080|4|8|skylake, avx512, 5122, singleprecision, pi, rtx2080|
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, pi, p100|
     |6|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, common, p100|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti|
-    |8|E5-2660_v3|20|245|k80|2|12|haswell, E5-2660_v3, doubleprecision, pi, oldest, k80|
     |6|E5-2660_v3|20|119|k80|4|12|haswell, E5-2660_v3, doubleprecision, common, oldest, k80|
+    |8|E5-2660_v3|20|245|k80|2|12|haswell, E5-2660_v3, doubleprecision, pi, oldest, k80|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
@@ -802,7 +805,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |25|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, pi, oldest|
+        |23|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, pi, oldest|
 
     === "pi_glahn"
 

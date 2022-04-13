@@ -33,21 +33,6 @@ Milgram is made up of several kinds of compute nodes. We group them into  (somet
 
 --8<-- "snippets/submission_rate_limit.md"
 
-### Partition Name Changes
-
-To bring the Milgram commons and Psychology private partitions in agreement with the existing YCRC naming conventions, we have renamed the following partitions. Full details of which nodes are in each partition are in the table below.
-
-* gpu -> psych_gpu
-* scavenge -> psych_scavenge
-* gpu_commons -> gpu
-* scavenge_all -> scavenge
-
-The Psychology short, long and verylong partitions have also been consolidated into two partitions:
-
-* psych_day: for jobs with a walltime of less than or equal to 24 hours
-* psych_week: for jobs with a walltime less than or equal to 7 days.
-
-As of the June maintenance, short, long and verylong no longer work. scavenge_all, scavenge, gpu_commons and gpu all point the appropriate commons nodes.  At the end of June, scavenge_all and gpu_commons will be removed and no longer work. **Please update your scripts accordingly at your earliest convenience.**
 
 ### Public Partitions
 

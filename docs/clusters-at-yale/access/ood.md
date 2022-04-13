@@ -48,15 +48,18 @@ You can also drag-and-drop to download and upload files and directories, and mov
 
 #### Customize Favorite Paths
 
-Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list custmozed favorite paths:
+Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list customized paths:
 
 ``` bash
   ood_add_path
   ood_remove_path
   ood_list_path
 ```
+When you run `ood_add_path` from a shell command line, it will prompt you to add one path at a time, until you type 'n' to discontinue. All the paths added by you will be shown in the OOD pull-down menu for the file manager, as well as the left pane when the file manager is opened. 
 
-The scripts are self explanatory and will prompt you to add or remove paths to the Files pull-down menue, as well as the left pane when the file manager is opened.
+`ood_remove_path` allows you to remove any of the paths added by you and `ood_list_path` will list all the paths added by you. 
+
+After you have customized the path configuration from a shell, go to the OOD dashbaord and click `Develop`->`Restart Web Server` on the top menu bar to make the change effective immediately.  
 
 ## Shell
 

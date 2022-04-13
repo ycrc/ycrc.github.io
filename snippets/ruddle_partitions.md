@@ -16,7 +16,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`30-00:00:00`|
+    |Maximum job time limit|`30-00:00:00`|
     |Maximum CPUs per user|`300`|
     |Maximum memory per user|`1800G`|
 
@@ -26,7 +26,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |152|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |139|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "interactive"
 
@@ -46,7 +46,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`2-00:00:00`|
+    |Maximum job time limit|`2-00:00:00`|
     |Maximum CPUs per user|`20`|
     |Maximum memory per user|`256G`|
 
@@ -56,7 +56,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |152|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |147|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "bigmem"
 
@@ -76,7 +76,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`7-00:00:00`|
+    |Maximum job time limit|`7-00:00:00`|
     |Maximum CPUs per user|`32`|
     |Maximum memory per user|`1505G`|
 
@@ -106,7 +106,7 @@
 
     |Limit|Value|
     |---|---|
-    |Max job time limit|`7-00:00:00`|
+    |Maximum job time limit|`7-00:00:00`|
     |Maximum CPUs per user|`300`|
     |Maximum memory per user|`1800G`|
 
@@ -118,7 +118,7 @@
     |---|---|---|---|---|
     |40|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
     |2|6240|36|1505|cascadelake, avx512, 6240, nogpu, pi, bigtmp|
-    |152|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |147|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
     |2|E7-4809_v3|32|1505|haswell, E7-4809_v3, nogpu, common|
 
 ### Private Partitions
@@ -141,7 +141,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Max job time limit|`14-00:00:00`|
+        |Maximum job time limit|`14-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -150,5 +150,30 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |40|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
+
+    === "pi_hall_bigmem"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+
+        ``` text
+        --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the pi_hall_bigmem partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Maximum job time limit|`14-00:00:00`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
         |2|6240|36|1505|cascadelake, avx512, 6240, nogpu, pi, bigtmp|
 
