@@ -1821,12 +1821,12 @@
 <h2 id="defaults-we-set">Defaults We Set</h2>
 <p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
 <p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span> <span class="s">&#39;({name})&#39;</span>
-<span class="nt">auto_activate_base</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">channels</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bioconda</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span><span class="w"></span>
+<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
 </code></pre></div>
 <h2 id="setup-your-environment">Setup Your Environment</h2>
 <h3 id="load-the-miniconda-module">Load the <code>miniconda</code> Module</h3>

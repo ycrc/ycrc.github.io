@@ -918,26 +918,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
-  </a>
-  
-    <nav class="md-nav" aria-label="Conda-based R Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-conda-packages" class="md-nav__link">
-    Install Conda Packages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#run-r" class="md-nav__link">
     Run R
   </a>
@@ -966,21 +946,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#parallel-r" class="md-nav__link">
+    Parallel R
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-r-with-conda" class="md-nav__link">
-    Parallel R with Conda
+  <a href="#virtual-display-session" class="md-nav__link">
+    Virtual Display Session
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#virtual-display-session" class="md-nav__link">
-    Virtual Display Session
+  <a href="#conda-based-r-environments" class="md-nav__link">
+    Conda-based R Environments
   </a>
   
 </li>
@@ -1570,26 +1557,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
-  </a>
-  
-    <nav class="md-nav" aria-label="Conda-based R Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-conda-packages" class="md-nav__link">
-    Install Conda Packages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#run-r" class="md-nav__link">
     Run R
   </a>
@@ -1618,21 +1585,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#parallel-r" class="md-nav__link">
+    Parallel R
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-r-with-conda" class="md-nav__link">
-    Parallel R with Conda
+  <a href="#virtual-display-session" class="md-nav__link">
+    Virtual Display Session
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#virtual-display-session" class="md-nav__link">
-    Virtual Display Session
+  <a href="#conda-based-r-environments" class="md-nav__link">
+    Conda-based R Environments
   </a>
   
 </li>
@@ -1658,44 +1632,69 @@
                 
                 
                 <h1 id="r">R</h1>
-<p><a href="https://www.r-project.org/about.html">R</a> is a free software environment for statistical computing and graphics. On the Yale Clusters there are a couple ways in which you can set up your R environment. There is no R executable provided by default; you have to choose one of the following methods to be able to run R.</p>
+<p><a href="https://www.r-project.org/about.html">R</a> is a free software environment for statistical computing and graphics.
+On the Yale Clusters there are a couple ways in which you can set up your R environment.
+There is no R executable provided by default; you have to choose one of the following methods to be able to run R.</p>
 <h2 id="the-r-module">The R Module</h2>
-<p>We provide a R as a <a href="/clusters-at-yale/applications/modules">software module</a>. The R modules are the only way we currently support the RStudio app via <a href="/clusters-at-yale/access/ood/#interactive-apps">Open Ondemand</a>.</p>
+<p>We provide several versions of R as <a href="/clusters-at-yale/applications/modules">software modules</a>.
+These modules provide a broad selection of commonly used packages pre-installed.
+Notably, this includes a number of geospatial packages like <code>sf</code>, <code>sp</code>, <code>raster</code>, and <code>terra</code>.</p>
+<p>In addition, there are software modules containing extra R packages including <code>Seurat</code> (<a href="https://satijalab.org/seurat/">homepage</a>) and the <code>bioconductor</code> collection of bioinformatics packages (<a href="https://www.bioconductor.org">homepage</a>).
+These can be loaded in addition to their matching R module to provide simple access to these tools.</p>
 <h3 id="find-and-load-r">Find and Load R</h3>
-<p>Find the available versions of R version 3 with:</p>
-<div class="highlight"><pre><span></span><code>module avail R/3
+<p>Find the available versions of R version 4 with:</p>
+<div class="highlight"><pre><span></span><code>module avail R/4
 </code></pre></div>
-<p>To load version 3.6.1:</p>
-<div class="highlight"><pre><span></span><code>module load R/3.6.1-foss-2018b
+<p>To load version 4.1.0:</p>
+<div class="highlight"><pre><span></span><code>module load R/4.1.0-foss-2020b
 </code></pre></div>
-<p>To show installed R packages and their versions for the <code>R/3.6.1-foss-2018b</code> module:</p>
-<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> R/3.6.1-foss-2018b
+<p>To show installed R packages and their versions for the <code>R/4.1.0</code> module:</p>
+<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> R/4.1.0-foss-2020b
 </code></pre></div>
+<p>To list the available versions of the <code>Bioconductor</code> or <code>Seurat</code> modules:</p>
+<div class="highlight"><pre><span></span><code>module avail Bioconductor
+
+module avail Seurat
+</code></pre></div>
+<p>To load the <code>Seurat</code> module:</p>
+<div class="highlight"><pre><span></span><code>module load Seurat/4.1.0-foss-2020b-R-4.1.0
+</code></pre></div>
+<p>which will also load the <code>R/4.1.0-foss-2020b</code> module as a dependency.</p>
 <h3 id="install-packages">Install Packages</h3>
-<p>The software modules include many commonly used packages, but you can install additional packages locally, <em>i.e.</em> to your home directory. We recommend you install packages in an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the slurm option <code>-C oldest</code>. This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster. If there is a missing library your package of interest needs you should be able to load its module. If you cannot find a dependency or have trouble installing an R package, <a href="/#web-and-email-support">please get in touch with us</a>.</p>
+<p>The software modules include many commonly used packages, but you can install additional packages specifically for your account.
+As part of the R software modules we define an environment variable which directs R to install packages to your project space.
+This helps prevent issues where R cannot install packages due to home-space quotas.
+To change the location of where R installs packages, the <code>R_LIBS_USER</code> variable can be set in your <code>~/.bashrc</code> file:</p>
+<div class="highlight"><pre><span></span><code>export R_LIBS_USER=$LOOMIS_PROJECT/R/%v
+</code></pre></div>
+<p>where <code>%v</code> is a placeholder for the R major and minor version number (e.g. <code>4.1</code>).
+R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.</p>
+<p>We recommend you install packages in an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the slurm option <code>-C oldest</code>.
+This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster.
+If there is a missing library your package of interest needs you should be able to load its module.
+If you cannot find a dependency or have trouble installing an R package, <a href="/#web-and-email-support">please get in touch with us</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Grace's login nodes have newer architecture than the oldest nodes on the cluster. Always install packages in an interactive job submitted with the <code>-C oldest</code> Slurm flag if you want to ensure your code will work on all generations of the compute nodes.</p>
 </div>
 <p>To get started load the R module and start R:</p>
 <div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
-module load R/3.6.1-foss-2018b
+module load R/4.1.0-foss-2020b
 R
 <span class="c1"># in R</span>
 &gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>This will throw a warning like:</p>
 <div class="highlight"><pre><span></span><code>Warning <span class="k">in</span> install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span> :
-<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/3.6.1-foss-2018b/lib64/R/library&quot;&#39;</span> is not writable
+<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.1.0-foss-2020b/lib64/R/library&quot;&#39;</span> is not writable
 Would you like to create a personal library
-~/R/x86_64-unknown-linux-gnu-library/3.6
+/gpfs/loomis/project/support/tl397/R/4.1
 to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 </code></pre></div>
-<p>This will install the <code>lattice</code> package to your <code>~/R/x86_64-unknown-linux-gnu-library/3.6</code> directory. There is a separate directory for R packages for each minor version of R, so packages installed with v 3.4 will not be visible from v 3.6.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
-<div class="highlight"><pre><span></span><code>mkdir ~/R/x86_64-pc-linux-gnu-library/4.0
+<div class="highlight"><pre><span></span><code>mkdir /path/to/your/project/space/R/4.1
 </code></pre></div>
 You only need the general minor version such as 4.0 instead of 4.0.3.</p>
 </div>
@@ -1706,65 +1705,34 @@ You only need the general minor version such as 4.0 instead of 4.0.3.</p>
 # Add new default location to the standard defaults, e.g. project/my_R_libs
 &gt; .libPaths(c(&quot;/home/netID/project/my_R_libs/&quot;, .libPaths()))
 </code></pre></div></p>
-<h2 id="conda-based-r-environments">Conda-based R Environments</h2>
-<p>If there isn't a module available for the version of R you want, you can set up your own R installation using <a href="/clusters-at-yale/guides/conda">Conda</a>. With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
-<h3 id="install-conda-packages">Install Conda Packages</h3>
-<p>Most of the time the best way to install R packages for your Conda R environment is via <code>conda</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Source the conda environment</span>
-conda activate my_r_env
-
-<span class="c1"># Install the lattice package (r-lattice) from the r channel (-c r)</span>
-conda install r-lattice
-</code></pre></div>
-<p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well. When you install packages with <code>install.packages</code> Make sure to load your Conda environment first.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
-module load miniconda
-<span class="nb">source</span> activate my_r_env
-R
-<span class="c1"># in R</span>
-&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
-</code></pre></div>
 <h2 id="run-r">Run R</h2>
-<p>We will kill R jobs on the login nodes that are using excessive resources. To be a good cluster citizen, launch your R computation in jobs. See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on submitting jobs.</p>
+<p>We will kill R jobs on the login nodes that are using excessive resources.
+To be a good cluster citizen, launch your R computation in jobs.
+See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on submitting jobs.</p>
 <h3 id="interactive-job">Interactive Job</h3>
-<p>To run R interactively, first launch an interactive job on a compute node. If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
+<p>To run R interactively, first launch an interactive job on a compute node.
+If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
 <div class="highlight"><pre><span></span><code>srun --pty -p interactive --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00 bash
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering <code>R</code> on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
-<p>To run R in batch mode, create a plain-text batch script to submit. In that script, you can run your R script. In this case <code>myscript.R</code> is in the same directory as the batch script, batch script contents shown below.</p>
+<p>To run R in batch mode, create a plain-text batch script to submit.
+In that script, you can run your R script. In this case <code>myscript.R</code> is in the same directory as the batch script, batch script contents shown below.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -J my_r_program</span>
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH -t 4:00:00</span>
 
-module load R/3.6.1-foss-2018b
+module load R/4.1.0-foss-2020b
 R --slave -f myscript.R
 </code></pre></div>
 <p>To actually submit the job, run <code>sbatch my_r_job.sh</code> where the batch script above was saved as <code>my_r_job.sh</code>.</p>
 <h3 id="rstudio">RStudio</h3>
-<p>You can run RStudio via X11 forwarding in an interactive job, but we recommend using the RStudio app via <a href="/clusters-at-yale/access/ood/#interactive-apps">Open Ondemand</a> instead.</p>
-<h2 id="parallel-r-with-conda">Parallel R with Conda</h2>
-<p>On a cluster you may want to use R in parallel across multiple nodes. While there are a few different ways this can be achieved, we recommend using <code>conda</code> to set up a specific R environment with the required packages and libraries.</p>
-<p>In particular, you will need <code>Rmpi</code>, <code>doMC</code>, and <code>doMPI</code>. The first two can be installed via conda, while the last one must be installed manually.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># load the miniconda module</span>
-module load miniconda
-
-<span class="c1"># create the environment with the required packages</span>
-conda create --name parallel_r r-base r-essentials r-doMC r-Rmpi
-
-<span class="c1"># activate the environment</span>
-conda activate parallel_r
-</code></pre></div>
-<p>This will produce an environment that is nearly ready to-go. 
-The last step is to install <code>doMPI</code>, which at the moment is not available via <code>conda</code>.
-We can use the <code>install.packages</code> method from within R to get this final piece:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>parallel_r<span class="o">)</span> $ R
-&gt; install.packages<span class="o">(</span><span class="s1">&#39;doMPI&#39;</span><span class="o">)</span>
-</code></pre></div>
-It's important that this last step is performed on a login node so that it doesn't interfere with 
-the SLURM scheduler. 
-Once this is complete, you should have a fully functional parallel-enabled R environment.</p>
+<p>You can run RStudio app via <a href="/clusters-at-yale/access/ood/#interactive-apps">Open Ondemand</a>.
+Here you can select the desired version of R and RStudio and launch an interactive compute session.</p>
+<h3 id="parallel-r">Parallel R</h3>
+<p>On a cluster you may want to use R in parallel across multiple nodes.
+While there are a few different ways this can be achieved, we recommend using the R software module which already includes <code>Rmpi</code>, <code>parallel</code>, and <code>doMC</code>.</p>
 <p>To test it, we can create a simple R script named <code>ex1.R</code></p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
 
@@ -1786,19 +1754,45 @@ Once this is complete, you should have a fully functional parallel-enabled R env
 <span class="c1">#SBATCH --mail-type=none</span>
 
 module purge
-module load miniconda
+module load R/4.1.0-foss-2020b
 
-<span class="nb">source</span> activate parallel_r
-
-mpirun R --slave -f ex1.R
+srun R --slave -f ex1.R
 </code></pre></div>
-<p>This script should execute a simple broadcast and complete in a few seconds. </p>
+<p>This script should execute a simple broadcast and complete in a few seconds.</p>
 <h2 id="virtual-display-session">Virtual Display Session</h2>
 <p>It is common for R to require a display session to save certain types of figures.
 You may see a warning like "unable to start device PNG" or "unable to open connection to X11 display".
 There is a tool, <code>xvfb</code>, which can help avoid these issues.</p>
 <p>The wrapper <code>xvfb-run</code> creates a virtual display session which allows R to create these figures without an X11 session.
 See the guide for <a href="/clusters-at-yale/guides/xvfb">xvfb</a> for more details.</p>
+<h2 id="conda-based-r-environments">Conda-based R Environments</h2>
+<p>If there isn't a module available for the version of R you want, you can set up your own R installation using <a href="/clusters-at-yale/guides/conda">Conda</a>.
+With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
+<p>Most of the time the best way to install R packages for your Conda R environment is via <code>conda</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># load miniconda</span>
+module load miniconda
+<span class="c1"># create the conda environment including r-base and r-essentials package collections</span>
+conda create --name my_r_env r-base r-essentials
+<span class="c1"># activate the environment</span>
+conda activate my_r_env
+
+<span class="c1"># Install the lattice package (r-lattice)</span>
+conda install r-lattice
+</code></pre></div>
+<p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well.
+When you install packages with <code>install.packages</code> make sure to activate your Conda environment first.</p>
+<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
+module load miniconda
+<span class="nb">source</span> activate my_r_env
+R
+<span class="c1"># in R</span>
+&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Conda-based R may not work properly with parallel packages like <code>Rmpi</code> when running across multiple compute nodes.
+In general, it's best to use the module installation of R for anything which requires MPI.</p>
+</div>
                 
                   
                     
@@ -1807,7 +1801,7 @@ See the guide for <a href="/clusters-at-yale/guides/xvfb">xvfb</a> for more deta
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
     
   </small>
 </div>
