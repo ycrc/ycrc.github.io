@@ -2,7 +2,7 @@
 
 ## MATLAB GUI
 
-If you wish to use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, select "MATLAB" from the "Interactive Apps" list.
+To use the MATLAB GUI, we recommend our web portal, [Open OnDemand](/clusters-at-yale/access/ood). Once logged in, click MATLAB pinned on the dashboard, or select "MATLAB" from the "Interactive Apps" list.
 
 ## Command Line MATLAB
 
@@ -14,7 +14,7 @@ Run one of the commands below, which will list available versions and the corres
 module avail matlab
 ```
 
-Load the appropriate module file. For example, to run version R2019a:
+Load the appropriate module file. For example, to run version R2021a:
 
 ```
 module load MATLAB/2021a
@@ -27,23 +27,20 @@ The module load command sets up your environment, including the PATH to find the
 !!!warning
     If you try to run MATLAB on a login node, it will likely crash. Instead, launch it in an interactive or batch job (see below).
 
-### Interactive Job
+### Interactive Job (without a GUI)
 
 To run MATLAB interactively, you need to create an interactive session on a compute node.
 
 You could start an interactive session using 4 cores, 16GiB of RAM for 4 hours with:
 
 ``` batch
-srun --pty --x11 -c 4 --mem 16G -p interactive -t 4:00:00 bash
+srun --pty -c 4 --mem 16G -p interactive -t 4:00:00 bash
 ```
 
 Once your interactive session starts, you can load the appropriate module file and start MATLAB
 
 ```
 module load MATLAB/2021a
-
-# launch the MATLAB GUI (needs X11 forwarding or a desktop session in OOD)
-matlab
 
 # launch the MATLAB command line prompt
 maltab -nodisplay
