@@ -1,7 +1,3 @@
-
-!!! attention "COVID-19/SARS-CoV-2 Research"
-    If you're doing computational research related to COVID-19/SARS-CoV-2 on an HPC cluster and experience any long wait times for jobs to run, [please let us know](mailto:hpc@yale.edu).
-
 # Introduction
 
 The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
