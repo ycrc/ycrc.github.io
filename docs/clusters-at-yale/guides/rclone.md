@@ -8,10 +8,14 @@ Before accessing a remote cloud storage using `rclone`, you need to run `rclone 
 the storage for `rclone`. Since `rclone config` will try to bring up a browser for you to authorize 
 the cloud storage, we recommend you to use [Open OnDemand](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/). 
 
-To run `rclone config` on OOD, first click `Remote Desktop` on OOD. 
+To run `rclone config` on OOD, first click `Remote Desktop` from the OOD dashboard. 
 Once a session starts running, click `Connect to Remote Desktop` and 
 you will see a terminal on the desktop in the browser. 
 Run `rclone config` at the command line of the terminal. 
+
+![ood_dashboard](/img/rclone-ood-dashboard.png){: .medium}
+
+![ood_remote](/img/rclone-remote-desktop.png){: .medium}
 
 During configuration, you will see a message similar to the following: 
 ```
