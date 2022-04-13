@@ -1610,10 +1610,12 @@
 <p>Before accessing a remote cloud storage using <code>rclone</code>, you need to run <code>rclone config</code> to configure 
 the storage for <code>rclone</code>. Since <code>rclone config</code> will try to bring up a browser for you to authorize 
 the cloud storage, we recommend you to use <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open OnDemand</a>. </p>
-<p>To run <code>rclone config</code> on OOD, first click <code>Remote Desktop</code> on OOD. 
+<p>To run <code>rclone config</code> on OOD, first click <code>Remote Desktop</code> from the OOD dashboard. 
 Once a session starts running, click <code>Connect to Remote Desktop</code> and 
 you will see a terminal on the desktop in the browser. 
 Run <code>rclone config</code> at the command line of the terminal. </p>
+<p><img alt="ood_dashboard" class="medium" src="/img/rclone-ood-dashboard.png" /></p>
+<p><img alt="ood_remote" class="medium" src="/img/rclone-remote-desktop.png" /></p>
 <p>During configuration, you will see a message similar to the following: 
 <div class="highlight"><pre><span></span><code>If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
 Log in and authorize rclone for access
@@ -1869,7 +1871,7 @@ rclone copy filename remote:/path/to/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
     
   </small>
 </div>
