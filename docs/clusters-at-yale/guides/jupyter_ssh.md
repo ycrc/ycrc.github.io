@@ -27,7 +27,6 @@ Save your edited version of this script on the cluster, and submit it with `sbat
 #SBATCH --time 6:00:00
 #SBATCH --job-name jupyter-notebook
 #SBATCH --output jupyter-notebook-%J.log
-#SBATCH --chdir $HOME
 
 # get tunneling info
 XDG_RUNTIME_DIR=""
