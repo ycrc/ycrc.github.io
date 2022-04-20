@@ -29,7 +29,7 @@ Copy the link from the message shown on your screen and paste it to the address 
 Log in with your Yale email address, respond to the DUO request, and authorize the access. 
 
 !!! Tip
-    If you received an error stating that your session has expired for DUO, simply paste the link and reload the page.
+    If you received an error stating that your session has expired for DUO, simply paste the link and reload the page.  If you still get the expired message, log out of CAS in your browser by going to https://secure.its.yale.edu/cas/logout.  After logging out, paste the link and reload.
 
 ## Examples
 
