@@ -30,6 +30,7 @@ Yale Orange Accent: #bd5319;
 
 .branding em{
     font-size: .75em;
+    padding-top: 3px;
 }
 
 
@@ -37,6 +38,10 @@ Yale Orange Accent: #bd5319;
 .md-header{
     background-color: white;
     color: #00356b;
+}
+
+.md-header__topic:first-child{
+    font-weight: 100;
 }
 
 .md-search input:hover{
@@ -51,17 +56,18 @@ Yale Orange Accent: #bd5319;
     color: #63aaff;
 }
 
-.md-nav__link:active,
-.md-nav__link--active {
-    color: #286dc0;
+.md-tabs__link{
+    opacity: 1.0;
 }
 
-.md-nav__link:hover,
-.md-nav__link:active:hover,
-.md-nav__link--active:hover{
+.md-tabs__link--active{
+    font-weight: 800;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active:hover{
     color: #63aaff;
 }
-
 
 .md-tabs {
     background-color: #00356b;

@@ -23,8 +23,8 @@
   {% set class = "md-tabs md-tabs--active" %}
 {% endif %}
 
-<!-- Tabs with outline -->
-<nav class="{{ class }}" aria-label="{{ lang.t('tabs.title') }}" data-md-component="tabs">
+{% set class = "" %}
+<nav class="md-tabs" aria-label="{{ lang.t('tabs.title') }}" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/about">About</a></li>
@@ -37,7 +37,7 @@
       <li class="md-tabs__item"><a class="md-tabs__link" href="http://research.computing.yale.edu/training">Training</a></li>
       <li class="md-tabs__item status"><a class="md-tabs__link" href="http://research.computing.yale.edu/system-status"><span id='status-icon'></span> System Status</a></li>
     </ul>
-  </div>
+ </div>
 </nav>
 
 <div id="system-status-message"></div>
