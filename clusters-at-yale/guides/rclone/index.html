@@ -1863,7 +1863,9 @@ Log in with your Yale email address, respond to the DUO request, and authorize t
 <p>The following examples show you how to set up rclone for Google Drive and Yale Box.
 In both examples, we name our remote cloud storage as 'remote' in the configuration. 
 You can provide any name you want. </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Google Drive</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Google Drive</label><label for="__tabbed_1_2">Box</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>The example below is a screen dump when setting up <code>rclone</code> on Farnam for Google Drive.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c03n06 ~<span class="o">]</span>$ rclone config
 No remotes found - make a new one
@@ -1978,7 +1980,7 @@ q<span class="o">)</span> Quit config
 e/n/d/r/c/s/q&gt; q
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Box</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>The example below is a screen dump when setting up <code>rclone</code> on Farnam for Yale Box.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c14n07 ~<span class="o">]</span>$ rclone config
 No remotes found - make a new one
@@ -2046,6 +2048,7 @@ s<span class="o">)</span> Set configuration password
 q<span class="o">)</span> Quit config
 e/n/d/r/c/s/q&gt; q
 </code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition tip">
