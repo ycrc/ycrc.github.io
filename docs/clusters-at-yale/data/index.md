@@ -45,7 +45,7 @@ Quota: varies
 
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. 
-Purchased storage, if applicable, is located in a  `/gpfs/<filesystem>/pi/` directory under the group's name.
+Purchased storage, if applicable, is located in a `/gpfs/gibbs/pi/` directory under the group's name. 
 
 ### 60-Day Scratch
 
@@ -102,6 +102,18 @@ For long-term allocations, additional project storage spaces can be purchased on
 For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found [here](https://research.computing.yale.edu/billing-hpc-services) (CAS login required).
 
 Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
+
+Purchased storage, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. The file count limits for different size allocations are listed above. 
+If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.
+
+| Allocation Quota | File Count Limit |
+|------------------|------------------|
+| < 50 TiB         | 10 million       |
+| 50-99 TiB        | 20 million       |
+| 100-499 TiB      | 40 million       |
+| >= 500 TiB       | 50 million       |
+
+
 
 ## HPC Storage Best Practices
 
