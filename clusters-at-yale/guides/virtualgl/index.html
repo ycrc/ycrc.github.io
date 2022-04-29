@@ -1905,7 +1905,7 @@ For applications that need to render large complicated models, hardware accelera
 <a href="https://virtualgl.org">VirtualGL</a>, in conjunction with VNC, provides a commonly used 
 solution for remote 3D rendering with hardware acceleration.</p>
 <h2 id="how-to-use-virtualgl">How to use VirtualGL</h2>
-<p>VirtualGL 3.0+ supports the traditional GLX back end or the new EGL back end for 3D rendering. </p>
+<p>VirtualGL 3.0+ supports the traditional GLX back end and the new EGL back end for 3D rendering. </p>
 <p>The EGL back end uses a DRI (Direct Rendering Infrastructure) deivice to access a graphics device, 
 while the GLX back end uses an X server to access a graphics device. 
 The EGL back end allows simultaneous jobs on the same node, each using their own dedicated GPU device for rendering.
@@ -1914,14 +1914,14 @@ The GLX back end supports a wider range of OpenGL applications than the EGL back
 X server can work properly with the graphics devices on the node. This means only one job can use
 the GLX back end on any GPU node, no matter how many GPU devices the node has.</p>
 <p>We suggest you use the EGL back end first. If it does not render your application properly, then switch to the GLX back end. </p>
-<p>We have provided a wrapper script <code>ycrc_vglrun</code> to make it easy for you users to
+<p>We have provided a wrapper script <code>ycrc_vglrun</code> to make it easy for you to
 choose which back end to use for 3D rendering. In the following examples, we will use ParaView
 (unless mentioned otherwise) to demonstrate how to use <code>ycrc_vglrun</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you need to run a hardware accelerated GUI application, you should first start
 a Remote Desktop on a GPU node, and then run the application from the shell in the Remote Desktop as shown below.
-We have not incorporated VirtualGL into the standalone interactive Apps that could benefit from VirtualGL.
+We have not incorporated VirtualGL into the standalone interactive Apps on OOD that could benefit from VirtualGL.
 However, this could change in the future.</p>
 </div>
 <h3 id="use-virtualgl-with-the-egl-back-end">Use VirtualGL with the EGL back end</h3>
