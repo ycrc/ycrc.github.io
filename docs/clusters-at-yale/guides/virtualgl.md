@@ -16,7 +16,7 @@ solution for remote 3D rendering with hardware acceleration.
 
 ## How to use VirtualGL 
 
-VirtualGL 3.0+ supports the traditional GLX back end or the new EGL back end for 3D rendering. 
+VirtualGL 3.0+ supports the traditional GLX back end and the new EGL back end for 3D rendering. 
 
 The EGL back end uses a DRI (Direct Rendering Infrastructure) deivice to access a graphics device, 
 while the GLX back end uses an X server to access a graphics device. 
@@ -28,14 +28,14 @@ the GLX back end on any GPU node, no matter how many GPU devices the node has.
 
 We suggest you use the EGL back end first. If it does not render your application properly, then switch to the GLX back end. 
 
-We have provided a wrapper script `ycrc_vglrun` to make it easy for you users to
+We have provided a wrapper script `ycrc_vglrun` to make it easy for you to
 choose which back end to use for 3D rendering. In the following examples, we will use ParaView
 (unless mentioned otherwise) to demonstrate how to use `ycrc_vglrun`.
 
 !!!note
     If you need to run a hardware accelerated GUI application, you should first start
     a Remote Desktop on a GPU node, and then run the application from the shell in the Remote Desktop as shown below.
-    We have not incorporated VirtualGL into the standalone interactive Apps that could benefit from VirtualGL.
+    We have not incorporated VirtualGL into the standalone interactive Apps on OOD that could benefit from VirtualGL.
     However, this could change in the future.
 
 ### Use VirtualGL with the EGL back end
