@@ -18,7 +18,7 @@ solution for remote 3D rendering with hardware acceleration.
 
 VirtualGL 3.0+ supports the traditional GLX back end and the new EGL back end for 3D rendering. 
 
-The EGL back end uses a DRI (Direct Rendering Infrastructure) deivice to access a graphics device, 
+The EGL back end uses a DRI (Direct Rendering Infrastructure) device to access a graphics device, 
 while the GLX back end uses an X server to access a graphics device. 
 The EGL back end allows simultaneous jobs on the same node, each using their own dedicated GPU device for rendering.
 Although it can render many applications properly, the EGL back end may fail to render some applications.
