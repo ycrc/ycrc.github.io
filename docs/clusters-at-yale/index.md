@@ -14,7 +14,8 @@ The first step in gaining access to our clusters is to request an account. There
 
 While using HPC resources, here are some important things to remember:
 
-* Do not run jobs or computation on a login node, instead [submit jobs](/clusters-at-yale/job-scheduling/).
+* Do not run jobs, transfers or computation on a login node, instead [submit jobs](/clusters-at-yale/job-scheduling/).
+* Similarly, transfer nodes are only for data transfers. Do not run jobs or computation on the transfer nodes.
 * Never give your password or ssh key to anyone else.
 * Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters-at-yale/clusters/milgram).
 * Do not run larger numbers of very short (less than a minute) jobs 

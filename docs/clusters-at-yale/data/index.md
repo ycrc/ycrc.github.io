@@ -44,7 +44,7 @@ It is good practice to have a second copy somewhere off-cluster of any valuable 
 Quota: varies
 
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
-See [below](/clusters-at-yale/data/#get-more-storage) for details on purchasing storage. 
+See [below](/clusters-at-yale/data/#additional-storage) for details on purchasing storage. 
 Purchased storage, if applicable, is located in a `/gpfs/gibbs/pi/` directory under the group's name. 
 
 ### 60-Day Scratch
@@ -95,7 +95,7 @@ scratch60     GRP             4054       20480       987,336     5,000,000 No   
 
 The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
-## Get More Storage
+## Additional Storage
 
 For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)).
 
