@@ -99,6 +99,7 @@ nav:
                 - "Command-line Argements": clusters-at-yale/guides/cmd-line-args.md
                 - clusters-at-yale/guides/comsol.md
                 - clusters-at-yale/guides/conda.md
+                - clusters-at-yale/guides/containers.md
                 - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
                 - clusters-at-yale/guides/gaussian.md
                 - "GitHub": clusters-at-yale/guides/github.md
@@ -115,7 +116,6 @@ nav:
                 - clusters-at-yale/guides/parallel.md
                 - clusters-at-yale/guides/r.md
                 - clusters-at-yale/guides/rclone.md
-                - clusters-at-yale/guides/singularity.md
                 - clusters-at-yale/guides/tmux.md
                 - clusters-at-yale/guides/vasp.md
                 - clusters-at-yale/guides/virtualgl.md
