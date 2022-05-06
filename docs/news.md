@@ -1,5 +1,15 @@
 # News
 
+## Ruddle Maintenance
+_May 2, 2022_
+
+### Software Updates
+
+- Security updates
+- Slurm updated to 21.08.7
+- Singularity replaced by Apptainer version 1.0.1 (note: the "singularity" command will still work as expected)
+- Lmod updated version 8.7
+
 ## May 2022
 
 ### Announcements
