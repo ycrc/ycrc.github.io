@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/singularity/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/containers/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
-        <title>Singularity - Yale Center for Research Computing</title>
+        <title>Containers - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#singularity" class="md-skip">
+        <a href="#containers" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Singularity
+              Containers
             
           </span>
         </div>
@@ -817,6 +817,192 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Containers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Containers
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apptainer-containers" class="md-nav__link">
+    Apptainer Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-a-pre-existing-container" class="md-nav__link">
+    Use a Pre-existing Container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-your-own-container" class="md-nav__link">
+    Build Your Own Container
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Your Own Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labels" class="md-nav__link">
+    %labels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    %files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post" class="md-nav__link">
+    %post
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    %environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-a-container-image" class="md-nav__link">
+    Use a Container Image
+  </a>
+  
+    <nav class="md-nav" aria-label="Use a Container Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactively" class="md-nav__link">
+    Interactively
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-a-job-script" class="md-nav__link">
+    In a Job Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    Environment Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    Additional Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mpi" class="md-nav__link">
+    MPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    GPUs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-directories" class="md-nav__link">
+    Home Directories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
       <a href="../cryoem/" class="md-nav__link">
@@ -1032,192 +1218,6 @@
       <a href="../rclone/" class="md-nav__link">
         Rclone
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Singularity
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Singularity
-      </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#singularity-containers" class="md-nav__link">
-    Singularity Containers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-a-pre-existing-container" class="md-nav__link">
-    Use a Pre-existing Container
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-your-own-container" class="md-nav__link">
-    Build Your Own Container
-  </a>
-  
-    <nav class="md-nav" aria-label="Build Your Own Container">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
-    Header
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#labels" class="md-nav__link">
-    %labels
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#files" class="md-nav__link">
-    %files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post" class="md-nav__link">
-    %post
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment" class="md-nav__link">
-    %environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building" class="md-nav__link">
-    Building
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-a-container-image" class="md-nav__link">
-    Use a Container Image
-  </a>
-  
-    <nav class="md-nav" aria-label="Use a Container Image">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interactively" class="md-nav__link">
-    Interactively
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-a-job-script" class="md-nav__link">
-    In a Job Script
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
-    Environment Variables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-notes" class="md-nav__link">
-    Additional Notes
-  </a>
-  
-    <nav class="md-nav" aria-label="Additional Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi" class="md-nav__link">
-    MPI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpus" class="md-nav__link">
-    GPUs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#home-directories" class="md-nav__link">
-    Home Directories
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1879,8 +1879,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#singularity-containers" class="md-nav__link">
-    Singularity Containers
+  <a href="#apptainer-containers" class="md-nav__link">
+    Apptainer Containers
   </a>
   
 </li>
@@ -2027,49 +2027,43 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/singularity.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/containers.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="singularity">Singularity</h1>
-<p><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459">Singularity</a> is a linux container technology that is well suited to use in shared-user environments such as the <a href="/clusters-at-yale/clusters">clusters</a> we maintain at Yale. It is similar to <a href="https://docs.docker.com/">Docker</a>; You can bring with you a stack of software, libraries, and a Linux operating system that is independent of the host computer you run the container on. This can be very useful if you want to share your software environment with other researchers or yourself across several computers. Because Singularity containers run as the user that started them and mount home directories by default, you can usually see the data you're interested in working on that is stored on a host computer without any extra work.</p>
-<p>Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official <a href="https://sylabs.io/guides/3.4/user-guide">user guide for Singularity</a>. We are happy to help, just <a href="/#get-help">contact us</a> with your questions.</p>
+                <h1 id="containers">Containers</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>On the Yale clusters, <strong>Singularity is not installed on login nodes.</strong> You will need to run it from compute nodes.</p>
+<p>The Singularity project has been renamed <a href="https://apptainer.org">Apptainer</a>. Everything should still work the same, including the 'singularity' command.  If you find it not working as expected, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 </div>
-<h2 id="singularity-containers">Singularity Containers</h2>
-<p>Images are the file(s) you use to run your container. Singularity images are single files that usually end in <code>.sif</code> and are read-only by default, meaning changes you make to the environment inside the container are not persistent.</p>
+<p><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459">Apptainer</a> (formerly Singularity) is a Linux container technology that is well suited to use in shared-user environments such as the <a href="/clusters-at-yale/clusters">clusters</a> we maintain at Yale. It is similar to <a href="https://docs.docker.com/">Docker</a>; You can bring with you a stack of software, libraries, and a Linux operating system that is independent of the host computer you run the container on. This can be very useful if you want to share your software environment with other researchers or yourself across several computers. Because Apptainer containers run as the user that started them and mount home directories by default, you can usually see the data you're interested in working on that is stored on a host computer without any extra work.</p>
+<p>Below we will outline some common use cases covering the creation and use of containers. There is also excellent documentation available on the full and official <a href="https://apptainer.org/docs/user/main/">user guide for Apptainer</a>. We are happy to help, just <a href="/#get-help">contact us</a> with your questions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On the Yale clusters, <strong>Apptainer is not installed on login nodes.</strong> You will need to run it from compute nodes.</p>
+</div>
+<h2 id="apptainer-containers">Apptainer Containers</h2>
+<p>Images are the file(s) you use to run your container. Apptainer images are single files that usually end in <code>.sif</code> and are read-only by default, meaning changes you make to the environment inside the container are not persistent.</p>
 <h2 id="use-a-pre-existing-container">Use a Pre-existing Container</h2>
-<p>If someone has already built a container that suits your needs, you can use it directly. Singularity images are single files that <a href="/clusters-at-yale/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a>, <a href="https://singularityhub.github.io/containers/registry/singularity-hub-registry/">Singularity Hub</a>, and <a href="https://cloud.sylabs.io/library">Sylabs Container Library</a>. Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># set SINGULARITY_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.singularity</span>
+<p>If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that <a href="/clusters-at-yale/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://singularityhub.github.io/singularityhub-docs/">Singularity Hub</a> (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer</span>
 <span class="c1"># e.g.</span>
-<span class="nb">export</span> <span class="nv">SINGULARITY_CACHEDIR</span><span class="o">=</span>~/scratch60/.singularity
+<span class="nb">export</span> <span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>~/scratch60/.apptainer
 </code></pre></div>
-<p>Here are some examples of getting containers already built by someone else with singularity:</p>
+<p>Here are some examples of getting containers already built by someone else with apptainer:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># from Docker Hub (https://hub.docker.com/)</span>
-singularity build ubuntu-18.10.sif docker://ubuntu:18.10
-singularity build tensorflow-10.0-py3.sif docker://tensorflow/tensorflow:1.10.0-py3
+apptainer build ubuntu-18.10.sif docker://ubuntu:18.10
+apptainer build tensorflow-10.0-py3.sif docker://tensorflow/tensorflow:1.10.0-py3
 
-<span class="c1"># from Singularity Hub (https://singularity-hub.org/)</span>
-singularity build bioconvert-latest.sif shub://biokit/bioconvert:latest
+<span class="c1"># from Singularity Hub (no longer updated)</span>
+apptainer build bioconvert-latest.sif shub://biokit/bioconvert:latest
 </code></pre></div>
 <h2 id="build-your-own-container">Build Your Own Container</h2>
-<p>You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a definition file.
-Singularity definition files are similar to Docker's <code>Dockerfile</code>, but use different syntax.
-To build a container from a definition file, you need administrative privileges on a Linux machine where <a href="https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps">Singularity is installed</a>.</p>
-<p>Sylabs provides a cloud-based container building platform (<a href="https://cloud.sylabs.io/builder">link</a>).
-This web-interface allows for the uploading and building of customized containers in the cloud.
-Additionally, users can generate a token to allow remote building from the command-line:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># login to the remote platform with their token:</span>
-singularity remote login
-
-<span class="c1"># launch a remote build of a local definition file (my_container.def)</span>
-singularity build --remote my_container.sif my_container.def
-</code></pre></div>
-This can be performed from any compute note on the clusters without elevated privileges.</p>
-<p>For full definition files and more documentation please see <a href="https://sylabs.io/guides/3.4/user-guide/definition_files.html">the singularity site</a>.</p>
+<p>You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a <a href="https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files">definition file</a>.
+Apptainer definition files are similar to Docker's <code>Dockerfile</code>, but use different syntax.
+To build a container from a definition file, you need administrative privileges on a Linux machine where <a href="https://apptainer.org/docs/user/main/quick_start.html#quick-installation-steps">Apptainer is installed</a>.</p>
+<p>For full definition files and more documentation please see <a href="https://apptainer.org/docs/user/main/definition_files.html">the Apptainer site</a>.</p>
 <h3 id="header">Header</h3>
 <p>Every container definition must begin with a header that defines what image to start with, or bootstrap from. This can be an official Linux distribution or someone else's container that gets you nearly what you want.</p>
 <p>To start from Ubuntu Bionic Beaver (18.04 LTS):</p>
@@ -2089,7 +2083,7 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
     Architecture x86_64
     URL https://research.computing.yale.edu/&lt;/hpc@yale.edu&gt;
 </code></pre></div>
-<p>You can examine container metadata with the <code>singularity inspect</code> command.</p>
+<p>You can examine container metadata with the <code>apptainer inspect</code> command.</p>
 <h3 id="files">%files</h3>
 <p>If you'd like to copy any files from the system you are building on, you do so in the %files section. Each line in the files section is a pair of source and destination paths, where the source is on your host system, and destination is a path in the container.</p>
 <div class="highlight"><pre><span></span><code>%files
@@ -2117,38 +2111,38 @@ From: nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 </code></pre></div>
 <h3 id="building">Building</h3>
 <p>To finally build your container after saving your definition file as <code>my_app.def</code>, for example, you would run</p>
-<div class="highlight"><pre><span></span><code>singularity build my_app.sif my_app.def
+<div class="highlight"><pre><span></span><code>apptainer build my_app.sif my_app.def
 </code></pre></div>
 <h2 id="use-a-container-image">Use a Container Image</h2>
 <p>Once you have a container image, you can run it as a part of a batch job, or interactively.</p>
 <h3 id="interactively">Interactively</h3>
 <p>To get a shell in a container so you can interactively work in its environment:</p>
-<div class="highlight"><pre><span></span><code>singularity shell --shell /bin/bash containername.sif
+<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash containername.sif
 </code></pre></div>
 <h3 id="in-a-job-script">In a Job Script</h3>
 <p>You can also run applications from your container non-interactively as you would in a batch job. If I wanted to run a script called <code>my_script.py</code> using my container's python:</p>
-<div class="highlight"><pre><span></span><code>singularity <span class="nb">exec</span> containername.sif python my_script.py
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> containername.sif python my_script.py
 </code></pre></div>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>If you are unsure if you are running inside or outside your container, you can run:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$SINGULARITY_NAME</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$APPTAINER_NAME</span>
 </code></pre></div>
 <p>If you get back text, you are in your container.</p>
-<p>If you'd like to pass environment variables into your container, you can do so by defining them prefixed with <code>SINGULARITYENV_</code> . For Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">SINGULARITYENV_BLASTDB</span><span class="o">=</span>/home/me/db/blast
-singularity <span class="nb">exec</span> my_blast_image.sif env <span class="p">|</span> grep BLAST
+<p>If you'd like to pass environment variables into your container, you can do so by defining them prefixed with <code>APPTAINERENV_</code> . For Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">APPTAINERENV_BLASTDB</span><span class="o">=</span>/home/me/db/blast
+apptainer <span class="nb">exec</span> my_blast_image.sif env <span class="p">|</span> grep BLAST
 </code></pre></div>
 <p>Should return <code>BLASTDB=/home/me/db/blast</code>, which means you set the <code>BLASTDB</code> environment variable in the container properly.</p>
 <h2 id="additional-notes">Additional Notes</h2>
 <h3 id="mpi">MPI</h3>
-<p>MPI support for Singularity is relatively straight-forward. The only thing to watch is to make sure that you are using the same version of MPI inside your container as you are on the cluster.</p>
+<p>MPI support for Apptainer is relatively straight-forward. The only thing to watch is to make sure that you are using the same version of MPI inside your container as you are on the cluster.</p>
 <h3 id="gpus">GPUs</h3>
-<p>You can use gpu-accelerated code inside your container, which will need most everything also installed in your container (e.g. CUDA, cuDNN). In order for your applications to have access to the right drivers on the host machine, use the <code>--nv</code> flag. For example:</p>
-<div class="highlight"><pre><span></span><code>singularity <span class="nb">exec</span> --nv tensorflow-10.0-py3.sif python ./my-tf-model.py
+<p>You can use GPU-accelerated code inside your container, which will need most everything also installed in your container (e.g. CUDA, cuDNN). In order for your applications to have access to the right drivers on the host machine, use the <code>--nv</code> flag. For example:</p>
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> --nv tensorflow-10.0-py3.sif python ./my-tf-model.py
 </code></pre></div>
 <h3 id="home-directories">Home Directories</h3>
-<p>Sometimes the maintainer of a docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the <code>--contain</code> option. Unfortunately, you will also then have to explicitly tell Singularity about the paths that you want to use from inside the container with the <a href="https://sylabs.io/guides/3.4/user-guide/bind_paths_and_mounts.html"><code>--bind</code></a> option.</p>
-<div class="highlight"><pre><span></span><code>singularity shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.sif
+<p>Sometimes the maintainer of a Docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the <code>--contain</code> option. Unfortunately, you will also then have to explicitly tell Apptainer about the paths that you want to use from inside the container with the <a href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html"><code>--bind</code></a> option.</p>
+<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.sif
 </code></pre></div>
                 
                   
@@ -2158,7 +2152,7 @@ singularity <span class="nb">exec</span> my_blast_image.sif env <span class="p">
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 24, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
       
     
   </small>
