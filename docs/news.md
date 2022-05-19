@@ -10,6 +10,11 @@ _May 2, 2022_
 - Singularity replaced by Apptainer version 1.0.1 (note: the "singularity" command will still work as expected)
 - Lmod updated version 8.7
 
+### Changes to non-interactive sessions
+
+Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads.
+Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.
+
 ## May 2022
 
 ### Announcements
@@ -45,6 +50,13 @@ _April 4-7, 2022_
 ### Changes to the `bigmem` Partition
 
 Jobs requesting less than 120G of memory are no longer allowed in the "bigmem" partition. Please submit these jobs to the general or scavenge partitions instead.
+
+
+### Changes to non-interactive sessions
+
+Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads.
+Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.
+
 
 ## April 2022
 
