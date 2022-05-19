@@ -1,11 +1,12 @@
 
-
-// Autoexpand Sidebar
 document.addEventListener("DOMContentLoaded", function() {
     load_navpane();
     display_system_status()
+
 });
 
+
+// Autoexpand Sidebar
 function load_navpane() {
     var width = window.innerWidth;
     if (width <= 1200) {
@@ -59,3 +60,6 @@ function display_system_status() {
 
     });
 };
+
+
+

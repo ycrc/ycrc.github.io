@@ -410,6 +410,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changes-to-non-interactive-sessions" class="md-nav__link">
+    Changes to non-interactive sessions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -487,6 +494,13 @@
           <li class="md-nav__item">
   <a href="#changes-to-the-bigmem-partition" class="md-nav__link">
     Changes to the bigmem Partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-non-interactive-sessions_1" class="md-nav__link">
+    Changes to non-interactive sessions
   </a>
   
 </li>
@@ -2049,6 +2063,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changes-to-non-interactive-sessions" class="md-nav__link">
+    Changes to non-interactive sessions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2126,6 +2147,13 @@
           <li class="md-nav__item">
   <a href="#changes-to-the-bigmem-partition" class="md-nav__link">
     Changes to the bigmem Partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-non-interactive-sessions_1" class="md-nav__link">
+    Changes to non-interactive sessions
   </a>
   
 </li>
@@ -2358,6 +2386,9 @@
 <li>Singularity replaced by Apptainer version 1.0.1 (note: the "singularity" command will still work as expected)</li>
 <li>Lmod updated version 8.7</li>
 </ul>
+<h3 id="changes-to-non-interactive-sessions">Changes to non-interactive sessions</h3>
+<p>Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads.
+Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.</p>
 <h2 id="may-2022">May 2022</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="ruddle-maintenance_1">Ruddle Maintenance</h4>
@@ -2386,6 +2417,9 @@
 </ul>
 <h3 id="changes-to-the-bigmem-partition">Changes to the <code>bigmem</code> Partition</h3>
 <p>Jobs requesting less than 120G of memory are no longer allowed in the "bigmem" partition. Please submit these jobs to the general or scavenge partitions instead.</p>
+<h3 id="changes-to-non-interactive-sessions_1">Changes to non-interactive sessions</h3>
+<p>Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads.
+Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.</p>
 <h2 id="april-2022">April 2022</h2>
 <h3 id="announcements_1">Announcements</h3>
 <h4 id="updates-to-r-on-open-ondemand">Updates to R on Open OnDemand</h4>
@@ -2463,7 +2497,7 @@ Your home directory can always be referenced in bash and submission scripts and 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 19, 2022</span>
       
     
   </small>
