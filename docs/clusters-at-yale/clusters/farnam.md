@@ -9,7 +9,7 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 - - -
 
 !!! info "Upcoming Farnam Retirement"
-    After more than six years in service, we will be retiring the Farnam HPC cluster later this year. In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates monitor the [Farnam decommission page](/clusters-at-yale/clusters/farnam-decommission).
+    After more than six years in service, we will be retiring the Farnam HPC cluster later this year. In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters-at-yale/clusters/farnam-decommission).
 
 ## Access the Cluster
 
