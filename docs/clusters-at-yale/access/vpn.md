@@ -43,4 +43,4 @@ Depending on what you choose you will be prompted to authenticate via a second a
 
 Once you successfully authenticate with MFA, you will be connected to the VPN and should be able to log in the clusters via SSH as usual.
 
-More information about MFA at Yale can be found on the [ITS website](https://cybersecurity.yale.edu/topic/use-yales-multifactor-authentication-mfa-service).
+More information about MFA at Yale can be found on the [ITS website](https://cybersecurity.yale.edu/mfa).

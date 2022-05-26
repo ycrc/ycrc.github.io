@@ -8,7 +8,7 @@ If you are new to the cluster, please watch our [Intro to HPC tutorial](https://
 
 ## Troubleshoot Login
 
-If you are having trouble logging in to the cluster, please see our [Troubleshoot Login](clusters-at-yale/troubleshoot/) guide.
+If you are having trouble logging in to the cluster, please see our [Troubleshoot Login](/clusters-at-yale/troubleshoot/) guide.
 
 ## Information to Provide with Help Requests
 

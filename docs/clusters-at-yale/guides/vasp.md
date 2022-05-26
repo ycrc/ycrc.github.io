@@ -87,6 +87,6 @@ Some users have found that if they actually assign 2 MPI tasks per node (rather 
 
 Here is some documentation on how to optimally configure NCORE and NPAR:
 
-* [https://cms.mpi.univie.ac.at/wiki/index.php/NCORE](https://cms.mpi.univie.ac.at/wiki/index.php/NCORE)
-* [https://cms.mpi.univie.ac.at/wiki/index.php/NPAR](https://cms.mpi.univie.ac.at/wiki/index.php/NPAR)
+* [https://www.vasp.at/wiki/index.php/NCORE](https://www.vasp.at/wiki/index.php/NCORE)
+* [https://www.vasp.at/wiki/index.php/NPAR](https://www.vasp.at/wiki/index.php/NPAR)
 * [https://www.nsc.liu.se/~pla/blog/2015/01/12/vasp-how-many-cores/](https://www.nsc.liu.se/~pla/blog/2015/01/12/vasp-how-many-cores/)

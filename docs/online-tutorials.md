@@ -36,7 +36,7 @@ Grep is tool for searching command line output or files for a certain string (ph
 
 * [Connecting to the Yale clusters](/clusters-at-yale/access)
 * [Transfer files to/from the cluster](/clusters-at-yale/data/transfer)
-* [Advanced SSH configuration](clusters-at-yale/access/advanced-config)
+* [Advanced SSH configuration](/clusters-at-yale/access/advanced-config)
 * [In-depth guide to `ssh`](https://www.ssh.com/academy/ssh/command)
 
 ### Bashrc and Bash Profiles

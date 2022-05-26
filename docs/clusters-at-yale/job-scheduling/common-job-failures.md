@@ -51,7 +51,7 @@ If you are *_sure_* you no longer need some files or direcories, you can delete 
 
 ### Buy More Space
 
-If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/clusters-at-yale/data/index/#get-more-storage).
+If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/clusters-at-yale/data/#purchase-additional-storage).
 
 ## Rate Limits
 

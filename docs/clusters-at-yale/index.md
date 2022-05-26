@@ -40,7 +40,7 @@ We also provide assistance for installing less commonly used packages. See our [
 
 ## Tutorial to Get Started
 
-To begin, access the cluster through [Open OnDemand](//clusters-at-yale/access/ood) and open the shell window. This can be done by by going to the top navigation bar, clicking on the **Clusters** tab and selecting the **Shell Access** button.
+To begin, access the cluster through [Open OnDemand](/clusters-at-yale/access/ood) and open the shell window. This can be done by by going to the top navigation bar, clicking on the **Clusters** tab and selecting the **Shell Access** button.
 
 ![cluster_navigation_bar_showing_shell_dropdown_tab](/img/intro_tutorial_navbar.jpg){: .medium}
 

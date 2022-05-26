@@ -22,7 +22,7 @@ Many Cryo-EM applications are meant to be viewed and interacted with in real-tim
 
 The [RELION](https://www3.mrc-lmb.cam.ac.uk/relion//index.php/Main_Page) pipeline operates in two modes. You can use it as a more familiar and beginner-friendly graphical interface, or call the programs involved directly. Once you are comfortable, using the commands directly in scripts submitted with `sbatch` will allow you to get the most work done the fastest.
 
-The authors provide up-to-date hints about performance on their [https://www3.mrc-lmb.cam.ac.uk/relion/index.php/Benchmarks_&_computer_hardware](Benchmrks & computer hardware) page. If you need technical help (jobs submit fine but having other issues) you should search and submit to their [mailing list](http://www.jiscmail.ac.uk/CCPEM).
+The authors provide up-to-date hints about performance on their [Benchmarks](https://www3.mrc-lmb.cam.ac.uk/relion/index.php/Benchmarks_&_computer_hardware) page. If you need technical help (jobs submit fine but having other issues) you should search and submit to their [mailing list](http://www.jiscmail.ac.uk/CCPEM).
 
 #### Module
 
