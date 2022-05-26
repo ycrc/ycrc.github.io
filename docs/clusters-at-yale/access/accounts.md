@@ -1,12 +1,12 @@
-# About Cluster Accounts
+# Accounts & Best Practices
 
 The YCRC HPC Policies can found [here](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). All users are required to abide by the described policies.
 
 ## Group Allocations
 
-A research group may request an allocation on one of [Yale's HPC clusters](/clusters-at-yale/clusters/index.md). Each group is granted access to the common compute resources and a [limited cluster storage allocation](/clusters-at-yale/data/index.md). 
+A research group may request an allocation on one of [Yale's HPC clusters](/clusters-at-yale/clusters). Each group is granted access to the common compute resources and a [limited cluster storage allocation](/clusters-at-yale/data). 
 
-## Request an Account
+### Request an Account
 
 You may request an account on a cluster using the [account request form](https://research.computing.yale.edu/account-request).  User accounts are personal to individual users and may not be shared. Under no circumstances may any user make use of another user’s account.
 

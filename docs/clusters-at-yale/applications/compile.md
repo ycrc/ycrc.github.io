@@ -4,11 +4,11 @@ How to get software you need up and running on the clusters.
 
 ## *caveat emptor*
 
-We recommend either use existing [software modules](/clusters-at-yale/applications/modules), [Anaconda](/clusters-at-yale/guides/conda), [Singularity](/clusters-at-yale/guides/singularity), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
+We recommend either use existing [software modules](/clusters-at-yale/applications/modules), [Conda](/clusters-at-yale/guides/conda), [Apptainer](/clusters-at-yale/guides/containers), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
 
 When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.
 
-Each of the cluster pages (see the [clusters index](/clusters-at-yale/clusters) for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.
+Each of the cluster pages (see the [HPC Resources](/clusters-at-yale/clusters) page for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.
 
 ### Illegal Instruction Instructions
 
@@ -26,7 +26,7 @@ Either way, you will want to control where your jobs run with [job constraints](
 
 ### Local Install
 
-Because you don't have admin/root/sudo privileges on the clusters, you won't be able to use `sudo` and a package manager like `apt`, `yum`, etc.; You will need to adapt install instructions to allow for what is called a local or user install. If you prefer or require this method, you should create a singularity container image (see our [Singularity guide](/clusters-at-yale/guides/singularity/)), then run it on the cluster.
+Because you don't have admin/root/sudo privileges on the clusters, you won't be able to use `sudo` and a package manager like `apt`, `yum`, etc.; You will need to adapt install instructions to allow for what is called a local or user install. If you prefer or require this method, you should create a container image (see our [Apptainer guide](/clusters-at-yale/guides/containers/)), then run it on the cluster.
 
 For things to work smoothly you will need to choose and stick with a prefix, or path to your installed applications and libraries. We recommend this be either in your home or project directory, something like `~/software` or `/path/to/project/software`. Make sure you have created it before continuing.
 

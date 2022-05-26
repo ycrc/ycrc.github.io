@@ -21,7 +21,6 @@ theme:
         - navigation.tabs
         - navigation.tabs.sticky
         - navigation.sections
-        - navigation.indexes
 
 plugins:
   - search
@@ -71,11 +70,11 @@ markdown_extensions:
         clickable_checkbox: true
 
 nav:
-    - Overview:
+    - About:
         - Introduction: index.md
         - news.md
         - HPC Clusters:
-            - clusters-at-yale/clusters/index.md
+            - "Overview": clusters-at-yale/clusters/index.md
             - clusters-at-yale/clusters/grace.md
             - clusters-at-yale/clusters/farnam.md
             - clusters-at-yale/clusters/ruddle.md
@@ -109,56 +108,64 @@ nav:
             - clusters-at-yale/job-scheduling/common-job-failures.md
             - clusters-at-yale/job-scheduling/resource-usage.md
             - clusters-at-yale/job-scheduling/fairshare.md
-            - clusters-at-yale/job-scheduling/scavenge.md
+            - clusters-at-yale/job-scheduling/dsq.md
             - clusters-at-yale/job-scheduling/dependency.md
             - clusters-at-yale/job-scheduling/scrontab.md
+            - clusters-at-yale/job-scheduling/scavenge.md
             - clusters-at-yale/job-scheduling/mpi.md
-            - clusters-at-yale/job-scheduling/dsq.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
-        - Data & Storage:
-            - clusters-at-yale/data/index.md
-            - clusters-at-yale/data/transfer.md
-            - "Stage Data for Compute Jobs": clusters-at-yale/data/staging.md
+        - Transfer Data:
+            - "Transfer to Cluster": clusters-at-yale/data/transfer.md
             - clusters-at-yale/data/globus.md
-            - clusters-at-yale/data/permissions.md
+            - "Stage Data for Compute Jobs": clusters-at-yale/data/staging.md
+    - Data & Storage:
+            - data/index.md
+            - clusters-at-yale/data/index.md
+            - data/google-drive.md
             - clusters-at-yale/data/archived-sequencing.md
+            - Manage & Share:
+                - clusters-at-yale/data/permissions.md
+                - data/archive.md
+                - data/external.md
+
 
     - Software & Tools:
-        - clusters-at-yale/guides/index.md
-        - clusters-at-yale/guides/cesm.md
-        - clusters-at-yale/guides/clustershell.md
-        - clusters-at-yale/guides/comsol.md
-        - clusters-at-yale/guides/conda.md
-        - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
-        - clusters-at-yale/guides/gaussian.md
-        - "GitHub": clusters-at-yale/guides/github.md
-        - clusters-at-yale/guides/github_pages.md
-        - clusters-at-yale/guides/gpus-cuda.md
-        - clusters-at-yale/guides/jupyter.md
-        - clusters-at-yale/guides/matlab.md
-        - clusters-at-yale/guides/mathematica.md
-        - "mpi4py": clusters-at-yale/guides/mpi4py.md
-        - clusters-at-yale/guides/mysql.md
-        - clusters-at-yale/guides/namd.md
-        - clusters-at-yale/guides/python.md
-        - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
-        - clusters-at-yale/guides/parallel.md
-        - clusters-at-yale/guides/r.md
-        - clusters-at-yale/guides/rclone.md
-        - clusters-at-yale/guides/containers.md
-        - clusters-at-yale/guides/tmux.md
-        - clusters-at-yale/guides/vasp.md
-        - "XVFB": clusters-at-yale/guides/xvfb.md
+        - "Overview": clusters-at-yale/guides/index.md
+        - Python: 
+            - clusters-at-yale/guides/conda.md
+            - clusters-at-yale/guides/python.md
+            - clusters-at-yale/guides/jupyter.md
+            - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
+            - "mpi4py": clusters-at-yale/guides/mpi4py.md
+        - Software: 
+            - clusters-at-yale/guides/cesm.md
+            - clusters-at-yale/guides/comsol.md
+            - clusters-at-yale/guides/gaussian.md
+            - clusters-at-yale/guides/matlab.md
+            - clusters-at-yale/guides/mathematica.md
+            - clusters-at-yale/guides/namd.md
+            - clusters-at-yale/guides/r.md
+            - clusters-at-yale/guides/vasp.md
+        - Tools:
+            - clusters-at-yale/guides/containers.md
+            - clusters-at-yale/guides/clustershell.md
+            - clusters-at-yale/guides/mysql.md
+            - clusters-at-yale/guides/parallel.md
+            - clusters-at-yale/guides/rclone.md
+            - clusters-at-yale/guides/tmux.md
+            - "XVFB": clusters-at-yale/guides/xvfb.md
+        - Guides:
+            - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
+            - "GitHub": clusters-at-yale/guides/github.md
+            - clusters-at-yale/guides/github_pages.md
+            - clusters-at-yale/guides/gpus-cuda.md
 
-    - Research Data:
-            - data/index.md
-            - data/google-drive.md
-            - data/archive.md
-            - data/external.md
-
-    - Training & Other Materials:
-            - online-tutorials.md
+    - Training & Other Resources:
+            - "Overview": resources/index.md
+            - Training:
+                - "YCRC Workshops": https://research.computing.yale.edu/training
+                - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
+                - online-tutorials.md
             - user-group.md
             - national-hpcs.md
-            - "YCRC Training": https://research.computing.yale.edu/training
             - "Glossary": glossary.md

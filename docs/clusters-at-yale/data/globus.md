@@ -40,18 +40,6 @@ These endpoints provide access to all files you normally have access to, except 
 
 To manage your endpoints, such as delete an endpoint, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Endpoint](https://app.globus.org/endpoints) on the Globus website.
 
-### Sharing Data Using Globus
-
-1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to share from in the collection field (e.g. yale#grace)
-1. Click the Share button on the right
-1. Click on "Add a Shared Endpoint"
-1. Next to Path, click "Browse" to find and select the directory you want to share
-1. Add other details as desired and click on "Create Share"
-1. Click on "Add Permissions -- Share With"
-1. Under "Username or Email" enter the e-mail address of the person that you want to share the data with, then click on "Save", then click on "Add Permission"
-1. Do not select "write" unless you want the person you are sharing the data with to be able to write to the share.
-
-For more information, please see the [official Globus Documentation](https://docs.globus.org/how-to).
 
 ## Setup an Endpoint on Your Computer
 

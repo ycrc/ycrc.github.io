@@ -3,7 +3,7 @@
 To facilitate the diverse work that happens on the YCRC clusters we compile, install, and manage software packages separately from those installed in standard system directories. We use [EasyBuild](https://docs.easybuild.io/en/latest) to build, install, and manage packages. You can access these packages as [Lmod](https://lmod.readthedocs.io/en/latest) modules. The modules involving compiled software are arranged into hierarchical [toolchains](/clusters-at-yale/applications/toolchains) that make dependencies more consistent when you load multiple modules.
 
 !!! warning
-    Avoid loading Python or R modules and [conda](/clusters-at-yale/guides/conda) environments. This will almost always break something.
+    Avoid loading Python or R modules simultaneously with [conda](/clusters-at-yale/guides/conda) environments. This will almost always break something.
 
 ## Find Modules
 

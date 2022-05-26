@@ -1,4 +1,19 @@
-# Data Storage Options
+# Data Storage
+
+Below we highlight some data storage option at Yale that are appropriate for research data. For a more complete list of data storage options, see the [Storage Finder](https://storage-finder.yale.edu/).
+If you have questions about selecting an appropriate home for your data, [contact us](/#get-help) for assistance.
+
+## HPC Cluster Storage
+
+**Capacity: Varies. Cost: Varies 
+Sensitive data is only allowed on the [Milgram cluster](/clusters-at-yale/clusters/milgram/)
+Only available on YCRC HPC clusters**
+
+Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.
+Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/clusters-at-yale/data/) page.
+
+Additional project-style storage allocations can be purchased. See [here](/clusters-at-yale/data/#purchase-additional-storage)for more information.
+
 
 ## Google Drive via EliApps
 
@@ -14,16 +29,16 @@ Google Drive is a cloud service for file storage, document editing and sharing. 
 No sensitive data (e.g. ePHI, HIPAA) for cluster mounts  
 Can be mounted on the cluster or computers on campus (but not both)**
 
-Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. All prices are charged monthly for storage used at that time.
+Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. 
 
-| Type        | Use                                                                            | Price           |
-|-------------|--------------------------------------------------------------------------------|-----------------|
-|Object Tier  |Good for staging data between cloud and clusters                                |$12/TiB/month    |
-|Active Tier  |Daily use, still copy to cluster before using in jobs                           |$10.78/TiB/month |
-|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/)  |$3.60/TiB/month  |
-|Backup Tier  |Low-access remote object backup. [Make sure to properly archive](/data/archive/)|$4.00/TiB/month  |
+| Type        | Use                                                                            |
+|-------------|--------------------------------------------------------------------------------|
+|Object Tier  |Good for staging data between cloud and clusters                                |
+|Active Tier  |Daily use, still copy to cluster before using in jobs                           |
+|Archive Tier |Long term storage, low access. [Make sure to properly archive](/data/archive/)  |
+|Backup Tier  |Low-access remote object backup. [Make sure to properly archive](/data/archive/)|
 
-For most up to date pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
+For pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400). All prices are charged monthly for storage used at that time.
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). If you would like to request a share that is mounted on the clusters, **specify in your request that the share be mounted from the HPC clusters**. If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 

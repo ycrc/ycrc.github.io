@@ -1,4 +1,4 @@
-# Factors Affecting Scheduling
+# Priority & Wait Time
 
 ## Job Priority Score
 

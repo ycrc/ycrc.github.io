@@ -1,4 +1,4 @@
-# Submit Job Arrays with dSQ
+# Job Arrays with dSQ
 
 [Dead Simple Queue](https://github.com/ycrc/dsq) is a light-weight tool to help submit large batches of homogenous jobs to a [Slurm](https://slurm.schedmd.com/)-based HPC cluster. It wraps around slurm's [sbatch](https://slurm.schedmd.com/sbatch.html) to help you submit independent jobs as [job arrays](https://slurm.schedmd.com/job_array.html). Job arrays have several advantages over submitting your jobs in a loop:
 

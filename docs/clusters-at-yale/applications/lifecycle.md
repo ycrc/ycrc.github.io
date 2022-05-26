@@ -17,7 +17,7 @@ The YCRC maintains a rolling two [toolchain](/clusters-at-yale/applications/tool
 
 ## Spring 2021 Deprecation Cycle
 
-In June 2021, we are removing deprecated software and finalizing the introduction of new toolchains. If a module you used in the past is no longer available and there is not a newer module available, please [contact us](/#get-help).
+In June 2021, we removed deprecated software and introduced a new epoch of toolchains. If a module you used in the past is no longer available and there is not a newer module available, please [contact us](/#get-help).
 
 ### [Grace](/clusters-at-yale/clusters/grace) and [Milgram](/clusters-at-yale/clusters/milgram)
 

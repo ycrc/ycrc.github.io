@@ -7,18 +7,18 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
-Open OnDemand is available on the following clusters using your NetID credentials (CAS login). 
+Open OnDemand is available on each cluster using your NetID credentials (CAS login). 
 
 | Cluster                                         | OOD site                                                   |
 |-------------------------------------------------|------------------------------------------------------------|
 | [Grace](/clusters-at-yale/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
 | [Farnam](/clusters-at-yale/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
-| [Milgram](/clusters-at-yale/clusters/milgram) | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
-| [Ruddle](/clusters-at-yale/clusters/ruddle)   | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
+| [Milgram](/clusters-at-yale/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
+| [Ruddle](/clusters-at-yale/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
-## Course Open OnDemand Web Portals
+### Course Open OnDemand Web Portals
 
 Courses on the clusters have their own course-specific OOD URLs, also called course OOD web portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
 

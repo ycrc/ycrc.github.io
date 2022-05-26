@@ -95,7 +95,7 @@ scratch60     GRP             4054       20480       987,336     5,000,000 No   
 
 The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
-## Additional Storage
+## Purchase Additional Storage
 
 For long-term allocations, additional project storage spaces can be purchased on our Gibbs filesystem, which provides similar functionality to the primary project storage. This storage currently costs $200/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)).
 
@@ -117,49 +117,20 @@ If you need additional files beyond your limit, contact us to discuss as increas
 
 ## HPC Storage Best Practices
 
-### Staging Data
+### Stage Data
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
 Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example.
-Both `grace` and `farnam` have dedicated `transfer` partitions where you can submit long-running transfer jobs.
-When your computation finishes you can remove the copy and transmit or copy results to a more permanent location.
-Please see [Staging Data](/clusters-at-yale/data/staging/) for more details and examples.
+Both Grace and Farnam have dedicated `transfer` partitions where you can submit long-running transfer jobs.
+When your computation finishes you can remove the copy and transmit or copy results to a permanent location.
+Please see the [Staging Data](/clusters-at-yale/data/staging/) documentation for more details and examples.
 
 ### Prevent Large Numbers of Small Files
 
 The parallel filesystems the clusters use perform poorly with very large numbers of small files.
 This is one reason we enforce file count quotas.
 If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+Additionally you can reduce load on the filesystem by spreading the files across multiple subdirectories.
 Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
 
-## Backups and Snapshots
-
-### Retrieve Data from Home Backups
-
-[Contact us](/#get-help) with your netid and the list of files/directories you would like restored. For any data deleted in the last couple days, first try the self-service snapshots described below.
-
-### Retrieve Data from Snapshots
-
-Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage. There are no snapshots on the Gibbs or Palmer filesystems at this time.
-
-As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.
-
-| File set                    | Snapshot Prefix                              |
-|-----------------------------|----------------------------------------------|
-| `/gpfs/loomis/project`      | `/gpfs/loomis/project/.snapshots`            |
-| `/gpfs/ysm`                 | `/gpfs/ysm/.snapshots`                       |
-| `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
-| `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |
-| `/gpfs/milgram/project`     | `/gpfs/milgram/project/.snapshots`           |
-| `/gpfs/milgram/pi/groupname`| `/gpfs/milgram/pi/groupname/.snapshots`      |
-| `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
-
-For example, if you wanted to recover the file `/gpfs/ysm/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/ysm/.snapshots/$(date +%Y%m%d-0000)/project/bjornson/rdb9/doit.sh` .
-
-!!! info "Snapshot Sizes"
-    Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.
-
-## Other Storage Options
-
-If you or your group finds HPC storage does not accommodate your needs, please see the [off-cluster research data storage](/data) page or the [ITS Storage Finder](https://storage-finder.yale.edu).
