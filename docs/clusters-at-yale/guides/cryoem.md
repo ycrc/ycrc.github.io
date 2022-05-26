@@ -53,9 +53,9 @@ EMAN2 has always been a bit of a struggle for us to install properly on the clus
 
 The EMAN2 authors offer some instructions on how to get EMAN2 running in a cluster environment on [their install page](https://blake.bcm.edu/emanwiki/EMAN2/Install/BinaryInstallAnaconda/2.3#Linux_Clusters). The default install may work as well if you avoid using MPI.
 
-#### Singularity Container
+#### Container
 
- At present, we have a mostly working [singularity container](/clusters-at-yale/guides/singularity/) for EMAN2.3 available here: 
+ At present, we have a mostly working [apptainer container](/clusters-at-yale/guides/containers/) for EMAN2.3 available here: 
 
 `/gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif`
 

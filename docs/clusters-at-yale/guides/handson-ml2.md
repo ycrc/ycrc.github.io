@@ -107,7 +107,7 @@ Notes on [handson-ml2](https://github.com/ageron/handson-ml2) for YCRC clusters 
 
 ## Containers - `tensorflow/serving`
 
-You can use TensorFlow Serving to serve multiple versions of models but examples given use Ubuntu packages or Docker. YCRC clusters are RHEL and do not allow Docker, so instead we use [Singularity]()
+You can use TensorFlow Serving to serve multiple versions of models but examples given use Ubuntu packages or Docker. YCRC clusters are RHEL and do not allow Docker, so instead we use [Apptainer](/clusters-at-yale/guides/containers)
 
 ``` bash
 docker pull tensorflow/serving

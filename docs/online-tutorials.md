@@ -111,7 +111,7 @@ It is possible to run Linux terminals and applications from within a Windows ins
 
 ### Documentation
 
-Singularity has officially been renamed Apptainer, but should still work the same.
+Singularity has officially been renamed Apptainer, but we expect no changes to its functionality.
  
 * [Apptainer Docs Page](https://apptainer.org/docs/user/main/)
 * [Singularity Google Groups](https://groups.google.com/a/lbl.gov/forum/#!forum/singularity)

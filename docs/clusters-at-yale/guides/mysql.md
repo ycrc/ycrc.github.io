@@ -44,7 +44,7 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('my-secret-pw');
 mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
 ```
 
-### Step 4: Make a link to the mysql singularity image file
+### Step 4: Make a link to the mysql image file
 
 The mysqld image file can be found under the apps tree on each cluster.
 For example, on Grace:/gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:
@@ -118,7 +118,7 @@ Singularity> mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED
 Singularity> mysql -e "FLUSH PRIVILEGES"
 ```
 
-Type exit to leave the container.  From that compute node, but outside the singularity container, try connecting with:
+Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
 ```
 mysql -u elmerfudd -h 127.0.0.1 -p
 ```
