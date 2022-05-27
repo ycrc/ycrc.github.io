@@ -22,7 +22,7 @@ your static website, using the transfer tool.
 
 ## Private Share Using Globus
 
-[Globus](/clusters-at-yale/data/globus) can be used to shared data hosts on one of the clsuters privately with a specific person or group of people.
+[Globus](/data/globus) can be used to shared data hosts on one of the clsuters privately with a specific person or group of people.
 
 1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to share from in the collection field (e.g. yale#grace)
 1. Click the Share button on the right

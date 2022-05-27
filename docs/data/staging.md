@@ -1,14 +1,14 @@
 # Stage Data for Compute Jobs
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
-Since the _permanent_ home of the data remains on off-cluster storage, you need to [transfer](/clusters-at-yale/data/transfer/) a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transfer the results to a more permanent location.
+Since the _permanent_ home of the data remains on off-cluster storage, you need to [transfer](/data/transfer/) a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transfer the results to a more permanent location.
 
 ## Temporary Storage
 
-We recommend staging data into your [Scratch60](/clusters-at-yale/data) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
+We recommend staging data into your [Scratch60](/data) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
 
 ## Interactive Transfers
-For interactive transfers, please see our [Transfer Data](/clusters-at-yale/data/transfer/) page for a more complete list of ways to move data efficiently to and from the clusters.  
+For interactive transfers, please see our [Transfer Data](/data/transfer/) page for a more complete list of ways to move data efficiently to and from the clusters.  
 
 A sample workflow using `rsync` would be:
 

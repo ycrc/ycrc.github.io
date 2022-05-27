@@ -11,7 +11,7 @@ Once you've set up Duo and your key is registered, you can log in to Ruddle. Use
 
 ## File Transfer and Duo MFA
 
-Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our [section on the Transfer Data page](/clusters-at-yale/data/transfer/#cyberduck-on-ruddle).
+Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our [section on the Transfer Data page](/data/transfer/#cyberduck-on-ruddle).
 
 ## Troubleshoot MFA
 

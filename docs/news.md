@@ -139,9 +139,9 @@ For non-Milgram users doing data transfers, transfers should not be performed on
 1. **Dedicated transfer node**. Each cluster has a dedicated transfer node, `transfer-<cluster>.hpc.yale.edu`. You can ssh directly to this node and run commands. 
 1. **“transfer” Slurm partition**. This is a small partition managed by the scheduler for doing data transfer. You can submit jobs to it using `srun/sbatch -p transfer …` 
 *For recurring or periodic data transfers (such as using cron), please use Slurm’s [scrontab](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/scrontab/) to schedule jobs that run on the transfer partition instead.
-2. **Globus**. For robust transfers of larger amount of data, see our [Globus](https://docs.ycrc.yale.edu/clusters-at-yale/data/globus/) documentation.
+2. **Globus**. For robust transfers of larger amount of data, see our [Globus](https://docs.ycrc.yale.edu/data/globus/) documentation.
 
-More info about data transfers can be found in our [Data Transfer](https://docs.ycrc.yale.edu/clusters-at-yale/data/transfer/) documentation.
+More info about data transfers can be found in our [Data Transfer](https://docs.ycrc.yale.edu/data/transfer/) documentation.
 
 ### Software Highlights
 

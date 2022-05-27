@@ -35,6 +35,9 @@ plugins:
             'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
             'clusters-at-yale/data/permissions.md': 'data/permissions.md'
             'clusters-at-yale/data/archived-sequencing.md': 'data/archived-sequencing.md'
+            'clusters-at-yale/data/globus.md': 'data/globus.md'
+            'clusters-at-yale/data/staging.md': 'data/staging.md'
+            'clusters-at-yale/data/transfer.md': 'data/transfer.md'
             'online-tutorials.md': 'resources/online-tutorials.md'
             'national-hpcs.md': 'resources/national-hpcs.md'
 
@@ -128,9 +131,9 @@ nav:
             - clusters-at-yale/job-scheduling/mpi.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
         - Transfer Data:
-            - "Transfer to Cluster": clusters-at-yale/data/transfer.md
-            - clusters-at-yale/data/globus.md
-            - "Stage Data for Compute Jobs": clusters-at-yale/data/staging.md
+            - "Transfer to Cluster": data/transfer.md
+            - data/globus.md
+            - "Stage Data for Compute Jobs": data/staging.md
     - Data & Storage:
             - data/index.md
             - data/hpc-storage.md

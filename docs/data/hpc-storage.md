@@ -121,10 +121,10 @@ If you need additional files beyond your limit, contact us to discuss as increas
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
-Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/clusters-at-yale/data/transfer/) a working copy to `scrach60`, for example.
+Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/data/transfer/) a working copy to `scrach60`, for example.
 Both Grace and Farnam have dedicated `transfer` partitions where you can submit long-running transfer jobs.
 When your computation finishes you can remove the copy and transmit or copy results to a permanent location.
-Please see the [Staging Data](/clusters-at-yale/data/staging/) documentation for more details and examples.
+Please see the [Staging Data](/data/staging/) documentation for more details and examples.
 
 ### Prevent Large Numbers of Small Files
 

@@ -27,11 +27,11 @@ You can upload and access your data using the web portal and sync data with your
 
 ## Rclone
 
-You can also transfer data using the command line utility [Rclone](/clusters-at-yale/data/transfer/#rclone). Rclone can be used to transfer data to any Google Drive account.
+You can also transfer data using the command line utility [Rclone](/data/transfer/#rclone). Rclone can be used to transfer data to any Google Drive account.
 
 ## Globus Google Drive Connector
 
-You can use Globus to transfer data to/from any EliApps Google Drive as well. See our [Globus](/clusters-at-yale/data/globus) documentation for more information.
+You can use Globus to transfer data to/from any EliApps Google Drive as well. See our [Globus](/data/globus) documentation for more information.
 
 
 

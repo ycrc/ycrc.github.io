@@ -50,7 +50,7 @@ When you connect type one of the following when prompted with a "Partial authent
 
 ### Large File Transfers (Globus)
 
-You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see [our Globus page](/clusters-at-yale/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
+You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
 ### Command-Line Transfer Tools
 
@@ -107,17 +107,17 @@ scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/
 
 ### Globus Endpoints
 
-Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see [our Globus page](/clusters-at-yale/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
+Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
 *  We have configured endpoints for most of the Yale clusters and many other institutions and compute facilities have Globus endpoints. 
 * You can also use Globus to transfer data to/from Eliapps Google Drive and S3 buckets.
 
 ### Cluster Transfer Nodes
 
-You can use the cluster transfer nodes to download/upload data to locations off-cluster. For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/clusters-at-yale/data/staging) for additional information. For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. On Milgram, which does not have a transfer node, you can initiate the transfers from a login node. However, please be mindful of that other users will also be using the login nodes for regular cluster operations.
+You can use the cluster transfer nodes to download/upload data to locations off-cluster. For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/data/staging) for additional information. For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. On Milgram, which does not have a transfer node, you can initiate the transfers from a login node. However, please be mindful of that other users will also be using the login nodes for regular cluster operations.
 
 !!! Tip
-    If you are running a large transfer without [Globus](/clusters-at-yale/data/globus), run it inside a [tmux](/clusters-at-yale/guides/tmux/) session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.
+    If you are running a large transfer without [Globus](/data/globus), run it inside a [tmux](/clusters-at-yale/guides/tmux/) session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.
 
 #### rsync
 

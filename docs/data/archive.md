@@ -81,7 +81,7 @@ Some key takeaways:
 
 ## S@Y Backup Tier
 
-Yale ITS offers dedicated offsite "S3"-style object storage for data backup and archive to the cloud.  Clients are responsible for the data transfers and recovery via the S3 protocol, such as by using [RClone] (/clusters-at-yale/data/transfer/#rclone).
+Yale ITS offers dedicated offsite "S3"-style object storage for data backup and archive to the cloud.  Clients are responsible for the data transfers and recovery via the S3 protocol, such as by using [RClone] (/data/transfer/#rclone).
 
 The Backup Tier is authorized for Low, Moderate, and High Risk data.
 
