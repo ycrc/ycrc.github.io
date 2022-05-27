@@ -1,4 +1,4 @@
-# Open OnDemand
+# Web Portal (Open OnDemand)
 
 [Open OnDemand](https://openondemand.org) (OOD) is platform for accessing the clusters that only requires a web browser.
 This web-portal provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).

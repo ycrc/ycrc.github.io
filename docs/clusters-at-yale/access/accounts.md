@@ -2,6 +2,16 @@
 
 The YCRC HPC Policies can found [here](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). All users are required to abide by the described policies.
 
+## HPC Policies
+
+* Do not run jobs, transfers or computation on a login node, instead [submit jobs](/clusters-at-yale/job-scheduling/).
+* Similarly, transfer nodes are only for data transfers. Do not run jobs or computation on the transfer nodes.
+* Never give your password or ssh key to anyone else.
+* Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters/milgram).
+* Do not run large numbers of very short (less than a minute) jobs.
+* Avoid workflows that generate numerous (thousands) of files as these put great stress on the shared filesystem.
+
+
 ## Group Allocations
 
 A research group may request an allocation on one of [Yale's HPC clusters](/clusters). Each group is granted access to the common compute resources and a [limited cluster storage allocation](/data). 

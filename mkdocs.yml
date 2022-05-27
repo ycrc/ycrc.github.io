@@ -95,7 +95,9 @@ nav:
             - clusters/farnam.md
             - clusters/ruddle.md
             - clusters/milgram.md
+        - user-group.md
         - About the YCRC: https://research.computing.yale.edu/about
+        - glossary.md
 
     - User Guide:
         - clusters-at-yale/index.md
@@ -106,10 +108,12 @@ nav:
         - Access the Clusters:
             - clusters-at-yale/access/index.md
             - clusters-at-yale/access/ood.md
+            - SSH Connection:
+                - "Connect with SSH": clusters-at-yale/access/ssh.md
+                - clusters-at-yale/access/x11.md
+                - clusters-at-yale/access/advanced-config.md
             - clusters-at-yale/access/vpn.md
-            - clusters-at-yale/access/x11.md
             - clusters-at-yale/access/mfa.md
-            - clusters-at-yale/access/advanced-config.md
         - Applications & Software:
             - clusters-at-yale/applications/index.md
             - clusters-at-yale/applications/compile.md
@@ -129,6 +133,7 @@ nav:
             - clusters-at-yale/job-scheduling/scavenge.md
             - clusters-at-yale/job-scheduling/mpi.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
+        - clusters-at-yale/glossary.md
     - Data & Storage:
             - data/index.md
             - data/hpc-storage.md
@@ -143,6 +148,7 @@ nav:
                 - data/permissions.md
                 - data/archive.md
                 - data/external.md
+            - data/glossary.md
 
 
     - Software & Tools:
@@ -182,6 +188,5 @@ nav:
                 - "YCRC Workshops": https://research.computing.yale.edu/training
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
                 - resources/online-tutorials.md
-            - user-group.md
             - resources/national-hpcs.md
-            - "Glossary": glossary.md
+            - resources/glossary.md
