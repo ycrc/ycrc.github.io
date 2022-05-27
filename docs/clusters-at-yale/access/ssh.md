@@ -12,7 +12,7 @@ For more advanced use cases that are not well supported by the [Web Portal (Open
 
 * Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters).
 
-* To use graphical programs on the clusters, please see our guides on [Open OnDemand](/clusters-at-yale/access/ood) or [X11 Forwarding](x11).
+* To use graphical programs on the clusters, please see our guides on [Open OnDemand](/clusters-at-yale/access/ood) or [X11 Forwarding](../x11).
 
 **If you are having trouble logging in**: please read the rest of this page and our [Troubleshoot Login](/clusters-at-yale/troubleshoot) page, then [contact us](/#get-help) if you're still having issues.
 
@@ -22,7 +22,7 @@ SSH (Secure Shell) keys are a set of two pieces of information that you use to i
 
 When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.
 
-We use an automated system to distribute your public key onto the clusters, [which you can log in to here](https://sshkeys.hpc.yale.edu/). It is only accessible on campus or through the [Yale VPN](vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
+We use an automated system to distribute your public key onto the clusters, [which you can log in to here](https://sshkeys.hpc.yale.edu/). It is only accessible on campus or through the [Yale VPN](../vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
 
 !!! warning
     Keep your private keys private! Anyone who has them can assume your identity on any server where your keys are authorized. **We will never ask for your private key**.
@@ -79,7 +79,7 @@ Once your key has been copied to the appropriate places on the clusters, you can
 ssh netid@clustername.hpc.yale.edu
 ```
 
-Check out our [Advanced SSH Configuration](advanced-config) for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.
+Check out our [Advanced SSH Configuration](../advanced-config) for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.
 
 ## Windows
 

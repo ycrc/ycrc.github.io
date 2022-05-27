@@ -106,7 +106,7 @@ See our page of [Submission Script Examples](/clusters-at-yale/job-scheduling/sl
 --8<-- "snippets/example_job.sh"
 ```
     
-Save [this file](/files/example_job.sh) as `example_job.sh`, then submit it with:
+Save [this file](/_static/files/example_job.sh) as `example_job.sh`, then submit it with:
 
 ``` bash
 sbatch example_job.sh

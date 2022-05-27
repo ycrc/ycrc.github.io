@@ -1,6 +1,6 @@
 # Multi-factor Authentication
 
-To improve security, access to Ruddle requires both a public key and multi-factor authentication (MFA). We use the same MFA (Duo) as is used elsewhere at Yale. To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/topic/use-yales-multifactor-authentication-mfa-service)
+To improve security, access to Ruddle requires both a public key and multi-factor authentication (MFA). We use the same MFA (Duo) as is used elsewhere at Yale. To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
 You will need upload your [ssh public key to our site](https://sshkeys.hpc.yale.edu/). For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 

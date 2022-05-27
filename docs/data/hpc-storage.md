@@ -7,7 +7,7 @@ Along with access to the compute clusters we provide each research group with cl
 
 ## Storage Spaces
 
-For an overview of which filesystems are mounted on each cluster, see the [HPC Resources](http://127.0.0.1:8000/clusters/#storage) documentation.
+For an overview of which filesystems are mounted on each cluster, see the [HPC Resources](/clusters/#storage) documentation.
 
 ### Home
 
