@@ -170,6 +170,7 @@ nav:
             - clusters-at-yale/guides/parallel.md
             - clusters-at-yale/guides/rclone.md
             - clusters-at-yale/guides/tmux.md
+            - clusters-at-yale/guides/virtualgl.md
             - "XVFB": clusters-at-yale/guides/xvfb.md
         - Guides:
             - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
