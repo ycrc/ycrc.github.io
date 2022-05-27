@@ -2358,14 +2358,14 @@
 <p>Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the <a href="/clusters">clusters page</a>.</p>
 </li>
 <li>
-<p>To use graphical programs on the clusters, please see our guides on <a href="/clusters-at-yale/access/ood">Open OnDemand</a> or <a href="x11">X11 Forwarding</a>.</p>
+<p>To use graphical programs on the clusters, please see our guides on <a href="/clusters-at-yale/access/ood">Open OnDemand</a> or <a href="../x11">X11 Forwarding</a>.</p>
 </li>
 </ul>
 <p><strong>If you are having trouble logging in</strong>: please read the rest of this page and our <a href="/clusters-at-yale/troubleshoot">Troubleshoot Login</a> page, then <a href="/#get-help">contact us</a> if you're still having issues.</p>
 <h2 id="what-are-ssh-keys">What are SSH keys</h2>
 <p>SSH (Secure Shell) keys are a set of two pieces of information that you use to identify yourself and encrypt communication to and from a server. Usually this takes the form of two files: a public key (often saved as <code>id_rsa.pub</code>) and a private key (<code>id_rsa</code> or <code>id_rsa.ppk</code>). To use an analogy, your public key is like a lock and your private key is what unlocks it. It is ok for others to see the lock (public key), but anyone who knows the private key can open your lock (and impersonate you).</p>
 <p>When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.</p>
-<p>We use an automated system to distribute your public key onto the clusters, <a href="https://sshkeys.hpc.yale.edu/">which you can log in to here</a>. It is only accessible on campus or through the <a href="vpn">Yale VPN</a>. All the public keys that are authorized to your account are stored in the file <code>~/.ssh/authorized_keys</code> on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.</p>
+<p>We use an automated system to distribute your public key onto the clusters, <a href="https://sshkeys.hpc.yale.edu/">which you can log in to here</a>. It is only accessible on campus or through the <a href="../vpn">Yale VPN</a>. All the public keys that are authorized to your account are stored in the file <code>~/.ssh/authorized_keys</code> on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Keep your private keys private! Anyone who has them can assume your identity on any server where your keys are authorized. <strong>We will never ask for your private key</strong>.</p>
@@ -2396,7 +2396,7 @@ Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):
 <p>Once your key has been copied to the appropriate places on the clusters, you can log in with the command:</p>
 <div class="highlight"><pre><span></span><code>ssh netid@clustername.hpc.yale.edu
 </code></pre></div>
-<p>Check out our <a href="advanced-config">Advanced SSH Configuration</a> for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.</p>
+<p>Check out our <a href="../advanced-config">Advanced SSH Configuration</a> for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.</p>
 <h2 id="windows">Windows</h2>
 <p>We recommend using the <a href="/clusters-at-yale/access/ood">Web Portal (Open OnDemand)</a> to connect to the clusters from Windows. If you need advanced features beyond the web portal, we recommend using <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>.</p>
 <h3 id="mobaxterm">MobaXterm</h3>

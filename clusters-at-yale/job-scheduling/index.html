@@ -2444,7 +2444,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <span class="nb">echo</span> <span class="s2">&quot;Job name: </span><span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span><span class="s2">, Job ID: </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;  I have </span><span class="si">${</span><span class="nv">SLURM_CPUS_ON_NODE</span><span class="si">}</span><span class="s2"> CPUs and </span><span class="si">${</span><span class="nv">mem_gbytes</span><span class="si">}</span><span class="s2">GiB of RAM on compute node </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p>Save <a href="/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
+<p>Save <a href="/_static/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
 <div class="highlight"><pre><span></span><code>sbatch example_job.sh
 </code></pre></div>
 <p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>.</p>
