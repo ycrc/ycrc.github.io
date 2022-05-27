@@ -1,8 +1,8 @@
 # Run Jobs with Slurm
 
-Performing computational work at scale in a shared environment involves organizing everyone's work into jobs and scheduling them. We use [Slurm](https://slurm.schedmd.com/overview.html) to schedule and manage jobs on the [YCRC clusters](/clusters-at-yale/clusters). 
+Performing computational work at scale in a shared environment involves organizing everyone's work into jobs and scheduling them. We use [Slurm](https://slurm.schedmd.com/overview.html) to schedule and manage jobs on the [YCRC clusters](/clusters). 
 
-Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs `srun` and `sbatch` or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on [each cluster page](/clusters-at-yale/clusters). Once submitted, jobs wait in a queue and are subject to several [factors affecting scheduling priority](/clusters-at-yale/job-scheduling/fairshare). When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.
+Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs `srun` and `sbatch` or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on [each cluster page](/clusters). Once submitted, jobs wait in a queue and are subject to several [factors affecting scheduling priority](/clusters-at-yale/job-scheduling/fairshare). When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.
 
 !!! info "Please be a good cluster citizen."
 
@@ -57,7 +57,7 @@ These options modify the size, length and behavior of jobs you submit. They can 
 |---------------------------|------------|-------------------|-----------|
 |`--job-name`               |`-J`        |Name of script     |Custom job name.|
 |`--output`                 |`-o`        |`"slurm-%j.out"`   |Where to save `stdout` and `stderr` from the job. See [filename patterns](https://slurm.schedmd.com/sbatch.html#SECTION_%3CB%3Efilename-pattern%3C/B%3E) for more formatting options.|
-|`--partition`              |`-p`        |Varies by cluster  |Partition to run on. See individual [cluster pages](/clusters-at-yale/clusters/) for details.|
+|`--partition`              |`-p`        |Varies by cluster  |Partition to run on. See individual [cluster pages](/clusters/) for details.|
 |`--account`                |`-A`        |Your group name    |Specify if you have access to multiple private partitions.|
 |`--time`                   |`-t`        |Varies by partition|Time limit for the job in D-HH:MM:SS, e.g. `-t 1-` is one day, `-t 4:00:00` is 4 hours.|
 |`--nodes`                  |`-N`        |`1`                |Total number of nodes.|

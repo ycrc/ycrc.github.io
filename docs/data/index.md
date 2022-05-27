@@ -6,7 +6,7 @@ If you have questions about selecting an appropriate home for your data, [contac
 ## HPC Cluster Storage
 
 - **Capacity: Varies. Cost: Varies**
-- **Sensitive data is only allowed on the [Milgram cluster](/clusters-at-yale/clusters/milgram/)**
+- **Sensitive data is only allowed on the [Milgram cluster](/clusters/milgram/)**
 - **Only available on YCRC HPC clusters**
 
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.

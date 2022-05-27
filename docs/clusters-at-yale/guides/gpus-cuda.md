@@ -1,6 +1,6 @@
 # GPUs and CUDA
 
-There are GPUs available for general use on the YCRC clusters. In order to use them, you must [request them for your job](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). See the [Grace](/clusters-at-yale/clusters/grace), [Farnam](/clusters-at-yale/clusters/farnam), and [Milgram](/clusters-at-yale/clusters/milgram) pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.
+There are GPUs available for general use on the YCRC clusters. In order to use them, you must [request them for your job](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). See the [Grace](/clusters/grace), [Farnam](/clusters/farnam), and [Milgram](/clusters/milgram) pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.
 
 ## Monitor Activity and Drivers
 

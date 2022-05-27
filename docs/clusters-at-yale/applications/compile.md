@@ -8,7 +8,7 @@ We recommend either use existing [software modules](/clusters-at-yale/applicatio
 
 When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.
 
-Each of the cluster pages (see the [HPC Resources](/clusters-at-yale/clusters) page for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.
+Each of the cluster pages (see the [HPC Resources](/clusters) page for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.
 
 ### Illegal Instruction Instructions
 

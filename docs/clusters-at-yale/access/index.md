@@ -14,7 +14,7 @@ If you're just getting started or prefer a more graphical interface, Open OnDema
 
 * Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`.
 
-* Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters-at-yale/clusters).
+* Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters).
 
 * To use graphical programs on the clusters, please see our guides on [Open OnDemand](/clusters-at-yale/access/ood), [X11 Forwarding](x11) and [VNC](vnc).
 

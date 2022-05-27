@@ -1,6 +1,6 @@
 # Cryogenic Electron Microscopy (Cryo-EM) Data Processing on Farnam
 
-Below is a work in progress collection of general hints, tips and tricks for running your work on [Farnam](/clusters-at-yale/clusters/farnam). As always, if anything below is unclear or could use updating, please let us know [during office hours, via email or through our web ticketing system](/#get-help).
+Below is a work in progress collection of general hints, tips and tricks for running your work on [Farnam](/clusters/farnam). As always, if anything below is unclear or could use updating, please let us know [during office hours, via email or through our web ticketing system](/#get-help).
 
 ## Storage
 
@@ -12,7 +12,7 @@ On most GPU nodes there is a fast SSD mounted at `/tmp`. You can use this as a f
 
 Many Cryo-EM applications can make use of GPUs as co-processors. In order to use a GPU on Farnam you must allocate a job on a partition with GPUs available and explicitly request GPU(s). Make sure to familiarize yourself with our documentation on [scheduling jobs](/clusters-at-yale/job-scheduling/) and [requesting specific resources](/clusters-at-yale/job-scheduling/resource-requests/).
 
-There are four [partitions](/clusters-at-yale/clusters/farnam/#public-partitions) that give you access to GPUs. The gpu, gpu_devel and savenge_gpu partitions are all for general use. The use of the `pi_cryoem` and `pi_tomo` partitions are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI ([See here for contact info](https://cryoem.yale.edu/contact)) for access.
+There are four [partitions](/clusters/farnam/#public-partitions) that give you access to GPUs. The gpu, gpu_devel and savenge_gpu partitions are all for general use. The use of the `pi_cryoem` and `pi_tomo` partitions are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI ([See here for contact info](https://cryoem.yale.edu/contact)) for access.
 
 ## Software
 

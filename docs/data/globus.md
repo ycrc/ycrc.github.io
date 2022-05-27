@@ -16,9 +16,9 @@ We currently support endpoints for the following clusters.
 
 | Cluster                                     | Globus Endpoint |
 |---------------------------------------------|-----------------|
-| [Farnam](/clusters-at-yale/clusters/farnam) | `yale#farnam`   |
-| [Grace](/clusters-at-yale/clusters/grace)   | `yale#grace`    |
-| [Ruddle](/clusters-at-yale/clusters/ruddle) | `yale#ruddle`   |
+| [Farnam](/clusters/farnam) | `yale#farnam`   |
+| [Grace](/clusters/grace)   | `yale#grace`    |
+| [Ruddle](/clusters/ruddle) | `yale#ruddle`   |
 
 These endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
 

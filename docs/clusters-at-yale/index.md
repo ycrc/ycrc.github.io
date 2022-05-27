@@ -4,7 +4,7 @@
 
 [![](/img/cluster.png)](/img/clusters.png){: .cluster-diagram}
 
-Broadly speaking, a high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the **login nodes**. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to manage these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. See our summary of the [compute and storage hardware](/clusters-at-yale/clusters) we maintain, from which you can navigate to a detailed description of each cluster.
+Broadly speaking, a high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the **login nodes**. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  **compute nodes**. The tool we use to manage these jobs is called a **job scheduler**. All compute nodes on a cluster mount a **shared filesystem**; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. See our summary of the [compute and storage hardware](/clusters) we maintain, from which you can navigate to a detailed description of each cluster.
 
 ## Request an Account
 
@@ -17,7 +17,7 @@ While using HPC resources, here are some important things to remember:
 * Do not run jobs, transfers or computation on a login node, instead [submit jobs](/clusters-at-yale/job-scheduling/).
 * Similarly, transfer nodes are only for data transfers. Do not run jobs or computation on the transfer nodes.
 * Never give your password or ssh key to anyone else.
-* Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters-at-yale/clusters/milgram).
+* Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters/milgram).
 * Do not run larger numbers of very short (less than a minute) jobs 
 
 Use of the clusters is also governed by our [official guidelines](https://research.computing.yale.edu/services/high-performance-computing/hpc-principles).

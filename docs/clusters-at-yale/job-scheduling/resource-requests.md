@@ -33,7 +33,7 @@ Slurm strictly enforces the memory your job can use. If you request 5GiB of memo
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters-at-yale/clusters) regarding node configurations that include GPUs. There are several `srun`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters) regarding node configurations that include GPUs. There are several `srun`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
 
 |Long Option<img width=200/>|Short Option|Description                                                                                                                  |
 |---------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|

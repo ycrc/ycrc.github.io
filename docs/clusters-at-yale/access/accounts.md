@@ -4,7 +4,7 @@ The YCRC HPC Policies can found [here](https://research.computing.yale.edu/servi
 
 ## Group Allocations
 
-A research group may request an allocation on one of [Yale's HPC clusters](/clusters-at-yale/clusters). Each group is granted access to the common compute resources and a [limited cluster storage allocation](/data). 
+A research group may request an allocation on one of [Yale's HPC clusters](/clusters). Each group is granted access to the common compute resources and a [limited cluster storage allocation](/data). 
 
 ### Request an Account
 

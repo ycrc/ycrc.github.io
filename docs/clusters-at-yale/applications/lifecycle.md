@@ -19,7 +19,7 @@ The YCRC maintains a rolling two [toolchain](/clusters-at-yale/applications/tool
 
 In June 2021, we removed deprecated software and introduced a new epoch of toolchains. If a module you used in the past is no longer available and there is not a newer module available, please [contact us](/#get-help).
 
-### [Grace](/clusters-at-yale/clusters/grace) and [Milgram](/clusters-at-yale/clusters/milgram)
+### [Grace](/clusters/grace) and [Milgram](/clusters/milgram)
 
 #### Removed Software:
 
@@ -33,7 +33,7 @@ In June 2021, we removed deprecated software and introduced a new epoch of toolc
 - Modules built with a 2020b toolchain, GCCcore/10.2.0 or iccifort/2020.4.304 (new)
 - Commonly used modules not otherwise deprecated
 
-### [Farnam](/clusters-at-yale/clusters/farnam) and [Ruddle](/clusters-at-yale/clusters/ruddle)
+### [Farnam](/clusters/farnam) and [Ruddle](/clusters/ruddle)
 
 #### Removed Software:
 

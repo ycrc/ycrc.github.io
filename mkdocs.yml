@@ -108,7 +108,6 @@ nav:
             - clusters-at-yale/access/ood.md
             - clusters-at-yale/access/vpn.md
             - clusters-at-yale/access/x11.md
-            - clusters-at-yale/access/vnc.md
             - clusters-at-yale/access/mfa.md
             - clusters-at-yale/access/advanced-config.md
         - Applications & Software:
@@ -165,7 +164,6 @@ nav:
             - clusters-at-yale/guides/vasp.md
         - Tools:
             - clusters-at-yale/guides/containers.md
-            - clusters-at-yale/guides/clustershell.md
             - clusters-at-yale/guides/mysql.md
             - clusters-at-yale/guides/parallel.md
             - clusters-at-yale/guides/rclone.md

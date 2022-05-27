@@ -51,4 +51,4 @@ restore –n 20 ...
     When retrieving data, run untar/unquip as a job on a compute node, **not a login node** and make sure to allocate sufficient resources to your job, e.g. `–c 20 --mem=100G`.
 
 !!! tip
-    The ycgaFastq tool can also be used to recover archived data.  See [here](/clusters-at-yale/clusters/ruddle/#access-sequencing-data). 
+    The ycgaFastq tool can also be used to recover archived data.  See [here](/clusters/ruddle/#access-sequencing-data). 
