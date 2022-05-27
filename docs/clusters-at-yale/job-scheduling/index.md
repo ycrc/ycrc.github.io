@@ -103,7 +103,7 @@ You can submit a script as a batch job, *i.e.* one that can be run non-interacti
 See our page of [Submission Script Examples](/clusters-at-yale/job-scheduling/slurm-examples/) for a few more, or the [example scripts repo](https://github.com/ycrc/ycrc_example_scripts) for more in-depth examples. Here is an example submission script that prints some job information and exits:
 
 ``` bash
---8<-- "snippets/example_job.sh"
+--8<-- "docs/_static/files/example_job.sh"
 ```
     
 Save [this file](/_static/files/example_job.sh) as `example_job.sh`, then submit it with:
