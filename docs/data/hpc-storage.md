@@ -7,6 +7,8 @@ Along with access to the compute clusters we provide each research group with cl
 
 ## Storage Spaces
 
+For an overview of which filesystems are mounted on each cluster, see the [HPC Resources](http://127.0.0.1:8000/clusters/#storage) documentation.
+
 ### Home
 
 Quota: 125 GiB and 500,000 files per person
@@ -17,26 +19,9 @@ Your home directory is where your sessions begin by default. Its intended use is
 
 Quota: 1 TiB and 5,000,000 files per group, expanded to 4 TiB on request
 
-Project storage is shared among all members of a specific group.
-Each group member has their own directory within their groups project directory and a symbolic link, or shortcut, to this directory is placed in your home-space called `~/project`.
-The true path of your project space can be found by running `mydirectories` or with
+Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project.
 
-``` bash
-readlink -f ~/project
-```
-
-By default, all group members' project spaces are readable by all other members of that group.
-To see your colleagues' project spaces, you need to access them via the true path, not the symbolic link in their home space.
-For example, on `Grace` you would do the following:
-
-```bash
-cd /gpfs/loomis/project/<group_name>
-```
-
-and you would see directories for each member of your group.
-
-You can also [share data with people more granularly](/data/permissions/).
-It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project storage is not backed up.
+You can access this space through a symlink, or shortcut, in your home directory called `project`. See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your project space with other users.
 
 
 #### Purchased Storage
@@ -45,21 +30,17 @@ Quota: varies
 
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](/data/#purchase-additional-storage) for details on purchasing storage. 
-Purchased storage, if applicable, is located in a `/gpfs/gibbs/pi/` directory under the group's name. 
+Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name. 
 
 ### 60-Day Scratch
 
 Quota: 20 TiB and 15,000,000 files per group
 
-60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old.
+60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. 
 
-We create a symlink, or shortcut, in every home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters/grace)), but the true path to your scratch60 directory is different. You can get it by running the `mydirectories` command or with
+You can access this space through a symlink, or shortcut, in your home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters/grace)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
 
-``` bash
-readlink -f ~/scratch60
-```
-
-### Check Your Quotas
+## Check Your Usage and Quotas
 
 To inspect your current usage, run the command `getquota`. Here is an example output of the command:
 

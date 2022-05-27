@@ -1,21 +1,27 @@
-# Manage Permissions for Sharing
+# Share with Cluster Users
 
 ## Home Directories
 
 **Do not give your home directory group write permissions. This will break your ability to log into the cluster.**  If you need to share files currently located in your home directory, either move it your project directory or [contact us](/#get-help) for assistance finding an appropriate location.
 
-## Shared Group Directories
+### `project` and `scratch60` links in Home Directories
 
-Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for shared data directories.
+For convenience, we create a symlink, or shortcut, in every home directory called `project` and `~/scratch60` (and `palmer_scratch` on [Grace](/clusters/grace)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
 
-If interested, [contact us](/#get-help) to request such a directory.
+You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.
+
+## Share Data within your Group
+
+By default, all project, purchased allocation and scratch60 directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.
+
+### Shared Group Directories
+
+Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for all group members. If interested, [contact us](/#get-help) to request such a directory.
 
 ## Share With Specific Users or Other Groups
 
-It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group.  The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios. 
-
-!!!warning
-    Your `~/project` and `~/scratch60` directories are actually symlinks (shortcuts) to elsewhere on the filesystem. Either run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get their true paths. Otherwise you will receive errors related to read permissions for your home-space.
+It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios.
+    
 
 ### Share a Directory with All Members of a Group
 

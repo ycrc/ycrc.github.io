@@ -129,16 +129,16 @@ nav:
             - clusters-at-yale/job-scheduling/scavenge.md
             - clusters-at-yale/job-scheduling/mpi.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
-        - Transfer Data:
-            - "Transfer to Cluster": data/transfer.md
-            - data/globus.md
-            - "Stage Data for Compute Jobs": data/staging.md
     - Data & Storage:
             - data/index.md
             - data/hpc-storage.md
             - data/backups.md
             - data/archived-sequencing.md
             - data/google-drive.md
+            - Transfer Data:
+                - "Transfer to Cluster": data/transfer.md
+                - data/globus.md
+                - "Stage Data for Compute Jobs": data/staging.md
             - Manage & Share:
                 - data/permissions.md
                 - data/archive.md
