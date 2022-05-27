@@ -62,7 +62,7 @@ The Globus connector is configured to only allow data to be uploaded into EliApp
 !!! note 
     There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. You see a "Endpoint Busy" error during this time.
 
-    Google has a 400,000 file limit per [Shared Drive](/data/google-drive), so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using [tar](/online-tutorials)) before transferring. 
+    Google has a 400,000 file limit per [Shared Drive](/data/google-drive), so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using [tar](/resources/online-tutorials)) before transferring. 
 
 In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.
 

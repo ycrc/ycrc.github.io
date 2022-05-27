@@ -11,7 +11,7 @@ If your Yale email account is already an EliApps account (Gmail), then you are a
 [Shared Drives](https://gsuite.google.com/learning-center/products/drive/get-started-team-drive/#!/) is an additional feature for EliApps that is available by request only (at the moment). A Shared Drive is a Google Drive space that solves a lot of ownership and permissions issues present with traditional shared Google Drive folder. Once you create a Shared Drive, e.g. for a project or research group, any data placed in that Drive are owned by the drive and the permission (which accounts can own or access the data) can be easily managed from the Shared Drive interface by drive owners. With Shared Drive, you can be sure the data will stay with research group as students and postdocs come and go. If your group already uses google drive, [contact us](/#get-help) if you need additional Shared Drives. Although they don't have a total size quota, there are [limits for Google Shared Drives](https://support.google.com/a/answer/7338880?hl=en). Some are listed below.
 
 !!! warning
-     To keep file counts low (and for easier data retrieval) we *highly* recommended that you archive your data using zip or [tar](/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive).
+     To keep file counts low (and for easier data retrieval) we *highly* recommended that you archive your data using zip or [tar](/resources/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive).
 
 | Limit type                                | Limit   |
 |-------------------------------------------|---------|

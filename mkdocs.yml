@@ -6,7 +6,7 @@ repo_name: github/ycrc/docs
 repo_url: https://github.com/ycrc/ycrc.github.io/tree/src
 edit_uri: docs/
 remote_branch: master
-strict: false
+strict: true
 
 theme:
     name: material
@@ -35,6 +35,8 @@ plugins:
             'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
             'clusters-at-yale/data/permissions.md': 'data/permissions.md'
             'clusters-at-yale/data/archived-sequencing.md': 'data/archived-sequencing.md'
+            'online-tutorials.md': 'resources/online-tutorials.md'
+            'national-hpcs.md': 'resources/national-hpcs.md'
 
 
 extra:
@@ -177,7 +179,7 @@ nav:
             - Training:
                 - "YCRC Workshops": https://research.computing.yale.edu/training
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
-                - online-tutorials.md
+                - resources/online-tutorials.md
             - user-group.md
-            - national-hpcs.md
+            - resources/national-hpcs.md
             - "Glossary": glossary.md

@@ -6,4 +6,4 @@ For certain software packages, we provide guides for running on our clusters. If
 
 ## Additional Guides
 
-For additional guides and tutorials, see our catalog of recommended [online tutorials on Python, R, unix commands and more](/online-tutorials).
+For additional guides and tutorials, see our catalog of recommended [online tutorials on Python, R, unix commands and more](/resources/online-tutorials).
