@@ -5,9 +5,9 @@ If you have questions about selecting an appropriate home for your data, [contac
 
 ## HPC Cluster Storage
 
-**Capacity: Varies. Cost: Varies 
-Sensitive data is only allowed on the [Milgram cluster](/clusters-at-yale/clusters/milgram/)
-Only available on YCRC HPC clusters**
+- **Capacity: Varies. Cost: Varies**
+- **Sensitive data is only allowed on the [Milgram cluster](/clusters-at-yale/clusters/milgram/)**
+- **Only available on YCRC HPC clusters**
 
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.
 Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/clusters-at-yale/data/) page.
@@ -17,17 +17,17 @@ Additional project-style storage allocations can be purchased. See [here](/clust
 
 ## Google Drive via EliApps
 
-**Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free 
-No sensitive data (e.g. ePHI, HIPAA)  
-Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/data/globus)**
+- **Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free**
+- **No sensitive data (e.g. ePHI, HIPAA)**
+- **Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/clusters-at-yale/data/globus)**
 
 Google Drive is a cloud service for file storage, document editing and sharing. All members of the Yale community with an EliApps (Google Workspace for Education) account have storage at no cost in the associated Google Drive account. Moreover, EliApps users can request Shared Drives, which are shared spaces where all files are group-owned. For more information on Google Drive through EliApps, see our [Google Drive documentation](/data/google-drive).
 
 ## Storage @ Yale
 
-**Capacity: As requested. Cost: See below  
-No sensitive data (e.g. ePHI, HIPAA) for cluster mounts  
-Can be mounted on the cluster or computers on campus (but not both)**
+- **Capacity: As requested. Cost: See below**
+- **No sensitive data (e.g. ePHI, HIPAA) for cluster mounts**
+- **Can be mounted on the cluster or computers on campus (but not both)**
 
 Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. 
 
@@ -47,15 +47,15 @@ To request a share, press the “Request this Service” button in the right sid
 
 ## Microsoft Teams/SharePoint
 
-**Capacity: 25 TB, 250 GB per file. Cost: Free
+- **Capacity: 25 TB, 250 GB per file. Cost: Free**
 
 You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on The relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
 
 ## Box at Yale
 
-**Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.  
-Sensitive data (e.g. ePHI, HIPAA) only in Secure Box  
-Can be mounted on your local machine and transferred with [`rclone`](https://rclone.org/)**
+- **Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.**
+- **Sensitive data (e.g. ePHI, HIPAA) only in Secure Box**
+- **Can be mounted on your local machine and transferred with [`rclone`](https://rclone.org/)**
 
 All members of the Yale community have access to a share at Box at Yale. Box is another cloud-based file sharing and storage service. You can upload and access your data using the web portal and sync data with your local machines via Box Sync.
 

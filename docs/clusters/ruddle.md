@@ -35,7 +35,7 @@ Illumina sequence data is initially written to YCGA's main storage system, which
 
 - 45 days after sequencing, the raw bcl files are deleted.
 - 60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.
-- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  [Instructions for retrieving archived data](/clusters-at-yale/data/archived-sequencing).
+- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  [Instructions for retrieving archived data](/data/archived-sequencing).
 
 All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the tape archive.
 Disaster recovery is provided by the data stored on the tape library.
@@ -73,7 +73,7 @@ $ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sam
 ```
 
 !!! tip
-    Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/clusters-at-yale/data/archived-sequencing).
+    Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/data/archived-sequencing).
 
 If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:
 
@@ -124,11 +124,11 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## Storage
 
-Ruddle's filesystem, `/gpfs/ycga`, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation. Ruddle's old `ycga-ba` filesystem has been retired.
+Ruddle's filesystem, `/gpfs/ycga`, is  where home, project, and scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation. Ruddle's old `ycga-ba` filesystem has been retired.
 
-You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
+You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 
-For information on data recovery, see the [Backups and Snapshots](/clusters-at-yale/data/#backups-and-snapshots) documentation.
+For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

@@ -1,11 +1,11 @@
-# Cluster Storage
+# HPC Storage
 
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the `getquota` command on a cluster. No sensitive data can be stored on any cluster storage, except for [Milgram](/clusters-at-yale/clusters/milgram/).
 
 !!! warning "Backups"
     The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
 
-## HPC Storage Quotas
+## Storage Spaces
 
 ### Home
 
@@ -35,7 +35,7 @@ cd /gpfs/loomis/project/<group_name>
 
 and you would see directories for each member of your group.
 
-You can also [share data with people more granularly](/clusters-at-yale/data/permissions/).
+You can also [share data with people more granularly](/data/permissions/).
 It is good practice to have a second copy somewhere off-cluster of any valuable data you have stored in project because project storage is not backed up.
 
 
@@ -44,7 +44,7 @@ It is good practice to have a second copy somewhere off-cluster of any valuable 
 Quota: varies
 
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
-See [below](/clusters-at-yale/data/#additional-storage) for details on purchasing storage. 
+See [below](/data/#purchase-additional-storage) for details on purchasing storage. 
 Purchased storage, if applicable, is located in a `/gpfs/gibbs/pi/` directory under the group's name. 
 
 ### 60-Day Scratch

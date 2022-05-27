@@ -6,7 +6,7 @@ repo_name: github/ycrc/docs
 repo_url: https://github.com/ycrc/ycrc.github.io/tree/src
 edit_uri: docs/
 remote_branch: master
-strict: true
+strict: false
 
 theme:
     name: material
@@ -25,6 +25,17 @@ theme:
 plugins:
   - search
   - git-revision-date-localized
+  - redirects:
+        redirect_maps:
+            'clusters-at-yale/clusters/index.md': 'clusters/index.md'
+            'clusters-at-yale/clusters/farnam.md': 'clusters/farnam.md'
+            'clusters-at-yale/clusters/ruddle.md': 'clusters/ruddle.md'
+            'clusters-at-yale/clusters/milgram.md': 'clusters/milgram.md'
+            'clusters-at-yale/clusters/grace.md': 'clusters/grace.md'
+            'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
+            'clusters-at-yale/data/permissions.md': 'data/permissions.md'
+            'clusters-at-yale/data/archived-sequencing.md': 'data/archived-sequencing.md'
+
 
 extra:
   social:
@@ -43,10 +54,10 @@ extra:
     property: G-QM84KPHSPL
 
 extra_css:
-    - 'stylesheets/extra.css'
+    - '_static/stylesheets/extra.css'
 
 extra_javascript:
-    - 'js/extra.js'
+    - '_static/js/extra.js'
     - 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
 
 markdown_extensions:
@@ -74,11 +85,11 @@ nav:
         - Introduction: index.md
         - news.md
         - HPC Clusters:
-            - "Overview": clusters-at-yale/clusters/index.md
-            - clusters-at-yale/clusters/grace.md
-            - clusters-at-yale/clusters/farnam.md
-            - clusters-at-yale/clusters/ruddle.md
-            - clusters-at-yale/clusters/milgram.md
+            - "Overview": clusters/index.md
+            - clusters/grace.md
+            - clusters/farnam.md
+            - clusters/ruddle.md
+            - clusters/milgram.md
         - About the YCRC: https://research.computing.yale.edu/about
 
     - User Guide:
@@ -120,11 +131,12 @@ nav:
             - "Stage Data for Compute Jobs": clusters-at-yale/data/staging.md
     - Data & Storage:
             - data/index.md
-            - clusters-at-yale/data/index.md
+            - data/hpc-storage.md
+            - data/backups.md
+            - data/archived-sequencing.md
             - data/google-drive.md
-            - clusters-at-yale/data/archived-sequencing.md
             - Manage & Share:
-                - clusters-at-yale/data/permissions.md
+                - data/permissions.md
                 - data/archive.md
                 - data/external.md
 

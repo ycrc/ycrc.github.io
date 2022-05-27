@@ -1,14 +1,14 @@
-## Backups and Snapshots
+# Backups and Snapshots
 
-The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). See the [individual cluster](/clusters-at-yale/clusters) documentation for more details about which storage is backed up or has snapshots. 
+The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). See the [individual cluster](/clusters) documentation for more details about which storage is backed up or has snapshots. 
 
 Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups. 
 
-### Retrieve Data from Home Backups
+## Retrieve Data from Home Backups
 
 [Contact us](/#get-help) with your netid and the list of files/directories you would like restored. For any data deleted in the last couple days, first try the self-service snapshots described below.
 
-### Retrieve Data from Snapshots
+## Retrieve Data from Snapshots
 
 Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage. There are no snapshots on the Gibbs or Palmer filesystems at this time.
 

@@ -15,7 +15,7 @@ We maintain and support four Red Hat Linux compute clusters, listed below. Pleas
 
 ## Storage
 
-We maintain several high performance storage systems. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/clusters-at-yale/data/index) page.
+We maintain several high performance storage systems. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/data/hpc-storage) page.
 
 | Name     | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                         |
 |----------|---------------|---------|-----------------------|---------------------------|---------------------------------|

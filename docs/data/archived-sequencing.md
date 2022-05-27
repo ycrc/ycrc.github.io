@@ -1,8 +1,8 @@
-# Ruddle Archived Sequence Data
+# YCGA Sequence Data Archive
 
 ## Retrieve Data from the Archive
 
-In the sequencing archive on [Ruddle](/clusters-at-yale/clusters/ruddle), a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
+In the sequencing archive on [Ruddle](/clusters/ruddle), a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
 
 Although the archive actually exists on tape, you can treat it as a regular directory tree. Many operations such as `ls`, `cd`, etc. are very fast, since directory structures and file metadata are on a disk cache. However, when you actually read the contents of files the tape is mounted and the file is read into a disk cache.
 

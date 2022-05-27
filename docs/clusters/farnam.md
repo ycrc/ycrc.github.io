@@ -9,7 +9,7 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 - - -
 
 !!! info "Upcoming Farnam Retirement"
-    After more than six years in service, we will be retiring the Farnam HPC cluster later this year. In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters-at-yale/clusters/farnam-decommission).
+    After more than six years in service, we will be retiring the Farnam HPC cluster later this year. In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters/farnam-decommission).
 
 ## Access the Cluster
 
@@ -60,11 +60,11 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## Storage
 
-Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where Home, Project, and Scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/clusters-at-yale/data/index) documentation.
+Farnam has access to a number of GPFS filesystems. `/gpfs/ysm` is Farnam's primary filesystem where Home, Project, and Scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/clusters-at-yale/data/permissions/) page.
+You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/scratch60` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 
-For information on data recovery, see the [Backups and Snapshots](/clusters-at-yale/data/#backups-and-snapshots) documentation.
+For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
     Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.

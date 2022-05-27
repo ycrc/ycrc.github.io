@@ -69,7 +69,7 @@ RStudio Server is out of beta! With the deprecation of R 3.x (see below), we wil
 Starting with the R 4.1.0 software module, we now automatically set an environment variable (`R_LIBS_USER`) which directs these packages to be stored in your project space. This will helps ensure that packages are not limited by home-space quotas and that packages installed for different versions of R are properly separated from each other. Previously installed packages should still be available and there should be no disruption from the change.
 
 #### Instructions for Running a MySQL Server on the Clusters
-Occasionally it could be useful for a user to run their own MySQL database server on one of the clusters.  Until now, that has not been possible, but recently we found a way using singularity.  Instructions may be found in our [new MySQL guide](https://docs.ycrc.yale.edu/clusters-at-yale/guides/mysql/).
+Occasionally it could be useful for a user to run their own MySQL database server on one of the clusters.  Until now, that has not been possible, but recently we found a way using singularity.  Instructions may be found in our [new MySQL guide](/clusters-at-yale/guides/mysql/).
 
 ### Software Highlights
 
@@ -83,7 +83,7 @@ Occasionally it could be useful for a user to run their own MySQL database serve
 
 #### Snapshots
 
-Snapshots are now available on all clusters for home and project spaces. Snapshots enable self-service restoration of modified or deleted files for at least 2 days in the past. [See our User Documentation for more details on availability and instructions.](https://docs.ycrc.yale.edu/clusters-at-yale/data/#backups-and-snapshots)
+Snapshots are now available on all clusters for home and project spaces. Snapshots enable self-service restoration of modified or deleted files for at least 2 days in the past. [See our User Documentation for more details on availability and instructions.](/data/backups)
 
 #### OOD File Browser Tip: Shortcuts
 
@@ -122,7 +122,7 @@ We have added an additional way to request an interactive job. The Slurm command
  
 ### Palmer scratch
 
-Palmer is out of beta! We have fixed the issue with Plink on Palmer, so now you can use Palmer scratch for any workloads. See [https://docs.ycrc.yale.edu/clusters-at-yale/data/index#60-day-scratch](https://docs.ycrc.yale.edu/clusters-at-yale/data/index#60-day-scratch) for more information on Palmer scratch. 
+Palmer is out of beta! We have fixed the issue with Plink on Palmer, so now you can use Palmer scratch for any workloads. See [https://docs.ycrc.yale.edu/data/hpc-storage#60-day-scratch](/data/hpc-storage/#60-day-scratch) for more information on Palmer scratch. 
 
 ## February 2022
 

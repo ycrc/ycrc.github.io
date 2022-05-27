@@ -5,11 +5,11 @@
 
 ## Configuration
 
-To set up ClusterShell, make sure you have a `.config` directory and a copy our [`groups.conf`](/files/clustershell_groups.conf) file there. For more info about ClusterShell configuration for Slurm, see [the official docs](https://clustershell.readthedocs.io/en/latest/config.html#slurm-group-bindings).
+To set up ClusterShell, make sure you have a `.config` directory and a copy our [`groups.conf`](/_static/files/clustershell_groups.conf) file there. For more info about ClusterShell configuration for Slurm, see [the official docs](https://clustershell.readthedocs.io/en/latest/config.html#slurm-group-bindings).
 
 ``` bash
 mkdir -p ~/.config/clustershell
-wget https://docs.ycrc.yale.edu/files/clustershell_groups.conf -O ~/.config/clustershell/groups.conf 
+wget https://docs.ycrc.yale.edu/_static/files/clustershell_groups.conf -O ~/.config/clustershell/groups.conf 
 ```
 
 We provide ClusterShell as a module, but you can also install it with `conda`.
