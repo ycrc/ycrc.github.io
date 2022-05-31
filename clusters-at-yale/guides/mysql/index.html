@@ -2321,8 +2321,8 @@ allocations on an HPC cluster are temporary.  If you need a persistent mysql dat
 lab, or using ITS's <a href="https://spinup.internal.yale.edu">Spinup</a> service.  In either case, the mysql server can be accessed remotely from the HPC clusters.</p>
 <p>However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
-require admin privileges.  The instructions that follow walk you through the process of running a mysql server using singularity on a cluster compute node 
-without any special privileges.  It uses a singularity <a href="https://www.hpc.iastate.edu/guides/containers/mysql-server">container</a> 
+require admin privileges.  The instructions that follow walk you through the process of running a mysql server using <a href="/clusters-at-yale/guides/containers">Apptainer</a> on a cluster compute node 
+without any special privileges.  It uses a Singularity <a href="https://www.hpc.iastate.edu/guides/containers/mysql-server">container</a> 
 developed by Robert Grandin at Iowa State (Thanks!) </p>
 <p>All of the following must be done on an allocated compute node.  Do not do this on the login node!</p>
 <h3 id="step-1-create-an-installation-directory-somewhere-and-cd-to-it">Step 1: Create an installation directory somewhere, and cd to it</h3>
@@ -2348,27 +2348,30 @@ password=&#39;my-secret-pw&#39;
 </code></pre></div>
 <h3 id="step-4-make-a-link-to-the-mysql-image-file">Step 4: Make a link to the mysql image file</h3>
 <p>The mysqld image file can be found under the apps tree on each cluster.
-For example, on Grace:/gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:</p>
-<div class="highlight"><pre><span></span><code>ln -s /gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg mysql.simg
+For example, on Grace:</p>
+<div class="highlight"><pre><span></span><code>/gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg
+</code></pre></div>
+<p>We recommend that you make a link to it in your mysql directory:</p>
+<div class="highlight"><pre><span></span><code>ln -s /gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg mysql.simg
 </code></pre></div>
 <h3 id="step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet">Step 5: Start the container.  Note that this doesn't actually start the service yet.</h3>
-<div class="highlight"><pre><span></span><code>singularity instance start --bind ${HOME} \
+<div class="highlight"><pre><span></span><code>apptainer instance start --bind ${HOME} \
     --bind ${PWD}/mysql/var/lib/mysql/:/var/lib/mysql \
     --bind ${PWD}/mysql/run/mysqld:/run/mysqld \
     ./mysql.simg mysql
 </code></pre></div>
 <p>To check that it is running:</p>
-<div class="highlight"><pre><span></span><code>singularity instance list
+<div class="highlight"><pre><span></span><code>apptainer instance list
 </code></pre></div>
 <h3 id="step-6-start-the-mysqld-server-within-the-container">Step 6: Start the mysqld server within the container</h3>
-<div class="highlight"><pre><span></span><code>singularity run instance://mysql
+<div class="highlight"><pre><span></span><code>apptainer run instance://mysql
 </code></pre></div>
 <p>You'll see lots of output, but at the end you should see a message like this
 <div class="highlight"><pre><span></span><code>2022-02-21T17:16:21.104527Z 0 [Note] mysqld: ready for connections.
 Version: &#39;5.7.21&#39;  socket: &#39;/var/run/mysqld/mysqld.sock&#39;  port: 3306  MySQL Community Server (GPL)
 </code></pre></div></p>
 <h3 id="step-7-enter-the-running-container">Step 7: Enter the running container</h3>
-<div class="highlight"><pre><span></span><code>singularity exec instance://mysql /bin/bash
+<div class="highlight"><pre><span></span><code>apptainer exec instance://mysql /bin/bash
 </code></pre></div>
 <p>Connect locally as root user while in the container, using the password you set in the config files in step 2.
 <div class="highlight"><pre><span></span><code>Singularity&gt; mysql -u root -p
@@ -2414,7 +2417,7 @@ Query OK, 0 rows affected (0.11 sec)
 </code></pre></div></p>
 <p>Success!  You've earned a reward of your choice!</p>
 <h3 id="step-9-shut-the-container-down">Step 9 Shut the container down.</h3>
-<div class="highlight"><pre><span></span><code>Singularity instance stop mysql
+<div class="highlight"><pre><span></span><code>apptainer instance stop mysql
 </code></pre></div>
 <p>Now that everything is installed, the next time you want to start the server, you'll only need to do steps 5 (starting the container)
 and 6 (starting the mysql server).</p>
@@ -2438,7 +2441,7 @@ password=&#39;my-secret-pw&#39;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
       
     
   </small>

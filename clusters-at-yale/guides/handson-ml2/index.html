@@ -2394,16 +2394,16 @@ docker run -it --rm -p <span class="m">8500</span>:8500 -p <span class="m">8501<
    -e <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model <span class="se">\</span>
    tensorflow/serving
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>singularity build tf_model_server.sif docker://tensorflow/serving
+<div class="highlight"><pre><span></span><code>apptainer build tf_model_server.sif docker://tensorflow/serving
 
 <span class="nb">export</span> <span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/repos/handson-ml2
-singularity run --containall -B <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
+apptainer run --containall -B <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
     --env <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model tf_model_server.sif
 </code></pre></div>
 <ul>
 <li>Only need to build <code>.sif</code> file when you would run <code>docker pull</code></li>
 <li>Don't need to forward ports out of container</li>
-<li><code>--containall</code> makes singularity run more like docker, allows finer control of what files container sees</li>
+<li><code>--containall</code> makes apptainer run more like docker, allows finer control of what files container sees</li>
 </ul>
 <h2 id="heterogeneous-job-layouts">Heterogeneous Job Layouts</h2>
 <p>If you want to allocate multiple node types in a single job, e.g. a larger first task/worker for a tf "chief" or a CPU-only parameter server. </p>
@@ -2441,7 +2441,7 @@ python cluster_tf.py
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
       
     
   </small>

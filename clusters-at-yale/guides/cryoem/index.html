@@ -2414,7 +2414,7 @@ srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refin
 <p>At present, we have a mostly working <a href="/clusters-at-yale/guides/containers/">apptainer container</a> for EMAN2.3 available here: </p>
 <p><code>/gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif</code></p>
 <p>To run a program from EMAN2 using this container you would use a command like:</p>
-<div class="highlight"><pre><span></span><code>singularity <span class="nb">exec</span> /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
 </code></pre></div>
 <h3 id="cryosparc">Cryosparc</h3>
 <p>We have a <a href="/clusters-at-yale/guides/cryosparc/">whole separate page</a> about this one, it is a bit involved.</p>
@@ -2428,7 +2428,7 @@ srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refin
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
       
     
   </small>

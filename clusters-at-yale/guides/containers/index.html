@@ -2477,7 +2477,7 @@
 <h2 id="apptainer-containers">Apptainer Containers</h2>
 <p>Images are the file(s) you use to run your container. Apptainer images are single files that usually end in <code>.sif</code> and are read-only by default, meaning changes you make to the environment inside the container are not persistent.</p>
 <h2 id="use-a-pre-existing-container">Use a Pre-existing Container</h2>
-<p>If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that <a href="/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://singularityhub.github.io/singularityhub-docs/">Singularity Hub</a> (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
+<p>If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that <a href="/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://singularityhub.github.io/singularityhub-docs/">Singularity Hub</a> (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer</span>
 <span class="c1"># e.g.</span>
 <span class="nb">export</span> <span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>~/scratch60/.apptainer
@@ -2583,7 +2583,7 @@ apptainer <span class="nb">exec</span> my_blast_image.sif env <span class="p">|<
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
       
     
   </small>
