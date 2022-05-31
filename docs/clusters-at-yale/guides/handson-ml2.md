@@ -120,16 +120,16 @@ docker run -it --rm -p 8500:8500 -p 8501:8501 \
 ```
 
 ``` bash
-singularity build tf_model_server.sif docker://tensorflow/serving
+apptainer build tf_model_server.sif docker://tensorflow/serving
 
 export ML_PATH=$HOME/repos/handson-ml2
-singularity run --containall -B "$ML_PATH/my_mnist_model:/models/my_mnist_model" \
+apptainer run --containall -B "$ML_PATH/my_mnist_model:/models/my_mnist_model" \
     --env MODEL_NAME=my_mnist_model tf_model_server.sif
 ```
 
 - Only need to build `.sif` file when you would run `docker pull`
 - Don't need to forward ports out of container
-- `--containall` makes singularity run more like docker, allows finer control of what files container sees
+- `--containall` makes apptainer run more like docker, allows finer control of what files container sees
 
 ## Heterogeneous Job Layouts
 
