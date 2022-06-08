@@ -62,7 +62,7 @@ The EMAN2 authors offer some instructions on how to get EMAN2 running in a clust
 To run a program from EMAN2 using this container you would use a command like:
 
 ``` bash
-singularity exec /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
+apptainer exec /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
 ```
 ### Cryosparc
 

@@ -16,7 +16,7 @@ Images are the file(s) you use to run your container. Apptainer images are singl
 
 ## Use a Pre-existing Container
 
-If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that [can be transferred](/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/) or [Singularity Hub](https://singularityhub.github.io/singularityhub-docs/) (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location singularity uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that [can be transferred](/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/) or [Singularity Hub](https://singularityhub.github.io/singularityhub-docs/) (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
 ``` bash
 # set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer

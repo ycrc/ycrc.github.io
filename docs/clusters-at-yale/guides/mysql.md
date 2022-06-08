@@ -6,8 +6,8 @@ lab, or using ITS's [Spinup](https://spinup.internal.yale.edu) service.  In eith
 
 However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
-require admin privileges.  The instructions that follow walk you through the process of running a mysql server using singularity on a cluster compute node 
-without any special privileges.  It uses a singularity [container](https://www.hpc.iastate.edu/guides/containers/mysql-server) 
+require admin privileges.  The instructions that follow walk you through the process of running a mysql server using [Apptainer](/clusters-at-yale/guides/containers) on a cluster compute node 
+without any special privileges.  It uses a Singularity [container](https://www.hpc.iastate.edu/guides/containers/mysql-server) 
 developed by Robert Grandin at Iowa State (Thanks!) 
 
 All of the following must be done on an allocated compute node.  Do not do this on the login node!
@@ -47,17 +47,23 @@ mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
 ### Step 4: Make a link to the mysql image file
 
 The mysqld image file can be found under the apps tree on each cluster.
-For example, on Grace:/gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg.  We recommend that you make a link to it in your mysql directory:
+For example, on Grace:
 
 ```
-ln -s /gpfs/loomis/apps/singularity/img/mysql/mysqld-5.7.21.simg mysql.simg
+/gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg
+```
+
+We recommend that you make a link to it in your mysql directory:
+
+```
+ln -s /gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg mysql.simg
 ```
 
 
 ### Step 5: Start the container.  Note that this doesn't actually start the service yet.
 
 ```
-singularity instance start --bind ${HOME} \
+apptainer instance start --bind ${HOME} \
     --bind ${PWD}/mysql/var/lib/mysql/:/var/lib/mysql \
     --bind ${PWD}/mysql/run/mysqld:/run/mysqld \
     ./mysql.simg mysql
@@ -66,13 +72,13 @@ singularity instance start --bind ${HOME} \
 To check that it is running:
 
 ```
-singularity instance list
+apptainer instance list
 ```
 
 ### Step 6: Start the mysqld server within the container
 
 ```
-singularity run instance://mysql
+apptainer run instance://mysql
 ```
 
 You'll see lots of output, but at the end you should see a message like this
@@ -83,7 +89,7 @@ Version: '5.7.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Comm
 
 ### Step 7: Enter the running container
 ```
-singularity exec instance://mysql /bin/bash
+apptainer exec instance://mysql /bin/bash
 ```
 
 Connect locally as root user while in the container, using the password you set in the config files in step 2.
@@ -146,7 +152,7 @@ Success!  You've earned a reward of your choice!
 ### Step 9 Shut the container down.
 
 ```
-Singularity instance stop mysql
+apptainer instance stop mysql
 ```
 
 Now that everything is installed, the next time you want to start the server, you'll only need to do steps 5 (starting the container)
