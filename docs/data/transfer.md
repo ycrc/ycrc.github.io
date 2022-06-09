@@ -103,7 +103,7 @@ To specify the destination, simply replace the `.` with the full path:
 scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 ```
 
-## Transfer Data to/from Other Locations 
+## Transfer Data to/from Other Locations
 
 ### Globus Endpoints
 
@@ -144,3 +144,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 ```
 
 We recommend that you protect your configurations with a password. You'll see that as an option when you run rclone config. For all the Rclone documentaion please [refer to the official site](https://rclone.org/docs/).
+
+### Sites Behind a VPN
+
+If you need to transfer data to or from an external site that is only accessible via VPN, please [contact us](/#get-help) for assistance as we might be able to provide a workaround to enable a direct transfer between the YCRC clusters and your external site.
