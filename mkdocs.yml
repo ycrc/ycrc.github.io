@@ -17,7 +17,7 @@ theme:
     favicon: 'assets/images/favicon.ico'
 
     features:
-        - navigation.instant
+        #- navigation.instant
         - navigation.tabs
         - navigation.tabs.sticky
         - navigation.sections
@@ -25,6 +25,15 @@ theme:
 plugins:
   - search
   - git-revision-date-localized
+  - blogging:
+        dirs:
+            - news
+        template: 'theme/partials/news-overrides.html'
+        show_total: false  # Remove 'total pages' label
+        size: 5
+        time_format: '%B %d, %Y'
+        meta_time_format: '%Y-%m-%d'
+
   - redirects:
         redirect_maps:
             'clusters-at-yale/clusters/index.md': 'clusters/index.md'

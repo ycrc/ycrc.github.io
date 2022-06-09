@@ -1,0 +1,29 @@
+{# Import the original template, required. #}
+{% extends "blog.html" %}
+
+
+{% macro render_blog(title, description, time, url, pg) -%}
+<div class="blog-post">
+    {% if show_tags and "tags" in pg.meta %}
+        {% call render_tags(pg.meta["tags"], index_url) %}
+        {% endcall %}
+    {% endif %}
+    <div class="blog-post-description">
+        {{ pg.content|safe }}
+    </div>
+    <div class="blog-post-extra">
+        {{ ("Updated" if is_revision else "Published") + ": " + time }}
+    </div>
+    <hr />
+</div>
+{{ caller() }}
+{%- endmacro %}
+
+
+{# Custom css, optional. #}
+{% block style %}
+{{ super() }}
+<style>
+
+</style>
+{% endblock %}
