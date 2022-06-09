@@ -1,5 +1,48 @@
 # News
 
+## Milgram Maintenance
+_June 8, 2022_
+
+### Software Updates
+
+- Security updates
+- Slurm updated to 21.08.8-2
+- NVIDIA drivers updated to 515.43.04
+- Singularity replaced by Apptainer version 1.0.2 (note: the "singularity" command will still work as expected)
+- Lmod updated to 8.7
+- Open OnDemand updated to 2.0.23
+
+### Hardware Updates
+
+- The hostnames of the compute nodes on Milgram were changed to bring them in line with YCRC naming conventions.
+
+### Changes to non-interactive sessions
+
+Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads.
+Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.
+
+
+## June 2022
+
+### Announcements
+
+#### Farnam Decommission & McCleary Announcement
+
+After more than six years in service, we will be retiring the Farnam HPC cluster later this year. Farnam will be replaced with a new HPC cluster, McCleary. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future. For more information about the decommission process and the launch of McCleary, see [our website](/clusters/farnam-decommission).
+
+#### RStudio (with module R) has been retired from Open OnDemand as of June 1st
+
+Please switch to RStudio Server which provides a better user experience. For users using a conda environment with RStudio, RStudio (with Conda R) will continue to be served on Open OnDemand.
+
+#### Milgram Maintenance
+The biannual scheduled maintenance for the Milgram cluster will be occurring June 7-9. During this time, the cluster will be unavailable. See the Milgram maintenance email announcements for more details.
+
+### Software Highlights
+
+- **QTLtools/1.3.1-foss-2020b** is now available on Farnam.
+- **R/4.2.0-foss-2020b** is available on all clusters.
+- Seurat for R/4.2.0 is now available on all clusters through the **R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0** module along with many other packages. Please check to see if any packages you need are available in these modules before running `install.packages`. 
+
 ## Ruddle Maintenance
 _May 2, 2022_
 
@@ -8,7 +51,7 @@ _May 2, 2022_
 - Security updates
 - Slurm updated to 21.08.7
 - Singularity replaced by Apptainer version 1.0.1 (note: the "singularity" command will still work as expected)
-- Lmod updated version 8.7
+- Lmod updated to 8.7
 
 ### Changes to non-interactive sessions
 
