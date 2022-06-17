@@ -1,0 +1,451 @@
+.:
+total 128
+-rw-rw-r-- 1 pl543 hpcprog    0 Jun 15 12:22 files
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 12:22 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .git
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 theme
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 snippets
+-rw-rw-r-- 1 pl543 hpcprog  138 Jun 15 11:52 requirements.txt
+-rw-rw-r-- 1 pl543 hpcprog 6481 Jun 15 11:52 readme.md
+-rw-rw-r-- 1 pl543 hpcprog 7509 Jun 15 11:52 mkdocs.yml
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 docs
+-rw-rw-r-- 1 pl543 hpcprog   24 Jun 15 11:52 .gitignore
+drwxr-sr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git:
+total 160
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 12:22 ..
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog    20 Jun 15 11:52 HEAD
+-rw-rw-r-- 1 pl543 hpcprog   319 Jun 15 11:52 config
+-rw-rw-r-- 1 pl543 hpcprog 18448 Jun 15 11:52 index
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 logs
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 refs
+-rw-rw-r-- 1 pl543 hpcprog   172 Jun 15 11:51 packed-refs
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 objects
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 branches
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 info
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:51 hooks
+-rw-rw-r-- 1 pl543 hpcprog    73 Jun 15 11:51 description
+
+./.git/logs:
+total 32
+-rw-rw-r-- 1 pl543 hpcprog  365 Jun 15 11:52 HEAD
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 refs
+
+./.git/logs/refs:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 heads
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 remotes
+
+./.git/logs/refs/heads:
+total 64
+-rw-rw-r-- 1 pl543 hpcprog  184 Jun 15 11:52 src
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  190 Jun 15 11:51 master
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git/logs/refs/remotes:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 origin
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+
+./.git/logs/refs/remotes/origin:
+total 32
+-rw-rw-r-- 1 pl543 hpcprog  190 Jun 15 11:51 HEAD
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git/refs:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 heads
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 remotes
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 tags
+
+./.git/refs/heads:
+total 64
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog   41 Jun 15 11:52 src
+-rw-rw-r-- 1 pl543 hpcprog   41 Jun 15 11:51 master
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git/refs/remotes:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 origin
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git/refs/remotes/origin:
+total 32
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+-rw-rw-r-- 1 pl543 hpcprog   32 Jun 15 11:51 HEAD
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+
+./.git/refs/tags:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+
+./.git/objects:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 pack
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 info
+
+./.git/objects/pack:
+total 64672
+drwxrwsr-x 2 pl543 hpcprog     4096 Jun 15 11:51 .
+-r--r--r-- 1 pl543 hpcprog 65429108 Jun 15 11:51 pack-10e0aedb5edfdcf06d854c2796fbe25f77da18ac.pack
+-r--r--r-- 1 pl543 hpcprog   775972 Jun 15 11:51 pack-10e0aedb5edfdcf06d854c2796fbe25f77da18ac.idx
+drwxrwsr-x 2 pl543 hpcprog     4096 Jun 15 11:51 ..
+
+./.git/objects/info:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+
+./.git/branches:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+
+./.git/info:
+total 32
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog  240 Jun 15 11:51 exclude
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+
+./.git/hooks:
+total 288
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rwxrwxr-x 1 pl543 hpcprog  398 Jun 15 11:51 pre-applypatch.sample
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:51 .
+-rwxrwxr-x 1 pl543 hpcprog 4951 Jun 15 11:51 pre-rebase.sample
+-rwxrwxr-x 1 pl543 hpcprog  896 Jun 15 11:51 commit-msg.sample
+-rwxrwxr-x 1 pl543 hpcprog 1239 Jun 15 11:51 prepare-commit-msg.sample
+-rwxrwxr-x 1 pl543 hpcprog 1704 Jun 15 11:51 pre-commit.sample
+-rw-rw-r-- 1 pl543 hpcprog 1348 Jun 15 11:51 pre-push.sample
+-rwxrwxr-x 1 pl543 hpcprog  452 Jun 15 11:51 applypatch-msg.sample
+-rwxrwxr-x 1 pl543 hpcprog  189 Jun 15 11:51 post-update.sample
+-rwxrwxr-x 1 pl543 hpcprog 3611 Jun 15 11:51 update.sample
+
+./theme:
+total 32
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 12:22 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 partials
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 assets
+-rw-rw-r-- 1 pl543 hpcprog  396 Jun 15 11:52 404.html
+
+./theme/partials:
+total 128
+-rw-rw-r-- 1 pl543 hpcprog 1818 Jun 15 11:52 tabs.html
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  641 Jun 15 11:52 news-overrides.html
+-rw-rw-r-- 1 pl543 hpcprog 4977 Jun 15 11:52 header.html
+-rw-rw-r-- 1 pl543 hpcprog 2146 Jun 15 11:52 footer.html
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+
+./theme/assets:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 images
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 fonts
+
+./theme/assets/images:
+total 32
+-rw-rw-r-- 1 pl543 hpcprog 5430 Jun 15 11:52 favicon.ico
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+
+./theme/assets/fonts:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 YaleNew
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+
+./theme/assets/fonts/YaleNew:
+total 448
+-rw-rw-r-- 1 pl543 hpcprog  97736 Jun 15 11:52 YaleNew-Roman.otf
+drwxrwsr-x 2 pl543 hpcprog   4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog 104052 Jun 15 11:52 YaleNew-Italic.otf
+-rw-rw-r-- 1 pl543 hpcprog  75168 Jun 15 11:52 YaleNew-BoldItalic.otf
+-rw-rw-r-- 1 pl543 hpcprog 106336 Jun 15 11:52 YaleNew-Bold.otf
+-rwxrwxr-x 1 pl543 hpcprog      0 Jun 15 11:52 YaleDisplay-Roman.suit
+-rwxrwxr-x 1 pl543 hpcprog      0 Jun 15 11:52 YaleDisRom
+drwxrwsr-x 2 pl543 hpcprog   4096 Jun 15 11:52 ..
+
+./snippets:
+total 288
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 12:22 ..
+-rw-rw-r-- 1 pl543 hpcprog   243 Jun 15 11:52 submission_rate_limit.md
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  6328 Jun 15 11:52 ruddle_partitions.md
+-rw-rw-r-- 1 pl543 hpcprog  6053 Jun 15 11:52 rclone_examples.md
+-rwxrwxr-x 1 pl543 hpcprog 14547 Jun 15 11:52 part_info.py
+-rw-rw-r-- 1 pl543 hpcprog 10434 Jun 15 11:52 milgram_partitions.md
+-rw-rw-r-- 1 pl543 hpcprog 55283 Jun 15 11:52 grace_partitions.md
+-rw-rw-r-- 1 pl543 hpcprog 49387 Jun 15 11:52 farnam_partitions.md
+
+./docs:
+total 160
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 12:22 ..
+-rw-rw-r-- 1 pl543 hpcprog  832 Jun 15 11:52 user-group.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 resources
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 news
+-rw-rw-r-- 1 pl543 hpcprog   26 Jun 15 11:52 news.md
+-rw-rw-r-- 1 pl543 hpcprog 5740 Jun 15 11:52 index.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 img
+-rw-rw-r-- 1 pl543 hpcprog 6897 Jun 15 11:52 glossary.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 data
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 clusters
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 clusters-at-yale
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 _static
+-rw-rw-r-- 1 pl543 hpcprog   18 Jun 15 11:52 CNAME
+
+./docs/resources:
+total 96
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 5758 Jun 15 11:52 online-tutorials.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog 2665 Jun 15 11:52 national-hpcs.md
+-rw-rw-r-- 1 pl543 hpcprog  252 Jun 15 11:52 index.md
+lrwxrwxrwx 1 pl543 hpcprog   14 Jun 15 11:52 glossary.md -> ../glossary.md
+
+./docs/news:
+total 288
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 1494 Jun 15 11:52 2022-06.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  815 Jun 15 11:52 2022-06-milgram.md
+-rw-rw-r-- 1 pl543 hpcprog 1298 Jun 15 11:52 2022-05.md
+-rw-rw-r-- 1 pl543 hpcprog  600 Jun 15 11:52 2022-05-ruddle.md
+-rw-rw-r-- 1 pl543 hpcprog 1539 Jun 15 11:52 2022-04.md
+-rw-rw-r-- 1 pl543 hpcprog 1007 Jun 15 11:52 2022-04-farnam.md
+-rw-rw-r-- 1 pl543 hpcprog  713 Jun 15 11:52 2022-03.md
+-rw-rw-r-- 1 pl543 hpcprog 1903 Jun 15 11:52 2022-02.md
+-rw-rw-r-- 1 pl543 hpcprog 1758 Jun 15 11:52 2022-02-grace.md
+
+./docs/img:
+total 19168
+drwxrwsr-x 2 pl543 hpcprog    4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog    2273 Jun 15 11:52 yale-white.png
+drwxrwsr-x 2 pl543 hpcprog    4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  116734 Jun 15 11:52 vpn2.png
+-rw-rw-r-- 1 pl543 hpcprog  156138 Jun 15 11:52 vpn1.png
+-rw-rw-r-- 1 pl543 hpcprog   91859 Jun 15 11:52 top.png
+-rw-rw-r-- 1 pl543 hpcprog  643086 Jun 15 11:52 tmux-ben.png
+-rw-rw-r-- 1 pl543 hpcprog   76217 Jun 15 11:52 ssh-connection.png
+-rw-rw-r-- 1 pl543 hpcprog  302878 Jun 15 11:52 rclone-remote-desktop.png
+-rw-rw-r-- 1 pl543 hpcprog  199745 Jun 15 11:52 rclone-ood-dashboard.png
+-rw-rw-r-- 1 pl543 hpcprog  343867 Jun 15 11:52 project_GHP_9.png
+-rw-rw-r-- 1 pl543 hpcprog  568162 Jun 15 11:52 project_GHP_8.png
+-rw-rw-r-- 1 pl543 hpcprog 2157875 Jun 15 11:52 project_GHP_7.png
+-rw-rw-r-- 1 pl543 hpcprog  302345 Jun 15 11:52 project_GHP_6.png
+-rw-rw-r-- 1 pl543 hpcprog  337681 Jun 15 11:52 project_GHP_5.png
+-rw-rw-r-- 1 pl543 hpcprog  282463 Jun 15 11:52 project_GHP_4.png
+-rw-rw-r-- 1 pl543 hpcprog  341207 Jun 15 11:52 project_GHP_3.png
+-rw-rw-r-- 1 pl543 hpcprog  346585 Jun 15 11:52 project_GHP_2.png
+-rw-rw-r-- 1 pl543 hpcprog  327635 Jun 15 11:52 project_GHP_1.png
+-rw-rw-r-- 1 pl543 hpcprog    2491 Jun 15 11:52 papers.svg
+-rw-rw-r-- 1 pl543 hpcprog  479370 Jun 15 11:52 ood_welcome.png
+-rw-rw-r-- 1 pl543 hpcprog  188598 Jun 15 11:52 ood_shell.png
+-rw-rw-r-- 1 pl543 hpcprog 1053564 Jun 15 11:52 ood_rstudio_running.png
+-rw-rw-r-- 1 pl543 hpcprog  151307 Jun 15 11:52 ood_rstudio_cairo.png
+-rw-rw-r-- 1 pl543 hpcprog  120611 Jun 15 11:52 ood_rstudio.png
+-rw-rw-r-- 1 pl543 hpcprog  196820 Jun 15 11:52 ood_remote_terminal.png
+-rw-rw-r-- 1 pl543 hpcprog   45669 Jun 15 11:52 ood_remote_starting.png
+-rw-rw-r-- 1 pl543 hpcprog  231436 Jun 15 11:52 ood_remote_queued.png
+-rw-rw-r-- 1 pl543 hpcprog 1863769 Jun 15 11:52 ood_remote_desktop.png
+-rw-rw-r-- 1 pl543 hpcprog   19178 Jun 15 11:52 ood_remote_clipboard.png
+-rw-rw-r-- 1 pl543 hpcprog  222413 Jun 15 11:52 ood_remote.png
+-rw-rw-r-- 1 pl543 hpcprog  279469 Jun 15 11:52 ood_jupyter_running.png
+-rw-rw-r-- 1 pl543 hpcprog  119348 Jun 15 11:52 ood_jupyter_form.png
+-rw-rw-r-- 1 pl543 hpcprog  150443 Jun 15 11:52 ood_jupyter.png
+-rw-rw-r-- 1 pl543 hpcprog  307832 Jun 15 11:52 ood_interactive.png
+-rw-rw-r-- 1 pl543 hpcprog  327136 Jun 15 11:52 ood_filebrowser.png
+-rw-rw-r-- 1 pl543 hpcprog  141867 Jun 15 11:52 ood_activejobs.png
+-rw-rw-r-- 1 pl543 hpcprog   31239 Jun 15 11:52 moba-vnc.png
+-rw-rw-r-- 1 pl543 hpcprog    1234 Jun 15 11:52 manual.svg
+-rw-rw-r-- 1 pl543 hpcprog  132835 Jun 15 11:52 intro_tutorial_textedit.jpg
+-rw-rw-r-- 1 pl543 hpcprog  163955 Jun 15 11:52 intro_tutorial_navbar.jpg
+-rw-rw-r-- 1 pl543 hpcprog   19733 Jun 15 11:52 handson-ml2_notebook05.png
+-rw-rw-r-- 1 pl543 hpcprog   13819 Jun 15 11:52 handson-ml2_notebook04.png
+-rw-rw-r-- 1 pl543 hpcprog    7624 Jun 15 11:52 handson-ml2_notebook03.png
+-rw-rw-r-- 1 pl543 hpcprog    8856 Jun 15 11:52 handson-ml2_notebook02.png
+-rw-rw-r-- 1 pl543 hpcprog   11064 Jun 15 11:52 handson-ml2_notebook01.png
+-rw-rw-r-- 1 pl543 hpcprog   33734 Jun 15 11:52 handson-ml2_03.png
+-rw-rw-r-- 1 pl543 hpcprog   78555 Jun 15 11:52 handson-ml2_02.png
+-rw-rw-r-- 1 pl543 hpcprog   45583 Jun 15 11:52 handson-ml2_01.png
+-rw-rw-r-- 1 pl543 hpcprog   35295 Jun 15 11:52 handson-ml2_00.png
+-rw-rw-r-- 1 pl543 hpcprog  947803 Jun 15 11:52 ghpages_7.png
+-rw-rw-r-- 1 pl543 hpcprog  261931 Jun 15 11:52 ghpages_6.png
+-rw-rw-r-- 1 pl543 hpcprog  298220 Jun 15 11:52 ghpages_5.png
+-rw-rw-r-- 1 pl543 hpcprog 1878671 Jun 15 11:52 ghpages_4.png
+-rw-rw-r-- 1 pl543 hpcprog  232635 Jun 15 11:52 ghpages_3.png
+-rw-rw-r-- 1 pl543 hpcprog  229021 Jun 15 11:52 ghpages_2.png
+-rw-rw-r-- 1 pl543 hpcprog  250683 Jun 15 11:52 ghpages_1.png
+-rw-rw-r-- 1 pl543 hpcprog  250805 Jun 15 11:52 ghpages_0.png
+-rw-rw-r-- 1 pl543 hpcprog   54967 Jun 15 11:52 cyberduck.png
+-rw-rw-r-- 1 pl543 hpcprog  760554 Jun 15 11:52 clusters.png
+-rw-rw-r-- 1 pl543 hpcprog   44712 Jun 15 11:52 cluster.png
+-rw-rw-r-- 1 pl543 hpcprog   17126 Jun 15 11:52 Stanley-Milgram.jpg
+-rw-rw-r-- 1 pl543 hpcprog   43212 Jun 15 11:52 Louise-Whitman-Farnam.jpg
+-rw-rw-r-- 1 pl543 hpcprog  116674 Jun 15 11:52 Grace-Hopper.jpg
+-rw-rw-r-- 1 pl543 hpcprog   54508 Jun 15 11:52 Frank-Ruddle.jpg
+
+./docs/data:
+total 352
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 8329 Jun 15 11:52 transfer.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog 4599 Jun 15 11:52 staging.md
+-rw-rw-r-- 1 pl543 hpcprog 3288 Jun 15 11:52 permissions.md
+-rw-rw-r-- 1 pl543 hpcprog 5215 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog 8170 Jun 15 11:52 hpc-storage.md
+-rw-rw-r-- 1 pl543 hpcprog 3186 Jun 15 11:52 google-drive.md
+lrwxrwxrwx 1 pl543 hpcprog   14 Jun 15 11:52 glossary.md -> ../glossary.md
+-rw-rw-r-- 1 pl543 hpcprog 5668 Jun 15 11:52 globus.md
+-rw-rw-r-- 1 pl543 hpcprog 3301 Jun 15 11:52 external.md
+-rw-rw-r-- 1 pl543 hpcprog 2696 Jun 15 11:52 backups.md
+-rw-rw-r-- 1 pl543 hpcprog 2720 Jun 15 11:52 archived-sequencing.md
+-rw-rw-r-- 1 pl543 hpcprog 5845 Jun 15 11:52 archive.md
+
+./docs/clusters:
+total 224
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 7709 Jun 15 11:52 ruddle.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog 3683 Jun 15 11:52 milgram.md
+-rw-rw-r-- 1 pl543 hpcprog  726 Jun 15 11:52 milgram-workstations.md
+-rw-rw-r-- 1 pl543 hpcprog 3187 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog 3519 Jun 15 11:52 grace.md
+-rw-rw-r-- 1 pl543 hpcprog 4152 Jun 15 11:52 farnam.md
+-rw-rw-r-- 1 pl543 hpcprog 3064 Jun 15 11:52 farnam-decommission.md
+
+./docs/clusters-at-yale:
+total 96
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 3667 Jun 15 11:52 troubleshoot.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 job-scheduling
+-rw-rw-r-- 1 pl543 hpcprog 9674 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog 2539 Jun 15 11:52 help-requests.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 guides
+lrwxrwxrwx 1 pl543 hpcprog   14 Jun 15 11:52 glossary.md -> ../glossary.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 applications
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 access
+
+./docs/clusters-at-yale/job-scheduling:
+total 416
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog  1372 Jun 15 11:52 slurm-examples.md
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  1590 Jun 15 11:52 slurm-account.md
+-rw-rw-r-- 1 pl543 hpcprog  6388 Jun 15 11:52 simplequeue.md
+-rw-rw-r-- 1 pl543 hpcprog  4390 Jun 15 11:52 scrontab.md
+-rw-rw-r-- 1 pl543 hpcprog  2799 Jun 15 11:52 scavenge.md
+-rw-rw-r-- 1 pl543 hpcprog  8719 Jun 15 11:52 resource-usage.md
+-rw-rw-r-- 1 pl543 hpcprog 10484 Jun 15 11:52 resource-requests.md
+-rw-rw-r-- 1 pl543 hpcprog  2439 Jun 15 11:52 mpi.md
+-rw-rw-r-- 1 pl543 hpcprog  8151 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog  2700 Jun 15 11:52 fairshare.md
+-rw-rw-r-- 1 pl543 hpcprog  9377 Jun 15 11:52 dsq.md
+-rw-rw-r-- 1 pl543 hpcprog  3617 Jun 15 11:52 dependency.md
+-rw-rw-r-- 1 pl543 hpcprog  5853 Jun 15 11:52 common-job-failures.md
+
+./docs/clusters-at-yale/guides:
+total 960
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog  1124 Jun 15 11:52 xvfb.md
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  3946 Jun 15 11:52 virtualgl.md
+-rw-rw-r-- 1 pl543 hpcprog  2820 Jun 15 11:52 vasp.md
+-rw-rw-r-- 1 pl543 hpcprog  4070 Jun 15 11:52 tmux.md
+-rw-rw-r-- 1 pl543 hpcprog  3632 Jun 15 11:52 rclone.md
+-rw-rw-r-- 1 pl543 hpcprog  8266 Jun 15 11:52 r.md
+-rw-rw-r-- 1 pl543 hpcprog  3892 Jun 15 11:52 python.md
+-rw-rw-r-- 1 pl543 hpcprog  3990 Jun 15 11:52 parallel.md
+-rw-rw-r-- 1 pl543 hpcprog  2274 Jun 15 11:52 namd.md
+-rw-rw-r-- 1 pl543 hpcprog  5568 Jun 15 11:52 mysql.md
+-rw-rw-r-- 1 pl543 hpcprog  8218 Jun 15 11:52 mpi4py.md
+-rw-rw-r-- 1 pl543 hpcprog  2499 Jun 15 11:52 matlab.md
+-rw-rw-r-- 1 pl543 hpcprog  5158 Jun 15 11:52 mathematica.md
+-rw-rw-r-- 1 pl543 hpcprog  3990 Jun 15 11:52 jupyter_ssh.md
+-rw-rw-r-- 1 pl543 hpcprog  1724 Jun 15 11:52 jupyter.md
+-rw-rw-r-- 1 pl543 hpcprog   933 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog  6391 Jun 15 11:52 handson-ml2.md
+-rw-rw-r-- 1 pl543 hpcprog  5680 Jun 15 11:52 gpus-cuda.md
+-rw-rw-r-- 1 pl543 hpcprog  4469 Jun 15 11:52 github_pages.md
+-rw-rw-r-- 1 pl543 hpcprog  4903 Jun 15 11:52 github.md
+-rw-rw-r-- 1 pl543 hpcprog  3086 Jun 15 11:52 gaussian.md
+-rw-rw-r-- 1 pl543 hpcprog  4014 Jun 15 11:52 cryosparc.md
+-rw-rw-r-- 1 pl543 hpcprog  5518 Jun 15 11:52 cryoem.md
+-rw-rw-r-- 1 pl543 hpcprog  8348 Jun 15 11:52 containers.md
+-rw-rw-r-- 1 pl543 hpcprog 10302 Jun 15 11:52 conda.md
+-rw-rw-r-- 1 pl543 hpcprog  6733 Jun 15 11:52 comsol.md
+-rw-rw-r-- 1 pl543 hpcprog  4714 Jun 15 11:52 cmd-line-args.md
+-rw-rw-r-- 1 pl543 hpcprog  3267 Jun 15 11:52 clustershell.md
+-rw-rw-r-- 1 pl543 hpcprog  6840 Jun 15 11:52 checkpointing.md
+-rw-rw-r-- 1 pl543 hpcprog  8454 Jun 15 11:52 cesm.md
+
+./docs/clusters-at-yale/applications:
+total 160
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 4188 Jun 15 11:52 toolchains.md
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog 6226 Jun 15 11:52 modules.md
+-rw-rw-r-- 1 pl543 hpcprog 2745 Jun 15 11:52 lifecycle.md
+-rw-rw-r-- 1 pl543 hpcprog 1359 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog 7278 Jun 15 11:52 compile.md
+
+./docs/clusters-at-yale/access:
+total 288
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog  1753 Jun 15 11:52 x11.md
+drwxrwsr-x 2 pl543 hpcprog  4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  2019 Jun 15 11:52 vpn.md
+-rw-rw-r-- 1 pl543 hpcprog  4289 Jun 15 11:52 vnc.md
+-rw-rw-r-- 1 pl543 hpcprog  7013 Jun 15 11:52 ssh.md
+-rw-rw-r-- 1 pl543 hpcprog 10130 Jun 15 11:52 ood.md
+-rw-rw-r-- 1 pl543 hpcprog  2585 Jun 15 11:52 mfa.md
+-rw-rw-r-- 1 pl543 hpcprog   912 Jun 15 11:52 index.md
+-rw-rw-r-- 1 pl543 hpcprog  2755 Jun 15 11:52 advanced-config.md
+-rw-rw-r-- 1 pl543 hpcprog  2787 Jun 15 11:52 accounts.md
+
+./docs/_static:
+total 0
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 stylesheets
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 js
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 files
+
+./docs/_static/stylesheets:
+total 32
+-rw-rw-r-- 1 pl543 hpcprog 2466 Jun 15 11:52 extra.css
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+
+./docs/_static/js:
+total 32
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog 1843 Jun 15 11:52 extra.js
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+
+./docs/_static/files:
+total 64
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 ..
+-rw-rw-r-- 1 pl543 hpcprog  631 Jun 15 11:52 example_job.sh
+drwxrwsr-x 2 pl543 hpcprog 4096 Jun 15 11:52 .
+-rw-rw-r-- 1 pl543 hpcprog  562 Jun 15 11:52 clustershell_groups.conf

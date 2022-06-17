@@ -6,7 +6,7 @@ repo_name: github/ycrc/docs
 repo_url: https://github.com/ycrc/ycrc.github.io/tree/src
 edit_uri: docs/
 remote_branch: master
-strict: true
+strict: false
 
 theme:
     name: material
@@ -157,6 +157,7 @@ nav:
                 - data/permissions.md
                 - data/archive.md
                 - data/external.md
+                - data/group-change.md
             - data/glossary.md
 
 
