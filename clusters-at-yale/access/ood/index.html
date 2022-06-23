@@ -772,8 +772,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#course-open-ondemand-web-portals" class="md-nav__link">
-    Course Open OnDemand Web Portals
+  <a href="#ood-for-courses" class="md-nav__link">
+    OOD for Courses
   </a>
   
 </li>
@@ -854,6 +854,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#root-directory" class="md-nav__link">
+    Root directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ycrc_default" class="md-nav__link">
     ycrc_default
   </a>
@@ -924,6 +931,13 @@
           <li class="md-nav__item">
   <a href="#rstudio-with-conda-r" class="md-nav__link">
     RStudio with Conda R
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
   </a>
   
 </li>
@@ -2370,8 +2384,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#course-open-ondemand-web-portals" class="md-nav__link">
-    Course Open OnDemand Web Portals
+  <a href="#ood-for-courses" class="md-nav__link">
+    OOD for Courses
   </a>
   
 </li>
@@ -2452,6 +2466,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#root-directory" class="md-nav__link">
+    Root directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ycrc_default" class="md-nav__link">
     ycrc_default
   </a>
@@ -2526,6 +2547,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2586,16 +2614,21 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 </tbody>
 </table>
 <p>The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. </p>
-<h3 id="course-open-ondemand-web-portals">Course Open OnDemand Web Portals</h3>
-<p>Courses on the clusters have their own course-specific OOD URLs, also called course OOD web portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: <code>coursename.ycrc.yale.edu</code>. More information about course OODs can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
+<h3 id="ood-for-courses">OOD for Courses</h3>
+<p>Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
+Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
+Students must use the course URL log in to OOD. They will with their NetID to sign in but work under their student account on the cluster. </p>
+<p>Course OOD and cluster OOD have different URLs, even if they use the same physical machine. 
+Student accounts can only log in to OOD through a course OOD URL, and a regular account (same as your NetID) can only log in through the cluster OOD URL.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
+<p>If you only have a student account, but try to log in through the cluster OOD URL, you will get an error in the browser:
 <div class="highlight"><pre><span></span><code>Error -- can&#39;t find user for cpsc424_test
 Run &#39;nginx_stage --help&#39; to see a full list of available command line options.
 </code></pre></div>
-Instead, use the course OOD URL.</p>
+Use the URL for your course OOD will resolve the problem.</p>
 </div>
+<p>Additional information about course OOD can be found at <a href="https://research.computing.yale.edu/services/academic-support">academic support</a>.</p>
 <h2 id="the-dashboard">The Dashboard</h2>
 <p>On login you will see the OOD dashboard.</p>
 <p><img alt="welcome" class="large" src="/img/ood_welcome.png" /></p>
@@ -2634,7 +2667,9 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <h3 id="jupyter">Jupyter</h3>
 <p>One of the most common uses of Open OnDemand is the Jupyter interface for Python and R. You can choose either Jupyter Notebook or Jupyter Lab. By default, this app will try to launch Jupyter Notebook, unless the <code>Start JupyterLab</code> checkbox is selected. </p>
 <p><img alt="jupyter_form" class="medium" src="/img/ood_jupyter_form.png" /></p>
-<p>Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
+<p>Make sure that you chose the right Conda environment for you from the drop-down menu. If you have not yet set one up, <a href="/clusters-at-yale/guides/jupyter">follow our instructions</a> on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.</p>
+<h4 id="root-directory">Root directory</h4>
+<p>The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example Gibbs, you need to create a symlink to that directory in your home directory. </p>
 <h4 id="ycrc_default">ycrc_default</h4>
 <p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
@@ -2658,14 +2693,11 @@ In addition: Warning message:
 In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,  :
   unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
 </code></pre></div>
-<p>To fix the problem, you need to configure RStudio Server to use <code>Cairo</code> 
-as the graphic device backend. To do so, first click <code>Tools</code> from the top menu bar on 
-the RStudio Server GUI, and then select <code>Global options</code> from the pull down menu. An option window will be opened. 
-In the window, click <code>general</code> on the left panel and then click <code>Graphics</code> on the right. Choose <code>Cairo</code> 
-from the <code>backend</code> list. </p>
-<p>Once done, it sets <code>Cairo</code> as the default drawing device. You only need to configure the device once 
-unless you have cleaned up your RStudio configuration files.</p>
-<p><img alt="rstudio_cairo" class="medium" src="/img/ood_rstudio_cairo.png" /></p>
+<p>To fix the problem, you need to configure your RStudio session to use <code>Cairo</code> for plotting. 
+You can do it in your code as follows: </p>
+<div class="highlight"><pre><span></span><code>options<span class="o">(</span><span class="nv">bitmapType</span><span class="o">=</span><span class="s1">&#39;cairo&#39;</span><span class="o">)</span>
+</code></pre></div>
+<p>Alternatively, you can put the above code in <code>.Rprofile</code> in your home directory and the option will be picked up automatically. </p>
 <h3 id="troubleshoot-ood">Troubleshoot OOD</h3>
 <h4 id="an-ood-session-is-started-and-then-completed-immediately">An OOD session is started and then completed immediately</h4>
 <ol>
@@ -2696,6 +2728,7 @@ unless you have cleaned up your RStudio configuration files.</p>
 </ol>
 <h4 id="rstudio-with-conda-r">RStudio with Conda R</h4>
 <p>If you see <code>NOT_FOUND</code> in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure <code>r-base r-essentials</code> are both included.</p>
+<h4 id="_1"></h4>
                 
                   
                     
@@ -2704,7 +2737,7 @@ unless you have cleaned up your RStudio configuration files.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 23, 2022</span>
       
     
   </small>
