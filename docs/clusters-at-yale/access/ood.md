@@ -101,7 +101,11 @@ One of the most common uses of Open OnDemand is the Jupyter interface for Python
 
 ![jupyter_form](/img/ood_jupyter_form.png){: .medium}
 
-Make sure that you chose the right Conda environment for your from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
+Make sure that you chose the right Conda environment for you from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
+
+#### Root directory
+
+The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example Gibbs, you need to create a symlink to that directory in your home directory. 
 
 #### ycrc_default
 
@@ -139,16 +143,14 @@ In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
   unable to open connection to X11 display ''
 ```
 
-To fix the problem, you need to configure RStudio Server to use `Cairo` 
-as the graphic device backend. To do so, first click `Tools` from the top menu bar on 
-the RStudio Server GUI, and then select `Global options` from the pull down menu. An option window will be opened. 
-In the window, click `general` on the left panel and then click `Graphics` on the right. Choose `Cairo` 
-from the `backend` list. 
+To fix the problem, you need to configure your RStudio session to use `Cairo` for plotting. 
+You can do it in your code as follows: 
 
-Once done, it sets `Cairo` as the default drawing device. You only need to configure the device once 
-unless you have cleaned up your RStudio configuration files.
+```bash
+options(bitmapType='cairo')
+```
 
-![rstudio_cairo](/img/ood_rstudio_cairo.png){: .medium}
+Alternatively, you can put the above code in .Rprofile in your home directory and the option will be picked up automatically. 
 
 ### Troubleshoot OOD
 
@@ -181,4 +183,4 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
 #### RStudio with Conda R
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
-
+#### 
