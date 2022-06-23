@@ -10,9 +10,9 @@ If you have questions about selecting an appropriate home for your data, [contac
 - **Only available on YCRC HPC clusters**
 
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.
-Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/data/) page.
+Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/data/hpc-storage/) page.
 
-Additional project-style storage allocations can be purchased. See [here](/data/#purchase-additional-storage)for more information.
+Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#purchase-additional-storage) for more information.
 
 
 ## Google Drive via EliApps
