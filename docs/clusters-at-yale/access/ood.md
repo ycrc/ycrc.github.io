@@ -18,17 +18,24 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
-### Course Open OnDemand Web Portals
+### OOD for Courses 
 
-Courses on the clusters have their own course-specific OOD URLs, also called course OOD web portals. Through the course OOD URLs, students will sign in with their NetID but work under their student account. The course URLs all follow the same naming convention: `coursename.ycrc.yale.edu`. More information about course OODs can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
+Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
+Students must use the course URL log in to OOD. They will with their NetID to sign in but work under their student account on the cluster. 
+
+Course OOD and cluster OOD have different URLs, even if they use the same physical machine. 
+Student accounts can only log in to OOD through a course OOD URL, and a regular account (same as your NetID) can only log in through the cluster OOD URL.
 
 !!! warning 
-    If you only have a student account, but try to sign in through the cluster OOD URL, you will get an error in the browser:
+    If you only have a student account, but try to log in through the cluster OOD URL, you will get an error in the browser:
     ```
     Error -- can't find user for cpsc424_test
     Run 'nginx_stage --help' to see a full list of available command line options.
     ```
-    Instead, use the course OOD URL.
+    Use the URL for your course OOD will resolve the problem.
+
+Additional information about course OOD can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
 
 ## The Dashboard
 
@@ -150,7 +157,7 @@ You can do it in your code as follows:
 options(bitmapType='cairo')
 ```
 
-Alternatively, you can put the above code in .Rprofile in your home directory and the option will be picked up automatically. 
+Alternatively, you can put the above code in `.Rprofile` in your home directory and the option will be picked up automatically. 
 
 ### Troubleshoot OOD
 
