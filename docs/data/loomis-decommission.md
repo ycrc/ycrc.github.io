@@ -28,7 +28,7 @@ During the upcoming Grace Maintenance in August 2022, we will copy all of the Lo
 If you have a project space that exceeds the no-cost allocation (4TB), you should have already or will receive a communication from us to either reduce your usage or create a new “pi” allocation on Gibbs to accommodate the overage, as applicable. In these instances, your group will be granted a new, empty "project" space on Gibbs with the default no-cost quota coming out of the maintenance. Any scripts will need to updated accordingly.
 
 The Loomis scratch space will be frozen during the August 2022 maintenance. It will be put into a read-only mode such that all data will be purged as it reaches its respective 60-day expiration.
-Any data in /gpfs/loomis/scratch60 you wish to retain after the freeze will need to be copied into another location (such as your new Gibbs project or Palmer scratch). As you already have a Palmer scratch space today, you can update your scripts and move data into /gpfs/palmer/scratch at your convenience.
+Any data in /gpfs/loomis/scratch60 you wish to retain after the freeze will need to be copied into another location (such as your new Gibbs project or Palmer scratch). As you already have a Palmer scratch space today, you can update your scripts and move data into /vast/palmer/scratch at your convenience.
 
 ### Conda Environments
 
