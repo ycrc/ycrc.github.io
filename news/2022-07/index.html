@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#june-2022" class="md-skip">
+        <a href="#july-2022" class="md-skip">
           Skip to content
         </a>
       
@@ -2142,11 +2142,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#june-2022" class="md-nav__link">
-    June 2022
+  <a href="#july-2022" class="md-nav__link">
+    July 2022
   </a>
   
-    <nav class="md-nav" aria-label="June 2022">
+    <nav class="md-nav" aria-label="July 2022">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2158,22 +2158,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#farnam-decommission-mccleary-announcement" class="md-nav__link">
-    Farnam Decommission &amp; McCleary Announcement
+  <a href="#loomis-decommission" class="md-nav__link">
+    Loomis Decommission
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rstudio-with-module-r-has-been-retired-from-open-ondemand-as-of-june-1st" class="md-nav__link">
-    RStudio (with module R) has been retired from Open OnDemand as of June 1st
+  <a href="#updates-to-ood-jupyter-app" class="md-nav__link">
+    Updates to OOD Jupyter App
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#milgram-maintenance" class="md-nav__link">
-    Milgram Maintenance
+  <a href="#ycrc-conda-environment" class="md-nav__link">
+    YCRC conda environment
   </a>
   
 </li>
@@ -2214,19 +2214,21 @@
                 
                   <h1>2022 07</h1>
                 
-                <h2 id="june-2022">June 2022</h2>
+                <h2 id="july-2022">July 2022</h2>
 <h3 id="announcements">Announcements</h3>
-<h4 id="farnam-decommission-mccleary-announcement">Farnam Decommission &amp; McCleary Announcement</h4>
-<p>After more than six years in service, we will be retiring the Farnam HPC cluster later this year. Farnam will be replaced with a new HPC cluster, McCleary. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future. For more information about the decommission process and the launch of McCleary, see <a href="/clusters/farnam-decommission">our website</a>.</p>
-<h4 id="rstudio-with-module-r-has-been-retired-from-open-ondemand-as-of-june-1st">RStudio (with module R) has been retired from Open OnDemand as of June 1st</h4>
-<p>Please switch to RStudio Server which provides a better user experience. For users using a conda environment with RStudio, RStudio (with Conda R) will continue to be served on Open OnDemand.</p>
-<h4 id="milgram-maintenance">Milgram Maintenance</h4>
-<p>The biannual scheduled maintenance for the Milgram cluster will be occurring June 7-9. During this time, the cluster will be unavailable. See the Milgram maintenance email announcements for more details.</p>
+<h4 id="loomis-decommission">Loomis Decommission</h4>
+<p>Loomis Decommission
+After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), will be retired later this year. The usage and capacity on Loomis will be replaced by two existing YCRC storage systems, Palmer and Gibbs, which are already available on Grace. Data in Loomis project storage will be transferred to /gpfs/gibbs/project during the upcoming August Grace maintenance. See the <a href="/data/loomis-decommission/">Loomis Decommission</a> documenation for more information and updates.</p>
+<h4 id="updates-to-ood-jupyter-app">Updates to OOD Jupyter App</h4>
+<p>OOD Jupyter App has been updated to handle conda environments more intelligently. Instead of listing all the conda envs in your account, the app now lists only the conda environments with Jupyter installed. If you do not see your desired environment listed in the dropdown, check that you have installed Jupyter in that environment. In addition, the “jupyterlab” checkbox in the app will only be visible if the environment selected has jupyterlab installed. </p>
+<h4 id="ycrc-conda-environment">YCRC conda environment</h4>
+<p><code>ycrc_conda_env.list</code> has been replaced by <code>ycrc_conda_env.sh</code>. To update your conda enviroments in OOD for the Jupyter App and RStudio Desktop (with Conda R), please run <code>ycrc_conda_env.sh update</code>.</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
-<li><strong>QTLtools/1.3.1-foss-2020b</strong> is now available on Farnam.</li>
-<li><strong>R/4.2.0-foss-2020b</strong> is available on all clusters.</li>
-<li>Seurat for R/4.2.0 is now available on all clusters through the <strong>R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0</strong> module along with many other packages. Please check to see if any packages you need are available in these modules before running <code>install.packages</code>. </li>
+<li><strong>miniconda/4.12.0</strong> is now available on all clusters</li>
+<li><strong>RStudio/2022.02.3-492</strong> is now available on all clusters. This is currently the only version that is compatible with the graphic engine used by R/4.2.0-foss-2020b.</li>
+<li><strong>fmriprep/21.0.2</strong> is now available on Milgram.</li>
+<li><strong>cellranger/7.0.0</strong> is now available on Farnam.</li>
 </ul>
                 
                   
