@@ -9,6 +9,10 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 - - -
 
+!!! info "Upcoming Loomis Retirement"
+    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), will be retired later this year. For more information and updates see the [Farnam decommission page](/data/loomis-decommission).
+
+
 ## Access the Cluster
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
