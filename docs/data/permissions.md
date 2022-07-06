@@ -14,6 +14,12 @@ You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with th
 
 By default, all project, purchased allocation and scratch60 directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.
 
+If you want to ensure all new files and directories you create have group *write* permission, add the following line to your `~/.bashrc` files:
+
+```
+umask 0002
+```
+
 ### Shared Group Directories
 
 Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for all group members. If interested, [contact us](/#get-help) to request such a directory.
