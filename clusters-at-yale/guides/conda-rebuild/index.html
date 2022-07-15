@@ -13,21 +13,21 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-rebuild/">
       
-      <link rel="icon" href="assets/images/favicon.ico">
+      <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
-        <title>Introduction - Yale Center for Research Computing</title>
+        <title>Conda rebuild - Yale Center for Research Computing</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="_static/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../_static/stylesheets/extra.css">
     
     
       
@@ -72,7 +72,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#rebuild-a-conda-environment-after-group-change" class="md-skip">
           Skip to content
         </a>
       
@@ -118,9 +118,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Yale Center for Research Computing" class="md-header__button md-logo" aria-label="Yale Center for Research Computing" data-md-component="logo">
+    <a href="../../.." title="Yale Center for Research Computing" class="md-header__button md-logo" aria-label="Yale Center for Research Computing" data-md-component="logo">
       
-  <img src="img/manual.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -131,13 +131,13 @@
     <div class="md-header__title" data-md-component="header-title">
         <div class="md-header__ellipsis">
             <span class="md-header__topic md-ellipsis branding">
-              <a href="." >
+              <a href="../../.." >
                   <kern style="letter-spacing:-0.09em">Y</kern>ale <em>Center for Research Computing</em>
               </a>
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Introduction
+              Conda rebuild
             
           </span>
         </div>
@@ -227,8 +227,6 @@
 <!-- Determine class according to level -->
 
 
-  
-
 
 
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
@@ -238,15 +236,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." class="md-tabs__link">
         About
       </a>
     </li>
@@ -262,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="clusters-at-yale/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         User Guide
       </a>
     </li>
@@ -278,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="data/" class="md-tabs__link">
+      <a href="../../../data/" class="md-tabs__link">
         Data & Storage
       </a>
     </li>
@@ -294,7 +290,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="clusters-at-yale/guides/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link">
         Software & Tools
       </a>
     </li>
@@ -310,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="resources/" class="md-tabs__link">
+      <a href="../../../resources/" class="md-tabs__link">
         Training & Other Resources
       </a>
     </li>
@@ -347,9 +343,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing" data-md-component="logo">
+    <a href="../../.." title="Yale Center for Research Computing" class="md-nav__button md-logo" aria-label="Yale Center for Research Computing" data-md-component="logo">
       
-  <img src="img/manual.svg" alt="logo">
+  <img src="../../../img/manual.svg" alt="logo">
 
     </a>
     Yale Center for Research Computing
@@ -376,14 +372,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -404,101 +398,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Introduction
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#get-help" class="md-nav__link">
-    Get Help
-  </a>
-  
-    <nav class="md-nav" aria-label="Get Help">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-and-email-support" class="md-nav__link">
-    Web and Email Support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#office-hours-via-zoom" class="md-nav__link">
-    Office Hours via Zoom
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#youtube-channel" class="md-nav__link">
-    YouTube Channel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#one-on-one-support" class="md-nav__link">
-    One-on-One Support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qa-platform" class="md-nav__link">
-    Q&amp;A Platform
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledge-the-ycrc" class="md-nav__link">
-    Acknowledge the YCRC
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -510,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="news/" class="md-nav__link">
+      <a href="../../../news/" class="md-nav__link">
         News
       </a>
     </li>
@@ -552,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters/" class="md-nav__link">
+      <a href="../../../clusters/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -566,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters/grace/" class="md-nav__link">
+      <a href="../../../clusters/grace/" class="md-nav__link">
         Grace
       </a>
     </li>
@@ -580,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters/farnam/" class="md-nav__link">
+      <a href="../../../clusters/farnam/" class="md-nav__link">
         Farnam
       </a>
     </li>
@@ -594,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters/ruddle/" class="md-nav__link">
+      <a href="../../../clusters/ruddle/" class="md-nav__link">
         Ruddle
       </a>
     </li>
@@ -608,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters/milgram/" class="md-nav__link">
+      <a href="../../../clusters/milgram/" class="md-nav__link">
         Milgram
       </a>
     </li>
@@ -629,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-group/" class="md-nav__link">
+      <a href="../../../user-group/" class="md-nav__link">
         YCRC User Group
       </a>
     </li>
@@ -657,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="glossary/" class="md-nav__link">
+      <a href="../../../glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -705,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -719,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/accounts/" class="md-nav__link">
+      <a href="../../access/accounts/" class="md-nav__link">
         Accounts & Best Practices
       </a>
     </li>
@@ -747,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/help-requests/" class="md-nav__link">
+      <a href="../../help-requests/" class="md-nav__link">
         Help Requests
       </a>
     </li>
@@ -761,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/troubleshoot/" class="md-nav__link">
+      <a href="../../troubleshoot/" class="md-nav__link">
         Troubleshoot Login
       </a>
     </li>
@@ -803,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/" class="md-nav__link">
+      <a href="../../access/" class="md-nav__link">
         Log on to the Clusters
       </a>
     </li>
@@ -817,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/ood/" class="md-nav__link">
+      <a href="../../access/ood/" class="md-nav__link">
         Web Portal (Open OnDemand)
       </a>
     </li>
@@ -857,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/ssh/" class="md-nav__link">
+      <a href="../../access/ssh/" class="md-nav__link">
         Connect with SSH
       </a>
     </li>
@@ -871,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/x11/" class="md-nav__link">
+      <a href="../../access/x11/" class="md-nav__link">
         Graphical Interfaces (X11)
       </a>
     </li>
@@ -885,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/advanced-config/" class="md-nav__link">
+      <a href="../../access/advanced-config/" class="md-nav__link">
         Advanced SSH Configuration
       </a>
     </li>
@@ -906,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/vpn/" class="md-nav__link">
+      <a href="../../access/vpn/" class="md-nav__link">
         Access from Off Campus (VPN)
       </a>
     </li>
@@ -920,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/access/mfa/" class="md-nav__link">
+      <a href="../../access/mfa/" class="md-nav__link">
         Multi-factor Authentication
       </a>
     </li>
@@ -969,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/applications/" class="md-nav__link">
+      <a href="../../applications/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -983,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/applications/compile/" class="md-nav__link">
+      <a href="../../applications/compile/" class="md-nav__link">
         Build Software
       </a>
     </li>
@@ -997,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/applications/modules/" class="md-nav__link">
+      <a href="../../applications/modules/" class="md-nav__link">
         Software Modules
       </a>
     </li>
@@ -1011,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/applications/toolchains/" class="md-nav__link">
+      <a href="../../applications/toolchains/" class="md-nav__link">
         Module Toolchains
       </a>
     </li>
@@ -1025,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/applications/lifecycle/" class="md-nav__link">
+      <a href="../../applications/lifecycle/" class="md-nav__link">
         Module Lifecycle
       </a>
     </li>
@@ -1074,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/" class="md-nav__link">
+      <a href="../../job-scheduling/" class="md-nav__link">
         Run Jobs with Slurm
       </a>
     </li>
@@ -1088,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/resource-requests/" class="md-nav__link">
+      <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
         Request Compute Resources
       </a>
     </li>
@@ -1102,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/common-job-failures/" class="md-nav__link">
+      <a href="../../job-scheduling/common-job-failures/" class="md-nav__link">
         Common Job Failures
       </a>
     </li>
@@ -1116,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/resource-usage/" class="md-nav__link">
+      <a href="../../job-scheduling/resource-usage/" class="md-nav__link">
         Monitor CPU and Memory
       </a>
     </li>
@@ -1130,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/fairshare/" class="md-nav__link">
+      <a href="../../job-scheduling/fairshare/" class="md-nav__link">
         Priority & Wait Time
       </a>
     </li>
@@ -1144,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/dsq/" class="md-nav__link">
+      <a href="../../job-scheduling/dsq/" class="md-nav__link">
         Job Arrays with dSQ
       </a>
     </li>
@@ -1158,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/dependency/" class="md-nav__link">
+      <a href="../../job-scheduling/dependency/" class="md-nav__link">
         Jobs with Dependencies
       </a>
     </li>
@@ -1172,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/scrontab/" class="md-nav__link">
+      <a href="../../job-scheduling/scrontab/" class="md-nav__link">
         Recurring Jobs
       </a>
     </li>
@@ -1186,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/scavenge/" class="md-nav__link">
+      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
         Scavenge Partition
       </a>
     </li>
@@ -1200,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/mpi/" class="md-nav__link">
+      <a href="../../job-scheduling/mpi/" class="md-nav__link">
         MPI Partition
       </a>
     </li>
@@ -1214,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/job-scheduling/slurm-examples/" class="md-nav__link">
+      <a href="../../job-scheduling/slurm-examples/" class="md-nav__link">
         Submission Script Examples
       </a>
     </li>
@@ -1235,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/glossary/" class="md-nav__link">
+      <a href="../../glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -1283,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/" class="md-nav__link">
+      <a href="../../../data/" class="md-nav__link">
         Data Storage
       </a>
     </li>
@@ -1297,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/hpc-storage/" class="md-nav__link">
+      <a href="../../../data/hpc-storage/" class="md-nav__link">
         HPC Storage
       </a>
     </li>
@@ -1311,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/backups/" class="md-nav__link">
+      <a href="../../../data/backups/" class="md-nav__link">
         Backups and Snapshots
       </a>
     </li>
@@ -1325,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/archived-sequencing/" class="md-nav__link">
+      <a href="../../../data/archived-sequencing/" class="md-nav__link">
         YCGA Sequence Data Archive
       </a>
     </li>
@@ -1339,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/google-drive/" class="md-nav__link">
+      <a href="../../../data/google-drive/" class="md-nav__link">
         Google Drive
       </a>
     </li>
@@ -1381,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/transfer/" class="md-nav__link">
+      <a href="../../../data/transfer/" class="md-nav__link">
         Transfer to Cluster
       </a>
     </li>
@@ -1395,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/globus/" class="md-nav__link">
+      <a href="../../../data/globus/" class="md-nav__link">
         Large Transfers with Globus
       </a>
     </li>
@@ -1409,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/staging/" class="md-nav__link">
+      <a href="../../../data/staging/" class="md-nav__link">
         Stage Data for Compute Jobs
       </a>
     </li>
@@ -1458,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/permissions/" class="md-nav__link">
+      <a href="../../../data/permissions/" class="md-nav__link">
         Share with Cluster Users
       </a>
     </li>
@@ -1472,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/archive/" class="md-nav__link">
+      <a href="../../../data/archive/" class="md-nav__link">
         Archive Your Data
       </a>
     </li>
@@ -1486,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/external/" class="md-nav__link">
+      <a href="../../../data/external/" class="md-nav__link">
         Share Data Outside Yale
       </a>
     </li>
@@ -1500,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/group-change/" class="md-nav__link">
+      <a href="../../../data/group-change/" class="md-nav__link">
         Group Change
       </a>
     </li>
@@ -1521,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data/glossary/" class="md-nav__link">
+      <a href="../../../data/glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -1569,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1611,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/conda/" class="md-nav__link">
+      <a href="../conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1625,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/python/" class="md-nav__link">
+      <a href="../python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -1639,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/jupyter/" class="md-nav__link">
+      <a href="../jupyter/" class="md-nav__link">
         Jupyter Notebooks
       </a>
     </li>
@@ -1653,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/handson-ml2/" class="md-nav__link">
+      <a href="../handson-ml2/" class="md-nav__link">
         Python+TensorFlow Example
       </a>
     </li>
@@ -1667,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/mpi4py/" class="md-nav__link">
+      <a href="../mpi4py/" class="md-nav__link">
         mpi4py
       </a>
     </li>
@@ -1716,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/cesm/" class="md-nav__link">
+      <a href="../cesm/" class="md-nav__link">
         CESM/CAM
       </a>
     </li>
@@ -1730,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/comsol/" class="md-nav__link">
+      <a href="../comsol/" class="md-nav__link">
         COMSOL
       </a>
     </li>
@@ -1744,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/gaussian/" class="md-nav__link">
+      <a href="../gaussian/" class="md-nav__link">
         Gaussian
       </a>
     </li>
@@ -1758,7 +1662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/matlab/" class="md-nav__link">
+      <a href="../matlab/" class="md-nav__link">
         MATLAB
       </a>
     </li>
@@ -1772,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/mathematica/" class="md-nav__link">
+      <a href="../mathematica/" class="md-nav__link">
         Mathematica
       </a>
     </li>
@@ -1786,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/namd/" class="md-nav__link">
+      <a href="../namd/" class="md-nav__link">
         NAMD
       </a>
     </li>
@@ -1800,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/r/" class="md-nav__link">
+      <a href="../r/" class="md-nav__link">
         R
       </a>
     </li>
@@ -1814,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/vasp/" class="md-nav__link">
+      <a href="../vasp/" class="md-nav__link">
         VASP
       </a>
     </li>
@@ -1863,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/containers/" class="md-nav__link">
+      <a href="../containers/" class="md-nav__link">
         Containers
       </a>
     </li>
@@ -1877,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         Mysql
       </a>
     </li>
@@ -1891,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/parallel/" class="md-nav__link">
+      <a href="../parallel/" class="md-nav__link">
         Parallel
       </a>
     </li>
@@ -1905,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/rclone/" class="md-nav__link">
+      <a href="../rclone/" class="md-nav__link">
         Rclone
       </a>
     </li>
@@ -1919,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/tmux/" class="md-nav__link">
+      <a href="../tmux/" class="md-nav__link">
         tmux
       </a>
     </li>
@@ -1933,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/virtualgl/" class="md-nav__link">
+      <a href="../virtualgl/" class="md-nav__link">
         VirtualGL
       </a>
     </li>
@@ -1947,7 +1851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/xvfb/" class="md-nav__link">
+      <a href="../xvfb/" class="md-nav__link">
         XVFB
       </a>
     </li>
@@ -1996,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/cryoem/" class="md-nav__link">
+      <a href="../cryoem/" class="md-nav__link">
         Cryo-EM on Farnam
       </a>
     </li>
@@ -2010,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/github/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         GitHub
       </a>
     </li>
@@ -2024,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/github_pages/" class="md-nav__link">
+      <a href="../github_pages/" class="md-nav__link">
         GitHub Pages
       </a>
     </li>
@@ -2038,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="clusters-at-yale/guides/gpus-cuda/" class="md-nav__link">
+      <a href="../gpus-cuda/" class="md-nav__link">
         GPUs and CUDA
       </a>
     </li>
@@ -2093,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/" class="md-nav__link">
+      <a href="../../../resources/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -2163,7 +2067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/online-tutorials/" class="md-nav__link">
+      <a href="../../../resources/online-tutorials/" class="md-nav__link">
         Online Tutorials
       </a>
     </li>
@@ -2184,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/national-hpcs/" class="md-nav__link">
+      <a href="../../../resources/national-hpcs/" class="md-nav__link">
         National HPCs
       </a>
     </li>
@@ -2198,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resources/glossary/" class="md-nav__link">
+      <a href="../../../resources/glossary/" class="md-nav__link">
         Glossary
       </a>
     </li>
@@ -2230,8 +2134,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2240,56 +2142,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get-help" class="md-nav__link">
-    Get Help
-  </a>
-  
-    <nav class="md-nav" aria-label="Get Help">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-and-email-support" class="md-nav__link">
-    Web and Email Support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#office-hours-via-zoom" class="md-nav__link">
-    Office Hours via Zoom
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#youtube-channel" class="md-nav__link">
-    YouTube Channel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#one-on-one-support" class="md-nav__link">
-    One-on-One Support
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qa-platform" class="md-nav__link">
-    Q&amp;A Platform
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledge-the-ycrc" class="md-nav__link">
-    Acknowledge the YCRC
+  <a href="#rebuild-a-conda-environment-after-group-change" class="md-nav__link">
+    Rebuild a Conda Environment after Group Change
   </a>
   
 </li>
@@ -2306,97 +2160,34 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/conda-rebuild.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <div class="admonition info">
-<p class="admonition-title">Welcome to the YCRC Documentation</p>
-<p>We recently reorganized the YCRC documentation to make it easier to find the information you need. If you have any difficulty locating a page
-from the previous site structure, you can use the "Search" or contact us for assistance. We hope you like the update!</p>
-</div>
-<h1 id="introduction">Introduction</h1>
-<p>The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.</p>
-<h2 id="get-help">Get Help</h2>
-<p>To best serve the research community, we provide one-on-one consulting and use a support tracking system.</p>
-<div class="admonition info">
-<p class="admonition-title">Troubleshooting Login Issues</p>
-<p>If you are experiencing issues logging into one of the clusters, please first check the current <a href="http://research.computing.yale.edu/system-status">System Status</a> for known issues and check the <a href="/clusters-at-yale/troubleshoot">Troubleshoot Login guide</a> first before seeking additional assistance.</p>
-</div>
-<h3 id="web-and-email-support">Web and Email Support</h3>
-<p>To submit requests, issues, or questions please send us an email at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> or sign on to our online support system at <a href="https://help.ycrc.yale.edu">help.ycrc.yale.edu</a>. Your login credentials there are your email and a password of your choosing, not your CAS password.</p>
-<p>Once received, our system will send an automated response with a link to a ticket. From there we'll track your ticket and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.</p>
-<h3 id="office-hours-via-zoom">Office Hours via Zoom</h3>
-<p>The YCRC hosts weekly office hours via Zoom on <strong>Wednesdays at 11am-12pm EST</strong>. Every Wednesday, Research support team members will be available to answer questions about the HPC clusters, data storage, cluster usage, etc. No appointments are necessary.</p>
-<p>Link: <a href="https://yale.zoom.us/j/92199991191">https://yale.zoom.us/j/92199991191</a></p>
-<p>Phone: 203-432-9666 (2-ZOOM if on-campus)or 646 568 7788; Meeting ID: 921 9999 1191</p>
-<h3 id="youtube-channel">YouTube Channel</h3>
-<p>The <a href="https://ycrc.yale.edu/youtube">YCRC YouTube channel</a> features recorded tutorials and workshops that cover a wide range of computing topics.
-New videos are added regularly and suggestions for topics can be submitted by emailing <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a>.</p>
-<h3 id="one-on-one-support">One-on-One Support</h3>
-<p>Research support team members are available by appointment for one-on-one support.  See the table below for information about each person's area of particular focus.
-Please send requests for appointments with a team member to <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a>.  If you have a general question or are unsure about who to meet with, 
-include as much detail as possible about your request and we'll find the right person for you.</p>
-<table>
-<thead>
-<tr>
-<th>Specialist</th>
-<th>Cluster(s)</th>
-<th>Areas of Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/staff/kathleen-mckiernan">Kathleen McKiernan</a></td>
-<td>All</td>
-<td>Getting Started</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/leadership-team/robert-bjornson">Rob Bjornson, Ph.D.</a></td>
-<td><a href="/clusters/farnam">Farnam</a>/<a href="/clusters/ruddle">Ruddle</a></td>
-<td>Life Sciences, Bioinformatics, Python, R</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford">Tom Langford, Ph.D.</a></td>
-<td><a href="/clusters/grace">Grace</a>/<a href="/clusters/milgram">Milgram</a></td>
-<td>Physics, Python, MPI</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/staff/ping-luo">Ping Luo</a></td>
-<td><a href="/clusters/grace">Grace</a>/<a href="/clusters/farnam">Farnam</a></td>
-<td>MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/staff/kaylea-nelson">Kaylea Nelson, Ph.D.</a></td>
-<td><a href="/clusters/grace">Grace</a>/<a href="/clusters/milgram">Milgram</a></td>
-<td>Astronomy, EPS dept, MPI, Python</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/leadership-team/andrew-sherman">Andy Sherman, Ph.D.</a></td>
-<td><a href="/clusters/grace">Grace</a></td>
-<td>MPI, GPUs, Matlab</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/staff/michael-strickler">Michael Strickler, Ph.D.</a></td>
-<td><a href="/clusters/farnam">Farnam</a>/<a href="/clusters/ruddle">Ruddle</a></td>
-<td>Life Sciences, Structural Biology</td>
-</tr>
-<tr>
-<td><a href="https://research.computing.yale.edu/about/staff/misha-guy">Misha Guy, Ph.D.</a></td>
-<td></td>
-<td><a href="https://research.computing.yale.edu/services/science-research-software-core">SRSC Software</a> and Mathematica (email at mikhael.guy@yale.edu for appointment)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="qa-platform">Q&amp;A Platform</h3>
-<p>The YCRC hosts a Q&amp;A platform at <a href="http://ask.cyberinfrastructure.org">ask.cyberinfrastructure.org</a>. Post questions about the clusters and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at <a href="http://ask.cyberinfrastructure.org/c/yale">ask.cyberinfrastructure.org/c/yale</a>.</p>
-<h2 id="acknowledge-the-ycrc">Acknowledge the YCRC</h2>
-<p>If publishing work performed on a YCRC cluster or with assistance from YCRC staff, we greatly appreciate acknowledgement of our staff and computing time in your publication. A list of YCRC staff can be found on our <a href="https://research.computing.yale.edu/about/staff">Staff page</a>, and the clusters are summarized on our <a href="/clusters">HPC Resources page</a>. Example acknowledgement below: </p>
-<blockquote>
-<p>We thank the Yale Center for Research Computing, specifically [YCRC staff member name(s)], for guidance and assistance in computation run on the [cluster name here] cluster.</p>
-</blockquote>
-<p>Additionally, if you would be willing to send the publication information to <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a>, that would assist our efforts to capture work performed on YCRC resources and we can promote your work on our <a href="https://research.computing.yale.edu">research.computing.yale.edu</a> website.</p>
+                  <h1>Conda rebuild</h1>
+                
+                <h2 id="rebuild-a-conda-environment-after-group-change">Rebuild a Conda Environment after Group Change</h2>
+<p>We will use an example to illustrate how to rebuild a conda env after group change. Assume the conda env is 
+originally installed in <code>/gpfs/loomis/project/oldgrp/user123</code>,
+and we want to move it to the project directory of the new group. </p>
+<p>First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.<br />
+Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
+<div class="highlight"><pre><span></span><code>module load miniconda
+<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/loomis/project/oldgrp/user123/conda_envs
+<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/loomis/project/oldgrp/user123/conda_pkgs
+conda activate myenv
+conda env <span class="nb">export</span> &gt; myenv.yml
+conda deactivate
+</code></pre></div></p>
+<p>Now, start a new login session, submit an interactive job, and rebuild the conda env in your new storage space.
+When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to the right locations by the system, 
+so you don't have to set them explicitly. 
+<div class="highlight"><pre><span></span><code>ssh grace
+srun --pty -p interactive bash
+module load miniconda
+conda env create -f myenv.yml
+</code></pre></div></p>
                 
                   
                     
@@ -2525,12 +2316,12 @@ include as much detail as possible about your request and we'll find the right p
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
-        <script src="_static/js/extra.js"></script>
+        <script src="../../../_static/js/extra.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       
