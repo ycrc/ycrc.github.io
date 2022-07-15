@@ -36,14 +36,14 @@ New videos are added regularly and suggestions for topics can be submitted by em
 ### One-on-One Support
 
 Research support team members are available by appointment for one-on-one support.  See the table below for information about each person's area of particular focus.
-Please send requests for appointments with a team member to [hpc@yale.edu](mailto:hpcg@yale.edu).  If you have a general question or are unsure about who to meet with, 
+Please send requests for appointments with a team member to [research.computing@yale.edu](mailto:research.computing@yale.edu).  If you have a general question or are unsure about who to meet with, 
 include as much detail as possible about your request and we'll find the right person for you.
 
 | Specialist | Cluster(s) | Areas of Focus |
 | --- | --- | --- |
 |[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters/farnam)/[Ruddle](/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R  |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)| Physics, Python, MPI |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Physics, Python, MPI |
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Grace](/clusters/grace)/[Farnam](/clusters/farnam)| MPI, OpenMP, C/C++, Fortran, ParaView, OOD Portal  |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters/grace)| MPI, GPUs, Matlab |
