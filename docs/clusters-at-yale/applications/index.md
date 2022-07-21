@@ -6,7 +6,7 @@ The YCRC will install and manage commonly used software. These software are avai
 
 ## Conda, Python & R
 
-You should also feel free to install things for yourself. See our [Conda](/clusters-at-yale/guides/conda), [Python](/clusters-at-yale/guides/python/), [R](/clusters-at-yale/guides/python) guides for guidance on running these on the clusters.
+You should also feel free to install things for yourself. See our [Conda](/clusters-at-yale/guides/conda), [Python](/clusters-at-yale/guides/python/), [R](/clusters-at-yale/guides/r) guides for guidance on running these on the clusters.
 
 ## Compile Your Own Software
 
