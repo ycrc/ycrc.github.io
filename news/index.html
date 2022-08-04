@@ -2317,8 +2317,6 @@
 <ul>
 <li>Core components of the ethernet network were upgraded to improve performance and increase overall capacity.</li>
 </ul>
-<h3 id="transfer-partition">Transfer Partition.</h3>
-<p>The transfer partition is not available and will be returned to service after the maintenance. We will post a message on the login nodes when the partition is available again. We apologize for any inconvenience.</p>
 <h3 id="loomis-decommission-and-project-data-migration">Loomis Decommission and Project Data Migration</h3>
 <p>After over eight years in service, the primary storage system on Grace, Loomis (<code>/gpfs/loomis</code>), will be retired later this year.</p>
 <p><strong>Project.</strong> We have migrated all of the Loomis project space (<code>/gpfs/loomis/project</code>) to the Gibbs storage system at <code>/gpfs/gibbs/project</code> during the maintenance. You will need to update your scripts and workflows to point to the new location (<code>/gpfs/gibbs/project/&lt;group&gt;/&lt;netid&gt;</code>). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated. If you have jobs in a pending state going into the maintenance that used the absolute Loomis path, we recommend canceling, updating and then re-submitting those jobs so they do not fail.</p>
