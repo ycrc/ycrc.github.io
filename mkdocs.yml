@@ -168,6 +168,7 @@ nav:
             - clusters-at-yale/guides/python.md
             - clusters-at-yale/guides/jupyter.md
             - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
+            - clusters-at-yale/guides/conda-clone.md
             - "mpi4py": clusters-at-yale/guides/mpi4py.md
         - Software: 
             - clusters-at-yale/guides/cesm.md
