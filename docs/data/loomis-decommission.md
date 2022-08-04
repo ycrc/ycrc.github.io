@@ -23,16 +23,23 @@ In 2023, a new unified software and module tree will be created on Palmer, so th
 
 Your Grace home directory was already migrated to Palmer during the January 2022 maintenance.
 
-During the upcoming Grace Maintenance in August 2022, we will copy all of the Loomis project space (/gpfs/loomis/project) to the Gibbs storage system. After the migration, you will need to update your scripts and workflows to point to the new location (/gpfs/gibbs/project). The "project" symlink in your home directory will be updated during the maintenance to point to your new space (with a few exceptions described below), so script using the symlinked path will not need to be updated. If you have jobs pending going into the maintenance that use the absolute Loomis path, we recommend canceling, updating and then re-submitting those jobs so they do not fail coming out of maintenance.
+During the upcoming Grace Maintenance in August 2022, we will migrated all of the Loomis project space (/gpfs/loomis/project) to the Gibbs storage system at `/gpfs/gibbs/project` during the maintenance. You will need to update your scripts and workflows to point to the new location (`/gpfs/gibbs/project/<group>/<netid>`). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated.
 
-If you have a project space that exceeds the no-cost allocation (4TB), you should have already or will receive a communication from us to either reduce your usage or create a new “pi” allocation on Gibbs to accommodate the overage, as applicable. In these instances, your group will be granted a new, empty "project" space on Gibbs with the default no-cost quota coming out of the maintenance. Any scripts will need to updated accordingly.
+If you had a project space that exceeds the no-cost allocation (4TiB), you have received a separate communication from us with details about your data migration. In these instances, your group has been granted a new, empty "project" space with the default no-cost quota. Any scripts will need to be updated accordingly.
 
-The Loomis scratch space will be frozen during the August 2022 maintenance. It will be put into a read-only mode such that all data will be purged as it reaches its respective 60-day expiration.
-Any data in /gpfs/loomis/scratch60 you wish to retain after the freeze will need to be copied into another location (such as your new Gibbs project or Palmer scratch). As you already have a Palmer scratch space today, you can update your scripts and move data into /vast/palmer/scratch at your convenience.
+The Loomis scratch space (/gpfs/loomis/scratch60) is now read-only. All data in that directory will be purged in 60 days on **October 3, 2022**. Any data in `/gpfs/loomis/scratch60` you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).
 
 ### Conda Environments
 
-While we will be transferring all data in your project directory to Gibbs, conda environments do not tolerate being moved to a new path and therefore will need to be rebuilt.
+By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide [documentation and a helper script](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/).
+
+### R Packages 
+
+Similarly, in 2022 we started redirecting user R packages to your project space to conserve home directory usage. If your R environment is not working as expected, we recommend deleting the old installation (found in `~/project/R/<version>`) and rerunning install.packages.
+
+### Custom Software Installations
+
+If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled. [Contact us](/#get-help) if you need assistance recompiling.
 
 ## Researchers with Purchased Storage on Loomis
 
