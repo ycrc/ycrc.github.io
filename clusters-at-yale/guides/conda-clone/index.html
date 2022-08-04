@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda_clone/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
-        <title>Repair broken environments - Yale Center for Research Computing</title>
+        <title>Clone Conda Environments - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#repair-broken-environments" class="md-skip">
+        <a href="#clone-conda-environments" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Repair broken environments
+              Clone Conda Environments
             
           </span>
         </div>
@@ -227,6 +227,8 @@
 <!-- Determine class according to level -->
 
 
+  
+
 
 
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
@@ -284,13 +286,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Software & Tools
       </a>
     </li>
@@ -1445,12 +1449,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1485,14 +1491,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
       
       
       
@@ -1560,6 +1568,82 @@
       <a href="../handson-ml2/" class="md-nav__link">
         Python+TensorFlow Example
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Clone Conda Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Clone Conda Environments
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clone-to-a-new-name" class="md-nav__link">
+    Clone to a New Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_moversh-helper-script" class="md-nav__link">
+    conda_mover.sh Helper Script
+  </a>
+  
+    <nav class="md-nav" aria-label="conda_mover.sh Helper Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebuild-an-environment" class="md-nav__link">
+    Rebuild an Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1943,7 +2027,7 @@
   
     <li class="md-nav__item">
       <a href="../gpus-cuda/" class="md-nav__link">
-        GPU Accelerated Python
+        GPUs and CUDA
       </a>
     </li>
   
@@ -2137,6 +2221,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clone-to-a-new-name" class="md-nav__link">
+    Clone to a New Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda_moversh-helper-script" class="md-nav__link">
+    conda_mover.sh Helper Script
+  </a>
+  
+    <nav class="md-nav" aria-label="conda_mover.sh Helper Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebuild-an-environment" class="md-nav__link">
+    Rebuild an Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2147,25 +2266,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/conda_clone.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/conda-clone.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="repair-broken-environments">Repair broken environments</h1>
-<p>During the Summer 2022 Grace maintenance, <code>Loomis</code> project directories were migrated to a new filesystem, <code>Gibbs</code>.
+                <h1 id="clone-conda-environments">Clone Conda Environments</h1>
+<p>During the Grace August 2022 maintenance, Loomis project directories were migrated to the Gibbs filesystem.
 This move included numerous Conda environments which may no longer work properly after the migration.</p>
+<h2 id="clone-to-a-new-name">Clone to a New Name</h2>
 <p>A simple way to repair any broken environments is to use Conda's built-in <code>clone</code> option to create a new environment based on the packages installed in the existing one.
 This is similar to exporting the contents of an environment and then building a new environment from that export, but it can be done in one step:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda create --name new_env --clone old_env
 </code></pre></div>
+<h2 id="conda_moversh-helper-script"><code>conda_mover.sh</code> Helper Script</h2>
 <p>To simplify things, we have developed a tool, <code>conda_mover.sh</code>, which will rebuild all your environments (or any specific ones provided by name) with the same environment name.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We recommend doing all of this actions on a compute node with at least 10G of memory to ensure <code>conda</code> will work properly.</p>
 </div>
-<p>The usage is:</p>
+<p>The usage is as follows.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -h
 A utility to clone multiple conda environments from existing location to the new project space
 To specify the new path, <span class="nb">set</span> the PROJECT environment variable
@@ -2180,13 +2301,22 @@ n NAME   Clone environment NAME
 <p>To list all known environments:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -l
 </code></pre></div>
+<h3 id="rebuild-an-environment">Rebuild an Environment</h3>
+<p>You can either rebuild a single environment at a time or all your environments using the helper script. 
+Remember to load any relevant modules for supporting libraries where needed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For more complex environments, such as those using both <code>pip</code> and <code>conda</code> or environments that use MPI,
+we recommend manually rebuilding the environment instead of cloning. <a href="/#get-help">Contact us</a> if you need assistance.</p>
+</div>
 <p>To rebuild a single environment:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -n env_name
 </code></pre></div>
 <p>To rebuild all known environments:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -a
 </code></pre></div>
-<p>This step may take a while, so it may be useful to launch as a batch job using a script like this:</p>
+<p>If you choose the rebuild all known environments (with <code>-a</code>), this may take a while, so it may be useful to launch as a batch job.
+An example script is provided below.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1">#SBATCH -p day</span>
@@ -2207,7 +2337,7 @@ module purge
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2022</span>
       
     
   </small>
