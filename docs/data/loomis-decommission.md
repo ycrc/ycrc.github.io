@@ -23,11 +23,11 @@ In 2023, a new unified software and module tree will be created on Palmer, so th
 
 Your Grace home directory was already migrated to Palmer during the January 2022 maintenance.
 
-During the upcoming Grace Maintenance in August 2022, we will migrated all of the Loomis project space (/gpfs/loomis/project) to the Gibbs storage system at `/gpfs/gibbs/project` during the maintenance. You will need to update your scripts and workflows to point to the new location (`/gpfs/gibbs/project/<group>/<netid>`). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated.
+During the upcoming Grace Maintenance in August 2022, we will migrated all of the Loomis project space (`/gpfs/loomis/project`) to the Gibbs storage system at `/gpfs/gibbs/project` during the maintenance. You will need to update your scripts and workflows to point to the new location (`/gpfs/gibbs/project/<group>/<netid>`). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated.
 
 If you had a project space that exceeds the no-cost allocation (4TiB), you have received a separate communication from us with details about your data migration. In these instances, your group has been granted a new, empty "project" space with the default no-cost quota. Any scripts will need to be updated accordingly.
 
-The Loomis scratch space (/gpfs/loomis/scratch60) is now read-only. All data in that directory will be purged in 60 days on **October 3, 2022**. Any data in `/gpfs/loomis/scratch60` you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).
+The Loomis scratch space (`/gpfs/loomis/scratch60`) is now read-only. All data in that directory will be purged in 60 days on **October 3, 2022**. Any data in `/gpfs/loomis/scratch60` you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).
 
 ### Conda Environments
 
@@ -39,10 +39,10 @@ Similarly, in 2022 we started redirecting user R packages to your project space 
 
 ### Custom Software Installations
 
-If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled. [Contact us](/#get-help) if you need assistance recompiling.
+If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled.
 
 ## Researchers with Purchased Storage on Loomis
 
-If you have purchased space on /gpfs/loomis that is still active (not expired), we will create a new area of the same size for you on Gibbs and will coordinate the transfer of the data with your group. 
+If you have purchased space on `/gpfs/loomis` that is still active (not expired), we will create a new area of the same size for you on Gibbs and will coordinate the transfer of the data with your group. 
 
-If you have purchased storage on /gpfs/loomis that has expired or will be expiring in 2022, you will have received a separate communication from us with information on purchasing replacement storage on Gibbs.
+If you have purchased storage on `/gpfs/loomis` that has expired or will be expiring in 2022, you will have received a separate communication from us with information on purchasing replacement storage on Gibbs.
