@@ -181,11 +181,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-rebuild/</loc>
-         <lastmod>2022-08-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/</loc>
          <lastmod>2022-08-04</lastmod>
          <changefreq>daily</changefreq>
@@ -487,6 +482,16 @@
     </url>
     <url>
          <loc>https://docs.ycrc.yale.edu/news/2022-07/</loc>
+         <lastmod>2022-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/news/2022-08-grace/</loc>
+         <lastmod>2022-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/news/2022-08/</loc>
          <lastmod>2022-08-04</lastmod>
          <changefreq>daily</changefreq>
     </url>

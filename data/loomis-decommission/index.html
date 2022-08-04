@@ -2206,6 +2206,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#r-packages" class="md-nav__link">
+    R Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-software-installations" class="md-nav__link">
+    Custom Software Installations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2247,12 +2261,15 @@
 <p>In 2023, a new unified software and module tree will be created on Palmer, so the same software will be available for use regardless of which YCRC HPC cluster you are using.</p>
 <h2 id="what-about-my-existing-data-on-loomis">What about My Existing Data on Loomis?</h2>
 <p>Your Grace home directory was already migrated to Palmer during the January 2022 maintenance.</p>
-<p>During the upcoming Grace Maintenance in August 2022, we will copy all of the Loomis project space (/gpfs/loomis/project) to the Gibbs storage system. After the migration, you will need to update your scripts and workflows to point to the new location (/gpfs/gibbs/project). The "project" symlink in your home directory will be updated during the maintenance to point to your new space (with a few exceptions described below), so script using the symlinked path will not need to be updated. If you have jobs pending going into the maintenance that use the absolute Loomis path, we recommend canceling, updating and then re-submitting those jobs so they do not fail coming out of maintenance.</p>
-<p>If you have a project space that exceeds the no-cost allocation (4TB), you should have already or will receive a communication from us to either reduce your usage or create a new “pi” allocation on Gibbs to accommodate the overage, as applicable. In these instances, your group will be granted a new, empty "project" space on Gibbs with the default no-cost quota coming out of the maintenance. Any scripts will need to updated accordingly.</p>
-<p>The Loomis scratch space will be frozen during the August 2022 maintenance. It will be put into a read-only mode such that all data will be purged as it reaches its respective 60-day expiration.
-Any data in /gpfs/loomis/scratch60 you wish to retain after the freeze will need to be copied into another location (such as your new Gibbs project or Palmer scratch). As you already have a Palmer scratch space today, you can update your scripts and move data into /vast/palmer/scratch at your convenience.</p>
+<p>During the upcoming Grace Maintenance in August 2022, we will migrated all of the Loomis project space (/gpfs/loomis/project) to the Gibbs storage system at <code>/gpfs/gibbs/project</code> during the maintenance. You will need to update your scripts and workflows to point to the new location (<code>/gpfs/gibbs/project/&lt;group&gt;/&lt;netid&gt;</code>). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated.</p>
+<p>If you had a project space that exceeds the no-cost allocation (4TiB), you have received a separate communication from us with details about your data migration. In these instances, your group has been granted a new, empty "project" space with the default no-cost quota. Any scripts will need to be updated accordingly.</p>
+<p>The Loomis scratch space (/gpfs/loomis/scratch60) is now read-only. All data in that directory will be purged in 60 days on <strong>October 3, 2022</strong>. Any data in <code>/gpfs/loomis/scratch60</code> you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).</p>
 <h3 id="conda-environments">Conda Environments</h3>
-<p>While we will be transferring all data in your project directory to Gibbs, conda environments do not tolerate being moved to a new path and therefore will need to be rebuilt.</p>
+<p>By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/">documentation and a helper script</a>.</p>
+<h3 id="r-packages">R Packages</h3>
+<p>Similarly, in 2022 we started redirecting user R packages to your project space to conserve home directory usage. If your R environment is not working as expected, we recommend deleting the old installation (found in <code>~/project/R/&lt;version&gt;</code>) and rerunning install.packages.</p>
+<h3 id="custom-software-installations">Custom Software Installations</h3>
+<p>If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled. <a href="/#get-help">Contact us</a> if you need assistance recompiling.</p>
 <h2 id="researchers-with-purchased-storage-on-loomis">Researchers with Purchased Storage on Loomis</h2>
 <p>If you have purchased space on /gpfs/loomis that is still active (not expired), we will create a new area of the same size for you on Gibbs and will coordinate the transfer of the data with your group. </p>
 <p>If you have purchased storage on /gpfs/loomis that has expired or will be expiring in 2022, you will have received a separate communication from us with information on purchasing replacement storage on Gibbs.</p>
@@ -2264,7 +2281,7 @@ Any data in /gpfs/loomis/scratch60 you wish to retain after the freeze will need
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2022</span>
       
     
   </small>
