@@ -4,6 +4,13 @@ During the Grace August 2022 maintenance, Loomis project directories were migrat
 This move included numerous Conda environments which may no longer work properly after the migration.
 
 
+You can either rebuild a single environment at a time or all your environments using the helper script. 
+Remember to load any relevant modules for supporting libraries where needed.
+
+!!! Note
+    If you are using either Jupyter Notebook or Rstudio with Conda R on Open OnDemand, you can enter these commands into the terminal.
+    You can access the terminal by clicking "Clusters" in the top bar and then selecting the "Shell Access" item.
+
 ## Clone to a New Name
 
 A simple way to repair any broken environments is to use Conda's built-in `clone` option to create a new environment based on the packages installed in the existing one.
