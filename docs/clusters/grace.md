@@ -47,6 +47,6 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
 | home           | `/vast/palmer/home.grace` | 125GiB/user                             | 500,000    | Yes     | No        | snapshots will be enabled late 2022      |
-| project        | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
-| scratch60      | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      | No        | decommissioning in late 2022 |
+| project        | `/gpfs/gibbs/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
 | palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        | |
+| scratch60      | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      | No        | read-only as of August 2022, decommissioning in late 2022 |
