@@ -2274,6 +2274,13 @@
                 <h1 id="clone-conda-environments">Clone Conda Environments</h1>
 <p>During the Grace August 2022 maintenance, Loomis project directories were migrated to the Gibbs filesystem.
 This move included numerous Conda environments which may no longer work properly after the migration.</p>
+<p>You can either rebuild a single environment at a time or all your environments using the helper script. 
+Remember to load any relevant modules for supporting libraries where needed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using either Jupyter Notebook or Rstudio with Conda R on Open OnDemand, you can enter these commands into the terminal.
+You can access the terminal by clicking "Clusters" in the top bar and then selecting the "Shell Access" item.</p>
+</div>
 <h2 id="clone-to-a-new-name">Clone to a New Name</h2>
 <p>A simple way to repair any broken environments is to use Conda's built-in <code>clone</code> option to create a new environment based on the packages installed in the existing one.
 This is similar to exporting the contents of an environment and then building a new environment from that export, but it can be done in one step:</p>
@@ -2337,7 +2344,7 @@ module purge
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 4, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2022</span>
       
     
   </small>
