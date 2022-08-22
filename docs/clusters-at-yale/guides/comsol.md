@@ -22,7 +22,7 @@ This is particularly useful for parametric sweeps or scanning over a range of va
 For example:
 
 ```
-comsol batch -inputfile mymodel.mph -outputfile out.mph -study std1
+comsol batch -configuration /tmp -data /tmp -prefsdir /tmp -inputfile mymodel.mph -outputfile out.mph -study std1 
 ```
 
 which will run the study `std1` found within the `mymodel.mph` file generated through the COMSOL GUI and save the outputs in  `out.mph`. 
