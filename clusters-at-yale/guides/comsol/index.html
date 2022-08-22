@@ -2300,7 +2300,7 @@ comsol -np $SLURM_CPUS_ON_NODE &amp;
 <p>Comsol can be run without the graphical interface assuming you have a model file and a study defined beforehand. 
 This is particularly useful for parametric sweeps or scanning over a range of values for specific parameters.
 For example:</p>
-<div class="highlight"><pre><span></span><code>comsol batch -inputfile mymodel.mph -outputfile out.mph -study std1
+<div class="highlight"><pre><span></span><code>comsol batch -configuration /tmp -data /tmp -prefsdir /tmp -inputfile mymodel.mph -outputfile out.mph -study std1 
 </code></pre></div>
 <p>which will run the study <code>std1</code> found within the <code>mymodel.mph</code> file generated through the COMSOL GUI and save the outputs in  <code>out.mph</code>. 
 A parameter can be passed into the study like this:</p>
@@ -2362,7 +2362,7 @@ Be careful to provide a different output file for each line to avoid clashes bet
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2022</span>
       
     
   </small>
