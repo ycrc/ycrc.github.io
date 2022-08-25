@@ -20,7 +20,7 @@ We maintain several high performance storage systems. Listed below are these sha
 | Name     | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                                  |
 |----------|---------------|---------|-----------------------|---------------------------|------------------------------------------|
 | Palmer   | /vast/palmer  | 500 TiB | Grace\*               | Vast                      | Grace home, scratch storage              |
-| Gibbs    | /gpfs/gibbs   | 8.0 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
+| Gibbs    | /gpfs/gibbs   | 11.0 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | YSM      | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       | IBM Spectrum Scale (GPFS) | Farnam primary storage                   |
 | Loomis   | /gpfs/loomis  | 2.6 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
 | Slayman  | /gpfs/slayman | 1.0 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
