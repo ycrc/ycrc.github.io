@@ -2325,6 +2325,8 @@
 <p><strong>R.</strong>  Similarly, in 2022 we started redirecting user R packages to your project space to conserve home directory usage. If your R environment is not working as expected, we recommend deleting the old installation (found in <code>~/project/R/&lt;version&gt;</code>) and rerunning install.packages.</p>
 <p><strong>Custom Software Installation.</strong> If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled. <a href="/#get-help">Contact us</a> if you need assistance recompiling.</p>
 <p><strong>Scratch60.</strong> The Loomis scratch space (<code>/gpfs/loomis/scratch60</code>) is now read-only. All data  in that directory will be purged in 60 days on <strong>October 3, 2022</strong>. Any data in <code>/gpfs/loomis/scratch60</code> you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).</p>
+<h3 id="changes-to-non-interactive-sessions">Changes to Non-Interactive Sessions</h3>
+<p>Non-interactive sessions (e.g. file transfers, commands sent over ssh) no longer load the standard cluster environment to alleviate performance issues due to unnecessary module loads. Please contact us if this change affects your workflow so we can resolve the issue or provide a workaround.</p>
     </div>
     <div class="blog-post-extra">
         Published: August 04, 2022
