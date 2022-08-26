@@ -1,8 +1,3 @@
-!!! info "Welcome to the YCRC Documentation"
-
-    We recently reorganized the YCRC documentation to make it easier to find the information you need. If you have any difficulty locating a page
-    from the previous site structure, you can use the "Search" or contact us for assistance. We hope you like the update!
-
 # Introduction
 
 The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
