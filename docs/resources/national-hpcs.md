@@ -4,17 +4,17 @@ Beyond Yale’s on campus clusters, there are a number of ways for researchers t
 
 Yale researchers may use the Data Management Planning Tool ([DMPtool](https://dmptool.org/)) to create, review, and share data management plans that are in accordance with institutional and funder requirements.
 
-## XSEDE
+## ACCESS (formerly XSEDE)
 
 Quarterly | [Application & Info](https://portal.xsede.org/allocations/announcements)
 
-[Startup Allocations](https://portal.xsede.org/allocations/startup) are readily available on XSEDE resources (typically approved within 2 weeks) for benchmarking and planning runs. For even lower commitment allocations (e.g. to just explore the resource), YCRC staff members have "Campus Champions" allocations on all XSEDE resources that can be shared upon request. [Contact us](/#get-help) for access.
+"Explore Allocations" are readily available on ACCESS resources for benchmarking and planning runs. For even lower commitment allocations (e.g. to just explore the resource), YCRC staff members have "Campus Champions" allocations on all ACCESS resources that can be shared upon request. [Contact us](/#get-help) for access.
 
-XSEDE resources include the following. Up to date information is available at [xsede.org](https://www.xsede.org/ecosystem/resources):
+ACCESS resources include the following. Up to date information is available at [access-ci.org](https://access-ci.org/):
 
 * Stampede2: traditional compute and Phis
 * Jetstream: Science Gateways
-* Bridges: traditional compute and GPUs
+* Bridges2: traditional compute and GPUs
 * Comet: traditional compute and GPUs
 * XStream: GPU cluster
 
