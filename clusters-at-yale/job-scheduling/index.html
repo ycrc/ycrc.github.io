@@ -2301,7 +2301,7 @@
                 
                 <h1 id="run-jobs-with-slurm">Run Jobs with Slurm</h1>
 <p>Performing computational work at scale in a shared environment involves organizing everyone's work into jobs and scheduling them. We use <a href="https://slurm.schedmd.com/overview.html">Slurm</a> to schedule and manage jobs on the <a href="/clusters">YCRC clusters</a>. </p>
-<p>Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs <code>srun</code> and <code>sbatch</code> or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on <a href="/clusters">each cluster page</a>. Once submitted, jobs wait in a queue and are subject to several <a href="/clusters-at-yale/job-scheduling/fairshare">factors affecting scheduling priority</a>. When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.</p>
+<p>Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs <code>salloc</code> and <code>sbatch</code> or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on <a href="/clusters">each cluster page</a>. Once submitted, jobs wait in a queue and are subject to several <a href="/clusters-at-yale/job-scheduling/fairshare">factors affecting scheduling priority</a>. When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.</p>
 <div class="admonition info">
 <p class="admonition-title">Please be a good cluster citizen.</p>
 <ul>
@@ -2332,7 +2332,7 @@
 See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU and Memory page</a> for more on tracking the resources your job actually uses.</p>
 <p><a id="directives"></a></p>
 <h2 id="common-job-request-options">Common Job Request Options</h2>
-<p>These options modify the size, length and behavior of jobs you submit. They can be specified when calling <code>srun</code> or <code>sbatch</code>, or saved to a <a href="#batch-jobs">batch script</a>. Options specified on the command line to <code>sbatch</code> will override those in a batch script. See our <a href="/clusters-at-yale/job-scheduling/resource-requests">Request Compute Resources page</a> for discussion on the differences between <code>--ntasks</code> and <code>--cpus-per-task</code>, constraints, GPUs, etc. If options are left unspecified defaults are used.</p>
+<p>These options modify the size, length and behavior of jobs you submit. They can be specified when calling <code>salloc</code> or <code>sbatch</code>, or saved to a <a href="#batch-jobs">batch script</a>. Options specified on the command line to <code>sbatch</code> will override those in a batch script. See our <a href="/clusters-at-yale/job-scheduling/resource-requests">Request Compute Resources page</a> for discussion on the differences between <code>--ntasks</code> and <code>--cpus-per-task</code>, constraints, GPUs, etc. If options are left unspecified defaults are used.</p>
 <table>
 <thead>
 <tr>
@@ -2437,7 +2437,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 </table>
 <h2 id="interactive-jobs">Interactive Jobs</h2>
 <p>Interactive jobs can be used for testing and troubleshooting code. Requesting an interactive job will allocate resources and log you into a shell on a compute node. For example:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -t <span class="m">2</span>:00:00 --mem<span class="o">=</span>8G -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc -t <span class="m">2</span>:00:00 --mem<span class="o">=</span>8G -p interactive
 </code></pre></div>
 <p>This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type <code>exit</code> or <kbd>Ctrl</kbd>+<kbd>d</kbd> </p>
 <div class="admonition tip">
@@ -2446,7 +2446,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 </div>
 <h3 id="graphical-applications">Graphical applications</h3>
 <p>Many graphical applications are well served with the <a href="/clusters-at-yale/access/ood/#remote-desktop">Open OnDemand Remote Desktop app</a>. If you would like to use X11 forwarding, first make sure it is <a href="/clusters-at-yale/access/x11">installed and configured</a>. Then, add the <code>--x11</code> flag to an interactive job request:</p>
-<div class="highlight"><pre><span></span><code>srun --pty --x11 -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc --x11 -p interactive
 </code></pre></div>
 <h2 id="batch-jobs">Batch Jobs</h2>
 <p>You can submit a script as a batch job, <em>i.e.</em> one that can be run non-interactively in batches. These submission scripts are comprised of three parts:</p>
@@ -2457,20 +2457,15 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 </ol>
 <p>See our page of <a href="/clusters-at-yale/job-scheduling/slurm-examples/">Submission Script Examples</a> for a few more, or the <a href="https://github.com/ycrc/ycrc_example_scripts">example scripts repo</a> for more in-depth examples. Here is an example submission script that prints some job information and exits:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
 <span class="c1">#SBATCH --job-name=example_job</span>
-<span class="c1">#SBATCH --out=&quot;slurm-%j.out&quot;</span>
-<span class="c1">#SBATCH --time=01:00</span>
-<span class="c1">#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=2</span>
-<span class="c1">#SBATCH --mem-per-cpu=5G</span>
+<span class="c1">#SBATCH --time=2:00:00</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 
-<span class="nv">mem_bytes</span><span class="o">=</span><span class="k">$(</span>&lt;/sys/fs/cgroup/memory/slurm/uid_<span class="si">${</span><span class="nv">SLURM_JOB_UID</span><span class="si">}</span>/job_<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/memory.limit_in_bytes<span class="k">)</span>
-<span class="nv">mem_gbytes</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$mem_bytes</span> <span class="o">/</span> <span class="m">1024</span> <span class="o">**</span><span class="m">3</span> <span class="k">))</span>
+module purge
+module load MATLAB/2021a
 
-<span class="nb">echo</span> <span class="s2">&quot;Starting at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;Job submitted to the </span><span class="si">${</span><span class="nv">SLURM_JOB_PARTITION</span><span class="si">}</span><span class="s2"> partition, the default partition on </span><span class="si">${</span><span class="nv">SLURM_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;Job name: </span><span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span><span class="s2">, Job ID: </span><span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;  I have </span><span class="si">${</span><span class="nv">SLURM_CPUS_ON_NODE</span><span class="si">}</span><span class="s2"> CPUs and </span><span class="si">${</span><span class="nv">mem_gbytes</span><span class="si">}</span><span class="s2">GiB of RAM on compute node </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+matlab -b <span class="s2">&quot;your_script&quot;</span>
 </code></pre></div>
 <p>Save <a href="/_static/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
 <div class="highlight"><pre><span></span><code>sbatch example_job.sh
@@ -2484,7 +2479,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
       
     
   </small>
