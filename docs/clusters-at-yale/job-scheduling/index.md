@@ -2,7 +2,7 @@
 
 Performing computational work at scale in a shared environment involves organizing everyone's work into jobs and scheduling them. We use [Slurm](https://slurm.schedmd.com/overview.html) to schedule and manage jobs on the [YCRC clusters](/clusters). 
 
-Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs `srun` and `sbatch` or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on [each cluster page](/clusters). Once submitted, jobs wait in a queue and are subject to several [factors affecting scheduling priority](/clusters-at-yale/job-scheduling/fairshare). When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.
+Submitting a job involves specifying a resource request then running one or more commands or applications. These requests take the form of options to the command-line programs `salloc` and `sbatch` or those same options as directives inside submission scripts. Requests are made of groups of compute nodes (servers) called partitions. Partitions, their defaults, limits, and purposes are listed on [each cluster page](/clusters). Once submitted, jobs wait in a queue and are subject to several [factors affecting scheduling priority](/clusters-at-yale/job-scheduling/fairshare). When your scheduled job begins, the commands or applications you specify are run on compute nodes the scheduler found to satisfy your resource request. If the job was submitted as a batch job, output normally printed to the screen will be saved to file.
 
 !!! info "Please be a good cluster citizen."
 
@@ -51,7 +51,7 @@ See our [Monitor CPU and Memory page](/clusters-at-yale/job-scheduling/resource-
 <a id="directives"></a>
 ## Common Job Request Options
 
-These options modify the size, length and behavior of jobs you submit. They can be specified when calling `srun` or `sbatch`, or saved to a [batch script](#batch-jobs). Options specified on the command line to `sbatch` will override those in a batch script. See our [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests) for discussion on the differences between `--ntasks` and `--cpus-per-task`, constraints, GPUs, etc. If options are left unspecified defaults are used.
+These options modify the size, length and behavior of jobs you submit. They can be specified when calling `salloc` or `sbatch`, or saved to a [batch script](#batch-jobs). Options specified on the command line to `sbatch` will override those in a batch script. See our [Request Compute Resources page](/clusters-at-yale/job-scheduling/resource-requests) for discussion on the differences between `--ntasks` and `--cpus-per-task`, constraints, GPUs, etc. If options are left unspecified defaults are used.
 
 |Long Option<img width=130/>|Short Option|Default            |Description|
 |---------------------------|------------|-------------------|-----------|
@@ -76,7 +76,7 @@ These options modify the size, length and behavior of jobs you submit. They can 
 Interactive jobs can be used for testing and troubleshooting code. Requesting an interactive job will allocate resources and log you into a shell on a compute node. For example:
 
 ``` bash
-srun --pty -t 2:00:00 --mem=8G -p interactive bash
+salloc -t 2:00:00 --mem=8G -p interactive
 ```
 
 This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type `exit` or <kbd>Ctrl</kbd>+<kbd>d</kbd> 
@@ -89,7 +89,7 @@ This will assign one CPU and 8GiB of RAM to you for two hours. You can run comma
 Many graphical applications are well served with the [Open OnDemand Remote Desktop app](/clusters-at-yale/access/ood/#remote-desktop). If you would like to use X11 forwarding, first make sure it is [installed and configured](/clusters-at-yale/access/x11). Then, add the `--x11` flag to an interactive job request:
 
 ``` bash
-srun --pty --x11 -p interactive bash
+salloc --x11 -p interactive
 ```
 
 ## Batch Jobs
