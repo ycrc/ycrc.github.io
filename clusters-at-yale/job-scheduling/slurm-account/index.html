@@ -2227,7 +2227,7 @@ sacctmgr remove user where <span class="nv">user</span><span class="o">=</span>b
 sacctmgr show assoc <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># show assocations for account</span>
 </code></pre></div>
 <h2 id="submit-jobs">Submit Jobs</h2>
-<div class="highlight"><pre><span></span><code>srun -A cryoem ...
+<div class="highlight"><pre><span></span><code>salloc -A cryoem ...
 sbatch -A cryoem my_script.sh
 </code></pre></div>
 <h2 id="list-jobs">List Jobs</h2>
@@ -2254,7 +2254,7 @@ scontrol uhold 1234   # hold job 1234 but allow the job&#39;s owner to release i
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

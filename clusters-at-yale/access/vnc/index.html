@@ -2235,10 +2235,10 @@
 <p>Start an interactive job on cluster with the <code>--x11</code> flag (see <a href="/clusters-at-yale/job-scheduling">Slurm</a> for more information). For this description, we’ll assume you were given node c04n03:</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code>srun --pty --x11 -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc --x11
 </code></pre></div>
 <ol>
-<li>On that node, run the VNCserver. You’ll see something like:</li>
+<li>On that node, run the VNCserver. You’ll see something like:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>c04n03$ vncserver
 
@@ -2293,7 +2293,7 @@ Log file is /home/fas/hpcprog/kln26/.vnc/c31n02.grace.hpc.yale.internal:1.log
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

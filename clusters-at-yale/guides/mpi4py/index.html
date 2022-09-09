@@ -2416,15 +2416,12 @@ These often require communication between the different steps and need a way to 
 <p>MPI utilizes Slurm tasks as the individual parallel workers. 
 Therefore, when requesting resources (either interactively or in batch-mode) the number of tasks will determine the number of parallel workers (or to use MPI's language, the <code>SIZE</code> of the <code>COMM World</code>).</p>
 <p>To request four tasks (each with a single CPU) interactively run the following:</p>
-<div class="codehilite"><pre><span></span><code>srun --pty -p day --cpus-per-task=1 --ntasks=4 bash
+<div class="highlight"><pre><span></span><code>salloc --cpus-per-task<span class="o">=</span><span class="m">1</span> --ntasks<span class="o">=</span><span class="m">4</span> 
 </code></pre></div>
-
-<p>This can also be achieved in batch-mode like this:</p>
-<div class="codehilite"><pre><span></span><code>#SBATCH --partition Display
-#SBATCH --cpus-per-task=1
-#SBATCH --ntasks=4
+<p>This can also be achieved in batch-mode by including the following directives in your submission script:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --ntasks=4</span>
 </code></pre></div>
-
 <p>A more detailed discussion of resource requests can be found <a href="/clusters-at-yale/job-scheduling/resource-requests/">here</a> and further examples are available <a href="/clusters-at-yale/job-scheduling/slurm-examples/">here</a>.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="ex-1-rank">Ex 1: Rank</h3>
@@ -2582,7 +2579,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

@@ -2347,7 +2347,7 @@
 <h3 id="interactive-job-without-a-gui">Interactive Job (without a GUI)</h3>
 <p>To run MATLAB interactively, you need to create an interactive session on a compute node.</p>
 <p>You could start an interactive session using 4 cores, 16GiB of RAM for 4 hours with:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -c 4 --mem 16G -p interactive -t 4:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc -c 4 --mem 16G -t 4:00:00
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module file and start MATLAB</p>
 <div class="highlight"><pre><span></span><code>module load MATLAB/2021a
@@ -2386,7 +2386,7 @@ matlab -b &quot;your_script&quot;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

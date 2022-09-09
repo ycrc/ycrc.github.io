@@ -2235,7 +2235,7 @@
 <p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are gently modified from the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>. </p>
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
 <p>First allocate an interactive job on a compute node to run the install on. </p>
-<div class="highlight"><pre><span></span><code>srun --cpus-per-task <span class="m">2</span> --pty -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc --cpus-per-task <span class="m">2</span>
 </code></pre></div>
 <p>Then, set the following environment variables to suit your install. We filled in some defaults for you.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># where to install cryosparc2 and its sample database</span>
@@ -2315,7 +2315,7 @@ cat <span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
 <span class="s">EOF</span>
 </code></pre></div>
 <h2 id="run">Run</h2>
-<div class="highlight"><pre><span></span><code>srun --cpus-per-task <span class="m">2</span> --pty -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc --cpus-per-task <span class="m">2</span>
 <span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
 <span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
 sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span> <span class="nv">$base_dir</span>/config.sh
@@ -2338,7 +2338,7 @@ cryosparcm status
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

@@ -2260,7 +2260,7 @@
 <div class="highlight"><pre><span></span><code>module load Gaussian
 </code></pre></div>
 <p>To run Gaussian interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using</p>
-<div class="highlight"><pre><span></span><code>srun --pty -c <span class="m">4</span>  -p interactive -t <span class="m">4</span>:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">4</span> -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h2 id="gaussview">GaussView</h2>
@@ -2275,7 +2275,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

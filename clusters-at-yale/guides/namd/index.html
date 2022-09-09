@@ -2286,7 +2286,7 @@
 <p>for the GPU-enabled version (about which there is more information below).</p>
 <p>NAMD can be run interactively, or as a batch job.</p>
 <p>To run NAMD interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using</p>
-<div class="highlight"><pre><span></span><code>srun --x11 --pty -c <span class="m">4</span>  -p interactive -t <span class="m">4</span>:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc --x11 -c <span class="m">4</span> -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>For longer simulations, you will generally want to run non-interactively via a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#batch-jobs">batch job</a>.</p>
 <h3 id="parallelization">Parallelization</h3>
@@ -2313,7 +2313,7 @@ charmrun namd2 ++local +p<span class="si">${</span><span class="nv">SLURM_CPUS_P
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

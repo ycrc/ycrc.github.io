@@ -2428,7 +2428,7 @@ If you cannot find a dependency or have trouble installing an R package, <a href
 <p>Grace's login nodes have newer architecture than the oldest nodes on the cluster. Always install packages in an interactive job submitted with the <code>-C oldest</code> Slurm flag if you want to ensure your code will work on all generations of the compute nodes.</p>
 </div>
 <p>To get started load the R module and start R:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc
 module load R/4.1.0-foss-2020b
 R
 <span class="c1"># in R</span>
@@ -2462,7 +2462,7 @@ See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for m
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run R interactively, first launch an interactive job on a compute node.
 If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p interactive --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering <code>R</code> on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
@@ -2531,7 +2531,7 @@ conda install r-lattice
 </code></pre></div>
 <p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well.
 When you install packages with <code>install.packages</code> make sure to activate your Conda environment first.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -C oldest -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc
 module load miniconda
 <span class="nb">source</span> activate my_r_env
 R
@@ -2551,7 +2551,7 @@ In general, it's best to use the module installation of R for anything which req
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

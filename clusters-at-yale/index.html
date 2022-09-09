@@ -2440,7 +2440,7 @@
 <h3 id="part-1-interactive-jobs">Part 1: Interactive Jobs</h3>
 <p>Inside of the shell window, start an interactive job with the default resource requests. Once you are allocated space off the login node, load the Miniconda module and create a <a href="/clusters-at-yale/guides/conda">Conda environment</a> for this exercise. This can be done like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ask for an interactive session</span>
-srun --pty -pinteractive bash
+salloc
 
 <span class="c1"># Load the Miniconda module</span>
 module load miniconda
@@ -2536,7 +2536,7 @@ cat decoded_example.txt
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

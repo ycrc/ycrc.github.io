@@ -2375,7 +2375,7 @@
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">general</label><div class="tabbed-content">
 <p>Use the general partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=7-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2416,7 +2416,7 @@
 </thead>
 <tbody>
 <tr>
-<td>139</td>
+<td>138</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -2428,7 +2428,7 @@
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
 <p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2469,7 +2469,7 @@
 </thead>
 <tbody>
 <tr>
-<td>147</td>
+<td>146</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -2481,7 +2481,7 @@
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2534,7 +2534,7 @@
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2585,11 +2585,18 @@
 <td>2</td>
 <td>6240</td>
 <td>36</td>
+<td>179</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
 <td>1505</td>
 <td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
-<td>147</td>
+<td>146</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -2610,9 +2617,9 @@
 <p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
 <details class="summary">
 <summary>PI Partitions (click to expand)</summary>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_hall</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_hall</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2656,7 +2663,7 @@
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">pi_hall_bigmem</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2694,6 +2701,50 @@
 <td>36</td>
 <td>1505</td>
 <td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">pi_townsend</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_townsend partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>14-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>179</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
 </tr>
 </tbody>
 </table>

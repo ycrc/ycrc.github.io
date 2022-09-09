@@ -2337,7 +2337,7 @@
 <div class="tabbed-set" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2378,7 +2378,7 @@
 </thead>
 <tbody>
 <tr>
-<td>71</td>
+<td>72</td>
 <td>8268</td>
 <td>48</td>
 <td>356</td>
@@ -2392,7 +2392,7 @@
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>79</td>
+<td>77</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>245</td>
@@ -2411,7 +2411,7 @@
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
 <p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2479,7 +2479,7 @@
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">week</label><div class="tabbed-content">
 <p>Use the week partition for jobs that need a longer runtime than day allows.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2532,7 +2532,7 @@
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">transfer</label><div class="tabbed-content">
 <p>Use the transfer partition to stage data for your jobs to and from <a href="/clusters-at-yale/data/#staging-data">cluster storage</a>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2585,7 +2585,7 @@
 <input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -2649,16 +2649,6 @@
 <td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
-<td>6</td>
-<td>5222</td>
-<td>8</td>
-<td>181</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
-</tr>
-<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -2667,6 +2657,16 @@
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5222</td>
+<td>8</td>
+<td>181</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2704,7 +2704,7 @@
 <input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -2767,7 +2767,7 @@
 <input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2808,18 +2808,18 @@
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>6240</td>
-<td>36</td>
-<td>1505</td>
-<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
-</tr>
-<tr>
 <td>2</td>
 <td>6234</td>
 <td>16</td>
 <td>1505</td>
 <td>cascadelake, avx512, nogpu, 6234, common, bigtmp</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6240</td>
+<td>36</td>
+<td>1505</td>
+<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2834,7 +2834,7 @@
 <input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">mpi</label><div class="tabbed-content">
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=92160
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -2887,7 +2887,7 @@
 <input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><label for="__tabbed_1_9">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -2931,17 +2931,7 @@
 </thead>
 <tbody>
 <tr>
-<td>71</td>
-<td>8268</td>
-<td>48</td>
-<td>356</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 8268, nogpu, standard, common, bigtmp</td>
-</tr>
-<tr>
-<td>60</td>
+<td>72</td>
 <td>8268</td>
 <td>48</td>
 <td>356</td>
@@ -2961,6 +2951,16 @@
 <td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
+<td>72</td>
+<td>8268</td>
+<td>48</td>
+<td>356</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 8268, nogpu, standard, common, bigtmp</td>
+</tr>
+<tr>
 <td>135</td>
 <td>6240</td>
 <td>36</td>
@@ -2969,66 +2969,6 @@
 <td></td>
 <td></td>
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
-</tr>
-<tr>
-<td>5</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>3</td>
-<td>6234</td>
-<td>16</td>
-<td>1505</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, nogpu, 6234, pi, bigtmp</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6254</td>
-<td>36</td>
-<td>370</td>
-<td>rtx2080ti</td>
-<td>8</td>
-<td>11</td>
-<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>180</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>8</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
 <td>20</td>
@@ -3051,14 +2991,14 @@
 <td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
 </tr>
 <tr>
-<td>3</td>
+<td>5</td>
 <td>6240</td>
 <td>36</td>
-<td>1505</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3074,11 +3014,51 @@
 <td>2</td>
 <td>6240</td>
 <td>36</td>
+<td>180</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
 <td>361</td>
 <td>a100</td>
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>370</td>
+<td>rtx2080ti</td>
+<td>8</td>
+<td>11</td>
+<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6240</td>
+<td>36</td>
+<td>370</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3089,6 +3069,26 @@
 <td></td>
 <td></td>
 <td>cascadelake, avx512, nogpu, 6234, common, bigtmp</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6240</td>
+<td>36</td>
+<td>1505</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6234</td>
+<td>16</td>
+<td>1505</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, nogpu, 6234, pi, bigtmp</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3151,16 +3151,6 @@
 <td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6136</td>
-<td>24</td>
-<td>749</td>
-<td></td>
-<td></td>
-<td></td>
-<td>skylake, avx512, 6136, nogpu, pi, bigtmp</td>
-</tr>
-<tr>
 <td>9</td>
 <td>6136</td>
 <td>24</td>
@@ -3169,6 +3159,16 @@
 <td>4</td>
 <td>16</td>
 <td>skylake, avx512, 6136, doubleprecision, pi, p100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6136</td>
+<td>24</td>
+<td>749</td>
+<td></td>
+<td></td>
+<td></td>
+<td>skylake, avx512, 6136, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3181,6 +3181,16 @@
 <td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
 </tr>
 <tr>
+<td>77</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>245</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, E5-2660_v4, nogpu, standard, common</td>
+</tr>
+<tr>
 <td>82</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -3189,16 +3199,6 @@
 <td></td>
 <td></td>
 <td>broadwell, E5-2660_v4, nogpu, standard, pi</td>
-</tr>
-<tr>
-<td>79</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>245</td>
-<td></td>
-<td></td>
-<td></td>
-<td>broadwell, E5-2660_v4, nogpu, standard, common</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3251,16 +3251,6 @@
 <td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti</td>
 </tr>
 <tr>
-<td>18</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>245</td>
-<td></td>
-<td></td>
-<td></td>
-<td>haswell, E5-2660_v3, nogpu, standard, pi, oldest</td>
-</tr>
-<tr>
 <td>44</td>
 <td>E5-2660_v3</td>
 <td>20</td>
@@ -3279,6 +3269,16 @@
 <td></td>
 <td></td>
 <td>haswell, E5-2660_v3, nogpu, standard, common, oldest</td>
+</tr>
+<tr>
+<td>18</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>245</td>
+<td></td>
+<td></td>
+<td></td>
+<td>haswell, E5-2660_v3, nogpu, standard, pi, oldest</td>
 </tr>
 <tr>
 <td>6</td>
@@ -3316,7 +3316,7 @@
 <input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><label for="__tabbed_1_10">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -3381,13 +3381,13 @@
 </tr>
 <tr>
 <td>1</td>
-<td>6254</td>
+<td>6240</td>
 <td>36</td>
 <td>370</td>
-<td>rtx2080ti</td>
-<td>8</td>
-<td>11</td>
-<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3410,16 +3410,6 @@
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
-</tr>
-<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -3428,6 +3418,16 @@
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>370</td>
+<td>rtx2080ti</td>
+<td>8</td>
+<td>11</td>
+<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3529,7 +3529,7 @@
 <summary>PI Partitions (click to expand)</summary>
 <div class="tabbed-set" data-tabs="2:41"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_altonji</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3573,7 +3573,7 @@
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">pi_anticevic</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3613,7 +3613,7 @@
 <td>broadwell, E5-2660_v4, nogpu, standard, pi</td>
 </tr>
 <tr>
-<td>14</td>
+<td>15</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>245</td>
@@ -3624,7 +3624,7 @@
 </div>
 <input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">pi_anticevic_bigmem</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3668,7 +3668,7 @@
 </div>
 <input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">pi_anticevic_gpu</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -3722,7 +3722,7 @@
 </div>
 <input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">pi_anticevic_z</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3766,7 +3766,7 @@
 </div>
 <input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">pi_balou</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3824,7 +3824,7 @@
 </div>
 <input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">pi_berry</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3875,7 +3875,7 @@
 </div>
 <input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">pi_chem_chase</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
 </code></pre></div>
 <div class="admonition warning">
@@ -3939,7 +3939,7 @@
 </div>
 <input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">pi_cowles</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -3998,7 +3998,7 @@
 </div>
 <input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">pi_cowles_nopreempt</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4050,7 +4050,7 @@
 </div>
 <input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><label for="__tabbed_2_11">pi_econ_io</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4094,7 +4094,7 @@
 </div>
 <input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">pi_econ_lp</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4152,7 +4152,7 @@
 </div>
 <input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><label for="__tabbed_2_13">pi_esi</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4200,7 +4200,7 @@
 </div>
 <input id="__tabbed_2_14" name="__tabbed_2" type="radio" /><label for="__tabbed_2_14">pi_fedorov</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4244,7 +4244,7 @@
 </div>
 <input id="__tabbed_2_15" name="__tabbed_2" type="radio" /><label for="__tabbed_2_15">pi_gelernter</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4295,7 +4295,7 @@
 </div>
 <input id="__tabbed_2_16" name="__tabbed_2" type="radio" /><label for="__tabbed_2_16">pi_gerstein</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4337,53 +4337,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><label for="__tabbed_2_17">pi_glahn</label><div class="tabbed-content">
+<input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><label for="__tabbed_2_17">pi_hammes_schiffer</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
-<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-</code></pre></div>
-<p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the pi_glahn partition are subject to the following limits:</p>
-<table>
-<thead>
-<tr>
-<th>Limit</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Maximum job time limit</td>
-<td><code>100-00:00:00</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Available Compute Nodes</strong></p>
-<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
-<table>
-<thead>
-<tr>
-<th>Count</th>
-<th>CPU Type</th>
-<th>CPUs/Node</th>
-<th>Memory/Node (GiB)</th>
-<th>Node Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>E5-2660_v3</td>
-<td>20</td>
-<td>245</td>
-<td>haswell, E5-2660_v3, nogpu, standard, pi, oldest</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_2_18" name="__tabbed_2" type="radio" /><label for="__tabbed_2_18">pi_hammes_schiffer</label><div class="tabbed-content">
-<p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
 </code></pre></div>
 <div class="admonition warning">
@@ -4495,9 +4451,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_19" name="__tabbed_2" type="radio" /><label for="__tabbed_2_19">pi_hodgson</label><div class="tabbed-content">
+<input id="__tabbed_2_18" name="__tabbed_2" type="radio" /><label for="__tabbed_2_18">pi_hodgson</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4539,9 +4495,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_20" name="__tabbed_2" type="radio" /><label for="__tabbed_2_20">pi_holland</label><div class="tabbed-content">
+<input id="__tabbed_2_19" name="__tabbed_2" type="radio" /><label for="__tabbed_2_19">pi_holland</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4590,9 +4546,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_21" name="__tabbed_2" type="radio" /><label for="__tabbed_2_21">pi_howard</label><div class="tabbed-content">
+<input id="__tabbed_2_20" name="__tabbed_2" type="radio" /><label for="__tabbed_2_20">pi_howard</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4634,9 +4590,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_22" name="__tabbed_2" type="radio" /><label for="__tabbed_2_22">pi_jetz</label><div class="tabbed-content">
+<input id="__tabbed_2_21" name="__tabbed_2" type="radio" /><label for="__tabbed_2_21">pi_jetz</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4678,9 +4634,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_23" name="__tabbed_2" type="radio" /><label for="__tabbed_2_23">pi_jorgensen</label><div class="tabbed-content">
+<input id="__tabbed_2_22" name="__tabbed_2" type="radio" /><label for="__tabbed_2_22">pi_jorgensen</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4722,9 +4678,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_24" name="__tabbed_2" type="radio" /><label for="__tabbed_2_24">pi_kaminski</label><div class="tabbed-content">
+<input id="__tabbed_2_23" name="__tabbed_2" type="radio" /><label for="__tabbed_2_23">pi_kaminski</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4766,9 +4722,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_25" name="__tabbed_2" type="radio" /><label for="__tabbed_2_25">pi_kim_theodore</label><div class="tabbed-content">
+<input id="__tabbed_2_24" name="__tabbed_2" type="radio" /><label for="__tabbed_2_24">pi_kim_theodore</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4817,9 +4773,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_26" name="__tabbed_2" type="radio" /><label for="__tabbed_2_26">pi_korenaga</label><div class="tabbed-content">
+<input id="__tabbed_2_25" name="__tabbed_2" type="radio" /><label for="__tabbed_2_25">pi_korenaga</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4861,9 +4817,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_27" name="__tabbed_2" type="radio" /><label for="__tabbed_2_27">pi_lederman</label><div class="tabbed-content">
+<input id="__tabbed_2_26" name="__tabbed_2" type="radio" /><label for="__tabbed_2_26">pi_lederman</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -4915,9 +4871,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_28" name="__tabbed_2" type="radio" /><label for="__tabbed_2_28">pi_levine</label><div class="tabbed-content">
+<input id="__tabbed_2_27" name="__tabbed_2" type="radio" /><label for="__tabbed_2_27">pi_levine</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=1952
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -4959,9 +4915,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_29" name="__tabbed_2" type="radio" /><label for="__tabbed_2_29">pi_lora</label><div class="tabbed-content">
+<input id="__tabbed_2_28" name="__tabbed_2" type="radio" /><label for="__tabbed_2_28">pi_lora</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5010,9 +4966,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_30" name="__tabbed_2" type="radio" /><label for="__tabbed_2_30">pi_mak</label><div class="tabbed-content">
+<input id="__tabbed_2_29" name="__tabbed_2" type="radio" /><label for="__tabbed_2_29">pi_mak</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5054,9 +5010,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_31" name="__tabbed_2" type="radio" /><label for="__tabbed_2_31">pi_manohar</label><div class="tabbed-content">
+<input id="__tabbed_2_30" name="__tabbed_2" type="radio" /><label for="__tabbed_2_30">pi_manohar</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -5148,9 +5104,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_32" name="__tabbed_2" type="radio" /><label for="__tabbed_2_32">pi_ohern</label><div class="tabbed-content">
+<input id="__tabbed_2_31" name="__tabbed_2" type="radio" /><label for="__tabbed_2_31">pi_ohern</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -5232,9 +5188,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_owen_miller</label><div class="tabbed-content">
+<input id="__tabbed_2_32" name="__tabbed_2" type="radio" /><label for="__tabbed_2_32">pi_owen_miller</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5290,9 +5246,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_34" name="__tabbed_2" type="radio" /><label for="__tabbed_2_34">pi_padmanabhan</label><div class="tabbed-content">
+<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_padmanabhan</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5334,9 +5290,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_35" name="__tabbed_2" type="radio" /><label for="__tabbed_2_35">pi_panda</label><div class="tabbed-content">
+<input id="__tabbed_2_34" name="__tabbed_2" type="radio" /><label for="__tabbed_2_34">pi_panda</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -5376,16 +5332,6 @@
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>6254</td>
-<td>36</td>
-<td>370</td>
-<td>rtx2080ti</td>
-<td>8</td>
-<td>11</td>
-<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -5405,12 +5351,22 @@
 <td>11</td>
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>370</td>
+<td>rtx2080ti</td>
+<td>8</td>
+<td>11</td>
+<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_36" name="__tabbed_2" type="radio" /><label for="__tabbed_2_36">pi_poland</label><div class="tabbed-content">
+<input id="__tabbed_2_35" name="__tabbed_2" type="radio" /><label for="__tabbed_2_35">pi_poland</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5459,9 +5415,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_37" name="__tabbed_2" type="radio" /><label for="__tabbed_2_37">pi_polimanti</label><div class="tabbed-content">
+<input id="__tabbed_2_36" name="__tabbed_2" type="radio" /><label for="__tabbed_2_36">pi_polimanti</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5503,9 +5459,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_38" name="__tabbed_2" type="radio" /><label for="__tabbed_2_38">pi_seto</label><div class="tabbed-content">
+<input id="__tabbed_2_37" name="__tabbed_2" type="radio" /><label for="__tabbed_2_37">pi_seto</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5547,9 +5503,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_39" name="__tabbed_2" type="radio" /><label for="__tabbed_2_39">pi_spielman</label><div class="tabbed-content">
+<input id="__tabbed_2_38" name="__tabbed_2" type="radio" /><label for="__tabbed_2_38">pi_spielman</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5591,9 +5547,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_40" name="__tabbed_2" type="radio" /><label for="__tabbed_2_40">pi_sweeney</label><div class="tabbed-content">
+<input id="__tabbed_2_39" name="__tabbed_2" type="radio" /><label for="__tabbed_2_39">pi_sweeney</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -5645,9 +5601,9 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_41" name="__tabbed_2" type="radio" /><label for="__tabbed_2_41">pi_tsmith</label><div class="tabbed-content">
+<input id="__tabbed_2_40" name="__tabbed_2" type="radio" /><label for="__tabbed_2_40">pi_tsmith</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>srun</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
@@ -5692,6 +5648,50 @@
 <td>20</td>
 <td>119</td>
 <td>haswell, E5-2660_v3, nogpu, standard, pi, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_41" name="__tabbed_2" type="radio" /><label for="__tabbed_2_41">pi_zhu</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_zhu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>8268</td>
+<td>48</td>
+<td>356</td>
+<td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
 </tr>
 </tbody>
 </table>

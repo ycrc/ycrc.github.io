@@ -2373,7 +2373,7 @@ restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 <p>Imagine that user rdb9 wants to restore data from run BHJWZZBCX3</p>
 <h3 id="step-1">step 1</h3>
 <p>Initialize compute node with 20 cores
-<div class="highlight"><pre><span></span><code>srun -c <span class="m">20</span> -p interactive --pty bash
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">20</span>
 module load ycga-public
 </code></pre></div></p>
 <h3 id="step-2">step 2</h3>
@@ -2407,7 +2407,7 @@ module load ycga-public
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

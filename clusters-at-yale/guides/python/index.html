@@ -2386,7 +2386,7 @@ conda activate py3_env
 <p>We will kill Python jobs on the login nodes that are using excessive resources. To be a good cluster citizen, launch your computation in jobs. See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on submitting jobs.</p>
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run Python interactively, first launch an interactive job on a compute node. If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p interactive --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start <code>python</code> or <code>ipython</code> on your command prompt. If you are happy with your Python commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
@@ -2411,7 +2411,7 @@ python myscript.py
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

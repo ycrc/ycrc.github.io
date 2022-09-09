@@ -2344,7 +2344,7 @@ e
 f
 </code></pre></div>
 <p>To achieve the same result, <code>parallel</code> starts some number of workers and then runs tasks on them.  The number of workers and tasks need not be the same. You specify the number of workers with <code>-j</code>. The tasks can be generated with a list of arguments specified after the separator <code>:::</code>. For parallel to perform well, you should allocate at least the same number of CPUs as workers with the slurm option <code>--cpus-per-task</code> or more simply <code>-c</code>.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -p interactive -c <span class="m">4</span> bash
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">4</span>
 module load parallel
 parallel -j <span class="m">4</span> <span class="s2">&quot;echo {}&quot;</span> ::: <span class="o">{</span>a..f<span class="o">}</span>
 </code></pre></div>
@@ -2411,7 +2411,7 @@ simulate <span class="m">5</span> <span class="m">16</span> <span class="m">50</
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

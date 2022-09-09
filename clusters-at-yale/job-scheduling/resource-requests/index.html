@@ -2385,7 +2385,7 @@
 <h2 id="request-memory-ram">Request Memory (RAM)</h2>
 <p>Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and <a href="/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory">you will get errors</a>. Make sure you either request the right amount of memory per core on each node in your job with <code>--mem-per-cpu</code> or memory per node in your job with <code>--mem</code>. You can request more memory than you think you might need for an example job, then <a href="/clusters-at-yale/job-scheduling/resource-usage/">make note of its actual usage</a> to better tune future requests for similar jobs.</p>
 <h2 id="request-gpus">Request GPUs</h2>
-<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters">individual cluster pages</a> regarding node configurations that include GPUs. There are several <code>srun</code>/<code>sbatch</code> options that allow you to request GPUs and specify your job layout relative to the GPUs requested.</p>
+<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters">individual cluster pages</a> regarding node configurations that include GPUs. There are several <code>salloc</code>/<code>sbatch</code> options that allow you to request GPUs and specify your job layout relative to the GPUs requested.</p>
 <table>
 <thead>
 <tr>
@@ -2440,7 +2440,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:</p>
-<div class="highlight"><pre><span></span><code>srun --pty --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel bash
+<div class="highlight"><pre><span></span><code>salloc --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel
 </code></pre></div>
 </div>
 <p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
@@ -2475,7 +2475,7 @@ sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

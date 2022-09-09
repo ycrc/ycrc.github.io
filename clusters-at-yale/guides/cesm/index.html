@@ -2638,12 +2638,12 @@ module save
 <h3 id="build-your-case">Build Your Case</h3>
 <p>After you run the setup script, there will be a set of the scripts in your case directory that start with your case name. To compile your simulation executable, first move to an interactive job and then run the build script corresponding to your case.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># CESM 1.x</span>
-srun --pty -c <span class="m">4</span> -p interactive bash
+salloc -c <span class="m">4</span>
 module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the appropriate module for your CESM version</span>
 ./<span class="nv">$CASE</span>.<span class="nv">$mach</span>.build
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># CESM 2.x</span>
-srun --pty -c <span class="m">4</span> -p interactive bash
+salloc -c <span class="m">4</span>
 module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the appropriate module for your CESM version</span>
 ./case.build --skip-provenance-check
 </code></pre></div>
@@ -2718,7 +2718,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

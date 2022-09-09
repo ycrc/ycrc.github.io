@@ -2287,11 +2287,11 @@ tmux a
 <p>Lines starting with a "#" denote a commented line, which aren't read as code</p>
 <p>Finally, to exit, you can type <code>exit</code> or <kbd>Ctrl</kbd>+<kbd>d</kbd></p>
 <h2 id="tmux-on-the-clusters">tmux on the Clusters</h2>
-<p>Using tmux on the cluster allows you to create interactive allocations that you can detach from. Normally, if you get an interactive allocation (e.g. srun --pty) then disconnect from the cluster, for example by putting your laptop to sleep, your allocation will be terminated and your job killed. Using tmux, you can detach gracefully and tmux will maintain your allocation. Here is how to do this correctly:</p>
+<p>Using tmux on the cluster allows you to create interactive allocations that you can detach from. Normally, if you get an interactive allocation (e.g. <code>salloc</code>) then disconnect from the cluster, for example by putting your laptop to sleep, your allocation will be terminated and your job killed. Using tmux, you can detach gracefully and tmux will maintain your allocation. Here is how to do this correctly:</p>
 <ol>
 <li>ssh to your cluster of choice</li>
 <li>Start tmux</li>
-<li>Inside your tmux session, submit an interactive job with srun. See the <a href="/clusters-at-yale/job-scheduling#interactive-jobs">Slurm documentation</a> for more details</li>
+<li>Inside your tmux session, submit an interactive job with <code>salloc</code>. See the <a href="/clusters-at-yale/job-scheduling#interactive-jobs">Slurm documentation</a> for more details</li>
 <li>Inside your job allocation (on a compute node), start your application (e.g. matlab)</li>
 <li>Detach from tmux by typing <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd></li>
 <li>Later, on the <em>same</em> login node, reattach by running <code>tmux attach</code></li>
@@ -2299,7 +2299,7 @@ tmux a
 <p>Make sure to:</p>
 <ul>
 <li>run tmux on the login node, NOT on compute nodes</li>
-<li>run srun inside tmux, not the reverse.</li>
+<li>run <code>salloc</code> inside tmux, not the reverse.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2311,7 +2311,7 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
 <p>Say you just submitted an interactive job that is running on a compute node inside your <code>tmux</code> session.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ tmux new -s analysis
 <span class="c1"># I am in my tmux session now</span>
-<span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ srun --pty -p interactive bash
+<span class="o">[</span>be59@farnam2 ~<span class="o">]</span>$ salloc
 <span class="o">[</span>be59@c23n08 ~<span class="o">]</span>$ ./my_fancy_analysis.sh
 </code></pre></div>
 <p>Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running <code>top</code> there. Split your window by typing:</p>
@@ -2332,7 +2332,7 @@ For example, if you are logged in to farnam1, use <code>ssh -Y farnam2</code> to
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

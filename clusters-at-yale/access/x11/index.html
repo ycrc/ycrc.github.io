@@ -2292,7 +2292,7 @@
 <p>A quick and simple test to check if X11 forwarding is working is to run the command <code>xclock</code> in the session you expect to be forwarding. After a short delay, you should see a window with a simple clock pop up.</p>
 <h2 id="submit-an-x11-enabled-job">Submit an X11 enabled Job</h2>
 <p>Once configured, you'll usually want to use X11 forwarding on a compute node to do your work. To allocate a simple interactive session with X11 forwarding:</p>
-<div class="highlight"><pre><span></span><code>srun --x11 --pty -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc --x11
 </code></pre></div>
 <p>For more Slurm options, see our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a>.</p>
                 
@@ -2303,7 +2303,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

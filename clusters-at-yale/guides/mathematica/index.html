@@ -2285,7 +2285,7 @@
 </div>
 <p>To run Mathematica interactively, you need to request an interactive session on a compute node.</p>
 <p>You could start an interactive session using Slurm. For example, to use 4 cores on 1 node:</p>
-<div class="highlight"><pre><span></span><code>srun --pty --x11 -c 4 -p interactive -t 4:00:00 bash
+<div class="highlight"><pre><span></span><code>salloc --x11 -c 4 -t 4:00:00
 </code></pre></div>
 <p>Note that if you are on macOS, you will need to install an additional program to use the GUI. See our <a href="/clusters-at-yale/access/x11">X11 Forwarding documentation</a> for instructions.</p>
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
@@ -2328,7 +2328,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>

@@ -2308,20 +2308,16 @@
 </li>
 <li>
 <p>Start an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a>.</p>
-<div class="highlight"><pre><span></span><code>srun --pty -c <span class="m">2</span> -p interactive bash
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">2</span> -p interactive
 </code></pre></div>
 <table>
 <thead>
 <tr>
-<th><code>srun</code> Argument</th>
+<th><code>salloc</code> Argument</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>--pty</code></td>
-<td>Start a pseudo terminal in the job</td>
-</tr>
 <tr>
 <td><code>-c 2</code></td>
 <td>Allocate two CPU cores (and default 5GiB RAM per core)</td>
@@ -2329,10 +2325,6 @@
 <tr>
 <td><code>-p interactive</code></td>
 <td>Start the job on the <code>interactive</code> partition (meant for work like this)</td>
-</tr>
-<tr>
-<td><code>bash</code></td>
-<td>Run the bash shell</td>
 </tr>
 </tbody>
 </table>
@@ -2469,7 +2461,7 @@ python cluster_tf.py
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>
