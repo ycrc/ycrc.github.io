@@ -75,7 +75,7 @@ If you cannot find a dependency or have trouble installing an R package, [please
 To get started load the R module and start R:
 
 ```bash
-srun --pty -C oldest -p interactive bash
+salloc
 module load R/4.1.0-foss-2020b
 R
 # in R
@@ -122,7 +122,7 @@ To run R interactively, first launch an interactive job on a compute node.
 If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:
 
 ``` bash
-srun --pty -p interactive --mem=10G -t 4:00:00 bash
+salloc --mem=10G -t 4:00:00
 ```
 
 Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering `R` on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.
@@ -224,7 +224,7 @@ If there are packages that conda does not provide, you can install using the `in
 When you install packages with `install.packages` make sure to activate your Conda environment first.
 
 ``` bash
-srun --pty -C oldest -p interactive bash
+salloc
 module load miniconda
 source activate my_r_env
 R

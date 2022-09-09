@@ -34,7 +34,7 @@ To run MATLAB interactively, you need to create an interactive session on a co
 You could start an interactive session using 4 cores, 16GiB of RAM for 4 hours with:
 
 ``` batch
-srun --pty -c 4 --mem 16G -p interactive -t 4:00:00 bash
+salloc -c 4 --mem 16G -t 4:00:00
 ```
 
 Once your interactive session starts, you can load the appropriate module file and start MATLAB

@@ -29,7 +29,7 @@ NAMD can be run interactively, or as a batch job.
 To run NAMD interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using
 
 ``` bash
-srun --x11 --pty -c 4  -p interactive -t 4:00:00 bash
+salloc --x11 -c 4 -t 4:00:00
 ```
 
 

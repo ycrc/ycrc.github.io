@@ -33,7 +33,7 @@ When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to th
 so you don't have to set them explicitly. 
 ```bash
 ssh grace
-srun --pty -p interactive bash
+salloc
 module load miniconda
 conda env create -f myenv.yml
 ```

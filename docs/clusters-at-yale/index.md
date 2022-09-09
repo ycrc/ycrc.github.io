@@ -51,7 +51,7 @@ Inside of the shell window, start an interactive job with the default resource r
 
 ``` bash
 # Ask for an interactive session
-srun --pty -pinteractive bash
+salloc
 
 # Load the Miniconda module
 module load miniconda

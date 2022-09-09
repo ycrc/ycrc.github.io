@@ -68,13 +68,16 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 
 To request four tasks (each with a single CPU) interactively run the following:
 
-    srun --pty -p day --cpus-per-task=1 --ntasks=4 bash
+```bash
+salloc --cpus-per-task=1 --ntasks=4 
+```
 
-This can also be achieved in batch-mode like this:
+This can also be achieved in batch-mode by including the following directives in your submission script:
 
-    #SBATCH --partition Display
-    #SBATCH --cpus-per-task=1
-    #SBATCH --ntasks=4
+```bash
+#SBATCH --cpus-per-task=1
+#SBATCH --ntasks=4
+```
 
 A more detailed discussion of resource requests can be found [here](/clusters-at-yale/job-scheduling/resource-requests/) and further examples are available [here](/clusters-at-yale/job-scheduling/slurm-examples/).
 

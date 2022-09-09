@@ -24,7 +24,7 @@ module load Gaussian
 To run Gaussian interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using
 
 ``` bash
-srun --pty -c 4  -p interactive -t 4:00:00 bash
+salloc -c 4 -t 4:00:00
 ```
 
 See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on requesting resources for interactive jobs.

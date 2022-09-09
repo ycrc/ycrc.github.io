@@ -64,7 +64,7 @@ Imagine that user rdb9 wants to restore data from run BHJWZZBCX3
 ### step 1
 Initialize compute node with 20 cores
 ``` bash 
-srun -c 20 -p interactive --pty bash
+salloc -c 20
 module load ycga-public
 ```
 

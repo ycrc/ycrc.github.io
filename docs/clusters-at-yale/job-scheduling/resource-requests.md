@@ -33,7 +33,7 @@ Slurm strictly enforces the memory your job can use. If you request 5GiB of memo
 
 ## Request GPUs
 
-Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters) regarding node configurations that include GPUs. There are several `srun`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
+Some of our clusters have nodes that contain GPU co-processors. Please refer to the [individual cluster pages](/clusters) regarding node configurations that include GPUs. There are several `salloc`/`sbatch` options that allow you to request GPUs and specify your job layout relative to the GPUs requested.
 
 |Long Option<img width=200/>|Short Option|Description                                                                                                                  |
 |---------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -69,7 +69,7 @@ sbatch -C "p100|v100|a100" --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
     As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:
     
     ``` text
-    srun --pty --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel bash
+    salloc --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel
     ```
 
 For more documentation on using GPUs on our clusters, please see [GPUs and CUDA](/clusters-at-yale/guides/gpus-cuda).

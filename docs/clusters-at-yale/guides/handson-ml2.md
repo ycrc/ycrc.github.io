@@ -22,15 +22,13 @@ Notes on [handson-ml2](https://github.com/ageron/handson-ml2) for YCRC clusters 
 1. Start an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs).
 
     ``` bash
-    srun --pty -c 2 -p interactive bash
+    salloc -c 2 -p interactive
     ```
 
-    | `srun` Argument  | Description |
+    | `salloc` Argument  | Description |
     | ---------------- | ----------- |
-    | `--pty`          | Start a pseudo terminal in the job |
     | `-c 2`           | Allocate two CPU cores (and default 5GiB RAM per core) |
     | `-p interactive` | Start the job on the `interactive` partition (meant for work like this) |
-    | `bash`           | Run the bash shell |
 
 1. Clone the repo from [GitHub](/clusters-at-yale/guides/github/).
 

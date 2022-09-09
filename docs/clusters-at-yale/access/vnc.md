@@ -13,10 +13,10 @@ On the clusters, we have web dashboards set up that can run VNC for you as a job
 1. Start an interactive job on cluster with the `--x11` flag (see [Slurm](/clusters-at-yale/job-scheduling) for more information). For this description, we’ll assume you were given node c04n03:
 
 ``` bash
-srun --pty --x11 -p interactive bash
+salloc --x11
 ```
 
-1.  On that node, run the VNCserver. You’ll see something like:
+1.  On that node, run the VNCserver. You’ll see something like:
 
 ``` bash
 c04n03$ vncserver

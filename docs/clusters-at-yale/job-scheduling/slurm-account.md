@@ -19,7 +19,7 @@ sacctmgr show assoc account=cryoem # show assocations for account
 ## Submit Jobs
 
 ``` bash
-srun -A cryoem ...
+salloc -A cryoem ...
 sbatch -A cryoem my_script.sh
 ```
 
