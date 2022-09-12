@@ -2249,7 +2249,7 @@
 <h2 id="retrieve-data-from-home-backups">Retrieve Data from Home Backups</h2>
 <p><a href="/#get-help">Contact us</a> with your netid and the list of files/directories you would like restored. For any data deleted in the last couple days, first try the self-service snapshots described below.</p>
 <h2 id="retrieve-data-from-snapshots">Retrieve Data from Snapshots</h2>
-<p>Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage. There are no snapshots on the Gibbs filesystem at this time.</p>
+<p>Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage.</p>
 <p>As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.</p>
 <table>
 <thead>
@@ -2259,6 +2259,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>/gpfs/gibbs/project</code></td>
+<td><code>/gpfs/gibbs/project/.snapshots</code></td>
+</tr>
 <tr>
 <td><code>/vast/palmer/home.grace</code></td>
 <td><code>/vast/palmer/home.grace/.snapshot</code></td>
@@ -2302,7 +2306,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2022</span>
       
     
   </small>
