@@ -9,6 +9,7 @@ The YCRC HPC Policies can found [here](https://research.computing.yale.edu/servi
 * Never give your password or ssh key to anyone else.
 * Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters/milgram).
 * Do not run large numbers of very short (less than a minute) jobs.
+* Terminate interactive or Open OnDemand session when no longer in use. Idle sessions may be canceled without warning.
 * Avoid workflows that generate numerous (thousands) of files as these put great stress on the shared filesystem.
 
 
