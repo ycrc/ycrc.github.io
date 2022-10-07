@@ -131,7 +131,7 @@ You can check your current storage usage & limits by running the `getquota` comm
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artifical extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
 
 |Partition  | Root Directory        | Quota                                   | File Count | Backups | Snapshots |
 |-----------|-----------------------|-----------------------------------------|------------|---------|-----------|
