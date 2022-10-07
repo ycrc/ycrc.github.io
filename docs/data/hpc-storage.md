@@ -92,7 +92,8 @@ If you need additional files beyond your limit, contact us to discuss as increas
 | < 50 TiB         | 10 million       |
 | 50-99 TiB        | 20 million       |
 | 100-499 TiB      | 40 million       |
-| >= 500 TiB       | 50 million       |
+| 500-999 TiB      | 50 million       |
+| >= 1 PiB         | 75 million       |
 
 
 
