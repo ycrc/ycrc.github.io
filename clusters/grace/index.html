@@ -5704,7 +5704,7 @@
 <p>For information on data recovery, see the <a href="/data/backups">Backups and Snapshots</a> documentation.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Files stored in <code>scratch60</code> and <code>palmer_scratch</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.</p>
+<p>Files stored in <code>palmer_scratch</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artifical extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="/data/#purchase-additional-storage">purchase storage</a> if you need additional longer term storage.</p>
 </div>
 <table>
 <thead>
@@ -5725,8 +5725,8 @@
 <td>125GiB/user</td>
 <td>500,000</td>
 <td>Yes</td>
-<td>No</td>
-<td>snapshots will be enabled late 2022</td>
+<td>&gt;=2 days</td>
+<td></td>
 </tr>
 <tr>
 <td>project</td>
@@ -5746,15 +5746,6 @@
 <td>No</td>
 <td></td>
 </tr>
-<tr>
-<td>scratch60</td>
-<td><code>/gpfs/loomis/scratch60</code></td>
-<td>20TiB/group</td>
-<td>15,000,000</td>
-<td>No</td>
-<td>No</td>
-<td>read-only as of August 2022, decommissioning in late 2022</td>
-</tr>
 </tbody>
 </table>
                 
@@ -5765,7 +5756,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2022</span>
       
     
   </small>
