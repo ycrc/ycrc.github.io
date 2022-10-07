@@ -501,6 +501,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/news/2022-10-farnam/</loc>
+         <lastmod>2022-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/news/2022-10/</loc>
+         <lastmod>2022-10-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/resources/</loc>
          <lastmod>2022-10-07</lastmod>
          <changefreq>daily</changefreq>
