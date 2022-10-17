@@ -4,7 +4,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -25,7 +25,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |14|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
 
 === "interactive"
 
@@ -33,7 +33,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -65,7 +65,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -78,6 +78,7 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`7-00:00:00`|
+    |Maximum CPUs per user|`72`|
 
     **Available Compute Nodes**
 
@@ -93,7 +94,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -124,7 +125,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -159,7 +160,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -189,7 +190,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -204,6 +205,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Limit|Value|
         |---|---|
         |Maximum job time limit|`7-00:00:00`|
+        |Maximum GPUs per user|`20`|
 
         **Available Compute Nodes**
 
@@ -217,7 +219,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -246,7 +248,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -259,6 +261,10 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Limit|Value|
         |---|---|
         |Maximum job time limit|`7-00:00:00`|
+        |Maximum CPUs per group|`500`|
+        |Maximum memory per group|`2500G`|
+        |Maximum CPUs per user|`350`|
+        |Maximum memory per user|`1750G`|
         |Maximum CPUs in use|`448`|
 
         **Available Compute Nodes**

@@ -10,14 +10,14 @@ Please see our [HPC Policies](https://research.computing.yale.edu/services/high-
 
 ## Retrieve Data from Snapshots
 
-Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage. There are no snapshots on the Gibbs filesystem at this time.
+Our clusters create snapshots nightly on portions of the filesystem so that you can retrieve mistakenly modified or deleted files for yourself. We do not currently provide snapshots of purchased storage (except for on Slayman, YSM and Milgram) or scratch storage.
 
 As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.
 
 | File set                    | Snapshot Prefix                              |
 |-----------------------------|----------------------------------------------|
+| `/gpfs/gibbs/project`       | `/gpfs/gibbs/project/.snapshots`          |
 | `/vast/palmer/home.grace`   | `/vast/palmer/home.grace/.snapshot`          |
-| `/gpfs/loomis/project`      | `/gpfs/loomis/project/.snapshots`            |
 | `/gpfs/ysm`                 | `/gpfs/ysm/.snapshots`                       |
 | `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
 | `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |

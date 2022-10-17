@@ -9,6 +9,10 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 - - -
 
+!!! info "Upcoming Loomis Retirement"
+    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), will be retired later this year. For more information and updates see the [Loomis decommission page](/data/loomis-decommission).
+
+
 ## Access the Cluster
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
@@ -31,18 +35,18 @@ See each tab below for more information about the available common use partition
 
 ## Storage
 
-Grace has access to a number of filesystems. `/vast/palmer` hosts Grace's home and scratch directories. `/gpfs/loomis` is Grace's primary filesystem where project and the older scratch60 directories are located. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
+Grace has access to a number of filesystems. `/vast/palmer` hosts Grace's home and scratch directories and `/gpfs/gibbs` hosts project directories and most additional purchased storage allocations. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Your `~/project`, `~/scratch60`, and `~/palmer_scratch` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
+You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/palmer_scratch` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch60` and `palmer_scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
+    Files stored in `palmer_scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
-| home           | `/vast/palmer/home.grace` | 125GiB/user                             | 500,000    | Yes     | No        | snapshots will be enabled late 2022      |
-| project        | `/gpfs/loomis/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
-| scratch60      | `/gpfs/loomis/scratch60`  | 20TiB/group                             | 15,000,000 | No      | No        | decommissioning in late 2022 |
-| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        | |
+| home           | `/vast/palmer/home.grace` | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
+| project        | `/gpfs/gibbs/project`     | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
+| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        |       |
+

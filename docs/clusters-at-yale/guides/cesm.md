@@ -97,14 +97,14 @@ After you run the setup script, there will be a set of the scripts in your case 
 
 ``` bash
 # CESM 1.x
-srun --pty -c 4 -p interactive bash
+salloc -c 4
 module load <module-name> # <module-name> = the appropriate module for your CESM version
 ./$CASE.$mach.build
 ```
 
 ``` bash
 # CESM 2.x
-srun --pty -c 4 -p interactive bash
+salloc -c 4
 module load <module-name> # <module-name> = the appropriate module for your CESM version
 ./case.build --skip-provenance-check
 ```

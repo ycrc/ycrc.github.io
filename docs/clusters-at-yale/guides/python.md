@@ -56,7 +56,7 @@ We will kill Python jobs on the login nodes that are using excessive resources. 
 To run Python interactively, first launch an interactive job on a compute node. If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:
 
 ``` bash
-srun --pty -p interactive --mem=10G -t 4:00:00 bash
+salloc --mem=10G -t 4:00:00
 ```
 
 Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start `python` or `ipython` on your command prompt. If you are happy with your Python commands, save them to a file which can then be submitted and run as a batch job.

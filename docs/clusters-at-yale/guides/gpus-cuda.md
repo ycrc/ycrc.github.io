@@ -66,6 +66,9 @@ module save cuda11
 #create environment with required dependencies
 conda create --name tf-modulecuda python numpy pandas matplotlib jupyter -c conda-forge 
 
+# activate environment
+conda activate tf-modulecuda
+
 # use pip to install tensorflow-gpu
 pip install tensorflow-gpu
 ```

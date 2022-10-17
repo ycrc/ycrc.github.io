@@ -294,7 +294,7 @@ def print_part_table(i, partition, hardware_list, has_gpus, defaults, limits):
     iprint(1 + i, "**Request Defaults**\n")
     iprint(
         1 + i,
-        f"Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.\n",
+        f"Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.\n",
     )
     iprint(1 + i, "``` text")
     iprint(1 + i, defaults)

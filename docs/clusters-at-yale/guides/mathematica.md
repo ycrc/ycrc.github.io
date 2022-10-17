@@ -18,7 +18,7 @@ To run Mathematica interactively, you need to request an interactive session o
 You could start an interactive session using Slurm. For example, to use 4 cores on 1 node:
 
 ```
-srun --pty --x11 -c 4 -p interactive -t 4:00:00 bash
+salloc --x11 -c 4 -t 4:00:00
 ```
 
 Note that if you are on macOS, you will need to install an additional program to use the GUI. See our [X11 Forwarding documentation](/clusters-at-yale/access/x11) for instructions.

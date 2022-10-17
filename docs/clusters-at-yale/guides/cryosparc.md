@@ -11,7 +11,7 @@ Before you get started, you will need to request a licence from Structura [from 
 First allocate an interactive job on a compute node to run the install on. 
 
 ``` bash
-srun --cpus-per-task 2 --pty -p interactive bash
+salloc --cpus-per-task 2
 ```
 
 Then, set the following environment variables to suit your install. We filled in some defaults for you.
@@ -105,7 +105,7 @@ EOF
 ## Run
 
 ``` bash
-srun --cpus-per-task 2 --pty -p interactive bash
+salloc --cpus-per-task 2
 master_host=$(hostname)
 base_dir=$(dirname "$(dirname "$(which cryosparcm)")")
 sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh

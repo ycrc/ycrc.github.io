@@ -36,9 +36,9 @@ Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs
 
 Quota: 20 TiB and 15,000,000 files per group
 
-60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. 
+60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.**
 
-You can access this space through a symlink, or shortcut, in your home directory called `scratch60` (and `palmer_scratch` on [Grace](/clusters/grace)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
+You can access this space through a symlink, or shortcut, in your home directory called `scratch60` (or `palmer_scratch` on [Grace](/clusters/grace)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
 
 ## Check Your Usage and Quotas
 
@@ -92,7 +92,8 @@ If you need additional files beyond your limit, contact us to discuss as increas
 | < 50 TiB         | 10 million       |
 | 50-99 TiB        | 20 million       |
 | 100-499 TiB      | 40 million       |
-| >= 500 TiB       | 50 million       |
+| 500-999 TiB      | 50 million       |
+| >= 1 PiB         | 75 million       |
 
 
 

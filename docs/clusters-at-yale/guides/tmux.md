@@ -27,11 +27,11 @@ Finally, to exit, you can type `exit` or <kbd>Ctrl</kbd>+<kbd>d</kbd>
 
 ## tmux on the Clusters
 
-Using tmux on the cluster allows you to create interactive allocations that you can detach from. Normally, if you get an interactive allocation (e.g. srun --pty) then disconnect from the cluster, for example by putting your laptop to sleep, your allocation will be terminated and your job killed. Using tmux, you can detach gracefully and tmux will maintain your allocation. Here is how to do this correctly:
+Using tmux on the cluster allows you to create interactive allocations that you can detach from. Normally, if you get an interactive allocation (e.g. `salloc`) then disconnect from the cluster, for example by putting your laptop to sleep, your allocation will be terminated and your job killed. Using tmux, you can detach gracefully and tmux will maintain your allocation. Here is how to do this correctly:
 
 1. ssh to your cluster of choice
 1. Start tmux
-1. Inside your tmux session, submit an interactive job with srun. See the [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs) for more details
+1. Inside your tmux session, submit an interactive job with `salloc`. See the [Slurm documentation](/clusters-at-yale/job-scheduling#interactive-jobs) for more details
 1. Inside your job allocation (on a compute node), start your application (e.g. matlab)
 1. Detach from tmux by typing <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>d</kbd>
 1. Later, on the _same_ login node, reattach by running `tmux attach`
@@ -39,7 +39,7 @@ Using tmux on the cluster allows you to create interactive allocations that you 
 Make sure to:
 
 * run tmux on the login node, NOT on compute nodes
-* run srun inside tmux, not the reverse.
+* run `salloc` inside tmux, not the reverse.
 
 !!!warning
     Every cluster has two login nodes.  If you cannot find your tmux session, it might be running on the other node.  Check the hostname of your current login node (from either your command prompt or from running `hostname -s`), then use ssh to login to the other one.  
@@ -55,7 +55,7 @@ Say you just submitted an interactive job that is running on a compute node insi
 ``` bash
 [be59@farnam2 ~]$ tmux new -s analysis
 # I am in my tmux session now
-[be59@farnam2 ~]$ srun --pty -p interactive bash
+[be59@farnam2 ~]$ salloc
 [be59@c23n08 ~]$ ./my_fancy_analysis.sh
 ```
 

@@ -4,7 +4,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=7-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -26,7 +26,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |139|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |138|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "interactive"
 
@@ -34,7 +34,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -56,7 +56,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |147|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |146|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "bigmem"
 
@@ -64,7 +64,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -94,7 +94,7 @@
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
     --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -117,8 +117,9 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |40|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
+    |2|6240|36|179|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
     |2|6240|36|1505|cascadelake, avx512, 6240, nogpu, pi, bigtmp|
-    |147|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |146|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
     |2|E7-4809_v3|32|1505|haswell, E7-4809_v3, nogpu, common|
 
 ### Private Partitions
@@ -129,7 +130,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -155,7 +156,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         **Request Defaults**
 
-        Unless specified, your jobs will run with the following options to `srun` and `sbatch` options for this partition.
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
         ``` text
         --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -176,4 +177,30 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|6240|36|1505|cascadelake, avx512, 6240, nogpu, pi, bigtmp|
+
+    === "pi_townsend"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the pi_townsend partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Maximum job time limit|`14-00:00:00`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |2|6240|36|179|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
 

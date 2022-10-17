@@ -1,6 +1,8 @@
 # HPC Resources
 
-The YCRC maintains and supports a number of high performance computing systems for the Yale research community. To download a Word document that describes our facilities, equipment, and other resources for HPC and research computing, click [here](https://research.computing.yale.edu/sites/default/files/files/Facilities%20and%20Equipment%20Document-2020-02-27.docx). Our high performance computing systems are named after [notable members of the Yale community](https://research.computing.yale.edu/about/hpc-resources).
+The YCRC maintains and supports a number of high performance computing systems for the Yale research community. Our high performance computing systems are named after [notable members of the Yale community](https://research.computing.yale.edu/about/hpc-resources).
+
+For proposals, we provide [a description of our facilities, equipment, and other resources for HPC and research computing](https://docs.google.com/document/d/1TRoXlMd8muiFP8NUp6g00tl0QAV5P8KScnC0vBv6oBA).
 
 ## Compute
 
@@ -17,12 +19,12 @@ We maintain and support four Red Hat Linux compute clusters, listed below. Pleas
 
 We maintain several high performance storage systems. Listed below are these shared filesystems and the clusters where they are available. We distinguish where clusters store their home directories with an asterisk. The directory `/home` will always point to your home directory on the cluster you logged into. For more information about storage quotas and purchasing storage see the [Cluster Storage](/data/hpc-storage) page.
 
-| Name     | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                         |
-|----------|---------------|---------|-----------------------|---------------------------|---------------------------------|
-| Palmer   | /vast/palmer  | 500 TiB | Grace\*               | Vast                      | Grace home, scratch storage     |
-| Loomis   | /gpfs/loomis  | 2.6 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | Grace project, scratch60 storage|
-| YSM      | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       | IBM Spectrum Scale (GPFS) | Farnam primary storage          |
-| Gibbs    | /gpfs/gibbs   | 8.0 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | purchased project-style storage |
-| Slayman  | /gpfs/slayman | 1.0 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage |
-| Milgram  | /gpfs/milgram | 3.0 PiB | Milgram\*             | IBM Spectrum Scale (GPFS) | Milgram primary storage         |
-| YCGA     | /gpfs/ycga    | 2.0 PiB | Ruddle\*              | IBM Spectrum Scale (GPFS) | Ruddle primary storage          |
+| Name     | Path          | Size    | Mounting Clusters     | File System Software      | Purpose                                  |
+|----------|---------------|---------|-----------------------|---------------------------|------------------------------------------|
+| Palmer   | /vast/palmer  | 500 TiB | Grace\*               | Vast                      | Grace home, scratch storage              |
+| Gibbs    | /gpfs/gibbs   | 11.0 PiB | Grace, Farnam, Ruddle | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
+| YSM      | /gpfs/ysm     | 1.5 PiB | Grace, Farnam\*       | IBM Spectrum Scale (GPFS) | Farnam primary storage                   |
+| Loomis   | /gpfs/loomis  | 2.6 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
+| Slayman  | /gpfs/slayman | 1.0 PiB | Grace, Farnam         | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
+| Milgram  | /gpfs/milgram | 3.0 PiB | Milgram\*             | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
+| YCGA     | /gpfs/ycga    | 2.0 PiB | Ruddle\*              | IBM Spectrum Scale (GPFS) | Ruddle primary storage                   |

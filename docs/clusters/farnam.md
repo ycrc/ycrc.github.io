@@ -9,7 +9,7 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 - - -
 
 !!! info "Upcoming Farnam Retirement"
-    After more than six years in service, we will be retiring the Farnam HPC cluster later this year. In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters/farnam-decommission).
+    After more than six years in service, we will be retiring the Farnam HPC cluster in early 2023. Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters/farnam-decommission).
 
 ## Access the Cluster
 
@@ -67,7 +67,7 @@ You can check your current storage usage & limits by running the `getquota` comm
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted.
+    Files stored in `scratch60` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
 
 |Partition  | Root Directory       | Storage                                 | File Count | Backups | Snapshots |
 |-----------|----------------------|-----------------------------------------|------------|---------|-----------|
