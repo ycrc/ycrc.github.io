@@ -92,12 +92,12 @@ o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC'
 
 cypher = message_decode_tutorial(message, 10)
 
-with open('/home/NETID/scratch60/decoded_example.txt','w+') as output:
+with open('/home/NETID/decoded_example.txt','w+') as output:
     print(cypher, file=output)
 
 ```
 
-This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. **Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.** This will allow your output file to go into your scratch60 space, and will automatically be deleted should you forget to do so.
+This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. **Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.** This will allow your output file to go into your homespace.
 
 From here, navigate back to your project directory and select the '+ New File' button, this time naming it `batch_tutorial.sh`. Using [Slurm options](/clusters-at-yale/job-scheduling/#common-job-request-options) to define resource requests for this job, paste the following code inside of this file like you did the previous file:
 
@@ -134,8 +134,8 @@ Once you receive an email saying the job is complete, navigate to your scratch60
 
 ``` bash
 
-# Navigate to your scratch60 space
-cd ../scratch60
+# Navigate to your homespace (replacing NETID with your netID)
+cd /home/NETID
 
 # Print out the decoded message
 cat decoded_example.txt
