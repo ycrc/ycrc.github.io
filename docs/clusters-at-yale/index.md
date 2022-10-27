@@ -130,7 +130,7 @@ sbatch batch_tutorial.sh
 
 ```
 
-Once you receive an email saying the job is complete, navigate to your scratch60 space through the shell window on Open OnDemand. Within this directory you will find a file called `decoded_example.txt`. To quickly see the file contents, use the `cat` command to print the file's contents on the standard output, revealing the decoded message like so:
+Once you receive an email saying the job is complete, navigate to your home-space through the shell window on Open OnDemand. Within this directory you will find a file called `decoded_example.txt`. To quickly see the file contents, use the `cat` command to print the file's contents on the standard output, revealing the decoded message like so:
 
 ``` bash
 
