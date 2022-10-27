@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2474,10 +2474,10 @@ conda deactivate
 
 <span class="n">cypher</span> <span class="o">=</span> <span class="n">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/scratch60/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">cypher</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
 </code></pre></div>
-<p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your scratch60 space, and will automatically be deleted should you forget to do so.</p>
+<p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your homespace.</p>
 <p>From here, navigate back to your project directory and select the '+ New File' button, this time naming it <code>batch_tutorial.sh</code>. Using <a href="/clusters-at-yale/job-scheduling/#common-job-request-options">Slurm options</a> to define resource requests for this job, paste the following code inside of this file like you did the previous file:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -2500,8 +2500,8 @@ python message_decode_tutorial.py
 sbatch batch_tutorial.sh
 </code></pre></div>
 <p>Once you receive an email saying the job is complete, navigate to your scratch60 space through the shell window on Open OnDemand. Within this directory you will find a file called <code>decoded_example.txt</code>. To quickly see the file contents, use the <code>cat</code> command to print the file's contents on the standard output, revealing the decoded message like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your scratch60 space</span>
-<span class="nb">cd</span> ../scratch60
+<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your homespace (replacing NETID with your netID)</span>
+<span class="nb">cd</span> /home/NETID
 
 <span class="c1"># Print out the decoded message</span>
 cat decoded_example.txt
@@ -2536,7 +2536,7 @@ cat decoded_example.txt
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2022</span>
       
     
   </small>
