@@ -2597,8 +2597,7 @@
 <div class="highlight"><pre><span></span><code>module load CESM/2.1.0-iomkl-2018a
 </code></pre></div>
 <p>For older versions of CESM, you will need to use the old modules. These old version of CESM do not work with the new modules</p>
-<div class="highlight"><pre><span></span><code>module use /apps/hpc/Modules
-module use /apps/hpc.rhel7/Modules
+<div class="highlight"><pre><span></span><code>module use /vast/palmer/apps/old.grace/Modules
 module avail CESM
 </code></pre></div>
 <p>Once you have located your module, run</p>
@@ -2619,7 +2618,7 @@ module save
 <div class="highlight"><pre><span></span><code>create_newcase -case <span class="nv">$CASE</span> -compset<span class="o">=</span>&lt;compset&gt; -res<span class="o">=</span>&lt;resolution&gt; -mach<span class="o">=</span>&lt;machine&gt;
 <span class="nb">cd</span> <span class="nv">$CASE</span>
 </code></pre></div>
-<p>The mach parameters for Grace is <code>yalegrace</code> for CESM 1.x and <code>gracempi</code> for CESM 2.x , respectively. For example</p>
+<p>The mach parameters for Grace is <code>yalegrace</code> for CESM 1.0.4 and <code>gracempi</code> for CESM 1.2.2 and CESM 2.x , respectively. For example</p>
 <div class="highlight"><pre><span></span><code>create_newcase --case <span class="nv">$CASE</span> --compset<span class="o">=</span>B1850 --res<span class="o">=</span>f09_g17 --mach<span class="o">=</span>gracempi
 
 <span class="nb">cd</span> <span class="nv">$CASE</span>
@@ -2675,8 +2674,8 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <h4 id="slurm-log">Slurm Log</h4>
 <p>In your case directory, there will be a file that looks like <code>slurm-&lt;job_id&gt;.log</code>. Check that file first to make sure the job started up properly. If the last few lines in the file redirect you to look at <code>cpl.log.&lt;some_number&gt;</code> file in your scratch directory, see below. If there is another error, try to address it and resubmit.</p>
 <h4 id="cesm-run-logs">CESM Run Logs</h4>
-<p>If the last few lines of the slurm log direct you to look at <code>cpl.log.&lt;some_number&gt;</code> file, change directory to your case “run” directory in your scratch directory:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch60/CESM/<span class="nv">$CASE</span>/run
+<p>If the last few lines of the slurm log direct you to look at <code>cpl.log.&lt;some_number&gt;</code> file, change directory to your case “run” directory (usually in your project directory):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/project/CESM/<span class="nv">$CASE</span>/run
 </code></pre></div>
 <p>The pointer to the cpl file is often misleading as I have found the error is usually located in one of the other logs. Instead look in the <code>cesm.log.xxxxxx</code> file. Towards the end there may be an error or it may signify which component was running. Then look in the log corresponding to that component to track down the issue.</p>
 <p>One shortcut to finding the relevant logs is to sort the log files by the time to see which ones were last updated:</p>
@@ -2691,7 +2690,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <h2 id="alternative-submission-parameters">Alternative Submission Parameters</h2>
 <p>By default, the submission script will submit to the "mpi" partition for 1 day. </p>
 <h3 id="cesm-1x">CESM 1.x</h3>
-<p>To change this in CESM 1.x, edit your case’s <code>run</code> script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:</p>
+<p>To change this in CESM 1.x, edit your case’s <code>run</code> script and change the partition and time. The maximum walltime in the mpi and scavenge partitions is 24 hours. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## scavenge partition</span>
 <span class="c1">#SBATCH --partition=scavenge</span>
 <span class="c1">#SBATCH --time=1-</span>
@@ -2718,7 +2717,7 @@ module load &lt;module-name&gt; <span class="c1"># &lt;module-name&gt; = the app
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2022</span>
       
     
   </small>
