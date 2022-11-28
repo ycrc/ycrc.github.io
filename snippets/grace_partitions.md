@@ -246,7 +246,7 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum nodes per group|`48`|
+    |Maximum nodes per group|`64`|
     |Maximum nodes per user|`64`|
 
     **Available Compute Nodes**
