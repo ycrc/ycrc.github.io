@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/loomis-decommission/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2192,11 +2192,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-about-my-existing-data-on-loomis" class="md-nav__link">
-    What about My Existing Data on Loomis?
+  <a href="#what-about-existing-data-on-loomis" class="md-nav__link">
+    What about Existing Data on Loomis?
   </a>
   
-    <nav class="md-nav" aria-label="What about My Existing Data on Loomis?">
+    <nav class="md-nav" aria-label="What about Existing Data on Loomis?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2216,6 +2216,13 @@
           <li class="md-nav__item">
   <a href="#custom-software-installations" class="md-nav__link">
     Custom Software Installations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decommission-of-old-deprecated-software-trees" class="md-nav__link">
+    Decommission of Old, Deprecated Software Trees
   </a>
   
 </li>
@@ -2254,12 +2261,13 @@
 <h2 id="unified-storage-at-the-ycrc">Unified Storage at the YCRC</h2>
 <p>This year will see the introduction of a more unified approach to storage across the YCRC’s clusters. Each group will have one project and one scratch space that is available on all of the HPC clusters (except for Milgram).</p>
 <h3 id="project">Project</h3>
-<p>A single project space to host no-cost project-style storage allocations will be available on the Gibbs storage system, which has until now hosted PI-purchased storage allocations. Purchased allocations will also be on Gibbs under the /gpfs/gibbs/pi space of the storage system.</p>
+<p>A single project space to host no-cost project-style storage allocations is be available on the Gibbs storage system, which has until now hosted PI-purchased storage allocations. Purchased allocations will also be on Gibbs under the /gpfs/gibbs/pi space of the storage system. Grace users are using this space as of the August 2022 maintenance.</p>
 <h3 id="scratch">Scratch</h3>
-<p>A single scratch space on Palmer, already available on Grace at /vast/palmer/scratch, will serve both Grace and the upcoming McCleary cluster (replacement for Farnam and Ruddle).  </p>
+<p>A single scratch space on Palmer, already available on Grace at /vast/palmer/scratch, will serve both Grace and the upcoming McCleary cluster (replacement for Farnam and Ruddle). The Loomis scratch space was decommissioned and purged on October 3, 2022.</p>
 <h3 id="software">Software</h3>
 <p>In 2023, a new unified software and module tree will be created on Palmer, so the same software will be available for use regardless of which YCRC HPC cluster you are using.</p>
-<h2 id="what-about-my-existing-data-on-loomis">What about My Existing Data on Loomis?</h2>
+<p>We have already migrated the software located in /gpfs/loomis/apps/avx to Palmer at /vast/palmer/apps/grace.avx. To continue to support this software without interruption, we are maintaining a symlink at /gpfs/loomis/apps/avx to the new location on Palmer, so software will continue to appear as if it is on Loomis even after the maintenance, despite being hosted on Palmer. When the operating system on Grace is upgraded to Red Hat 8 in 2023, Grace will use the new unified software tree that will be shared with the upcoming McCleary cluster and the aforementioned symlink will be removed. More information on that upgrade will come next year.</p>
+<h2 id="what-about-existing-data-on-loomis">What about Existing Data on Loomis?</h2>
 <p>Your Grace home directory was already migrated to Palmer during the January 2022 maintenance.</p>
 <p>During the Grace Maintenance in August 2022, we migrated all of the Loomis project space (<code>/gpfs/loomis/project</code>) to the Gibbs storage system at <code>/gpfs/gibbs/project</code>. You will need to update your scripts and workflows to point to the new location (<code>/gpfs/gibbs/project/&lt;group&gt;/&lt;netid&gt;</code>). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated.</p>
 <p>If you had a project space that exceeds the no-cost allocation (4TiB), you have received a separate communication from us with details about your data migration. In these instances, your group has been granted a new, empty "project" space with the default no-cost quota. Any scripts will need to be updated accordingly.</p>
@@ -2270,9 +2278,11 @@
 <p>Similarly, in 2022 we started redirecting user R packages to your project space to conserve home directory usage. If your R environment is not working as expected, we recommend deleting the old installation (found in <code>~/project/R/&lt;version&gt;</code>) and rerunning install.packages.</p>
 <h3 id="custom-software-installations">Custom Software Installations</h3>
 <p>If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled.</p>
+<h3 id="decommission-of-old-deprecated-software-trees">Decommission of Old, Deprecated Software Trees</h3>
+<p>As part of the Loomis Decommission, we will not be migrating the old software trees located at /gpfs/loomis/apps/hpc, /gpfs/loomis/apps/hpc.rhel6 and /gpfs/loomis/apps/hpc.rhel7. The deprecated modules can be identified as being prefixed with "Apps/", "GPU/", "Libs/" or "MPI/" rather than beginning with the software name. If you are using software modules in one of the old trees, please find an alternative in the current supported tree or notify us ASAP so we can continue to support your work.</p>
 <h2 id="researchers-with-purchased-storage-on-loomis">Researchers with Purchased Storage on Loomis</h2>
 <p>If you have purchased space on <code>/gpfs/loomis</code> that is still active (not expired), we will create a new area of the same size for you on Gibbs and will coordinate the transfer of the data with your group. </p>
-<p>If you have purchased storage on <code>/gpfs/loomis</code> that has expired or will be expiring in 2022, you will have received a separate communication from us with information on purchasing replacement storage on Gibbs.</p>
+<p>If you have purchased storage on <code>/gpfs/loomis</code> that has expired or will be expiring in 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs.</p>
                 
                   
                     
@@ -2281,7 +2291,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
       
     
   </small>
