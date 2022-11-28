@@ -8,18 +8,20 @@ This year will see the introduction of a more unified approach to storage across
 
 ### Project
 
-A single project space to host no-cost project-style storage allocations will be available on the Gibbs storage system, which has until now hosted PI-purchased storage allocations. Purchased allocations will also be on Gibbs under the /gpfs/gibbs/pi space of the storage system.
+A single project space to host no-cost project-style storage allocations is be available on the Gibbs storage system, which has until now hosted PI-purchased storage allocations. Purchased allocations will also be on Gibbs under the /gpfs/gibbs/pi space of the storage system. Grace users are using this space as of the August 2022 maintenance.
 
 ### Scratch
 
-A single scratch space on Palmer, already available on Grace at /vast/palmer/scratch, will serve both Grace and the upcoming McCleary cluster (replacement for Farnam and Ruddle).  
+A single scratch space on Palmer, already available on Grace at /vast/palmer/scratch, will serve both Grace and the upcoming McCleary cluster (replacement for Farnam and Ruddle). The Loomis scratch space was decommissioned and purged on October 3, 2022.
 
 ### Software
 
 In 2023, a new unified software and module tree will be created on Palmer, so the same software will be available for use regardless of which YCRC HPC cluster you are using.
 
+We have already migrated the software located in /gpfs/loomis/apps/avx to Palmer at /vast/palmer/apps/grace.avx. To continue to support this software without interruption, we are maintaining a symlink at /gpfs/loomis/apps/avx to the new location on Palmer, so software will continue to appear as if it is on Loomis even after the maintenance, despite being hosted on Palmer. When the operating system on Grace is upgraded to Red Hat 8 in 2023, Grace will use the new unified software tree that will be shared with the upcoming McCleary cluster and the aforementioned symlink will be removed. More information on that upgrade will come next year.
 
-## What about My Existing Data on Loomis?
+
+## What about Existing Data on Loomis?
 
 Your Grace home directory was already migrated to Palmer during the January 2022 maintenance.
 
@@ -41,8 +43,13 @@ Similarly, in 2022 we started redirecting user R packages to your project space 
 
 If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled.
 
+### Decommission of Old, Deprecated Software Trees
+
+As part of the Loomis Decommission, we will not be migrating the old software trees located at /gpfs/loomis/apps/hpc, /gpfs/loomis/apps/hpc.rhel6 and /gpfs/loomis/apps/hpc.rhel7. The deprecated modules can be identified as being prefixed with "Apps/", "GPU/", "Libs/" or "MPI/" rather than beginning with the software name. If you are using software modules in one of the old trees, please find an alternative in the current supported tree or notify us ASAP so we can continue to support your work.
+
+
 ## Researchers with Purchased Storage on Loomis
 
 If you have purchased space on `/gpfs/loomis` that is still active (not expired), we will create a new area of the same size for you on Gibbs and will coordinate the transfer of the data with your group. 
 
-If you have purchased storage on `/gpfs/loomis` that has expired or will be expiring in 2022, you will have received a separate communication from us with information on purchasing replacement storage on Gibbs.
+If you have purchased storage on `/gpfs/loomis` that has expired or will be expiring in 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs.
