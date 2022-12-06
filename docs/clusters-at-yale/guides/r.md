@@ -58,7 +58,7 @@ This helps prevent issues where R cannot install packages due to home-space quot
 To change the location of where R installs packages, the `R_LIBS_USER` variable can be set in your `~/.bashrc` file:
 
 ```
-export R_LIBS_USER=$LOOMIS_PROJECT/R/%v
+export R_LIBS_USER=$GIBBS_PROJECT/R/%v
 ```
 
 where `%v` is a placeholder for the R major and minor version number (e.g. `4.1`).
@@ -88,7 +88,7 @@ This will throw a warning like:
 Warning in install.packages("lattice") :
 'lib = "/ysm-gpfs/apps/software/R/4.1.0-foss-2020b/lib64/R/library"' is not writable
 Would you like to create a personal library
-/gpfs/loomis/project/support/tl397/R/4.1
+/gpfs/gibbs/project/support/tl397/R/4.1
 to install packages into?  (y/n)
 ```
 

@@ -14,15 +14,15 @@ For R packages, you just need to reinstall them with `install.packages()`.
 ## Rebuild a Conda Environment after Group Change
 
 We will use an example to illustrate how to rebuild a conda env after group change. Assume the conda env is 
-originally installed in `/gpfs/loomis/project/oldgrp/user123`,
+originally installed in `/gpfs/gibbs/project/oldgrp/user123`,
 and we want to move it to the project directory of the new group. 
 
 First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.  
 Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
 ```bash
 module load miniconda
-export CONDA_ENVS_PATH=/gpfs/loomis/project/oldgrp/user123/conda_envs
-export CONDA_PKGS_DIRS=/gpfs/loomis/project/oldgrp/user123/conda_pkgs
+export CONDA_ENVS_PATH=/gpfs/gibbs/project/oldgrp/user123/conda_envs
+export CONDA_PKGS_DIRS=/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
 conda activate myenv
 conda env export > myenv.yml
 conda deactivate

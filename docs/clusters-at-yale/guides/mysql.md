@@ -7,7 +7,7 @@ lab, or using ITS's [Spinup](https://spinup.internal.yale.edu) service.  In eith
 However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
 require admin privileges.  The instructions that follow walk you through the process of running a mysql server using [Apptainer](/clusters-at-yale/guides/containers) on a cluster compute node 
-without any special privileges.  It uses a Singularity [container](https://www.hpc.iastate.edu/guides/containers/mysql-server) 
+without any special privileges.  It uses an Apptainer [container](https://www.hpc.iastate.edu/guides/containers/mysql-server) 
 developed by Robert Grandin at Iowa State (Thanks!) 
 
 All of the following must be done on an allocated compute node.  Do not do this on the login node!
@@ -50,13 +50,13 @@ The mysqld image file can be found under the apps tree on each cluster.
 For example, on Grace:
 
 ```
-/gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg
+/vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg
 ```
 
 We recommend that you make a link to it in your mysql directory:
 
 ```
-ln -s /gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg mysql.simg
+ln -s /vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg mysql.simg
 ```
 
 

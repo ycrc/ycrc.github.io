@@ -18,7 +18,7 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
-### OOD for Courses 
+### OOD for Courses
 
 Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
 Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
@@ -102,7 +102,7 @@ In some browsers, you may have to use a special text box to copy and paste from 
 ![clipboard](/img/ood_remote_clipboard.png){: .medium}
 
 
-### Jupyter 
+### Jupyter
 
 One of the most common uses of Open OnDemand is the Jupyter interface for Python and R. You can choose either Jupyter Notebook or Jupyter Lab. By default, this app will try to launch Jupyter Notebook, unless the `Start JupyterLab` checkbox is selected. 
 
@@ -181,12 +181,12 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 1.  If you are trying to launch `jupyter-notebook`, make sure it is available in your jupyter conda environment:
 ```bash
 (ycrc_default)[pl543@grace1 ~]$ which jupyter-notebook
-/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 ```
 2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
 ```bash
 (ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
-/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 ```
 #### RStudio with Conda R
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
