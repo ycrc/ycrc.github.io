@@ -2302,6 +2302,63 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="december-2022">December 2022</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="grace-gibbs-maintenance">Grace &amp; Gibbs Maintenance</h4>
+<p>The biannual scheduled maintenance for the Grace cluster will be occurring December 6-8. During this time, the cluster will be unavailable. Additionally, the Gibbs filesystem will be unavailable on Farnam and Ruddle on Tuesday, December 6th to deploy a critical firmware upgrade. See the maintenance email announcements for more details.</p>
+<h4 id="loomis-decommission">Loomis Decommission</h4>
+<p>The Loomis GPFS filesystem will be retired and unmounted from Grace and Farnam during the Grace December maintenance starting on December 6th. All data except for a few remaining private filesets have already been transferred to other systems (e.g., current software, home, scratch to Palmer and project to Gibbs). The remaining private filesets are being transferred to Gibbs in advance of the maintenance and owners should have received communications accordingly. The only potential user impact of the retirement is on anyone using the older, deprecated software trees. Otherwise, the Loomis retirement should have no user impact but please reach out if you have any concerns or believe you are still using data located on Loomis. <a href="/data/loomis-decommission/">See the Loomis Decommission documentation for more information.</a> </p>
+<h4 id="apptainer-upgrade-on-grace-and-ruddle">Apptainer Upgrade on Grace and Ruddle</h4>
+<p>The newest version of Apptainer (v1.1, available now on Ruddle and, after December maintenance, on Grace) comes the ability to create containers without needing elevated privileges (i.e. <code>sudo</code> access). This greatly simplifies the container workflow as you no longer need a separate system to build a container from a definition file. You can simply create a definition file and run the build command. </p>
+<p>For example, to create a simple toy container from this def file (<code>lolcow.def</code>):</p>
+<div class="highlight"><pre><span></span><code>BootStrap: docker
+From: ubuntu:20.04
+
+%post
+    apt-get -y update
+    apt-get -y install cowsay lolcat
+
+%environment
+    export LC_ALL=C
+    export PATH=/usr/games:$PATH
+
+%runscript
+    date | cowsay | lolcat
+</code></pre></div>
+<p>You can run:</p>
+<div class="highlight"><pre><span></span><code>salloc -p interactive -c 4 
+apptainer build lolcow.sif lolcow.def
+</code></pre></div>
+<p>This upgrade is live on Ruddle and will be applied on Grace during the December maintenance. For more information, please see the <a href="https://apptainer.org/docs/user/main/">Apptainer documentation site </a> and <a href="/clusters-at-yale/guides/containers/">our docs page on containers</a>.  </p>
+<h3 id="software-highlights">Software Highlights</h3>
+<ul>
+<li><strong>RELION/4.0.0-fosscuda-2020b</strong> for cryo-EM/cryo-tomography data processing is now available on Farnam. RELION/3.1 will no longer be updated by the RELION developer. Note that data processed with RELION 4 are not backwards compatible with RELION 3.</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: December 01, 2022
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="ruddle-maintenance">Ruddle Maintenance</h2>
 <p><em>November 1, 2022</em></p>
 <h3 id="software-updates">Software Updates</h3>
@@ -2469,6 +2526,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
                 
                 
                 
@@ -2519,12 +2582,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -2702,6 +2759,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -2740,12 +2803,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -2904,6 +2961,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -2939,12 +3002,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
