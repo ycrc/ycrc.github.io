@@ -2242,13 +2242,13 @@ in your new space under the new group.</p>
 <p>For R packages, you just need to reinstall them with <code>install.packages()</code>. </p>
 <h2 id="rebuild-a-conda-environment-after-group-change">Rebuild a Conda Environment after Group Change</h2>
 <p>We will use an example to illustrate how to rebuild a conda env after group change. Assume the conda env is 
-originally installed in <code>/gpfs/loomis/project/oldgrp/user123</code>,
+originally installed in <code>/gpfs/gibbs/project/oldgrp/user123</code>,
 and we want to move it to the project directory of the new group. </p>
 <p>First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.<br />
 Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
 <div class="highlight"><pre><span></span><code>module load miniconda
-<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/loomis/project/oldgrp/user123/conda_envs
-<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/loomis/project/oldgrp/user123/conda_pkgs
+<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
+<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
 conda activate myenv
 conda env <span class="nb">export</span> &gt; myenv.yml
 conda deactivate
@@ -2269,7 +2269,7 @@ conda env create -f myenv.yml
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
       
     
   </small>

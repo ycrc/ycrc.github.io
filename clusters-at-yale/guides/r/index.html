@@ -2415,7 +2415,7 @@ module avail Seurat
 As part of the R software modules we define an environment variable which directs R to install packages to your project space.
 This helps prevent issues where R cannot install packages due to home-space quotas.
 To change the location of where R installs packages, the <code>R_LIBS_USER</code> variable can be set in your <code>~/.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code>export R_LIBS_USER=$LOOMIS_PROJECT/R/%v
+<div class="highlight"><pre><span></span><code>export R_LIBS_USER=$GIBBS_PROJECT/R/%v
 </code></pre></div>
 <p>where <code>%v</code> is a placeholder for the R major and minor version number (e.g. <code>4.1</code>).
 R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.</p>
@@ -2438,7 +2438,7 @@ R
 <div class="highlight"><pre><span></span><code>Warning <span class="k">in</span> install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span> :
 <span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.1.0-foss-2020b/lib64/R/library&quot;&#39;</span> is not writable
 Would you like to create a personal library
-/gpfs/loomis/project/support/tl397/R/4.1
+/gpfs/gibbs/project/support/tl397/R/4.1
 to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 </code></pre></div>
 <div class="admonition note">
@@ -2551,7 +2551,7 @@ In general, it's best to use the module installation of R for anything which req
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
       
     
   </small>

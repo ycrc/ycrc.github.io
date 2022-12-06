@@ -2350,7 +2350,7 @@ lab, or using ITS's <a href="https://spinup.internal.yale.edu">Spinup</a> servic
 <p>However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
 require admin privileges.  The instructions that follow walk you through the process of running a mysql server using <a href="/clusters-at-yale/guides/containers">Apptainer</a> on a cluster compute node 
-without any special privileges.  It uses a Singularity <a href="https://www.hpc.iastate.edu/guides/containers/mysql-server">container</a> 
+without any special privileges.  It uses an Apptainer <a href="https://www.hpc.iastate.edu/guides/containers/mysql-server">container</a> 
 developed by Robert Grandin at Iowa State (Thanks!) </p>
 <p>All of the following must be done on an allocated compute node.  Do not do this on the login node!</p>
 <h3 id="step-1-create-an-installation-directory-somewhere-and-cd-to-it">Step 1: Create an installation directory somewhere, and cd to it</h3>
@@ -2377,10 +2377,10 @@ password=&#39;my-secret-pw&#39;
 <h3 id="step-4-make-a-link-to-the-mysql-image-file">Step 4: Make a link to the mysql image file</h3>
 <p>The mysqld image file can be found under the apps tree on each cluster.
 For example, on Grace:</p>
-<div class="highlight"><pre><span></span><code>/gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg
+<div class="highlight"><pre><span></span><code>/vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg
 </code></pre></div>
 <p>We recommend that you make a link to it in your mysql directory:</p>
-<div class="highlight"><pre><span></span><code>ln -s /gpfs/loomis/apps/singularity/img/mysqld-5.7.21.simg mysql.simg
+<div class="highlight"><pre><span></span><code>ln -s /vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg mysql.simg
 </code></pre></div>
 <h3 id="step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet">Step 5: Start the container.  Note that this doesn't actually start the service yet.</h3>
 <div class="highlight"><pre><span></span><code>apptainer instance start --bind ${HOME} \
@@ -2469,7 +2469,7 @@ password=&#39;my-secret-pw&#39;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
       
     
   </small>
