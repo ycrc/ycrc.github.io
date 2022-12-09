@@ -1,8 +1,8 @@
 # Farnam Decommission and McCleary launch
 
-After more than six years in service, we will be retiring the Farnam HPC cluster in early 2023. Farnam has served the Yale biomedical research community, providing over 100 million hours of computations. 
+After more than six years in service, we will be retiring the Farnam HPC cluster in 2023. Farnam has served the Yale biomedical research community, providing over 100 million hours of computations. 
  
-In late 2022, Farnam will be replaced with a new HPC cluster, McCleary. McCleary is named for Beatrix McCleary Hamburg, who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
+In 2023, Farnam will be replaced with a new HPC cluster, McCleary. McCleary is named for Beatrix McCleary Hamburg, who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
  
 ## McCleary HPC Cluster
 
