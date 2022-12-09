@@ -10,7 +10,7 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 - - -
 
 !!! info "Upcoming Loomis Retirement"
-    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), will be retired later this year. For more information and updates see the [Loomis decommission page](/data/loomis-decommission).
+    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), has been retired. For more information see the [Loomis decommission page](/data/loomis-decommission).
 
 
 ## Access the Cluster
