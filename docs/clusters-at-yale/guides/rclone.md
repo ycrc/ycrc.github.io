@@ -77,9 +77,12 @@ You should replace it with the actual name you have picked up for the cloud stor
 rclone ls remote:/
 ```
 
-### Copy files 
+### Copy files
 ```
+# to download a file to the cluster
 rclone copy remote:/path/to/filename .
+
+# to upload a file from the cluster to the cloud storage
 rclone copy filename remote:/path/to/
 ```
 
