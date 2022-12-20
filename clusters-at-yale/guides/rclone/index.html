@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/rclone/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2561,7 +2561,10 @@ You should replace it with the actual name you have picked up for the cloud stor
 <div class="highlight"><pre><span></span><code>rclone ls remote:/
 </code></pre></div>
 <h3 id="copy-files">Copy files</h3>
-<div class="highlight"><pre><span></span><code>rclone copy remote:/path/to/filename .
+<div class="highlight"><pre><span></span><code># to download a file to the cluster
+rclone copy remote:/path/to/filename .
+
+# to upload a file from the cluster to the cloud storage
 rclone copy filename remote:/path/to/
 </code></pre></div>
 <h3 id="help">Help</h3>
@@ -2575,7 +2578,7 @@ rclone copy filename remote:/path/to/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
       
     
   </small>
