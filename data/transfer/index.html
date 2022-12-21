@@ -2558,7 +2558,7 @@
                 <h1 id="transfer-data">Transfer Data</h1>
 <p>For all transfer methods, you need to have <a href="/clusters-at-yale/access">set up your account</a> on the cluster(s) you want to tranfer data to/from.</p>
 <h2 id="data-transfer-nodes">Data Transfer Nodes</h2>
-<p>Each cluster (except Milgram) has dedicated nodes specially networked for high speed transfers both on and off-campus using the Yale Science Network. You may use transfer nodes to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. You must still be on-campus or on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the transfer nodes.</p>
+<p>Each cluster has dedicated nodes specially networked for high speed transfers both on and off-campus using the Yale Science Network. You may use transfer nodes to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. You must still be on-campus or on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the transfer nodes.</p>
 <table>
 <thead>
 <tr>
@@ -2581,11 +2581,11 @@
 </tr>
 <tr>
 <td>Milgram</td>
-<td>use login node, <code>milgram.hpc.yale.edu</code></td>
+<td><code>transfer-milgram.hpc.yale.edu</code></td>
 </tr>
 </tbody>
 </table>
-<p>From the login node of any cluster (except Milgram), you can <code>ssh</code> into the transfer node. This is useful for transferring data to locations other than your local machine (see below for details).</p>
+<p>From the login node of any cluster, you can <code>ssh</code> into the transfer node. This is useful for transferring data to or from locations other than your local machine (see below for details).</p>
 <div class="highlight"><pre><span></span><code>[netID@cluster ~] ssh transfer
 </code></pre></div>
 <h2 id="transferring-data-tofrom-your-local-machine">Transferring Data to/from Your Local Machine</h2>
@@ -2671,7 +2671,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
       
     
   </small>
