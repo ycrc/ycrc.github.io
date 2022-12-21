@@ -14,13 +14,15 @@ Globus transfers data between computers set up as "endpoints". The official YCRC
 
 We currently support endpoints for the following clusters.
 
-| Cluster                                     | Globus Endpoint |
-|---------------------------------------------|-----------------|
+| Cluster                    | Globus Endpoint |
+|----------------------------|-----------------|
 | [Farnam](/clusters/farnam) | `yale#farnam`   |
 | [Grace](/clusters/grace)   | `yale#grace`    |
 | [Ruddle](/clusters/ruddle) | `yale#ruddle`   |
 
 These endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
+
+Milgram does not currently have a Globus endpoint, however we hope to be adding one in 2023.
 
 ## Get Started with Globus
 
