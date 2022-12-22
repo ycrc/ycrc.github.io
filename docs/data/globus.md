@@ -68,16 +68,4 @@ The Globus connector is configured to only allow data to be uploaded into EliApp
 
 In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.
 
-## Setup a S3 Endpoint
-
-We support creating Globus S3 endpoints. To request a Globus S3 Endpoint, please [contact YCRC](https://docs.ycrc.yale.edu/#web-and-email-support). Please include in your request:
-
-- S3 bucket name
-- The [Amazon Region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions) for that bucket
-- An initial list of Yale NetIDs who should be able to access the bucket
-
-!!! warning
-    Please DO NOT send us the Amazon login credentials through an insecure method such as email or our ticketing system.
-
-After we have created your Globus S3 endpoint, you will be able to further self-serve you own access controls with the Globus portal.
 
