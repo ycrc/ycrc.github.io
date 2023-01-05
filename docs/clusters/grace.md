@@ -48,5 +48,5 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
 | home           | `/vast/palmer/home.grace` | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
 | project        | `/gpfs/gibbs/project`     | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
-| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        |       |
+| palmer_scratch | `/vast/palmer/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
 
