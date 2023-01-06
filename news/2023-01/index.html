@@ -2178,6 +2178,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#milgram-transfer-node" class="md-nav__link">
+    Milgram Transfer Node
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2210,7 +2217,10 @@
                 <h2 id="january-2023">January 2023</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="open-ondeamnd-vscode">Open OnDeamnd VSCode</h4>
-<p>A new OOD app code-server is now available on all clusters, except Milgram (coming in February). The new code-server allows you to run VSCode in a browser on a compute node. All users who have been running VSCode on a login node via the ssh extension should switch to code-server at their earliest convenience.  Unlike VSCode on the login node, the new app also enables you to use GPUs, to allocate large memory nodes, and to specify a private partition (if applicable) The app is still in beta version and your feedback is much appreciated.</p>
+<p>A new OOD app code-server is now available on all clusters, except Milgram (coming in Feb). Code-server allows you to run VSCode in a browser on a compute node. All users who have been running VSCode on a login node via the ssh extension should switch to code-server immediately.  The app allows you to use GPUs, to allocate large memories, and to specify a private partition (if you have the access), things you won’t be able to do if you run VSCode on a login node. The app is still in beta version and your feedback is much appreciated.</p>
+<h4 id="milgram-transfer-node">Milgram Transfer Node</h4>
+<p>Milgram now has a node dedicated to data transfers to and from the cluster. To access the node from within Milgram, run <code>ssh transfer</code> from the login node. To upload or download data from Milgram via the transfer node, use the hostname <code>transfer-milgram.hpc.yale.edu</code> (must be on VPN). More information can be found in our <a href="/data/transfer/">Transfer Data documentation</a>.</p>
+<p>With the addition of the new transfer node, we ask that the login nodes are no longer used for data transfers to limit impact on regular login activities.</p>
                 
                   
                     
@@ -2219,7 +2229,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
       
     
   </small>
