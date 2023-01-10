@@ -36,7 +36,7 @@ Course members must use the course URL to log in to course accounts on Open OnDe
 
 ## Node Reservations
 
-If the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available via a "reservation". The nodes can be requested using the `--reservation=courseid` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. In each of the following examples, replace `courseid` with the id given to your course. Jobs on course reservations are subject to the restrictions of their parent partition (e.g. 24 hour walltime limit on `day` or 2-day walltime limit on `gpu`). If your jobs need to exceed those restrictions, please have your instructor or TF contact us.
+*If* the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available via a "reservation". The nodes can be requested using the `--reservation=courseid` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. In each of the following examples, replace `courseid` with the id given to your course. Jobs on course reservations are subject to the restrictions of their parent partition (e.g. 24 hour walltime limit on `day` or 2-day walltime limit on `gpu`). If your jobs need to exceed those restrictions, please have your instructor or TF contact us.
 
 Course members are welcome to use the public partitions of the cluster. However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
@@ -62,7 +62,9 @@ Add the following to your submission script:
 
 ### Web Portal
 
-The course-specific web portal will automatically send all submitted jobs to the reservation, if one exists.
+In any of the app submission forms, type the `courseid` into the "Reservation" field. For standard (non-gpu) nodes, select `day` (Grace) or `general` (Farnam) in the "Partition" field. If your node reservation contains GPU-enabled nodes, select `gpu`.
+
+Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.
 
 ## End of Semester Course Deletion
 
