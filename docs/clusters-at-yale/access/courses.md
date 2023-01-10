@@ -1,0 +1,74 @@
+# Courses
+
+The YCRC Grace and Farnam clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.
+
+!!! warning
+    All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.
+
+
+!!! info "For Instructors"
+    If you are interested in using a YCRC cluster in your Yale course, contact us at research.computing@yale.edu. If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.
+
+
+## Course ID
+
+Your course will be give a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names, web portal and, if applicable, node reservation.
+
+## Course Accounts
+
+All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are district from any research accounts a course member may already have. Use this account if connecting to the cluster [via `ssh`](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/). All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/). 
+
+## Course Storage
+
+Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.
+
+See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
+
+## Course-specific Web Portal
+
+Your course also has a course-specific web portal, based on [Open OnDemand](/clusters-at-yale/access/ood/), accessible via the URL (replacing `courseid` with the id given to your course):
+
+```
+courseid.ycrc.yale.edu
+```
+
+Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
+
+## Node Reservations
+
+If the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available via a "reservation". The nodes can be requested using the `--reservation=courseid` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. In each of the following examples, replace `courseid` with the id given to your course.
+
+Course members are welcome to use the public partitions of the cluster. However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
+
+### Interactive Jobs
+
+```
+salloc -p day --reservation=courseid
+```
+
+or if the reservation is for GPU nodes
+
+```
+salloc -p gpu --gpus=1 --reservation=courseid
+```
+
+### Batch Jobs
+
+Add the following to your submission script:
+
+```
+#SBATCH --reservation=courseid
+```
+
+### Web Portal
+
+The course-specific web portal will automatically send all submitted jobs to the reservation, if one exists.
+
+## End of Semester Course Deletion
+
+As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. 
+
+A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not received a reminder.** Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.
+
+
+

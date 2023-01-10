@@ -123,6 +123,7 @@ nav:
                 - clusters-at-yale/access/advanced-config.md
             - clusters-at-yale/access/vpn.md
             - clusters-at-yale/access/mfa.md
+            - clusters-at-yale/access/courses.md
         - Applications & Software:
             - clusters-at-yale/applications/index.md
             - clusters-at-yale/applications/compile.md
