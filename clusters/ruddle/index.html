@@ -1355,8 +1355,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data/archived-sequencing/" class="md-nav__link">
-        YCGA Sequence Data Archive
+      <a href="../../data/google-drive/" class="md-nav__link">
+        Google Drive
       </a>
     </li>
   
@@ -1369,8 +1369,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data/google-drive/" class="md-nav__link">
-        Google Drive
+      <a href="../../data/ycga-data/" class="md-nav__link">
+        YCGA Data
       </a>
     </li>
   
@@ -2373,6 +2373,10 @@
 <p><img alt="Frank" class="cluster-portrait" src="/img/Frank-Ruddle.jpg" /></p>
 <p>Ruddle is intended for use only on projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>; Please do not use this cluster for other projects. If you have any questions about this policy, please <a href="/#get-help">contact us</a>.</p>
 <p>Ruddle is named for <a href="http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html">Frank Ruddle</a>, a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.</p>
+<div class="admonition info">
+<p class="admonition-title">Upcoming Ruddle Retirement</p>
+<p>After more than seven years in service, we will be retiring the Farnam HPC cluster in mid 2023. Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the <a href="/clusters/farnam-decommission">McCleary announcement page</a>.</p>
+</div>
 <hr />
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>Once you have <a href="https://research.computing.yale.edu/support/hpc/account-request">an account</a>, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a> or through the <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
@@ -2770,7 +2774,7 @@
 <ul>
 <li>45 days after sequencing, the raw bcl files are deleted.</li>
 <li>60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.</li>
-<li>365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  <a href="/data/archived-sequencing">Instructions for retrieving archived data</a>.</li>
+<li>365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  <a href="/data/ycga-data/#retrieve-data-from-the-archive">Instructions for retrieving archived data</a>.</li>
 </ul>
 <p>All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the tape archive.
 Disaster recovery is provided by the data stored on the tape library.</p>
@@ -2794,7 +2798,7 @@ the sample submitter's netid and the flowcell (run) name:</p>
 </code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our <a href="/data/archived-sequencing">guide on how to do so</a>.</p>
+<p>Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our <a href="/data/ycga-data/#retrieve-data-from-the-archive">guide on how to do so</a>.</p>
 </div>
 <p>If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:</p>
 <table>
@@ -2902,7 +2906,7 @@ the sample submitter's netid and the flowcell (run) name:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2023</span>
       
     
   </small>
