@@ -43,13 +43,13 @@ plugins:
             'clusters-at-yale/clusters/grace.md': 'clusters/grace.md'
             'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
             'clusters-at-yale/data/permissions.md': 'data/permissions.md'
-            'clusters-at-yale/data/archived-sequencing.md': 'data/archived-sequencing.md'
+            'clusters-at-yale/data/archived-sequencing.md': 'data/ycga-data.md'
+            'data/archived-sequencing.md': 'data/ycga-data.md'
             'clusters-at-yale/data/globus.md': 'data/globus.md'
             'clusters-at-yale/data/staging.md': 'data/staging.md'
             'clusters-at-yale/data/transfer.md': 'data/transfer.md'
             'online-tutorials.md': 'resources/online-tutorials.md'
             'national-hpcs.md': 'resources/national-hpcs.md'
-
 
 extra:
   social:
@@ -147,8 +147,8 @@ nav:
             - data/index.md
             - data/hpc-storage.md
             - data/backups.md
-            - data/archived-sequencing.md
             - data/google-drive.md
+            - data/ycga-data.md
             - Transfer Data:
                 - "Transfer to Cluster": data/transfer.md
                 - data/globus.md

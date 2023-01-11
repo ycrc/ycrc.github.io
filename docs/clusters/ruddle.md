@@ -6,6 +6,8 @@ Ruddle is intended for use only on projects related to the [Yale Center for Geno
 
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
+!!! info "Upcoming Ruddle Retirement"
+    After more than seven years in service, we will be retiring the Farnam HPC cluster in mid 2023. Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [McCleary announcement page](/clusters/farnam-decommission).
 
 - - -
 ## Access the Cluster
@@ -35,7 +37,7 @@ Illumina sequence data is initially written to YCGA's main storage system, which
 
 - 45 days after sequencing, the raw bcl files are deleted.
 - 60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.
-- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  [Instructions for retrieving archived data](/data/archived-sequencing).
+- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  [Instructions for retrieving archived data](/data/ycga-data/#retrieve-data-from-the-archive).
 
 All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the tape archive.
 Disaster recovery is provided by the data stored on the tape library.
@@ -73,7 +75,7 @@ $ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sam
 ```
 
 !!! tip
-    Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/data/archived-sequencing).
+    Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [guide on how to do so](/data/ycga-data/#retrieve-data-from-the-archive).
 
 If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:
 
