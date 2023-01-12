@@ -2438,14 +2438,16 @@
 <p>A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). <strong>Students will not received a reminder.</strong> Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.</p>
 <h3 id="transfer-data-to-research-account">Transfer Data to Research Account</h3>
 <p>If you have a research account on the cluster, you can transfer any data you want to save from your course account to your research account.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure there is sufficient free space in your research account storage to accomodate any data you are transferring from your course account using <code>getquota</code>.</p>
+</div>
 <ol>
 <li>
 <p>Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.</p>
 </li>
 <li>
 <p>Grant your research account access to your course accounts directories (substitute in your courseid and netid in the example).</p>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code># home directory
 setfacl -m u:netid:rX /home/courseid_netid
 
@@ -2455,24 +2457,20 @@ setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
 # project directory on Farnam
 setfacl -m u:netid:rX /gpfs/ysm/project/courseid/courseid_netid
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Log in as your research account. Check that you can access the above paths.</p>
 </li>
 <li>
 <p>Move to the <code>transfer</code> node with <code>ssh transfer</code>. If you are transferring a lot of data, open a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session so the transfer can continue if you disconnect from the cluster.</p>
 </li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure there is sufficient free space in your research account storage to accomodate any data you are transferring from your course account using <code>getquota</code>.</p>
-</div>
-<ol>
-<li>Initiate a copy of the desired data using <code>rsync</code>. For example:</li>
-</ol>
+<li>
+<p>Initiate a copy of the desired data using <code>rsync</code>. For example:</p>
 <div class="highlight"><pre><span></span><code>mkdir /gpfs/gibbs/project/group/netid/my_course_data
 rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project/group/netid/my_course_data
 </code></pre></div>
+</li>
+</ol>
                 
                   
                     
@@ -2481,7 +2479,7 @@ rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>
