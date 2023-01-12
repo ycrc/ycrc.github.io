@@ -72,5 +72,43 @@ As mentioned above, all course allocations are temporary. All associated account
 
 A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not received a reminder.** Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.
 
+### Transfer Data to Research Account
+
+If you have a research account on the cluster, you can transfer any data you want to save from your course account to your research account.
+
+!!! warning
+    Make sure there is sufficient free space in your research account storage to accomodate any data you are transferring from your course account using `getquota`.
+
+1. Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.
+
+1. Grant your research account access to your course accounts directories (substitute in your courseid and netid in the example).
+
+    ```
+    # home directory
+    setfacl -m u:netid:rX /home/courseid_netid
+
+    # project directory on Grace
+    setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
+
+    # project directory on Farnam
+    setfacl -m u:netid:rX /gpfs/ysm/project/courseid/courseid_netid
+    ```
+
+1. Log in as your research account. Check that you can access the above paths.
+
+1. Move to the `transfer` node with `ssh transfer`. If you are transferring a lot of data, open a [tmux](/clusters-at-yale/guides/tmux/) session so the transfer can continue if you disconnect from the cluster.
+
+1. Initiate a copy of the desired data using `rsync`. For example:
+
+    ```
+    mkdir /gpfs/gibbs/project/group/netid/my_course_data
+    rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project/group/netid/my_course_data
+    ```
+
+
+
+
+
+
 
 
