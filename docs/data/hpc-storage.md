@@ -34,7 +34,7 @@ Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs
 
 ### 60-Day Scratch
 
-Quota: 20 TiB and 15,000,000 files per group
+Quota: 10 TiB and 15,000,000 files per group
 
 60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.**
 
@@ -70,8 +70,8 @@ scratch60     tl397      13056       282,212
 Fileset       Type    Usage (GiB)   Quota (GiB)  File Count    File Limit    Backup    Purged
 ------------- ------- ------------ ----------- ------------- ------------- --------- ---------
 home.grace    USR               39         100       190,055       200,000 Yes        No
-project       GRP              707        6144     1,611,981     5,000,000 No         No
-scratch60     GRP             4054       20480       987,336     5,000,000 No         60 days
+project       GRP              707        4096     1,611,981     5,000,000 No         No
+scratch60     GRP             4054       10240       987,336     5,000,000 No         60 days
 ```
 
 The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
