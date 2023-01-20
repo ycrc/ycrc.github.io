@@ -60,6 +60,12 @@ Add the following to your submission script:
 #SBATCH --reservation=courseid
 ```
 
+or if the reservation is for GPU nodes
+
+```
+#SBATCH -p gpu --gpus=1 --reservation=courseid
+```
+
 ### Web Portal
 
 In any of the app submission forms, type the `courseid` into the "Reservation" field. For standard (non-gpu) nodes, select `day` (Grace) or `general` (Farnam) in the "Partition" field. If your node reservation contains GPU-enabled nodes, select `gpu`.
