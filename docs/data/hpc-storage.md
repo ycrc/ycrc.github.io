@@ -36,42 +36,43 @@ Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs
 
 Quota: 10 TiB and 15,000,000 files per group
 
-60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch60 quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.**
+60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.**
 
-You can access this space through a symlink, or shortcut, in your home directory called `scratch60` (or `palmer_scratch` on [Grace](/clusters/grace)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
+You can access this space through a symlink, or shortcut, in your home directory called `palmer_scratch` (or `scratch60` on [Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
 
 ## Check Your Usage and Quotas
 
 To inspect your current usage, run the command `getquota`. Here is an example output of the command:
 
 ``` text
-This script shows information about your quotas on the current gpfs filesystem.
-If you plan to poll this sort of information extensively, please contact us
-for help at hpc@yale.edu
+This script shows information about your quotas on grace.
+If you plan to poll this sort of information extensively,
+please contact us for help at hpc@yale.edu
 
-## Usage Details for hpcprog (as of Nov 20 2019 05:00)
-Fileset       User  Usage (GiB) File Count
-------------- ----- ---------- -------------
-project       ahs3          82        33,788
-project       cag94          0             1
-project       kln26        366       533,998
-project       njc2           0             1
-project       pl543        115       259,212
-project       tl397        370       529,026
+## Usage Details for support (as of Jan 25 2023 12:00)
+Fileset                User  Usage (GiB) File Count   
+---------------------- ----- ---------- -------------
+gibbs:project          ahs3         568       121,786
+gibbs:project          kln26        435       423,219
+gibbs:project          ms725        233       456,736
+gibbs:project          pl543        427     1,551,959
+gibbs:project          rdb9        1952     1,049,346
+gibbs:project          tl397        605     2,573,824
 ----
-scratch60     ahs3           0            89
-scratch60     cag94          0             1
-scratch60     kln26       2510       714,703
-scratch60     njc2           0             1
-scratch60     pl543          0             6
-scratch60     tl397      13056       282,212
+gibbs:pi_support       ahs3           0             1
+gibbs:pi_support       kln26       5886    14,514,143
+gibbs:pi_support       ms725      19651     2,692,158
+gibbs:pi_support       pl543        328       142,936
+gibbs:pi_support       rdb9        1047       165,553
+gibbs:pi_support       tl397        175       118,038
 
-## Quota Summary for hpcprog (as of right now)
-Fileset       Type    Usage (GiB)   Quota (GiB)  File Count    File Limit    Backup    Purged
-------------- ------- ------------ ----------- ------------- ------------- --------- ---------
-home.grace    USR               39         100       190,055       200,000 Yes        No
-project       GRP              707        4096     1,611,981     5,000,000 No         No
-scratch60     GRP             4054       10240       987,336     5,000,000 No         60 days
+## Quota Summary for support (as of right now [*palmer stats are gathered once a day])
+Fileset                Type    Usage (GiB)  Quota (GiB) File Count    File Limit    Backup    Purged   
+---------------------- ------- ------------ ----------- ------------- ------------- --------- ---------
+palmer:home.grace      USR               63         125       216,046       500,000 Yes       No        
+gibbs:project          GRP             3832       10240     3,350,198    10,000,000 No        No        
+palmer:scratch         GRP                0       10240           903    15,000,000 No        60 days        
+gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,000 No        No
 ```
 
 The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
@@ -103,8 +104,8 @@ If you need additional files beyond your limit, contact us to discuss as increas
 
 Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
-Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/data/transfer/) a working copy to `scrach60`, for example.
-Both Grace and Farnam have dedicated `transfer` partitions where you can submit long-running transfer jobs.
+Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/data/transfer/) a working copy to `palmer_scratch`, for example.
+Both Grace and McCleary have dedicated `transfer` partitions where you can submit long-running transfer jobs.
 When your computation finishes you can remove the copy and transmit or copy results to a permanent location.
 Please see the [Staging Data](/data/staging/) documentation for more details and examples.
 
