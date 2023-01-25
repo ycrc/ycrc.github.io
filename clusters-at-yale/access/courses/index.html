@@ -2430,6 +2430,9 @@
 <p>Add the following to your submission script:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH --reservation=courseid
 </code></pre></div>
+<p>or if the reservation is for GPU nodes</p>
+<div class="highlight"><pre><span></span><code>#SBATCH -p gpu --gpus=1 --reservation=courseid
+</code></pre></div>
 <h3 id="web-portal">Web Portal</h3>
 <p>In any of the app submission forms, type the <code>courseid</code> into the "Reservation" field. For standard (non-gpu) nodes, select <code>day</code> (Grace) or <code>general</code> (Farnam) in the "Partition" field. If your node reservation contains GPU-enabled nodes, select <code>gpu</code>.</p>
 <p>Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.</p>
@@ -2479,7 +2482,7 @@ rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>
       
     
   </small>

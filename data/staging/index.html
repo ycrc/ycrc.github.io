@@ -2397,25 +2397,25 @@
 <p>Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 Since the <em>permanent</em> home of the data remains on off-cluster storage, you need to <a href="/data/transfer/">transfer</a> a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transfer the results to a more permanent location.</p>
 <h2 id="temporary-storage">Temporary Storage</h2>
-<p>We recommend staging data into your <a href="/data">Scratch60</a> storage space on the cluster, as the <em>working</em> copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). </p>
+<p>We recommend staging data into your <a href="/data/hpc-storage/#60-day-scratch">scratch</a> storage space on the cluster, as the <em>working</em> copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). </p>
 <h2 id="interactive-transfers">Interactive Transfers</h2>
 <p>For interactive transfers, please see our <a href="/data/transfer/">Transfer Data</a> page for a more complete list of ways to move data efficiently to and from the clusters.  </p>
 <p>A sample workflow using <code>rsync</code> would be:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
 <span class="o">[</span>netID@cluster ~<span class="o">]</span> ssh transfer
 <span class="c1"># copy data to temporary cluster storage</span>
-<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 <span class="c1"># process data on cluster</span>
 <span class="o">[</span>netID@transfer ~<span class="o">]</span>$ sbatch data_processing.sh
 <span class="c1"># return results to permanent storage for safe-keeping</span>
-<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/scratch60/output_data netID@department_server:/path/to/outputs/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/palmer_scratch/output_data netID@department_server:/path/to/outputs/
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To protect your transfer from network interruptions between your computer and the transfer node, launch your <code>rsync</code> inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node.</p>
 </div>
 <h2 id="transfer-partition">Transfer Partition</h2>
-<p>Both Grace and Farnam have dedicated data transfer partitions (named <code>transfer</code>) designed for staging data onto the cluster.
+<p>Both Grace and McCleary have dedicated data transfer partitions (named <code>transfer</code>) designed for staging data onto the cluster.
 All users are able to submit jobs to these partitions. Note each users is limited to running two transfer jobs at one time.
 If your workflow requires more simultaneuous transfers, contact us for assistance.</p>
 <h3 id="transfers-as-batch-jobs">Transfers as Batch Jobs</h3>
@@ -2428,9 +2428,9 @@ If your workflow requires more simultaneuous transfers, contact us for assistanc
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 <span class="c1">#SBATCH --output=transfer.txt</span>
 
-rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
-This will launch a batch job that will transfer data from <code>remote.host.yale.edu</code> to your scratch60 directory.
+This will launch a batch job that will transfer data from <code>remote.host.yale.edu</code> to your scratch directory.
 Note, this will only work if you have set up password-less logins on the remote host.</p>
 <h2 id="transfer-job-dependencies">Transfer Job Dependencies</h2>
 <p>There are <code>sbatch</code> options that allow you to hold a job from running until a previous job finishes.
@@ -2445,7 +2445,7 @@ We can break this into two separate Slurm jobs: a transfer job followed by a pro
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 
-rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/scratch60/
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
 <h3 id="processsbatch">process.sbatch</h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2460,7 +2460,7 @@ module load miniconda
 
 conda activate my_env
 
-python <span class="nv">$HOME</span>/process_script.py <span class="nv">$HOME</span>/scratch60/data
+python <span class="nv">$HOME</span>/process_script.py <span class="nv">$HOME</span>/palmer_scratch/data
 </code></pre></div>
 <p>First we would submit the transfer job to Slurm:</p>
 <div class="highlight"><pre><span></span><code>$ sbatch transfer.sbatch
@@ -2488,9 +2488,9 @@ The process is somewhat simpler than the above example because we do not need to
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 
-cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/scratch60/
+cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
-<p>This will transfer <code>data</code> from the Storage@Yale share to <code>scratch60</code> where it can be processed on any of the compute nodes.</p>
+<p>This will transfer <code>data</code> from the Storage@Yale share to <code>palmer_scratch</code> where it can be processed on any of the compute nodes.</p>
                 
                   
                     
@@ -2499,7 +2499,7 @@ cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/scratch60/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
       
     
   </small>
