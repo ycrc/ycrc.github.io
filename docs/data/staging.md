@@ -5,7 +5,7 @@ Since the _permanent_ home of the data remains on off-cluster storage, you need 
 
 ## Temporary Storage
 
-We recommend staging data into your [Scratch60](/data) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
+We recommend staging data into your [scratch](/data/hpc-storage/#60-day-scratch) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
 
 ## Interactive Transfers
 For interactive transfers, please see our [Transfer Data](/data/transfer/) page for a more complete list of ways to move data efficiently to and from the clusters.  
@@ -16,18 +16,18 @@ A sample workflow using `rsync` would be:
 # connect to the transfer node from the login node
 [netID@cluster ~] ssh transfer
 # copy data to temporary cluster storage
-[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
+[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/palmer_scratch/
 # process data on cluster
 [netID@transfer ~]$ sbatch data_processing.sh
 # return results to permanent storage for safe-keeping
-[netID@transfer ~]$ rsync -avP $HOME/scratch60/output_data netID@department_server:/path/to/outputs/
+[netID@transfer ~]$ rsync -avP $HOME/palmer_scratch/output_data netID@department_server:/path/to/outputs/
 ```
 
 !!! Tip 
     To protect your transfer from network interruptions between your computer and the transfer node, launch your `rsync` inside a [tmux](/clusters-at-yale/guides/tmux/) session on the transfer node.
 
 ## Transfer Partition
-Both Grace and Farnam have dedicated data transfer partitions (named `transfer`) designed for staging data onto the cluster.
+Both Grace and McCleary have dedicated data transfer partitions (named `transfer`) designed for staging data onto the cluster.
 All users are able to submit jobs to these partitions. Note each users is limited to running two transfer jobs at one time.
 If your workflow requires more simultaneuous transfers, contact us for assistance.
 
@@ -44,10 +44,10 @@ A sample `sbatch` script for an `rsync` transfer is show here:
 #SBATCH --job-name=my_transfer
 #SBATCH --output=transfer.txt
 
-rsync -av netID@department_server:/path/to/data $HOME/scratch60/
+rsync -av netID@department_server:/path/to/data $HOME/palmer_scratch/
 
 ```
-This will launch a batch job that will transfer data from `remote.host.yale.edu` to your scratch60 directory.
+This will launch a batch job that will transfer data from `remote.host.yale.edu` to your scratch directory.
 Note, this will only work if you have set up password-less logins on the remote host.
 
 ## Transfer Job Dependencies
@@ -68,7 +68,7 @@ We can break this into two separate Slurm jobs: a transfer job followed by a pro
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name=my_transfer
 
-rsync -av netID@department_server:/path/to/data $HOME/scratch60/
+rsync -av netID@department_server:/path/to/data $HOME/palmer_scratch/
 
 ```
 
@@ -87,7 +87,7 @@ module load miniconda
 
 conda activate my_env
 
-python $HOME/process_script.py $HOME/scratch60/data
+python $HOME/process_script.py $HOME/palmer_scratch/data
 
 ```
 
@@ -130,8 +130,8 @@ Here, we have modified the `transfer.sbatch` file from above:
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name=my_transfer
 
-cp /SAY/standard/my_say_share/data $HOME/scratch60/
+cp /SAY/standard/my_say_share/data $HOME/palmer_scratch/
 
 ```
 
-This will transfer `data` from the Storage@Yale share to `scratch60` where it can be processed on any of the compute nodes.
+This will transfer `data` from the Storage@Yale share to `palmer_scratch` where it can be processed on any of the compute nodes.

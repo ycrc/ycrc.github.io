@@ -1,78 +1,63 @@
 # YCGA Data
 
-Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga` on the [Ruddle](/clusters/ruddle) and, coming soon, on [McCleary](/clusters/farnam-decommission).
+Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [Ruddle](/clusters/ruddle) and, coming soon, on [McCleary](/clusters/farnam-decommission).
 
 
 ## YCGA Data Retention Policy
 
 Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus. Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).
 
-- 45 days after sequencing, the raw bcl files are deleted.
-- 60 days after sequencing, the fastq files are written to a tape archive.  Two tape libraries store identical copies of the data, located in two datacenters in separate buildings on West Campus.
-- 365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the tape archive.  Data is retained on the tape archive indefinitely.  See below for instructions for retrieving archived data.
+- ~45 days after sequencing, the raw bcl files are deleted.
+- ~60 days after sequencing, the fastq files are written to an archive.  This archive exists in two geographically distinct copies for safety.
+- ~365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See below for instructions for retrieving archived data.
 
-All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the tape archive.
-Disaster recovery is provided by the data stored on the tape library.
+All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the archive.
+Disaster recovery is provided by the archive copy.
 
-## Access Sequencing Data
-
-To avoid duplication of data and to save space that counts against your quotas, we suggest that you make soft links to your sequencing data rather than copying them.
-
-Normally, YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
+YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
 http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
 
-You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  You can use the ycgaFastq tool to do that:
+You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  
+
+To find the actual location of your data, do:
+``` bash
+$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+```
+
+## Illumina sequencing data
+
+For Illumina data (not singlecell or pacbio data), 
+you can browse to the YCGA-provided URL and find a file ruddle_paths.txt that contains the 
+true locations of the files.
+
+Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:
 
 ```bash
 $ /home/bioinfo/software/knightlab/bin/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 ```
 
-ycgaFastq can also be used to retrieve data that has been archived to tape.  The simplest way to do that is to provide
+ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
 the sample submitter's netid and the flowcell (run) name:
 
 ```bash
 $ ycgaFastq rdb9 AHFH66DSXX
 ```
 
-If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run as been archived and deleted:
+If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run has been archived and deleted:
 ```bash
 $ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 ```
 
 ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the [documentation](http://campuspress.yale.edu/knightlab/ruddle/ycgafastq) or contact us.
 
-If you would like to know the true location of the data on Ruddle, do this:
-``` bash
-$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
-```
-
 !!! tip
     Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [below](/data/ycga-data/#retrieve-data-from-the-archive).
 
-If you have a very old link from YCGA that doesn't use the random string, you can find the location by decoding the url as shown below:
-
-| `fullPath` Starts With    | Root Path on Ruddle                      |
-|---------------------------|------------------------------------------|
-| `gpfs_illumina/sequencer` | `/gpfs/ycga/illumina/sequencer`          |
-| `ba_sequencers`           | `/ycga-ba/ba_sequencers`                 |
-| `sequencers`              | `/gpfs/ycga/sequencers/panfs/sequencers` |
-
-For example, if the sample link you received is:
-
-```
-http://sysg1.cs.yale.edu:2011/gen?fullPath=sequencers2/sequencerV/runs/131107_D00306_0096... etc
-```
-
-The path on the cluster to the data is:
-```
-/gpfs/ycga/sequencers/panfs/sequencers2/sequencerV/runs/131107_D00306_0096... etc
-```
-
 ## Retrieve Data from the Archive
 
-In the sequencing archive on [Ruddle](/clusters/ruddle), a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
+In the sequencing data archive, a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
 
-Although the archive actually exists on tape or in cloud storage, you can treat it as a regular directory tree. Many operations such as `ls`, `cd`, etc. are very fast, since directory structures and file metadata are on a disk cache. However, when you actually read the contents of files the file is retrieved and read into a disk cache.  This can take some time.
+Although the archive actually exists in cloud storage, you can treat it as a regular directory tree. Many operations such as `ls`, `cd`, etc. are very fast, since directory structures and file metadata are on a disk cache. However, when you actually read the contents of files the file is retrieved and read into a disk cache.  This can take some time.
 
 Archived runs are stored in the following locations.
 
@@ -81,6 +66,7 @@ Archived runs are stored in the following locations.
 | `/panfs/sequencers`                         | `/SAY/archive/YCGA-729009-YCGA-A2/archive/panfs/sequencers`                         |
 | `/ycga-ba/ba_sequencers`                    | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-ba/ba_sequencers`                    |
 | `/gpfs/ycga/sequencers/illumina/sequencers` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencers` |
+| `/gpfs/ycga/sequencers/pacbio` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/pacbio` |
 
 You can directly copy or untar the project tarfile into a scratch directory.
 
