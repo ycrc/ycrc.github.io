@@ -69,7 +69,7 @@ McCleary's globus connector is named `yale#mccleary` and provides access to all 
 For a general getting started with Globus, please check out their [website](https://docs.globus.org/how-to/get-started/).
 We have a stand-alone docs page about Globus [here](/data/globus), but here we will detail the process to transfer data from YSM (for example) to the Gibbs file system.
 
-1. log in to [app.globus.org](app.globus.org) and use your Yale credentials to authenticate. 
+1. log in to [app.globus.org](https://app.globus.org) and use your Yale credentials to authenticate. 
 2. navigate to the File Manager and access McCleary by searching for the "collection" `yale#mccleary` in the left-hand panel.
 3. find the files you wish to transfer, using the check-boxes to select any and all files needed.
 4. click on the "Transfer or Sync to" option and in the right-hand panel also search for the `yale#mccleary` collection.
