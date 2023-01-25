@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-requests/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-export/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
-        <title>Request Compute Resources - Yale Center for Research Computing</title>
+        <title>Rebuilding conda environemnts for McCleary migration - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#request-compute-resources" class="md-skip">
+        <a href="#rebuilding-conda-environemnts-for-mccleary-migration" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Request Compute Resources
+              Rebuilding conda environemnts for McCleary migration
             
           </span>
         </div>
@@ -254,15 +254,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link">
         User Guide
       </a>
     </li>
@@ -288,13 +286,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Software & Tools
       </a>
     </li>
@@ -585,14 +585,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -968,16 +966,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
@@ -1000,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../job-scheduling/" class="md-nav__link">
         Run Jobs with Slurm
       </a>
     </li>
@@ -1012,120 +1008,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Request Compute Resources
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
         Request Compute Resources
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" class="md-nav__link">
-    Request Cores and Nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Request Cores and Nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multi-thread-multi-process-and-mpi" class="md-nav__link">
-    Multi-thread, Multi-process, and MPI
-  </a>
-  
-    <nav class="md-nav" aria-label="Multi-thread, Multi-process, and MPI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi-applications" class="md-nav__link">
-    MPI Applications
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hybrid-mpiopenmp-applications" class="md-nav__link">
-    Hybrid (MPI+OpenMP) Applications
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-memory-ram" class="md-nav__link">
-    Request Memory (RAM)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-gpus" class="md-nav__link">
-    Request GPUs
-  </a>
-  
-    <nav class="md-nav" aria-label="Request GPUs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#request-specific-gpu-types" class="md-nav__link">
-    Request Specific GPU Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-and-constraints" class="md-nav__link">
-    Features and Constraints
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1137,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common-job-failures/" class="md-nav__link">
+      <a href="../../job-scheduling/common-job-failures/" class="md-nav__link">
         Common Job Failures
       </a>
     </li>
@@ -1151,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-usage/" class="md-nav__link">
+      <a href="../../job-scheduling/resource-usage/" class="md-nav__link">
         Monitor CPU and Memory
       </a>
     </li>
@@ -1165,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fairshare/" class="md-nav__link">
+      <a href="../../job-scheduling/fairshare/" class="md-nav__link">
         Priority & Wait Time
       </a>
     </li>
@@ -1179,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dsq/" class="md-nav__link">
+      <a href="../../job-scheduling/dsq/" class="md-nav__link">
         Job Arrays with dSQ
       </a>
     </li>
@@ -1193,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dependency/" class="md-nav__link">
+      <a href="../../job-scheduling/dependency/" class="md-nav__link">
         Jobs with Dependencies
       </a>
     </li>
@@ -1207,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scrontab/" class="md-nav__link">
+      <a href="../../job-scheduling/scrontab/" class="md-nav__link">
         Recurring Jobs
       </a>
     </li>
@@ -1221,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scavenge/" class="md-nav__link">
+      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
         Scavenge Partition
       </a>
     </li>
@@ -1235,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpi/" class="md-nav__link">
+      <a href="../../job-scheduling/mpi/" class="md-nav__link">
         MPI Partition
       </a>
     </li>
@@ -1249,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm-examples/" class="md-nav__link">
+      <a href="../../job-scheduling/slurm-examples/" class="md-nav__link">
         Submission Script Examples
       </a>
     </li>
@@ -1576,12 +1463,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1604,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1616,14 +1505,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
       
       
       
@@ -1646,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/conda/" class="md-nav__link">
+      <a href="../conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1660,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/python/" class="md-nav__link">
+      <a href="../python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -1674,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/jupyter/" class="md-nav__link">
+      <a href="../jupyter/" class="md-nav__link">
         Jupyter Notebooks
       </a>
     </li>
@@ -1688,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/handson-ml2/" class="md-nav__link">
+      <a href="../handson-ml2/" class="md-nav__link">
         Python+TensorFlow Example
       </a>
     </li>
@@ -1700,11 +1591,67 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../guides/conda-export/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Rebuilding conda environemnts for McCleary migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Rebuilding conda environemnts for McCleary migration
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#full-export-including-dependencies" class="md-nav__link">
+    Full export including dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-only-specified-packages" class="md-nav__link">
+    Export only specified packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-new-environment" class="md-nav__link">
+    Build new environment
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1716,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/mpi4py/" class="md-nav__link">
+      <a href="../mpi4py/" class="md-nav__link">
         mpi4py
       </a>
     </li>
@@ -1765,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/cesm/" class="md-nav__link">
+      <a href="../cesm/" class="md-nav__link">
         CESM/CAM
       </a>
     </li>
@@ -1779,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/comsol/" class="md-nav__link">
+      <a href="../comsol/" class="md-nav__link">
         COMSOL
       </a>
     </li>
@@ -1793,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/gaussian/" class="md-nav__link">
+      <a href="../gaussian/" class="md-nav__link">
         Gaussian
       </a>
     </li>
@@ -1807,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/matlab/" class="md-nav__link">
+      <a href="../matlab/" class="md-nav__link">
         MATLAB
       </a>
     </li>
@@ -1821,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/mathematica/" class="md-nav__link">
+      <a href="../mathematica/" class="md-nav__link">
         Mathematica
       </a>
     </li>
@@ -1835,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/namd/" class="md-nav__link">
+      <a href="../namd/" class="md-nav__link">
         NAMD
       </a>
     </li>
@@ -1849,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/r/" class="md-nav__link">
+      <a href="../r/" class="md-nav__link">
         R
       </a>
     </li>
@@ -1863,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/vasp/" class="md-nav__link">
+      <a href="../vasp/" class="md-nav__link">
         VASP
       </a>
     </li>
@@ -1912,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/containers/" class="md-nav__link">
+      <a href="../containers/" class="md-nav__link">
         Containers
       </a>
     </li>
@@ -1926,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         Mysql
       </a>
     </li>
@@ -1940,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/parallel/" class="md-nav__link">
+      <a href="../parallel/" class="md-nav__link">
         Parallel
       </a>
     </li>
@@ -1954,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/rclone/" class="md-nav__link">
+      <a href="../rclone/" class="md-nav__link">
         Rclone
       </a>
     </li>
@@ -1968,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/tmux/" class="md-nav__link">
+      <a href="../tmux/" class="md-nav__link">
         tmux
       </a>
     </li>
@@ -1982,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/virtualgl/" class="md-nav__link">
+      <a href="../virtualgl/" class="md-nav__link">
         VirtualGL
       </a>
     </li>
@@ -1996,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/xvfb/" class="md-nav__link">
+      <a href="../xvfb/" class="md-nav__link">
         XVFB
       </a>
     </li>
@@ -2045,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/cryoem/" class="md-nav__link">
+      <a href="../cryoem/" class="md-nav__link">
         Cryo-EM on Farnam
       </a>
     </li>
@@ -2059,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/github/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         GitHub
       </a>
     </li>
@@ -2073,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/github_pages/" class="md-nav__link">
+      <a href="../github_pages/" class="md-nav__link">
         GitHub Pages
       </a>
     </li>
@@ -2087,7 +2034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/gpus-cuda/" class="md-nav__link">
+      <a href="../gpus-cuda/" class="md-nav__link">
         GPUs and CUDA
       </a>
     </li>
@@ -2289,75 +2236,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#request-cores-and-nodes" class="md-nav__link">
-    Request Cores and Nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Request Cores and Nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multi-thread-multi-process-and-mpi" class="md-nav__link">
-    Multi-thread, Multi-process, and MPI
-  </a>
-  
-    <nav class="md-nav" aria-label="Multi-thread, Multi-process, and MPI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi-applications" class="md-nav__link">
-    MPI Applications
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hybrid-mpiopenmp-applications" class="md-nav__link">
-    Hybrid (MPI+OpenMP) Applications
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-memory-ram" class="md-nav__link">
-    Request Memory (RAM)
+  <a href="#full-export-including-dependencies" class="md-nav__link">
+    Full export including dependencies
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-gpus" class="md-nav__link">
-    Request GPUs
+  <a href="#export-only-specified-packages" class="md-nav__link">
+    Export only specified packages
   </a>
-  
-    <nav class="md-nav" aria-label="Request GPUs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#request-specific-gpu-types" class="md-nav__link">
-    Request Specific GPU Types
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-and-constraints" class="md-nav__link">
-    Features and Constraints
+  <a href="#build-new-environment" class="md-nav__link">
+    Build new environment
   </a>
   
 </li>
@@ -2374,113 +2268,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/job-scheduling/resource-requests.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/conda-export.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="request-compute-resources">Request Compute Resources</h1>
-<h2 id="request-cores-and-nodes">Request Cores and Nodes</h2>
-<p>When <a href="/clusters-at-yale/job-scheduling/">running jobs with Slurm</a>, you must be explicit about requesting CPU cores and nodes. See our page on <a href="/clusters-at-yale/job-scheduling/resource-usage/">monitoring usage</a> for tips on verifying your jobs are using the resources you expect. The three options <code>--nodes</code> or <code>-N</code>, <code>--ntasks</code> or <code>-n</code>, and <code>--cpus-per-task</code> or <code>-c</code> can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If your application references threads or cores but makes no mention of MPI, only use <code>--cpus-per-task</code> to request CPUs. You cannot request more cores than there are on a single compute node where your job runs.</p>
-</div>
-<h3 id="multi-thread-multi-process-and-mpi">Multi-thread, Multi-process, and MPI</h3>
-<p>The majority of applications in the world were written to use one or more cores on a single computer.  Most can only use one core, and do not benefit from being given more cores. The best way to speed these applications up is to run many separate jobs at once, using <a href="/clusters-at-yale/job-scheduling/dsq/">Dead Simple Queue</a> or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>. </p>
-<p>If an application is able to use multiple cores, it usually achieves this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node. MPI translates what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, Slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using <code>--ntasks=4</code> (or <code>-n 4</code>) and <code>--cpus-per-task=4</code> (or <code>-c 4</code>) achieves the same job allocation by luck, but you should only use <code>--cpus-per-task</code> when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessable.</p>
-<p>Some MPI programs are also multi-threaded, so each process can use multiple CPUs. Only these applications can use <code>--ntasks</code> <em>and</em> <code>--cpus-per-task</code> to run faster.</p>
-<h4 id="mpi-applications">MPI Applications</h4>
-<p>For more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
-<div class="highlight"><pre><span></span><code>ntasks-per-node * nodes &gt;= ntasks
+                <h1 id="rebuilding-conda-environemnts-for-mccleary-migration">Rebuilding conda environemnts for McCleary migration</h1>
+<p>As the Farnam and Ruddle clusters are decommissioned and work migrates to the new cluster McCleary, there is a need to simplify the migration of conda environments. </p>
+<p>There are two concepts for rebuilding conda environments:</p>
+<ol>
+<li>a copy of an existing environment, with identical versions of each package</li>
+<li>a fresh build following the same steps taken to creat the first environment (letting unspecified versions float)</li>
+</ol>
+<p>This short doc will walk through recommended approaches to both styles of exporting and rebuilding a generic environment named <code>test</code> containing python, jupyter, numpy, and scipy.</p>
+<h2 id="full-export-including-dependencies">Full export including dependencies</h2>
+<p>To export the exact versions of each package installed (including all dependencies) run:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --no-builds --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div>
-<h4 id="hybrid-mpiopenmp-applications">Hybrid (MPI+OpenMP) Applications</h4>
-<p>For the most predictable performance for hybrid applications, you will need to use all three of the <code>--ntasks</code>, <code>--cpus-per-task</code>, and <code>--nodes</code> flags, where <code>--ntasks</code> equals the number of MPI tasks, <code>--cpus-per-task</code> equals the number of <code>OMP_NUM_THREADS</code> and <code>--nodes</code> is the number of nodes required to fit <code>--ntasks * --cpus-per-task</code>.</p>
-<h2 id="request-memory-ram">Request Memory (RAM)</h2>
-<p>Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and <a href="/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory">you will get errors</a>. Make sure you either request the right amount of memory per core on each node in your job with <code>--mem-per-cpu</code> or memory per node in your job with <code>--mem</code>. You can request more memory than you think you might need for an example job, then <a href="/clusters-at-yale/job-scheduling/resource-usage/">make note of its actual usage</a> to better tune future requests for similar jobs.</p>
-<h2 id="request-gpus">Request GPUs</h2>
-<p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters">individual cluster pages</a> regarding node configurations that include GPUs. There are several <code>salloc</code>/<code>sbatch</code> options that allow you to request GPUs and specify your job layout relative to the GPUs requested.</p>
-<table>
-<thead>
-<tr>
-<th>Long Option<img width=200/></th>
-<th>Short Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--cpus-per-gpu</code></td>
-<td></td>
-<td>Use instead of <code>--cpus-per-task</code> to specify number of CPUs per allocated GPU.</td>
-</tr>
-<tr>
-<td><code>--gpus</code></td>
-<td><code>-G</code></td>
-<td>Specify the <em>total number</em> of GPUs required for the job either with number or type:number.</td>
-</tr>
-<tr>
-<td><code>--gpus-per-node</code></td>
-<td></td>
-<td>Specify the number of GPUs <em>per node</em>, either with number or type:number. New option similar to <code>--gres=gpu</code>.</td>
-</tr>
-<tr>
-<td><code>--gpus-per-task</code></td>
-<td></td>
-<td>Specify the number of GPUs <em>per task</em>, either with number or type:number.</td>
-</tr>
-<tr>
-<td><code>--mem-per-gpu</code><sup>*</sup></td>
-<td></td>
-<td>Request system memory that scales per GPU. The <code>--mem</code>, <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code> options are mutually exclusive</td>
-</tr>
-<tr>
-<td><code>--constraint</code></td>
-<td><code>-C</code></td>
-<td>Request a selection of GPU types (separate types with <code>|</code>). This option requires the <code>--gpus</code> option for GPU selection.</td>
-</tr>
-</tbody>
-</table>
-<p><sup>* The <code>--mem-per-gpu</code> flag does not currently work as intended, please do not use. Request memory using <code>--mem</code> or <code>--mem-per-cpu</code> in the meantime.</sup></p>
-<p>In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - <strong>the default GPU request for jobs is to not request any</strong>. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options <code>--mem</code>, <code>--mem-per-gpu</code> and <code>--mem-per-cpu</code> do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. </p>
-<h3 id="request-specific-gpu-types">Request Specific GPU Types</h3>
-<p>If your job can only run on a subset of the GPU types available in the partition, you can request one or more specific types of GPUs. </p>
-<p>To request a specific type of GPU, use <code>type:number</code> notation. For example, to request an NVIDIA P100.</p>
-<div class="highlight"><pre><span></span><code>sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
+<p>This yaml file is ~230 lines long and contains every package that is installed in the <code>test</code> environment.</p>
+<p>Since we are moving this environment to a different system with a different directory where conda environments are stored, we need to remove the line in this print out related to the "prefix". </p>
+<h2 id="export-only-specified-packages">Export only specified packages</h2>
+<p>If we simply wish to rebuild the environment using the steps previously employed to create it, we can replace <code>--no-builds</code> with <code>--from-history</code>. 
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --from-history --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
+</code></pre></div></p>
+<p>This is a much smaller file, ~10 lines, and only lists the packages explicitly installed:</p>
+<div class="highlight"><pre><span></span><code>name: test
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - scipy
+  - numpy=1.21
+  - jupyter
+  - python=3.8
 </code></pre></div>
-<p>To submit your job to a number of GPU options (such as NVIDIA P100, V100 or A100), use a combination of the constraint flag (<code>-C</code>) and the <code>--gpus</code> flag (with just a number). For the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">constraint flag</a>, separate the different GPU type names with the pipe character (<code>|</code>). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.</p>
-<div class="highlight"><pre><span></span><code>sbatch -C &quot;p100|v100|a100&quot; --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
+<p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
+<h2 id="build-new-environment">Build new environment</h2>
+<p>Now we can take this file from Farnam/Ruddle to McCleary and create a new environment using all the enumerated pacakges:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env create --file test_export.yaml
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:</p>
-<div class="highlight"><pre><span></span><code>salloc --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel
-</code></pre></div>
-</div>
-<p>For more documentation on using GPUs on our clusters, please see <a href="/clusters-at-yale/guides/gpus-cuda">GPUs and CUDA</a>.</p>
-<h2 id="features-and-constraints">Features and Constraints</h2>
-<p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
-<p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx512</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types. Multiple requirements ("AND") are separated by a comma (<code>,</code>) and multiple options ("OR") should be separated by the pipe character (<code>|</code>).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)</span>
-sbatch --constraint<span class="o">=</span>haswell submit.sh
-
-<span class="c1"># only run on nodes with E5-2660 v4 CPUs</span>
-sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
-</code></pre></div>
-<p>We also have keyword features to help you constrain your jobs to certain categories of nodes.  </p>
-<ul>
-<li><code>oldest</code>: the oldest generation of node on the cluster. Use this constraint when compiling code if you wish to ensure it can run on any standard node on the cluster.</li>
-<li><code>nogpu</code>: nodes without GPUs.</li>
-<li><code>standard</code>: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.</li>
-<li><code>singleprecision</code>: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).</li>
-<li><code>doubleprecision</code>: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).</li>
-<li>GPU type (e.g. <code>v100</code>): nodes with a specific type of GPU. </li>
-<li><code>bigtmp</code>: nodes with at least 1.5T of local storage in <code>/tmp</code>. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's <code>$GAUSS_SCRDIR</code>).  </li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Use the command <code>scontrol show node &lt;hostname&gt;</code>, replacing <code>&lt;hostname&gt;</code> with the node's name you're interested in, to see more information about the node including its features.</p>
-</div>
+<p>This will create a new environment (with the same name <code>test</code>) on McCleary which.</p>
                 
                   
                     
@@ -2489,7 +2320,7 @@ sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
       
     
   </small>
