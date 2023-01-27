@@ -43,7 +43,7 @@ Make sure to:
 
 !!!warning
     Every cluster has two login nodes.  If you cannot find your tmux session, it might be running on the other node.  Check the hostname of your current login node (from either your command prompt or from running `hostname -s`), then use ssh to login to the other one.  
-    For example, if you are logged in to farnam1, use `ssh -Y farnam2` to reach the other login node.
+    For example, if you are logged in to grace1, use `ssh -Y grace2` to reach the other login node.
 
 
 ### Windows and Panes
@@ -53,10 +53,10 @@ Make sure to:
 Say you just submitted an interactive job that is running on a compute node inside your `tmux` session.
 
 ``` bash
-[be59@farnam2 ~]$ tmux new -s analysis
+[ms725@grace1 ~]$ tmux new -s analysis
 # I am in my tmux session now
-[be59@farnam2 ~]$ salloc
-[be59@c23n08 ~]$ ./my_fancy_analysis.sh
+[ms725@grace1 ~]$ salloc -p interactive
+[ms725@c14n02 ~]$ ./my_fancy_analysis.sh
 ```
 
 Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running `top` there. Split your window by typing:
@@ -67,12 +67,12 @@ Now you can easily monitor its CPU and memory utilization without ever taking yo
 
 ``` bash
 # I'm in a new pane now.
-[be59@farnam2 ~]$ ssh c23n08
-[be59@c23n08 ~]$ top
+[ms725@grace1 ~]$ ssh c14n02
+[ms725@c14n02 ~]$ top
 ```
 
 Your view will look something like this:
 
-![tmux](/img/tmux-ben.png)
+![tmux](/img/tmux-michael.png)
 
 To switch back and forth between panes, type <kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>o</kbd>
