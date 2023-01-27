@@ -4,6 +4,11 @@ In the process of migrating from Farnam and Ruddle to McCleary, we are requestin
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
 Transfers should be initiated on Farnam or Ruddle and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary homespaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
 
+!!! Warning 
+	Do not attempt to transfer conda environments to McCleary. 
+	Environments are not portable and will not work properly if simply copied.
+	Instead, please export and rebuild environments following our [guide](/clusters-at-yale/guides/conda-export).
+
 The two tools we recommend for this transfer are `rsync` and `Globus`.
 `rsync` is a command-line utility which copies files, along with their attributes, with protections against file corruption. 
 `Globus` is a web app where you can schedule large transfers which occur in the background and provide notifications when complete.
