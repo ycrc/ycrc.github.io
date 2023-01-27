@@ -1,8 +1,8 @@
 # Transfer data from Farnam/Ruddle to McCleary
 
 In the process of migrating from Farnam and Ruddle to McCleary, we are requesting researchers migrate their own data.
-The new McCleary cluster will temporarily mount the filesystems from Farnam and Ruddle to facilite this process.
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
+Transfers should be initiated on Farnam or Ruddle and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary homespaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
 
 The two tools we recommend for this transfer are `rsync` and `Globus`.
 `rsync` is a command-line utility which copies files, along with their attributes, with protections against file corruption. 
@@ -48,7 +48,7 @@ rsync -avP /gpfs/ysm/project/GROUP/NETID/my_data /gpfs/gibbs/project/GROUP/NETID
 Similarly, to transfer a directory (`my_code`) from your YCGA homespace to your new McCleary homespace:
 
 ```sh
-rsync -avP /gpfs/ycga/home/NETID/my_code /home/NETID/
+rsync -avP /home/NETID/my_code /vast/palmer/home.mccleary/NETID/
 ```
 
 where `GROUP` and `NETID` are replaced by your specific group/netid.
@@ -65,14 +65,15 @@ For more information about `tmux`, please see their [Getting Started Guide](http
 ## Globus
 
 Yale provides dedicated Globus connections for each of the clusters following the naming convention `yale#cluster_name`. 
-McCleary's globus connector is named `yale#mccleary` and provides access to all the filesystems affected by the decommissioning of Farnam and Ruddle.
+Transfers can be managed through existing accounts on Farnam or Ruddle, using `yale#farnam` or `yale#ruddle`.
+#McCleary's globus connector is named `yale#mccleary` and provides access to all the filesystems affected by the decommissioning of Farnam and Ruddle.
 For a general getting started with Globus, please check out their [website](https://docs.globus.org/how-to/get-started/).
 We have a stand-alone docs page about Globus [here](/data/globus), but here we will detail the process to transfer data from YSM (for example) to the Gibbs file system.
 
 1. log in to [app.globus.org](https://app.globus.org) and use your Yale credentials to authenticate. 
-2. navigate to the File Manager and access McCleary by searching for the "collection" `yale#mccleary` in the left-hand panel.
+2. navigate to the File Manager and access Farnam or Ruddle by searching for the "collection" `yale#farnam` or `yale#ruddle` in the left-hand panel.
 3. find the files you wish to transfer, using the check-boxes to select any and all files needed.
-4. click on the "Transfer or Sync to" option and in the right-hand panel also search for the `yale#mccleary` collection.
+4. click on the "Transfer or Sync to" option and in the right-hand panel also search for the same cluster's (either `yale#farnam` or `yale#ruddle`) collection.
 5. navigate through the file-browser to find the desired destination for these data (most likely `gibbs_project` or a subdirectory).
 6. start the transfer, click the "Start" button on the left-hand side.
 
