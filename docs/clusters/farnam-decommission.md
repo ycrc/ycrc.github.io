@@ -33,8 +33,8 @@ If you have data on the Gibbs, there is no action required as they will be avail
 
 If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not expired), we will migrate your allocation at a mutually agreeable time. **This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.**  
 
-If you have purchased storage on /gpfs/ysm that has expired or will be expiring in 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which will be available on McCleary).
+If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which will be available on McCleary).
  
-Likewise, if you have purchased nodes on Farnam that are at their end of life, you should have received a separate communication from us with more information. All newer nodes will be transferred to McCleary and placed in similarly named partitions as on Farnam and Ruddle. Communications about node migrations will be sent when McCleary becomes available.
+Likewise, if you have purchased nodes on Farnam that are at their end of life (`haswell` generation nodes), you should have received a separate communication from us with more information. All newer nodes will be transferred to McCleary and placed in similarly named partitions as on Farnam and Ruddle. Communications about node migrations will be sent when McCleary becomes available.
  
 If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.
