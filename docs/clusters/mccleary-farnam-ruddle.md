@@ -6,6 +6,10 @@ During the initial weeks of this phase, researchers should be aware that the clu
 In light of this, the YCRC compute service charges will not apply on McCleary commons partitions  until Farnam is formally decommissioned.
 
 
+!!! note
+    McCleary will be launching in February. Keep an eye on this page or your email for updates.
+
+
 ## Accounts
 
 Most Farnam and Ruddle users who have been active in the last year will have had their accounts already created on McCleary and will receive an email to that effect. 

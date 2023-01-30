@@ -6,7 +6,14 @@ McCleary is a shared-use resource for the [Yale School of Medicine](https://medi
 
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
+!!! note
+    McCleary will be launching in February. Keep an eye on this page or your email for updates.
+
 - - -
+
+!!! note
+    Farnam or Ruddle user? See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about using McCleary and how it differs from Farnam and Ruddle.
+
 
 ## Access the Cluster
 
