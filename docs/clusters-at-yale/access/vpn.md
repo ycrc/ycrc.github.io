@@ -5,7 +5,7 @@ Yale's clusters can only be accessed on the Yale network. Therefore, in order to
 ## VPN Software
 ### Windows and macOS
 
-We recommend the Cisco AnyConnect VPN Client, which can be downloaded from the [ITS Software Library](http://software.yale.edu/software/cisco-vpn-anyconnect).
+We recommend the Cisco AnyConnect VPN Client, which can be downloaded from the [ITS Software Library](https://yale.onthehub.com/WebStore/ProductSearchOfferingList.aspx?srch=cisco).
 
 ### Linux
 
