@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/mccleary-transfer/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2185,6 +2185,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2205,7 +2212,11 @@
                 <h1 id="transfer-data-from-farnamruddle-to-mccleary">Transfer data from Farnam/Ruddle to McCleary</h1>
 <p>In the process of migrating from Farnam and Ruddle to McCleary, we are requesting researchers migrate their own data.
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
-Transfers should be initiated on Farnam or Ruddle and sync'd to either Gibbs project directories (<code>/gpfs/gibbs/project/GROUP/NETID</code>) or their McCleary homespaces (which are mounted at <code>/vast/palmer/home.mccleary/NETID</code>).</p>
+Transfers should be initiated on Farnam or Ruddle's <code>transfer</code> nodes and sync'd to either Gibbs project directories (<code>/gpfs/gibbs/project/GROUP/NETID</code>) or their McCleary homespaces (which are mounted at <code>/vast/palmer/home.mccleary/NETID</code>).
+All users are able to log into the <code>transfer</code> nodes via ssh:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@farnam1 ~<span class="o">]</span>$ ssh transfer
+<span class="o">[</span>tl397@transfer-farnam ~<span class="o">]</span>$
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not attempt to transfer conda environments to McCleary. 
@@ -2250,9 +2261,8 @@ To reattach to a detached session, run <code>tmux attach</code> from the same ho
 For more information about <code>tmux</code>, please see their <a href="https://github.com/tmux/tmux/wiki/Getting-Started">Getting Started Guide</a>.</p>
 <h2 id="globus">Globus</h2>
 <p>Yale provides dedicated Globus connections for each of the clusters following the naming convention <code>yale#cluster_name</code>. 
-Transfers can be managed through existing accounts on Farnam or Ruddle, using <code>yale#farnam</code> or <code>yale#ruddle</code>.</p>
-<h1 id="mcclearys-globus-connector-is-named-yalemccleary-and-provides-access-to-all-the-filesystems-affected-by-the-decommissioning-of-farnam-and-ruddle">McCleary's globus connector is named <code>yale#mccleary</code> and provides access to all the filesystems affected by the decommissioning of Farnam and Ruddle.</h1>
-<p>For a general getting started with Globus, please check out their <a href="https://docs.globus.org/how-to/get-started/">website</a>.
+Transfers can be managed through existing accounts on Farnam or Ruddle, using <code>yale#farnam</code> or <code>yale#ruddle</code>.
+For a general getting started with Globus, please check out their <a href="https://docs.globus.org/how-to/get-started/">website</a>.
 We have a stand-alone docs page about Globus <a href="/data/globus">here</a>, but here we will detail the process to transfer data from YSM (for example) to the Gibbs file system.</p>
 <ol>
 <li>log in to <a href="https://app.globus.org">app.globus.org</a> and use your Yale credentials to authenticate. </li>
@@ -2274,7 +2284,7 @@ You will receive an email when the transfer completes detailing the size and ave
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>
