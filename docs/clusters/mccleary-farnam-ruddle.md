@@ -17,6 +17,20 @@ All other users can request an account using our [Account Request form](https://
 
 Any new additions to Farnam and Ruddle in the coming months will also automatically be granted a McCleary account.
 
+
+!!! warning
+	Check which group your new McCleary account is associated with and make sure that matches your expection.
+	This is the group that will be charged (if/when applicable) for your compute usage as well as dictate which private partitions you may have access to.
+	Any cluster specific changes previously made on Farnam or Ruddle will not be automatically reflected on McCleary.
+	To check, run the following command (replacing `<netid>` with your netid):
+
+	```
+	sacctmgr show user <netid>
+	```
+
+	If you need your group association changed, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu).
+
+
 ## Access
 
 ### Hostname
