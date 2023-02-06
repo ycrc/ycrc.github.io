@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2368,7 +2368,7 @@
                 
                 
                 <h1 id="gpus-and-cuda">GPUs and CUDA</h1>
-<p>There are GPUs available for general use on the YCRC clusters. In order to use them, you must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request them for your job</a>. See the <a href="/clusters/grace">Grace</a>, <a href="/clusters/farnam">Farnam</a>, and <a href="/clusters/milgram">Milgram</a> pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
+<p>There are GPUs available for general use on the YCRC clusters. In order to use them, you must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request them for your job</a>. See the <a href="/clusters/grace">Grace</a>, <a href="/clusters/mccleary">McCleary</a>, and <a href="/clusters/milgram">Milgram</a> pages for hardware and partition specifics. Please do not use nodes with GPUs unless your application or job can make use of them. Any jobs submitted to a GPU partition without having requested a GPU may be terminated without warning.</p>
 <h2 id="monitor-activity-and-drivers">Monitor Activity and Drivers</h2>
 <p>The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on <a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">this nvidia developer site</a>.</p>
 <p>You can check the available GPUs, their current usage, installed version of the nvidia drivers, and more with the command <a href="https://developer.nvidia.com/nvidia-system-management-interface"><code>nvidia-smi</code></a>. Either in an interactive job or after connecting to a node running your job with <code>ssh</code>,  <code>nvidia-smi</code> output should look something like this:</p>
@@ -2448,7 +2448,7 @@ conda create --name pytorch_env pytorch torchvision torchaudio <span class="nv">
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
       
     
   </small>

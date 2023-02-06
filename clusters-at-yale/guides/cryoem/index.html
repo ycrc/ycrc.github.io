@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryoem/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cryogenic-electron-microscopy-cryo-em-data-processing-on-farnam" class="md-skip">
+        <a href="#cryogenic-electron-microscopy-cryo-em-data-processing-on-mccleary" class="md-skip">
           Skip to content
         </a>
       
@@ -2421,21 +2421,21 @@
                   </a>
                 
                 
-                <h1 id="cryogenic-electron-microscopy-cryo-em-data-processing-on-farnam">Cryogenic Electron Microscopy (Cryo-EM) Data Processing on Farnam</h1>
-<p>Below is a work in progress collection of general hints, tips and tricks for running your work on <a href="/clusters/farnam">Farnam</a>. As always, if anything below is unclear or could use updating, please let us know <a href="/#get-help">during office hours, via email or through our web ticketing system</a>.</p>
+                <h1 id="cryogenic-electron-microscopy-cryo-em-data-processing-on-mccleary">Cryogenic Electron Microscopy (Cryo-EM) Data Processing on McCleary</h1>
+<p>Below is a work in progress collection of general hints, tips and tricks for running your work on <a href="/clusters/mccleary">McCleary</a>. As always, if anything below is unclear or could use updating, please let us know <a href="/#get-help">during office hours, via email or through our web ticketing system</a>.</p>
 <h2 id="storage">Storage</h2>
 <p>Be wary of you and your group's storage quotas. Run <code>getquota</code> from time to time to make sure there isn't usage you aren't expecting. We strongly recommend that you archive raw data off-cluster, as <strong>only home directories are backed up</strong>. Let us know if you need extra space and we can work with you to find a solution that is right for your project and your group.</p>
 <p>On most GPU nodes there is a fast SSD mounted at <code>/tmp</code>. You can use this as a fast local cache if your program can take advantage of it.</p>
 <h2 id="schedule-jobs">Schedule Jobs</h2>
-<p>Many Cryo-EM applications can make use of GPUs as co-processors. In order to use a GPU on Farnam you must allocate a job on a partition with GPUs available and explicitly request GPU(s). Make sure to familiarize yourself with our documentation on <a href="/clusters-at-yale/job-scheduling/">scheduling jobs</a> and <a href="/clusters-at-yale/job-scheduling/resource-requests/">requesting specific resources</a>.</p>
-<p>There are four <a href="/clusters/farnam/#public-partitions">partitions</a> that give you access to GPUs. The gpu, gpu_devel and savenge_gpu partitions are all for general use. The use of the <code>pi_cryoem</code> and <code>pi_tomo</code> partitions are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI (<a href="https://cryoem.yale.edu/contact">See here for contact info</a>) for access.</p>
+<p>Many Cryo-EM applications can make use of GPUs as co-processors. In order to use a GPU on McCleary you must allocate a job on a partition with GPUs available and explicitly request GPU(s). Make sure to familiarize yourself with our documentation on <a href="/clusters-at-yale/job-scheduling/">scheduling jobs</a> and <a href="/clusters-at-yale/job-scheduling/resource-requests/">requesting specific resources</a>.</p>
+<p>In addition to public <a href="/clusters/mccleary/#public-partitions">partitions</a> that give you access to GPUs, there are <code>pi_cryoem</code> and <code>pi_tomo</code> partitions which are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI (<a href="https://cryoem.yale.edu/contact">See here for contact info</a>) for access.</p>
 <h2 id="software">Software</h2>
 <p>Many Cryo-EM applications are meant to be viewed and interacted with in real-time. This mode of working is not ideal for the way most HPC clusters are set up, so where possible try to prototype a job you would like to run with a smaller dataset or subset of your data. Then develop a script to submit with <code>sbatch</code>.</p>
 <h3 id="relion">RELION</h3>
 <p>The <a href="https://www3.mrc-lmb.cam.ac.uk/relion//index.php/Main_Page">RELION</a> pipeline operates in two modes. You can use it as a more familiar and beginner-friendly graphical interface, or call the programs involved directly. Once you are comfortable, using the commands directly in scripts submitted with <code>sbatch</code> will allow you to get the most work done the fastest.</p>
 <p>The authors provide up-to-date hints about performance on their <a href="https://www3.mrc-lmb.cam.ac.uk/relion/index.php/Benchmarks_&amp;_computer_hardware">Benchmarks</a> page. If you need technical help (jobs submit fine but having other issues) you should search and submit to their <a href="http://www.jiscmail.ac.uk/CCPEM">mailing list</a>.</p>
 <h4 id="module">Module</h4>
-<p>We have GPU-enabled versions of RELION available on Farnam as <a href="/clusters-at-yale/applications/modules/">software modules</a>. To check witch versions are available, run <code>module avail relion</code>. To see specific notes about a particular install, you can use <code>module help</code>, e.g. <code>module help RELION/3.0.5-fosscuda-2018b</code> . </p>
+<p>We have GPU-enabled versions of RELION available on McCleary as <a href="/clusters-at-yale/applications/modules/">software modules</a>. To check witch versions are available, run <code>module avail relion</code>. To see specific notes about a particular install, you can use <code>module help</code>, e.g. <code>module help RELION/4.0.0-fosscuda-2020b</code> . </p>
 <h4 id="example-job-parameters">Example Job Parameters</h4>
 <p>RELION reserves one worker (slurm task) for orchestrating an MPI-based job, which they call the "master". This can lead to inefficient jobs where there are tasks that could be using a GPU but are stuck being the master process. You can request a better layout for your job with a <a href="https://slurm.schedmd.com/heterogeneous_jobs.html">heterogenous job</a>, allocating CPUs on a cpu-only compute node for the task that will not use GPUs. Here is an example 3D refinement job submission script (replace <code>choose_a_version</code> with the version you want to use):</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2470,7 +2470,7 @@ srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refin
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
       
     
   </small>
