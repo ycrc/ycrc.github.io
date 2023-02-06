@@ -44,7 +44,7 @@ If your job is already running, you can check on its usage, but will have to wai
 ```
 [netid@node ~]$ squeue --me
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
+          21252409   general    12345    netid   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
 ```
 
 Then use ssh to connect to a node your job is running on from the `NODELIST` column:
