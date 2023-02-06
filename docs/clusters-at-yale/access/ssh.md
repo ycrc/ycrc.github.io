@@ -75,6 +75,14 @@ Copy and paste the output to our [SSH key uploader](https://sshkeys.hpc.yale.edu
 
 Once your key has been copied to the appropriate places on the clusters, you can log in with the command:
 
+
+#### For McCleary
+```
+ssh netid@clustername.ycrc.yale.edu
+```
+
+#### For all other clusters
+
 ```
 ssh netid@clustername.hpc.yale.edu
 ```
