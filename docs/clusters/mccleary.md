@@ -30,6 +30,12 @@ McCleary is made up of several kinds of compute nodes. We group them into  (some
 --8<-- "snippets/submission_rate_limit.md"
 
 
+### Public Partitions
+
+See each tab below for more information about the available common use partitions.
+
+--8<-- "snippets/mccleary_partitions.md"
+
 ## Public Datasets
 
 We host datasets of general interest in a loosely organized directory tree in `/gpfs/gibbs/data`:
