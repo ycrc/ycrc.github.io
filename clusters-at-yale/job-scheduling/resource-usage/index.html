@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-usage/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2430,7 +2430,7 @@ stress-ng: info:  <span class="o">[</span><span class="m">32574</span><span clas
 <p>If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should <code>ssh</code> to, run:</p>
 <div class="highlight"><pre><span></span><code>[netid@node ~]$ squeue --me
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
+          21252409   general    12345    netid   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
 </code></pre></div>
 <p>Then use ssh to connect to a node your job is running on from the <code>NODELIST</code> column:</p>
 <div class="highlight"><pre><span></span><code>[netid@node ~]$ ssh c13n03
