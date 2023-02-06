@@ -1387,8 +1387,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cyberduck-on-ruddle" class="md-nav__link">
-    Cyberduck on Ruddle
+  <a href="#cyberduck-on-mccleary-and-ruddle" class="md-nav__link">
+    Cyberduck on McCleary and Ruddle
   </a>
   
 </li>
@@ -2429,8 +2429,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cyberduck-on-ruddle" class="md-nav__link">
-    Cyberduck on Ruddle
+  <a href="#cyberduck-on-mccleary-and-ruddle" class="md-nav__link">
+    Cyberduck on McCleary and Ruddle
   </a>
   
 </li>
@@ -2599,6 +2599,7 @@
 </tr>
 </tbody>
 </table>
+<p>McCleary will have a transfer node shortly. In the meantime, you can access your McCleary data from the Farnam and Ruddle transfer nodes.</p>
 <p>From the login node of any cluster, you can <code>ssh</code> into the transfer node. This is useful for transferring data to or from locations other than your local machine (see below for details).</p>
 <div class="highlight"><pre><span></span><code>[netID@cluster ~] ssh transfer
 </code></pre></div>
@@ -2611,8 +2612,8 @@
 <h4 id="cyberduck">Cyberduck</h4>
 <p>You can also transfer files between your local computer and a cluster using an FTP client, such as <a href="https://cyberduck.io/">Cyberduck (OSX/Windows)</a>. You will need to configure the client with your netid as the username, the cluster transfer node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.</p>
 <p><img alt="Cyberduck sample configuration." src="/img/cyberduck.png" /></p>
-<h5 id="cyberduck-on-ruddle">Cyberduck on Ruddle</h5>
-<p>Ruddle requires <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
+<h5 id="cyberduck-on-mccleary-and-ruddle">Cyberduck on McCleary and Ruddle</h5>
+<p>McCleary and Ruddle require <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
 <p>When you connect type one of the following when prompted with a "Partial authentication success" window.</p>
 <ul>
 <li>"push" to receive a push notification to your smart phone (requires the Duo mobile app)</li>
@@ -2685,7 +2686,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
       
     
   </small>
