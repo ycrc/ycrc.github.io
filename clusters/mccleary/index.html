@@ -2190,6 +2190,26 @@
     Partitions and Hardware
   </a>
   
+    <nav class="md-nav" aria-label="Partitions and Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ycga-partitions" class="md-nav__link">
+    YCGA Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2253,6 +2273,618 @@
 <p class="admonition-title">Job Submission Rate Limits</p>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
 </div>
+<h3 id="public-partitions">Public Partitions</h3>
+<p>See each tab below for more information about the available common use partitions.</p>
+<div class="tabbed-set" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the day partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>400</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>3200G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>200</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1600G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
+<p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the interactive partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>32G</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2680_v4</td>
+<td>28</td>
+<td>245</td>
+<td>broadwell, avx2, E5-2680_v4, nogpu, standard, pi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">week</label><div class="tabbed-content">
+<p>Use the week partition for jobs that need a longer runtime than day allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the week partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>40</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>320G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>160G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">transfer</label><div class="tabbed-content">
+<p>Use the transfer partition to stage data for your jobs to and from <a href="/clusters-at-yale/data/#staging-data">cluster storage</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the transfer partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>2</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu</label><div class="tabbed-content">
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>2-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per group</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">bigmem</label><div class="tabbed-content">
+<p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>64</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>1000G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>32</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>500G</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">scavenge</label><div class="tabbed-content">
+<p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>20000G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>35</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2680_v4</td>
+<td>28</td>
+<td>245</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, avx2, E5-2680_v4, nogpu, standard, pi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">scavenge_gpu</label><div class="tabbed-content">
+<p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge_gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per group</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="ycga-partitions">YCGA Partitions</h3>
+<p>The following partitions are intended for projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>. Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please <a href="/#get-help">contact us</a> to get approved and added.</p>
+<details class="summary">
+<summary>YCGA Partitions (click to expand)</summary>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">ycga</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the ycga partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>64</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1000G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 <h2 id="public-datasets">Public Datasets</h2>
 <p>We host datasets of general interest in a loosely organized directory tree in <code>/gpfs/gibbs/data</code>:</p>
 <div class="highlight"><pre><span></span><code>├── annovar
@@ -2341,7 +2973,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
       
     
   </small>

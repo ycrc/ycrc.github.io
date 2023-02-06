@@ -2263,9 +2263,9 @@
                 
                 <h1 id="advanced-ssh-configuration">Advanced SSH Configuration</h1>
 <h2 id="example-ssh-config">Example SSH <code>config</code></h2>
-<p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh farnam</code> or <code>scp ~/my_file farnam:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
+<p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh grace</code> or <code>scp ~/my_file grace:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
 <p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
-<div class="highlight"><pre><span></span><code># To re-use your connections with multi-factor authentication (e.g. Ruddle)
+<div class="highlight"><pre><span></span><code># To re-use your connections with multi-factor authentication (e.g. McCleary or Ruddle)
 # Uncomment the two lines below
 #ControlMaster auto
 #ControlPath ~/.ssh/tmp/%h_%p_%r
@@ -2280,17 +2280,15 @@ Host *.hpc.yale.edu farnam grace milgram ruddle
     User NETID
 #   ForwardX11 yes
 
-Host farnam
-     HostName farnam.hpc.yale.edu
+Host *.ycrc.yale.edu mccleary
+    User NETID
+#   ForwardX11 yes
 
-Host grace
-     HostName grace.hpc.yale.edu
+Host farnam grace milgram ruddle
+    HostName %h.hpc.yale.edu
 
-Host milgram
-     Hostname milgram.hpc.yale.edu
-
-Host ruddle
-     HostName ruddle.hpc.yale.edu
+Host mccleary
+     HostName %h.ycrc.yale.edu
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2312,6 +2310,10 @@ Host ruddle
 <div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu farnam grace milgram ruddle
     UseKeychain yes
     AddKeystoAgent yes
+
+Host *.ycrc.yale.edu mccleary
+    UseKeychain yes
+    AddKeystoAgent yes
 </code></pre></div>
 <p>You can view a list of the keys currently in your agent with:</p>
 <div class="highlight"><pre><span></span><code>ssh-add -L
@@ -2324,7 +2326,7 @@ Host ruddle
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2019</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
       
     
   </small>
