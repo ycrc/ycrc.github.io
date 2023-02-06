@@ -2,7 +2,13 @@
 
 In the process of migrating from Farnam and Ruddle to McCleary, we are requesting researchers migrate their own data.
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
-Transfers should be initiated on Farnam or Ruddle and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary homespaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
+Transfers should be initiated on Farnam or Ruddle's `transfer` nodes and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary homespaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
+All users are able to log into the `transfer` nodes via ssh:
+
+```sh
+[tl397@farnam1 ~]$ ssh transfer
+[tl397@transfer-farnam ~]$
+```
 
 !!! Warning 
 	Do not attempt to transfer conda environments to McCleary. 
@@ -71,7 +77,6 @@ For more information about `tmux`, please see their [Getting Started Guide](http
 
 Yale provides dedicated Globus connections for each of the clusters following the naming convention `yale#cluster_name`. 
 Transfers can be managed through existing accounts on Farnam or Ruddle, using `yale#farnam` or `yale#ruddle`.
-#McCleary's globus connector is named `yale#mccleary` and provides access to all the filesystems affected by the decommissioning of Farnam and Ruddle.
 For a general getting started with Globus, please check out their [website](https://docs.globus.org/how-to/get-started/).
 We have a stand-alone docs page about Globus [here](/data/globus), but here we will detail the process to transfer data from YSM (for example) to the Gibbs file system.
 

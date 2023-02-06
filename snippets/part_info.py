@@ -254,7 +254,7 @@ def collapse_memory_differences(partition_hardware, has_gpus):
 def sort_hardware(partition_hardware):
 
 
-    node_gens = ["cascadelake", "skylake", "broadwell", "haswell", "ivybridge", "epyc"]
+    node_gens = ["icelake", "cascadelake", "skylake", "broadwell", "haswell", "epyc"]
     nodes_by_gen = {}
 
     for node_type in partition_hardware:
@@ -356,6 +356,12 @@ pi_parts = [
     if (part.startswith("pi_") or part.startswith("psych_"))
 ]
 
+ycga_parts = [
+    part
+    for part in part_hardware
+    if part.startswith("ycga")
+]
+
 if len(pi_parts) > 0:
     print("### Private Partitions")
     print(
@@ -363,6 +369,22 @@ if len(pi_parts) > 0:
     )
     print('??? summary "PI Partitions (click to expand)"')
     for part in sorted(pi_parts):
+        print_part_table(
+            1,
+            part,
+            part_hardware[part],
+            part in parts_with_gpus,
+            defaults[part],
+            limits[part],
+        )
+
+if len(ycga_parts) > 0:
+    print("### YCGA Partitions")
+    print(
+        "The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.\n"
+    )
+    print('??? summary "YCGA Partitions (click to expand)"')
+    for part in sorted(ycga_parts):
         print_part_table(
             1,
             part,
