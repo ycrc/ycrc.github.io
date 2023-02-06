@@ -1,6 +1,6 @@
 # Practical Example: Python+TensorFlow
 
-Notes on [handson-ml2](https://github.com/ageron/handson-ml2) for YCRC clusters [Grace](/clusters/grace/) & [Farnam](/clusters/farnam/)
+Notes on [handson-ml2](https://github.com/ageron/handson-ml2) for YCRC clusters [Grace](/clusters/grace/) & [McCleary](/clusters/mccleary/)
 
 ## Prerequisites
 
