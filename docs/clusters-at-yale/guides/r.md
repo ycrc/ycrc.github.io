@@ -146,7 +146,7 @@ In that script, you can run your R script. In this case `myscript.R` is in the s
 #SBATCH -t 4:00:00
 
 module load R/4.1.0-foss-2020b
-Rscript -f myscript.R
+Rscript myscript.R
 ```
 
 To actually submit the job, run `sbatch my_r_job.sh` where the batch script above was saved as `my_r_job.sh`.
@@ -185,13 +185,13 @@ Then we can launch it with an sbatch script (`ex1.sh`):
 ```sh
 #!/bin/bash
 
-#SBATCH -n 4 -N 4 -t 5:00
-#SBATCH --mail-type=none
+#SBATCH -n 4 
+#SBATCH -t 5:00
 
 module purge
 module load R/4.1.0-foss-2020b
 
-srun Rscript -f ex1.R
+srun Rscript ex1.R
 ```
 
 This script should execute a simple broadcast and complete in a few seconds.
