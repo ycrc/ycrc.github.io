@@ -2488,7 +2488,7 @@ In that script, you can run your R script. In this case <code>myscript.R</code> 
 <span class="c1">#SBATCH -t 4:00:00</span>
 
 module load R/4.1.0-foss-2020b
-R --slave -f myscript.R
+Rscript -f myscript.R
 </code></pre></div>
 <p>To actually submit the job, run <code>sbatch my_r_job.sh</code> where the batch script above was saved as <code>my_r_job.sh</code>.</p>
 <h3 id="rstudio">RStudio</h3>
@@ -2520,7 +2520,7 @@ While there are a few different ways this can be achieved, we recommend using th
 module purge
 module load R/4.1.0-foss-2020b
 
-srun R --slave -f ex1.R
+srun Rscript -f ex1.R
 </code></pre></div>
 <p>This script should execute a simple broadcast and complete in a few seconds.</p>
 <h2 id="virtual-display-session">Virtual Display Session</h2>
@@ -2565,7 +2565,7 @@ In general, it's best to use the module installation of R for anything which req
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
       
     
   </small>
