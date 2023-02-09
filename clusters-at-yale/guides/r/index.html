@@ -2403,27 +2403,35 @@ There is no R executable provided by default; you have to choose one of the foll
 <p>We provide several versions of R as <a href="/clusters-at-yale/applications/modules">software modules</a>.
 These modules provide a broad selection of commonly used packages pre-installed.
 Notably, this includes a number of geospatial packages like <code>sf</code>, <code>sp</code>, <code>raster</code>, and <code>terra</code>.</p>
-<p>In addition, there are software modules containing extra R packages including <code>Seurat</code> (<a href="https://satijalab.org/seurat/">homepage</a>) and the <code>bioconductor</code> collection of bioinformatics packages (<a href="https://www.bioconductor.org">homepage</a>).
-These can be loaded in addition to their matching R module to provide simple access to these tools.</p>
+<p>In addition, we install a collection of the most common <code>bioconductor</code> bioinformatics packages (<a href="https://www.bioconductor.org">homepage</a>) called <code>R-bundle-Bioconductor</code>.
+This can be loaded in addition to the matching R module to provide simple access to these tools.</p>
 <h3 id="find-and-load-r">Find and Load R</h3>
 <p>Find the available versions of R version 4 with:</p>
 <div class="highlight"><pre><span></span><code>module avail R/4
 </code></pre></div>
 <p>To load version 4.1.0:</p>
-<div class="highlight"><pre><span></span><code>module load R/4.1.0-foss-2020b
+<div class="highlight"><pre><span></span><code>module load R/4.2.0-foss-2020b
 </code></pre></div>
-<p>To show installed R packages and their versions for the <code>R/4.1.0</code> module:</p>
-<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> R/4.1.0-foss-2020b
+<p>To show installed R packages and their versions for the <code>R/4.2.0</code> module:</p>
+<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> R/4.2.0-foss-2020b
 </code></pre></div>
-<p>To list the available versions of the <code>Bioconductor</code> or <code>Seurat</code> modules:</p>
-<div class="highlight"><pre><span></span><code>module avail Bioconductor
+<p>Between the base R module and the R-bundle-Bioconductor module, there are over 1000 R packages installed and ready to use. </p>
+<p>To find if your desired package is available in these modules, you can run <code>module spider $PACKAGE/$VERSION</code>:</p>
+<div class="highlight"><pre><span></span><code>module spider Seurat/4.1.1
 
-module avail Seurat
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+  Seurat: Seurat/4.1.1 <span class="o">(</span>E<span class="o">)</span>
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+    This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names <span class="k">in</span> parentheses show the module location <span class="k">in</span> the software hierarchy.
+
+
+       R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0
+
+
+Names marked by a trailing <span class="o">(</span>E<span class="o">)</span> are extensions provided by another module.
 </code></pre></div>
-<p>To load the <code>Seurat</code> module:</p>
-<div class="highlight"><pre><span></span><code>module load Seurat/4.1.0-foss-2020b-R-4.1.0
-</code></pre></div>
-<p>which will also load the <code>R/4.1.0-foss-2020b</code> module as a dependency.</p>
+<p>So to get this version of Seurat, you can load the R-bundle-Bioconductor module. 
+Then you simple <code>load.packages(Seurat)</code> to use that tool.</p>
 <h3 id="install-packages">Install Packages</h3>
 <p>The software modules include many commonly used packages, but you can install additional packages specifically for your account.
 As part of the R software modules we define an environment variable which directs R to install packages to your project space.
@@ -2431,7 +2439,7 @@ This helps prevent issues where R cannot install packages due to home-space quot
 To change the location of where R installs packages, the <code>R_LIBS_USER</code> variable can be set in your <code>~/.bashrc</code> file:</p>
 <div class="highlight"><pre><span></span><code>export R_LIBS_USER=$GIBBS_PROJECT/R/%v
 </code></pre></div>
-<p>where <code>%v</code> is a placeholder for the R major and minor version number (e.g. <code>4.1</code>).
+<p>where <code>%v</code> is a placeholder for the R major and minor version number (e.g. <code>4.2</code>).
 R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.</p>
 <p>We recommend you install packages in an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the slurm option <code>-C oldest</code>.
 This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster.
@@ -2443,14 +2451,14 @@ If you cannot find a dependency or have trouble installing an R package, <a href
 </div>
 <p>To get started load the R module and start R:</p>
 <div class="highlight"><pre><span></span><code>salloc
-module load R/4.1.0-foss-2020b
+module load R/4.2.0-foss-2020b
 R
 <span class="c1"># in R</span>
 &gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>This will throw a warning like:</p>
 <div class="highlight"><pre><span></span><code>Warning <span class="k">in</span> install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span> :
-<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.1.0-foss-2020b/lib64/R/library&quot;&#39;</span> is not writable
+<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.2.0-foss-2020b/lib64/R/library&quot;&#39;</span> is not writable
 Would you like to create a personal library
 /gpfs/gibbs/project/support/tl397/R/4.1
 to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
@@ -2458,9 +2466,9 @@ to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
-<div class="highlight"><pre><span></span><code>mkdir /path/to/your/project/space/R/4.1
+<div class="highlight"><pre><span></span><code>mkdir /path/to/your/project/space/R/4.2
 </code></pre></div>
-You only need the general minor version such as 4.0 instead of 4.0.3.</p>
+You only need the general minor version such as 4.2 instead of 4.2.2.</p>
 </div>
 <p>You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
 <div class="highlight"><pre><span></span><code># List current package locations
