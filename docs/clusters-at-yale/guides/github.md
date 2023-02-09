@@ -50,7 +50,7 @@ We can then edit these files and commit the changes into a new snapshot:
 # edit files
 echo "changed this file" >> input.txt
 $ git status
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -90,7 +90,7 @@ Then you can connect your local repository to the GitHub repo (named `my_new_rep
 
 ```sh
 git remote add origin git@github.com:user_name/my_new_repo.git
-git push -u origin master
+git push -u origin main
 ```
 
 Alternatively, a repository can be created on GitHub and then cloned to your local machine:
