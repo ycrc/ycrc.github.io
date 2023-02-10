@@ -39,7 +39,7 @@ include as much detail as possible about your request and we'll find the right p
 |[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[Farnam](/clusters/farnam)/[Ruddle](/clusters/ruddle)| Life Sciences, Bioinformatics, Python, R  |
 |[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Physics, Python, MPI |
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept |
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
 |[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters/grace)| MPI, GPUs, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[Farnam](/clusters/farnam)/[Ruddle](/clusters/ruddle) | Life Sciences, Structural Biology |
