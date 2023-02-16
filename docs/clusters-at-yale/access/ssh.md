@@ -8,7 +8,7 @@ For more advanced use cases that are not well supported by the [Web Portal (Open
 
 * Send us your public SSH key with our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Allow up to ten minutes for it to propagate.
 
-* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`.
+* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`. If you are accessing McCleary, the command is `ssh netid@mccleary.ycrc.yale.edu.`
 
 * Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters).
 
