@@ -7,4 +7,4 @@
 module purge
 module load MATLAB/2021a
 
-matlab -b "your_script"
+matlab -batch "your_script"
