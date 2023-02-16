@@ -65,7 +65,7 @@ Create a batch script with the [resource requests](/clusters-at-yale/job-schedul
 
 module load MATLAB/2021a
 # assuming you have your_script.m in the current directory
-matlab -b "your_script"
+matlab -batch "your_script"
 
 # if using MATLAB older than R2019a
 # matlab -nojvm -nodisplay -nosplash < your_script.m
