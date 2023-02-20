@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/mccleary/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -227,6 +227,8 @@
 <!-- Determine class according to level -->
 
 
+  
+
 
 
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
@@ -236,13 +238,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
         About
       </a>
     </li>
@@ -372,12 +376,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -426,14 +432,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
       
       
       
@@ -487,6 +495,117 @@
       <a href="../farnam/" class="md-nav__link">
         Farnam
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          McCleary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        McCleary
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-cluster" class="md-nav__link">
+    Access the Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-status-and-monitoring" class="md-nav__link">
+    System Status and Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitions and Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ycga-partitions" class="md-nav__link">
+    YCGA Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-datasets" class="md-nav__link">
+    Public Datasets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ycga-data" class="md-nav__link">
+    YCGA Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2256,7 +2375,7 @@
 <p>McCleary is named for <a href="https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html">Beatrix McCleary Hamburg</a>, who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>McCleary will be launching in February. Keep an eye on this page or your email for updates.</p>
+<p>McClearly is in a “beta” phase so researchers can test and migrate their workloads and data to McCleary in advance of the Farnam and Ruddle decommissions later this year. During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch. In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.</p>
 </div>
 <hr />
 <div class="admonition note">
@@ -2961,7 +3080,7 @@
 <td>10TiB/group</td>
 <td>15,000,000</td>
 <td>No</td>
-<td>&gt;=2 days</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
@@ -2973,7 +3092,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
       
     
   </small>
