@@ -9,12 +9,13 @@ If you access Open OnDemand installed on YCRC clusters from off campus, you will
 
 Open OnDemand is available on each cluster using your NetID credentials (CAS login). 
 
-| Cluster                                         | OOD site                                                   |
-|-------------------------------------------------|------------------------------------------------------------|
-| [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
-| [Farnam](/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
-| [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
-| [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
+| Cluster                        | OOD site                                                         |
+|--------------------------------|------------------------------------------------------------------|
+| [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)         |
+| [Farnam](/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)       |
+| [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
+| [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)     |
+| [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu)       |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 

@@ -5,15 +5,10 @@ McClearly is initially launching in a “beta” phase so researchers can test a
 During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch.
 In light of this, the YCRC compute service charges will not apply on McCleary commons partitions  until Farnam is formally decommissioned.
 
-
-!!! note
-    McCleary will be launching in February. Keep an eye on this page or your email for updates.
-
-
 ## Accounts
 
 Most Farnam and Ruddle users who have been active in the last year will have had their accounts already created on McCleary and will receive an email to that effect. 
-All other users can request an account using our [Account Request form](https://research.computing.yale.edu/support/hpc/account-request).
+All other users who conduct life sciences research can request an account using our [Account Request form](https://research.computing.yale.edu/support/hpc/account-request).
 
 Any new additions to Farnam and Ruddle in the coming months will also automatically be granted a McCleary account.
 
@@ -42,11 +37,11 @@ McCleary can be accessed via SSH (or MobaXterm) or transfer applications at the 
 
 Multifactor authentication via Duo is required for all users on McCleary, similar to how Ruddle is currently configured.
 This will be new to Farnam users. For most usage this additional step is minimally invasive and makes our clusters much more secure. 
-However, for users who use graphical transfer tools such as Cyberduck, please see our [MFA transfer documentation](/data/transfer/#cyberduck-on-ruddle).
+However, for users who use graphical transfer tools such as Cyberduck, please see our [MFA transfer documentation](/data/transfer/#cyberduck-on-mccleary-and-ruddle).
 
 ### Web Portal (Open OnDemand)
 
-McCleary web portal url will be [ood-mccleary.ycrc.yale.edu](http://ood-mccleary.ycrc.yale.edu). The Web Portal is not available yet, but is coming soon.
+McCleary web portal url is available at [ood-mccleary.ycrc.yale.edu](http://ood-mccleary.ycrc.yale.edu).
 
 !!! note
 	Again, the url does *not* use the domain hpc.yale.edu, but uses *ycrc*.yale.edu instead.

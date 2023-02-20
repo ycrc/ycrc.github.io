@@ -2,28 +2,30 @@
 
 After several years in service, we will be retiring the Farnam and Ruddle HPC clusters in 2023. 
 
-Farnam and Ruddle will be replaced with a new HPC cluster, McCleary. McCleary is named for Beatrix McCleary Hamburg, who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
+Farnam and Ruddle are being replaced with the new HPC cluster, McCleary. McCleary is named for Beatrix McCleary Hamburg, who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster is Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
  
 ## McCleary HPC Cluster
 
-The McCleary HPC cluster will comprise over 3000 direct-to-chip water cooled cores, latest generation GPU nodes and our first 4TB large memory nodes. Later generation nodes from Farnam will also be added 
-to McCleary to complement the new resources, while Farnam and Ruddle’s oldest nodes will be retired. 
+The [McCleary HPC cluster](/clusters/mccleary) is comprise over 3000 direct-to-chip water cooled cores, latest generation GPU nodes and our first 4TB large memory nodes.
+Later generation nodes from Farnam will also be added to McCleary to complement the new resources, while Farnam and Ruddle’s oldest nodes will be retired. 
 
-McCleary’s home and scratch spaces will join the Grace cluster on the all-flash storage system, Palmer. 
+McCleary’s home and scratch spaces are on the all-flash storage system, Palmer. 
 
-Project and PI-purchased storage will be available on the Gibbs storage system. YCGA users will have additional access to a dedicated storage system that will be a drop-in replacement for project and sequencers data from Ruddle. 
+Project and PI-purchased storage is available on the Gibbs storage system. YCGA users have additional access to `/gpfs/ygca`, which is also mounted on Ruddle. At a later date there will be a drop-in replacement for project and sequencers data from Ruddle. 
  
 ## How to Get a McCleary Account
 
-If you have been active on either cluster in 2022, your account will be considered for automatic creation on McCleary. If you have not used Farnam or Ruddle since January 1st, 2022, you will need to request an account on McCleary when it becomes available. More information on account creation and requesting accounts will be provided as we get closer to McCleary’s launch.
+We have automatically created accounts for most users who have been active on either cluster in 2022. Check your email for a "Welcome to McCleary" email with instructions on logging in.
+
+If you have not used Farnam or Ruddle since January 1st, 2022, you will need to request an account on McCleary on [our account request form](https://research.computing.yale.edu/support/hpc/account-request).
 
 ## What about My Existing Data on Farnam?
 
-Farnam’s primary filesystem, YSM (/gpfs/ysm), will be retired with the Farnam cluster. **All data on YSM (that you want to keep) will need to be transferred off the cluster, either to non-HPC storage or to a McCleary account.** More information and instructions on transferring data will be provided as McCleary’s storage becomes available.
+Farnam’s primary filesystem, YSM (/gpfs/ysm), will be retired with the Farnam cluster. **All data on YSM (that you want to keep) will need to be transferred off the cluster, either to non-HPC storage or to a McCleary account.** More information and instructions on transferring data is available [here](/data/mccleary-transfer/.
 
 ## What about My Existing Data on Ruddle?
 
-All data in project storage as well as sequencer data on Ruddle will be transferred to a new filesystem, which will be a drop in a replacement on McCleary for the existing storage.
+All data in project storage as well as sequencer data on Ruddle will be transferred to a new filesystem, which will be a drop in a replacement on McCleary for the existing `/gpfs/ycga` storage.
 
 All data you would like to keep from your Ruddle home and scratch60 directories will need to manually transferred either to non-HPC storage or to a McCleary account prior to Ruddle decommission.
  
