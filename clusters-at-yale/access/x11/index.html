@@ -2304,7 +2304,7 @@
                 
                 
                 <h1 id="graphical-interfaces-x11">Graphical Interfaces (X11)</h1>
-<p>To use a graphical interface on the clusters, your connection needs to be set up for X11 forwarding, which will transmit the graphical window from the cluster back to your local machine. A simple test to see if your setup is working is to run the command <code>xclock</code> . You should see a simple analog clock window pop up.</p>
+<p>To use a graphical interface on the clusters and you choose not to use the <a href="/clusters-at-yale/access/ood/">web portal</a>, your connection needs to be set up for X11 forwarding, which will transmit the graphical window from the cluster back to your local machine. A simple test to see if your setup is working is to run the command <code>xclock</code> . You should see a simple analog clock window pop up.</p>
 <h2 id="on-macos">On macOS</h2>
 <ol>
 <li>Download and Install <a href="https://www.xquartz.org/releases/XQuartz-2.7.8.html">X-Quartz v2.7.8</a> (newer versions will not work with our clusters).</li>
@@ -2315,7 +2315,7 @@
 <div class="highlight"><pre><span></span><code>launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
 </code></pre></div>
 <h2 id="on-windows">On Windows</h2>
-<p>We recommend <a href="/clusters-at-yale/access/#windows">MobaXterm</a> for connecting to the clusters from Windows. It is configured for X11 forwarding out of the box and should require no additional configuration or software.</p>
+<p>We recommend <a href="/access/ssh/#windows">MobaXterm</a> for connecting to the clusters from Windows. It is configured for X11 forwarding out of the box and should require no additional configuration or software.</p>
 <h2 id="quick-test">Quick Test</h2>
 <p>A quick and simple test to check if X11 forwarding is working is to run the command <code>xclock</code> in the session you expect to be forwarding. After a short delay, you should see a window with a simple clock pop up.</p>
 <h2 id="submit-an-x11-enabled-job">Submit an X11 enabled Job</h2>
@@ -2331,7 +2331,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
       
     
   </small>

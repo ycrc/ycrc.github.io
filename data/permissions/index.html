@@ -2397,7 +2397,7 @@
 <h2 id="home-directories">Home Directories</h2>
 <p><strong>Do not give your home directory group write permissions. This will break your ability to log into the cluster.</strong>  If you need to share files currently located in your home directory, either move it your project directory or <a href="/#get-help">contact us</a> for assistance finding an appropriate location.</p>
 <h3 id="project-and-scratch60-links-in-home-directories"><code>project</code> and <code>scratch60</code> links in Home Directories</h3>
-<p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>~/scratch60</code> (and <code>palmer_scratch</code> on <a href="/clusters/grace">Grace</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
+<p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>~/scratch60</code> (and <code>palmer_scratch</code> on <a href="/clusters/grace">Grace</a> and <a href="/clusters/mccleary">McCleary</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
 <p>You can run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.</p>
 <h2 id="share-data-within-your-group">Share Data within your Group</h2>
 <p>By default, all project, purchased allocation and scratch60 directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.</p>
@@ -2444,7 +2444,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
       
     
   </small>
