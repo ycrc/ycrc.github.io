@@ -2,7 +2,7 @@
 
 ![Beatrix McCleary Hamburg](/img/beatrix-mccleary.jpg){: .cluster-portrait}
 
-McCleary is a shared-use resource for the [Yale School of Medicine](https://medicine.yale.edu) (YSM) and projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.
+McCleary is a shared-use resource for the [Yale School of Medicine](https://medicine.yale.edu) (YSM), life science researchers elsewhere on campus and projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.
 
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
@@ -21,11 +21,11 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 
 ## System Status and Monitoring
 
-For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/farnam/).
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status).
 
 ## Partitions and Hardware
 
-McCleary is made up of several kinds of compute nodes. We group them into  (sometimes overlapping)  [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
+McCleary is made up of several kinds of compute nodes. We group them into (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
 
 --8<-- "snippets/submission_rate_limit.md"
 
