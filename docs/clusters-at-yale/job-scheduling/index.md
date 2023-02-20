@@ -6,7 +6,7 @@ Submitting a job involves specifying a resource request then running one or more
 
 !!! info "Please be a good cluster citizen."
 
-    - Do not run heavy computation on login nodes (e.g. `grace1`, `farnam2`). Doing so negatively impacts everyone's ability to interact with the cluster.
+    - Do not run heavy computation on login nodes (e.g. `grace1`, `login1.mccleary`). Doing so negatively impacts everyone's ability to interact with the cluster.
     - Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on [Monitoring CPU and Memory Usage](/clusters-at-yale/job-scheduling/resource-usage) for how to measure job resource usage.
     - If you plan to run many similar jobs, use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html) - we enforce limits on [job submission rates](/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits) on all clusters.
 

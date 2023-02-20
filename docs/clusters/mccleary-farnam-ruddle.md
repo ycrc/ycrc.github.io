@@ -35,7 +35,7 @@ McCleary can be accessed via SSH (or MobaXterm) or transfer applications at the 
 !!! note
 	The hostname does *not* use the domain hpc.yale.edu, but uses *ycrc*.yale.edu instead.
 
-Multifactor authentication via Duo is required for all users on McCleary, similar to how Ruddle is currently configured.
+[Multifactor authentication via Duo](/clusters-at-yale/access/mfa/) is required for all users on McCleary, similar to how Ruddle is currently configured.
 This will be new to Farnam users. For most usage this additional step is minimally invasive and makes our clusters much more secure. 
 However, for users who use graphical transfer tools such as Cyberduck, please see our [MFA transfer documentation](/data/transfer/#cyberduck-on-mccleary-and-ruddle).
 
@@ -53,7 +53,7 @@ We have installed most commonly used software modules from Farnam and Ruddle ont
 Usage of modules on McCleary is similar to the other clusters (e.g. `module avail`, `module load`). 
 Some software may only be initially available in a newer version than was installed on Farnam or Ruddle. 
 
-If you cannot find a software package on McCleary that you need, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into installing it for you
+If you cannot find a software package on McCleary that you need, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into installing it for you.
 
 ### Conda Enviroments
 

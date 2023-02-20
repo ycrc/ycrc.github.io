@@ -41,6 +41,6 @@ Offending key in /home/user/.ssh/known_hosts:34
 
 ```
 
-This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please [contact us](/#get-help) if you receive this error.
+This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please [contact us](/#get-help) if you receive this error.
 
 If the host keys have indeed changed on the server you are connecting to, you can edit `~/.ssh/known_hosts` and remove the offending line. In the example above, you would need to delete line 34 in `~/.ssh/known_hosts` before you re-connect.

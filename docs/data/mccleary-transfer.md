@@ -2,7 +2,7 @@
 
 In the process of migrating from Farnam and Ruddle to McCleary, we are requesting researchers migrate their own data.
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
-Transfers should be initiated on Farnam or Ruddle's `transfer` nodes and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary homespaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
+Transfers should be initiated on Farnam or Ruddle's `transfer` nodes and sync'd to either Gibbs project directories (`/gpfs/gibbs/project/GROUP/NETID`) or their McCleary home spaces (which are mounted at `/vast/palmer/home.mccleary/NETID`).
 All users are able to log into the `transfer` nodes via ssh:
 
 ```sh

@@ -1,6 +1,6 @@
 # YCGA Data
 
-Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [Ruddle](/clusters/ruddle) and, coming soon, on [McCleary](/clusters/farnam-decommission).
+Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [Ruddle](/clusters/ruddle) and on [McCleary](/clusters/mccleary).
 
 
 ## YCGA Data Retention Policy
