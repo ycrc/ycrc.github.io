@@ -15,7 +15,7 @@ Project and PI-purchased storage is available on the Gibbs storage system. YCGA 
  
 ## How to Get a McCleary Account
 
-We have automatically created accounts for most users who have been active on either cluster in 2022. Check your email for a "Welcome to McCleary" email with instructions on logging in.
+We have automatically created accounts for most users who have been active on either cluster in 2022. If this applies to you, you will have received a "Welcome to McCleary" email with instructions on logging in.
 
 If you have not used Farnam or Ruddle since January 1st, 2022, you will need to request an account on McCleary on [our account request form](https://research.computing.yale.edu/support/hpc/account-request).
 

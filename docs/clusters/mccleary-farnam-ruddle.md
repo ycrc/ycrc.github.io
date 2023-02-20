@@ -7,7 +7,7 @@ In light of this, the YCRC compute service charges will not apply on McCleary co
 
 ## Accounts
 
-Most Farnam and Ruddle users who have been active in the last year will have had their accounts already created on McCleary and will receive an email to that effect. 
+Most Farnam and Ruddle users who have been active in the last year have accounts automatically created on McCleary for them and have received an email to that effect. 
 All other users who conduct life sciences research can request an account using our [Account Request form](https://research.computing.yale.edu/support/hpc/account-request).
 
 Any new additions to Farnam and Ruddle in the coming months will also automatically be granted a McCleary account.
