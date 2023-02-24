@@ -1,6 +1,6 @@
 # McCleary for Farnam and Ruddle Users
 
-McCleary is the successor to both the Farnam and Ruddle clusters. 
+McCleary is the successor to both the Farnam and Ruddle clusters, which will be retired in mid-2023.
 McClearly is initially launching in a “beta” phase so researchers can test and migrate their workloads and data to McCleary.
 During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch.
 In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.

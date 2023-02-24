@@ -7,7 +7,7 @@ Ruddle is intended for use only on projects related to the [Yale Center for Geno
 Ruddle is named for [Frank Ruddle](http://www.nytimes.com/2013/03/20/science/francis-ruddle-who-led-transgenic-research-dies-at-83.html), a Yale geneticist who was a pioneer in genetic engineering and the study of developmental genetics.
 
 !!! info "Upcoming Ruddle Retirement"
-    After more than seven years in service, we will be retiring the Ruddle HPC cluster in mid 2023. Ruddle is being replaced with the new HPC cluster, [McCleary](/clusters/mccleary). For more information and updates see the [McCleary announcement page](/clusters/farnam-decommission).
+    After more than seven years in service, we will be retiring the Ruddle HPC cluster in mid 2023. Ruddle is being replaced with the new HPC cluster, [McCleary](/clusters/mccleary). For more information and updates see the [McCleary announcement page](/clusters/mccleary-farnam-ruddle).
 
 - - -
 ## Access the Cluster
