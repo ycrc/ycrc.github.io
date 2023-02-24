@@ -50,6 +50,7 @@ plugins:
             'clusters-at-yale/data/transfer.md': 'data/transfer.md'
             'online-tutorials.md': 'resources/online-tutorials.md'
             'national-hpcs.md': 'resources/national-hpcs.md'
+            'clusters/farnam-decommission.md': 'clusters/mccleary-farnam-ruddle.md'
 
 extra:
   social:

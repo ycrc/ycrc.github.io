@@ -1,9 +1,9 @@
 # McCleary for Farnam and Ruddle Users
 
 McCleary is the successor to both the Farnam and Ruddle clusters. 
-McClearly is initially launching in a “beta” phase so researchers can test and migrate their workloads and data to McCleary in advance of Farnam and Ruddle decommission later this year.
+McClearly is initially launching in a “beta” phase so researchers can test and migrate their workloads and data to McCleary.
 During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch.
-In light of this, the YCRC compute service charges will not apply on McCleary commons partitions  until Farnam is formally decommissioned.
+In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
 
 ## Accounts
 
@@ -125,17 +125,24 @@ If you have purchased nodes on Farnam or Ruddle that are not in the `haswell` ge
 
 If you have data on the Gibbs filesystem, there is no action required as they are already available on McCleary.
 
-### From Farnam
+### What about My Existing Data on Farnam?
 
-`/gpfs/ysm` is available on McCleary as a read-only filesystem so necessary data can be copied from Farnam to McCleary. You will be give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to [hpc@yale.edu](mailto:hpc@yale.edu). **All data on YSM (that you want to keep) will need to be transferred off the YSM filesystem, either to non-HPC storage or to a McCleary account by you prior the Farnam retirement.** More information and instructions on transferring data can be found [here](/data/mccleary-transfer/).
+Farnam’s primary filesystem, YSM (/gpfs/ysm), will be retired with the Farnam cluster. Until then `/gpfs/ysm` is available on McCleary as a read-only filesystem so necessary data can be copied from Farnam to McCleary. You have been give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to [hpc@yale.edu](mailto:hpc@yale.edu). **All data on YSM (that you want to keep) will need to be transferred off the YSM filesystem, either to non-HPC storage or to a McCleary account by you prior the Farnam retirement.** More information and instructions on transferring data can be found [here](/data/mccleary-transfer/).
 
 If you have purchased space on `/gpfs/ysm` or that is still active (not expired), we will migrate your allocation at a mutually agreeable time. **This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.**  
 
-### From Ruddle
+### What about My Existing Data on Ruddle?
 
-`/gpfs/ycga` is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you will be give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to [hpc@yale.edu](mailto:hpc@yale.edu). Note this project space (`/gpfs/gibbs/project`) is distinct from the YCGA storage described below which is confusingly also called `project` but is located at `/gpfs/ycga/project`.
+`/gpfs/ycga` is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you have been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to [hpc@yale.edu](mailto:hpc@yale.edu). Note this project space (`/gpfs/gibbs/project`) is distinct from the YCGA storage described below which is confusingly also called `project` but is located at `/gpfs/ycga/project`.
 
 At a later date, all data in the `project`, `sequencers`, `special`, and `pi` directories under `/gpfs/ycga` will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  **All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement**. More information and instructions on transferring data can be found [here](/data/mccleary-transfer/).
  
 If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.
 
+### Researchers with Purchased Storage
+
+If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not expired), we will migrate your allocation at a mutually agreeable time. **This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.**  
+
+If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which will be available on McCleary).
+ 
+If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.

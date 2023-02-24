@@ -18,6 +18,7 @@ As long as your files existed in the form you want them in before the most recen
 |-----------------------------|----------------------------------------------|
 | `/gpfs/gibbs/project`       | `/gpfs/gibbs/project/.snapshots`          |
 | `/vast/palmer/home.grace`   | `/vast/palmer/home.grace/.snapshot`          |
+| `/vast/palmer/home.mccleary`| `/vast/palmer/home.mccleary/.snapshot`       |
 | `/gpfs/ysm`                 | `/gpfs/ysm/.snapshots`                       |
 | `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
 | `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |
