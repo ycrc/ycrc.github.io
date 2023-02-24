@@ -6,13 +6,13 @@ McCleary is a shared-use resource for the [Yale School of Medicine](https://medi
 
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
-!!! note
+!!! warning
     McClearly is in a “beta” phase so researchers can test and migrate their workloads and data to McCleary in advance of the Farnam and Ruddle decommissions later this year. During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch. In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
 
 - - -
 
-!!! note
-    Farnam or Ruddle user? See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about using McCleary and how it differs from Farnam and Ruddle.
+!!! info
+    Farnam or Ruddle user? Farnam and Ruddle will both be retired in mid 2023 and all work will need to transition to McCleary. See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about moving to McCleary and how it differs from Farnam and Ruddle.
 
 
 ## Access the Cluster
