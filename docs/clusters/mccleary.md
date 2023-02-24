@@ -41,6 +41,9 @@ See each tab below for more information about the available common use partition
 We host datasets of general interest in a loosely organized directory tree in `/gpfs/gibbs/data`:
 
 ```
+├── alphafold-2.3
+├── alphafold-2.2 (deprecated)
+├── alphafold-2.0 (deprecated)
 ├── annovar
 │   └── humandb
 ├── cryoem
