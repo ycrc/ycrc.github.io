@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2348,10 +2348,10 @@
 <p>First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with <code>#</code> will be ignored when submitting your job array. <strong>Note:</strong> slurm jobs start in the directory from which your job was submitted.</p>
 <p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 20 minutes.</p>
 <p>Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:</p>
-<div class="highlight"><pre><span></span><code>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample2
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample1<span class="w"> </span>--rg<span class="w"> </span>SM:sample1<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample1.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample1
+module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample2<span class="w"> </span>--rg<span class="w"> </span>SM:sample2<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample2.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample2
 ...
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1000
+module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample1000<span class="w"> </span>--rg<span class="w"> </span>SM:sample1000<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample1000.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample1000
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Avoid Very Short Jobs</p>
@@ -2360,7 +2360,7 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 </div>
 <h2 id="step-2-generate-batch-script-with-dsq">Step 2: Generate Batch Script with <code>dsq</code></h2>
 <p>On YCRC clusters you can load Dead Simple Queue onto your path with:</p>
-<div class="highlight"><pre><span></span><code>module load dSQ
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>dSQ
 </code></pre></div>
 <p>You can also download or clone this repo and use the scripts directly.</p>
 <p><code>dsq</code> takes a few arguments, then writes a job submission script (default) or can directly submit a job for you. <strong>The resources you request will be given to each job in the array (each line in your job file)</strong>, e.g. requesting 2 GiB of RAM with dSQ will run each individual job with a separate 2 GiB of RAM available. Run <code>sbatch --help</code> or see the <a href="https://slurm.schedmd.com/sbatch.html">official Slurm documentation</a> for more info on sbatch options. dSQ will set a default job name of dsq-jobfile (your job file name without the file extension). dSQ will also set the job output file name pattern to dsq-jobfile-%A_%a-%N.out, which will capture each of your jobs' output to a file with the job's ID(%A), its array index or zero-based line number(%a), and the host name of the node it ran on (%N). If you are handling output in each of your jobs, set this to <code>/dev/null</code>, which will stop these files from being created.</p>
@@ -2382,7 +2382,7 @@ Optional Arguments:
   --submit              Submit the job array on the fly instead of creating a submission script.
 </code></pre></div>
 <p>In the example above, we want walltime of 20 minutes and memory=4GiB per job. Our invocation would be:</p>
-<div class="highlight"><pre><span></span><code>dsq --job-file joblist.txt --mem-per-cpu 4g -t <span class="m">20</span>:00 --mail-type ALL
+<div class="highlight"><pre><span></span><code>dsq<span class="w"> </span>--job-file<span class="w"> </span>joblist.txt<span class="w"> </span>--mem-per-cpu<span class="w"> </span>4g<span class="w"> </span>-t<span class="w"> </span><span class="m">20</span>:00<span class="w"> </span>--mail-type<span class="w"> </span>ALL
 </code></pre></div>
 <p>The <code>dsq</code> command will create a file called <code>dsq-joblist-yyyy-mm-dd.sh</code>, where the y, m, and d are today's date. After creating the batch script, take a look at its contents. You can further modify the Slurm directives in this file before submitting.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2392,18 +2392,18 @@ Optional Arguments:
 <span class="c1">#SBATCH --mem-per-cpu 4g -t 10:00 --mail-type ALL</span>
 
 <span class="c1"># DO NOT EDIT LINE BELOW</span>
-/path/to/dSQBatch.py --job-file /path/to/joblist.txt --status-dir /path/to/here
+/path/to/dSQBatch.py<span class="w"> </span>--job-file<span class="w"> </span>/path/to/joblist.txt<span class="w"> </span>--status-dir<span class="w"> </span>/path/to/here
 </code></pre></div>
 <h2 id="step-3-submit-batch-script">Step 3: Submit Batch Script</h2>
-<div class="highlight"><pre><span></span><code>sbatch dsq-joblist-yyyy-mm-dd.sh
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>dsq-joblist-yyyy-mm-dd.sh
 </code></pre></div>
 <h2 id="manage-your-dsq-job">Manage Your dSQ Job</h2>
 <p>You can refer to any portion of your job with <code>jobid_index</code> syntax, or the entire array with its jobid. The index Dead Simple Queue uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2. You can also specify ranges.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># to cancel job 4 for array job 14567</span>
-scancel 14567_4
+scancel<span class="w"> </span>14567_4
 
 <span class="c1"># to cancel jobs 10-20 for job 14567:</span>
-scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o">]</span>
+scancel<span class="w"> </span>14567_<span class="o">[</span><span class="m">10</span>-20<span class="o">]</span>
 </code></pre></div>
 <h2 id="dsq-output">dSQ Output</h2>
 <p>You can monitor the status of your jobs in Slurm by using <code>squeue -u &lt;netid&gt;</code>, <code>squeue -j &lt;jobid&gt;</code>, or <code>dsqa -j &lt;jobid&gt;</code>.</p>
@@ -2427,7 +2427,7 @@ scancel 14567_<span class="o">[</span><span class="m">10</span>-20<span class="o
                         Comma separated list of states to use for re-writing job file. Default: CANCELLED,NODE_FAIL,PREEMPTED
 </code></pre></div>
 <p>Asking for a simple report:</p>
-<div class="highlight"><pre><span></span><code>dsqa -j <span class="m">13233846</span>
+<div class="highlight"><pre><span></span><code>dsqa<span class="w"> </span>-j<span class="w"> </span><span class="m">13233846</span>
 </code></pre></div>
 <p>Produces one</p>
 <div class="highlight"><pre><span></span><code>State Summary for Array 13233846
@@ -2438,7 +2438,7 @@ RUNNING        5     1-3,5-6
 PREEMPTED      1     0 
 </code></pre></div>
 <p>You can redirect the report and the failed jobs to separate files:</p>
-<div class="highlight"><pre><span></span><code>dsqa -j <span class="m">2629186</span> -f jobsfile.txt &gt; re-run_jobs.txt <span class="m">2</span>&gt; 2629186_report.txt
+<div class="highlight"><pre><span></span><code>dsqa<span class="w"> </span>-j<span class="w"> </span><span class="m">2629186</span><span class="w"> </span>-f<span class="w"> </span>jobsfile.txt<span class="w"> </span>&gt;<span class="w"> </span>re-run_jobs.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>2629186_report.txt
 </code></pre></div>
                 
                   
