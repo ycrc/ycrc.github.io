@@ -55,7 +55,7 @@ Names marked by a trailing (E) are extensions provided by another module.
 ```
 
 So to get this version of Seurat, you can load the R-bundle-Bioconductor module. 
-Then you simple `load.packages(Seurat)` to use that tool.
+Then you simple `library(Seurat)` to use that tool.
 
 ### Install Packages
 
