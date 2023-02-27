@@ -66,7 +66,7 @@ Archived runs are stored in the following locations.
 | `/panfs/sequencers`                         | `/SAY/archive/YCGA-729009-YCGA-A2/archive/panfs/sequencers`                         |
 | `/ycga-ba/ba_sequencers`                    | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-ba/ba_sequencers`                    |
 | `/gpfs/ycga/sequencers/illumina/sequencers` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencers` |
-| `/gpfs/ycga/sequencers/pacbio` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/pacbio` |
+| `/gpfs/gibbs/pi/ycga/sequencers/pacbio` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/pacbio` |
 
 You can directly copy or untar the project tarfile into a scratch directory.
 
