@@ -21,7 +21,7 @@ Find the available versions of R version 4 with:
 module avail R/4
 ```
 
-To load version 4.1.0:
+To load version 4.2.0:
 
 ``` bash
 module load R/4.2.0-foss-2020b
