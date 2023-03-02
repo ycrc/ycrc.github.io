@@ -60,7 +60,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |6|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
-    |1|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
+    |1|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, oldest, pi|
 
 === "week"
 
@@ -81,10 +81,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`7-00:00:00`|
-    |Maximum CPUs per group|`40`|
-    |Maximum memory per group|`320G`|
-    |Maximum CPUs per user|`20`|
-    |Maximum memory per user|`160G`|
+    |Maximum CPUs per group|`64`|
+    |Maximum memory per group|`983G`|
+    |Maximum CPUs per user|`64`|
+    |Maximum memory per user|`983G`|
 
     **Available Compute Nodes**
 
@@ -156,7 +156,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 === "bigmem"
 
@@ -221,10 +221,10 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |35|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
-    |1|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |35|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
+    |1|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, oldest, pi|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 === "scavenge_gpu"
 
@@ -258,7 +258,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 ### YCGA Partitions
 The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.
