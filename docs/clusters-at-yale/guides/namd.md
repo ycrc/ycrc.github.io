@@ -62,5 +62,5 @@ For a single-node run, you will need at least one thread for each GPU you want t
 #SBATCH -c 4 --gpus=4
 ...
 
-charmrun namd2 ++local +p${SLURM_CPUS_PER_TASK} YourConfigfile
+charmrun ++local namd2 +p${SLURM_CPUS_PER_TASK} YourConfigfile
 ```
