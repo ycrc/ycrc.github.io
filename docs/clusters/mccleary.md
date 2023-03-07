@@ -20,7 +20,7 @@ McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
 !!! warning
-    On McCleary, you are limited to 4 simultaneous interactive app instances (of any type) through the web portal at one time. 
+    On McCleary, you are limited to 4 interactive app instances (of any type) through the web portal at one time. 
     Additional instances will remain pending in the queue until you terminate older open instances. 
     Closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
