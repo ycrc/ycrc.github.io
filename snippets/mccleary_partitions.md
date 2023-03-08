@@ -219,10 +219,11 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |48|8362|64|479||||icelake, avx512, 8362, nogpu, standard, pi|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
-    |35|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
-    |1|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, oldest, pi|
+    |34|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
+    |4|6346|32|1991||||icelake, avx512, 6346, nogpu, pi|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 === "scavenge_gpu"
@@ -281,7 +282,7 @@ The following partitions are intended for projects related to the [Yale Center f
         |---|---|
         |Maximum job time limit|`7-00:00:00`|
         |Maximum CPUs per group|`614`|
-        |Maximum memory per group|`4598M`|
+        |Maximum memory per group|`4598G`|
         |Maximum CPUs per user|`307`|
         |Maximum memory per user|`2299G`|
 
