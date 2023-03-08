@@ -12,7 +12,7 @@ We maintain and support four Red Hat Linux compute clusters, listed below. Pleas
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
 | [Grace](grace)      | 29,000             | 900                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)         |
 | [Farnam](farnam)    | 6,700              | 275                 | `farnam.hpc.yale.edu`         | medical and life science                                          |
-| [McCleary](mccleary)| 3000               | 40                  | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/) [IN BETA] |
+| [McCleary](mccleary)| 6000               | 90                  | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/) [IN BETA] |
 | [Milgram](milgram)  | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA and other sensitive data                                    |
 | [Ruddle](ruddle)    | 4,500              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/)          |
 

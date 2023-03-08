@@ -12,7 +12,6 @@ All other users who conduct life sciences research can request an account using 
 
 Any new additions to Farnam and Ruddle in the coming months will also automatically be granted a McCleary account.
 
-
 !!! warning
 	Check which group your new McCleary account is associated with and make sure that matches your expection.
 	This is the group that will be charged (if/when applicable) for your compute usage as well as dictate which private partitions you may have access to.
@@ -42,6 +41,11 @@ However, for users who use graphical transfer tools such as Cyberduck, please se
 ### Web Portal (Open OnDemand)
 
 McCleary web portal url is available at [ood-mccleary.ycrc.yale.edu](http://ood-mccleary.ycrc.yale.edu).
+
+On McCleary, you are limited to 4 interactive app instances (of any type) through the web portal at one time. 
+Additional instances will remain pending in the queue until you terminate older open instances. 
+Closing the window does not terminate the interactive app job.
+To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
 !!! note
 	Again, the url does *not* use the domain hpc.yale.edu, but uses *ycrc*.yale.edu instead.
@@ -110,16 +114,15 @@ For now, interactive GPU-enabled jobs should be submitted to the `gpu` partition
 
 ### YCGA Compute
 
-YCGA researchers have access to a dedicated set of nodes on McCleary that are prefixed with `ycga`. 
-At launch, there will only be the `ycga` partition with dedicated nodes.
-Feel free to use the commons partitions for other needs (`bigmem`, `interactive`, `gpu`).
-The rest of the partitions and nodes will be available when the new YCGA nodes are added to the cluster.
+YCGA researchers have access to a dedicated set of nodes totally over 3000 cores on McCleary that are prefixed with `ycga`.
 
+* `ycga`: general purpose partition for batch jobs
+* `ycga_interactive`: partition for interactive jobs (limit of 1 job at a time in this partition)
+* `ycga_bigmem`: for jobs requiring large amount of RAM (>120G)
 
 ### Dedicated Nodes
 
 If you have purchased nodes on Farnam or Ruddle that are not in the `haswell` generation, we will coordinate with your group to migrate those nodes to McCleary at a later date into a partition of the same name.
-
 
 ## Storage and Data
 
