@@ -92,7 +92,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |3|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+    |6|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
 
 === "transfer"
 
@@ -177,10 +177,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`64`|
-    |Maximum memory per group|`1000G`|
     |Maximum CPUs per user|`32`|
-    |Maximum memory per user|`500G`|
+    |Maximum memory per user|`3960G`|
     |Maximum running jobs per user|`1`|
 
     **Available Compute Nodes**
@@ -189,7 +187,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |1|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+    |4|6346|32|3960|icelake, avx512, 6346, nogpu, bigtmp, common|
 
 === "scavenge"
 
@@ -222,6 +220,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
+    |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
     |35|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
     |1|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, oldest, pi|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
@@ -281,8 +280,10 @@ The following partitions are intended for projects related to the [Yale Center f
         |Limit|Value|
         |---|---|
         |Maximum job time limit|`7-00:00:00`|
-        |Maximum CPUs per user|`64`|
-        |Maximum memory per user|`1000G`|
+        |Maximum CPUs per group|`614`|
+        |Maximum memory per group|`4598M`|
+        |Maximum CPUs per user|`307`|
+        |Maximum memory per user|`2299G`|
 
         **Available Compute Nodes**
 
@@ -290,5 +291,62 @@ The following partitions are intended for projects related to the [Yale Center f
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |2|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+        |48|8362|64|479|icelake, avx512, 8362, nogpu, standard, pi|
+
+    === "ycga_bigmem"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the ycga_bigmem partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Maximum job time limit|`1-00:00:00`|
+        |Maximum CPUs per user|`32`|
+        |Maximum memory per user|`1991G`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |4|6346|32|1991|icelake, avx512, 6346, nogpu, pi|
+
+    === "ycga_interactive"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the ycga_interactive partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Maximum job time limit|`06:00:00`|
+        |Maximum CPUs per user|`4`|
+        |Maximum memory per user|`32G`|
+        |Maximum running jobs per user|`1`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |48|8362|64|479|icelake, avx512, 8362, nogpu, standard, pi|
 
