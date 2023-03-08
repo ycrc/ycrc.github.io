@@ -2578,7 +2578,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>3</td>
+<td>6</td>
 <td>8358</td>
 <td>64</td>
 <td>983</td>
@@ -2738,20 +2738,12 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td><code>1-00:00:00</code></td>
 </tr>
 <tr>
-<td>Maximum CPUs per group</td>
-<td><code>64</code></td>
-</tr>
-<tr>
-<td>Maximum memory per group</td>
-<td><code>1000G</code></td>
-</tr>
-<tr>
 <td>Maximum CPUs per user</td>
 <td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
-<td><code>500G</code></td>
+<td><code>3960G</code></td>
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
@@ -2773,11 +2765,11 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>8358</td>
-<td>64</td>
-<td>983</td>
-<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+<td>4</td>
+<td>6346</td>
+<td>32</td>
+<td>3960</td>
+<td>icelake, avx512, 6346, nogpu, bigtmp, common</td>
 </tr>
 </tbody>
 </table>
@@ -2841,6 +2833,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>40</td>
 <td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6346</td>
+<td>32</td>
+<td>3960</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6346, nogpu, bigtmp, common</td>
 </tr>
 <tr>
 <td>35</td>
@@ -2957,7 +2959,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>The following partitions are intended for projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>. Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please <a href="/#get-help">contact us</a> to get approved and added.</p>
 <details class="summary">
 <summary>YCGA Partitions (click to expand)</summary>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">ycga</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">ycga</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -2977,12 +2979,20 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td><code>7-00:00:00</code></td>
 </tr>
 <tr>
+<td>Maximum CPUs per group</td>
+<td><code>614</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>4598M</code></td>
+</tr>
+<tr>
 <td>Maximum CPUs per user</td>
-<td><code>64</code></td>
+<td><code>307</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
-<td><code>1000G</code></td>
+<td><code>2299G</code></td>
 </tr>
 </tbody>
 </table>
@@ -3000,11 +3010,119 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>2</td>
-<td>8358</td>
+<td>48</td>
+<td>8362</td>
 <td>64</td>
-<td>983</td>
-<td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
+<td>479</td>
+<td>icelake, avx512, 8362, nogpu, standard, pi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">ycga_bigmem</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the ycga_bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>32</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1991G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>6346</td>
+<td>32</td>
+<td>1991</td>
+<td>icelake, avx512, 6346, nogpu, pi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">ycga_interactive</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the ycga_interactive partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>32G</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48</td>
+<td>8362</td>
+<td>64</td>
+<td>479</td>
+<td>icelake, avx512, 8362, nogpu, standard, pi</td>
 </tr>
 </tbody>
 </table>
