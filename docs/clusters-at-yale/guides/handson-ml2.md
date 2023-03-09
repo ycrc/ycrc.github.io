@@ -119,7 +119,8 @@ If you want to allocate multiple node types in a single job, e.g. a larger first
 #SBATCH --ntasks=8 --cpus-per-task=2 
 #SBATCH --mem-per-cpu=16G --gpus-per-task=1
 
-module load miniconda cuDNN/8.0.5.39-CUDA-11.1.1
+module purge
+module load miniconda
 conda activate tf2
 
 # this python process will start on a node in the gpu partition with 4 CPUs & 1 GPU
@@ -134,7 +135,8 @@ python cluster_tf.py
 #SBATCH --partition=gpu --ntasks=8 --cpus-per-task=2 
 #SBATCH --mem-per-cpu=16G --gpus-per-task=1
 
-module load miniconda cuDNN/8.0.5.39-CUDA-11.1.1
+module purge
+module load miniconda
 conda activate tf2
 
 # this python process will start on a node in the day partition with 2 CPUs
