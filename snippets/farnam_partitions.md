@@ -28,7 +28,6 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |82|E5-2660_v3|20|117|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
 
 === "interactive"
@@ -60,7 +59,6 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6240|36|181|cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |94|E5-2660_v3|20|117|haswell, avx2, E5-2660_v3, nogpu, standard, oldest, common|
 
 === "transfer"
@@ -124,10 +122,11 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |6|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
-    |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
     |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
-    |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
+    |6|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |2|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, common, k80|
 
 === "gpu_devel"
@@ -191,8 +190,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6234|16|1505|cascadelake, avx2, avx512, 6234, nogpu, common, bigtmp|
     |3|6240|36|1505|cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp|
+    |2|6234|16|1505|cascadelake, avx2, avx512, 6234, nogpu, common, bigtmp|
     |2|E7-4809_v3|32|1505|haswell, avx2, E7-4809_v3, nogpu, common|
 
 === "scavenge"
@@ -226,35 +225,35 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |6|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, pi, bigtmp|
-    |18|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, standard, common, bigtmp|
     |7|8268|48|356||||cascadelake, avx512, 8268, nogpu, standard, bigtmp, pi|
+    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
+    |1|6226r|32|181|rtx3090|4|24|cascadelake, avx2, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
-    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
+    |3|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp|
     |8|5222|8|181|rtx5000|4|16|cascadelake, avx2, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000|
     |1|6242|32|999|rtx8000|2|48|cascadelake, avx2, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000|
+    |3|8268|48|370||||cascadelake, avx2, avx512, 8268, nogpu, pi, bigtmp|
     |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
+    |1|6240|36|370|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|364|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, a100|
-    |1|5222|36|750|a100|4|40|cascadelake, avx2, avx512, 5222, doubleprecision, bigtmp, a100|
+    |1|6420|36|750|a100|4|40|cascadelake, avx2, avx512, 6420, doubleprecision, bigtmp, a100|
     |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
-    |1|6226r|32|181|rtx3090|4|24|cascadelake, avx2, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|181|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, a100, bigtmp|
     |1|6240|36|181|rtx3090|4|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|181|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
-    |4|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
     |4|6240|36|748||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
-    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
-    |1|6240|36|370|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
-    |6|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
+    |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |1|6248r|48|370||||cascadelake, avx2, avx512, 6248r, nogpu, pi, bigtmp|
-    |3|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, common, bigtmp|
-    |3|8268|48|370||||cascadelake, avx2, avx512, 8268, nogpu, pi, bigtmp|
+    |6|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
+    |4|6240|36|370||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
     |2|6132|28|181||||skylake, avx2, avx512, 6132, nogpu, standard, pi, bigtmp|
     |1|6132|28|749||||skylake, avx2, avx512, 6132, nogpu, pi, bigtmp|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi, rtx2080|
     |37|E5-2680_v4|28|245||||broadwell, avx2, E5-2680_v4, nogpu, standard, pi|
-    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi, p100|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common, gtx1080ti|
-    |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi, p100|
+    |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |1|E7-4820_v4|40|1505||||broadwell, avx2, E7-4820_v4, nogpu, pi|
     |11|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, gtx1080ti|
     |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi, bigtmp, titanv|
@@ -293,21 +292,22 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
+    |1|6226r|32|181|rtx3090|4|24|cascadelake, avx2, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|181|rtx2080ti|4|11|cascadelake, avx2, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
+    |1|6240|36|370|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|364|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, a100|
-    |1|5222|36|750|a100|4|40|cascadelake, avx2, avx512, 5222, doubleprecision, bigtmp, a100|
+    |1|6420|36|750|a100|4|40|cascadelake, avx2, avx512, 6420, doubleprecision, bigtmp, a100|
     |1|6240|36|370|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, common, bigtmp, a100|
-    |1|6226r|32|181|rtx3090|4|24|cascadelake, avx2, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|181|a100|4|40|cascadelake, avx2, avx512, 6240, doubleprecision, pi, a100, bigtmp|
     |1|6240|36|181|rtx3090|4|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|181|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
-    |4|5222|8|181|rtx3090|4|24|cascadelake, avx2, avx512, 5222, doubleprecision, common, bigtmp, rtx3090|
-    |1|6240|36|370|rtx3090|8|24|cascadelake, avx2, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |2|5122|8|181|rtx2080|4|8|skylake, avx2, avx512, 5122, singleprecision, pi, rtx2080|
-    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi, p100|
+    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |1|E5-2623_v4|8|57|gtx1080ti|4|11|broadwell, avx2, E5-2623_v4, singleprecision, common, gtx1080ti|
-    |10|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
+    |3|E5-2680_v4|28|245|p100|2|16|broadwell, avx2, E5-2680_v4, doubleprecision, pi, p100|
+    |9|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, common, gtx1080ti|
     |11|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, pi, gtx1080ti|
     |1|E5-2637_v4|8|119|titanv|4|12|broadwell, avx2, E5-2637_v4, doubleprecision, pi, bigtmp, titanv|
     |3|E5-2660_v3|20|119|k80|4|12|haswell, avx2, E5-2660_v3, doubleprecision, pi, k80|
@@ -646,8 +646,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |1|6240|36|1505||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
-        |1|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
         |1|6240|36|370|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
+        |1|6240|36|181||||cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
 
     === "pi_galvani"
 
@@ -812,8 +812,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |4|6240|36|370|cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
         |4|6240|36|748|cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
+        |4|6240|36|370|cascadelake, avx2, avx512, 6240, nogpu, pi, bigtmp|
 
     === "pi_kleinstein"
 
@@ -895,7 +895,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |1|5222|36|750|a100|4|40|cascadelake, avx2, avx512, 5222, doubleprecision, bigtmp, a100|
+        |1|6420|36|750|a100|4|40|cascadelake, avx2, avx512, 6420, doubleprecision, bigtmp, a100|
 
     === "pi_ma"
 
