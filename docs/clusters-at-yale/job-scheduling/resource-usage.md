@@ -9,7 +9,7 @@ Making sure your jobs use the right amount of RAM and the right number of CPUs h
 If you launch a program by putting `/usr/bin/time` in front of it, `time` will watch your program and provide statistics about the resources it used. For example:
 
 ``` bash
-[be59@c01n01 ~]$ /usr/bin/time -v stress-ng --cpu 8 --timeout 10s
+[netid@node ~]$ /usr/bin/time -v stress-ng --cpu 8 --timeout 10s
 stress-ng: info:  [32574] dispatching hogs: 8 cpu
 stress-ng: info:  [32574] successful run completed in 10.08s
     Command being timed: "stress-ng --cpu 8 --timeout 10s"
@@ -42,16 +42,16 @@ To know how much RAM your job used (and what jobs like it will need in the futur
 If your job is already running, you can check on its usage, but will have to wait until it has finished to find the maximum memory and CPU used. The easiest way to check the instantaneous memory and CPU usage of a job is to ssh to a compute node your job is running on. To find the node you should `ssh` to, run:
 
 ```
-[be59@farnam1 ~]$ squeue --me
+[netid@node ~]$ squeue --me
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          21252409   general    12345    be59   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
+          21252409   general    12345    netid   R      32:17     17 c13n[02-04],c14n[05-10],c16n[03-10]
 ```
 
 Then use ssh to connect to a node your job is running on from the `NODELIST` column:
 
 ```
-[be59@farnam1 ~]$ ssh c13n03
-[be59@c13n03 ~]$
+[netid@node ~]$ ssh c13n03
+[netid@c13n03 ~]$
 ```
 
 Once you are on the compute node, run either `ps` or `top`.
@@ -61,7 +61,7 @@ Once you are on the compute node, run either `ps` or `top`.
 `ps` will give you instantaneous usage every time you run it. Here is some sample `ps` output:
 
 ```
-[be59@bigmem01 ~]$  ps -u$USER -o %cpu,rss,args
+[netid@bigmem01 ~]$  ps -u$USER -o %cpu,rss,args
 %CPU   RSS COMMAND
 92.6 79446140 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
 94.5 80758040 /gpfs/ysm/apps/hpc/Apps/Matlab/R2016b/bin/glnxa64/MATLAB -dmlworker -nodisplay -r distcomp_evaluate_filetask
@@ -91,7 +91,7 @@ Slurm records statistics for every job, including how much memory and CPU was us
 After the job completes, you can run `seff <jobid>` to get some useful information about your job, including the memory used and what percent of your allocated memory that amounts to.
 
 ```
-[rdb9@farnam1 ~]$ seff 21294645
+[netid@node ~]$ seff 21294645
 Job ID: 21294645
 Cluster: farnam
 User/Group: rdb9/lsprog
@@ -111,7 +111,7 @@ look at statistics for how resources are used by each element of the array.
 The `seff-array` tool takes the job ID of the array and then calculates the distribution and average CPU and memory usage:
 
 ```
-[tl397@grace1 ~]$ seff-array 43283382
+[netid@node ~]$ seff-array 43283382
 ========== Max Memory Usage ==========
 # NumSamples = 90; Min = 896.29 MB; Max = 900.48 MB
 # Mean = 897.77 MB; Variance = 0.40 MB;                   SD = 0.63 MB; Median 897.78 MB
@@ -160,8 +160,8 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
 You can also use the more flexible [`sacct`](https://slurm.schedmd.com/sacct.html) to get that info, along with other more advanced job queries. Unfortunately, the default output from `sacct` is not as useful. We recommend setting an environment variable to customize the output.
 
 ```
-[rdb9@farnam1 ~]$ export SACCT_FORMAT="JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32"
-[rdb9@farnam1 ~]$ sacct -j 21294645
+[netid@node ~]$ export SACCT_FORMAT="JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32"
+[netid@node ~]$ sacct -j 21294645
                JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES
 -------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------
             21294645       bash      rdb9 interacti+          c06n09   01:33:23  COMPLETED      0:0               cpu=1,mem=5G,node=1,billing=1

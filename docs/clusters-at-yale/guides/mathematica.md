@@ -58,7 +58,7 @@ Once Mathematica is started, open a new document in the Mathematica window and g
 1. Under `Local Kernels`, disable `Local Kernels` if it is enabled
 2. Go in `Cluster Integration` and first `enable cluster integration` it if it is not enabled
 3. Under the `Cluster Integration` tab, expand the `Advanced Settings` arrow. When you configure parallel kernels for the first time, please select `SLURM` from the `Cluster Engine` pull-down menu
-    + Matching parallel kernel versions with your master Mathematica version is important, especially if you’ve already had SLURM selected by running different Mathematica versions previously (you might see different versions in Kernel program) In this case, select Windows CCS from Cluster Engine and a red error will appear in Advanced Settings. After this select SLURM again as this should set the correct engine for you.
+    + Matching parallel kernel versions with your main Mathematica version is important, especially if you’ve already had SLURM selected by running different Mathematica versions previously (you might see different versions in Kernel program) In this case, select Windows CCS from Cluster Engine and a red error will appear in Advanced Settings. After this select SLURM again as this should set the correct engine for you.
 4. Under `Kernels`, set your desired number (we recommend to set it lower first to test)
 5. In `Advanced Settings` under `Native specification`, specify time and RAM per kernel, such as `—time=02:00:00 —mem=20G` (please note that this is RAM per one kernel)
 6. If you are using Mathematica 12.3 and above, and if `RemoteKernel Objects` is enabled, disable it and restart your Mathematica session

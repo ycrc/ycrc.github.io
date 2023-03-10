@@ -1,4 +1,4 @@
-# Passing values into batch jobs
+# Pass Values into Jobs
 
 A useful tool when running jobs on the clusters is to be able to pass variables into a script without modifying any code.
 This can include specifying the name of a data file to be processed, or setting a variable to a specific value.
@@ -7,7 +7,7 @@ Here we will work through how to implement these two approaches in both Python a
 
 ## Python
 
-### Environment variables
+### Environment Variables
 
 In python, environment variables are accessed via the `os` package ([docs page](https://docs.python.org/3/library/os.html)).
 In particular, we can use `os.getenv` to retrieve environment variables set prior to launching the python script.
@@ -51,7 +51,7 @@ python my_script.py
 
 This avoids having to modify the python script to change which datafile is processed, we only need to change the environment variable.
 
-### Command-line arguments
+### Command-line Arguments
 
 Similarly, one can use command-line arguments to pass values into a script.
 In python, there are two main packages designed for handling arguments.
@@ -82,7 +82,7 @@ Take a look at their documentation for examples of how to use `argparse`.
 
 Just as with Python, R provides comparable utilities to access command-line arguments and environment variables.
 
-### Environment variables
+### Environment Variables
 
 The `Sys.getenv` utility ([docs page](https://rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.getenv)) works nearly identically to the Python implementation.
 
@@ -93,7 +93,7 @@ The `Sys.getenv` utility ([docs page](https://rdocumentation.org/packages/base/v
 
 Just like Python, these values are always returned as `string` representations, so if the variable of interest is a number it will need to be cast into an integer using `as.numeric()`.
 
-### Command-line arguments
+### Command-line Arguments
 
 To collect command-line arguments in R use the `commandArgs` function:
 
@@ -117,7 +117,7 @@ Rscript my_script.R a b c
 There is a more advanced and detailed package for managing command-line arguments called `optparse` ([docs page](https://cran.r-project.org/web/packages/optparse/)).
 This can be used to create more featured scripts in a similar way to Python's `argparse`.
 
-## Slurm environment variables
+## Slurm Environment Variables
 
 Slurm sets a number of environment variables detailing the layout of every job.
 These include:

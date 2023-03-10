@@ -8,7 +8,7 @@ For more advanced use cases that are not well supported by the [Web Portal (Open
 
 * Send us your public SSH key with our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Allow up to ten minutes for it to propagate.
 
-* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`.
+* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`. If you are accessing McCleary, the command is `ssh netid@mccleary.ycrc.yale.edu.`
 
 * Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters).
 
@@ -75,6 +75,14 @@ Copy and paste the output to our [SSH key uploader](https://sshkeys.hpc.yale.edu
 
 Once your key has been copied to the appropriate places on the clusters, you can log in with the command:
 
+
+#### For McCleary
+```
+ssh netid@clustername.ycrc.yale.edu
+```
+
+#### For all other clusters
+
 ```
 ssh netid@clustername.hpc.yale.edu
 ```
@@ -112,7 +120,7 @@ To make a new connection to one of the clusters:
 * Open MobaXterm.
 * From the top menu select Sessions -> New Session.
 * Click the SSH icon in the top left.
-* Enter the cluster login node address (e.g. farnam.hpc.yale.edu) as the Remote Host.
+* Enter the cluster login node address (e.g. grace.hpc.yale.edu) as the Remote Host.
 * Check "Specify Username" and Enter your netID as the the username.
 * Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
 * Click OK.

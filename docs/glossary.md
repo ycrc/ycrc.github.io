@@ -18,13 +18,13 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **CLI** - Command Line Interface processes commands to a computer program in the form of lines of text in a window
 
-**Cluster** - a set of computers networked together so nodes can perform the same task facilitated by a scheduling software
+**Cluster** - a set of computers, called nodes) networked together so nodes can perform the tasks facilitated by a scheduling software
 
 **Command** - a specific order from a computer to execute a service with either an application or the operating system
 
 **Compute Node** - the nodes that work runs on to perform computational work
 
-**Container** - A stack of software, libraries and a Linux operating system that is independent of the host computer and can be accessed on other computers
+**Container** - A stack of software, libraries and operating system that is independent of the host computer and can be accessed on other computers
 
 **Container Image** - Self-contained read-only files used to run applications
 
@@ -39,6 +39,8 @@ To help clarify the way we refer to certain terms in our user documentation, her
 **Environment** - a collection of hardware, software, data storage and networks that work together in facilitating the processing and exchange of information
 
 **Extension** - Suffix at the end of a filename to indicate the file type
+
+**Fileset** - a section of a storage device that is given a designated purpose
 
 **Filesystem** - a process that manages how and where data is stored
 
@@ -72,7 +74,7 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Login Node** - a node that users log in on to access the cluster
 
-**Memory** - a device or system that is used to store information for immediate use
+**Memory** - *(see RAM)*
 
 **Metadata** - A set of data that describes and gives basic information about other data
 
@@ -82,7 +84,7 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Multiprocessing** - the ability to operate more than one task simultaneously on the same program across two or more processors in a computer
 
-**Node** - a device on a large network
+**Node** - a server in the cluster
 
 **Option** - a single letter or full word that modifies the behavior of a command in a predetermined way *(also known as a flag or switch)*
 
@@ -90,7 +92,9 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Parallel** - *(ex. Computing/Programming)* Architecture in which several processes are carried out simultaneously across smaller, independent parts
 
-**Partition** - a section of a storage device that is given a designated purpose and specific parameters to allow for various memory consuming tasks to take place
+**Partition** - a section of a storage device that is given a designated purpose
+
+**Partition** *(Slurm)* - a collection of compute nodes available via the scheduler
 
 **Path** - A string of characters used to identify locations throughout a directory structure
 
@@ -100,7 +104,7 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Queue** - a sequence of objects arranged according to priority waiting to be processed
 
-**RAM** - Random Access Memory can be read and changed in any order and is typically used to to store working data
+**RAM** - Random Access Memory, also known as "Memory" can be read and changed in any order and is typically used to to store working data
 
 **Reproducibility** - the ability to execute the same results across multiple systems by different individuals using the same data
 

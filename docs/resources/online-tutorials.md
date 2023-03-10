@@ -21,8 +21,8 @@ Note: You can learn more about most commands you come across by typing "man [com
 
 Grep is tool for searching command line output or files for a certain string (phrase) or regular expression.
 
-* [Introduction to `awk` and examples of common usage](https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/)
-* [In-depth guide to `awk` and more advanced usage](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
+* [Introduction to `grep` and examples of common usage](https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/)
+* [In-depth guide to `grep` and more advanced usage](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
 
 ### `sed`
 

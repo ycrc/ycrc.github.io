@@ -9,8 +9,8 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 - - -
 
-!!! info "Upcoming Loomis Retirement"
-    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), will be retired later this year. For more information and updates see the [Loomis decommission page](/data/loomis-decommission).
+!!! info "Loomis Retirement"
+    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), has been retired. For more information see the [Loomis decommission page](/data/loomis-decommission).
 
 
 ## Access the Cluster
@@ -48,5 +48,5 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
 | home           | `/vast/palmer/home.grace` | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
 | project        | `/gpfs/gibbs/project`     | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
-| palmer_scratch | `/vast/palmer/scratch`    | 20TiB/group                             | 15,000,000 | No      | No        |       |
+| scratch        | `/vast/palmer/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
 

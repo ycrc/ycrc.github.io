@@ -10,8 +10,8 @@ We provide several versions of R as [software modules](/clusters-at-yale/applica
 These modules provide a broad selection of commonly used packages pre-installed.
 Notably, this includes a number of geospatial packages like `sf`, `sp`, `raster`, and `terra`.
 
-In addition, there are software modules containing extra R packages including `Seurat` ([homepage](https://satijalab.org/seurat/)) and the `bioconductor` collection of bioinformatics packages ([homepage](https://www.bioconductor.org)).
-These can be loaded in addition to their matching R module to provide simple access to these tools.
+In addition, we install a collection of the most common `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)) called `R-bundle-Bioconductor`.
+This can be loaded in addition to the matching R module to provide simple access to these tools.
 
 ### Find and Load R
 
@@ -21,34 +21,41 @@ Find the available versions of R version 4 with:
 module avail R/4
 ```
 
-To load version 4.1.0:
+To load version 4.2.0:
 
 ``` bash
-module load R/4.1.0-foss-2020b
+module load R/4.2.0-foss-2020b
 ```
 
-To show installed R packages and their versions for the `R/4.1.0` module:
+To show installed R packages and their versions for the `R/4.2.0` module:
 
 ``` bash
-module help R/4.1.0-foss-2020b
+module help R/4.2.0-foss-2020b
 ```
 
-To list the available versions of the `Bioconductor` or `Seurat` modules:
+Between the base R module and the R-bundle-Bioconductor module, there are over 1000 R packages installed and ready to use. 
+
+To find if your desired package is available in these modules, you can run `module spider $PACKAGE/$VERSION`:
 
 ```bash
-module avail Bioconductor
+module spider Seurat/4.1.1
 
-module avail Seurat
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+  Seurat: Seurat/4.1.1 (E)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+    This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names in parentheses show the module location in the software hierarchy.
+
+
+       R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0
+
+
+Names marked by a trailing (E) are extensions provided by another module.
+
+
 ```
 
-To load the `Seurat` module:
-
-```bash
-module load Seurat/4.1.0-foss-2020b-R-4.1.0
-
-```
-
-which will also load the `R/4.1.0-foss-2020b` module as a dependency.
+So to get this version of Seurat, you can load the R-bundle-Bioconductor module. 
+Then you simple `library(Seurat)` to use that tool.
 
 ### Install Packages
 
@@ -58,10 +65,10 @@ This helps prevent issues where R cannot install packages due to home-space quot
 To change the location of where R installs packages, the `R_LIBS_USER` variable can be set in your `~/.bashrc` file:
 
 ```
-export R_LIBS_USER=$LOOMIS_PROJECT/R/%v
+export R_LIBS_USER=$GIBBS_PROJECT/R/%v
 ```
 
-where `%v` is a placeholder for the R major and minor version number (e.g. `4.1`).
+where `%v` is a placeholder for the R major and minor version number (e.g. `4.2`).
 R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.
 
 We recommend you install packages in an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs) with the slurm option `-C oldest`.
@@ -76,7 +83,7 @@ To get started load the R module and start R:
 
 ```bash
 salloc
-module load R/4.1.0-foss-2020b
+module load R/4.2.0-foss-2020b
 R
 # in R
 > install.packages("lattice", repos="http://cran.r-project.org")
@@ -86,9 +93,9 @@ This will throw a warning like:
 
 ```bash
 Warning in install.packages("lattice") :
-'lib = "/ysm-gpfs/apps/software/R/4.1.0-foss-2020b/lib64/R/library"' is not writable
+'lib = "/ysm-gpfs/apps/software/R/4.2.0-foss-2020b/lib64/R/library"' is not writable
 Would you like to create a personal library
-/gpfs/loomis/project/support/tl397/R/4.1
+/gpfs/gibbs/project/support/tl397/R/4.1
 to install packages into?  (y/n)
 ```
 
@@ -96,9 +103,9 @@ to install packages into?  (y/n)
 !!!note
     If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
     ```
-    mkdir /path/to/your/project/space/R/4.1
+    mkdir /path/to/your/project/space/R/4.2
     ```
-    You only need the general minor version such as 4.0 instead of 4.0.3.
+    You only need the general minor version such as 4.2 instead of 4.2.2.
 
 You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
 ```
@@ -139,7 +146,7 @@ In that script, you can run your R script. In this case `myscript.R` is in the s
 #SBATCH -t 4:00:00
 
 module load R/4.1.0-foss-2020b
-R --slave -f myscript.R
+Rscript myscript.R
 ```
 
 To actually submit the job, run `sbatch my_r_job.sh` where the batch script above was saved as `my_r_job.sh`.
@@ -178,13 +185,13 @@ Then we can launch it with an sbatch script (`ex1.sh`):
 ```sh
 #!/bin/bash
 
-#SBATCH -n 4 -N 4 -t 5:00
-#SBATCH --mail-type=none
+#SBATCH -n 4 
+#SBATCH -t 5:00
 
 module purge
 module load R/4.1.0-foss-2020b
 
-srun R --slave -f ex1.R
+srun Rscript ex1.R
 ```
 
 This script should execute a simple broadcast and complete in a few seconds.

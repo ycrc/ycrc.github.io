@@ -6,7 +6,7 @@
 
 ### `project` and `scratch60` links in Home Directories
 
-For convenience, we create a symlink, or shortcut, in every home directory called `project` and `~/scratch60` (and `palmer_scratch` on [Grace](/clusters/grace)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
+For convenience, we create a symlink, or shortcut, in every home directory called `project` and `~/scratch60` (and `palmer_scratch` on [Grace](/clusters/grace) and [McCleary](/clusters/mccleary)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
 
 You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.
 

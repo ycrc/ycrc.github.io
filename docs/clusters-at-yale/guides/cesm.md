@@ -21,8 +21,7 @@ module load CESM/2.1.0-iomkl-2018a
 For older versions of CESM, you will need to use the old modules. These old version of CESM do not work with the new modules
 
 ``` bash
-module use /apps/hpc/Modules
-module use /apps/hpc.rhel7/Modules
+module use /vast/palmer/apps/old.grace/Modules
 module avail CESM
 ```
 
@@ -60,7 +59,7 @@ create_newcase -case $CASE -compset=<compset> -res=<resolution> -mach=<machine>
 cd $CASE
 ```
 
-The mach parameters for Grace is `yalegrace` for CESM 1.x and `gracempi` for CESM 2.x , respectively. For example
+The mach parameters for Grace is `yalegrace` for CESM 1.0.4 and `gracempi` for CESM 1.2.2 and CESM 2.x , respectively. For example
 
 ``` bash
 create_newcase --case $CASE --compset=B1850 --res=f09_g17 --mach=gracempi
@@ -164,10 +163,10 @@ In your case directory, there will be a file that looks like `slurm-<job_id>.log
 
 #### CESM Run Logs
 
-If the last few lines of the slurm log direct you to look at `cpl.log.<some_number>` file, change directory to your case “run” directory in your scratch directory:
+If the last few lines of the slurm log direct you to look at `cpl.log.<some_number>` file, change directory to your case “run” directory (usually in your project directory):
 
 ``` bash
-cd ~/scratch60/CESM/$CASE/run
+cd ~/project/CESM/$CASE/run
 ```
 
 The pointer to the cpl file is often misleading as I have found the error is usually located in one of the other logs. Instead look in the `cesm.log.xxxxxx` file. Towards the end there may be an error or it may signify which component was running. Then look in the log corresponding to that component to track down the issue.
@@ -195,7 +194,7 @@ If you are still experiencing issues, [contact us](/#get-help).
 By default, the submission script will submit to the "mpi" partition for 1 day. 
 
 ### CESM 1.x
-To change this in CESM 1.x, edit your case’s `run` script and change the partition and time. The maximum walltime in the mpi partition is 24 hours. The maximum walltime in scavenge is 24 hours on Grace. For example:
+To change this in CESM 1.x, edit your case’s `run` script and change the partition and time. The maximum walltime in the mpi and scavenge partitions is 24 hours. For example:
 
 ``` bash
 ## scavenge partition

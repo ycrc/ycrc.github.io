@@ -49,7 +49,7 @@ NAMD uses charm++ parallel objects for multinode parallelization and the program
 
 ### GPUs
 
-To use the GPU-accelerated version, request GPU resources for your SLURM job, and load a CUDA-enabled version of NAMD:
+To use the GPU-accelerated version, request GPU resources for your SLURM job using salloc or via a submission script, and load a CUDA-enabled version of NAMD:
 
 ``` bash
 module load NAMD/2.13-multicore-CUDA
@@ -62,5 +62,5 @@ For a single-node run, you will need at least one thread for each GPU you want t
 #SBATCH -c 4 --gpus=4
 ...
 
-charmrun namd2 ++local +p${SLURM_CPUS_PER_TASK} YourConfigfile
+charmrun ++local namd2 +p${SLURM_CPUS_PER_TASK} YourConfigfile
 ```

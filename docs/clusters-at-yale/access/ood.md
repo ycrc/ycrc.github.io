@@ -9,16 +9,17 @@ If you access Open OnDemand installed on YCRC clusters from off campus, you will
 
 Open OnDemand is available on each cluster using your NetID credentials (CAS login). 
 
-| Cluster                                         | OOD site                                                   |
-|-------------------------------------------------|------------------------------------------------------------|
-| [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)   |
-| [Farnam](/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu) |
-| [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu) |
-| [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu) |
+| Cluster                        | OOD site                                                         |
+|--------------------------------|------------------------------------------------------------------|
+| [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)         |
+| [Farnam](/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)       |
+| [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
+| [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)     |
+| [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu)       |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
-### OOD for Courses 
+### OOD for Courses
 
 Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
 Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
@@ -79,6 +80,12 @@ This is a convenient way to access the clusters when you don't have access to an
 
 We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, RStudio Server, and Jupyter Notebook, etc.
 
+!!! warning
+    On McCleary, you are limited to 4 interactive app instances (of any type) at one time. 
+    Additional instances will remain pending in the queue until you delete older open instances. 
+    Closing the window does not terminate the interactive app job.
+    To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
+
 ### Remote Desktop
 
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
@@ -102,7 +109,7 @@ In some browsers, you may have to use a special text box to copy and paste from 
 ![clipboard](/img/ood_remote_clipboard.png){: .medium}
 
 
-### Jupyter 
+### Jupyter
 
 One of the most common uses of Open OnDemand is the Jupyter interface for Python and R. You can choose either Jupyter Notebook or Jupyter Lab. By default, this app will try to launch Jupyter Notebook, unless the `Start JupyterLab` checkbox is selected. 
 
@@ -181,12 +188,12 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 1.  If you are trying to launch `jupyter-notebook`, make sure it is available in your jupyter conda environment:
 ```bash
 (ycrc_default)[pl543@grace1 ~]$ which jupyter-notebook
-/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 ```
 2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
 ```bash
 (ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
-/gpfs/loomis/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 ```
 #### RStudio with Conda R
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.

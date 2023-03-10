@@ -2,12 +2,12 @@
 
 ## Example SSH `config`
 
-The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), and macOS. It allows you to use tab completion of the clusters, without the `.hpc.yale.edu` suffixes (i.e. `ssh farnam` or `scp ~/my_file farnam:my_file` should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require [Duo MFA](/clusters-at-yale/access/mfa) will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
+The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), and macOS. It allows you to use tab completion of the clusters, without the `.hpc.yale.edu` suffixes (i.e. `ssh grace` or `scp ~/my_file grace:my_file` should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require [Duo MFA](/clusters-at-yale/access/mfa) will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
 
 Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid. Lines that begin with `#` will be ignored.
 
 ```
-# To re-use your connections with multi-factor authentication (e.g. Ruddle)
+# To re-use your connections with multi-factor authentication (e.g. McCleary or Ruddle)
 # Uncomment the two lines below
 #ControlMaster auto
 #ControlPath ~/.ssh/tmp/%h_%p_%r
@@ -22,18 +22,15 @@ Host *.hpc.yale.edu farnam grace milgram ruddle
     User NETID
 #   ForwardX11 yes
 
-Host farnam
-     HostName farnam.hpc.yale.edu
+Host *.ycrc.yale.edu mccleary
+    User NETID
+#   ForwardX11 yes
 
-Host grace
-     HostName grace.hpc.yale.edu
+Host farnam grace milgram ruddle
+    HostName %h.hpc.yale.edu
 
-Host milgram
-     Hostname milgram.hpc.yale.edu
-
-Host ruddle
-     HostName ruddle.hpc.yale.edu
-
+Host mccleary
+     HostName %h.ycrc.yale.edu
 ```
 
 !!! warning
@@ -64,6 +61,11 @@ Then and add the following to your `~/.ssh/config` file (create this file if it 
 Host *.hpc.yale.edu farnam grace milgram ruddle
     UseKeychain yes
     AddKeystoAgent yes
+
+Host *.ycrc.yale.edu mccleary
+    UseKeychain yes
+    AddKeystoAgent yes
+
 ```
 
 You can view a list of the keys currently in your agent with:

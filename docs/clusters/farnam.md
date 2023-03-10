@@ -9,7 +9,7 @@ The Farnam Cluster is named for [Louise Whitman Farnam](http://archives.yalealum
 - - -
 
 !!! info "Upcoming Farnam Retirement"
-    After more than six years in service, we will be retiring the Farnam HPC cluster in early 2023. Farnam will be replaced with a new HPC cluster, McCleary. For more information and updates see the [Farnam decommission page](/clusters/farnam-decommission).
+    After more than six years in service, we will be retiring the Farnam HPC cluster in mid 2023. Farnam is being replaced with the new HPC cluster, [McCleary](/clusters/mccleary). For more information and updates see the [McCleary announcement page](/clusters/mccleary-farnam-ruddle).
 
 ## Access the Cluster
 
@@ -33,9 +33,14 @@ See each tab below for more information about the available common use partition
 
 ## Public Datasets
 
-We host datasets of general interest in a loosely organized directory tree in `/gpfs/ysm/datasets`:
+We host datasets of general interest in a loosely organized directory tree in `/gpfs/gibbs/data`:
 
 ```
+├── alphafold-2.3
+├── alphafold-2.2 (deprecated)
+├── alphafold-2.0 (deprecated)
+├── annovar
+│   └── humandb
 ├── cryoem
 ├── db
 │   ├── annovar

@@ -43,13 +43,14 @@ plugins:
             'clusters-at-yale/clusters/grace.md': 'clusters/grace.md'
             'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
             'clusters-at-yale/data/permissions.md': 'data/permissions.md'
-            'clusters-at-yale/data/archived-sequencing.md': 'data/archived-sequencing.md'
+            'clusters-at-yale/data/archived-sequencing.md': 'data/ycga-data.md'
+            'data/archived-sequencing.md': 'data/ycga-data.md'
             'clusters-at-yale/data/globus.md': 'data/globus.md'
             'clusters-at-yale/data/staging.md': 'data/staging.md'
             'clusters-at-yale/data/transfer.md': 'data/transfer.md'
             'online-tutorials.md': 'resources/online-tutorials.md'
             'national-hpcs.md': 'resources/national-hpcs.md'
-
+            'clusters/farnam-decommission.md': 'clusters/mccleary-farnam-ruddle.md'
 
 extra:
   social:
@@ -102,6 +103,7 @@ nav:
             - "Overview": clusters/index.md
             - clusters/grace.md
             - clusters/farnam.md
+            - clusters/mccleary.md
             - clusters/ruddle.md
             - clusters/milgram.md
         - user-group.md
@@ -123,6 +125,7 @@ nav:
                 - clusters-at-yale/access/advanced-config.md
             - clusters-at-yale/access/vpn.md
             - clusters-at-yale/access/mfa.md
+            - clusters-at-yale/access/courses.md
         - Applications & Software:
             - clusters-at-yale/applications/index.md
             - clusters-at-yale/applications/compile.md
@@ -147,8 +150,8 @@ nav:
             - data/index.md
             - data/hpc-storage.md
             - data/backups.md
-            - data/archived-sequencing.md
             - data/google-drive.md
+            - data/ycga-data.md
             - Transfer Data:
                 - "Transfer to Cluster": data/transfer.md
                 - data/globus.md
@@ -168,7 +171,7 @@ nav:
             - clusters-at-yale/guides/python.md
             - clusters-at-yale/guides/jupyter.md
             - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
-            - clusters-at-yale/guides/conda-clone.md
+            - "Export Conda Environments": clusters-at-yale/guides/conda-export.md
             - "mpi4py": clusters-at-yale/guides/mpi4py.md
         - Software: 
             - clusters-at-yale/guides/cesm.md

@@ -1,6 +1,6 @@
 # COMSOL
 
-YCRC has COMSOL Multiphysics 5.2a available on Grace and Farnam. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
+YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please [contact us](/#get-help).
 
 ## Use COMSOL
 
