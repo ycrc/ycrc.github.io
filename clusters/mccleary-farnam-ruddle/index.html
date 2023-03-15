@@ -2436,10 +2436,10 @@ This scheme promotes high turnover of compute resources and reduces the number o
 <p>Interactive jobs are blocked from running in the <code>day</code> or <code>week</code> partitions. See the <code>interactive</code> partition below instead.</p>
 <p><code>day</code> is the default partition for batch jobs (where your job goes if you do not specify a partition with <code>-p</code> or <code>--partition</code>).</p>
 <h4 id="interactive"><code>interactive</code></h4>
-<p>The <code>interactive</code> partition is now a set of dedicated nodes for interactive use (<code>salloc</code> jobs).
+<p>The <code>interactive</code> partition is now called <code>devel</code> and contains a set of dedicated nodes specifically for development or interactive uses (<code>salloc</code> jobs).
 To ensure high availability of resources, users are limited to one job at time.
 That job cannot request more than 6 hours, 4 cpus and 32G of memory.</p>
-<p><code>interactive</code> is the default partition for jobs started using <code>salloc</code> (where your job goes if you do not specify a partition with <code>-p</code> or <code>--partition</code>).</p>
+<p><code>devel</code> is the default partition for jobs started using <code>salloc</code> (where your job goes if you do not specify a partition with <code>-p</code> or <code>--partition</code>).</p>
 <h4 id="bigmem"><code>bigmem</code></h4>
 <p>McCleary has a <code>bigmem</code> partition, but the maximum time request is now 24 hours. 
 Jobs requesting less than 120G of RAM will be rejected from the partition and we ask you to submit those jobs to <code>day</code>.</p>
@@ -2478,7 +2478,7 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2023</span>
       
     
   </small>
