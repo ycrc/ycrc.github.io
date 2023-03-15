@@ -92,11 +92,11 @@ Interactive jobs are blocked from running in the `day` or `week` partitions. See
 
 #### `interactive`
 
-The `interactive` partition is now a set of dedicated nodes for interactive use (`salloc` jobs).
+The `interactive` partition is now called `devel` and contains a set of dedicated nodes specifically for development or interactive uses (`salloc` jobs).
 To ensure high availability of resources, users are limited to one job at time.
 That job cannot request more than 6 hours, 4 cpus and 32G of memory.
 
-`interactive` is the default partition for jobs started using `salloc` (where your job goes if you do not specify a partition with `-p` or `--partition`).
+`devel` is the default partition for jobs started using `salloc` (where your job goes if you do not specify a partition with `-p` or `--partition`).
 
 #### `bigmem`
 

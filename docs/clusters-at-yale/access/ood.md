@@ -81,7 +81,7 @@ This is a convenient way to access the clusters when you don't have access to an
 We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, RStudio Server, and Jupyter Notebook, etc.
 
 !!! warning
-    On McCleary, you are limited to 4 interactive app instances (of any type) at one time. 
+    You are limited to 4 interactive app instances (of any type) at one time. 
     Additional instances will remain pending in the queue until you delete older open instances. 
     Closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
