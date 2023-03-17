@@ -36,7 +36,14 @@ On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/
 
 #### Cyberduck
 
-You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/). You will need to configure the client with your netid as the username, the cluster transfer node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.
+You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/). You will need to configure the client with:
+
+* Your netid as the "Username"
+* Cluster transfer node (see above) as the "Server"
+* Select your private key as the "SSH Private Key"
+* Leave "Password" blank (you will be prompted on connection for your ssh key passphrase)
+
+An example configuration of Cyberduck is shown below.
 
 ![Cyberduck sample configuration.](/img/cyberduck.png)
 
