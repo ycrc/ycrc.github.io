@@ -2624,7 +2624,14 @@
 <h4 id="mobaxterm-windows">MobaXterm (Windows)</h4>
 <p><a href="/clusters-at-yale/access/#windows">MobaXterm</a> is an all-in-one graphical client for Windows that includes a transfer pane for each cluster you connect to. Once you have established a connection to the cluster, click on the "Sftp" tab in the left sidebar to see your files on the cluster. You can drag-and-drop data into and out of the SFTP pane to upload and download, respectively.</p>
 <h4 id="cyberduck">Cyberduck</h4>
-<p>You can also transfer files between your local computer and a cluster using an FTP client, such as <a href="https://cyberduck.io/">Cyberduck (OSX/Windows)</a>. You will need to configure the client with your netid as the username, the cluster transfer node as the hostname and your private key as the authentication method. An example configuration of Cyberduck is shown below.</p>
+<p>You can also transfer files between your local computer and a cluster using an FTP client, such as <a href="https://cyberduck.io/">Cyberduck (OSX/Windows)</a>. You will need to configure the client with:</p>
+<ul>
+<li>Your netid as the "Username"</li>
+<li>Cluster transfer node (see above) as the "Server"</li>
+<li>Select your private key as the "SSH Private Key"</li>
+<li>Leave "Password" blank (you will be prompted on connection for your ssh key passphrase)</li>
+</ul>
+<p>An example configuration of Cyberduck is shown below.</p>
 <p><img alt="Cyberduck sample configuration." src="/img/cyberduck.png" /></p>
 <h5 id="cyberduck-on-mccleary-and-ruddle">Cyberduck on McCleary and Ruddle</h5>
 <p>McCleary and Ruddle require <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
@@ -2700,7 +2707,7 @@ rclone sync localpath/mydir mys3:bucketname/remotedir
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2023</span>
       
     
   </small>
