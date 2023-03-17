@@ -82,7 +82,7 @@ We have deployed a selection of common graphical programs as Interactive Apps on
 
 !!! warning
     You are limited to 4 interactive app instances (of any type) at one time. 
-    Additional instances will remain pending in the queue until you delete older open instances. 
+    Additional instances will be rejected until you delete older open instances. 
     Closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
