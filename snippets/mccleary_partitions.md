@@ -17,10 +17,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`400`|
-    |Maximum memory per group|`3200G`|
-    |Maximum CPUs per user|`200`|
-    |Maximum memory per user|`1600G`|
+    |Maximum CPUs per group|`512`|
+    |Maximum memory per group|`6000G`|
+    |Maximum CPUs per user|`256`|
+    |Maximum memory per user|`3000G`|
 
     **Available Compute Nodes**
 
@@ -148,7 +148,6 @@
     |Maximum job time limit|`2-00:00:00`|
     |Maximum GPUs per group|`4`|
     |Maximum GPUs per user|`2`|
-    |Maximum running jobs per user|`1`|
 
     **Available Compute Nodes**
 
@@ -181,7 +180,6 @@
     |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`32`|
     |Maximum memory per user|`3960G`|
-    |Maximum running jobs per user|`1`|
 
     **Available Compute Nodes**
 
@@ -222,8 +220,8 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |48|8362|64|479||||icelake, avx512, 8362, nogpu, standard, pi|
-    |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
+    |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |33|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
     |4|6346|32|1991||||icelake, avx512, 6346, nogpu, pi|
     |18|6240|36|180||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
@@ -253,7 +251,6 @@
     |Maximum job time limit|`1-00:00:00`|
     |Maximum GPUs per group|`4`|
     |Maximum GPUs per user|`2`|
-    |Maximum running jobs per user|`1`|
 
     **Available Compute Nodes**
 
