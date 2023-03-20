@@ -10,6 +10,11 @@ For large data transfers both within Yale and to external collaborators, we reco
 
 Globus transfers data between computers set up as "endpoints". The official YCRC endpoints are listed below. Transfers can be to and from these endpoints or those you have defined for yourself with [Globus Connect](#setup-an-endpoint-on-your-computer).
 
+!!! warning "Course Accounts"
+    Globus does not work for course accounts (`<course_id>_<netid>`).
+    Please try the other transfer methods listed in our [Transfer documentation](/data/transfer/) instead.
+
+
 ## Cluster Endpoints
 
 We currently support endpoints for the following clusters.
