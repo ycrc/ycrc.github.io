@@ -29,7 +29,9 @@ Any new additions to Farnam and Ruddle in the coming months will also automatica
 
 ### Hostname
 
-McCleary can be accessed via SSH (or MobaXterm) or transfer applications at the hostname `mccleary.ycrc.yale.edu`. 
+McCleary can be accessed via SSH (or MobaXterm) at the hostname `mccleary.ycrc.yale.edu`. 
+
+Transfers and transfer applications should be connected via `transfer-mccleary.ycrc.yale.edu`. 
 
 !!! note
 	The hostname does *not* use the domain hpc.yale.edu, but uses *ycrc*.yale.edu instead.

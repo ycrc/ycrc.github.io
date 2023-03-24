@@ -9,18 +9,17 @@ Each cluster has dedicated nodes specially networked for high speed transfers bo
 | Cluster   | Transfer Node                          |
 |-----------|----------------------------------------|
 | Grace     | `transfer-grace.hpc.yale.edu`          |
+| McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
 | Farnam    | `transfer-farnam.hpc.yale.edu`         |
 | Ruddle    | `transfer-ruddle.hpc.yale.edu`         |
 | Milgram   | `transfer-milgram.hpc.yale.edu`        |
 
-McCleary will have a transfer node shortly. In the meantime, you can access your McCleary data from the Farnam and Ruddle transfer nodes.
 
 From the login node of any cluster, you can `ssh` into the transfer node. This is useful for transferring data to or from locations other than your local machine (see below for details).
 
 ```
 [netID@cluster ~] ssh transfer
 ```
-
 
 ## Transferring Data to/from Your Local Machine
 

@@ -27,7 +27,7 @@ We currently support endpoints for the following clusters.
 
 These endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
 
-Milgram does not currently have a Globus endpoint, however we hope to be adding one in 2023.
+Milgram and McCleary do not currently have a Globus endpoint, however we hope to be adding those later on this year.
 
 ## Get Started with Globus
 
