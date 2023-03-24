@@ -28,8 +28,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |27|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
-    |18|6240|36|180|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |33|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+    |18|6240|36|180|cascadelake, avx512, 6240, nogpu, bigtmp, standard, common|
 
 === "devel"
 
@@ -60,8 +60,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
-    |1|E5-2680_v4|28|245|broadwell, avx2, E5-2680_v4, nogpu, standard, oldest, pi|
+    |4|E5-2680_v4|28|227|broadwell, E5-2680_v4, nogpu, standard, oldest, common|
 
 === "week"
 
@@ -93,7 +92,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+    |7|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
 
 === "transfer"
 
@@ -123,7 +122,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |1|8358|64|983|icelake, avx512, 8358, nogpu, bigtmp, common|
+    |2|72|8|227|milan, 72F3, nogpu, standard, common|
 
 === "gpu"
 
@@ -222,9 +221,9 @@
     |48|8362|64|479||||icelake, avx512, 8362, nogpu, standard, pi|
     |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
-    |33|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
+    |40|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
     |4|6346|32|1991||||icelake, avx512, 6346, nogpu, pi|
-    |18|6240|36|180||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |18|6240|36|180||||cascadelake, avx512, 6240, nogpu, bigtmp, standard, common|
     |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
