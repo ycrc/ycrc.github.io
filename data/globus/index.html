@@ -1410,6 +1410,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setup-a-s3-endpoint" class="md-nav__link">
+    Setup a S3 Endpoint
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2310,6 +2317,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setup-a-s3-endpoint" class="md-nav__link">
+    Setup a S3 Endpoint
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2405,6 +2419,18 @@ Please try the other transfer methods listed in our <a href="/data/transfer/">Tr
 <p>Google has a 400,000 file limit per <a href="/data/google-drive">Shared Drive</a>, so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using <a href="/resources/online-tutorials">tar</a>) before transferring. </p>
 </div>
 <p>In our testing, we have seen up to 10MB/s upload and 100MB/s download speeds.</p>
+<h2 id="setup-a-s3-endpoint">Setup a S3 Endpoint</h2>
+<p>We support creating Globus S3 endpoints. To request a Globus S3 Endpoint, please <a href="https://docs.ycrc.yale.edu/#web-and-email-support">contact YCRC</a>. Please include in your request:</p>
+<ul>
+<li>S3 bucket name</li>
+<li>The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Amazon Region</a> for that bucket</li>
+<li>An initial list of Yale NetIDs who should be able to access the bucket</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please DO NOT send us the Amazon login credentials through an insecure method such as email or our ticketing system.</p>
+</div>
+<p>After we have created your Globus S3 endpoint, you will be able to further self-serve you own access controls with the Globus portal.</p>
                 
                   
                     
@@ -2413,7 +2439,7 @@ Please try the other transfer methods listed in our <a href="/data/transfer/">Tr
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
       
     
   </small>
