@@ -467,7 +467,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Maximum job time limit|`365-00:00:00`|
+        |Maximum job time limit|`2-00:00:00`|
+        |Maximum CPUs per user|`32`|
         |Maximum GPUs per user|`12`|
         |Maximum running jobs per user|`2`|
 
@@ -1102,6 +1103,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Limit|Value|
         |---|---|
         |Maximum job time limit|`4-00:00:00`|
+        |Maximum CPUs per user|`32`|
         |Maximum GPUs per user|`12`|
         |Maximum running jobs per user|`2`|
 
