@@ -198,9 +198,12 @@ nav:
 
     - Training & Other Resources:
             - "Overview": resources/index.md
+            - Tutorials:
+                - resources/intro_to_hpc_tutorial.md
+                - resources/online-tutorials.md
             - Training:
                 - "YCRC Workshops": https://research.computing.yale.edu/training
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
-                - resources/online-tutorials.md
+
             - resources/national-hpcs.md
             - resources/glossary.md
