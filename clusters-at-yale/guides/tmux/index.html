@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2388,7 +2388,7 @@ For example, if you are logged in to grace1, use <code>ssh -Y grace2</code> to r
 <p>Say you just submitted an interactive job that is running on a compute node inside your <code>tmux</code> session.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ tmux new -s analysis
 <span class="c1"># I am in my tmux session now</span>
-<span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ salloc -p interactive
+<span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ salloc
 <span class="o">[</span>ms725@c14n02 ~<span class="o">]</span>$ ./my_fancy_analysis.sh
 </code></pre></div>
 <p>Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running <code>top</code> there. Split your window by typing:</p>
@@ -2409,7 +2409,7 @@ For example, if you are logged in to grace1, use <code>ssh -Y grace2</code> to r
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>

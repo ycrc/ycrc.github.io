@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/handson-ml2/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2385,7 +2385,7 @@
 </li>
 <li>
 <p>Start an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a>.</p>
-<div class="highlight"><pre><span></span><code>salloc -c <span class="m">2</span> -p interactive
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">2</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2398,10 +2398,6 @@
 <tr>
 <td><code>-c 2</code></td>
 <td>Allocate two CPU cores (and default 5GiB RAM per core)</td>
-</tr>
-<tr>
-<td><code>-p interactive</code></td>
-<td>Start the job on the <code>interactive</code> partition (meant for work like this)</td>
 </tr>
 </tbody>
 </table>
@@ -2519,7 +2515,7 @@ python cluster_tf.py
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>
