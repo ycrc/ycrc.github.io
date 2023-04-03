@@ -91,7 +91,7 @@ We have deployed a selection of common graphical programs as Interactive Apps on
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
 In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
 
-Use the form to request resources and decide what partition your job should run on (use `interactive` or your lab's partition).
+Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram, Farnam and Ruddle) or your lab's partition.
 
 ![remote_desktop](/img/ood_remote.png){: .medium}
 

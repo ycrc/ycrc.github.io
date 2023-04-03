@@ -55,7 +55,7 @@ Say you just submitted an interactive job that is running on a compute node insi
 ``` bash
 [ms725@grace1 ~]$ tmux new -s analysis
 # I am in my tmux session now
-[ms725@grace1 ~]$ salloc -p interactive
+[ms725@grace1 ~]$ salloc
 [ms725@c14n02 ~]$ ./my_fancy_analysis.sh
 ```
 

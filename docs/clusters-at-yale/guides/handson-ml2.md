@@ -22,13 +22,12 @@ Notes on installing and testing [tensorflow](https://www.tensorflow.org/install/
 1. Start an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs).
 
     ``` bash
-    salloc -c 2 -p interactive
+    salloc -c 2
     ```
 
     | `salloc` Argument  | Description |
     | ---------------- | ----------- |
     | `-c 2`           | Allocate two CPU cores (and default 5GiB RAM per core) |
-    | `-p interactive` | Start the job on the `interactive` partition (meant for work like this) |
 
 1. Create the [Conda](/clusters-at-yale/guides/conda/) environment for tensorflow, index it for the YCRC [Open Ondemand](/clusters-at-yale/access/ood/) web dashboard.
 

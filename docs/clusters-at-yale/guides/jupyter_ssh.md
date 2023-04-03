@@ -21,7 +21,7 @@ Save your edited version of this script on the cluster, and submit it with `sbat
 
 ``` bash
 #!/bin/bash
-#SBATCH --partition interactive
+#SBATCH --partition devel
 #SBATCH --cpus-per-task 1
 #SBATCH --mem-per-cpu 8G
 #SBATCH --time 6:00:00
