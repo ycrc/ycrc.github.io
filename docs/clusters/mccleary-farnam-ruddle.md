@@ -1,9 +1,8 @@
 # McCleary for Farnam and Ruddle Users
 
 McCleary is the successor to both the Farnam and Ruddle clusters, which will be retired in mid-2023.
-McClearly is initially launching in a “beta” phase so researchers can test and migrate their workloads and data to McCleary.
-During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch.
-In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
+McClearly is now in a "production stable" state so researchers can permanently migrate their workloads and data from Ruddle and Farnam.
+To encourage transition to McCleary, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
 
 ## Accounts
 
@@ -83,7 +82,7 @@ If you job cannot run in the available partition time limits, please contact us 
 
 #### `general`
 
-McCleary will not have a `general` partition, but instead will have `day` and `week` partitions with maximum time limits of 24 hours and 7 days, respectively. 
+McCleary does not have a `general` partition, but instead has `day` and `week` partitions with maximum time limits of 24 hours and 7 days, respectively. 
 The `week` partition contains significantly fewer nodes than `day` and will reject any job that request less than 24 hours of walltime, so please think carefully about how long your job needs to run for when selecting a partition.
 We strongly encourage checkpointing if it is an option or dividing up your workload into less than 24 hour chunks.
 This scheme promotes high turnover of compute resources and reduces the number of idle jobs, resulting in lower overall wait time.
@@ -94,7 +93,7 @@ Interactive jobs are blocked from running in the `day` or `week` partitions. See
 
 #### `interactive`
 
-The `interactive` partition is now called `devel` and contains a set of dedicated nodes specifically for development or interactive uses (`salloc` jobs).
+The `interactive` partition is called `devel` and contains a set of dedicated nodes specifically for development or interactive uses (`salloc` jobs).
 To ensure high availability of resources, users are limited to one job at time.
 That job cannot request more than 6 hours, 4 cpus and 32G of memory.
 
@@ -124,7 +123,7 @@ YCGA researchers have access to a dedicated set of nodes totally over 3000 cores
 
 ### Dedicated Nodes
 
-If you have purchased nodes on Farnam or Ruddle that are not in the `haswell` generation, we will coordinate with your group to migrate those nodes to McCleary at a later date into a partition of the same name.
+If you have purchased nodes on Farnam or Ruddle that are not in the `haswell` generation, we will coordinate with your group to migrate those nodes to McCleary in April into a partition of the same name.
 
 ## Storage and Data
 

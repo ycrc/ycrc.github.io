@@ -7,7 +7,7 @@ McCleary is a shared-use resource for the [Yale School of Medicine](https://medi
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
 !!! warning
-    McClearly is in a “beta” phase so researchers can test and migrate their workloads and data to McCleary in advance of the Farnam and Ruddle decommissions later this year. During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch. In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
+    McClearly is now in a "production stable" state, so please migrate your workloads and data to McCleary in advance of the Farnam and Ruddle decommissions this summer. To encourage a swift transtition, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
 
 - - -
 
@@ -22,7 +22,7 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 !!! warning
     You are limited to 4 interactive app instances (of any type) at one time. 
     Additional instances will be rejected until you delete older open instances. 
-    Closing the window does not terminate the interactive app job.
+    For OnDemand jobs, closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
 ## System Status and Monitoring

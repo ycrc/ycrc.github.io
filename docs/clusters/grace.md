@@ -20,7 +20,7 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 !!! warning
     You are limited to 4 interactive app instances (of any type) at one time. 
     Additional instances will be rejected until you delete older open instances. 
-    Closing the window does not terminate the interactive app job.
+    For OnDemand jobs, closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
 ## System Status and Monitoring
