@@ -2423,9 +2423,8 @@
                 
                 <h1 id="mccleary-for-farnam-and-ruddle-users">McCleary for Farnam and Ruddle Users</h1>
 <p>McCleary is the successor to both the Farnam and Ruddle clusters, which will be retired in mid-2023.
-McClearly is initially launching in a “beta” phase so researchers can test and migrate their workloads and data to McCleary.
-During the initial weeks of this phase, researchers should be aware that the cluster may be taken down for maintenance with minimal notice so we can finalize the cluster configuration and ensure stability for the McCleary production launch.
-In light of this, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.</p>
+McClearly is now in a "production stable" state so researchers can permanently migrate their workloads and data from Ruddle and Farnam.
+To encourage transition to McCleary, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.</p>
 <h2 id="accounts">Accounts</h2>
 <p>Most Farnam and Ruddle users who have been active in the last year have accounts automatically created on McCleary for them and have received an email to that effect. 
 All other users who conduct life sciences research can request an account using our <a href="https://research.computing.yale.edu/support/hpc/account-request">Account Request form</a>.</p>
@@ -2479,14 +2478,14 @@ Use the <code>-t</code> flag to request a longer time limit.</p>
 <p>Below are notable changes to the partitions relative to Farnam and Ruddle. Many of these changes are reductions to maximum time request. 
 If you job cannot run in the available partition time limits, please contact us at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> so we can discuss your situation.</p>
 <h4 id="general"><code>general</code></h4>
-<p>McCleary will not have a <code>general</code> partition, but instead will have <code>day</code> and <code>week</code> partitions with maximum time limits of 24 hours and 7 days, respectively. 
+<p>McCleary does not have a <code>general</code> partition, but instead has <code>day</code> and <code>week</code> partitions with maximum time limits of 24 hours and 7 days, respectively. 
 The <code>week</code> partition contains significantly fewer nodes than <code>day</code> and will reject any job that request less than 24 hours of walltime, so please think carefully about how long your job needs to run for when selecting a partition.
 We strongly encourage checkpointing if it is an option or dividing up your workload into less than 24 hour chunks.
 This scheme promotes high turnover of compute resources and reduces the number of idle jobs, resulting in lower overall wait time.</p>
 <p>Interactive jobs are blocked from running in the <code>day</code> or <code>week</code> partitions. See the <code>interactive</code> partition below instead.</p>
 <p><code>day</code> is the default partition for batch jobs (where your job goes if you do not specify a partition with <code>-p</code> or <code>--partition</code>).</p>
 <h4 id="interactive"><code>interactive</code></h4>
-<p>The <code>interactive</code> partition is now called <code>devel</code> and contains a set of dedicated nodes specifically for development or interactive uses (<code>salloc</code> jobs).
+<p>The <code>interactive</code> partition is called <code>devel</code> and contains a set of dedicated nodes specifically for development or interactive uses (<code>salloc</code> jobs).
 To ensure high availability of resources, users are limited to one job at time.
 That job cannot request more than 6 hours, 4 cpus and 32G of memory.</p>
 <p><code>devel</code> is the default partition for jobs started using <code>salloc</code> (where your job goes if you do not specify a partition with <code>-p</code> or <code>--partition</code>).</p>
@@ -2506,7 +2505,7 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <li><code>ycga_bigmem</code>: for jobs requiring large amount of RAM (&gt;120G)</li>
 </ul>
 <h3 id="dedicated-nodes">Dedicated Nodes</h3>
-<p>If you have purchased nodes on Farnam or Ruddle that are not in the <code>haswell</code> generation, we will coordinate with your group to migrate those nodes to McCleary at a later date into a partition of the same name.</p>
+<p>If you have purchased nodes on Farnam or Ruddle that are not in the <code>haswell</code> generation, we will coordinate with your group to migrate those nodes to McCleary in April into a partition of the same name.</p>
 <h2 id="storage-and-data">Storage and Data</h2>
 <p>If you have data on the Gibbs filesystem, there is no action required as they are already available on McCleary.</p>
 <h3 id="what-about-my-existing-data-on-farnam">What about My Existing Data on Farnam?</h3>
@@ -2528,7 +2527,7 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 4, 2023</span>
       
     
   </small>
