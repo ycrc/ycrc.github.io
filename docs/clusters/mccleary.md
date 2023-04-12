@@ -7,7 +7,7 @@ McCleary is a shared-use resource for the [Yale School of Medicine](https://medi
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
 !!! warning
-    McClearly is now in a "production stable" state, so please migrate your workloads and data to McCleary in advance of the Farnam and Ruddle decommissions this summer. To encourage a swift transtition, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned.
+    McClearly is now in a "production stable" state, so please migrate your workloads and data to McCleary in advance of the Farnam decommissions on June 1st. To encourage a swift transtition, the YCRC compute service charges will not apply on McCleary commons partitions until June 1st, when Farnam is formally decommissioned.
 
 - - -
 
