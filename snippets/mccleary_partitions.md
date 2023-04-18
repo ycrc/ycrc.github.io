@@ -60,7 +60,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |4|E5-2680_v4|28|227|broadwell, E5-2680_v4, nogpu, standard, oldest, common|
+    |12|E5-2680_v4|28|227|broadwell, E5-2680_v4, nogpu, standard, oldest, common|
 
 === "week"
 
@@ -155,8 +155,9 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
+    |4|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
+    |5|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 === "bigmem"
 
@@ -187,6 +188,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |4|6346|32|3960|icelake, avx512, 6346, nogpu, bigtmp, common|
+    |2|6234|16|1486|cascadelake, avx512, 6234, nogpu, common, bigtmp|
 
 === "scavenge"
 
@@ -220,12 +222,15 @@
     |---|---|---|---|---|---|---|---|
     |48|8362|64|479||||icelake, avx512, 8362, nogpu, standard, pi|
     |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
-    |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |40|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
+    |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |4|6346|32|1991||||icelake, avx512, 6346, nogpu, pi|
     |18|6240|36|180||||cascadelake, avx512, 6240, nogpu, bigtmp, standard, common|
+    |4|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |2|6234|16|1486||||cascadelake, avx512, 6234, nogpu, common, bigtmp|
     |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
+    |2|E5-2680_v4|28|227||||broadwell, E5-2680_v4, nogpu, standard, oldest, pi|
+    |5|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
 
 === "scavenge_gpu"
 
@@ -258,8 +263,39 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
+    |4|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
-    |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, avx2, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
+    |5|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
+
+### Private Partitions
+With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
+
+??? summary "PI Partitions (click to expand)"
+    === "pi_breaker"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Job Limits**
+
+        Jobs submitted to the pi_breaker partition are subject to the following limits:
+
+        |Limit|Value|
+        |---|---|
+        |Maximum job time limit|`7-00:00:00`|
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |2|E5-2680_v4|28|227|broadwell, E5-2680_v4, nogpu, standard, oldest, pi|
 
 ### YCGA Partitions
 The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.
