@@ -52,7 +52,7 @@ include as much detail as possible about your request and we'll find the right p
 
 ### Q&A Platform
 
-The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Post questions about the clusters and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/c/yale](http://ask.cyberinfrastructure.org/c/yale).
+The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org). Post questions about the clusters and receive answers from YCRC staff or even your peers! The sub-site for YCRC related questions is available at [ask.cyberinfrastructure.org/g/Yale](https://ask.cyberinfrastructure.org/g/Yale).
 
 ## Acknowledge the YCRC
 
