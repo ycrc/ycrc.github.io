@@ -2323,15 +2323,15 @@ This enables you to "detach" from the session while the transfer continues in th
 To reattach to a detached session, run <code>tmux attach</code> from the same host where <code>tmux</code> was initially started.
 For more information about <code>tmux</code>, please see their <a href="https://github.com/tmux/tmux/wiki/Getting-Started">Getting Started Guide</a>.</p>
 <h2 id="globus">Globus</h2>
-<p>Yale provides dedicated Globus connections for each of the clusters following the naming convention <code>yale#cluster_name</code>. 
-Transfers can be managed through existing accounts on Farnam or Ruddle, using <code>yale#farnam</code> or <code>yale#ruddle</code>.
+<p>Yale provides dedicated Globus connections for each of the clusters. 
+Transfers can be managed through existing accounts on Farnam or Ruddle, using <code>yale#farnam</code> or <code>yale#ruddle</code>, or using McCleary's Globus connection (<code>Yale CRC McCleary</code>).
 For a general getting started with Globus, please check out their <a href="https://docs.globus.org/how-to/get-started/">website</a>.
 We have a stand-alone docs page about Globus <a href="/data/globus">here</a>, but here we will detail the process to transfer data from YSM (for example) to the Gibbs file system.</p>
 <ol>
 <li>log in to <a href="https://app.globus.org">app.globus.org</a> and use your Yale credentials to authenticate. </li>
-<li>navigate to the File Manager and access Farnam or Ruddle by searching for the "collection" <code>yale#farnam</code> or <code>yale#ruddle</code> in the left-hand panel.</li>
+<li>navigate to the File Manager and access Farnam or Ruddle by searching for the "collection" <code>yale#farnam</code>, <code>yale#ruddle</code>, or <code>Yale CRC McCleary</code> in the left-hand panel.</li>
 <li>find the files you wish to transfer, using the check-boxes to select any and all files needed.</li>
-<li>click on the "Transfer or Sync to" option and in the right-hand panel also search for the same cluster's (either <code>yale#farnam</code> or <code>yale#ruddle</code>) collection.</li>
+<li>click on the "Transfer or Sync to" option and in the right-hand panel also search for the same cluster's collection.</li>
 <li>navigate through the file-browser to find the desired destination for these data (most likely <code>gibbs_project</code> or a subdirectory).</li>
 <li>start the transfer, click the "Start" button on the left-hand side.</li>
 </ol>
@@ -2347,7 +2347,7 @@ You will receive an email when the transfer completes detailing the size and ave
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2023</span>
       
     
   </small>
