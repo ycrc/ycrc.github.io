@@ -145,8 +145,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
-    |Maximum GPUs per group|`4`|
-    |Maximum GPUs per user|`2`|
+    |Maximum GPUs per group|`24`|
+    |Maximum GPUs per user|`12`|
 
     **Available Compute Nodes**
 
@@ -221,9 +221,9 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |48|8362|64|479||||icelake, avx512, 8362, nogpu, standard, pi|
-    |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
-    |40|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
+    |40|8358|64|983||||icelake, avx512, 8358, nogpu, bigtmp, common|
+    |4|6346|32|3960||||icelake, avx512, 6346, nogpu, bigtmp, common|
     |4|6346|32|1991||||icelake, avx512, 6346, nogpu, pi|
     |18|6240|36|180||||cascadelake, avx512, 6240, nogpu, bigtmp, standard, common|
     |4|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
