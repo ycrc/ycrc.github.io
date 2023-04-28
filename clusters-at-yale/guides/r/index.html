@@ -2470,28 +2470,28 @@ Notably, this includes a number of geospatial packages like <code>sf</code>, <co
 This can be loaded in addition to the matching R module to provide simple access to these tools.</p>
 <h3 id="find-and-load-r">Find and Load R</h3>
 <p>Find the available versions of R version 4 with:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>R/4
+<div class="highlight"><pre><span></span><code>module avail R/4
 </code></pre></div>
 <p>To load version 4.2.0:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.2.0-foss-2020b
+<div class="highlight"><pre><span></span><code>module load R/4.2.0-foss-2020b
 </code></pre></div>
 <p>To show installed R packages and their versions for the <code>R/4.2.0</code> module:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>R/4.2.0-foss-2020b
+<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> R/4.2.0-foss-2020b
 </code></pre></div>
 <p>Between the base R module and the R-bundle-Bioconductor module, there are over 1000 R packages installed and ready to use. </p>
 <p>To find if your desired package is available in these modules, you can run <code>module spider $PACKAGE/$VERSION</code>:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>spider<span class="w"> </span>Seurat/4.1.1
+<div class="highlight"><pre><span></span><code>module spider Seurat/4.1.1
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-<span class="w">  </span>Seurat:<span class="w"> </span>Seurat/4.1.1<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>
+  Seurat: Seurat/4.1.1 <span class="o">(</span>E<span class="o">)</span>
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-<span class="w">    </span>This<span class="w"> </span>extension<span class="w"> </span>is<span class="w"> </span>provided<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>modules.<span class="w"> </span>To<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>extension<span class="w"> </span>you<span class="w"> </span>must<span class="w"> </span>load<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>modules.<span class="w"> </span>Note<span class="w"> </span>that<span class="w"> </span>any<span class="w"> </span>module<span class="w"> </span>names<span class="w"> </span><span class="k">in</span><span class="w"> </span>parentheses<span class="w"> </span>show<span class="w"> </span>the<span class="w"> </span>module<span class="w"> </span>location<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>software<span class="w"> </span>hierarchy.
+    This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names <span class="k">in</span> parentheses show the module location <span class="k">in</span> the software hierarchy.
 
 
-<span class="w">       </span>R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0
+       R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0
 
 
-Names<span class="w"> </span>marked<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>trailing<span class="w"> </span><span class="o">(</span>E<span class="o">)</span><span class="w"> </span>are<span class="w"> </span>extensions<span class="w"> </span>provided<span class="w"> </span>by<span class="w"> </span>another<span class="w"> </span>module.
+Names marked by a trailing <span class="o">(</span>E<span class="o">)</span> are extensions provided by another module.
 </code></pre></div>
 <p>So to get this version of Seurat, you can load the R-bundle-Bioconductor module. 
 Then you simple <code>library(Seurat)</code> to use that tool.</p>
@@ -2514,17 +2514,17 @@ If you cannot find a dependency or have trouble installing an R package, <a href
 </div>
 <p>To get started load the R module and start R:</p>
 <div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>R/4.2.0-foss-2020b
+module load R/4.2.0-foss-2020b
 R
 <span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
+&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>This will throw a warning like:</p>
-<div class="highlight"><pre><span></span><code>Warning<span class="w"> </span><span class="k">in</span><span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span><span class="w"> </span>:
-<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.2.0-foss-2020b/lib64/R/library&quot;&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>writable
-Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>personal<span class="w"> </span>library
+<div class="highlight"><pre><span></span><code>Warning <span class="k">in</span> install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span><span class="o">)</span> :
+<span class="s1">&#39;lib = &quot;/ysm-gpfs/apps/software/R/4.2.0-foss-2020b/lib64/R/library&quot;&#39;</span> is not writable
+Would you like to create a personal library
 /gpfs/gibbs/project/support/tl397/R/4.1
-to<span class="w"> </span>install<span class="w"> </span>packages<span class="w"> </span>into?<span class="w">  </span><span class="o">(</span>y/n<span class="o">)</span>
+to install packages into?  <span class="o">(</span>y/n<span class="o">)</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2547,7 +2547,7 @@ See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for m
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run R interactively, first launch an interactive job on a compute node.
 If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering <code>R</code> on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
@@ -2558,8 +2558,8 @@ In that script, you can run your R script. In this case <code>myscript.R</code> 
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH -t 4:00:00</span>
 
-module<span class="w"> </span>load<span class="w"> </span>R/4.1.0-foss-2020b
-Rscript<span class="w"> </span>myscript.R
+module load R/4.1.0-foss-2020b
+Rscript myscript.R
 </code></pre></div>
 <p>To actually submit the job, run <code>sbatch my_r_job.sh</code> where the batch script above was saved as <code>my_r_job.sh</code>.</p>
 <h3 id="rstudio">RStudio</h3>
@@ -2576,8 +2576,8 @@ While there are a few different ways this can be achieved, we recommend using th
 
 <span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 <span class="n">val</span><span class="o">&lt;-</span><span class="m">777</span>
-<span class="nf">mpi.bcast</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;me&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;val&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
+<span class="nf">mpi.bcast</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;me&quot;</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="s">&quot;val&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
 <span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 
 <span class="nf">mpi.quit</span><span class="p">()</span>
@@ -2588,10 +2588,10 @@ While there are a few different ways this can be achieved, we recommend using th
 <span class="c1">#SBATCH -n 4 </span>
 <span class="c1">#SBATCH -t 5:00</span>
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>R/4.1.0-foss-2020b
+module purge
+module load R/4.1.0-foss-2020b
 
-srun<span class="w"> </span>Rscript<span class="w"> </span>ex1.R
+srun Rscript ex1.R
 </code></pre></div>
 <p>This script should execute a simple broadcast and complete in a few seconds.</p>
 <h2 id="virtual-display-session">Virtual Display Session</h2>
@@ -2605,23 +2605,23 @@ See the guide for <a href="/clusters-at-yale/guides/xvfb">xvfb</a> for more deta
 With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
 <p>Most of the time the best way to install R packages for your Conda R environment is via <code>conda</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># load miniconda</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module load miniconda
 <span class="c1"># create the conda environment including r-base and r-essentials package collections</span>
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_r_env<span class="w"> </span>r-base<span class="w"> </span>r-essentials
+conda create --name my_r_env r-base r-essentials
 <span class="c1"># activate the environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>my_r_env
+conda activate my_r_env
 
 <span class="c1"># Install the lattice package (r-lattice)</span>
-conda<span class="w"> </span>install<span class="w"> </span>r-lattice
+conda install r-lattice
 </code></pre></div>
 <p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well.
 When you install packages with <code>install.packages</code> make sure to activate your Conda environment first.</p>
 <div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>my_r_env
+module load miniconda
+<span class="nb">source</span> activate my_r_env
 R
 <span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
+&gt; install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>, <span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
