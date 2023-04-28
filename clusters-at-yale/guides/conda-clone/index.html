@@ -2291,8 +2291,8 @@ You can access the terminal by clicking "Clusters" in the top bar and then selec
 <h2 id="clone-to-a-new-name">Clone to a New Name</h2>
 <p>A simple way to repair any broken environments is to use Conda's built-in <code>clone</code> option to create a new environment based on the packages installed in the existing one.
 This is similar to exporting the contents of an environment and then building a new environment from that export, but it can be done in one step:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda create --name new_env --clone old_env
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>new_env<span class="w"> </span>--clone<span class="w"> </span>old_env
 </code></pre></div>
 <h2 id="conda_moversh-helper-script"><code>conda_mover.sh</code> Helper Script</h2>
 <p>To simplify things, we have developed a tool, <code>conda_mover.sh</code>, which will rebuild all your environments (or any specific ones provided by name) with the same environment name.</p>
@@ -2301,19 +2301,19 @@ conda create --name new_env --clone old_env
 <p>We recommend doing all of this actions on a compute node with at least 10G of memory to ensure <code>conda</code> will work properly.</p>
 </div>
 <p>The usage is as follows.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -h
-A utility to clone multiple conda environments from existing location to the new project space
-To specify the new path, <span class="nb">set</span> the PROJECT environment variable
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda_mover.sh<span class="w"> </span>-h
+A<span class="w"> </span>utility<span class="w"> </span>to<span class="w"> </span>clone<span class="w"> </span>multiple<span class="w"> </span>conda<span class="w"> </span>environments<span class="w"> </span>from<span class="w"> </span>existing<span class="w"> </span>location<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>project<span class="w"> </span>space
+To<span class="w"> </span>specify<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>path,<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>PROJECT<span class="w"> </span>environment<span class="w"> </span>variable
 
-Syntax: conda_mover.sh <span class="o">[</span>-h<span class="p">|</span>l<span class="p">|</span>a<span class="p">|</span>n NAME<span class="o">]</span>
+Syntax:<span class="w"> </span>conda_mover.sh<span class="w"> </span><span class="o">[</span>-h<span class="p">|</span>l<span class="p">|</span>a<span class="p">|</span>n<span class="w"> </span>NAME<span class="o">]</span>
 options:
-h        Print this <span class="nb">help</span>
-l        List all available environments
-a        Clone all available environments
-n NAME   Clone environment NAME
+h<span class="w">        </span>Print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span>
+l<span class="w">        </span>List<span class="w"> </span>all<span class="w"> </span>available<span class="w"> </span>environments
+a<span class="w">        </span>Clone<span class="w"> </span>all<span class="w"> </span>available<span class="w"> </span>environments
+n<span class="w"> </span>NAME<span class="w">   </span>Clone<span class="w"> </span>environment<span class="w"> </span>NAME
 </code></pre></div>
 <p>To list all known environments:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -l
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda_mover.sh<span class="w"> </span>-l
 </code></pre></div>
 <h3 id="rebuild-an-environment">Rebuild an Environment</h3>
 <p>You can either rebuild a single environment at a time or all your environments using the helper script. 
@@ -2324,10 +2324,10 @@ Remember to load any relevant modules for supporting libraries where needed.</p>
 we recommend manually rebuilding the environment instead of cloning. <a href="/#get-help">Contact us</a> if you need assistance.</p>
 </div>
 <p>To rebuild a single environment:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -n env_name
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda_mover.sh<span class="w"> </span>-n<span class="w"> </span>env_name
 </code></pre></div>
 <p>To rebuild all known environments:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01 ~<span class="o">]</span>$ conda_mover.sh -a
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@c16n01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda_mover.sh<span class="w"> </span>-a
 </code></pre></div>
 <p>If you choose the rebuild all known environments (with <code>-a</code>), this may take a while, so it may be useful to launch as a batch job.
 An example script is provided below.</p>
@@ -2339,9 +2339,9 @@ An example script is provided below.</p>
 <span class="c1">#SBATCH --mem-per-cpu=10G</span>
 <span class="c1">#SBATCH --job-name conda_mover</span>
 
-module purge
+module<span class="w"> </span>purge
 
-/gpfs/gibbs/public/bin/conda_mover.sh -a
+/gpfs/gibbs/public/bin/conda_mover.sh<span class="w"> </span>-a
 </code></pre></div>
                 
                   

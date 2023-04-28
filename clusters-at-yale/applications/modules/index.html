@@ -2603,18 +2603,18 @@
 <h2 id="find-modules">Find Modules</h2>
 <h3 id="all-available-modules">All Available Modules</h3>
 <p>To list all available modules, run:</p>
-<div class="highlight"><pre><span></span><code>module avail
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail
 </code></pre></div>
 <h3 id="search-for-modules">Search For Modules</h3>
 <p>You can search for modules or extensions with <code>spider</code> and <code>avail</code>. For example, to find and list all Python version 3 modules, run:</p>
-<div class="highlight"><pre><span></span><code>module avail python/3
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>python/3
 </code></pre></div>
 <p>To find any module or extension that mentions python in its name or description, use the command:</p>
-<div class="highlight"><pre><span></span><code>module spider python
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>spider<span class="w"> </span>python
 </code></pre></div>
 <h3 id="get-module-help">Get Module Help</h3>
 <p>You can get a brief description of a module and the url to the software's homepage by running:</p>
-<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> modulename/version
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>modulename/version
 </code></pre></div>
 <p>If you don't find a commonly used software package you require, <a href="/#get-help">contact us</a> with a software installation request. Otherwise, check out <a href="/clusters-at-yale/applications">our installation guides</a> to install it for yourself.</p>
 <h2 id="load-and-unload-modules">Load and Unload Modules</h2>
@@ -2626,7 +2626,7 @@
 <li>For <a href="/clusters-at-yale/job-scheduling/#batch-jobs">batch jobs</a>, add <code>module load</code> command(s) to your submission script.</li>
 </ul>
 <p>For example, to load <code>Python</code> version <code>3.8.6</code> and <code>BLAST+</code> version <code>2.11.0</code>, find modules with matching <a href="/clusters-at-yale/applications/toolchains">toolchain</a> suffixes and run the command:</p>
-<div class="highlight"><pre><span></span><code>module load Python/3.8.6-GCCcore-10.2.0 BLAST+/2.11.0-GCCcore-10.2.0
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Python/3.8.6-GCCcore-10.2.0<span class="w"> </span>BLAST+/2.11.0-GCCcore-10.2.0
 </code></pre></div>
 <p>Lmod will add <code>python</code> and the BLAST commands to your environment.  Since both of these modules were built with the <code>GCCcore/10.2.0</code> <a href="/clusters-at-yale/applications/toolchains">toolchain</a> module, they will not load conflicting libraries. Recall you can see the other modules that were loaded by running <code>module list</code>.</p>
 <div class="admonition tip">
@@ -2635,10 +2635,10 @@
 </div>
 <h3 id="unload">Unload</h3>
 <p>You can also unload a specific module that you've previously loaded:</p>
-<div class="highlight"><pre><span></span><code>module unload R
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>unload<span class="w"> </span>R
 </code></pre></div>
 <p>Or unload all modules at once with:</p>
-<div class="highlight"><pre><span></span><code>module purge
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Purge Lightly</p>
@@ -2648,17 +2648,17 @@
 <h4 id="save-collections">Save Collections</h4>
 <p>It can be a pain to enter a long list of modules every time you return to a project. Module collections allow you to create sets of modules to load together. This method is particularly useful if you have two or more module sets that may <a href="/clusters-at-yale/applications/toolchains/#what-versions-match">conflict</a> with one another.</p>
 <p>Save a collection of modules by first loading all the modules you want to save together then run:</p>
-<div class="highlight"><pre><span></span><code>module save environment_name
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>save<span class="w"> </span>environment_name
 </code></pre></div>
 <p>(replace <code>environment_name</code> with something more meaningful to you)</p>
 <h4 id="restore-collections">Restore Collections</h4>
 <p>Load a collection with <code>module restore</code>:</p>
-<div class="highlight"><pre><span></span><code>module restore environment_name
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>restore<span class="w"> </span>environment_name
 </code></pre></div>
 <p>To modify a collection: <code>restore</code> it, make the desired changes by <code>load</code>ing and/or <code>unload</code>ing modules, then <code>save</code> it to the same name. </p>
 <h4 id="list-collections">List Collections</h4>
 <p>To get a list of your collections, run:</p>
-<div class="highlight"><pre><span></span><code>module savelist
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>savelist
 </code></pre></div>
 <h2 id="ml-a-convinient-tool"><code>ml</code>: A Convinient Tool</h2>
 <p>Lmod provides a convinient tool called <code>ml</code> to simplify all of the module commands. </p>
@@ -2666,41 +2666,41 @@
 <div class="highlight"><pre><span></span><code>ml
 </code></pre></div>
 <h4 id="load-modules">Load Modules</h4>
-<div class="highlight"><pre><span></span><code>ml Python/3.8.6-GCCcore-10.2.0
+<div class="highlight"><pre><span></span><code>ml<span class="w"> </span>Python/3.8.6-GCCcore-10.2.0
 </code></pre></div>
 <h4 id="unload-modules">Unload Modules</h4>
-<div class="highlight"><pre><span></span><code>ml -Python
+<div class="highlight"><pre><span></span><code>ml<span class="w"> </span>-Python
 </code></pre></div>
 <h4 id="with-moudle-sub-commands">With <code>moudle</code> Sub-commands</h4>
 <p><code>ml</code> can be used to replace the <code>module</code> command. It can take all the sub-commands from <code>module</code> and works the same way as <code>module</code> does.</p>
-<div class="highlight"><pre><span></span><code>ml load Python R   
-ml unload Python
-ml spider Python
-ml avail
-ml whatis Python
-ml key Python
-ml purge
-ml save <span class="nb">test</span>
-ml restore <span class="nb">test</span>
+<div class="highlight"><pre><span></span><code>ml<span class="w"> </span>load<span class="w"> </span>Python<span class="w"> </span>R<span class="w">   </span>
+ml<span class="w"> </span>unload<span class="w"> </span>Python
+ml<span class="w"> </span>spider<span class="w"> </span>Python
+ml<span class="w"> </span>avail
+ml<span class="w"> </span>whatis<span class="w"> </span>Python
+ml<span class="w"> </span>key<span class="w"> </span>Python
+ml<span class="w"> </span>purge
+ml<span class="w"> </span>save<span class="w"> </span><span class="nb">test</span>
+ml<span class="w"> </span>restore<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>To refer to the directory where the software from a module is stored, you can use the environment variable <code>$EBROOTMODULENAME</code> where MODULENAME is the name of the module in all caps with no spaces. This can be useful for finding the executables, libraries, or readme files that are included with the software:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node ~ <span class="o">]</span>$ module load SAMtools
-<span class="o">[</span>netid@node ~ <span class="o">]</span>$ <span class="nb">echo</span> <span class="nv">$EBVERSIONSAMTOOLS</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node<span class="w"> </span>~<span class="w"> </span><span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>SAMtools
+<span class="o">[</span>netid@node<span class="w"> </span>~<span class="w"> </span><span class="o">]</span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$EBVERSIONSAMTOOLS</span>
 <span class="m">1</span>.11
-<span class="o">[</span>netid@node ~ <span class="o">]</span>$ ls <span class="nv">$EBROOTSAMTOOLS</span>
-bin  easybuild  include  lib  lib64  share
-<span class="o">[</span>netid@node ~ <span class="o">]</span>$ ls <span class="nv">$EBROOTSAMTOOLS</span>/bin
-ace2sam             maq2sam-short       psl2sam.pl             soap2sam.pl
-blast2sam.pl        md5fa               r2plot.lua             vcfutils.lua
-bowtie2sam.pl       md5sum-lite         sam2vcf.pl             wgsim
-export2sam.pl       novo2sam.pl         samtools               wgsim_eval.pl
-interpolate_sam.pl  plot-ampliconstats  samtools.pl            zoom2sam.pl
-maq2sam-long        plot-bamstats       seq_cache_populate.pl
+<span class="o">[</span>netid@node<span class="w"> </span>~<span class="w"> </span><span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span><span class="nv">$EBROOTSAMTOOLS</span>
+bin<span class="w">  </span>easybuild<span class="w">  </span>include<span class="w">  </span>lib<span class="w">  </span>lib64<span class="w">  </span>share
+<span class="o">[</span>netid@node<span class="w"> </span>~<span class="w"> </span><span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span><span class="nv">$EBROOTSAMTOOLS</span>/bin
+ace2sam<span class="w">             </span>maq2sam-short<span class="w">       </span>psl2sam.pl<span class="w">             </span>soap2sam.pl
+blast2sam.pl<span class="w">        </span>md5fa<span class="w">               </span>r2plot.lua<span class="w">             </span>vcfutils.lua
+bowtie2sam.pl<span class="w">       </span>md5sum-lite<span class="w">         </span>sam2vcf.pl<span class="w">             </span>wgsim
+export2sam.pl<span class="w">       </span>novo2sam.pl<span class="w">         </span>samtools<span class="w">               </span>wgsim_eval.pl
+interpolate_sam.pl<span class="w">  </span>plot-ampliconstats<span class="w">  </span>samtools.pl<span class="w">            </span>zoom2sam.pl
+maq2sam-long<span class="w">        </span>plot-bamstats<span class="w">       </span>seq_cache_populate.pl
 </code></pre></div>
 <h2 id="further-reading">Further Reading</h2>
 <p>You can view documentation while on the cluster using the command:</p>
-<div class="highlight"><pre><span></span><code>man module
+<div class="highlight"><pre><span></span><code>man<span class="w"> </span>module
 </code></pre></div>
 <p>There is even more information at the <a href="http://www.tacc.utexas.edu/tacc-projects/lmod">offical Lmod website</a>.</p>
                 
