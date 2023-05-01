@@ -234,25 +234,25 @@
     |10|8268|48|352||||cascadelake, avx512, 8268, nogpu, bigtmp, pi|
     |1|6248r|48|352||||cascadelake, avx512, 6248r, nogpu, pi, bigtmp|
     |1|6242|32|981|rtx8000|2|48|cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000|
-    |2|6234|16|1486||||cascadelake, avx512, 6234, nogpu, common, bigtmp|
-    |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
     |1|6240|36|352|rtx3090|8|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
+    |2|6240|36|352|a100|4|40|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100|
+    |1|6420|36|730|a100|4|40|cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100|
+    |1|6226r|32|163|rtx3090|4|24|cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|163|rtx3090|4|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|163|rtx3090|8|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|1486||||cascadelake, avx512, 6240, nogpu, pi, bigtmp|
     |2|6240|36|163|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |8|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000|
-    |1|6226r|32|163|rtx3090|4|24|cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090|
+    |2|6234|16|1486||||cascadelake, avx512, 6234, nogpu, common, bigtmp|
+    |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
     |1|6240|36|352|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
-    |2|6240|36|352|a100|4|40|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100|
-    |1|6420|36|730|a100|4|40|cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100|
     |1|6132|28|730||||skylake, avx512, 6132, nogpu, standard, bigtmp, pi|
     |2|6132|28|163||||skylake, avx512, 6132, nogpu, standard, bigtmp, pi|
     |2|5122|8|163|rtx2080|4|8|skylake, avx512, 5122, singleprecision, pi, rtx2080|
     |39|E5-2680_v4|28|227||||broadwell, E5-2680_v4, nogpu, standard, oldest, pi|
     |5|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
-    |1|E7-4820_v4|40|1486||||broadwell, E7-4820_v4, nogpu, pi|
     |3|E5-2660_v4|28|227|p100|2|16|broadwell, E5-2660_v4, doubleprecision, pi, p100|
+    |1|E7-4820_v4|40|1486||||broadwell, E7-4820_v4, nogpu, pi|
     |11|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, pi, gtx1080ti|
     |1|E5-2637_v4|8|101|titanv|4|12|broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv|
 
@@ -277,8 +277,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum GPUs per group|`4`|
-    |Maximum GPUs per user|`2`|
+    |Maximum GPUs per group|`100`|
+    |Maximum GPUs per user|`64`|
 
     **Available Compute Nodes**
 
@@ -290,16 +290,16 @@
     |1|8358|64|983|a100|4|40|icelake, avx512, 8358, doubleprecision, bigtmp, common, a100|
     |4|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |1|6242|32|981|rtx8000|2|48|cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000|
-    |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
     |1|6240|36|352|rtx3090|8|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
+    |2|6240|36|352|a100|4|40|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100|
+    |1|6420|36|730|a100|4|40|cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100|
+    |1|6226r|32|163|rtx3090|4|24|cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090|
     |1|6240|36|163|rtx3090|4|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |1|6240|36|163|rtx3090|8|24|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090|
     |2|6240|36|163|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
     |8|5222|8|163|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000|
-    |1|6226r|32|163|rtx3090|4|24|cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090|
+    |4|5222|8|163|rtx3090|4|24|cascadelake, avx512, 5222, doubleprecision, common, rtx3090|
     |1|6240|36|352|v100|4|16|cascadelake, avx2, avx512, 6240, pi, v100|
-    |2|6240|36|352|a100|4|40|cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100|
-    |1|6420|36|730|a100|4|40|cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100|
     |2|5122|8|163|rtx2080|4|8|skylake, avx512, 5122, singleprecision, pi, rtx2080|
     |5|E5-2637_v4|8|101|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti|
     |3|E5-2660_v4|28|227|p100|2|16|broadwell, E5-2660_v4, doubleprecision, pi, p100|
