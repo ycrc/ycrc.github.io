@@ -2311,7 +2311,7 @@
 <p>After over eight years in service, the primary storage system on Grace, Loomis (<code>/gpfs/loomis</code>), will be retired later this year.</p>
 <p><strong>Project.</strong> We have migrated all of the Loomis project space (<code>/gpfs/loomis/project</code>) to the Gibbs storage system at <code>/gpfs/gibbs/project</code> during the maintenance. You will need to update your scripts and workflows to point to the new location (<code>/gpfs/gibbs/project/&lt;group&gt;/&lt;netid&gt;</code>). The "project" symlink in your home directory has been updated to point to your new space (with a few exceptions described below), so scripts using the symlinked path will not need to be updated. If you have jobs in a pending state going into the maintenance that used the absolute Loomis path, we recommend canceling, updating and then re-submitting those jobs so they do not fail.</p>
 <p>If you had a project space that exceeds the no-cost allocation (4 TiB), you have received a separate communication from us with details about your data migration. In these instances, your group has been granted a new, empty "project" space with the default no-cost quota. Any scripts will need to be updated accordingly.</p>
-<p><strong>Conda.</strong>  By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/">documentation and a helper script</a>.</p>
+<p><strong>Conda.</strong>  By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide <a href="/clusters-at-yale/guides/conda-export/">conda-export documentation</a>.</p>
 <p><strong>R.</strong>  Similarly, in 2022 we started redirecting user R packages to your project space to conserve home directory usage. If your R environment is not working as expected, we recommend deleting the old installation (found in <code>~/project/R/&lt;version&gt;</code>) and rerunning install.packages.</p>
 <p><strong>Custom Software Installation.</strong> If you or your group had any self-installed software in the project directory, it is possible that the migration will have broken the software and it will need to be recompiled. <a href="/#get-help">Contact us</a> if you need assistance recompiling.</p>
 <p><strong>Scratch60.</strong> The Loomis scratch space (<code>/gpfs/loomis/scratch60</code>) is now read-only. All data  in that directory will be purged in 60 days on <strong>October 3, 2022</strong>. Any data in <code>/gpfs/loomis/scratch60</code> you wish to retain needs to be copied into another location by that date (such as your Gibbs project or Palmer scratch).</p>
@@ -2325,7 +2325,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2023</span>
       
     
   </small>
