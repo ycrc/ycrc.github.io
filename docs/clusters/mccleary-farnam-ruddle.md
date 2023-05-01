@@ -81,7 +81,7 @@ If you cannot find a software package on McCleary that you need, please let us k
 
 ### Conda Enviroments
 
-If you have conda environment on Farnam or Ruddle that you would like to setup on McCleary, see our [Clone Conda Environment documentation](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/).
+If you have conda environment on Farnam or Ruddle that you would like to setup on McCleary, see our [Export Conda Environment documentation](/clusters-at-yale/guides/conda-export/).
 
 ## Partition and Job Scheduler
 
