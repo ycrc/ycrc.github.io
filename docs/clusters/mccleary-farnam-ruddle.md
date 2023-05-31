@@ -81,7 +81,7 @@ If you cannot find a software package on McCleary that you need, please let us k
 
 ### Conda Enviroments
 
-If you have conda environment on Farnam or Ruddle that you would like to setup on McCleary, see our [Clone Conda Environment documentation](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/).
+If you have conda environment on Farnam or Ruddle that you would like to setup on McCleary, see our [Export Conda Environment documentation](/clusters-at-yale/guides/conda-export/).
 
 ## Partition and Job Scheduler
 
@@ -169,3 +169,10 @@ If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not
 If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which will be available on McCleary).
  
 If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.
+
+### Storage At Yale (SAY) Shares
+
+Storage At Yale shares are available on McCleary, but only on the `transfer` node. 
+To access your SAY data, make sure to login to the `transfer` node and then copy your data to either `project` or `scratch`. 
+Note, this is different than how Ruddle was set up, where SAY shares were available on all nodes. 
+

@@ -32,7 +32,7 @@ The Loomis scratch space was decommissioned and purged on October 3, 2022.
 
 ### Conda Environments
 
-By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide [documentation and a helper script](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda-clone/).
+By default, all conda environments are installed into your project directory. However, most conda environments do not survive being moved from one location to another, so you may need to regenerate your conda environment(s). To assist with this, we provide [conda-export documentation](/clusters-at-yale/guides/conda-export/).
 
 ### R Packages
 
