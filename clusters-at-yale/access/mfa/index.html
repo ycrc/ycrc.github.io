@@ -2428,7 +2428,7 @@ When this happens, you will be asked to Duo authenticate for each connection.</p
 <h3 id="ssh-config-file">SSH Config File</h3>
 <p>On macOS and Linux-based systems setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
 An example config file is shown below which enables SSH multiplexing (<code>ControlMaster</code>) by caching connections in a directory (<code>ControlPath</code>) for a period of time (2h, <code>ControlPersist</code>). </p>
-<div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu farnam grace milgram ruddle
+<div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu grace milgram ruddle
     User NETID
     # Uncomment below to enable X11 forwarding without `-Y`
     #ForwardX11 yes
@@ -2446,7 +2446,7 @@ Host *.ycrc.yale.edu mccleary
     ControlPath ~/.ssh/tmp/%h_%p_%r
     ControlPersist 2h
 
-Host farnam grace milgram ruddle
+Host grace milgram ruddle
     HostName %h.hpc.yale.edu
 
 Host mccleary
