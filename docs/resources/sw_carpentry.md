@@ -1,0 +1,3 @@
+# Software Carpentry
+
+To help researchers learn the skills they need, they can utilize [Software Carpentry](https://software-carpentry.org/about/)'s in-house training as well as their community-led lesson development to help them get started. These [in-house lessons](https://software-carpentry.org/lessons/) are offered in both English and Spanish and go over Unix and Git basics as well as working with Python and R. To learn more about the community-based lessons available to users, see the [Carpentries Lab page](https://carpentries.org/community-lessons/#the-carpentrieslab) for more information.

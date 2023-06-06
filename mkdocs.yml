@@ -201,6 +201,8 @@ nav:
             - Tutorials:
                 - resources/intro_to_hpc_tutorial.md
                 - resources/online-tutorials.md
+                - resources/yale_library.md
+                - resources/sw_carpentry.md
             - Training:
                 - "YCRC Workshops": https://research.computing.yale.edu/training
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
