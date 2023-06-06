@@ -122,4 +122,4 @@ Now that this is completed, return to the Open OnDemand homepage and select the 
 
 Once the session is submitted and running, connect to the notebook and navigate to your working directory. From there you can either select the **Upload** button to upload an existing Jupyter notebook file or select the **New** button to create a new notebook.
 
-To help with this, make sure to look over the [YCRC Jupyter Notebook information](clusters-at-yale/guides/jupyter/) as well as [Jupyter's User Interface page](https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html).
+To help with this, make sure to look over the [YCRC Jupyter Notebook information](docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/) as well as [Jupyter's User Interface page](https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html).
