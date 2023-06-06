@@ -10,7 +10,6 @@ Each cluster has dedicated nodes specially networked for high speed transfers bo
 |-----------|----------------------------------------|
 | Grace     | `transfer-grace.hpc.yale.edu`          |
 | McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
-| Farnam    | `transfer-farnam.hpc.yale.edu`         |
 | Ruddle    | `transfer-ruddle.hpc.yale.edu`         |
 | Milgram   | `transfer-milgram.hpc.yale.edu`        |
 
