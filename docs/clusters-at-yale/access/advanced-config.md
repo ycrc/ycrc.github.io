@@ -7,10 +7,6 @@ The following configuration is an example ssh client configuration file specific
 Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid. Lines that begin with `#` will be ignored.
 
 ```
-# To re-use your connections with multi-factor authentication (e.g. McCleary or Ruddle)
-# Uncomment the two lines below
-#ControlMaster auto
-#ControlPath ~/.ssh/tmp/%h_%p_%r
 
 # If you use a ssh key that is named something other than id_rsa,
 # you can specify your private key like this:
@@ -20,17 +16,25 @@ Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid.
 # On a Mac you still need xquartz installed
 Host *.hpc.yale.edu farnam grace milgram ruddle
     User NETID
-#   ForwardX11 yes
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication
+    # Uncomment the two lines below
+    #ControlMaster auto
+    #ControlPath ~/.ssh/tmp/%h_%p_%r
 
 Host *.ycrc.yale.edu mccleary
     User NETID
-#   ForwardX11 yes
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication
+    # Uncomment the two lines below
+    #ControlMaster auto
+    #ControlPath ~/.ssh/tmp/%h_%p_%r
 
 Host farnam grace milgram ruddle
     HostName %h.hpc.yale.edu
 
 Host mccleary
-     HostName %h.ycrc.yale.edu
+    HostName %h.ycrc.yale.edu
 ```
 
 !!! warning

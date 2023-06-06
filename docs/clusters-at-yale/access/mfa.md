@@ -1,17 +1,89 @@
 # Multi-factor Authentication
 
-To improve security, access to Ruddle or McCleary requires both a public key and multi-factor authentication (MFA). We use the same MFA (Duo) as is used elsewhere at Yale. To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
+To improve security, access to Ruddle or McCleary requires both a public key and multi-factor authentication (MFA).
+We use the same MFA (Duo) as is used elsewhere at Yale.
+To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
-You will need upload your [ssh public key to our site](https://sshkeys.hpc.yale.edu/). For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
+You will need upload your [ssh public key to our site](https://sshkeys.hpc.yale.edu/).
+For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
-Once you've set up Duo and your key is registered, you can log in to Ruddle or McCleary. Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option. We recommend choosing Duo Push (option 1). If you chose this option you should receive a notification on your phone. Once approved, you should be allowed to continue to log in.
+Once you've set up Duo and your key is registered, you can log in to Ruddle or McCleary.
+Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option.
+We recommend choosing Duo Push (option 1).
+If you chose this option you should receive a notification on your phone.
+Once approved, you should be allowed to continue to log in.
 
 !!!note
-    You can set up more than one phone for Duo. For example, you can set up your smartphone plus your office landline. That way, if you forget or lose your phone, you can still authenticate. For instructions on how to add additional phones go [here](http://its.yale.edu/sites/default/files/imce/pdfs/MFA%20Adding%20a%20new%20device%2008312015.pdf).
+    You can set up more than one phone for Duo.
+    For example, you can set up your smartphone plus your office landline.
+    That way, if you forget or lose your phone, you can still authenticate.
+    For instructions on how to add additional phones go [here](https://guide.duo.com/enrollment#add-or-manage-devices).
 
-## File Transfer and Duo MFA
+## Connection Multiplexing and File Transfers with DUO MFA
 
-Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our [section on the Transfer Data page](/data/transfer/#cyberduck-on-mccleary-and-ruddle).
+Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you.
+When this happens, you will be asked to Duo authenticate for each connection.
+
+### SSH Config File
+On macOS and Linux-based systems setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
+An example config file is shown below which enables SSH multiplexing (`ControlMaster`) by caching connections in a directory (`ControlPath`) for a period of time (2h, `ControlPersist`). 
+
+```
+Host *.hpc.yale.edu farnam grace milgram ruddle
+    User NETID
+    # Uncomment below to enable X11 forwarding without `-Y`
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication:
+    ControlMaster auto
+    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPersist 2h
+
+Host *.ycrc.yale.edu mccleary
+    User NETID
+    # Uncomment below to enable X11 forwarding without `-Y`
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication
+    ControlMaster auto
+    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPersist 2h
+
+Host farnam grace milgram ruddle
+    HostName %h.hpc.yale.edu
+
+Host mccleary
+    HostName %h.ycrc.yale.edu
+```
+
+!!! warning
+    For multiplexing to work, the `~/.ssh/tmp` directory must exist. Create it with `mkdir -p ~/.ssh/tmp`
+
+
+### CyberDuck
+CyberDuck's interface with MFA can be stream-lined with a few additional configuration steps.
+Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
+
+When you connect type one of the following when prompted with a "Partial authentication success" window.
+
+* "push" to receive a push notification to your smart phone (requires the Duo mobile app)
+* "sms" to receive a verification passcode via text message
+* "phone" to receive a phone call
+
+### MobaXTerm
+
+MobaXTerm is able to cache MFA connections to reduce the frequency of push notifications.
+Under `Settings > SSH > Advanced SSH settings` set the ssh browser type to `scp (enhanced speed)` as seen here:
+
+[MobaXTerm SSH Settings](/img/mobaxterm_mfa.png)
+
+### WinSCP
+
+Similarly, WinSCP can reuse existing SSH connections to reduce the frequency of push notifications. 
+Under `Options > Preferences > Background (under Transfer)` and:
+
+* Set `Maximal number of transfers at the same time:` to 1
+* Check the `Use multiple connections for single transfer` box
+* Click `OK` to save settings
+
 
 ## Troubleshoot MFA
 
