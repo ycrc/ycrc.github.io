@@ -102,7 +102,6 @@ nav:
         - HPC Clusters:
             - "Overview": clusters/index.md
             - clusters/grace.md
-            - clusters/farnam.md
             - clusters/mccleary.md
             - clusters/ruddle.md
             - clusters/milgram.md
