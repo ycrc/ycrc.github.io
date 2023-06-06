@@ -151,7 +151,7 @@ rclone copy localpath/myfile mys3:bucketname/
 rclone sync localpath/mydir mys3:bucketname/remotedir
 ```
 
-We recommend that you protect your configurations with a password. You'll see that as an option when you run rclone config. For all the Rclone documentaion please [refer to the official site](https://rclone.org/docs/).
+We recommend that you protect your configurations with a password. You'll see that as an option when you run rclone config. Please see [our Rclone page](/clusters-at-yale/guides/rclone/) for additional information on how to set up and use Rclone on the YCRC clusters. For all the Rclone documentaion please [refer to the official site](https://rclone.org/docs/).
 
 ### Sites Behind a VPN
 
