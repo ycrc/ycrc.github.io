@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2459,7 +2459,7 @@
                 
                 
                 <h1 id="courses">Courses</h1>
-<p>The YCRC Grace and Farnam clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.</p>
+<p>The YCRC Grace and McCleary clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.</p>
@@ -2497,7 +2497,7 @@
 <div class="highlight"><pre><span></span><code>#SBATCH -p gpu --gpus=1 --reservation=courseid
 </code></pre></div>
 <h3 id="web-portal">Web Portal</h3>
-<p>In any of the app submission forms, type the <code>courseid</code> into the "Reservation" field. For standard (non-gpu) nodes, select <code>day</code> (Grace) or <code>general</code> (Farnam) in the "Partition" field. If your node reservation contains GPU-enabled nodes, select <code>gpu</code>.</p>
+<p>In any of the app submission forms, type the <code>courseid</code> into the "Reservation" field. For standard (non-gpu) nodes, select <code>day</code> in the "Partition" field. If your node reservation contains GPU-enabled nodes, select <code>gpu</code>.</p>
 <p>Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.</p>
 <h2 id="end-of-semester-course-deletion">End of Semester Course Deletion</h2>
 <p>As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. </p>
@@ -2517,11 +2517,8 @@
 <div class="highlight"><pre><span></span><code># home directory
 setfacl -m u:netid:rX /home/courseid_netid
 
-# project directory on Grace
+# project directory on Grace and McCleary
 setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
-
-# project directory on Farnam
-setfacl -m u:netid:rX /gpfs/ysm/project/courseid/courseid_netid
 </code></pre></div>
 </li>
 <li>
@@ -2545,7 +2542,7 @@ rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
       
     
   </small>

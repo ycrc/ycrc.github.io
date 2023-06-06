@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/gaussian/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2328,16 +2328,16 @@
 <p>Access to Gaussian on the Yale clusters is free, but available by request only. To gain access to the installations of Gaussian, please <a href="/#get-help">contact us</a> to be added to the <code>gaussian</code> group.</p>
 </div>
 <p><a href="http://www.gaussian.com/">Gaussian</a> is an electronic structure modeling program that Yale has licensed for its HPC clusters. The latest version of Gaussian is Gaussian 16, which also includes GaussView 6. Older versions of both applications are also available. To see a full list of available versions of Gaussian on the cluster, run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>gaussian
+<div class="highlight"><pre><span></span><code>module avail gaussian
 </code></pre></div>
 <h2 id="running-gaussian-on-the-cluster">Running Gaussian on the Cluster</h2>
 <p>The examples here are for Gaussian 16. In most cases, you could run the older version Gaussian 09 by replacing "g16" with "g09" wherever it occurs.</p>
 <p>When running Gaussian, it is recommended that users request exclusive access to allocated nodes (e.g., by requesting all the cpus on the node) and that they specify the largest possible memory allocation for the number of nodes requested. In addition, in most cases, the scratch storage location (set by the environment variable <code>GAUSS_SCRDIR</code>) should be on the local parallel scratch file system (e.g., scratch60)  of the cluster, rather than in the user’s home directory. (This is the default in the Gaussian module files.)</p>
 <p>Before running Gaussian, you must set up a number of environment variables. This is accomplished most easily by loading the Gaussian module file using:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Gaussian
+<div class="highlight"><pre><span></span><code>module load Gaussian
 </code></pre></div>
 <p>To run Gaussian interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">4</span> -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for more detailed information on requesting resources for interactive jobs.</p>
 <h2 id="gaussview">GaussView</h2>
