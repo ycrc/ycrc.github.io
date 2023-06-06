@@ -590,6 +590,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ycga-partitions" class="md-nav__link">
+    YCGA Partitions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2382,6 +2389,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ycga-partitions" class="md-nav__link">
+    YCGA Partitions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2497,7 +2511,7 @@
 </thead>
 <tbody>
 <tr>
-<td>138</td>
+<td>136</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -2550,7 +2564,7 @@
 </thead>
 <tbody>
 <tr>
-<td>146</td>
+<td>144</td>
 <td>E5-2660_v3</td>
 <td>20</td>
 <td>119</td>
@@ -2715,7 +2729,7 @@
 <tbody>
 <tr>
 <td>Maximum job time limit</td>
-<td><code>14-00:00:00</code></td>
+<td><code>30-00:00:00</code></td>
 </tr>
 </tbody>
 </table>
@@ -2759,7 +2773,7 @@
 <tbody>
 <tr>
 <td>Maximum job time limit</td>
-<td><code>14-00:00:00</code></td>
+<td><code>30-00:00:00</code></td>
 </tr>
 </tbody>
 </table>
@@ -2832,6 +2846,75 @@
 </div>
 </div>
 </details>
+<h3 id="ycga-partitions">YCGA Partitions</h3>
+<p>The following partitions are intended for projects related to the <a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a>. Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please <a href="/#get-help">contact us</a> to get approved and added.</p>
+<details class="summary">
+<summary>YCGA Partitions (click to expand)</summary>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">ycga</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=NONE --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>144</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>119</td>
+<td>haswell, E5-2660_v3, nogpu, standard, common, oldest</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E7-4809_v3</td>
+<td>32</td>
+<td>1505</td>
+<td>haswell, E7-4809_v3, nogpu, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">ycgastaff</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=NONE --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v3</td>
+<td>20</td>
+<td>119</td>
+<td>haswell, E5-2660_v3, nogpu, standard, common, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 <h2 id="ycga-data-retention-policy">YCGA Data Retention Policy</h2>
 <p>Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus. Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).</p>
 <ul>
@@ -2846,18 +2929,18 @@ Disaster recovery is provided by the data stored on the tape library.</p>
 <p>Normally, YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
 http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/sample_dir_001</p>
 <p>You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  You can use the ycgaFastq tool to do that:</p>
-<div class="highlight"><pre><span></span><code>$ /home/bioinfo/software/knightlab/bin/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>/home/bioinfo/software/knightlab/bin/ycgaFastq<span class="w">  </span>fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 </code></pre></div>
 <p>ycgaFastq can also be used to retrieve data that has been archived to tape.  The simplest way to do that is to provide
 the sample submitter's netid and the flowcell (run) name:</p>
-<div class="highlight"><pre><span></span><code>$ ycgaFastq rdb9 AHFH66DSXX
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>rdb9<span class="w"> </span>AHFH66DSXX
 </code></pre></div>
 <p>If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run as been archived and deleted:
-<div class="highlight"><pre><span></span><code>$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>/ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 </code></pre></div></p>
 <p>ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the <a href="http://campuspress.yale.edu/knightlab/ruddle/ycgafastq">documentation</a> or contact us.</p>
 <p>If you would like to know the true location of the data on Ruddle, do this:
-<div class="highlight"><pre><span></span><code>$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>readlink<span class="w"> </span>-f<span class="w"> </span>/ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
 </code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

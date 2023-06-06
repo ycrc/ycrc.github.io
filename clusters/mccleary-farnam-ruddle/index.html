@@ -2456,34 +2456,27 @@
                 
                 
                 <h1 id="mccleary-for-farnam-and-ruddle-users">McCleary for Farnam and Ruddle Users</h1>
-<p>McCleary is the successor to both the Farnam and Ruddle clusters, which will be retired in early summer 2023.
-McClearly is now in a "production stable" state so researchers can permanently migrate their workloads and data from Ruddle and Farnam.
-To encourage transition to McCleary, the YCRC compute service charges will not apply on McCleary commons partitions until Farnam is formally decommissioned on June 1st.</p>
+<p>McCleary is the successor to both the Farnam and Ruddle clusters, which are being retired in early summer 2023.
+McClearly is now in a "production stable" state so researchers can permanently migrate their workloads and data from Ruddle and Farnam.</p>
 <h2 id="key-dates">Key Dates</h2>
 <h3 id="farnam">Farnam</h3>
 <ul>
-<li>April: During the month, we will be migrating purchased nodes and storage from Farnam to McCleary<ul>
-<li>An email to coordinate a migration date will be arriving shortly</li>
-</ul>
-</li>
-<li>June 1st: We will turn off access to Farnam login and OnDemand nodes<ul>
-<li>As this is the formal retirement of Farnam, compute service charges on McCleary commons partitions will begin at this time</li>
+<li>April: Migration of purchased nodes and storage from Farnam to McCleary</li>
+<li>June 1st: Access to Farnam login and OnDemand nodes disabled<ul>
+<li>Compute service charges on McCleary commons partitions begin</li>
 </ul>
 </li>
 <li>July 13: /gpfs/ysm will no longer be available from McCleary</li>
 </ul>
 <h3 id="ruddle">Ruddle</h3>
 <ul>
-<li>April: During the month, we will be migrating purchased nodes from Ruddle to McCleary<ul>
-<li>An email to coordinate a migration date will be arriving shortly</li>
-</ul>
-</li>
-<li>June 1st: Official Farnam retirement date, and therefore compute service charges on McCleary commons partitions will begin at this time. Jobs in the ycga partitions will always be exempt from compute service charge.</li>
+<li>April: Migration of purchased nodes from Ruddle to McCleary</li>
+<li>June 1st: Official Farnam retirement date, and beginning of compute service charges on McCleary commons partitions. Jobs in the ycga partitions will always be exempt from compute service charge.</li>
 <li>July 1st: We will turn off access to Ruddle login and OnDemand nodes</li>
 </ul>
 <h2 id="accounts">Accounts</h2>
 <p>Most Farnam and Ruddle users who have been active in the last year have accounts automatically created on McCleary for them and have received an email to that effect. All other users who conduct life sciences research can request an account using our <a href="https://research.computing.yale.edu/support/hpc/account-request">Account Request form</a>.</p>
-<p>As of entering production sate, we will no longer be creating new Farnam or Ruddle accounts. All new accounts in existing Farnam groups will be created for McCleary only.</p>
+<p>As McCleary has entered production state, we will no longer be creating new Farnam or Ruddle accounts. All new accounts in existing Farnam groups will be created for McCleary only.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Check which group your new McCleary account is associated with and make sure that matches your expection.
@@ -2560,20 +2553,20 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <li><code>ycga_bigmem</code>: for jobs requiring large amount of RAM (&gt;120G)</li>
 </ul>
 <h3 id="dedicated-nodes">Dedicated Nodes</h3>
-<p>If you have purchased nodes on Farnam or Ruddle that are not in the <code>haswell</code> generation, we will coordinate with your group to migrate those nodes to McCleary in April into a partition of the same name.</p>
+<p>If you have purchased nodes on Farnam or Ruddle that are not in the <code>haswell</code> generation, we have coordinated with your group to migrate those nodes to McCleary in April into a partition of the same name.</p>
 <h2 id="storage-and-data">Storage and Data</h2>
 <p>If you have data on the Gibbs filesystem, there is no action required as they are already available on McCleary.</p>
 <h3 id="what-about-my-existing-data-on-farnam">What about My Existing Data on Farnam?</h3>
-<p>Farnam’s primary filesystem, YSM (/gpfs/ysm), will be retired on July 13th. Until then <code>/gpfs/ysm</code> is available on McCleary as a read-only filesystem so necessary data can be copied from Farnam to McCleary. You have been give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. <strong>All data on YSM (that you want to keep) will need to be transferred off the YSM filesystem, either to non-HPC storage or to a McCleary account by you prior the Farnam retirement.</strong> More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
-<p>If you have purchased space on <code>/gpfs/ysm</code> or that is still active (not expired), we will migrate your allocation at a mutually agreeable time. <strong>This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.</strong>  </p>
+<p>Farnam’s primary filesystem, YSM (/gpfs/ysm), will be retired on July 13th. Until then <code>/gpfs/ysm</code> is available on McCleary as a read-only filesystem so necessary data can be copied from /gpfs/ysm to McCleary storage. You have been give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. <strong>All data on YSM (that you want to keep) will need to be transferred off the YSM filesystem, either to non-HPC storage or to a McCleary account, by you prior the Farnam retirement.</strong> More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
+<p>If you have purchased space on <code>/gpfs/ysm</code> that is still active (not expired), we have migrated your allocation at a mutually agreeable time. <strong>This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.</strong>  </p>
 <h3 id="what-about-my-existing-data-on-ruddle">What about My Existing Data on Ruddle?</h3>
 <p><code>/gpfs/ycga</code> is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you have been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. Note this project space (<code>/gpfs/gibbs/project</code>) is distinct from the YCGA storage described below which is confusingly also called <code>project</code> but is located at <code>/gpfs/ycga/project</code>.</p>
 <p>At a later date, all data in the <code>project</code>, <code>sequencers</code>, <code>special</code>, and <code>pi</code> directories under <code>/gpfs/ycga</code> will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  <strong>All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 1st</strong>. More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
 <p>If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.</p>
 <h3 id="researchers-with-purchased-storage">Researchers with Purchased Storage</h3>
 <p>If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not expired), we will migrate your allocation at a mutually agreeable time. <strong>This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.</strong>  </p>
-<p>If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which will be available on McCleary).</p>
-<p>If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.</p>
+<p>If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which is available on McCleary).</p>
+<p>If you have any questions or concerns about what has been moved to McCleary and when, please reach out to us.</p>
 <h3 id="storage-at-yale-say-shares">Storage At Yale (SAY) Shares</h3>
 <p>Storage At Yale shares are available on McCleary, but only on the <code>transfer</code> node. 
 To access your SAY data, make sure to login to the <code>transfer</code> node and then copy your data to either <code>project</code> or <code>scratch</code>. 
@@ -2586,7 +2579,7 @@ Note, this is different than how Ruddle was set up, where SAY shares were availa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 19, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
       
     
   </small>
