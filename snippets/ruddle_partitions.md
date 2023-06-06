@@ -26,7 +26,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |138|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |136|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "interactive"
 
@@ -56,7 +56,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |146|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+    |144|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
 === "bigmem"
 
@@ -142,7 +142,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Maximum job time limit|`14-00:00:00`|
+        |Maximum job time limit|`30-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -168,7 +168,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Limit|Value|
         |---|---|
-        |Maximum job time limit|`14-00:00:00`|
+        |Maximum job time limit|`30-00:00:00`|
 
         **Available Compute Nodes**
 
@@ -203,4 +203,45 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |2|6240|36|179|cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp|
+
+### YCGA Partitions
+The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.
+
+??? summary "YCGA Partitions (click to expand)"
+    === "ycga"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=NONE --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |144|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
+        |2|E7-4809_v3|32|1505|haswell, E7-4809_v3, nogpu, common|
+
+    === "ycgastaff"
+
+        **Request Defaults**
+
+        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+        ``` text
+        --time=NONE --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+        ```
+
+        **Available Compute Nodes**
+
+        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+        |---|---|---|---|---|
+        |2|E5-2660_v3|20|119|haswell, E5-2660_v3, nogpu, standard, common, oldest|
 
