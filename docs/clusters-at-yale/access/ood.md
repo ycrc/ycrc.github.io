@@ -7,7 +7,7 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
-Open OnDemand is available on each cluster using your NetID credentials (CAS login). 
+Open OnDemand is available on each cluster using your NetID credentials (CAS login). The Yale CAS login is configured with the DUO authentication. We recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication menthod for DUO. This will simplified the login process.
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
@@ -23,7 +23,7 @@ The above four URLs are also called cluster OOD URLs. They are available to any 
 
 Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
 Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
-Students must use the course URL log in to OOD. They will with their NetID to sign in but work under their student account on the cluster. 
+Students must use the course URL to log in to OOD. They will with their NetID to log in but work under their student account on the cluster while they are in OOD. 
 
 Course OOD and cluster OOD have different URLs, even if they use the same physical machine. 
 Student accounts can only log in to OOD through a course OOD URL, and a regular account (same as your NetID) can only log in through the cluster OOD URL.
@@ -166,6 +166,15 @@ options(bitmapType='cairo')
 
 Alternatively, you can put the above code in `.Rprofile` in your home directory and the option will be picked up automatically. 
 
+#### Clean RStudio
+If RStudio becomes slow to respond or completely stops responding, please stop the RStudio session and then run the following script at a shell command line:
+
+```
+clean_rstudio.sh
+```
+
+This will remove any temporary files created by RStudio and allow it to start anew.
+
 ### Troubleshoot OOD
 
 #### An OOD session is started and then completed immediately
@@ -197,4 +206,5 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
 #### RStudio with Conda R
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
-#### 
+#### RStudio Server does not respond
+If you encounter a grey screen after clicking the "Connect to RStudio Server" button, please stop the RStudio session and run `clean-rstudio.sh` at a shell command line.
