@@ -7,12 +7,11 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 
 If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
-Open OnDemand is available on each cluster using your NetID credentials (CAS login). 
+Open OnDemand is available on each cluster using your NetID credentials (CAS login). The Yale CAS login is configured with the DUO authentication. We recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication menthod for DUO. This will simplified the login process.
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
 | [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)         |
-| [Farnam](/clusters/farnam)     | [ood-farnam.hpc.yale.edu](https://ood-farnam.hpc.yale.edu)       |
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)     |
 | [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu)       |
@@ -23,7 +22,7 @@ The above four URLs are also called cluster OOD URLs. They are available to any 
 
 Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
 Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
-Students must use the course URL log in to OOD. They will with their NetID to sign in but work under their student account on the cluster. 
+Students must use the course URL to log in to OOD. They will with their NetID to log in but work under their student account on the cluster while they are in OOD. 
 
 Course OOD and cluster OOD have different URLs, even if they use the same physical machine. 
 Student accounts can only log in to OOD through a course OOD URL, and a regular account (same as your NetID) can only log in through the cluster OOD URL.
@@ -91,7 +90,7 @@ We have deployed a selection of common graphical programs as Interactive Apps on
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
 In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
 
-Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram, Farnam and Ruddle) or your lab's partition.
+Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram and Ruddle) or your lab's partition.
 
 ![remote_desktop](/img/ood_remote.png){: .medium}
 
@@ -166,13 +165,22 @@ options(bitmapType='cairo')
 
 Alternatively, you can put the above code in `.Rprofile` in your home directory and the option will be picked up automatically. 
 
+#### Clean RStudio
+If RStudio becomes slow to respond or completely stops responding, please stop the RStudio session and then run the following script at a shell command line:
+
+```
+clean_rstudio.sh
+```
+
+This will remove any temporary files created by RStudio and allow it to start anew.
+
 ### Troubleshoot OOD
 
 #### An OOD session is started and then completed immediately
 
 1. Check if your quota is full
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  
-3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, farnam, ruddle, milgram)
+3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, ruddle, milgram) or `$HOME/.lmod.d/default.mccleary-rhel8` for McCleary.
 
 #### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
 1. Make sure there is no initialization left by `conda init` in your `.bashrc`. Clean it with 
@@ -197,4 +205,5 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
 #### RStudio with Conda R
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
-#### 
+#### RStudio Server does not respond
+If you encounter a grey screen after clicking the "Connect to RStudio Server" button, please stop the RStudio session and run `clean-rstudio.sh` at a shell command line.

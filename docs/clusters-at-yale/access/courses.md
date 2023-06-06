@@ -1,6 +1,6 @@
 # Courses
 
-The YCRC Grace and Farnam clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.
+The YCRC Grace and McCleary clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.
 
 !!! warning
     All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.
@@ -68,7 +68,7 @@ or if the reservation is for GPU nodes
 
 ### Web Portal
 
-In any of the app submission forms, type the `courseid` into the "Reservation" field. For standard (non-gpu) nodes, select `day` (Grace) or `general` (Farnam) in the "Partition" field. If your node reservation contains GPU-enabled nodes, select `gpu`.
+In any of the app submission forms, type the `courseid` into the "Reservation" field. For standard (non-gpu) nodes, select `day` in the "Partition" field. If your node reservation contains GPU-enabled nodes, select `gpu`.
 
 Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.
 
@@ -93,11 +93,9 @@ If you have a research account on the cluster, you can transfer any data you wan
     # home directory
     setfacl -m u:netid:rX /home/courseid_netid
 
-    # project directory on Grace
+    # project directory on Grace and McCleary
     setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
 
-    # project directory on Farnam
-    setfacl -m u:netid:rX /gpfs/ysm/project/courseid/courseid_netid
     ```
 
 1. Log in as your research account. Check that you can access the above paths.

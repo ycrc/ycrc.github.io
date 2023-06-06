@@ -1,6 +1,6 @@
 # Python
 
-[Python](https://www.python.org/about/) is a language and free software distribution that is used for websites, system administration, security testing, and scientific computing, to name a few. On the Yale Clusters there are a couple ways in which you can set up Python environments. The default python provided is the minimal install of Python 2.7 that comes with Red Hat Enterprise Linux 7. Unless your Python scripts only use Python's standard library, you will probably want to use one of the methods below to set up your own python environment.
+[Python](https://www.python.org/about/) is a language and free software distribution that is used for websites, system administration, security testing, and scientific computing, to name a few. On the Yale Clusters there are a couple ways in which you can set up Python environments. The default python provided is the minimal install of Python 2.7 that comes with Red Hat Enterprise Linux 7. We strongly recommend that you use one of the methods below to set up your own python environment.
 
 ## The Python Module
 
