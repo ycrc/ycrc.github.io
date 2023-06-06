@@ -488,20 +488,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/farnam/" class="md-nav__link">
-        Farnam
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../clusters/mccleary/" class="md-nav__link">
         McCleary
       </a>
@@ -2181,6 +2167,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/yale_library/" class="md-nav__link">
+        Yale Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/sw_carpentry/" class="md-nav__link">
+        Software Carpentry
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2385,7 +2399,7 @@
 </li>
 <li>
 <p>Start an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a>.</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span>
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">2</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2404,17 +2418,17 @@
 </li>
 <li>
 <p>Create the <a href="/clusters-at-yale/guides/conda/">Conda</a> environment for tensorflow, index it for the YCRC <a href="/clusters-at-yale/access/ood/">Open Ondemand</a> web dashboard.</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf2<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.2.2<span class="w"> </span><span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.1.0<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
+<div class="highlight"><pre><span></span><code>module load miniconda
+mamba create --name tf2 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.2.2 <span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.1.0 jupyter jupyterlab
 <span class="c1"># environment creation will take a few minutes</span>
-conda<span class="w"> </span>activate<span class="w"> </span>tf2
+conda activate tf2
 <span class="c1"># Do not install tensorflow with conda, it is no longer supported</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.11.*
+pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.11.*
 <span class="c1"># configure system paths to point to python libraries</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+mkdir -p <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
+<span class="nb">echo</span> <span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/&#39;</span> &gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
 <span class="c1">#run command to add to list of jupyter note book environments</span>
-ycrc_conda_env.list<span class="w"> </span>build
+ycrc_conda_env.list build
 </code></pre></div>
 </li>
 </ol>
@@ -2458,19 +2472,19 @@ ycrc_conda_env.list<span class="w"> </span>build
 </ol>
 <h2 id="containers-tensorflowserving">Containers - <code>tensorflow/serving</code></h2>
 <p>You can use TensorFlow Serving to serve multiple versions of models but examples given use Ubuntu packages or Docker. YCRC clusters are RHEL and do not allow Docker, so instead we use <a href="/clusters-at-yale/guides/containers">Apptainer</a></p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>tensorflow/serving
+<div class="highlight"><pre><span></span><code>docker pull tensorflow/serving
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/ml<span class="w"> </span><span class="c1"># or wherever this project is</span>
-docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">8500</span>:8500<span class="w"> </span>-p<span class="w"> </span><span class="m">8501</span>:8501<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>-e<span class="w"> </span><span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>tensorflow/serving
+<span class="nb">export</span> <span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/ml <span class="c1"># or wherever this project is</span>
+docker run -it --rm -p <span class="m">8500</span>:8500 -p <span class="m">8501</span>:8501 <span class="se">\</span>
+   -v <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
+   -e <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model <span class="se">\</span>
+   tensorflow/serving
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span>build<span class="w"> </span>tf_model_server.sif<span class="w"> </span>docker://tensorflow/serving
+<div class="highlight"><pre><span></span><code>apptainer build tf_model_server.sif docker://tensorflow/serving
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/repos/handson-ml2
-apptainer<span class="w"> </span>run<span class="w"> </span>--containall<span class="w"> </span>-B<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--env<span class="w"> </span><span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model<span class="w"> </span>tf_model_server.sif
+<span class="nb">export</span> <span class="nv">ML_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/repos/handson-ml2
+apptainer run --containall -B <span class="s2">&quot;</span><span class="nv">$ML_PATH</span><span class="s2">/my_mnist_model:/models/my_mnist_model&quot;</span> <span class="se">\</span>
+    --env <span class="nv">MODEL_NAME</span><span class="o">=</span>my_mnist_model tf_model_server.sif
 </code></pre></div>
 <ul>
 <li>Only need to build <code>.sif</code> file when you would run <code>docker pull</code></li>
@@ -2486,12 +2500,12 @@ apptainer<span class="w"> </span>run<span class="w"> </span>--containall<span cl
 <span class="c1">#SBATCH --ntasks=8 --cpus-per-task=2 </span>
 <span class="c1">#SBATCH --mem-per-cpu=16G --gpus-per-task=1</span>
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>tf2
+module purge
+module load miniconda
+conda activate tf2
 
 <span class="c1"># this python process will start on a node in the gpu partition with 4 CPUs &amp; 1 GPU</span>
-python<span class="w"> </span>cluster_tf.py
+python cluster_tf.py
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=day --time=1- --ntasks=1 --cpus-per-task=2</span>
@@ -2500,12 +2514,12 @@ python<span class="w"> </span>cluster_tf.py
 <span class="c1">#SBATCH --partition=gpu --ntasks=8 --cpus-per-task=2 </span>
 <span class="c1">#SBATCH --mem-per-cpu=16G --gpus-per-task=1</span>
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>tf2
+module purge
+module load miniconda
+conda activate tf2
 
 <span class="c1"># this python process will start on a node in the day partition with 2 CPUs</span>
-python<span class="w"> </span>cluster_tf.py
+python cluster_tf.py
 </code></pre></div>
                 
                   

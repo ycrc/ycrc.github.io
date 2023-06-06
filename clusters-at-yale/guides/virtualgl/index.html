@@ -488,20 +488,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/farnam/" class="md-nav__link">
-        Farnam
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../clusters/mccleary/" class="md-nav__link">
         McCleary
       </a>
@@ -2214,6 +2200,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/yale_library/" class="md-nav__link">
+        Yale Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/sw_carpentry/" class="md-nav__link">
+        Software Carpentry
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2463,23 +2477,23 @@ However, this could change in the future.</p>
 <h3 id="use-virtualgl-with-the-egl-back-end">Use VirtualGL with the EGL back end</h3>
 <p>EGL is the default back end which <code>ycrc_vglrun</code> will choose to use if no option is provided. You can also add the <code>-e</code> 
 option to choose the EGL back end explicitly. </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ParaView
-ycrc_vglrun<span class="w"> </span>paraview
+<div class="highlight"><pre><span></span><code>module load ParaView
+ycrc_vglrun paraview
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ParaView
-ycrc_vglrun<span class="w"> </span>-e<span class="w"> </span>paraview
+<div class="highlight"><pre><span></span><code>module load ParaView
+ycrc_vglrun -e paraview
 </code></pre></div>
 <h3 id="use-virtualgl-with-the-glx-back-end">Use VirtualGL with the GLX back end</h3>
 <p>If your application cannot be rendered properly with the EGL back end, your next step is to try the GLX back end. 
 You should choose it explicitly with the <code>-g</code> option. </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ParaView
-ycrc_vglrun<span class="w"> </span>-g<span class="w"> </span>paraview
+<div class="highlight"><pre><span></span><code>module load ParaView
+ycrc_vglrun -g paraview
 </code></pre></div>
 <h3 id="run-matlab-with-hardware-opengl-rendering">Run MATLAB with hardware OpenGL rendering</h3>
 <p>By default, MATLAB will use software OpenGL rendering. To run MATLAB with hardware OpenGL rendering, 
 add <code>-nosoftwareopengl</code>.
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>MATLAB
-ycrc_vglrun<span class="w"> </span>matlab<span class="w"> </span>-nosoftwareopengl
+<div class="highlight"><pre><span></span><code>module load MATLAB
+ycrc_vglrun matlab -nosoftwareopengl
 </code></pre></div></p>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="nvidia-smi-or-vglrun-cannot-be-found"><code>nvidia-smi</code> or <code>vglrun</code> cannot be found</h3>
@@ -2490,10 +2504,10 @@ with GPU nodes.</p>
 <p>If you get the following message when running your application with the GLX back end,
 you need to add <code>--exclude=nodename</code> to <code>Advanced options</code> in the Remote Desktop OOD user interface
 and resubmit Remote Desktop. Replace <code>nodename</code> with the actual node name from the message. </p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>VirtualGL<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>GLX<span class="w"> </span>back<span class="w"> </span>end<span class="w"> </span>is<span class="w"> </span>currently<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>another<span class="w"> </span>application.
-<span class="w">    </span>Please<span class="w"> </span>resubmit<span class="w"> </span>your<span class="w"> </span>job<span class="w"> </span>with
+<div class="highlight"><pre><span></span><code>    VirtualGL with the GLX back end is currently used by another application.
+    Please resubmit your job with
 
-<span class="w">              </span>--exclude<span class="o">=</span>c22n01
+              --exclude<span class="o">=</span>c22n01
 </code></pre></div>
                 
                   

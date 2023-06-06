@@ -488,20 +488,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/farnam/" class="md-nav__link">
-        Farnam
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../clusters/mccleary/" class="md-nav__link">
         McCleary
       </a>
@@ -881,9 +867,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-transfer-and-duo-mfa" class="md-nav__link">
-    File Transfer and Duo MFA
+  <a href="#connection-multiplexing-and-file-transfers-with-duo-mfa" class="md-nav__link">
+    Connection Multiplexing and File Transfers with DUO MFA
   </a>
+  
+    <nav class="md-nav" aria-label="Connection Multiplexing and File Transfers with DUO MFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-config-file" class="md-nav__link">
+    SSH Config File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyberduck" class="md-nav__link">
+    CyberDuck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    MobaXTerm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winscp" class="md-nav__link">
+    WinSCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2160,6 +2180,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/yale_library/" class="md-nav__link">
+        Yale Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/sw_carpentry/" class="md-nav__link">
+        Software Carpentry
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2292,9 +2340,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-transfer-and-duo-mfa" class="md-nav__link">
-    File Transfer and Duo MFA
+  <a href="#connection-multiplexing-and-file-transfers-with-duo-mfa" class="md-nav__link">
+    Connection Multiplexing and File Transfers with DUO MFA
   </a>
+  
+    <nav class="md-nav" aria-label="Connection Multiplexing and File Transfers with DUO MFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-config-file" class="md-nav__link">
+    SSH Config File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyberduck" class="md-nav__link">
+    CyberDuck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    MobaXTerm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winscp" class="md-nav__link">
+    WinSCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2323,15 +2405,78 @@
                 
                 
                 <h1 id="multi-factor-authentication">Multi-factor Authentication</h1>
-<p>To improve security, access to Ruddle or McCleary requires both a public key and multi-factor authentication (MFA). We use the same MFA (Duo) as is used elsewhere at Yale. To get set up with Duo, see these <a href="https://cybersecurity.yale.edu/mfa">instructions.</a></p>
-<p>You will need upload your <a href="https://sshkeys.hpc.yale.edu/">ssh public key to our site</a>. For more info on how to use ssh, please see the <a href="/clusters-at-yale/access">SSH instructions</a>.</p>
-<p>Once you've set up Duo and your key is registered, you can log in to Ruddle or McCleary. Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option. We recommend choosing Duo Push (option 1). If you chose this option you should receive a notification on your phone. Once approved, you should be allowed to continue to log in.</p>
+<p>To improve security, access to Ruddle or McCleary requires both a public key and multi-factor authentication (MFA).
+We use the same MFA (Duo) as is used elsewhere at Yale.
+To get set up with Duo, see these <a href="https://cybersecurity.yale.edu/mfa">instructions.</a></p>
+<p>You will need upload your <a href="https://sshkeys.hpc.yale.edu/">ssh public key to our site</a>.
+For more info on how to use ssh, please see the <a href="/clusters-at-yale/access">SSH instructions</a>.</p>
+<p>Once you've set up Duo and your key is registered, you can log in to Ruddle or McCleary.
+Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option.
+We recommend choosing Duo Push (option 1).
+If you chose this option you should receive a notification on your phone.
+Once approved, you should be allowed to continue to log in.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can set up more than one phone for Duo. For example, you can set up your smartphone plus your office landline. That way, if you forget or lose your phone, you can still authenticate. For instructions on how to add additional phones go <a href="http://its.yale.edu/sites/default/files/imce/pdfs/MFA%20Adding%20a%20new%20device%2008312015.pdf">here</a>.</p>
+<p>You can set up more than one phone for Duo.
+For example, you can set up your smartphone plus your office landline.
+That way, if you forget or lose your phone, you can still authenticate.
+For instructions on how to add additional phones go <a href="https://guide.duo.com/enrollment#add-or-manage-devices">here</a>.</p>
 </div>
-<h2 id="file-transfer-and-duo-mfa">File Transfer and Duo MFA</h2>
-<p>Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you. When this happens, you will be asked to Duo authenticate for each connection. Setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. For CyberDuck, see our <a href="/data/transfer/#cyberduck-on-mccleary-and-ruddle">section on the Transfer Data page</a>.</p>
+<h2 id="connection-multiplexing-and-file-transfers-with-duo-mfa">Connection Multiplexing and File Transfers with DUO MFA</h2>
+<p>Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you.
+When this happens, you will be asked to Duo authenticate for each connection.</p>
+<h3 id="ssh-config-file">SSH Config File</h3>
+<p>On macOS and Linux-based systems setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
+An example config file is shown below which enables SSH multiplexing (<code>ControlMaster</code>) by caching connections in a directory (<code>ControlPath</code>) for a period of time (2h, <code>ControlPersist</code>). </p>
+<div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu farnam grace milgram ruddle
+    User NETID
+    # Uncomment below to enable X11 forwarding without `-Y`
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication:
+    ControlMaster auto
+    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPersist 2h
+
+Host *.ycrc.yale.edu mccleary
+    User NETID
+    # Uncomment below to enable X11 forwarding without `-Y`
+    #ForwardX11 yes
+    # To re-use your connections with multi-factor authentication
+    ControlMaster auto
+    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPersist 2h
+
+Host farnam grace milgram ruddle
+    HostName %h.hpc.yale.edu
+
+Host mccleary
+    HostName %h.ycrc.yale.edu
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For multiplexing to work, the <code>~/.ssh/tmp</code> directory must exist. Create it with <code>mkdir -p ~/.ssh/tmp</code></p>
+</div>
+<h3 id="cyberduck">CyberDuck</h3>
+<p>CyberDuck's interface with MFA can be stream-lined with a few additional configuration steps.
+Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
+<p>When you connect type one of the following when prompted with a "Partial authentication success" window.</p>
+<ul>
+<li>"push" to receive a push notification to your smart phone (requires the Duo mobile app)</li>
+<li>"sms" to receive a verification passcode via text message</li>
+<li>"phone" to receive a phone call</li>
+</ul>
+<h3 id="mobaxterm">MobaXTerm</h3>
+<p>MobaXTerm is able to cache MFA connections to reduce the frequency of push notifications.
+Under <code>Settings &gt; SSH &gt; Advanced SSH settings</code> set the ssh browser type to <code>scp (enhanced speed)</code> as seen here:</p>
+<p><a href="/img/mobaxterm_mfa.png">MobaXTerm SSH Settings</a></p>
+<h3 id="winscp">WinSCP</h3>
+<p>Similarly, WinSCP can reuse existing SSH connections to reduce the frequency of push notifications. 
+Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and:</p>
+<ul>
+<li>Set <code>Maximal number of transfers at the same time:</code> to 1</li>
+<li>Check the <code>Use multiple connections for single transfer</code> box</li>
+<li>Click <code>OK</code> to save settings</li>
+</ul>
 <h2 id="troubleshoot-mfa">Troubleshoot MFA</h2>
 <p>If you are having problems initially registering Duo, please contact the <a href="https://yale.service-now.com/it?id=get_help">Yale ITS Helpdesk</a>.</p>
 <p>If you have successfully used MFA connect to a cluster before, but cannot now, first please check the following:</p>
@@ -2357,7 +2502,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
       
     
   </small>

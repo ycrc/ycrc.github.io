@@ -488,20 +488,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/farnam/" class="md-nav__link">
-        Farnam
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../clusters/mccleary/" class="md-nav__link">
         McCleary
       </a>
@@ -2283,6 +2269,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/yale_library/" class="md-nav__link">
+        Yale Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/sw_carpentry/" class="md-nav__link">
+        Software Carpentry
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2585,15 +2599,15 @@
 <p>If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that <a href="/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://singularityhub.github.io/singularityhub-docs/">Singularity Hub</a> (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your <code>~/.bashrc</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer</span>
 <span class="c1"># e.g.</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>~/scratch60/.apptainer
+<span class="nb">export</span> <span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>~/scratch60/.apptainer
 </code></pre></div>
 <p>Here are some examples of getting containers already built by someone else with apptainer:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># from Docker Hub (https://hub.docker.com/)</span>
-apptainer<span class="w"> </span>build<span class="w"> </span>ubuntu-18.10.sif<span class="w"> </span>docker://ubuntu:18.10
-apptainer<span class="w"> </span>build<span class="w"> </span>tensorflow-10.0-py3.sif<span class="w"> </span>docker://tensorflow/tensorflow:1.10.0-py3
+apptainer build ubuntu-18.10.sif docker://ubuntu:18.10
+apptainer build tensorflow-10.0-py3.sif docker://tensorflow/tensorflow:1.10.0-py3
 
 <span class="c1"># from Singularity Hub (no longer updated)</span>
-apptainer<span class="w"> </span>build<span class="w"> </span>bioconvert-latest.sif<span class="w"> </span>shub://biokit/bioconvert:latest
+apptainer build bioconvert-latest.sif shub://biokit/bioconvert:latest
 </code></pre></div>
 <h2 id="build-your-own-container">Build Your Own Container</h2>
 <p>You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a <a href="https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files">definition file</a>.
@@ -2603,70 +2617,70 @@ To build a container from a definition file, you need administrative privileges 
 <h3 id="header">Header</h3>
 <p>Every container definition must begin with a header that defines what image to start with, or bootstrap from. This can be an official Linux distribution or someone else's container that gets you nearly what you want.</p>
 <p>To start from Ubuntu Bionic Beaver (18.04 LTS):</p>
-<div class="highlight"><pre><span></span><code>Bootstrap:<span class="w"> </span>docker
-From:<span class="w"> </span>ubuntu:18.04
+<div class="highlight"><pre><span></span><code>Bootstrap: docker
+From: ubuntu:18.04
 </code></pre></div>
 <p>Or an Nvidia developer image</p>
-<div class="highlight"><pre><span></span><code>Bootstrap:<span class="w"> </span>docker
-From:<span class="w"> </span>nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
+<div class="highlight"><pre><span></span><code>Bootstrap: docker
+From: nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 </code></pre></div>
 <p>The rest of the sections all begin with <code>%</code> and the section name. You will see section contents indented by convention, but this is not required.</p>
 <h3 id="labels">%labels</h3>
 <p>The labels section allows you to define metadata for your container:</p>
 <div class="highlight"><pre><span></span><code>%labels
-<span class="w">    </span>Name
-<span class="w">    </span>Maintainer<span class="w"> </span><span class="s2">&quot;YCRC Support Team&quot;</span><span class="w"> </span>&lt;hpc@yale.edu&gt;Version<span class="w"> </span>v99.9
-<span class="w">    </span>Architecture<span class="w"> </span>x86_64
-<span class="w">    </span>URL<span class="w"> </span>https://research.computing.yale.edu/&lt;/hpc@yale.edu&gt;
+    Name
+    Maintainer <span class="s2">&quot;YCRC Support Team&quot;</span> &lt;hpc@yale.edu&gt;Version v99.9
+    Architecture x86_64
+    URL https://research.computing.yale.edu/&lt;/hpc@yale.edu&gt;
 </code></pre></div>
 <p>You can examine container metadata with the <code>apptainer inspect</code> command.</p>
 <h3 id="files">%files</h3>
 <p>If you'd like to copy any files from the system you are building on, you do so in the %files section. Each line in the files section is a pair of source and destination paths, where the source is on your host system, and destination is a path in the container.</p>
 <div class="highlight"><pre><span></span><code>%files
-<span class="w">    </span>sample_data.tar<span class="w"> </span>/opt/sample_data/
-<span class="w">    </span>example_script.sh<span class="w"> </span>/opt/sample_data/
+    sample_data.tar /opt/sample_data/
+    example_script.sh /opt/sample_data/
 </code></pre></div>
 <h3 id="post">%post</h3>
 <p>The post section is where you can run updates, installs, etc in your container to customize it.</p>
 <div class="highlight"><pre><span></span><code>%post
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Customizing Ubuntu&quot;</span>
-<span class="w">    </span>apt-get<span class="w"> </span>update
-<span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>software-properties-common<span class="w"> </span>build-essential<span class="w"> </span>cmake
-<span class="w">    </span>add-apt-repository<span class="w"> </span>universe
-<span class="w">    </span>apt-get<span class="w"> </span>update
-<span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>libboost-all-dev<span class="w"> </span>libgl1-mesa-dev<span class="w"> </span>libglu1-mesa-dev
-<span class="w">    </span><span class="nb">cd</span><span class="w"> </span>/tmp
-<span class="w">    </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gitdudette/myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp
-<span class="w">    </span><span class="c1"># ... etc etc</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Customizing Ubuntu&quot;</span>
+    apt-get update
+    apt-get -y install software-properties-common build-essential cmake
+    add-apt-repository universe
+    apt-get update
+    apt-get -y libboost-all-dev libgl1-mesa-dev libglu1-mesa-dev
+    <span class="nb">cd</span> /tmp
+    git clone https://github.com/gitdudette/myapp <span class="o">&amp;&amp;</span> <span class="nb">cd</span> myapp
+    <span class="c1"># ... etc etc</span>
 </code></pre></div>
 <h3 id="environment">%environment</h3>
 <p>The environment section allows you to define environment variables for your container. These variables are available when you run the built container, not during its build.</p>
 <div class="highlight"><pre><span></span><code>%environment
-<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/opt/my_app/bin:<span class="nv">$PATH</span>
-<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/my_app/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+    <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/my_app/bin:<span class="nv">$PATH</span>
+    <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/my_app/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 </code></pre></div>
 <h3 id="building">Building</h3>
 <p>To finally build your container after saving your definition file as <code>my_app.def</code>, for example, you would run</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span>build<span class="w"> </span>my_app.sif<span class="w"> </span>my_app.def
+<div class="highlight"><pre><span></span><code>apptainer build my_app.sif my_app.def
 </code></pre></div>
 <h2 id="use-a-container-image">Use a Container Image</h2>
 <p>Once you have a container image, you can run it as a part of a batch job, or interactively.</p>
 <h3 id="interactively">Interactively</h3>
 <p>To get a shell in a container so you can interactively work in its environment:</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span>shell<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>containername.sif
+<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash containername.sif
 </code></pre></div>
 <h3 id="in-a-job-script">In a Job Script</h3>
 <p>You can also run applications from your container non-interactively as you would in a batch job. If I wanted to run a script called <code>my_script.py</code> using my container's python:</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>containername.sif<span class="w"> </span>python<span class="w"> </span>my_script.py
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> containername.sif python my_script.py
 </code></pre></div>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>If you are unsure if you are running inside or outside your container, you can run:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$APPTAINER_NAME</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$APPTAINER_NAME</span>
 </code></pre></div>
 <p>If you get back text, you are in your container.</p>
 <p>If you'd like to pass environment variables into your container, you can do so by defining them prefixed with <code>APPTAINERENV_</code> . For Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINERENV_BLASTDB</span><span class="o">=</span>/home/me/db/blast
-apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>my_blast_image.sif<span class="w"> </span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>BLAST
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">APPTAINERENV_BLASTDB</span><span class="o">=</span>/home/me/db/blast
+apptainer <span class="nb">exec</span> my_blast_image.sif env <span class="p">|</span> grep BLAST
 </code></pre></div>
 <p>Should return <code>BLASTDB=/home/me/db/blast</code>, which means you set the <code>BLASTDB</code> environment variable in the container properly.</p>
 <h2 id="additional-notes">Additional Notes</h2>
@@ -2674,11 +2688,11 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 <p>MPI support for Apptainer is relatively straight-forward. The only thing to watch is to make sure that you are using the same version of MPI inside your container as you are on the cluster.</p>
 <h3 id="gpus">GPUs</h3>
 <p>You can use GPU-accelerated code inside your container, which will need most everything also installed in your container (e.g. CUDA, cuDNN). In order for your applications to have access to the right drivers on the host machine, use the <code>--nv</code> flag. For example:</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>tensorflow-10.0-py3.sif<span class="w"> </span>python<span class="w"> </span>./my-tf-model.py
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> --nv tensorflow-10.0-py3.sif python ./my-tf-model.py
 </code></pre></div>
 <h3 id="home-directories">Home Directories</h3>
 <p>Sometimes the maintainer of a Docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the <code>--contain</code> option. Unfortunately, you will also then have to explicitly tell Apptainer about the paths that you want to use from inside the container with the <a href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html"><code>--bind</code></a> option.</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span>shell<span class="w"> </span>--shell<span class="w"> </span>/bin/bash<span class="w"> </span>--contain<span class="w"> </span>--bind<span class="w"> </span>/gpfs/ysm/project/be59:/home/be59/project<span class="w"> </span>bioconvert-latest.sif
+<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.sif
 </code></pre></div>
                 
                   
