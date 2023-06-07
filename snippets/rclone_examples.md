@@ -1,6 +1,6 @@
 === "Google Drive"
     
-    The example below is a screen dump when setting up `rclone` on Farnam for Google Drive.
+    The example below is a screen dump when setting up `rclone` for Google Drive.
     
     ```bash
     [pl543@c03n06 ~]$ rclone config
@@ -120,7 +120,7 @@
     
 === "Box"
     
-    The example below is a screen dump when setting up `rclone` on Farnam for Yale Box.
+    The example below is a screen dump when setting up `rclone` for Yale Box.
 
     ```bash
     [pl543@c14n07 ~]$ rclone config
@@ -192,7 +192,7 @@
     
 === "S3"
 
-    The example below is a screen dump when setting up `rclone` on Farnam for an S3 provider such as aws.
+    The example below is a screen dump when setting up `rclone` for an S3 provider such as aws.
 
 ```bash
 
