@@ -127,7 +127,7 @@ The `ycrc_default` conda environment will be automatically built when you select
 ```bash
 module load miniconda
 conda create -n env_name jupyter jupyter-lab
-ycrc_conda_env.list build  
+ycrc_conda_env.sh update
 ```
 
 Once created, `ycrc_default` will not be updated by OOD automatically. It must be updated by the user manually. To update `ycrc_default`, run the following command from a shell command line:

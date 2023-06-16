@@ -42,7 +42,7 @@ Notes on installing and testing [tensorflow](https://www.tensorflow.org/install/
     mkdir -p $CONDA_PREFIX/etc/conda/activate.d
     echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
     #run command to add to list of jupyter note book environments
-    ycrc_conda_env.list build
+    ycrc_conda_env.sh update
     ```
 
 ## Start a Notebook
