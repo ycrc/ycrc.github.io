@@ -2482,7 +2482,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="1:9"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2541,7 +2541,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
 </tr>
 <tr>
-<td>19</td>
+<td>15</td>
 <td>6240</td>
 <td>36</td>
 <td>180</td>
@@ -2665,10 +2665,70 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>983</td>
 <td>icelake, avx512, 8358, nogpu, bigtmp, common</td>
 </tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, common</td>
+</tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">transfer</label><div class="tabbed-content">
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">long</label><div class="tabbed-content">
+<p>Use the long partition for jobs that need a longer runtime than week allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=7-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the long partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>36</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>36</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">transfer</label><div class="tabbed-content">
 <p>Use the transfer partition to stage data for your jobs to and from <a href="/clusters-at-yale/data/#staging-data">cluster storage</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2721,7 +2781,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu</label><div class="tabbed-content">
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2786,10 +2846,10 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>5222</td>
 <td>8</td>
 <td>163</td>
-<td>rtx5000</td>
+<td>rtx3090</td>
 <td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+<td>24</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2802,6 +2862,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100</td>
 </tr>
 <tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
 <td>2</td>
 <td>5222</td>
 <td>8</td>
@@ -2810,16 +2880,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
 </tr>
 <tr>
 <td>10</td>
@@ -2834,7 +2894,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2901,7 +2961,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2968,7 +3028,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><label for="__tabbed_1_8">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><label for="__tabbed_1_9">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3029,16 +3089,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 8362, nogpu, standard, pi</td>
 </tr>
 <tr>
-<td>4</td>
-<td>6346</td>
-<td>32</td>
-<td>3960</td>
-<td></td>
-<td></td>
-<td></td>
-<td>icelake, avx512, 6346, nogpu, bigtmp, common</td>
-</tr>
-<tr>
 <td>1</td>
 <td>8358</td>
 <td>64</td>
@@ -3077,6 +3127,26 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td></td>
 <td>icelake, avx512, 6346, nogpu, pi</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6346</td>
+<td>32</td>
+<td>3960</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6346, nogpu, bigtmp, common</td>
+</tr>
+<tr>
+<td>42</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3129,14 +3199,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
 </tr>
 <tr>
-<td>4</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+<td>6</td>
+<td>6240</td>
+<td>36</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
 <td>10</td>
@@ -3179,6 +3249,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000</td>
 </tr>
 <tr>
+<td>2</td>
+<td>6234</td>
+<td>16</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6234, nogpu, common, bigtmp</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
@@ -3187,6 +3267,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 6240, pi, v100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3207,6 +3297,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6420</td>
+<td>36</td>
+<td>730</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3239,6 +3339,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090</td>
 </tr>
 <tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
 <td>10</td>
 <td>5222</td>
 <td>8</td>
@@ -3247,46 +3357,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6234</td>
-<td>16</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6234, nogpu, common, bigtmp</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6420</td>
-<td>36</td>
-<td>730</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3370,16 +3440,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 <tr>
 <td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>101</td>
-<td>titanv</td>
-<td>4</td>
-<td>12</td>
-<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
-</tr>
-<tr>
-<td>1</td>
 <td>E7-4820_v4</td>
 <td>40</td>
 <td>1486</td>
@@ -3388,10 +3448,20 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td>broadwell, E7-4820_v4, nogpu, pi</td>
 </tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>101</td>
+<td>titanv</td>
+<td>4</td>
+<td>12</td>
+<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
+</tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><label for="__tabbed_1_9">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><label for="__tabbed_1_10">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3462,16 +3532,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100-80g</td>
 </tr>
 <tr>
-<td>4</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
-</tr>
-<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -3502,6 +3562,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, pi, v100</td>
 </tr>
 <tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
@@ -3520,6 +3590,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6420</td>
+<td>36</td>
+<td>730</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3552,6 +3632,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090</td>
 </tr>
 <tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
 <td>10</td>
 <td>5222</td>
 <td>8</td>
@@ -3560,26 +3650,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, rtx3090</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6420</td>
-<td>36</td>
-<td>730</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>cascadelake, avx512, 6420, doubleprecision, pi, bigtmp, a100</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3649,7 +3719,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
 <details class="summary">
 <summary>PI Partitions (click to expand)</summary>
-<div class="tabbed-set" data-tabs="2:31"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_breaker</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:34"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_breaker</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4268,21 +4338,21 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>352</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 6240, pi, v100</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
 <td>1486</td>
 <td></td>
 <td></td>
 <td></td>
 <td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>352</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 6240, pi, v100</td>
 </tr>
 </tbody>
 </table>
@@ -4534,7 +4604,95 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><label for="__tabbed_2_17">pi_jadi</label><div class="tabbed-content">
+<input id="__tabbed_2_17" name="__tabbed_2" type="radio" /><label for="__tabbed_2_17">pi_hall</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_hall partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_18" name="__tabbed_2" type="radio" /><label for="__tabbed_2_18">pi_hall_bigmem</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_hall_bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>1486</td>
+<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_19" name="__tabbed_2" type="radio" /><label for="__tabbed_2_19">pi_jadi</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4578,7 +4736,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_18" name="__tabbed_2" type="radio" /><label for="__tabbed_2_18">pi_jetz</label><div class="tabbed-content">
+<input id="__tabbed_2_20" name="__tabbed_2" type="radio" /><label for="__tabbed_2_20">pi_jetz</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4629,7 +4787,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_19" name="__tabbed_2" type="radio" /><label for="__tabbed_2_19">pi_kleinstein</label><div class="tabbed-content">
+<input id="__tabbed_2_21" name="__tabbed_2" type="radio" /><label for="__tabbed_2_21">pi_kleinstein</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4673,7 +4831,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_20" name="__tabbed_2" type="radio" /><label for="__tabbed_2_20">pi_krishnaswamy</label><div class="tabbed-content">
+<input id="__tabbed_2_22" name="__tabbed_2" type="radio" /><label for="__tabbed_2_22">pi_krishnaswamy</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4727,7 +4885,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_21" name="__tabbed_2" type="radio" /><label for="__tabbed_2_21">pi_ma</label><div class="tabbed-content">
+<input id="__tabbed_2_23" name="__tabbed_2" type="radio" /><label for="__tabbed_2_23">pi_ma</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4771,7 +4929,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_22" name="__tabbed_2" type="radio" /><label for="__tabbed_2_22">pi_medzhitov</label><div class="tabbed-content">
+<input id="__tabbed_2_24" name="__tabbed_2" type="radio" /><label for="__tabbed_2_24">pi_medzhitov</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4815,7 +4973,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_23" name="__tabbed_2" type="radio" /><label for="__tabbed_2_23">pi_miranker</label><div class="tabbed-content">
+<input id="__tabbed_2_25" name="__tabbed_2" type="radio" /><label for="__tabbed_2_25">pi_miranker</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4859,7 +5017,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_24" name="__tabbed_2" type="radio" /><label for="__tabbed_2_24">pi_ohern</label><div class="tabbed-content">
+<input id="__tabbed_2_26" name="__tabbed_2" type="radio" /><label for="__tabbed_2_26">pi_ohern</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4903,7 +5061,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_25" name="__tabbed_2" type="radio" /><label for="__tabbed_2_25">pi_reinisch</label><div class="tabbed-content">
+<input id="__tabbed_2_27" name="__tabbed_2" type="radio" /><label for="__tabbed_2_27">pi_reinisch</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4957,7 +5115,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_26" name="__tabbed_2" type="radio" /><label for="__tabbed_2_26">pi_sigworth</label><div class="tabbed-content">
+<input id="__tabbed_2_28" name="__tabbed_2" type="radio" /><label for="__tabbed_2_28">pi_sigworth</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -5011,7 +5169,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_27" name="__tabbed_2" type="radio" /><label for="__tabbed_2_27">pi_sindelar</label><div class="tabbed-content">
+<input id="__tabbed_2_29" name="__tabbed_2" type="radio" /><label for="__tabbed_2_29">pi_sindelar</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -5075,7 +5233,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_28" name="__tabbed_2" type="radio" /><label for="__tabbed_2_28">pi_tomography</label><div class="tabbed-content">
+<input id="__tabbed_2_30" name="__tabbed_2" type="radio" /><label for="__tabbed_2_30">pi_tomography</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=1-00:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -5151,7 +5309,51 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_29" name="__tabbed_2" type="radio" /><label for="__tabbed_2_29">pi_ya-chi_ho</label><div class="tabbed-content">
+<input id="__tabbed_2_31" name="__tabbed_2" type="radio" /><label for="__tabbed_2_31">pi_townsend</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_townsend partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_32" name="__tabbed_2" type="radio" /><label for="__tabbed_2_32">pi_ya-chi_ho</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -5195,7 +5397,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_30" name="__tabbed_2" type="radio" /><label for="__tabbed_2_30">pi_yong_xiong</label><div class="tabbed-content">
+<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_yong_xiong</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -5249,7 +5451,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_31" name="__tabbed_2" type="radio" /><label for="__tabbed_2_31">pi_zhao</label><div class="tabbed-content">
+<input id="__tabbed_2_34" name="__tabbed_2" type="radio" /><label for="__tabbed_2_34">pi_zhao</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
