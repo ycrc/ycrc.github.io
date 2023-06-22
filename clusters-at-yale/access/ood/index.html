@@ -2800,7 +2800,7 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>env_name<span class="w"> </span>jupyter<span class="w"> </span>jupyter-lab
-ycrc_conda_env.list<span class="w"> </span>build<span class="w">  </span>
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <p>Once created, <code>ycrc_default</code> will not be updated by OOD automatically. It must be updated by the user manually. To update <code>ycrc_default</code>, run the following command from a shell command line:
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
@@ -2869,7 +2869,7 @@ You can do it in your code as follows: </p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2023</span>
       
     
   </small>
