@@ -36,6 +36,8 @@ salloc -p rhel8_day -c 4 --mem-per-cpu=6G --time 4:00:00
 
 ### Basic MPI job on `rhel8_mpi`:
 
+The `rhel8_mpi` partition mirrors the standard `mpi` partition, and is designed for tightly coupled multi-node MPI work.
+The partition is whole-node allocated and jobs must request a minimum of two nodes.
 Here is an example script running QuantumESPRESSO on two nodes of the `rhel8_mpi` partition (assuming the input file is named `qe.in`):
 
 ```sh
