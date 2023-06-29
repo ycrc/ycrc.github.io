@@ -17,7 +17,7 @@ McClearly is now in a "production stable" state so researchers can permanently m
 
 * April: Migration of purchased nodes from Ruddle to McCleary
 * June 1st: Official Farnam retirement date, and beginning of compute service charges on McCleary commons partitions. Jobs in the ycga partitions will always be exempt from compute service charge.
-* July 1st: We will turn off access to Ruddle login and OnDemand nodes
+* July 24th: We will turn off access to Ruddle login and OnDemand nodes
 
 
 
@@ -155,7 +155,7 @@ If you have purchased space on `/gpfs/ysm` that is still active (not expired), w
 
 `/gpfs/ycga` is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you have been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to [hpc@yale.edu](mailto:hpc@yale.edu). Note this project space (`/gpfs/gibbs/project`) is distinct from the YCGA storage described below which is confusingly also called `project` but is located at `/gpfs/ycga/project`.
 
-At a later date, all data in the `project`, `sequencers`, `special`, and `pi` directories under `/gpfs/ycga` will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  **All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 1st**. More information and instructions on transferring data can be found [here](/data/mccleary-transfer/).
+At a later date, all data in the `project`, `sequencers`, `special`, and `pi` directories under `/gpfs/ycga` will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  **All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 24th**. More information and instructions on transferring data can be found [here](/data/mccleary-transfer/).
  
 If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.
 
