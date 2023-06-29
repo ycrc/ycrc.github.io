@@ -2486,7 +2486,7 @@ McClearly is now in a "production stable" state so researchers can permanently m
 <ul>
 <li>April: Migration of purchased nodes from Ruddle to McCleary</li>
 <li>June 1st: Official Farnam retirement date, and beginning of compute service charges on McCleary commons partitions. Jobs in the ycga partitions will always be exempt from compute service charge.</li>
-<li>July 1st: We will turn off access to Ruddle login and OnDemand nodes</li>
+<li>July 24th: We will turn off access to Ruddle login and OnDemand nodes</li>
 </ul>
 <h2 id="accounts">Accounts</h2>
 <p>Most Farnam and Ruddle users who have been active in the last year have accounts automatically created on McCleary for them and have received an email to that effect. All other users who conduct life sciences research can request an account using our <a href="https://research.computing.yale.edu/support/hpc/account-request">Account Request form</a>.</p>
@@ -2575,7 +2575,7 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <p>If you have purchased space on <code>/gpfs/ysm</code> that is still active (not expired), we have migrated your allocation at a mutually agreeable time. <strong>This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.</strong>  </p>
 <h3 id="what-about-my-existing-data-on-ruddle">What about My Existing Data on Ruddle?</h3>
 <p><code>/gpfs/ycga</code> is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you have been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. Note this project space (<code>/gpfs/gibbs/project</code>) is distinct from the YCGA storage described below which is confusingly also called <code>project</code> but is located at <code>/gpfs/ycga/project</code>.</p>
-<p>At a later date, all data in the <code>project</code>, <code>sequencers</code>, <code>special</code>, and <code>pi</code> directories under <code>/gpfs/ycga</code> will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  <strong>All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 1st</strong>. More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
+<p>At a later date, all data in the <code>project</code>, <code>sequencers</code>, <code>special</code>, and <code>pi</code> directories under <code>/gpfs/ycga</code> will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  <strong>All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 24th</strong>. More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
 <p>If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.</p>
 <h3 id="researchers-with-purchased-storage">Researchers with Purchased Storage</h3>
 <p>If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not expired), we will migrate your allocation at a mutually agreeable time. <strong>This is the only data that the YCRC will be automatically migrating from Farnam to McCleary.</strong>  </p>
@@ -2593,7 +2593,7 @@ Note, this is different than how Ruddle was set up, where SAY shares were availa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
       
     
   </small>
