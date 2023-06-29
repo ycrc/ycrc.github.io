@@ -2264,6 +2264,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gpu-job-on-rhel8_gpu-partition" class="md-nav__link">
+    GPU job on rhel8_gpu partition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#basic-mpi-job-on-rhel8_mpi" class="md-nav__link">
     Basic MPI job on rhel8_mpi:
   </a>
@@ -2310,7 +2317,8 @@ This will bring it in-line with McCleary and provides a number of key benefits t
 <li>shared application tree between McCleary and Grace, which brings software parity between the clusters</li>
 </ol>
 <p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. 
-To this end, we have preemptively set aside <code>rhel8_day</code> and <code>rhel8_mpi</code> partitions for use in debugging and testing of workflows before the August maintenace.
+To this end, we have preemptively set aside <code>rhel8_day</code>, <code>rhel8_gpu</code>, and <code>rhel8_mpi</code> partitions for use in debugging and testing of workflows before the August maintenace.
+The <code>rhel8_gpu</code> partition contains 12 new compute nodes each with four A5000 GPUs.
 These partitions are available now and are exempt from billing.</p>
 <h2 id="testing-red-hat-8">Testing Red Hat 8</h2>
 <p>We recommend testing key workflows early so that YCRC can make any changes required before deploying to the full cluster in August.
@@ -2318,10 +2326,14 @@ To try out the new operating system, you will need to log into a separate <code>
 <div class="highlight"><pre><span></span><code><span class="c1"># after logging into grace:</span>
 ssh rhel8_login
 </code></pre></div>
-<p>Then you will be able to submit jobs to the <code>rhel8_day</code> and <code>rhel8_mpi</code> partitions like this:</p>
+<p>Then you will be able to submit jobs to the <code>rhel8_day</code>, <code>rhel8_gpu</code>, and <code>rhel8_mpi</code> partitions like this:</p>
 <h3 id="simple-interactive-job-on-the-rhel8_day-partition">Simple interactive job on the <code>rhel8_day</code> partition</h3>
 <p>Request 4 CPUs, 24G of memory for 4 hours. </p>
 <div class="highlight"><pre><span></span><code>salloc -p rhel8_day -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>6G --time <span class="m">4</span>:00:00
+</code></pre></div>
+<h3 id="gpu-job-on-rhel8_gpu-partition">GPU job on <code>rhel8_gpu</code> partition</h3>
+<p>Request 4 CPUs, 20G of memory and 2 <code>A5000</code> GPUs:</p>
+<div class="highlight"><pre><span></span><code>salloc -p rhel8_gpu -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>5G --gpus<span class="o">=</span>a5000:2
 </code></pre></div>
 <h3 id="basic-mpi-job-on-rhel8_mpi">Basic MPI job on <code>rhel8_mpi</code>:</h3>
 <p>The <code>rhel8_mpi</code> partition mirrors the standard <code>mpi</code> partition, and is designed for tightly coupled multi-node MPI work.
@@ -2352,7 +2364,7 @@ Kindly include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
       
     
   </small>
