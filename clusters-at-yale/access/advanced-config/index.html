@@ -2375,11 +2375,11 @@ Host mccleary
 <p>For multiplexing to work, the <code>~/.ssh/tmp</code> directory must exist. Create it with <code>mkdir -p ~/.ssh/tmp</code></p>
 </div>
 <p>For more info on ssh configuration, run:</p>
-<div class="highlight"><pre><span></span><code>man ssh_config
+<div class="highlight"><pre><span></span><code>man<span class="w"> </span>ssh_config
 </code></pre></div>
 <h2 id="store-passphrase-and-use-ssh-agent-on-macos">Store Passphrase and Use SSH Agent on macOS</h2>
 <p>By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):</p>
-<div class="highlight"><pre><span></span><code>ssh-add -K ~/.ssh/id_rsa
+<div class="highlight"><pre><span></span><code>ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
 </code></pre></div>
 <p>Or whatever your private key file is named.</p>
 <div class="admonition note">
@@ -2396,7 +2396,7 @@ Host *.ycrc.yale.edu mccleary
     AddKeystoAgent yes
 </code></pre></div>
 <p>You can view a list of the keys currently in your agent with:</p>
-<div class="highlight"><pre><span></span><code>ssh-add -L
+<div class="highlight"><pre><span></span><code>ssh-add<span class="w"> </span>-L
 </code></pre></div>
                 
                   
