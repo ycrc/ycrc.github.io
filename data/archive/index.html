@@ -1454,8 +1454,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips-for-sy-archive-tier-or-any-tape-archive" class="md-nav__link">
-    Tips for S@Y Archive Tier (or Any Tape Archive)
+  <a href="#tips-for-sy-archive-tier" class="md-nav__link">
+    Tips for S@Y Archive Tier
   </a>
   
 </li>
@@ -2348,8 +2348,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips-for-sy-archive-tier-or-any-tape-archive" class="md-nav__link">
-    Tips for S@Y Archive Tier (or Any Tape Archive)
+  <a href="#tips-for-sy-archive-tier" class="md-nav__link">
+    Tips for S@Y Archive Tier
   </a>
   
 </li>
@@ -2408,8 +2408,8 @@ There is an alternative syntax that is more legible:</p>
 <p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>--extract<span class="w"> </span>--file<span class="o">=</span>archive-2021-04-26.tar.gz<span class="w"> </span>file.txt
 </code></pre></div>
 Either should work fine on the clusters.</p>
-<h2 id="tips-for-sy-archive-tier-or-any-tape-archive">Tips for S@Y Archive Tier (or Any Tape Archive)</h2>
-<p>The archive tier of Storage@Yale is a tape-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
+<h2 id="tips-for-sy-archive-tier">Tips for S@Y Archive Tier</h2>
+<p>The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
 <p>To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2417,22 +2417,15 @@ Either should work fine on the clusters.</p>
 specified when requesting the share.  Direct access from the cluster is only authorized for
 Low and Moderate risk data.</p>
 </div>
-<p>When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet on tape. In the background, the system will flush files to tape and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
-<p>However, once some time has elapsed and the file has been moved to tape, it can take several minutes or even longer to copy a file from the archive. This is because the system has to:</p>
-<ol>
-<li>Wait until a tape drive is free (there are a limited number of drives)</li>
-<li>Load the correct tape</li>
-<li>Find the file on the tape</li>
-<li>And finally, copy it out to a disk cache in front of the tape</li>
-</ol>
-<p>Only then is the file available to your copy command. There are only a handful of tape drives, so you may have to wait for one to be available.  ITS estimates that recovery of 1 TB takes 1-2 hours.  Performance is better on large files than lots of small files, as noted above.</p>
+<p>When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
+<p>However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.</p>
 </div>
 <p>Some key takeaways:</p>
 <ul>
-<li>Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is on tape, since metadata is kept in the disk cache.</li>
+<li>Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is in the cloud, since metadata is kept in the disk cache.</li>
 <li>Operations that actually read the file (cp, wc -l, tar, etc) will require recovering the entire file to disk cache first, and can take several minutes or longer depending on how busy the system is.</li>
 <li>If many files will need to be recovered together, it is much better to store them as a single file first with tar or zip, then write that file to the archive.</li>
 <li>Please do NOT write huge numbers of small files. They will be difficult or impossible to restore in large numbers.</li>
@@ -2451,7 +2444,7 @@ Low and Moderate risk data.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2023</span>
       
     
   </small>

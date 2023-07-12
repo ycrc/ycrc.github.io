@@ -2497,18 +2497,18 @@ module<span class="w"> </span>avail<span class="w"> </span>pytorch
 <h4 id="create-an-example-tensorflow-environment">Create an Example Tensorflow Environment</h4>
 <p>To create a conda environment with Tensorflow and uses the module CUDA:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># load modules, including the system CUDA and cuDNN</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda<span class="w"> </span>CUDAcore/11.2.2<span class="w"> </span>cuDNN/8.1.1.33-CUDA-11.2.2
+module<span class="w"> </span>load<span class="w"> </span>miniconda<span class="w"> </span>CUDAcore/11.3.1<span class="w"> </span>cuDNN/8.2.1.32-CUDA-11.3.1
 <span class="c1"># save module collection for future use</span>
 module<span class="w"> </span>save<span class="w"> </span>cuda11
 
 <span class="c1">#create environment with required dependencies</span>
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-modulecuda<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-modulecuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>
 
 <span class="c1"># activate environment</span>
 conda<span class="w"> </span>activate<span class="w"> </span>tf-modulecuda
 
 <span class="c1"># use pip to install tensorflow</span>
-pip<span class="w"> </span>install<span class="w"> </span>tensorflow
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.12.*
 </code></pre></div>
 The most up to date instructions for creating your own cuda/tensorflow environment can be found <a href="https://www.tensorflow.org/install/pip">here</a>. </p>
 <p>To create a conda environment with your own versions of Cuda and tensorflow:</p>
@@ -2567,7 +2567,7 @@ conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2023</span>
       
     
   </small>
