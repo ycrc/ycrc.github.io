@@ -56,18 +56,18 @@ To create a conda environment with Tensorflow and uses the module CUDA:
 
 ```bash
 # load modules, including the system CUDA and cuDNN
-module load miniconda CUDAcore/11.2.2 cuDNN/8.1.1.33-CUDA-11.2.2
+module load miniconda CUDAcore/11.3.1 cuDNN/8.2.1.32-CUDA-11.3.1
 # save module collection for future use
 module save cuda11
 
 #create environment with required dependencies
-conda create --name tf-modulecuda python numpy pandas matplotlib jupyter -c conda-forge 
+conda create --name tf-modulecuda python=3.11.* numpy pandas matplotlib jupyter -c conda-forge 
 
 # activate environment
 conda activate tf-modulecuda
 
 # use pip to install tensorflow
-pip install tensorflow
+pip install tensorflow==2.12.*
 ```
 The most up to date instructions for creating your own cuda/tensorflow environment can be found [here](https://www.tensorflow.org/install/pip). 
 
