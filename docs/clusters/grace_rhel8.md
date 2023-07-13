@@ -10,7 +10,8 @@ This will bring it in-line with McCleary and provides a number of key benefits t
 4. shared application tree between McCleary and Grace, which brings software parity between the clusters
 
 While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. 
-To this end, we have preemptively set aside `rhel8_day` and `rhel8_mpi` partitions for use in debugging and testing of workflows before the August maintenace.
+To this end, we have preemptively set aside `rhel8_day`, `rhel8_gpu`, and `rhel8_mpi` partitions for use in debugging and testing of workflows before the August maintenace.
+The `rhel8_gpu` partition contains 12 new compute nodes each with four A5000 GPUs.
 These partitions are available now and are exempt from billing.
 
 
@@ -23,7 +24,7 @@ To try out the new operating system, you will need to log into a separate `rhel8
 ssh rhel8_login
 ```
 
-Then you will be able to submit jobs to the `rhel8_day` and `rhel8_mpi` partitions like this:
+Then you will be able to submit jobs to the `rhel8_day`, `rhel8_gpu`, and `rhel8_mpi` partitions like this:
 
 
 ### Simple interactive job on the `rhel8_day` partition
@@ -34,8 +35,19 @@ Request 4 CPUs, 24G of memory for 4 hours.
 salloc -p rhel8_day -c 4 --mem-per-cpu=6G --time 4:00:00
 ```
 
+### GPU job on `rhel8_gpu` partition
+
+Request 4 CPUs, 20G of memory and 2 `A5000` GPUs:
+
+```sh
+salloc -p rhel8_gpu -c 4 --mem-per-cpu=5G --gpus=a5000:2
+```
+
+
 ### Basic MPI job on `rhel8_mpi`:
 
+The `rhel8_mpi` partition mirrors the standard `mpi` partition, and is designed for tightly coupled multi-node MPI work.
+The partition is whole-node allocated and jobs must request a minimum of two nodes.
 Here is an example script running QuantumESPRESSO on two nodes of the `rhel8_mpi` partition (assuming the input file is named `qe.in`):
 
 ```sh

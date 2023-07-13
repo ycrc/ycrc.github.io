@@ -33,8 +33,8 @@ Log in with your Yale email address, respond to the DUO request, and authorize t
 
 ## Examples
 
-The following examples show you how to set up rclone for Google Drive and Yale Box.
-In both examples, we name our remote cloud storage as 'remote' in the configuration. 
+The following examples show you how to set up rclone for a viriety of different storage types.
+In the examples, we name our remote cloud storage as 'remote' in the configuration. 
 You can provide any name you want. 
 
 --8<-- "snippets/rclone_examples.md"

@@ -1,6 +1,6 @@
 === "Google Drive"
     
-    The example below is a screen dump when setting up `rclone` on Farnam for Google Drive.
+    The example below is a screen dump when setting up `rclone` for Google Drive.
     
     ```bash
     [pl543@c03n06 ~]$ rclone config
@@ -120,7 +120,7 @@
     
 === "Box"
     
-    The example below is a screen dump when setting up `rclone` on Farnam for Yale Box.
+    The example below is a screen dump when setting up `rclone` for Yale Box.
 
     ```bash
     [pl543@c14n07 ~]$ rclone config
@@ -190,3 +190,101 @@
     e/n/d/r/c/s/q> q
     ```
     
+=== "S3"
+
+    The example below is a screen dump when setting up `rclone` for an S3 provider such as aws.
+
+```bash
+
+[rdb9@login1.mccleary ~]$ rclone config
+Enter configuration password:
+password:
+Current remotes:
+
+Name                 Type
+====                 ====
+
+[...]
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> n
+    ```bash
+
+Enter name for new remote.
+name> remote
+
+Option Storage.
+Type of storage to configure.
+Choose a number from below, or type in your own value.
+
+[...]
+
+ 5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, China Mobile, Cloudflare, ArvanCloud, DigitalOcean, Dreamhost, Huawei OBS, IBM COS, IDrive e2, IONOS Cloud, Liara, Lyve Cloud, Minio, Netease, RackCorp, Scaleway, SeaweedFS, StackPath, Storj, Tencent COS, Qiniu and Wasabi
+   \ (s3)
+[...]
+Storage> 5
+
+Option provider.
+Choose your S3 provider.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+ 1 / Amazon Web Services (AWS) S3
+   \ (AWS)
+[...]
+provider> 1
+
+Option env_auth.
+Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
+Only applies if access_key_id and secret_access_key is blank.
+Choose a number from below, or type in your own boolean value (true or false).
+Press Enter for the default (false).
+ 1 / Enter AWS credentials in the next step.
+   \ (false)
+ 2 / Get AWS credentials from the environment (env vars or IAM).
+   \ (true)
+env_auth> 
+
+Option access_key_id.
+AWS Access Key ID.
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+access_key_id> ***************
+
+Option secret_access_key.
+AWS Secret Access Key (password).
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+secret_access_key> *************
+
+Option region.
+Region to connect to.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+   / The default endpoint - a good choice if you are unsure.
+ 1 | US Region, Northern Virginia, or Pacific Northwest.
+   | Leave location constraint empty.
+   \ (us-east-1)
+   / US East (Ohio) Region.
+[...]
+
+[take defaults for all remaining questions
+
+Edit advanced config?
+y) Yes
+n) No (default)
+y/n> n
+
+Configuration complete.
+Options:
+- type: s3
+- provider: AWS
+- access_key_id: ***************
+- secret_access_key: ****************
+- region: us-east-1
+```

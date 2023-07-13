@@ -102,7 +102,6 @@ nav:
         - HPC Clusters:
             - "Overview": clusters/index.md
             - clusters/grace.md
-            - clusters/farnam.md
             - clusters/mccleary.md
             - clusters/ruddle.md
             - clusters/milgram.md
@@ -201,6 +200,8 @@ nav:
             - Tutorials:
                 - resources/intro_to_hpc_tutorial.md
                 - resources/online-tutorials.md
+                - resources/yale_library.md
+                - resources/sw_carpentry.md
             - Training:
                 - "YCRC Workshops": https://research.computing.yale.edu/training
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube

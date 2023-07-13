@@ -75,7 +75,7 @@ These options modify the size, length and behavior of jobs you submit. They can 
 
 Interactive jobs can be used for testing and troubleshooting code. Requesting an interactive job will allocate resources and log you into a shell on a compute node.
 
-You can start an interactive job using the `salloc` command. Unless specified otherwise using the `-p` flag (see above), all `salloc` requests will go to the `devel` (`interactive` on Milgram, Farnam and Ruddle) partition on the cluster.
+You can start an interactive job using the `salloc` command. Unless specified otherwise using the `-p` flag (see above), all `salloc` requests will go to the `devel` (`interactive` on Milgram and Ruddle) partition on the cluster.
 
 For example, to request an interactive job with 8GB of RAM for 2 hours:
 

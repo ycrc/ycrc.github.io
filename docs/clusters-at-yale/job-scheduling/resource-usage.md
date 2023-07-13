@@ -93,8 +93,8 @@ After the job completes, you can run `seff <jobid>` to get some useful informati
 ```
 [netid@node ~]$ seff 21294645
 Job ID: 21294645
-Cluster: farnam
-User/Group: rdb9/lsprog
+Cluster: mccleary
+User/Group: rdb9/support
 State: COMPLETED (exit code 0)
 Cores: 1
 CPU Utilized: 00:15:55

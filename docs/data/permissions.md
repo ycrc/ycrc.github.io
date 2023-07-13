@@ -17,7 +17,7 @@ By default, all project, purchased allocation and scratch60 directories are read
 If you want to ensure all new files and directories you create have group *write* permission, add the following line to your `~/.bashrc` files:
 
 ```
-umask 0002
+umask 002
 ```
 
 ### Shared Group Directories

@@ -44,7 +44,7 @@ You will likely want to copy files between your computer and the clusters. There
 
 ## Introduction to HPC Tutorial
 
-To help new cluster users navigate their first interactive and batch jobs, we have an [Introduction to HPC tutorial](resources/intro_to_hpc_tutorial) to correspond with the topics discussed in our [Introduction to HPC YouTube video](). 
+To help new cluster users navigate their first interactive and batch jobs, we have an [Introduction to HPC tutorial](docs.ycrc.yale.edu/resources/intro_to_hpc_tutorial/) to correspond with the topics discussed in our [Introduction to HPC YouTube video](https://www.youtube.com/@ycrc6469/videos).
 
 ## Linux
 

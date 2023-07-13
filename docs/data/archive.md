@@ -46,9 +46,9 @@ tar --extract --file=archive-2021-04-26.tar.gz file.txt
 ```
 Either should work fine on the clusters.
 
-## Tips for S@Y Archive Tier (or Any Tape Archive)
+## Tips for S@Y Archive Tier
 
-The archive tier of Storage@Yale is a tape-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
+The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
 To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.
 
@@ -57,23 +57,16 @@ To use S@Y (Archive) effectively, you need to be aware of how it works and follo
     specified when requesting the share.  Direct access from the cluster is only authorized for
     Low and Moderate risk data.
 
-When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet on tape. In the background, the system will flush files to tape and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
+When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
 
-However, once some time has elapsed and the file has been moved to tape, it can take several minutes or even longer to copy a file from the archive. This is because the system has to:
-
-1. Wait until a tape drive is free (there are a limited number of drives)
-1. Load the correct tape
-1. Find the file on the tape
-1. And finally, copy it out to a disk cache in front of the tape
-
-Only then is the file available to your copy command. There are only a handful of tape drives, so you may have to wait for one to be available.  ITS estimates that recovery of 1 TB takes 1-2 hours.  Performance is better on large files than lots of small files, as noted above.
+However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.
 
 !!!note
      S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.
 
 Some key takeaways:
 
-* Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is on tape, since metadata is kept in the disk cache.
+* Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is in the cloud, since metadata is kept in the disk cache.
 * Operations that actually read the file (cp, wc -l, tar, etc) will require recovering the entire file to disk cache first, and can take several minutes or longer depending on how busy the system is.
 * If many files will need to be recovered together, it is much better to store them as a single file first with tar or zip, then write that file to the archive.
 * Please do NOT write huge numbers of small files. They will be difficult or impossible to restore in large numbers.

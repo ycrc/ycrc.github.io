@@ -1,6 +1,6 @@
 # YCGA Data
 
-Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [Ruddle](/clusters/ruddle) and on [McCleary](/clusters/mccleary).
+Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [McCleary](/clusters/mccleary).
 
 
 ## YCGA Data Retention Policy
@@ -33,7 +33,8 @@ true locations of the files.
 Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:
 
 ```bash
-$ /home/bioinfo/software/knightlab/bin/ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+module load ycga-public
+$ ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 ```
 
 ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
@@ -48,12 +49,26 @@ If you have a path to the original location of the sequencing data, ycgaFastq ca
 $ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 ```
 
+If you have a manifest file that contains the paths to all of the data files in a dataset, you can
+use ycgaFastq as well:
+
+```bash
+$ ycgaFastq manifest.txt
+```
+
 ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the [documentation](http://campuspress.yale.edu/knightlab/ruddle/ycgafastq) or contact us.
 
 !!! tip
     Original sequence data are archived pursuant to the YCGA retention policy. For long-running projects we recommend you keep a personal backup of your sequence files. If you need to retrieve archived sequencing data, please see our [below](/data/ycga-data/#retrieve-data-from-the-archive).
 
 ## Retrieve Data from the Archive
+
+!!! info
+__The sequence archive /SAY/archive/YCGa-72009-YCGA-A2 is only mounted on the transfer node
+and transfer partition.__
+
+You must ssh to transfer, or submit a job (batch or interactive) to the transfer partition, in order
+to access and download archived sequence data.
 
 In the sequencing data archive, a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
 
@@ -87,23 +102,11 @@ module load Quip
 quip –d M20_ACAGTG_L008_R1_009.fastq.qp
 ```
 
-For your convenience, we have a tool, `restore`, that will download a tar file, untar it, and uncompress all quip files.
+If you have trouble locating your files, you can use the utility `locateRun`, using any substring of the original run name. `locateRun` is in the ycga-public module.
 
 ``` bash
 module load ycga-public
-restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
-```
-
-If you have trouble locating your files, you can use the utility `locateRun`, using any substring of the original run name. `locateRun` is in the same module as restore.
-
-``` bash
 locateRun C9374AN
-```
-
-Restore spends most of the time running quip. You can parallelize and thereby speed up that process using the `-n` flag.
-
-``` bash
-restore –n 20 ...
 ```
 
 !!! tip
@@ -118,9 +121,9 @@ Imagine that user rdb9 wants to restore data from run BHJWZZBCX3
 
 **step 1**
 
-Initialize compute node with 20 cores
+Get session on transfer partition
 ``` bash 
-salloc -c 20
+salloc -p transfer
 module load ycga-public
 ```
 
@@ -150,9 +153,25 @@ We want `210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar`, matching
 
 **step 4**
 
-Use the restore utility to copy and uncompress the fastq files from the tar file.  By default, restore will start 20 threads, which matches our srun above.  The restore will likely take several minutes. To see progress, you can use the `-v` flag.
+Copy the tarball to scratch
+
 ``` bash
-restore -v -t /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
+cd ~/scratch
+rsync -L -v /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar .
+```
+
+**step 5**
+
+Submit a batch job to use the restore utility to uncompress the fastq files from the tar file.
+In our example we'll use 32 cpus.  The restore will likely
+take several minutes. To see progress, you can use the `-v` flag.
+
+``` bash
+#/bin/bash
+#SBATCH -c 32
+
+module load ycga-public
+restore -v -n $SLURM_CPUS_PER_TASK -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
 ```
 
 The restored fastq files will written to a directory like this: 

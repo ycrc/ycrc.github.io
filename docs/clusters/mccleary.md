@@ -7,13 +7,12 @@ McCleary is a shared-use resource for the [Yale School of Medicine](https://medi
 McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
 !!! warning
-    McClearly is now in a "production stable" state, so please migrate your workloads and data to McCleary in advance of the Farnam decommissions on June 1st. To encourage a swift transtition, the YCRC compute service charges will not apply on McCleary commons partitions until June 1st, when Farnam is formally decommissioned.
+    Ruddle users:  McCleary is now in production, so please migrate your workloads and data to McCleary in advance of the Ruddle decommission on July 24th.
 
 - - -
 
 !!! info
     Farnam or Ruddle user? Farnam and Ruddle will both be retired in mid 2023 and all work will need to transition to McCleary. See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about moving to McCleary and how it differs from Farnam and Ruddle.
-
 
 ## Access the Cluster
 
@@ -32,6 +31,9 @@ For system status messages and the schedule for upcoming maintenance, please see
 ## Partitions and Hardware
 
 McCleary is made up of several kinds of compute nodes. We group them into (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
+
+!!! info
+    YCGA sequence data user?  To avoid being charged for your cpu usage for YCGA-related work, make sure to submit jobs to the ycga partition with -p ycga.
 
 --8<-- "snippets/submission_rate_limit.md"
 
