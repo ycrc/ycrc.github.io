@@ -2360,15 +2360,15 @@
 <p>This short doc will walk through recommended approaches to both styles of exporting and rebuilding a generic environment named <code>test</code> containing python, jupyter, numpy, and scipy.</p>
 <h2 id="full-export-including-dependencies">Full export including dependencies</h2>
 <p>To export the exact versions of each package installed (including all dependencies) run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--no-builds<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>prefix<span class="w"> </span>&gt;<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --no-builds --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div>
 <p>This yaml file is ~230 lines long and contains every package that is installed in the <code>test</code> environment.</p>
 <p>Since we are moving this environment to a different system with a different directory where conda environments are stored, we need to remove the line in this print out related to the "prefix". </p>
 <h2 id="export-only-specified-packages">Export only specified packages</h2>
 <p>If we simply wish to rebuild the environment using the steps previously employed to create it, we can replace <code>--no-builds</code> with <code>--from-history</code>. 
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>prefix<span class="w"> </span>&gt;<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --from-history --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div></p>
 <p>This is a much smaller file, ~10 lines, and only lists the packages explicitly installed:</p>
 <div class="highlight"><pre><span></span><code>name: test
@@ -2385,8 +2385,8 @@ dependencies:
 <p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
 <h2 id="build-new-environment">Build new environment</h2>
 <p>Now we can take this file from Farnam/Ruddle to McCleary and create a new environment using all the enumerated pacakges:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--file<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env create --file test_export.yaml
 </code></pre></div>
 <p>This will create a new environment (with the same name <code>test</code>) on McCleary which.</p>
                 

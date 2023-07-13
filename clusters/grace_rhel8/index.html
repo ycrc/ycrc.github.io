@@ -2324,16 +2324,16 @@ These partitions are available now and are exempt from billing.</p>
 <p>We recommend testing key workflows early so that YCRC can make any changes required before deploying to the full cluster in August.
 To try out the new operating system, you will need to log into a separate <code>rhel8_login</code> node after logging into grace:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># after logging into grace:</span>
-ssh<span class="w"> </span>rhel8_login
+ssh rhel8_login
 </code></pre></div>
 <p>Then you will be able to submit jobs to the <code>rhel8_day</code>, <code>rhel8_gpu</code>, and <code>rhel8_mpi</code> partitions like this:</p>
 <h3 id="simple-interactive-job-on-the-rhel8_day-partition">Simple interactive job on the <code>rhel8_day</code> partition</h3>
 <p>Request 4 CPUs, 24G of memory for 4 hours. </p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>rhel8_day<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>--mem-per-cpu<span class="o">=</span>6G<span class="w"> </span>--time<span class="w"> </span><span class="m">4</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc -p rhel8_day -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>6G --time <span class="m">4</span>:00:00
 </code></pre></div>
 <h3 id="gpu-job-on-rhel8_gpu-partition">GPU job on <code>rhel8_gpu</code> partition</h3>
 <p>Request 4 CPUs, 20G of memory and 2 <code>A5000</code> GPUs:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>rhel8_gpu<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>--mem-per-cpu<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span>a5000:2
+<div class="highlight"><pre><span></span><code>salloc -p rhel8_gpu -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>5G --gpus<span class="o">=</span>a5000:2
 </code></pre></div>
 <h3 id="basic-mpi-job-on-rhel8_mpi">Basic MPI job on <code>rhel8_mpi</code>:</h3>
 <p>The <code>rhel8_mpi</code> partition mirrors the standard <code>mpi</code> partition, and is designed for tightly coupled multi-node MPI work.
@@ -2347,11 +2347,11 @@ Here is an example script running QuantumESPRESSO on two nodes of the <code>rhel
 <span class="c1">#SBATCH --ntasks-per-node 24</span>
 <span class="c1">#SBATCH --mem=0 # request all memory on the node</span>
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>QuantumESPRESSO/7.1-intel-2020b
-module<span class="w"> </span>list
+module purge
+module load QuantumESPRESSO/7.1-intel-2020b
+module list
 
-srun<span class="w"> </span><span class="si">${</span><span class="nv">EBROOTQUANTUMESPRESSO</span><span class="si">}</span>/bin/pw.x<span class="w"> </span>-ndiag<span class="w"> </span><span class="m">100</span><span class="w"> </span>-i<span class="w"> </span>qe.in
+srun <span class="si">${</span><span class="nv">EBROOTQUANTUMESPRESSO</span><span class="si">}</span>/bin/pw.x -ndiag <span class="m">100</span> -i qe.in
 </code></pre></div>
 <h2 id="reporting-issues">Reporting issues</h2>
 <p>If any issues are encountered while testing, please report them to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> so that we can address them in a timely manner.

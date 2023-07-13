@@ -2389,26 +2389,26 @@ Disaster recovery is provided by the archive copy.</p>
 http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/sample_dir_001</p>
 <p>You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  </p>
 <p>To find the actual location of your data, do:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>readlink<span class="w"> </span>-f<span class="w"> </span>/ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+<div class="highlight"><pre><span></span><code>$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
 </code></pre></div></p>
 <h2 id="illumina-sequencing-data">Illumina sequencing data</h2>
 <p>For Illumina data (not singlecell or pacbio data), 
 you can browse to the YCGA-provided URL and find a file ruddle_paths.txt that contains the 
 true locations of the files.</p>
 <p>Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
-$<span class="w"> </span>ycgaFastq<span class="w">  </span>fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+<div class="highlight"><pre><span></span><code>module load ycga-public
+$ ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 </code></pre></div>
 <p>ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
 the sample submitter's netid and the flowcell (run) name:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>rdb9<span class="w"> </span>AHFH66DSXX
+<div class="highlight"><pre><span></span><code>$ ycgaFastq rdb9 AHFH66DSXX
 </code></pre></div>
 <p>If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run has been archived and deleted:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>/ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+<div class="highlight"><pre><span></span><code>$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 </code></pre></div></p>
 <p>If you have a manifest file that contains the paths to all of the data files in a dataset, you can
 use ycgaFastq as well:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>manifest.txt
+<div class="highlight"><pre><span></span><code>$ ycgaFastq manifest.txt
 </code></pre></div>
 <p>ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the <a href="http://campuspress.yale.edu/knightlab/ruddle/ycgafastq">documentation</a> or contact us.</p>
 <div class="admonition tip">
@@ -2458,16 +2458,16 @@ to access and download archived sequence data.</p>
 </div>
 <p>Very large tar files over 500GB, sometimes fail to download.  If you run into problems, contact us at hpc@yale.edu and we can
 manually download it.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/scratch60/somedir
-tar<span class="w"> </span>–xvf<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch60/somedir
+tar –xvf /SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
 </code></pre></div>
 <p>Inside the project tar files are the fastq files, which have been compressed using <code>quip</code>. If your pipeline cannot read quip files directly, you will need to uncompress them before using them.</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Quip
-quip<span class="w"> </span>–d<span class="w"> </span>M20_ACAGTG_L008_R1_009.fastq.qp
+<div class="highlight"><pre><span></span><code>module load Quip
+quip –d M20_ACAGTG_L008_R1_009.fastq.qp
 </code></pre></div>
 <p>If you have trouble locating your files, you can use the utility <code>locateRun</code>, using any substring of the original run name. <code>locateRun</code> is in the ycga-public module.</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
-locateRun<span class="w"> </span>C9374AN
+<div class="highlight"><pre><span></span><code>module load ycga-public
+locateRun C9374AN
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2481,19 +2481,19 @@ locateRun<span class="w"> </span>C9374AN
 <p>Imagine that user rdb9 wants to restore data from run BHJWZZBCX3</p>
 <p><strong>step 1</strong></p>
 <p>Get session on transfer partition
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>transfer
-module<span class="w"> </span>load<span class="w"> </span>ycga-public
+<div class="highlight"><pre><span></span><code>salloc -p transfer
+module load ycga-public
 </code></pre></div></p>
 <p><strong>step 2</strong></p>
 <p>Find the run location
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>locateRun<span class="w"> </span>BHJWZZBCX3
+<div class="highlight"><pre><span></span><code>$ locateRun BHJWZZBCX3
 /ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3.deleted
 /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
 </code></pre></div></p>
 <p>Note that the original run location has been deleted, but the archive location is listed.</p>
 <p><strong>step 3</strong></p>
 <p>List the contents of the archived run, and locate the desired project tarball:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-1<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
+<div class="highlight"><pre><span></span><code>$ ls -1 /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
 210305_D00306_1337_BHJWZZBCX3_0.tar
 210305_D00306_1337_BHJWZZBCX3_0_Unaligned_Project_Jdm222.tar
 210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar
@@ -2502,8 +2502,8 @@ module<span class="w"> </span>load<span class="w"> </span>ycga-public
 <p>We want <code>210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar</code>, matching our netid.</p>
 <p><strong>step 4</strong></p>
 <p>Copy the tarball to scratch</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/scratch
-rsync<span class="w"> </span>-L<span class="w"> </span>-v<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch
+rsync -L -v /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar .
 </code></pre></div>
 <p><strong>step 5</strong></p>
 <p>Submit a batch job to use the restore utility to uncompress the fastq files from the tar file.
@@ -2512,8 +2512,8 @@ take several minutes. To see progress, you can use the <code>-v</code> flag.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#/bin/bash</span>
 <span class="c1">#SBATCH -c 32</span>
 
-module<span class="w"> </span>load<span class="w"> </span>ycga-public
-restore<span class="w"> </span>-v<span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="w"> </span>-t<span class="w"> </span>210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
+module load ycga-public
+restore -v -n <span class="nv">$SLURM_CPUS_PER_TASK</span> -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
 </code></pre></div>
 <p>The restored fastq files will written to a directory like this: 
 <div class="highlight"><pre><span></span><code>210305_D00306_1337_BHJWZZBCX3/Data/Intensities/BaseCalls/Unaligned*/Project_*
