@@ -2326,17 +2326,17 @@
 <p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are gently modified from the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>. </p>
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
 <p>First allocate an interactive job on a compute node to run the install on. </p>
-<div class="highlight"><pre><span></span><code>salloc --cpus-per-task <span class="m">2</span>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>Then, set the following environment variables to suit your install. We filled in some defaults for you.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># where to install cryosparc2 and its sample database</span>
-<span class="nv">install_path</span><span class="o">=</span><span class="k">$(</span> readlink -f <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project <span class="k">)</span>/software/cryosparc2
+<span class="nv">install_path</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span>readlink<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project<span class="w"> </span><span class="k">)</span>/software/cryosparc2
 
 <span class="c1"># the license ID you got from Structura</span>
 <span class="nv">license_id</span><span class="o">=</span>
 
 <span class="c1"># your email</span>
-<span class="nv">my_email</span><span class="o">=</span><span class="k">$(</span>head -n1 ~/.forward<span class="k">)</span>
+<span class="nv">my_email</span><span class="o">=</span><span class="k">$(</span>head<span class="w"> </span>-n1<span class="w"> </span>~/.forward<span class="k">)</span>
 
 <span class="c1"># slurm partition to submit your cryosparc jobs to</span>
 <span class="c1"># not sure you can change at runtime?</span>
@@ -2349,7 +2349,7 @@
 <span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
 
 <span class="c1"># load the right CUDA</span>
-module load CUDA/9.0.176
+module<span class="w"> </span>load<span class="w"> </span>CUDA/9.0.176
 
 <span class="c1"># set up some more paths</span>
 <span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/database
@@ -2357,27 +2357,27 @@ module load CUDA/9.0.176
 <span class="nv">ssd_path</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/cryosparc2_cache
 
 <span class="c1"># go get the installers</span>
-mkdir -p <span class="nv">$install_path</span>
-<span class="nb">cd</span> <span class="nv">$install_path</span>
-curl -sL https://get.cryosparc.com/download/master-latest/<span class="nv">$license_id</span> &gt; cryosparc2_master.tar.gz
-curl -sL https://get.cryosparc.com/download/worker-latest/<span class="nv">$license_id</span> &gt; cryosparc2_worker.tar.gz
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$install_path</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
+curl<span class="w"> </span>-sL<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$license_id</span><span class="w"> </span>&gt;<span class="w"> </span>cryosparc2_master.tar.gz
+curl<span class="w"> </span>-sL<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$license_id</span><span class="w"> </span>&gt;<span class="w"> </span>cryosparc2_worker.tar.gz
 
-tar -xf cryosparc2_master.tar.gz
-tar -xf cryosparc2_worker.tar.gz
+tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc2_master.tar.gz
+tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc2_worker.tar.gz
 </code></pre></div>
 <h3 id="3-install-the-server-and-worker">3. Install the Server and Worker</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_master
-./install.sh --license <span class="nv">$license_id</span> --hostname <span class="k">$(</span>hostname<span class="k">)</span> --dbpath <span class="nv">$db_path</span> --yes
-<span class="nb">source</span> ~/.bashrc
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_master
+./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$license_id</span><span class="w"> </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span>--yes
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
 
-<span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
-./install.sh --license <span class="nv">$license_id</span> --cudapath <span class="nv">$CUDA_HOME</span> --yes
-<span class="nb">source</span> ~/.bashrc
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
+./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$license_id</span><span class="w"> </span>--cudapath<span class="w"> </span><span class="nv">$CUDA_HOME</span><span class="w"> </span>--yes
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h3 id="4-configure-for-farnam">4. Configure for Farnam</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Farnam cluster setup</span>
-mkdir -p <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs
-cat <span class="s">&lt;&lt; EOF &gt; cluster_info.json</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; cluster_info.json</span>
 <span class="s">{</span>
 <span class="s">    &quot;name&quot; : &quot;farnam&quot;,</span>
 <span class="s">    &quot;worker_bin_path&quot; : &quot;${install_path}/cryosparc2_worker/bin/cryosparcw&quot;,</span>
@@ -2390,7 +2390,7 @@ cat <span class="s">&lt;&lt; EOF &gt; cluster_info.json</span>
 <span class="s">}</span>
 <span class="s">EOF</span>
 
-cat <span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
 <span class="s">#!/usr/bin/env bash</span>
 <span class="s">#SBATCH --job-name cryosparc_{{ project_uid }}_{{ job_uid }}</span>
 <span class="s">#SBATCH -c {{ num_cpu }}</span>
@@ -2406,16 +2406,16 @@ cat <span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
 <span class="s">EOF</span>
 </code></pre></div>
 <h2 id="run">Run</h2>
-<div class="highlight"><pre><span></span><code>salloc --cpus-per-task <span class="m">2</span>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span>
 <span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span> <span class="nv">$base_dir</span>/config.sh
-<span class="nb">source</span> <span class="nv">$base_dir</span>/config.sh
-cryosparcm start
-cryosparcm status
+<span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
+<span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
+cryosparcm<span class="w"> </span>start
+cryosparcm<span class="w"> </span>status
 
 <span class="c1"># run the output from the following command on your local linux/mac machine</span>
-<span class="nb">echo</span> <span class="s2">&quot;ssh -N -L </span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2">:</span><span class="nv">$master_host</span><span class="s2">:</span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">@farnam.hpc.yale.edu&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssh -N -L </span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2">:</span><span class="nv">$master_host</span><span class="s2">:</span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">@farnam.hpc.yale.edu&quot;</span>
 </code></pre></div>
 <h2 id="database-errors">Database errors</h2>
 <p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
