@@ -26,7 +26,7 @@ As long as your files existed in the form you want them in before the most recen
 | `/gpfs/milgram/pi/groupname`| `/gpfs/milgram/pi/groupname/.snapshots`      |
 | `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
 
-For example, if you wanted to recover the file `/gpfs/ysm/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/ysm/.snapshots/date/project/bjornson/rdb9/doit.sh` .
+Within the snapshot directory, you will find multiple directories with names that indicate specific dates. For example, if you wanted to recover the file `/gpfs/gibbs/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/gibbs/.snapshots/date/project/bjornson/rdb9/doit.sh` .
 
 !!! info "Snapshot Sizes"
     Because of the way snapshots are stored, sizes will not be correctly reported until you copy your files/directories back out of the `.snapshots` directory.
