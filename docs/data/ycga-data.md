@@ -33,8 +33,8 @@ true locations of the files.
 Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:
 
 ```bash
-module load ycga-public
-$ ycgaFastq  fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+export PATH=$PATH:/gpfs/gibbs/pi/ycga/mane/ycga_bioinfo/bin_May2023
+$ ycgaFastq fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 ```
 
 ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
