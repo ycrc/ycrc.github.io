@@ -17,6 +17,18 @@ Additional project-style storage allocations can be purchased. See [here](/data/
 
 ## Google Drive via EliApps
 
+!!! warning
+    ** Changes to Google Drive pricing **
+    
+    ITS has informed us of a number of changes to the EliApps Google Drive quotas, including shared drives.
+
+    - **As of 8/15/23, all new EliApps accounts will have a free quota of 5GB.**
+    - **As of 7/1/24, all existing EliApps accounts will have a free quota of 5GB.**
+    - **Quotas beyond 5GB will be available for $145/TB/yr**
+
+    Therefore, you should probably not consider Google Drive on EliApps for storage large amounts of data.  ITS suggested alternatives
+    are Storage@Yale, Teams/SharePoint, or DropBox.
+
 - **Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free**
 - **No sensitive data (e.g. ePHI, HIPAA)**
 - **Can be mounted on [your local machine](https://www.google.com/drive/download/) and transferred to via [Globus Google Drive Connector](/data/globus)**
@@ -50,6 +62,15 @@ To request a share, press the “Request this Service” button in the right sid
 - **Capacity: 25 TB, 250 GB per file. Cost: Free**
 
 You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on The relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
+
+## Dropbox at Yale
+
+ITS offers departmental subscriptions to DropBox for a low cost (currently $23.66/user/year).
+
+- **Unlimited storage** (take this with a grain of salt)
+- **Low risk data only**
+
+[For more information about DropBox at Yale, see the ITS website.](https://yale.service-now.com/it?id=service_offering&sys_id=29c43a8e1b51c1500a3986ecdc4bcb4c)
 
 ## Box at Yale
 
