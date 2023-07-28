@@ -2396,8 +2396,8 @@ http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/sample_dir_001</p>
 you can browse to the YCGA-provided URL and find a file ruddle_paths.txt that contains the 
 true locations of the files.</p>
 <p>Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
-$<span class="w"> </span>ycgaFastq<span class="w">  </span>fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/gpfs/gibbs/pi/ycga/mane/ycga_bioinfo/bin_May2023
+$<span class="w"> </span>ycgaFastq<span class="w"> </span>fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
 </code></pre></div>
 <p>ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
 the sample submitter's netid and the flowcell (run) name:</p>
@@ -2526,7 +2526,7 @@ restore<span class="w"> </span>-v<span class="w"> </span>-n<span class="w"> </sp
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 3, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 26, 2023</span>
       
     
   </small>
