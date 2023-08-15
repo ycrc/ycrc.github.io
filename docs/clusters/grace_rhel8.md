@@ -1,74 +1,28 @@
 # Grace Operating System Upgrade
 
-Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches.
-Therefore we will be working to upgrade the operating system to RHEL 8 in the summer maintenance window, August 15-17, 2023.
-This will bring it in-line with McCleary and provides a number of key benefits to Grace:
+Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Therefore Grace has been upgraded to RHEL 8 during the August maintenance window, August 15-17, 2023.
+This provides a number of key benefits to Grace:
 
+1. consistency with the McCleary cluster
 1. continued security patches and support beyond 2023
-2. updated system libraries to better support modern software
-3. improved node management system to facilitate the growing number of nodes on Grace
-4. shared application tree between McCleary and Grace, which brings software parity between the clusters
+1. updated system libraries to better support modern software
+1. improved node management system to facilitate the growing number of nodes on Grace
+1. shared application tree between McCleary and Grace, which brings software parity between the clusters\*
 
-While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. 
-To this end, we have preemptively set aside `rhel8_day`, `rhel8_gpu`, and `rhel8_mpi` partitions for use in debugging and testing of workflows before the August maintenace.
-The `rhel8_gpu` partition contains 12 new compute nodes each with four A5000 GPUs.
-These partitions are available now and are exempt from billing.
+\* some software and workflows will only be supported by YCRC staff on one of the cluster, e.g. tightly couple MPI codes (Grace) or RELION (McCleary).
 
+While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. `rhel8_day`) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.
 
-## Testing Red Hat 8
-We recommend testing key workflows early so that YCRC can make any changes required before deploying to the full cluster in August.
-To try out the new operating system, you will need to log into a separate `rhel8_login` node after logging into grace:
+## New Software Tree
 
-```sh
-# after logging into grace:
-ssh rhel8_login
-```
+Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.
+Some software may only be initially available in a newer version than was installed on Grace. 
 
-Then you will be able to submit jobs to the `rhel8_day`, `rhel8_gpu`, and `rhel8_mpi` partitions like this:
+If you cannot find a software package on Grace that you need, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into installing it for you.
 
 
-### Simple interactive job on the `rhel8_day` partition
+## Report Issues
 
-Request 4 CPUs, 24G of memory for 4 hours. 
-
-```sh
-salloc -p rhel8_day -c 4 --mem-per-cpu=6G --time 4:00:00
-```
-
-### GPU job on `rhel8_gpu` partition
-
-Request 4 CPUs, 20G of memory and 2 `A5000` GPUs:
-
-```sh
-salloc -p rhel8_gpu -c 4 --mem-per-cpu=5G --gpus=a5000:2
-```
-
-
-### Basic MPI job on `rhel8_mpi`:
-
-The `rhel8_mpi` partition mirrors the standard `mpi` partition, and is designed for tightly coupled multi-node MPI work.
-The partition is whole-node allocated and jobs must request a minimum of two nodes.
-Here is an example script running QuantumESPRESSO on two nodes of the `rhel8_mpi` partition (assuming the input file is named `qe.in`):
-
-```sh
-#!/bin/bash
-
-#SBATCH --partition rhel8_mpi
-#SBATCH --nodes 2
-#SBATCH --cpus-per-task 1
-#SBATCH --ntasks-per-node 24
-#SBATCH --mem=0 # request all memory on the node
-
-module purge
-module load QuantumESPRESSO/7.1-intel-2020b
-module list
-
-srun ${EBROOTQUANTUMESPRESSO}/bin/pw.x -ndiag 100 -i qe.in
-
-```
-
-## Reporting issues
-
-If any issues are encountered while testing, please report them to [hpc@yale.edu](mailto:hpc@yale.edu) so that we can address them in a timely manner.
-Kindly include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.
+If you continue to have or discover new issues with your workflow, feel free to [contact us](/) for assistance. Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.
 

@@ -9,8 +9,8 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 - - -
 
-!!! info "Loomis Retirement"
-    After almost a decade in service, the primary storage system on Grace, Loomis (/gpfs/loomis), has been retired. For more information see the [Loomis decommission page](/data/loomis-decommission).
+!!! info "Operating System Upgrade"
+    During the August 2023 maintenance, the operating system on Grace was upgraded from Red Hat 7 to Red Hat 8. For more information, see our [Grace Operating System Upgrade](/clusters/grace_rhel8) page. 
 
 
 ## Access the Cluster
