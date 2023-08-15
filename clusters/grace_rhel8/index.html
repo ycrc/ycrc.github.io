@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace_rhel8/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2256,6 +2256,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#missing-system-libraries" class="md-nav__link">
+    Missing system libraries
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2300,12 +2307,21 @@ This provides a number of key benefits to Grace:</p>
 <p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. <code>rhel8_day</code>) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.</p>
 <h2 id="new-software-tree">New Software Tree</h2>
 <p>Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.
-Some software may only be initially available in a newer version than was installed on Grace. </p>
-<p>If you cannot find a software package on Grace that you need, please let us know at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can look into installing it for you.</p>
+Existing applications will continue to be available during this transition period.
+We plan to deprecate and remove the old application tree during the December 2023 maintenance window.</p>
+<p>If you experience any issues with software, please let us know at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can look into reinstalling.</p>
 <h2 id="common-errors">Common Errors</h2>
 <h3 id="python-not-found">Python not found</h3>
-<p>Under RHEL8, we have only installed Python 3, which must be executed using <code>python3</code> (not <code>python</code>). As always, if you need additional packages, we strongly recommend setting up your own <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
-<p>In addition, Python 2.7 is no longer support and therefore not installed by default. To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
+<p>Under RHEL8, we have only installed Python 3, which must be executed using <code>python3</code> (not <code>python</code>). 
+As always, if you need additional packages, we strongly recommend setting up your own <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
+<p>In addition, Python 2.7 is no longer support and therefore not installed by default. 
+To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
+<h3 id="missing-system-libraries">Missing system libraries</h3>
+<p>Some of the existing applications may depend on libraries that are no longer installed in the operating system.
+If you run into these errors please email <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and include which application/version you are using along with the full error message.
+We will investigate these on a case-by-case basis and work to get the issue resolved.</p>
+<p>There will be a small number of compute nodes reserved with RHEL7 (in a partition named <code>legacy</code>) to enable work to continue while we resolve these issues.
+This partition will remain available until the December maintenance window.</p>
 <h2 id="report-issues">Report Issues</h2>
 <p>If you continue to have or discover new issues with your workflow, feel free to <a href="/">contact us</a> for assistance. Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
                 
