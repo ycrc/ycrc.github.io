@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -490,20 +490,6 @@
     <li class="md-nav__item">
       <a href="../../../clusters/mccleary/" class="md-nav__link">
         McCleary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../clusters/ruddle/" class="md-nav__link">
-        Ruddle
       </a>
     </li>
   
@@ -2168,7 +2154,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/cryoem/" class="md-nav__link">
-        Cryo-EM on Farnam
+        Cryo-EM on McCleary
       </a>
     </li>
   
@@ -2726,10 +2712,6 @@ This web-portal provides a shell, file browser, and graphical interface for cert
 <td><a href="/clusters/milgram">Milgram</a></td>
 <td><a href="https://ood-milgram.hpc.yale.edu">ood-milgram.hpc.yale.edu</a></td>
 </tr>
-<tr>
-<td><a href="/clusters/ruddle">Ruddle</a></td>
-<td><a href="https://ood-ruddle.hpc.yale.edu">ood-ruddle.hpc.yale.edu</a></td>
-</tr>
 </tbody>
 </table>
 <p>The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. </p>
@@ -2758,9 +2740,9 @@ Use the URL for your course OOD will resolve the problem.</p>
 <p>You can also drag-and-drop to download and upload files and directories, and move files between directories using this interface.</p>
 <h4 id="customize-favorite-paths">Customize Favorite Paths</h4>
 <p>Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list customized paths:</p>
-<p><div class="highlight"><pre><span></span><code><span class="w">  </span>ood_add_path
-<span class="w">  </span>ood_remove_path
-<span class="w">  </span>ood_list_path
+<p><div class="highlight"><pre><span></span><code>  ood_add_path
+  ood_remove_path
+  ood_list_path
 </code></pre></div>
 When you run <code>ood_add_path</code> from a shell command line, it will prompt you to add one path at a time, until you type 'n' to discontinue. All the paths added by you will be shown in the OOD pull-down menu for the file manager, as well as the left pane when the file manager is opened. </p>
 <p><code>ood_remove_path</code> allows you to remove any of the paths added by you and <code>ood_list_path</code> will list all the paths added by you. </p>
@@ -2781,7 +2763,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <h3 id="remote-desktop">Remote Desktop</h3>
 <p>Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
 In the past your options were to use <a href="/clusters-at-yale/access/vnc">VNC</a> or <a href="/clusters-at-yale/access/x11">X11 forwarding</a>. These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.</p>
-<p>Use the form to request resources and decide what partition your job should run on. Use <code>devel</code> (<code>interactive</code> on Milgram and Ruddle) or your lab's partition.</p>
+<p>Use the form to request resources and decide what partition your job should run on. Use <code>devel</code> (<code>interactive</code> on Milgram) or your lab's partition.</p>
 <p><img alt="remote_desktop" class="medium" src="/img/ood_remote.png" /></p>
 <p>Once you launch the job, you will be presented with a notification that your job has been queued.
 Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the Remote Desktop:</p>
@@ -2798,26 +2780,26 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example Gibbs, you need to create a symlink to that directory in your home directory. </p>
 <h4 id="ycrc_default">ycrc_default</h4>
 <p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>env_name<span class="w"> </span>jupyter<span class="w"> </span>jupyter-lab
-ycrc_conda_env.sh<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n env_name jupyter jupyter-lab
+ycrc_conda_env.sh update
 </code></pre></div>
 <p>Once created, <code>ycrc_default</code> will not be updated by OOD automatically. It must be updated by the user manually. To update <code>ycrc_default</code>, run the following command from a shell command line:
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w">  </span>ycrc_default<span class="w"> </span>jupyter<span class="w"> </span>jupyter-lab
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda update -n  ycrc_default jupyter jupyter-lab
 </code></pre></div></p>
 <h3 id="rstudio-server">RStudio Server</h3>
 <h4 id="change-user-r-package-path">Change User R Package Path</h4>
 <p>To change the default path where packages installed by the user are stored, you need to add the following line of code in your <code>$HOME/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
 </code></pre></div>
 <h4 id="configure-the-graphic-device">Configure the Graphic Device</h4>
 <p>When you plot in a RStudio session, you may encounter the following error:</p>
-<div class="highlight"><pre><span></span><code>Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>RStudioGD<span class="o">()</span><span class="w"> </span>:<span class="w"> </span>
-<span class="w">  </span>Shadow<span class="w"> </span>graphics<span class="w"> </span>device<span class="w"> </span>error:<span class="w"> </span>r<span class="w"> </span>error<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>R<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>error<span class="o">)</span>
-In<span class="w"> </span>addition:<span class="w"> </span>Warning<span class="w"> </span>message:
-In<span class="w"> </span>grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,<span class="w">  </span>:
-<span class="w">  </span>unable<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>X11<span class="w"> </span>display<span class="w"> </span><span class="s1">&#39;&#39;</span>
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> RStudioGD<span class="o">()</span> : 
+  Shadow graphics device error: r error <span class="m">4</span> <span class="o">(</span>R code execution error<span class="o">)</span>
+In addition: Warning message:
+In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,  :
+  unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
 </code></pre></div>
 <p>To fix the problem, you need to configure your RStudio session to use <code>Cairo</code> for plotting. 
 You can do it in your code as follows: </p>
@@ -2834,26 +2816,26 @@ You can do it in your code as follows: </p>
 <ol>
 <li>Check if your quota is full</li>
 <li>Reset your <code>.bashrc</code> and <code>.bash_profile</code> to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  </li>
-<li>Remove the default module collection file <code>$HOME/.lmod.d/default.cluster-rhel7</code> (cluster is one of the following: grace, ruddle, milgram) or <code>$HOME/.lmod.d/default.mccleary-rhel8</code> for McCleary.</li>
+<li>Remove the default module collection file <code>$HOME/.lmod.d/default.cluster-rhel7</code> (cluster is one of the following: grace, milgram) or <code>$HOME/.lmod.d/default.mccleary-rhel8</code> for McCleary.</li>
 </ol>
 <h4 id="remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly">Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly</h4>
 <ol>
 <li>Make sure there is no initialization left by <code>conda init</code> in your <code>.bashrc</code>. Clean it with 
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
 </code></pre></div></li>
 <li>Run <code>dbus-launch</code> and make sure you see the following output:
-<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>dbus-launch
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1 ~<span class="o">]</span>$ which dbus-launch
 /usr/bin/dbus-launch
 </code></pre></div></li>
 </ol>
 <h4 id="jupyter-cannot-be-started-properly">Jupyter cannot be started properly</h4>
 <ol>
 <li>If you are trying to launch <code>jupyter-notebook</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-notebook
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-notebook
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 <li>If you are trying to launch <code>jupyter-lab</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-lab
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-lab
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 </ol>
@@ -2869,7 +2851,7 @@ You can do it in your code as follows: </p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>

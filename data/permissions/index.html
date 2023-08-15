@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/permissions/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -490,20 +490,6 @@
     <li class="md-nav__item">
       <a href="../../clusters/mccleary/" class="md-nav__link">
         McCleary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/ruddle/" class="md-nav__link">
-        Ruddle
       </a>
     </li>
   
@@ -2046,7 +2032,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/cryoem/" class="md-nav__link">
-        Cryo-EM on Farnam
+        Cryo-EM on McCleary
       </a>
     </li>
   
@@ -2460,17 +2446,17 @@
 <h2 id="home-directories">Home Directories</h2>
 <p><strong>Do not give your home directory group write permissions. This will break your ability to log into the cluster.</strong>  If you need to share files currently located in your home directory, either move it your project directory or <a href="/#get-help">contact us</a> for assistance finding an appropriate location.</p>
 <h3 id="project-and-scratch60-links-in-home-directories"><code>project</code> and <code>scratch60</code> links in Home Directories</h3>
-<p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>~/scratch60</code> (and <code>palmer_scratch</code> on <a href="/clusters/grace">Grace</a> and <a href="/clusters/mccleary">McCleary</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
+<p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>palmer_scratch</code> (and <code>~/scratch60</code>on <a href="/clusters/milgram">Milgram</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
 <p>You can run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.</p>
 <h2 id="share-data-within-your-group">Share Data within your Group</h2>
-<p>By default, all project, purchased allocation and scratch60 directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.</p>
+<p>By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.</p>
 <p>If you want to ensure all new files and directories you create have group <em>write</em> permission, add the following line to your <code>~/.bashrc</code> files:</p>
 <div class="highlight"><pre><span></span><code>umask 002
 </code></pre></div>
 <h3 id="shared-group-directories">Shared Group Directories</h3>
 <p>Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for all group members. If interested, <a href="/#get-help">contact us</a> to request such a directory.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
-<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch60</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch60</code>, you need first share your <code>project</code> or <code>scratch60</code>, and then share the sub-directory. Here are some simple scenarios.</p>
+<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch</code>, you need first share your <code>project</code> or <code>scratch</code>, and then share the sub-directory. Here are some simple scenarios.</p>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> in your project directory with group <code>othergroup</code>:</p>
 <div class="highlight"><pre><span></span><code>setfacl -m g:othergroup:rx $(readlink -f ~/project)
@@ -2507,7 +2493,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>

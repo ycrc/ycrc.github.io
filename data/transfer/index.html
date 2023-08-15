@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/transfer/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -490,20 +490,6 @@
     <li class="md-nav__item">
       <a href="../../clusters/mccleary/" class="md-nav__link">
         McCleary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/ruddle/" class="md-nav__link">
-        Ruddle
       </a>
     </li>
   
@@ -1387,8 +1373,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cyberduck-on-mccleary-and-ruddle" class="md-nav__link">
-    Cyberduck on McCleary and Ruddle
+  <a href="#cyberduck-on-mccleary" class="md-nav__link">
+    Cyberduck on McCleary
   </a>
   
 </li>
@@ -2141,7 +2127,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/cryoem/" class="md-nav__link">
-        Cryo-EM on Farnam
+        Cryo-EM on McCleary
       </a>
     </li>
   
@@ -2506,8 +2492,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cyberduck-on-mccleary-and-ruddle" class="md-nav__link">
-    Cyberduck on McCleary and Ruddle
+  <a href="#cyberduck-on-mccleary" class="md-nav__link">
+    Cyberduck on McCleary
   </a>
   
 </li>
@@ -2667,10 +2653,6 @@
 <td><code>transfer-mccleary.ycrc.yale.edu</code></td>
 </tr>
 <tr>
-<td>Ruddle</td>
-<td><code>transfer-ruddle.hpc.yale.edu</code></td>
-</tr>
-<tr>
 <td>Milgram</td>
 <td><code>transfer-milgram.hpc.yale.edu</code></td>
 </tr>
@@ -2695,8 +2677,8 @@
 </ul>
 <p>An example configuration of Cyberduck is shown below.</p>
 <p><img alt="Cyberduck sample configuration." src="/img/cyberduck.png" /></p>
-<h5 id="cyberduck-on-mccleary-and-ruddle">Cyberduck on McCleary and Ruddle</h5>
-<p>McCleary and Ruddle require <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
+<h5 id="cyberduck-on-mccleary">Cyberduck on McCleary</h5>
+<p>McCleary require <a href="/clusters-at-yale/access/mfa">Multi-Factor Authentication</a> so there are a couple additional configuration steps. Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change the setting to "Use browser connection" instead of "Open multiple connections".</p>
 <p>When you connect type one of the following when prompted with a "Partial authentication success" window.</p>
 <ul>
 <li>"push" to receive a push notification to your smart phone (requires the Duo mobile app)</li>
@@ -2709,27 +2691,27 @@
 <h4 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h4>
 <p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span><span class="o">[</span>from<span class="o">]</span><span class="w"> </span><span class="o">[</span>to<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>scp <span class="o">[</span>from<span class="o">]</span> <span class="o">[</span>to<span class="o">]</span>
 </code></pre></div>
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/fas/admins/abc123/test:</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/home/xyz/myfile.txt<span class="w"> </span>abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp /home/xyz/myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>mydirectory<span class="w"> </span>abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp -r mydirectory abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt .
 </code></pre></div>
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt<span class="w"> </span>/path/myfolder
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 </code></pre></div>
 <h2 id="transfer-data-tofrom-other-locations">Transfer Data to/from Other Locations</h2>
 <h3 id="globus-endpoints">Globus Endpoints</h3>
@@ -2752,11 +2734,11 @@ To specify the destination, simply replace the <code>.</code> with the full path
 </code></pre></div>
 <h4 id="rclone">Rclone</h4>
 <p>To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using <a href="https://rclone.org/">Rclone</a>. It is installed on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:</p>
-<div class="highlight"><pre><span></span><code>rclone<span class="w"> </span>configure
+<div class="highlight"><pre><span></span><code>rclone configure
 </code></pre></div>
 <p>You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can connect to the transfer node (using <code>ssh transfer</code> from the login node) and then use that connection name to copy files with similar syntax to <code>scp</code> and <code>rsync</code>:</p>
-<div class="highlight"><pre><span></span><code>rclone<span class="w"> </span>copy<span class="w"> </span>localpath/myfile<span class="w"> </span>mys3:bucketname/
-rclone<span class="w"> </span>sync<span class="w"> </span>localpath/mydir<span class="w"> </span>mys3:bucketname/remotedir
+<div class="highlight"><pre><span></span><code>rclone copy localpath/myfile mys3:bucketname/
+rclone sync localpath/mydir mys3:bucketname/remotedir
 </code></pre></div>
 <p>We recommend that you protect your configurations with a password. You'll see that as an option when you run rclone config. Please see <a href="/clusters-at-yale/guides/rclone/">our Rclone page</a> for additional information on how to set up and use Rclone on the YCRC clusters. For all the Rclone documentaion please <a href="https://rclone.org/docs/">refer to the official site</a>.</p>
 <h3 id="sites-behind-a-vpn">Sites Behind a VPN</h3>
@@ -2769,7 +2751,7 @@ rclone<span class="w"> </span>sync<span class="w"> </span>localpath/mydir<span c
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>

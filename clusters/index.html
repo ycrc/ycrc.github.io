@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -543,20 +543,6 @@
     <li class="md-nav__item">
       <a href="mccleary/" class="md-nav__link">
         McCleary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ruddle/" class="md-nav__link">
-        Ruddle
       </a>
     </li>
   
@@ -1986,7 +1972,7 @@
   
     <li class="md-nav__item">
       <a href="../clusters-at-yale/guides/cryoem/" class="md-nav__link">
-        Cryo-EM on Farnam
+        Cryo-EM on McCleary
       </a>
     </li>
   
@@ -2340,7 +2326,11 @@
 <p>The YCRC maintains and supports a number of high performance computing systems for the Yale research community. Our high performance computing systems are named after <a href="https://research.computing.yale.edu/about/hpc-resources">notable members of the Yale community</a>.</p>
 <p>For proposals, we provide <a href="https://docs.google.com/document/d/1TRoXlMd8muiFP8NUp6g00tl0QAV5P8KScnC0vBv6oBA">a description of our facilities, equipment, and other resources for HPC and research computing</a>.</p>
 <h2 id="compute">Compute</h2>
-<p>We maintain and support four Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. </p>
+<p>We maintain and support three Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The Farnam and Ruddle clusters were both retired in 2023 and their users are now supported on the McCleary cluster.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -2360,13 +2350,6 @@
 <td>general and highly parallel, tightly coupled (InfiniBand)</td>
 </tr>
 <tr>
-<td><a href="farnam">Farnam</a></td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>medical and life science [RETIRED]</td>
-</tr>
-<tr>
 <td><a href="mccleary">McCleary</a></td>
 <td>12,000</td>
 <td>312</td>
@@ -2379,13 +2362,6 @@
 <td>80</td>
 <td><code>milgram.hpc.yale.edu</code></td>
 <td>HIPAA and other sensitive data</td>
-</tr>
-<tr>
-<td><a href="ruddle">Ruddle</a></td>
-<td>4,500</td>
-<td>200</td>
-<td><code>ruddle.hpc.yale.edu</code></td>
-<td><a href="http://ycga.yale.edu/">Yale Center for Genome Analysis</a></td>
 </tr>
 </tbody>
 </table>
@@ -2409,23 +2385,15 @@
 <td>700 TiB</td>
 <td>Grace*, McCleary*</td>
 <td>Vast</td>
-<td>Grace home, scratch storage</td>
+<td>home, scratch storage</td>
 </tr>
 <tr>
 <td>Gibbs</td>
 <td>/gpfs/gibbs</td>
 <td>14.0 PiB</td>
-<td>Grace, Ruddle, McCleary</td>
+<td>Grace, McCleary</td>
 <td>IBM Spectrum Scale (GPFS)</td>
 <td>project, purchased project-style storage</td>
-</tr>
-<tr>
-<td>YSM</td>
-<td>/gpfs/ysm</td>
-<td>1.5 PiB</td>
-<td>Grace, McCleary (read-only)</td>
-<td>IBM Spectrum Scale (GPFS)</td>
-<td>Farnam primary storage [Retiring July 13, 2023]</td>
 </tr>
 <tr>
 <td>Slayman</td>
@@ -2446,10 +2414,10 @@
 <tr>
 <td>YCGA</td>
 <td>/gpfs/ycga</td>
-<td>2.0 PiB</td>
-<td>Ruddle*, McCleary</td>
+<td>3.0 PiB</td>
+<td>McCleary</td>
 <td>IBM Spectrum Scale (GPFS)</td>
-<td>Ruddle primary storage, YCGA storage</td>
+<td>YCGA storage</td>
 </tr>
 </tbody>
 </table>
@@ -2461,7 +2429,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>
