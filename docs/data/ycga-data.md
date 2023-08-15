@@ -91,7 +91,7 @@ manually download it.
 
 
 ``` bash
-cd ~/scratch60/somedir
+cd ~/palmer_scratch/somedir
 tar –xvf /SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
 ```
 
@@ -153,22 +153,23 @@ We want `210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar`, matching
 
 **step 4**
 
-Copy the tarball to scratch
+First, copy the tarball to scratch.  To do this you must be on the transfer partition or transfer node, since /SAY is only mounted there.
 
 ``` bash
-cd ~/scratch
+cd ~/palmer_scratch
 rsync -L -v /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar .
 ```
 
 **step 5**
 
 Submit a batch job to use the restore utility to uncompress the fastq files from the tar file.
-In our example we'll use 32 cpus.  The restore will likely
+In our example we'll use 32 cpus.  This is not done using the transfer partition, but rather the day partition, since day will allow you more cpus.  The restore will likely
 take several minutes. To see progress, you can use the `-v` flag.
 
 ``` bash
 #/bin/bash
 #SBATCH -c 32
+#SBATCH -p day
 
 module load ycga-public
 restore -v -n $SLURM_CPUS_PER_TASK -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
