@@ -2235,42 +2235,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#testing-red-hat-8" class="md-nav__link">
-    Testing Red Hat 8
+  <a href="#new-software-tree" class="md-nav__link">
+    New Software Tree
   </a>
-  
-    <nav class="md-nav" aria-label="Testing Red Hat 8">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#simple-interactive-job-on-the-rhel8_day-partition" class="md-nav__link">
-    Simple interactive job on the rhel8_day partition
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpu-job-on-rhel8_gpu-partition" class="md-nav__link">
-    GPU job on rhel8_gpu partition
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-mpi-job-on-rhel8_mpi" class="md-nav__link">
-    Basic MPI job on rhel8_mpi:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reporting-issues" class="md-nav__link">
-    Reporting issues
+  <a href="#report-issues" class="md-nav__link">
+    Report Issues
   </a>
   
 </li>
@@ -2293,55 +2266,24 @@
                 
                 
                 <h1 id="grace-operating-system-upgrade">Grace Operating System Upgrade</h1>
-<p>Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches.
-Therefore we will be working to upgrade the operating system to RHEL 8 in the summer maintenance window, August 15-17, 2023.
-This will bring it in-line with McCleary and provides a number of key benefits to Grace:</p>
+<p>Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Therefore Grace has been upgraded to RHEL 8 during the August maintenance window, August 15-17, 2023.
+This provides a number of key benefits to Grace:</p>
 <ol>
+<li>consistency with the McCleary cluster</li>
 <li>continued security patches and support beyond 2023</li>
 <li>updated system libraries to better support modern software</li>
 <li>improved node management system to facilitate the growing number of nodes on Grace</li>
-<li>shared application tree between McCleary and Grace, which brings software parity between the clusters</li>
+<li>shared application tree between McCleary and Grace, which brings software parity between the clusters*</li>
 </ol>
-<p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. 
-To this end, we have preemptively set aside <code>rhel8_day</code>, <code>rhel8_gpu</code>, and <code>rhel8_mpi</code> partitions for use in debugging and testing of workflows before the August maintenace.
-The <code>rhel8_gpu</code> partition contains 12 new compute nodes each with four A5000 GPUs.
-These partitions are available now and are exempt from billing.</p>
-<h2 id="testing-red-hat-8">Testing Red Hat 8</h2>
-<p>We recommend testing key workflows early so that YCRC can make any changes required before deploying to the full cluster in August.
-To try out the new operating system, you will need to log into a separate <code>rhel8_login</code> node after logging into grace:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># after logging into grace:</span>
-ssh rhel8_login
-</code></pre></div>
-<p>Then you will be able to submit jobs to the <code>rhel8_day</code>, <code>rhel8_gpu</code>, and <code>rhel8_mpi</code> partitions like this:</p>
-<h3 id="simple-interactive-job-on-the-rhel8_day-partition">Simple interactive job on the <code>rhel8_day</code> partition</h3>
-<p>Request 4 CPUs, 24G of memory for 4 hours. </p>
-<div class="highlight"><pre><span></span><code>salloc -p rhel8_day -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>6G --time <span class="m">4</span>:00:00
-</code></pre></div>
-<h3 id="gpu-job-on-rhel8_gpu-partition">GPU job on <code>rhel8_gpu</code> partition</h3>
-<p>Request 4 CPUs, 20G of memory and 2 <code>A5000</code> GPUs:</p>
-<div class="highlight"><pre><span></span><code>salloc -p rhel8_gpu -c <span class="m">4</span> --mem-per-cpu<span class="o">=</span>5G --gpus<span class="o">=</span>a5000:2
-</code></pre></div>
-<h3 id="basic-mpi-job-on-rhel8_mpi">Basic MPI job on <code>rhel8_mpi</code>:</h3>
-<p>The <code>rhel8_mpi</code> partition mirrors the standard <code>mpi</code> partition, and is designed for tightly coupled multi-node MPI work.
-The partition is whole-node allocated and jobs must request a minimum of two nodes.
-Here is an example script running QuantumESPRESSO on two nodes of the <code>rhel8_mpi</code> partition (assuming the input file is named <code>qe.in</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH --partition rhel8_mpi</span>
-<span class="c1">#SBATCH --nodes 2</span>
-<span class="c1">#SBATCH --cpus-per-task 1</span>
-<span class="c1">#SBATCH --ntasks-per-node 24</span>
-<span class="c1">#SBATCH --mem=0 # request all memory on the node</span>
-
-module purge
-module load QuantumESPRESSO/7.1-intel-2020b
-module list
-
-srun <span class="si">${</span><span class="nv">EBROOTQUANTUMESPRESSO</span><span class="si">}</span>/bin/pw.x -ndiag <span class="m">100</span> -i qe.in
-</code></pre></div>
-<h2 id="reporting-issues">Reporting issues</h2>
-<p>If any issues are encountered while testing, please report them to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> so that we can address them in a timely manner.
-Kindly include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
+<p>* some software and workflows will only be supported by YCRC staff on one of the cluster, e.g. tightly couple MPI codes (Grace) or RELION (McCleary).</p>
+<p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. <code>rhel8_day</code>) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.</p>
+<h2 id="new-software-tree">New Software Tree</h2>
+<p>Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.
+Some software may only be initially available in a newer version than was installed on Grace. </p>
+<p>If you cannot find a software package on Grace that you need, please let us know at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can look into installing it for you.</p>
+<h2 id="report-issues">Report Issues</h2>
+<p>If you continue to have or discover new issues with your workflow, feel free to <a href="/">contact us</a> for assistance. Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
                 
                   
                     
@@ -2350,7 +2292,7 @@ Kindly include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>
