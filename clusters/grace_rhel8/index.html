@@ -2242,6 +2242,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    Common Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-not-found" class="md-nav__link">
+    Python not found
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#report-issues" class="md-nav__link">
     Report Issues
   </a>
@@ -2282,6 +2302,10 @@ This provides a number of key benefits to Grace:</p>
 <p>Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.
 Some software may only be initially available in a newer version than was installed on Grace. </p>
 <p>If you cannot find a software package on Grace that you need, please let us know at <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and we can look into installing it for you.</p>
+<h2 id="common-errors">Common Errors</h2>
+<h3 id="python-not-found">Python not found</h3>
+<p>Under RHEL8, we have only installed Python 3, which must be executed using <code>python3</code> (not <code>python</code>). As always, if you need additional packages, we strongly recommend setting up your own <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
+<p>In addition, Python 2.7 is no longer support and therefore not installed by default. To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
 <h2 id="report-issues">Report Issues</h2>
 <p>If you continue to have or discover new issues with your workflow, feel free to <a href="/">contact us</a> for assistance. Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
                 
