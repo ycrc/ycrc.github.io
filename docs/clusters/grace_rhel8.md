@@ -17,17 +17,30 @@ While we have done extensive testing both internally and with the new McCleary c
 ## New Software Tree
 
 Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.
-Some software may only be initially available in a newer version than was installed on Grace. 
+Existing applications will continue to be available during this transition period.
+We plan to deprecate and remove the old application tree during the December 2023 maintenance window.
 
-If you cannot find a software package on Grace that you need, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into installing it for you.
+If you experience any issues with software, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into reinstalling.
 
 ## Common Errors
 
 ### Python not found
 
-Under RHEL8, we have only installed Python 3, which must be executed using `python3` (not `python`). As always, if you need additional packages, we strongly recommend setting up your own [conda environment](/clusters-at-yale/guides/conda/).
+Under RHEL8, we have only installed Python 3, which must be executed using `python3` (not `python`). 
+As always, if you need additional packages, we strongly recommend setting up your own [conda environment](/clusters-at-yale/guides/conda/).
 
-In addition, Python 2.7 is no longer support and therefore not installed by default. To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
+In addition, Python 2.7 is no longer support and therefore not installed by default. 
+To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
+
+### Missing system libraries
+
+Some of the existing applications may depend on libraries that are no longer installed in the operating system.
+If you run into these errors please email [hpc@yale.edu](mailto:hpc@yale.edu) and include which application/version you are using along with the full error message.
+We will investigate these on a case-by-case basis and work to get the issue resolved.
+
+There will be a small number of compute nodes reserved with RHEL7 (in a partition named `legacy`) to enable work to continue while we resolve these issues.
+This partition will remain available until the December maintenance window.
+
 
 ## Report Issues
 
