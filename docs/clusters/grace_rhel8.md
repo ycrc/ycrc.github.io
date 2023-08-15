@@ -21,6 +21,13 @@ Some software may only be initially available in a newer version than was instal
 
 If you cannot find a software package on Grace that you need, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into installing it for you.
 
+## Common Errors
+
+### Python not found
+
+Under RHEL8, we have only installed Python 3, which must be executed using `python3` (not `python`). As always, if you need additional packages, we strongly recommend setting up your own [conda environment](/clusters-at-yale/guides/conda/).
+
+In addition, Python 2.7 is no longer support and therefore not installed by default. To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
 
 ## Report Issues
 
