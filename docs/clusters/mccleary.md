@@ -4,15 +4,13 @@
 
 McCleary is a shared-use resource for the [Yale School of Medicine](https://medicine.yale.edu) (YSM), life science researchers elsewhere on campus and projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). It consists of a variety of compute nodes networked over ethernet and mounts several shared filesystems.
 
-McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster will be Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
+McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04/19/obituaries/beatrix-hamburg-barrier-breaking-scholar-is-dead-at-94.html), who received her medical degree in 1948 and was the first female African American graduate of Yale School of Medicine. The McCleary HPC cluster is Yale's first direct-to-chip liquid cooled cluster, moving the YCRC and the Yale research computing community into a more environmentally friendly future.
 
-!!! warning
-    Ruddle users:  McCleary is now in production, so please migrate your workloads and data to McCleary in advance of the Ruddle decommission on July 24th.
 
 - - -
 
 !!! info
-    Farnam or Ruddle user? Farnam and Ruddle will both be retired in mid 2023 and all work will need to transition to McCleary. See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about moving to McCleary and how it differs from Farnam and Ruddle.
+    Farnam or Ruddle user? Farnam and Ruddle were both retired in summer 2023. See [our explainer](/clusters/mccleary-farnam-ruddle) for what you need to know about using McCleary and how it differs from Farnam and Ruddle.
 
 ## Access the Cluster
 
