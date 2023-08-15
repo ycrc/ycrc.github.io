@@ -6,15 +6,16 @@ For proposals, we provide [a description of our facilities, equipment, and other
 
 ## Compute
 
-We maintain and support four Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. 
+We maintain and support three Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. 
+
+!!! info
+    The Farnam and Ruddle clusters were both retired in 2023 and their users are now supported on the McCleary cluster.
 
 | Cluster Name        | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                            |
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
 | [Grace](grace)      | 29,000             | 900                 | `grace.hpc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)         |
-| [Farnam](farnam)    | N/A                | N/A                 | N/A                           | medical and life science [RETIRED]                                |
 | [McCleary](mccleary)| 12,000               | 312                  | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)           |
 | [Milgram](milgram)  | 2,400              | 80                  | `milgram.hpc.yale.edu`        | HIPAA and other sensitive data                                    |
-| [Ruddle](ruddle)    | 4,500              | 200                 | `ruddle.hpc.yale.edu`         | [Yale Center for Genome Analysis](http://ycga.yale.edu/)          |
 
 ## Storage
 
@@ -22,9 +23,8 @@ We maintain several high performance storage systems. Listed below are these sha
 
 | Name     | Path          | Size     | Mounting Clusters       | File System Software      | Purpose                                  |
 |----------|---------------|----------|-------------------------|---------------------------|------------------------------------------|
-| Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | Vast                      | Grace home, scratch storage              |
-| Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, Ruddle, McCleary | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
-| YSM      | /gpfs/ysm     | 1.5 PiB  | Grace, McCleary (read-only) | IBM Spectrum Scale (GPFS) | Farnam primary storage [Retiring July 13, 2023]                   |
+| Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | Vast                      | home, scratch storage              |
+| Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | Slayman  | /gpfs/slayman | 1.0 PiB  | Grace, McCleary | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
-| Milgram  | /gpfs/milgram | 3.0 PiB  | Milgram\*               | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
-| YCGA     | /gpfs/ycga    | 2.0 PiB  | Ruddle\*, McCleary      | IBM Spectrum Scale (GPFS) | Ruddle primary storage, YCGA storage     |
+| Milgram  | /gpfs/milgram | 3.0 PiB  | Milgram\*      | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
+| YCGA     | /gpfs/ycga    | 3.0 PiB  | McCleary      | IBM Spectrum Scale (GPFS) | YCGA storage     |

@@ -22,7 +22,6 @@ We currently support endpoints for the following clusters.
 | Cluster                        | Globus Endpoint     |
 |--------------------------------|---------------------|
 | [Grace](/clusters/grace)       | `yale#grace`        |
-| [Ruddle](/clusters/ruddle)     | `yale#ruddle`       |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 
 These endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.

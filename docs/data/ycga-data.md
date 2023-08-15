@@ -17,7 +17,7 @@ Disaster recovery is provided by the archive copy.
 YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
 http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
 
-You can use that link to download your data in a browser, but if you plan to process the data on Ruddle, it is better to make a soft link to the data, rather than copying it.  
+You can use that link to download your data in a browser, but if you plan to process the data on McCleary, it is better to make a soft link to the data, rather than copying it.  
 
 To find the actual location of your data, do:
 ``` bash

@@ -4,7 +4,7 @@ The Yale Center for Research Computing provides support for research computing a
 
 !!! info "Introducing the McCleary HPC Cluster"
 
-    The YCRC is pleased to announce the launch of the new McCleary HPC cluster, which will serve researchers from the Yale School of Medicine, Yale Center for Genome Analysis and life scientists in the Faculty of Arts and Sciences! For more information, see our [McCleary documentation](/clusters/mccleary).
+    The YCRC is pleased to announce the new McCleary HPC cluster, which now serves researchers from the Yale School of Medicine, Yale Center for Genome Analysis and life scientists in the Faculty of Arts and Sciences! For more information, see our [McCleary documentation](/clusters/mccleary).
 
 ## Get Help
 

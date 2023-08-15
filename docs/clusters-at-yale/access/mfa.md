@@ -1,13 +1,13 @@
 # Multi-factor Authentication
 
-To improve security, access to Ruddle or McCleary requires both a public key and multi-factor authentication (MFA).
+To improve security, access to McCleary requires both a public key and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
 You will need upload your [ssh public key to our site](https://sshkeys.hpc.yale.edu/).
 For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
-Once you've set up Duo and your key is registered, you can log in to Ruddle or McCleary.
+Once you've set up Duo and your key is registered, you can log in to McCleary.
 Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option.
 We recommend choosing Duo Push (option 1).
 If you chose this option you should receive a notification on your phone.
@@ -29,7 +29,7 @@ On macOS and Linux-based systems setting up a [config file](/clusters-at-yale/ac
 An example config file is shown below which enables SSH multiplexing (`ControlMaster`) by caching connections in a directory (`ControlPath`) for a period of time (2h, `ControlPersist`). 
 
 ```
-Host *.hpc.yale.edu grace milgram ruddle
+Host *.hpc.yale.edu grace milgram
     User NETID
     # Uncomment below to enable X11 forwarding without `-Y`
     #ForwardX11 yes
@@ -47,7 +47,7 @@ Host *.ycrc.yale.edu mccleary
     ControlPath ~/.ssh/tmp/%h_%p_%r
     ControlPersist 2h
 
-Host grace milgram ruddle
+Host grace milgram
     HostName %h.hpc.yale.edu
 
 Host mccleary

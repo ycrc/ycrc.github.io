@@ -103,7 +103,6 @@ nav:
             - "Overview": clusters/index.md
             - clusters/grace.md
             - clusters/mccleary.md
-            - clusters/ruddle.md
             - clusters/milgram.md
         - user-group.md
         - About the YCRC: https://research.computing.yale.edu/about
@@ -190,7 +189,7 @@ nav:
             - clusters-at-yale/guides/virtualgl.md
             - "XVFB": clusters-at-yale/guides/xvfb.md
         - Guides:
-            - "Cryo-EM on Farnam": clusters-at-yale/guides/cryoem.md
+            - "Cryo-EM on McCleary": clusters-at-yale/guides/cryoem.md
             - "GitHub": clusters-at-yale/guides/github.md
             - clusters-at-yale/guides/github_pages.md
             - clusters-at-yale/guides/gpus-cuda.md

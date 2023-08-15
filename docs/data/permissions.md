@@ -6,13 +6,13 @@
 
 ### `project` and `scratch60` links in Home Directories
 
-For convenience, we create a symlink, or shortcut, in every home directory called `project` and `~/scratch60` (and `palmer_scratch` on [Grace](/clusters/grace) and [McCleary](/clusters/mccleary)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
+For convenience, we create a symlink, or shortcut, in every home directory called `project` and `palmer_scratch` (and `~/scratch60`on [Milgram](/clusters/milgram)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
 
 You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.
 
 ## Share Data within your Group
 
-By default, all project, purchased allocation and scratch60 directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.
+By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.
 
 If you want to ensure all new files and directories you create have group *write* permission, add the following line to your `~/.bashrc` files:
 
@@ -26,7 +26,7 @@ Upon request we can setup directories for sharing scripts or data across your re
 
 ## Share With Specific Users or Other Groups
 
-It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch60` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch60`, you need first share your `project` or `scratch60`, and then share the sub-directory. Here are some simple scenarios.
+It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch`, you need first share your `project` or `scratch`, and then share the sub-directory. Here are some simple scenarios.
     
 
 ### Share a Directory with All Members of a Group

@@ -2,7 +2,7 @@
 
 ## Retrieve Data from the Archive
 
-In the sequencing archive on [Ruddle](/clusters/ruddle), a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
+In the sequencing archive on [McCleary](/clusters/ruddle), a directory exists for each run, holding one or more tar files. There is a main tar file, plus a tar file for each project directory. Most users only need the project tar file corresponding to their data.
 
 Although the archive actually exists on tape or in cloud storage, you can treat it as a regular directory tree. Many operations such as `ls`, `cd`, etc. are very fast, since directory structures and file metadata are on a disk cache. However, when you actually read the contents of files the file is retrieved and read into a disk cache.  This can take some time.
 
@@ -78,7 +78,7 @@ $ locateRun BHJWZZBCX3
 
 Note that the original run location has been deleted, but the archive location is listed.
 
-### step 3 
+### step 3
 List the contents of the archived run, and locate the desired project tarball:
 ``` bash
 $ ls -1 /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3

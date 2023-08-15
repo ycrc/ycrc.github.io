@@ -10,7 +10,6 @@ Each cluster has dedicated nodes specially networked for high speed transfers bo
 |-----------|----------------------------------------|
 | Grace     | `transfer-grace.hpc.yale.edu`          |
 | McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
-| Ruddle    | `transfer-ruddle.hpc.yale.edu`         |
 | Milgram   | `transfer-milgram.hpc.yale.edu`        |
 
 
@@ -45,9 +44,9 @@ An example configuration of Cyberduck is shown below.
 
 ![Cyberduck sample configuration.](/img/cyberduck.png)
 
-##### Cyberduck on McCleary and Ruddle
+##### Cyberduck on McCleary
 
-McCleary and Ruddle require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
+McCleary require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
 
 When you connect type one of the following when prompted with a "Partial authentication success" window.
 

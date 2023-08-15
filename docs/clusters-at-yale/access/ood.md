@@ -14,7 +14,6 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 | [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)         |
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)     |
-| [Ruddle](/clusters/ruddle)     | [ood-ruddle.hpc.yale.edu](https://ood-ruddle.hpc.yale.edu)       |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
@@ -90,7 +89,7 @@ We have deployed a selection of common graphical programs as Interactive Apps on
 Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
 In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
 
-Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram and Ruddle) or your lab's partition.
+Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram) or your lab's partition.
 
 ![remote_desktop](/img/ood_remote.png){: .medium}
 
@@ -180,7 +179,7 @@ This will remove any temporary files created by RStudio and allow it to start an
 
 1. Check if your quota is full
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  
-3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, ruddle, milgram) or `$HOME/.lmod.d/default.mccleary-rhel8` for McCleary.
+3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, milgram) or `$HOME/.lmod.d/default.mccleary-rhel8` for McCleary.
 
 #### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
 1. Make sure there is no initialization left by `conda init` in your `.bashrc`. Clean it with 

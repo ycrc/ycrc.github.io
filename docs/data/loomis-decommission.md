@@ -12,13 +12,13 @@ A single project space to host no-cost project-style storage allocations is avai
 
 ### Scratch
 
-A single scratch space on Palmer, available for Grace users at /vast/palmer/scratch, will serve both Grace and the upcoming McCleary cluster (replacement for Farnam and Ruddle). The Loomis scratch space was decommissioned and purged on October 3, 2022.
+A single scratch space on Palmer, available for Grace users at /vast/palmer/scratch, serves both Grace and McCleary cluster (replacement for Farnam and Ruddle). The Loomis scratch space was decommissioned and purged on October 3, 2022.
 
 ### Software
 
-In 2023, a new unified software and module tree will be created on Palmer, so the same software will be available for use regardless of which YCRC HPC cluster you are using.
+In 2023, a new unified software and module tree was created on Palmer, so the same software will be available for use regardless of which YCRC HPC cluster you are using. 
 
-We have already migrated the software located in /gpfs/loomis/apps/avx to Palmer at /vast/palmer/apps/grace.avx. To continue to support this software without interruption, we are maintaining a symlink at /gpfs/loomis/apps/avx to the new location on Palmer, so software will continue to appear as if it is on Loomis even after the maintenance, despite being hosted on Palmer. When the operating system on Grace is upgraded to Red Hat 8 in 2023, Grace will use the new unified software tree that will be shared with the upcoming McCleary cluster and the aforementioned symlink will be removed. More information on that upgrade will come in 2023.
+We have migrated the software located in /gpfs/loomis/apps/avx to Palmer at /vast/palmer/apps/grace.avx. To continue to support this software without interruption, we are maintaining a symlink at /gpfs/loomis/apps/avx to the new location on Palmer, so software will continue to appear as if it is on Loomis even after the maintenance, despite being hosted on Palmer. In August 2023, Grace was upgraded to Red Hat 8 and this old software tree was deprecated and is no longer supported.
 
 ## What about Existing Data on Loomis?
 
