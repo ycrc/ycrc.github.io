@@ -16,7 +16,14 @@ While we have done extensive testing both internally and with the new McCleary c
 
 ## New Host Key
 
-The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login for the first time after the maintenance.
+The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in an error similar to the following when you attempt to login for the first time after the maintenance.
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+```
 
 To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):
 
@@ -52,7 +59,7 @@ As always, if you need additional packages, we strongly recommend setting up you
 In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
 
-### Missing system libraries
+### Missing System Libraries
 
 Some of the existing applications may depend on libraries that are no longer installed in the operating system.
 If you run into these errors please email [hpc@yale.edu](mailto:hpc@yale.edu) and include which application/version you are using along with the full error message.
