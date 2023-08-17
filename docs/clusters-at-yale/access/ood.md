@@ -11,9 +11,9 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
-| [Grace](/clusters/grace)       | [ood-grace.hpc.yale.edu](https://ood-grace.hpc.yale.edu)         |
+| [Grace](/clusters/grace)       | [ood-grace.ycrc.yale.edu](https://ood-grace.ycrc.yale.edu)         |
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
-| [Milgram](/clusters/milgram)   | [ood-milgram.hpc.yale.edu](https://ood-milgram.hpc.yale.edu)     |
+| [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu](https://ood-milgram.ycrc.yale.edu)     |
 
 The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
