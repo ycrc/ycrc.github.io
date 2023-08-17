@@ -2696,22 +2696,22 @@
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
-<div class="highlight"><pre><span></span><code>scp myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/fas/admins/abc123/test:</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<div class="highlight"><pre><span></span><code>scp /home/xyz/myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
-<div class="highlight"><pre><span></span><code>scp -r mydirectory abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
-<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt .
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt .
 </code></pre></div>
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 </code></pre></div>
 <h2 id="transfer-data-tofrom-other-locations">Transfer Data to/from Other Locations</h2>
 <h3 id="globus-endpoints">Globus Endpoints</h3>

@@ -2678,7 +2678,7 @@ apptainer <span class="nb">exec</span> my_blast_image.sif env <span class="p">|<
 </code></pre></div>
 <h3 id="home-directories">Home Directories</h3>
 <p>Sometimes the maintainer of a Docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the <code>--contain</code> option. Unfortunately, you will also then have to explicitly tell Apptainer about the paths that you want to use from inside the container with the <a href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html"><code>--bind</code></a> option.</p>
-<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.sif
+<div class="highlight"><pre><span></span><code>apptainer shell --shell /bin/bash --contain --bind /gpfs/gibbs/project/support/be59:/home/be59/project bioconvert-latest.sif
 </code></pre></div>
                 
                   
@@ -2688,7 +2688,7 @@ apptainer <span class="nb">exec</span> my_blast_image.sif env <span class="p">|<
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>
