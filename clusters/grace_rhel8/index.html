@@ -2345,8 +2345,8 @@ If you run into these errors please email <a href="mailto:hpc@yale.edu">hpc@yale
 We will investigate these on a case-by-case basis and work to get the issue resolved.</p>
 <p>There will be a small number of compute nodes reserved with RHEL7 (in a partition named <code>legacy</code>) to enable work to continue while we resolve these issues.
 This partition will remain available until the December maintenance window.</p>
-<div class="admonition rhel7 standard environment">
-<p class="admonition-title">Rhel7</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Some of the applications in the new shared apps tree may not work perfectly on the legacy RHEL7 nodes. 
 When running jobs in the legacy partition, you should therefore run <code>module purge</code> at the begining of interactive sessions and add it to the start of your batch scripts. 
 This will ensure that you only load modules built for RHEL7.</p>
