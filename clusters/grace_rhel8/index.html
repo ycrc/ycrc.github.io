@@ -2259,7 +2259,7 @@
         
           <li class="md-nav__item">
   <a href="#missing-system-libraries" class="md-nav__link">
-    Missing system libraries
+    Missing System Libraries
   </a>
   
 </li>
@@ -2308,7 +2308,12 @@ This provides a number of key benefits to Grace:</p>
 <p>* some software and workflows will only be supported by YCRC staff on one of the cluster, e.g. tightly couple MPI codes (Grace) or RELION (McCleary).</p>
 <p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. <code>rhel8_day</code>) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.</p>
 <h2 id="new-host-key">New Host Key</h2>
-<p>The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login for the first time after the maintenance.</p>
+<p>The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in an error similar to the following when you attempt to login for the first time after the maintenance.</p>
+<div class="highlight"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+</code></pre></div>
 <p>To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):</p>
 <div class="highlight"><pre><span></span><code>ssh-keygen -R grace.hpc.yale.edu
 </code></pre></div>
@@ -2329,7 +2334,7 @@ We plan to deprecate and remove the old application tree during the December 202
 As always, if you need additional packages, we strongly recommend setting up your own <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
 <p>In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
-<h3 id="missing-system-libraries">Missing system libraries</h3>
+<h3 id="missing-system-libraries">Missing System Libraries</h3>
 <p>Some of the existing applications may depend on libraries that are no longer installed in the operating system.
 If you run into these errors please email <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and include which application/version you are using along with the full error message.
 We will investigate these on a case-by-case basis and work to get the issue resolved.</p>
