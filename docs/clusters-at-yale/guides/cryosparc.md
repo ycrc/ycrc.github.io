@@ -114,7 +114,7 @@ cryosparcm start
 cryosparcm status
 
 # run the output from the following command on your local linux/mac machine
-echo "ssh -N -L $CRYOSPARC_BASE_PORT:$master_host:$CRYOSPARC_BASE_PORT $USER@farnam.hpc.yale.edu"
+echo "ssh -N -L $CRYOSPARC_BASE_PORT:$master_host:$CRYOSPARC_BASE_PORT $USER@mccleary.ycrc.yale.edu"
 ```
 
 ## Database errors

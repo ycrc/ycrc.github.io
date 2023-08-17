@@ -182,5 +182,5 @@ apptainer exec --nv tensorflow-10.0-py3.sif python ./my-tf-model.py
 Sometimes the maintainer of a Docker container you are trying to use installed software into a special user's home directory. If you need access to someone's home directory that exists in the container and not on the host, you should add the `--contain` option. Unfortunately, you will also then have to explicitly tell Apptainer about the paths that you want to use from inside the container with the [`--bind`](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html) option.
 
 ``` bash
-apptainer shell --shell /bin/bash --contain --bind /gpfs/ysm/project/be59:/home/be59/project bioconvert-latest.sif
+apptainer shell --shell /bin/bash --contain --bind /gpfs/gibbs/project/support/be59:/home/be59/project bioconvert-latest.sif
 ```

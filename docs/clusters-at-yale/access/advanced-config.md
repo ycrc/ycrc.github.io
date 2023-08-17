@@ -49,13 +49,12 @@ Or whatever your private key file is named.
 !!! note
     If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: `/usr/bin/ssh-add`
 
-Then and add the following to your `~/.ssh/config` file (create this file if it doesn't exist, or add these settings to the `Host *.hpc.yale.edu ...` rule if it does).
+Then and add the following to your `~/.ssh/config` file (create this file if it doesn't exist, or add these settings to the `Host *.ycrc.yale.edu ...` rule if it does).
 
 ```
 Host *.ycrc.yale.edu mccleary grace milgram
     UseKeychain yes
     AddKeystoAgent yes
-
 ```
 
 You can view a list of the keys currently in your agent with:

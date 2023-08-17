@@ -6,9 +6,9 @@ For more advanced use cases that are not well supported by the [Web Portal (Open
 
 * [Request an account](https://research.computing.yale.edu/support/hpc/account-request) (if you do not already have one).
 
-* Send us your public SSH key with our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Allow up to ten minutes for it to propagate.
+* Send us your public SSH key with our [SSH key uploader](https://sshkeys.ycrc.yale.edu/). Allow up to ten minutes for it to propagate.
 
-* Once we have your public key you can connect with `ssh netid@clustername.hpc.yale.edu`. If you are accessing McCleary, the command is `ssh netid@mccleary.ycrc.yale.edu.`
+* Once we have your public key you can connect with `ssh netid@clustername.ycrc.yale.edu`.
 
 * Login node addresses and other details of the clusters, such as scheduler partitions and storage, can be found on the [clusters page](/clusters).
 
@@ -22,7 +22,7 @@ SSH (Secure Shell) keys are a set of two pieces of information that you use to i
 
 When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.
 
-We use an automated system to distribute your public key onto the clusters, [which you can log in to here](https://sshkeys.hpc.yale.edu/). It is only accessible on campus or through the [Yale VPN](../vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
+We use an automated system to distribute your public key onto the clusters, [which you can log in to here](https://sshkeys.ycrc.yale.edu/). It is only accessible on campus or through the [Yale VPN](../vpn). All the public keys that are authorized to your account are stored in the file `~/.ssh/authorized_keys` on the clusters you have been given access to. If you use multiple computers, you can either keep the same ssh key pair on every one or have a different set for each. Having only one is less complicated, but if your key pair is compromised you have to be worried about everywhere it is authorized.
 
 !!! warning
     Keep your private keys private! Anyone who has them can assume your identity on any server where your keys are authorized. **We will never ask for your private key**.
@@ -69,22 +69,14 @@ Next, upload your public SSH key on the cluster. Run the following command in a 
 cat ~/.ssh/id_rsa.pub
 ```
 
-Copy and paste the output to our [SSH key uploader](https://sshkeys.hpc.yale.edu/). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
+Copy and paste the output to our [SSH key uploader](https://sshkeys.ycrc.yale.edu/). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
 
 ### Connect on macOS and Linux
 
 Once your key has been copied to the appropriate places on the clusters, you can log in with the command:
 
-
-#### For McCleary
 ```
 ssh netid@clustername.ycrc.yale.edu
-```
-
-#### For all other clusters
-
-```
-ssh netid@clustername.hpc.yale.edu
 ```
 
 Check out our [Advanced SSH Configuration](../advanced-config) for tips on maintaining connections and adding tab complete to your ssh commands on linux/macOS.
@@ -110,7 +102,7 @@ First, generate an SSH key pair if you haven't already:
 * Click "Save public key" and save your public key as id_rsa.pub.
 * Choose a secure passphrase and enter into the two relevant fields. Your passphrase will prevent access to your account in the event your private key is stolen.
 * Click "Save private key" and save your private key as id_rsa.ppk (this one is secret, *don't give it to other people*).
-* Copy the text of your public key and paste it into the text box in our [SSH key uploader](https://sshkeys.hpc.yale.edu/).
+* Copy the text of your public key and paste it into the text box in our [SSH key uploader](https://sshkeys.ycrc.yale.edu/).
 * Your key will be synced out to the clusters in a few minutes.
 
 ### Connect with MobaXterm
@@ -120,7 +112,7 @@ To make a new connection to one of the clusters:
 * Open MobaXterm.
 * From the top menu select Sessions -> New Session.
 * Click the SSH icon in the top left.
-* Enter the cluster login node address (e.g. grace.hpc.yale.edu) as the Remote Host.
+* Enter the cluster login node address (e.g. grace.ycrc.yale.edu) as the Remote Host.
 * Check "Specify Username" and Enter your netID as the the username.
 * Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
 * Click OK.

@@ -77,19 +77,19 @@ The from and to can each be a filename or a directory/folder on the computer you
 Using the example netid `abc123`, following is run on your computer's local terminal.
 
 ``` bash
-scp myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 ```
 
 In this example, `myfile.txt` is copied to the directory `/home/fas/admins/abc123/test:` on Grace. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
 
 ``` bash
-scp /home/xyz/myfile.txt abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 ```
 
 #### Example: Transfer a Directory to a Cluster
 
 ``` bash
-scp -r mydirectory abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/test
+scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 ```
 
 In this example, the contents of `mydirectory` are transferred. The `-r` indicates that the copy is recursive.
@@ -99,14 +99,14 @@ In this example, the contents of `mydirectory` are transferred. The `-r` indicat
 Assuming you would like the files copied to your current directory:
 
 ``` bash
-scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt .
+scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt .
 ```
 
 Note that `.` represents your current working directory.
 To specify the destination, simply replace the `.` with the full path:
 
 ``` bash
-scp abc123@transfer-grace.hpc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
+scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 ```
 
 ## Transfer Data to/from Other Locations

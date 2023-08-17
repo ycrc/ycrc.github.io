@@ -4,7 +4,7 @@ To improve security, access to McCleary requires both a public key and multi-fac
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
-You will need upload your [ssh public key to our site](https://sshkeys.hpc.yale.edu/).
+You will need upload your [ssh public key to our site](https://sshkeys.ycrc.yale.edu/).
 For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
 Once you've set up Duo and your key is registered, you can log in to McCleary.
