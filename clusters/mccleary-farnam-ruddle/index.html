@@ -2393,15 +2393,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-about-my-existing-data-on-farnam" class="md-nav__link">
-    What about My Existing Data on Farnam?
+  <a href="#farnam-data" class="md-nav__link">
+    Farnam Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-about-my-existing-data-on-ruddle" class="md-nav__link">
-    What about My Existing Data on Ruddle?
+  <a href="#ruddle-data" class="md-nav__link">
+    Ruddle Data
   </a>
   
 </li>
@@ -2414,8 +2414,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#storage-at-yale-say-shares" class="md-nav__link">
-    Storage At Yale (SAY) Shares
+  <a href="#storageyale-say-shares" class="md-nav__link">
+    Storage@Yale (SAY) Shares
   </a>
   
 </li>
@@ -2452,18 +2452,18 @@
 <li>Compute service charges on McCleary commons partitions begin</li>
 </ul>
 </li>
-<li>July 13: /gpfs/ysm no longer be available</li>
+<li>July 13: <code>/gpfs/ysm</code> no longer be available</li>
 </ul>
 <h3 id="ruddle">Ruddle</h3>
 <ul>
 <li>April: Migration of purchased nodes from Ruddle to McCleary</li>
 <li>June 1st: Official Farnam retirement date, and beginning of compute service charges on McCleary commons partitions. Jobs in the ycga partitions will always be exempt from compute service charge.</li>
-<li>July 24th: Access to Ruddle login and OnDemand nodes disabled</li>
+<li>July 24th: Access to Ruddle login and OnDemand nodes disabled. Old <code>/gpfs/ycga</code> replaced with new system.</li>
 </ul>
 <h2 id="accounts">Accounts</h2>
 <p>Most Farnam and Ruddle users who have been active in the last year have accounts automatically created on McCleary for them and have received an email to that effect. All other users who conduct life sciences research can request an account using our <a href="https://research.computing.yale.edu/support/hpc/account-request">Account Request form</a>.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Group Membership</p>
 <p>Check which group your new McCleary account is associated with and make sure that matches your expection.
 This is the group that will be charged (if/when applicable) for your compute usage as well as dictate which private partitions you may have access to.
 Any cluster specific changes previously made on Farnam or Ruddle will not be automatically reflected on McCleary.
@@ -2538,19 +2538,22 @@ For now, interactive GPU-enabled jobs should be submitted to the <code>gpu</code
 <h3 id="dedicated-nodes">Dedicated Nodes</h3>
 <p>If you have purchased nodes on Farnam or Ruddle that are not in the <code>haswell</code> generation, we have coordinated with your group to migrate those nodes to McCleary in April into a partition of the same name.</p>
 <h2 id="storage-and-data">Storage and Data</h2>
-<p>If you have data on the Gibbs filesystem, there is no action required as they are already available on McCleary.</p>
-<h3 id="what-about-my-existing-data-on-farnam">What about My Existing Data on Farnam?</h3>
+<p>If you have data on the Gibbs filesystem, there was no action required as they are already available on McCleary.</p>
+<h3 id="farnam-data">Farnam Data</h3>
 <p>Farnam’s primary filesystem, YSM (/gpfs/ysm), was retired on July 13th. If you previously had a Farnam account, you have been give new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. </p>
-<h3 id="what-about-my-existing-data-on-ruddle">What about My Existing Data on Ruddle?</h3>
-<p><code>/gpfs/ycga</code> is available on McCleary as a read-and-write filesystem so it can continued to be used for McCleary compute jobs. However, you have been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>. Note this project space (<code>/gpfs/gibbs/project</code>) is distinct from the YCGA storage described below which is confusingly also called <code>project</code> but is located at <code>/gpfs/ycga/project</code>.</p>
-<p>At a later date, all data in the <code>project</code>, <code>sequencers</code>, <code>special</code>, and <code>pi</code> directories under <code>/gpfs/ycga</code> will be copied by the YCRC to a new GPFS filesystem but under the same path names to avoid breaking workflows.  <strong>All data in Ruddle home and scratch60 (that you want to keep) will need to be transferred off the existing filesystem by you prior the Ruddle retirement on July 24th</strong>. More information and instructions on transferring data can be found <a href="/data/mccleary-transfer/">here</a>.</p>
-<p>If you have any questions or concerns about what will be moved to McCleary and when, please reach out to us.</p>
+<h3 id="ruddle-data">Ruddle Data</h3>
+<p>The YCGA storage system (<code>/gpfs/ycga</code>) has been replaced with a new, larger storage system at the same namespace. All data in the <code>project</code> (now at <code>work</code>), <code>sequencers</code>, <code>special</code>, and <code>pi</code> directories under <code>/gpfs/ycga</code> were migrated by YCRC staff to the new storage system. All other data on <code>/gpfs/ycga</code> (Ruddle home and scratch60) was retired with Ruddle on July 24th.</p>
+<p>As a McCleary user, you have also been given new, empty home and scratch directories for McCleary on our Palmer filesystem and a 1 TiB project space on our Gibbs filesystem. Project quotas can be increased to 4 TiB at no cost by sending a request to <a href="mailto:hpc@yale.edu">hpc@yale.edu</a>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Ruddle Project Data</p>
+<p>Data previously in <code>/gpfs/ycga/project/&lt;groupname&gt;/&lt;netid&gt;</code> can now be found at <code>/gpfs/ycga/work/&lt;groupname&gt;/&lt;netid&gt;</code>. The <code>project</code> symlink in your home directory links to your Gibbs project space, <strong>not</strong> your YCGA storage. </p>
+</div>
 <h3 id="researchers-with-purchased-storage">Researchers with Purchased Storage</h3>
-<p>If you have purchased space on /gpfs/ycga or /gpfs/ysm that is still active (not expired), we have migrated your allocation. <strong>This is the only data that the YCRC automatically migrated from Farnam to McCleary.</strong>  </p>
-<p>If you have purchased storage on /gpfs/ysm that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which is available on McCleary).</p>
+<p>If you have purchased space on <code>/gpfs/ycga</code>or <code>/gpfs/ysm</code> that has not expired, we have migrated your allocation. <strong>This is the only data that the YCRC automatically migrated from Farnam to McCleary.</strong>  </p>
+<p>If you have purchased storage on <code>/gpfs/ysm</code> that has expired as of December 31st 2022, you should have received a separate communication from us with information on purchasing replacement storage on Gibbs (which is available on McCleary).</p>
 <p>If you have any questions or concerns about what has been moved to McCleary and when, please reach out to us.</p>
-<h3 id="storage-at-yale-say-shares">Storage At Yale (SAY) Shares</h3>
-<p>Storage At Yale shares are available on McCleary, but only on the <code>transfer</code> node. 
+<h3 id="storageyale-say-shares">Storage@Yale (SAY) Shares</h3>
+<p>Storage@Yale shares are available on McCleary, but only on the <code>transfer</code> node. 
 To access your SAY data, make sure to login to the <code>transfer</code> node and then copy your data to either <code>project</code> or <code>scratch</code>. 
 Note, this is different than how Ruddle was set up, where SAY shares were available on all nodes. </p>
                 
@@ -2561,7 +2564,7 @@ Note, this is different than how Ruddle was set up, where SAY shares were availa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>
