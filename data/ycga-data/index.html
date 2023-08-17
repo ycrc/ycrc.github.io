@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/ycga-data/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2444,7 +2444,7 @@ to access and download archived sequence data.</p>
 </div>
 <p>Very large tar files over 500GB, sometimes fail to download.  If you run into problems, contact us at hpc@yale.edu and we can
 manually download it.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch60/somedir
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/palmer_scratch/somedir
 tar –xvf /SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
 </code></pre></div>
 <p>Inside the project tar files are the fastq files, which have been compressed using <code>quip</code>. If your pipeline cannot read quip files directly, you will need to uncompress them before using them.</p>
@@ -2487,16 +2487,17 @@ module load ycga-public
 </code></pre></div></p>
 <p>We want <code>210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar</code>, matching our netid.</p>
 <p><strong>step 4</strong></p>
-<p>Copy the tarball to scratch</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch
+<p>First, copy the tarball to scratch.  To do this you must be on the transfer partition or transfer node, since /SAY is only mounted there.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/palmer_scratch
 rsync -L -v /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar .
 </code></pre></div>
 <p><strong>step 5</strong></p>
 <p>Submit a batch job to use the restore utility to uncompress the fastq files from the tar file.
-In our example we'll use 32 cpus.  The restore will likely
+In our example we'll use 32 cpus.  This is not done using the transfer partition, but rather the day partition, since day will allow you more cpus.  The restore will likely
 take several minutes. To see progress, you can use the <code>-v</code> flag.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#/bin/bash</span>
 <span class="c1">#SBATCH -c 32</span>
+<span class="c1">#SBATCH -p day</span>
 
 module load ycga-public
 restore -v -n <span class="nv">$SLURM_CPUS_PER_TASK</span> -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
