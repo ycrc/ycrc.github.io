@@ -14,6 +14,26 @@ This provides a number of key benefits to Grace:
 
 While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. `rhel8_day`) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.
 
+## New Host Key
+
+The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login for the first time after the maintenance.
+
+To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):
+
+```
+ssh-keygen -R grace.hpc.yale.edu
+```
+
+If you are using a GUI, such as MobaXterm, you will need to manually edit your known host file and remove the lines related to Grace. For MobaXterm, this file is located (by default) in `Documents\MobaXterm\home\.ssh`.
+
+Then attempt a new login and accept the new host key. The valid host keys for the login nodes are as follows:
+
+```
+3072 SHA256:8jJ/dKJVntzBJQWW8pU901PHbWcIe2r8ACvq30zQxKU login1 (RSA)
+256 SHA256:vhmGumY/XI/PAaheWQCadspl22/mqMiUiNXk+ov/zRc login1 (ECDSA)
+256 SHA256:NWNrMNoLwcqMm+E2NpsKKmirSbku9iXgbfk8ucn5aZE login1 (ED25519)
+```
+
 ## New Software Tree
 
 Grace now shares a software module tree with the McCleary cluster, providing a more consistent experience for all our users.

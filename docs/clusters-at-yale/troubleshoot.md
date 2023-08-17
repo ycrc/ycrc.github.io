@@ -15,7 +15,7 @@ If you are having trouble logging into a cluster, please use the checklist below
 - [ ] Make sure your computer is either on Yale's campus network (ethernet or YaleSecure wireless) or [Yale's VPN](/clusters-at-yale/access/vpn/).
     - [ ]  If you get an error like `could not resolve hostname` you may have lost connection to the Yale network. If you are sure you have not, make sure that you are also using the Yale DNS servers (130.132.1.9,10,11).
 - [ ] Your home directory should only be writable by you. If you recently modified the permissions to your home directory and can't log in, [contact us](/#get-help) and we can fix the permissions for you.
-- [ ] If you are using [McCleary](/clusters/mccleary) or [Ruddle](/clusters/ruddle), we require Duo MFA for every login. If following our [MFA Troubleshooting steps](/clusters-at-yale/access/mfa/#troubleshoot-mfa) doesn't  work, contact the [ITS Help Desk](https://yale.service-now.com/it?id=get_help).
+- [ ] If you are using [McCleary](/clusters/mccleary), we require Duo MFA for every login. If following our [MFA Troubleshooting steps](/clusters-at-yale/access/mfa/#troubleshoot-mfa) doesn't  work, contact the [ITS Help Desk](https://yale.service-now.com/it?id=get_help).
 
 If none of the above solve your issue, please [contact us](/#get-help) with your netid and the cluster you are attempting to connect to.
 
@@ -41,6 +41,6 @@ Offending key in /home/user/.ssh/known_hosts:34
 
 ```
 
-This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please [contact us](/#get-help) if you receive this error.
+This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster (see [Grace August 2023 Maintenance](/clusters/grace_rhel8)). It could also mean someone is trying to intercept your ssh session. Please [contact us](/#get-help) if you receive this error outside of known system upgrades.
 
 If the host keys have indeed changed on the server you are connecting to, you can edit `~/.ssh/known_hosts` and remove the offending line. In the example above, you would need to delete line 34 in `~/.ssh/known_hosts` before you re-connect.
