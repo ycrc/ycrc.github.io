@@ -179,7 +179,7 @@ This will remove any temporary files created by RStudio and allow it to start an
 
 1. Check if your quota is full
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  
-3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel7` (cluster is one of the following: grace, milgram) or `$HOME/.lmod.d/default.mccleary-rhel8` for McCleary.
+3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel8` (cluster is one of the following: grace, mccleary) or `$HOME/.lmod.d/default.milgram-rhel7` for Milgram.
 
 #### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
 1. Make sure there is no initialization left by `conda init` in your `.bashrc`. Clean it with 

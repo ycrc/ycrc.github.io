@@ -8,7 +8,7 @@ When we install software, we use pre-defined build environment modules called to
 
 ### Free Open Source Software (`foss`)
 
-The `foss` toolchains are versioned with a yearletter scheme, e.g. `foss/2018b` is the second `foss` toolchain composed in 2018. Software modules that were built with a sub-toolchain, e.g. `GCCcore`, are still safe to load with their parents as long as their versions match. The major difference between `foss` and `fosscuda` is that `fosscuda` includes CUDA and builds applications for GPUs by default. You shoould only use `fosscuda` modules on nodes with [GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). Below is a tree depicting which toolchains inherit each other.
+The `foss` toolchains are versioned with a yearletter scheme, e.g. `foss/2020b` is the second `foss` toolchain composed in 2020. Software modules that were built with a sub-toolchain, e.g. `GCCcore`, are still safe to load with their parents as long as their versions match. The major difference between `foss` and `fosscuda` is that `fosscuda` includes CUDA and builds applications for GPUs by default. You shoould only use `fosscuda` modules on nodes with [GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). Below is a tree depicting which toolchains inherit each other.
 
 ``` text
 foss: gompi + FFTW, OpenBLAS, ScaLAPACK
@@ -25,7 +25,7 @@ fosscuda: gompic + FFTW, OpenBLAS, ScaLAPACK
 
 ### Intel
 
-The YCRC licenses Intel Parallel Studio XE (Intel oneAPI Base & HPC Toolkit coming soon). The `intel` and `iomkl` toolchains are versioned with a yearletter scheme, e.g. `intel/2018b` is the second `intel` toolchain composed in 2018. The major difference between `iomkl` and `intel` is MPI - `intel` uses Intel's MPI implementation and `iomkl` uses OpenMPI. Below is a tree depicting which toolchains inherit each other.
+The YCRC licenses Intel Parallel Studio XE (Intel oneAPI Base & HPC Toolkit coming soon). The `intel` and `iomkl` toolchains are versioned with a yearletter scheme, e.g. `intel/2020b` is the second `intel` toolchain composed in 2020. The major difference between `iomkl` and `intel` is MPI - `intel` uses Intel's MPI implementation and `iomkl` uses OpenMPI. Below is a tree depicting which toolchains inherit each other.
 
 ``` text
 iomkl: iompi + Intel Math Kernel Library
@@ -44,19 +44,19 @@ intel: iimpi + Intel Math Kernel Library
 To see what versions of sub-toolchains are compatible with their parents, load a `foss` or `intel` module of interest and run `module list`.
 
 ```bash
-[netid@node ~]$ module load foss/2018b
+[netid@node ~]$ module load foss/2020b
 [netid@node ~]$ module list
 
 Currently Loaded Modules:
-  1) StdEnv                       (S)   8) OpenMPI/3.1.1-GCC-7.3.0-2.30
-  2) GCCcore/7.3.0                      9) OpenBLAS/0.3.1-GCC-7.3.0-2.30
-  3) binutils/2.30-GCCcore-7.3.0       10) gompi/2018b
-  4) GCC/7.3.0-2.30                    11) FFTW/3.3.8-gompi-2018b
-  5) zlib/1.2.11-GCCcore-7.3.0         12) ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1
-  6) numactl/2.0.11-GCCcore-7.3.0      13) foss/2018b
-  7) hwloc/1.11.10-GCCcore-7.3.0
+  1) StdEnv                        (S)   7) XZ/5.2.5-GCCcore-10.2.0           13) OpenMPI/4.0.5-GCC-10.2.0
+  2) GCCcore/10.2.0                      8) libxml2/2.9.10-GCCcore-10.2.0     14) OpenBLAS/0.3.12-GCC-10.2.0
+  3) zlib/1.2.11-GCCcore-10.2.0          9) libpciaccess/0.16-GCCcore-10.2.0  15) gompi/2020b
+  4) binutils/2.35-GCCcore-10.2.0       10) hwloc/2.2.0-GCCcore-10.2.0        16) FFTW/3.3.8-gompi-2020b
+  5) GCC/10.2.0                         11) UCX/1.9.0-GCCcore-10.2.0          17) ScaLAPACK/2.1.0-gompi-2020b
+  6) numactl/2.0.13-GCCcore-10.2.0      12) libfabric/1.11.0-GCCcore-10.2.0   18) foss/2020b
 
   Where:
    S:  Module is Sticky, requires --force to unload or purge
 ```
-Here you see that `foss/2018b` includes `GCCcore/7.3.0`, so modules with either the `foss-2018b` or `GCCcore-7.3.0` should be compatible.
+
+Here you see that `foss/2020b` includes `GCCcore/10.2.0`, so modules with either the `foss-2020b` or `GCCcore-10.2.0` should be compatible.

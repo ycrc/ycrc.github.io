@@ -29,16 +29,8 @@ On macOS and Linux-based systems setting up a [config file](/clusters-at-yale/ac
 An example config file is shown below which enables SSH multiplexing (`ControlMaster`) by caching connections in a directory (`ControlPath`) for a period of time (2h, `ControlPersist`). 
 
 ```
-Host *.hpc.yale.edu grace milgram
-    User NETID
-    # Uncomment below to enable X11 forwarding without `-Y`
-    #ForwardX11 yes
-    # To re-use your connections with multi-factor authentication:
-    ControlMaster auto
-    ControlPath ~/.ssh/tmp/%h_%p_%r
-    ControlPersist 2h
 
-Host *.ycrc.yale.edu mccleary
+Host *.ycrc.yale.edu mccleary grace milgram
     User NETID
     # Uncomment below to enable X11 forwarding without `-Y`
     #ForwardX11 yes
@@ -47,10 +39,7 @@ Host *.ycrc.yale.edu mccleary
     ControlPath ~/.ssh/tmp/%h_%p_%r
     ControlPersist 2h
 
-Host grace milgram
-    HostName %h.hpc.yale.edu
-
-Host mccleary
+Host mccleary grace milgram
     HostName %h.ycrc.yale.edu
 ```
 
