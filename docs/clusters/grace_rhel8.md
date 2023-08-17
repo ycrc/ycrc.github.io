@@ -68,7 +68,7 @@ We will investigate these on a case-by-case basis and work to get the issue reso
 There will be a small number of compute nodes reserved with RHEL7 (in a partition named `legacy`) to enable work to continue while we resolve these issues.
 This partition will remain available until the December maintenance window.
 
-!!! RHEL7 Standard Environment
+!!! Warning
     Some of the applications in the new shared apps tree may not work perfectly on the legacy RHEL7 nodes. 
     When running jobs in the legacy partition, you should therefore run `module purge` at the begining of interactive sessions and add it to the start of your batch scripts. 
     This will ensure that you only load modules built for RHEL7.
