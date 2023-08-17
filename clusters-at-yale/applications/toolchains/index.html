@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/applications/toolchains/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2367,7 +2367,7 @@
 <h2 id="toolchains">Toolchains</h2>
 <p>When we install software, we use pre-defined build environment modules called toolchains. These are modules that include dependencies like compilers and libraries such as GCC, OpenMPI, CUDA, etc. We do this to keep our build process simpler, and to ensure that sets of software modules loaded together function properly. The two groups of toolchains we use on the YCRC clusters are <a href="https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-foss-toolchain"><code>foss</code></a> and <a href="https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#component-versions-in-intel-toolchain"><code>intel</code></a>, which hierarchically include some shared sub-toolchains. Toolchains will have versions associated with the version of the compiler and/or when the toolchain was composed. Toolchain names and versions are appended as suffixes in module names. This tells you that a module was built with that toolchain and which other modules are compatible with it. The YCRC maintains a rolling two toolchain version support model. The toolchain versions supported on each cluster are listed in the <a href="/clusters-at-yale/applications/lifecycle">Module Lifecycle</a> documentation.</p>
 <h3 id="free-open-source-software-foss">Free Open Source Software (<code>foss</code>)</h3>
-<p>The <code>foss</code> toolchains are versioned with a yearletter scheme, e.g. <code>foss/2018b</code> is the second <code>foss</code> toolchain composed in 2018. Software modules that were built with a sub-toolchain, e.g. <code>GCCcore</code>, are still safe to load with their parents as long as their versions match. The major difference between <code>foss</code> and <code>fosscuda</code> is that <code>fosscuda</code> includes CUDA and builds applications for GPUs by default. You shoould only use <code>fosscuda</code> modules on nodes with <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">GPUs</a>. Below is a tree depicting which toolchains inherit each other.</p>
+<p>The <code>foss</code> toolchains are versioned with a yearletter scheme, e.g. <code>foss/2020b</code> is the second <code>foss</code> toolchain composed in 2020. Software modules that were built with a sub-toolchain, e.g. <code>GCCcore</code>, are still safe to load with their parents as long as their versions match. The major difference between <code>foss</code> and <code>fosscuda</code> is that <code>fosscuda</code> includes CUDA and builds applications for GPUs by default. You shoould only use <code>fosscuda</code> modules on nodes with <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">GPUs</a>. Below is a tree depicting which toolchains inherit each other.</p>
 <div class="highlight"><pre><span></span><code>foss: gompi + FFTW, OpenBLAS, ScaLAPACK
 └── gompi: GCC + OpenMPI
     └── GCC: GCCcore + zlib, binutils
@@ -2380,7 +2380,7 @@ fosscuda: gompic + FFTW, OpenBLAS, ScaLAPACK
             └── GCCcore: GNU Compiler Collection
 </code></pre></div>
 <h3 id="intel">Intel</h3>
-<p>The YCRC licenses Intel Parallel Studio XE (Intel oneAPI Base &amp; HPC Toolkit coming soon). The <code>intel</code> and <code>iomkl</code> toolchains are versioned with a yearletter scheme, e.g. <code>intel/2018b</code> is the second <code>intel</code> toolchain composed in 2018. The major difference between <code>iomkl</code> and <code>intel</code> is MPI - <code>intel</code> uses Intel's MPI implementation and <code>iomkl</code> uses OpenMPI. Below is a tree depicting which toolchains inherit each other.</p>
+<p>The YCRC licenses Intel Parallel Studio XE (Intel oneAPI Base &amp; HPC Toolkit coming soon). The <code>intel</code> and <code>iomkl</code> toolchains are versioned with a yearletter scheme, e.g. <code>intel/2020b</code> is the second <code>intel</code> toolchain composed in 2020. The major difference between <code>iomkl</code> and <code>intel</code> is MPI - <code>intel</code> uses Intel's MPI implementation and <code>iomkl</code> uses OpenMPI. Below is a tree depicting which toolchains inherit each other.</p>
 <div class="highlight"><pre><span></span><code>iomkl: iompi + Intel Math Kernel Library
 └── iompi: iccifort + OpenMPI
     └── iccifort: Intel compilers
@@ -2393,22 +2393,21 @@ intel: iimpi + Intel Math Kernel Library
 </code></pre></div>
 <h2 id="what-versions-match">What Versions Match?</h2>
 <p>To see what versions of sub-toolchains are compatible with their parents, load a <code>foss</code> or <code>intel</code> module of interest and run <code>module list</code>.</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node ~<span class="o">]</span>$ module load foss/2018b
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node ~<span class="o">]</span>$ module load foss/2020b
 <span class="o">[</span>netid@node ~<span class="o">]</span>$ module list
 
 Currently Loaded Modules:
-  <span class="m">1</span><span class="o">)</span> StdEnv                       <span class="o">(</span>S<span class="o">)</span>   <span class="m">8</span><span class="o">)</span> OpenMPI/3.1.1-GCC-7.3.0-2.30
-  <span class="m">2</span><span class="o">)</span> GCCcore/7.3.0                      <span class="m">9</span><span class="o">)</span> OpenBLAS/0.3.1-GCC-7.3.0-2.30
-  <span class="m">3</span><span class="o">)</span> binutils/2.30-GCCcore-7.3.0       <span class="m">10</span><span class="o">)</span> gompi/2018b
-  <span class="m">4</span><span class="o">)</span> GCC/7.3.0-2.30                    <span class="m">11</span><span class="o">)</span> FFTW/3.3.8-gompi-2018b
-  <span class="m">5</span><span class="o">)</span> zlib/1.2.11-GCCcore-7.3.0         <span class="m">12</span><span class="o">)</span> ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1
-  <span class="m">6</span><span class="o">)</span> numactl/2.0.11-GCCcore-7.3.0      <span class="m">13</span><span class="o">)</span> foss/2018b
-  <span class="m">7</span><span class="o">)</span> hwloc/1.11.10-GCCcore-7.3.0
+  <span class="m">1</span><span class="o">)</span> StdEnv                        <span class="o">(</span>S<span class="o">)</span>   <span class="m">7</span><span class="o">)</span> XZ/5.2.5-GCCcore-10.2.0           <span class="m">13</span><span class="o">)</span> OpenMPI/4.0.5-GCC-10.2.0
+  <span class="m">2</span><span class="o">)</span> GCCcore/10.2.0                      <span class="m">8</span><span class="o">)</span> libxml2/2.9.10-GCCcore-10.2.0     <span class="m">14</span><span class="o">)</span> OpenBLAS/0.3.12-GCC-10.2.0
+  <span class="m">3</span><span class="o">)</span> zlib/1.2.11-GCCcore-10.2.0          <span class="m">9</span><span class="o">)</span> libpciaccess/0.16-GCCcore-10.2.0  <span class="m">15</span><span class="o">)</span> gompi/2020b
+  <span class="m">4</span><span class="o">)</span> binutils/2.35-GCCcore-10.2.0       <span class="m">10</span><span class="o">)</span> hwloc/2.2.0-GCCcore-10.2.0        <span class="m">16</span><span class="o">)</span> FFTW/3.3.8-gompi-2020b
+  <span class="m">5</span><span class="o">)</span> GCC/10.2.0                         <span class="m">11</span><span class="o">)</span> UCX/1.9.0-GCCcore-10.2.0          <span class="m">17</span><span class="o">)</span> ScaLAPACK/2.1.0-gompi-2020b
+  <span class="m">6</span><span class="o">)</span> numactl/2.0.13-GCCcore-10.2.0      <span class="m">12</span><span class="o">)</span> libfabric/1.11.0-GCCcore-10.2.0   <span class="m">18</span><span class="o">)</span> foss/2020b
 
   Where:
    S:  Module is Sticky, requires --force to unload or purge
 </code></pre></div>
-Here you see that <code>foss/2018b</code> includes <code>GCCcore/7.3.0</code>, so modules with either the <code>foss-2018b</code> or <code>GCCcore-7.3.0</code> should be compatible.</p>
+<p>Here you see that <code>foss/2020b</code> includes <code>GCCcore/10.2.0</code>, so modules with either the <code>foss-2020b</code> or <code>GCCcore-10.2.0</code> should be compatible.</p>
                 
                   
                     
@@ -2417,7 +2416,7 @@ Here you see that <code>foss/2018b</code> includes <code>GCCcore/7.3.0</code>, s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>

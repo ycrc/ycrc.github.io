@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2326,7 +2326,7 @@
                 
                 <h1 id="advanced-ssh-configuration">Advanced SSH Configuration</h1>
 <h2 id="example-ssh-config">Example SSH <code>config</code></h2>
-<p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.hpc.yale.edu</code> suffixes (i.e. <code>ssh grace</code> or <code>scp ~/my_file grace:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
+<p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.ycrc.yale.edu</code> suffixes (i.e. <code>ssh grace</code> or <code>scp ~/my_file grace:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require <a href="/clusters-at-yale/access/mfa">Duo MFA</a> will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
 <p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
 <div class="highlight"><pre><span></span><code># If you use a ssh key that is named something other than id_rsa,
 # you can specify your private key like this:
@@ -2334,7 +2334,8 @@
 
 # Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
 # On a Mac you still need xquartz installed
-Host *.hpc.yale.edu grace milgram 
+
+Host *.ycrc.yale.edu mccleary grace milgram
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
@@ -2342,18 +2343,7 @@ Host *.hpc.yale.edu grace milgram
     #ControlMaster auto
     #ControlPath ~/.ssh/tmp/%h_%p_%r
 
-Host *.ycrc.yale.edu mccleary
-    User NETID
-    #ForwardX11 yes
-    # To re-use your connections with multi-factor authentication
-    # Uncomment the two lines below
-    #ControlMaster auto
-    #ControlPath ~/.ssh/tmp/%h_%p_%r
-
-Host grace milgram
-    HostName %h.hpc.yale.edu
-
-Host mccleary
+Host mccleary grace milgram
     HostName %h.ycrc.yale.edu
 </code></pre></div>
 <div class="admonition warning">
@@ -2373,11 +2363,7 @@ Host mccleary
 <p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
 </div>
 <p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.hpc.yale.edu ...</code> rule if it does).</p>
-<div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu grace milgram ruddle
-    UseKeychain yes
-    AddKeystoAgent yes
-
-Host *.ycrc.yale.edu mccleary
+<div class="highlight"><pre><span></span><code>Host *.ycrc.yale.edu mccleary grace milgram
     UseKeychain yes
     AddKeystoAgent yes
 </code></pre></div>
@@ -2392,7 +2378,7 @@ Host *.ycrc.yale.edu mccleary
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>

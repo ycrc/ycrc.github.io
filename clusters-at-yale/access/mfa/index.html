@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2414,16 +2414,7 @@ When this happens, you will be asked to Duo authenticate for each connection.</p
 <h3 id="ssh-config-file">SSH Config File</h3>
 <p>On macOS and Linux-based systems setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
 An example config file is shown below which enables SSH multiplexing (<code>ControlMaster</code>) by caching connections in a directory (<code>ControlPath</code>) for a period of time (2h, <code>ControlPersist</code>). </p>
-<div class="highlight"><pre><span></span><code>Host *.hpc.yale.edu grace milgram
-    User NETID
-    # Uncomment below to enable X11 forwarding without `-Y`
-    #ForwardX11 yes
-    # To re-use your connections with multi-factor authentication:
-    ControlMaster auto
-    ControlPath ~/.ssh/tmp/%h_%p_%r
-    ControlPersist 2h
-
-Host *.ycrc.yale.edu mccleary
+<div class="highlight"><pre><span></span><code>Host *.ycrc.yale.edu mccleary grace milgram
     User NETID
     # Uncomment below to enable X11 forwarding without `-Y`
     #ForwardX11 yes
@@ -2432,10 +2423,7 @@ Host *.ycrc.yale.edu mccleary
     ControlPath ~/.ssh/tmp/%h_%p_%r
     ControlPersist 2h
 
-Host grace milgram
-    HostName %h.hpc.yale.edu
-
-Host mccleary
+Host mccleary grace milgram
     HostName %h.ycrc.yale.edu
 </code></pre></div>
 <div class="admonition warning">
@@ -2488,7 +2476,7 @@ Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>
