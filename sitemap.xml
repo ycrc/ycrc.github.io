@@ -601,6 +601,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/news/2023-08-grace/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/news/2023-08-milgram/</loc>
+         <lastmod>2023-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/news/2023-08/</loc>
          <lastmod>2023-08-23</lastmod>
          <changefreq>daily</changefreq>
