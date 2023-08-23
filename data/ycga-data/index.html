@@ -2495,12 +2495,16 @@ rsync -L -v /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumi
 <p>Submit a batch job to use the restore utility to uncompress the fastq files from the tar file.
 In our example we'll use 32 cpus.  This is not done using the transfer partition, but rather the day partition, since day will allow you more cpus.  The restore will likely
 take several minutes. To see progress, you can use the <code>-v</code> flag.</p>
+<p>Put the following code in a batch script (e.g. myrestore.sh):</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#/bin/bash</span>
 <span class="c1">#SBATCH -c 32</span>
 <span class="c1">#SBATCH -p day</span>
 
 module load ycga-public
 restore -v -n <span class="nv">$SLURM_CPUS_PER_TASK</span> -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
+</code></pre></div>
+<p>Then submit the job using sbatch:</p>
+<div class="highlight"><pre><span></span><code>sbatch myrestore.sh
 </code></pre></div>
 <p>The restored fastq files will written to a directory like this: 
 <div class="highlight"><pre><span></span><code>210305_D00306_1337_BHJWZZBCX3/Data/Intensities/BaseCalls/Unaligned*/Project_*
@@ -2513,7 +2517,7 @@ restore -v -n <span class="nv">$SLURM_CPUS_PER_TASK</span> -t 210305_D00306_1337
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2023</span>
       
     
   </small>
