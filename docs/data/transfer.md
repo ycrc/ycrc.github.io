@@ -44,9 +44,9 @@ An example configuration of Cyberduck is shown below.
 
 ![Cyberduck sample configuration.](/img/cyberduck.png)
 
-##### Cyberduck on McCleary
+##### Cyberduck on McCleary and Milgram
 
-McCleary require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
+McCleary and Milgram require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
 
 When you connect type one of the following when prompted with a "Partial authentication success" window.
 

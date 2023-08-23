@@ -1,13 +1,13 @@
 # Multi-factor Authentication
 
-To improve security, access to McCleary requires both a public key and multi-factor authentication (MFA).
+To improve security, access to McCleary and Milgram requires both a public key and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
 You will need upload your [ssh public key to our site](https://sshkeys.ycrc.yale.edu/).
 For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
-Once you've set up Duo and your key is registered, you can log in to McCleary.
+Once you've set up Duo and your key is registered, you can log in to the cluster.
 Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option.
 We recommend choosing Duo Push (option 1).
 If you chose this option you should receive a notification on your phone.
