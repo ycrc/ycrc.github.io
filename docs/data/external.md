@@ -1,5 +1,9 @@
 # Share Data Outside Yale
 
+## Share data using Microsoft OneDrive
+Yale ITS's recommended way to send other people large files is by
+using Microsoft OneDrive.  See [details](https://yale.service-now.com/it?id=support_article&sys_id=eeece8c91bfb6010806141d8cd4bcb58).
+
 ## Public Website
 
 Researchers frequently ask how they can set up a public website to share data or provide a web-based application.  The easiest way to do this is by using Yale ITS's spinup service.  
@@ -47,5 +51,4 @@ follow the spinup [instructions on requesting public access to a web server](htt
 1. Do not select "write" unless you want the person you are sharing the data with to be able to write to your storage on the cluster.
 
 For more information, please see the [official Globus Documentation](https://docs.globus.org/how-to).
-
 

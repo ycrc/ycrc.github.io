@@ -166,6 +166,8 @@ Submit a batch job to use the restore utility to uncompress the fastq files from
 In our example we'll use 32 cpus.  This is not done using the transfer partition, but rather the day partition, since day will allow you more cpus.  The restore will likely
 take several minutes. To see progress, you can use the `-v` flag.
 
+Put the following code in a batch script (e.g. myrestore.sh):
+
 ``` bash
 #/bin/bash
 #SBATCH -c 32
@@ -173,6 +175,12 @@ take several minutes. To see progress, you can use the `-v` flag.
 
 module load ycga-public
 restore -v -n $SLURM_CPUS_PER_TASK -t 210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
+```
+
+Then submit the job using sbatch:
+
+``` bash
+sbatch myrestore.sh
 ```
 
 The restored fastq files will written to a directory like this: 
