@@ -8,7 +8,7 @@ Each cluster has dedicated nodes specially networked for high speed transfers bo
 
 | Cluster   | Transfer Node                          |
 |-----------|----------------------------------------|
-| Grace     | `transfer-grace.ycrc.yale.edu`          |
+| Grace     | `transfer-grace.hpc.yale.edu`          |
 | McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
 | Milgram   | `transfer-milgram.hpc.yale.edu`        |
 
