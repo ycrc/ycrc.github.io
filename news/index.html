@@ -2379,6 +2379,64 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="september-2023">September 2023</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="grace-rhel8-upgrade">Grace RHEL8 Upgrade</h4>
+<p>As Red Hat Enterprise Linux (RHEL) 7 approaches its end of life, we upgraded the Grace cluster from RHEL7 to RHEL8 during the August maintenance window.  This brings Grace in line with McCleary and provide a number of key benefits:</p>
+<ul>
+<li>continued security patches and support beyond 2023</li>
+<li>updated system libraries to better support modern software</li>
+<li>improved node management system to facilitate the growing number of nodes on Grace</li>
+<li>shared application tree between McCleary and Grace, which brings software parity between clusters</li>
+</ul>
+<p>There are a small number of compute nodes in the <code>legacy</code> partition with the old RHEL7 operating system installed for workloads that still need to be migrated. We expect to retire this partition during the Grace December 2023 maintenance. Please contact us if you need help upgrading to RHEL8 in the coming months.</p>
+<h4 id="grace-old-software-deprecation">Grace Old Software Deprecation</h4>
+<p>The RHEL7 application module tree (<code>/gpfs/loomis/apps/avx</code>) is now deprecated and will be removed from the default module environment during the Grace December maintenance. The software will still be available on Grace, but YCRC will no longer provide support for those old packages after December. If you are using a software package in that tree that is not yet installed into the new shared module tree, please let us know as soon as possible so we can help avoid any disruptions.</p>
+<h3 id="software-highlights">Software Highlights</h3>
+<ul>
+<li>
+<p><strong>intel/2022b</strong> toolchain is now available on Grace and McCleary</p>
+<ul>
+<li>MKL 2022.2.1</li>
+<li>Intel MPI 2022.2.1</li>
+<li>Intel Compilers 2022.2.1</li>
+</ul>
+</li>
+<li>
+<p><strong>foss/2022b</strong> toolchain is now available on Grace and McCleary</p>
+<ul>
+<li>FFTW 3.3.10</li>
+<li>ScaLAPACK 2.2.0</li>
+<li>OpenMPI 4.1.4</li>
+<li>GCC 12.2.0</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: September 01, 2023
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="milgram-maintenance">Milgram Maintenance</h2>
 <p><em>August</em> 22, 2023_</p>
 <h3 id="software-updates">Software Updates</h3>
@@ -2541,6 +2599,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
                 
                 
                 
@@ -2584,12 +2648,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -2745,6 +2803,12 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -2782,12 +2846,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -2951,6 +3009,12 @@ apptainer build lolcow.sif lolcow.def
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -2988,12 +3052,6 @@ apptainer build lolcow.sif lolcow.def
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
@@ -3191,6 +3249,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page5">
+
+            
                 
                 
                 
@@ -3240,12 +3304,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page5">
-
             
                 
                 
@@ -3412,6 +3470,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page6">
+
+            
                 
                 
                 
@@ -3448,12 +3512,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page6">
-
             
                 
                 
@@ -3611,6 +3669,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page7">
+
+            
                 
                 
                 
@@ -3657,12 +3721,6 @@ Your home directory can always be referenced in bash and submission scripts and 
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page7">
-
             
                 
                 
