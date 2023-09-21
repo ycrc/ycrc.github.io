@@ -361,6 +361,36 @@
     |1|E5-2660_v4|28|245|p100|1|16|broadwell, E5-2660_v4, doubleprecision, pi, p100, oldest|
     |1|E5-2637_v4|8|119|gtx1080ti|4|11|broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest|
 
+=== "scavenge_mpi"
+
+    Use the scavenge_mpi partition to run preemptable jobs on more MPI resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=92160
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the scavenge_mpi partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`1-00:00:00`|
+    |Maximum nodes per group|`64`|
+    |Maximum nodes per user|`64`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |128|6136|24|90|hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp|
+
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
 
