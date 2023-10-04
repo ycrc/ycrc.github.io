@@ -38,9 +38,9 @@ export GFDL_BASE=$HOME/programs/isca
 # "environment" configuration for grace
 export GFDL_ENV=gfortran
 # temporary working directory used in running the model
-export GFDL_WORK=$LOOMIS_SCRATCH/gfdl_work
+export GFDL_WORK=$PALMER_SCRATCH/gfdl_work
 # directory for storing model output
-export GFDL_DATA=$LOOMIS_PROJECT/gfdl_data
+export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 
 ```
 
