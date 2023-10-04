@@ -175,6 +175,7 @@ nav:
             - clusters-at-yale/guides/cesm.md
             - clusters-at-yale/guides/comsol.md
             - clusters-at-yale/guides/gaussian.md
+            - clusters-at-yale/guides/isca.md
             - clusters-at-yale/guides/matlab.md
             - clusters-at-yale/guides/mathematica.md
             - clusters-at-yale/guides/namd.md
