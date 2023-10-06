@@ -2321,9 +2321,11 @@
 <h4 id="papermill-for-jupyter-command-line-execution">"Papermill" for Jupyter Command-Line Execution</h4>
 <p>Many scientific workflows start as interactive Jupyter notebooks, and our Open OnDemand portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively. </p>
 <p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
-<p>To get started, install papermill into your Conda environments:
+<p>To get started, install papermill into your Conda environments:</p>
+<div class="highlight"><pre><span></span><code>module load miniconda
 conda install papermill
-Then you can simply evaluate a notebook, preserving figures and output inside the notebook, like this:</p>
+</code></pre></div>
+<p>Then you can simply evaluate a notebook, preserving figures and output inside the notebook, like this:</p>
 <div class="highlight"><pre><span></span><code>papermill /path/to/notebook.ipynb
 </code></pre></div>
 <p>This can be run inside a batch job that might look like this:</p>
