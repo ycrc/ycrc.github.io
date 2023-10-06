@@ -2393,6 +2393,91 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="mccleary-maintenance">McCleary Maintenance</h2>
+<p><em>October</em> 3-5, 2023_</p>
+<h3 id="software-updates">Software Updates</h3>
+<ul>
+<li>Slurm updated to 23.02.5</li>
+<li>NVIDIA drivers updated to 535.104.12</li>
+<li>Lmod updated to 8.7.30</li>
+<li>Apptainer updated to 1.2.3</li>
+<li>System Python updated to 3.11</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: October 05, 2023
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="october-2023">October 2023</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="mccleary-maintenance">McCleary Maintenance</h4>
+<p>The biannual scheduled maintenance for the McCleary cluster will be occurring Oct 3-5. During this time, the cluster will be unavailable. See the McCleary maintenance email announcements for more details.</p>
+<h4 id="interactive-jobs-on-day-on-mccleary">Interactive jobs on <code>day</code> on McCleary</h4>
+<p>Interactive jobs are now allowed to be run on the <code>day</code> partition on McCleary. Note you are still limited to 4 interactive-style jobs of any kind (salloc or OpenOnDemand) at one time. Additional instances will be rejected until you delete older open instances. For OnDemand jobs, closing the window does not terminate the interactive app job. To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
+<h4 id="papermill-for-jupyter-command-line-execution">"Papermill" for Jupyter Command-Line Execution</h4>
+<p>Many scientific workflows start as interactive Jupyter notebooks, and our Open OnDemand portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively. </p>
+<p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
+<p>To get started, install papermill into your Conda environments:
+conda install papermill
+Then you can simply evaluate a notebook, preserving figures and output inside the notebook, like this:</p>
+<div class="highlight"><pre><span></span><code>papermill /path/to/notebook.ipynb
+</code></pre></div>
+<p>This can be run inside a batch job that might look like this:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH -p day
+#SBATCH -c 1
+#SBATCH -t 6:00:00
+
+module purge miniconda
+conda activate my_env
+papermill /path/to/notebook.ipynb
+</code></pre></div>
+<p>Variables can also be parameterized and passed in as command-line options so that you can run multiple copies simultaneously with different input variables. For more information see the [Papermill docs pages](https://papermill.readthedocs.io/.</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: October 01, 2023
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="september-2023">September 2023</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="grace-rhel8-upgrade">Grace RHEL8 Upgrade</h4>
@@ -2516,6 +2601,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
                 
                 
                 
@@ -2612,12 +2703,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -2741,6 +2826,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -2816,12 +2907,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -2924,6 +3009,12 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -3022,12 +3113,6 @@ apptainer build lolcow.sif lolcow.def
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
@@ -3162,6 +3247,12 @@ wait
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page5">
+
+            
                 
                 
                 
@@ -3262,12 +3353,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page5">
-
             
                 
                 
@@ -3402,6 +3487,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page6">
+
+            
                 
                 
                 
@@ -3483,12 +3574,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page6">
-
             
                 
                 
@@ -3608,6 +3693,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page7">
+
+            
                 
                 
                 
@@ -3682,12 +3773,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page7">
-
             
                 
                 
