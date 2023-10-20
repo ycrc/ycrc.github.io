@@ -1160,6 +1160,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#scavenge-mpi-nodes" class="md-nav__link">
+    Scavenge MPI Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#research-available-nodes" class="md-nav__link">
     Research Available Nodes
   </a>
@@ -2353,6 +2360,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#scavenge-mpi-nodes" class="md-nav__link">
+    Scavenge MPI Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#research-available-nodes" class="md-nav__link">
     Research Available Nodes
   </a>
@@ -2394,7 +2408,9 @@
 </code></pre></div>
 <h2 id="scavenge-gpus">Scavenge GPUs</h2>
 <p>On Grace and McCleary, we also have a <code>scavenge_gpu</code> partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
-(e.g. preemption, time limit), <code>scavenge_gpu</code> behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Compute Node tables on the respective cluster pages.</p>
+(e.g. preemption, time limit), <code>scavenge_gpu</code> behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Partition tables on the respective cluster pages.</p>
+<h2 id="scavenge-mpi-nodes">Scavenge MPI Nodes</h2>
+<p>On Grace, we have a <code>scavenge_mpi</code> partition, that contains all scavenge-able nodes similar to the <code>mpi</code> partition and has higher priority for those node than normal scavenge. <code>scavenge_mpi</code> is subject to the same preemption model as <code>scavenge</code> and the <a href="/clusters-at-yale/job-scheduling/mpi/">same use case restrictions</a> as the regular <code>mpi</code> partition (multi-node, tightly couple parallel codes). You can see the full count of MPI nodes in the Partition tables on the respective cluster pages.</p>
 <h2 id="research-available-nodes">Research Available Nodes</h2>
 <p>If you are interested in specific hardware and its availability, you can use the <code>sinfo</code> command to query how many of each type of node is available and what features it lists. For example:</p>
 <div class="highlight"><pre><span></span><code>sinfo -e -o <span class="s2">&quot;%.6D|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
@@ -2411,7 +2427,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2023</span>
       
     
   </small>
