@@ -23,10 +23,13 @@ We currently support endpoints for the following clusters.
 |--------------------------------|---------------------|
 | [Grace](/clusters/grace)       | `yale#grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
+| [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
 
-These endpoints provide access to all files you normally have access to, except sequencing data on Ruddle.
+For Grace and McCleary, these endpoints provide access to all files you normally have access to.
 
-Milgram does not currently have a Globus endpoint, however we hope to be adding one later on this year.
+For security reasons, Milgram Globus uses a staging area (`/gpfs/milgram/globus/$NETID`). 
+Once uploaded, data should be moved from this staging area to its final location within Milgram.
+Files in the staging area are purged after 21 days.
 
 ## Get Started with Globus
 
