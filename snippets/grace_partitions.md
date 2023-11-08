@@ -133,6 +133,9 @@
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
     ```
 
+    !!! info
+        Interactive jobs (`salloc` or Open OnDemand) are not allowed in the `gpu` partition. Please submit those jobs to `gpu_devel`.
+
     !!! warning "GPU jobs need GPUs!"
         Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
     **Job Limits**
