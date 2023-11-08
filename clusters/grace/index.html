@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2483,7 +2483,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 8268, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>98</td>
+<td>97</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -2668,6 +2668,10 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Interactive jobs (<code>salloc</code> or Open OnDemand) are not allowed in the <code>gpu</code> partition. Please submit those jobs to <code>gpu_devel</code>.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -2716,17 +2720,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a5000</td>
 <td>4</td>
 <td>24</td>
-<td>icelake, avx512, 6326, doubleprecision, a5000</td>
-</tr>
-<tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
 </tr>
 <tr>
 <td>5</td>
@@ -2742,16 +2736,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>2</td>
 <td>6240</td>
 <td>36</td>
-<td>166</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
 <td>361</td>
 <td>a100</td>
 <td>4</td>
@@ -2759,7 +2743,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
 </tr>
 <tr>
-<td>6</td>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>370</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
+</tr>
+<tr>
+<td>2</td>
 <td>5222</td>
 <td>8</td>
 <td>181</td>
@@ -2803,15 +2797,19 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <tbody>
 <tr>
 <td>Maximum job time limit</td>
-<td><code>04:00:00</code></td>
+<td><code>06:00:00</code></td>
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
 <td><code>10</code></td>
 </tr>
 <tr>
+<td>Maximum GPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
 <td>Maximum submitted jobs per user</td>
-<td><code>1</code></td>
+<td><code>2</code></td>
 </tr>
 </tbody>
 </table>
@@ -2832,6 +2830,36 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>361</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>166</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6240</td>
 <td>36</td>
@@ -2840,6 +2868,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5222</td>
+<td>8</td>
+<td>181</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
 </tr>
 </tbody>
 </table>
@@ -3018,7 +3056,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a5000</td>
 <td>4</td>
 <td>24</td>
-<td>icelake, avx512, 6326, doubleprecision, a5000</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>206</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
 </tr>
 <tr>
 <td>72</td>
@@ -3041,6 +3089,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
+<td>87</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
 <td>135</td>
 <td>6240</td>
 <td>36</td>
@@ -3051,14 +3109,64 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>87</td>
+<td>5</td>
 <td>6240</td>
 <td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>361</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
 <td>181</td>
 <td></td>
 <td></td>
 <td></td>
-<td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
+<td>cascadelake, avx512, 8260, nogpu, pi</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>166</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>180</td>
+<td>rtx3090</td>
+<td>4</td>
+<td>24</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3081,16 +3189,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
 </tr>
 <tr>
-<td>5</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
 <td>1</td>
 <td>6326</td>
 <td>32</td>
@@ -3099,16 +3197,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>166</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3151,36 +3239,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
 </tr>
 <tr>
-<td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>180</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>361</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
-</tr>
-<tr>
 <td>8</td>
 <td>6240</td>
 <td>36</td>
@@ -3211,16 +3269,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
 </tr>
 <tr>
-<td>20</td>
-<td>8260</td>
-<td>96</td>
-<td>181</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 8260, nogpu, pi</td>
-</tr>
-<tr>
 <td>16</td>
 <td>6136</td>
 <td>24</td>
@@ -3229,16 +3277,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td></td>
 <td>edr, skylake, avx512, 6136, nogpu, standard, pi, bigtmp</td>
-</tr>
-<tr>
-<td>132</td>
-<td>6136</td>
-<td>24</td>
-<td>90</td>
-<td></td>
-<td></td>
-<td></td>
-<td>hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
 <td>3</td>
@@ -3259,6 +3297,36 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td></td>
 <td>hdr, skylake, avx512, 6136, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>128</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td></td>
+<td></td>
+<td></td>
+<td>hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td></td>
+<td></td>
+<td></td>
+<td>hdr, skylake, avx512, 6136, nogpu, pi, common, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
 </tr>
 <tr>
 <td>9</td>
@@ -3291,16 +3359,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>skylake, avx512, 6136, nogpu, pi, bigtmp</td>
 </tr>
 <tr>
-<td>2</td>
-<td>6136</td>
-<td>24</td>
-<td>90</td>
-<td>v100</td>
-<td>2</td>
-<td>16</td>
-<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
-</tr>
-<tr>
 <td>74</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -3322,16 +3380,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 <tr>
 <td>1</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>245</td>
-<td>p100</td>
-<td>1</td>
-<td>16</td>
-<td>broadwell, E5-2660_v4, doubleprecision, pi, p100, oldest</td>
-</tr>
-<tr>
-<td>1</td>
 <td>E5-2637_v4</td>
 <td>8</td>
 <td>119</td>
@@ -3339,6 +3387,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>11</td>
 <td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>245</td>
+<td>p100</td>
+<td>1</td>
+<td>16</td>
+<td>broadwell, E5-2660_v4, doubleprecision, pi, p100, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -3397,17 +3455,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a5000</td>
 <td>4</td>
 <td>24</td>
-<td>icelake, avx512, 6326, doubleprecision, a5000</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
 </tr>
 <tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>206</td>
+<td>a5000</td>
 <td>4</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
 </tr>
 <tr>
 <td>5</td>
@@ -3420,14 +3478,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>1001</td>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>361</td>
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
+<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3438,26 +3496,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>24</td>
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6254</td>
-<td>36</td>
-<td>370</td>
-<td>rtx2080ti</td>
-<td>8</td>
-<td>11</td>
-<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>370</td>
-<td>v100</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3480,14 +3518,44 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
 </tr>
 <tr>
-<td>2</td>
+<td>4</td>
 <td>6240</td>
 <td>36</td>
-<td>361</td>
+<td>370</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6254</td>
+<td>36</td>
+<td>370</td>
+<td>rtx2080ti</td>
+<td>8</td>
+<td>11</td>
+<td>cascadelake, avx512, 6254, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6240</td>
+<td>36</td>
+<td>370</td>
+<td>v100</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
 </tr>
 <tr>
 <td>6</td>
@@ -3498,6 +3566,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
 </tr>
 <tr>
 <td>9</td>
@@ -3520,14 +3598,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
 </tr>
 <tr>
-<td>2</td>
-<td>6136</td>
-<td>24</td>
-<td>90</td>
-<td>v100</td>
-<td>2</td>
-<td>16</td>
-<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3538,16 +3616,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>1</td>
 <td>16</td>
 <td>broadwell, E5-2660_v4, doubleprecision, pi, p100, oldest</td>
-</tr>
-<tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>119</td>
-<td>gtx1080ti</td>
-<td>4</td>
-<td>11</td>
-<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
 </tr>
 </tbody>
 </table>
@@ -3610,11 +3678,15 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
 <details class="summary">
 <summary>PI Partitions (click to expand)</summary>
-<div class="tabbed-set" data-tabs="2:33"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_anticevic</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:34"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">pi_anticevic</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_anticevic partition are subject to the following limits:</p>
 <table>
@@ -3640,15 +3712,31 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <th>CPU Type</th>
 <th>CPUs/Node</th>
 <th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
 <th>Node Features</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>206</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
+</tr>
+<tr>
 <td>20</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>245</td>
+<td></td>
+<td></td>
+<td></td>
 <td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 </tbody>
@@ -3748,17 +3836,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <tbody>
 <tr>
 <td>1</td>
-<td>8268</td>
-<td>48</td>
-<td>356</td>
-<td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
-</tr>
-<tr>
-<td>1</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
 <td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8268</td>
+<td>48</td>
+<td>356</td>
+<td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -4075,7 +4163,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>6136</td>
 <td>24</td>
 <td>90</td>
-<td>hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp</td>
+<td>hdr, skylake, avx512, 6136, nogpu, pi, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -4173,16 +4261,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>6</td>
-<td>8268</td>
-<td>48</td>
-<td>356</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
-</tr>
-<tr>
 <td>8</td>
 <td>6240</td>
 <td>36</td>
@@ -4191,6 +4269,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td></td>
 <td>cascadelake, avx512, 6240, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>6</td>
+<td>8268</td>
+<td>48</td>
+<td>356</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -5031,6 +5119,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
+<td>3</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6326</td>
 <td>32</td>
@@ -5059,16 +5157,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 6240, doubleprecision, pi, v100</td>
-</tr>
-<tr>
-<td>3</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 </tbody>
 </table>
@@ -5354,7 +5442,51 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_zhu</label><div class="tabbed-content">
+<input id="__tabbed_2_33" name="__tabbed_2" type="radio" /><label for="__tabbed_2_33">pi_vaccaro</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_vaccaro partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>28-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>181</td>
+<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_34" name="__tabbed_2" type="radio" /><label for="__tabbed_2_34">pi_zhu</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
