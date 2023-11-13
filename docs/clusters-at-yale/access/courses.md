@@ -74,7 +74,7 @@ Any course-specific apps listed under the "Courses" dropdown will automatically 
 
 ## Cluster Maintenance
 
-Each cluster is unavailable for computation twice a year due to regular maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/support/hpc/system-status).
+Each cluster is inaccessible twice a year for a three day regularly scheduled maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/support/hpc/system-status).
 
 Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
 
