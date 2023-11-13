@@ -72,6 +72,12 @@ In any of the app submission forms, type the `courseid` into the "Reservation" f
 
 Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.
 
+## Cluster Maintenance
+
+Each cluster is unavailable for computation twice a year due to regular maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/support/hpc/system-status).
+
+Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
+
 ## End of Semester Course Deletion
 
 As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. 
