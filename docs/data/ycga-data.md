@@ -2,6 +2,55 @@
 
 Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [McCleary](/clusters/mccleary).
 
+## YCGA Access Retention Policy
+
+The McCleary high-performance computing system has specific resources that are dedicated to
+YCGA users. This includes a slurm partition (‘ycga’) and a large parallel storage system
+(/gpfs/ycga). The following policy guidelines govern the use of these resources on McCleary for
+data storage and analysis.
+
+### Yale University Faculty User
+1. All Yale PIs using YCGA for library preparation and/or sequencing will have an
+additional 5 TB storage area called ‘work’ for data storage. This is in addition to the 5
+TB storage area called ‘project’ that all McCleary groups receive.
+2. Currently, neither work or project storage is backed up. Users are responsible for
+protecting their own data.
+3. All Fastq files are available on the /gpfs/ycga storage system for one year. After that, the
+files are available in an archive that allows self-service retrieval, as described in the link
+above. Issues or questions about archived data can be addressed to ycga@yale.edu.
+4. Users processing sequence data on McCleary should be careful to submit their jobs to the
+‘ycga’ partition. Jobs submitted to other partitions may incur additional charges.
+5. Members of Yale PI labs using YCGA for library preparation and/or sequencing may
+apply for accounts on McCleary with PI’s approval.
+6. Each Yale PI lab will have a dedicated secure directory to store their data, and permission
+to lab members will be granted with the authorization of the respective PI. Furthermore,
+such approval will be terminated upon request from the PI or termination of Yale Net ID.
+7. Lab members moving to a new university will get access to HPC resources for an
+additional six months only upon permission from Yale PI. If Yale NetID is no longer
+accessible, former Yale members who were YCGA users should request a Sponsored
+Identity NetID from their business office. Sponsored Identity NetIDs will be valid for six
+months. Such users will also need to request VPN access.
+8. A PI moving to a new university to establish their lab will have access to their data for
+one year from the termination of their Yale position. During this time, the PI or one lab
+member from the new lab will be provided access to the HPC system. Request for Guest
+NetID should be made to their business office. Guest NetID will be valid for one year.
+9. Any new Yale faculty member will be given access to McCleary once they start using
+YCGA services.
+10. Users not utilizing the YCGA services will not be provided access to McCleary high-
+performance computing system.
+
+### External Collaborators
+1. Access to McCleary can be granted to collaborating labs, with the authorization of the
+respective Yale PI. A maximum of one account per collaborating lab will be granted.
+Furthermore, such approval will be terminated upon request from the PI. Request for a
+Sponsored Identity NetID should be made to the Yale PI’s business office. Guest NetID
+will be valid for one year. The expectation is that the collaborator, with PI consent, will
+download data from the McCleary HPC system to their own internal system for data
+analysis.
+
+### Non-Yale Users
+ Users not affiliated with Yale University will not be provided access to McCleary high-
+performance computing system.
 
 ## YCGA Data Retention Policy
 
