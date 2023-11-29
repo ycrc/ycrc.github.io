@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
-        <title>cryoSPARCv2 on Farnam - Yale Center for Research Computing</title>
+        <title>Pytorch - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cryosparcv2-on-farnam" class="md-skip">
+        <a href="#pytorch" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              cryoSPARCv2 on Farnam
+              Pytorch
             
           </span>
         </div>
@@ -2226,69 +2226,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-    <nav class="md-nav" aria-label="Install">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-up-environment" class="md-nav__link">
-    1. Set up Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-up-directories-download-installers" class="md-nav__link">
-    2. Set up Directories, Download installers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-install-the-server-and-worker" class="md-nav__link">
-    3. Install the Server and Worker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-configure-for-farnam" class="md-nav__link">
-    4. Configure for Farnam
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-errors" class="md-nav__link">
-    Database errors
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2299,112 +2236,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/cryosparc.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/pytorch.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cryosparcv2-on-farnam">cryoSPARCv2 on Farnam</h1>
-<p>Getting cryoSPARC set up and running on the YCRC clusters is something of a task. This guide is meant for intermediate/advanced users. If enought people can convince Structura bio (<a href="https://discuss.cryosparc.com/t/external-authentication-methods/2736">see ticket here</a>) to make cryoSPARC more cluster-friendly we could have a single instance running that you'd just log in to with your Yale credentials. Until then, venture below at your own peril.</p>
-<h2 id="install">Install</h2>
-<p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are gently modified from the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>. </p>
-<h3 id="1-set-up-environment">1. Set up Environment</h3>
-<p>First allocate an interactive job on a compute node to run the install on. </p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span>
+                <h1 id="pytorch">Pytorch</h1>
+<p>Pytorch is an open source Machine Learning (ML) framework based on the python programming language.</p>
+<h1 id="pytorch-module">Pytorch module</h1>
+<p>Some pytorch versions are already available on the clusters at yale as modules and will not require any user modification to run successfully. You can search for these versions using the module avail command:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>pytorch
 </code></pre></div>
-<p>Then, set the following environment variables to suit your install. We filled in some defaults for you.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># where to install cryosparc2 and its sample database</span>
-<span class="nv">install_path</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span>readlink<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project<span class="w"> </span><span class="k">)</span>/software/cryosparc2
-
-<span class="c1"># the license ID you got from Structura</span>
-<span class="nv">license_id</span><span class="o">=</span>
-
-<span class="c1"># your email</span>
-<span class="nv">my_email</span><span class="o">=</span><span class="k">$(</span>head<span class="w"> </span>-n1<span class="w"> </span>~/.forward<span class="k">)</span>
-
-<span class="c1"># slurm partition to submit your cryosparc jobs to</span>
-<span class="c1"># not sure you can change at runtime?</span>
-<span class="nv">partition</span><span class="o">=</span>gpu
-</code></pre></div>
-<h3 id="2-set-up-directories-download-installers">2. Set up Directories, Download installers</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># your username</span>
-<span class="nv">my_name</span><span class="o">=</span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
-<span class="c1"># a temp password</span>
-<span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
-
-<span class="c1"># load the right CUDA</span>
-module<span class="w"> </span>load<span class="w"> </span>CUDA/9.0.176
-
-<span class="c1"># set up some more paths</span>
-<span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/database
-<span class="nv">worker_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
-<span class="nv">ssd_path</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/cryosparc2_cache
-
-<span class="c1"># go get the installers</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$install_path</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
-curl<span class="w"> </span>-sL<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$license_id</span><span class="w"> </span>&gt;<span class="w"> </span>cryosparc2_master.tar.gz
-curl<span class="w"> </span>-sL<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$license_id</span><span class="w"> </span>&gt;<span class="w"> </span>cryosparc2_worker.tar.gz
-
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc2_master.tar.gz
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc2_worker.tar.gz
-</code></pre></div>
-<h3 id="3-install-the-server-and-worker">3. Install the Server and Worker</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_master
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$license_id</span><span class="w"> </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span>--yes
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc2_worker
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$license_id</span><span class="w"> </span>--cudapath<span class="w"> </span><span class="nv">$CUDA_HOME</span><span class="w"> </span>--yes
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-</code></pre></div>
-<h3 id="4-configure-for-farnam">4. Configure for Farnam</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Farnam cluster setup</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/site_configs
-cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; cluster_info.json</span>
-<span class="s">{</span>
-<span class="s">    &quot;name&quot; : &quot;farnam&quot;,</span>
-<span class="s">    &quot;worker_bin_path&quot; : &quot;${install_path}/cryosparc2_worker/bin/cryosparcw&quot;,</span>
-<span class="s">    &quot;cache_path&quot; : &quot;/tmp/{{ cryosparc_username }}/cryosparc_cache&quot;,</span>
-<span class="s">    &quot;send_cmd_tpl&quot; : &quot;{{ command }}&quot;,</span>
-<span class="s">    &quot;qsub_cmd_tpl&quot; : &quot;sbatch {{ script_path_abs }}&quot;,</span>
-<span class="s">    &quot;qstat_cmd_tpl&quot; : &quot;squeue -j {{ cluster_job_id }}&quot;,</span>
-<span class="s">    &quot;qdel_cmd_tpl&quot; : &quot;scancel {{ cluster_job_id }}&quot;,</span>
-<span class="s">    &quot;qinfo_cmd_tpl&quot; : &quot;sinfo&quot;</span>
-<span class="s">}</span>
-<span class="s">EOF</span>
-
-cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; cluster_script.sh</span>
-<span class="s">#!/usr/bin/env bash</span>
-<span class="s">#SBATCH --job-name cryosparc_{{ project_uid }}_{{ job_uid }}</span>
-<span class="s">#SBATCH -c {{ num_cpu }}</span>
-<span class="s">#SBATCH --gpus={{ num_gpu }}</span>
-<span class="s">#SBATCH -p ${partition}</span>
-<span class="s">#SBATCH --mem={{ (ram_gb*1024)|int }}</span>
-<span class="s">#SBATCH -o {{ job_dir_abs }}</span>
-<span class="s">#SBATCH -e {{ job_dir_abs }}</span>
-
-<span class="s">module load CUDA/9.0.176</span>
-<span class="s">mkdir -p /tmp/${USER}/cryosparc2_cache</span>
-<span class="s">{{ run_cmd }}</span>
-<span class="s">EOF</span>
-</code></pre></div>
-<h2 id="run">Run</h2>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--cpus-per-task<span class="w"> </span><span class="m">2</span>
-<span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-<span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-cryosparcm<span class="w"> </span>start
-cryosparcm<span class="w"> </span>status
-
-<span class="c1"># run the output from the following command on your local linux/mac machine</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssh -N -L </span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2">:</span><span class="nv">$master_host</span><span class="s2">:</span><span class="nv">$CRYOSPARC_BASE_PORT</span><span class="s2"> </span><span class="nv">$USER</span><span class="s2">@mccleary.ycrc.yale.edu&quot;</span>
-</code></pre></div>
-<h2 id="database-errors">Database errors</h2>
-<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
+<h1 id="installing-pytorch-in-a-miniconda-environment">Installing Pytorch in a miniconda environment</h1>
+<p>If you find that there is not a module available on the cluster for the version of pytorch you need, and/or you are using a complex miniconda environment as part of your workflow, then you may benefit from installing pytorch yourself inside a miniconda environment.</p>
+<p>Click this link, <a href="https://pytorch.org/get-started/locally/">installing pytorch</a>, to be directed to the pytorch website to install the latest version of pytorch.</p>
+<p>You will be greeted with a table like the one below:</p>
+<p><img alt="pytorch" src="/img/pytorch_start_locally.png" /></p>
+<p>Please make sure your selections match the image above, i.e., Stable, linux, conda, and Python. Either CUDA version will work on the clusters, and CPU should be selected if you do not plan on using GPUs with your pytorch installation.</p>
+<p>Then copy the install command to install pytorch into your existing environment. Please make sure you are off the login node or the install will fail.</p>
+<p>If building a new environment, you can instead use the conda create command as outlined at this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">site</a>.</p>
+<h1 id="installing-older-versions-of-pytorch">Installing older versions of pytorch</h1>
+<p>To install older versions of pytorch, you can find instructions at this <a href="https://pytorch.org/get-started/previous-versions">site</a>.</p>
                 
                   
                     
@@ -2413,7 +2265,7 @@ cryosparcm<span class="w"> </span>status
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
       
     
   </small>
