@@ -35,8 +35,6 @@ Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs
 
 Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.
 
-All purchased storage 
-
 ### 60-Day Scratch
 
 Quota: 10 TiB and 15,000,000 files per group
