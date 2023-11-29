@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/ycga-data/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1284,6 +1284,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ycga-access-retention-policy" class="md-nav__link">
+    YCGA Access Retention Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="YCGA Access Retention Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yale-university-faculty-user" class="md-nav__link">
+    Yale University Faculty User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-collaborators" class="md-nav__link">
+    External Collaborators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-yale-users" class="md-nav__link">
+    Non-Yale Users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ycga-data-retention-policy" class="md-nav__link">
     YCGA Data Retention Policy
   </a>
@@ -1620,20 +1654,6 @@
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/jupyter/" class="md-nav__link">
         Jupyter Notebooks
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters-at-yale/guides/handson-ml2/" class="md-nav__link">
-        Python+TensorFlow Example
       </a>
     </li>
   
@@ -2324,6 +2344,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ycga-access-retention-policy" class="md-nav__link">
+    YCGA Access Retention Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="YCGA Access Retention Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yale-university-faculty-user" class="md-nav__link">
+    Yale University Faculty User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-collaborators" class="md-nav__link">
+    External Collaborators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-yale-users" class="md-nav__link">
+    Non-Yale Users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ycga-data-retention-policy" class="md-nav__link">
     YCGA Data Retention Policy
   </a>
@@ -2376,6 +2430,55 @@
                 
                 <h1 id="ycga-data">YCGA Data</h1>
 <p>Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at <code>/gpfs/ycga/sequencers</code> on <a href="/clusters/mccleary">McCleary</a>.</p>
+<h2 id="ycga-access-retention-policy">YCGA Access Retention Policy</h2>
+<p>The McCleary high-performance computing system has specific resources that are dedicated to
+YCGA users. This includes a slurm partition (‘ycga’) and a large parallel storage system
+(/gpfs/ycga). The following policy guidelines govern the use of these resources on McCleary for
+data storage and analysis.</p>
+<h3 id="yale-university-faculty-user">Yale University Faculty User</h3>
+<ol>
+<li>All Yale PIs using YCGA for library preparation and/or sequencing will have an
+additional 5 TB storage area called ‘work’ for data storage. This is in addition to the 5
+TB storage area called ‘project’ that all McCleary groups receive.</li>
+<li>Currently, neither work or project storage is backed up. Users are responsible for
+protecting their own data.</li>
+<li>All Fastq files are available on the /gpfs/ycga storage system for one year. After that, the
+files are available in an archive that allows self-service retrieval, as described in the link
+above. Issues or questions about archived data can be addressed to ycga@yale.edu.</li>
+<li>Users processing sequence data on McCleary should be careful to submit their jobs to the
+‘ycga’ partition. Jobs submitted to other partitions may incur additional charges.</li>
+<li>Members of Yale PI labs using YCGA for library preparation and/or sequencing may
+apply for accounts on McCleary with PI’s approval.</li>
+<li>Each Yale PI lab will have a dedicated secure directory to store their data, and permission
+to lab members will be granted with the authorization of the respective PI. Furthermore,
+such approval will be terminated upon request from the PI or termination of Yale Net ID.</li>
+<li>Lab members moving to a new university will get access to HPC resources for an
+additional six months only upon permission from Yale PI. If Yale NetID is no longer
+accessible, former Yale members who were YCGA users should request a Sponsored
+Identity NetID from their business office. Sponsored Identity NetIDs will be valid for six
+months. Such users will also need to request VPN access.</li>
+<li>A PI moving to a new university to establish their lab will have access to their data for
+one year from the termination of their Yale position. During this time, the PI or one lab
+member from the new lab will be provided access to the HPC system. Request for Guest
+NetID should be made to their business office. Guest NetID will be valid for one year.</li>
+<li>Any new Yale faculty member will be given access to McCleary once they start using
+YCGA services.</li>
+<li>Users not utilizing the YCGA services will not be provided access to McCleary high-
+performance computing system.</li>
+</ol>
+<h3 id="external-collaborators">External Collaborators</h3>
+<ol>
+<li>Access to McCleary can be granted to collaborating labs, with the authorization of the
+respective Yale PI. A maximum of one account per collaborating lab will be granted.
+Furthermore, such approval will be terminated upon request from the PI. Request for a
+Sponsored Identity NetID should be made to the Yale PI’s business office. Guest NetID
+will be valid for one year. The expectation is that the collaborator, with PI consent, will
+download data from the McCleary HPC system to their own internal system for data
+analysis.</li>
+</ol>
+<h3 id="non-yale-users">Non-Yale Users</h3>
+<p>Users not affiliated with Yale University will not be provided access to McCleary high-
+performance computing system.</p>
 <h2 id="ycga-data-retention-policy">YCGA Data Retention Policy</h2>
 <p>Illumina sequence data is initially written to YCGA's main storage system, which is located in the main HPC datacenter at Yale's West Campus. Data stored there is protected against loss by software RAID.  Raw basecall data (bcl files) is immediately transformed into DNA sequences (fastq files).</p>
 <ul>
@@ -2531,7 +2634,7 @@ restore -v -n <span class="nv">$SLURM_CPUS_PER_TASK</span> -t 210305_D00306_1337
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
     
   </small>
