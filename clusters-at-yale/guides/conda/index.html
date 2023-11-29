@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1577,6 +1577,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1652,13 +1666,6 @@
           <li class="md-nav__item">
   <a href="#conda-channels" class="md-nav__link">
     Conda Channels
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mamba-the-conda-alternative" class="md-nav__link">
-    Mamba: The Conda Alternative
   </a>
   
 </li>
@@ -1815,20 +1822,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
-        Python
-      </a>
     </li>
   
 
@@ -2518,13 +2511,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#mamba-the-conda-alternative" class="md-nav__link">
-    Mamba: The Conda Alternative
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2721,6 +2707,10 @@
 <p class="admonition-title">Tip</p>
 <p>For added reproducibility and control, specify versions of packages to be installed using <code>conda</code> with <code>packagename=version</code> syntax. E.g. <code>numpy=1.14</code></p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You will need to request an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the <code>salloc</code> command when you create a new <code>conda</code> environment or install packages into an existing <code>conda</code> environment.   </p>
+</div>
 <p>For example, if you have a legacy application that needs Python 2 and OpenBLAS:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda create -n legacy_application <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 openblas
@@ -2744,21 +2734,6 @@ conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
 <span class="c1"># normally you would need this:</span>
 <span class="c1"># conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker</span>
 </code></pre></div>
-<h3 id="mamba-the-conda-alternative">Mamba: The Conda Alternative</h3>
-<p>For complicated environments, <code>conda</code> can often strugle to "solve" the required set of packages in a reasonable time. 
-An alternative tool, called <code>mamba</code>, has been developed, bringing a faster dependency solver based on <code>libsolv</code>, which is used in modern RPM package managers.</p>
-<p><code>mamba</code> is a drop-in replacement for <code>conda</code> and environments can be created or new packages installed in the same way as with <code>conda</code>:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-
-<span class="c1"># create new environment</span>
-mamba create --name env_name python numpy pandas jupyter
-
-<span class="c1"># install new pacakge into existing environment</span>
-conda activate env_name
-mamba install scipy scikit-learn
-</code></pre></div>
-<p>The <code>mamba</code> utility is installed in the YCRC base environment and is available for general use.
-For more details, see the <a href="https://github.com/mamba-org/mamba">Mamba GitHub page</a>.</p>
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To use the applications in your environment, run the following:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
