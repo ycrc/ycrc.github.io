@@ -1,6 +1,4 @@
-# Rebuilding conda environemnts for McCleary migration
-
-As the Farnam and Ruddle clusters are decommissioned and work migrates to the new cluster McCleary, there is a need to simplify the migration of conda environments. 
+# Rebuilding conda environemnts
 
 There are two concepts for rebuilding conda environments:
 
@@ -8,7 +6,6 @@ There are two concepts for rebuilding conda environments:
 2. a fresh build following the same steps taken to creat the first environment (letting unspecified versions float)
 
 This short doc will walk through recommended approaches to both styles of exporting and rebuilding a generic environment named `test` containing python, jupyter, numpy, and scipy.
-
 
 
 ## Full export including dependencies
@@ -23,8 +20,8 @@ conda env export --no-builds --name test | grep -v prefix > test_export.yaml
 
 This yaml file is ~230 lines long and contains every package that is installed in the `test` environment.
 
-Since we are moving this environment to a different system with a different directory where conda environments are stored, we need to remove the line in this print out related to the "prefix". 
-
+The conda export command includes information about the path where it was installed (i.e. the `prefix`).
+To remove this hard-coded path, we need to remove the line in this print out related to the "prefix".
 
 
 ## Export only specified packages
@@ -58,7 +55,7 @@ In this environment, the versions of python and numpy were pinned during install
 
 ## Build new environment
 
-Now we can take this file from Farnam/Ruddle to McCleary and create a new environment using all the enumerated pacakges:
+To create a new environment using all the enumerated pacakges:
 
 ```sh
 module load miniconda
@@ -66,6 +63,6 @@ conda env create --file test_export.yaml
 
 ```
 
-This will create a new environment (with the same name `test`) on McCleary which.
-
+This will create a new environment with the same name `test`.
+The yaml file can be edited to change the name of the new environment.
 
