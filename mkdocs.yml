@@ -168,7 +168,6 @@ nav:
             - clusters-at-yale/guides/conda.md
             - clusters-at-yale/guides/python.md
             - clusters-at-yale/guides/jupyter.md
-            - "Python+TensorFlow Example": clusters-at-yale/guides/handson-ml2.md
             - "Export Conda Environments": clusters-at-yale/guides/conda-export.md
             - "mpi4py": clusters-at-yale/guides/mpi4py.md
         - Software: 
