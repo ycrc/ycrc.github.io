@@ -19,10 +19,11 @@ Your home directory is where your sessions begin by default. Its intended use is
 
 Quota: 1 TiB and 5,000,000 files per group, expanded to 4 TiB on request
 
-Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project.
+Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project. 
 
 You can access this space through a symlink, or shortcut, in your home directory called `project`. See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your project space with other users.
 
+Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within `project`. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.
 
 #### Purchased Storage
 
@@ -31,6 +32,10 @@ Quota: varies
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](/data/#purchase-additional-storage) for details on purchasing storage. 
 Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name. 
+
+Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.
+
+All purchased storage 
 
 ### 60-Day Scratch
 
