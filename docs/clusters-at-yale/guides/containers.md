@@ -16,7 +16,8 @@ Images are the file(s) you use to run your container. Apptainer images are singl
 
 ## Use a Pre-existing Container
 
-If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that [can be transferred](/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/) or [Singularity Hub](https://singularityhub.github.io/singularityhub-docs/) (no longer updated). Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that [can be transferred](/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/) or [NVidia Container Registry](https://catalog.ngc.nvidia.com/containers).
+Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
 ``` bash
 # set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer
@@ -39,9 +40,6 @@ apptainer build bioconvert-latest.sif shub://biokit/bioconvert:latest
 
 You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a [definition file](https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files).
 Apptainer definition files are similar to Docker's `Dockerfile`, but use different syntax.
-To build a container from a definition file, you need administrative privileges on a Linux machine where [Apptainer is installed](https://apptainer.org/docs/user/main/quick_start.html#quick-installation-steps).
-
-
 For full definition files and more documentation please see [the Apptainer site](https://apptainer.org/docs/user/main/definition_files.html).
 
 
