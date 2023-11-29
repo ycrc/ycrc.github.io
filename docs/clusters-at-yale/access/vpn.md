@@ -31,16 +31,14 @@ You will need to connect via the VPN client using the profile "access.yale.edu".
 
 ### Multi-factor Authentication (MFA)
 
-Authentication for the VPN requires multi-factor authentication via Duo in addition to your normal Yale credentials (netid and password). After you select "Connect" in the above dialog box, you will be presented with a new prompt to enter your netid, password and an MFA method.
+Authentication for the VPN requires multi-factor authentication via Duo in addition to your normal Yale credentials (email address  and netid password). After you select "Connect" in the above dialog box, it will launch a web page with a prompt to login with your email address, netid password and MFA method.
 
-![VPN with MFA.](/img/vpn2.png){: .medium}
+You can click "Other options" to choose your authentication method. 
 
-Depending on what you choose you will be prompted to authenticate via a second authentication method.
+* If you choose "Duo Push", simply tap "Approve" on your mobile device.
+* If you choose "Duo Mobile passcode", enter the passcode from the Duo Mobile app.
+* If you choose "Phone call", follow the prompts when you are called.
 
-* If you type "push", simply tap "Approve" on your mobile device.
-* If you type "sms" you will receive a text message with your passcode. Enter the passcode you received to authenticate.
-* If you type "phone", follow the prompts when you are called.
-
-Once you successfully authenticate with MFA, you will be connected to the VPN and should be able to log in the clusters via SSH as usual.
+Once you successfully authenticate with MFA, you will be connected to the VPN and should be able to log in the clusters via SSH and Open OnDemand as usual.
 
 More information about MFA at Yale can be found on the [ITS website](https://cybersecurity.yale.edu/mfa).
