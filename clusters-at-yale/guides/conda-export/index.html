@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rebuilding-conda-environemnts-for-mccleary-migration" class="md-skip">
+        <a href="#rebuilding-conda-environemnts" class="md-skip">
           Skip to content
         </a>
       
@@ -2336,8 +2336,7 @@
                   </a>
                 
                 
-                <h1 id="rebuilding-conda-environemnts-for-mccleary-migration">Rebuilding conda environemnts for McCleary migration</h1>
-<p>As the Farnam and Ruddle clusters are decommissioned and work migrates to the new cluster McCleary, there is a need to simplify the migration of conda environments. </p>
+                <h1 id="rebuilding-conda-environemnts">Rebuilding conda environemnts</h1>
 <p>There are two concepts for rebuilding conda environments:</p>
 <ol>
 <li>a copy of an existing environment, with identical versions of each package</li>
@@ -2350,7 +2349,8 @@
 conda env <span class="nb">export</span> --no-builds --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div>
 <p>This yaml file is ~230 lines long and contains every package that is installed in the <code>test</code> environment.</p>
-<p>Since we are moving this environment to a different system with a different directory where conda environments are stored, we need to remove the line in this print out related to the "prefix". </p>
+<p>The conda export command includes information about the path where it was installed (i.e. the <code>prefix</code>).
+To remove this hard-coded path, we need to remove the line in this print out related to the "prefix".</p>
 <h2 id="export-only-specified-packages">Export only specified packages</h2>
 <p>If we simply wish to rebuild the environment using the steps previously employed to create it, we can replace <code>--no-builds</code> with <code>--from-history</code>. 
 <div class="highlight"><pre><span></span><code>module load miniconda
@@ -2370,11 +2370,12 @@ dependencies:
 </code></pre></div>
 <p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
 <h2 id="build-new-environment">Build new environment</h2>
-<p>Now we can take this file from Farnam/Ruddle to McCleary and create a new environment using all the enumerated pacakges:</p>
+<p>To create a new environment using all the enumerated pacakges:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda env create --file test_export.yaml
 </code></pre></div>
-<p>This will create a new environment (with the same name <code>test</code>) on McCleary which.</p>
+<p>This will create a new environment with the same name <code>test</code>.
+The yaml file can be edited to change the name of the new environment.</p>
                 
                   
                     
@@ -2383,7 +2384,7 @@ conda env create --file test_export.yaml
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
       
     
   </small>

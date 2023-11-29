@@ -1628,8 +1628,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-mpi4py" class="md-nav__link">
-    Installing mpi4py
+  <a href="#mpi4py-on-the-clusters" class="md-nav__link">
+    mpi4py on the clusters
   </a>
   
 </li>
@@ -2368,8 +2368,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-mpi4py" class="md-nav__link">
-    Installing mpi4py
+  <a href="#mpi4py-on-the-clusters" class="md-nav__link">
+    mpi4py on the clusters
   </a>
   
 </li>
@@ -2471,23 +2471,18 @@ These often require communication between the different steps and need a way to 
 <p><code>BROADCAST</code>: One-to-many communication</p>
 <p><code>SCATTER</code>: One-to-many data distribution</p>
 <p><code>GATHER</code>: Many-to-one data distribution</p>
-<h2 id="installing-mpi4py">Installing mpi4py</h2>
-<p>On the clusters, the easiest way to install <code>mpi4py</code> is to use the module-based software for OpenMPI and Python:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8</span><span class="o">.</span><span class="mi">6</span><span class="o">-</span><span class="n">GCCcore</span><span class="o">-</span><span class="mf">10.2</span><span class="o">.</span><span class="mi">0</span><span class="w"> </span><span class="n">OpenMPI</span><span class="o">/</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="n">GCC</span><span class="o">-</span><span class="mf">10.2</span><span class="o">.</span><span class="mi">0</span><span class="w"></span>
-</code></pre></div>
+<h2 id="mpi4py-on-the-clusters"><code>mpi4py</code> on the clusters</h2>
+<p>On the clusters, the easiest way to start using <code>mpi4py</code> is to use the module-based software for OpenMPI and Python:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># toolchains 2020b and before</span>
+module load SciPy-bundle/2020.11-foss-2020b
 
-<p>Then <code>mpi4py</code> can be installed using <code>pip</code>:</p>
-<div class="codehilite"><pre><span></span><code>pip install --user mpi4py
+<span class="c1"># toolchains starting with 2022b</span>
+module load mpi4py/3.1.4-gompi-2022b
 </code></pre></div>
-
-<p>This will ensure that <code>mpi4py</code> can properly communicate with Slurm and will know the layout of resources allocated.</p>
-<p>For operation on personal machines, <code>mpi4py</code> can be installed via <code>conda</code> which installs all dependences (including MPI):</p>
-<div class="codehilite"><pre><span></span><code>conda create --name mpi python=3.8 mpi4py numpy scipy
-</code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Conda-based MPI does not work on the cluster due to the complexity of MPI interfacing with Slurm. Make sure to use the software modules as discussed above for anything on the cluster.</p>
+<p><code>mpi4py</code> installed via Conda is unaware of the cluster infrastructure and therefore will likely only work on a single compute node.
+If you wish to get a conda environment working across multiple nodes, please reach out to hpc@yale.edu for assistance.</p>
 </div>
 <h2 id="cluster-resource-requests">Cluster Resource Requests</h2>
 <p>MPI utilizes Slurm tasks as the individual parallel workers. 
@@ -2656,7 +2651,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
       
     
   </small>
