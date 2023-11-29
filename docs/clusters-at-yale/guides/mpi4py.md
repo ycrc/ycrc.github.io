@@ -41,25 +41,23 @@ We will go over a few simple examples here.
 `GATHER`: Many-to-one data distribution
 
 
-## Installing mpi4py
+## `mpi4py` on the clusters
 
 
-On the clusters, the easiest way to install `mpi4py` is to use the module-based software for OpenMPI and Python:
+On the clusters, the easiest way to start using `mpi4py` is to use the module-based software for OpenMPI and Python:
 
-    module load Python/3.8.6-GCCcore-10.2.0 OpenMPI/4.0.5-GCC-10.2.0
+```sh
+# toolchains 2020b and before
+module load SciPy-bundle/2020.11-foss-2020b
 
-Then `mpi4py` can be installed using `pip`:
+# toolchains starting with 2022b
+module load mpi4py/3.1.4-gompi-2022b
 
-    pip install --user mpi4py
-
- This will ensure that `mpi4py` can properly communicate with Slurm and will know the layout of resources allocated.
-
-For operation on personal machines, `mpi4py` can be installed via `conda` which installs all dependences (including MPI):
-
-    conda create --name mpi python=3.8 mpi4py numpy scipy
+```
 
 !!! warning
-    Conda-based MPI does not work on the cluster due to the complexity of MPI interfacing with Slurm. Make sure to use the software modules as discussed above for anything on the cluster.
+    `mpi4py` installed via Conda is unaware of the cluster infrastructure and therefore will likely only work on a single compute node.
+    If you wish to get a conda environment working across multiple nodes, please reach out to hpc@yale.edu for assistance.
 
 ## Cluster Resource Requests
 
