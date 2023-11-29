@@ -12,6 +12,7 @@ The YCRC HPC Policies can found [here](https://research.computing.yale.edu/servi
 * Terminate interactive or Open OnDemand session when no longer in use. Idle sessions may be canceled without warning.
 * Avoid workflows that generate numerous (thousands) of files as these put great stress on the shared filesystem.
 * Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+* Each YCRC cluster undergoes regular scheduled maintenance twice a year, see [our maintenance schedule](/clusters/maintenance) for more details. 
 
 
 ## Group Allocations
