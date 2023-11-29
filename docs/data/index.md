@@ -85,3 +85,5 @@ To access, navigate to [yale.box.com](http://yale.box.com) and login with your y
 For sync with your local machine, install [Box Sync](https://sites.box.com/sync4/) and authenticate with your yale.edu account.
 
 [For more information about Box at Yale, see the ITS website.](https://yale.service-now.com/it?id=service_offering&sys_id=ff584dcd6fbb31007ee2abcf9f3ee4ee)
+
+**To learn more about these options, [see the Yale Collaboration Counts page available through Yale ITS](https://yaleedu.sharepoint.com/sites/collaborationcounts) for details.**
