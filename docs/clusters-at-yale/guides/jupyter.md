@@ -67,4 +67,4 @@ papermill /path/to/notebook.ipynb /path/to/output.ipynb
 
 ```
 
-Variables can also be parameterized and passed in as command-line options so that you can run multiple copies simultaneously with different input variables. For more information see the [Papermill docs pages](https://papermill.readthedocs.io/.
+Variables can also be parameterized and passed in as command-line options so that you can run multiple copies simultaneously with different input variables. For more information see the [Papermill docs pages](https://papermill.readthedocs.io/).
