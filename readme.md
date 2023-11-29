@@ -5,7 +5,8 @@ All the source files for the site are stored in the branch `src`. **Never** dire
 
 ## Setup
 
-* Clone the repo from `https://github.com/ycrc/ycrc.github.io`
+* Clone the repo: `git clone git@github.com:ycrc/ycrc.github.io.git` (make sure to have SSH keys set up)
+
 * Switch to the src branch. DO NOT make changes the master branch, it is for the compiled site only: `git checkout src`
 
 * Setup your Python environment
