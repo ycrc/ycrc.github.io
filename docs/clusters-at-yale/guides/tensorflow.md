@@ -13,4 +13,4 @@ If you need a specific version of tensorflow or are working with specific python
 
 This table outlines how to install each version of tensorflow from 2.15-2.11:
 
---8<-- "snippets/tensorflowinstall.md" 
+--8<-- "snippets/tensorflowinstall.md"
