@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/news/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2377,6 +2377,42 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="december-2023">December 2023</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="grace-maintenance-multi-factor-authentication">Grace Maintenance - Multi-Factor Authentication</h4>
+<p>The biannual scheduled maintenance for the Grace cluster will be occurring Dec 5-7. During this time, the cluster will be unavailable. See the Grace maintenance email announcements for more details.</p>
+<p><a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">Multi-Factor authentication via Duo</a> will be required for ssh for all users on Grace after the maintenance.  For most usage, this additional step is minimally invasive and makes our clusters much more secure. However, for users who use graphical transfer tools such as Cyberduck, please see our <a href="https://docs.ycrc.yale.edu/data/transfer/#cyberduck-on-mccleary-and-milgram">MFA transfer documentation</a>.</p>
+<h4 id="scavenge_gpu-and-scavenge_mpi"><code>scavenge_gpu</code> and <code>scavenge_mpi</code></h4>
+<p>In addition to the general purpose scavenge partition, we also have two resource specific scavenge partitions, <code>scavenge_gpu</code> (Grace, McCleary) and <code>scavenge_mpi</code> (Grace only). The <code>scavenge_gpu</code> partition contains all GPU enabled nodes, commons and privately owned. Similarly, the <code>scavenge_mpi</code> partition contains all nodes similar to the <code>mpi</code> partition. Both partitions have higher priority for their respective nodes than normal scavenge (meaning jobs submitted to <code>scavenge_gpu</code> or <code>scavenge_mpi</code> will preempt normal scavenge jobs). All scavenge partitions are exempt from CPU charges.</p>
+<h3 id="software-highlights">Software Highlights</h3>
+<ul>
+<li><strong>IMOD/4.12.56_RHEL7-64_CUDA12.1</strong> is now available on McCleary and Grace</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: December 01, 2023
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="november-2023">November 2023</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="globus-available-on-milgram">Globus Available on Milgram</h4>
@@ -2537,6 +2573,12 @@ papermill /path/to/notebook.ipynb
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
                 
                 
                 
@@ -2572,12 +2614,6 @@ papermill /path/to/notebook.ipynb
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -2765,6 +2801,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -2801,12 +2843,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -2963,6 +2999,12 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -2993,12 +3035,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
@@ -3169,6 +3205,12 @@ apptainer build lolcow.sif lolcow.def
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page5">
+
+            
                 
                 
                 
@@ -3223,12 +3265,6 @@ wait
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page5">
-
             
                 
                 
@@ -3421,6 +3457,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page6">
+
+            
                 
                 
                 
@@ -3463,12 +3505,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page6">
-
             
                 
                 
@@ -3629,6 +3665,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page7">
+
+            
                 
                 
                 
@@ -3665,12 +3707,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page7">
-
             
                 
                 
@@ -3838,6 +3874,12 @@ Your home directory can always be referenced in bash and submission scripts and 
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page8">
+
+            
                 
                 
                 
@@ -3905,6 +3947,8 @@ Your home directory can always be referenced in bash and submission scripts and 
             <a class="page-number" href="#blog-p6">6</a>
         
             <a class="page-number" href="#blog-p7">7</a>
+        
+            <a class="page-number" href="#blog-p8">8</a>
         
     </div>
     
