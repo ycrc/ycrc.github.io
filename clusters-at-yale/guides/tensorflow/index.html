@@ -2248,7 +2248,46 @@
 <h1 id="installing-tensorflow">Installing Tensorflow</h1>
 <p>If you need a specific version of tensorflow or are working with specific python packages in a miniconda environment, then you will likely need to install your own version of tensorflow. Each version of tensorflow requires a specific version of CUDA and cudnn to be installed. You can refer to this <a href="https://www.tensorflow.org/install/source#tested_build_configurations">website</a>.</p>
 <p>This table outlines how to install each version of tensorflow from 2.15-2.11:</p>
-<p>--8&lt;-- "snippets/tensorflowinstall.md" </p>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">tensorflow 2.15</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>module load miniconda
+
+conda create -n tf15 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*
+
+pip install tensorflow<span class="o">[</span>and-cuda<span class="o">]</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">tensorflow 2.14</label><div class="tabbed-content">
+<p>Tensorflow 2.14 does not currently support gpu usage but can be installed using pip for cpu usage.</p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">tensorflow 2.13/2.12</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create --name tf-condacuda python numpy pandas matplotlib jupyter <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.8.0 
+conda activate tf-condacuda
+pip install nvidia-cudnn-cu11<span class="o">==</span><span class="m">8</span>.6.0.163
+
+<span class="c1"># Store system paths to cuda libraries for gpu communication</span>
+mkdir -p <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
+<span class="nb">echo</span> <span class="s1">&#39;CUDNN_PATH=$(dirname $(python -c &quot;import nvidia.cudnn;print(nvidia.cudnn.__file__)&quot;))&#39;</span> &gt;&gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span> <span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib&#39;</span> &gt;&gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+
+<span class="c1">#install tensorflow</span>
+pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.12.*
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">tensorflow 2.11</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create --name tf-condacuda python numpy pandas matplotlib jupyter <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3.1 <span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.2.1
+conda activate tf-condacuda
+
+<span class="c1"># Store system paths to cuda libraries for gpu communication</span>
+mkdir -p <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
+<span class="nb">echo</span> <span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/&#39;</span> &gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+
+<span class="c1">#install tensorflow</span>
+pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.11.*
+</code></pre></div>
+</div>
+</div>
                 
                   
                     
@@ -2257,7 +2296,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 4, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2023</span>
       
     
   </small>
