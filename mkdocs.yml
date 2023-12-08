@@ -172,7 +172,7 @@ nav:
                 - clusters-at-yale/guides/conda.md
                 - clusters-at-yale/guides/jupyter.md
                 - clusters-at-yale/guides/pytorch.md
-	    - "MPI with Python": clusters-at-yale/guides/mpi4py.md
+                - "MPI with Python": clusters-at-yale/guides/mpi4py.md
             - clusters-at-yale/guides/cesm.md
             - clusters-at-yale/guides/comsol.md
             - clusters-at-yale/guides/gaussian.md
