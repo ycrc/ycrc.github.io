@@ -45,7 +45,7 @@ export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 
 ## Update the Environment
 
-Open `$HOME/programs/isca/src/extra/env/` and add the following after the first line (the starting with `echo`)
+Open `$HOME/programs/isca/src/extra/env/gfortran` and add the following after the first line (the starting with `echo`)
 
 ```
 module restore isca
