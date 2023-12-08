@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/clustershell/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1619,6 +1619,13 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
             
               
   
@@ -1628,13 +1635,6 @@
       <a href="../mpi4py/" class="md-nav__link">
         MPI with Python
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -2375,18 +2375,18 @@
 <p><a href="https://clustershell.readthedocs.io/en/latest/intro.html">ClusterShell</a> is a useful Python package for executing arbitrary commands across multiple hosts. On the Yale clusters it provides a relatively simple way for you to run commands on nodes your jobs are running on, and collect the results. The two most useful commands provided are <a href="#nodeset"><code>nodeset</code></a>, which can show and manipulate node lists and <a href="#clush"><code>clush</code></a>, which can run commands on multiple nodes at once.</p>
 <h2 id="configuration">Configuration</h2>
 <p>To set up ClusterShell, make sure you have a <code>.config</code> directory and a copy our <a href="/_static/files/clustershell_groups.conf"><code>groups.conf</code></a> file there. For more info about ClusterShell configuration for Slurm, see <a href="https://clustershell.readthedocs.io/en/latest/config.html#slurm-group-bindings">the official docs</a>.</p>
-<div class="highlight"><pre><span></span><code>mkdir -p ~/.config/clustershell
-wget https://docs.ycrc.yale.edu/_static/files/clustershell_groups.conf -O ~/.config/clustershell/groups.conf 
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/clustershell
+wget<span class="w"> </span>https://docs.ycrc.yale.edu/_static/files/clustershell_groups.conf<span class="w"> </span>-O<span class="w"> </span>~/.config/clustershell/groups.conf<span class="w"> </span>
 </code></pre></div>
 <p>We provide ClusterShell as a module, but you can also install it with <code>conda</code>.</p>
 <h4 id="module">Module</h4>
-<div class="highlight"><pre><span></span><code>module load ClusterShell
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ClusterShell
 </code></pre></div>
 <h4 id="conda">Conda</h4>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda create -yn clustershell python pip
-<span class="nb">source</span> activate clustershell
-pip install ClusterShell
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>-yn<span class="w"> </span>clustershell<span class="w"> </span>python<span class="w"> </span>pip
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>clustershell
+pip<span class="w"> </span>install<span class="w"> </span>ClusterShell
 </code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="nodeset"><code>nodeset</code></h3>
@@ -2394,17 +2394,17 @@ pip install ClusterShell
 <h4 id="user-group">User group</h4>
 <p>List expanded node names where user abc123 has jobs running</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -u abc123 -o &quot;%N&quot;</span>
-nodeset -e @user:abc123
+nodeset<span class="w"> </span>-e<span class="w"> </span>@user:abc123
 </code></pre></div>
 <h4 id="job-group">Job group</h4>
 <p>List folded nodes where job 1234567 is running</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -j 1234567 -o &quot;%N&quot;</span>
-nodeset -f @job:1234567
+nodeset<span class="w"> </span>-f<span class="w"> </span>@job:1234567
 </code></pre></div>
 <h4 id="state-group">State group</h4>
 <p>List expanded node names that are idle according to slurm</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># similar to sinfo -t IDLE -o &quot;%N&quot;</span>
-nodeset -e @state:idle
+nodeset<span class="w"> </span>-e<span class="w"> </span>@state:idle
 </code></pre></div>
 <h3 id="clush"><code>clush</code></h3>
 <p>The <a href="https://clustershell.readthedocs.io/en/latest/tools/clush.html"><code>clush</code></a> command uses the node grouping syntax from nodeset to allow you to run commands on those nodes. <code>clush</code> uses ssh to connect to each of these nodes. You can use the <code>-b</code> option to gather output from nodes with same output into the same lines. Leaving this out will report on each node separately.</p>
@@ -2414,18 +2414,18 @@ nodeset -e @state:idle
 </div>
 <h4 id="local-storage">Local storage</h4>
 <p>Get a list of files in /tmp/abs on all nodes where job <code>654321</code> is running.</p>
-<div class="highlight"><pre><span></span><code>clush -bw @job:654321 ls /tmp/abc123
+<div class="highlight"><pre><span></span><code>clush<span class="w"> </span>-bw<span class="w"> </span>@job:654321<span class="w"> </span>ls<span class="w"> </span>/tmp/abc123
 
 <span class="c1"># don&#39;t gather identical output</span>
-clush -w @job:654321 ls /tmp/abc123
+clush<span class="w"> </span>-w<span class="w"> </span>@job:654321<span class="w"> </span>ls<span class="w"> </span>/tmp/abc123
 </code></pre></div>
 <h4 id="cpu-usage">CPU usage</h4>
 <p>Show %cpu, memory usage, and command for all nodes running any jobs owned by user <code>abc123</code>.</p>
-<div class="highlight"><pre><span></span><code>clush -bw @user:abc123 ps -uabc123 -o%cpu,rss,cmd
+<div class="highlight"><pre><span></span><code>clush<span class="w"> </span>-bw<span class="w"> </span>@user:abc123<span class="w"> </span>ps<span class="w"> </span>-uabc123<span class="w"> </span>-o%cpu,rss,cmd
 </code></pre></div>
 <h4 id="gpu-usage">GPU usage</h4>
 <p>Show what's running on all the GPUs on the nodes associated with your job <code>654321</code>.</p>
-<div class="highlight"><pre><span></span><code>clush -bw @job:654321 nvidia-smi --format<span class="o">=</span>csv --query-compute-apps<span class="o">=</span>process_name,used_gpu_memory
+<div class="highlight"><pre><span></span><code>clush<span class="w"> </span>-bw<span class="w"> </span>@job:654321<span class="w"> </span>nvidia-smi<span class="w"> </span>--format<span class="o">=</span>csv<span class="w"> </span>--query-compute-apps<span class="o">=</span>process_name,used_gpu_memory
 </code></pre></div>
                 
                   
