@@ -41,7 +41,15 @@ export GFDL_ENV=gfortran
 export GFDL_WORK=$PALMER_SCRATCH/gfdl_work
 # directory for storing model output
 export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
+```
 
+## Update the Environment
+
+Open `$HOME/programs/isca/src/extra/env/` and add the following after the first line (the starting with `echo`)
+
+```
+module restore isca
+conda activate isca
 ```
 
 ## Select an Experiment and Update the Flags
