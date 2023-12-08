@@ -2321,7 +2321,7 @@
 <li>Apptainer updated to 1.2.4</li>
 </ul>
 <h3 id="multifactor-authentication-mfa">Multifactor Authentication (MFA)</h3>
-<p><a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">Multi-Factor authentication via Duo</a> is now required for ssh for all users on Grace after the maintenance.  For most usage, this additional step is minimally invasive and makes our clusters much more secure. However, for users who use graphical transfer tools such as Cyberduck, please see <a href="https://docs.ycrc.yale.edu/data/transfer/#cyberduck-on-mccleary-and-milgram">our MFA transfer documentation</a>.</p>
+<p><a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">Multi-Factor authentication via Duo</a> is now required for ssh for all users on Grace after the maintenance.  For most usage, this additional step is minimally invasive and makes our clusters much more secure. However, for users who use graphical transfer tools such as Cyberduck, please see <a href="https://docs.ycrc.yale.edu/data/transfer/#cyberduck-with-mfa">our MFA transfer documentation</a>.</p>
 <h3 id="transfer-node-host-key-change">Transfer Node Host Key Change</h3>
 <p>The ssh host key for Grace's transfer node was changed during the maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login. To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):</p>
 <div class="highlight"><pre><span></span><code>ssh-keygen -R transfer-grace.ycrc.yale.edu
