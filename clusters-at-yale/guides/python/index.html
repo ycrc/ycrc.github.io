@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/python/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1732,13 +1732,6 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
             
               
   
@@ -1748,6 +1741,13 @@
       <a href="../mpi4py/" class="md-nav__link">
         MPI with Python
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2454,13 +2454,13 @@ We strongly recommend that you use one of the methods below to set up your own p
 We include frozen versions of many common packages used for scientific computing.</p>
 <h3 id="find-and-load-python">Find and Load Python</h3>
 <p>Find the available versions of Python version 3 with:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>Python/3
+<div class="highlight"><pre><span></span><code>module avail Python/3
 </code></pre></div>
 <p>To load version 3.8.6:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Python/3.8.6-foss-2020b
+<div class="highlight"><pre><span></span><code>module load Python/3.8.6-foss-2020b
 </code></pre></div>
 <p>To show installed Python packages and their versions for the <code>Python/3.8.6-foss-2020b</code> module:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>Python/3.8.6-foss-2020b
+<div class="highlight"><pre><span></span><code>module <span class="nb">help</span> Python/3.8.6-foss-2020b
 </code></pre></div>
 <h3 id="install-packages">Install Packages</h3>
 <p>We recommend <em><em>against</em></em> installing python packages with <code>pip</code> after having loaded the Python module. 
@@ -2476,11 +2476,11 @@ If you do <code>pip</code> install packages, do so in an interactive job submitt
 <p>You can easily set up multiple Python installations side-by-side using the <code>conda</code> command. With Conda you can manage your own packages and dependencies for Python, R, etc. 
 See our guide for more detailed instructions. </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># install once</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py3_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>matplotlib<span class="w"> </span>ipython<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
+module load miniconda
+conda create -n py3_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span> numpy scipy matplotlib ipython jupyter jupyterlab
 <span class="c1"># use later</span>
-module<span class="w"> </span>purge<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>py3_env
+module purge <span class="o">&amp;&amp;</span> module load miniconda
+conda activate py3_env
 </code></pre></div>
 <h2 id="run-python">Run Python</h2>
 <p>We will kill Python jobs on the login nodes that are using excessive resources. 
@@ -2489,7 +2489,7 @@ See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for m
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run Python interactively, first launch an interactive job on a compute node. 
 If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc --mem<span class="o">=</span>10G -t <span class="m">4</span>:00:00
 </code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start <code>python</code> or <code>ipython</code> on your command prompt. 
 If you are happy with your Python commands, save them to a file which can then be submitted and run as a batch job.</p>
@@ -2501,9 +2501,9 @@ In this case <code>myscript.py</code> is in the same directory as the batch scri
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH -t 4:00:00</span>
 
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>py3_env
-python<span class="w"> </span>myscript.py
+module load miniconda
+conda activate py3_env
+python myscript.py
 </code></pre></div>
 <p>To actually submit the job, run <code>sbatch my_py_job.sh</code> where the batch script above was saved as <code>my_py_job.sh</code>.</p>
 <h3 id="jupyter-notebooks">Jupyter Notebooks</h3>

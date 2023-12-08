@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1858,13 +1858,6 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
             
               
   
@@ -1874,6 +1867,13 @@
       <a href="../../guides/mpi4py/" class="md-nav__link">
         MPI with Python
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2752,9 +2752,9 @@ Use the URL for your course OOD will resolve the problem.</p>
 <p>You can also drag-and-drop to download and upload files and directories, and move files between directories using this interface.</p>
 <h4 id="customize-favorite-paths">Customize Favorite Paths</h4>
 <p>Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list customized paths:</p>
-<p><div class="highlight"><pre><span></span><code><span class="w">  </span>ood_add_path
-<span class="w">  </span>ood_remove_path
-<span class="w">  </span>ood_list_path
+<p><div class="highlight"><pre><span></span><code>  ood_add_path
+  ood_remove_path
+  ood_list_path
 </code></pre></div>
 When you run <code>ood_add_path</code> from a shell command line, it will prompt you to add one path at a time, until you type 'n' to discontinue. All the paths added by you will be shown in the OOD pull-down menu for the file manager, as well as the left pane when the file manager is opened. </p>
 <p><code>ood_remove_path</code> allows you to remove any of the paths added by you and <code>ood_list_path</code> will list all the paths added by you. </p>
@@ -2792,26 +2792,26 @@ Depending on the resources requested, you may need to wait for a bit. When the j
 <p>The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example Gibbs, you need to create a symlink to that directory in your home directory. </p>
 <h4 id="ycrc_default">ycrc_default</h4>
 <p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>env_name<span class="w"> </span>jupyter<span class="w"> </span>jupyter-lab
-ycrc_conda_env.sh<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n env_name jupyter jupyter-lab
+ycrc_conda_env.sh update
 </code></pre></div>
 <p>Once created, <code>ycrc_default</code> will not be updated by OOD automatically. It must be updated by the user manually. To update <code>ycrc_default</code>, run the following command from a shell command line:
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w">  </span>ycrc_default<span class="w"> </span>jupyter<span class="w"> </span>jupyter-lab
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda update -n  ycrc_default jupyter jupyter-lab
 </code></pre></div></p>
 <h3 id="rstudio-server">RStudio Server</h3>
 <h4 id="change-user-r-package-path">Change User R Package Path</h4>
 <p>To change the default path where packages installed by the user are stored, you need to add the following line of code in your <code>$HOME/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
 </code></pre></div>
 <h4 id="configure-the-graphic-device">Configure the Graphic Device</h4>
 <p>When you plot in a RStudio session, you may encounter the following error:</p>
-<div class="highlight"><pre><span></span><code>Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>RStudioGD<span class="o">()</span><span class="w"> </span>:<span class="w"> </span>
-<span class="w">  </span>Shadow<span class="w"> </span>graphics<span class="w"> </span>device<span class="w"> </span>error:<span class="w"> </span>r<span class="w"> </span>error<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>R<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>error<span class="o">)</span>
-In<span class="w"> </span>addition:<span class="w"> </span>Warning<span class="w"> </span>message:
-In<span class="w"> </span>grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,<span class="w">  </span>:
-<span class="w">  </span>unable<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>X11<span class="w"> </span>display<span class="w"> </span><span class="s1">&#39;&#39;</span>
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> RStudioGD<span class="o">()</span> : 
+  Shadow graphics device error: r error <span class="m">4</span> <span class="o">(</span>R code execution error<span class="o">)</span>
+In addition: Warning message:
+In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,  :
+  unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
 </code></pre></div>
 <p>To fix the problem, you need to configure your RStudio session to use <code>Cairo</code> for plotting. 
 You can do it in your code as follows: </p>
@@ -2833,21 +2833,21 @@ You can do it in your code as follows: </p>
 <h4 id="remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly">Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly</h4>
 <ol>
 <li>Make sure there is no initialization left by <code>conda init</code> in your <code>.bashrc</code>. Clean it with 
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
 </code></pre></div></li>
 <li>Run <code>dbus-launch</code> and make sure you see the following output:
-<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>dbus-launch
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1 ~<span class="o">]</span>$ which dbus-launch
 /usr/bin/dbus-launch
 </code></pre></div></li>
 </ol>
 <h4 id="jupyter-cannot-be-started-properly">Jupyter cannot be started properly</h4>
 <ol>
 <li>If you are trying to launch <code>jupyter-notebook</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-notebook
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-notebook
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 <li>If you are trying to launch <code>jupyter-lab</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-lab
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-lab
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 </ol>
