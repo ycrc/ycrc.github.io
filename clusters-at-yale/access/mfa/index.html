@@ -2452,9 +2452,9 @@ An example config file is shown below which enables SSH multiplexing (<code>Cont
 Host mccleary grace milgram
     HostName %h.ycrc.yale.edu
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For multiplexing to work, the <code>~/.ssh/tmp</code> directory must exist. Create it with <code>mkdir -p ~/.ssh/tmp</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can change the <code>ControlPath</code> directory to <code>/tmp</code> or any other directory, so long as it exists. </p>
 </div>
 <h3 id="cyberduck">CyberDuck</h3>
 <p>CyberDuck's interface with MFA can be stream-lined with a few additional configuration steps.
