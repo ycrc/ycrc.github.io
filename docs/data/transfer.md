@@ -44,14 +44,13 @@ An example configuration of Cyberduck is shown below.
 
 ![Cyberduck sample configuration.](/img/cyberduck.png)
 
-##### Cyberduck on McCleary and Milgram
+##### Cyberduck with MFA
 
-McCleary and Milgram require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
+Our clusters require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
 
 When you connect type one of the following when prompted with a "Partial authentication success" window.
 
 * "push" to receive a push notification to your smart phone (requires the Duo mobile app)
-* "sms" to receive a verification passcode via text message
 * "phone" to receive a phone call
 
 ### Large File Transfers (Globus)

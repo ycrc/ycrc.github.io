@@ -2,7 +2,7 @@
 
 ## Example SSH `config`
 
-The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), and macOS. It allows you to use tab completion of the clusters, without the `.ycrc.yale.edu` suffixes (i.e. `ssh grace` or `scp ~/my_file grace:my_file` should work). It will also allow you to re-use and multiplex authenticated sessions. This means clusters that require [Duo MFA](/clusters-at-yale/access/mfa) will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
+The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), and macOS. It allows you to use tab completion of the clusters, without the `.ycrc.yale.edu` suffixes (i.e. `ssh grace` or `scp ~/my_file grace:my_file` should work). It will also allow you to re-use and multiplex authenticated sessions. This means although the clusters require [Duo MFA](/clusters-at-yale/access/mfa), it will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.
 
 Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid. Lines that begin with `#` will be ignored.
 

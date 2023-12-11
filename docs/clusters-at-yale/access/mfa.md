@@ -1,6 +1,6 @@
 # Multi-factor Authentication
 
-To improve security, access to McCleary and Milgram requires both a public key and multi-factor authentication (MFA).
+To improve security, access to all cluster requires both a public key and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
 
