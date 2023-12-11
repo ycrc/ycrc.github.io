@@ -43,8 +43,8 @@ Host mccleary grace milgram
     HostName %h.ycrc.yale.edu
 ```
 
-!!! warning
-    For multiplexing to work, the `~/.ssh/tmp` directory must exist. Create it with `mkdir -p ~/.ssh/tmp`
+!!! Tip
+    You can change the `ControlPath` directory to `/tmp` or any other directory, so long as it exists. 
 
 
 ### CyberDuck
