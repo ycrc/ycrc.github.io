@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2446,7 +2446,7 @@ An example config file is shown below which enables SSH multiplexing (<code>Cont
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
     ControlMaster auto
-    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPath ~/.ssh/%h_%p_%r
     ControlPersist 2h
 
 Host mccleary grace milgram
@@ -2502,7 +2502,7 @@ Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
       
     
   </small>
