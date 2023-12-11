@@ -36,7 +36,7 @@ Host *.ycrc.yale.edu mccleary grace milgram
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
     ControlMaster auto
-    ControlPath ~/.ssh/tmp/%h_%p_%r
+    ControlPath ~/.ssh/%h_%p_%r
     ControlPersist 2h
 
 Host mccleary grace milgram
