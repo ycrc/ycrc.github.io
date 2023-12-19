@@ -24,8 +24,8 @@ export LICENSE_ID=Your-cryosparc-license-code-here
 
  #go get the installers
 cd $install_path
-curl -L https://get.cryosparc.com/download/master-latest/$license_id -o cryosparc_master.tar.gz
-curl -L https://get.cryosparc.com/download/worker-latest/$license_id -o cryosparc_worker.tar.gz
+curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
 
 tar -xf cryosparc_master.tar.gz
 tar -xf cryosparc_worker.tar.gz
