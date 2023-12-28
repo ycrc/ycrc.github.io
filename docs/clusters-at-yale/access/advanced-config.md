@@ -40,7 +40,13 @@ man ssh_config
 
 By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):
 
+
 ``` bash
+
+# In MacOS version 12.0 Monterey or newer
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
+
+# Older MacOS version
 ssh-add -K ~/.ssh/id_rsa
 ```
 
