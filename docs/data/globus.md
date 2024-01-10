@@ -21,7 +21,7 @@ We currently support endpoints for the following clusters.
 
 | Cluster                        | Globus Endpoint     |
 |--------------------------------|---------------------|
-| [Grace](/clusters/grace)       | `yale#grace`        |
+| [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
 
@@ -43,7 +43,7 @@ Files in the staging area are purged after 21 days.
 1. Click on the right-hand side menu option "Transfer or Sync to..."
 1. Enter the second endpoint name in the right search box (e.g. another cluster or your personal endpoint)
 1. Select one or more files you would like to transfer and click the appropriate start button on the bottom.
-2. To complete a partial transfer, you can click the "sync" checkbox in the Transfer Setting window on the Globus page, and hten Globus should resume the transfer where it left off.
+2. To complete a partial transfer, you can click the "sync" checkbox in the Transfer Setting window on the Globus page, and then Globus should resume the transfer where it left off.
 
 ### Manage Your Endpoints
 
