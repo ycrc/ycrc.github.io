@@ -39,7 +39,7 @@ Files in the staging area are purged after 21 days.
     1. [First login only] Do not associate with another account yet unless you are familiar with doing this
     1. [First login only] Select "non-profit research or educational purposes"
     1. [First login only] Click on "Allow" for allowing Globus Web App
-1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to browse in the collection field (e.g. yale#grace)
+1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to browse in the collection field (e.g. Yale CRC Grace)
 1. Click on the right-hand side menu option "Transfer or Sync to..."
 1. Enter the second endpoint name in the right search box (e.g. another cluster or your personal endpoint)
 1. Select one or more files you would like to transfer and click the appropriate start button on the bottom.
