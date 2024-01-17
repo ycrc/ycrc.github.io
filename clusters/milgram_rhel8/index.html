@@ -2353,7 +2353,7 @@ As always, if you need additional packages, we strongly recommend setting up you
 <p>In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
 <h3 id="mpi-applications-fail-with-srun-command">MPI applications fail with <code>srun</code> command</h3>
-<p>If your workflow involves loading any of the OpenMPI modules and uses <code>srun</code> to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.</p>
+<p>If your workflow involves loading the 2020b version of OpenMPI and uses <code>srun</code> to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.</p>
 <p>For example, load the <code>OpenMPI/4.0.5-GCC-10.2.0-rhel8</code> module after loading the <code>gompi/2020b</code> module:</p>
 <div class="highlight"><pre><span></span><code>module load gompi/2020b
 module load OpenMPI/4.0.5-GCC-10.2.0-rhel8
