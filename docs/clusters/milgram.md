@@ -13,10 +13,8 @@ Users wishing to use Milgram must agree to the following:
 * All Milgram users must have fulfilled and be current with Yale's HIPAA training requirement.
 * Since Milgram's resources are limited, we ask that you only use Milgram for work on and storage of sensitive data, and that you do your other high performance computing on our other clusters.  
 
-!!! warning "Multifactor Authentication on Milgram"
-    [Multifactor authentication via Duo](/clusters-at-yale/access/mfa/) is required for all users on Milgram.
-    For most usage this additional step is minimally invasive and makes our clusters much more secure. 
-    However, for users who use graphical transfer tools such as Cyberduck, please see our [MFA transfer documentation](/data/transfer/#cyberduck-on-mccleary-and-ruddle).
+!!! warning "Upcoming Operating System Upgrade""
+    Milgram's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer. Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024. For more information see our [Milgram Operating System Upgrade documentation](/clusters/milgram_rhel8).
 
 - - -
 

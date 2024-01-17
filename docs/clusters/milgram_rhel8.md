@@ -1,6 +1,6 @@
 # Milgram Operating System Upgrade
 
-Milgram's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Milgram's current operating system, Red Hat (RHEL) 7, will be officially end-of-life in 2024 and will no longer be supported with security patches by the developer.
 Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
 This provides a number of key benefits to Milgram:
 
@@ -8,7 +8,7 @@ This provides a number of key benefits to Milgram:
 1. updated system libraries to better support modern software
 1. improved node management system to facilitate the growing number of nodes on Milgram
 
-While we have done extensive testing both internally and with McCleary and Grace clusters, we recognize that there are a large number custom workflows on Milgram that may need to be modified to work with the new operating system. To this end, we are setting aside `rhel8_devel` and `rhel8_day` partitions for use in debugging and testing of workflows before the February maintenance. 
+While we have done extensive testing both internally and with McCleary and Grace clusters, we recognize that there are a large number of custom workflows on Milgram that may need to be modified to work with the new operating system. To this end, we have set aside `rhel8_devel` and `rhel8_day` partitions for use in debugging and testing of workflows before the February maintenance. 
 
 ## Test Partitions
 
