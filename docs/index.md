@@ -2,10 +2,6 @@
 
 The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
 
-!!! info "Introducing the McCleary HPC Cluster"
-
-    The YCRC is pleased to announce the new McCleary HPC cluster, which now serves researchers from the Yale School of Medicine, Yale Center for Genome Analysis and life scientists in the Faculty of Arts and Sciences! For more information, see our [McCleary documentation](/clusters/mccleary).
-
 ## Get Help
 
 To best serve the research community, we provide one-on-one consulting and use a support tracking system.
@@ -48,7 +44,6 @@ include as much detail as possible about your request and we'll find the right p
 |[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [McCleary](/clusters/mccleary) | Computational Chemistry, Python, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
-|[Andy Sherman, Ph.D.](https://research.computing.yale.edu/about/leadership-team/andrew-sherman)|[Grace](/clusters/grace)| MPI, GPUs |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
 
 
