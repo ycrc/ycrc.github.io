@@ -4,7 +4,7 @@ Milgram's current operating system, Red Hat (RHEL) 7, will be offically end-of-l
 Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
 This provides a number of key benefits to Milgram:
 
-1. continued security patches and support beyond 2023
+1. continued security patches and support beyond 2024
 1. updated system libraries to better support modern software
 1. improved node management system to facilitate the growing number of nodes on Milgram
 
@@ -30,9 +30,7 @@ Submit a batch job to `rhel8_day`:
 sbatch -p rhel8_day -c 4 -t 2:00:00 batch.sh
 ```
 
-Please note that the `rhel8_devel` and `rhel8_day` partitions have the same job limits (e.g.maximum time limit) as the `interactive` and `day` partitions, respectively.
-
-If your workflow involves loading any of the OpenMPI modules and uses `srun` to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.   
+Please note that the `rhel8_devel` and `rhel8_day` partitions have the same job limits (e.g.maximum time limit) as the `interactive` and `day` partitions, respectively.   
 
 ## Common Errors
 
@@ -44,6 +42,17 @@ As always, if you need additional packages, we strongly recommend setting up you
 In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
 
+### MPI applications fail with `srun` command
+
+If your workflow involves loading any of the OpenMPI modules and uses `srun` to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.
+
+For example, load the `OpenMPI/4.0.5-GCC-10.2.0-rhel8` module after loading the `gompi/2020b` module:
+
+```
+module load gompi/2020b
+module load OpenMPI/4.0.5-GCC-10.2.0-rhel8
+```
+  
 ### Missing System Libraries
 
 Some of the existing applications may depend on libraries that are no longer installed in the operating system.
