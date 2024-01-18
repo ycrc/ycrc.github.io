@@ -2716,16 +2716,16 @@
 <h2 id="defaults-we-set">Defaults We Set</h2>
 <p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
 <p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
-<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">channels</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span><span class="w"></span>
+<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="nt">channels</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span><span class="w"></span>
 </code></pre></div>
 <h2 id="setup-your-environment">Setup Your Environment</h2>
 <h3 id="load-the-miniconda-module">Load the <code>miniconda</code> Module</h3>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+<div class="highlight"><pre><span></span><code>module load miniconda
 </code></pre></div>
 <p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/clusters-at-yale/applications/modules">module documentation</a> for more details.</p>
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
@@ -2740,32 +2740,32 @@
 <p>You will need to request an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the <code>salloc</code> command when you create a new <code>conda</code> environment or install packages into an existing <code>conda</code> environment.   </p>
 </div>
 <p>For example, if you have a legacy application that needs Python 2 and OpenBLAS:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>legacy_application<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7<span class="w"> </span>openblas
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n legacy_application <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 openblas
 </code></pre></div>
 <p>If you want a good starting point for interactive data science in R/Python Jupyter Notebooks:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ds_notebook<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>ipython<span class="w"> </span>jupyter<span class="w"> </span>r-irkernel<span class="w"> </span>r-ggplot2<span class="w"> </span>r-tidyverse
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter r-irkernel r-ggplot2 r-tidyverse
 </code></pre></div>
 <p>Note that you can also install jupyterlab instead of, or alongside jupyter. </p>
 <h3 id="conda-channels">Conda Channels</h3>
 <p>Community-lead collections of packages that you can install with <code>conda</code> are provided with channels. Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
 <p>You can create a new environment called <code>brian2</code> (specified with the <code>-n</code> option) and install <a href="http://briansimulator.org/">Brian2</a> into it with the following:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brian2<span class="w"> </span>brian2
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n brian2 brian2
 <span class="c1"># normally you would need this:</span>
 <span class="c1"># conda create -n brian2 --channel conda-forge brian2</span>
 </code></pre></div>
 <p>You can also install packages from Bioconda, for example:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>bioinfo<span class="w"> </span>biopython<span class="w"> </span>bedtools<span class="w"> </span>bowtie2<span class="w"> </span>repeatmasker
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
 <span class="c1"># normally you would need this:</span>
 <span class="c1"># conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker</span>
 </code></pre></div>
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To use the applications in your environment, run the following:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>env_name
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda activate env_name
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2782,25 +2782,25 @@ conda<span class="w"> </span>activate<span class="w"> </span>env_name
 <span class="c1">#SBATCH --mem-per-cpu=6000</span>
 
 
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module load miniconda
 
-conda<span class="w"> </span>activate<span class="w"> </span>env_name
-python<span class="w"> </span>analyses.py
+conda activate env_name
+python analyses.py
 </code></pre></div>
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
 <p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> or use <a href="https://docs.conda.io/projects/conda/en/latest/commands/search.html"><code>conda search</code></a> to find the names of packages you would like to install:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>search<span class="w"> </span>numpy
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda search numpy
 </code></pre></div>
 <h3 id="compiling-codes">Compiling Codes</h3>
 <p>You may need to compile codes in a conda environment, for example, installing an R package in a conda R env. This requires you to have the GNU C compiler and its development libraries installed in the conda env before compiling any codes:</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>gcc_linux-64
+<div class="highlight"><pre><span></span><code>conda install gcc_linux-64
 </code></pre></div>
 <p>Without <code>gcc_linux-64</code>, the code will be compiled using the system compiler and libraries. You will experience run-time errors when running the code in the conda environment. </p>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="conda-version-doesnt-match-the-module-loaded">Conda version doesn't match the module loaded</h3>
 <p>If you have run <code>conda init</code> in the past, you may be locked to an old version of <code>conda</code>. You can run the following to fix this:</p>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
 </code></pre></div>
 <h3 id="permission-denied">Permission Denied</h3>
 <p>If you get a permission denied error when running <code>conda install</code> or <code>pip install</code> for a package, make sure you have created an environment and activated it or activated an existing one first.</p>
@@ -2808,17 +2808,17 @@ conda<span class="w"> </span>search<span class="w"> </span>numpy
 <p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the <code>minconda</code> module and rerunning your <code>conda activate env_name</code> command.</p>
 <h3 id="could-not-find-environment">Could not find environment</h3>
 <p>This error means that the version of miniconda you have loaded doesn't recognize the environment name you have supplied. Make sure you have the <code>miniconda</code> module loaded (and not a different Python module) and have previously created this environment. You can see a list of previously created environments by running:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>info<span class="w"> </span>--envs
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda info --envs
 </code></pre></div>
 <h2 id="additional-conda-commands">Additional Conda Commands</h2>
 <h3 id="list-installed-packages">List Installed Packages</h3>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>list<span class="w"> </span>--name<span class="w"> </span>env_name
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda list --name env_name
 </code></pre></div>
 <h3 id="delete-a-conda-environment">Delete a Conda Environment</h3>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>env_name<span class="w"> </span>--all
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda remove --name env_name --all
 </code></pre></div>
 <h3 id="save-and-export-environments">Save and Export Environments</h3>
 <p>There are two concepts for rebuilding conda environments:</p>
@@ -2829,16 +2829,16 @@ conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"
 <p>This short doc will walk through recommended approaches to both styles of exporting and rebuilding a generic environment named <code>test</code> containing python, jupyter, numpy, and scipy.</p>
 <h4 id="full-export-including-dependencies">Full Export Including Dependencies</h4>
 <p>To export the exact versions of each package installed (including all dependencies) run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--no-builds<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>prefix<span class="w"> </span>&gt;<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --no-builds --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div>
 <p>This yaml file is ~230 lines long and contains every package that is installed in the <code>test</code> environment.</p>
 <p>The conda export command includes information about the path where it was installed (i.e. the <code>prefix</code>).
 To remove this hard-coded path, we need to remove the line in this print out related to the "prefix".</p>
 <h4 id="export-only-specified-packages">Export Only Specified Packages</h4>
 <p>If we simply wish to rebuild the environment using the steps previously employed to create it, we can replace <code>--no-builds</code> with <code>--from-history</code>.
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>prefix<span class="w"> </span>&gt;<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env <span class="nb">export</span> --from-history --name <span class="nb">test</span> <span class="p">|</span> grep -v prefix &gt; test_export.yaml
 </code></pre></div></p>
 <p>This is a much smaller file, ~10 lines, and only lists the packages explicitly installed:</p>
 <div class="highlight"><pre><span></span><code>name: test
@@ -2855,8 +2855,8 @@ dependencies:
 <p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
 <h4 id="build-a-new-environment">Build a New Environment</h4>
 <p>To create a new environment using all the enumerated pacakges:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--file<span class="w"> </span>test_export.yaml
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda env create --file test_export.yaml
 </code></pre></div>
 <p>This will create a new environment with the same name <code>test</code>.
 The yaml file can be edited to change the name of the new environment.</p>
