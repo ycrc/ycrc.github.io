@@ -32,6 +32,8 @@ sbatch -p rhel8_day -c 4 -t 2:00:00 batch.sh
 
 Please note that the `rhel8_devel` and `rhel8_day` partitions have the same job limits (e.g.maximum time limit) as the `interactive` and `day` partitions, respectively.   
 
+During this testing phase, there will be no charges applied to jobs which run in the RHEL8 partitions.
+
 ## Common Errors
 
 ### Python not found
