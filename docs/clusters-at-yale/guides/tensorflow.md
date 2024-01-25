@@ -36,7 +36,7 @@ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'
 This should print out a line of text that lists the recognized GPU. If this fails, please reach out to YCRC support for further assistance.
 
 
-#####Additional Tensorflow packages
+#Additional Tensorflow packages
 
 #####ptxas or nvvm
 
