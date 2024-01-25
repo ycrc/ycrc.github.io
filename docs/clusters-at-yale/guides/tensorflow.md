@@ -34,3 +34,36 @@ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'
 ```
 
 This should print out a line of text that lists the recognized GPU. If this fails, please reach out to YCRC support for further assistance.
+
+
+#####Additional Tensorflow packages
+
+#####ptxas or nvvm
+
+Use case: Tensorflow missing ptxas or complaining about can't find $CUDA/nvvm/libdevice:
+
+'''bash
+module load miniconda
+
+conda activate YOUR_TF_ENVIRONMENT
+
+conda install -c nvidia cuda-nvcc
+
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+
+echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+conda deactivate
+
+conda activate YOUR_TF_ENVIRONMENT
+'''
+
+#####Tensorboard
+
+Tensorboard comes installed with any tensorflow installation. Tensorboard is a visual software package for tensorflow that allows for graphical analysis of tensorflow processes. It is built to work in google colab and jupyter notebooks.
+
+
+However, it requires a web browser to function and must therefore be launched using remote desktop on OOD rather than OOD jupyter apps.
+
+
+ 
