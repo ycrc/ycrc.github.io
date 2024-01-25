@@ -2303,11 +2303,20 @@ pip<span class="w"> </span>install<span class="w"> </span>tensorflow<span class=
 </code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">tensorflow 2.14</label><div class="tabbed-content">
-<p>Tensorflow 2.14 does not currently support gpu usage but can be installed using pip for cpu usage.</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>tf14<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.14.0<span class="w"> </span>nvidia-cuda-runtime-cu11<span class="o">==</span><span class="m">11</span>.8.89<span class="w"> </span>nvidia-cublas-cu11<span class="o">==</span><span class="m">11</span>.11.3.6<span class="w"> </span>nvidia-cufft-cu11<span class="o">==</span><span class="m">10</span>.9.0.58<span class="w"> </span>nvidia-cudnn-cu11<span class="o">==</span><span class="m">8</span>.7.0.84<span class="w"> </span>nvidia-curand-cu11<span class="o">==</span><span class="m">10</span>.3.0.86<span class="w"> </span>nvidia-cusolver-cu11<span class="o">==</span><span class="m">11</span>.4.1.48<span class="w"> </span>nvidia-cusparse-cu11<span class="o">==</span><span class="m">11</span>.7.5.86<span class="w"> </span>nvidia-nccl-cu11<span class="o">==</span><span class="m">2</span>.16.5<span class="w"> </span>nvidia-cuda-cupti-cu11<span class="o">==</span><span class="m">11</span>.8.87<span class="w"> </span>nvidia-cuda-nvcc-cu11<span class="o">==</span><span class="m">11</span>.8.89
+conda<span class="w"> </span>activate<span class="w"> </span>tf14
+
+<span class="c1"># Store system paths to cuda libraries for gpu communication</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;CUDNN_PATH=$(dirname $(python -c &quot;import nvidia.cudnn;print(nvidia.cudnn.__file__)&quot;))&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+</code></pre></div>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">tensorflow 2.13/2.12</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.8.0<span class="w"> </span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.8.0<span class="w"> </span>
 conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 pip<span class="w"> </span>install<span class="w"> </span>nvidia-cudnn-cu11<span class="o">==</span><span class="m">8</span>.6.0.163
 
@@ -2322,7 +2331,7 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tenso
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">tensorflow 2.11</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3.1<span class="w"> </span><span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.2.1
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3.1<span class="w"> </span><span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.2.1
 conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 
 <span class="c1"># Store system paths to cuda libraries for gpu communication</span>
