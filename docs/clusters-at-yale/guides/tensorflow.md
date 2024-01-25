@@ -57,7 +57,7 @@ conda deactivate
 
 conda activate YOUR_TF_ENVIRONMENT
 ```
-\n\n
+
 
 
 #####Tensorboard
