@@ -42,7 +42,7 @@ This should print out a line of text that lists the recognized GPU. If this fail
 
 Use case: Tensorflow missing ptxas or complaining about can't find $CUDA/nvvm/libdevice:
 
-'''bash
+```bash
 module load miniconda
 
 conda activate YOUR_TF_ENVIRONMENT
@@ -56,7 +56,9 @@ echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX' >> $CONDA_PREFIX/e
 conda deactivate
 
 conda activate YOUR_TF_ENVIRONMENT
-'''
+```
+\n\n
+
 
 #####Tensorboard
 
