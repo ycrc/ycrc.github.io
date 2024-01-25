@@ -2360,15 +2360,21 @@ python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;
 <h1 id="additional-tensorflow-packages">Additional Tensorflow packages</h1>
 <h5 id="ptxas-or-nvvm">ptxas or nvvm</h5>
 <p>Use case: Tensorflow missing ptxas or complaining about can't find $CUDA/nvvm/libdevice:</p>
-<p>'''bash
-module load miniconda</p>
-<p>conda activate YOUR_TF_ENVIRONMENT</p>
-<p>conda install -c nvidia cuda-nvcc</p>
-<p>mkdir -p $CONDA_PREFIX/etc/conda/activate.d</p>
-<p>echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX' &gt;&gt; $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh</p>
-<p>conda deactivate</p>
-<p>conda activate YOUR_TF_ENVIRONMENT
-'''</p>
+<p><div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+
+conda<span class="w"> </span>activate<span class="w"> </span>YOUR_TF_ENVIRONMENT
+
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>cuda-nvcc
+
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
+
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+
+conda<span class="w"> </span>deactivate
+
+conda<span class="w"> </span>activate<span class="w"> </span>YOUR_TF_ENVIRONMENT
+</code></pre></div>
+\n\n</p>
 <h5 id="tensorboard">Tensorboard</h5>
 <p>Tensorboard comes installed with any tensorflow installation. Tensorboard is a visual software package for tensorflow that allows for graphical analysis of tensorflow processes. It is built to work in google colab and jupyter notebooks.</p>
 <p>However, it requires a web browser to function and must therefore be launched using remote desktop on OOD rather than OOD jupyter apps.</p>
