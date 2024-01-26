@@ -137,6 +137,10 @@ conda update -n  ycrc_default jupyter jupyter-lab
 
 ### RStudio Server
 
+RStudio Server works with R from an R module or from an R Conda environment. Selected R modules on the cluster (ususally the two most recent versions installed on the cluster)
+are available in the user form. If you want to use Conda R, you need to run `ycrc_conda_env.sh update` to have it listed in the user form. 
+
+
 #### Change User R Package Path
 To change the default path where packages installed by the user are stored, you need to add the following line of code in your `$HOME/.bashrc`:
 
@@ -168,10 +172,30 @@ Alternatively, you can put the above code in `.Rprofile` in your home directory 
 If RStudio becomes slow to respond or completely stops responding, please stop the RStudio session and then run the following script at a shell command line:
 
 ```
-clean_rstudio.sh
+ycrc_clean_rstudio.sh
 ```
 
 This will remove any temporary files created by RStudio and allow it to start anew.
+
+### Start RStudio Desktop in Remote Desktop
+
+While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be benificial. 
+For example, when a user needs to monitor the R code's progress constantly.
+
+RStudio Server is not user friendly for long-running R code. When your CAS session timeout, you won't be able to reconnect
+while the code is running. You'll need to wait until the code finishes before
+you can connect to the same session again. 
+
+If you need to monitor your R code's progress continuously within the same R session without concerns about disconnection, 
+you can run an RStudio Desktop within a Remote Desktop environment.
+
+First, start a Remote Desktop in OOD. From the terminal in the Remote Desktop, run the following commands:
+
+```bash
+module load R
+module load RStudio
+rstudio
+```
 
 ### Troubleshoot OOD
 
