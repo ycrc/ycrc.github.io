@@ -88,6 +88,7 @@ def get_part_hardware():
         ["sinfo", "--noheader", "-eo", "%P|%D|%c|%m|%G|%b"], universal_newlines=True
     ).split("\n"):
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
+
         if line_dict["partition"] != "":
             if line_dict["cpus"] == "0":
                 continue
