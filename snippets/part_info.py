@@ -104,7 +104,10 @@ def get_part_hardware():
                 for gpu, num in gres_regex.findall(line_dict["gres"]):
                     gpu_type.append(gpu)
                     gpu_num.append(num)
-                    gpu_mem.append(vram_dict[gpu])
+                    if "-80g" in line_dict["features"]:
+                        gpu_mem.append("80")
+                    else:
+                        gpu_mem.append(vram_dict[gpu])
             table_dict = dict(
                 zip(
                     out_cols_gpu,
