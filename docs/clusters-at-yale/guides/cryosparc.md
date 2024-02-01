@@ -38,7 +38,7 @@ tar -xf cryosparc_worker.tar.gz
 # Load a cluster CUDA module
  
 cd ${install_path}/cryosparc_master
-ad CUDA/11.3.1
+module load CUDA/11.8.0
 export cuda_path=${EBROOTCUDA}
 
 # Set a temporary password
