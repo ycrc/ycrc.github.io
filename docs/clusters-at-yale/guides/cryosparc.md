@@ -56,13 +56,24 @@ cd ${install_path}/cryosparc_master
 ./install.sh --standalone \
 --license $LICENSE_ID \
 --worker_path $worker_path \
---cudapath $cuda_path \  
 --ssdpath $ssd_path \
 --initial_email $user_email \
 --initial_password $cryosparc_passwd \
 --initial_username ${USER} \
 --initial_firstname "Firstname" \
 --initial_lastname "Lastname"
+```
+
+!!!warning
+     If you are installing a version of cryoSPARC older than 4.4.0, add the additional line
+
+     ``` bash
+     --cudapath $cuda_path \
+     ```
+
+     after the --ssdpath line.
+
+``` bash
 
 # Set location of cryoSPARC executables
 source ~/.bashrc
