@@ -2423,15 +2423,21 @@ mkdir <span class="nv">$ssd_path</span>
 ./install.sh --standalone <span class="se">\</span>
 --license <span class="nv">$LICENSE_ID</span> <span class="se">\</span>
 --worker_path <span class="nv">$worker_path</span> <span class="se">\</span>
---cudapath <span class="nv">$cuda_path</span> <span class="se">\ </span> 
 --ssdpath <span class="nv">$ssd_path</span> <span class="se">\</span>
 --initial_email <span class="nv">$user_email</span> <span class="se">\</span>
 --initial_password <span class="nv">$cryosparc_passwd</span> <span class="se">\</span>
 --initial_username <span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
 --initial_firstname <span class="s2">&quot;Firstname&quot;</span> <span class="se">\</span>
 --initial_lastname <span class="s2">&quot;Lastname&quot;</span>
-
-<span class="c1"># Set location of cryoSPARC executables</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are installing a version of cryoSPARC older than 4.4.0, add the additional line</p>
+<div class="highlight"><pre><span></span><code>--cudapath <span class="nv">$cuda_path</span> <span class="se">\</span>
+</code></pre></div>
+<p>after the --ssdpath line.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set location of cryoSPARC executables</span>
 <span class="nb">source</span> ~/.bashrc
 </code></pre></div>
 <h2 id="run">Run</h2>
@@ -2475,7 +2481,7 @@ cryosparcm start
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2024</span>
       
     
   </small>
