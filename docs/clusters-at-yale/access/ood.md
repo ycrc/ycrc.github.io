@@ -177,7 +177,7 @@ ycrc_clean_rstudio.sh
 
 This will remove any temporary files created by RStudio and allow it to start anew.
 
-### Start RStudio Desktop in Remote Desktop
+#### Run RStudio in Remote Desktop
 
 While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be benificial. 
 For example, when a user needs to monitor the R code's progress constantly.
@@ -187,13 +187,29 @@ while the code is running. You'll need to wait until the code finishes before
 you can connect to the same session again. 
 
 If you need to monitor your R code's progress continuously within the same R session without concerns about disconnection, 
-you can run an RStudio Desktop within a Remote Desktop environment.
+you can run RStudio Desktop within a Remote Desktop environment.
 
-First, start a Remote Desktop in OOD. From the terminal in the Remote Desktop, run the following commands:
+##### Using R module with RStudio Desktop
+
+First, start a Remote Desktop instance in OOD. From the terminal in the Remote Desktop, run the following commands:
 
 ```bash
 module load R
 module load RStudio
+rstudio
+```
+
+##### Using R Conda with RStudio Desktop
+
+If you want to use R in a Conda environment, start a Remote Desktop instance in OOD first. 
+From the terminal in the Remote Desktop, please don't load the modules for R and RStudio. 
+Instead, please install 'rstudio-desktop' into your R Conda environment if you haven't done so, 
+and then call `rstudio`.  
+
+```bash
+module load miniconda
+conda activate my_r_env
+conda install rstudio-desktop
 rstudio
 ```
 
