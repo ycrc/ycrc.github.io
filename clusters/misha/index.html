@@ -2418,8 +2418,18 @@
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>Misha is made up of several kinds of compute nodes. We group them into  (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
 <div class="admonition warning">
-<p class="admonition-title">Job Submission Rate Limits</p>
+<p class="admonition-title">Job Submission Limits</p>
+<ul>
+<li>
+<p>You are limited to 4 interactive app instances (of any type) at one time. 
+Additional instances will be rejected until you delete older open instances. 
+For OnDemand jobs, closing the window does not terminate the interactive app job.
+To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
+</li>
+<li>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
+</li>
+</ul>
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>

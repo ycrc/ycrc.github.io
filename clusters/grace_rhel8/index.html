@@ -2340,7 +2340,7 @@
                 
                 
                 <h1 id="grace-operating-system-upgrade">Grace Operating System Upgrade</h1>
-<p>Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+<p>Grace's previous operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
 Therefore Grace has been upgraded to RHEL 8 during the August maintenance window, August 15-17, 2023.
 This provides a number of key benefits to Grace:</p>
 <ol>
@@ -2351,7 +2351,6 @@ This provides a number of key benefits to Grace:</p>
 <li>shared application tree between McCleary and Grace, which brings software parity between the clusters*</li>
 </ol>
 <p>* some software and workflows will only be supported by YCRC staff on one of the cluster, e.g. tightly couple MPI codes (Grace) or RELION (McCleary).</p>
-<p>While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. <code>rhel8_day</code>) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.</p>
 <h2 id="new-host-key">New Host Key</h2>
 <p>The ssh host key for Grace's login nodes were changed during the August maintenance, which will result in an error similar to the following when you attempt to login for the first time after the maintenance.</p>
 <div class="highlight"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -2401,7 +2400,7 @@ This will ensure that you only load modules built for RHEL7.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
       
     
   </small>

@@ -2441,20 +2441,23 @@
 </div>
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>Once you have <a href="https://research.computing.yale.edu/support/hpc/account-request">an account</a>, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a> or through the <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You are limited to 4 interactive app instances (of any type) at one time. 
-Additional instances will be rejected until you delete older open instances. 
-For OnDemand jobs, closing the window does not terminate the interactive app job.
-To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
-</div>
 <h2 id="system-status-and-monitoring">System Status and Monitoring</h2>
 <p>For system status messages and the schedule for upcoming maintenance, please see the <a href="https://research.computing.yale.edu/support/hpc/system-status">system status page</a>. For a current node-level view of job activity, see the <a href="http://cluster.ycrc.yale.edu/grace/">cluster monitor page (VPN only)</a>.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>Grace is made up of several kinds of compute nodes. We group them into (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
 <div class="admonition warning">
-<p class="admonition-title">Job Submission Rate Limits</p>
+<p class="admonition-title">Job Submission Limits</p>
+<ul>
+<li>
+<p>You are limited to 4 interactive app instances (of any type) at one time. 
+Additional instances will be rejected until you delete older open instances. 
+For OnDemand jobs, closing the window does not terminate the interactive app job.
+To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
+</li>
+<li>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
+</li>
+</ul>
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
@@ -5616,7 +5619,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
       
     
   </small>

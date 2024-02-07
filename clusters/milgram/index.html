@@ -2455,8 +2455,8 @@
 <li>Since Milgram's resources are limited, we ask that you only use Milgram for work on and storage of sensitive data, and that you do your other high performance computing on our other clusters.  </li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Upcoming Operating System Upgrade"</p>
-<p>Milgram's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer. Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024. For more information see our <a href="/clusters/milgram_rhel8">Milgram Operating System Upgrade documentation</a>.</p>
+<p class="admonition-title">Operating System Upgrade"</p>
+<p>Milgram has been upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024. For more information see our <a href="/clusters/milgram_rhel8">Milgram Operating System Upgrade documentation</a>.</p>
 </div>
 <hr />
 <h2 id="access-the-cluster">Access the Cluster</h2>
@@ -2470,8 +2470,22 @@
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>Milgram is made up of several kinds of compute nodes. We group them into  (sometimes overlapping) <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
 <div class="admonition warning">
-<p class="admonition-title">Job Submission Rate Limits</p>
+<p class="admonition-title">Job Submission Limits</p>
+<ul>
+<li>
+<p>You are limited to 4 interactive app instances (of any type) at one time. 
+Additional instances will be rejected until you delete older open instances. 
+For OnDemand jobs, closing the window does not terminate the interactive app job.
+To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
+</li>
+<li>
 <p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Interactive Partition Name Change</p>
+<p>The 'interactive' and 'psych_interactive partitions have been renamed to 'devel' and 'psych_devel', respectively.  Please adjust your job submissions accordingly.</p>
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
@@ -2515,7 +2529,7 @@
 </thead>
 <tbody>
 <tr>
-<td>14</td>
+<td>9</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -2524,14 +2538,14 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">interactive</label><div class="tabbed-content">
-<p>Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">devel</label><div class="tabbed-content">
+<p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the interactive partition are subject to the following limits:</p>
+<p>Jobs submitted to the devel partition are subject to the following limits:</p>
 <table>
 <thead>
 <tr>
@@ -2736,6 +2750,16 @@
 </thead>
 <tbody>
 <tr>
+<td>20</td>
+<td>6342</td>
+<td>48</td>
+<td>479</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, bigtmp, nogpu, standard, pi</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6326</td>
 <td>32</td>
@@ -2743,10 +2767,10 @@
 <td>a40</td>
 <td>4</td>
 <td>48</td>
-<td>icelake, a40, avx512, pi, 6326, singleprecision, bigtmp</td>
+<td>icelake, avx512, pi, 6326, singleprecision, bigtmp, a40</td>
 </tr>
 <tr>
-<td>18</td>
+<td>17</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -2776,7 +2800,7 @@
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
-<td>47</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -2826,7 +2850,7 @@
 <td>a40</td>
 <td>4</td>
 <td>48</td>
-<td>icelake, a40, avx512, pi, 6326, singleprecision, bigtmp</td>
+<td>icelake, avx512, pi, 6326, singleprecision, bigtmp, a40</td>
 </tr>
 </tbody>
 </table>
@@ -2882,7 +2906,14 @@
 </thead>
 <tbody>
 <tr>
-<td>43</td>
+<td>20</td>
+<td>6342</td>
+<td>48</td>
+<td>479</td>
+<td>icelake, avx512, 6342, bigtmp, nogpu, standard, pi</td>
+</tr>
+<tr>
+<td>42</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -2891,7 +2922,67 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">psych_gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">psych_devel</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the psych_devel partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>32G</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Maximum submitted jobs per user</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>247</td>
+<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">psych_gpu</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -2949,66 +3040,6 @@
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">psych_interactive</label><div class="tabbed-content">
-<p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-</code></pre></div>
-<p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the psych_interactive partition are subject to the following limits:</p>
-<table>
-<thead>
-<tr>
-<th>Limit</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Maximum job time limit</td>
-<td><code>06:00:00</code></td>
-</tr>
-<tr>
-<td>Maximum CPUs per user</td>
-<td><code>4</code></td>
-</tr>
-<tr>
-<td>Maximum memory per user</td>
-<td><code>32G</code></td>
-</tr>
-<tr>
-<td>Maximum running jobs per user</td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td>Maximum submitted jobs per user</td>
-<td><code>1</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Available Compute Nodes</strong></p>
-<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
-<table>
-<thead>
-<tr>
-<th>Count</th>
-<th>CPU Type</th>
-<th>CPUs/Node</th>
-<th>Memory/Node (GiB)</th>
-<th>Node Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>247</td>
-<td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
-</tr>
-</tbody>
-</table>
-</div>
 <input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">psych_scavenge</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3051,6 +3082,16 @@
 </thead>
 <tbody>
 <tr>
+<td>20</td>
+<td>6342</td>
+<td>48</td>
+<td>479</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, bigtmp, nogpu, standard, pi</td>
+</tr>
+<tr>
 <td>10</td>
 <td>6240</td>
 <td>36</td>
@@ -3061,7 +3102,7 @@
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
-<td>47</td>
+<td>46</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -3128,7 +3169,7 @@
 </thead>
 <tbody>
 <tr>
-<td>43</td>
+<td>42</td>
 <td>E5-2660_v4</td>
 <td>28</td>
 <td>247</td>
@@ -3193,7 +3234,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
       
     
   </small>

@@ -2275,13 +2275,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test-partitions" class="md-nav__link">
-    Test Partitions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#common-errors" class="md-nav__link">
     Common Errors
   </a>
@@ -2292,13 +2285,6 @@
           <li class="md-nav__item">
   <a href="#python-not-found" class="md-nav__link">
     Python not found
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mpi-applications-fail-with-srun-command" class="md-nav__link">
-    MPI applications fail with srun command
   </a>
   
 </li>
@@ -2340,39 +2326,21 @@
                 
                 
                 <h1 id="milgram-operating-system-upgrade">Milgram Operating System Upgrade</h1>
-<p>Milgram's current operating system, Red Hat (RHEL) 7, will be officially end-of-life in 2024 and will no longer be supported with security patches by the developer.
-Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
+<p>Milgram's previous operating system, Red Hat (RHEL) 7, will be officially end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Therefore Milgram has been upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
 This provides a number of key benefits to Milgram:</p>
 <ol>
 <li>continued security patches and support beyond 2024</li>
 <li>updated system libraries to better support modern software</li>
 <li>improved node management system to facilitate the growing number of nodes on Milgram</li>
 </ol>
-<p>While we have done extensive testing both internally and with McCleary and Grace clusters, we recognize that there are a large number of custom workflows on Milgram that may need to be modified to work with the new operating system. To this end, we have set aside <code>rhel8_devel</code> and <code>rhel8_day</code> partitions for use in debugging and testing of workflows before the February maintenance. </p>
-<h2 id="test-partitions">Test Partitions</h2>
-<p>To submit jobs to the test partitions, open the shell access on Open OnDemand or log into Milgram via SSH with the command:</p>
-<div class="highlight"><pre><span></span><code>ssh netid@milgram.ycrc.yale.edu
-</code></pre></div>
-<p>Request an interactive job on <code>rhel8_devel</code>:</p>
-<div class="highlight"><pre><span></span><code>salloc -p rhel8_devel -c 4 -t 2:00:00 
-</code></pre></div>
-<p>Submit a batch job to <code>rhel8_day</code>:</p>
-<div class="highlight"><pre><span></span><code>sbatch -p rhel8_day -c 4 -t 2:00:00 batch.sh
-</code></pre></div>
-<p>Please note that the <code>rhel8_devel</code> and <code>rhel8_day</code> partitions have the same job limits (e.g.maximum time limit) as the <code>interactive</code> and <code>day</code> partitions, respectively.   </p>
-<p>During this testing phase, there will be no charges applied to jobs which run in the RHEL8 partitions.</p>
 <h2 id="common-errors">Common Errors</h2>
+<p>Below are common errors encountered when moving workflows to </p>
 <h3 id="python-not-found">Python not found</h3>
 <p>Under RHEL8, we have only installed Python 3, which must be executed using <code>python3</code> (not <code>python</code>). 
 As always, if you need additional packages, we strongly recommend setting up your own <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
 <p>In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a <a href="/clusters-at-yale/guides/conda/">conda environment</a>.</p>
-<h3 id="mpi-applications-fail-with-srun-command">MPI applications fail with <code>srun</code> command</h3>
-<p>If your workflow involves loading the 2020b version of OpenMPI and uses <code>srun</code> to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.</p>
-<p>For example, load the <code>OpenMPI/4.0.5-GCC-10.2.0-rhel8</code> module after loading the <code>gompi/2020b</code> module:</p>
-<div class="highlight"><pre><span></span><code>module load gompi/2020b
-module load OpenMPI/4.0.5-GCC-10.2.0-rhel8
-</code></pre></div>
 <h3 id="missing-system-libraries">Missing System Libraries</h3>
 <p>Some of the existing applications may depend on libraries that are no longer installed in the operating system.
 If you run into these errors please email <a href="mailto:hpc@yale.edu">hpc@yale.edu</a> and include which application/version you are using along with the full error message.
@@ -2387,7 +2355,7 @@ We will investigate these on a case-by-case basis and work to get the issue reso
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
       
     
   </small>
