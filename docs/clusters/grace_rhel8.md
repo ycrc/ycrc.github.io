@@ -1,6 +1,6 @@
 # Grace Operating System Upgrade
 
-Grace's current operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Grace's previous operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
 Therefore Grace has been upgraded to RHEL 8 during the August maintenance window, August 15-17, 2023.
 This provides a number of key benefits to Grace:
 
@@ -11,8 +11,6 @@ This provides a number of key benefits to Grace:
 1. shared application tree between McCleary and Grace, which brings software parity between the clusters\*
 
 \* some software and workflows will only be supported by YCRC staff on one of the cluster, e.g. tightly couple MPI codes (Grace) or RELION (McCleary).
-
-While we have done extensive testing both internally and with the new McCleary cluster, we recognize that there are a large number custom workflows on Grace that may need to be modified to work with the new operating system. To this end, we provided test partition ahead of the upgrade. Now that the upgrade has been rolled out cluster-wide, the test partitions (e.g. `rhel8_day`) have been removed. All jobs should be submitted to the normal partitions, which now contain exclusively RHEL 8 nodes.
 
 ## New Host Key
 
