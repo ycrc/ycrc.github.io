@@ -17,12 +17,6 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 
-!!! warning
-    You are limited to 4 interactive app instances (of any type) at one time. 
-    Additional instances will be rejected until you delete older open instances. 
-    For OnDemand jobs, closing the window does not terminate the interactive app job.
-    To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
-
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/grace/).
