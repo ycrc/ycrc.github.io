@@ -12,7 +12,7 @@ The YCRC Grace and McCleary clusters can be made available for Yale courses with
 
 ## Course ID
 
-Your course will be give a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names, web portal and, if applicable, node reservation.
+Your course will be give a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names and web portal.
 
 ## Course Accounts
 
@@ -36,20 +36,20 @@ Course members must use the course URL to log in to course accounts on Open OnDe
 
 ## Node Reservations
 
-*If* the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available via a "reservation". The nodes can be requested using the `--reservation=courseid` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. In each of the following examples, replace `courseid` with the id given to your course. Jobs on course reservations are subject to the restrictions of their parent partition (e.g. 24 hour walltime limit on `day` or 2-day walltime limit on `gpu`). If your jobs need to exceed those restrictions, please have your instructor or TF contact us.
+*If* the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available in an `education` or `education_gpu` partition. The nodes can be requested using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing the partitions with any other courses that also requested nodes. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
 
 Course members are welcome to use the public partitions of the cluster. However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
 ### Interactive Jobs
 
 ```
-salloc -p day --reservation=courseid
+salloc -p education 
 ```
 
-or if the reservation is for GPU nodes
+or if your instructor has reserved GPU nodes
 
 ```
-salloc -p gpu --gpus=1 --reservation=courseid
+salloc -p education_gpu --gpus=1
 ```
 
 ### Batch Jobs
@@ -57,20 +57,18 @@ salloc -p gpu --gpus=1 --reservation=courseid
 Add the following to your submission script:
 
 ```
-#SBATCH --reservation=courseid
+#SBATCH -p education
 ```
 
-or if the reservation is for GPU nodes
+or if your instructor has reserved GPU nodes
 
 ```
-#SBATCH -p gpu --gpus=1 --reservation=courseid
+#SBATCH -p education_gpu --gpus=1
 ```
 
 ### Web Portal
 
-In any of the app submission forms, type the `courseid` into the "Reservation" field. For standard (non-gpu) nodes, select `day` in the "Partition" field. If your node reservation contains GPU-enabled nodes, select `gpu`.
-
-Any course-specific apps listed under the "Courses" dropdown will automatically send all submitted jobs to the reservation, if one exists.
+In any of the app submission forms, type the correct paritition name into the "Partition" field.
 
 ## Cluster Maintenance
 
