@@ -1,40 +1,16 @@
 # Milgram Operating System Upgrade
 
-Milgram's current operating system, Red Hat (RHEL) 7, will be officially end-of-life in 2024 and will no longer be supported with security patches by the developer.
-Therefore Milgram will be upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
+Milgram's previous operating system, Red Hat (RHEL) 7, will be officially end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Therefore Milgram has been upgraded to RHEL 8 during the February maintenance window, February 6-8, 2024.
 This provides a number of key benefits to Milgram:
 
 1. continued security patches and support beyond 2024
 1. updated system libraries to better support modern software
 1. improved node management system to facilitate the growing number of nodes on Milgram
 
-While we have done extensive testing both internally and with McCleary and Grace clusters, we recognize that there are a large number of custom workflows on Milgram that may need to be modified to work with the new operating system. To this end, we have set aside `rhel8_devel` and `rhel8_day` partitions for use in debugging and testing of workflows before the February maintenance. 
-
-## Test Partitions
-
-To submit jobs to the test partitions, open the shell access on Open OnDemand or log into Milgram via SSH with the command:
-
-```
-ssh netid@milgram.ycrc.yale.edu
-```
-
-Request an interactive job on `rhel8_devel`:
-
-```
-salloc -p rhel8_devel -c 4 -t 2:00:00 
-```
-
-Submit a batch job to `rhel8_day`:
-
-```
-sbatch -p rhel8_day -c 4 -t 2:00:00 batch.sh
-```
-
-Please note that the `rhel8_devel` and `rhel8_day` partitions have the same job limits (e.g.maximum time limit) as the `interactive` and `day` partitions, respectively.   
-
-During this testing phase, there will be no charges applied to jobs which run in the RHEL8 partitions.
-
 ## Common Errors
+
+Below are common errors encountered when moving workflows to 
 
 ### Python not found
 
@@ -43,17 +19,6 @@ As always, if you need additional packages, we strongly recommend setting up you
 
 In addition, Python 2.7 is no longer support and therefore not installed by default. 
 To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/guides/conda/).
-
-### MPI applications fail with `srun` command
-
-If your workflow involves loading the 2020b version of OpenMPI and uses `srun` to run your application, please load the OpenMPI module built with RHEL8 after loading other necessary modules.
-
-For example, load the `OpenMPI/4.0.5-GCC-10.2.0-rhel8` module after loading the `gompi/2020b` module:
-
-```
-module load gompi/2020b
-module load OpenMPI/4.0.5-GCC-10.2.0-rhel8
-```
   
 ### Missing System Libraries
 
