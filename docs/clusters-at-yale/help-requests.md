@@ -16,7 +16,7 @@ Whenever requesting assistance with HPC related issues, please provide the YCRC 
 To assist with providing this information, we have included instructions below on retreiving the information if you are working in the command line interface.
 
 * Your NetID
-* name of the cluster you are working on (e.g. Grace, Milgram, Ruddle or McCleary)
+* name of the cluster you are working on (e.g. Grace, Milgram or McCleary)
 * instructions on how to repeat your issue. Please include the following:
 	* which directory are you working in or where you submitted your job
 		* Run the command `pwd` when you are in the directory where you encountered the issue
