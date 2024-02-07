@@ -37,8 +37,6 @@ plugins:
   - redirects:
         redirect_maps:
             'clusters-at-yale/clusters/index.md': 'clusters/index.md'
-            'clusters-at-yale/clusters/farnam.md': 'clusters/farnam.md'
-            'clusters-at-yale/clusters/ruddle.md': 'clusters/ruddle.md'
             'clusters-at-yale/clusters/milgram.md': 'clusters/milgram.md'
             'clusters-at-yale/clusters/grace.md': 'clusters/grace.md'
             'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
