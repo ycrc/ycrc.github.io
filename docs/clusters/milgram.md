@@ -36,6 +36,9 @@ Milgram is made up of several kinds of compute nodes. We group them into  (somet
 --8<-- "snippets/submission_rate_limit.md"
 
 
+!!! warning "Interactive Partition Name Change"
+    The 'interactive' and 'psych_interactive partitions have been renamed to 'devel' and 'psych_devel', respectively.  Please adjust your job submissions accordingly.
+
 ### Public Partitions
 
 See each tab below for more information about the available common use partitions.
