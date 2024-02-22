@@ -135,6 +135,16 @@ module load miniconda
 conda update -n  ycrc_default jupyter jupyter-lab
 ```
 
+### VSCode Server
+
+[Visual Studio Code](https://code.visualstudio.com) is a popular development tool that is widely used by our researchers.
+While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
+Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
+We have developed an application for OOD that launches VS Code in a job on a compute node and opens in a web-browser. 
+This application is called `code_server` and is available on all clusters.
+
+
+
 ### RStudio Server
 
 RStudio Server works with R from an R module or from an R Conda environment. Selected R modules on the cluster (ususally the two most recent versions installed on the cluster)
