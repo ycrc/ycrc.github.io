@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -883,6 +883,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode-server" class="md-nav__link">
+    VSCode Server
+  </a>
   
 </li>
         
@@ -2650,6 +2657,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vscode-server" class="md-nav__link">
+    VSCode Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rstudio-server" class="md-nav__link">
     RStudio Server
   </a>
@@ -2882,6 +2896,12 @@ ycrc_conda_env.sh update
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda update -n  ycrc_default jupyter jupyter-lab
 </code></pre></div></p>
+<h3 id="vscode-server">VSCode Server</h3>
+<p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.
+While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
+Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
+We have developed an application for OOD that launches VS Code in a job on a compute node and opens in a web-browser. 
+This application is called <code>code_server</code> and is available on all clusters.</p>
 <h3 id="rstudio-server">RStudio Server</h3>
 <p>RStudio Server works with R from an R module or from an R Conda environment. Selected R modules on the cluster (ususally the two most recent versions installed on the cluster)
 are available in the user form. If you want to use Conda R, you need to run <code>ycrc_conda_env.sh update</code> to have it listed in the user form. </p>
@@ -2971,7 +2991,7 @@ rstudio
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2024</span>
       
     
   </small>
