@@ -3,7 +3,7 @@ date: '2024-02-08'
 ---
 
 ## Milgram Maintenance
-_Februrary 6-8, 2024_
+_Februrary 6-8, 2024docs/news/2024-02-milgram.md_
 
 ### Software Updates
 
