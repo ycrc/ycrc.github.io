@@ -18,6 +18,8 @@ We maintain and support three Red Hat Linux compute clusters, listed below. Plea
 | [Grace](grace)      | 26,000             | 740                 | `grace.ycrc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)         |
 | [McCleary](mccleary)| 13,000               | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)           |
 | [Milgram](milgram)  | 2,400              | 80                  | `milgram.ycrc.yale.edu`        | HIPAA and other sensitive data                                    |
+| [Misha](misha)  | 380              | 12                  | `misha.ycrc.yale.edu`        | [Wu Tsai Institute](http://wti.yale.edu)                                    |
+
 
 ## Storage
 
