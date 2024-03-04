@@ -23,7 +23,7 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 | Apr 2-4 2024   | McCleary |
 | Jun 4-6 2024   | Grace    |
 | Aug 20-22 2024 | Milgram  |
-| Oct 1-3 2024   | McCleary |
+| Oct 15-17 2024 | McCleary |
 | Dec 3-5 2024   | Grace    |
 
 Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
