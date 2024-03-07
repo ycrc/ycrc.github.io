@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/isca/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2426,9 +2426,8 @@ export GFDL_WORK=$PALMER_SCRATCH/gfdl_work
 export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 </code></pre></div>
 <h2 id="update-the-environment">Update the Environment</h2>
-<p>Open <code>$HOME/programs/isca/src/extra/env/gfortran</code> and add the following after the first line (the starting with <code>echo</code>)</p>
-<div class="highlight"><pre><span></span><code>module restore isca
-conda activate isca
+<p>Open <code>$HOME/programs/isca/postprocessing/mppnccombine_run.sh</code> and remove the following line:</p>
+<div class="highlight"><pre><span></span><code>module purge
 </code></pre></div>
 <h2 id="select-an-experiment-and-update-the-flags">Select an Experiment and Update the Flags</h2>
 <p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>
@@ -2448,7 +2447,7 @@ conda activate isca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2024</span>
       
     
   </small>
