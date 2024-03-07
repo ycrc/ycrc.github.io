@@ -45,11 +45,10 @@ export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 
 ## Update the Environment
 
-Open `$HOME/programs/isca/src/extra/env/gfortran` and add the following after the first line (the starting with `echo`)
+Open `$HOME/programs/isca/postprocessing/mppnccombine_run.sh` and remove the following line:
 
 ```
-module restore isca
-conda activate isca
+module purge
 ```
 
 ## Select an Experiment and Update the Flags
