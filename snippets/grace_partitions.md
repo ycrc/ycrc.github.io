@@ -124,10 +124,11 @@
 === "gpu"
 
     Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    The gpu partition is only for batch jobs, all interactive GPU work should run in the gpu_devel partition.
 
     **Request Defaults**
 
-    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+    Unless specified, your jobs will run with the following options to `sbatch` options for this partition.
 
     ``` text
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -160,8 +161,8 @@
 
 === "gpu_devel"
 
-    Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.
-
+    Use the gpu_devel partition to work interactively with GPUs, including Open OnDemand jobs.
+    
     **Request Defaults**
 
     Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
