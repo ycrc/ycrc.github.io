@@ -2807,9 +2807,10 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </table>
 </div>
 <input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.
+The gpu partition is only for batch jobs, all interactive GPU work should run in the gpu_devel partition.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -2960,7 +2961,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </table>
 </div>
 <input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><label for="__tabbed_1_7">gpu_devel</label><div class="tabbed-content">
-<p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
+<p>Use the gpu_devel partition to work interactively with GPUs, including Open OnDemand jobs.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
