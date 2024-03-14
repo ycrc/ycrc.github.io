@@ -45,98 +45,12 @@ module avail pytorch
 
 ### Tensorflow
 
-You can find hints about the correct version of Tensorflow from their [tested build configurations](https://www.tensorflow.org/install/source#tested_build_configurations). You can also test your install with a simple script that imports Tensorflow (run on a GPU node). If you an `ImportError` that mentions missing libraries like `libcublas.so.9.0`, for example, that means that Tensorflow is probably expecting CUDA v 9.0 but cannot find it.
+Instructions for installing tensorflow on our clusters can be found [here](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/)
 
-### Tensorflow-gpu 
-Tensorflow-gpu is now depreciated for newer versions of CUDA and cuDNN and has been combined with the original tensorflow. Any version of tensorflow 2.* contains gpu capabilities and should be installed instead of attempting to install tensorflow-gpu.
-
-#### Create an Example Tensorflow Environment
-
-To create a conda environment with Tensorflow and uses the module CUDA:
-
-```bash
-# load modules, including the system CUDA and cuDNN
-module load miniconda CUDAcore/11.3.1 cuDNN/8.2.1.32-CUDA-11.3.1
-# save module collection for future use
-module save cuda11
-
-#create environment with required dependencies
-conda create --name tf-modulecuda python=3.11.* numpy pandas matplotlib jupyter -c conda-forge 
-
-# activate environment
-conda activate tf-modulecuda
-
-# use pip to install tensorflow
-pip install tensorflow==2.12.*
-```
-The most up to date instructions for creating your own cuda/tensorflow environment can be found [here](https://www.tensorflow.org/install/pip). 
-
-To create a conda environment with your own versions of Cuda and tensorflow:
-
-For tensorflow 2.12+:
-
-```bash
-module load miniconda
-conda create --name tf-condacuda python numpy pandas matplotlib jupyter cudatoolkit=11.8.0 
-conda activate tf-condacuda
-pip install nvidia-cudnn-cu11==8.6.0.163
-
-# Store system paths to cuda libraries for gpu communication
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-
-#install tensorflow
-pip install tensorflow==2.12.*
-
-```
-
-For tensorflow 2.11.*
-
-```bash
-module load miniconda
-conda create --name tf-condacuda python numpy pandas matplotlib jupyter cudatoolkit=11.3.1 cudnn=8.2.1
-conda activate tf-condacuda
-
-# Store system paths to cuda libraries for gpu communication
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-
-#install tensorflow
-pip install tensorflow==2.11.*
-
-```
-
-#### Use Your Environment
-
-To re-enter your environment you only need the following:
-
-```bash
-module load miniconda
-conda activate tf-condacuda
-
-```
-Or if using the module-installed CUDA:
-
-``` bash
-module restore cuda11
-conda activate tf-modulecuda
-```
 
 ### PyTorch
 
-As with Tensorflow, sometimes the conda-supplied CUDA libraries are sufficient for the version of PyTorch you are installing. 
-If not make sure you have the version of CUDA referenced on the PyTorch site [in their install instructions](https://pytorch.org/get-started/locally/).
-They also provide [instructions on installing previous versions](https://pytorch.org/get-started/previous-versions/) compatible with older versions of CUDA.
-
-Following the instructions on their site, create a PyTorch environment using `conda`:
-
-```bash
-module load miniconda
-conda create --name pytorch_env pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
-
-```
-
+Instructions for installing tensorflow on our clusters can be found [here](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/)
 
 ## Compile `.c` or `.cpp` Files with CUDA code
 
