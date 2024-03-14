@@ -134,6 +134,7 @@ nav:
         - Job Scheduling:
             - clusters-at-yale/job-scheduling/index.md
             - clusters-at-yale/job-scheduling/resource-requests.md
+            - clusters-at-yale/job-scheduling/getusage.md
             - clusters-at-yale/job-scheduling/common-job-failures.md
             - clusters-at-yale/job-scheduling/resource-usage.md
             - clusters-at-yale/job-scheduling/fairshare.md
