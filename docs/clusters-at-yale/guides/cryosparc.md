@@ -4,7 +4,7 @@ Getting cryoSPARC set up and running on the YCRC clusters is something of a task
 
 ## Install
 
-Before you get started, you will need to request a licence from Structura [from their website](https://cryosparc.com/download/). These instructions are gently modified from the [official cryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
+Before you get started, you will need to request a licence from Structura [from their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official cryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
 
 ### 1. Set up Environment
 
@@ -79,9 +79,7 @@ cd ${install_path}/cryosparc_master
 source ~/.bashrc
 ```
 
-## Run
-
-### 1. Launch cryoSPARC server
+### 4. Test
 
 The installation process will normally attempt to launch cryoSPARC automatically.  Check its status and launch manually if need be.
 
@@ -90,26 +88,92 @@ cryosparcm status
 cryosparcm start (if not running) 
 ```
 
-### 2. Access the cryoSPARC interface
+If everything is running, you should be able to launch Firefox and see the cryoSPARC login interface at http://localhost:39000.
 
-In your interactive session with –x11, or Open OnDemand Remote Desktop, launch a browser and go to https://localhost:39000 . Log in with your email and the password you chose above.
-
-### 3. Clean up
-
-When you are finished with your current cryoSPARC session,
+When you are done testing, shut down cryoSPARC,
 
 ``` bash
 cryosparcm stop
 ```
 
-and shut down your Open OnDemand session.
+and exit your interactive session.
 
-### 4. Relaunch
+## Run
 
-You are not guaranteed to get the same GPU node every time, so you need to set cryoSPARC to use whichever one you are running on.  Once you have started a new GPU node session,
+There are two approaches to running cryoSPARC for data processing: directly in an interactive session as above, and in a remote
+session controlled by a batch script. Due to the [current time limitations](https://docs.ycrc.yale.edu/clusters/mccleary/#public-partitions) on the interactive public partitions, it is recommended to use the batch script method. If you are running in the pi_cryoem or pi_tomography partition, you have a longer interactive time limit, but the batch script method is still preferable, as it cleans up the cryoSPARC session automatically. 
+
+You are not guaranteed to get the same GPU node every time, so you need to set cryoSPARC to use whichever one you are running on. The first step
+in the following directions reconfigures the node name to match the current compute node.
+
+### 1. Submit a batch script
+
+The following batch script template illustrates how to set up a remote cryoSPARC session.  By default, it will create an output file whose name
+contains the compute node that cryoSPARC has been launched on.
+
+#### a. Copy the batch script template below into a file in the desired directory on the cluster.
 
 ``` bash
+#!/bin/bash
+#SBATCH --partition=gpu
+#SBATCH --time=2-00:00:00
+#SBATCH --mem=64G
+#SBATCH -N 1 -c 8
+#SBATCH --gpus=4
+#SBATCH --signal=B:10@60 # send the signal '10' at 60s before job finishes
+#SBATCH --job-name=cryoSPARC-batch
+#SBATCH --output="cryosparc-%N-%j.out"
+
+# Shut down cryoSPARC cleanly when timeout is imminent
+trap "echo -n 'TIMEOUT @ '; date; echo -n 'Shutting down cryoSPARC...'; cryosparcm stop; echo 'Done' " 10
+
+# Shut down cryoSPARC cleanly when scancel is invoked
+trap "echo -n 'CANCEL @ '; date; echo -n 'Shutting down cryoSPARC...'; cryosparcm stop; echo 'Done' " 15
+
 mkdir /tmp/${USER}
+export master_host=$(hostname)
+export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")
+
+sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh
+
+source $base_dir/config.sh
+
+cryosparcm start
+sleep infinity &
+wait
+```
+
+#### b. Adjust the script contents as desired for memory, CPU, time, and partition.
+
+#### c. Submit the script to SLURM.
+
+``` bash
+sbatch YourScriptName
+```
+
+#### d. Check the contents of the job output file to make sure that cryoSPARC has launched.
+
+#### e. In an Open OnDemand Remote Desktop session, open the Firefox web browser, and enter the name of the compute node your batch job is running on 
+(obtainable from the output filename, or from squeue).
+
+http://YourComputeNode:39000
+
+This should present you with the cryoSPARC login screen.
+
+#### f. You can exit your Remote Desktop session without terminating cryoSPARC, and reconnect to your cryoSPARC instance later. 
+
+#### g. cryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.
+
+``` bash
+scancel YourJobID
+```
+
+### 2. Relaunching in an interactive session (not generally recommended, as noted above)
+
+  Once you have started a new GPU node session,
+
+``` bash
+mkdir -p /tmp/${USER}
 export master_host=$(hostname)
 export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")
 
@@ -122,7 +186,7 @@ cryosparcm start
 
 and then connect to https://localhost:39000 as above.
 
-### 5. Running on multiple nodes
+## Running on multiple nodes
 
 In principle, you can request multiple nodes for your job session, and configure cryoSPARC to use additional nodes as worker nodes. Contact YCRC staff for assistance.
   
