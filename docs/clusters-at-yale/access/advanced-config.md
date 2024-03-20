@@ -21,14 +21,12 @@ Host *.ycrc.yale.edu mccleary grace milgram
     # To re-use your connections with multi-factor authentication
     # Uncomment the two lines below
     #ControlMaster auto
-    #ControlPath ~/.ssh/tmp/%h_%p_%r
+    #ControlPath /tmp/%h_%p_%r
+    #ControlPersist 2h
 
-Host mccleary grace milgram
+Host mccleary grace milgram misha
     HostName %h.ycrc.yale.edu
 ```
-
-!!! warning
-    For multiplexing to work, the `~/.ssh/tmp` directory must exist. Create it with `mkdir -p ~/.ssh/tmp`
 
 For more info on ssh configuration, run:
 
