@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2533,6 +2533,13 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
+<td>66</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, common, bigtmp</td>
+</tr>
+<tr>
 <td>72</td>
 <td>8268</td>
 <td>48</td>
@@ -2540,7 +2547,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 8268, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>107</td>
+<td>130</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -2657,11 +2664,11 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>25</td>
-<td>6240</td>
-<td>36</td>
-<td>181</td>
-<td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
+<td>18</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, common, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -2720,10 +2727,9 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </table>
 </div>
 <input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.
-The gpu partition is only for batch jobs, all interactive GPU work should run in the gpu_devel partition.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>sbatch</code> options for this partition.</p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
 <div class="admonition warning">
@@ -2840,7 +2846,7 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </table>
 </div>
 <input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">gpu_devel</label><div class="tabbed-content">
-<p>Use the gpu_devel partition to work interactively with GPUs, including Open OnDemand jobs.</p>
+<p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -3000,18 +3006,18 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>6240</td>
-<td>36</td>
-<td>1505</td>
-<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
-</tr>
-<tr>
 <td>4</td>
 <td>6346</td>
 <td>32</td>
 <td>3936</td>
 <td>cascadelake, avx512, 6346, common, nogpu, bigtmp</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6240</td>
+<td>36</td>
+<td>1505</td>
+<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3133,6 +3139,56 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>icelake, avx512, 6326, pi, standard, bigtmp, l40s</td>
 </tr>
 <tr>
+<td>6</td>
+<td>6342</td>
+<td>48</td>
+<td>2000</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>50</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>84</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, common, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>469</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
+</tr>
+<tr>
+<td>11</td>
+<td>6326</td>
+<td>32</td>
+<td>206</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
+</tr>
+<tr>
 <td>2</td>
 <td>6326</td>
 <td>32</td>
@@ -3141,16 +3197,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>24</td>
 <td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
-</tr>
-<tr>
-<td>12</td>
-<td>6326</td>
-<td>32</td>
-<td>206</td>
-<td>a5000</td>
-<td>4</td>
-<td>24</td>
-<td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
 </tr>
 <tr>
 <td>72</td>
@@ -3193,16 +3239,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp</td>
 </tr>
 <tr>
-<td>2</td>
-<td>6240</td>
-<td>36</td>
-<td>166</td>
-<td>rtx3090</td>
-<td>4</td>
-<td>24</td>
-<td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, rtx3090</td>
-</tr>
-<tr>
 <td>4</td>
 <td>6240</td>
 <td>36</td>
@@ -3213,7 +3249,7 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>cascadelake, avx512, 6240, doubleprecision, common, v100</td>
 </tr>
 <tr>
-<td>5</td>
+<td>3</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -3221,36 +3257,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>11</td>
 <td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>20</td>
-<td>8260</td>
-<td>96</td>
-<td>181</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 8260, nogpu, pi</td>
-</tr>
-<tr>
-<td>3</td>
-<td>6240</td>
-<td>36</td>
-<td>1505</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>1001</td>
-<td>a100</td>
-<td>4</td>
-<td>80</td>
-<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3261,16 +3267,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td></td>
 <td></td>
 <td>cascadelake, avx512, 6346, common, nogpu, bigtmp</td>
-</tr>
-<tr>
-<td>3</td>
-<td>6234</td>
-<td>16</td>
-<td>1505</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, nogpu, 6234, pi, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3313,7 +3309,7 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, pi, rtx3090</td>
 </tr>
 <tr>
-<td>2</td>
+<td>1</td>
 <td>6240</td>
 <td>36</td>
 <td>361</td>
@@ -3321,6 +3317,36 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>40</td>
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
+</tr>
+<tr>
+<td>20</td>
+<td>8260</td>
+<td>96</td>
+<td>181</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 8260, nogpu, pi</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6240</td>
+<td>36</td>
+<td>1505</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, common, bigtmp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
 </tr>
 <tr>
 <td>8</td>
@@ -3343,7 +3369,17 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>cascadelake, avx512, nogpu, 6234, common, bigtmp</td>
 </tr>
 <tr>
-<td>6</td>
+<td>3</td>
+<td>6234</td>
+<td>16</td>
+<td>1505</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, nogpu, 6234, pi, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
 <td>5222</td>
 <td>8</td>
 <td>181</td>
@@ -3393,14 +3429,14 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>hdr, skylake, avx512, 6136, nogpu, standard, pi, bigtmp</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5122</td>
-<td>8</td>
+<td>9</td>
+<td>6136</td>
+<td>24</td>
 <td>181</td>
-<td>rtx2080</td>
+<td>p100</td>
 <td>4</td>
-<td>8</td>
-<td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
+<td>16</td>
+<td>skylake, avx512, 6136, doubleprecision, pi, p100</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3413,14 +3449,14 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
 </tr>
 <tr>
-<td>9</td>
-<td>6136</td>
-<td>24</td>
+<td>2</td>
+<td>5122</td>
+<td>8</td>
 <td>181</td>
-<td>p100</td>
+<td>rtx2080</td>
 <td>4</td>
-<td>16</td>
-<td>skylake, avx512, 6136, doubleprecision, pi, p100</td>
+<td>8</td>
+<td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3453,16 +3489,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>broadwell, E5-2660_v4, nogpu, standard, pi, oldest</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>119</td>
-<td>gtx1080ti</td>
-<td>4</td>
-<td>11</td>
-<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
-</tr>
-<tr>
 <td>6</td>
 <td>E5-2660_v4</td>
 <td>28</td>
@@ -3481,6 +3507,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td></td>
 <td></td>
 <td>broadwell, E7-4820_v4, nogpu, pi, oldest</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3562,16 +3598,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
 </tr>
 <tr>
-<td>2</td>
-<td>6326</td>
-<td>32</td>
-<td>206</td>
-<td>a5000</td>
-<td>4</td>
-<td>24</td>
-<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
-</tr>
-<tr>
 <td>12</td>
 <td>6326</td>
 <td>32</td>
@@ -3580,6 +3606,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>24</td>
 <td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>206</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3610,16 +3646,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>11</td>
 <td>cascadelake, avx512, 6240, singleprecision, common, bigtmp, rtx2080ti</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>1001</td>
-<td>a100</td>
-<td>4</td>
-<td>80</td>
-<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3672,6 +3698,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>cascadelake, avx512, 6240, doubleprecision, bigtmp, common, a100</td>
 </tr>
 <tr>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
+</tr>
+<tr>
 <td>6</td>
 <td>5222</td>
 <td>8</td>
@@ -3680,26 +3716,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>5122</td>
-<td>8</td>
-<td>181</td>
-<td>rtx2080</td>
-<td>4</td>
-<td>8</td>
-<td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6136</td>
-<td>24</td>
-<td>90</td>
-<td>v100</td>
-<td>2</td>
-<td>16</td>
-<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
 </tr>
 <tr>
 <td>9</td>
@@ -3712,14 +3728,24 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>skylake, avx512, 6136, doubleprecision, pi, p100</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E5-2637_v4</td>
+<td>2</td>
+<td>6136</td>
+<td>24</td>
+<td>90</td>
+<td>v100</td>
+<td>2</td>
+<td>16</td>
+<td>skylake, avx512, 6136, doubleprecision, common, bigtmp, v100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5122</td>
 <td>8</td>
-<td>119</td>
-<td>gtx1080ti</td>
+<td>181</td>
+<td>rtx2080</td>
 <td>4</td>
-<td>11</td>
-<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
+<td>8</td>
+<td>skylake, avx512, 5122, singleprecision, pi, rtx2080</td>
 </tr>
 <tr>
 <td>6</td>
@@ -3730,6 +3756,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>1</td>
 <td>16</td>
 <td>broadwell, E5-2660_v4, doubleprecision, common, p100, oldest</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>119</td>
+<td>gtx1080ti</td>
+<td>4</td>
+<td>11</td>
+<td>broadwell, E5-2637_v4, singleprecision, pi, bigtmp, gtx1080ti, oldest</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3843,6 +3879,26 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>2000</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>15</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>2</td>
 <td>6326</td>
@@ -4170,6 +4226,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </thead>
 <tbody>
 <tr>
+<td>6</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
 <td>7</td>
 <td>8268</td>
 <td>48</td>
@@ -4275,6 +4338,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>6</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>12</td>
 <td>6136</td>
@@ -4535,6 +4605,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>8</td>
 <td>6240</td>
@@ -4963,6 +5040,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </thead>
 <tbody>
 <tr>
+<td>6</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
 <td>2</td>
 <td>8268</td>
 <td>48</td>
@@ -5050,7 +5137,21 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </thead>
 <tbody>
 <tr>
-<td>2</td>
+<td>4</td>
+<td>6342</td>
+<td>48</td>
+<td>2000</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>4</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -5100,6 +5201,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>8</td>
 <td>8268</td>
@@ -5288,6 +5399,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <tbody>
 <tr>
 <td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
+<td>2</td>
 <td>6326</td>
 <td>32</td>
 <td>469</td>
@@ -5295,16 +5416,6 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>24</td>
 <td>icelake, avx512, 6326, doubleprecision, a5000, pi</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>1001</td>
-<td>a100</td>
-<td>4</td>
-<td>80</td>
-<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -5335,6 +5446,16 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 <td>4</td>
 <td>11</td>
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>cascadelake, avx512, 6326, doubleprecision, bigtmp, pi, a100-80g</td>
 </tr>
 </tbody>
 </table>
@@ -5424,6 +5545,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>2</td>
 <td>6240</td>
@@ -5611,6 +5739,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </thead>
 <tbody>
 <tr>
+<td>2</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
+<tr>
 <td>1</td>
 <td>8268</td>
 <td>48</td>
@@ -5654,6 +5789,13 @@ The gpu partition is only for batch jobs, all interactive GPU work should run in
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>1</td>
+<td>6342</td>
+<td>48</td>
+<td>488</td>
+<td>icelake, avx512, 6342, nogpu, standard, pi, bigtmp</td>
+</tr>
 <tr>
 <td>1</td>
 <td>6240</td>
