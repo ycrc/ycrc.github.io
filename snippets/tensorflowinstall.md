@@ -1,9 +1,27 @@
+=== "tensorflow 2.16"
+
+    ```bash
+    module load miniconda
+    conda create -n tf16
+    pip install tensorflow[and-cuda]==2.16.*
+    
+    #tensorflow can't find cuda libraries, need to tell it
+    mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+    echo 'NVIDIA_DIR=$(dirname $(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)")))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+    echo 'for dir in $NVIDIA_DIR/*; do     if [ -d "$dir/lib" ]; then         export LD_LIBRARY_PATH="$dir/lib:$LD_LIBRARY_PATH";     fi; done' 
+
+    ####make changes permanent
+    conda deactivate 
+
+    conda activate tf16
+    ```
+
 === "tensorflow 2.15"
 
     ```bash
     module load miniconda
     conda create -n tf15 python=3.11.*
-    pip install tensorflow[and-cuda]
+    pip install tensorflow[and-cuda]==2.15.*
     ```
 
 === "tensorflow 2.14"
