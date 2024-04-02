@@ -124,14 +124,24 @@ contains the compute node that cryoSPARC has been launched on.
 #SBATCH --job-name=cryoSPARC-batch
 #SBATCH --output="cryosparc-%N-%j.out"
 
+function cleanup()
+{
+	date
+	echo -n "Shutting down cryoSPARC @ "; date
+	cryosparcm cli "remove_scheduler_target_node('$worker_host')"
+        cryosparcm stop
+        echo "Done"
+}
+
 # Shut down cryoSPARC cleanly when timeout is imminent
-trap "echo -n 'TIMEOUT @ '; date; echo -n 'Shutting down cryoSPARC...'; cryosparcm stop; echo 'Done' " 10
+trap cleanup 10
 
 # Shut down cryoSPARC cleanly when scancel is invoked
-trap "echo -n 'CANCEL @ '; date; echo -n 'Shutting down cryoSPARC...'; cryosparcm stop; echo 'Done' " 15
+trap cleanup 15
 
 mkdir /tmp/${USER}
 export master_host=$(hostname)
+export worker_host=$(hostname)
 export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")
 
 sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh
@@ -139,6 +149,15 @@ sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNA
 source $base_dir/config.sh
 
 cryosparcm start
+
+# Forcibly add the current node as a worker
+cryosparcw connect \
+        --worker $worker_host \
+        --master $master_host \
+        --port 39000 \
+        --ssdpath /tmp/${USER} \
+        --cpus $SLURM_CPUS_PER_TASK
+
 sleep infinity &
 wait
 ```
@@ -175,6 +194,7 @@ scancel YourJobID
 ``` bash
 mkdir -p /tmp/${USER}
 export master_host=$(hostname)
+export worker_host=$(hostname)
 export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")
 
 sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh
@@ -182,9 +202,25 @@ sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNA
 source $base_dir/config.sh
 
 cryosparcm start
+
+# Forcibly add the current node as a worker
+cryosparcw connect \
+        --worker $worker_host \
+        --master $master_host \
+        --port 39000 \
+        --ssdpath /tmp/${USER} \
+        --cpus $SLURM_CPUS_PER_TASK
 ```
 
 and then connect to https://localhost:39000 as above.
+
+Among other things, this will not perform the automatic cleanup of cryoSPARC lockfiles or of previous worker nodes,
+so you will want to manually run shutdown and worker removal when you are done with cryoSPARC:
+
+``` bash
+cryosparcm cli "remove_scheduler_target_node('$worker_host')"
+cryosparcm stop
+```
 
 ## Running on multiple nodes
 
