@@ -2545,14 +2545,24 @@ contains the compute node that cryoSPARC has been launched on.</p>
 <span class="c1">#SBATCH --job-name=cryoSPARC-batch</span>
 <span class="c1">#SBATCH --output=&quot;cryosparc-%N-%j.out&quot;</span>
 
+<span class="k">function</span> cleanup<span class="o">()</span>
+<span class="o">{</span>
+    date
+    <span class="nb">echo</span> -n <span class="s2">&quot;Shutting down cryoSPARC @ &quot;</span><span class="p">;</span> date
+    cryosparcm cli <span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
+        cryosparcm stop
+        <span class="nb">echo</span> <span class="s2">&quot;Done&quot;</span>
+<span class="o">}</span>
+
 <span class="c1"># Shut down cryoSPARC cleanly when timeout is imminent</span>
-<span class="nb">trap</span> <span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo -n &#39;Shutting down cryoSPARC...&#39;; cryosparcm stop; echo &#39;Done&#39; &quot;</span> <span class="m">10</span>
+<span class="nb">trap</span> cleanup <span class="m">10</span>
 
 <span class="c1"># Shut down cryoSPARC cleanly when scancel is invoked</span>
-<span class="nb">trap</span> <span class="s2">&quot;echo -n &#39;CANCEL @ &#39;; date; echo -n &#39;Shutting down cryoSPARC...&#39;; cryosparcm stop; echo &#39;Done&#39; &quot;</span> <span class="m">15</span>
+<span class="nb">trap</span> cleanup <span class="m">15</span>
 
 mkdir /tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
 <span class="nb">export</span> <span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
 <span class="nb">export</span> <span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
 
 sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span> <span class="nv">$base_dir</span>/config.sh
@@ -2560,6 +2570,15 @@ sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CR
 <span class="nb">source</span> <span class="nv">$base_dir</span>/config.sh
 
 cryosparcm start
+
+<span class="c1"># Forcibly add the current node as a worker</span>
+cryosparcw connect <span class="se">\</span>
+        --worker <span class="nv">$worker_host</span> <span class="se">\</span>
+        --master <span class="nv">$master_host</span> <span class="se">\</span>
+        --port <span class="m">39000</span> <span class="se">\</span>
+        --ssdpath /tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
+        --cpus <span class="nv">$SLURM_CPUS_PER_TASK</span>
+
 sleep infinity <span class="p">&amp;</span>
 <span class="nb">wait</span>
 </code></pre></div>
@@ -2580,6 +2599,7 @@ sleep infinity <span class="p">&amp;</span>
 <p>Once you have started a new GPU node session,</p>
 <div class="highlight"><pre><span></span><code>mkdir -p /tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
 <span class="nb">export</span> <span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
 <span class="nb">export</span> <span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
 
 sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span> <span class="nv">$base_dir</span>/config.sh
@@ -2587,8 +2607,21 @@ sed -i.bak <span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CR
 <span class="nb">source</span> <span class="nv">$base_dir</span>/config.sh
 
 cryosparcm start
+
+<span class="c1"># Forcibly add the current node as a worker</span>
+cryosparcw connect <span class="se">\</span>
+        --worker <span class="nv">$worker_host</span> <span class="se">\</span>
+        --master <span class="nv">$master_host</span> <span class="se">\</span>
+        --port <span class="m">39000</span> <span class="se">\</span>
+        --ssdpath /tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
+        --cpus <span class="nv">$SLURM_CPUS_PER_TASK</span>
 </code></pre></div>
 <p>and then connect to https://localhost:39000 as above.</p>
+<p>Among other things, this will not perform the automatic cleanup of cryoSPARC lockfiles or of previous worker nodes,
+so you will want to manually run shutdown and worker removal when you are done with cryoSPARC:</p>
+<div class="highlight"><pre><span></span><code>cryosparcm cli <span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
+cryosparcm stop
+</code></pre></div>
 <h2 id="running-on-multiple-nodes">Running on multiple nodes</h2>
 <p>In principle, you can request multiple nodes for your job session, and configure cryoSPARC to use additional nodes as worker nodes. Contact YCRC staff for assistance.</p>
 <h2 id="troubleshoot">Troubleshoot</h2>
@@ -2604,7 +2637,7 @@ cryosparcm start
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2024</span>
       
     
   </small>
