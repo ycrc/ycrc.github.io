@@ -15,10 +15,10 @@ We maintain and support three Red Hat Linux compute clusters, listed below. Plea
 
 | Cluster Name        | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                            |
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
-| [Grace](grace)      | 26,000             | 740                 | `grace.ycrc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)         |
-| [McCleary](mccleary)| 13,000               | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)           |
-| [Milgram](milgram)  | 2,400              | 80                  | `milgram.ycrc.yale.edu`        | HIPAA and other sensitive data                                    |
-| [Misha](misha)  | 380              | 12                  | `misha.ycrc.yale.edu`        | [Wu Tsai Institute](http://wti.yale.edu)                                    |
+| [Grace](grace)      | 26,000             | 740                 | `grace.ycrc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)|
+| [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)     |
+| [Milgram](milgram)  | 2,400              | 80                  | `milgram.ycrc.yale.edu`        | HIPAA and other sensitive data                |
+| [Misha](misha)      | 2176               | 40                  | `misha.ycrc.yale.edu`        | [Wu Tsai Institute](http://wti.yale.edu)                    |
 
 
 ## Storage
@@ -30,5 +30,6 @@ We maintain several high performance storage systems. Listed below are these sha
 | Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | Vast                      | home, scratch storage              |
 | Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | Slayman  | /gpfs/slayman | 1.0 PiB  | Grace, McCleary | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
-| Milgram  | /gpfs/milgram | 3.0 PiB  | Milgram\*      | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
 | YCGA     | /gpfs/ycga    | 3.0 PiB  | McCleary      | IBM Spectrum Scale (GPFS) | YCGA storage     |
+| Milgram  | /gpfs/milgram | 3.0 PiB  | Milgram\*      | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
+| Radev    | /gpfs/radev   | 2.0 PiB  | Misha\*      | IBM Spectrum Scale (GPFS) | Misha primary storage                  |
