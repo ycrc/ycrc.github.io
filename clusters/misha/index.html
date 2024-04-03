@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/misha/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2461,7 +2461,126 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">gpu</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the day partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>6458</td>
+<td>64</td>
+<td>480</td>
+<td>saphirerapids, avx512, 6458q, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">devel</label><div class="tabbed-content">
+<p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6458</td>
+<td>64</td>
+<td>480</td>
+<td>saphirerapids, avx512, 6458q, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">week</label><div class="tabbed-content">
+<p>Use the week partition for jobs that need a longer runtime than day allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the week partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>6458</td>
+<td>64</td>
+<td>480</td>
+<td>saphirerapids, avx512, 6458q, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -2488,14 +2607,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>6</td>
+<td>5</td>
 <td>6326</td>
 <td>32</td>
 <td>1001</td>
 <td>a100</td>
 <td>4</td>
-<td>40</td>
-<td>icelake, avx512, 6326, doubleprecision, a100_80G, common</td>
+<td>80</td>
+<td>icelake, avx512, 6326, doubleprecision, a100-80g, common</td>
 </tr>
 <tr>
 <td>6</td>
@@ -2506,6 +2625,74 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>48</td>
 <td>icelake, avx512, 6326, doubleprecision, a40, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">gpu_devel</label><div class="tabbed-content">
+<p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=UNLIMITED
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6326, doubleprecision, a100-80g-MIG, common</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><label for="__tabbed_1_6">bigmem</label><div class="tabbed-content">
+<p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>6458</td>
+<td>64</td>
+<td>1992</td>
+<td>saphirerapids, avx512, 6458q, common</td>
 </tr>
 </tbody>
 </table>
