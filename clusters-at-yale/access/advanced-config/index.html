@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2403,7 +2403,7 @@
 # Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
 # On a Mac you still need xquartz installed
 
-Host *.ycrc.yale.edu mccleary grace milgram
+Host *.ycrc.yale.edu mccleary grace milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
@@ -2432,7 +2432,7 @@ ssh-add -K ~/.ssh/id_rsa
 <p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
 </div>
 <p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.ycrc.yale.edu ...</code> rule if it does).</p>
-<div class="highlight"><pre><span></span><code>Host *.ycrc.yale.edu mccleary grace milgram
+<div class="highlight"><pre><span></span><code>Host *.ycrc.yale.edu mccleary grace milgram misha
     UseKeychain yes
     AddKeystoAgent yes
 </code></pre></div>
@@ -2447,7 +2447,7 @@ ssh-add -K ~/.ssh/id_rsa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2024</span>
       
     
   </small>
