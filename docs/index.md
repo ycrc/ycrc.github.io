@@ -43,7 +43,7 @@ include as much detail as possible about your request and we'll find the right p
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
 |[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [McCleary](/clusters/mccleary) | Computational Chemistry, Python, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
+|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
 
 

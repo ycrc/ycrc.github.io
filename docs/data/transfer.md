@@ -11,6 +11,7 @@ Each cluster has dedicated nodes specially networked for high speed transfers bo
 | Grace     | `transfer-grace.ycrc.yale.edu`          |
 | McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
 | Milgram   | `transfer-milgram.ycrc.yale.edu`        |
+| Misha   | `transfer-misha.ycrc.yale.edu`        |
 
 
 From the login node of any cluster, you can `ssh` into the transfer node. This is useful for transferring data to or from locations other than your local machine (see below for details).
