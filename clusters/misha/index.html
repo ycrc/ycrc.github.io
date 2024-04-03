@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/misha/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2495,6 +2495,22 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>Maximum job time limit</td>
 <td><code>1-00:00:00</code></td>
 </tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>384</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>3840G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>128</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1280G</code></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Available Compute Nodes</strong></p>
@@ -2526,6 +2542,30 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the devel partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>32G</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Available Compute Nodes</strong></p>
 <p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
 <table>
@@ -2568,6 +2608,22 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <tr>
 <td>Maximum job time limit</td>
 <td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>192</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>1920G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>32</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>320G</code></td>
 </tr>
 </tbody>
 </table>
@@ -2621,16 +2677,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>5</td>
-<td>6326</td>
-<td>32</td>
-<td>1001</td>
-<td>a100</td>
-<td>4</td>
-<td>80</td>
-<td>icelake, avx512, 6326, doubleprecision, a100-80g, common</td>
-</tr>
-<tr>
 <td>6</td>
 <td>6326</td>
 <td>32</td>
@@ -2639,6 +2685,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>48</td>
 <td>icelake, avx512, 6326, doubleprecision, a40, common</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6326</td>
+<td>32</td>
+<td>1001</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>icelake, avx512, 6326, doubleprecision, a100-80g, common</td>
 </tr>
 </tbody>
 </table>
@@ -2688,6 +2744,30 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
 </code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>64</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>2T</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Available Compute Nodes</strong></p>
 <p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
 <table>
