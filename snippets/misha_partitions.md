@@ -24,7 +24,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |18|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "devel"
 
@@ -44,7 +44,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |2|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "week"
 
@@ -72,7 +72,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |6|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "gpu"
 
@@ -137,5 +137,5 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|1992|saphirerapids, avx512, 6458q, common|
+    |2|6458|64|1992|sapphirerapids, avx512, 6458q, common|
 
