@@ -101,11 +101,23 @@
     Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
-    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=UNLIMITED
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
     ```
 
     !!! warning "GPU jobs need GPUs!"
         Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+    **Job Limits**
+
+    Jobs submitted to the gpu partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`2-00:00:00`|
+    |Maximum CPUs per group|`192`|
+    |Maximum GPUs per group|`24`|
+    |Maximum CPUs per user|`96`|
+    |Maximum GPUs per user|`12`|
+
     **Available Compute Nodes**
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
@@ -124,11 +136,22 @@
     Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
 
     ``` text
-    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=UNLIMITED
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
     ```
 
     !!! warning "GPU jobs need GPUs!"
         Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+    **Job Limits**
+
+    Jobs submitted to the gpu_devel partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`06:00:00`|
+    |Maximum CPUs per user|`10`|
+    |Maximum GPUs per user|`2`|
+    |Maximum memory per user|`70G`|
+
     **Available Compute Nodes**
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
