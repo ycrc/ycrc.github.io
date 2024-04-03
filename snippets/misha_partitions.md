@@ -17,6 +17,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
+    |Maximum CPUs per group|`384`|
+    |Maximum memory per group|`3840G`|
+    |Maximum CPUs per user|`128`|
+    |Maximum memory per user|`1280G`|
 
     **Available Compute Nodes**
 
@@ -24,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |18|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "devel"
 
@@ -38,13 +42,23 @@
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
     ```
 
+    **Job Limits**
+
+    Jobs submitted to the devel partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`06:00:00`|
+    |Maximum CPUs per user|`4`|
+    |Maximum memory per user|`32G`|
+
     **Available Compute Nodes**
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |2|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "week"
 
@@ -65,6 +79,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`7-00:00:00`|
+    |Maximum CPUs per group|`192`|
+    |Maximum memory per group|`1920G`|
+    |Maximum CPUs per user|`32`|
+    |Maximum memory per user|`320G`|
 
     **Available Compute Nodes**
 
@@ -72,7 +90,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|6458|64|480|saphirerapids, avx512, 6458q, common|
+    |6|6458|64|480|sapphirerapids, avx512, 6458q, common|
 
 === "gpu"
 
@@ -94,8 +112,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |5|6326|32|1001|a100|4|80|icelake, avx512, 6326, doubleprecision, a100-80g, common|
     |6|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
+    |5|6326|32|1001|a100|4|80|icelake, avx512, 6326, doubleprecision, a100-80g, common|
 
 === "gpu_devel"
 
@@ -131,11 +149,21 @@
     --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
     ```
 
+    **Job Limits**
+
+    Jobs submitted to the bigmem partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`1-00:00:00`|
+    |Maximum CPUs per user|`64`|
+    |Maximum memory per user|`2T`|
+
     **Available Compute Nodes**
 
     Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|1992|saphirerapids, avx512, 6458q, common|
+    |2|6458|64|1992|sapphirerapids, avx512, 6458q, common|
 
