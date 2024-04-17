@@ -32,7 +32,7 @@ Course members must use the course URL to log in to course accounts on Open OnDe
 
 ### SSH Access
 
-To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your cluster account name. For example:
+To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
 
 ```
 ssh courseid_netid@grace.ycrc.yale.edu
