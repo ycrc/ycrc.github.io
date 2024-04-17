@@ -906,18 +906,31 @@
     Course Accounts
   </a>
   
+    <nav class="md-nav" aria-label="Course Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#course-specific-web-portal" class="md-nav__link">
+    Course-specific Web Portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-access" class="md-nav__link">
+    SSH Access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#course-storage" class="md-nav__link">
     Course Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-specific-web-portal" class="md-nav__link">
-    Course-specific Web Portal
   </a>
   
 </li>
@@ -2446,18 +2459,31 @@
     Course Accounts
   </a>
   
+    <nav class="md-nav" aria-label="Course Accounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#course-specific-web-portal" class="md-nav__link">
+    Course-specific Web Portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-access" class="md-nav__link">
+    SSH Access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#course-storage" class="md-nav__link">
     Course Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-specific-web-portal" class="md-nav__link">
-    Course-specific Web Portal
   </a>
   
 </li>
@@ -2553,15 +2579,25 @@
 <h2 id="course-id">Course ID</h2>
 <p>Your course will be give a specific <code>courseid</code> based on the Yale course catalog number. This <code>courseid</code> will be used in the course account names and web portal.</p>
 <h2 id="course-accounts">Course Accounts</h2>
-<p>All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of <code>courseid_netid</code>. Course accounts are district from any research accounts a course member may already have. Use this account if connecting to the cluster <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/">via <code>ssh</code></a>. All course-related accounts are subject to <a href="/clusters-at-yale/access/accounts/">the same policies and expectation as standard accounts</a>. </p>
-<h2 id="course-storage">Course Storage</h2>
-<p>Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.</p>
-<p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
-<h2 id="course-specific-web-portal">Course-specific Web Portal</h2>
+<p>All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of <code>courseid_netid</code>. Course accounts are district from any research accounts a course member may already have. As with all cluster access, you must be on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the web portal if you are off campus.</p>
+<p>All course-related accounts are subject to <a href="/clusters-at-yale/access/accounts/">the same policies and expectation as standard accounts</a>.</p>
+<h3 id="course-specific-web-portal">Course-specific Web Portal</h3>
 <p>Your course also has a course-specific web portal, based on <a href="/clusters-at-yale/access/ood/">Open OnDemand</a>, accessible via the URL (replacing <code>courseid</code> with the id given to your course):</p>
 <div class="highlight"><pre><span></span><code>courseid.ycrc.yale.edu
 </code></pre></div>
-<p>Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. As with all cluster access, you must be on the <a href="/clusters-at-yale/access/vpn/">VPN</a> to access the web portal if you are off campus.</p>
+<p>Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. </p>
+<h3 id="ssh-access">SSH Access</h3>
+<p>To access your course account via terminal and <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/"><code>ssh</code> authentication</a>, connect to the cluster using your cluster account name. For example:</p>
+<div class="highlight"><pre><span></span><code>ssh courseid_netid@grace.ycrc.yale.edu
+
+# or
+
+ssh courseid_netid@mccleary.ycrc.yale.edu
+</code></pre></div>
+<p>If you already have a permanent researcher account (one that is just your netid) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, <a href="https://sshkeys.ycrc.yale.edu/">upload your new key</a> and it will be delivered to all of your accounts within a few minutes.</p>
+<h2 id="course-storage">Course Storage</h2>
+<p>Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.</p>
+<p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
 <h2 id="node-reservations">Node Reservations</h2>
 <p><em>If</em> the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available in an <code>education</code> or <code>education_gpu</code> partition. The nodes can be requested using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing the partitions with any other courses that also requested nodes. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
 <p>Course members are welcome to use the public partitions of the cluster. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
@@ -2626,7 +2662,7 @@ rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2024</span>
       
     
   </small>
