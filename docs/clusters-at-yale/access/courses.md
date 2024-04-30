@@ -16,15 +16,11 @@ Your course will be give a specific `courseid` based on the Yale course catalog 
 
 ## Course Accounts
 
-All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are district from any research accounts a course member may already have. Use this account if connecting to the cluster [via `ssh`](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/). All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/). 
+All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are district from any research accounts a course member may already have. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
 
-## Course Storage
+All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/).
 
-Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.
-
-See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
-
-## Course-specific Web Portal
+### Course-specific Web Portal
 
 Your course also has a course-specific web portal, based on [Open OnDemand](/clusters-at-yale/access/ood/), accessible via the URL (replacing `courseid` with the id given to your course):
 
@@ -32,7 +28,30 @@ Your course also has a course-specific web portal, based on [Open OnDemand](/clu
 courseid.ycrc.yale.edu
 ```
 
-Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
+Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. 
+
+### SSH Access
+
+To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
+
+```
+ssh courseid_netid@grace.ycrc.yale.edu
+
+# or
+
+ssh courseid_netid@mccleary.ycrc.yale.edu
+```
+
+If you already have a permanent researcher account (one that is just your netid) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, [upload your new key](https://sshkeys.ycrc.yale.edu/) and it will be delivered to all of your accounts within a few minutes.
+
+
+## Course Storage
+
+Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.
+
+See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
+
+
 
 ## Node Reservations
 

@@ -64,13 +64,13 @@ All compression of sequence data is lossless.  Gzip is used for data stored on t
 Disaster recovery is provided by the archive copy.
 
 YCGA will send you an email informing you that your data is ready, and will include a url that looks like:
-http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_001
+http://fcb.ycga.yale.edu:3010/_randomstring_/sample_dir_YourSampleNumber
 
 You can use that link to download your data in a browser, but if you plan to process the data on McCleary, it is better to make a soft link to the data, rather than copying it.  
 
 To find the actual location of your data, do:
 ``` bash
-$ readlink -f /ycga-gpfs/project/fas/lsprog/tools/external/data/randomstring/sample_dir_001
+$ readlink -f /gpfs/ycga/work/lsprog/tools/external/data/randomstring/sample_dir_YourSampleNumber
 ```
 
 ## Illumina sequencing data
@@ -82,8 +82,8 @@ true locations of the files.
 Alternatively, you can use the ycgaFastq tool to easily make soft links to the sequencing files:
 
 ```bash
-export PATH=$PATH:/gpfs/gibbs/pi/ycga/mane/ycga_bioinfo/bin_May2023
-$ ycgaFastq fcb.ycga.yale.edu:3010/randomstring/sample_dir_001
+$ module load ycga-public
+$ ycgaFastq fcb.ycga.yale.edu:3010/randomstring/sample_dir_YourSampleNumber
 ```
 
 ycgaFastq can also be used to retrieve data that has been archived.  The simplest way to do that is to provide
@@ -130,7 +130,7 @@ Archived runs are stored in the following locations.
 | `/panfs/`                         | `/SAY/archive/YCGA-729009-YCGA-A2/archive/panfs/`                         |
 | `/ycga-ba/`                    | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-ba/`                    |
 | `/gpfs/ycga/sequencers/illumina/` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/` |
-| `/gpfs/gibbs/pi/ycga/pacbio/` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/pacbio/` |
+| `/gpfs/ycga/sequencers/pacbio/` | `/SAY/archive/YCGA-729009-YCGA-A2/archive/pacbio/` |
 
 You can directly copy or untar the project tarfile into a scratch directory.
 
