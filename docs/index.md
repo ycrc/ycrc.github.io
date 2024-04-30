@@ -1,3 +1,10 @@
+
+!!! tip "Yale joins the Massachusetts Green High Performance Computing Center (MGHPCC)"
+    We are pleased to announce that Yale has joined the Massachusetts Green High Performance Computing Center ([MGHPCC](https://www.mghpcc.org)), a not-for-profit, state-of-the-art data center dedicated to computationally-intensive research. 
+    Work on the build-out of dedicated Yale space within the facility and the deployment of high-speed networking between Yale’s campus and MGHPCC is underway. 
+    Initial HPC hardware deployments are expected to occur later on this year. 
+    Click [here](https://research.computing.yale.edu) for more information about how the YCRC will transition the HPC infrastructure to MGHPCC.
+
 # Introduction
 
 The Yale Center for Research Computing provides support for research computing at Yale University. Our most active area for support is High Performance Computing, however we also support other computationally intensive research.  In addition, we work with faculty and research groups across disciplines to design and maintain cost-effective computing capabilities.
