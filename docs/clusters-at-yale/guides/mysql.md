@@ -120,8 +120,8 @@ This is one way to do that from the container shell.
 You should probably substitute your name for elmerfudd and a better password for mypasswd!
 
 ```
-Singularity> mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION"
-Singularity> mysql -e "FLUSH PRIVILEGES"
+mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION"
+mysql -e "FLUSH PRIVILEGES"
 ```
 
 Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
