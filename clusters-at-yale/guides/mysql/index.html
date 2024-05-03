@@ -2568,8 +2568,8 @@ mysql&gt;
 <p>Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. <br />
 This is one way to do that from the container shell. </p>
 <p>You should probably substitute your name for elmerfudd and a better password for mypasswd!</p>
-<div class="highlight"><pre><span></span><code>Singularity&gt; mysql -e &quot;GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION&quot;
-Singularity&gt; mysql -e &quot;FLUSH PRIVILEGES&quot;
+<div class="highlight"><pre><span></span><code>mysql -e &quot;GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION&quot;
+mysql -e &quot;FLUSH PRIVILEGES&quot;
 </code></pre></div>
 <p>Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
 <div class="highlight"><pre><span></span><code>mysql -u elmerfudd -h 127.0.0.1 -p
@@ -2614,7 +2614,7 @@ password=&#39;my-secret-pw&#39;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2024</span>
       
     
   </small>
