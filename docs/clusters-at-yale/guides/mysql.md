@@ -4,6 +4,8 @@
 allocations on an HPC cluster are temporary.  If you need a persistent mysql database server, we recommend either installing mysql on a server in your
 lab, or using ITS's [Spinup](https://spinup.internal.yale.edu) service.  In either case, the mysql server can be accessed remotely from the HPC clusters.
 
+Spinup has serverless database servers (mysql and postgres) that can automatically sleep when not being accessed.  While asleep, you only pay for the data storage. 
+
 However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
 mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
 require admin privileges.  The instructions that follow walk you through the process of running a mysql server using [Apptainer](/clusters-at-yale/guides/containers) on a cluster compute node 
