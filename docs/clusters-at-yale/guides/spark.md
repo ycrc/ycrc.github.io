@@ -60,7 +60,7 @@ SPARK_MASTER_WEBUI: http://r805u02n04.grace.ycrc.yale.edu:8080
 
 Navigating to the web-interface URL yields an overview like this:
 
-![Spark Web UI](img/spark_interactive.png)
+![Spark Web UI](/img/spark_interactive.png)
 
 ## Spark batch job
 
