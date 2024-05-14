@@ -196,6 +196,7 @@ nav:
             - "GitHub": clusters-at-yale/guides/github.md
             - clusters-at-yale/guides/github_pages.md
             - clusters-at-yale/guides/gpus-cuda.md
+            - clusters-at-yale/guides/spark.md
 
     - Training & Other Resources:
             - "Overview": resources/index.md
