@@ -46,17 +46,35 @@ spark-start
 source ${HOME}/.spark-local/${SLURM_JOB_ID}/spark/conf/spark-env.sh
 
 echo "***** Spark cluster is running. Submit jobs to ${SPARK_MASTER_URL}. *****"
+
+# set up SSH tunnel for spark web-interface
+node=$(hostname -s)
+user=$(whoami)
+cluster=$(hostname -f | awk -F"." '{print $2}')
+web_port=8080
+
+# print tunneling instructions
+echo -e "
+MacOS or linux terminal command to create your ssh tunnel:
+ssh -N -L ${web_port}:${node}:${web_port} ${user}@${cluster}.ycrc.yale.edu
+
+Forwarded port:same as remote port
+Remote server: ${node}
+Remote port: ${port}
+SSH server: ${cluster}.hpc.yale.edu
+SSH login: $user
+SSH port: 22
+
+Use a Browser on your local machine to go to:
+localhost:${port} 
+"
+
 sleep infinity
 ```
+Spark jobs can be submitted to `spark://$NODE.grace.ycrc.yale.edu:7077` (where $NODE is replaced by the node where the job is running) address from anywhere on the cluster.
 
-This will print the URL to which jobs can be submitted (with port 7077) and the web-interface URL. 
-For example:
-
-```sh
-SPARK_MASTER_URL: spark://r805u02n04.grace.ycrc.yale.edu:7077
-SPARK_MASTER_WEBUI: http://r805u02n04.grace.ycrc.yale.edu:8080
-
-```
+To use the web UI from outside the cluster, an ssh command is needed to connect your local computer to the compute node where the Spark server is running.
+After making the ssh tunnel connection, navigate to `localhost:8080` to view the web UI to monitor your jobs.
 
 Navigating to the web-interface URL yields an overview like this:
 
@@ -91,6 +109,22 @@ spark-start
 # Source spark-env.sh to get useful env variables.
 source ${HOME}/.spark-local/${SLURM_JOB_ID}/spark/conf/spark-env.sh
 
+# print tunneling instructions
+echo -e "
+MacOS or linux terminal command to create your ssh tunnel:
+ssh -N -L ${web_port}:${node}:${web_port} ${user}@${cluster}.ycrc.yale.edu
+
+Forwarded port:same as remote port
+Remote server: ${node}
+Remote port: ${port}
+SSH server: ${cluster}.hpc.yale.edu
+SSH login: $user
+SSH port: 22
+
+Use a Browser on your local machine to go to:
+localhost:${port} 
+"
+
 # Customize the executor resources below to match resources requested above
 # with an allowance for spark driver overhead. Also change the path to your spark job.
 spark-submit --master ${SPARK_MASTER_URL} \
@@ -100,5 +134,5 @@ spark-submit --master ${SPARK_MASTER_URL} \
   /path/to/custom/analysis.py
 
 ```
-The Spark web-interface is accessible and it is the recommended way to monitor jobs' progress.
+The Spark web-interface is accessible after setting up the ssh tunnel as described above. 
 
