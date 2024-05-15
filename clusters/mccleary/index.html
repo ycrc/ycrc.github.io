@@ -2916,7 +2916,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100-80g</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -2926,7 +2926,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100-80g</td>
+<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100, a100-80g</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3063,7 +3063,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100, a100-40g</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3236,6 +3236,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 6346, nogpu, bigtmp, common</td>
 </tr>
 <tr>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>984</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>icelake, avx512, 6326, doubleprecision, pi, a100, a100-80g</td>
+</tr>
+<tr>
 <td>40</td>
 <td>8358</td>
 <td>64</td>
@@ -3253,17 +3263,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100-80g</td>
-</tr>
-<tr>
-<td>1</td>
-<td>8358</td>
-<td>64</td>
-<td>983</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3273,17 +3273,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100-80g</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100, a100-80g</td>
 </tr>
 <tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
 <td>4</td>
-<td>6346</td>
-<td>32</td>
-<td>1991</td>
-<td></td>
-<td></td>
-<td></td>
-<td>icelake, avx512, 6346, nogpu, pi</td>
+<td>80</td>
+<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100, a100-80g</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3306,30 +3306,20 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 8358, doubleprecision, pi, bigtmp, l40s,</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>984</td>
-<td>a100</td>
 <td>4</td>
-<td>40</td>
-<td>icelake, avx512, 6326, doubleprecision, pi, a100</td>
+<td>6346</td>
+<td>32</td>
+<td>1991</td>
+<td></td>
+<td></td>
+<td></td>
+<td>icelake, avx512, 6346, nogpu, pi</td>
 </tr>
 <tr>
 <td>42</td>
 <td>6240</td>
 <td>36</td>
 <td>180</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
-</tr>
-<tr>
-<td>9</td>
-<td>6240</td>
-<td>36</td>
-<td>163</td>
 <td></td>
 <td></td>
 <td></td>
@@ -3366,6 +3356,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, common</td>
 </tr>
 <tr>
+<td>9</td>
+<td>6240</td>
+<td>36</td>
+<td>163</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi</td>
+</tr>
+<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -3386,16 +3386,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
 </tr>
 <tr>
-<td>6</td>
-<td>6240</td>
-<td>36</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
-</tr>
-<tr>
 <td>10</td>
 <td>8268</td>
 <td>48</td>
@@ -3414,36 +3404,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td></td>
 <td></td>
 <td>cascadelake, avx512, 6248r, nogpu, pi, bigtmp</td>
-</tr>
-<tr>
-<td>8</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6242</td>
-<td>32</td>
-<td>981</td>
-<td>rtx8000</td>
-<td>2</td>
-<td>48</td>
-<td>cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>6234</td>
-<td>16</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6234, nogpu, common, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3483,7 +3443,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3493,7 +3453,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>352</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100, a100-40g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3516,6 +3486,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, rtx3090</td>
 </tr>
 <tr>
+<td>6</td>
+<td>6240</td>
+<td>36</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
+</tr>
+<tr>
 <td>2</td>
 <td>6240</td>
 <td>36</td>
@@ -3524,6 +3504,26 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>11</td>
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6242</td>
+<td>32</td>
+<td>981</td>
+<td>rtx8000</td>
+<td>2</td>
+<td>48</td>
+<td>cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3536,14 +3536,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>352</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100</td>
+<td>2</td>
+<td>6234</td>
+<td>16</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6234, nogpu, common, bigtmp</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3586,16 +3586,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>broadwell, E5-2680_v4, nogpu, standard, oldest, pi</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E7-4820_v4</td>
-<td>40</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>broadwell, E7-4820_v4, nogpu, pi</td>
-</tr>
-<tr>
 <td>9</td>
 <td>E5-2637_v4</td>
 <td>8</td>
@@ -3606,14 +3596,24 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti</td>
 </tr>
 <tr>
-<td>3</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>227</td>
-<td>p100</td>
-<td>2</td>
-<td>16</td>
-<td>broadwell, E5-2660_v4, doubleprecision, pi, p100</td>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>101</td>
+<td>titanv</td>
+<td>4</td>
+<td>12</td>
+<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
+</tr>
+<tr>
+<td>1</td>
+<td>E7-4820_v4</td>
+<td>40</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>broadwell, E7-4820_v4, nogpu, pi</td>
 </tr>
 <tr>
 <td>11</td>
@@ -3626,14 +3626,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>broadwell, E5-2637_v4, singleprecision, common, gtx1080ti</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>101</td>
-<td>titanv</td>
-<td>4</td>
-<td>12</td>
-<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
+<td>3</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>227</td>
+<td>p100</td>
+<td>2</td>
+<td>16</td>
+<td>broadwell, E5-2660_v4, doubleprecision, pi, p100</td>
 </tr>
 </tbody>
 </table>
@@ -3709,24 +3709,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 6326, doubleprecision, a5000, common</td>
 </tr>
 <tr>
-<td>1</td>
-<td>8358</td>
-<td>64</td>
-<td>983</td>
+<td>2</td>
+<td>6326</td>
+<td>32</td>
+<td>984</td>
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100-80g</td>
-</tr>
-<tr>
-<td>1</td>
-<td>8358</td>
-<td>64</td>
-<td>983</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100</td>
+<td>icelake, avx512, 6326, doubleprecision, pi, a100, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3736,7 +3726,27 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>80</td>
-<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100-80g</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, common, a100, a100-80g</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100, a100-80g</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8358</td>
+<td>64</td>
+<td>983</td>
+<td>a100</td>
+<td>4</td>
+<td>80</td>
+<td>icelake, avx512, 8358, gpu, bigtmp, common, doubleprecision, a100, a100-80g</td>
 </tr>
 <tr>
 <td>4</td>
@@ -3759,16 +3769,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>icelake, avx512, 8358, doubleprecision, pi, bigtmp, l40s,</td>
 </tr>
 <tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>984</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>icelake, avx512, 6326, doubleprecision, pi, a100</td>
-</tr>
-<tr>
 <td>6</td>
 <td>5222</td>
 <td>8</td>
@@ -3777,26 +3777,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>8</td>
-<td>5222</td>
-<td>8</td>
-<td>163</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6242</td>
-<td>32</td>
-<td>981</td>
-<td>rtx8000</td>
-<td>2</td>
-<td>48</td>
-<td>cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3836,7 +3816,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3846,7 +3826,17 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>352</td>
+<td>a100</td>
+<td>4</td>
+<td>40</td>
+<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100, a100-40g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -3879,6 +3869,26 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti</td>
 </tr>
 <tr>
+<td>8</td>
+<td>5222</td>
+<td>8</td>
+<td>163</td>
+<td>rtx5000</td>
+<td>4</td>
+<td>16</td>
+<td>cascadelake, avx512, 5222, doubleprecision, pi, bigtmp, rtx5000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6242</td>
+<td>32</td>
+<td>981</td>
+<td>rtx8000</td>
+<td>2</td>
+<td>48</td>
+<td>cascadelake, avx512, 6242, doubleprecision, pi, bigtmp, rtx8000</td>
+</tr>
+<tr>
 <td>1</td>
 <td>6226r</td>
 <td>32</td>
@@ -3887,16 +3897,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>24</td>
 <td>cascadelake, avx512, 6226r, doubleprecision, pi, rtx3090</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
-<td>352</td>
-<td>a100</td>
-<td>4</td>
-<td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, common, bigtmp, a100</td>
 </tr>
 <tr>
 <td>2</td>
@@ -3919,14 +3919,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>broadwell, E5-2637_v4, singleprecision, oldest, common, gtx1080ti</td>
 </tr>
 <tr>
-<td>3</td>
-<td>E5-2660_v4</td>
-<td>28</td>
-<td>227</td>
-<td>p100</td>
-<td>2</td>
-<td>16</td>
-<td>broadwell, E5-2660_v4, doubleprecision, pi, p100</td>
+<td>1</td>
+<td>E5-2637_v4</td>
+<td>8</td>
+<td>101</td>
+<td>titanv</td>
+<td>4</td>
+<td>12</td>
+<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
 </tr>
 <tr>
 <td>11</td>
@@ -3939,14 +3939,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>broadwell, E5-2637_v4, singleprecision, common, gtx1080ti</td>
 </tr>
 <tr>
-<td>1</td>
-<td>E5-2637_v4</td>
-<td>8</td>
-<td>101</td>
-<td>titanv</td>
-<td>4</td>
-<td>12</td>
-<td>broadwell, E5-2637_v4, doubleprecision, pi, bigtmp, titanv</td>
+<td>3</td>
+<td>E5-2660_v4</td>
+<td>28</td>
+<td>227</td>
+<td>p100</td>
+<td>2</td>
+<td>16</td>
+<td>broadwell, E5-2660_v4, doubleprecision, pi, p100</td>
 </tr>
 </tbody>
 </table>
@@ -4049,7 +4049,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
 </tr>
 </tbody>
 </table>
@@ -4103,7 +4103,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
 </tr>
 </tbody>
 </table>
@@ -4575,21 +4575,21 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>1</td>
 <td>6240</td>
 <td>36</td>
-<td>1486</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6240</td>
-<td>36</td>
 <td>352</td>
 <td>v100</td>
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 6240, pi, v100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6240</td>
+<td>36</td>
+<td>1486</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cascadelake, avx512, 6240, nogpu, pi, bigtmp</td>
 </tr>
 </tbody>
 </table>
@@ -4751,8 +4751,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>983</td>
 <td>a100</td>
 <td>4</td>
-<td>40</td>
-<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100</td>
+<td>80</td>
+<td>icelake, avx512, 8358, doubleprecision, bigtmp, pi, a100, a100-80g</td>
 </tr>
 <tr>
 <td>1</td>
@@ -4889,8 +4889,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>984</td>
 <td>a100</td>
 <td>4</td>
-<td>40</td>
-<td>icelake, avx512, 6326, doubleprecision, pi, a100</td>
+<td>80</td>
+<td>icelake, avx512, 6326, doubleprecision, pi, a100, a100-80g</td>
 </tr>
 <tr>
 <td>40</td>
@@ -5144,7 +5144,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>a100</td>
 <td>4</td>
 <td>40</td>
-<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100</td>
+<td>cascadelake, avx512, 6240, doubleprecision, pi, bigtmp, a100, a100-40g</td>
 </tr>
 </tbody>
 </table>
@@ -5911,7 +5911,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 <tr>
 <td>Maximum CPUs per group</td>
-<td><code>512</code></td>
+<td><code>1024</code></td>
 </tr>
 <tr>
 <td>Maximum memory per group</td>
