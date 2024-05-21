@@ -1360,6 +1360,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#avoid-excessively-long-or-complicated-filenames" class="md-nav__link">
+    Avoid Excessively Long or Complicated Filenames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prevent-large-numbers-of-small-files" class="md-nav__link">
     Prevent Large Numbers of Small Files
   </a>
@@ -2522,6 +2529,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#avoid-excessively-long-or-complicated-filenames" class="md-nav__link">
+    Avoid Excessively Long or Complicated Filenames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prevent-large-numbers-of-small-files" class="md-nav__link">
     Prevent Large Numbers of Small Files
   </a>
@@ -2570,7 +2584,7 @@
 <p>Quota: varies</p>
 <p>Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as <code>project</code> storage and is also not backed up.
 See <a href="/data/#purchase-additional-storage">below</a> for details on purchasing storage. 
-Purchased storage, if applicable, is located on the Gibbs filesystem in a <code>/gpfs/gibbs/pi/</code> directory under the group's name. </p>
+Purchased storage, if applicable, is located on the Gibbs filesystem in a <code>/gpfs/gibbs/pi/</code> or on the Palmer filesystem in a <code>/vast/palmer/pi/</code> directory under the group's name.</p>
 <p>Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.</p>
 <h3 id="60-day-scratch">60-Day Scratch</h3>
 <p>Quota: 10 TiB and 15,000,000 files per group</p>
@@ -2652,6 +2666,8 @@ Since the <em>permanent</em> copy of the data remains on off-cluster storage, yo
 Both Grace and McCleary have dedicated <code>transfer</code> partitions where you can submit long-running transfer jobs.
 When your computation finishes you can remove the copy and transmit or copy results to a permanent location.
 Please see the <a href="/data/staging/">Staging Data</a> documentation for more details and examples.</p>
+<h3 id="avoid-excessively-long-or-complicated-filenames">Avoid Excessively Long or Complicated Filenames</h3>
+<p>Extremely long filenames or filenames including non-standard characters, such as non-UTF8 characters or line breaks, cannot be scanned by our system and CANNOT be backed up to our HPC backup system. Please note that excessive nesting of directories (dozens of directories deep) also qualifies as a "long" filename.</p>
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
 <p>The parallel filesystems the clusters use perform poorly with very large numbers of small files.
 This is one reason we enforce file count quotas.
@@ -2666,7 +2682,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2024</span>
       
     
   </small>
