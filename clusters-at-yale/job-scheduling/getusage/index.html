@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/getusage/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1051,9 +1051,48 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Monitor Overall Slurm Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Monitor Overall Slurm Usage
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#open-ondemand-web-app" class="md-nav__link">
+    Open OnDemand Web-app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-getusage" class="md-nav__link">
+    Command-line getusage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2328,6 +2367,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#open-ondemand-web-app" class="md-nav__link">
+    Open OnDemand Web-app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-getusage" class="md-nav__link">
+    Command-line getusage
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2344,9 +2405,37 @@
                 
                 
                 <h1 id="monitor-overall-slurm-usage">Monitor Overall Slurm Usage</h1>
-<p>To enable research groups to monitor their combined utilization of cluster resources, we have developed a utility called <code>getusage</code>. 
+<p>To enable research groups to monitor their combined utilization of cluster resources, we have developed a suite of <code>getusage</code> tools. 
 We perform nightly querries of Slurm's database to aggrigate usage (in <code>cpu_hours</code>) broken down by user, account, and partition. 
-These aggrigates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
+These data are available both through each cluster's Open OnDemand and as a command-line utility.</p>
+<h2 id="open-ondemand-web-app">Open OnDemand Web-app</h2>
+<p>The Open OnDemand web portals host an interactive data dashboard that provide tables and visualization of Slurm utilization.</p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>OOD site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/clusters/grace">Grace</a></td>
+<td><a href="https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-grace.ycrc.yale.edu/pun/sys/ycrc_getusage</a></td>
+</tr>
+<tr>
+<td><a href="/clusters/mccleary">McCleary</a></td>
+<td><a href="https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_getusage</a></td>
+</tr>
+<tr>
+<td><a href="/clusters/milgram">Milgram</a></td>
+<td><a href="https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage</a></td>
+</tr>
+</tbody>
+</table>
+<p>An example of such a view is shown here:</p>
+<p><img alt="getusage" src="/img/ood-getusage.png" /></p>
+<h2 id="command-line-getusage">Command-line <code>getusage</code></h2>
+<p>These aggrigates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage --help
 
  Usage: getusage <span class="o">[</span>OPTIONS<span class="o">]</span>
@@ -2410,7 +2499,7 @@ Remaining No Cost Allotment: <span class="m">24</span>,954.97 CPU Hours
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 21, 2024</span>
       
     
   </small>
