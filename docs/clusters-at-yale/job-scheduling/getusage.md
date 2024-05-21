@@ -1,7 +1,24 @@
 # Monitor Overall Slurm Usage
 
-To enable research groups to monitor their combined utilization of cluster resources, we have developed a utility called `getusage`. 
+To enable research groups to monitor their combined utilization of cluster resources, we have developed a suite of `getusage` tools. 
 We perform nightly querries of Slurm's database to aggrigate usage (in `cpu_hours`) broken down by user, account, and partition. 
+These data are available both through each cluster's Open OnDemand and as a command-line utility.
+
+## Open OnDemand Web-app
+
+The Open OnDemand web portals host an interactive data dashboard that provide tables and visualization of Slurm utilization.
+
+| Cluster                        | OOD site                                                         |
+|--------------------------------|------------------------------------------------------------------|
+| [Grace](/clusters/grace)       | [ood-grace.ycrc.yale.edu/pun/sys/ycrc_getusage](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_getusage)         |
+| [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_getusage](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_getusage) |
+| [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage)     |
+
+An example of such a view is shown here:
+
+![getusage](/img/ood-getusage.png)
+
+## Command-line `getusage`
 These aggrigates are collected from all clusters and made accessible to researchers by running `getusage`:
 
 ```sh
