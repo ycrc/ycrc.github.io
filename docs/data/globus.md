@@ -49,24 +49,35 @@ Files in the staging area are purged after 21 days.
 
 To manage your endpoints, such as delete an endpoint, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Endpoint](https://app.globus.org/endpoints) on the Globus website.
 
-
-## Setup an Endpoint on Your Computer
+## Set Up an Endpoint on Your Computer
 
 You can set up your own endpoint for transferring data to and from your own computer with [Globus Connect Personal](https://www.globus.org/globus-connect). 
 
 To transfer or share data between two personal endpoints, you will need to request access to the YCRC's Globus Plus subscription on [this page](https://app.globus.org/groups/8f3fced6-4318-11e3-9f63-12313809f035/join).
 
+## Set Up a [Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) Endpoint
 
-## Setup a Google Drive Endpoint
+1. Click on the following link: [Globus OneDrive Endpoint](https://app.globus.org/file-manager?origin_id=923b3fbe-ffd2-4a8e-b4ad-be207fd33faa)
+1. Log into Globus, if needed.
+1. The first time you log into the endpoint, you will be asked ot grant access to your OneDrive account.  Click to allow access and be taken through the approval process.
+1. After granting approval, you will be able to access the top level of your Yale OneDrive via the Globus Collection "Yale OneDrive".
+
+## Set Up a [Dropbox](https://www.dropbox.com) Endpoint
+
+1. Click on the following link: [Globus Dropbox Endpoint](https://app.globus.org/file-manager?origin_id=ced0b3b0-e7f2-4ffb-aa09-418f7c42a38d)
+1. Log into Globus, if needed.
+1. The first time you log into the endpoint, you will be asked to grant access to your DropBox account.  Click to allow access and be taken through the approval process.
+1. After granting approval, you will be able to access the top level of your DropBox storage via the Globus Collection "Yale Dropbox".
+
+## Set Up a [Google Drive](https://www.google.com/drive/) Endpoint
 
 The Globus connector is configured to only allow data to be uploaded into EliApps (Yale's GSuite for Education) Google Drive accounts. If you don't have an EliApps account, request one as described above.
 
-1. To set up your Globus Google Drive endpoint, click on the following link: [Setup Globus Google Drive Endpoint](https://app.globus.org/file-manager?origin_id=28ae8ae7-b2c6-47b4-badc-da9c1cab1e6e)
+1. Click on the following link: [Globus Google Drive Endpoint](https://app.globus.org/file-manager?origin_id=28ae8ae7-b2c6-47b4-badc-da9c1cab1e6e)
 1. Log into Globus, if needed.
-1. The first time you login to the Globus Google Drive endpoint, you will be presented with a permissions approval page. If you are ok with the Connector manipulating your files through Globus (which is required), click the Allow button.
+1. The first time you login to the Globus Google Drive endpoint, you will be asked to grant access to your Google Drive. Click to allow access and be taken through the approval process.
 1. You may see your Yale EliApps account expressed in an uncommon format, such as netid@yale.edu@accounts.google.com. This is normal, and expected.
-1. After your approvals you will be directed to the Globus File Manager, with the default view of "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.
-2. To transfer to or from your Google Drive, search in the Collection field for "YCRC Globus Google Drive Collection".
+1. After granting approval, you will be able to access your Google Drive via the Globus Collection "YCRC Globus Google Drive Collection". The default view is "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.
 
 !!! note 
     There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. You see a "Endpoint Busy" error during this time.
