@@ -16,11 +16,11 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
-        <title>cryoSPARC on McCleary - Yale Center for Research Computing</title>
+        <title>CryoSPARC on McCleary - Yale Center for Research Computing</title>
       
     
     
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              cryoSPARC on McCleary
+              CryoSPARC on McCleary
             
           </span>
         </div>
@@ -2396,7 +2396,7 @@
         
           <li class="md-nav__item">
   <a href="#d-check-the-contents-of-the-job-output-file-to-make-sure-that-cryosparc-has-launched" class="md-nav__link">
-    d. Check the contents of the job output file to make sure that cryoSPARC has launched.
+    d. Check the contents of the job output file to make sure that CryoSPARC has launched.
   </a>
   
 </li>
@@ -2410,14 +2410,14 @@
         
           <li class="md-nav__item">
   <a href="#f-you-can-exit-your-remote-desktop-session-without-terminating-cryosparc-and-reconnect-to-your-cryosparc-instance-later" class="md-nav__link">
-    f. You can exit your Remote Desktop session without terminating cryoSPARC, and reconnect to your cryoSPARC instance later.
+    f. You can exit your Remote Desktop session without terminating CryoSPARC, and reconnect to your CryoSPARC instance later.
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#g-cryosparc-will-shut-down-automatically-when-time-runs-out-if-you-want-to-stop-it-before-this-simply-cancel-the-batch-job" class="md-nav__link">
-    g. cryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.
+    g. CryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.
   </a>
   
 </li>
@@ -2447,6 +2447,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#topaz-support-optional" class="md-nav__link">
+    Topaz support (Optional)
+  </a>
+  
+    <nav class="md-nav" aria-label="Topaz support (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-in-an-interactive-cluster-session-load-the-desired-topaz-module-and-determine-the-location-of-the-executable-eg" class="md-nav__link">
+    1. In an interactive cluster session, load the desired Topaz module and determine the location of the executable; e.g.,
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-in-a-running-cryosparc-instance-add-this-executable-to-the-general-settings" class="md-nav__link">
+    2. In a running CryoSPARC instance, add this executable to the General settings:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-consult-the-cryosparc-guide" class="md-nav__link">
+    3. Consult the CryoSPARC guide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshoot" class="md-nav__link">
     Troubleshoot
   </a>
@@ -2470,10 +2504,10 @@
                   </a>
                 
                 
-                <h1 id="cryosparc-on-mccleary">cryoSPARC on McCleary</h1>
-<p>Getting cryoSPARC set up and running on the YCRC clusters is something of a task. This guide is meant for intermediate/advanced users. YCRC staff are working on a cryoSPARC application for <a href="/clusters-at-yale/access/ood.md">Open OnDemand</a> Until then, venture below at your own peril.</p>
+                <h1 id="cryosparc-on-mccleary">CryoSPARC on McCleary</h1>
+<p>Getting CryoSPARC set up and running on the YCRC clusters is something of a task. This guide is meant for intermediate/advanced users. YCRC staff are working on a CryoSPARC application for <a href="/clusters-at-yale/access/ood.md">Open OnDemand</a> Until then, venture below at your own peril.</p>
 <h2 id="install">Install</h2>
-<p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>. </p>
+<p>Before you get started, you will need to request a licence from Structura <a href="https://cryosparc.com/download/">from their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
 <p>First, get an interactive session or an Open Ondemand Remote Desktop in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.</p>
 <p>Then choose a location for installing the software, such as under your project directory.</p>
@@ -2495,7 +2529,7 @@ tar -xf cryosparc_worker.tar.gz
 <div class="highlight"><pre><span></span><code><span class="c1"># Load a cluster CUDA module</span>
 
 <span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
-module load CUDA/11.8.0
+module load CUDA/12.0.0
 <span class="nb">export</span> <span class="nv">cuda_path</span><span class="o">=</span><span class="si">${</span><span class="nv">EBROOTCUDA</span><span class="si">}</span>
 
 <span class="c1"># Set a temporary password</span>
@@ -2522,32 +2556,32 @@ mkdir <span class="nv">$ssd_path</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you are installing a version of cryoSPARC older than 4.4.0, add the additional line</p>
+<p>If you are installing a version of CryoSPARC older than 4.4.0, add the additional line</p>
 <div class="highlight"><pre><span></span><code>--cudapath <span class="nv">$cuda_path</span> <span class="se">\</span>
 </code></pre></div>
 <p>after the --ssdpath line.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Set location of cryoSPARC executables</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set location of CryoSPARC executables</span>
 <span class="nb">source</span> ~/.bashrc
 </code></pre></div>
 <h3 id="4-test">4. Test</h3>
-<p>The installation process will normally attempt to launch cryoSPARC automatically.  Check its status and launch manually if need be.</p>
+<p>The installation process will normally attempt to launch CryoSPARC automatically.  Check its status and launch manually if need be.</p>
 <div class="highlight"><pre><span></span><code>cryosparcm status
 cryosparcm start <span class="o">(</span><span class="k">if</span> not running<span class="o">)</span> 
 </code></pre></div>
-<p>If everything is running, you should be able to launch Firefox and see the cryoSPARC login interface at http://localhost:39000.</p>
-<p>When you are done testing, shut down cryoSPARC,</p>
+<p>If everything is running, you should be able to launch Firefox and see the CryoSPARC login interface at http://localhost:39000.</p>
+<p>When you are done testing, shut down CryoSPARC,</p>
 <div class="highlight"><pre><span></span><code>cryosparcm stop
 </code></pre></div>
 <p>and exit your interactive session.</p>
 <h2 id="run">Run</h2>
-<p>There are two approaches to running cryoSPARC for data processing: directly in an interactive session as above, and in a remote
-session controlled by a batch script. Due to the <a href="https://docs.ycrc.yale.edu/clusters/mccleary/#public-partitions">current time limitations</a> on the interactive public partitions, it is recommended to use the batch script method. If you are running in the pi_cryoem or pi_tomography partition, you have a longer interactive time limit, but the batch script method is still preferable, as it cleans up the cryoSPARC session automatically. </p>
-<p>You are not guaranteed to get the same GPU node every time, so you need to set cryoSPARC to use whichever one you are running on. The first step
+<p>There are two approaches to running CryoSPARC for data processing: directly in an interactive session as above, and in a remote
+session controlled by a batch script. Due to the <a href="https://docs.ycrc.yale.edu/clusters/mccleary/#public-partitions">current time limitations</a> on the interactive public partitions, it is recommended to use the batch script method. If you are running in the pi_cryoem or pi_tomography partition, you have a longer interactive time limit, but the batch script method is still preferable, as it cleans up the CryoSPARC session automatically. </p>
+<p>You are not guaranteed to get the same GPU node every time, so you need to set CryoSPARC to use whichever one you are running on. The first step
 in the following directions reconfigures the node name to match the current compute node.</p>
 <h3 id="1-submit-a-batch-script">1. Submit a batch script</h3>
-<p>The following batch script template illustrates how to set up a remote cryoSPARC session.  By default, it will create an output file whose name
-contains the compute node that cryoSPARC has been launched on.</p>
+<p>The following batch script template illustrates how to set up a remote CryoSPARC session.  By default, it will create an output file whose name
+contains the compute node that CryoSPARC has been launched on.</p>
 <h4 id="a-copy-the-batch-script-template-below-into-a-file-in-the-desired-directory-on-the-cluster">a. Copy the batch script template below into a file in the desired directory on the cluster.</h4>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=gpu</span>
@@ -2556,22 +2590,23 @@ contains the compute node that cryoSPARC has been launched on.</p>
 <span class="c1">#SBATCH -N 1 -c 8</span>
 <span class="c1">#SBATCH --gpus=4</span>
 <span class="c1">#SBATCH --signal=B:10@60 # send the signal &#39;10&#39; at 60s before job finishes</span>
-<span class="c1">#SBATCH --job-name=cryoSPARC-batch</span>
+<span class="c1">#SBATCH --job-name=CryoSPARC-batch</span>
 <span class="c1">#SBATCH --output=&quot;cryosparc-%N-%j.out&quot;</span>
 
 <span class="k">function</span> cleanup<span class="o">()</span>
 <span class="o">{</span>
     date
-    <span class="nb">echo</span> -n <span class="s2">&quot;Shutting down cryoSPARC @ &quot;</span><span class="p">;</span> date
+    <span class="nb">echo</span> -n <span class="s2">&quot;Shutting down CryoSPARC @ &quot;</span><span class="p">;</span> date
+        cryosparcm start
     cryosparcm cli <span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
         cryosparcm stop
         <span class="nb">echo</span> <span class="s2">&quot;Done&quot;</span>
 <span class="o">}</span>
 
-<span class="c1"># Shut down cryoSPARC cleanly when timeout is imminent</span>
+<span class="c1"># Shut down CryoSPARC cleanly when timeout is imminent</span>
 <span class="nb">trap</span> cleanup <span class="m">10</span>
 
-<span class="c1"># Shut down cryoSPARC cleanly when scancel is invoked</span>
+<span class="c1"># Shut down CryoSPARC cleanly when scancel is invoked</span>
 <span class="nb">trap</span> cleanup <span class="m">15</span>
 
 mkdir /tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
@@ -2600,13 +2635,13 @@ sleep infinity <span class="p">&amp;</span>
 <h4 id="c-submit-the-script-to-slurm">c. Submit the script to SLURM.</h4>
 <div class="highlight"><pre><span></span><code>sbatch YourScriptName
 </code></pre></div>
-<h4 id="d-check-the-contents-of-the-job-output-file-to-make-sure-that-cryosparc-has-launched">d. Check the contents of the job output file to make sure that cryoSPARC has launched.</h4>
+<h4 id="d-check-the-contents-of-the-job-output-file-to-make-sure-that-cryosparc-has-launched">d. Check the contents of the job output file to make sure that CryoSPARC has launched.</h4>
 <h4 id="e-in-an-open-ondemand-remote-desktop-session-open-the-firefox-web-browser-and-enter-the-name-of-the-compute-node-your-batch-job-is-running-on">e. In an Open OnDemand Remote Desktop session, open the Firefox web browser, and enter the name of the compute node your batch job is running on</h4>
 <p>(obtainable from the output filename, or from squeue).</p>
 <p>http://YourComputeNode:39000</p>
-<p>This should present you with the cryoSPARC login screen.</p>
-<h4 id="f-you-can-exit-your-remote-desktop-session-without-terminating-cryosparc-and-reconnect-to-your-cryosparc-instance-later">f. You can exit your Remote Desktop session without terminating cryoSPARC, and reconnect to your cryoSPARC instance later.</h4>
-<h4 id="g-cryosparc-will-shut-down-automatically-when-time-runs-out-if-you-want-to-stop-it-before-this-simply-cancel-the-batch-job">g. cryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.</h4>
+<p>This should present you with the CryoSPARC login screen.</p>
+<h4 id="f-you-can-exit-your-remote-desktop-session-without-terminating-cryosparc-and-reconnect-to-your-cryosparc-instance-later">f. You can exit your Remote Desktop session without terminating CryoSPARC, and reconnect to your CryoSPARC instance later.</h4>
+<h4 id="g-cryosparc-will-shut-down-automatically-when-time-runs-out-if-you-want-to-stop-it-before-this-simply-cancel-the-batch-job">g. CryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.</h4>
 <div class="highlight"><pre><span></span><code>scancel YourJobID
 </code></pre></div>
 <h3 id="2-relaunching-in-an-interactive-session-not-generally-recommended-as-noted-above">2. Relaunching in an interactive session (not generally recommended, as noted above)</h3>
@@ -2631,15 +2666,27 @@ cryosparcw connect <span class="se">\</span>
         --cpus <span class="nv">$SLURM_CPUS_PER_TASK</span>
 </code></pre></div>
 <p>and then connect to https://localhost:39000 as above.</p>
-<p>Among other things, this will not perform the automatic cleanup of cryoSPARC lockfiles or of previous worker nodes,
-so you will want to manually run shutdown and worker removal when you are done with cryoSPARC:</p>
+<p>Among other things, this will not perform the automatic cleanup of CryoSPARC lockfiles or of previous worker nodes,
+so you will want to manually run shutdown and worker removal when you are done with CryoSPARC:</p>
 <div class="highlight"><pre><span></span><code>cryosparcm cli <span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
 cryosparcm stop
 </code></pre></div>
 <h2 id="running-on-multiple-nodes">Running on multiple nodes</h2>
-<p>In principle, you can request multiple nodes for your job session, and configure cryoSPARC to use additional nodes as worker nodes. Contact YCRC staff for assistance.</p>
+<p>In principle, you can request multiple nodes for your job session, and configure CryoSPARC to use additional nodes as worker nodes. Contact YCRC staff for assistance.</p>
+<h2 id="topaz-support-optional">Topaz support (Optional)</h2>
+<p><a href="https://cb.csail.mit.edu/cb/topaz/">Topaz</a> is a pipeline for particle picking in cryo-electron microscopy images using
+convolutional neural networks. It can optionally be used from inside CryoSPARC using our cluster module.</p>
+<h3 id="1-in-an-interactive-cluster-session-load-the-desired-topaz-module-and-determine-the-location-of-the-executable-eg">1. In an interactive cluster session, load the desired Topaz module and determine the location of the executable; e.g.,</h3>
+<div class="highlight"><pre><span></span><code>module load topaz/0.2.5.20240417-foss-2022b-CUDA-12.0.0
+which topaz
+/vast/palmer/apps/avx2/software/topaz/0.2.5.20240417-foss-2022b-CUDA-12.0.0/bin/topaz
+</code></pre></div>
+<h3 id="2-in-a-running-cryosparc-instance-add-this-executable-to-the-general-settings">2. In a running CryoSPARC instance, add this executable to the General settings:</h3>
+<p><img alt="" src="/img/TopazCryosparc.png" /></p>
+<h3 id="3-consult-the-cryosparc-guide">3. Consult the <a href="https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz">CryoSPARC guide</a></h3>
+<p>for details on using Topaz with CryoSPARC.</p>
 <h2 id="troubleshoot">Troubleshoot</h2>
-<p>If you are unable to start a new cryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Check /tmp and /tmp/${USER} for the existence of a cryosparc<em>.sock file or a mongo</em>.sock file.  If they are owned by you, you can just remove them, and cryoSPARC should start normally.  If they are not owned by you, and you have reserved the GPUs, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
+<p>If you are unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Check /tmp and /tmp/${USER} for the existence of a cryosparc<em>.sock file or a mongo</em>.sock file.  If they are owned by you, you can just remove them, and CryoSPARC should start normally.  If they are not owned by you, and you have reserved the GPUs, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
 <p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
 </code></pre></div>
@@ -2651,7 +2698,7 @@ cryosparcm stop
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2024</span>
       
     
   </small>
