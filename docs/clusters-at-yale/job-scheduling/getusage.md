@@ -1,7 +1,7 @@
 # Monitor Overall Slurm Usage
 
 To enable research groups to monitor their combined utilization of cluster resources, we have developed a suite of `getusage` tools. 
-We perform nightly querries of Slurm's database to aggrigate usage (in `cpu_hours`) broken down by user, account, and partition. 
+We perform nightly queries of Slurm's database to aggregate usage (in `cpu_hours`) broken down by user, account, and partition. 
 These data are available both through each cluster's Open OnDemand and as a command-line utility.
 
 ## Open OnDemand Web-app
