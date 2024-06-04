@@ -18,9 +18,6 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 
 | Date           | Cluster  |
 |----------------|----------|
-| Dec 5-7 2023   | Grace    |
-| Feb 6-8 2024   | Milgram  |
-| Apr 2-4 2024   | McCleary |
 | Jun 4-6 2024   | Grace    |
 | Aug 20-22 2024 | Milgram  |
 | Oct 15-17 2024 | McCleary |
