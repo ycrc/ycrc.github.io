@@ -31,7 +31,10 @@ Quota: varies
 
 Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](/data/#purchase-additional-storage) for details on purchasing storage. 
-Purchased storage, if applicable, is located on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name. 
+Purchased storage, if applicable, is assigned on one of our two storage systems:
+
+* on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name
+* on the Palmer filesystem in a `/vast/palmer/pi/` directory under the group's name  
 
 Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.
 
