@@ -128,10 +128,10 @@ function cleanup()
 {
 	date
 	echo -n "Shutting down CryoSPARC @ "; date
-        cryosparcm start
+	cryosparcm start
 	cryosparcm cli "remove_scheduler_target_node('$worker_host')"
-        cryosparcm stop
-        echo "Done"
+	cryosparcm stop
+	echo "Done"
 }
 
 # Shut down CryoSPARC cleanly when timeout is imminent
