@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2597,10 +2597,10 @@ contains the compute node that CryoSPARC has been launched on.</p>
 <span class="o">{</span>
     date
     <span class="nb">echo</span> -n <span class="s2">&quot;Shutting down CryoSPARC @ &quot;</span><span class="p">;</span> date
-        cryosparcm start
+    cryosparcm start
     cryosparcm cli <span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
-        cryosparcm stop
-        <span class="nb">echo</span> <span class="s2">&quot;Done&quot;</span>
+    cryosparcm stop
+    <span class="nb">echo</span> <span class="s2">&quot;Done&quot;</span>
 <span class="o">}</span>
 
 <span class="c1"># Shut down CryoSPARC cleanly when timeout is imminent</span>
@@ -2698,7 +2698,7 @@ which topaz
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2024</span>
       
     
   </small>
