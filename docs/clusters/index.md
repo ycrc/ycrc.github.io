@@ -27,7 +27,7 @@ We maintain several high performance storage systems. Listed below are these sha
 
 | Name     | Path          | Size     | Mounting Clusters       | File System Software      | Purpose                                  |
 |----------|---------------|----------|-------------------------|---------------------------|------------------------------------------|
-| Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | Vast                      | home, scratch storage              |
+| Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | Vast                      | home, scratch storage, purchased project-style storage |
 | Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | Slayman  | /gpfs/slayman | 1.0 PiB  | Grace, McCleary | IBM Spectrum Scale (GPFS) | purchased project-style storage          |
 | YCGA     | /gpfs/ycga    | 3.0 PiB  | McCleary      | IBM Spectrum Scale (GPFS) | YCGA storage     |
