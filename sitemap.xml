@@ -21,6 +21,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/applications/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/applications/compile/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/applications/lifecycle/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/applications/modules/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/applications/toolchains/</loc>
+         <lastmod>2024-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/clusters/</loc>
          <lastmod>2024-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -142,31 +167,6 @@
     </url>
     <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/</loc>
-         <lastmod>2024-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/</loc>
-         <lastmod>2024-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/compile/</loc>
-         <lastmod>2024-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/lifecycle/</loc>
-         <lastmod>2024-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/modules/</loc>
-         <lastmod>2024-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/applications/toolchains/</loc>
          <lastmod>2024-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>

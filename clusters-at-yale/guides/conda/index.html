@@ -919,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../applications/" class="md-nav__link">
+      <a href="../../../applications/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -933,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../applications/compile/" class="md-nav__link">
+      <a href="../../../applications/compile/" class="md-nav__link">
         Build Software
       </a>
     </li>
@@ -947,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../applications/modules/" class="md-nav__link">
+      <a href="../../../applications/modules/" class="md-nav__link">
         Software Modules
       </a>
     </li>
@@ -961,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../applications/toolchains/" class="md-nav__link">
+      <a href="../../../applications/toolchains/" class="md-nav__link">
         Module Toolchains
       </a>
     </li>
@@ -975,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../applications/lifecycle/" class="md-nav__link">
+      <a href="../../../applications/lifecycle/" class="md-nav__link">
         Module Lifecycle
       </a>
     </li>
@@ -2775,7 +2775,7 @@
                 
                 
                 <h1 id="conda">Conda</h1>
-<p><a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the <a href="/clusters-at-yale/applications/modules">modules</a> that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">Conda's official command-line reference</a> and <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">the offical docs for managing environments</a> for detailed instructions. Here we present essential instructions and site-specific info.</p>
+<p><a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the <a href="/applications/modules">modules</a> that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See <a href="https://docs.conda.io/projects/conda/en/latest/commands.html">Conda's official command-line reference</a> and <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">the offical docs for managing environments</a> for detailed instructions. Here we present essential instructions and site-specific info.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Mixing modules and conda-managed software is almost never a good idea. When constructing an environment for your work you should load either modules or a conda environment. If you get stuck, you <a href="/#get-help">can always ask us for help</a>.</p>
@@ -2797,7 +2797,7 @@
 <h3 id="load-the-miniconda-module">Load the <code>miniconda</code> Module</h3>
 <div class="highlight"><pre><span></span><code>module load miniconda
 </code></pre></div>
-<p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/clusters-at-yale/applications/modules">module documentation</a> for more details.</p>
+<p>You can save this to your default module collection by using <code>module save</code>. See our <a href="/applications/modules">module documentation</a> for more details.</p>
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
 <p>To create an environment use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. Environment files are saved to the first path in <code>$CONDA_ENVS_PATH</code>, or where you specify with the <code>--prefix</code> option. You should give your environments names that are meaningful to you, so you can more easily keep track of their purposes.</p>
 <p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although sometimes unavoidable for Python, we recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
@@ -2938,7 +2938,7 @@ The yaml file can be edited to change the name of the new environment.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
       
     
   </small>
