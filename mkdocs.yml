@@ -39,7 +39,7 @@ plugins:
             'clusters-at-yale/clusters/index.md': 'clusters/index.md'
             'clusters-at-yale/applications/index.md': 'applications/index.md'
             'clusters-at-yale/applications/compile.md': 'applications/compile.md'
-            'clusters-at-yale/applications/lifecycle.md': 'applications/lifecyle.md'
+            'clusters-at-yale/applications/lifecycle.md': 'applications/lifecycle.md'
             'clusters-at-yale/applications/modules.md': 'applications/modules.md'
             'clusters-at-yale/applications/toolchains.md': 'applications/toolchains.md'
 
