@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -530,6 +530,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../clusters/bouchet/" class="md-nav__link">
+        Bouchet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../clusters/maintenance/" class="md-nav__link">
         Maintenance
       </a>
@@ -678,13 +692,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
-    Be a Good Cluster Citizen
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#log-in" class="md-nav__link">
     Log in
   </a>
@@ -692,8 +699,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schedule-a-job" class="md-nav__link">
-    Schedule a Job
+  <a href="#submit-a-job" class="md-nav__link">
+    Submit a Job
   </a>
   
 </li>
@@ -708,27 +715,6 @@
         <li class="md-nav__item">
   <a href="#transfer-your-files" class="md-nav__link">
     Transfer Your Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-hpc-tutorial" class="md-nav__link">
-    Introduction to HPC Tutorial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hands-on-training" class="md-nav__link">
-    Hands on Training
   </a>
   
 </li>
@@ -2449,13 +2435,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#be-a-good-cluster-citizen" class="md-nav__link">
-    Be a Good Cluster Citizen
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#log-in" class="md-nav__link">
     Log in
   </a>
@@ -2463,8 +2442,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#schedule-a-job" class="md-nav__link">
-    Schedule a Job
+  <a href="#submit-a-job" class="md-nav__link">
+    Submit a Job
   </a>
   
 </li>
@@ -2479,27 +2458,6 @@
         <li class="md-nav__item">
   <a href="#transfer-your-files" class="md-nav__link">
     Transfer Your Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-hpc-tutorial" class="md-nav__link">
-    Introduction to HPC Tutorial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hands-on-training" class="md-nav__link">
-    Hands on Training
   </a>
   
 </li>
@@ -2529,53 +2487,49 @@
                 
                 
                 <h1 id="getting-started">Getting Started</h1>
+<div class="admonition info">
+<p class="admonition-title">New to HPC?</p>
+<p>Are you new to HPC clusters? Or used one before but new to Yale's systems? We encourage you to watch our <a href="https://www.youtube.com/watch?v=SaiXaC0jRjE&amp;t=2s">Introduction to HPC workshop</a>.</p>
+</div>
 <h2 id="hpc-clusters">HPC Clusters</h2>
-<p><a class="cluster-diagram" href="/img/clusters.png"><img alt="" src="/img/cluster.png" /></a></p>
-<p>Broadly speaking, a high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to manage these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. See our summary of the <a href="/clusters">compute and storage hardware</a> we maintain, from which you can navigate to a detailed description of each cluster.</p>
+<p><a class="cluster-diagram" href="/img/clusters.png"><img alt="HPC Cluster Diagram" src="/img/cluster.png" /></a></p>
+<p>A high performance computing (HPC) cluster is a collection of networked computers and data storage. We refer to individual servers in this network as nodes. Our clusters are only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you view files and dispatch jobs to other nodes across the cluster configured for computation, called  <strong>compute nodes</strong>. The tool we use to manage these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount a <strong>shared filesystem</strong>; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. </p>
+<ul>
+<li><a href="/clusters">Compute and storage systems</a></li>
+</ul>
 <h2 id="request-an-account">Request an Account</h2>
-<p>The first step in gaining access to <a href="/clusters">one of our clusters</a> is to request an account. All users must adhere to the YCRC <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-policies">HPC Policies</a>. To understand which cluster is appropriate for you and to request an account, visit the <a href="https://research.computing.yale.edu/account-request">account request page</a>. </p>
-<h2 id="be-a-good-cluster-citizen">Be a Good Cluster Citizen</h2>
-<p>While using HPC resources, here are some important things to remember:</p>
+<p>The first step in gaining access to <a href="/clusters">one of our clusters</a> is to request an account. All users must adhere to the YCRC <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-policies">HPC Policies</a>.</p>
 <ul>
-<li>Do not run jobs, transfers or computation on a login node, instead <a href="/clusters-at-yale/job-scheduling/">submit jobs</a>.</li>
-<li>Similarly, transfer nodes are only for data transfers. Do not run jobs or computation on the transfer nodes.</li>
-<li>Never give your password or ssh key to anyone else.</li>
-<li>Do not store any <a href="https://cybersecurity.yale.edu/protectyourdata">high risk data</a> on the clusters, except <a href="/clusters/milgram">Milgram</a>.</li>
-<li>Do not run larger numbers of very short (less than a minute) jobs </li>
+<li><a href="https://research.computing.yale.edu/account-request">Account Request Form</a></li>
 </ul>
-<p>Use of the clusters is also governed by our <a href="https://research.computing.yale.edu/services/high-performance-computing/hpc-principles">official guidelines</a>.</p>
 <h2 id="log-in">Log in</h2>
-<p>Once you have an account, go to our <a href="access">Log on to the Clusters page</a> login information and configuration.</p>
-<p>If you want to access the clusters from outside Yale's network, you must use the <a href="access/vpn">Yale VPN.</a></p>
-<h2 id="schedule-a-job">Schedule a Job</h2>
-<p>On our clusters, you control your jobs using a job scheduling system called Slurm that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs you may want to run a job <strong>interactively</strong>. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="job-scheduling">Slurm documentation</a> or attend the <a href="https://research.computing.yale.edu/training/introduction-hpc">Introduction to HPC workshop</a> for more details.</p>
+<p>Once you have an account, you can connect to the cluster either via our Web Portal or more traditional SSH access. If you want to access the clusters from outside Yale's network, you must use the <a href="access/vpn">Yale VPN.</a></p>
+<ul>
+<li><a href="access">Log in to the Clusters </a></li>
+</ul>
+<h2 id="submit-a-job">Submit a Job</h2>
+<p>You control your computations using a job scheduling system called Slurm that allocates and manages compute resources for you. For testing and small jobs you may want to run a job <strong>interactively</strong>, which lets you interact with the compute node(s) in real time. Batch submission, the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. </p>
+<ul>
+<li><a href="job-scheduling">Slurm Job Submissions</a></li>
+</ul>
 <h2 id="use-software">Use Software</h2>
-<p>To best serve the diverse needs of all our researchers, we use <a href="/clusters-at-yale/applications/modules">software modules</a> to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease.</p>
-<p>We also provide assistance for installing less commonly used packages. See our <a href="applications">Applications &amp; Software documentation</a> for more details.</p>
+<p>We use <a href="/clusters-at-yale/applications/modules">software modules</a> to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease. We also provide assistance for installing less commonly used packages.</p>
+<ul>
+<li><a href="applications">Applications &amp; Software</a></li>
+</ul>
 <h2 id="transfer-your-files">Transfer Your Files</h2>
-<p>You will likely want to copy files between your computer and the clusters. There are a couple methods available to you, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the <strong>Upload</strong> button and dragging and dropping your files into the upload window. For more information on this as well as other upload methods, see our <a href="data/transfer">transferring data</a> page.</p>
-<h2 id="introduction-to-hpc-tutorial">Introduction to HPC Tutorial</h2>
-<p>To help new cluster users navigate their first interactive and batch jobs, we have an <a href="docs.ycrc.yale.edu/resources/intro_to_hpc_tutorial/">Introduction to HPC tutorial</a> to correspond with the topics discussed in our <a href="https://www.youtube.com/@ycrc6469/videos">Introduction to HPC YouTube video</a>.</p>
-<h2 id="linux">Linux</h2>
-<p>Our clusters run the Linux operating system, where we support the use of the Bash shell. A basically familiarity with Linux commands is required for interacting with the clusters. We periodically run an <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Bootcamp</a> to get you started. There are also many excellent beginner tutorials available for free online, including the following:</p>
+<p>There are a number of methods for transferring file between your computer and the cluster, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the <strong>Upload</strong> button and dragging and dropping your files into the upload window. </p>
 <ul>
-<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a></li>
-<li><a href="http://rik.smith-unna.com/command_line_bootcamp/">Interactive Command Line Bootcamp</a></li>
+<li><a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#file-browser">Transfer data using the Web Portal</a></li>
+<li><a href="data/transfer">Other ways to transfer data</a> (for larger transfers)</li>
 </ul>
-<h2 id="hands-on-training">Hands on Training</h2>
-<p>We offer several courses that will assist you with your work on our clusters. They range from orientation for absolute beginners to advanced topics on application-specific optimization. Please peruse <a href="https://research.computing.yale.edu/training">our catalog of training</a> to see what is available.</p>
 <h2 id="get-help">Get Help</h2>
-<p>If you have additional questions/comments, please <a href="/#get-help">contact us</a>. Where applicable, please include the following information:</p>
-<ul>
-<li>Your NetID</li>
-<li>Cluster name</li>
-<li>Partition name</li>
-<li>Job ID(s)</li>
-<li>Error messages</li>
-<li>Command used to submit the job(s)</li>
-<li>Path(s) to scripts called by the submission command</li>
-<li>Path(s) to output files from your jobs</li>
-</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Additional Training</p>
+<p>We offer several courses that range from orientation for beginners to advanced topics on application-specific optimization. Please peruse <a href="https://research.computing.yale.edu/training">our catalog of training</a> to see what is available.</p>
+<p>Our clusters run the Linux operating system, where we support the use of the Bash shell. If you are new to linux, check out our <a href="https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux">Intro to Linux Workshop</a>.</p>
+</div>
+<p>If you have additional questions/comments, please <a href="/#get-help">contact us</a>.</p>
                 
                   
                     
@@ -2584,7 +2538,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
       
     
   </small>

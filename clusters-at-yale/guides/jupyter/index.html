@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -518,6 +518,20 @@
     <li class="md-nav__item">
       <a href="../../../clusters/misha/" class="md-nav__link">
         Misha
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../clusters/bouchet/" class="md-nav__link">
+        Bouchet
       </a>
     </li>
   
@@ -2456,8 +2470,8 @@ To get started choose Jupyter Notebook from the OOD Interactive Apps menu or cli
 <p>We recommend you use <a href="/clusters-at-yale/guides/conda">miniconda</a> to manage your Jupyter environments.
 You can create Conda environments from the OOD shell interface or from a terminal-based login to the clusters.
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>notebook_env<span class="w"> </span>python<span class="w"> </span>jupyter<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda create -y -n notebook_env python jupyter numpy pandas matplotlib
 </code></pre></div>
 <h3 id="specify-your-resource-request">Specify your resource request</h3>
 <p><img alt="jupyter_ood" class="medium" src="/img/ood_jupyter.png" /></p>

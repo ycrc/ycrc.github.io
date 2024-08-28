@@ -136,11 +136,10 @@ img.cluster-portrait {
     max-height: 15vh;
 }
 
-img.cluster-diagram {
-    width: auto;
-    float: center;
+.cluster-diagram img{
     padding: 1%;
-    height: 100%;
+    float: right;
+    width: 450px;
 }
 
 /* Full Width */
