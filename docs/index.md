@@ -1,9 +1,6 @@
 
-!!! tip "Yale joins the Massachusetts Green High Performance Computing Center (MGHPCC)"
-    We are pleased to announce that Yale has joined the Massachusetts Green High Performance Computing Center ([MGHPCC](https://www.mghpcc.org)), a not-for-profit, state-of-the-art data center dedicated to computationally-intensive research. 
-    Work on the build-out of dedicated Yale space within the facility and the deployment of high-speed networking between Yale’s campus and MGHPCC is underway. 
-    Initial HPC hardware deployments are expected to occur later on this year. 
-    Click [here](https://research.computing.yale.edu/about/yale-joins-mghpcc) for more information about how the YCRC will transition the HPC infrastructure to MGHPCC.
+!!! tip "Announcing the Bouchet HPC Cluster"
+    The Bouchet HPC cluster, YCRC first installation at MGHPCC, will be available in beta Fall 2024. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
 
 # Introduction
 
