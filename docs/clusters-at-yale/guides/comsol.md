@@ -4,7 +4,7 @@ YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basi
 
 ## Use COMSOL
 
-To use COMSOL on the cluster, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/clusters-at-yale/applications/modules) documentation. 
+To use COMSOL on the cluster, load the COMSOL module by running `module load COMSOL/5.2a-classkit`. For more information on our modules, please see our [software modules](/applications/modules) documentation. 
 
 COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
 

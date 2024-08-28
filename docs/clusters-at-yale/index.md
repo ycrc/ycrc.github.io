@@ -32,16 +32,16 @@ You control your computations using a job scheduling system called Slurm that al
 
 ## Use Software
 
-We use [software modules](/clusters-at-yale/applications/modules) to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease. We also provide assistance for installing less commonly used packages.
+We use [software modules](/applications/modules) to make multiple versions of popular software available. Modules allow you to swap between different applications and versions of those applications with relative ease. We also provide assistance for installing less commonly used packages.
 
-- [Applications & Software](applications)
+- [Applications & Software](/applications)
 
 ## Transfer Your Files
 
 There are a number of methods for transferring file between your computer and the cluster, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the **Upload** button and dragging and dropping your files into the upload window. 
 
-- [Transfer data using the Web Portal](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#file-browser)
-- [Other ways to transfer data](data/transfer) (for larger transfers)
+- [Transfer data using the Web Portal](/clusters-at-yale/access/ood/#file-browser)
+- [Other ways to transfer data](/data/transfer) (for larger transfers)
 
 ## Get Help
 

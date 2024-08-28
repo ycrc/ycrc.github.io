@@ -7,7 +7,7 @@ We strongly recommend that you use one of the methods below to set up your own p
 
 ## The Python Module
 
-We provide a Python as a [software module](/clusters-at-yale/applications/modules). 
+We provide a Python as a [software module](/applications/modules). 
 We include frozen versions of many common packages used for scientific computing.
 
 ### Find and Load Python

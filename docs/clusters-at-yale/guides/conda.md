@@ -1,6 +1,6 @@
 # Conda
 
-[Conda](https://conda.io/projects/conda/en/latest/index.html) is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the [modules](/clusters-at-yale/applications/modules) that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See [Conda's official command-line reference](https://docs.conda.io/projects/conda/en/latest/commands.html) and [the offical docs for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for detailed instructions. Here we present essential instructions and site-specific info.
+[Conda](https://conda.io/projects/conda/en/latest/index.html) is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the [modules](/applications/modules) that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See [Conda's official command-line reference](https://docs.conda.io/projects/conda/en/latest/commands.html) and [the offical docs for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for detailed instructions. Here we present essential instructions and site-specific info.
 
 !!! Warning
     Mixing modules and conda-managed software is almost never a good idea. When constructing an environment for your work you should load either modules or a conda environment. If you get stuck, you [can always ask us for help](/#get-help).
@@ -34,7 +34,7 @@ channels:
 module load miniconda
 ```
 
-You can save this to your default module collection by using `module save`. See our [module documentation](/clusters-at-yale/applications/modules) for more details.
+You can save this to your default module collection by using `module save`. See our [module documentation](/applications/modules) for more details.
 
 ### Create a `conda` Environment
 

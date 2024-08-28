@@ -20,7 +20,7 @@ To assist with providing this information, we have included instructions below o
 * instructions on how to repeat your issue. Please include the following:
 	* which directory are you working in or where you submitted your job
 		* Run the command `pwd` when you are in the directory where you encountered the issue
-	* the [software modules](/clusters-at-yale/applications/modules/) you have loaded
+	* the [software modules](/applications/modules/) you have loaded
 		* Run `module list` when you encounter the issue
 	* the commands you ran that resulted in the error or issue
 	* the name of the submission script your submitted to the scheduler with `sbatch` (if reporting an issue with a batch job)

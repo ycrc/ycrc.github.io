@@ -26,7 +26,7 @@ The authors provide up-to-date hints about performance on their [Benchmarks](htt
 
 #### Module
 
-We have GPU-enabled versions of RELION available on McCleary as [software modules](/clusters-at-yale/applications/modules/). To check witch versions are available, run `module avail relion`. To see specific notes about a particular install, you can use `module help`, e.g. `module help RELION/4.0.0-fosscuda-2020b` . 
+We have GPU-enabled versions of RELION available on McCleary as [software modules](/applications/modules/). To check witch versions are available, run `module avail relion`. To see specific notes about a particular install, you can use `module help`, e.g. `module help RELION/4.0.0-fosscuda-2020b` . 
 
 #### Example Job Parameters
 
@@ -70,4 +70,4 @@ We have a [whole separate page](/clusters-at-yale/guides/cryosparc/) about this 
 
 ### Other Software
 
-We have CCP4, Phenix and some other [software modules](/clusters-at-yale/applications/modules.md) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).
+We have CCP4, Phenix and some other [software modules](/applications/modules.md) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).

@@ -70,7 +70,7 @@ To avoid hitting this limit and make large numbers of jobs more manageable, you 
 
 ## Software Modules
 
-We build and organize [software modules](/clusters-at-yale/applications/modules) on the cluster using [toolchains](/clusters-at-yale/applications/toolchains/#toolchains). The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, *e.g.* `foss-2018b` or `intel-2018a`. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. 
+We build and organize [software modules](/applications/modules) on the cluster using [toolchains](/applications/toolchains/#toolchains). The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, *e.g.* `foss-2018b` or `intel-2018a`. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. 
 
 ```
 The following have been reloaded with a version change:
@@ -92,7 +92,7 @@ Where possible, only use one toolchain at a time. When you want to use software 
 
 ## Conda Environments
 
-[Conda environments](/clusters-at-yale/guides/conda/) provide a nice way to manage `python` and `R` packages and modules. Conda acieves this by setting functions and environment variables that point to your environment files when you run `conda activate`. Unlike [modules](/clusters-at-yale/applications/modules/), conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.
+[Conda environments](/clusters-at-yale/guides/conda/) provide a nice way to manage `python` and `R` packages and modules. Conda acieves this by setting functions and environment variables that point to your environment files when you run `conda activate`. Unlike [modules](/applications/modules/), conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.
 
 ### Load Conda Environments Right Before Use
 

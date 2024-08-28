@@ -6,7 +6,7 @@ There is no R executable provided by default; you have to choose one of the foll
 
 ## The R Module
 
-We provide several versions of R as [software modules](/clusters-at-yale/applications/modules).
+We provide several versions of R as [software modules](/applications/modules).
 These modules provide a broad selection of commonly used packages pre-installed.
 Notably, this includes a number of geospatial packages like `sf`, `sp`, `raster`, and `terra`.
 

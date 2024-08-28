@@ -37,18 +37,11 @@ plugins:
   - redirects:
         redirect_maps:
             'clusters-at-yale/clusters/index.md': 'clusters/index.md'
-            'clusters-at-yale/clusters/milgram.md': 'clusters/milgram.md'
-            'clusters-at-yale/clusters/grace.md': 'clusters/grace.md'
-            'clusters-at-yale/data/index.md': 'data/hpc-storage.md'
-            'clusters-at-yale/data/permissions.md': 'data/permissions.md'
-            'clusters-at-yale/data/archived-sequencing.md': 'data/ycga-data.md'
-            'data/archived-sequencing.md': 'data/ycga-data.md'
-            'clusters-at-yale/data/globus.md': 'data/globus.md'
-            'clusters-at-yale/data/staging.md': 'data/staging.md'
-            'clusters-at-yale/data/transfer.md': 'data/transfer.md'
-            'online-tutorials.md': 'resources/online-tutorials.md'
-            'national-hpcs.md': 'resources/national-hpcs.md'
-            'clusters/farnam-decommission.md': 'clusters/mccleary-farnam-ruddle.md'
+            'clusters-at-yale/applications/index.md': 'applications/index.md'
+            'clusters-at-yale/applications/compile.md': 'applications/compile.md'
+            'clusters-at-yale/applications/lifecycle.md': 'applications/lifecyle.md'
+            'clusters-at-yale/applications/modules.md': 'applications/modules.md'
+            'clusters-at-yale/applications/toolchains.md': 'applications/toolchains.md'
 
 extra:
   social:
@@ -126,11 +119,11 @@ nav:
             - clusters-at-yale/access/mfa.md
             - clusters-at-yale/access/courses.md
         - Applications & Software:
-            - clusters-at-yale/applications/index.md
-            - clusters-at-yale/applications/compile.md
-            - "Software Modules": clusters-at-yale/applications/modules.md
-            - "Module Toolchains": clusters-at-yale/applications/toolchains.md
-            - "Module Lifecycle": clusters-at-yale/applications/lifecycle.md
+            - applications/index.md
+            - applications/compile.md
+            - "Software Modules": applications/modules.md
+            - "Module Toolchains": applications/toolchains.md
+            - "Module Lifecycle": applications/lifecycle.md
 
         - Job Scheduling:
             - clusters-at-yale/job-scheduling/index.md
