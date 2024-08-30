@@ -5,9 +5,8 @@ The YCRC Grace and McCleary clusters can be made available for Yale courses with
 !!! warning
     All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.
 
-
 !!! info "For Instructors"
-    If you are interested in using a YCRC cluster in your Yale course, contact us at research.computing@yale.edu. If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.
+    If you are interested in using a YCRC cluster in your Yale course, fill out [this form](https://forms.gle/c1XBGojuaoiHegydA). If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.
 
 
 ## Course ID
