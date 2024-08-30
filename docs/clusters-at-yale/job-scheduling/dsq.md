@@ -13,27 +13,39 @@ dSQ adds a few nice features on top of job arrays:
 * dSQAutopsy can create a new job file that has only the jobs that didn't complete from your last run.
 * All you need is Python 2.7+, or Python 3.
 
-dSQ is _not_ recommended for situations where the initialization of the job takes most of its execution time and it is re-usable. These situations are much better handled by a worker-based job handler.
+dSQ is _not_ recommended for situations where the initialization of the job takes most of its execution time and it is re-usable. 
+These situations are much better handled by a worker-based job handler.
 
 ## Step 1: Create Your Job File
 
-First, you'll need to generate a job file. Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. Empty lines or lines that begin with `#` will be ignored when submitting your job array. **Note:** slurm jobs start in the directory from which your job was submitted.
+First, you'll need to generate a job file. 
+Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. 
+Empty lines or lines that begin with `#` will be ignored when submitting your job array. 
+**Note:** slurm jobs start in the directory from which your job was submitted.
 
-For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with `bowtie2` and convert to bam files with `samtools`. Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 20 minutes.
+For example, imagine that you have 1000 image files that correspond to individual samples you want to process with a python script (`my_script.py`) inside a conda environment (`env_name`). 
+Given some initial testing, you think that each job needs 4 GiB of RAM, and will run in less than 20 minutes.
 
-Create a file with the jobs you want to run, one per line. A simple loop that prints your jobs should usually suffice. A job can be a simple command invocation, or a sequence of commands. You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:
+Create a file with the jobs you want to run, one per line. 
+A simple loop that prints your jobs should usually suffice. 
+A job can be a simple command invocation, or a sequence of commands. 
+You can call the job file anything, but for this example assume it's called "joblist.txt" and contains:
 
 ``` bash
-module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - | samtools view -Shu - | samtools sort  - sample1
-module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - | samtools view -Shu - | samtools sort  - sample2
+module load miniconda; conda activate env_name; python my_script.py image_000.jpg
+module load miniconda; conda activate env_name; python my_script.py image_001.jpg
 ...
-module load bowtie2 samtools; bowtie2 -p 8 --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - | samtools view -Shu - | samtools sort  - sample1000
+module load miniconda; conda activate env_name; python my_script.py image_999.jpg
 ```
 
 !!! info "Avoid Very Short Jobs"
-    When building your job file, please bundle very short jobs (less than a minute) such that each element of the job array will run for at least 10 minutes. You can do this by putting multiple tasks on a single line, separated by a `;`. In the same vein, avoid jobs that simply check for a previous successful completion and then exit. See dSQAutopsy below for a way to completely avoid submitting these types of jobs.
+    When building your job file, please bundle very short jobs (less than a minute) such that each element of the job array will run for at least 10 minutes.
+    You can do this by putting multiple tasks on a single line, separated by a `;`. 
+    In the same vein, avoid jobs that simply check for a previous successful completion and then exit. 
+    See dSQAutopsy below for a way to completely avoid submitting these types of jobs.
 
-    Our clusters are not tuned for extremely high throughput jobs. Therefore, large numbers of very short jobs put a lot of strain on both the scheduler, resulting in delays in scheduling other users' jobs, and the storage, due to large numbers of I/O operations.
+    Our clusters are not tuned for extremely high throughput jobs. 
+    Therefore, large numbers of very short jobs put a lot of strain on both the scheduler, resulting in delays in scheduling other users' jobs, and the storage, due to large numbers of I/O operations.
 
 ## Step 2: Generate Batch Script with `dsq`
 
