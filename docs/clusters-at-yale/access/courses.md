@@ -15,7 +15,7 @@ Your course will be give a specific `courseid` based on the Yale course catalog 
 
 ## Course Accounts
 
-All members of a course, including the instructor and TFs will be give temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are district from any research accounts a course member may already have. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
+All members of a course, including the instructor and TFs will be given temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are distinct from any research accounts a course member may already have. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
 
 All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/).
 
