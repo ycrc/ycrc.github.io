@@ -98,7 +98,7 @@ Please account for the cluster unavailability when developing course schedules a
 
 As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. 
 
-A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not received a reminder.** Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.
+A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not receive a reminder.** Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.
 
 ### Transfer Data to Research Account
 
