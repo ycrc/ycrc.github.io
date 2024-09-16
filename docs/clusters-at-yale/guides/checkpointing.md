@@ -64,21 +64,32 @@ module load DMTCP
 dmtcp_restart -i 300 *.dmtcp
 ```
 
-Note that we are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
+!!! note 
+We are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
 the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.
 
-## Restart a Preempted job
+## Restart a job that timed out or was preempted
 
-Here is an example job script that will start a job running, periodically checkpoint it, and automatically requeue the
-job if it is preempted:
+!!! note 
+Timeouts and preemptions are subtlely different.  Slurm will automatically requeue a job that
+has been declared requeue-able (--requeue) and was preempted.  It will NOT automatically requeue a
+timed out job.  Jobs that time out require some additional signal handling.  The script requests
+signal 10 be sent to the script just before the job times out, and traps that signal and requests
+a requeue.  It is important to run the actual job in the background using & and wait.
 
+Here is an example job script that will start a job running, periodically checkpoint it, and
+automatically requeue the job if it is preempted or times out:
 
 ``` bash
 #!/bin/bash
 
 #SBATCH -t 30:00
 #SBATCH --requeue
+#SBATCH -p scavenge
+#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out
 #SBATCH --open-mode=append
+
+trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10
 
 #edit following line to put the appropriate module
 module load DMTCP
@@ -92,15 +103,15 @@ export DMTCP_COORD_PORT=$(</tmp/port)
 if [[ $cnt == 0 ]]
 then
     echo "doing launch"
-    rm -f *.dmtcp
-    dmtcp_launch -j python count.py
- 
+    rm -f *.dmtcp &
+    dmtcp_launch -j python count.py 
 elif [[ $cnt > 0 ]]; then
     echo "doing restart"
-    dmtcp_restart -j *.dmtcp
+    dmtcp_restart -j *.dmtcp &
 else
     echo "Failed to restart the job, exit"; exit
 fi
+wait
 ```
 
 Launch the job with sbatch, and watch the numbers appear in the slurm*.out file.  
@@ -144,8 +155,11 @@ as above.
 #SBATCH -c 6 
 #SBATCH -t 30:00
 #SBATCH --requeue
+#SBATCH -p scavenge
+#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out
 #SBATCH --open-mode=append
-#SBATCH -C haswell 
+
+trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10
 
 #edit following line to put the appropriate module
 module load NAMD/2.12-multicore
@@ -161,15 +175,14 @@ export DMTCP_COORD_PORT=$(</tmp/port)
 if [[ $cnt == 0 ]]
 then
     echo "doing launch"
-    dmtcp_launch namd2 +ppn $SLURM_CPUS_ON_NODE stmv.namd 
- 
+    dmtcp_launch namd2 +ppn $SLURM_CPUS_ON_NODE stmv.namd &
 elif [[ $cnt > 0 ]]; then
     echo "doing restart"
-    dmtcp_restart *.dmtcp
-
+    dmtcp_restart *.dmtcp &
 else
     echo "Failed to restart the job, exit"; exit
 fi
+wait
 ```
 
 ## Additional notes
@@ -178,7 +191,7 @@ fi
 you should take care to do `#SBATCH --open-mode=append`
 * keep in mind that recovery from checkpoints does imply backing up to the point of the previous checkpoint.  If your program is continuously 
 writing output, the output since the last checkpoint will be replicated.  For many programs (like NAMD) the output is really just logging, so this is not a problem.
-* by default, dmtcp compresses checkpoint files.  For large files this can take a long time.  You can turn off comporession with `dmtcp_launch --no-gzip`.
+* by default, dmtcp compresses checkpoint files.  For large files this can take a long time.  You can turn off compression with `dmtcp_launch --no-gzip`.
 
 * dmtcp creates a convenience restart script called restart_dmtcp_script.sh with every checkpoint.  In theory you can simply call it to restart:
 `./restart_dmtcp_script.sh`
