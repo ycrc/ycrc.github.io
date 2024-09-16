@@ -2345,8 +2345,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#restart-a-preempted-job" class="md-nav__link">
-    Restart a Preempted job
+  <a href="#restart-a-job-that-timed-out-or-was-preempted" class="md-nav__link">
+    Restart a job that timed out or was preempted
   </a>
   
 </li>
@@ -2425,16 +2425,31 @@ module<span class="w"> </span>load<span class="w"> </span>DMTCP
 
 dmtcp_restart<span class="w"> </span>-i<span class="w"> </span><span class="m">300</span><span class="w"> </span>*.dmtcp
 </code></pre></div></p>
-<p>Note that we are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>We are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
 the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.</p>
-<h2 id="restart-a-preempted-job">Restart a Preempted job</h2>
-<p>Here is an example job script that will start a job running, periodically checkpoint it, and automatically requeue the
-job if it is preempted:</p>
+<h2 id="restart-a-job-that-timed-out-or-was-preempted">Restart a job that timed out or was preempted</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Timeouts and preemptions are subtlely different.  Slurm will automatically requeue a job that
+has been declared requeue-able (--requeue) and was preempted.  It will NOT automatically requeue a
+timed out job.  Jobs that time out require some additional signal handling.  The script requests
+signal 10 be sent to the script just before the job times out, and traps that signal and requests
+a requeue.  It is important to run the actual job in the background using &amp; and wait.</p>
+<p>Here is an example job script that will start a job running, periodically checkpoint it, and
+automatically requeue the job if it is preempted or times out:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1">#SBATCH -t 30:00</span>
 <span class="c1">#SBATCH --requeue</span>
+<span class="c1">#SBATCH -p scavenge</span>
+<span class="c1">#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out</span>
 <span class="c1">#SBATCH --open-mode=append</span>
+
+<span class="nb">trap</span><span class="w"> </span><span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span><span class="w"> </span><span class="m">10</span>
 
 <span class="c1">#edit following line to put the appropriate module</span>
 module<span class="w"> </span>load<span class="w"> </span>DMTCP
@@ -2448,15 +2463,15 @@ dmtcp_coordinator<span class="w"> </span>-i<span class="w"> </span><span class="
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing launch&quot;</span>
-<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span>*.dmtcp
-<span class="w">    </span>dmtcp_launch<span class="w"> </span>-j<span class="w"> </span>python<span class="w"> </span>count.py
-
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span>dmtcp_launch<span class="w"> </span>-j<span class="w"> </span>python<span class="w"> </span>count.py<span class="w"> </span>
 <span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing restart&quot;</span>
-<span class="w">    </span>dmtcp_restart<span class="w"> </span>-j<span class="w"> </span>*.dmtcp
+<span class="w">    </span>dmtcp_restart<span class="w"> </span>-j<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
 <span class="k">else</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span>
 <span class="k">fi</span>
+<span class="nb">wait</span>
 </code></pre></div>
 <p>Launch the job with sbatch, and watch the numbers appear in the slurm*.out file.<br />
 Then, simulate preemption by doing:</p>
@@ -2495,8 +2510,11 @@ as above.</p>
 <span class="c1">#SBATCH -c 6 </span>
 <span class="c1">#SBATCH -t 30:00</span>
 <span class="c1">#SBATCH --requeue</span>
+<span class="c1">#SBATCH -p scavenge</span>
+<span class="c1">#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out</span>
 <span class="c1">#SBATCH --open-mode=append</span>
-<span class="c1">#SBATCH -C haswell </span>
+
+<span class="nb">trap</span><span class="w"> </span><span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span><span class="w"> </span><span class="m">10</span>
 
 <span class="c1">#edit following line to put the appropriate module</span>
 module<span class="w"> </span>load<span class="w"> </span>NAMD/2.12-multicore
@@ -2512,15 +2530,14 @@ dmtcp_coordinator<span class="w"> </span>-i<span class="w"> </span><span class="
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing launch&quot;</span>
-<span class="w">    </span>dmtcp_launch<span class="w"> </span>namd2<span class="w"> </span>+ppn<span class="w"> </span><span class="nv">$SLURM_CPUS_ON_NODE</span><span class="w"> </span>stmv.namd<span class="w"> </span>
-
+<span class="w">    </span>dmtcp_launch<span class="w"> </span>namd2<span class="w"> </span>+ppn<span class="w"> </span><span class="nv">$SLURM_CPUS_ON_NODE</span><span class="w"> </span>stmv.namd<span class="w"> </span><span class="p">&amp;</span>
 <span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing restart&quot;</span>
-<span class="w">    </span>dmtcp_restart<span class="w"> </span>*.dmtcp
-
+<span class="w">    </span>dmtcp_restart<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
 <span class="k">else</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span>
 <span class="k">fi</span>
+<span class="nb">wait</span>
 </code></pre></div>
 <h2 id="additional-notes">Additional notes</h2>
 <ul>
@@ -2529,7 +2546,7 @@ you should take care to do <code>#SBATCH --open-mode=append</code></li>
 <li>keep in mind that recovery from checkpoints does imply backing up to the point of the previous checkpoint.  If your program is continuously 
 writing output, the output since the last checkpoint will be replicated.  For many programs (like NAMD) the output is really just logging, so this is not a problem.</li>
 <li>
-<p>by default, dmtcp compresses checkpoint files.  For large files this can take a long time.  You can turn off comporession with <code>dmtcp_launch --no-gzip</code>.</p>
+<p>by default, dmtcp compresses checkpoint files.  For large files this can take a long time.  You can turn off compression with <code>dmtcp_launch --no-gzip</code>.</p>
 </li>
 <li>
 <p>dmtcp creates a convenience restart script called restart_dmtcp_script.sh with every checkpoint.  In theory you can simply call it to restart:
@@ -2551,7 +2568,7 @@ However, we have found it to be unreliable.  Your mileage may vary.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 22, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 16, 2024</span>
       
     
   </small>
