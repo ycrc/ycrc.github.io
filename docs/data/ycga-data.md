@@ -2,6 +2,10 @@
 
 Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [McCleary](/clusters/mccleary).
 
+!!! Important
+On Oct 1, 2024, we will be tightening access restrictions to the primary sequence data.  More information is available
+[here](/data/ycga-permissions).
+
 ## YCGA Access Policy
 
 The McCleary high-performance computing system has specific resources that are dedicated to
@@ -40,7 +44,7 @@ YCGA services.
 1. Access to McCleary can be granted to collaborating labs, with the authorization of the
 respective Yale PI. A maximum of one account per collaborating lab will be granted.
 Furthermore, such approval will be terminated upon request from the PI.
-This requires obtaining a [Sponsored Netid](clusters-at-yale/access/accounts/#external-collaborators).
+This requires obtaining a [Sponsored Netid](/clusters-at-yale/access/accounts/#external-collaborators).
 The expectation is that the collaborator, with PI consent, will
 download data from the McCleary HPC system to their own internal system for data
 analysis.

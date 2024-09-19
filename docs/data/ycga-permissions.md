@@ -1,6 +1,6 @@
 # YCGA Data Permissions
 
-Primary sequencing data produced by YCGA is only accessible to the groups that submitted the data.
+Primary sequencing data produced by YCGA is only made accessible to the groups that submitted the data.
 
 In order to improve the security of fastq sequence data on the Yale HPC system (McCleary) we will be tightening permissions on that data to restrict access to the group that submitted the samples.  We will do our best to allow access by the correct groups, but in some cases you may lose access when we make the change.
 
