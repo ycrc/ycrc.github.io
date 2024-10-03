@@ -2,7 +2,7 @@
 
     ```bash
     module load miniconda
-    conda create -n tf16
+    conda create -n tf16 python=3.11.*
     pip install tensorflow[and-cuda]==2.16.*
     
     #tensorflow can't find cuda libraries, need to tell it
