@@ -2475,6 +2475,118 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="october-2024">October 2024</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="announcing-bouchet">Announcing Bouchet</h4>
+<p>The Bouchet HPC cluster, YCRC's first installation at MGHPCC, will be in beta in Fall 2024. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later this year, we will acquire and install a large number of general-purpose compute nodes and GPU-enabled compute nodes. At that point, Bouchet will be available to all Yale researchers for computational work involving low-risk data.  Visit the <a href="clusters/bouchet">Bouchet page</a> for more information and updates.</p>
+<h4 id="jobstats-on-the-web">Jobstats on the Web</h4>
+<p>In our quest to provide detailed information about job performance and efficiency, we have recently enhanced the web-based jobstats portal to show summary statistics and plots of CPU, Memory, GPU, and GPU memory usage over time. </p>
+<p>These plots are helpful diagnostics for understanding why jobs fail or how to more efficiently request resources. These plots and statistics are available for in-progress jobs, a great way to keep track of performance while jobs are still running. This tool is part of the User Portal which can be accessed via Open OnDemand for each cluster:</p>
+<ul>
+<li><a href="https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal">Grace</a></li>
+<li><a href="https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal">McCleary</a></li>
+<li><a href="https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal">Milgram</a></li>
+</ul>
+<h3 id="software-highlights">Software Highlights</h3>
+<ul>
+<li><strong>GROMACS/2023.3-foss-2022b-CUDA-12.1.1-PLUMED-2.9.2</strong> is now available on Grace and McCleary</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: October 01, 2024
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="september-2024">September 2024</h2>
+<h3 id="announcements">Announcements</h3>
+<h4 id="the-ycrc-is-hiring">The YCRC is Hiring!</h4>
+<p>The YCRC is looking to add permanent members to our Research Support team. If helping others use the clusters and learning about other work done at the YCRC interests you, consider joining the YCRC! If you have any questions about the position, contact Kaylea Nelson (<a href="mailto:kaylea.nelson@yale.edu">kaylea.nelson@yale.edu</a>).</p>
+<p><a href="https://research.computing.yale.edu/about/careers">https://research.computing.yale.edu/about/careers</a></p>
+<h4 id="clarity-access">Clarity Access</h4>
+<p>Yale is launching the <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform">Clarity platform</a>. In its initial phase, Clarity offers an AI chatbot powered by OpenAI’s ChatGPT-4o. Importantly, Clarity provides a “walled-off” environment; its use is limited to Yale faculty, students, and staff, and information entered into its chatbot is not saved or used to train external AI models. Clarity is appropriate for use with all data types, including [high-risk data](https://your.yale.edu/policies-procedures/policies/1604-data-classification-policy, provided that <a href="https://cybersecurity.yale.edu/mss">all security standards</a> are observed. Its chatbot is capable of content creation, coding assistance, data and image analysis, text-to-speech, and more. Over time, the platform may expand to incorporate additional AI tools, including other <a href="https://ai.yale.edu/guidance/learn-about-ai#keyterms">large language models</a>. Clarity is designed to evolve as generative AI develops and the community offers feedback. </p>
+<p><em>Before using the Clarity AI chatbot, please review <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform#training">training resources</a> and <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform/clarity-platform-faqs">guidance</a> on appropriate use.</em></p>
+<h4 id="job-performance-monitoring">Job Performance Monitoring</h4>
+<p>We have recently deployed a new tool for measuring and monitoring job performance called <code>jobstats</code>. Available on all clusters, <code>jobstats</code> provides a report of the utilization of CPU, Memory, and GPU resources for in-progress and recently completed jobs. To generate the report simply run (replacing the ID number of the job in question):</p>
+<div class="highlight"><pre><span></span><code>[ab123@grace ~]$ jobstats 123456789
+
+======================================================================
+                         Slurm Job Statistics
+======================================================================
+         Job ID: 123456789
+  NetID/Account: ab123/agroup
+       Job Name: my_job
+          State: RUNNING
+          Nodes: 1
+      CPU Cores: 4
+     CPU Memory: 256GB (64GB per CPU-core)
+  QOS/Partition: normal/week
+        Cluster: grace
+     Start Time: Thu Sep 5, 2024 at 10:58 AM
+       Run Time: 1-06:43:41 (in progress)
+     Time Limit: 4-04:00:00
+
+                         Overall Utilization
+======================================================================
+  CPU utilization  [|||||||||||||                            26%]
+  CPU memory usage [||||                                      8%]
+
+                         Detailed Utilization
+======================================================================
+  CPU utilization per node (CPU time used/run time)
+      r816u29n04: 1-07:48:36/5-02:54:45 (efficiency=25.9%)
+
+  CPU memory usage per node - used/allocated
+      r816u29n04: 19.9GB/256.0GB (5.0GB/64.0GB per core of 4)
+</code></pre></div>
+<h3 id="software-highlights">Software Highlights</h3>
+<ul>
+<li><strong>R/4.4.1-foss-2022b</strong> is now available on all clusters</li>
+<li><strong>R-bundle-Bioconductor/3.19-foss-2022b-R-4.4.1</strong> (INCLUDES SEURAT) is now available on all clusters</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: September 01, 2024
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="milgram-maintenance">Milgram Maintenance</h2>
 <p><em>August 20-22, 2024</em></p>
 <h3 id="software-updates">Software Updates</h3>
@@ -2584,6 +2696,12 @@ non-A100 GPU: 15 SU
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
                 
                 
                 
@@ -2662,12 +2780,6 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -2788,6 +2900,12 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -2865,12 +2983,6 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -2984,6 +3096,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -3049,12 +3167,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
@@ -3202,6 +3314,12 @@ papermill /path/to/notebook.ipynb
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page5">
+
+            
                 
                 
                 
@@ -3295,12 +3413,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page5">
-
             
                 
                 
@@ -3431,6 +3543,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page6">
+
+            
                 
                 
                 
@@ -3511,12 +3629,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page6">
-
             
                 
                 
@@ -3623,6 +3735,12 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page7">
+
+            
                 
                 
                 
@@ -3696,12 +3814,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page7">
-
             
                 
                 
@@ -3853,6 +3965,12 @@ wait
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page8">
+
+            
                 
                 
                 
@@ -3942,12 +4060,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page8">
-
             
                 
                 
@@ -4093,6 +4205,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page9">
+
+            
                 
                 
                 
@@ -4175,12 +4293,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page9">
-
             
                 
                 
@@ -4295,6 +4407,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page10">
+
+            
                 
                 
                 
@@ -4377,12 +4495,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page10">
-
             
                 
                 
