@@ -25,7 +25,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |9|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |9|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
 
 === "devel"
 
@@ -57,7 +57,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |2|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
 
 === "week"
 
@@ -86,7 +86,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |4|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |4|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
 
 === "gpu"
 
@@ -149,10 +149,9 @@
     |---|---|---|---|---|---|---|---|
     |20|6342|48|479||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
     |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
-    |17|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp|
+    |17|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
+    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
     |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
-    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
-    |43|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
@@ -206,8 +205,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |20|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
-        |40|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |19|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
 
     === "psych_devel"
 
@@ -237,7 +235,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |1|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
 
     === "psych_gpu"
 
@@ -266,7 +264,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
 
     === "psych_scavenge"
 
@@ -295,8 +293,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
         |20|6342|48|479||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
-        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti|
-        |43|E5-2660_v4|28|247||||broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
+        |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
 
     === "psych_week"
 
@@ -328,5 +325,4 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
         |20|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
-        |40|E5-2660_v4|28|247|broadwell, E5-2660_v4, nogpu, standard, pi, oldest|
 

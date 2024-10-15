@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re
 import sys
 from collections import defaultdict
@@ -99,7 +99,7 @@ def get_part_hardware():
             gpu_type = []
             gpu_mem = []
             gpu_num = []
-            
+
             if line_dict["gres"] != "(null)":
                 parts_with_gpus.add(line_dict["partition"])
                 for gpu, num in gres_regex.findall(line_dict["gres"]):
