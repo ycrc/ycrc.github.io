@@ -25,6 +25,7 @@ vram_dict = {
     "rtx4000": "8",
     "rtx5000": "16",
     "rtx8000": "48",
+    "h100": "80",
 }
 
 # Commons partitions, their display order
