@@ -94,7 +94,7 @@ def get_part_hardware():
             if line_dict["cpus"] == "0":
                 continue
             partition_name = line_dict["partition"]
-            mem = int(line_dict["memory"]) / 1024
+            mem = int(line_dict["memory"]) // 1024 # integer division to avoid rounding up
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
             gpu_mem = []
