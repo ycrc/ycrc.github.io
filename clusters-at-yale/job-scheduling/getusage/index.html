@@ -2450,59 +2450,59 @@ These data are available both through each cluster's Open OnDemand and as a comm
 <p><img alt="getusage" src="/img/ood-getusage.png" /></p>
 <h2 id="command-line-getusage">Command-line <code>getusage</code></h2>
 <p>These aggrigates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>getusage<span class="w"> </span>--help
+<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage --help
 
-<span class="w"> </span>Usage:<span class="w"> </span>getusage<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+ Usage: getusage <span class="o">[</span>OPTIONS<span class="o">]</span>
 
-╭─<span class="w"> </span>Options<span class="w"> </span>──────────────────────────────────────────────────────────────────╮
-│<span class="w"> </span>--user<span class="w">       </span>-u<span class="w">      </span>TEXT<span class="w">  </span>User<span class="w"> </span>name<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>Current<span class="w"> </span>user<span class="o">]</span><span class="w">               </span>│
-│<span class="w"> </span>--cluster<span class="w">    </span>-c<span class="w">      </span>TEXT<span class="w">  </span>Filter<span class="w"> </span>usage<span class="w"> </span>by<span class="w"> </span>cluster<span class="w"> </span>CLUSTER<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>All<span class="o">]</span><span class="w">  </span>│
-│<span class="w"> </span>--partition<span class="w">  </span>-p<span class="w">            </span>Break<span class="w"> </span>usage<span class="w"> </span>down<span class="w"> </span>by<span class="w"> </span>partition<span class="w">                   </span>│
-│<span class="w"> </span>--summary<span class="w">    </span>-s<span class="w">            </span>Only<span class="w"> </span>report<span class="w"> </span>monthly<span class="w"> </span>summary<span class="w">                     </span>│
-│<span class="w"> </span>--help<span class="w">                     </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                     </span>│
+╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --user       -u      TEXT  User name <span class="o">[</span>default: Current user<span class="o">]</span>               │
+│ --cluster    -c      TEXT  Filter usage by cluster CLUSTER <span class="o">[</span>default: All<span class="o">]</span>  │
+│ --partition  -p            Break usage down by partition                   │
+│ --summary    -s            Only report monthly summary                     │
+│ --help                     Show this message and exit.                     │
 ╰────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
 <p>Running without any arguments produces a report for the full fiscal year (starting in July):</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>getusage
-testuser<span class="w"> </span>Group<span class="w"> </span>Report
+<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage
+testuser Group Report
 
-Monthly<span class="w"> </span>usage<span class="w"> </span><span class="k">for</span><span class="w"> </span>testuser
+Monthly usage <span class="k">for</span> testuser
 ────────────────────────────────────────────────────────────────────────────────
-<span class="w">                                 </span>CPU<span class="w"> </span>Hours<span class="w"> </span>Billable
-<span class="w">               </span>cluster<span class="w">  </span>User
-<span class="m">2023</span><span class="w"> </span>July<span class="w">      </span>grace<span class="w">    </span>testuser<span class="w">     </span><span class="m">19</span>.04<span class="w">    </span><span class="m">18</span>.93
-<span class="m">2023</span><span class="w"> </span>August<span class="w">    </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">2</span>.94<span class="w">     </span><span class="m">2</span>.94
-<span class="w">               </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">2</span>.48<span class="w">     </span><span class="m">2</span>.48
-<span class="m">2023</span><span class="w"> </span>September<span class="w"> </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">1</span>.11<span class="w">     </span><span class="m">1</span>.11
-<span class="w">               </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">3</span>.54<span class="w">     </span><span class="m">3</span>.54
-<span class="m">2023</span><span class="w"> </span>October<span class="w">   </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">0</span>.99<span class="w">     </span><span class="m">0</span>.99
-<span class="w">               </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">1</span>.46<span class="w">     </span><span class="m">1</span>.46
-<span class="m">2023</span><span class="w"> </span>November<span class="w">  </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">1</span>.07<span class="w">     </span><span class="m">1</span>.07
-<span class="m">2024</span><span class="w"> </span>January<span class="w">   </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">0</span>.16<span class="w">     </span><span class="m">0</span>.00
-<span class="w">               </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">4</span>.35<span class="w">     </span><span class="m">4</span>.35
-<span class="w">               </span>milgram<span class="w">  </span>testuser<span class="w">      </span><span class="m">0</span>.01<span class="w">     </span><span class="m">0</span>.00
-<span class="m">2024</span><span class="w"> </span>February<span class="w">  </span>grace<span class="w">    </span>testuser<span class="w">      </span><span class="m">0</span>.00<span class="w">     </span><span class="m">0</span>.00
-<span class="w">               </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">1</span>.41<span class="w">     </span><span class="m">1</span>.41
-<span class="w">               </span>milgram<span class="w">  </span>testuser<span class="w">      </span><span class="m">0</span>.14<span class="w">     </span><span class="m">0</span>.14
-<span class="m">2024</span><span class="w"> </span>March<span class="w">     </span>mccleary<span class="w"> </span>testuser<span class="w">      </span><span class="m">0</span>.00<span class="w">     </span><span class="m">0</span>.00
-<span class="w">               </span>milgram<span class="w">  </span>testuser<span class="w">      </span><span class="m">6</span>.61<span class="w">     </span><span class="m">6</span>.61
-Monthly<span class="w"> </span>Summary
-Latest<span class="w"> </span>month<span class="w"> </span>is<span class="w"> </span><span class="k">in</span>-progress<span class="w"> </span><span class="o">(</span>data<span class="w"> </span>updated<span class="w"> </span>daily<span class="w"> </span>at<span class="w"> </span>midnight<span class="o">)</span>
+                                 CPU Hours Billable
+               cluster  User
+<span class="m">2023</span> July      grace    testuser     <span class="m">19</span>.04    <span class="m">18</span>.93
+<span class="m">2023</span> August    grace    testuser      <span class="m">2</span>.94     <span class="m">2</span>.94
+               mccleary testuser      <span class="m">2</span>.48     <span class="m">2</span>.48
+<span class="m">2023</span> September grace    testuser      <span class="m">1</span>.11     <span class="m">1</span>.11
+               mccleary testuser      <span class="m">3</span>.54     <span class="m">3</span>.54
+<span class="m">2023</span> October   grace    testuser      <span class="m">0</span>.99     <span class="m">0</span>.99
+               mccleary testuser      <span class="m">1</span>.46     <span class="m">1</span>.46
+<span class="m">2023</span> November  grace    testuser      <span class="m">1</span>.07     <span class="m">1</span>.07
+<span class="m">2024</span> January   grace    testuser      <span class="m">0</span>.16     <span class="m">0</span>.00
+               mccleary testuser      <span class="m">4</span>.35     <span class="m">4</span>.35
+               milgram  testuser      <span class="m">0</span>.01     <span class="m">0</span>.00
+<span class="m">2024</span> February  grace    testuser      <span class="m">0</span>.00     <span class="m">0</span>.00
+               mccleary testuser      <span class="m">1</span>.41     <span class="m">1</span>.41
+               milgram  testuser      <span class="m">0</span>.14     <span class="m">0</span>.14
+<span class="m">2024</span> March     mccleary testuser      <span class="m">0</span>.00     <span class="m">0</span>.00
+               milgram  testuser      <span class="m">6</span>.61     <span class="m">6</span>.61
+Monthly Summary
+Latest month is <span class="k">in</span>-progress <span class="o">(</span>data updated daily at midnight<span class="o">)</span>
 ────────────────────────────────────────────────────────────────────────────────
-<span class="w">               </span>CPU<span class="w"> </span>Hours<span class="w">      </span>Billable
-<span class="m">2023</span>-07-31<span class="w">         </span><span class="m">19</span>.04<span class="w">         </span><span class="m">18</span>.93
-<span class="m">2023</span>-08-31<span class="w">          </span><span class="m">5</span>.42<span class="w">          </span><span class="m">5</span>.42
-<span class="m">2023</span>-09-30<span class="w">          </span><span class="m">4</span>.65<span class="w">          </span><span class="m">4</span>.65
-<span class="m">2023</span>-10-31<span class="w">          </span><span class="m">2</span>.45<span class="w">          </span><span class="m">2</span>.45
-<span class="m">2023</span>-11-30<span class="w">          </span><span class="m">1</span>.07<span class="w">          </span><span class="m">1</span>.07
-<span class="m">2023</span>-12-31<span class="w">          </span><span class="m">0</span>.00<span class="w">          </span><span class="m">0</span>.00
-<span class="m">2024</span>-01-31<span class="w">          </span><span class="m">4</span>.52<span class="w">          </span><span class="m">4</span>.35
-<span class="m">2024</span>-02-29<span class="w">          </span><span class="m">1</span>.55<span class="w">          </span><span class="m">1</span>.55
-<span class="m">2024</span>-03-31<span class="w">          </span><span class="m">6</span>.61<span class="w">          </span><span class="m">6</span>.61
+               CPU Hours      Billable
+<span class="m">2023</span>-07-31         <span class="m">19</span>.04         <span class="m">18</span>.93
+<span class="m">2023</span>-08-31          <span class="m">5</span>.42          <span class="m">5</span>.42
+<span class="m">2023</span>-09-30          <span class="m">4</span>.65          <span class="m">4</span>.65
+<span class="m">2023</span>-10-31          <span class="m">2</span>.45          <span class="m">2</span>.45
+<span class="m">2023</span>-11-30          <span class="m">1</span>.07          <span class="m">1</span>.07
+<span class="m">2023</span>-12-31          <span class="m">0</span>.00          <span class="m">0</span>.00
+<span class="m">2024</span>-01-31          <span class="m">4</span>.52          <span class="m">4</span>.35
+<span class="m">2024</span>-02-29          <span class="m">1</span>.55          <span class="m">1</span>.55
+<span class="m">2024</span>-03-31          <span class="m">6</span>.61          <span class="m">6</span>.61
 
-Total<span class="w"> </span>usage:<span class="w">          </span><span class="m">45</span>.31<span class="w"> </span>CPU<span class="w"> </span>Hours
-Total<span class="w"> </span>billable<span class="w"> </span>usage:<span class="w"> </span><span class="m">45</span>.03<span class="w"> </span>CPU<span class="w"> </span>Hours
-Remaining<span class="w"> </span>No<span class="w"> </span>Cost<span class="w"> </span>Allotment:<span class="w"> </span><span class="m">24</span>,954.97<span class="w"> </span>CPU<span class="w"> </span>Hours
+Total usage:          <span class="m">45</span>.31 CPU Hours
+Total billable usage: <span class="m">45</span>.03 CPU Hours
+Remaining No Cost Allotment: <span class="m">24</span>,954.97 CPU Hours
 </code></pre></div>
 <p>Please reach out to hpc@yale.edu with any comments or suggestions about how we can improve <code>getusage</code>. </p>
                 
