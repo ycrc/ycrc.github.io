@@ -147,7 +147,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |20|6342|48|479||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
+    |20|6342|48|478||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
     |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
     |17|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
     |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
@@ -205,7 +205,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |19|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
+        |19|6342|48|478|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
 
     === "psych_devel"
 
@@ -235,7 +235,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |1|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
+        |1|6342|48|478|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
 
     === "psych_gpu"
 
@@ -292,7 +292,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
         |---|---|---|---|---|---|---|---|
-        |20|6342|48|479||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
+        |20|6342|48|478||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
         |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
 
     === "psych_week"
@@ -324,5 +324,5 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |20|6342|48|479|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
+        |20|6342|48|478|icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
 
