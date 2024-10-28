@@ -28,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |18|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "devel"
 
@@ -59,7 +59,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "week"
 
@@ -91,7 +91,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |6|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "gpu"
 
@@ -128,7 +128,7 @@
     |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
     |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
     |6|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
-    |5|6326|32|1001|a100|4|80|icelake, avx512, 6326, doubleprecision, a100, a100-80g, common|
+    |5|6326|32|1000|a100|4|80|icelake, avx512, 6326, doubleprecision, a100, a100-80g, common|
 
 === "gpu_devel"
 
@@ -161,7 +161,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|6326|32|1001||||icelake, avx512, 6326, doubleprecision, a100, a100-80g-MIG, common|
+    |1|6326|32|1000||||icelake, avx512, 6326, doubleprecision, a100, a100-80g-MIG, common|
 
 === "bigmem"
 
@@ -191,5 +191,5 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|1992|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|1991|sapphirerapids, avx512, 6458q, common|
 
