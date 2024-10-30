@@ -2521,7 +2521,7 @@ module avail pytorch
 <h3 id="tensorflow">Tensorflow</h3>
 <p>Instructions for installing tensorflow on our clusters can be found <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/">here</a></p>
 <h3 id="pytorch">PyTorch</h3>
-<p>Instructions for installing tensorflow on our clusters can be found <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">here</a></p>
+<p>Instructions for installing pytorch on our clusters can be found <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">here</a></p>
 <h2 id="compile-c-or-cpp-files-with-cuda-code">Compile <code>.c</code> or <code>.cpp</code> Files with CUDA code</h2>
 <p>By default, <code>nvcc</code> expects that host code is in files with a <code>.c</code> or <code>.cpp</code> extension, and device code is in files with a <code>.cu</code> extension. When you mix device code in a <code>.c</code> or <code>.cpp</code> file with host code, the device code will not be recoganized by <code>nvcc</code> unless you add this flag: <code>-x cu</code>.  </p>
 <div class="highlight"><pre><span></span><code>nvcc -x cu mycuda.cpp -o mycuda.exe
