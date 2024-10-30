@@ -2,9 +2,9 @@
 
 Bouchet HPC cluster is YCRC's first installation at [Massachusetts High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc). The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the "mpi" partition on the Grace cluster. 
 
-Therefore,in beta, we are explicitly and exclusively seeking tighly coupled, MPI-enabled workloads. We encourage researchers to participate in the beta as it will help ensure that the production cluster will run your work without issue and provide optimal performance. There will be no compute charges on Bouchet during testing.  
+During the beta testing, we are explicitly and exclusively seeking tighly coupled, MPI-enabled workloads. We encourage researchers to participate in the beta as it will help ensure that the production cluster will run your work without issue and provide optimal performance. There will be no compute charges on Bouchet during testing.  
 
-Bouchet MPI parition provides a number of benefits compared to Grace MPI partition
+Bouchet MPI parition provides a number of benefits compared to Grace MPI partition:
 
 1. Bouchet MPI nodes are Emerald Rapids Platinum 8562Y+ nodes, which are a newer generation compared to Skylake 6136 nodes in the Grace MPI partition 
 2. Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node in Grace MPI parition
@@ -28,7 +28,7 @@ On other clusters, your PI name is the primary group of your account. On Bouchet
 
 ### Storage
 
-Bouchet has an all-flash storage system from VAST data and does not have any GPFS filesystem. `/nfs/roberts/` hosts Bouchet's home, project and scratch directories.
+Bouchet filesystem is an all-flash storage system from VAST data and does not have any GPFS filesystem. `/nfs/roberts/` hosts Bouchet's home, project and scratch directories.
 
 |Storage         | Root Directory            | Quota                                   | File Count | 
 |----------------|---------------------------|-----------------------------------------|------------|
