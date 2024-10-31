@@ -2464,17 +2464,17 @@
 <div class="highlight"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
 </code></pre></div>
 <p>and copy and paste the output to our <a href="https://sshkeys.ycrc.yale.edu/">SSH key uploader</a>. The propagation of this public key to other clusters can take a few minutes. </p>
-<p>To initiate the transfer from a non-Bouchet cluster, log into the <code>transfer</code> node via ssh:</p>
-<p><div class="highlight"><pre><span></span><code>[an492@login1.grace ~]$ ssh transfer
-[an492@transfer1.grace ~]$
+<p>To initiate the transfer from Bouchet cluster, log into the <code>transfer</code> node via ssh:</p>
+<p><div class="highlight"><pre><span></span><code>[an492@login1.bouchet ~]$ ssh transfer1
+[an492@transfer1.bouchet ~]$
 </code></pre></div>
 and run the <code>rsync</code> commands on the <code>transfer</code> node. </p>
 <p>We recommend using the following flags with the <code>rsync</code> command:
-<div class="highlight"><pre><span></span><code>rsync -avP /path/to/existing/data NETIDd@transfer1-bouchet.ycrc.yale.edu:/path/to/new/home/for/data
+<div class="highlight"><pre><span></span><code>rsync -avP NETID@transfer-CLUSTER.ycrc.yale.edu:/path/to/existing/data /path/to/new/home/for/data
 </code></pre></div>
 Here the <code>-a</code> will run transfer in <code>archive</code> mode, which preserves ownership, permissions, and creation/modification times. Additionally, the <code>-v</code> will run in <code>verbose</code> mode where the name of every file is printed out, and <code>-P</code> displays a progress bar. </p>
 <p>As an example, to transfer a directory (named <code>mydata</code>) from Grace project directory to Bouchet project directory:
-<div class="highlight"><pre><span></span><code>rsync -avP /gpfs/gibbs/project/GROUP/NETID/mydata NETIDd@transfer1-bouchet.ycrc.yale.edu:/nfs/roberts/project/ 
+<div class="highlight"><pre><span></span><code>rsync -avP NETID@transfer-grace.ycrc.yale.edu:/gpfs/gibbs/project/GROUP/NETID/mydata /nfs/roberts/project/GROUP/NETID 
 </code></pre></div></p>
 <p>For <code>rsync</code> transfers that may take a while, it is best to run the transfer inside a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/">tmux</a> sesseion. </p>
 <h3 id="applications-and-software">Applications and software</h3>
