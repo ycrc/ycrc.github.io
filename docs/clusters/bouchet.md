@@ -13,3 +13,48 @@ The Bouchet HPC cluster will be available in beta Fall 2024. The first installat
 Ultimately, Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. However, we are still in the early stages of planning that transition and will continue to operate both Grace and McCleary in their current form for a number of years. More details will be provided as we consult with faculty and researchers about the transition and how we can minimize disruptions to critical work. To this effect, we will be convening a faculty advisory committee this fall to ensure a smooth migration.
 
 If you have any questions about Yale’s partnership at MGHPCC or the Bouchet cluster, please [reach out to us](/).
+
+## Access the Cluster
+
+Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access).
+
+## System Status and Monitoring
+
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). 
+For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/bouchet/).
+
+## Partitions and Hardware
+
+Bouchet is made up of sixty identical compute nodes. 
+These are mostly reserved for the `mpi` partition, but we have set aside two nodes for debugging and compiliation in the `devel` partition.
+By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
+
+--8<-- "snippets/submission_rate_limit.md"
+
+### Public Partitions
+
+See each tab below for more information about the available common use partitions.
+
+--8<-- "snippets/bouchet_partitions.md"
+
+## Storage
+
+Bouchet has access to one filesystem called `roberts`. 
+This is a VAST filesystem similar to the `palmer` filesystem on Grace and McCleary.
+For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
+
+You can check your current storage usage & limits by running the `getquota` command. 
+Your `~/project` and `~/scratch` directories are shortcuts. 
+Get a list of the absolute paths to your directories with the `mydirectories` command. 
+If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
+
+For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
+
+!!! Warning
+    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+
+|Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
+|----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
+| home           | `/home`                   | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
+| project        | `/nfs/roberts/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
+| scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
