@@ -15,7 +15,7 @@ Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid.
 # Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
 # On a Mac you still need xquartz installed
 
-Host *.ycrc.yale.edu mccleary grace milgram misha
+Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
