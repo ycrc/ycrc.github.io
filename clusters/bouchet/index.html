@@ -575,6 +575,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#access-the-cluster" class="md-nav__link">
+    Access the Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-status-and-monitoring" class="md-nav__link">
+    System Status and Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitions and Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2387,6 +2428,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#access-the-cluster" class="md-nav__link">
+    Access the Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-status-and-monitoring" class="md-nav__link">
+    System Status and Monitoring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitions-and-hardware" class="md-nav__link">
+    Partitions and Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Partitions and Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-partitions" class="md-nav__link">
+    Public Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2412,6 +2494,193 @@
 <p>The Bouchet HPC cluster will be available in beta Fall 2024. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data.</p>
 <p>Ultimately, Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. However, we are still in the early stages of planning that transition and will continue to operate both Grace and McCleary in their current form for a number of years. More details will be provided as we consult with faculty and researchers about the transition and how we can minimize disruptions to critical work. To this effect, we will be convening a faculty advisory committee this fall to ensure a smooth migration.</p>
 <p>If you have any questions about Yale’s partnership at MGHPCC or the Bouchet cluster, please <a href="/">reach out to us</a>.</p>
+<h2 id="access-the-cluster">Access the Cluster</h2>
+<p>Once you have <a href="https://research.computing.yale.edu/support/hpc/account-request">an account</a>, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a>.</p>
+<h2 id="system-status-and-monitoring">System Status and Monitoring</h2>
+<p>For system status messages and the schedule for upcoming maintenance, please see the <a href="https://research.computing.yale.edu/support/hpc/system-status">system status page</a>. 
+For a current node-level view of job activity, see the <a href="http://cluster.ycrc.yale.edu/bouchet/">cluster monitor page (VPN only)</a>.</p>
+<h2 id="partitions-and-hardware">Partitions and Hardware</h2>
+<p>Bouchet is made up of sixty identical compute nodes. 
+These are mostly reserved for the <code>mpi</code> partition, but we have set aside two nodes for debugging and compiliation in the <code>devel</code> partition.
+By combining the <code>--partition</code> and <a href="/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints"><code>--constraint</code></a> Slurm options you can more finely control what nodes your jobs can run on.</p>
+<div class="admonition warning">
+<p class="admonition-title">Job Submission Limits</p>
+<ul>
+<li>
+<p>You are limited to 4 interactive app instances (of any type) at one time. 
+Additional instances will be rejected until you delete older open instances. 
+For OnDemand jobs, closing the window does not terminate the interactive app job.
+To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.</p>
+</li>
+<li>
+<p>Job submissions are limited to <strong>200 jobs per hour</strong>. See the Rate Limits section in the <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">Common Job Failures</a> page for more info.</p>
+</li>
+</ul>
+</div>
+<h3 id="public-partitions">Public Partitions</h3>
+<p>See each tab below for more information about the available common use partitions.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">devel</label><div class="tabbed-content">
+<p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the devel partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>06:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>70G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>8562Y+</td>
+<td>64</td>
+<td>479</td>
+<td>cpugen:emeraldrerapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">mpi</label><div class="tabbed-content">
+<p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=498688
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the mpi partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per group</td>
+<td><code>58</code></td>
+</tr>
+<tr>
+<td>Maximum nodes per user</td>
+<td><code>58</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>58</td>
+<td>8562Y+</td>
+<td>64</td>
+<td>479</td>
+<td>cpugen:emeraldrerapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="storage">Storage</h2>
+<p>Bouchet has access to one filesystem called <code>roberts</code>. 
+This is a VAST filesystem similar to the <code>palmer</code> filesystem on Grace and McCleary.
+For more details on the different storage spaces, see our <a href="/data/hpc-storage">Cluster Storage</a> documentation.</p>
+<p>You can check your current storage usage &amp; limits by running the <code>getquota</code> command. 
+Your <code>~/project</code> and <code>~/scratch</code> directories are shortcuts. 
+Get a list of the absolute paths to your directories with the <code>mydirectories</code> command. 
+If you want to share data in your Project or Scratch directory, see the <a href="/data/permissions/">permissions</a> page.</p>
+<p>For information on data recovery, see the <a href="/data/backups">Backups and Snapshots</a> documentation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Files stored in <code>scratch</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="/data/#purchase-additional-storage">purchase storage</a> if you need additional longer term storage.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Root Directory</th>
+<th>Storage</th>
+<th>File Count</th>
+<th>Backups</th>
+<th>Snapshots</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>home</td>
+<td><code>/home</code></td>
+<td>125GiB/user</td>
+<td>500,000</td>
+<td>Yes</td>
+<td>&gt;=2 days</td>
+<td></td>
+</tr>
+<tr>
+<td>project</td>
+<td><code>/nfs/roberts/project</code></td>
+<td>1TiB/group, increase to 4TiB on request</td>
+<td>5,000,000</td>
+<td>No</td>
+<td>&gt;=2 days</td>
+<td></td>
+</tr>
+<tr>
+<td>scratch</td>
+<td><code>/nfs/roberts/scratch</code></td>
+<td>10TiB/group</td>
+<td>15,000,000</td>
+<td>No</td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 
                   
                     
@@ -2420,7 +2689,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2024</span>
       
     
   </small>
