@@ -42,10 +42,10 @@ include as much detail as possible about your request and we'll find the right p
 | --- | --- | --- |
 |[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R  |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Physics, Python, MPI |
-|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace) | Molecular Dynamics, Matlab, C/C++ |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
+|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
-|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [McCleary](/clusters/mccleary) | Computational Chemistry, Python, Matlab |
+|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
