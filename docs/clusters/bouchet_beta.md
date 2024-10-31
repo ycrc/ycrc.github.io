@@ -48,23 +48,23 @@ cat ~/.ssh/id_rsa.pub
 
 and copy and paste the output to our [SSH key uploader](https://sshkeys.ycrc.yale.edu/). The propagation of this public key to other clusters can take a few minutes. 
 
-To initiate the transfer from a non-Bouchet cluster, log into the `transfer` node via ssh:
+To initiate the transfer from Bouchet cluster, log into the `transfer` node via ssh:
 
 ```
-[an492@login1.grace ~]$ ssh transfer
-[an492@transfer1.grace ~]$
+[an492@login1.bouchet ~]$ ssh transfer1
+[an492@transfer1.bouchet ~]$
 ```
 and run the `rsync` commands on the `transfer` node. 
 
 We recommend using the following flags with the `rsync` command:
 ```
-rsync -avP /path/to/existing/data NETIDd@transfer1-bouchet.ycrc.yale.edu:/path/to/new/home/for/data
+rsync -avP NETID@transfer-CLUSTER.ycrc.yale.edu:/path/to/existing/data /path/to/new/home/for/data
 ```
 Here the `-a` will run transfer in `archive` mode, which preserves ownership, permissions, and creation/modification times. Additionally, the `-v` will run in `verbose` mode where the name of every file is printed out, and `-P` displays a progress bar. 
 
 As an example, to transfer a directory (named `mydata`) from Grace project directory to Bouchet project directory:
 ```
-rsync -avP /gpfs/gibbs/project/GROUP/NETID/mydata NETIDd@transfer1-bouchet.ycrc.yale.edu:/nfs/roberts/project/ 
+rsync -avP NETID@transfer-grace.ycrc.yale.edu:/gpfs/gibbs/project/GROUP/NETID/mydata /nfs/roberts/project/GROUP/NETID 
 ```
 
 For `rsync` transfers that may take a while, it is best to run the transfer inside a [tmux](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/) sesseion. 
