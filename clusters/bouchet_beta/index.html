@@ -2410,37 +2410,39 @@
                 
                 
                 <h1 id="bouchet-beta-testing">Bouchet Beta Testing</h1>
-<p>Bouchet HPC cluster is YCRC's first installation at <a href="https://research.computing.yale.edu/about/yale-joins-mghpcc">Massachusetts High Performance Computing Center (MGHPCC)</a>. 
+<p>The Bouchet HPC cluster is YCRC's first installation at <a href="https://research.computing.yale.edu/about/yale-joins-mghpcc">Massachusetts High Performance Computing Center (MGHPCC)</a>. 
 Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward.
 The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows using <code>mpi</code>. 
-A second set of nodes will be installed in early 2025 aimed at general purpose workflows.
+A second set of nodes will be installed in early 2025 aimed at general purpose workflows, including GPU-accelerated work.
 We encourage researchers to participate in the beta as it will help ensure that the production cluster will run your work without issue and provide optimal performance. 
 There will be no compute charges on Bouchet during beta testing.  </p>
 <p>Compared to the existing <code>mpi</code> partition Bouchet provides several key improvements:</p>
 <ol>
-<li>Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to Skylake 6136 nodes in the Grace MPI partition </li>
-<li>Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node in Grace MPI parition</li>
+<li>Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes </li>
+<li>Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available</li>
 <li>The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance </li>
 </ol>
 <h2 id="access-the-cluster">Access the cluster</h2>
 <p>Once you have an account, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a>. 
-Open OnDemand for Bouchet will be available in the future. 
 You can log in with the command:</p>
 <div class="highlight"><pre><span></span><code>ssh NETID@bouchet.ycrc.yale.edu
 </code></pre></div>
+<p>Open OnDemand for Bouchet will be available in the future.</p>
 <h2 id="key-differences-from-other-clusters">Key Differences from Other Clusters</h2>
 <h3 id="primary-group">Primary Group</h3>
 <p>On non-Bouchet clusters, your PI name is the primary group of your account. 
-On Bouchet, your primary group is your NetID, and your PI name is your secondary group. 
-This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.    </p>
+On Bouchet, your primary group is your NetID, and secondary groups are assigned for any PI group you belong to. 
+This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.  <br />
+Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
+However, be careful about copying existing files from <code>$HOME</code> to project spaces, as those files may need to have their group ownership updated. </p>
 <h3 id="partition">Partition</h3>
 <p>Currently, <code>devel</code> and <code>mpi</code> partitions are available. 
 Both have identical 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes. 
-For more detailed information about job limits and avalable compute nodes in each partition, please refer to <a href="https://docs.ycrc.yale.edu/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
+For more detailed information about job limits and avalable compute nodes in each partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
 Please use <code>devel</code> partition for code development, debugging, and compilation. 
-Jobs submitted to <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.      </p>
+Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.      </p>
 <h3 id="storage">Storage</h3>
-<p>Bouchet filesystem is an all-flash storage system from VAST data and does not have any GPFS filesystem. 
+<p>Bouchet filesystem is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
 <code>/nfs/roberts/</code> hosts Bouchet's home, project, and scratch directories. 
 Your project and scratch storage usage and quota are shared with the members of your secondary group. </p>
 <table>
@@ -2474,7 +2476,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 </tbody>
 </table>
 <h3 id="transfer-data-from-other-clusters">Transfer data from other clusters</h3>
-<p>To transfer data from other clusters to Bouchet, we encourage using <code>rsync</code>. 
+<p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/transfer/#rsync"><code>rsync</code></a>. 
 <code>rsync</code> is a commonly used command-line tool for remote transfers between two systems. </p>
 <p>Before getting started with the transfer with <code>rsync</code>, we first need to enable access to Bouchet from other clusters. 
 Please run the following command on Bouchet:</p>
@@ -2499,8 +2501,8 @@ Here the <code>-a</code> will run transfer in <code>archive</code> mode, which p
 <p>Commonly used software is available as modules, similar to other clusters. 
 The software module tree is lcoated at <code>/apps/software</code>. 
 Currently, all software is compiled and installed with the 2022b version of the toolchain on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
-If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the devel partition of Bouchet. 
-Because Bouchet does not have any GPFS filesystem, please turn off any GPFS related optimization configuration. </p>
+If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the <code>devel</code> partition of Bouchet. 
+Because Bouchet does not have a GPFS filesystem, please turn off any GPFS related optimization configuration. </p>
 <h2 id="report-issues">Report Issues</h2>
 <p>If you discover issues when running your workflow or experience performance issues, feel free to <a href="/">contact</a> us for assistance. 
 Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
@@ -2512,7 +2514,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2024</span>
       
     
   </small>
