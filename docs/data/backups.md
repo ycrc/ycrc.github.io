@@ -14,17 +14,17 @@ Our clusters create snapshots nightly on portions of the filesystem so that you 
 
 As long as your files existed in the form you want them in before the most recent midnight and the deletion was in the last few days, they can probably be recovered. Snapshot directory structure mirrors the files that are being tracked with a prefix, listed in the table below. Contact us if you need assistance finding the appropriate snapshot location for your files.
 
-| File set                    | Snapshot Prefix                              |
-|-----------------------------|----------------------------------------------|
-| `/gpfs/gibbs/project`       | `/gpfs/gibbs/project/.snapshots`	     |
-| `/gpfs/gibbs/pi/group`      | `/gpfs/gibbs/pi/group/.snapshots`            |
-| `/vast/palmer/home.grace`   | `/vast/palmer/home.grace/.snapshot`          |
-| `/vast/palmer/home.mccleary`| `/vast/palmer/home.mccleary/.snapshot`       |
-| `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
-| `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |
-| `/gpfs/milgram/project`     | `/gpfs/milgram/project/.snapshots`           |
-| `/gpfs/milgram/pi/groupname`| `/gpfs/milgram/pi/groupname/.snapshots`      |
-| `/gpfs/slayman/pi/gerstein` | `/gpfs/slayman/pi/gerstein/.snapshots`       |
+Storage space              | File set                    | Snapshot Prefix                              |
+---------------------------|-----------------------------|----------------------------------------------|
+Project (Grace, McCleary)  | `/gpfs/gibbs/project`       | `/gpfs/gibbs/project/.snapshots`	        |
+Gibbs PI (Grace, McCleary) | `/gpfs/gibbs/pi/group`      | `/gpfs/gibbs/pi/group/.snapshots`            |
+Palmer PI (Grace, McCleary)|`/vast/palmer/pi/group`      | `/vast/palmer/pi/group/.snapshots`           | 
+Home (Grace)               | `/vast/palmer/home.grace`   | `/vast/palmer/home.grace/.snapshot`          |
+Home (McCleary)            | `/vast/palmer/home.mccleary`| `/vast/palmer/home.mccleary/.snapshot`       |
+YCGA (McCleary)            | `/gpfs/ycga`                | `/gpfs/ycga/.snapshots`                      |
+Home (Milgram)             | `/gpfs/milgram/home`        | `/gpfs/milgram/home/.snapshots`              |
+Project (Milgram)          | `/gpfs/milgram/project`     | `/gpfs/milgram/project/.snapshots`           |
+PI (Milgram)               | `/gpfs/milgram/pi/group`    | `/gpfs/milgram/pi/group/.snapshots`          |
 
 Within the snapshot directory, you will find multiple directories with names that indicate specific dates. For example, if you wanted to recover the file `/gpfs/gibbs/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/gibbs/.snapshots/date/project/bjornson/rdb9/doit.sh` .
 

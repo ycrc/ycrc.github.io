@@ -13,7 +13,7 @@ If you are having trouble logging into a cluster, please use the checklist below
     - [ ] If you are [using Windows](/clusters-at-yale/access/#windows), make sure you have pointed MobaXterm to your private ssh key (ends in .pem)
     - [ ] If you are asked for a passphrase when logging in, this is the ssh key passphrase you set when first creating your key pair. If you have forgotten this passphrase, you need to create a new key pair and upload a new public key.
 - [ ] Make sure your computer is either on Yale's campus network (ethernet or YaleSecure wireless) or [Yale's VPN](/clusters-at-yale/access/vpn/).
-    - [ ]  If you get an error like `could not resolve hostname` you may have lost connection to the Yale network. If you are sure you have not, make sure that you are also using the Yale DNS servers (130.132.1.9,10,11).
+    - [ ]  If you get an error like `could not resolve hostname` you may have lost connection to the Yale network. If you are sure you have not, make sure that you are also using the Yale DNS servers (172.18.190.12,20,28).
 - [ ] Your home directory should only be writable by you. If you recently modified the permissions to your home directory and can't log in, [contact us](/#get-help) and we can fix the permissions for you.
 - [ ] If you are using [McCleary](/clusters/mccleary) or [Milgram](/clusters/milgram), we require Duo MFA for every login. If following our [MFA Troubleshooting steps](/clusters-at-yale/access/mfa/#troubleshoot-mfa) doesn't  work, contact the [ITS Help Desk](https://yale.service-now.com/it?id=get_help).
 

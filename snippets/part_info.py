@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re
 import sys
 from collections import defaultdict
@@ -25,6 +25,7 @@ vram_dict = {
     "rtx4000": "8",
     "rtx5000": "16",
     "rtx8000": "48",
+    "h100": "80",
 }
 
 # Commons partitions, their display order
@@ -94,12 +95,12 @@ def get_part_hardware():
             if line_dict["cpus"] == "0":
                 continue
             partition_name = line_dict["partition"]
-            mem = int(line_dict["memory"]) / 1024
+            mem = int(line_dict["memory"]) // 1024 # integer division to avoid rounding up
             cpu_type = cpu_regex.match(line_dict["features"]).groups()[0]
             gpu_type = []
             gpu_mem = []
             gpu_num = []
-            
+
             if line_dict["gres"] != "(null)":
                 parts_with_gpus.add(line_dict["partition"])
                 for gpu, num in gres_regex.findall(line_dict["gres"]):

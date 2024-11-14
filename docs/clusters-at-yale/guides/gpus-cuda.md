@@ -50,7 +50,7 @@ Instructions for installing tensorflow on our clusters can be found [here](https
 
 ### PyTorch
 
-Instructions for installing tensorflow on our clusters can be found [here](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/)
+Instructions for installing PyTorch on our clusters can be found [here](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/)
 
 ## Compile `.c` or `.cpp` Files with CUDA code
 

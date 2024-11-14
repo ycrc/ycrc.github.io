@@ -17,9 +17,9 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`384`|
+    |Maximum CPUs per group|`512`|
     |Maximum memory per group|`3840G`|
-    |Maximum CPUs per user|`128`|
+    |Maximum CPUs per user|`512`|
     |Maximum memory per user|`1280G`|
 
     **Available Compute Nodes**
@@ -28,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |18|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "devel"
 
@@ -49,8 +49,9 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`06:00:00`|
-    |Maximum CPUs per user|`4`|
-    |Maximum memory per user|`32G`|
+    |Maximum CPUs per user|`10`|
+    |Maximum GPUs per user|`4`|
+    |Maximum memory per user|`70G`|
 
     **Available Compute Nodes**
 
@@ -58,7 +59,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "week"
 
@@ -81,8 +82,8 @@
     |Maximum job time limit|`7-00:00:00`|
     |Maximum CPUs per group|`192`|
     |Maximum memory per group|`1920G`|
-    |Maximum CPUs per user|`32`|
-    |Maximum memory per user|`320G`|
+    |Maximum CPUs per user|`128`|
+    |Maximum memory per user|`1280G`|
 
     **Available Compute Nodes**
 
@@ -90,7 +91,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|6458|64|480|sapphirerapids, avx512, 6458q, common|
+    |6|6458|64|479|sapphirerapids, avx512, 6458q, common|
 
 === "gpu"
 
@@ -115,8 +116,8 @@
     |Maximum job time limit|`2-00:00:00`|
     |Maximum CPUs per group|`192`|
     |Maximum GPUs per group|`24`|
-    |Maximum CPUs per user|`96`|
-    |Maximum GPUs per user|`12`|
+    |Maximum CPUs per user|`192`|
+    |Maximum GPUs per user|`18`|
 
     **Available Compute Nodes**
 
@@ -124,8 +125,10 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
+    |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
     |6|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
-    |5|6326|32|1001|a100|4|80|icelake, avx512, 6326, doubleprecision, a100-80g, common|
+    |5|6326|32|1000|a100|4|80|icelake, avx512, 6326, doubleprecision, a100, a100-80g, common|
 
 === "gpu_devel"
 
@@ -147,10 +150,10 @@
 
     |Limit|Value|
     |---|---|
-    |Maximum job time limit|`06:00:00`|
+    |Maximum job time limit|`12:00:00`|
     |Maximum CPUs per user|`10`|
-    |Maximum GPUs per user|`2`|
-    |Maximum memory per user|`70G`|
+    |Maximum GPUs per user|`4`|
+    |Maximum memory per user|`100G`|
 
     **Available Compute Nodes**
 
@@ -158,7 +161,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|6326|32|1001||||icelake, avx512, 6326, doubleprecision, a100-80g-MIG, common|
+    |1|6326|32|1000||||icelake, avx512, 6326, doubleprecision, a100, a100-80g-MIG, common|
 
 === "bigmem"
 
@@ -188,5 +191,5 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|1992|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|1991|sapphirerapids, avx512, 6458q, common|
 
