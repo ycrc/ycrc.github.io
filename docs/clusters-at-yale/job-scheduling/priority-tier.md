@@ -17,7 +17,7 @@ This form must be submitted by the group’s PI (or delegate).
 During the Priority Tier onboarding process, the YCRC will require certain information before access can be granted.
 
 * Charging instructions (COA)
-* A list of members in your group who should have access (and therefore the privileges to incur charges. Additional group members can be added to Priority Tier at any time by submitted a request to [hpc@yale.edu](mailto:hpc@yale.edu).
+* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [hpc@yale.edu](mailto:hpc@yale.edu).
 * We also strongly recommend providing an annual usage limit, beyond which no additional computation on Priority Tier will occur (computation in Standard Tier will still be available at no cost). Note this limit can be changed at any time upon request.
 
 ## How to Use Priority Tier Partitions
@@ -32,25 +32,29 @@ Any compute resources not in use by a Priority Tier partition will be available 
 | Partition       | Description       | Grace                             | McCleary                          | Milgram |
 |-----------------|-------------------|-----------------------------------|-----------------------------------|-----------|
 | `priority`      | similar to `week` | Intel Ice Lake Nodes              | Intel Ice Lake Nodes              |  Intel Cascade Lake Nodes |
-| `priority_gpu`  | similar to `gpu`  | A100-80G, A5000 GPU-enabled Nodes | A100-80G, A5000 GPU-enabled Nodes |  NA | 
+| `priority_gpu`  | similar to `gpu`  | A100, A5000 GPU-enabled Nodes | A100, A5000 GPU-enabled Nodes |  NA | 
 | `priority_mpi`  | similar to `mpi`  | Intel Skylake Nodes |  NA | NA  |
 
 At launch all Priority Tier partitions will have a 7-day maximum wall time limit.
 
-The expectation for a job submitted to Priority Tier partition is that not necessarily that it will run immediately (as one experiences in `devel` or jobs preempting `scavenge` jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.
+The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in `devel` or jobs preempting `scavenge` jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.
 
 ### Account Selection
 
 When you are granted access to Priority Tier, you will be added to one or more `p_` Slurm group accounts.
-These group account names take the form `p_groupname`.
+These group account names take the form `p_groupname`, where `groupname` is the name of the Slurm group account used in the existing Standard Tier partitions.
 PIs can elect to have multiple Slurm group accounts for different projects, each with their own COA, for direct connection between certain computation and the associated grant or other source of funds.
-In these instances the additional Slurm group accounts will take the form `p_groupname_projectid`
+In these instances the additional Slurm group accounts will take the form `p_groupname_projectid`.
 
-In either instance, the Priority Tier Slurm group account **must** be specified in the job submission script using the `-A`
+In either instance, the Priority Tier Slurm group account *must* be specified in the job submission script using the `-A` flag
 
-- `-A p_groupname` or `-A p_groupname_projectid` 
+```
+#SBATCH -A p_groupname
+### or
+#SBATCH -A p_groupname_projectid
+```
 
-Only `p_` groups can access the Priority Tier partitions and cannot be used in the Standard Tier partitions (see below section on Fairshare for more information on why this is). 
+Only `p_` groups can access the Priority Tier partitions and they cannot be used in the Standard Tier partitions (see below section on Fairshare for more information on why this is). 
 
 ### `priority_gpu` Partitions
 
@@ -68,17 +72,18 @@ All YCRC clusters are governed by a set of "fairness" control.
 "Fairshare” is an algorithm that controls moment-to-moment priority of a job based on recent use of the cluster. 
 For example, jobs from heavy recent users/groups start at the end of the queue and work their way forward over time and jobs from new or low-usage users/groups start at the front of the queue. 
 CPU core hours, memory consumption and GPU hours all contribute at proportional levels to the usage incurred by running jobs. 
-The cluster scheduler also has "concurrent usage limits" (QOSs) that prevent a single user or group from taking over a whole cluster, regardless of recent use and fairshare status. 
+The cluster scheduler also has "concurrent utilization limits" (QOSs) that prevent a single user or group from taking over a whole cluster, regardless of recent use and fairshare status. 
 
 All accounts in the Priority Tier share a distinct fairshare pool from the one shared by Standard Tier accounts.
 Computations in Standard Tier will not affect your priority in Priority Tier and vice versa.
 
-At launch there are no concurrent utilization limits on Priority Tier but they may be instated at a latter date based on demand and user behavior.
-Communication will be sent if and when this is being considered.
+At launch there are no concurrent utilization limits on Priority Tier but they may be instated at a later date based on demand and user behavior.
+Communications will be sent if and when this is being considered.
 
 ## Rate Structure
 
-The new charging model for computations run on a Priority Tier partition will be Service Unit (SU) based at a rate of $0.004/SU/hour. 
+The new charging model for computations run on a Priority Tier partition will be Service Unit (SU) based at a rate of $0.004/SU/hour.
+This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
 The SUs of a compute job are calculated as follows:
 
 |  Type | Subtype   | Service Units  | Cost per Hour  |
@@ -89,11 +94,11 @@ The SUs of a compute job are calculated as follows:
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
-To assist with cost estimates and budgeting, see below for tools to calculating charges.
+To assist with cost estimates and budgeting, see below for tools for calculating charges.
 
 ### Annual Usage Limit
 
-We strongly encourage every group to set an annual usage limit for priority tier accounts to ensure Priority Tier expenses stay within expected bounds.
+We strongly encourage every group to set an annual usage limit for Priority Tier accounts to ensure Priority Tier expenses stay within expected bounds.
 This limit can be changed at any time but during the onboarding process YCRC can assist with setting a reasonable starting limit.
 
 As the annual usage limit is approached, you will no longer be able to submit any jobs that would (if they ran for their full requested walltime) over run the limit.
@@ -104,3 +109,10 @@ In the meantime, you can continue to run any computations in the Standard Tier o
 
 To assist with cost estimates and budgeting, we provide a [Cost Calculator](https://docs.google.com/spreadsheets/d/1607EHXc_aay0O0CeteV9ckkwcrFhJwvx9aNmxFmLIYI/edit?usp=sharing). 
 Additional tools for estimating charges per job will be available on the clusters by December 1st.
+
+
+## Other Upcoming Improvements
+
+In conjunction with the new charging model, the YCRC is committed to making improvements to the ongoing tuning of fairshare and concurrent utilization algorithms and additional practices and tooling to enable users to make efficient use of the systems.
+One such improvement available today is the [User Portal](https://docs.ycrc.yale.edu/news/2024-08/#ycrc-hpc-user-portal) where researchers can view information about their activity on our clusters.
+Keep an eye on the YCRC Bulldog User News in coming months for information about these improvements as we roll them out.
