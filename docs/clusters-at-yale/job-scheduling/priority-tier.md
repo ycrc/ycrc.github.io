@@ -94,7 +94,7 @@ The SUs of a compute job are calculated as follows:
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
-To assist with cost estimates and budgeting, see below for tools for calculating charges.
+Usage will be billed monthly, with the bills expected the first week of the month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
 
 ### Annual Usage Limit
 
