@@ -17,21 +17,21 @@ This form must be submitted by the group’s PI (or delegate).
 During the Priority Tier onboarding process, the YCRC will require certain information before access can be granted.
 
 * Charging instructions (COA)
-* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [hpc@yale.edu](mailto:hpc@yale.edu).
+* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [hpc@yale.edu](mailto:hpc@yale.edu) (all group members should already have cluster accounts requested through the [Account Request Form](https://research.computing.yale.edu/support/hpc/account-request)).
 * We also strongly recommend providing an annual usage limit, beyond which no additional computation on Priority Tier will occur (computation in Standard Tier will still be available at no cost). Note this limit can be changed at any time upon request.
 
 ## How to Use Priority Tier Partitions
 
 ### Job Submission
 
-Starting on December 1st, there will be a new tier of partitions on Grace, McCleary and Milgram. Priority Tier partitions will be added to Bouchet when it enters production.
+Starting on December 1st, there will be a new tier of partitions on [Grace](/clusters/grace/), [McCleary](/clusters/mccleary/) and [Milgram](/clusters/milgram/). Priority Tier partitions will be added to [Bouchet](/clusters/bouchet/) when it enters production.
 Jobs submitted to a Priority Tier partition will precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
 The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs.
 Any compute resources not in use by a Priority Tier partition will be available for use by the Standard Tier partitions.
 
 | Partition       | Description       | Grace                             | McCleary                          | Milgram |
 |-----------------|-------------------|-----------------------------------|-----------------------------------|-----------|
-| `priority`      | similar to `week` | Intel Ice Lake Nodes              | Intel Ice Lake Nodes              |  Intel Cascade Lake Nodes |
+| `priority`      | similar to `day`  | Intel Ice Lake Nodes              | Intel Ice Lake Nodes              |  Intel Cascade Lake Nodes |
 | `priority_gpu`  | similar to `gpu`  | A100, A5000 GPU-enabled Nodes | A100, A5000 GPU-enabled Nodes |  NA | 
 | `priority_mpi`  | similar to `mpi`  | Intel Skylake Nodes |  NA | NA  |
 
