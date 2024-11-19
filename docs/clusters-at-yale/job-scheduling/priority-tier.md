@@ -35,7 +35,7 @@ Any compute resources not in use by a Priority Tier partition will be available 
 | `priority_gpu`  | similar to `gpu`  | A100, A5000 GPU-enabled Nodes | A100, A5000 GPU-enabled Nodes |  NA | 
 | `priority_mpi`  | similar to `mpi`  | Intel Skylake Nodes |  NA | NA  |
 
-At launch all Priority Tier partitions will have a 7-day maximum wall time limit.
+At launch all Priority Tier partitions will have a 7-day maximum wall time limit. Interactive jobs will be permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
 
 The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in `devel` or jobs preempting `scavenge` jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.
 
