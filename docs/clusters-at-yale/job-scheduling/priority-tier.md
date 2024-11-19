@@ -41,20 +41,20 @@ The expectation for a job submitted to Priority Tier partition is not necessaril
 
 ### Account Selection
 
-When you are granted access to Priority Tier, you will be added to one or more `p_` Slurm group accounts.
-These group account names take the form `p_groupname`, where `groupname` is the name of the Slurm group account used in the existing Standard Tier partitions.
+When you are granted access to Priority Tier, you will be added to one or more `prio_` Slurm group accounts.
+These group account names take the form `prio_groupname`, where `groupname` is the name of the Slurm group account used in the existing Standard Tier partitions.
 PIs can elect to have multiple Slurm group accounts for different projects, each with their own COA, for direct connection between certain computation and the associated grant or other source of funds.
-In these instances the additional Slurm group accounts will take the form `p_groupname_projectid`.
+In these instances the additional Slurm group accounts will take the form `prio_groupname_projectid`.
 
 In either instance, the Priority Tier Slurm group account *must* be specified in the job submission script using the `-A` flag
 
 ```
-#SBATCH -A p_groupname
+#SBATCH -A prio_groupname
 ### or
-#SBATCH -A p_groupname_projectid
+#SBATCH -A prio_groupname_projectid
 ```
 
-Only `p_` groups can access the Priority Tier partitions and they cannot be used in the Standard Tier partitions (see below section on Fairshare for more information on why this is). 
+Only `prio_` groups can access the Priority Tier partitions and they cannot be used in the Standard Tier partitions (see below section on Fairshare for more information on why this is). 
 
 ### `priority_gpu` Partitions
 
@@ -94,7 +94,7 @@ The SUs of a compute job are calculated as follows:
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
-Usage will be billed monthly, with the bills expected the first week of the month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
+Usage will be billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
 
 ### Annual Usage Limit
 
