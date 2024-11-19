@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/priority-tier/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2506,7 +2506,7 @@ Any compute resources not in use by a Priority Tier partition will be available 
 </tr>
 </tbody>
 </table>
-<p>At launch all Priority Tier partitions will have a 7-day maximum wall time limit.</p>
+<p>At launch all Priority Tier partitions will have a 7-day maximum wall time limit. Interactive jobs will be permitted on Priority Tier partitions. Priority Tier jobs are still bound by <a href="/clusters-at-yale/access/accounts/">YCRC policies and best practices</a>, so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.</p>
 <p>The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in <code>devel</code> or jobs preempting <code>scavenge</code> jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.</p>
 <h3 id="account-selection">Account Selection</h3>
 <p>When you are granted access to Priority Tier, you will be added to one or more <code>prio_</code> Slurm group accounts.

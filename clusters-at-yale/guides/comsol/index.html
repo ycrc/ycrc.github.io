@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/comsol/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2496,9 +2496,9 @@ A parameter can be passed into the study like this:</p>
 Which will run three versions of the model sequentially for each of the three values of <code>L</code> enumerated.
 When combined with <a href="/clusters-at-yale/job-scheduling/dsq/">Slurm Job Arrays</a> many COMSOL jobs can be run in parallel.
 An example <code>dSQ</code> job-file would look like:</p>
-<p><div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_8.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">8</span><span class="o">[</span>cm<span class="o">]</span>
-module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_10.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">10</span><span class="o">[</span>cm<span class="o">]</span>
-module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_12.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">12</span><span class="o">[</span>cm<span class="o">]</span>
+<p><div class="highlight"><pre><span></span><code>module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_8.mph -pname L -plist <span class="m">8</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_10.mph -pname L -plist <span class="m">10</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_12.mph -pname L -plist <span class="m">12</span><span class="o">[</span>cm<span class="o">]</span>
 </code></pre></div>
 Which would run three versions of the study using different values of <code>L</code> and save their outputs in separate files.
 Be careful to provide a different output file for each line to avoid clashes between the separate jobs.</p>
