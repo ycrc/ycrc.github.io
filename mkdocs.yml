@@ -135,6 +135,7 @@ nav:
             - clusters-at-yale/job-scheduling/dsq.md
             - clusters-at-yale/job-scheduling/dependency.md
             - clusters-at-yale/job-scheduling/scrontab.md
+            - clusters-at-yale/job-scheduling/priority-tier.md
             - clusters-at-yale/job-scheduling/scavenge.md
             - clusters-at-yale/job-scheduling/mpi.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
