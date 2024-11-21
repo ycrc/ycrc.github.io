@@ -4,12 +4,12 @@ The YCRC uses a framework called [EasyBuild](https://easybuild.readthedocs.io/en
 
 When you install a new software package, EasyBuild performs the following steps:
 
-*finds the easyconfig file matching the name you specify 
-*gets sources(either downloaded or found in source path)
-*configures
-*builds
-*installs
-*generates module
+* finds the easyconfig file matching the name you specify 
+* gets sources(either downloaded or found in source path)
+* configures
+* builds
+* installs
+* generates module
  
 ## Get Started
 To get started with installing software with EasyBuild, request an interactive session on the oldest available nodes and load the EasyBuild module:
@@ -22,9 +22,9 @@ module load EasyBuild
 ## Configure EasyBuild
 Some of the important configurations settings are:
 
-*[Source path](https://docs.easybuild.io/configuration/#sourcepath): parent path of the directory for software source and install files
-*[Build path](https://docs.easybuild.io/configuration/#buildpath): parent path of the temporaty directory for building software packages
-*[Software and module install path](https://docs.easybuild.io/configuration/#installpath): by default,software install path is `$HOME/.local/easybuild/software` and module install path is `$HOME/.local/easybuild/modules/all`. 
+* [Source path](https://docs.easybuild.io/configuration/#sourcepath): parent path of the directory for software source and install files
+* [Build path](https://docs.easybuild.io/configuration/#buildpath): parent path of the temporaty directory for building software packages
+* [Software and module install path](https://docs.easybuild.io/configuration/#installpath): by default, software install path is `$HOME/.local/easybuild/software` and module install path is `$HOME/.local/easybuild/modules/all`. 
 
 You can look up the current configuration of EasyBuild with the following command:
 ```
@@ -41,9 +41,7 @@ repositorypath (D) = /home/testuser/.local/easybuild/ebfiles_repo
 robot-paths    (D) = /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
 sourcepath     (D) = /home/testuser/.local/easybuild/sources
 ```
-If you wish to change any of these paths, you can do so using several methods including command-line arguments, environment variables and configuration files. For more details, take a look at the [documentation](https://docs.easybuild.io/configuration/). 
-
-For example, if you would like to use a configuration file, please create a `config.cfg` file in `$HOME/.config/easybuild`:
+If you wish to change any of these paths, you can do so using several methods including command-line arguments, environment variables and configuration files. For more details, take a look at the [documentation](https://docs.easybuild.io/configuration/). For example, if you would like to use a configuration file, please create a `config.cfg` file in `$HOME/.config/easybuild`:
 ```
 cat $HOME/.config/easybuild/config.cfg
 
@@ -55,7 +53,6 @@ sourcepath=/gpfs/gibbs/project/testuser/testuser/source
 ```
 This configuration will change the output of `eb --show-config` to:
 ```
-#
 # Current EasyBuild configuration
 # (C: command line argument, D: default value, E: environment variable, F: configuration file)
 #
@@ -69,7 +66,6 @@ sourcepath     (F) = /gpfs/gibbs/project/testuser/testuser/source
 
 ## Search for Easyconfig files
 To install software with EasyBuild, you need easyconfig files. Easyconfig files specify build parameters such as name, toolchain, sources, and dependencies. To searc for an existing easyconfig file for a specific softwar in the EasyBuild repository, you can use the `--search` or `-S` option:
-
 ```
 eb -S HPCG
 
@@ -95,15 +91,11 @@ CFGS1=/vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
 Note: 2 matching archived easyconfig(s) found, use --consider-archived-easyconfigs to see them
 
 ``` 
-
 The config file typically has the name format `software-version-toolchain-version.eb`. Make sure to choose easyconfig files that uses the available [toolchains](https://docs.ycrc.yale.edu/applications/toolchains/) on our clusters. If you wish to edit the easyconfig file, copy and paste it in your own cluster space. For example:
-
 ```
 cp /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs/h/HPCG/HPCG-3.1-intel-2022b.eb $HOME
 ```
-
 Let's say we added a new patch and `versionsuffix = '-patched'` to the easyconfig file. If you change source files and patches in the easyconfig files, please update the [checksums](https://docs.easybuild.io/writing-easyconfig-files/?h=inject#common_easyconfig_param_sources):
-
 ```
 eb --inject-checksums --force HPCG-3.1-intel-2022b.eb
 ```
@@ -125,7 +117,7 @@ You can use the command:
 ```
 module use $HOME/.local/easybuild/modules/all
 module load HPCG/3.1-intel-2022b-patched
-``
+```
 then `module avail` command will display modules installed locally.
 
 You can also update $MODULEPATH in your $HOME/.bashrc file. Add this line:
