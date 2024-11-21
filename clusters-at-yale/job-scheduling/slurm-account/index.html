@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-account/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2406,27 +2406,27 @@
                 <h1 id="slurm-account-coordinator">Slurm Account Coordinator</h1>
 <p>On the clusters the YCRC maintains, we map your linux user and group to your Slurm user and account, which is what actually gives you permission to submit to the various partitions available on the clusters. By changing the Slurm accounts associated with your user, you can modify access to partitions. As a coordinator of an account, you have permission to modify users' association with that account and modify jobs running that are associated with that account. Below are some useful example commands where we use an example user with the name "be59" where you are the coordinator of the slurm account "cryoem".</p>
 <h2 id="addremove-users-from-an-account">Add/Remove Users From an Account</h2>
-<div class="highlight"><pre><span></span><code>sacctmgr add user be59 <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># add user</span>
-sacctmgr remove user where <span class="nv">user</span><span class="o">=</span>be59 and <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># remove user</span>
+<div class="highlight"><pre><span></span><code>sacctmgr<span class="w"> </span>add<span class="w"> </span>user<span class="w"> </span>be59<span class="w"> </span><span class="nv">account</span><span class="o">=</span>cryoem<span class="w"> </span><span class="c1"># add user</span>
+sacctmgr<span class="w"> </span>remove<span class="w"> </span>user<span class="w"> </span>where<span class="w"> </span><span class="nv">user</span><span class="o">=</span>be59<span class="w"> </span>and<span class="w"> </span><span class="nv">account</span><span class="o">=</span>cryoem<span class="w"> </span><span class="c1"># remove user</span>
 </code></pre></div>
 <h2 id="show-account-info">Show Account Info</h2>
-<div class="highlight"><pre><span></span><code>sacctmgr show assoc <span class="nv">user</span><span class="o">=</span>be59 <span class="c1"># show user associations</span>
-sacctmgr show assoc <span class="nv">account</span><span class="o">=</span>cryoem <span class="c1"># show assocations for account</span>
+<div class="highlight"><pre><span></span><code>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span>be59<span class="w"> </span><span class="c1"># show user associations</span>
+sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">account</span><span class="o">=</span>cryoem<span class="w"> </span><span class="c1"># show assocations for account</span>
 </code></pre></div>
 <h2 id="submit-jobs">Submit Jobs</h2>
-<div class="highlight"><pre><span></span><code>salloc -A cryoem ...
-sbatch -A cryoem my_script.sh
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-A<span class="w"> </span>cryoem<span class="w"> </span>...
+sbatch<span class="w"> </span>-A<span class="w"> </span>cryoem<span class="w"> </span>my_script.sh
 </code></pre></div>
 <h2 id="list-jobs">List Jobs</h2>
-<div class="highlight"><pre><span></span><code>squeue -A cryoem  <span class="c1"># by account</span>
-squeue -u be59 <span class="c1"># by user</span>
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-A<span class="w"> </span>cryoem<span class="w">  </span><span class="c1"># by account</span>
+squeue<span class="w"> </span>-u<span class="w"> </span>be59<span class="w"> </span><span class="c1"># by user</span>
 </code></pre></div>
 <h2 id="cancel-jobs">Cancel Jobs</h2>
-<div class="highlight"><pre><span></span><code>scancel <span class="m">1234</span>  <span class="c1"># by job ID</span>
-scancel -u be59   <span class="c1"># kill all jobs by user</span>
-scancel -u be59 --state<span class="o">=</span>running  <span class="c1"># kill running jobs by user</span>
-scancel -u be59 --state<span class="o">=</span>pending  <span class="c1"># kill pending jobs by user</span>
-scancel -A cryoem  <span class="c1"># kill all jobs in the account</span>
+<div class="highlight"><pre><span></span><code>scancel<span class="w"> </span><span class="m">1234</span><span class="w">  </span><span class="c1"># by job ID</span>
+scancel<span class="w"> </span>-u<span class="w"> </span>be59<span class="w">   </span><span class="c1"># kill all jobs by user</span>
+scancel<span class="w"> </span>-u<span class="w"> </span>be59<span class="w"> </span>--state<span class="o">=</span>running<span class="w">  </span><span class="c1"># kill running jobs by user</span>
+scancel<span class="w"> </span>-u<span class="w"> </span>be59<span class="w"> </span>--state<span class="o">=</span>pending<span class="w">  </span><span class="c1"># kill pending jobs by user</span>
+scancel<span class="w"> </span>-A<span class="w"> </span>cryoem<span class="w">  </span><span class="c1"># kill all jobs in the account</span>
 </code></pre></div>
 <h2 id="hold-and-release-jobs">Hold and Release Jobs</h2>
 <div class="highlight"><pre><span></span><code>scontrol hold 1234   # by job ID

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/spark/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2476,39 +2476,39 @@ Note, the <code>spark-start</code> script expects the memory request to be <code
 
 <span class="c1"># These modules are required. You may need to customize the module version</span>
 <span class="c1"># depending on which cluster you are on.</span>
-module load Spark/3.5.1-foss-2022b-Scala-2.13
+module<span class="w"> </span>load<span class="w"> </span>Spark/3.5.1-foss-2022b-Scala-2.13
 
 <span class="c1"># Start the Spark instance.</span>
 spark-start
 
 <span class="c1"># Source spark-env.sh to get useful env variables.</span>
-<span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
+<span class="nb">source</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
 
-<span class="nb">echo</span> <span class="s2">&quot;***** Spark cluster is running. Submit jobs to </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="s2">. *****&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;***** Spark cluster is running. Submit jobs to </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="s2">. *****&quot;</span>
 
 <span class="c1"># set up SSH tunnel for spark web-interface</span>
-<span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname -s<span class="k">)</span>
+<span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span>
 <span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname -f <span class="p">|</span> awk -F<span class="s2">&quot;.&quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 <span class="nv">web_port</span><span class="o">=</span><span class="m">8080</span>
 
 <span class="c1"># print tunneling instructions</span>
-<span class="nb">echo</span> -e <span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel:</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
 
 <span class="s2">Forwarded port:same as remote port</span>
-<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
+<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span>
 <span class="s2">SSH server: </span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.hpc.yale.edu</span>
-<span class="s2">SSH login: </span><span class="nv">$user</span><span class="s2"></span>
+<span class="s2">SSH login: </span><span class="nv">$user</span>
 <span class="s2">SSH port: 22</span>
 
 <span class="s2">Use a Browser on your local machine to go to:</span>
 <span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span>
 <span class="s2">&quot;</span>
 
-sleep infinity
+sleep<span class="w"> </span>infinity
 </code></pre></div>
 Spark jobs can be submitted to <code>spark://$NODE.grace.ycrc.yale.edu:7077</code> (where $NODE is replaced by the node where the job is running) address from anywhere on the cluster.</p>
 <p>To use the web UI from outside the cluster, an ssh command is needed to connect your local computer to the compute node where the Spark server is running.
@@ -2532,24 +2532,24 @@ Note, replace the placeholder with the real path to the analysis code.</p>
 
 <span class="c1"># These modules are required. You may need to customize the module version</span>
 <span class="c1"># depending on which cluster you are on.</span>
-module load Spark/3.5.1-foss-2022b-Scala-2.13
+module<span class="w"> </span>load<span class="w"> </span>Spark/3.5.1-foss-2022b-Scala-2.13
 
 <span class="c1"># Start the Spark instance.</span>
 spark-start
 
 <span class="c1"># Source spark-env.sh to get useful env variables.</span>
-<span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
+<span class="nb">source</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
 
 <span class="c1"># print tunneling instructions</span>
-<span class="nb">echo</span> -e <span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel:</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
 
 <span class="s2">Forwarded port:same as remote port</span>
-<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
+<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span>
 <span class="s2">SSH server: </span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.hpc.yale.edu</span>
-<span class="s2">SSH login: </span><span class="nv">$user</span><span class="s2"></span>
+<span class="s2">SSH login: </span><span class="nv">$user</span>
 <span class="s2">SSH port: 22</span>
 
 <span class="s2">Use a Browser on your local machine to go to:</span>
@@ -2558,11 +2558,11 @@ spark-start
 
 <span class="c1"># Customize the executor resources below to match resources requested above</span>
 <span class="c1"># with an allowance for spark driver overhead. Also change the path to your spark job.</span>
-spark-submit --master <span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span> <span class="se">\</span>
-  --executor-cores <span class="m">1</span> <span class="se">\</span>
-  --executor-memory 5G <span class="se">\</span>
-  --total-executor-cores <span class="k">$((</span>SLURM_CPUS_ON_NODE <span class="o">-</span> <span class="m">1</span><span class="k">))</span> <span class="se">\</span>
-  /path/to/custom/analysis.py
+spark-submit<span class="w"> </span>--master<span class="w"> </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--executor-cores<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--executor-memory<span class="w"> </span>5G<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--total-executor-cores<span class="w"> </span><span class="k">$((</span>SLURM_CPUS_ON_NODE<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/path/to/custom/analysis.py
 </code></pre></div>
 The Spark web-interface is accessible after setting up the ssh tunnel as described above. </p>
                 
