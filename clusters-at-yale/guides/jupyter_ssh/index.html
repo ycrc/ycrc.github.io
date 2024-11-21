@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter_ssh/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1134,6 +1134,20 @@
     <li class="md-nav__item">
       <a href="../../job-scheduling/scrontab/" class="md-nav__link">
         Recurring Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-scheduling/priority-tier/" class="md-nav__link">
+        Priority Tier
       </a>
     </li>
   
@@ -2429,23 +2443,23 @@ You will also need to either load a module that contains <code>jupyter-notebook<
 
 <span class="c1"># get tunneling info</span>
 <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-<span class="nv">port</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i8000-9999<span class="w"> </span>-n1<span class="k">)</span>
-<span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span>
+<span class="nv">port</span><span class="o">=</span><span class="k">$(</span>shuf -i8000-9999 -n1<span class="k">)</span>
+<span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname -s<span class="k">)</span>
 <span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname -f <span class="p">|</span> awk -F<span class="s2">&quot;.&quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 
 <span class="c1"># print tunneling instructions jupyter-log</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;</span>
 <span class="s2">For more info and how to connect from windows,</span>
 <span class="s2">   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
 <span class="s2">Windows MobaXterm info</span>
 <span class="s2">Forwarded port:same as remote port</span>
-<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
-<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span>
+<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">SSH server: </span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
-<span class="s2">SSH login: </span><span class="nv">$user</span>
+<span class="s2">SSH login: </span><span class="nv">$user</span><span class="s2"></span>
 <span class="s2">SSH port: 22</span>
 <span class="s2">Use a Browser on your local machine to go to:</span>
 <span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">  (prefix w/ https:// if using password)</span>
@@ -2453,7 +2467,7 @@ You will also need to either load a module that contains <code>jupyter-notebook<
 
 <span class="c1"># load modules or conda environments here</span>
 
-jupyter-notebook<span class="w"> </span>--no-browser<span class="w"> </span>--port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="w"> </span>--ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
+jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span> --ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
 </code></pre></div>
 <h3 id="start-the-tunnel">Start the Tunnel</h3>
 <p>Once you have submitted your job and it starts, your notebook server will be ready for you to connect. 
