@@ -58,7 +58,6 @@ Only `prio_` groups can access the Priority Tier partitions and they cannot be u
 
 ### `priority_gpu` Partitions
 
-
 To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, we strongly recommend being specific about the GPU model if any job submissions.
 
 ```
@@ -110,9 +109,8 @@ In the meantime, you can continue to run any computations in the Standard Tier o
 ### Estimate Charges and Review Usage
 
 To assist with cost estimates and budgeting, we provide a [Cost Calculator](https://docs.google.com/spreadsheets/d/1607EHXc_aay0O0CeteV9ckkwcrFhJwvx9aNmxFmLIYI/edit?usp=sharing). 
-Additional tools for estimating charges per job will be available on the clusters by December 1st.
 
-Usage to date can be monitored in the User Portal ([Grace](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal), [McCleary](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal), [Milgram](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal)).
+Usage to date can be monitored in the User Portal ([Grace](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal), [McCleary](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal), [Milgram](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal)) and on the cluster using the `getusage -g prio_groupname` command.
 
 ## Other Upcoming Improvements
 
