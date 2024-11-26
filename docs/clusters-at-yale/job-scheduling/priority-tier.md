@@ -58,13 +58,12 @@ Only `prio_` groups can access the Priority Tier partitions and they cannot be u
 
 ### `priority_gpu` Partitions
 
-To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, jobs submitted to a `priority_gpu` partition must specify a GPU type. For example:
+
+To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, we strongly recommend being specific about the GPU model if any job submissions.
 
 ```
 #SBATCH --gpus=a100:1
 ```
-
-Jobs submitted without a specific gpu type (such as `--gpu=1`) will be rejected.
 
 ### Fairshare and Concurrent Utilization Limits
 
@@ -94,6 +93,9 @@ The SUs of a compute job are calculated as follows:
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
+Usage is billed for actual runtime, not requested walltime of a job. 
+However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
+
 Usage will be billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
 
 ### Annual Usage Limit
@@ -105,11 +107,12 @@ As the annual usage limit is approached, you will no longer be able to submit an
 If they choose, the PI (or delegate) of the group can request to have the limit increased.
 In the meantime, you can continue to run any computations in the Standard Tier of partitions which are always free of charge.
 
-### Estimate Charges
+### Estimate Charges and Review Usage
 
 To assist with cost estimates and budgeting, we provide a [Cost Calculator](https://docs.google.com/spreadsheets/d/1607EHXc_aay0O0CeteV9ckkwcrFhJwvx9aNmxFmLIYI/edit?usp=sharing). 
 Additional tools for estimating charges per job will be available on the clusters by December 1st.
 
+Usage to date can be monitored in the User Portal ([Grace](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal), [McCleary](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal), [Milgram](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal)).
 
 ## Other Upcoming Improvements
 
