@@ -2503,7 +2503,11 @@ The relative weights are derived from the approximate cost of these different re
 </tr>
 </tbody>
 </table>
-<p>An example of such a view is shown here:</p>
+<p>An example of such a view is shown below.</p>
+<div class="admonition info">
+<p class="admonition-title">Multiple Accounts</p>
+<p>If you belong to multiple Slurm Accounts, including <a href="/clusters-at-yale/job-scheduling/priority-tier">priority tier</a> accounts, these will be populated in the pull-down <code>Account</code> menu. </p>
+</div>
 <p><img alt="getusage" src="/img/ood-getusage.png" /></p>
 <h2 id="command-line-getusage">Command-line <code>getusage</code></h2>
 <p>These aggrigates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
@@ -2513,12 +2517,19 @@ The relative weights are derived from the approximate cost of these different re
 
 ╭─ Options ──────────────────────────────────────────────────────────────────╮
 │ --user       -u      TEXT  User name <span class="o">[</span>default: Current user<span class="o">]</span>               │
+│ --group      -g      TEXT  Slurm Account <span class="o">[</span>default: Default Account<span class="o">]</span>        │
 │ --cluster    -c      TEXT  Filter usage by cluster CLUSTER <span class="o">[</span>default: All<span class="o">]</span>  │
 │ --partition  -p            Break usage down by partition                   │
 │ --summary    -s            Only report monthly summary                     │
 │ --help                     Show this message and exit.                     │
 ╰────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Multiple Accounts</p>
+<p>If you belong to multiple accounts, you can specify them with the <code>-g</code> flag. 
+By default, <code>getusage</code> displays information about your "default" Slurm Account.
+If you wish to view your secondary account's usage (or for <a href="/clusters-at-yale/job-scheduling/priority-tier">priority tier</a> accounts, specify them like: <code>getusage -g prio_account</code></p>
+</div>
 <p>Running without any arguments produces a report for the full fiscal year (starting in July):</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage
 Monthly usage <span class="o">(</span><span class="k">in</span> su_hours<span class="o">)</span> <span class="k">for</span> testuser
