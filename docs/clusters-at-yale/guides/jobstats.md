@@ -1,7 +1,7 @@
 # Job Performance Monitoring
 
-We have recently deployed a new tool for measuring and monitoring job performance called `jobstats`. 
-Available on all clusters, jobstats provides a report of the utilization of CPU, Memory, and GPU resources for in-progress and recently completed jobs. 
+We have recently deployed a new tool for measuring and monitoring job performance called [`jobstats`](https://github.com/ycrc/jobstats). 
+Available on all clusters, `jobstats` provides a report of the utilization of CPU, Memory, and GPU resources for in-progress and recently completed jobs. 
 To generate the report simply run (replacing the ID number of the job in question):
 
 ```
