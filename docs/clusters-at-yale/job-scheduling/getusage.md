@@ -25,7 +25,10 @@ The Open OnDemand User Portals host an interactive data dashboard that provide t
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage)     |
 
-An example of such a view is shown here:
+An example of such a view is shown below.
+
+!!! info "Multiple Accounts"
+    If you belong to multiple Slurm Accounts, including [priority tier](/clusters-at-yale/job-scheduling/priority-tier) accounts, these will be populated in the pull-down `Account` menu. 
 
 ![getusage](/img/ood-getusage.png)
 
@@ -39,13 +42,19 @@ These aggrigates are collected from all clusters and made accessible to research
 
 ╭─ Options ──────────────────────────────────────────────────────────────────╮
 │ --user       -u      TEXT  User name [default: Current user]               │
+│ --group      -g      TEXT  Slurm Account [default: Default Account]        │
 │ --cluster    -c      TEXT  Filter usage by cluster CLUSTER [default: All]  │
 │ --partition  -p            Break usage down by partition                   │
 │ --summary    -s            Only report monthly summary                     │
 │ --help                     Show this message and exit.                     │
 ╰────────────────────────────────────────────────────────────────────────────╯
-
 ```
+
+!!! info "Multiple Accounts"
+    If you belong to multiple accounts, you can specify them with the `-g` flag. 
+    By default, `getusage` displays information about your "default" Slurm Account.
+    If you wish to view your secondary account's usage (or for [priority tier](/clusters-at-yale/job-scheduling/priority-tier) accounts, specify them like: `getusage -g prio_account`
+
 
 Running without any arguments produces a report for the full fiscal year (starting in July):
 
