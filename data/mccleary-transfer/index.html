@@ -1076,8 +1076,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/resource-usage/" class="md-nav__link">
-        Monitor CPU and Memory
+      <a href="../../clusters-at-yale/job-scheduling/jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -2401,8 +2401,8 @@
 Researchers are encouraged to only transfer data which is actively needed and take this opportunity to archive or delete old data. 
 Transfers should be initiated on Ruddle's or McCleary's <code>transfer</code> nodes and sync'd to either Gibbs project directories (<code>/gpfs/gibbs/project/GROUP/NETID</code>) or their McCleary home spaces (which are mounted at <code>/vast/palmer/home.mccleary/NETID</code>).
 All users are able to log into the <code>transfer</code> nodes via ssh:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@ruddle1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>transfer
-<span class="o">[</span>tl397@transfer-ruddle<span class="w"> </span>~<span class="o">]</span>$
+<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@ruddle1 ~<span class="o">]</span>$ ssh transfer
+<span class="o">[</span>tl397@transfer-ruddle ~<span class="o">]</span>$
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2420,24 +2420,24 @@ Since McCleary mounts Farnam and Ruddle's filesystems, these copies are "local" 
 <p>While <code>rsync</code> is most commonly used for remote transfers between two systems, it is an excellent tool for local work as well.
 In particular, it's ability to perform tests to make sure that files are transfered properly and to recover from interrupted transfers make it a good option for data migration.
 There are many configuration possibilities, but we recommend using the following flags:</p>
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avP<span class="w"> </span>/path/to/existing/data<span class="w"> </span>/path/to/new/home/for/data
+<div class="highlight"><pre><span></span><code>rsync -avP /path/to/existing/data /path/to/new/home/for/data
 </code></pre></div>
 <p>Here the <code>-a</code> will run the transfer in <code>archive</code> mode, which preserves ownership, permissions, and creation/modification times.
 Additionally, the <code>-v</code> will run in <code>verbose</code> mode where the name of every file is printed out, and <code>-P</code> displays a progress bar.</p>
 <p>One subtle detail is that <code>rsync</code> changes its behavior based on whether the source path has a trailing <code>/</code>. 
 If one initiates a sync like this:
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avP<span class="w"> </span>/path/to/existing/data<span class="w"> </span>/path/to/new/home/for/data
+<div class="highlight"><pre><span></span><code>rsync -avP /path/to/existing/data /path/to/new/home/for/data
 </code></pre></div>
 the existing <code>data</code> directory is transferred as a whole entity, including the top-level directory <code>data</code>.
 However, if the source path includes a trailing <code>/</code>:</p>
-<p><div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avP<span class="w"> </span>/path/to/existing/data/<span class="w"> </span>/path/to/new/home/for/data
+<p><div class="highlight"><pre><span></span><code>rsync -avP /path/to/existing/data/ /path/to/new/home/for/data
 </code></pre></div>
 then the contents of data are transferred, omitting the top-level directory. </p>
 <p>As an example, to transfer a directory (named <code>my_data</code>) from a YSM project directory on McCleary to your Gibbs project space, you can run:</p>
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avP<span class="w"> </span>/gpfs/ysm/project/GROUP/NETID/my_data<span class="w"> </span>/gpfs/gibbs/project/GROUP/NETID/
+<div class="highlight"><pre><span></span><code>rsync -avP /gpfs/ysm/project/GROUP/NETID/my_data /gpfs/gibbs/project/GROUP/NETID/
 </code></pre></div>
 <p>Similarly, to transfer a directory (<code>my_code</code>) from your YCGA homespace to your new McCleary homespace:</p>
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avP<span class="w"> </span>/home/NETID/my_code<span class="w"> </span>/vast/palmer/home.mccleary/NETID/
+<div class="highlight"><pre><span></span><code>rsync -avP /home/NETID/my_code /vast/palmer/home.mccleary/NETID/
 </code></pre></div>
 <p>where <code>GROUP</code> and <code>NETID</code> are replaced by your specific group/netid.</p>
 <p>For more detailed information about <code>rsync</code>, please take a look at this nice tutorial (<a href="https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories">link</a>).</p>

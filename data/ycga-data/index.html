@@ -1080,8 +1080,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/resource-usage/" class="md-nav__link">
-        Monitor CPU and Memory
+      <a href="../../clusters-at-yale/job-scheduling/jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -2620,7 +2620,7 @@ http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/<em>sample</em></p>
 <p class="admonition-title">Tip</p>
 </div>
 <p>To find the actual location of your data, do:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>readlink<span class="w"> </span>-f<span class="w"> </span>/gpfs/ycga/work/lsprog/tools/external/data/randomstring/sample_dir_YourSampleNumber
+<div class="highlight"><pre><span></span><code>$ readlink -f /gpfs/ycga/work/lsprog/tools/external/data/randomstring/sample_dir_YourSampleNumber
 </code></pre></div>
 For standard Illumina data (not 10X/singlecell or pacbio data) 
 you can browse to the YCGA-provided URL and open ruddle_paths.txt.  It contains the 
@@ -2629,21 +2629,21 @@ true locations of the files.</p>
 <p>If you want to copy the data to your own computer, you can use that link to download your data using a browser or a tool such
 as wget.  However, if you plan to process the data on McCleary, there are better alternatives.</p>
 <p>We recommend using the ycgaFastq tool to link to the sequencing files:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ycga-public
-$<span class="w"> </span>ycgaFastq<span class="w"> </span>fcb.ycga.yale.edu:3010/randomstring/sample
+<div class="highlight"><pre><span></span><code>$ module load ycga-public
+$ ycgaFastq fcb.ycga.yale.edu:3010/randomstring/sample
 </code></pre></div></p>
 <p>If the run has been archived and deleted, ycgaFastq will retrieve the data</p>
 <p>ycgaFastq has several alternative invocations:</p>
 <p>If you don't know the URL, you can use the 
 sample submitter's netid and the flowcell (run) name:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>rdb9<span class="w"> </span>AHFH66DSXX
+<div class="highlight"><pre><span></span><code>$ ycgaFastq rdb9 AHFH66DSXX
 </code></pre></div>
 <p>If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run has been archived and deleted:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>/ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+<div class="highlight"><pre><span></span><code>$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 </code></pre></div></p>
 <p>If you have a ruddle_paths.txt file that contains the paths to all of the data files in a dataset, you can
 use ycgaFastq as well:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>ruddle_paths.txt
+<div class="highlight"><pre><span></span><code>$ ycgaFastq ruddle_paths.txt
 </code></pre></div>
 <p>ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the <a href="http://campuspress.yale.edu/knightlab/ruddle/ycgafastq">documentation</a> or contact us.</p>
 <div class="admonition tip">
@@ -2656,8 +2656,8 @@ http://fcb.ycga.yale.edu:3010/<em>randomstring</em>/sample</p>
 <p>If you want to copy the data to your own computer, you can use that link to download your data using a browser or a tool such
 as wget.  However, if you plan to process the data on McCleary, there are better alternatives.</p>
 <p>We recommend using the URLFetch tool to link to the sequencing files:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ycga-public
-$<span class="w"> </span>URLFetch<span class="w"> </span>fcb.ycga.yale.edu:3010/randomstring/sample
+<div class="highlight"><pre><span></span><code>$ module load ycga-public
+$ URLFetch fcb.ycga.yale.edu:3010/randomstring/sample
 </code></pre></div></p>
 <p>URLFetch will simply link to the data if it has not been deleted.  If it is archived and deleted, it will
 download a tarball of the data, which you can then untar.</p>

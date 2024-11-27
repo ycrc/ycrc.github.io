@@ -1080,8 +1080,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/resource-usage/" class="md-nav__link">
-        Monitor CPU and Memory
+      <a href="../../clusters-at-yale/job-scheduling/jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -2822,27 +2822,27 @@
 <h4 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h4>
 <p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span><span class="o">[</span>from<span class="o">]</span><span class="w"> </span><span class="o">[</span>to<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>scp <span class="o">[</span>from<span class="o">]</span> <span class="o">[</span>to<span class="o">]</span>
 </code></pre></div>
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/fas/admins/abc123/test:</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/home/xyz/myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>mydirectory<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+<div class="highlight"><pre><span></span><code>scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
 </code></pre></div>
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt .
 </code></pre></div>
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt<span class="w"> </span>/path/myfolder
+<div class="highlight"><pre><span></span><code>scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
 </code></pre></div>
 <h2 id="transfer-data-tofrom-other-locations">Transfer Data to/from Other Locations</h2>
 <h3 id="globus-endpoints">Globus Endpoints</h3>
@@ -2865,11 +2865,11 @@ To specify the destination, simply replace the <code>.</code> with the full path
 </code></pre></div>
 <h4 id="rclone">Rclone</h4>
 <p>To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using <a href="https://rclone.org/">Rclone</a>. It is installed on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:</p>
-<div class="highlight"><pre><span></span><code>rclone<span class="w"> </span>configure
+<div class="highlight"><pre><span></span><code>rclone configure
 </code></pre></div>
 <p>You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can connect to the transfer node (using <code>ssh transfer</code> from the login node) and then use that connection name to copy files with similar syntax to <code>scp</code> and <code>rsync</code>:</p>
-<div class="highlight"><pre><span></span><code>rclone<span class="w"> </span>copy<span class="w"> </span>localpath/myfile<span class="w"> </span>mys3:bucketname/
-rclone<span class="w"> </span>sync<span class="w"> </span>localpath/mydir<span class="w"> </span>mys3:bucketname/remotedir
+<div class="highlight"><pre><span></span><code>rclone copy localpath/myfile mys3:bucketname/
+rclone sync localpath/mydir mys3:bucketname/remotedir
 </code></pre></div>
 <p>We recommend that you protect your configurations with a password. You'll see that as an option when you run rclone config. Please see <a href="/clusters-at-yale/guides/rclone/">our Rclone page</a> for additional information on how to set up and use Rclone on the YCRC clusters. For all the Rclone documentaion please <a href="https://rclone.org/docs/">refer to the official site</a>.</p>
 <h3 id="sites-behind-a-vpn">Sites Behind a VPN</h3>

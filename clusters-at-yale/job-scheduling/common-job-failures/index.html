@@ -1240,8 +1240,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-usage/" class="md-nav__link">
-        Monitor CPU and Memory
+      <a href="../jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -2676,7 +2676,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --mem-per-cpu=8G</span>
 </code></pre></div>
 <p>In an interactive job:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem-per-cpu<span class="o">=</span>8G
+<div class="highlight"><pre><span></span><code>salloc --mem-per-cpu<span class="o">=</span>8G
 </code></pre></div>
 <h3 id="use-less-memory">Use Less Memory</h3>
 <p>This method is usually a little more involved, and is easier if you can inspect the code you are using. Watching your <a href="/clusters-at-yale/job-scheduling/resource-usage">job's resource usage</a>, attending <a href="https://research.computing.yale.edu/training/writing-efficient-r-code">a workshop</a>, or <a href="/#get-help">getting in touch</a> with us are good places to start.</p>
