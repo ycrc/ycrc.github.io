@@ -2598,10 +2598,10 @@
                 
                 <h1 id="priority-tier">Priority Tier</h1>
 <h2 id="overview">Overview</h2>
-<p>Effective December 1st 2024, the current YCRC CPU-Hour based service charges will be replaced with new Priority Tier service charges.
-The YCRC is adding a new Priority Tier of partitions that will be an opt-in, fast lane for computational jobs. 
-All computation on the “standard” tier of partitions (e.g. day, week, mpi, gpu) will no longer incur charges.
-Private nodes and scavenge partitions will continue to not incur charges.</p>
+<p>Effective December 1st 2024, the current YCRC CPU-Hour based service charges has been replaced with new Priority Tier service charges.
+The YCRC has added a new Priority Tier of partitions that is an opt-in, fast lane for computational jobs. 
+All computation on the “standard” tier of partitions (e.g. day, week, mpi, gpu)  no longer incur charges.
+Private nodes and scavenge partitions continue to not incur charges.</p>
 <p>The new compute charging model was developed in close collaboration with faculty, YCRC staff and university administrators to ensure the YCRC service charging models support the researchers who rely on our systems and the needs of the University.</p>
 <h2 id="access">Access</h2>
 <p>Access to Priority Tier partitions is granted upon request through the <a href="https://docs.google.com/forms/d/1gXaOiOwmU-YY1Q5k2mJJRmEHTeJcBs9BlkJ7n1akF1Q">Priority Tier Access Request Form</a>.
@@ -2614,10 +2614,10 @@ This form must be submitted by the group’s PI (or delegate).</p>
 </ul>
 <h2 id="how-to-use-priority-tier-partitions">How to Use Priority Tier Partitions</h2>
 <h3 id="job-submission">Job Submission</h3>
-<p>Starting on December 1st, there will be a new tier of partitions on <a href="/clusters/grace/">Grace</a>, <a href="/clusters/mccleary/">McCleary</a> and <a href="/clusters/milgram/">Milgram</a>. Priority Tier partitions will be added to <a href="/clusters/bouchet/">Bouchet</a> when it enters production.
-Jobs submitted to a Priority Tier partition will precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
+<p>Starting on December 1st, there is a new tier of partitions on <a href="/clusters/grace/">Grace</a>, <a href="/clusters/mccleary/">McCleary</a> and <a href="/clusters/milgram/">Milgram</a>. Priority Tier partitions will be added to <a href="/clusters/bouchet/">Bouchet</a> when it enters production.
+Jobs submitted to a Priority Tier partition precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
 The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs.
-Any compute resources not in use by a Priority Tier partition will be available for use by the Standard Tier partitions.</p>
+Any compute resources not in use by a Priority Tier partition are available for use by the Standard Tier partitions.</p>
 <table>
 <thead>
 <tr>
@@ -2652,7 +2652,7 @@ Any compute resources not in use by a Priority Tier partition will be available 
 </tr>
 </tbody>
 </table>
-<p>At launch all Priority Tier partitions will have a 7-day maximum wall time limit. Interactive jobs will be permitted on Priority Tier partitions. Priority Tier jobs are still bound by <a href="/clusters-at-yale/access/accounts/">YCRC policies and best practices</a>, so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.</p>
+<p>At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by <a href="/clusters-at-yale/access/accounts/">YCRC policies and best practices</a>, so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.</p>
 <p>The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in <code>devel</code> or jobs preempting <code>scavenge</code> jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.</p>
 <h3 id="account-selection">Account Selection</h3>
 <p>When you are granted access to Priority Tier, you will be added to one or more <code>prio_</code> Slurm group accounts.
@@ -2680,7 +2680,7 @@ Computations in Standard Tier will not affect your priority in Priority Tier and
 <p>At launch there are no concurrent utilization limits on Priority Tier but they may be instated at a later date based on demand and user behavior.
 Communications will be sent if and when this is being considered.</p>
 <h2 id="rate-structure">Rate Structure</h2>
-<p>The new charging model for computations run on a Priority Tier partition will be Service Unit (SU) based at a rate of $0.004/SU/hour.
+<p>The new charging model for computations run on a Priority Tier partition is Service Unit (SU) based at a rate of $0.004/SU/hour.
 This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
 The SUs of a compute job are calculated as follows:</p>
 <table>
@@ -2716,7 +2716,7 @@ The SUs of a compute job are calculated as follows:</p>
 <p>* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB</p>
 <p>Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.</p>
-<p>Usage will be billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.</p>
+<p>Usage is billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.</p>
 <h3 id="annual-usage-limit">Annual Usage Limit</h3>
 <p>We strongly encourage every group to set an annual usage limit for Priority Tier accounts to ensure Priority Tier expenses stay within expected bounds.
 This limit can be changed at any time but during the onboarding process YCRC can assist with setting a reasonable starting limit.</p>
@@ -2725,10 +2725,10 @@ If they choose, the PI (or delegate) of the group can request to have the limit 
 In the meantime, you can continue to run any computations in the Standard Tier of partitions which are always free of charge.</p>
 <h3 id="estimate-charges-and-review-usage">Estimate Charges and Review Usage</h3>
 <p>To assist with cost estimates and budgeting, we provide a <a href="https://docs.google.com/spreadsheets/d/1607EHXc_aay0O0CeteV9ckkwcrFhJwvx9aNmxFmLIYI/edit?usp=sharing">Cost Calculator</a>. </p>
-<p>Usage to date can be monitored in the User Portal (<a href="https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal">Grace</a>, <a href="https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal">McCleary</a>, <a href="https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal">Milgram</a>) and on the cluster using the <code>getusage -g prio_groupname</code> command.</p>
+<p>Usage to date can be monitored in the <a href="/clusters-at-yale/job-scheduling/getusage/#open-ondemand-web-app">User Portal</a> and on the cluster using the <code>getusage -g prio_groupname</code> <a href="/clusters-at-yale/job-scheduling/getusage/#command-line-getusage">command</a>.</p>
 <h2 id="other-upcoming-improvements">Other Upcoming Improvements</h2>
 <p>In conjunction with the new charging model, the YCRC is committed to making improvements to the ongoing tuning of fairshare and concurrent utilization algorithms and additional practices and tooling to enable users to make efficient use of the systems.
-One such improvement available today is the <a href="https://docs.ycrc.yale.edu/news/2024-08/#ycrc-hpc-user-portal">User Portal</a> where researchers can view information about their activity on our clusters.
+One such improvement available today is the <a href="/job-scheduling/getusage/#open-ondemand-web-app">User Portal</a> where researchers can view information about their activity on our clusters.
 Keep an eye on the YCRC Bulldog User News in coming months for information about these improvements as we roll them out.</p>
                 
                   
@@ -2738,7 +2738,7 @@ Keep an eye on the YCRC Bulldog User News in coming months for information about
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2024</span>
       
     
   </small>
