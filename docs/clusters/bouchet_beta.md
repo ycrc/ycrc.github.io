@@ -5,7 +5,6 @@ Bouchet is the planned successor to both Grace and McCleary, with the majority o
 The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows using `mpi`. 
 A second set of nodes will be installed in early 2025 aimed at general purpose workflows, including GPU-accelerated work.
 We encourage researchers to participate in the beta as it will help ensure that the production cluster will run your work without issue and provide optimal performance. 
-There will be no compute charges on Bouchet during beta testing.  
 
 Compared to the existing `mpi` partition Bouchet provides several key improvements:
 
@@ -24,7 +23,7 @@ ssh NETID@bouchet.ycrc.yale.edu
 
 Open OnDemand for Bouchet will be available in the future.
 
-## Key Differences from Other Clusters 
+## Key Differences from Other Clusters
 
 ### Primary Group
 
@@ -34,7 +33,7 @@ This setup makes the process of group change easier and can also accomodate "pro
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from `$HOME` to project spaces, as those files may need to have their group ownership updated. 
 
-### Partition 
+### Partition
 
 Currently, `devel` and `mpi` partitions are available. 
 Both have identical 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes. 
