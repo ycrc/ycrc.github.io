@@ -21,7 +21,7 @@ You can log in with the command:
 ssh NETID@bouchet.ycrc.yale.edu
 ```
 
-Open OnDemand for Bouchet will be available in the future.
+Open OnDemand for Bouchet will be available in the future. Additionally, the implementation of certain utility commands that are available on other clusters is still in progress.  
 
 ## Key Differences from Other Clusters
 
@@ -36,8 +36,7 @@ However, be careful about copying existing files from `$HOME` to project spaces,
 ### Partition
 
 Currently, `devel` and `mpi` partitions are available. 
-Both have identical 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes. 
-For more detailed information about job limits and avalable compute nodes in each partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
+For detailed information about job limits and avalable compute nodes in each partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
 Please use `devel` partition for code development, debugging, and compilation. 
 Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.      
 
