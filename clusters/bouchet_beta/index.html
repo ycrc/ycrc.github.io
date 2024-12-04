@@ -2454,7 +2454,7 @@ We encourage researchers to participate in the beta as it will help ensure that 
 You can log in with the command:</p>
 <div class="highlight"><pre><span></span><code>ssh NETID@bouchet.ycrc.yale.edu
 </code></pre></div>
-<p>Open OnDemand for Bouchet will be available in the future.</p>
+<p>Open OnDemand for Bouchet will be available in the future. Additionally, the implementation of certain utility commands that are available on other clusters is still in progress.  </p>
 <h2 id="key-differences-from-other-clusters">Key Differences from Other Clusters</h2>
 <h3 id="primary-group">Primary Group</h3>
 <p>On non-Bouchet clusters, your PI name is the primary group of your account. 
@@ -2464,8 +2464,7 @@ Files created in PI-owned project and scratch directories will inherit the corre
 However, be careful about copying existing files from <code>$HOME</code> to project spaces, as those files may need to have their group ownership updated. </p>
 <h3 id="partition">Partition</h3>
 <p>Currently, <code>devel</code> and <code>mpi</code> partitions are available. 
-Both have identical 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes. 
-For more detailed information about job limits and avalable compute nodes in each partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
+For detailed information about job limits and avalable compute nodes in each partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
 Please use <code>devel</code> partition for code development, debugging, and compilation. 
 Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.      </p>
 <h3 id="storage">Storage</h3>
@@ -2541,7 +2540,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 4, 2024</span>
       
     
   </small>
