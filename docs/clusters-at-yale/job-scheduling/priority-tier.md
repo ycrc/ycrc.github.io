@@ -2,10 +2,10 @@
 
 ## Overview
 
-Effective December 1st 2024, the current YCRC CPU-Hour based service charges will be replaced with new Priority Tier service charges.
-The YCRC is adding a new Priority Tier of partitions that will be an opt-in, fast lane for computational jobs. 
-All computation on the “standard” tier of partitions (e.g. day, week, mpi, gpu) will no longer incur charges.
-Private nodes and scavenge partitions will continue to not incur charges.
+Effective December 1st 2024, the current YCRC CPU-Hour based service charges has been replaced with new Priority Tier service charges.
+The YCRC has added a new Priority Tier of partitions that is an opt-in, fast lane for computational jobs. 
+All computation on the “standard” tier of partitions (e.g. day, week, mpi, gpu)  no longer incur charges.
+Private nodes and scavenge partitions continue to not incur charges.
 
 The new compute charging model was developed in close collaboration with faculty, YCRC staff and university administrators to ensure the YCRC service charging models support the researchers who rely on our systems and the needs of the University.
 
@@ -24,10 +24,10 @@ During the Priority Tier onboarding process, the YCRC will require certain infor
 
 ### Job Submission
 
-Starting on December 1st, there will be a new tier of partitions on [Grace](/clusters/grace/), [McCleary](/clusters/mccleary/) and [Milgram](/clusters/milgram/). Priority Tier partitions will be added to [Bouchet](/clusters/bouchet/) when it enters production.
-Jobs submitted to a Priority Tier partition will precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
+Starting on December 1st, there is a new tier of partitions on [Grace](/clusters/grace/), [McCleary](/clusters/mccleary/) and [Milgram](/clusters/milgram/). Priority Tier partitions will be added to [Bouchet](/clusters/bouchet/) when it enters production.
+Jobs submitted to a Priority Tier partition precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
 The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs.
-Any compute resources not in use by a Priority Tier partition will be available for use by the Standard Tier partitions.
+Any compute resources not in use by a Priority Tier partition are available for use by the Standard Tier partitions.
 
 | Partition       | Description       | Grace                             | McCleary                          | Milgram |
 |-----------------|-------------------|-----------------------------------|-----------------------------------|-----------|
@@ -35,7 +35,7 @@ Any compute resources not in use by a Priority Tier partition will be available 
 | `priority_gpu`  | similar to `gpu`  | A100, A5000 GPU-enabled Nodes | A100, A5000 GPU-enabled Nodes |  NA | 
 | `priority_mpi`  | similar to `mpi`  | Intel Skylake Nodes |  NA | NA  |
 
-At launch all Priority Tier partitions will have a 7-day maximum wall time limit. Interactive jobs will be permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
+At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
 
 The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in `devel` or jobs preempting `scavenge` jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.
 
@@ -80,7 +80,7 @@ Communications will be sent if and when this is being considered.
 
 ## Rate Structure
 
-The new charging model for computations run on a Priority Tier partition will be Service Unit (SU) based at a rate of $0.004/SU/hour.
+The new charging model for computations run on a Priority Tier partition is Service Unit (SU) based at a rate of $0.004/SU/hour.
 This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
 The SUs of a compute job are calculated as follows:
 
@@ -95,7 +95,7 @@ The SUs of a compute job are calculated as follows:
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
 
-Usage will be billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
+Usage is billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.
 
 ### Annual Usage Limit
 
@@ -110,10 +110,10 @@ In the meantime, you can continue to run any computations in the Standard Tier o
 
 To assist with cost estimates and budgeting, we provide a [Cost Calculator](https://docs.google.com/spreadsheets/d/1607EHXc_aay0O0CeteV9ckkwcrFhJwvx9aNmxFmLIYI/edit?usp=sharing). 
 
-Usage to date can be monitored in the User Portal ([Grace](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal), [McCleary](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal), [Milgram](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal)) and on the cluster using the `getusage -g prio_groupname` command.
+Usage to date can be monitored in the [User Portal](/clusters-at-yale/job-scheduling/getusage/#open-ondemand-web-app) and on the cluster using the `getusage -g prio_groupname` [command](/clusters-at-yale/job-scheduling/getusage/#command-line-getusage).
 
 ## Other Upcoming Improvements
 
 In conjunction with the new charging model, the YCRC is committed to making improvements to the ongoing tuning of fairshare and concurrent utilization algorithms and additional practices and tooling to enable users to make efficient use of the systems.
-One such improvement available today is the [User Portal](https://docs.ycrc.yale.edu/news/2024-08/#ycrc-hpc-user-portal) where researchers can view information about their activity on our clusters.
+One such improvement available today is the [User Portal](/job-scheduling/getusage/#open-ondemand-web-app) where researchers can view information about their activity on our clusters.
 Keep an eye on the YCRC Bulldog User News in coming months for information about these improvements as we roll them out.

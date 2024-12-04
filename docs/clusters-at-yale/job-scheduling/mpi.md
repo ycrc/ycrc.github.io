@@ -35,7 +35,7 @@ If you choose to compile your code with advanced optimization flags specific to 
 # Grace 
 --partition devel --constraint skylake 
 # Bouchet
---partition devel --constraint emeraldrapid
+--partition devel --constraint cpugen:emeraldrapid
 s
 ```
 ## Core Layouts
