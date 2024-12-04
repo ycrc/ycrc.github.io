@@ -2589,13 +2589,13 @@ Since the <em>permanent</em> home of the data remains on off-cluster storage, yo
 <p>For interactive transfers, please see our <a href="/data/transfer/">Transfer Data</a> page for a more complete list of ways to move data efficiently to and from the clusters.  </p>
 <p>A sample workflow using <code>rsync</code> would be:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
-<span class="o">[</span>netID@cluster<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>ssh<span class="w"> </span>transfer
+<span class="o">[</span>netID@cluster ~<span class="o">]</span> ssh transfer
 <span class="c1"># copy data to temporary cluster storage</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span>netID@department_server:/path/to/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 <span class="c1"># process data on cluster</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>data_processing.sh
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ sbatch data_processing.sh
 <span class="c1"># return results to permanent storage for safe-keeping</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/output_data<span class="w"> </span>netID@department_server:/path/to/outputs/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/palmer_scratch/output_data netID@department_server:/path/to/outputs/
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2615,7 +2615,7 @@ If your workflow requires more simultaneuous transfers, contact us for assistanc
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 <span class="c1">#SBATCH --output=transfer.txt</span>
 
-rsync<span class="w"> </span>-av<span class="w"> </span>netID@department_server:/path/to/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
 This will launch a batch job that will transfer data from <code>remote.host.yale.edu</code> to your scratch directory.
 Note, this will only work if you have set up password-less logins on the remote host.</p>
@@ -2632,7 +2632,7 @@ We can break this into two separate Slurm jobs: a transfer job followed by a pro
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 
-rsync<span class="w"> </span>-av<span class="w"> </span>netID@department_server:/path/to/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+rsync -av netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
 <h3 id="processsbatch">process.sbatch</h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2642,26 +2642,26 @@ rsync<span class="w"> </span>-av<span class="w"> </span>netID@department_server:
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_process</span>
 
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module purge
+module load miniconda
 
-conda<span class="w"> </span>activate<span class="w"> </span>my_env
+conda activate my_env
 
-python<span class="w"> </span><span class="nv">$HOME</span>/process_script.py<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/data
+python <span class="nv">$HOME</span>/process_script.py <span class="nv">$HOME</span>/palmer_scratch/data
 </code></pre></div>
 <p>First we would submit the transfer job to Slurm:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sbatch<span class="w"> </span>transfer.sbatch
-Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">12345678</span>
+<div class="highlight"><pre><span></span><code>$ sbatch transfer.sbatch
+Submitted batch job <span class="m">12345678</span>
 </code></pre></div>
 <p>Then we can pass this jobID as a dependency for the processing job:</p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:12345678<span class="w"> </span>process.sbatch
-Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">12345679</span>
+<p><div class="highlight"><pre><span></span><code>$ sbatch --dependency<span class="o">=</span>afterok:12345678 process.sbatch
+Submitted batch job <span class="m">12345679</span>
 </code></pre></div>
 Slurm will now hold the processing job until the transfer finishes:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>squeue
-JOBID<span class="w">    </span>PARTITION<span class="w">  </span>NAME<span class="w">       </span>USER<span class="w">   </span>ST<span class="w">      </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-<span class="m">12345679</span><span class="w">       </span>day<span class="w">  </span>process<span class="w">    </span>netID<span class="w">  </span>PD<span class="w">      </span><span class="m">0</span>:00<span class="w">      </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>Dependency<span class="o">)</span>
-<span class="m">12345678</span><span class="w">  </span>transfer<span class="w">  </span>transfer<span class="w">   </span>netID<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:15<span class="w">      </span><span class="m">1</span><span class="w"> </span>c01n04
+<div class="highlight"><pre><span></span><code>$ squeue
+JOBID    PARTITION  NAME       USER   ST      TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="m">12345679</span>       day  process    netID  PD      <span class="m">0</span>:00      <span class="m">1</span> <span class="o">(</span>Dependency<span class="o">)</span>
+<span class="m">12345678</span>  transfer  transfer   netID  R       <span class="m">0</span>:15      <span class="m">1</span> c01n04
 </code></pre></div>
 <h2 id="storageyale-transfers">Storage@Yale Transfers</h2>
 <p>Storage@Yale shares are mounted on the transfer partition, enabling you to stage data from these remote servers.
@@ -2675,7 +2675,7 @@ The process is somewhat simpler than the above example because we do not need to
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 
-cp<span class="w"> </span>/SAY/standard/my_say_share/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
 <p>This will transfer <code>data</code> from the Storage@Yale share to <code>palmer_scratch</code> where it can be processed on any of the compute nodes.</p>
                 
