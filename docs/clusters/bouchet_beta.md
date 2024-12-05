@@ -33,8 +33,9 @@ Open OnDemand for Bouchet will be available in the future. Additionally, the imp
 ### Primary Group
 
 On non-Bouchet clusters, your PI name is the primary group of your account. 
-On Bouchet, your primary group is your NetID, and secondary groups are assigned for any PI group you belong to. 
-This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.    
+On Bouchet, your primary group is your NetID, and secondary groups are assigned for any PI group you belong to.
+This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.
+PI groups on Bouchet take the form `pi_<netid of the pi>`, instead of `<lastname of pi>` to avoid collisions and confusion between PIs who share a lastname.    
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from `$HOME` to project spaces, as those files may need to have their group ownership updated. 
 
@@ -43,7 +44,7 @@ However, be careful about copying existing files from `$HOME` to project spaces,
 Currently, `devel` and `mpi` partitions are available. 
 For detailed information about job limits and avalable compute nodes in each partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
 Please use `devel` partition for code development, debugging, and compilation. 
-Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.      
+Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.   
 
 ### Storage
 
