@@ -17,6 +17,8 @@ Compared to the existing `mpi` partition Bouchet provides several key improvemen
 
 ## Access the Cluster
 
+Access to the Bouchet Beta can be requested via the [Beta Access Request From](https://forms.gle/krJjvGBX9pSSmiNE9). For the beta period,  we are explicitly and exclusively seeking tightly coupled, parallel workloads.
+
 Once you have an account, the cluster can be accessed [via ssh](/clusters-at-yale/access). 
 You can log in with the command:
 

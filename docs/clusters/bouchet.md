@@ -8,7 +8,9 @@ Yale [recently joined the Massachusetts Green High Performance Computing Center 
 
 ## Announcing the Bouchet HPC Cluster
 
-The Bouchet HPC cluster will be available in beta Fall 2024. 
+!!! info "Bouchet Beta"
+    The Bouchet HPC cluster is now available in beta for tightly coupled, parallel workloads. Please see the [Bouchet Beta Testing documentation](/clusters/bouchet_beta/) for more information.
+
 The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the `mpi` partition on the Grace cluster. 
 Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. 
 At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data.
@@ -31,9 +33,6 @@ For a current node-level view of job activity, see the [cluster monitor page (VP
 
 ## Partitions and Hardware
 
-Bouchet is made up of sixty identical compute nodes. 
-These are mostly reserved for the `mpi` partition, but we have set aside two nodes for debugging and compiliation in the `devel` partition.
-
 ### Public Partitions
 
 See each tab below for more information about the available common use partitions.
@@ -42,11 +41,10 @@ See each tab below for more information about the available common use partition
 
 ## Storage
 
-Bouchet has access to one filesystem called `roberts`. 
-This is a VAST filesystem similar to the `palmer` filesystem on Grace and McCleary.
+Bouchet has access to one filesystem called Roberts. 
+Roberts is an all-flash, NFS filesystem similar to the Palmer filesystem on Grace and McCleary.
 For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. 
 Your `~/project` and `~/scratch` directories are shortcuts. 
 Get a list of the absolute paths to your directories with the `mydirectories` command. 
 If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
@@ -58,6 +56,6 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
-| home           | `/home`                   | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
+| home           | `/home`                   | 125GiB/user                             | 500,000    | Not yet | >=2 days  |       |
 | project        | `/nfs/roberts/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
