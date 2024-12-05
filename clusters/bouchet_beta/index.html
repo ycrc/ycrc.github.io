@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/bouchet_beta/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2360,7 +2360,7 @@
       
         <li class="md-nav__item">
   <a href="#access-the-cluster" class="md-nav__link">
-    Access the cluster
+    Access the Cluster
   </a>
   
 </li>
@@ -2447,9 +2447,14 @@ We encourage researchers to participate in the beta as it will help ensure that 
 <ol>
 <li>Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes </li>
 <li>Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available</li>
-<li>The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance </li>
+<li>The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance</li>
 </ol>
-<h2 id="access-the-cluster">Access the cluster</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While in beta, Bouchet may become unavailable with little or no notice as the YCRC configures and troubleshoots the system for production deployment. No data on Bouchet is currently backed up. Bouchet is expected to stay in beta until at least mid-January.</p>
+</div>
+<h2 id="access-the-cluster">Access the Cluster</h2>
+<p>Access to the Bouchet Beta can be requested via the <a href="https://forms.gle/krJjvGBX9pSSmiNE9">Beta Access Request From</a>. For the beta period,  we are explicitly and exclusively seeking tightly coupled, parallel workloads.</p>
 <p>Once you have an account, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a>. 
 You can log in with the command:</p>
 <div class="highlight"><pre><span></span><code>ssh NETID@bouchet.ycrc.yale.edu
@@ -2468,9 +2473,9 @@ For detailed information about job limits and avalable compute nodes in each par
 Please use <code>devel</code> partition for code development, debugging, and compilation. 
 Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.      </p>
 <h3 id="storage">Storage</h3>
-<p>Bouchet filesystem is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
+<p>Bouchet's filesystem, Roberts, is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
 <code>/nfs/roberts/</code> hosts Bouchet's home, project, and scratch directories. 
-Your project and scratch storage usage and quota are shared with the members of your secondary group. </p>
+Your project and scratch storage usage and quota are shared with the members of the associated secondary group. </p>
 <table>
 <thead>
 <tr>
@@ -2503,7 +2508,8 @@ Your project and scratch storage usage and quota are shared with the members of 
 </table>
 <h3 id="transfer-data-from-other-clusters">Transfer data from other clusters</h3>
 <p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/transfer/#rsync"><code>rsync</code></a>. 
-<code>rsync</code> is a commonly used command-line tool for remote transfers between two systems. </p>
+<code>rsync</code> is a commonly used command-line tool for remote transfers between two systems. 
+Globus is not yet available on Bouchet.</p>
 <p>Before getting started with the transfer with <code>rsync</code>, we first need to enable access to Bouchet from other clusters. 
 Please run the following command on Bouchet:</p>
 <div class="highlight"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
@@ -2524,11 +2530,10 @@ Here the <code>-a</code> will run transfer in <code>archive</code> mode, which p
 </code></pre></div></p>
 <p>For <code>rsync</code> transfers that may take a while, it is best to run the transfer inside a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/">tmux</a> sesseion. </p>
 <h3 id="applications-and-software">Applications and software</h3>
-<p>Commonly used software is available as modules, similar to other clusters. 
-The software module tree is lcoated at <code>/apps/software</code>. 
+<p>Commonly used software is available as <a href="/applications/modules/">modules</a>, similar to other clusters. 
 Currently, all software is compiled and installed with the 2022b version of the toolchain on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
 If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the <code>devel</code> partition of Bouchet. 
-Because Bouchet does not have a GPFS filesystem, please turn off any GPFS related optimization configuration. </p>
+Because Bouchet does not have a GPFS filesystem, be sure to turn off any GPFS related optimization configuration. </p>
 <h2 id="report-issues">Report Issues</h2>
 <p>If you discover issues when running your workflow or experience performance issues, feel free to <a href="/">contact</a> us for assistance. 
 Please include the working directory, the commands that were run, the software modules used, and any more information needed to reproduce the issue.</p>
@@ -2540,7 +2545,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 4, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 5, 2024</span>
       
     
   </small>
