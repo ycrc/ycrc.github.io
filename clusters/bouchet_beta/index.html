@@ -2463,15 +2463,16 @@ You can log in with the command:</p>
 <h2 id="key-differences-from-other-clusters">Key Differences from Other Clusters</h2>
 <h3 id="primary-group">Primary Group</h3>
 <p>On non-Bouchet clusters, your PI name is the primary group of your account. 
-On Bouchet, your primary group is your NetID, and secondary groups are assigned for any PI group you belong to. 
-This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.  <br />
+On Bouchet, your primary group is your NetID, and secondary groups are assigned for any PI group you belong to.
+This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.
+PI groups on Bouchet take the form <code>pi_&lt;netid of the pi&gt;</code>, instead of <code>&lt;lastname of pi&gt;</code> to avoid collisions and confusion between PIs who share a lastname.  <br />
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from <code>$HOME</code> to project spaces, as those files may need to have their group ownership updated. </p>
 <h3 id="partition">Partition</h3>
 <p>Currently, <code>devel</code> and <code>mpi</code> partitions are available. 
 For detailed information about job limits and avalable compute nodes in each partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
 Please use <code>devel</code> partition for code development, debugging, and compilation. 
-Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.      </p>
+Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.   </p>
 <h3 id="storage">Storage</h3>
 <p>Bouchet's filesystem, Roberts, is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
 <code>/nfs/roberts/</code> hosts Bouchet's home, project, and scratch directories. 
