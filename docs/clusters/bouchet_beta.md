@@ -10,9 +10,12 @@ Compared to the existing `mpi` partition Bouchet provides several key improvemen
 
 1. Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes 
 2. Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available
-3. The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance 
+3. The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance
 
-## Access the cluster
+!!! warning
+    While in beta, Bouchet may become unavailable with little or no notice as the YCRC configures and troubleshoots the system for production deployment. No data on Bouchet is currently backed up. Bouchet is expected to stay in beta until at least mid-January.
+
+## Access the Cluster
 
 Once you have an account, the cluster can be accessed [via ssh](/clusters-at-yale/access). 
 You can log in with the command:
@@ -42,9 +45,9 @@ Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need
 
 ### Storage
 
-Bouchet filesystem is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
+Bouchet's filesystem, Roberts, is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
 `/nfs/roberts/` hosts Bouchet's home, project, and scratch directories. 
-Your project and scratch storage usage and quota are shared with the members of your secondary group. 
+Your project and scratch storage usage and quota are shared with the members of the associated secondary group. 
 
 |Storage         | Root Directory            | Quota                                   | File Count | 
 |----------------|---------------------------|-----------------------------------------|------------|
@@ -56,6 +59,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 
 To transfer data from other clusters to Bouchet, we encourage using [`rsync`](/data/transfer/#rsync). 
 `rsync` is a commonly used command-line tool for remote transfers between two systems. 
+Globus is not yet available on Bouchet.
 
 Before getting started with the transfer with `rsync`, we first need to enable access to Bouchet from other clusters. 
 Please run the following command on Bouchet:
@@ -91,11 +95,10 @@ For `rsync` transfers that may take a while, it is best to run the transfer insi
 
 ### Applications and software
 
-Commonly used software is available as modules, similar to other clusters. 
-The software module tree is lcoated at `/apps/software`. 
+Commonly used software is available as [modules](/applications/modules/), similar to other clusters. 
 Currently, all software is compiled and installed with the 2022b version of the toolchain on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
 If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the `devel` partition of Bouchet. 
-Because Bouchet does not have a GPFS filesystem, please turn off any GPFS related optimization configuration. 
+Because Bouchet does not have a GPFS filesystem, be sure to turn off any GPFS related optimization configuration. 
 
 
 ## Report Issues
