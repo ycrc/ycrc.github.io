@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/nextflow/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2492,19 +2492,19 @@
 <p><a href="https://www.nextflow.io/">Nextflow</a> is a very popular workflow tool, especially in bioinformatics.  It automates workflow processing, is very portable, and has excellent reporting.
 Nextflow is able to make effective use of slurm when running  on our clusters, using slurm submissions for running processes and achieving a high level of parallelism.  However, there are a few gotchas and things to know about.</p>
 <p>First, to specify slurm as the executor, add the following executor default to the process specification in nextflow.config. </p>
-<div class="highlight"><pre><span></span><code>Process <span class="o">{</span> 
-    …
-   <span class="nv">executor</span> <span class="o">=</span> <span class="s1">&#39;slurm&#39;</span>
-    …
+<div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<span class="w">    </span>…
+<span class="w">   </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span>…
 <span class="o">}</span>
 </code></pre></div>
 <p>You can add other slurm-related options, for example:</p>
-<div class="highlight"><pre><span></span><code>process <span class="o">{</span>
-    <span class="nv">executor</span> <span class="o">=</span> <span class="s1">&#39;slurm&#39;</span>
-    <span class="nv">queue</span> <span class="o">=</span> <span class="s1">&#39;day&#39;</span>
-    <span class="nv">memory</span> <span class="o">=</span> <span class="s1">&#39;200 GB&#39;</span>
-    <span class="nv">cpus</span> <span class="o">=</span> <span class="m">32</span>
-    <span class="nv">Time</span> <span class="o">=</span> 4h
+<div class="highlight"><pre><span></span><code>process<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;day&#39;</span>
+<span class="w">    </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;200 GB&#39;</span>
+<span class="w">    </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span><span class="nv">Time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>4h
 <span class="o">}</span>
 </code></pre></div>
 <p>This sets the initial default for the slurm partition, memory, cpus, and time.  Note that nextflow uses different names for many of these values than slurm.
@@ -2525,27 +2525,27 @@ More information can be found on nextflow's <a href="https://www.nextflow.io/doc
 <p>We recommend that you configure your workflow to specify small, short jobs as using the local executor, leaving the larger and longer running jobs to the slurm executor.
 The cleanest way to do this is to give those processes a specific ‘label’, e.g. process_local, and then set the executor for that label to be ‘local’.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code> process Fastqc <span class="o">{</span>
-   label <span class="s1">&#39;process_local&#39;</span>
-   …
+<div class="highlight"><pre><span></span><code><span class="w"> </span>process<span class="w"> </span>Fastqc<span class="w"> </span><span class="o">{</span>
+<span class="w">   </span>label<span class="w"> </span><span class="s1">&#39;process_local&#39;</span>
+<span class="w">   </span>…
 <span class="o">}</span>
 
-Process <span class="o">{</span>
-    …
-     withLabel:process_local <span class="o">{</span>
-          <span class="nv">executor</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>
-    …
+Process<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>…
+<span class="w">     </span>withLabel:process_local<span class="w"> </span><span class="o">{</span>
+<span class="w">          </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
+<span class="w">    </span>…
 <span class="o">}</span>
 </code></pre></div>
 <p>Oftentimes, if you are using a well developed workflow, the configuration will already use labels to “classify” each of the processes, so that resource requirements are only mentioned once per class, rather than for every process.  For example, a workflow might define the class ‘process_single’, which is used to tag small, quick running processes.  In that case, you can simply add executor = local to the withLabel for that label:</p>
-<div class="highlight"><pre><span></span><code>Process <span class="o">{</span>
-     …
-     withLabel:process_single <span class="o">{</span>
-         <span class="nv">executor</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>
-         <span class="nv">cpus</span> <span class="o">=</span> <span class="m">1</span>
-         <span class="nv">memory</span> <span class="o">=</span> <span class="o">{</span> maxMem<span class="o">(</span><span class="m">2</span>.GB * task.attempt<span class="o">)</span> <span class="o">}</span>
-     <span class="o">}</span>
-     …
+<div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span>
+<span class="w">     </span>…
+<span class="w">     </span>withLabel:process_single<span class="w"> </span><span class="o">{</span>
+<span class="w">         </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
+<span class="w">         </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">         </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>maxMem<span class="o">(</span><span class="m">2</span>.GB<span class="w"> </span>*<span class="w"> </span>task.attempt<span class="o">)</span><span class="w"> </span><span class="o">}</span>
+<span class="w">     </span><span class="o">}</span>
+<span class="w">     </span>…
 <span class="o">}</span>
 </code></pre></div>
 <h2 id="running-a-hybrid-workflow">Running a hybrid workflow</h2>
