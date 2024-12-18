@@ -2394,10 +2394,10 @@
 <h1 id="installing-tensorflow">Installing Tensorflow</h1>
 <p>If you need a specific version of tensorflow or are working with specific python packages in a miniconda environment, then you will likely need to install your own version of tensorflow. Each version of tensorflow requires a specific version of CUDA and cudnn to be installed. You can refer to this <a href="https://www.tensorflow.org/install/source#tested_build_configurations">website</a>.</p>
 <p>This table outlines how to install each version of tensorflow from 2.15-2.11:</p>
-<div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">tensorflow 2.16</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">tensorflow 2.16+</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>tf16<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*
-pip<span class="w"> </span>install<span class="w"> </span>tensorflow<span class="o">[</span>and-cuda<span class="o">]==</span><span class="m">2</span>.16.*
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>tf_VERSION<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*
+pip<span class="w"> </span>install<span class="w"> </span>tensorflow<span class="o">[</span>and-cuda<span class="o">]==</span><span class="m">2</span>.x.*<span class="w"> </span><span class="c1">###change x to reflect tensorflow version, i.e., 2.17.*</span>
 
 <span class="c1">#tensorflow can&#39;t find cuda libraries, need to tell it</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
