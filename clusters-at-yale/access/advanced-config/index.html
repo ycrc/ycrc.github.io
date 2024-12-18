@@ -875,6 +875,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh-agent-on-windows" class="md-nav__link">
+    SSH Agent on Windows
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2431,6 +2438,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh-agent-on-windows" class="md-nav__link">
+    SSH Agent on Windows
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2495,6 +2509,21 @@ ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
 <p>You can view a list of the keys currently in your agent with:</p>
 <div class="highlight"><pre><span></span><code>ssh-add<span class="w"> </span>-L
 </code></pre></div>
+<h2 id="ssh-agent-on-windows">SSH Agent on Windows</h2>
+<p>In a PowerShell terminal:
+<div class="highlight"><pre><span></span><code><span class="c"># By default the ssh-agent service is disabled. Configure it to start automatically.</span>
+<span class="c"># Make sure you&#39;re running as an Administrator.</span>
+<span class="nb">Get-Service</span> <span class="n">ssh-agent</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
+
+<span class="c"># Start the service</span>
+<span class="nb">Start-Service</span> <span class="n">ssh-agent</span>
+
+<span class="c"># This should return a status of Running</span>
+<span class="nb">Get-Service</span> <span class="n">ssh-agent</span>
+
+<span class="c"># Now load your key files into ssh-agent</span>
+<span class="n">ssh-add</span> <span class="nv">$env:USERPROFILE</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\&lt;</span><span class="n">your_keyfile</span><span class="p">&gt;</span>
+</code></pre></div></p>
                 
                   
                     
@@ -2503,7 +2532,7 @@ ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
       
     
   </small>

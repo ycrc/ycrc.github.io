@@ -2113,6 +2113,26 @@
     Working with remote repositories on GitHub
   </a>
   
+    <nav class="md-nav" aria-label="Working with remote repositories on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-a-repository-on-github" class="md-nav__link">
+    Hosting a Repository on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2483,6 +2503,26 @@
     Working with remote repositories on GitHub
   </a>
   
+    <nav class="md-nav" aria-label="Working with remote repositories on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-a-repository-on-github" class="md-nav__link">
+    Hosting a Repository on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2574,6 +2614,25 @@ project. </p>
 <h2 id="working-with-remote-repositories-on-github">Working with remote repositories on GitHub</h2>
 <p>We recommend using an off-site repository like <a href="https://github.com">GitHub</a> that provides a secure and co-located 
 backup of your local repositories. </p>
+<h3 id="authentication">Authentication</h3>
+<p>As of 2021, GitHub no longer allows password authentication to push and pull repository changes. Instead, an SSH key is used - similar to logging into the cluster via SSH.  To set up SSH authentication to GitHub, follow these steps:</p>
+<ol>
+<li>You can choose to use your existing SSH key, or generate a new one using the instructions in our <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/">SSH Connection</a> documentation.</li>
+<li>Copy the public key of your SSH keypair to your clipboard.  The public key is typically contained in a file named <code>&lt;your_key&gt;.pub</code> - for example, <code>id_rsa.pub</code> for the default key filename. Open this file in a text editor and copy its contents.</li>
+<li>Navigate to <a href="https://github.com">GitHub.com</a> and click your user profile icon in the top right.  Select "<strong>⚙️ Settings</strong>". From the "<strong>Access</strong>" submenu on the left, select "<strong>🔑 SSH and GPG Keys</strong>".</li>
+<li>Click the "<strong>New SSH Key</strong>" button.</li>
+<li>Add a recognizable title for your key.</li>
+<li>Paste the contents of your public key into the "<strong>Key</strong>" box and click the "<strong>Add SSH Key</strong>" button.</li>
+</ol>
+<p>You can now proceed to testing the newly added SSH key:</p>
+<ol>
+<li>If you haven't already, add your SSH key to your system's <code>ssh-agent</code> as detailed in our <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/">Advanced SSH Configuration</a> documentation.</li>
+<li>In a terminal, run <code>ssh -T git@github.com</code>.</li>
+<li>If prompted, reply "yes" to the key fingerprint warning after verifying that the fingerprint displayed matches one of the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints">official GitHub key fingerprints</a>.</li>
+<li>If authentication is successful, you will see the message:<br />
+<code>Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.</code></li>
+</ol>
+<h3 id="hosting-a-repository-on-github">Hosting a Repository on GitHub</h3>
 <p>To start, create a repository on GitHub by going to <a href="https://github.com/new">https://github.com/new</a> and providing a name and 
 choose either public or private access.
 Then you can connect your local repository to the GitHub repo (named <code>my_new_repo</code>):</p>
@@ -2628,7 +2687,7 @@ for research use.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump b
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
       
     
   </small>
