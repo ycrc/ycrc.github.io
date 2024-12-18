@@ -2601,8 +2601,18 @@
 <p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>palmer_scratch</code> (and <code>~/scratch60</code>on <a href="/clusters/milgram">Milgram</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
 <p>You can run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get the "true" paths, which is more readily accesible to other users.</p>
 <h2 id="share-data-within-your-group">Share Data within your Group</h2>
-<p>By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.</p>
-<p>If you want to ensure all new files and directories you create have group <em>write</em> permission, add the following line to your <code>~/.bashrc</code> files:</p>
+<p>By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut inside your home directory, see above), no permission changes should be needed. To see your group's current permission settings within project storage, see the example below:</p>
+<div class="highlight"><pre><span></span><code># Replace &#39;netid&#39; with your NetID and &#39;group&#39; with your group name
+cd /gpfs/gibbs/project/group/
+ls -l
+
+# Sample output
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+</code></pre></div>
+<p>Owner permissions(rwx) are defined as read, write and execute permissions. These permissions are divided into three parts, each containing their own 'rwx' permissions, and defined as Owner, Group, and Other User permissions. Users can add group write permissions to an existing file or directory using the <code>chmod g+w</code> command.</p>
+<p>If you would like to ensure all new files and directories you create have group <em>write</em> permission, add the following line to your <code>~/.bashrc</code> files:</p>
 <div class="highlight"><pre><span></span><code>umask 002
 </code></pre></div>
 <h3 id="shared-group-directories">Shared Group Directories</h3>
@@ -2645,7 +2655,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
       
     
   </small>
