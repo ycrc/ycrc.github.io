@@ -140,8 +140,28 @@ conda update -n  ycrc_default jupyter jupyter-lab
 [Visual Studio Code](https://code.visualstudio.com) is a popular development tool that is widely used by our researchers.
 While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
 Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
-We have developed an application for OOD that launches VS Code in a job on a compute node and opens in a web-browser. 
-This application is called `code_server` and is available on all clusters.
+
+Instead, we recommend that you run VSCode on a cluster node, within OOD.  There are two ways to do that:
+
+#### As an OOD app
+We have developed an application for OOD that launches VSCode in a job on a compute node and opens in a web-browser. 
+This application is called `code_server` and is available on all clusters.  This is the simpler method and is the best for most users.
+
+#### Manually within an OOD remote desktop session
+This allows more control over the environment, and can be useful if the first method runs into problems.
+The steps are:
+
+1. Create an OOD remote desktop session
+1. In a terminal in that session, do: `module load VSCode; vscode`
+
+
+#### Steps for configuring a conda environment within VSCode
+
+1. Install the ms-python and ms-python debugger extensions.
+1. Click settings (the gear icon) and search for conda.  Use the the Remote tab for the code_server app or the User tab for a manually started VSCode.  Enter the full path
+to your conda executable, e.g. /vast/palmer/apps/avx2/software/miniconda/24.7.1/bin/conda.
+1. Open a python file in the file browser.
+1. At the bottom right, click on the python version number.  You should see all of the python interpreters in your conda envs.  Choose the interpreter for the env you want.
 
 
 

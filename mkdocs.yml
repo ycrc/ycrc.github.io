@@ -130,6 +130,7 @@ nav:
             - clusters-at-yale/job-scheduling/resource-requests.md
             - clusters-at-yale/job-scheduling/getusage.md
             - clusters-at-yale/job-scheduling/common-job-failures.md
+            - clusters-at-yale/guides/cmd-line-args.md
             - clusters-at-yale/job-scheduling/jobstats.md
             - clusters-at-yale/job-scheduling/fairshare.md
             - clusters-at-yale/job-scheduling/dsq.md
@@ -169,6 +170,7 @@ nav:
                 - clusters-at-yale/guides/pytorch.md
                 - clusters-at-yale/guides/tensorflow.md
                 - "MPI with Python": clusters-at-yale/guides/mpi4py.md
+            - clusters-at-yale/guides/alphafold.md
             - clusters-at-yale/guides/atlas.md
             - clusters-at-yale/guides/cesm.md
             - clusters-at-yale/guides/comsol.md
