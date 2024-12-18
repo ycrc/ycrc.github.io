@@ -115,5 +115,5 @@ Usage to date can be monitored in the [User Portal](/clusters-at-yale/job-schedu
 ## Other Upcoming Improvements
 
 In conjunction with the new charging model, the YCRC is committed to making improvements to the ongoing tuning of fairshare and concurrent utilization algorithms and additional practices and tooling to enable users to make efficient use of the systems.
-One such improvement available today is the [User Portal](/job-scheduling/getusage/#open-ondemand-web-app) where researchers can view information about their activity on our clusters.
+One such improvement available today is the [User Portal](/clusters-at-yale/access/ood#user-portal) where researchers can view information about their activity on our clusters.
 Keep an eye on the YCRC Bulldog User News in coming months for information about these improvements as we roll them out.
