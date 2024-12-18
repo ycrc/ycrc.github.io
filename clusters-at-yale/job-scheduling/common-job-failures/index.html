@@ -1240,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/cmd-line-args/" class="md-nav__link">
+      <a href="../cmd-line-args/" class="md-nav__link">
         Pass Values into Jobs
       </a>
     </li>
@@ -1883,20 +1883,6 @@
           
         </ul>
       </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guides/alphafold/" class="md-nav__link">
-        AlphaFold
-      </a>
     </li>
   
 
@@ -2723,7 +2709,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 </code></pre></div>
 <p>You will then need to wait until your submission rate drops. </p>
 <h3 id="use-job-arrays">Use Job Arrays</h3>
-<p>To avoid hitting this limit and make large numbers of jobs more manageable, you should use <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>. If you need help adapting your workflow to <code>dsq</code> or job arrays <a href="/#get-help">contact us</a>.</p>
+<p>To avoid hitting this limit and make large numbers of jobs more manageable, you should use <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a> (for a specific example of the latter, see <a href="/clusters-at-yale/guides/matlab_compile#job-arrays">here</a>). If you need help adapting your workflow to <code>dsq</code> or job arrays <a href="/#get-help">contact us</a>.</p>
 <h2 id="software-modules">Software Modules</h2>
 <p>We build and organize <a href="/applications/modules">software modules</a> on the cluster using <a href="/applications/toolchains/#toolchains">toolchains</a>. The major toolchains we use produce modules that end in foss-yearletter or intel-yearletter, <em>e.g.</em> <code>foss-2018b</code> or <code>intel-2018a</code>. If modules from different toolchains are loaded at the same time, the conflicts that arise often lead to errors or strange application behavior. Seeing either of the following messages is a sign that you are loading incompatible modules. </p>
 <div class="highlight"><pre><span></span><code>The following have been reloaded with a version change:
@@ -2750,7 +2736,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
       
     
   </small>

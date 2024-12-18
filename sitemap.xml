@@ -201,11 +201,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/cmd-line-args/</loc>
-         <lastmod>2024-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/comsol/</loc>
          <lastmod>2024-12-18</lastmod>
          <changefreq>daily</changefreq>
@@ -362,6 +357,11 @@
     </url>
     <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/</loc>
+         <lastmod>2024-12-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/cmd-line-args/</loc>
          <lastmod>2024-12-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
