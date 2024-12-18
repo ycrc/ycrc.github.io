@@ -4,7 +4,7 @@
 developed by Google DeepMind that predicts a protein’s 3D structure from its amino acid sequence.
 
 As of November 11, 2024, there are two versions of AlphaFold generally available:
-AlphaFold 2 and [AlphaFold 3]((https://github.com/google-deepmind/alphafold3).
+AlphaFold 2 and [AlphaFold 3](https://github.com/google-deepmind/alphafold3).
 Both versions are available as cluster modules, but are run somewhat differently.
 
 Note that given the duration and resources usually involved in running AlphaFold,
