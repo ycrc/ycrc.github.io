@@ -169,6 +169,7 @@ nav:
                 - clusters-at-yale/guides/pytorch.md
                 - clusters-at-yale/guides/tensorflow.md
                 - "MPI with Python": clusters-at-yale/guides/mpi4py.md
+            - clusters-at-yale/guides/alphafold.md
             - clusters-at-yale/guides/atlas.md
             - clusters-at-yale/guides/cesm.md
             - clusters-at-yale/guides/comsol.md
