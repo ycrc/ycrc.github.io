@@ -146,21 +146,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-jupyter/</loc>
-         <lastmod>2024-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop/</loc>
-         <lastmod>2024-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/</loc>
-         <lastmod>2024-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/</loc>
          <lastmod>2024-12-18</lastmod>
          <changefreq>daily</changefreq>
