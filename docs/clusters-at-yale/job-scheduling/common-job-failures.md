@@ -66,7 +66,7 @@ You will then need to wait until your submission rate drops.
 
 ### Use Job Arrays
 
-To avoid hitting this limit and make large numbers of jobs more manageable, you should use [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) or [job arrays](https://slurm.schedmd.com/job_array.html). If you need help adapting your workflow to `dsq` or job arrays [contact us](/#get-help).
+To avoid hitting this limit and make large numbers of jobs more manageable, you should use [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) or [job arrays](https://slurm.schedmd.com/job_array.html) (for a specific example of the latter, see [here](/clusters-at-yale/guides/matlab_compile#job-arrays)). If you need help adapting your workflow to `dsq` or job arrays [contact us](/#get-help).
 
 ## Software Modules
 
