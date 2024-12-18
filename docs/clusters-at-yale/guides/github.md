@@ -84,6 +84,27 @@ project.
 We recommend using an off-site repository like [GitHub](https://github.com) that provides a secure and co-located 
 backup of your local repositories. 
 
+### Authentication
+As of 2021, GitHub no longer allows password authentication to push and pull repository changes. Instead, an SSH key is used - similar to logging into the cluster via SSH.  To set up SSH authentication to GitHub, follow these steps:
+
+1. You can choose to use your existing SSH key, or generate a new one using the instructions in our [SSH Connection](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) documentation.
+2. Copy the public key of your SSH keypair to your clipboard.  The public key is typically contained in a file named `<your_key>.pub` - for example, `id_rsa.pub` for the default key filename. Open this file in a text editor and copy its contents.
+3. Navigate to [GitHub.com](https://github.com) and click your user profile icon in the top right.  Select "**⚙️ Settings**". From the "**Access**" submenu on the left, select "**🔑 SSH and GPG Keys**".
+4. Click the "**New SSH Key**" button.
+5. Add a recognizable title for your key.
+6. Paste the contents of your public key into the "**Key**" box and click the "**Add SSH Key**" button.
+
+You can now proceed to testing the newly added SSH key:
+
+1. If you haven't already, add your SSH key to your system's `ssh-agent` as detailed in our [Advanced SSH Configuration](https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/) documentation.
+2. In a terminal, run `ssh -T git@github.com`.
+3. If prompted, reply "yes" to the key fingerprint warning after verifying that the fingerprint displayed matches one of the [official GitHub key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints).
+4. If authentication is successful, you will see the message:  
+`Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.`
+
+
+### Hosting a Repository on GitHub
+
 To start, create a repository on GitHub by going to <https://github.com/new> and providing a name and 
 choose either public or private access.
 Then you can connect your local repository to the GitHub repo (named `my_new_repo`):
