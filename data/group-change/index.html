@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/group-change/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2475,20 +2475,20 @@ originally installed in <code>/gpfs/gibbs/project/oldgrp/user123</code>,
 and we want to move it to the project directory of the new group. </p>
 <p>First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.<br />
 Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
-<div class="highlight"><pre><span></span><code>module load miniconda
-<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
-<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
-conda activate myenv
-conda env <span class="nb">export</span> &gt; myenv.yml
-conda deactivate
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
+<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
+conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>myenv.yml
+conda<span class="w"> </span>deactivate
 </code></pre></div></p>
 <p>Now, start a new login session, submit an interactive job, and rebuild the conda env in your new storage space.
 When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to the right locations by the system, 
 so you don't have to set them explicitly. 
-<div class="highlight"><pre><span></span><code>ssh grace
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>grace
 salloc
-module load miniconda
-conda env create -f myenv.yml
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>myenv.yml
 </code></pre></div></p>
                 
                   
