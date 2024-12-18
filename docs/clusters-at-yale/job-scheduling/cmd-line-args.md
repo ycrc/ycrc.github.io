@@ -124,7 +124,7 @@ These include:
 
 - `SLURM_JOB_ID`: the unique jobid given to each job. Useful to set unique output directories
 - `SLURM_CPUS_PER_TASK`: the number of CPUs allocated for each task. Useful as a replacement for R's `detectCores` or Python's `multiprocessing.cpu_count` which report the physical number of CPUs and not the number allocated by Slurm.
-- `SLURM_ARRAY_TASK_ID`: the unique array index for each element of a job array. Useful to un-roll a loop or to set a unique random seed for parallel simulations.
+- `SLURM_ARRAY_TASK_ID`: the unique array index for each element of a [job arrays](https://slurm.schedmd.com/job_array.html) (for a specific example, see [here](/clusters-at-yale/guides/matlab_compile#job-arrays)). Useful to un-roll a loop or to set a unique random seed for parallel simulations.
 
 These can be leveraged within batch scripts using the above techniques to either pass on the command-line or directly reading the environment variable to control how a script runs.
 
