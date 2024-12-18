@@ -1,6 +1,11 @@
 
+!!! tip "YCRC Welcomes Ruth Marinshaw as the New Executive Director"
+    YCRC Team is delighted to welcome Ruth Marinshaw as our new Executive Director. Ruth joined Yale mid-November to serve as the university's primary technologist to support the computing needs of Yale's research community. She will work with colleagues across campus to implement and operate computational technologies that support Yale faculty, students, and staff in conducting cutting-edge research. See the [announcement](https://research.yale.edu/announcements/welcoming-ruth-marinshaw-executive-director-research-computing-technologies) for more about Ruth.
+
 !!! tip "Announcing the Bouchet HPC Cluster"
     The Bouchet HPC cluster, YCRC first installation at MGHPCC, will be available in beta Fall 2024. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
+
+
 
 # Introduction
 
@@ -42,10 +47,10 @@ include as much detail as possible about your request and we'll find the right p
 | --- | --- | --- |
 |[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R  |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Physics, Python, MPI |
-|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace) | Molecular Dynamics, Matlab, C/C++ |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
+|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, EPS dept, MPI, Python  |
-|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [McCleary](/clusters/mccleary) | Computational Chemistry, Python, Matlab |
+|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
 |[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
 |[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |

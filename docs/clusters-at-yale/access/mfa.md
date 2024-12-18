@@ -30,17 +30,25 @@ An example config file is shown below which enables SSH multiplexing (`ControlMa
 
 ```
 
-Host *.ycrc.yale.edu mccleary grace milgram
+# If you use a ssh key that is named something other than id_rsa,
+# you can specify your private key like this:
+# IdentityFile ~/.ssh/other_key_rsa
+
+# Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
+# On a Mac you still need xquartz installed
+
+Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
-    # Uncomment below to enable X11 forwarding without `-Y`
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
-    ControlMaster auto
-    ControlPath ~/.ssh/%h_%p_%r
-    ControlPersist 2h
+    # Uncomment the two lines below
+    #ControlMaster auto
+    #ControlPath /tmp/%h_%p_%r
+    #ControlPersist 2h
 
-Host mccleary grace milgram
+Host mccleary grace milgram misha
     HostName %h.ycrc.yale.edu
+
 ```
 
 !!! Tip

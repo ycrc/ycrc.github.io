@@ -37,13 +37,6 @@ Container images can take up a lot of disk space (dozens of gigabytes), so you m
 export APPTAINER_CACHEDIR=~/scratch60/.apptainer
 ```
 
-## Build Your Own Container
-
-You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a [definition file](https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files).
-Apptainer definition files are similar to Docker's `Dockerfile`, but use different syntax.
-For full definition files and more documentation please see [the Apptainer site](https://apptainer.org/docs/user/main/definition_files.html).
-
-
 ## Use a Container Image
 
 Once you have a container image, you can run it as a part of a batch job, or interactively.
@@ -105,6 +98,11 @@ apptainer exec my_blast_image.sif env | grep BLAST
 
 Should return `BLASTDB=/home/me/db/blast`, which means you set the `BLASTDB` environment variable in the container properly.
 
+## Build Your Own Container with Definition Files
+
+You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a [definition file](https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files).
+Apptainer definition files are similar to Docker's `Dockerfile`, but use different syntax.
+For full definition files and more documentation please see [the Apptainer site](https://apptainer.org/docs/user/main/definition_files.html).
 
 ### Header
 
@@ -184,6 +182,3 @@ To finally build your container after saving your definition file as `my_app.def
 ``` bash
 apptainer build my_app.sif my_app.def
 ```
-
-
-

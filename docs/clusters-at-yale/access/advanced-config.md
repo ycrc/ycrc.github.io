@@ -15,7 +15,7 @@ Save the text below to `~/.ssh/config` and replace `NETID` with your Yale netid.
 # Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
 # On a Mac you still need xquartz installed
 
-Host *.ycrc.yale.edu mccleary grace milgram misha
+Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
@@ -65,4 +65,22 @@ You can view a list of the keys currently in your agent with:
 
 ``` bash
 ssh-add -L
+```
+
+## SSH Agent on Windows
+
+In a PowerShell terminal:
+```powershell
+# By default the ssh-agent service is disabled. Configure it to start automatically.
+# Make sure you're running as an Administrator.
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+
+# Start the service
+Start-Service ssh-agent
+
+# This should return a status of Running
+Get-Service ssh-agent
+
+# Now load your key files into ssh-agent
+ssh-add $env:USERPROFILE\.ssh\<your_keyfile>
 ```

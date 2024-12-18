@@ -189,7 +189,7 @@ Then we can launch it with an sbatch script (`ex1.sh`):
 #SBATCH -t 5:00
 
 module purge
-module load R/4.1.0-foss-2020b
+module load R/4.2.0-foss-2020b
 
 srun Rscript ex1.R
 ```
