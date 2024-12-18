@@ -36,8 +36,9 @@ On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/
 #### Cyberduck (Mac/Linux)
 
 **Windows Computers Disclaimer**: Recent updates as of 12/18/2024 have made Cyberduck incompatible with the authentication methods used on our clusters.
-                If interested in using a client on windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows)
-You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/). You will need to configure the client with:
+                If interested in using a client on windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows).
+
+You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX)](https://cyberduck.io/). You will need to configure the client with:
 
 * Your netid as the "Username"
 * Cluster transfer node (see above) as the "Server"

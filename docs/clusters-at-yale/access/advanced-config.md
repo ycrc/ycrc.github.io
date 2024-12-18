@@ -66,3 +66,21 @@ You can view a list of the keys currently in your agent with:
 ``` bash
 ssh-add -L
 ```
+
+## SSH Agent on Windows
+
+In a PowerShell terminal:
+```powershell
+# By default the ssh-agent service is disabled. Configure it to start automatically.
+# Make sure you're running as an Administrator.
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+
+# Start the service
+Start-Service ssh-agent
+
+# This should return a status of Running
+Get-Service ssh-agent
+
+# Now load your key files into ssh-agent
+ssh-add $env:USERPROFILE\.ssh\<your_keyfile>
+```
