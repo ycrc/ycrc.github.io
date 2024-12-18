@@ -12,9 +12,22 @@ You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with th
 
 ## Share Data within your Group
 
-By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut your home directory, see above), no permission changes should be needed.
+By default, all project, purchased allocation and scratch directories are readable by other members of your group. As long as they use the true path (not the shortcut inside your home directory, see above), no permission changes should be needed. To see your group's current permission settings within project storage, see the example below:
 
-If you want to ensure all new files and directories you create have group *write* permission, add the following line to your `~/.bashrc` files:
+```
+# Replace 'netid' with your NetID and 'group' with your group name
+cd /gpfs/gibbs/project/group/
+ls -l
+
+# Sample output
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
+```
+
+Owner permissions(rwx) are defined as read, write and execute permissions. These permissions are divided into three parts, each containing their own 'rwx' permissions, and defined as Owner, Group, and Other User permissions. Users can add group write permissions to an existing file or directory using the `chmod g+w` command.
+
+If you would like to ensure all new files and directories you create have group *write* permission, add the following line to your `~/.bashrc` files:
 
 ```
 umask 002

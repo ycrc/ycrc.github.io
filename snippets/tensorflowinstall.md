@@ -1,9 +1,9 @@
-=== "tensorflow 2.16"
+=== "tensorflow 2.16+"
 
     ```bash
     module load miniconda
-    conda create -n tf16 python=3.11.*
-    pip install tensorflow[and-cuda]==2.16.*
+    conda create -n tf_VERSION python=3.11.*
+    pip install tensorflow[and-cuda]==2.x.* ###change x to reflect tensorflow version, i.e., 2.17.*
     
     #tensorflow can't find cuda libraries, need to tell it
     mkdir -p $CONDA_PREFIX/etc/conda/activate.d
