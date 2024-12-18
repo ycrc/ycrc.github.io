@@ -33,8 +33,10 @@ On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/
 
 [MobaXterm](/clusters-at-yale/access/#windows) is an all-in-one graphical client for Windows that includes a transfer pane for each cluster you connect to. Once you have established a connection to the cluster, click on the "Sftp" tab in the left sidebar to see your files on the cluster. You can drag-and-drop data into and out of the SFTP pane to upload and download, respectively.
 
-#### Cyberduck
+#### Cyberduck (Mac/Linux)
 
+**Windows Computers Disclaimer**: Recent updates as of 12/18/2024 have made Cyberduck incompatible with the authentication methods used on our clusters.
+                If interested in using a client on windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows)
 You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX/Windows)](https://cyberduck.io/). You will need to configure the client with:
 
 * Your netid as the "Username"
