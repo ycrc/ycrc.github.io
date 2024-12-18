@@ -1,16 +1,18 @@
 # Multi-factor Authentication
 
-To improve security, access to all cluster requires both a public key and multi-factor authentication (MFA).
+To improve security, access to all cluster requires both a public key (or NetID credentials for the [Web Portal](/clusters-at-yale/access/ood)) and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
-To get set up with Duo, see these [instructions.](https://cybersecurity.yale.edu/mfa)
+To get set up with Duo, follow these [instructions.](https://cybersecurity.yale.edu/mfa)
 
 You will need upload your [ssh public key to our site](https://sshkeys.ycrc.yale.edu/).
 For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
 Once you've set up Duo and your key is registered, you can log in to the cluster.
-Use ssh to connect to your cluster of choice, and you will be prompted for a passcode or to select a notification option.
+Use ssh to connect to your cluster of choice, and you will be prompted to select a notification option.
 We recommend choosing Duo Push (option 1).
 If you chose this option you should receive a notification on your phone.
+We also recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication menthod for DUO.
+This will simplified the login process.
 Once approved, you should be allowed to continue to log in.
 
 !!!note

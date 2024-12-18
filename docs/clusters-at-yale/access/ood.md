@@ -1,82 +1,71 @@
-# Web Portal (Open OnDemand)
+# Access the Web Portal
 
-[Open OnDemand](https://openondemand.org) (OOD) is platform for accessing the clusters that only requires a web browser.
-This web-portal provides a shell, file browser, and graphical interface for certain apps (like Jupyter or MATLAB).
+[Open OnDemand](https://openondemand.org) (OOD) is a platform for accessing the clusters that only requires a web browser.
+This web portal provides a shell, file browser, and graphical interface for many apps (such as Jupyter, RStudio or MATLAB).
 
 ## Access
 
-If you access Open OnDemand installed on YCRC clusters from off campus, you will need to first connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
+Open OnDemand is available on each cluster using your NetID credentials (CAS login) and [DUO MFA](/clusters-at-yale/access/mfa).
 
-Open OnDemand is available on each cluster using your NetID credentials (CAS login). The Yale CAS login is configured with the DUO authentication. We recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication menthod for DUO. This will simplified the login process.
+!!! warning
+    To access Open OnDemand from off campus, you need to connect to the Yale [VPN](https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn). 
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
 | [Grace](/clusters/grace)       | [ood-grace.ycrc.yale.edu](https://ood-grace.ycrc.yale.edu)         |
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
-| [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu](https://ood-milgram.ycrc.yale.edu)     |
+| [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu](https://ood-milgram.ycrc.yale.edu)     | 
 
-The above four URLs are also called cluster OOD URLs. They are available to any user with a research account (also called a lab account) on the clusters. Your research account is the same as your NetID. 
 
-### OOD for Courses
 
-Each course on the YCRC clusters has its own URL to access OOD on the cluster. The URL is unique to each course and is also called course OOD. 
-Course OODs all follow the same naming convention: <b>coursename.ycrc.yale.edu</b>. 'courename' is an abbreviated name given to the course by YCRC. 
-Students must use the course URL to log in to OOD. They will with their NetID to log in but work under their student account on the cluster while they are in OOD. 
+### Web Portal for Courses
 
-Course OOD and cluster OOD have different URLs, even if they use the same physical machine. 
-Student accounts can only log in to OOD through a course OOD URL, and a regular account (same as your NetID) can only log in through the cluster OOD URL.
-
-!!! warning 
-    If you only have a student account, but try to log in through the cluster OOD URL, you will get an error in the browser:
-    ```
-    Error -- can't find user for cpsc424_test
-    Run 'nginx_stage --help' to see a full list of available command line options.
-    ```
-    Use the URL for your course OOD will resolve the problem.
-
-Additional information about course OOD can be found at [academic support](https://research.computing.yale.edu/services/academic-support).
+Each [academic course](/clusters-at-yale/access/courses) on the YCRC clusters has its own unique URL to access the web portal on the cluster. 
+Course web portal URLs are <b>courseID.ycrc.yale.edu</b>, where 'courseID' is the unique abbreviation given to the course. 
+Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. 
+You will then authenticate using your standard NetID (without the courseid prefix) and password.
+Additional information about courses and the associate web portal can be found at [academic support](/clusters-at-yale/access/courses).
 
 ## The Dashboard
 
 On login you will see the OOD dashboard.
+Along the top are pull-down menus for various Apps, including a file browser, a terminal, a variet of interactive apps.
 
 ![welcome](/img/ood_welcome.png){: .large}
-
-Along the top are pull-down menus for various Apps, including File Managers, Job Composer, a Shell, a list of Interactive Apps, etc.
 
 ## File Browser
 
 ![file_browser](/img/ood_filebrowser.png){: .medium}
 
-The file browser is a graphical interface to manage, upload, and download files from the clusters. You can use the built-in file editor to view and edit files from your browser without having to download and upload scripts.
+The file browser, accessible via the `Files` pull-down menu, is a graphical interface to manage, upload, and download files from the clusters.
+You can drag-and-drop to download and upload files and directories, and move files between directories using this interface.
 
-You can also drag-and-drop to download and upload files and directories, and move files between directories using this interface.
+You can also use the built-in file editor to view and edit files from your browser without having to download and upload scripts.
 
-#### Customize Favorite Paths
+### Customize Favorite Paths
 
-Users are allowed to customize favorite paths in the file manager. Using the scripts below to add, remove, and list customized paths:
+You are able to customize favorite paths in the file browser. Use the scripts below to add, remove, and list customized paths:
 
 ``` bash
   ood_add_path
   ood_remove_path
   ood_list_path
 ```
-When you run `ood_add_path` from a shell command line, it will prompt you to add one path at a time, until you type 'n' to discontinue. All the paths added by you will be shown in the OOD pull-down menu for the file manager, as well as the left pane when the file manager is opened. 
 
+When you run `ood_add_path` from a terminal command line, it will prompt you to add one path at a time, until you type `n` to discontinue. 
 `ood_remove_path` allows you to remove any of the paths added by you and `ood_list_path` will list all the paths added by you. 
 
-After you have customized the path configuration from a shell, go to the OOD dashbaord and click `Develop`->`Restart Web Server` on the top menu bar to make the change effective immediately.  
+All the paths added will be shown in the pull-down menu for the file browser, as well as the left pane when the file browser is opened. After you have customized the path configuration from a terminal, go to the OOD dashbaord and click `</> Develop`->`Restart Web Server` on the top right corner navigation bar to make the change effective immediately.
 
-## Shell
+## Terminal
 
-You can launch a traditional command-line interface to the cluster using the Shell pull-down menu.
-This opens a terminal in a web-browser that you can use in the exact same way as when logging into the cluster via SSH.
+You can launch a traditional command-line interface on the cluster by selecting `Clusters` -> `Shell Access` in the top navigation bar.
 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 
 ## Interactive Apps
 
-We have deployed a selection of common graphical programs as Interactive Apps on Open OneDemand. Currently, we have apps for Remote Desktop, MATLAB, Mathematica, RStudio Desktop, RStudio Server, and Jupyter Notebook, etc.
+We have deployed a selection of common graphical programs, such as Remote Desktop, Jupyter, RStudtio, and MATLAB, as Interactive Apps on the Web Portal.
 
 !!! warning
     You are limited to 4 interactive app instances (of any type) at one time. 
@@ -84,154 +73,45 @@ We have deployed a selection of common graphical programs as Interactive Apps on
     Closing the window does not terminate the interactive app job.
     To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
-### Remote Desktop
+### Launch an Interactive App
 
-Occasionally, it is helpful to use a graphical interface to explore data or run certain programs.
-In the past your options were to use [VNC](/clusters-at-yale/access/vnc) or [X11 forwarding](/clusters-at-yale/access/x11). These tools can be complex to setup or suffer from reduced performance. The Remote Desktop app from OOD simplifies the configuration of a VNC desktop session on a compute node. The MATLAB, Mathematica, and RStudio Desktop Apps are special versions of this app. To get started choose Remote Desktop (or another desktop app) from the Interactive Apps menu on the dashboard.
-
-Use the form to request resources and decide what partition your job should run on. Use `devel` (`interactive` on Milgram) or your lab's partition.
+Select an app either from the Dashboard or the "Interactive Apps" pull down menu. 
+Use the form to request resources and decide what partition your job should run on. 
+We recommend either `devel` or, if applicable, your group's private partition.
 
 ![remote_desktop](/img/ood_remote.png){: .medium}
 
 Once you launch the job, you will be presented with a notification that your job has been queued.
-Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the Remote Desktop:
+Depending on the resources requested, you may need to wait for a bit. When the job starts you will see the option to launch the interactive app.
+After you click on Launch Remote Desktop (for example), your interactive app will open in a new tab. 
 
 ![starting](/img/ood_remote_starting.png){: .medium}
 
-Note you can share a view only link for your session if you would like to share your screen. After you click on Launch Remote Desktop, a standard desktop interface will open in a new tab. 
+For additional information on specific Interactive Apps, see the following documentation. A full list of available apps can viewed by selecting the "Interactive Apps" pull-down menu.
 
-#### Copy/Paste
+- [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop)
+- [Jupyter](/clusters-at-yale/access/ood-jupyter)
+- [RStudio](/clusters-at-yale/access/ood-rstudio)
+- [VSCode](/clusters-at-yale/access/ood-vscode)
 
-In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
+## User Portal
 
-![clipboard](/img/ood_remote_clipboard.png){: .medium}
+The User Portal, located under the "Utilities" pull-down menu on the navigation bar, provides a variety of useful information about your recent jobs, the groups that you are a part of, compute and storage utilization, and support and documentation for the use of the clusters.
+The User Portal also hosts a cost calculator for jobs submitted to [Priority Tier](/clusters-at-yale/job-scheduling/priority-tier) partitions.
+For more information on specific tools in the User Portal, check out the following documentation:
 
+- [Monitor Overall Slurm Usage](/clusters-at-yale/job-scheduling/getusage/#open-ondemand-web-app)
+- [Job Performance Monitoring](/clusters-at-yale/job-scheduling/jobstats/)
 
-### Jupyter
+## Troubleshoot the Web Portal
 
-One of the most common uses of Open OnDemand is the Jupyter interface for Python and R. You can choose either Jupyter Notebook or Jupyter Lab. By default, this app will try to launch Jupyter Notebook, unless the `Start JupyterLab` checkbox is selected. 
+### An OOD session is started and then completed immediately
 
-![jupyter_form](/img/ood_jupyter_form.png){: .medium}
-
-Make sure that you chose the right Conda environment for you from the drop-down menu. If you have not yet set one up, [follow our instructions](/clusters-at-yale/guides/jupyter) on how to create a new one. After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.), you can submit the job. When it launches you can open the standard Jupyter interface where you can start working with notebooks.
-
-#### Root directory
-
-The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example Gibbs, you need to create a symlink to that directory in your home directory. 
-
-#### ycrc_default
-
-The `ycrc_default` conda environment will be automatically built when you select it for the first time from Jupyter. You can also build your own Jupyter and make it available to OOD:
-
-```bash
-module load miniconda
-conda create -n env_name jupyter jupyter-lab
-ycrc_conda_env.sh update
-```
-
-Once created, `ycrc_default` will not be updated by OOD automatically. It must be updated by the user manually. To update `ycrc_default`, run the following command from a shell command line:
-```bash
-module load miniconda
-conda update -n  ycrc_default jupyter jupyter-lab
-```
-
-### VSCode Server
-
-[Visual Studio Code](https://code.visualstudio.com) is a popular development tool that is widely used by our researchers.
-While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
-Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
-We have developed an application for OOD that launches VS Code in a job on a compute node and opens in a web-browser. 
-This application is called `code_server` and is available on all clusters.
-
-
-
-### RStudio Server
-
-RStudio Server works with R from an R module or from an R Conda environment. Selected R modules on the cluster (ususally the two most recent versions installed on the cluster)
-are available in the user form. If you want to use Conda R, you need to run `ycrc_conda_env.sh update` to have it listed in the user form. 
-
-
-#### Change User R Package Path
-To change the default path where packages installed by the user are stored, you need to add the following line of code in your `$HOME/.bashrc`:
-
-```bash
-export R_LIBS_USER=path_to_your_local_r_packages
-```
-
-#### Configure the Graphic Device
-When you plot in a RStudio session, you may encounter the following error:
-
-``` bash
-Error in RStudioGD() : 
-  Shadow graphics device error: r error 4 (R code execution error)
-In addition: Warning message:
-In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
-  unable to open connection to X11 display ''
-```
-
-To fix the problem, you need to configure your RStudio session to use `Cairo` for plotting. 
-You can do it in your code as follows: 
-
-```bash
-options(bitmapType='cairo')
-```
-
-Alternatively, you can put the above code in `.Rprofile` in your home directory and the option will be picked up automatically. 
-
-#### Clean RStudio
-If RStudio becomes slow to respond or completely stops responding, please stop the RStudio session and then run the following script at a shell command line:
-
-```
-ycrc_clean_rstudio.sh
-```
-
-This will remove any temporary files created by RStudio and allow it to start anew.
-
-#### Run RStudio in Remote Desktop
-
-While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be benificial. 
-For example, when a user needs to monitor the R code's progress constantly.
-
-RStudio Server is not user friendly for long-running R code. When your CAS session timeout, you won't be able to reconnect
-while the code is running. You'll need to wait until the code finishes before
-you can connect to the same session again. 
-
-If you need to monitor your R code's progress continuously within the same R session without concerns about disconnection, 
-you can run RStudio Desktop within a Remote Desktop environment.
-
-##### Using R module with RStudio Desktop
-
-First, start a Remote Desktop instance in OOD. From the terminal in the Remote Desktop, run the following commands:
-
-```bash
-module load R
-module load RStudio
-rstudio
-```
-
-##### Using R Conda with RStudio Desktop
-
-If you want to use R in a Conda environment, start a Remote Desktop instance in OOD first. 
-From the terminal in the Remote Desktop, please don't load the modules for R and RStudio. 
-Instead, please install 'rstudio-desktop' into your R Conda environment if you haven't done so, 
-and then call `rstudio`.  
-
-```bash
-module load miniconda
-conda activate my_r_env
-conda install rstudio-desktop
-rstudio
-```
-
-### Troubleshoot OOD
-
-#### An OOD session is started and then completed immediately
-
-1. Check if your quota is full
+1. Check if your quota is full by running the `getquota` command or checking the [User Portal](#user-portal).
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly)  
-3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel8` (cluster is one of the following: grace, mccleary) or `$HOME/.lmod.d/default.milgram-rhel7` for Milgram.
+3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel8.
 
-#### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
+### Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly
 1. Make sure there is no initialization left by `conda init` in your `.bashrc`. Clean it with 
 ```bash
 sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
@@ -241,18 +121,3 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 [pl543@grace1 ~]$ which dbus-launch
 /usr/bin/dbus-launch
 ```
-#### Jupyter cannot be started properly
-1.  If you are trying to launch `jupyter-notebook`, make sure it is available in your jupyter conda environment:
-```bash
-(ycrc_default)[pl543@grace1 ~]$ which jupyter-notebook
-/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
-```
-2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
-```bash
-(ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
-/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
-```
-#### RStudio with Conda R
-If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
-#### RStudio Server does not respond
-If you encounter a grey screen after clicking the "Connect to RStudio Server" button, please stop the RStudio session and run `clean-rstudio.sh` at a shell command line.

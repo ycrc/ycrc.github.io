@@ -6,7 +6,7 @@ repo_name: github/ycrc/docs
 repo_url: https://github.com/ycrc/ycrc.github.io/tree/src
 edit_uri: docs/
 remote_branch: master
-strict: true
+strict: false
 
 theme:
     name: material
@@ -42,6 +42,7 @@ plugins:
             'clusters-at-yale/applications/lifecycle.md': 'applications/lifecycle.md'
             'clusters-at-yale/applications/modules.md': 'applications/modules.md'
             'clusters-at-yale/applications/toolchains.md': 'applications/toolchains.md'
+            'clusters-at-yale/guides/jupyter.md': 'clusters-at-yale/access/ood-jupyter.md'
 
 extra:
   social:
@@ -110,7 +111,12 @@ nav:
         - clusters-at-yale/troubleshoot.md
         - Access the Clusters:
             - clusters-at-yale/access/index.md
-            - clusters-at-yale/access/ood.md
+            - Web Portal:
+                - clusters-at-yale/access/ood.md
+                - clusters-at-yale/access/ood-remote-desktop.md
+                - clusters-at-yale/access/ood-jupyter.md
+                - clusters-at-yale/access/ood-rstudio.md
+                - clusters-at-yale/access/ood-vscode.md
             - SSH Connection:
                 - "Connect with SSH": clusters-at-yale/access/ssh.md
                 - clusters-at-yale/access/x11.md
@@ -165,7 +171,6 @@ nav:
             - Python:
                 - clusters-at-yale/guides/python.md
                 - clusters-at-yale/guides/conda.md
-                - clusters-at-yale/guides/jupyter.md
                 - clusters-at-yale/guides/pytorch.md
                 - clusters-at-yale/guides/tensorflow.md
                 - "MPI with Python": clusters-at-yale/guides/mpi4py.md

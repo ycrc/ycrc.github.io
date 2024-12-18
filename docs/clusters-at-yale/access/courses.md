@@ -29,6 +29,14 @@ courseid.ycrc.yale.edu
 
 Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. 
 
+!!! warning 
+    If you only have a course participant account, but try to log in through the cluster web portal URL, you will get an error in the browser:
+    ```
+    Error -- can't find user for cpsc424_test
+    Run 'nginx_stage --help' to see a full list of available command line options.
+    ```
+    Use the URL for your course web portal will resolve the problem.
+
 ### SSH Access
 
 To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
