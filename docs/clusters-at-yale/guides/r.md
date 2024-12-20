@@ -6,12 +6,7 @@ There is no R executable provided by default; you have to choose one of the foll
 
 ## The R Module
 
-We provide several versions of R as [software modules](/applications/modules).
-These modules provide a broad selection of commonly used packages pre-installed.
-Notably, this includes a number of geospatial packages like `sf`, `sp`, `raster`, and `terra`.
-
-In addition, we install a collection of the most common `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)) called `R-bundle-Bioconductor`.
-This can be loaded in addition to the matching R module to provide simple access to these tools.
+We provide several versions of R as [software modules](/applications/modules). In addition, we install a collection of the most common `CRAN` packages ([homepage](https://cran.r-project.org)) called `R-bundle-CRAN`, as well as `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)) called `R-bundle-Bioconductor`.
 
 ### Find and Load R
 
@@ -21,32 +16,26 @@ Find the available versions of R version 4 with:
 module avail R/4
 ```
 
-To load version 4.2.0:
+To load version 4.4.1:
 
 ``` bash
-module load R/4.2.0-foss-2020b
+module load R/4.4.1-foss-2022b
 ```
 
-To show installed R packages and their versions for the `R/4.2.0` module:
-
-``` bash
-module help R/4.2.0-foss-2020b
-```
-
-Between the base R module and the R-bundle-Bioconductor module, there are over 1000 R packages installed and ready to use. 
+Loading the R module (e.g. `R/4.4.1-foss-2022b`) automatically loads the `R-bundle-CRAN` and the `R-bundle-Bioconductor` modules. With these modules, there are over 1000 R packages installed and ready to use. 
 
 To find if your desired package is available in these modules, you can run `module spider $PACKAGE/$VERSION`:
 
 ```bash
-module spider Seurat/4.1.1
+module spider Seurat/5.1.0
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
-  Seurat: Seurat/4.1.1 (E)
+  Seurat: Seurat/5.1.0 (E)
 --------------------------------------------------------------------------------------------------------------------------------------------------------
     This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names in parentheses show the module location in the software hierarchy.
 
 
-       R-bundle-Bioconductor/3.15-foss-2020b-R-4.2.0
+       R-bundle-Bioconductor/3.19-foss-2022b-R-4.4.1
 
 
 Names marked by a trailing (E) are extensions provided by another module.
@@ -54,14 +43,12 @@ Names marked by a trailing (E) are extensions provided by another module.
 
 ```
 
-So to get this version of Seurat, you can load the R-bundle-Bioconductor module. 
-Then you simple `library(Seurat)` to use that tool.
+So this version of Seurat is included in the `R-bundle-Bioconductor` module for R version 4.4.1. By loading the `R/4.4.1-foss-2022b` module, you can simply run `library(Seurat)` to use that tool without installing it yourself.
 
 ### Install Packages
 
 The software modules include many commonly used packages, but you can install additional packages specifically for your account.
-As part of the R software modules we define an environment variable which directs R to install packages to your project space.
-This helps prevent issues where R cannot install packages due to home-space quotas.
+As part of the R software modules we define an environment variable which directs R to install packages to your home space.
 To change the location of where R installs packages, the `R_LIBS_USER` variable can be set in your `~/.bashrc` file:
 
 ```
@@ -71,19 +58,15 @@ export R_LIBS_USER=$GIBBS_PROJECT/R/%v
 where `%v` is a placeholder for the R major and minor version number (e.g. `4.2`).
 R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.
 
-We recommend you install packages in an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs) with the slurm option `-C oldest`.
-This will ensure the compiled portions of your R library are compatible with all compute nodes on the cluster.
-If there is a missing library your package of interest needs you should be able to load its module.
+We recommend you install packages in an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs).
+If there is a missing library your package of interest needs, you should be able to load its module.
 If you cannot find a dependency or have trouble installing an R package, [please get in touch with us](/#web-and-email-support).
-
-!!! warning
-    Grace's login nodes have newer architecture than the oldest nodes on the cluster. Always install packages in an interactive job submitted with the `-C oldest` Slurm flag if you want to ensure your code will work on all generations of the compute nodes.
 
 To get started load the R module and start R:
 
 ```bash
 salloc
-module load R/4.2.0-foss-2020b
+module load R/4.4.1-foss-2022b
 R
 # in R
 > install.packages("lattice", repos="http://cran.r-project.org")
@@ -92,20 +75,19 @@ R
 This will throw a warning like:
 
 ```bash
-Warning in install.packages("lattice") :
-'lib = "/ysm-gpfs/apps/software/R/4.2.0-foss-2020b/lib64/R/library"' is not writable
+Warning in install.packages("lattice", repos = "http://cran.r-project.org") :
+  'lib = "/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel) yes
 Would you like to create a personal library
-/gpfs/gibbs/project/support/tl397/R/4.1
-to install packages into?  (y/n)
+‘/home/netID/R/4.4.1-foss-2022b’
+to install packages into? (yes/No/cancel) yes
 ```
-
 
 !!!note
     If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
     ```
-    mkdir /path/to/your/project/space/R/4.2
+    mkdir -p $HOME/R/4.4.1-foss-2022b
     ```
-    You only need the general minor version such as 4.2 instead of 4.2.2.
 
 You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
 ```
@@ -115,7 +97,6 @@ You can customize where packages are installed and accessed for a particular R s
 # Add new default location to the standard defaults, e.g. project/my_R_libs
 > .libPaths(c("/home/netID/project/my_R_libs/", .libPaths()))
 ```
-
 
 ## Run R
 
@@ -145,7 +126,7 @@ In that script, you can run your R script. In this case `myscript.R` is in the s
 #SBATCH --mem=10G
 #SBATCH -t 4:00:00
 
-module load R/4.1.0-foss-2020b
+module load R/4.4.1-foss-2022b
 Rscript myscript.R
 ```
 
@@ -160,7 +141,6 @@ Here you can select the desired version of R and RStudio and launch an interacti
 
 On a cluster you may want to use R in parallel across multiple nodes.
 While there are a few different ways this can be achieved, we recommend using the R software module which already includes `Rmpi`, `parallel`, and `doMC`.
-
 
 To test it, we can create a simple R script named `ex1.R`
 
@@ -180,7 +160,7 @@ mpi.quit()
 
 ```
 
-Then we can launch it with an sbatch script (`ex1.sh`):
+For some versions of R, the `Rmpi` package needs to be installed first. Then we can launch it with an sbatch script (`ex1.sh`):
 
 ```sh
 #!/bin/bash
@@ -189,7 +169,7 @@ Then we can launch it with an sbatch script (`ex1.sh`):
 #SBATCH -t 5:00
 
 module purge
-module load R/4.2.0-foss-2020b
+module load R/4.4.1-foss-2022b
 
 srun Rscript ex1.R
 ```
