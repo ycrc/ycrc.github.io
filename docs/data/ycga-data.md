@@ -3,8 +3,7 @@
 Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga/sequencers` on [McCleary](/clusters/mccleary).
 
 !!! Important
-On Oct 1, 2024, we will be tightening access restrictions to the primary sequence data.  More information is available
-[here](/data/ycga-permissions).
+    On Oct 1, 2024, we will be tightening access restrictions to the primary sequence data.  More information is available [here](/data/ycga-permissions).
 
 ## YCGA Access Policy
 
