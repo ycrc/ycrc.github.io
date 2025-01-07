@@ -26,7 +26,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |1|6426Y|32|251|cpugen:sapphirerapids,cpumodel:6426Y,common:yes|
+    |2|8562Y+|64|479|cpugen:emeraldrerapids, cpumodel:8562Y+, common:yes|
 
 === "mpi"
 
@@ -56,5 +56,5 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |60|8562Y+|64|479|cpugen:emeraldrerapids, cpumodel:8562Y+, common:yes|
+    |58|8562Y+|64|479|cpugen:emeraldrerapids, cpumodel:8562Y+, common:yes|
 
