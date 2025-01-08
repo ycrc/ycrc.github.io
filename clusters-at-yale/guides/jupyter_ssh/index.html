@@ -2535,7 +2535,8 @@ You will also need to either load a module that contains <code>jupyter-notebook<
 <span class="nv">port</span><span class="o">=</span><span class="k">$(</span>shuf -i8000-9999 -n1<span class="k">)</span>
 <span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname -s<span class="k">)</span>
 <span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname -f <span class="p">|</span> awk -F<span class="s2">&quot;.&quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<span class="nv">cluster</span><span class="o">=</span><span class="nv">$CLUSTER</span>
+<span class="nv">token</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$RANDOM</span> <span class="p">|</span> md5sum <span class="p">|</span> head -c <span class="m">30</span><span class="k">)</span>
 
 <span class="c1"># print tunneling instructions jupyter-log</span>
 <span class="nb">echo</span> -e <span class="s2">&quot;</span>
@@ -2551,12 +2552,13 @@ You will also need to either load a module that contains <code>jupyter-notebook<
 <span class="s2">SSH login: </span><span class="nv">$user</span><span class="s2"></span>
 <span class="s2">SSH port: 22</span>
 <span class="s2">Use a Browser on your local machine to go to:</span>
-<span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">  (prefix w/ https:// if using password)</span>
+<span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/lab?token=</span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">  (prefix w/ https:// if using password)</span>
 <span class="s2">&quot;</span>
 
 <span class="c1"># load modules or conda environments here</span>
 
-jupyter-notebook --no-browser --port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span> --ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
+<span class="nb">export</span> <span class="nv">JUPYTER_TOKEN</span><span class="o">=</span><span class="nv">$token</span>
+jupyter lab --no-browser --port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span> --ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
 </code></pre></div>
 <h3 id="start-the-tunnel">Start the Tunnel</h3>
 <p>Once you have submitted your job and it starts, your notebook server will be ready for you to connect. 
@@ -2581,12 +2583,8 @@ Then start MobaXterm:</p>
 <li>Click the play button under the Start/Stop column.</li>
 </ol>
 <h2 id="browse-the-notebook">Browse the Notebook</h2>
-<p>Finally, open a web browser on your local machine and enter the address <code>http://localhost:port</code> where port is the one specified in your log file. 
-The address Jupyter creates by default (the one with the name of a compute node) will not work outside the cluster's network. 
-Since version 5 of jupyter, the notebook will automatically generate a token that allows you to authenticate when you connect. 
-It is long, and will be at the end of the url jupyter generates. 
-It will look something like</p>
-<p><code>http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**</code></p>
+<p>Finally, open a web browser on your local machine and enter the address <code>http://localhost:port/lab?token=...</code> where port is the one specified in your log file. 
+The address Jupyter creates by default (the one with the name of a compute node) will not work outside the cluster's network. </p>
 <p>If you run into trouble or need help, <a href="/#get-help">contact us</a>.</p>
                 
                   
@@ -2596,7 +2594,7 @@ It will look something like</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2025</span>
       
     
   </small>
