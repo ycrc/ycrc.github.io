@@ -33,7 +33,8 @@ XDG_RUNTIME_DIR=""
 port=$(shuf -i8000-9999 -n1)
 node=$(hostname -s)
 user=$(whoami)
-cluster=$(hostname -f | awk -F"." '{print $2}')
+cluster=$CLUSTER
+token=$(echo $RANDOM | md5sum | head -c 30)
 
 # print tunneling instructions jupyter-log
 echo -e "
@@ -49,12 +50,13 @@ SSH server: ${cluster}.ycrc.yale.edu
 SSH login: $user
 SSH port: 22
 Use a Browser on your local machine to go to:
-localhost:${port}  (prefix w/ https:// if using password)
+localhost:${port}/lab?token=${token}  (prefix w/ https:// if using password)
 "
 
 # load modules or conda environments here
 
-jupyter-notebook --no-browser --port=${port} --ip=${node}
+export JUPYTER_TOKEN=$token
+jupyter lab --no-browser --port=${port} --ip=${node}
 ```
 
 ### Start the Tunnel
@@ -86,12 +88,7 @@ Then start MobaXterm:
 
 ## Browse the Notebook
 
-Finally, open a web browser on your local machine and enter the address `http://localhost:port` where port is the one specified in your log file. 
+Finally, open a web browser on your local machine and enter the address `http://localhost:port/lab?token=...` where port is the one specified in your log file. 
 The address Jupyter creates by default (the one with the name of a compute node) will not work outside the cluster's network. 
-Since version 5 of jupyter, the notebook will automatically generate a token that allows you to authenticate when you connect. 
-It is long, and will be at the end of the url jupyter generates. 
-It will look something like
-
-`http://c14n06:9230/?token=**ad0775eaff315e6f1d98b13ef10b919bc6b9ef7d0605cc20**`
 
 If you run into trouble or need help, [contact us](/#get-help).
