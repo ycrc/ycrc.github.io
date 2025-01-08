@@ -16,6 +16,7 @@ You will also need to either load a module that contains `jupyter-notebook`.
 
 !!! tip
     If you are using a Conda environment, please follow the instructions for launching a Jupyter session via [Open OnDemand](/clusters-at-yale/access/ood-jupyter).
+    Make sure that you have installed Jupyter in your conda environment. We recommend `jupyterlab` which provides a nice user interface.
 
 Save your edited version of this script on the cluster, and submit it with `sbatch`.
 
@@ -54,6 +55,10 @@ localhost:${port}/lab?token=${token}  (prefix w/ https:// if using password)
 "
 
 # load modules or conda environments here
+# module load miniconda; conda activate ENV_NAME
+# or
+# module load  
+
 
 export JUPYTER_TOKEN=$token
 jupyter lab --no-browser --port=${port} --ip=${node}
