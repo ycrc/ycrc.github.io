@@ -25,6 +25,8 @@ As long as your files existed in the form you want them in before the most recen
 | Home (Milgram)              | `/gpfs/milgram/home`         | `/gpfs/milgram/home/.snapshots`        |
 | Project (Milgram)           | `/gpfs/milgram/project`      | `/gpfs/milgram/project/.snapshots`     |
 | PI (Milgram)                | `/gpfs/milgram/pi/group`     | `/gpfs/milgram/pi/group/.snapshots`    |
+| Home (Bouchet)              | `/nfs/roberts/home`          | `/nfs/roberts/home/.snapshot`          |
+| Project (Bouchet)           | `/nfs/roberts/project/group` | `/nfs/roberts/project/group/.snapshot` | 
 
 Within the snapshot directory, you will find multiple directories with names that indicate specific dates. For example, if you wanted to recover the file `/gpfs/gibbs/project/bjornson/rdb9/doit.sh` (a file in the bjornson group's project directory owned by rdb9) it would be found at `/gpfs/gibbs/.snapshots/date/project/bjornson/rdb9/doit.sh` .
 
