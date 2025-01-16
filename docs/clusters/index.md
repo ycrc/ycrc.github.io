@@ -15,11 +15,11 @@ We maintain and support three Red Hat Linux compute clusters, listed below. Plea
 
 | Cluster Name        | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                            |
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
-| [Bouchet](bouchet)  | 4,000              | 60                  | -                            | Coming Soon (beta in Fall 2024)                  |
-| [Grace](grace)      | 26,000             | 740                 | `grace.ycrc.yale.edu`          | general and highly parallel, tightly coupled (InfiniBand)|
-| [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)     |
-| [Milgram](milgram)  | 2,000              | 50                 | `milgram.ycrc.yale.edu`        | HIPAA and other sensitive data                |
-| [Misha](misha)      | 2,000              | 40                  | `misha.ycrc.yale.edu`        | [Wu Tsai Institute](http://wti.yale.edu)                    |
+| [Bouchet](bouchet)  | 4,000              | 60                  | `bouchet.ycrc.yale.edu`       | in beta, highly parallel, tightly coupled                         |
+| [Grace](grace)      | 26,000             | 740                 | `grace.ycrc.yale.edu`         | general and highly parallel, tightly coupled (InfiniBand)         |
+| [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)           |
+| [Milgram](milgram)  | 2,000              | 50                  | `milgram.ycrc.yale.edu`       | HIPAA and other sensitive data                                    |
+| [Misha](misha)      | 2,000              | 40                  | `misha.ycrc.yale.edu`         | [Wu Tsai Institute](http://wti.yale.edu)                          |
 
 
 ## Storage
