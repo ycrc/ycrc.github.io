@@ -33,7 +33,7 @@ On Bouchet, your primary group is your NetID, and secondary groups are assigned 
 This setup makes the process of group change easier and can also accomodate "project"-based secondary groups rather than PI-based secondary groups.
 PI groups on Bouchet take the form `pi_<netid of the pi>`, instead of `<lastname of pi>` to avoid collisions and confusion between PIs who share a lastname.    
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
-However, be careful about copying existing files from `$HOME` to project spaces, as those files may need to have their group ownership updated. 
+However, be careful about copying existing files from `$HOME` to project spaces, as those files may need to have their group ownership updated.
 
 ### Partition
 
@@ -54,6 +54,19 @@ Your project and scratch storage usage and quota are shared with the members of 
 | home           | `/nfs/roberts/home`       | 125GiB/user                             | 500,000    | 
 | project        | `/nfs/roberts/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | 
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 |
+
+
+Since your primary group is not the PI group on Bouchet, we do not create symlinks to the `project` or `scratch` directories in your home directory when we set up your account. However, if you would like to create a symlink to the PI group storage space for convenience, you can use the `ln` command:
+
+```
+ln -s /path/to/existing/directory /path/to/symlink
+```
+
+As an example, to create a symlink named `pi_project` in your home directory that points to the PI project directory, you can run the following command:
+
+```
+ln -s /nfs/roberts/project/group  $HOME/pi_project
+```
 
 ### Transfer data from other clusters
 
