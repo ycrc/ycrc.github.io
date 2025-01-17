@@ -2591,12 +2591,6 @@ Your project and scratch storage usage and quota are shared with the members of 
 </tr>
 </tbody>
 </table>
-<p>Since your primary group is not the PI group on Bouchet, we do not create symlinks to the <code>project</code> or <code>scratch</code> directories in your home directory when we set up your account. However, if you would like to create a symlink to the PI group storage space for convenience, you can use the <code>ln</code> command:</p>
-<div class="highlight"><pre><span></span><code>ln -s /path/to/existing/directory /path/to/symlink
-</code></pre></div>
-<p>As an example, to create a symlink named <code>pi_project</code> in your home directory that points to the PI project directory, you can run the following command:</p>
-<div class="highlight"><pre><span></span><code>ln -s /nfs/roberts/project/group  $HOME/pi_project
-</code></pre></div>
 <h3 id="transfer-data-from-other-clusters">Transfer data from other clusters</h3>
 <p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/transfer/#rsync"><code>rsync</code></a>. 
 <code>rsync</code> is a commonly used command-line tool for remote transfers between two systems. 
@@ -2636,7 +2630,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2025</span>
       
     
   </small>
