@@ -796,6 +796,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/news/2024-12/</loc>
+         <lastmod>2025-01-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/news/2025-01/</loc>
+         <lastmod>2025-01-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/resources/</loc>
          <lastmod>2025-01-21</lastmod>
          <changefreq>daily</changefreq>
