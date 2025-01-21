@@ -8,8 +8,8 @@ Yale [recently joined the Massachusetts Green High Performance Computing Center 
 
 ## Announcing the Bouchet HPC Cluster
 
-!!! info "Bouchet Beta"
-    The Bouchet HPC cluster is now available in beta for tightly coupled, parallel workloads. Please see the [Bouchet Beta Testing documentation](/clusters/bouchet_beta/) for more information.
+!!! info "Bouchet In Production"
+    The Bouchet HPC cluster is now in production for tightly coupled, parallel workloads. Please see the [Bouchet Getting Started](/clusters/bouchet_getting_started/) for more information.
 
 The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the `mpi` partition on the Grace cluster. 
 Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. 
