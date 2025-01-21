@@ -47,7 +47,7 @@ include as much detail as possible about your request and we'll find the right p
 | --- | --- | --- |
 |[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R  |
-|[Sam Friedman](https://research.computing.yale.edu/about/staff/sam-friedman)|[McCleary](/clusters/mccleary) | Life Sciences |
+|[Sam Friedman](https://research.computing.yale.edu/about/staff/sam-friedman)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
 |[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
 |[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, MPI, Python  |
