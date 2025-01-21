@@ -2,7 +2,7 @@
 
 The Bouchet HPC cluster is YCRC's first installation at [Massachusetts High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc). 
 Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward.
-The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows using `mpi`. 
+The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, are dedicated to tightly coupled parallel workflows like those using `MPI`. 
 A second set of nodes will be installed in early 2025 aimed at general purpose workflows, including GPU-accelerated work. 
 
 Compared to the existing `mpi` partition Bouchet provides several key improvements:
