@@ -2,8 +2,8 @@
 !!! tip "YCRC Welcomes Ruth Marinshaw as the New Executive Director"
     YCRC Team is delighted to welcome Ruth Marinshaw as our new Executive Director. Ruth joined Yale mid-November to serve as the university's primary technologist to support the computing needs of Yale's research community. She will work with colleagues across campus to implement and operate computational technologies that support Yale faculty, students, and staff in conducting cutting-edge research. See the [announcement](https://research.yale.edu/announcements/welcoming-ruth-marinshaw-executive-director-research-computing-technologies) for more about Ruth.
 
-!!! tip "Announcing the Bouchet HPC Cluster"
-    The Bouchet HPC cluster, YCRC first installation at MGHPCC, will be available in beta Fall 2024. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
+!!! tip "The Bouchet Cluster is Now Available"
+    The Bouchet HPC cluster, YCRC first installation at MGHPCC, is now in production. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, are dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this spring we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
 
 
 
