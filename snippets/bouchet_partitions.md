@@ -1,6 +1,6 @@
 === "devel"
 
-    Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.
+    Use the devel partition for jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.
 
     **Request Defaults**
 

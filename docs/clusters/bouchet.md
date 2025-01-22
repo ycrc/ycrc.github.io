@@ -2,7 +2,7 @@
 
 ![Edward Bouchet](/img/edward-bouchet.jpg){: .cluster-portrait}
 
-Yale [recently joined the Massachusetts Green High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc), a not-for-profit, state-of-the-art data center dedicated to computationally-intensive research. We are pleased to announce our first installation at MGHPCC will be a new HPC cluster called Bouchet. Bouchet is named for Edward Bouchet (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
+Yale [recently joined the Massachusetts Green High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc), a not-for-profit, state-of-the-art data center dedicated to computationally-intensive research. We are pleased to announce our first installation at MGHPCC will be a new HPC cluster called Bouchet. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
 
 - - -
 
@@ -45,7 +45,7 @@ Bouchet has access to one filesystem called Roberts.
 Roberts is an all-flash, NFS filesystem similar to the Palmer filesystem on Grace and McCleary.
 For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
-Your `~/project` and `~/scratch` directories are shortcuts. 
+Your `~/project_pi_<netid of the pi>` and `~/scratch_pi_<netid of the pi>` directories are shortcuts. 
 Get a list of the absolute paths to your directories with the `mydirectories` command. 
 If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 
@@ -57,5 +57,5 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
 | home           | `/home`                   | 125GiB/user                             | 500,000    | Not yet | >=2 days  |       |
-| project        | `/nfs/roberts/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | No      | >=2 days  |       |
+| project        | `/nfs/roberts/project`    | 4TiB/group                              | 5,000,000  | No      | >=2 days  |       |
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
