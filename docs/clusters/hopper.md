@@ -14,8 +14,6 @@ As the Hopper production launch approaches, support staff will be available to a
 
 - - -
 
-## Announcing the Bouchet HPC Cluster
-
 The Hopper HPC cluster will be available in a closed beta early 2025. 
 
 If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please [reach out to us](/).
