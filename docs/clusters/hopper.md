@@ -34,6 +34,7 @@ PIs are also required to conduct a regular review of user accounts on their proj
 Failure to complete the review by the due date will result in the locking of all accounts associated with the project until the review is complete. 
 
 Accounts will be deactivated when any of the following occurs: 
+
 - Account is inactive for more than one year 
 - Owner leaves the project 
 - Owner leaves the university
@@ -62,7 +63,7 @@ All transfers of any type will be logged, and users remain responsible for follo
 All high-risk data transfers, either onto or out of the cluster, require approval.
 Please contact us for approval and transfer assistance, including details on the data.
 
-### Low Risk Data
+### Low-Risk Data
 
 Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our [Globus documentation](/data/globus).
