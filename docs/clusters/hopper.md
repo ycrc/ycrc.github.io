@@ -14,7 +14,8 @@ As the Hopper production launch approaches, support staff will be available to a
 
 - - -
 
-The Hopper HPC cluster will be available in a closed beta early 2025. 
+The Hopper HPC cluster will be available in a closed beta early 2025.
+Hopper is expected to be in production for use with ePHI, CUI and certain other types of sensitive data in summer 2025.
 
 If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please [reach out to us](/).
 
