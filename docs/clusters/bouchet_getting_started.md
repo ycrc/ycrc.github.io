@@ -52,7 +52,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 |Storage         | Root Directory            | Quota                                   | File Count | 
 |----------------|---------------------------|-----------------------------------------|------------|
 | home           | `/nfs/roberts/home`       | 125GiB/user                             | 500,000    | 
-| project        | `/nfs/roberts/project`    | 1TiB/group, increase to 4TiB on request | 5,000,000  | 
+| project        | `/nfs/roberts/project`    | 4TiB/group                              | 5,000,000  | 
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 |
 
 
