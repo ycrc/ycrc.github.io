@@ -74,6 +74,10 @@ ITS offers departmental subscriptions to DropBox for a low cost (currently $23.6
 
 ## Box at Yale
 
+!!! warning Box Phase Out 2026-03-01
+    ITS will be phasing out Box in March, 2026. They recommend migrating to Microsoft 365.
+    For more information visit the ITS [Box At Yale](https://yale.service-now.com/it?id=service_offering&sys_id=ff584dcd6fbb31007ee2abcf9f3ee4ee).
+
 - **Capacity: 50GiB per user. Cost: Free. 15 GiB max file size.**
 - **Sensitive data (e.g. ePHI, HIPAA) only in Secure Box**
 - **Can be mounted on your local machine and transferred with [`rclone`](https://rclone.org/)**
