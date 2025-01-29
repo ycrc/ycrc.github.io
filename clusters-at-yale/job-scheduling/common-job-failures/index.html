@@ -2797,7 +2797,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 <div class="highlight"><pre><span></span><code>GCCcore/7.3.0 exists but could not be loaded as requested.
 </code></pre></div>
 <h3 id="match-or-purge-your-toolchains">Match or Purge Your Toolchains</h3>
-<p>Where possible, only use one toolchain at a time. When you want to use software from muliple toolchains run <code>module purge</code> between running new <code>module load</code> commands. If your work requires a version of software that is not installed, <a href="/#get-help">contact us</a>.</p>
+<p>Where possible, only use one toolchain at a time. When you want to use software from muliple toolchains run <code>module reset</code> between running new <code>module load</code> commands. If your work requires a version of software that is not installed, <a href="/#get-help">contact us</a>.</p>
 <h2 id="conda-environments">Conda Environments</h2>
 <p><a href="/clusters-at-yale/guides/conda/">Conda environments</a> provide a nice way to manage <code>python</code> and <code>R</code> packages and modules. Conda acieves this by setting functions and environment variables that point to your environment files when you run <code>conda activate</code>. Unlike <a href="/applications/modules/">modules</a>, conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.</p>
 <h3 id="load-conda-environments-right-before-use">Load Conda Environments Right Before Use</h3>
