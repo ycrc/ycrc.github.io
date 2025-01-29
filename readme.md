@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 * To identify the specific filename you wish to edit, it is convenient to browse within the site itself, [https://docs.ycrc.yale.edu](https://docs.ycrc.yale.edu).
 
-* After finding the desired page, to get the filename, click on the `pencil` icon near the upper right-hand side of the page (to the left of the page's Table of contents, if there is one).
+* After finding the desired page, to get the filename, click on the `pencil` icon near the upper right-hand side of the page (to the left of the page's Table of contents, if there is one). This takes you to the source page on github.
 
 * Then, click on the `copy path` icon, to the right of the file path listed at the top of the page (it looks like a pair of small overlapped squares). For example, if you see `ycrc.github.io/docs/clusters-at-yale/access/index.md` then `docs/clusters-at-yale/access/index.md` will be copied to the clipboard.
 
