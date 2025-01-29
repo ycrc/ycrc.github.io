@@ -2943,7 +2943,7 @@ module<span class="w"> </span>load<span class="w"> </span>&lt;module-name&gt;<sp
 </code></pre></div>
 <p>This directory will contain all the outputs from your simulation as well as logs and the cesm.exe executable.</p>
 <h4 id="common-build-issues">Common Build Issues</h4>
-<p>Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run <code>module purge</code> before the <code>module load</code> to ensure a reproducible environment.</p>
+<p>Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run <code>module reset</code> before the <code>module load</code> to ensure a reproducible environment.</p>
 <p>If you get an error saying <code>ERROR: Error gathering provenance information from manage_externals</code>, rerun the build using the suggested flag, e.g. <code>./case.build --skip-provenance-check</code>.  </p>
 <h3 id="submit-your-case">Submit Your Case</h3>
 <p>Once the build is complete, which can take 5-15 minutes, you can submit your case with the submit script.</p>

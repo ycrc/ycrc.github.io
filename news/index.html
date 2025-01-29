@@ -3432,7 +3432,7 @@ conda install papermill
 #SBATCH -c 1
 #SBATCH -t 6:00:00
 
-module purge miniconda
+module unload miniconda
 conda activate my_env
 papermill /path/to/notebook.ipynb
 </code></pre></div>

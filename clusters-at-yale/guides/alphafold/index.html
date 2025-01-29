@@ -2532,7 +2532,7 @@ and modify for your specific use case.</p>
 <span class="c1">#SBATCH --constraint &quot;a100|rtx5000|a5000|rtx3090&quot;</span>
 
 <span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
-module<span class="w"> </span>purge
+module<span class="w"> </span>reset
 module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 
 <span class="c1">## Provide settings for running various components in parallel</span>

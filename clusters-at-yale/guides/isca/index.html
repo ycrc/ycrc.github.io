@@ -2600,7 +2600,7 @@ export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 </code></pre></div>
 <h2 id="update-the-environment">Update the Environment</h2>
 <p>Open <code>$HOME/programs/isca/postprocessing/mppnccombine_run.sh</code> and remove the following line:</p>
-<div class="highlight"><pre><span></span><code>module purge
+<div class="highlight"><pre><span></span><code>module reset
 </code></pre></div>
 <h2 id="select-an-experiment-and-update-the-flags">Select an Experiment and Update the Flags</h2>
 <p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>

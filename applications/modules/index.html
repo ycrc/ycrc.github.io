@@ -2851,11 +2851,11 @@
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>unload<span class="w"> </span>R
 </code></pre></div>
 <p>Or unload all modules at once with:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>purge
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>reset
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Purge Lightly</p>
-<p><code>module purge</code> will alert you to a sticky module that is always loaded called <code>StdEnv</code>. Avoid unloading <code>StdEnv</code> unless explicitly told to do so, othewise you will lose some important setup for the cluster you are on.</p>
+<p>We used to recommend <code>module purge</code> instead of <code>module reset</code> for module unloading. However, <code>module purge</code> is slower and also prints a deceptive warning about a 'sticky' module called <code>StdEnv</code> that these commands leave loaded. Avoid unloading <code>StdEnv</code> unless explicitly told to do so, otherwise you will lose some important setup for the cluster you are on.</p>
 </div>
 <h3 id="module-collections">Module Collections</h3>
 <h4 id="save-collections">Save Collections</h4>

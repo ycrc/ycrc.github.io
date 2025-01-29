@@ -2686,7 +2686,8 @@ For example, if you want to create an environment with many commonly used scient
 conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>notebook_env<span class="w"> </span>python<span class="w"> </span>jupyter<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib
 ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
-<p>Note that the conda environment list on the Jupyter form <em>will not</em> update automatically. To update the list you must run <code>ycrc_conda_env.sh update</code>.</p>
+<p>Note that you <strong>must</strong> include jupyter in the list of packages you give to the <code>conda create</code> command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.</p>
+<p>The <code>ycrc_conda_env.sh update</code> command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. <em>To update the list you must run this command</em>.</p>
 <h2 id="command-line-execution-of-jupyter-notebooks">Command-Line Execution of Jupyter Notebooks</h2>
 <p>Many scientific workflows start as interactive Jupyter notebooks, and our Web Portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively.</p>
 <p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
@@ -2704,7 +2705,7 @@ conda install papermill
 #SBATCH -c 1
 #SBATCH -t 6:00:00
 
-module purge
+module reset
 module load miniconda
 conda activate my_env
 papermill /path/to/notebook.ipynb /path/to/output.ipynb
