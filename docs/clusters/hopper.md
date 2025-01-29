@@ -22,7 +22,7 @@ If you have any questions about Yale’s partnership at MGHPCC or the Hopper clu
 
 
 !!! info
-    All details on the account process and user experience as currently in development and subject to change depending on compliance and as we assess researcher needs. The following information describes the current envisioned environment.
+    All details on the account process and user experience is currently in development and subject to change depending on compliance and as we assess researcher needs. The following information describes the current envisioned environment.
 
 ## Access the Cluster
 
@@ -73,8 +73,8 @@ Please contact us for approval and transfer assistance, including details on the
 
 Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our [Globus documentation](/data/globus).
-If your data is large (>100G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
 The user then must submit a request to the YCRC to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
+If your data is large (>100G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
 
 Downloading of low-risk files from the cluster is the same process, but in reverse.
 Submit a request to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
