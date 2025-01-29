@@ -882,6 +882,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node" class="md-nav__link">
+    Setting up SSH tunneling to run VS Code Server on a cluster node
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2506,6 +2513,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node" class="md-nav__link">
+    Setting up SSH tunneling to run VS Code Server on a cluster node
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2524,12 +2538,15 @@
                 
                 
                 <h1 id="vscode">VSCode</h1>
-<p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.
-While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
+<p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.</p>
+<p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.</p>
+<p>While there are several extensions that allow users to connect to remote servers over SSH, these are imperfect and often drop connection. 
 Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.</p>
 <h2 id="code-server">Code Server</h2>
 <p>The Code Server app launches VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
 To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood">Web Portals</a> and choose Code Server from the Interactive Apps menu in the portal and then follow the instructions for <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">launching an interactive app</a>.</p>
+<h2 id="setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node">Setting up SSH tunneling to run VS Code Server on a cluster node</h2>
+<p>If you would like to edit code on the cluster using a VS Code app running on your local machine (i.e., laptop), it is possible with a little extra work. </p>
                 
                   
                     

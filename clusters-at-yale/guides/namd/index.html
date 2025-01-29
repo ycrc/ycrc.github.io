@@ -2563,37 +2563,37 @@
                 
                 <h1 id="namd">NAMD</h1>
 <p><a href="https://www.ks.uiuc.edu/Research/namd/">NAMD</a> is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. NAMD scales to hundreds of cores for typical simulations. NAMD uses the popular molecular graphics program <a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>, for simulation setup and trajectory analysis, but is also file-compatible with AMBER, CHARMM, and X-PLOR.To see a full list of available versions of NAMD on the cluster, run:</p>
-<div class="highlight"><pre><span></span><code>module avail namd/
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>namd/
 </code></pre></div>
 <p>As of this writing, the latest installed version is 2.13.</p>
 <h2 id="running-namd-on-the-cluster">Running NAMD on the Cluster</h2>
 <p>To set up NAMD on the cluster,</p>
-<div class="highlight"><pre><span></span><code>module load NAMD/2.13-multicore
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>NAMD/2.13-multicore
 </code></pre></div>
 <p>for the standard multicore version, or</p>
-<div class="highlight"><pre><span></span><code>module load NAMD/2.13-multicore-CUDA
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>NAMD/2.13-multicore-CUDA
 </code></pre></div>
 <p>for the GPU-enabled version (about which there is more information below).</p>
 <p>NAMD can be run interactively, or as a batch job.</p>
 <p>To run NAMD interactively, you need to create an interactive session on a compute node. You could start an interactive session using 4 cores for 4 hours using</p>
-<div class="highlight"><pre><span></span><code>salloc --x11 -c <span class="m">4</span> -t <span class="m">4</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--x11<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
 </code></pre></div>
 <p>For longer simulations, you will generally want to run non-interactively via a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#batch-jobs">batch job</a>.</p>
 <h3 id="parallelization">Parallelization</h3>
 <p>NAMD is most effective when run with parallelization. For running on a single node,</p>
-<div class="highlight"><pre><span></span><code>namd2 +p<span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> YourConfigfile
+<div class="highlight"><pre><span></span><code>namd2<span class="w"> </span>+p<span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span>YourConfigfile
 </code></pre></div>
 <p>where ${SLURM_CPUS_PER_TASK} is set by your "-c" job resource request.</p>
 <p>NAMD uses charm++ parallel objects for multinode parallelization and the program launch uses the charmrun interface. Setting up a multinode run in a way that provides improved performance can be a complicated undertaking.  If you wish to run a multinode NAMD job and are not already familiar with MPI, feel free to contact the YCRC staff for assistance.</p>
 <h3 id="gpus">GPUs</h3>
 <p>To use the GPU-accelerated version, request GPU resources for your SLURM job using salloc or via a submission script, and load a CUDA-enabled version of NAMD:</p>
-<div class="highlight"><pre><span></span><code>module load NAMD/2.13-multicore-CUDA
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>NAMD/2.13-multicore-CUDA
 </code></pre></div>
 <p>For a single-node run, you will need at least one thread for each GPU you want to use:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH -c 4 --gpus=4</span>
 ...
 
-charmrun ++local namd2 +p<span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> YourConfigfile
+charmrun<span class="w"> </span>++local<span class="w"> </span>namd2<span class="w"> </span>+p<span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span>YourConfigfile
 </code></pre></div>
                 
                   
