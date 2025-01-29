@@ -15,17 +15,24 @@ As the Hopper production launch approaches, support staff will be available to a
 - - -
 
 The Hopper HPC cluster will be available in a closed beta early 2025.
-Hopper is expected to be in production for use with ePHI, CUI and certain other types of sensitive data in summer 2025.
+Beta access is by invitation only.
+Hopper is expected to be in production and available to Yale researchers for use with ePHI, CUI and certain other types of sensitive data in summer 2025.
 
 If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please [reach out to us](/).
+
+
+!!! info
+    All details on the account process and user experience as currently in development and subject to change depending on compliance and as we assess researcher needs. The following information describes the current envisioned environment.
 
 ## Access the Cluster
 
 ### Accounts
 
 Before using Hopper, all users must successfully complete the a training program which includes NIST 800-171 and HIPAA training.
+(Coming soon--for Beta Testing, you will be required to complete the training once it is available).
 This training must be renewed annually.
 Unlikely other YCRC HPC systems, access to the system is granted on a per project basis.
+(During beta, your project will be called `<pi_netid>_beta`.)
 A request for a specific project will need to be submitted by a PI and approved before user accounts can be created.
 
 Once a project is approved, the project's PI is responisible for the approval of additional user accounts.
@@ -49,7 +56,7 @@ The VDI functions as the ‘login node’ and isolates the user from their host 
 The VDI will provide a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) and command line terminal access, to access files, run commands, and launch jobs.
 To protect the security of the data on Hopper, the VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts.
 
-To access the VDI, navigate to INSERT URL in a web browser.
+To access the VDI, navigate to (URL Coming Soon) in a web browser.
 
 ## Transfer Data
 
@@ -67,7 +74,7 @@ Please contact us for approval and transfer assistance, including details on the
 Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our [Globus documentation](/data/globus).
 If your data is large (>100G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
-The user then must submit a request to an administrator (YCRC and/or HSIT) to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
+The user then must submit a request to the YCRC to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
 
 Downloading of low-risk files from the cluster is the same process, but in reverse.
 Submit a request to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
@@ -77,7 +84,7 @@ Data will be purged from the staging area after a TBD amount of time.
 
 ## Software
 
-All software must be approved and installed by administrators (YCRC and/or HSIT), typically as [modules](/applications/modules).
+All software must be approved and installed by YCRC staff, typically as [modules](/applications/modules).
 No software may be installed by users, including conda environments and R packages.
 A researcher's own analysis scripts, such as Python, R, MATLAB or bash scripts, do not qualify as software and are permissable to upload and run on the cluster without approval.
 If you are unclear if your workflow qualifies as software, please contact your administrator for clarifications.
