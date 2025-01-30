@@ -7,7 +7,7 @@ There are several ways to use Visual Studio Code with the YCRC clusters, dependi
 
 ## VSCode on Remote Desktop:
 
-The easiest way to run VSCode is to use [our Open OnDemand web portal](/clusters-at-yale/access/ood). First, start a Remote Desktop [interactive session](/clusters-at-yale/access/ood/#launch-an-interactive-app) (see [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop)). Note, we recommend to drag the 'image quality' slider bar all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:
+The easiest way to run VSCode is to use [our Open OnDemand web portal](/clusters-at-yale/access/ood). First, start a Remote Desktop [interactive session](/clusters-at-yale/access/ood/#launch-an-interactive-app). As noted in our [Remote Deskop documentation](/clusters-at-yale/access/ood-remote-desktop/), we recommend to [adjust the 'image quality' slider bar](/clusters-at-yale/access/ood-remote-desktop/#graphics-quality) all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:
 
 ```
 module load VSCode
@@ -20,7 +20,7 @@ The above method will probably give most users a workable solution for using VSC
 
 If this (or something else) is a problem for you, a solution is to run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. However, while there are several extensions that allow VSCode users to connect to remote servers over SSH, these are imperfect and can drop the connection. Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
 
-We are testing an alternative method for SSH tunneling with VSCode. This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).
+We are testing an alternative method for SSH tunneling with VSCode, similar the [method we recommend for Jupyter notebooks](/clusters-at-yale/guides/jupyter_ssh/). This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).
 
 If you'd like to try this tunneling method, please use the following steps:
 
