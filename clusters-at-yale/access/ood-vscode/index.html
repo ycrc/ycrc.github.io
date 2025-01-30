@@ -2555,14 +2555,14 @@
 <p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.</p>
 <p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.</p>
 <h2 id="vscode-on-remote-desktop">VSCode on Remote Desktop:</h2>
-<p>The easiest way to run VSCode is to use <a href="/clusters-at-yale/access/ood">our Open OnDemand web portal</a>. First, start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a> (see <a href="/clusters-at-yale/access/ood-remote-desktop">Remote Desktop</a>). Note, we recommend to drag the 'image quality' slider bar all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:</p>
+<p>The easiest way to run VSCode is to use <a href="/clusters-at-yale/access/ood">our Open OnDemand web portal</a>. First, start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a>. As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Deskop documentation</a>, we recommend to <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">adjust the 'image quality' slider bar</a> all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:</p>
 <div class="highlight"><pre><span></span><code>module load VSCode
 vscode
 </code></pre></div>
 <h2 id="setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node">Setting up SSH tunneling to run VS Code Server on a cluster node</h2>
 <p>The above method will probably give most users a workable solution for using VSCode. However, one issue with the Remote Desktop is graphics responsiveness: particularly when scrolling, window behavior can become laggy and imprecise.</p>
 <p>If this (or something else) is a problem for you, a solution is to run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. However, while there are several extensions that allow VSCode users to connect to remote servers over SSH, these are imperfect and can drop the connection. Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.</p>
-<p>We are testing an alternative method for SSH tunneling with VSCode. This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).</p>
+<p>We are testing an alternative method for SSH tunneling with VSCode, similar the <a href="/clusters-at-yale/guides/jupyter_ssh/">method we recommend for Jupyter notebooks</a>. This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).</p>
 <p>If you'd like to try this tunneling method, please use the following steps:</p>
 <ol>
 <li>
