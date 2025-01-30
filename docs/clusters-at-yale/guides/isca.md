@@ -48,7 +48,7 @@ export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 Open `$HOME/programs/isca/postprocessing/mppnccombine_run.sh` and remove the following line:
 
 ```
-module purge
+module reset
 ```
 
 ## Select an Experiment and Update the Flags

@@ -6,7 +6,7 @@ Below is a work in progress collection of general hints, tips and tricks for run
 
 Be wary of you and your group's storage quotas. Run `getquota` from time to time to make sure there isn't usage you aren't expecting. We strongly recommend that you archive raw data off-cluster, as **only home directories are backed up**. Let us know if you need extra space and we can work with you to find a solution that is right for your project and your group.
 
-On most GPU nodes there is a fast SSD mounted at `/tmp`. You can use this as a fast local cache if your program can take advantage of it.
+On computing nodes there is a fast SSD mounted at `/tmp`. You can use this as a fast local cache if your program can take advantage of it. Note however that a node's '/tmp' is purged of user data as soon as the user's last job on that node is completed.
 
 ## Schedule Jobs
 

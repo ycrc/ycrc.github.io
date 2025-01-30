@@ -88,7 +88,7 @@ GCCcore/7.3.0 exists but could not be loaded as requested.
 
 ### Match or Purge Your Toolchains
 
-Where possible, only use one toolchain at a time. When you want to use software from muliple toolchains run `module purge` between running new `module load` commands. If your work requires a version of software that is not installed, [contact us](/#get-help).
+Where possible, only use one toolchain at a time. When you want to use software from muliple toolchains run `module reset` between running new `module load` commands. If your work requires a version of software that is not installed, [contact us](/#get-help).
 
 ## Conda Environments
 

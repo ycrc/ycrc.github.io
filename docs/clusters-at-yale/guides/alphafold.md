@@ -66,7 +66,7 @@ and modify for your specific use case.
 #SBATCH --constraint "a100|rtx5000|a5000|rtx3090"
 
 ## Clear all loaded software modules, and load AlphaFold module
-module purge
+module reset
 module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 
 ## Provide settings for running various components in parallel

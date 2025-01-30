@@ -44,7 +44,9 @@ conda create -y -n notebook_env python jupyter numpy pandas matplotlib
 ycrc_conda_env.sh update
 ```
 
-Note that the conda environment list on the Jupyter form *will not* update automatically. To update the list you must run `ycrc_conda_env.sh update`.
+Note that you **must** include jupyter in the list of packages you give to the `conda create` command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
+															    
+The `ycrc_conda_env.sh update` command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. *To update the list you must run this command*.
 
 ## Command-Line Execution of Jupyter Notebooks
 
@@ -74,7 +76,7 @@ This can be run inside a batch job that might look like this:
 #SBATCH -c 1
 #SBATCH -t 6:00:00
 
-module purge
+module reset
 module load miniconda
 conda activate my_env
 papermill /path/to/notebook.ipynb /path/to/output.ipynb

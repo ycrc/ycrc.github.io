@@ -82,7 +82,7 @@ rsync -av netID@department_server:/path/to/data $HOME/palmer_scratch/
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name=my_process
 
-module purge
+module reset
 module load miniconda
 
 conda activate my_env

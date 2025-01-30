@@ -68,7 +68,7 @@ This partition will remain available until the December maintenance window.
 
 !!! Warning
     Some of the applications in the new shared apps tree may not work perfectly on the legacy RHEL7 nodes. 
-    When running jobs in the legacy partition, you should therefore run `module purge` at the begining of interactive sessions and add it to the start of your batch scripts. 
+    When running jobs in the legacy partition, you should therefore run `module reset` at the begining of interactive sessions and add it to the start of your batch scripts. 
     This will ensure that you only load modules built for RHEL7.
 
 ## Report Issues
