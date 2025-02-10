@@ -61,7 +61,7 @@ You will need to be on the Yale VPN is you are off campus or connecting to a sec
 
 #### Upload
 1. In the main pane, navigate to the destination for your files
-1. To Upload, select "Upload" in the sidebar and browse to the file or folder you would like to upload.
+1. To Upload, select "Upload" in the sidebar and browse to the file or folder you would like to upload
 
 #### Download
 1. In the main pane, navigate to your file
