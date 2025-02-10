@@ -73,7 +73,7 @@ Please contact us for approval and transfer assistance, including details on the
 
 Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our [Globus documentation](/data/globus).
-The user then must submit a request to the YCRC to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
+The user then must [submit a request to the YCRC](https://forms.gle/YigxQdbvobaH7YDT6) to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
 If your data is large (>100G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
 
 Downloading of low-risk files from the cluster is the same process, but in reverse.

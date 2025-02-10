@@ -24,6 +24,7 @@ We currently support endpoints for the following clusters.
 | [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
+| [Hopper Low Risk](/clusters/milgram)   | `Yale CRC Hopper Low Risk`  |
 
 For Grace and McCleary, these endpoints provide access to all files you normally have access to.
 
@@ -31,7 +32,12 @@ For security reasons, Milgram Globus uses a staging area (`/gpfs/milgram/globus/
 Once uploaded, data should be moved from this staging area to its final location within Milgram.
 Files in the staging area are purged after 21 days.
 
+For Hopper, the Low Risk endpoint mounts a staging area. Once you have staged your data, please submit [this form](https://forms.gle/YigxQdbvobaH7YDT6) to have the files transferred to Hopper.
+If your data is larger than 100G, please submit your request without uploading any data to Globus and we will 
+
 ## Get Started with Globus
+
+### Authenticate
 
 1. In a browser, go to [app.globus.org](https://app.globus.org/).
 1. Use the pull-down menu to select Yale and click "Continue".
@@ -39,11 +45,27 @@ Files in the staging area are purged after 21 days.
     1. [First login only] Do not associate with another account yet unless you are familiar with doing this
     1. [First login only] Select "non-profit research or educational purposes"
     1. [First login only] Click on "Allow" for allowing Globus Web App
+
+### Transfer Between Endpoints
+
 1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to browse in the collection field (e.g. Yale CRC Grace)
 1. Click on the right-hand side menu option "Transfer or Sync to..."
 1. Enter the second endpoint name in the right search box (e.g. another cluster or your personal endpoint)
 1. Select one or more files you would like to transfer and click the appropriate start button on the bottom.
 2. To complete a partial transfer, you can click the "sync" checkbox in the Transfer Setting window on the Globus page, and then Globus should resume the transfer where it left off.
+
+### Upload or Download Directly from Globus Web App
+
+From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to browse in the collection field (e.g. Yale CRC Hopper Low Risk).
+You will need to be on the Yale VPN is you are off campus or connecting to a secure cluster.
+
+#### Upload
+1. In the main pane, navigate to the destination for your files
+1. To Upload, select "Upload" in the sidebar and browse to the file or folder you would like to upload.
+
+#### Download
+1. In the main pane, navigate to your file
+1. Right-Click and select "Download"
 
 ### Manage Your Endpoints
 
