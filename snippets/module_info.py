@@ -27,7 +27,7 @@ def make_table(module_list):
 
     for m in module_list:
         try:
-            module_table += f'    |{m["package"]}|{",".join([v["versionName"] for v in m["versions"]])}|\n'
+            module_table += f'    |[{m["package"]}]({m["url"])|{",".join([v["versionName"].split('-')[0] for v in m["versions"]])}|\n'
         except KeyError:
             pass
 
