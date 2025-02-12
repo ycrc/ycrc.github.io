@@ -1,4 +1,4 @@
-=== "Bouchet"
+=== "bouchet"
 
     |Package|Versions|
     |---|---|
