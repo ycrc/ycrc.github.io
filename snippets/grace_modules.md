@@ -1,926 +1,923 @@
-=== "grace"
-    ## Modules available on the grace cluster.
-    
-    |Package|Versions|
-    |---|---|
-    |[ACTC](https://sourceforge.net/projects/actc)|1.1, 1.1|
-    |[ADMIXTURE](https://dalexander.github.io/admixture/)|1.3.0|
-    |[AFNI](http://afni.nimh.nih.gov/)|23.2.08, 2022.1.14, 2023.1.01, 2023.1.07, 24.1.22|
-    |[ANTLR](https://www.antlr2.org/)|2.7.7|
-    |[ANTs](https://stnava.github.io/ANTs/)|2.3.5|
-    |[APBS](https://apbs.readthedocs.io)|1.4.2.1, 3.4.1.Linux|
-    |[APR](https://apr.apache.org/)|1.7.0, 1.7.5|
-    |[APR-util](https://apr.apache.org/)|1.6.1, 1.6.3|
-    |[ASE](https://wiki.fysik.dtu.dk/ase)|3.22.1|
-    |[ATK](https://developer.gnome.org/atk/)|2.36.0, 2.38.0|
-    |[AUGUSTUS](https://bioinf.uni-greifswald.de/augustus/)|3.4.0|
-    |[Abseil](https://abseil.io/)|20230125.2|
-    |[AdapterRemoval](https://github.com/MikkelSchubert/adapterremoval)|2.3.2|
-    |[AlphaFold](https://github.com/google-deepmind/alphafold3)|2.2.3, 2.2.3, 2.2.4, 2.2.4, 2.3.2, 2.3.2, 3.0.0|
-    |[AmberTools](https://ambermd.org/)|23.6|
-    |[Archive-Zip](https://metacpan.org/pod/Archive::Zip)|1.68, 1.68|
-    |[AreTomo](https://msg.ucsf.edu/software)|1.3.4|
-    |[AreTomo2](https://github.com/czimaginginstitute/AreTomo2)|1.0.0|
-    |[AreTomo3](https://github.com/czimaginginstitute/AreTomo3)|2.0.6beta|
-    |[Armadillo](https://arma.sourceforge.net/)|10.2.1, 11.4.3, 11.4.3|
-    |[Arrow](https://arrow.apache.org)|0.17.1, 0.17.1, 6.0.0, 11.0.0, 14.0.1, 16.1.0|
-    |[Aspera-CLI](http://asperasoft.com)|3.9.6.1467.159c5b1|
-    |[Aspera-Connect](http://www.ibm.com/aspera/connect/)|4.2.4.265|
-    |[AuthentiCT](https://www.biopython.org)|1.0.1|
-    |[Autoconf](https://www.gnu.org/software/autoconf/)|2.69, 2.71, 2.72|
-    |[Automake](https://www.gnu.org/software/automake/automake.html)|1.16.2, 1.16.5, 1.16.5|
-    |[Autotools](https://autotools.io)|20200321, 20220317, 20231222|
-    |[BBMap](https://sourceforge.net/projects/bbmap/)|38.90|
-    |[BCFtools](https://www.htslib.org/)|1.11, 1.16, 1.21|
-    |[BEDOPS](http://bedops.readthedocs.io/en/latest/index.html)|2.4.41|
-    |[BEDTools](https://bedtools.readthedocs.io/)|2.30.0|
-    |[BGEN-enkre](https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk)|1.1.7|
-    |[BLAST](http://blast.ncbi.nlm.nih.gov/)|2.2.26|
-    |[BLAST+](http://blast.ncbi.nlm.nih.gov/)|2.13.0, 2.14.1, 2.15.0|
-    |[BLAT](https://genome.ucsc.edu/FAQ/FAQblat.html)|3.5, 3.5|
-    |[BLIS](https://github.com/flame/blis/)|0.9.0, 1.0|
-    |[BLT](http://blt.sourceforge.net/)|20220626|
-    |[BWA](http://bio-bwa.sourceforge.net/)|0.7.17, 0.7.17, 0.7.17|
-    |[BamTools](https://github.com/pezmaster31/bamtools)|2.5.1, 2.5.1, 2.5.2|
-    |[BaseSpaceCLI](https://developer.basespace.illumina.com/docs/content/documentation/cli/cli-overview)|1.5.3|
-    |[Bazel](https://bazel.io/)|3.7.2, 5.4.1, 6.1.0, 6.3.1|
-    |[Beast](https://beast2.org)|2.6.3, 2.6.3, 2.6.7, 2.7.4, 2.7.6|
-    |[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup)|4.11.1|
-    |[Bio-DB-BigFile](https://metacpan.org/pod/Bio::DB::BigFile)|1.07, 1.07|
-    |[Bio-DB-HTS](https://metacpan.org/release/Bio-DB-HTS)|3.01, 3.01|
-    |[BioPP](https://github.com/BioPP/bpp-core)|2.4.1|
-    |[BioPerl](http://www.bioperl.org/)|1.7.8, 1.7.8|
-    |[Biopython](https://www.biopython.org)|1.78, 1.79, 1.81, 1.83|
-    |[Bismark](https://www.bioinformatics.babraham.ac.uk/projects/bismark/)|0.24.0|
-    |[Bison](https://www.gnu.org/software/bison)|3.0.4, 3.0.4, 3.0.5, 3.7.1, 3.7.1, 3.8.2, 3.8.2, 3.8.2|
-    |[Blender](https://www.blender.org/)|4.0.1, 4.2.1|
-    |[Block](https://sanshar.github.io/Block/)|1.5.3|
-    |[Blosc](https://www.blosc.org/)|1.21.0, 1.21.3|
-    |[Blosc2](https://www.blosc.org/)|2.8.0|
-    |[Boost](https://www.boost.org/)|1.74.0, 1.74.0, 1.74.0, 1.74.0, 1.74.0, 1.81.0, 1.81.0, 1.81.0, 1.83.0, 1.85.0, 1.86.0|
-    |[Boost.MPI](https://www.boost.org/)|1.81.0, 1.81.0|
-    |[Boost.Python](https://boostorg.github.io/python)|1.74.0, 1.81.0|
-    |[Boost.Python-NumPy](https://boostorg.github.io/python)|1.74.0, 1.81.0|
-    |[Bowtie](http://bowtie-bio.sourceforge.net/index.shtml)|1.3.0, 1.3.0, 1.3.1|
-    |[Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)|2.3.4.3, 2.4.2, 2.4.2, 2.5.1|
-    |[Brotli](https://github.com/google/brotli)|1.0.9, 1.0.9|
-    |[Brunsli](https://github.com/google/brunsli/)|0.1|
-    |[Bsoft](https://cbiit.github.io/Bsoft/)|2.1.4|
-    |[CAMPARI](http://campari.sourceforge.net/V4/index.html)|4.0|
-    |[CCP4](http://www.ccp4.ac.uk/)|8.0.011, 8.0.015|
-    |[CD-HIT](http://weizhongli-lab.org/cd-hit/)|4.8.1|
-    |[CDO](https://code.zmaw.de/projects/cdo)|2.2.2|
-    |[CESM](http://www.cesm.ucar.edu/models/cesm2/)|2.1.3, 2.1.3|
-    |[CESM-deps](http://www.cesm.ucar.edu/models/cesm2/)|2, 2|
-    |[CFITSIO](https://heasarc.gsfc.nasa.gov/fitsio/)|3.48, 4.2.0|
-    |[CGAL](https://www.cgal.org/)|4.14.3, 4.14.3, 5.2, 5.2.4, 5.5.2|
-    |[CLHEP](https://proj-clhep.web.cern.ch/proj-clhep/)|2.4.4.0, 2.4.6.4|
-    |[CMake](https://www.cmake.org)|3.18.4, 3.18.4, 3.20.1, 3.24.3, 3.29.3|
-    |[COMSOL](https://www.comsol.com)|5.2a, 5.2a|
-    |[CONN](https://web.conn-toolbox.org/home)|22a|
-    |[CP2K](https://www.cp2k.org/)|8.1|
-    |[CPPE](https://github.com/maxscheurer/cppe)|0.3.1|
-    |[CREST](https://xtb-docs.readthedocs.io/en/latest/crest.html)|3.0.1, 3.0.2|
-    |[CTFFIND](https://grigoriefflab.umassmed.edu/ctffind4)|4.1.14, 4.1.14, 4.1.14, 4.1.14, 4.1.14|
-    |[CUDA](https://developer.nvidia.com/cuda-toolkit)|10.1.243, 11.1.1, 11.3.1, 11.8.0, 12.0.0, 12.1.1, 12.6.0|
-    |[CUDAcore](https://developer.nvidia.com/cuda-toolkit)|11.1.1, 11.3.1|
-    |[CUnit](https://sourceforge.net/projects/cunit/)|2.1|
-    |[Cartopy](https://scitools.org.uk/cartopy/docs/latest/)|0.20.3, 0.22.0|
-    |[Catch2](https://github.com/catchorg/Catch2)|2.13.10|
-    |[Cbc](https://github.com/coin-or/Cbc)|2.10.5|
-    |[CellRanger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)|3.0.2, 6.1.2, 7.0.0, 7.0.1, 7.1.0, 7.2.0, 8.0.1|
-    |[CellRanger-ARC](https://support.10xgenomics.com/single-cell-multiome-atac-gex/software/pipelines/latest/what-is-cell-ranger-arc)|2.0.2|
-    |[Cereal](https://uscilab.github.io/cereal/)|1.3.2, 1.3.2|
-    |[Cgl](https://github.com/coin-or/Cgl)|0.60.7|
-    |[CharLS](https://github.com/team-charls/charls)|2.2.0, 2.4.2|
-    |[CheMPS2](https://github.com/SebWouters/CheMPS2)|1.8.12|
-    |[Check](https://libcheck.github.io/check/)|0.15.2, 0.15.2|
-    |[Chimera](https://www.cgl.ucsf.edu/chimera/)|1.16|
-    |[ChimeraX](https://www.rbvi.ucsf.edu/chimerax/)|1.6.1, 1.7, 1.8|
-    |[Clang](https://clang.llvm.org/)|11.0.1, 13.0.1, 15.0.5, 16.0.4, 16.0.4|
-    |[Clp](https://github.com/coin-or/Clp)|1.17.8|
-    |[Code-Server](https://coder.com/docs/code-server)|4.7.0, 4.7.0, 4.16.1, 4.17.0|
-    |[CoinUtils](https://github.com/coin-or/CoinUtils)|2.11.9|
-    |[Compress-Raw-Zlib](https://metacpan.org/pod/Compress::Raw::Zlib)|2.202, 2.202|
-    |[CoordgenLibs](https://github.com/schrodinger/coordgenlibs)|3.0.2|
-    |[Coot](http://www2.mrc-lmb.cam.ac.uk/Personal/pemsley/coot)|0.9.7, 0.9.8.6|
-    |[CppUnit](https://freedesktop.org/wiki/Software/cppunit/)|1.15.1|
-    |[Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)|20190706|
-    |[Cython](https://cython.org/)|0.29.22, 3.0.8, 3.0.10|
-    |[Cytoscape](https://cytoscape.org/)|3.9.1|
-    |[DB](https://www.oracle.com/technetwork/products/berkeleydb)|18.1.40, 18.1.40|
-    |[DBD-mysql](https://metacpan.org/pod/distribution/DBD-mysql/lib/DBD/mysql.pm)|4.050, 4.050|
-    |[DB_File](https://perldoc.perl.org/DB_File.html)|1.855|
-    |[DBus](https://dbus.freedesktop.org/)|1.13.18, 1.15.2|
-    |[DIAMOND](https://github.com/bbuchfink/diamond)|2.0.15, 2.1.7|
-    |[DMTCP](http://dmtcp.sourceforge.net/index.html)|3.0.0, 3.0.0|
-    |[DSSP](https://github.com/PDB-REDO/dssp/)|4.2.1, 4.4.7|
-    |[Dice](https://github.com/sanshar/Dice)|20240101|
-    |[Doxygen](https://www.doxygen.org)|1.8.20, 1.9.5|
-    |[EDirect](https://www.ncbi.nlm.nih.gov/books/NBK25501/)|20.4.20230912, 20.5.20231006, 22.8.20241011|
-    |[EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/software/)|7.2.1|
-    |[ELPA](https://elpa.mpcdf.mpg.de/)|2020.11.001, 2020.11.001, 2021.11.001, 2022.05.001|
-    |[EMAN](https://blake.bcm.edu/emanwiki/EMAN1)|1.9|
-    |[EMAN2](https://blake.bcm.edu/emanwiki/EMAN2)|2.91, 2.99.47|
-    |[EMBOSS](http://emboss.sourceforge.net/)|6.6.0|
-    |[ESM-2](https://github.com/facebookresearch/esm)|2.0.0|
-    |[ESMF](https://www.earthsystemcog.org/projects/esmf/)|8.3.0, 8.3.0|
-    |[EasyBuild](https://easybuilders.github.io/easybuild)|4.6.2, 4.7.0, 4.7.1, 4.7.2, 4.8.0, 4.8.1, 4.8.2, 4.9.0, 4.9.1, 4.9.2, 4.9.3|
-    |[Eigen](https://eigen.tuxfamily.org)|3.3.8, 3.3.9, 3.4.0, 3.4.0, 3.4.0|
-    |[El-MAVEN](https://github.com/ElucidataInc/ElMaven)|0.12.1beta|
-    |[Emacs](https://www.gnu.org/software/emacs/)|28.1, 28.2|
-    |[ExifTool](https://exiftool.org)|12.58, 12.70|
-    |[Exodus](https://github.com/sandialabs/seacas)|20240403, 20240403|
-    |[FASTX-Toolkit](http://hannonlab.cshl.edu/fastx_toolkit/)|0.0.14|
-    |[FFTW](https://www.fftw.org)|2.1.5, 2.1.5, 2.1.5, 2.1.5, 3.3.8, 3.3.8, 3.3.8, 3.3.8, 3.3.8, 3.3.10, 3.3.10, 3.3.10, 3.3.10, 3.3.10|
-    |[FFTW.MPI](https://www.fftw.org)|3.3.10, 3.3.10, 3.3.10|
-    |[FFmpeg](https://www.ffmpeg.org/)|4.3.1, 5.1.2|
-    |[FHI-aims](https://fhi-aims.org/)|231212_1|
-    |[FLAC](https://xiph.org/flac/)|1.3.3, 1.4.2|
-    |[FLASH](https://ccb.jhu.edu/software/FLASH/)|2.2.00|
-    |[FLTK](https://www.fltk.org)|1.3.5, 1.3.8|
-    |[FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools)|2024.05|
-    |[FSL](https://www.fmrib.ox.ac.uk/fsl/)|6.0.5.2, 6.0.5.2, 6.0.7.9|
-    |[FTGL](https://github.com/frankheckenbach/ftgl)|2.3, 2.4.0|
-    |[Faiss](https://github.com/facebookresearch/faiss)|1.7.4|
-    |[FastME](http://www.atgc-montpellier.fr/fastme/)|2.1.6.3|
-    |[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|0.11.9, 0.12.1|
-    |[FastUniq](https://sourceforge.net/projects/fastuniq)|1.1|
-    |[Fiji](https://fiji.sc/)|2.14.0, 20221201, 20230801|
-    |[Fiona](https://github.com/Toblerity/Fiona)|1.9.2|
-    |[Flask](https://www.palletsprojects.com/p/flask/)|2.2.3|
-    |[FlexiBLAS](https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release)|3.2.1, 3.2.1, 3.4.4|
-    |[FragGeneScan](https://omics.informatics.indiana.edu/FragGeneScan/)|1.31|
-    |[FreeImage](http://freeimage.sourceforge.net)|3.18.0, 3.18.0|
-    |[FreeSurfer](https://surfer.nmr.mgh.harvard.edu/)|dev, dev, 7.3.2, 7.4.1|
-    |[FreeXL](https://www.gaia-gis.it/fossil/freexl/index)|2.0.0|
-    |[FriBidi](https://github.com/fribidi/fribidi)|1.0.10, 1.0.12|
-    |[GATK](https://www.broadinstitute.org/gatk/)|3.8, 4.2.0.0, 4.2.6.1, 4.4.0.0, 4.5.0.0, 4.6.0.0|
-    |[GCC](https://gcc.gnu.org/)|10.2.0, 12.2.0, 13.3.0|
-    |[GCCcore](https://gcc.gnu.org/)|7.3.0, 10.2.0, 12.2.0, 13.3.0|
-    |[GCTA](https://yanglab.westlake.edu.cn/software/gcta/)|1.94.1|
-    |[GConf](https://gitlab.gnome.org/iainl/gconf)|3.2.6|
-    |[GDAL](https://www.gdal.org)|3.2.1, 3.6.2|
-    |[GDB](https://www.gnu.org/software/gdb/gdb.html)|10.1, 13.2|
-    |[GDCM](https://sourceforge.net/projects/gdcm)|3.0.21|
-    |[GDRCopy](https://github.com/NVIDIA/gdrcopy)|2.1, 2.3, 2.3.1, 2.4.1|
-    |[GEOS](https://trac.osgeo.org/geos)|3.9.1, 3.11.1|
-    |[GL2PS](https://www.geuz.org/gl2ps/)|1.4.2, 1.4.2|
-    |[GLM](https://github.com/g-truc/glm)|0.9.9.8|
-    |[GLPK](https://www.gnu.org/software/glpk/)|4.65, 5.0|
-    |[GLib](https://www.gtk.org/)|2.66.1, 2.75.0|
-    |[GLibmm](https://www.gtk.org/)|2.49.7|
-    |[GMP](https://gmplib.org/)|6.2.0, 6.2.1|
-    |[GObject-Introspection](https://gi.readthedocs.io/en/latest/)|1.66.1, 1.66.1, 1.74.0|
-    |[GRASS](https://grass.osgeo.org)|8.2.0|
-    |[GROMACS](https://www.gromacs.org)|2021.5, 2023.3|
-    |[GSEA](https://www.gsea-msigdb.org)|4.3.2|
-    |[GSL](https://www.gnu.org/software/gsl/)|2.5, 2.6, 2.6, 2.6, 2.7, 2.7, 2.7|
-    |[GST-libav](https://gstreamer.freedesktop.org/)|1.18.4, 1.22.1|
-    |[GST-plugins-bad](https://gstreamer.freedesktop.org/)|1.22.5|
-    |[GST-plugins-base](https://gstreamer.freedesktop.org/)|1.18.4, 1.18.4, 1.22.1, 1.22.1|
-    |[GST-plugins-good](https://gstreamer.freedesktop.org/)|1.18.4, 1.22.1|
-    |[GStreamer](https://gstreamer.freedesktop.org/)|1.18.4, 1.18.4, 1.22.1, 1.22.1|
-    |[GTK+](https://developer.gnome.org/gtk3/stable/)|3.24.23|
-    |[GTK2](https://developer.gnome.org/gtk+/stable/)|2.24.33|
-    |[GTK3](https://developer.gnome.org/gtk3/stable/)|3.24.35|
-    |[GTK4](https://docs.gtk.org/gtk4/)|4.11.3|
-    |[GTS](http://gts.sourceforge.net/)|0.7.6|
-    |[Garfield++]()|5.0|
-    |[Gaussian](http://gaussian.com/)|16, 16|
-    |[Gctf](https://www2.mrc-lmb.cam.ac.uk/research/locally-developed-software/zhang-software/)|1.18, 1.18|
-    |[Gdk-Pixbuf](https://docs.gtk.org/gdk-pixbuf/)|2.40.0, 2.40.0, 2.42.10|
-    |[Geant4](https://geant4.cern.ch/)|10.7.1|
-    |[Geant4-data](https://geant4.cern.ch/)|11.3|
-    |[GenomeTools](http://genometools.org)|1.6.1|
-    |[Ghostscript](https://ghostscript.com)|9.53.3, 10.0.0|
-    |[GitPython](https://gitpython.readthedocs.org)|3.1.31|
-    |[Globus-CLI](https://docs.globus.org/cli/)|3.18.0, 3.30.1|
-    |[GnuTLS](https://www.gnutls.org)|3.7.8|
-    |[Go](https://www.golang.org)|1.17.6, 1.21.1, 1.21.4, 1.22.1|
-    |[Grace](https://plasma-gate.weizmann.ac.il/Grace/)|5.1.25|
-    |[Gradle](https://gradle.org)|8.6|
-    |[Graphene](https://ebassi.github.io/graphene/)|1.10.8|
-    |[GraphicsMagick](https://www.graphicsmagick.org/)|1.3.36|
-    |[Graphviz](https://www.graphviz.org/)|2.47.0|
-    |[Guile](https://www.gnu.org/software/guile/)|2.2.7, 3.0.9, 3.0.9|
-    |[Gurobi](https://www.gurobi.com)|9.1.2, 10.0.3|
-    |[HDF](https://www.hdfgroup.org/products/hdf4/)|4.2.15, 4.2.15|
-    |[HDF5](https://portal.hdfgroup.org/display/support)|1.10.7, 1.10.7, 1.10.7, 1.10.7, 1.14.0, 1.14.0, 1.14.0, 1.14.0|
-    |[HDFView](https://www.hdfgroup.org/downloads/hdfview/)|3.3.1|
-    |[HH-suite](https://github.com/soedinglab/hh-suite)|3.3.0, 3.3.0, 3.3.0|
-    |[HISAT-3N](https://daehwankimlab.github.io/hisat2)|20221013|
-    |[HISAT2](https://daehwankimlab.github.io/hisat2)|2.2.1|
-    |[HMMER](http://hmmer.org/)|3.3.2, 3.3.2, 3.4|
-    |[HOOMD-blue](https://bitbucket.org/glotzer/hoomd-blue)|4.9.1, 4.9.1|
-    |[HPCG](https://software.sandia.gov/hpcg)|3.1, 3.1, 3.1, 3.1|
-    |[HPL](https://www.netlib.org/benchmark/hpl/)|2.3, 2.3, 2.3, 2.3|
-    |[HTSeq](https://htseq.readthedocs.io/)|0.13.5|
-    |[HTSlib](https://www.htslib.org/)|1.11, 1.11, 1.12, 1.16, 1.17, 1.21|
-    |[HarfBuzz](https://www.freedesktop.org/wiki/Software/HarfBuzz)|2.6.7, 5.3.1|
-    |[Harminv](https://github.com/stevengj/harminv)|1.4.1, 1.4.2|
-    |[HepMC3](http://hepmc.web.cern.ch/hepmc/)|3.2.6|
-    |[Highway](https://github.com/google/highway)|1.0.3|
-    |[HyPhy](https://hyphy.org)|2.5.62|
-    |[Hypre](https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods)|2.20.0, 2.27.0|
-    |[ICU](https://icu.unicode.org)|67.1, 72.1, 75.1|
-    |[IDBA-UD](https://i.cs.hku.hk/~alse/hkubrg/projects/idba_ud/)|1.1.3|
-    |[IGV](https://www.broadinstitute.org/software/igv/)|2.16.0, 2.16.2, 2.17.4, 2.19.1|
-    |[IMOD](http://bio3d.colorado.edu/imod/)|4.11.15, 4.11.16, 4.11.24_RHEL7, 4.11.24, 4.12.56_RHEL7, 4.12.62_RHEL8|
-    |[IOR](https://github.com/hpc/ior)|4.0.0, 4.0.0|
-    |[IPython](https://ipython.org/index.html)|7.18.1, 8.14.0|
-    |[IQ-TREE](http://www.iqtree.org/)|2.1.2|
-    |[ISA-L](https://github.com/intel/isa-l)|2.30.0|
-    |[ISL](https://libisl.sourceforge.io)|0.23, 0.26|
-    |[ImageMagick](https://www.imagemagick.org/)|7.0.10, 7.1.0|
-    |[Imath](https://imath.readthedocs.io/en/latest/)|3.1.6|
-    |[Infernal](http://eddylab.org/infernal/)|1.1.4|
-    |[IsoNet](https://github.com//IsoNet-cryoET)|0.2.1|
-    |[JAGS](http://mcmc-jags.sourceforge.net/)|4.3.0, 4.3.2|
-    |[Jansson](https://www.digip.org/jansson/)|2.14|
-    |[JasPer](https://www.ece.uvic.ca/~frodo/jasper/)|2.0.24, 4.0.0|
-    |[Java](https://openjdk.org)|1.8.345, 8.345, 11.0.16, 17.0.4, 21.0.2|
-    |[JsonCpp](https://open-source-parsers.github.io/jsoncpp-docs/doxygen/index.html)|1.9.4, 1.9.5|
-    |[Judy](http://judy.sourceforge.net/)|1.0.5, 1.0.5|
-    |[Julia](https://julialang.org)|1.8.2, 1.8.5, 1.9.2, 1.10.0, 1.10.2, 1.10.4, 1.11.1|
-    |[Jupyter-bundle](https://jupyter.org/)|20230823|
-    |[JupyterHub](https://jupyter.org)|4.0.1|
-    |[JupyterLab](https://jupyter.org/)|2.2.8, 4.0.3|
-    |[JupyterNotebook](https://jupyter.org/)|7.0.3|
-    |[KaHIP](https://kahip.github.io/)|3.14|
-    |[Kalign](https://github.com/TimoLassmann/kalign)|3.3.1, 3.4.0|
-    |[Kent_tools](https://genome.cse.ucsc.edu/)|411, 461|
-    |[Knitro](https://www.artelys.com/en/optimization-tools/knitro)|12.0.0, 14.0.0|
-    |[Kraken2](https://github.com/DerrickWood/kraken2/wiki)|2.1.3|
-    |[LAME](http://lame.sourceforge.net/)|3.100, 3.100|
-    |[LAMMPS](https://www.lammps.org)|2Aug2023, 23Jun2022|
-    |[LDC](https://wiki.dlang.org/LDC)|0.17.6, 1.25.1|
-    |[LERC](https://github.com/Esri/lerc)|4.0.0|
-    |[LHAPDF](http://lhapdf.hepforge.org/)|6.5.4|
-    |[LLVM](https://llvm.org/)|11.0.0, 14.0.6, 15.0.5, 16.0.4|
-    |[LMDB](https://symas.com/lmdb)|0.9.24, 0.9.29|
-    |[LSD2](https://github.com/tothuhien/lsd2)|2.2|
-    |[LZO](https://www.oberhumer.com/opensource/lzo/)|2.10, 2.10|
-    |[Leptonica](http://www.leptonica.org)|1.83.0|
-    |[LibSoup](https://wiki.gnome.org/Projects/libsoup)|3.0.8|
-    |[LibTIFF](https://libtiff.gitlab.io/libtiff/)|4.1.0, 4.2.0, 4.4.0|
-    |[Libint](https://github.com/evaleev/libint)|2.6.0|
-    |[LittleCMS](https://www.littlecms.com/)|2.11, 2.14|
-    |[Lua](https://www.lua.org/)|5.4.2, 5.4.4|
-    |[M4](https://www.gnu.org/software/m4/m4.html)|1.4.17, 1.4.18, 1.4.18, 1.4.18, 1.4.19, 1.4.19, 1.4.19|
-    |[MACS2](https://github.com/taoliu/MACS)|2.2.7.1, 2.2.9.1, 2.2.9.1|
-    |[MACS3](https://macs3-project.github.io/MACS/)|3.0.1|
-    |[MAFFT](https://mafft.cbrc.jp/alignment/software/source.html)|7.475, 7.505|
-    |[MAGeCK](https://sourceforge.net/p/mageck/wiki/Home/)|0.5.9.5|
-    |[MATIO](https://sourceforge.net/projects/matio/)|1.5.23|
-    |[MATLAB](http://www.mathworks.com/products/matlab)|2018b, 2020b, 2022a, 2022b, 2023a, 2023b|
-    |[MCL](https://micans.org/mcl/)|14.137|
-    |[MCR](https://www.mathworks.com/products/compiler/mcr/)|R2019b.8, R2020b.5, R2021b.6, R2022a.6, R2023a|
-    |[MDI](https://github.com/MolSSI-MDI/MDI_Library)|1.4.16|
-    |[MEME](http://meme-suite.org/)|5.4.1|
-    |[METIS](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview)|5.1.0, 5.1.0, 5.1.0|
-    |[MINC](https://github.com/BIC-MNI/libminc)|2.4.06|
-    |[MMseqs2](https://mmseqs.com)|13, 14|
-    |[MPB](https://mpb.readthedocs.io/en/latest/)|1.11.1|
-    |[MPC](http://www.multiprecision.org/)|1.2.1, 1.3.1|
-    |[MPFR](https://www.mpfr.org)|4.1.0, 4.2.0|
-    |[MPICH](https://www.mpich.org/)|4.2.1|
-    |[MRIcron](http://www.mccauslandcenter.sc.edu/mricro/mricron)|1.0.20190902|
-    |[MRtrix3](https://www.mrtrix.org)|3.0.2|
-    |[MUMPS](https://graal.ens-lyon.fr/MUMPS/)|5.3.5, 5.6.1|
-    |[MUMmer](https://mummer.sourceforge.net/)|4.0.0rc1|
-    |[MUSCLE](https://drive5.com/muscle/)|5.1|
-    |[MadGraph5_aMC](http://madgraph.phys.ucl.ac.be)|2.9.16|
-    |[MafFilter](https://github.com/jydu/maffilter)|1.3.1|
-    |[Mako](https://www.makotemplates.org)|1.1.3, 1.2.4|
-    |[MariaDB](https://mariadb.org/)|10.5.8, 10.11.2|
-    |[Markdown](https://python-markdown.github.io/)|3.6|
-    |[Mathematica](http://www.wolfram.com/mathematica)|13.0.1|
-    |[Maven](https://maven.apache.org/index.html)|3.9.2|
-    |[MaxBin](https://sourceforge.net/projects/maxbin/)|2.2.7|
-    |[MaxQuant](https://maxquant.org/maxquant)|2.4.2.0, 2.4.2.0, 2.6.1.0|
-    |[Meep](https://meep.readthedocs.io/en/latest/)|1.24.0, 1.26.0|
-    |[Mercurial](https://www.mercurial-scm.org)|5.7.1|
-    |[Mesa](https://www.mesa3d.org/)|20.2.1, 21.3.3, 22.2.4|
-    |[MeshLab](https://github.com/cnr-isti-vclab/meshlab)|2023.12|
-    |[Meson](https://mesonbuild.com)|0.55.3, 0.62.1, 0.64.0, 1.3.1, 1.4.0|
-    |[Metal](http://csg.sph.umich.edu/abecasis/Metal/)|2020|
-    |[MitoGraph](http://rafelski.com/susanne/MitoGraph)|3.0|
-    |[Mono](https://www.mono-project.com/)|6.8.0.105, 6.8.0.123|
-    |[MotionCor2](http://msg.ucsf.edu/em/software/motioncor2.html)|1.5.0, 1.6.4|
-    |[MotionCor3](https://github.com/czimaginginstitute/MotionCor3)|1.0.1|
-    |[MrBayes](https://nbisweden.github.io/MrBayes/)|3.2.6, 3.2.7|
-    |[MultiQC](https://multiqc.info)|1.10.1|
-    |[NAG](http://www.nag.co.uk)|29|
-    |[NAMD](http://www.ks.uiuc.edu/Research/namd)|2.14, 2.14, 2.14, 2.14|
-    |[NASM](https://www.nasm.us/)|2.15.05, 2.15.05|
-    |[NBO](http://nbo.chem.wisc.edu/)|7.0|
-    |[NCCL](https://developer.nvidia.com/nccl)|2.8.3, 2.8.4, 2.10.3, 2.16.2, 2.16.2, 2.16.2, 2.18.3, 2.23.4|
-    |[NCO](https://github.com/nco/nco)|5.2.1, 5.2.1|
-    |[NECI](https://github.com/ghb24/NECI_STABLE)|20230620|
-    |[NEdit](https://sourceforge.net/projects/nedit/)|5.7|
-    |[NGS](https://github.com/ncbi/ngs)|2.10.9|
-    |[NIfTI](http://niftilib.sourceforge.net/)|2.0.0|
-    |[NLopt](http://ab-initio.mit.edu/wiki/index.php/NLopt)|2.6.2, 2.6.2, 2.7.0, 2.7.1|
-    |[NSPR](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR)|4.29, 4.35|
-    |[NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)|3.57, 3.85|
-    |[NVHPC](https://developer.nvidia.com/hpc-sdk/)|21.11, 21.11, 23.1, 24.9|
-    |[Net-core](https://dotnet.microsoft.com/)|3.1.101|
-    |[NetLogo](https://ccl.northwestern.edu/netlogo/)|6.4.0|
-    |[Netpbm](https://sourceforge.net/projects/netpbm)|10.86.41|
-    |[Nextflow](https://www.nextflow.io/)|22.10.6, 23.04.2, 23.10.1, 24.04.2, 24.04.4|
-    |[Ninja](https://ninja-build.org/)|1.10.1, 1.11.1, 1.12.1|
-    |[ORCA](https://orcaforum.kofo.mpg.de)|5.0.3, 5.0.3, 5.0.4, 5.0.4, 6.0.0, 6.0.1|
-    |[OSU-Micro-Benchmarks](https://mvapich.cse.ohio-state.edu/benchmarks/)|5.7, 5.7, 6.2, 6.2|
-    |[OligoArray](http://berry.engin.umich.edu/oligoarray2_1/)|2.1|
-    |[OligoArrayAux](http://www.unafold.org/Dinamelt/software/oligoarrayaux.php)|3.8|
-    |[OpenBLAS](https://www.openblas.net/)|0.3.12, 0.3.21, 0.3.21, 0.3.27|
-    |[OpenBabel](https://openbabel.org)|3.1.1|
-    |[OpenCV](https://opencv.org/)|4.5.1, 4.8.0|
-    |[OpenEXR](https://www.openexr.com/)|2.5.5, 3.1.5|
-    |[OpenFOAM](https://www.openfoam.com/)|v2012, v2206, v2212|
-    |[OpenJPEG](https://www.openjpeg.org/)|2.4.0, 2.5.0|
-    |[OpenLibm](https://openlibm.org)|0.7.5|
-    |[OpenMM](https://openmm.org)|7.5.0, 7.5.1, 7.5.1, 7.5.1, 7.7.0, 8.0.0|
-    |[OpenMPI](https://www.open-mpi.org/)|4.0.5, 4.0.5, 4.0.5, 4.0.5, 4.0.5, 4.1.4, 4.1.4, 4.1.4|
-    |[OpenPGM](https://code.google.com/p/openpgm/)|5.2.122, 5.2.122|
-    |[OpenSSL](https://www.openssl.org/)|1.0, 1.1, 3|
-    |[OpenSlide](https://openslide.org/)|3.4.1|
-    |[OpenSlide-Java](https://github.com/openslide/openslide-java)|0.12.4|
-    |[OrthoFinder](https://github.com/davidemms/OrthoFinder)|2.5.4|
-    |[Osi](https://github.com/coin-or/Osi)|0.108.8|
-    |[PALEOMIX](https://github.com/MikkelSchubert/paleomix)|1.3.8|
-    |[PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)|4.10.7|
-    |[PBZIP2](http://compression.great-site.net/pbzip2)|1.1.13|
-    |[PCRE](https://www.pcre.org/)|8.44, 8.45|
-    |[PCRE2](https://www.pcre.org/)|10.35, 10.40|
-    |[PDBFixer](https://github.com/openmm/pdbfixer)|1.7|
-    |[PEAR](https://cme.h-its.org/exelixis/web/software/pear/)|0.9.11|
-    |[PEET](http://bio3d.colorado.edu/PEET)|1.15.0, 1.16.0a|
-    |[PETSc](https://www.mcs.anl.gov/petsc)|3.15.0, 3.17.4, 3.20.3|
-    |[PGI](http://www.pgroup.com/)|18.10, 18.10|
-    |[PIPseeker](https://www.fluentbio.com/products/pipseeker-software-for-data-analysis/)|2.1.4|
-    |[PKTOOLS](https://savannah.nongnu.org/projects/pktools)|2.6.7.6, 2.6.7.6|
-    |[PLINK](https://www.cog-genomics.org/plink/2.0)|1.9b_6.21, 2_avx2_20221024|
-    |[PLUMED](https://www.plumed.org)|2.6.2, 2.7.0, 2.7.3, 2.9.0, 2.9.2|
-    |[PMIx](https://pmix.org/)|5.0.2|
-    |[POV-Ray](https://www.povray.org/)|3.7.0.8, 3.7.0.10|
-    |[PRINSEQ](http://prinseq.sourceforge.net)|0.20.4|
-    |[PROJ](https://proj.org)|7.2.1, 9.1.1|
-    |[PRRTE](https://docs.prrte.org/)|3.0.5|
-    |[PYTHIA](https://www.pythia.org)|8.309|
-    |[Pandoc](https://pandoc.org)|2.13, 3.1.2|
-    |[Pango](https://www.pango.org/)|1.47.0, 1.50.12|
-    |[ParMETIS](http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)|4.0.3|
-    |[ParaView](https://www.paraview.org)|5.8.1, 5.11.0|
-    |[PartitionFinder](https://www.robertlanfear.com/partitionfinder)|2.1.1|
-    |[Perl](https://www.perl.org/)|5.28.0, 5.32.0, 5.32.0, 5.32.1, 5.36.0, 5.36.0, 5.36.1, 5.38.0, 5.38.2|
-    |[Perl-bundle-CPAN](https://www.perl.org/)|5.36.1|
-    |[Phenix](http://www.phenix-online.org/)|1.20.1, 1.20.1|
-    |[PhyloBayes](http://megasun.bch.umontreal.ca/People/lartillot/www/download.html)|4.1e|
-    |[Pillow](https://pillow.readthedocs.org/)|8.0.1, 9.4.0|
-    |[Pillow-SIMD](https://github.com/uploadcare/pillow-simd)|7.1.2, 9.5.0|
-    |[Pint](https://github.com/hgrecco/pint)|0.22|
-    |[PnetCDF](https://parallel-netcdf.github.io/)|1.12.2, 1.12.3, 1.13.0, 1.13.0|
-    |[PostgreSQL](https://www.postgresql.org/)|13.2, 15.2|
-    |[PuLP](https://github.com/coin-or/pulp)|2.7.0|
-    |[PyBLP](https://pyblp.readthedocs.io/en/stable/index.html)|1.1.0|
-    |[PyBerny](https://github.com/jhrmnn/pyberny)|0.6.3|
-    |[PyCairo](https://pycairo.readthedocs.io/)|1.24.0|
-    |[PyCharm](https://www.jetbrains.com/pycharm/)|2022.3.2, 2024.3.2|
-    |[PyCheMPS2](https://sebwouters.github.io/CheMPS2)|1.8.12|
-    |[PyGObject](https://pygobject.readthedocs.io/)|3.44.1|
-    |[PyInstaller](https://pyinstaller.org/en/stable/)|6.3.0|
-    |[PyOpenGL](http://pyopengl.sourceforge.net)|3.1.5, 3.1.6|
-    |[PyQt5](https://www.riverbankcomputing.com/software/pyqt)|5.15.4, 5.15.7|
-    |[PySCF](http://www.pyscf.org)|2.4.0|
-    |[PyTables](https://www.pytables.org)|3.5.2, 3.8.0|
-    |[PyTorch](https://pytorch.org/)|1.9.0, 1.13.1, 2.1.2, 2.1.2|
-    |[PyYAML](https://github.com/yaml/pyyaml)|5.3.1, 6.0|
-    |[PycURL](http://pycurl.io/)|7.45.2|
-    |[Pylada-light](http://pylada.github.io/pylada-light/coredocs/index.html)|2023Oct13|
-    |[Pysam](https://github.com/pysam-developers/pysam)|0.16.0.1, 0.16.0.1, 0.16.0.1, 0.21.0|
-    |[Python](https://python.org/)|2.7.18, 2.7.18, 3.8.6, 3.8.6, 3.10.8, 3.10.8, 3.10.8, 3.10.8, 3.12.3|
-    |[Python-bundle-PyPI](https://python.org/)|2023.06, 2024.06|
-    |[QCA](https://userbase.kde.org/QCA)|2.3.5|
-    |[QScintilla](https://www.riverbankcomputing.com/software/qscintilla)|2.11.6|
-    |[QTLtools](https://qtltools.github.io/qtltools/)|1.3.1|
-    |[Qhull](http://www.qhull.org)|2020.2, 2020.2|
-    |[Qt5](https://qt.io/)|5.14.2, 5.15.7|
-    |[Qt5Webkit](https://github.com/qt/qtwebkit)|5.212.0, 5.212.0|
-    |[QtKeychain](https://github.com/frankosterfeld/qtkeychain)|0.13.2|
-    |[QtPy](https://github.com/spyder-ide/qtpy)|2.3.0|
-    |[Qtconsole](https://jupyter.org/)|5.4.0|
-    |[QuPath](https://qupath.github.io)|0.5.0, 0.5.1|
-    |[QuantumESPRESSO](https://www.quantum-espresso.org)|6.8, 7.0, 7.2|
-    |[Quip](http://homes.cs.washington.edu/~dcjones/quip)|1.1.8, 1.1.8, 20171217|
-    |[Qwt](https://qwt.sourceforge.io/)|6.1.5, 6.2.0|
-    |[R](https://bioconductor.org)|4.2.0, 4.2.0, 4.3.2, 4.3.2, 4.4.1, 4.4.1|
-    |[R-INLA](https://www.r-inla.org)|24.01.18|
-    |[R-bundle-Bioconductor](https://bioconductor.org)|3.15, 3.16, 3.18, 3.19|
-    |[R-bundle-CRAN](https://www.r-project.org/)|2023.12, 2024.06|
-    |[RDKit](https://www.rdkit.org)|2022.09.5|
-    |[RE2](https://github.com/google/re2)|2023|
-    |[RECON](https://www.repeatmasker.org/RepeatModeler/)|1.08|
-    |[RELION](http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page)|3.0.8, 3.1.4, 3.1.4, 3.1.4, 4.0.0, 4.0.1, 4.0.1, 5beta, 5beta, 5.0.0|
-    |[RELION-composite-masks](https://github.com/jiangjiansen/relion_composite_masks)|5.0.0|
-    |[RMBlast](https://www.repeatmasker.org/RMBlast.html)|2.11.0|
-    |[ROOT](https://root.cern.ch/drupal/)|6.26.06, 6.26.10|
-    |[RSEM](https://deweylab.github.io/RSEM/)|1.3.3|
-    |[RStudio](http://www.rstudio.com/)|2022.07.2, 2022.12.0, 2024.04.2|
-    |[RStudio-Server](https://www.rstudio.com/)|2024.04.1+748|
-    |[RapidJSON](https://rapidjson.org)|1.1.0, 1.1.0|
-    |[Regenie](https://rgcgithub.github.io/regenie)|4.0|
-    |[RepeatMasker](https://www.repeatmasker.org/)|4.1.2|
-    |[RepeatScout](https://www.repeatmasker.org/)|1.0.6|
-    |[ResMap](http://resmap.sourceforge.net/)|1.95|
-    |[RevBayes](https://revbayes.github.io)|1.1.1, 1.2.1, 1.2.2, 1.2.2|
-    |[Rivet](https://gitlab.com/hepcedar/rivet)|3.1.9|
-    |[Rmath](https://www.r-project.org/)|4.0.4, 4.4.1|
-    |[Rosetta](https://www.rosettacommons.org)|3.12|
-    |[Ruby](https://www.ruby-lang.org)|2.7.2, 3.0.5, 3.2.2|
-    |[Rust](https://www.rust-lang.org)|1.52.1, 1.65.0, 1.70.0, 1.75.0, 1.78.0|
-    |[SAMtools](https://www.htslib.org/)|1.11, 1.11, 1.16, 1.16.1, 1.18, 1.20, 1.21|
-    |[SAS](https://www.sas.com)|9.4M8, 9.4|
-    |[SBGrid](https://sbgrid.org)|2.11.2|
-    |[SCOTCH](https://www.labri.fr/perso/pelegrin/scotch/)|6.1.0, 7.0.3|
-    |[SCons](https://www.scons.org)|4.0.1, 4.5.2|
-    |[SDL2](https://www.libsdl.org/)|2.0.14, 2.26.3|
-    |[SHAPEIT](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html)|2.r904.glibcv2.17|
-    |[SHAPEIT4](https://odelaneau.github.io/shapeit4/)|4.2.2|
-    |[SLEPc](https://slepc.upv.es)|3.15.0, 3.17.2|
-    |[SMRT-Link](https://www.pacb.com/support/software-downloads/)|11.1.0.166339, 12.0.0|
-    |[SOCI](http://soci.sourceforge.net/)|4.0.3, 4.0.3|
-    |[SPAGeDi](https://github.com/reedacartwright/spagedi)|1.5d|
-    |[SPAdes](https://github.com/ablab/spades)|3.15.1, 3.15.5|
-    |[SPM](https://www.fil.ion.ucl.ac.uk/spm)|12.5_r7771|
-    |[SQLite](https://www.sqlite.org/)|3.33.0, 3.39.4, 3.45.3|
-    |[SRA-Toolkit](https://github.com/ncbi/sra-tools)|2.10.9, 3.0.10, 3.1.1, 3.1.1|
-    |[STAR](https://github.com/alexdobin/STAR)|2.7.6a, 2.7.7a, 2.7.8a, 2.7.9a, 2.7.11a, 2.7.11a|
-    |[STREAM](https://www.cs.virginia.edu/stream/)|5.10|
-    |[SWIG](http://www.swig.org/)|4.0.2, 4.1.1|
-    |[Salmon](https://github.com/COMBINE-lab/salmon)|1.4.0|
-    |[Sambamba](https://lomereiter.github.io/sambamba/)|0.8.0|
-    |[ScaFaCoS](http://www.scafacos.de/)|1.0.1, 1.0.4|
-    |[ScaLAPACK](https://www.netlib.org/scalapack/)|2.1.0, 2.1.0, 2.2.0, 2.2.0, 2.2.0|
-    |[SciPy-bundle](https://python.org/)|2020.11, 2020.11, 2020.11, 2020.11, 2020.11, 2021.05, 2023.02, 2024.05|
-    |[Seaborn](https://seaborn.pydata.org/)|0.12.2, 0.13.2|
-    |[Seq-Gen](http://tree.bio.ed.ac.uk/software/Seq-Gen)|1.3.4|
-    |[SeqKit](https://bioinf.shenwei.me/seqkit/)|2.3.1, 2.8.1|
-    |[Serf](https://serf.apache.org/)|1.3.9, 1.3.9|
-    |[Shapely](https://github.com/Toblerity/Shapely)|1.8.5.post1, 2.0.1|
-    |[Sherpa](https://sherpa-team.gitlab.io/index.html)|3.0.0|
-    |[Slicer](https://slicer.readthedocs.io)|5.6.2|
-    |[SpaceRanger](https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/what-is-space-ranger)|2.1.1|
-    |[Spark](https://spark.apache.org)|3.1.1, 3.1.1, 3.5.0, 3.5.0, 3.5.1, 3.5.3, 3.5.4|
-    |[SpectrA](https://spectralib.org/)|1.0.0, 1.0.1|
-    |[Stacks](https://catchenlab.life.illinois.edu/stacks/)|2.59|
-    |[Stata](https://www.stata.com/)|17|
-    |[StringTie](https://ccb.jhu.edu/software/stringtie/)|2.1.4|
-    |[Subread](http://subread.sourceforge.net/)|2.0.3|
-    |[Subversion](https://subversion.apache.org/)|1.14.0, 1.14.3|
-    |[SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html)|5.8.1, 5.13.0|
-    |[Summovie](http://grigoriefflab.janelia.org/unblur)|1.0.2|
-    |[SuperLU_DIST](https://crd-legacy.lbl.gov/~xiaoye/SuperLU/)|8.1.2|
-    |[Szip](https://www.hdfgroup.org/doc_resource/SZIP/)|2.1.1, 2.1.1|
-    |[TOMO3D](https://sites.google.com/site/3demimageprocessing/tomo3d)|01|
-    |[TOPAS](https://www.topasmc.org)|3.9|
-    |[TRF](https://tandem.bu.edu/trf/trf.html)|4.09.1|
-    |[TRUST4](https://github.com/liulab-dfci/TRUST4)|1.0.7|
-    |[TWL-NINJA](https://github.com/TravisWheelerLab/NINJA)|0.97|
-    |[Tcl](https://www.tcl.tk/)|8.6.10, 8.6.12, 8.6.14|
-    |[TensorFlow](https://www.tensorflow.org/)|2.5.0, 2.7.1, 2.13.0, 2.15.1|
-    |[TensorRT](https://developer.nvidia.com/tensorrt)|8.6.1|
-    |[Tk](https://www.tcl.tk/)|8.6.10, 8.6.12|
-    |[Tkinter](https://python.org/)|3.8.6, 3.10.8|
-    |[TopHat](http://ccb.jhu.edu/software/tophat/)|2.1.2, 2.1.2|
-    |[TotalView](http://www.roguewave.com/products/totalview.aspx)|2023.3.10|
-    |[TreeMix](http://bitbucket.org/nygcresearch/treemix)|1.13|
-    |[Trilinos](https://trilinos.org)|13.4.1|
-    |[Trim_Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)|0.6.7|
-    |[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)|0.39|
-    |[UCC](https://www.openucx.org/)|1.1.0, 1.3.0|
-    |[UCC-CUDA](https://www.openucx.org/)|1.1.0, 1.1.0, 1.3.0|
-    |[UCX](https://www.openucx.org/)|1.9.0, 1.9.0, 1.10.0, 1.13.1, 1.16.0|
-    |[UCX-CUDA](http://www.openucx.org/)|1.10.0, 1.13.1, 1.13.1, 1.13.1, 1.16.0|
-    |[UDUNITS](https://www.unidata.ucar.edu/software/udunits/)|2.2.26, 2.2.28|
-    |[USEARCH](https://www.drive5.com/usearch/index.html)|11.0.667|
-    |[UnZip](http://www.info-zip.org/UnZip.html)|6.0, 6.0, 6.0|
-    |[Unblur](http://grigoriefflab.janelia.org/unblur)|1.0.2|
-    |[VASP](http://www.vasp.at)|5.4.1, 5.4.4, 5.4.4, 6.3.0, 6.4.2|
-    |[VASPsol](http://www.vasp.at)|5.4.1|
-    |[VCFtools](https://vcftools.github.io)|0.1.16|
-    |[VDJtools](http://vdjtools-doc.readthedocs.io/en/latest/)|1.2.1|
-    |[VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)|107, 110, 112, 112.0|
-    |[VESTA](http://www.jp-minerals.org/vesta)|3.5.8|
-    |[VMD](https://www.ks.uiuc.edu/Research/vmd)|1.9.4a57|
-    |[VSCode](https://code.visualstudio.com/)|1.95.3, 1.96.2, 1.96.4|
-    |[VTK](https://www.vtk.org)|9.0.1, 9.0.1, 9.2.6|
-    |[VTune](https://software.intel.com/en-us/vtune)|2023.2.0|
-    |[Valgrind](https://valgrind.org)|3.16.1, 3.21.0|
-    |[ViennaRNA](http://www.tbi.univie.ac.at/RNA/)|2.5.1|
-    |[Vim](http://www.vim.org)|9.0.1434|
-    |[VisPy](https://vispy.org)|0.12.2|
-    |[Voro++](http://math.lbl.gov/voro++/)|0.4.6, 0.4.6|
-    |[WRF](https://www.wrf-model.org)|4.4.1|
-    |[Wannier90](http://www.wannier.org)|3.1.0, 3.1.0|
-    |[Wayland](https://wayland.freedesktop.org/)|1.22.0|
-    |[Waylandpp](https://github.com/NilsBrause/waylandpp)|1.0.0|
-    |[WebKitGTK+](https://webkitgtk.org/)|2.40.4|
-    |[X11](https://www.x.org)|20201008, 20221110|
-    |[XCFun](https://xcfun.readthedocs.io)|2.1.1|
-    |[XGBoost](https://github.com/dmlc/xgboost)|2.1.1, 2.1.1|
-    |[XML-LibXML](https://metacpan.org/pod/distribution/XML-LibXML/LibXML.pod)|2.0206, 2.0208|
-    |[XMedCon](https://xmedcon.sourceforge.io/)|0.25.0|
-    |[XZ](https://tukaani.org/xz/)|5.2.5, 5.2.7, 5.4.5|
-    |[Xerces-C++](https://xerces.apache.org/xerces-c/)|3.1.4, 3.2.3, 3.2.4|
-    |[Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml)|1.20.9, 21.1.6|
-    |[YODA](https://yoda.hepforge.org/)|1.9.9|
-    |[Yasm](https://www.tortall.net/projects/yasm/)|1.3.0, 1.3.0|
-    |[Z3](https://github.com/Z3Prover/z3)|4.8.10, 4.10.2, 4.12.2, 4.12.2|
-    |[ZeroMQ](https://www.zeromq.org/)|4.3.3, 4.3.4|
-    |[Zip](http://www.info-zip.org/Zip.html)|3.0, 3.0|
-    |[aiohttp](https://github.com/aio-libs/aiohttp)|3.8.5|
-    |[alibuild](https://alisw.github.io/alibuild/)|1.17.11|
-    |[angsd](http://www.popgen.dk/angsd)|0.940|
-    |[anndata](https://github.com/scverse/anndata)|0.10.5.post1|
-    |[annovar](http://annovar.openbioinformatics.org/en/latest/)|2019Oct24, 20200607|
-    |[ant](https://ant.apache.org/)|1.10.9, 1.10.12, 1.10.12|
-    |[archspec](https://github.com/archspec/archspec)|0.1.2, 0.2.0|
-    |[aria2](https://aria2.github.io)|1.35.0, 1.36.0|
-    |[arpack-ng](https://github.com/opencollab/arpack-ng)|3.8.0, 3.8.0, 3.8.0|
-    |[arrow-R](https://cran.r-project.org/web/packages/arrow)|6.0.0.2, 11.0.0.3, 14.0.0.2, 16.1.0|
-    |[at-spi2-atk](https://wiki.gnome.org/Accessibility)|2.38.0, 2.38.0|
-    |[at-spi2-core](https://wiki.gnome.org/Accessibility)|2.38.0, 2.46.0|
-    |[attr](https://savannah.nongnu.org/projects/attr)|2.4.48, 2.5.1|
-    |[attrdict3](https://github.com/pirofti/AttrDict3)|2.0.2|
-    |[awscli](https://pypi.python.org/pypi/awscli)|2.1.23, 2.13.20, 2.15.2|
-    |[bases2Fastq](https://docs.elembio.io/docs/bases2fastq/)|v1.5.1, v1.5.1, v2.0.0|
-    |[bcl2fastq2](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)|2.20.0, 2.20.0|
-    |[beagle-lib](https://github.com/beagle-dev/beagle-lib)|3.1.2, 3.1.2, 3.1.2, 3.1.2, 4.0.0, 4.0.1|
-    |[binutils](https://directory.fsf.org/project/binutils/)|2.28, 2.30, 2.30, 2.35, 2.35, 2.39, 2.39, 2.40, 2.42, 2.42|
-    |[biswebnode](https://bioimagesuiteweb.github.io/bisweb-manual/CommandLineTools.html)|1.3.0|
-    |[bokeh](https://github.com/bokeh/bokeh)|2.2.3, 2.2.3, 3.2.1|
-    |[boto3](https://github.com/boto/boto3)|1.20.13, 1.26.163|
-    |[breseq](https://barricklab.org/breseq)|0.35.5, 0.38.0, 0.38.1|
-    |[bsddb3](https://pypi.org/project/bsddb3/)|6.2.9, 6.2.9|
-    |[bzip2](https://sourceware.org/bzip2)|1.0.8, 1.0.8, 1.0.8|
-    |[c-ares](https://c-ares.org/)|1.19.1|
-    |[cURL](https://curl.haxx.se)|7.55.1, 7.72.0, 7.86.0, 7.86.0, 8.7.1|
-    |[cairo](https://cairographics.org)|1.16.0, 1.16.0, 1.17.4|
-    |[ccache](https://ccache.dev/)|4.6.3|
-    |[cffi](https://cffi.readthedocs.io/en/latest/)|1.16.0|
-    |[code-server](https://github.com/coder/code-server)|4.91.1, 4.95.3|
-    |[configurable-http-proxy](https://github.com/jupyterhub/configurable-http-proxy)|4.5.5|
-    |[cppy](https://github.com/nucleic/cppy)|1.2.1|
-    |[cromwell](http://cromwell.readthedocs.io/)|86|
-    |[cryptography](https://github.com/pyca/cryptography)|41.0.1, 42.0.8|
-    |[cuDNN](https://developer.nvidia.com/cudnn)|8.0.5.39, 8.2.1.32, 8.7.0.84, 8.8.0.121, 8.9.2.26, 9.5.0.50|
-    |[cuTENSOR](https://developer.nvidia.com/cutensor)|1.7.0.1, 2.0.2.5|
-    |[cutadapt](https://opensource.scilifelab.se/projects/cutadapt/)|3.4|
-    |[cxxopts](https://github.com/jarro2783/cxxopts)|3.0.0|
-    |[cyrus-sasl](https://www.cyrusimap.org/sasl/)|2.1.28|
-    |[dSQ](https://github.com/ycrc/dSQ)|1.05|
-    |[dask](https://dask.org/)|2021.2.0, 2021.2.0, 2023.7.1|
-    |[dbus-glib](https://dbus.freedesktop.org/doc/dbus-glib)|0.112|
-    |[dcm2niix](https://github.com/rordenlab/dcm2niix)|1.0.20211006, 1.0.20230411|
-    |[dedalus](https://github.com/DedalusProject/dedalus)|3.0.2|
-    |[deepTools](https://deeptools.readthedocs.io/)|3.5.1, 3.5.5|
-    |[deml](https://github.com/grenaud/deML)|1.1.4|
-    |[dftd4](https://github.com/dftd4/dftd4)|3.4.0|
-    |[dill](https://pypi.org/project/dill/)|0.3.7|
-    |[dlib](https://github.com/davisking/dlib)|19.22, 19.22, 19.22|
-    |[dorado](https://github.com/nanoporetech/dorado)|0.5.3|
-    |[dotNET-Core](https://www.microsoft.com/net/)|7.0.410|
-    |[dotNET-SDK](https://www.microsoft.com/net/)|3.1.300|
-    |[double-conversion](https://github.com/google/double-conversion)|3.1.5, 3.2.1|
-    |[dtcmp](https://github.com/LLNL/dtcmp)|1.1.2, 1.1.4|
-    |[ecBuild](https://ecbuild.readthedocs.io/)|3.8.0|
-    |[ecCodes](https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home)|2.31.0|
-    |[einops](https://einops.rocks/)|0.7.0|
-    |[elbencho](https://github.com/breuner/elbencho)|2.0, 3.0|
-    |[elfutils](https://elfutils.org/)|0.183, 0.189|
-    |[eman](https://blake.bcm.edu/emanwiki/EMAN1)||
-    |[enchant-2](https://github.com/AbiWord/enchant)|2.3.3|
-    |[ensmallen](https://ensmallen.org/)|2.21.1, 2.21.1|
-    |[exiv2](http://www.exiv2.org)|0.27.5, 0.28.0|
-    |[expat](https://libexpat.github.io)|2.2.5, 2.2.9, 2.4.9, 2.6.2|
-    |[expecttest](https://github.com/ezyang/expecttest)|0.1.3|
-    |[fastjet](https://fastjet.fr/)|3.4.0|
-    |[fastjet-contrib](https://fastjet.hepforge.org/contrib/)|1.049|
-    |[fastp](https://github.com/OpenGene/fastp)|0.23.2|
-    |[ffnvcodec](https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git)|11.1.5.2|
-    |[file](https://www.darwinsys.com/file/)|5.39, 5.43|
-    |[flatbuffers](https://github.com/google/flatbuffers/)|1.12.0, 23.1.4, 23.5.26|
-    |[flatbuffers-python](https://github.com/google/flatbuffers/)|1.12, 2.0, 23.1.4, 23.5.26|
-    |[flex](http://flex.sourceforge.net/)|2.6.3, 2.6.4, 2.6.4, 2.6.4, 2.6.4, 2.6.4|
-    |[flit](https://github.com/pypa/flit)|3.9.0, 3.9.0|
-    |[fmriprep](https://fmriprep.org)|23.1.0, 23.1.4, 23.2.1, 24.1.0|
-    |[fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/)|2.13.92, 2.14.1|
-    |[foss](https://easybuild.readthedocs.io/en/master/Common-toolchains.html#foss-toolchain)|2020b, 2022b, 2024a|
-    |[fosscuda]((none))|2020b|
-    |[freeglut](http://freeglut.sourceforge.net/)|3.2.1, 3.4.0|
-    |[freetype](https://www.freetype.org)|2.10.3, 2.10.3, 2.12.1|
-    |[gc](https://hboehm.info/gc/)|8.0.4, 8.2.2, 8.2.4|
-    |[gcccuda]((none))|2020b, 2022b|
-    |[gcloud](https://cloud.google.com/sdk)|382.0.0, 494.0.0|
-    |[gettext](https://www.gnu.org/software/gettext/)|0.19.8.1, 0.21, 0.21, 0.21.1, 0.21.1, 0.22.5, 0.22.5|
-    |[gfbf]((none))|2022b, 2024a|
-    |[gflags](https://github.com/gflags/gflags)|2.2.2|
-    |[giflib](http://giflib.sourceforge.net/)|5.2.1, 5.2.1|
-    |[git](https://git-scm.com)|2.28.0, 2.30.0, 2.38.1, 2.45.1|
-    |[git-lfs](https://git-lfs.github.com)|3.2.0, 3.5.1|
-    |[glew](https://github.com/nigels-com/glew)|2.1.0, 2.2.0|
-    |[glib-networking](https://gitlab.gnome.org/GNOME/glib-networking)|2.72.1|
-    |[glibc](https://www.gnu.org/software/libc/)|2.34|
-    |[gmpy2](https://github.com/aleaxit/gmpy)|2.1.0b5, 2.1.5|
-    |[gmsh](https://gmsh.info/)|4.11.1, 4.11.1|
-    |[gnuplot](http://gnuplot.sourceforge.net)|5.4.1, 5.4.6|
-    |[gomkl]((none))|2022b|
-    |[gompi]((none))|2020b, 2022b, 2024a|
-    |[gompic]((none))|2020b|
-    |[googletest](https://github.com/google/googletest)|1.10.0, 1.12.1|
-    |[gperf](https://www.gnu.org/software/gperf/)|3.1, 3.1|
-    |[gperftools](https://github.com/gperftools/gperftools)|2.14|
-    |[gpu_burn](https://github.com/wilicc/gpu-burn)|20231110|
-    |[graphite2](https://scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_home)|1.3.14, 1.3.14|
-    |[groff](https://www.gnu.org/software/groff)|1.22.4, 1.22.4|
-    |[grpcio](https://grpc.io/)|1.59.3|
-    |[gsutil](https://cloud.google.com/storage/docs/gsutil)|4.42, 5.10|
-    |[gzip](https://www.gnu.org/software/gzip/)|1.10, 1.12, 1.13|
-    |[h5py](https://www.h5py.org/)|3.1.0, 3.1.0, 3.2.1, 3.8.0|
-    |[hatchling](https://hatch.pypa.io)|1.18.0, 1.24.2|
-    |[help2man](https://www.gnu.org/software/help2man/)|1.47.4, 1.47.16, 1.49.2, 1.49.3|
-    |[hiredis](https://github.com/redis/hiredis)|1.2.0|
-    |[hmmlearn](https://github.com/hmmlearn/hmmlearn)|0.3.0|
-    |[hunspell](https://hunspell.github.io/)|1.7.1|
-    |[hwloc](https://www.open-mpi.org/projects/hwloc/)|2.2.0, 2.8.0, 2.10.0|
-    |[hypothesis](https://github.com/HypothesisWorks/hypothesis)|5.41.2, 5.41.5, 6.1.1, 6.68.2, 6.103.1|
-    |[iccifort](https://software.intel.com/en-us/intel-compilers/)|2020.4.304|
-    |[igraph](https://igraph.org)|0.9.5, 0.10.4, 0.10.4, 0.10.6, 0.10.6, 0.10.10|
-    |[iimkl](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2022b|
-    |[iimpi](https://software.intel.com/parallel-studio-xe)|2020b, 2022b, 2024a|
-    |[imageio](https://imageio.github.io)|2.9.0, 2.31.1|
-    |[imgaug](https://imgaug.readthedocs.io/en/latest/)|0.4.0|
-    |[imkl](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html)|2020.4.304, 2020.4.304, 2020.4.304, 2022.2.1, 2022.2.1, 2024.2.0|
-    |[imkl-FFTW](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html)|2022.2.1, 2024.2.0|
-    |[impi](https://software.intel.com/content/www/us/en/develop/tools/mpi-library.html)|2019.9.304, 2021.7.1, 2021.13.0|
-    |[inih](https://dri.freedesktop.org)|57|
-    |[intel](https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain)|2020b, 2022b, 2024a|
-    |[intel-compilers](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html)|2022.2.1, 2024.2.0|
-    |[intltool](https://freedesktop.org/wiki/Software/intltool/)|0.51.0, 0.51.0|
-    |[iomkl](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2020b, 2022b|
-    |[iompi](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2020b, 2022b|
-    |[jax](https://pypi.python.org/pypi/jax)|0.2.19, 0.3.25, 0.4.25, 0.4.25|
-    |[jbigkit](https://www.cl.cam.ac.uk/~mgk25/jbigkit/)|2.1, 2.1|
-    |[jemalloc](http://jemalloc.net)|5.2.1, 5.3.0|
-    |[json-c](https://github.com/json-c/json-c)|0.16|
-    |[json-fortran](https://github.com/jacobwilliams/json-fortran)|8.3.0|
-    |[jupyter-resource-usage](https://github.com/jupyter-server/jupyter-resource-usage)|1.0.0|
-    |[jupyter-server](https://jupyter.org/)|2.7.0|
-    |[jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy)|3.2.2|
-    |[jupyterlmod](https://github.com/cmd-ntrf/jupyter-lmod)|4.0.3|
-    |[kallisto](https://pachterlab.github.io/kallisto/)|0.48.0|
-    |[kim-api](https://openkim.org/)|2.2.1, 2.3.0|
-    |[kineto](https://github.com/pytorch/kineto)|0.4.0|
-    |[leidenalg](https://github.com/vtraag/leidenalg)|0.8.8, 0.10.2|
-    |[lftp](https://lftp.yar.ru)|4.9.2|
-    |[libGDSII](https://github.com/HomerReid/libGDSII)|0.21|
-    |[libGLU](https://mesa.freedesktop.org/archive/glu/)|9.0.1, 9.0.2|
-    |[libGridXC](https://gitlab.com/siesta-project/libraries/libgridxc)|0.9.6|
-    |[libPSML](https://launchpad.net/libpsml)|1.1.10|
-    |[libRmath](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-standalone-Rmath-library)|4.1.0|
-    |[libXp](http://www.freedesktop.org/wiki/Software/xlibs)|1.0.3|
-    |[libaec](https://gitlab.dkrz.de/k202009/libaec)|1.0.6, 1.0.6|
-    |[libaio](https://pagure.io/libaio)|0.3.112, 0.3.113|
-    |[libarchive](https://www.libarchive.org/)|3.4.3, 3.6.1, 3.7.4|
-    |[libavif](https://github.com/AOMediaCodec/libavif)|0.11.1, 0.11.1|
-    |[libcerf](https://jugit.fz-juelich.de/mlz/libcerf)|1.14, 2.3|
-    |[libcifpp](https://github.com/PDB-REDO/libcifpp)|5.0.6, 7.0.3|
-    |[libcint](https://github.com/sunqm/libcint)|5.5.0|
-    |[libcircle](https://github.com/hpc/libcircle/)|0.3, 0.3|
-    |[libctl](https://libctl.readthedocs.io/en/latest/)|4.5.1|
-    |[libdap](https://www.opendap.org/software/libdap)|3.20.11|
-    |[libdeflate](https://github.com/ebiggers/libdeflate)|1.7, 1.15|
-    |[libdrm](https://dri.freedesktop.org)|2.4.102, 2.4.114|
-    |[libepoxy](https://github.com/anholt/libepoxy)|1.5.4, 1.5.10|
-    |[libev](http://software.schmorp.de/pkg/libev.html)|4.33|
-    |[libevent](https://libevent.org/)|2.1.12, 2.1.12, 2.1.12|
-    |[libexif](https://libexif.github.io/)|0.6.24, 0.6.24|
-    |[libfabric](https://ofiwg.github.io/libfabric/)|1.11.0, 1.16.1, 1.21.0|
-    |[libffi](https://sourceware.org/libffi/)|3.3, 3.4.4, 3.4.5|
-    |[libgcrypt](https://gnupg.org/related_software/libgcrypt/index.html)|1.10.1|
-    |[libgd](https://libgd.github.io)|2.3.0, 2.3.1, 2.3.3|
-    |[libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus)|6.1, 6.1|
-    |[libgeotiff](https://directory.fsf.org/wiki/Libgeotiff)|1.6.0, 1.7.1|
-    |[libgit2](https://libgit2.org/)|1.1.0, 1.5.0|
-    |[libglvnd](https://gitlab.freedesktop.org/glvnd/libglvnd)|1.3.2, 1.6.0|
-    |[libgpg-error](https://gnupg.org/related_software/libgpg-error/index.html)|1.46|
-    |[libharu](https://github.com/libharu/libharu/)|2.3.0|
-    |[libiconv](https://www.gnu.org/software/libiconv)|1.16, 1.17, 1.17|
-    |[libidn](http://www.gnu.org/software/libidn)|1.41|
-    |[libidn2](http://www.gnu.org/software/libidn2)|2.3.0, 2.3.2|
-    |[libjpeg-turbo](https://sourceforge.net/projects/libjpeg-turbo/)|2.0.5, 2.1.4|
-    |[libleidenalg](https://github.com/vtraag/libleidenalg)|0.11.1, 0.11.1, 0.11.1|
-    |[libmcfp](https://github.com/mhekkel/libmcfp)|1.2.2, 1.3.3|
-    |[libnsl](https://github.com/thkukuk/libnsl)|2.0.0|
-    |[libogg](https://xiph.org/ogg/)|1.3.4, 1.3.5|
-    |[libopus](https://www.opus-codec.org/)|1.3.1|
-    |[libpci](https://github.com/pciutils/pciutils)|3.7.0|
-    |[libpciaccess](https://cgit.freedesktop.org/xorg/lib/libpciaccess/)|0.16, 0.17, 0.18.1|
-    |[libpng](http://www.libpng.org/pub/png/libpng.html)|1.2.59, 1.5.30, 1.6.37, 1.6.38|
-    |[libpsl](https://rockdaboot.github.io/libpsl)|0.21.1|
-    |[libreadline](https://tiswww.case.edu/php/chet/readline/rltop.html)|8.0, 8.2, 8.2|
-    |[librsvg](https://wiki.gnome.org/Projects/LibRsvg)|2.51.2|
-    |[librttopo](https://git.osgeo.org/gitea/rttopo/librttopo)|1.1.0|
-    |[libsigc++](https://libsigcplusplus.github.io/libsigcplusplus/)|2.10.8|
-    |[libsndfile](http://www.mega-nerd.com/libsndfile)|1.0.28, 1.2.0|
-    |[libsodium](https://doc.libsodium.org/)|1.0.18, 1.0.18|
-    |[libspatialindex](https://libspatialindex.org)|1.9.3|
-    |[libspatialite](https://www.gaia-gis.it/fossil/libspatialite/home)|5.0.1|
-    |[libtasn1](https://www.gnu.org/software/libtasn1/)|4.19.0|
-    |[libtirpc](https://sourceforge.net/projects/libtirpc/)|1.3.1, 1.3.3|
-    |[libtool](https://www.gnu.org/software/libtool)|2.4.6, 2.4.7, 2.4.7|
-    |[libunistring](https://www.gnu.org/software/libunistring/)|0.9.10, 1.1, 1.1|
-    |[libunwind](https://www.nongnu.org/libunwind/)|1.4.0, 1.6.2|
-    |[libvorbis](https://xiph.org/vorbis/)|1.3.7, 1.3.7|
-    |[libwebkitgtk-1.0]()|1.2.4.9|
-    |[libwebp](https://developers.google.com/speed/webp/)|1.1.0, 1.3.1|
-    |[libwpe](https://webkit.org/wpe)|1.14.1|
-    |[libxc](https://www.tddft.org/programs/libxc)|4.3.4, 4.3.4, 5.1.2, 5.1.5, 6.1.0, 6.1.0|
-    |[libxml++](http://libxmlplusplus.sourceforge.net)|2.40.1|
-    |[libxml2](http://xmlsoft.org/)|2.9.10, 2.9.14, 2.10.3, 2.12.7|
-    |[libxslt](http://xmlsoft.org/)|1.1.34, 1.1.37|
-    |[libxsmm](https://github.com/hfp/libxsmm)|1.16.1|
-    |[libyaml](https://pyyaml.org/wiki/LibYAML)|0.2.5, 0.2.5|
-    |[libzip](https://libzip.org/)|1.9.2|
-    |[liftOver](https://genome.ucsc.edu/goldenPath/help/hgTracksHelp.html#Liftover)|2023|
-    |[loompy](https://loompy.org/)|3.0.7|
-    |[lpsolve](https://sourceforge.net/projects/lpsolve/)|5.5.2.11|
-    |[lwgrp](https://github.com/LLNL/lwgrp)|1.0.3, 1.0.5|
-    |[lxml](https://lxml.de/)|4.9.2|
-    |[lz4](https://lz4.github.io/lz4/)|1.9.2, 1.9.4, 1.9.4|
-    |[maeparser](https://github.com/schrodinger/maeparser)|1.3.1|
-    |[magma](https://icl.cs.utk.edu/magma/)|2.5.4, 2.7.1, 2.7.1|
-    |[make](https://www.gnu.org/software/make/make.html)|4.3, 4.3, 4.4.1, 4.4.1|
-    |[makeinfo](https://www.gnu.org/software/texinfo/)|6.7, 6.7, 7.0.3|
-    |[mapDamage](https://ginolhac.github.io/mapDamage/)|2.2.1|
-    |[matlab-proxy](https://github.com/mathworks/matlab-proxy)|0.12.1, 0.13.1, 0.14.0, 0.15.1, 0.18.2, 0.19.0|
-    |[matplotlib](https://matplotlib.org)|3.3.3, 3.3.3, 3.3.3, 3.7.0|
-    |[maturin](https://github.com/pyo3/maturin)|1.1.0, 1.4.0, 1.6.0|
-    |[mctc-lib](https://grimme-lab.github.io/mctc-lib)|0.3.1|
-    |[meson-python](https://github.com/mesonbuild/meson-python)|0.11.0, 0.15.0, 0.16.0|
-    |[mfold_util](https://www.unafold.org)|4.7|
-    |[mgltools](https://ccsb.scripps.edu/mgltools/)||
-    |[miniconda](https://github.com/conda-forge/miniforge)|22.9.0, 22.11.1, 23.1.0, 23.3.1, 23.5.2, 24.3.0, 24.3.0, 24.7.1, 24.9.2|
-    |[minimap2](https://github.com/lh3/minimap2)|2.22|
-    |[minizip](https://www.winimage.com/zLibDll/minizip.html)|1.1|
-    |[ml_dtypes](https://github.com/jax-ml/ml_dtypes)|0.3.1|
-    |[mlpack](https://www.mlpack.org/)|4.3.0, 4.3.0|
-    |[mm-common](https://gitlab.gnome.org/GNOME/mm-common)|1.0.4|
-    |[mongolite](https://cran.r-project.org/web/packages/mongolite)|20240424, 20240424|
-    |[morphosamplers](https://github.com/kevinyamauchi/morphosamplers)|0.0.10|
-    |[motif](https://motif.ics.com/)|2.3.8, 2.3.8|
-    |[mpi4py](https://github.com/mpi4py/mpi4py)|3.1.4|
-    |[mpifileutils](https://hpc.github.io/mpifileutils/)|0.11.1, 0.11.1|
-    |[mrc](https://github.com/mhekkel/mrc)|1.3.6, 1.3.13|
-    |[mrcfile](https://github.com/ccpem/mrcfile)|1.3.0, 1.5.0|
-    |[mstore](https://github.com/grimme-lab/mstore)|0.2.0|
-    |[muParser](https://beltoforion.de/article.php?a=muparser)|2.3.4|
-    |[multicharge](https://github.com/grimme-lab/multicharge)|0.2.0|
-    |[nanobind](https://github.com/wjakob/nanobind)|2.1.0|
-    |[napari](https://napari.org/)|0.4.18|
-    |[nbclassic](https://jupyter.org/)|1.0.0|
-    |[ncbi-vdb](https://github.com/ncbi/ncbi-vdb)|2.10.9, 3.0.10, 3.1.1|
-    |[ncdu](https://dev.yorhel.nl/ncdu)|1.18|
-    |[ncompress](http://ncompress.sourceforge.net/)|4.2.4.6|
-    |[ncurses](https://www.gnu.org/software/ncurses/)|5.9, 5.9, 6.0, 6.2, 6.2, 6.3, 6.3, 6.5, 6.5|
-    |[ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html)|2.1.8, 2.1.8|
-    |[nedit-ng](https://eteran.github.io/nedit-ng/)|2020.1|
-    |[netCDF](https://www.unidata.ucar.edu/software/netcdf/)|4.6.1, 4.7.4, 4.7.4, 4.7.4, 4.7.4, 4.9.0, 4.9.0, 4.9.0|
-    |[netCDF-C++](http://www.unidata.ucar.edu/software/netcdf/)|4.2|
-    |[netCDF-C++4](https://www.unidata.ucar.edu/software/netcdf/)|4.3.1, 4.3.1|
-    |[netCDF-Fortran](https://www.unidata.ucar.edu/software/netcdf/)|4.4.4, 4.5.3, 4.5.3, 4.5.3, 4.5.3, 4.6.0, 4.6.0, 4.6.0|
-    |[netcdf4-python](https://unidata.github.io/netcdf4-python/)|1.6.3|
-    |[nettle](https://www.lysator.liu.se/~nisse/nettle/)|3.6, 3.8.1|
-    |[networkx](https://pypi.python.org/pypi/networkx)|2.5, 2.5, 2.5.1, 3.0|
-    |[nf-core](https://github.com/nf-core/tools)|2.14.1|
-    |[nghttp2](https://github.com/nghttp2/nghttp2)|1.48.0|
-    |[nghttp3](https://github.com/ngtcp2/nghttp3)|0.6.0|
-    |[ngtcp2](https://github.com/ngtcp2/ngtcp2)|0.7.0|
-    |[nlohmann_json](https://github.com/nlohmann/json)|3.11.2|
-    |[nodejs](https://nodejs.org)|12.19.0, 18.12.1, 20.11.1|
-    |[nsync](https://github.com/google/nsync)|1.24.0, 1.26.0|
-    |[numactl](https://github.com/numactl/numactl)|2.0.13, 2.0.16, 2.0.18|
-    |[numba](https://numba.pydata.org/)|0.58.1|
-    |[nvofbf]((none))|2023.01|
-    |[nvompi]((none))|2023.01|
-    |[occt](https://www.opencascade.com/)|7.5.0p1, 7.5.0p1|
-    |[p11-kit](https://p11-glue.freedesktop.org/p11-kit.html)|0.24.1|
-    |[p7zip](https://github.com/p7zip-project/p7zip/)|17.04|
-    |[pam-devel](http://www.linux-pam.org/)|1.3.1|
-    |[parallel](https://savannah.gnu.org/projects/parallel/)|20210322|
-    |[parameterized](https://github.com/wolever/parameterized)|0.9.0|
-    |[patchelf](https://github.com/NixOS/patchelf)|0.12, 0.17.2, 0.18.0|
-    |[phonopy](https://atztogo.github.io/phonopy/)|2.27.0|
-    |[phyx](https://github.com/FePhyFoFum/phyx)|1.3|
-    |[picard](https://broadinstitute.github.io/picard/)|2.18.14, 2.25.6|
-    |[pigz](https://zlib.net/pigz/)|2.6, 2.7|
-    |[pixman](http://www.pixman.org/)|0.40.0, 0.42.2|
-    |[pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)|0.29.2, 0.29.2|
-    |[pkgconf](https://github.com/pkgconf/pkgconf)|1.8.0, 1.8.0, 1.9.3, 2.2.0|
-    |[pkgconfig](https://github.com/matze/pkgconfig)|1.5.1, 1.5.5|
-    |[plotly.py](https://plot.ly/python)|4.14.3, 5.13.1|
-    |[pocl](http://portablecl.org)|1.6, 1.8, 5.0|
-    |[poetry](https://python-poetry.org)|1.5.1, 1.7.1, 1.8.3|
-    |[poppler](https://poppler.freedesktop.org)|21.06.1, 21.06.1, 22.12.0|
-    |[popt](https://github.com/rpm-software-management/popt)|1.16|
-    |[postgis](http://postgis.net/)|3.4.2|
-    |[printproto](http://xorg.freedesktop.org/)|1.0.5|
-    |[prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit)|3.0.36|
-    |[protobuf](https://github.com/protocolbuffers/protobuf)|3.14.0, 3.19.4, 23.0|
-    |[protobuf-python](https://github.com/google/protobuf/)|3.14.0, 3.19.4, 4.23.0|
-    |[psycopg2](https://psycopg.org/)|2.9.9|
-    |[pugixml](https://pugixml.org/)|1.12.1|
-    |[py-cpuinfo](https://github.com/workhorsy/py-cpuinfo)|9.0.0|
-    |[py3Dmol](https://github.com/3dmol/3Dmol.js/tree/master/py3Dmol)|2.0.1.post1, 2.1.0|
-    |[pyFFTW](https://github.com/pyFFTW/pyFFTW)|0.13.1|
-    |[pySCENIC](https://github.com/aertslab/pySCENIC)|0.12.1|
-    |[pybind11](https://pybind11.readthedocs.io)|2.6.0, 2.6.2, 2.10.3, 2.12.0, 2.12.0|
-    |[pydantic](https://github.com/samuelcolvin/pydantic)|2.5.3|
-    |[pyfaidx](https://pypi.python.org/pypi/pyfaidx)|0.7.2.1|
-    |[pyproj](https://pyproj4.github.io/pyproj)|3.5.0|
-    |[pytest](https://docs.pytest.org/en/latest/)|7.4.2|
-    |[pytest-flakefinder](https://github.com/dropbox/pytest-flakefinder)|1.1.0|
-    |[pytest-rerunfailures](https://github.com/pytest-dev/pytest-rerunfailures)|12.0|
-    |[pytest-shard](https://github.com/AdamGleave/pytest-shard)|0.1.2|
-    |[pytest-workflow](https://github.com/LUMC/pytest-workflow)|2.0.1|
-    |[pytest-xdist](https://github.com/pytest-dev/pytest-xdist)|2.3.0, 3.3.1|
-    |[python-igraph](https://igraph.org/python)|0.9.8, 0.11.4|
-    |[python-isal](https://github.com/pycompression/python-isal)|0.11.1|
-    |[qrupdate](https://sourceforge.net/projects/qrupdate/)|1.1.2|
-    |[rMATS-turbo](https://github.com/Xinglab/rmats-turbo)|4.1.1, 4.1.2, 4.2.0|
-    |[rasterio](https://github.com/mapbox/rasterio)|1.3.8|
-    |[re2c](https://re2c.org)|2.0.3, 3.0|
-    |[rpmrebuild](http://rpmrebuild.sourceforge.net/)|2.16, 2.18|
-    |[ruamel.yaml](https://sourceforge.net/projects/ruamel-yaml)|0.17.21, 0.17.21|
-    |[samblaster](https://github.com/GregoryFaust/samblaster)|0.1.26|
-    |[scanpy](https://scanpy.readthedocs.io/en/stable/)|1.9.8|
-    |[scikit-build](https://scikit-build.readthedocs.io/en/latest)|0.11.1, 0.11.1, 0.17.2, 0.17.6|
-    |[scikit-build-core](https://scikit-build.readthedocs.io/en/latest/)|0.9.3|
-    |[scikit-image](https://scikit-image.org/)|0.18.1, 0.18.1, 0.18.3, 0.21.0|
-    |[scikit-learn](https://scikit-learn.org/stable/index.html)|0.20.4, 0.23.2, 0.23.2, 0.24.1, 1.2.1|
-    |[segemehl](https://www.bioinf.uni-leipzig.de/Software/segemehl/)|0.3.4|
-    |[seqtk](https://github.com/lh3/seqtk/)|1.3|
-    |[setuptools](https://pypi.org/project/setuptools)|64.0.3|
-    |[setuptools-rust](https://github.com/PyO3/setuptools-rust)|1.9.0|
-    |[shRNA](https://github.com/brevans/pipe_shRNA)|0.1|
-    |[siscone](https://siscone.hepforge.org/)|3.0.5|
-    |[slurm-drmaa](https://github.com/natefoo/slurm-drmaa)|1.1.3|
-    |[snakemake](https://snakemake.readthedocs.io)|7.32.3|
-    |[snappy](https://github.com/google/snappy)|1.1.8, 1.1.9, 1.1.10|
-    |[sparsehash](https://github.com/sparsehash/sparsehash)|2.0.4|
-    |[spglib-python](https://pypi.python.org/pypi/spglib)|2.0.2, 2.3.1|
-    |[statsmodels](https://www.statsmodels.org/)|0.12.1, 0.14.0|
-    |[sympy](https://sympy.org/)|1.7.1, 1.12|
-    |[t-SNE-CUDA](https://github.com/CannyLab/tsne-cuda)|3.0.1|
-    |[tabix](http://samtools.sourceforge.net)|0.2.6|
-    |[tbb](https://github.com/oneapi-src/oneTBB)|2020.3, 2021.9.0, 2021.10.0, 2021.13.0|
-    |[tcsh](https://www.tcsh.org)|6.22.03, 6.24.07|
-    |[tensorboard](https://github.com/tensorflow/tensorboard)|2.15.1|
-    |[tesseract](https://github.com/tesseract-ocr/tesseract)|5.3.0, 5.3.0|
-    |[texlive](https://tug.org)|20220321, 20220321, 20220321|
-    |[time](https://www.gnu.org/software/time/)|1.9|
-    |[tmux](https://github.com/tmux/tmux/)|3.4|
-    |[topaz](http://cb.csail.mit.edu/cb/topaz/)|0.2.5, 0.2.5.20240417|
-    |[torchvision](https://github.com/pytorch/vision)|0.10.0, 0.16.0|
-    |[tqdm](https://github.com/tqdm/tqdm)|4.56.2, 4.60.0, 4.64.1|
-    |[ttyd](https://tsl0922.github.io/ttyd/)|1.7.7|
-    |[typing-extensions](https://github.com/python/typing/blob/master/typing_extensions/README.rst)|3.7.4.3, 4.9.0|
-    |[umap-learn](https://umap-learn.readthedocs.io/en/latest/)|0.5.3|
-    |[unifdef](https://github.com/fanf2/unifdef)|2.12|
-    |[unrar](https://www.rarlab.com/)|7.0.1|
-    |[utf8proc](https://github.com/JuliaStrings/utf8proc)|2.5.0, 2.8.0|
-    |[util-linux](https://www.kernel.org/pub/linux/utils/util-linux)|2.36, 2.38.1|
-    |[virtualenv](https://github.com/pypa/virtualenv)|20.23.1, 20.26.2|
-    |[watershed-workflow](https://environmental-modeling-workflows.github.io/watershed-workflow/build/html/index.html)|1.4.0, 1.4.0, 1.5.0|
-    |[wget](https://www.gnu.org/software/wget)|1.20.3|
-    |[wpebackend-fdo](https://wpewebkit.org/)|1.14.1|
-    |[wrapt](https://pypi.org/project/wrapt/)|1.15.0|
-    |[wxPython](https://www.wxpython.org/)|4.2.1|
-    |[wxWidgets](https://www.wxwidgets.org)|3.1.4, 3.1.4, 3.2.0, 3.2.2.1|
-    |[x264](https://www.videolan.org/developers/x264.html)|20201026, 20230226|
-    |[x265](https://x265.org/)|3.3, 3.5|
-    |[xarray](https://github.com/pydata/xarray)|2023.4.2, 2023.4.2|
-    |[xextproto](http://www.freedesktop.org/wiki/Software/xlibs)|7.3.0|
-    |[xmlf90](https://launchpad.net/xmlf90)|1.5.4|
-    |[xorg-macros](https://gitlab.freedesktop.org/xorg/util/macros)|1.19.2, 1.19.3, 1.20.1|
-    |[xpdf](https://www.xpdfreader.com/)|4.04|
-    |[xprop](https://www.x.org/wiki/)|1.2.5, 1.2.5|
-    |[xtb](https://xtb-docs.readthedocs.io)|6.5.1, 6.6.0, 6.6.1, 6.7.1|
-    |[xxd](https://www.vim.org)|8.2.4220, 9.0.1696|
-    |[yaml-cpp](https://github.com/jbeder/yaml-cpp)|0.7.0, 0.7.0|
-    |[ycga-public](https://github.com/ycrc/ycga-public)|1.6.0, 1.7.2, 1.7.3, 1.7.4, 1.7.5, 1.7.6, 1.7.7|
-    |[zlib](https://www.zlib.net/)|1.2.11, 1.2.11, 1.2.11, 1.2.12, 1.2.12, 1.2.13, 1.3.1, 1.3.1|
-    |[zstd](https://facebook.github.io/zstd)|1.4.5, 1.5.2, 1.5.6|
+|Package|Versions|
+|---|---|
+|[ACTC](https://sourceforge.net/projects/actc)|1.1, 1.1|
+|[ADMIXTURE](https://dalexander.github.io/admixture/)|1.3.0|
+|[AFNI](http://afni.nimh.nih.gov/)|23.2.08, 2022.1.14, 2023.1.01, 2023.1.07, 24.1.22|
+|[ANTLR](https://www.antlr2.org/)|2.7.7|
+|[ANTs](https://stnava.github.io/ANTs/)|2.3.5|
+|[APBS](https://apbs.readthedocs.io)|1.4.2.1, 3.4.1.Linux|
+|[APR](https://apr.apache.org/)|1.7.0, 1.7.5|
+|[APR-util](https://apr.apache.org/)|1.6.1, 1.6.3|
+|[ASE](https://wiki.fysik.dtu.dk/ase)|3.22.1|
+|[ATK](https://developer.gnome.org/atk/)|2.36.0, 2.38.0|
+|[AUGUSTUS](https://bioinf.uni-greifswald.de/augustus/)|3.4.0|
+|[Abseil](https://abseil.io/)|20230125.2|
+|[AdapterRemoval](https://github.com/MikkelSchubert/adapterremoval)|2.3.2|
+|[AlphaFold](https://github.com/google-deepmind/alphafold3)|2.2.3, 2.2.3, 2.2.4, 2.2.4, 2.3.2, 2.3.2, 3.0.0|
+|[AmberTools](https://ambermd.org/)|23.6|
+|[Archive-Zip](https://metacpan.org/pod/Archive::Zip)|1.68, 1.68|
+|[AreTomo](https://msg.ucsf.edu/software)|1.3.4|
+|[AreTomo2](https://github.com/czimaginginstitute/AreTomo2)|1.0.0|
+|[AreTomo3](https://github.com/czimaginginstitute/AreTomo3)|2.0.6beta|
+|[Armadillo](https://arma.sourceforge.net/)|10.2.1, 11.4.3, 11.4.3|
+|[Arrow](https://arrow.apache.org)|0.17.1, 0.17.1, 6.0.0, 11.0.0, 14.0.1, 16.1.0|
+|[Aspera-CLI](http://asperasoft.com)|3.9.6.1467.159c5b1|
+|[Aspera-Connect](http://www.ibm.com/aspera/connect/)|4.2.4.265|
+|[AuthentiCT](https://www.biopython.org)|1.0.1|
+|[Autoconf](https://www.gnu.org/software/autoconf/)|2.69, 2.71, 2.72|
+|[Automake](https://www.gnu.org/software/automake/automake.html)|1.16.2, 1.16.5, 1.16.5|
+|[Autotools](https://autotools.io)|20200321, 20220317, 20231222|
+|[BBMap](https://sourceforge.net/projects/bbmap/)|38.90|
+|[BCFtools](https://www.htslib.org/)|1.11, 1.16, 1.21|
+|[BEDOPS](http://bedops.readthedocs.io/en/latest/index.html)|2.4.41|
+|[BEDTools](https://bedtools.readthedocs.io/)|2.30.0|
+|[BGEN-enkre](https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk)|1.1.7|
+|[BLAST](http://blast.ncbi.nlm.nih.gov/)|2.2.26|
+|[BLAST+](http://blast.ncbi.nlm.nih.gov/)|2.13.0, 2.14.1, 2.15.0|
+|[BLAT](https://genome.ucsc.edu/FAQ/FAQblat.html)|3.5, 3.5|
+|[BLIS](https://github.com/flame/blis/)|0.9.0, 1.0|
+|[BLT](http://blt.sourceforge.net/)|20220626|
+|[BWA](http://bio-bwa.sourceforge.net/)|0.7.17, 0.7.17, 0.7.17|
+|[BamTools](https://github.com/pezmaster31/bamtools)|2.5.1, 2.5.1, 2.5.2|
+|[BaseSpaceCLI](https://developer.basespace.illumina.com/docs/content/documentation/cli/cli-overview)|1.5.3|
+|[Bazel](https://bazel.io/)|3.7.2, 5.4.1, 6.1.0, 6.3.1|
+|[Beast](https://beast2.org)|2.6.3, 2.6.3, 2.6.7, 2.7.4, 2.7.6|
+|[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup)|4.11.1|
+|[Bio-DB-BigFile](https://metacpan.org/pod/Bio::DB::BigFile)|1.07, 1.07|
+|[Bio-DB-HTS](https://metacpan.org/release/Bio-DB-HTS)|3.01, 3.01|
+|[BioPP](https://github.com/BioPP/bpp-core)|2.4.1|
+|[BioPerl](http://www.bioperl.org/)|1.7.8, 1.7.8|
+|[Biopython](https://www.biopython.org)|1.78, 1.79, 1.81, 1.83|
+|[Bismark](https://www.bioinformatics.babraham.ac.uk/projects/bismark/)|0.24.0|
+|[Bison](https://www.gnu.org/software/bison)|3.0.4, 3.0.4, 3.0.5, 3.7.1, 3.7.1, 3.8.2, 3.8.2, 3.8.2|
+|[Blender](https://www.blender.org/)|4.0.1, 4.2.1|
+|[Block](https://sanshar.github.io/Block/)|1.5.3|
+|[Blosc](https://www.blosc.org/)|1.21.0, 1.21.3|
+|[Blosc2](https://www.blosc.org/)|2.8.0|
+|[Boost](https://www.boost.org/)|1.74.0, 1.74.0, 1.74.0, 1.74.0, 1.74.0, 1.81.0, 1.81.0, 1.81.0, 1.83.0, 1.85.0, 1.86.0|
+|[Boost.MPI](https://www.boost.org/)|1.81.0, 1.81.0|
+|[Boost.Python](https://boostorg.github.io/python)|1.74.0, 1.81.0|
+|[Boost.Python-NumPy](https://boostorg.github.io/python)|1.74.0, 1.81.0|
+|[Bowtie](http://bowtie-bio.sourceforge.net/index.shtml)|1.3.0, 1.3.0, 1.3.1|
+|[Bowtie2](https://bowtie-bio.sourceforge.net/bowtie2/index.shtml)|2.3.4.3, 2.4.2, 2.4.2, 2.5.1|
+|[Brotli](https://github.com/google/brotli)|1.0.9, 1.0.9|
+|[Brunsli](https://github.com/google/brunsli/)|0.1|
+|[Bsoft](https://cbiit.github.io/Bsoft/)|2.1.4|
+|[CAMPARI](http://campari.sourceforge.net/V4/index.html)|4.0|
+|[CCP4](http://www.ccp4.ac.uk/)|8.0.011, 8.0.015|
+|[CD-HIT](http://weizhongli-lab.org/cd-hit/)|4.8.1|
+|[CDO](https://code.zmaw.de/projects/cdo)|2.2.2|
+|[CESM](http://www.cesm.ucar.edu/models/cesm2/)|2.1.3, 2.1.3|
+|[CESM-deps](http://www.cesm.ucar.edu/models/cesm2/)|2, 2|
+|[CFITSIO](https://heasarc.gsfc.nasa.gov/fitsio/)|3.48, 4.2.0|
+|[CGAL](https://www.cgal.org/)|4.14.3, 4.14.3, 5.2, 5.2.4, 5.5.2|
+|[CLHEP](https://proj-clhep.web.cern.ch/proj-clhep/)|2.4.4.0, 2.4.6.4|
+|[CMake](https://www.cmake.org)|3.18.4, 3.18.4, 3.20.1, 3.24.3, 3.29.3|
+|[COMSOL](https://www.comsol.com)|5.2a, 5.2a|
+|[CONN](https://web.conn-toolbox.org/home)|22a|
+|[CP2K](https://www.cp2k.org/)|8.1|
+|[CPPE](https://github.com/maxscheurer/cppe)|0.3.1|
+|[CREST](https://xtb-docs.readthedocs.io/en/latest/crest.html)|3.0.1, 3.0.2|
+|[CTFFIND](https://grigoriefflab.umassmed.edu/ctffind4)|4.1.14, 4.1.14, 4.1.14, 4.1.14, 4.1.14|
+|[CUDA](https://developer.nvidia.com/cuda-toolkit)|10.1.243, 11.1.1, 11.3.1, 11.8.0, 12.0.0, 12.1.1, 12.6.0|
+|[CUDAcore](https://developer.nvidia.com/cuda-toolkit)|11.1.1, 11.3.1|
+|[CUnit](https://sourceforge.net/projects/cunit/)|2.1|
+|[Cartopy](https://scitools.org.uk/cartopy/docs/latest/)|0.20.3, 0.22.0|
+|[Catch2](https://github.com/catchorg/Catch2)|2.13.10|
+|[Cbc](https://github.com/coin-or/Cbc)|2.10.5|
+|[CellRanger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)|3.0.2, 6.1.2, 7.0.0, 7.0.1, 7.1.0, 7.2.0, 8.0.1|
+|[CellRanger-ARC](https://support.10xgenomics.com/single-cell-multiome-atac-gex/software/pipelines/latest/what-is-cell-ranger-arc)|2.0.2|
+|[Cereal](https://uscilab.github.io/cereal/)|1.3.2, 1.3.2|
+|[Cgl](https://github.com/coin-or/Cgl)|0.60.7|
+|[CharLS](https://github.com/team-charls/charls)|2.2.0, 2.4.2|
+|[CheMPS2](https://github.com/SebWouters/CheMPS2)|1.8.12|
+|[Check](https://libcheck.github.io/check/)|0.15.2, 0.15.2|
+|[Chimera](https://www.cgl.ucsf.edu/chimera/)|1.16|
+|[ChimeraX](https://www.rbvi.ucsf.edu/chimerax/)|1.6.1, 1.7, 1.8|
+|[Clang](https://clang.llvm.org/)|11.0.1, 13.0.1, 15.0.5, 16.0.4, 16.0.4|
+|[Clp](https://github.com/coin-or/Clp)|1.17.8|
+|[Code-Server](https://coder.com/docs/code-server)|4.7.0, 4.7.0, 4.16.1, 4.17.0|
+|[CoinUtils](https://github.com/coin-or/CoinUtils)|2.11.9|
+|[Compress-Raw-Zlib](https://metacpan.org/pod/Compress::Raw::Zlib)|2.202, 2.202|
+|[CoordgenLibs](https://github.com/schrodinger/coordgenlibs)|3.0.2|
+|[Coot](http://www2.mrc-lmb.cam.ac.uk/Personal/pemsley/coot)|0.9.7, 0.9.8.6|
+|[CppUnit](https://freedesktop.org/wiki/Software/cppunit/)|1.15.1|
+|[Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)|20190706|
+|[Cython](https://cython.org/)|0.29.22, 3.0.8, 3.0.10|
+|[Cytoscape](https://cytoscape.org/)|3.9.1|
+|[DB](https://www.oracle.com/technetwork/products/berkeleydb)|18.1.40, 18.1.40|
+|[DBD-mysql](https://metacpan.org/pod/distribution/DBD-mysql/lib/DBD/mysql.pm)|4.050, 4.050|
+|[DB_File](https://perldoc.perl.org/DB_File.html)|1.855|
+|[DBus](https://dbus.freedesktop.org/)|1.13.18, 1.15.2|
+|[DIAMOND](https://github.com/bbuchfink/diamond)|2.0.15, 2.1.7|
+|[DMTCP](http://dmtcp.sourceforge.net/index.html)|3.0.0, 3.0.0|
+|[DSSP](https://github.com/PDB-REDO/dssp/)|4.2.1, 4.4.7|
+|[Dice](https://github.com/sanshar/Dice)|20240101|
+|[Doxygen](https://www.doxygen.org)|1.8.20, 1.9.5|
+|[EDirect](https://www.ncbi.nlm.nih.gov/books/NBK25501/)|20.4.20230912, 20.5.20231006, 22.8.20241011|
+|[EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/software/)|7.2.1|
+|[ELPA](https://elpa.mpcdf.mpg.de/)|2020.11.001, 2020.11.001, 2021.11.001, 2022.05.001|
+|[EMAN](https://blake.bcm.edu/emanwiki/EMAN1)|1.9|
+|[EMAN2](https://blake.bcm.edu/emanwiki/EMAN2)|2.91, 2.99.47|
+|[EMBOSS](http://emboss.sourceforge.net/)|6.6.0|
+|[ESM-2](https://github.com/facebookresearch/esm)|2.0.0|
+|[ESMF](https://www.earthsystemcog.org/projects/esmf/)|8.3.0, 8.3.0|
+|[EasyBuild](https://easybuilders.github.io/easybuild)|4.6.2, 4.7.0, 4.7.1, 4.7.2, 4.8.0, 4.8.1, 4.8.2, 4.9.0, 4.9.1, 4.9.2, 4.9.3|
+|[Eigen](https://eigen.tuxfamily.org)|3.3.8, 3.3.9, 3.4.0, 3.4.0, 3.4.0|
+|[El-MAVEN](https://github.com/ElucidataInc/ElMaven)|0.12.1beta|
+|[Emacs](https://www.gnu.org/software/emacs/)|28.1, 28.2|
+|[ExifTool](https://exiftool.org)|12.58, 12.70|
+|[Exodus](https://github.com/sandialabs/seacas)|20240403, 20240403|
+|[FASTX-Toolkit](http://hannonlab.cshl.edu/fastx_toolkit/)|0.0.14|
+|[FFTW](https://www.fftw.org)|2.1.5, 2.1.5, 2.1.5, 2.1.5, 3.3.8, 3.3.8, 3.3.8, 3.3.8, 3.3.8, 3.3.10, 3.3.10, 3.3.10, 3.3.10, 3.3.10|
+|[FFTW.MPI](https://www.fftw.org)|3.3.10, 3.3.10, 3.3.10|
+|[FFmpeg](https://www.ffmpeg.org/)|4.3.1, 5.1.2|
+|[FHI-aims](https://fhi-aims.org/)|231212_1|
+|[FLAC](https://xiph.org/flac/)|1.3.3, 1.4.2|
+|[FLASH](https://ccb.jhu.edu/software/FLASH/)|2.2.00|
+|[FLTK](https://www.fltk.org)|1.3.5, 1.3.8|
+|[FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools)|2024.05|
+|[FSL](https://www.fmrib.ox.ac.uk/fsl/)|6.0.5.2, 6.0.5.2, 6.0.7.9|
+|[FTGL](https://github.com/frankheckenbach/ftgl)|2.3, 2.4.0|
+|[Faiss](https://github.com/facebookresearch/faiss)|1.7.4|
+|[FastME](http://www.atgc-montpellier.fr/fastme/)|2.1.6.3|
+|[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|0.11.9, 0.12.1|
+|[FastUniq](https://sourceforge.net/projects/fastuniq)|1.1|
+|[Fiji](https://fiji.sc/)|2.14.0, 20221201, 20230801|
+|[Fiona](https://github.com/Toblerity/Fiona)|1.9.2|
+|[Flask](https://www.palletsprojects.com/p/flask/)|2.2.3|
+|[FlexiBLAS](https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release)|3.2.1, 3.2.1, 3.4.4|
+|[FragGeneScan](https://omics.informatics.indiana.edu/FragGeneScan/)|1.31|
+|[FreeImage](http://freeimage.sourceforge.net)|3.18.0, 3.18.0|
+|[FreeSurfer](https://surfer.nmr.mgh.harvard.edu/)|dev, dev, 7.3.2, 7.4.1|
+|[FreeXL](https://www.gaia-gis.it/fossil/freexl/index)|2.0.0|
+|[FriBidi](https://github.com/fribidi/fribidi)|1.0.10, 1.0.12|
+|[GATK](https://www.broadinstitute.org/gatk/)|3.8, 4.2.0.0, 4.2.6.1, 4.4.0.0, 4.5.0.0, 4.6.0.0|
+|[GCC](https://gcc.gnu.org/)|10.2.0, 12.2.0, 13.3.0|
+|[GCCcore](https://gcc.gnu.org/)|7.3.0, 10.2.0, 12.2.0, 13.3.0|
+|[GCTA](https://yanglab.westlake.edu.cn/software/gcta/)|1.94.1|
+|[GConf](https://gitlab.gnome.org/iainl/gconf)|3.2.6|
+|[GDAL](https://www.gdal.org)|3.2.1, 3.6.2|
+|[GDB](https://www.gnu.org/software/gdb/gdb.html)|10.1, 13.2|
+|[GDCM](https://sourceforge.net/projects/gdcm)|3.0.21|
+|[GDRCopy](https://github.com/NVIDIA/gdrcopy)|2.1, 2.3, 2.3.1, 2.4.1|
+|[GEOS](https://trac.osgeo.org/geos)|3.9.1, 3.11.1|
+|[GL2PS](https://www.geuz.org/gl2ps/)|1.4.2, 1.4.2|
+|[GLM](https://github.com/g-truc/glm)|0.9.9.8|
+|[GLPK](https://www.gnu.org/software/glpk/)|4.65, 5.0|
+|[GLib](https://www.gtk.org/)|2.66.1, 2.75.0|
+|[GLibmm](https://www.gtk.org/)|2.49.7|
+|[GMP](https://gmplib.org/)|6.2.0, 6.2.1|
+|[GObject-Introspection](https://gi.readthedocs.io/en/latest/)|1.66.1, 1.66.1, 1.74.0|
+|[GRASS](https://grass.osgeo.org)|8.2.0|
+|[GROMACS](https://www.gromacs.org)|2021.5, 2023.3|
+|[GSEA](https://www.gsea-msigdb.org)|4.3.2|
+|[GSL](https://www.gnu.org/software/gsl/)|2.5, 2.6, 2.6, 2.6, 2.7, 2.7, 2.7|
+|[GST-libav](https://gstreamer.freedesktop.org/)|1.18.4, 1.22.1|
+|[GST-plugins-bad](https://gstreamer.freedesktop.org/)|1.22.5|
+|[GST-plugins-base](https://gstreamer.freedesktop.org/)|1.18.4, 1.18.4, 1.22.1, 1.22.1|
+|[GST-plugins-good](https://gstreamer.freedesktop.org/)|1.18.4, 1.22.1|
+|[GStreamer](https://gstreamer.freedesktop.org/)|1.18.4, 1.18.4, 1.22.1, 1.22.1|
+|[GTK+](https://developer.gnome.org/gtk3/stable/)|3.24.23|
+|[GTK2](https://developer.gnome.org/gtk+/stable/)|2.24.33|
+|[GTK3](https://developer.gnome.org/gtk3/stable/)|3.24.35|
+|[GTK4](https://docs.gtk.org/gtk4/)|4.11.3|
+|[GTS](http://gts.sourceforge.net/)|0.7.6|
+|[Garfield++]()|5.0|
+|[Gaussian](http://gaussian.com/)|16, 16|
+|[Gctf](https://www2.mrc-lmb.cam.ac.uk/research/locally-developed-software/zhang-software/)|1.18, 1.18|
+|[Gdk-Pixbuf](https://docs.gtk.org/gdk-pixbuf/)|2.40.0, 2.40.0, 2.42.10|
+|[Geant4](https://geant4.cern.ch/)|10.7.1|
+|[Geant4-data](https://geant4.cern.ch/)|11.3|
+|[GenomeTools](http://genometools.org)|1.6.1|
+|[Ghostscript](https://ghostscript.com)|9.53.3, 10.0.0|
+|[GitPython](https://gitpython.readthedocs.org)|3.1.31|
+|[Globus-CLI](https://docs.globus.org/cli/)|3.18.0, 3.30.1|
+|[GnuTLS](https://www.gnutls.org)|3.7.8|
+|[Go](https://www.golang.org)|1.17.6, 1.21.1, 1.21.4, 1.22.1|
+|[Grace](https://plasma-gate.weizmann.ac.il/Grace/)|5.1.25|
+|[Gradle](https://gradle.org)|8.6|
+|[Graphene](https://ebassi.github.io/graphene/)|1.10.8|
+|[GraphicsMagick](https://www.graphicsmagick.org/)|1.3.36|
+|[Graphviz](https://www.graphviz.org/)|2.47.0|
+|[Guile](https://www.gnu.org/software/guile/)|2.2.7, 3.0.9, 3.0.9|
+|[Gurobi](https://www.gurobi.com)|9.1.2, 10.0.3|
+|[HDF](https://www.hdfgroup.org/products/hdf4/)|4.2.15, 4.2.15|
+|[HDF5](https://portal.hdfgroup.org/display/support)|1.10.7, 1.10.7, 1.10.7, 1.10.7, 1.14.0, 1.14.0, 1.14.0, 1.14.0|
+|[HDFView](https://www.hdfgroup.org/downloads/hdfview/)|3.3.1|
+|[HH-suite](https://github.com/soedinglab/hh-suite)|3.3.0, 3.3.0, 3.3.0|
+|[HISAT-3N](https://daehwankimlab.github.io/hisat2)|20221013|
+|[HISAT2](https://daehwankimlab.github.io/hisat2)|2.2.1|
+|[HMMER](http://hmmer.org/)|3.3.2, 3.3.2, 3.4|
+|[HOOMD-blue](https://bitbucket.org/glotzer/hoomd-blue)|4.9.1, 4.9.1|
+|[HPCG](https://software.sandia.gov/hpcg)|3.1, 3.1, 3.1, 3.1|
+|[HPL](https://www.netlib.org/benchmark/hpl/)|2.3, 2.3, 2.3, 2.3|
+|[HTSeq](https://htseq.readthedocs.io/)|0.13.5|
+|[HTSlib](https://www.htslib.org/)|1.11, 1.11, 1.12, 1.16, 1.17, 1.21|
+|[HarfBuzz](https://www.freedesktop.org/wiki/Software/HarfBuzz)|2.6.7, 5.3.1|
+|[Harminv](https://github.com/stevengj/harminv)|1.4.1, 1.4.2|
+|[HepMC3](http://hepmc.web.cern.ch/hepmc/)|3.2.6|
+|[Highway](https://github.com/google/highway)|1.0.3|
+|[HyPhy](https://hyphy.org)|2.5.62|
+|[Hypre](https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods)|2.20.0, 2.27.0|
+|[ICU](https://icu.unicode.org)|67.1, 72.1, 75.1|
+|[IDBA-UD](https://i.cs.hku.hk/~alse/hkubrg/projects/idba_ud/)|1.1.3|
+|[IGV](https://www.broadinstitute.org/software/igv/)|2.16.0, 2.16.2, 2.17.4, 2.19.1|
+|[IMOD](http://bio3d.colorado.edu/imod/)|4.11.15, 4.11.16, 4.11.24_RHEL7, 4.11.24, 4.12.56_RHEL7, 4.12.62_RHEL8|
+|[IOR](https://github.com/hpc/ior)|4.0.0, 4.0.0|
+|[IPython](https://ipython.org/index.html)|7.18.1, 8.14.0|
+|[IQ-TREE](http://www.iqtree.org/)|2.1.2|
+|[ISA-L](https://github.com/intel/isa-l)|2.30.0|
+|[ISL](https://libisl.sourceforge.io)|0.23, 0.26|
+|[ImageMagick](https://www.imagemagick.org/)|7.0.10, 7.1.0|
+|[Imath](https://imath.readthedocs.io/en/latest/)|3.1.6|
+|[Infernal](http://eddylab.org/infernal/)|1.1.4|
+|[IsoNet](https://github.com//IsoNet-cryoET)|0.2.1|
+|[JAGS](http://mcmc-jags.sourceforge.net/)|4.3.0, 4.3.2|
+|[Jansson](https://www.digip.org/jansson/)|2.14|
+|[JasPer](https://www.ece.uvic.ca/~frodo/jasper/)|2.0.24, 4.0.0|
+|[Java](https://openjdk.org)|1.8.345, 8.345, 11.0.16, 17.0.4, 21.0.2|
+|[JsonCpp](https://open-source-parsers.github.io/jsoncpp-docs/doxygen/index.html)|1.9.4, 1.9.5|
+|[Judy](http://judy.sourceforge.net/)|1.0.5, 1.0.5|
+|[Julia](https://julialang.org)|1.8.2, 1.8.5, 1.9.2, 1.10.0, 1.10.2, 1.10.4, 1.11.1|
+|[Jupyter-bundle](https://jupyter.org/)|20230823|
+|[JupyterHub](https://jupyter.org)|4.0.1|
+|[JupyterLab](https://jupyter.org/)|2.2.8, 4.0.3|
+|[JupyterNotebook](https://jupyter.org/)|7.0.3|
+|[KaHIP](https://kahip.github.io/)|3.14|
+|[Kalign](https://github.com/TimoLassmann/kalign)|3.3.1, 3.4.0|
+|[Kent_tools](https://genome.cse.ucsc.edu/)|411, 461|
+|[Knitro](https://www.artelys.com/en/optimization-tools/knitro)|12.0.0, 14.0.0|
+|[Kraken2](https://github.com/DerrickWood/kraken2/wiki)|2.1.3|
+|[LAME](http://lame.sourceforge.net/)|3.100, 3.100|
+|[LAMMPS](https://www.lammps.org)|2Aug2023, 23Jun2022|
+|[LDC](https://wiki.dlang.org/LDC)|0.17.6, 1.25.1|
+|[LERC](https://github.com/Esri/lerc)|4.0.0|
+|[LHAPDF](http://lhapdf.hepforge.org/)|6.5.4|
+|[LLVM](https://llvm.org/)|11.0.0, 14.0.6, 15.0.5, 16.0.4|
+|[LMDB](https://symas.com/lmdb)|0.9.24, 0.9.29|
+|[LSD2](https://github.com/tothuhien/lsd2)|2.2|
+|[LZO](https://www.oberhumer.com/opensource/lzo/)|2.10, 2.10|
+|[Leptonica](http://www.leptonica.org)|1.83.0|
+|[LibSoup](https://wiki.gnome.org/Projects/libsoup)|3.0.8|
+|[LibTIFF](https://libtiff.gitlab.io/libtiff/)|4.1.0, 4.2.0, 4.4.0|
+|[Libint](https://github.com/evaleev/libint)|2.6.0|
+|[LittleCMS](https://www.littlecms.com/)|2.11, 2.14|
+|[Lua](https://www.lua.org/)|5.4.2, 5.4.4|
+|[M4](https://www.gnu.org/software/m4/m4.html)|1.4.17, 1.4.18, 1.4.18, 1.4.18, 1.4.19, 1.4.19, 1.4.19|
+|[MACS2](https://github.com/taoliu/MACS)|2.2.7.1, 2.2.9.1, 2.2.9.1|
+|[MACS3](https://macs3-project.github.io/MACS/)|3.0.1|
+|[MAFFT](https://mafft.cbrc.jp/alignment/software/source.html)|7.475, 7.505|
+|[MAGeCK](https://sourceforge.net/p/mageck/wiki/Home/)|0.5.9.5|
+|[MATIO](https://sourceforge.net/projects/matio/)|1.5.23|
+|[MATLAB](http://www.mathworks.com/products/matlab)|2018b, 2020b, 2022a, 2022b, 2023a, 2023b|
+|[MCL](https://micans.org/mcl/)|14.137|
+|[MCR](https://www.mathworks.com/products/compiler/mcr/)|R2019b.8, R2020b.5, R2021b.6, R2022a.6, R2023a|
+|[MDI](https://github.com/MolSSI-MDI/MDI_Library)|1.4.16|
+|[MEME](http://meme-suite.org/)|5.4.1|
+|[METIS](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview)|5.1.0, 5.1.0, 5.1.0|
+|[MINC](https://github.com/BIC-MNI/libminc)|2.4.06|
+|[MMseqs2](https://mmseqs.com)|13, 14|
+|[MPB](https://mpb.readthedocs.io/en/latest/)|1.11.1|
+|[MPC](http://www.multiprecision.org/)|1.2.1, 1.3.1|
+|[MPFR](https://www.mpfr.org)|4.1.0, 4.2.0|
+|[MPICH](https://www.mpich.org/)|4.2.1|
+|[MRIcron](http://www.mccauslandcenter.sc.edu/mricro/mricron)|1.0.20190902|
+|[MRtrix3](https://www.mrtrix.org)|3.0.2|
+|[MUMPS](https://graal.ens-lyon.fr/MUMPS/)|5.3.5, 5.6.1|
+|[MUMmer](https://mummer.sourceforge.net/)|4.0.0rc1|
+|[MUSCLE](https://drive5.com/muscle/)|5.1|
+|[MadGraph5_aMC](http://madgraph.phys.ucl.ac.be)|2.9.16|
+|[MafFilter](https://github.com/jydu/maffilter)|1.3.1|
+|[Mako](https://www.makotemplates.org)|1.1.3, 1.2.4|
+|[MariaDB](https://mariadb.org/)|10.5.8, 10.11.2|
+|[Markdown](https://python-markdown.github.io/)|3.6|
+|[Mathematica](http://www.wolfram.com/mathematica)|13.0.1|
+|[Maven](https://maven.apache.org/index.html)|3.9.2|
+|[MaxBin](https://sourceforge.net/projects/maxbin/)|2.2.7|
+|[MaxQuant](https://maxquant.org/maxquant)|2.4.2.0, 2.4.2.0, 2.6.1.0|
+|[Meep](https://meep.readthedocs.io/en/latest/)|1.24.0, 1.26.0|
+|[Mercurial](https://www.mercurial-scm.org)|5.7.1|
+|[Mesa](https://www.mesa3d.org/)|20.2.1, 21.3.3, 22.2.4|
+|[MeshLab](https://github.com/cnr-isti-vclab/meshlab)|2023.12|
+|[Meson](https://mesonbuild.com)|0.55.3, 0.62.1, 0.64.0, 1.3.1, 1.4.0|
+|[Metal](http://csg.sph.umich.edu/abecasis/Metal/)|2020|
+|[MitoGraph](http://rafelski.com/susanne/MitoGraph)|3.0|
+|[Mono](https://www.mono-project.com/)|6.8.0.105, 6.8.0.123|
+|[MotionCor2](http://msg.ucsf.edu/em/software/motioncor2.html)|1.5.0, 1.6.4|
+|[MotionCor3](https://github.com/czimaginginstitute/MotionCor3)|1.0.1|
+|[MrBayes](https://nbisweden.github.io/MrBayes/)|3.2.6, 3.2.7|
+|[MultiQC](https://multiqc.info)|1.10.1|
+|[NAG](http://www.nag.co.uk)|29|
+|[NAMD](http://www.ks.uiuc.edu/Research/namd)|2.14, 2.14, 2.14, 2.14|
+|[NASM](https://www.nasm.us/)|2.15.05, 2.15.05|
+|[NBO](http://nbo.chem.wisc.edu/)|7.0|
+|[NCCL](https://developer.nvidia.com/nccl)|2.8.3, 2.8.4, 2.10.3, 2.16.2, 2.16.2, 2.16.2, 2.18.3, 2.23.4|
+|[NCO](https://github.com/nco/nco)|5.2.1, 5.2.1|
+|[NECI](https://github.com/ghb24/NECI_STABLE)|20230620|
+|[NEdit](https://sourceforge.net/projects/nedit/)|5.7|
+|[NGS](https://github.com/ncbi/ngs)|2.10.9|
+|[NIfTI](http://niftilib.sourceforge.net/)|2.0.0|
+|[NLopt](http://ab-initio.mit.edu/wiki/index.php/NLopt)|2.6.2, 2.6.2, 2.7.0, 2.7.1|
+|[NSPR](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR)|4.29, 4.35|
+|[NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS)|3.57, 3.85|
+|[NVHPC](https://developer.nvidia.com/hpc-sdk/)|21.11, 21.11, 23.1, 24.9|
+|[Net-core](https://dotnet.microsoft.com/)|3.1.101|
+|[NetLogo](https://ccl.northwestern.edu/netlogo/)|6.4.0|
+|[Netpbm](https://sourceforge.net/projects/netpbm)|10.86.41|
+|[Nextflow](https://www.nextflow.io/)|22.10.6, 23.04.2, 23.10.1, 24.04.2, 24.04.4|
+|[Ninja](https://ninja-build.org/)|1.10.1, 1.11.1, 1.12.1|
+|[ORCA](https://orcaforum.kofo.mpg.de)|5.0.3, 5.0.3, 5.0.4, 5.0.4, 6.0.0, 6.0.1|
+|[OSU-Micro-Benchmarks](https://mvapich.cse.ohio-state.edu/benchmarks/)|5.7, 5.7, 6.2, 6.2|
+|[OligoArray](http://berry.engin.umich.edu/oligoarray2_1/)|2.1|
+|[OligoArrayAux](http://www.unafold.org/Dinamelt/software/oligoarrayaux.php)|3.8|
+|[OpenBLAS](https://www.openblas.net/)|0.3.12, 0.3.21, 0.3.21, 0.3.27|
+|[OpenBabel](https://openbabel.org)|3.1.1|
+|[OpenCV](https://opencv.org/)|4.5.1, 4.8.0|
+|[OpenEXR](https://www.openexr.com/)|2.5.5, 3.1.5|
+|[OpenFOAM](https://www.openfoam.com/)|v2012, v2206, v2212|
+|[OpenJPEG](https://www.openjpeg.org/)|2.4.0, 2.5.0|
+|[OpenLibm](https://openlibm.org)|0.7.5|
+|[OpenMM](https://openmm.org)|7.5.0, 7.5.1, 7.5.1, 7.5.1, 7.7.0, 8.0.0|
+|[OpenMPI](https://www.open-mpi.org/)|4.0.5, 4.0.5, 4.0.5, 4.0.5, 4.0.5, 4.1.4, 4.1.4, 4.1.4|
+|[OpenPGM](https://code.google.com/p/openpgm/)|5.2.122, 5.2.122|
+|[OpenSSL](https://www.openssl.org/)|1.0, 1.1, 3|
+|[OpenSlide](https://openslide.org/)|3.4.1|
+|[OpenSlide-Java](https://github.com/openslide/openslide-java)|0.12.4|
+|[OrthoFinder](https://github.com/davidemms/OrthoFinder)|2.5.4|
+|[Osi](https://github.com/coin-or/Osi)|0.108.8|
+|[PALEOMIX](https://github.com/MikkelSchubert/paleomix)|1.3.8|
+|[PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)|4.10.7|
+|[PBZIP2](http://compression.great-site.net/pbzip2)|1.1.13|
+|[PCRE](https://www.pcre.org/)|8.44, 8.45|
+|[PCRE2](https://www.pcre.org/)|10.35, 10.40|
+|[PDBFixer](https://github.com/openmm/pdbfixer)|1.7|
+|[PEAR](https://cme.h-its.org/exelixis/web/software/pear/)|0.9.11|
+|[PEET](http://bio3d.colorado.edu/PEET)|1.15.0, 1.16.0a|
+|[PETSc](https://www.mcs.anl.gov/petsc)|3.15.0, 3.17.4, 3.20.3|
+|[PGI](http://www.pgroup.com/)|18.10, 18.10|
+|[PIPseeker](https://www.fluentbio.com/products/pipseeker-software-for-data-analysis/)|2.1.4|
+|[PKTOOLS](https://savannah.nongnu.org/projects/pktools)|2.6.7.6, 2.6.7.6|
+|[PLINK](https://www.cog-genomics.org/plink/2.0)|1.9b_6.21, 2_avx2_20221024|
+|[PLUMED](https://www.plumed.org)|2.6.2, 2.7.0, 2.7.3, 2.9.0, 2.9.2|
+|[PMIx](https://pmix.org/)|5.0.2|
+|[POV-Ray](https://www.povray.org/)|3.7.0.8, 3.7.0.10|
+|[PRINSEQ](http://prinseq.sourceforge.net)|0.20.4|
+|[PROJ](https://proj.org)|7.2.1, 9.1.1|
+|[PRRTE](https://docs.prrte.org/)|3.0.5|
+|[PYTHIA](https://www.pythia.org)|8.309|
+|[Pandoc](https://pandoc.org)|2.13, 3.1.2|
+|[Pango](https://www.pango.org/)|1.47.0, 1.50.12|
+|[ParMETIS](http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)|4.0.3|
+|[ParaView](https://www.paraview.org)|5.8.1, 5.11.0|
+|[PartitionFinder](https://www.robertlanfear.com/partitionfinder)|2.1.1|
+|[Perl](https://www.perl.org/)|5.28.0, 5.32.0, 5.32.0, 5.32.1, 5.36.0, 5.36.0, 5.36.1, 5.38.0, 5.38.2|
+|[Perl-bundle-CPAN](https://www.perl.org/)|5.36.1|
+|[Phenix](http://www.phenix-online.org/)|1.20.1, 1.20.1|
+|[PhyloBayes](http://megasun.bch.umontreal.ca/People/lartillot/www/download.html)|4.1e|
+|[Pillow](https://pillow.readthedocs.org/)|8.0.1, 9.4.0|
+|[Pillow-SIMD](https://github.com/uploadcare/pillow-simd)|7.1.2, 9.5.0|
+|[Pint](https://github.com/hgrecco/pint)|0.22|
+|[PnetCDF](https://parallel-netcdf.github.io/)|1.12.2, 1.12.3, 1.13.0, 1.13.0|
+|[PostgreSQL](https://www.postgresql.org/)|13.2, 15.2|
+|[PuLP](https://github.com/coin-or/pulp)|2.7.0|
+|[PyBLP](https://pyblp.readthedocs.io/en/stable/index.html)|1.1.0|
+|[PyBerny](https://github.com/jhrmnn/pyberny)|0.6.3|
+|[PyCairo](https://pycairo.readthedocs.io/)|1.24.0|
+|[PyCharm](https://www.jetbrains.com/pycharm/)|2022.3.2, 2024.3.2|
+|[PyCheMPS2](https://sebwouters.github.io/CheMPS2)|1.8.12|
+|[PyGObject](https://pygobject.readthedocs.io/)|3.44.1|
+|[PyInstaller](https://pyinstaller.org/en/stable/)|6.3.0|
+|[PyOpenGL](http://pyopengl.sourceforge.net)|3.1.5, 3.1.6|
+|[PyQt5](https://www.riverbankcomputing.com/software/pyqt)|5.15.4, 5.15.7|
+|[PySCF](http://www.pyscf.org)|2.4.0|
+|[PyTables](https://www.pytables.org)|3.5.2, 3.8.0|
+|[PyTorch](https://pytorch.org/)|1.9.0, 1.13.1, 2.1.2, 2.1.2|
+|[PyYAML](https://github.com/yaml/pyyaml)|5.3.1, 6.0|
+|[PycURL](http://pycurl.io/)|7.45.2|
+|[Pylada-light](http://pylada.github.io/pylada-light/coredocs/index.html)|2023Oct13|
+|[Pysam](https://github.com/pysam-developers/pysam)|0.16.0.1, 0.16.0.1, 0.16.0.1, 0.21.0|
+|[Python](https://python.org/)|2.7.18, 2.7.18, 3.8.6, 3.8.6, 3.10.8, 3.10.8, 3.10.8, 3.10.8, 3.12.3|
+|[Python-bundle-PyPI](https://python.org/)|2023.06, 2024.06|
+|[QCA](https://userbase.kde.org/QCA)|2.3.5|
+|[QScintilla](https://www.riverbankcomputing.com/software/qscintilla)|2.11.6|
+|[QTLtools](https://qtltools.github.io/qtltools/)|1.3.1|
+|[Qhull](http://www.qhull.org)|2020.2, 2020.2|
+|[Qt5](https://qt.io/)|5.14.2, 5.15.7|
+|[Qt5Webkit](https://github.com/qt/qtwebkit)|5.212.0, 5.212.0|
+|[QtKeychain](https://github.com/frankosterfeld/qtkeychain)|0.13.2|
+|[QtPy](https://github.com/spyder-ide/qtpy)|2.3.0|
+|[Qtconsole](https://jupyter.org/)|5.4.0|
+|[QuPath](https://qupath.github.io)|0.5.0, 0.5.1|
+|[QuantumESPRESSO](https://www.quantum-espresso.org)|6.8, 7.0, 7.2|
+|[Quip](http://homes.cs.washington.edu/~dcjones/quip)|1.1.8, 1.1.8, 20171217|
+|[Qwt](https://qwt.sourceforge.io/)|6.1.5, 6.2.0|
+|[R](https://bioconductor.org)|4.2.0, 4.2.0, 4.3.2, 4.3.2, 4.4.1, 4.4.1|
+|[R-INLA](https://www.r-inla.org)|24.01.18|
+|[R-bundle-Bioconductor](https://bioconductor.org)|3.15, 3.16, 3.18, 3.19|
+|[R-bundle-CRAN](https://www.r-project.org/)|2023.12, 2024.06|
+|[RDKit](https://www.rdkit.org)|2022.09.5|
+|[RE2](https://github.com/google/re2)|2023|
+|[RECON](https://www.repeatmasker.org/RepeatModeler/)|1.08|
+|[RELION](http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page)|3.0.8, 3.1.4, 3.1.4, 3.1.4, 4.0.0, 4.0.1, 4.0.1, 5beta, 5beta, 5.0.0|
+|[RELION-composite-masks](https://github.com/jiangjiansen/relion_composite_masks)|5.0.0|
+|[RMBlast](https://www.repeatmasker.org/RMBlast.html)|2.11.0|
+|[ROOT](https://root.cern.ch/drupal/)|6.26.06, 6.26.10|
+|[RSEM](https://deweylab.github.io/RSEM/)|1.3.3|
+|[RStudio](http://www.rstudio.com/)|2022.07.2, 2022.12.0, 2024.04.2|
+|[RStudio-Server](https://www.rstudio.com/)|2024.04.1+748|
+|[RapidJSON](https://rapidjson.org)|1.1.0, 1.1.0|
+|[Regenie](https://rgcgithub.github.io/regenie)|4.0|
+|[RepeatMasker](https://www.repeatmasker.org/)|4.1.2|
+|[RepeatScout](https://www.repeatmasker.org/)|1.0.6|
+|[ResMap](http://resmap.sourceforge.net/)|1.95|
+|[RevBayes](https://revbayes.github.io)|1.1.1, 1.2.1, 1.2.2, 1.2.2|
+|[Rivet](https://gitlab.com/hepcedar/rivet)|3.1.9|
+|[Rmath](https://www.r-project.org/)|4.0.4, 4.4.1|
+|[Rosetta](https://www.rosettacommons.org)|3.12|
+|[Ruby](https://www.ruby-lang.org)|2.7.2, 3.0.5, 3.2.2|
+|[Rust](https://www.rust-lang.org)|1.52.1, 1.65.0, 1.70.0, 1.75.0, 1.78.0|
+|[SAMtools](https://www.htslib.org/)|1.11, 1.11, 1.16, 1.16.1, 1.18, 1.20, 1.21|
+|[SAS](https://www.sas.com)|9.4M8, 9.4|
+|[SBGrid](https://sbgrid.org)|2.11.2|
+|[SCOTCH](https://www.labri.fr/perso/pelegrin/scotch/)|6.1.0, 7.0.3|
+|[SCons](https://www.scons.org)|4.0.1, 4.5.2|
+|[SDL2](https://www.libsdl.org/)|2.0.14, 2.26.3|
+|[SHAPEIT](https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html)|2.r904.glibcv2.17|
+|[SHAPEIT4](https://odelaneau.github.io/shapeit4/)|4.2.2|
+|[SLEPc](https://slepc.upv.es)|3.15.0, 3.17.2|
+|[SMRT-Link](https://www.pacb.com/support/software-downloads/)|11.1.0.166339, 12.0.0|
+|[SOCI](http://soci.sourceforge.net/)|4.0.3, 4.0.3|
+|[SPAGeDi](https://github.com/reedacartwright/spagedi)|1.5d|
+|[SPAdes](https://github.com/ablab/spades)|3.15.1, 3.15.5|
+|[SPM](https://www.fil.ion.ucl.ac.uk/spm)|12.5_r7771|
+|[SQLite](https://www.sqlite.org/)|3.33.0, 3.39.4, 3.45.3|
+|[SRA-Toolkit](https://github.com/ncbi/sra-tools)|2.10.9, 3.0.10, 3.1.1, 3.1.1|
+|[STAR](https://github.com/alexdobin/STAR)|2.7.6a, 2.7.7a, 2.7.8a, 2.7.9a, 2.7.11a, 2.7.11a|
+|[STREAM](https://www.cs.virginia.edu/stream/)|5.10|
+|[SWIG](http://www.swig.org/)|4.0.2, 4.1.1|
+|[Salmon](https://github.com/COMBINE-lab/salmon)|1.4.0|
+|[Sambamba](https://lomereiter.github.io/sambamba/)|0.8.0|
+|[ScaFaCoS](http://www.scafacos.de/)|1.0.1, 1.0.4|
+|[ScaLAPACK](https://www.netlib.org/scalapack/)|2.1.0, 2.1.0, 2.2.0, 2.2.0, 2.2.0|
+|[SciPy-bundle](https://python.org/)|2020.11, 2020.11, 2020.11, 2020.11, 2020.11, 2021.05, 2023.02, 2024.05|
+|[Seaborn](https://seaborn.pydata.org/)|0.12.2, 0.13.2|
+|[Seq-Gen](http://tree.bio.ed.ac.uk/software/Seq-Gen)|1.3.4|
+|[SeqKit](https://bioinf.shenwei.me/seqkit/)|2.3.1, 2.8.1|
+|[Serf](https://serf.apache.org/)|1.3.9, 1.3.9|
+|[Shapely](https://github.com/Toblerity/Shapely)|1.8.5.post1, 2.0.1|
+|[Sherpa](https://sherpa-team.gitlab.io/index.html)|3.0.0|
+|[Slicer](https://slicer.readthedocs.io)|5.6.2|
+|[SpaceRanger](https://support.10xgenomics.com/spatial-gene-expression/software/pipelines/latest/what-is-space-ranger)|2.1.1|
+|[Spark](https://spark.apache.org)|3.1.1, 3.1.1, 3.5.0, 3.5.0, 3.5.1, 3.5.3, 3.5.4|
+|[SpectrA](https://spectralib.org/)|1.0.0, 1.0.1|
+|[Stacks](https://catchenlab.life.illinois.edu/stacks/)|2.59|
+|[Stata](https://www.stata.com/)|17|
+|[StringTie](https://ccb.jhu.edu/software/stringtie/)|2.1.4|
+|[Subread](http://subread.sourceforge.net/)|2.0.3|
+|[Subversion](https://subversion.apache.org/)|1.14.0, 1.14.3|
+|[SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html)|5.8.1, 5.13.0|
+|[Summovie](http://grigoriefflab.janelia.org/unblur)|1.0.2|
+|[SuperLU_DIST](https://crd-legacy.lbl.gov/~xiaoye/SuperLU/)|8.1.2|
+|[Szip](https://www.hdfgroup.org/doc_resource/SZIP/)|2.1.1, 2.1.1|
+|[TOMO3D](https://sites.google.com/site/3demimageprocessing/tomo3d)|01|
+|[TOPAS](https://www.topasmc.org)|3.9|
+|[TRF](https://tandem.bu.edu/trf/trf.html)|4.09.1|
+|[TRUST4](https://github.com/liulab-dfci/TRUST4)|1.0.7|
+|[TWL-NINJA](https://github.com/TravisWheelerLab/NINJA)|0.97|
+|[Tcl](https://www.tcl.tk/)|8.6.10, 8.6.12, 8.6.14|
+|[TensorFlow](https://www.tensorflow.org/)|2.5.0, 2.7.1, 2.13.0, 2.15.1|
+|[TensorRT](https://developer.nvidia.com/tensorrt)|8.6.1|
+|[Tk](https://www.tcl.tk/)|8.6.10, 8.6.12|
+|[Tkinter](https://python.org/)|3.8.6, 3.10.8|
+|[TopHat](http://ccb.jhu.edu/software/tophat/)|2.1.2, 2.1.2|
+|[TotalView](http://www.roguewave.com/products/totalview.aspx)|2023.3.10|
+|[TreeMix](http://bitbucket.org/nygcresearch/treemix)|1.13|
+|[Trilinos](https://trilinos.org)|13.4.1|
+|[Trim_Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)|0.6.7|
+|[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)|0.39|
+|[UCC](https://www.openucx.org/)|1.1.0, 1.3.0|
+|[UCC-CUDA](https://www.openucx.org/)|1.1.0, 1.1.0, 1.3.0|
+|[UCX](https://www.openucx.org/)|1.9.0, 1.9.0, 1.10.0, 1.13.1, 1.16.0|
+|[UCX-CUDA](http://www.openucx.org/)|1.10.0, 1.13.1, 1.13.1, 1.13.1, 1.16.0|
+|[UDUNITS](https://www.unidata.ucar.edu/software/udunits/)|2.2.26, 2.2.28|
+|[USEARCH](https://www.drive5.com/usearch/index.html)|11.0.667|
+|[UnZip](http://www.info-zip.org/UnZip.html)|6.0, 6.0, 6.0|
+|[Unblur](http://grigoriefflab.janelia.org/unblur)|1.0.2|
+|[VASP](http://www.vasp.at)|5.4.1, 5.4.4, 5.4.4, 6.3.0, 6.4.2|
+|[VASPsol](http://www.vasp.at)|5.4.1|
+|[VCFtools](https://vcftools.github.io)|0.1.16|
+|[VDJtools](http://vdjtools-doc.readthedocs.io/en/latest/)|1.2.1|
+|[VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)|107, 110, 112, 112.0|
+|[VESTA](http://www.jp-minerals.org/vesta)|3.5.8|
+|[VMD](https://www.ks.uiuc.edu/Research/vmd)|1.9.4a57|
+|[VSCode](https://code.visualstudio.com/)|1.95.3, 1.96.2, 1.96.4|
+|[VTK](https://www.vtk.org)|9.0.1, 9.0.1, 9.2.6|
+|[VTune](https://software.intel.com/en-us/vtune)|2023.2.0|
+|[Valgrind](https://valgrind.org)|3.16.1, 3.21.0|
+|[ViennaRNA](http://www.tbi.univie.ac.at/RNA/)|2.5.1|
+|[Vim](http://www.vim.org)|9.0.1434|
+|[VisPy](https://vispy.org)|0.12.2|
+|[Voro++](http://math.lbl.gov/voro++/)|0.4.6, 0.4.6|
+|[WRF](https://www.wrf-model.org)|4.4.1|
+|[Wannier90](http://www.wannier.org)|3.1.0, 3.1.0|
+|[Wayland](https://wayland.freedesktop.org/)|1.22.0|
+|[Waylandpp](https://github.com/NilsBrause/waylandpp)|1.0.0|
+|[WebKitGTK+](https://webkitgtk.org/)|2.40.4|
+|[X11](https://www.x.org)|20201008, 20221110|
+|[XCFun](https://xcfun.readthedocs.io)|2.1.1|
+|[XGBoost](https://github.com/dmlc/xgboost)|2.1.1, 2.1.1|
+|[XML-LibXML](https://metacpan.org/pod/distribution/XML-LibXML/LibXML.pod)|2.0206, 2.0208|
+|[XMedCon](https://xmedcon.sourceforge.io/)|0.25.0|
+|[XZ](https://tukaani.org/xz/)|5.2.5, 5.2.7, 5.4.5|
+|[Xerces-C++](https://xerces.apache.org/xerces-c/)|3.1.4, 3.2.3, 3.2.4|
+|[Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml)|1.20.9, 21.1.6|
+|[YODA](https://yoda.hepforge.org/)|1.9.9|
+|[Yasm](https://www.tortall.net/projects/yasm/)|1.3.0, 1.3.0|
+|[Z3](https://github.com/Z3Prover/z3)|4.8.10, 4.10.2, 4.12.2, 4.12.2|
+|[ZeroMQ](https://www.zeromq.org/)|4.3.3, 4.3.4|
+|[Zip](http://www.info-zip.org/Zip.html)|3.0, 3.0|
+|[aiohttp](https://github.com/aio-libs/aiohttp)|3.8.5|
+|[alibuild](https://alisw.github.io/alibuild/)|1.17.11|
+|[angsd](http://www.popgen.dk/angsd)|0.940|
+|[anndata](https://github.com/scverse/anndata)|0.10.5.post1|
+|[annovar](http://annovar.openbioinformatics.org/en/latest/)|2019Oct24, 20200607|
+|[ant](https://ant.apache.org/)|1.10.9, 1.10.12, 1.10.12|
+|[archspec](https://github.com/archspec/archspec)|0.1.2, 0.2.0|
+|[aria2](https://aria2.github.io)|1.35.0, 1.36.0|
+|[arpack-ng](https://github.com/opencollab/arpack-ng)|3.8.0, 3.8.0, 3.8.0|
+|[arrow-R](https://cran.r-project.org/web/packages/arrow)|6.0.0.2, 11.0.0.3, 14.0.0.2, 16.1.0|
+|[at-spi2-atk](https://wiki.gnome.org/Accessibility)|2.38.0, 2.38.0|
+|[at-spi2-core](https://wiki.gnome.org/Accessibility)|2.38.0, 2.46.0|
+|[attr](https://savannah.nongnu.org/projects/attr)|2.4.48, 2.5.1|
+|[attrdict3](https://github.com/pirofti/AttrDict3)|2.0.2|
+|[awscli](https://pypi.python.org/pypi/awscli)|2.1.23, 2.13.20, 2.15.2|
+|[bases2Fastq](https://docs.elembio.io/docs/bases2fastq/)|v1.5.1, v1.5.1, v2.0.0|
+|[bcl2fastq2](https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html)|2.20.0, 2.20.0|
+|[beagle-lib](https://github.com/beagle-dev/beagle-lib)|3.1.2, 3.1.2, 3.1.2, 3.1.2, 4.0.0, 4.0.1|
+|[binutils](https://directory.fsf.org/project/binutils/)|2.28, 2.30, 2.30, 2.35, 2.35, 2.39, 2.39, 2.40, 2.42, 2.42|
+|[biswebnode](https://bioimagesuiteweb.github.io/bisweb-manual/CommandLineTools.html)|1.3.0|
+|[bokeh](https://github.com/bokeh/bokeh)|2.2.3, 2.2.3, 3.2.1|
+|[boto3](https://github.com/boto/boto3)|1.20.13, 1.26.163|
+|[breseq](https://barricklab.org/breseq)|0.35.5, 0.38.0, 0.38.1|
+|[bsddb3](https://pypi.org/project/bsddb3/)|6.2.9, 6.2.9|
+|[bzip2](https://sourceware.org/bzip2)|1.0.8, 1.0.8, 1.0.8|
+|[c-ares](https://c-ares.org/)|1.19.1|
+|[cURL](https://curl.haxx.se)|7.55.1, 7.72.0, 7.86.0, 7.86.0, 8.7.1|
+|[cairo](https://cairographics.org)|1.16.0, 1.16.0, 1.17.4|
+|[ccache](https://ccache.dev/)|4.6.3|
+|[cffi](https://cffi.readthedocs.io/en/latest/)|1.16.0|
+|[code-server](https://github.com/coder/code-server)|4.91.1, 4.95.3|
+|[configurable-http-proxy](https://github.com/jupyterhub/configurable-http-proxy)|4.5.5|
+|[cppy](https://github.com/nucleic/cppy)|1.2.1|
+|[cromwell](http://cromwell.readthedocs.io/)|86|
+|[cryptography](https://github.com/pyca/cryptography)|41.0.1, 42.0.8|
+|[cuDNN](https://developer.nvidia.com/cudnn)|8.0.5.39, 8.2.1.32, 8.7.0.84, 8.8.0.121, 8.9.2.26, 9.5.0.50|
+|[cuTENSOR](https://developer.nvidia.com/cutensor)|1.7.0.1, 2.0.2.5|
+|[cutadapt](https://opensource.scilifelab.se/projects/cutadapt/)|3.4|
+|[cxxopts](https://github.com/jarro2783/cxxopts)|3.0.0|
+|[cyrus-sasl](https://www.cyrusimap.org/sasl/)|2.1.28|
+|[dSQ](https://github.com/ycrc/dSQ)|1.05|
+|[dask](https://dask.org/)|2021.2.0, 2021.2.0, 2023.7.1|
+|[dbus-glib](https://dbus.freedesktop.org/doc/dbus-glib)|0.112|
+|[dcm2niix](https://github.com/rordenlab/dcm2niix)|1.0.20211006, 1.0.20230411|
+|[dedalus](https://github.com/DedalusProject/dedalus)|3.0.2|
+|[deepTools](https://deeptools.readthedocs.io/)|3.5.1, 3.5.5|
+|[deml](https://github.com/grenaud/deML)|1.1.4|
+|[dftd4](https://github.com/dftd4/dftd4)|3.4.0|
+|[dill](https://pypi.org/project/dill/)|0.3.7|
+|[dlib](https://github.com/davisking/dlib)|19.22, 19.22, 19.22|
+|[dorado](https://github.com/nanoporetech/dorado)|0.5.3|
+|[dotNET-Core](https://www.microsoft.com/net/)|7.0.410|
+|[dotNET-SDK](https://www.microsoft.com/net/)|3.1.300|
+|[double-conversion](https://github.com/google/double-conversion)|3.1.5, 3.2.1|
+|[dtcmp](https://github.com/LLNL/dtcmp)|1.1.2, 1.1.4|
+|[ecBuild](https://ecbuild.readthedocs.io/)|3.8.0|
+|[ecCodes](https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home)|2.31.0|
+|[einops](https://einops.rocks/)|0.7.0|
+|[elbencho](https://github.com/breuner/elbencho)|2.0, 3.0|
+|[elfutils](https://elfutils.org/)|0.183, 0.189|
+|[eman](https://blake.bcm.edu/emanwiki/EMAN1)||
+|[enchant-2](https://github.com/AbiWord/enchant)|2.3.3|
+|[ensmallen](https://ensmallen.org/)|2.21.1, 2.21.1|
+|[exiv2](http://www.exiv2.org)|0.27.5, 0.28.0|
+|[expat](https://libexpat.github.io)|2.2.5, 2.2.9, 2.4.9, 2.6.2|
+|[expecttest](https://github.com/ezyang/expecttest)|0.1.3|
+|[fastjet](https://fastjet.fr/)|3.4.0|
+|[fastjet-contrib](https://fastjet.hepforge.org/contrib/)|1.049|
+|[fastp](https://github.com/OpenGene/fastp)|0.23.2|
+|[ffnvcodec](https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git)|11.1.5.2|
+|[file](https://www.darwinsys.com/file/)|5.39, 5.43|
+|[flatbuffers](https://github.com/google/flatbuffers/)|1.12.0, 23.1.4, 23.5.26|
+|[flatbuffers-python](https://github.com/google/flatbuffers/)|1.12, 2.0, 23.1.4, 23.5.26|
+|[flex](http://flex.sourceforge.net/)|2.6.3, 2.6.4, 2.6.4, 2.6.4, 2.6.4, 2.6.4|
+|[flit](https://github.com/pypa/flit)|3.9.0, 3.9.0|
+|[fmriprep](https://fmriprep.org)|23.1.0, 23.1.4, 23.2.1, 24.1.0|
+|[fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/)|2.13.92, 2.14.1|
+|[foss](https://easybuild.readthedocs.io/en/master/Common-toolchains.html#foss-toolchain)|2020b, 2022b, 2024a|
+|[fosscuda]((none))|2020b|
+|[freeglut](http://freeglut.sourceforge.net/)|3.2.1, 3.4.0|
+|[freetype](https://www.freetype.org)|2.10.3, 2.10.3, 2.12.1|
+|[gc](https://hboehm.info/gc/)|8.0.4, 8.2.2, 8.2.4|
+|[gcccuda]((none))|2020b, 2022b|
+|[gcloud](https://cloud.google.com/sdk)|382.0.0, 494.0.0|
+|[gettext](https://www.gnu.org/software/gettext/)|0.19.8.1, 0.21, 0.21, 0.21.1, 0.21.1, 0.22.5, 0.22.5|
+|[gfbf]((none))|2022b, 2024a|
+|[gflags](https://github.com/gflags/gflags)|2.2.2|
+|[giflib](http://giflib.sourceforge.net/)|5.2.1, 5.2.1|
+|[git](https://git-scm.com)|2.28.0, 2.30.0, 2.38.1, 2.45.1|
+|[git-lfs](https://git-lfs.github.com)|3.2.0, 3.5.1|
+|[glew](https://github.com/nigels-com/glew)|2.1.0, 2.2.0|
+|[glib-networking](https://gitlab.gnome.org/GNOME/glib-networking)|2.72.1|
+|[glibc](https://www.gnu.org/software/libc/)|2.34|
+|[gmpy2](https://github.com/aleaxit/gmpy)|2.1.0b5, 2.1.5|
+|[gmsh](https://gmsh.info/)|4.11.1, 4.11.1|
+|[gnuplot](http://gnuplot.sourceforge.net)|5.4.1, 5.4.6|
+|[gomkl]((none))|2022b|
+|[gompi]((none))|2020b, 2022b, 2024a|
+|[gompic]((none))|2020b|
+|[googletest](https://github.com/google/googletest)|1.10.0, 1.12.1|
+|[gperf](https://www.gnu.org/software/gperf/)|3.1, 3.1|
+|[gperftools](https://github.com/gperftools/gperftools)|2.14|
+|[gpu_burn](https://github.com/wilicc/gpu-burn)|20231110|
+|[graphite2](https://scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=graphite_home)|1.3.14, 1.3.14|
+|[groff](https://www.gnu.org/software/groff)|1.22.4, 1.22.4|
+|[grpcio](https://grpc.io/)|1.59.3|
+|[gsutil](https://cloud.google.com/storage/docs/gsutil)|4.42, 5.10|
+|[gzip](https://www.gnu.org/software/gzip/)|1.10, 1.12, 1.13|
+|[h5py](https://www.h5py.org/)|3.1.0, 3.1.0, 3.2.1, 3.8.0|
+|[hatchling](https://hatch.pypa.io)|1.18.0, 1.24.2|
+|[help2man](https://www.gnu.org/software/help2man/)|1.47.4, 1.47.16, 1.49.2, 1.49.3|
+|[hiredis](https://github.com/redis/hiredis)|1.2.0|
+|[hmmlearn](https://github.com/hmmlearn/hmmlearn)|0.3.0|
+|[hunspell](https://hunspell.github.io/)|1.7.1|
+|[hwloc](https://www.open-mpi.org/projects/hwloc/)|2.2.0, 2.8.0, 2.10.0|
+|[hypothesis](https://github.com/HypothesisWorks/hypothesis)|5.41.2, 5.41.5, 6.1.1, 6.68.2, 6.103.1|
+|[iccifort](https://software.intel.com/en-us/intel-compilers/)|2020.4.304|
+|[igraph](https://igraph.org)|0.9.5, 0.10.4, 0.10.4, 0.10.6, 0.10.6, 0.10.10|
+|[iimkl](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2022b|
+|[iimpi](https://software.intel.com/parallel-studio-xe)|2020b, 2022b, 2024a|
+|[imageio](https://imageio.github.io)|2.9.0, 2.31.1|
+|[imgaug](https://imgaug.readthedocs.io/en/latest/)|0.4.0|
+|[imkl](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html)|2020.4.304, 2020.4.304, 2020.4.304, 2022.2.1, 2022.2.1, 2024.2.0|
+|[imkl-FFTW](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html)|2022.2.1, 2024.2.0|
+|[impi](https://software.intel.com/content/www/us/en/develop/tools/mpi-library.html)|2019.9.304, 2021.7.1, 2021.13.0|
+|[inih](https://dri.freedesktop.org)|57|
+|[intel](https://easybuild.readthedocs.io/en/master/Common-toolchains.html#intel-toolchain)|2020b, 2022b, 2024a|
+|[intel-compilers](https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html)|2022.2.1, 2024.2.0|
+|[intltool](https://freedesktop.org/wiki/Software/intltool/)|0.51.0, 0.51.0|
+|[iomkl](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2020b, 2022b|
+|[iompi](https://software.intel.com/en-us/intel-cluster-toolkit-compiler/)|2020b, 2022b|
+|[jax](https://pypi.python.org/pypi/jax)|0.2.19, 0.3.25, 0.4.25, 0.4.25|
+|[jbigkit](https://www.cl.cam.ac.uk/~mgk25/jbigkit/)|2.1, 2.1|
+|[jemalloc](http://jemalloc.net)|5.2.1, 5.3.0|
+|[json-c](https://github.com/json-c/json-c)|0.16|
+|[json-fortran](https://github.com/jacobwilliams/json-fortran)|8.3.0|
+|[jupyter-resource-usage](https://github.com/jupyter-server/jupyter-resource-usage)|1.0.0|
+|[jupyter-server](https://jupyter.org/)|2.7.0|
+|[jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy)|3.2.2|
+|[jupyterlmod](https://github.com/cmd-ntrf/jupyter-lmod)|4.0.3|
+|[kallisto](https://pachterlab.github.io/kallisto/)|0.48.0|
+|[kim-api](https://openkim.org/)|2.2.1, 2.3.0|
+|[kineto](https://github.com/pytorch/kineto)|0.4.0|
+|[leidenalg](https://github.com/vtraag/leidenalg)|0.8.8, 0.10.2|
+|[lftp](https://lftp.yar.ru)|4.9.2|
+|[libGDSII](https://github.com/HomerReid/libGDSII)|0.21|
+|[libGLU](https://mesa.freedesktop.org/archive/glu/)|9.0.1, 9.0.2|
+|[libGridXC](https://gitlab.com/siesta-project/libraries/libgridxc)|0.9.6|
+|[libPSML](https://launchpad.net/libpsml)|1.1.10|
+|[libRmath](https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-standalone-Rmath-library)|4.1.0|
+|[libXp](http://www.freedesktop.org/wiki/Software/xlibs)|1.0.3|
+|[libaec](https://gitlab.dkrz.de/k202009/libaec)|1.0.6, 1.0.6|
+|[libaio](https://pagure.io/libaio)|0.3.112, 0.3.113|
+|[libarchive](https://www.libarchive.org/)|3.4.3, 3.6.1, 3.7.4|
+|[libavif](https://github.com/AOMediaCodec/libavif)|0.11.1, 0.11.1|
+|[libcerf](https://jugit.fz-juelich.de/mlz/libcerf)|1.14, 2.3|
+|[libcifpp](https://github.com/PDB-REDO/libcifpp)|5.0.6, 7.0.3|
+|[libcint](https://github.com/sunqm/libcint)|5.5.0|
+|[libcircle](https://github.com/hpc/libcircle/)|0.3, 0.3|
+|[libctl](https://libctl.readthedocs.io/en/latest/)|4.5.1|
+|[libdap](https://www.opendap.org/software/libdap)|3.20.11|
+|[libdeflate](https://github.com/ebiggers/libdeflate)|1.7, 1.15|
+|[libdrm](https://dri.freedesktop.org)|2.4.102, 2.4.114|
+|[libepoxy](https://github.com/anholt/libepoxy)|1.5.4, 1.5.10|
+|[libev](http://software.schmorp.de/pkg/libev.html)|4.33|
+|[libevent](https://libevent.org/)|2.1.12, 2.1.12, 2.1.12|
+|[libexif](https://libexif.github.io/)|0.6.24, 0.6.24|
+|[libfabric](https://ofiwg.github.io/libfabric/)|1.11.0, 1.16.1, 1.21.0|
+|[libffi](https://sourceware.org/libffi/)|3.3, 3.4.4, 3.4.5|
+|[libgcrypt](https://gnupg.org/related_software/libgcrypt/index.html)|1.10.1|
+|[libgd](https://libgd.github.io)|2.3.0, 2.3.1, 2.3.3|
+|[libgdiplus](https://www.mono-project.com/docs/gui/libgdiplus)|6.1, 6.1|
+|[libgeotiff](https://directory.fsf.org/wiki/Libgeotiff)|1.6.0, 1.7.1|
+|[libgit2](https://libgit2.org/)|1.1.0, 1.5.0|
+|[libglvnd](https://gitlab.freedesktop.org/glvnd/libglvnd)|1.3.2, 1.6.0|
+|[libgpg-error](https://gnupg.org/related_software/libgpg-error/index.html)|1.46|
+|[libharu](https://github.com/libharu/libharu/)|2.3.0|
+|[libiconv](https://www.gnu.org/software/libiconv)|1.16, 1.17, 1.17|
+|[libidn](http://www.gnu.org/software/libidn)|1.41|
+|[libidn2](http://www.gnu.org/software/libidn2)|2.3.0, 2.3.2|
+|[libjpeg-turbo](https://sourceforge.net/projects/libjpeg-turbo/)|2.0.5, 2.1.4|
+|[libleidenalg](https://github.com/vtraag/libleidenalg)|0.11.1, 0.11.1, 0.11.1|
+|[libmcfp](https://github.com/mhekkel/libmcfp)|1.2.2, 1.3.3|
+|[libnsl](https://github.com/thkukuk/libnsl)|2.0.0|
+|[libogg](https://xiph.org/ogg/)|1.3.4, 1.3.5|
+|[libopus](https://www.opus-codec.org/)|1.3.1|
+|[libpci](https://github.com/pciutils/pciutils)|3.7.0|
+|[libpciaccess](https://cgit.freedesktop.org/xorg/lib/libpciaccess/)|0.16, 0.17, 0.18.1|
+|[libpng](http://www.libpng.org/pub/png/libpng.html)|1.2.59, 1.5.30, 1.6.37, 1.6.38|
+|[libpsl](https://rockdaboot.github.io/libpsl)|0.21.1|
+|[libreadline](https://tiswww.case.edu/php/chet/readline/rltop.html)|8.0, 8.2, 8.2|
+|[librsvg](https://wiki.gnome.org/Projects/LibRsvg)|2.51.2|
+|[librttopo](https://git.osgeo.org/gitea/rttopo/librttopo)|1.1.0|
+|[libsigc++](https://libsigcplusplus.github.io/libsigcplusplus/)|2.10.8|
+|[libsndfile](http://www.mega-nerd.com/libsndfile)|1.0.28, 1.2.0|
+|[libsodium](https://doc.libsodium.org/)|1.0.18, 1.0.18|
+|[libspatialindex](https://libspatialindex.org)|1.9.3|
+|[libspatialite](https://www.gaia-gis.it/fossil/libspatialite/home)|5.0.1|
+|[libtasn1](https://www.gnu.org/software/libtasn1/)|4.19.0|
+|[libtirpc](https://sourceforge.net/projects/libtirpc/)|1.3.1, 1.3.3|
+|[libtool](https://www.gnu.org/software/libtool)|2.4.6, 2.4.7, 2.4.7|
+|[libunistring](https://www.gnu.org/software/libunistring/)|0.9.10, 1.1, 1.1|
+|[libunwind](https://www.nongnu.org/libunwind/)|1.4.0, 1.6.2|
+|[libvorbis](https://xiph.org/vorbis/)|1.3.7, 1.3.7|
+|[libwebkitgtk-1.0]()|1.2.4.9|
+|[libwebp](https://developers.google.com/speed/webp/)|1.1.0, 1.3.1|
+|[libwpe](https://webkit.org/wpe)|1.14.1|
+|[libxc](https://www.tddft.org/programs/libxc)|4.3.4, 4.3.4, 5.1.2, 5.1.5, 6.1.0, 6.1.0|
+|[libxml++](http://libxmlplusplus.sourceforge.net)|2.40.1|
+|[libxml2](http://xmlsoft.org/)|2.9.10, 2.9.14, 2.10.3, 2.12.7|
+|[libxslt](http://xmlsoft.org/)|1.1.34, 1.1.37|
+|[libxsmm](https://github.com/hfp/libxsmm)|1.16.1|
+|[libyaml](https://pyyaml.org/wiki/LibYAML)|0.2.5, 0.2.5|
+|[libzip](https://libzip.org/)|1.9.2|
+|[liftOver](https://genome.ucsc.edu/goldenPath/help/hgTracksHelp.html#Liftover)|2023|
+|[loompy](https://loompy.org/)|3.0.7|
+|[lpsolve](https://sourceforge.net/projects/lpsolve/)|5.5.2.11|
+|[lwgrp](https://github.com/LLNL/lwgrp)|1.0.3, 1.0.5|
+|[lxml](https://lxml.de/)|4.9.2|
+|[lz4](https://lz4.github.io/lz4/)|1.9.2, 1.9.4, 1.9.4|
+|[maeparser](https://github.com/schrodinger/maeparser)|1.3.1|
+|[magma](https://icl.cs.utk.edu/magma/)|2.5.4, 2.7.1, 2.7.1|
+|[make](https://www.gnu.org/software/make/make.html)|4.3, 4.3, 4.4.1, 4.4.1|
+|[makeinfo](https://www.gnu.org/software/texinfo/)|6.7, 6.7, 7.0.3|
+|[mapDamage](https://ginolhac.github.io/mapDamage/)|2.2.1|
+|[matlab-proxy](https://github.com/mathworks/matlab-proxy)|0.12.1, 0.13.1, 0.14.0, 0.15.1, 0.18.2, 0.19.0|
+|[matplotlib](https://matplotlib.org)|3.3.3, 3.3.3, 3.3.3, 3.7.0|
+|[maturin](https://github.com/pyo3/maturin)|1.1.0, 1.4.0, 1.6.0|
+|[mctc-lib](https://grimme-lab.github.io/mctc-lib)|0.3.1|
+|[meson-python](https://github.com/mesonbuild/meson-python)|0.11.0, 0.15.0, 0.16.0|
+|[mfold_util](https://www.unafold.org)|4.7|
+|[mgltools](https://ccsb.scripps.edu/mgltools/)||
+|[miniconda](https://github.com/conda-forge/miniforge)|22.9.0, 22.11.1, 23.1.0, 23.3.1, 23.5.2, 24.3.0, 24.3.0, 24.7.1, 24.9.2|
+|[minimap2](https://github.com/lh3/minimap2)|2.22|
+|[minizip](https://www.winimage.com/zLibDll/minizip.html)|1.1|
+|[ml_dtypes](https://github.com/jax-ml/ml_dtypes)|0.3.1|
+|[mlpack](https://www.mlpack.org/)|4.3.0, 4.3.0|
+|[mm-common](https://gitlab.gnome.org/GNOME/mm-common)|1.0.4|
+|[mongolite](https://cran.r-project.org/web/packages/mongolite)|20240424, 20240424|
+|[morphosamplers](https://github.com/kevinyamauchi/morphosamplers)|0.0.10|
+|[motif](https://motif.ics.com/)|2.3.8, 2.3.8|
+|[mpi4py](https://github.com/mpi4py/mpi4py)|3.1.4|
+|[mpifileutils](https://hpc.github.io/mpifileutils/)|0.11.1, 0.11.1|
+|[mrc](https://github.com/mhekkel/mrc)|1.3.6, 1.3.13|
+|[mrcfile](https://github.com/ccpem/mrcfile)|1.3.0, 1.5.0|
+|[mstore](https://github.com/grimme-lab/mstore)|0.2.0|
+|[muParser](https://beltoforion.de/article.php?a=muparser)|2.3.4|
+|[multicharge](https://github.com/grimme-lab/multicharge)|0.2.0|
+|[nanobind](https://github.com/wjakob/nanobind)|2.1.0|
+|[napari](https://napari.org/)|0.4.18|
+|[nbclassic](https://jupyter.org/)|1.0.0|
+|[ncbi-vdb](https://github.com/ncbi/ncbi-vdb)|2.10.9, 3.0.10, 3.1.1|
+|[ncdu](https://dev.yorhel.nl/ncdu)|1.18|
+|[ncompress](http://ncompress.sourceforge.net/)|4.2.4.6|
+|[ncurses](https://www.gnu.org/software/ncurses/)|5.9, 5.9, 6.0, 6.2, 6.2, 6.3, 6.3, 6.5, 6.5|
+|[ncview](http://meteora.ucsd.edu/~pierce/ncview_home_page.html)|2.1.8, 2.1.8|
+|[nedit-ng](https://eteran.github.io/nedit-ng/)|2020.1|
+|[netCDF](https://www.unidata.ucar.edu/software/netcdf/)|4.6.1, 4.7.4, 4.7.4, 4.7.4, 4.7.4, 4.9.0, 4.9.0, 4.9.0|
+|[netCDF-C++](http://www.unidata.ucar.edu/software/netcdf/)|4.2|
+|[netCDF-C++4](https://www.unidata.ucar.edu/software/netcdf/)|4.3.1, 4.3.1|
+|[netCDF-Fortran](https://www.unidata.ucar.edu/software/netcdf/)|4.4.4, 4.5.3, 4.5.3, 4.5.3, 4.5.3, 4.6.0, 4.6.0, 4.6.0|
+|[netcdf4-python](https://unidata.github.io/netcdf4-python/)|1.6.3|
+|[nettle](https://www.lysator.liu.se/~nisse/nettle/)|3.6, 3.8.1|
+|[networkx](https://pypi.python.org/pypi/networkx)|2.5, 2.5, 2.5.1, 3.0|
+|[nf-core](https://github.com/nf-core/tools)|2.14.1|
+|[nghttp2](https://github.com/nghttp2/nghttp2)|1.48.0|
+|[nghttp3](https://github.com/ngtcp2/nghttp3)|0.6.0|
+|[ngtcp2](https://github.com/ngtcp2/ngtcp2)|0.7.0|
+|[nlohmann_json](https://github.com/nlohmann/json)|3.11.2|
+|[nodejs](https://nodejs.org)|12.19.0, 18.12.1, 20.11.1|
+|[nsync](https://github.com/google/nsync)|1.24.0, 1.26.0|
+|[numactl](https://github.com/numactl/numactl)|2.0.13, 2.0.16, 2.0.18|
+|[numba](https://numba.pydata.org/)|0.58.1|
+|[nvofbf]((none))|2023.01|
+|[nvompi]((none))|2023.01|
+|[occt](https://www.opencascade.com/)|7.5.0p1, 7.5.0p1|
+|[p11-kit](https://p11-glue.freedesktop.org/p11-kit.html)|0.24.1|
+|[p7zip](https://github.com/p7zip-project/p7zip/)|17.04|
+|[pam-devel](http://www.linux-pam.org/)|1.3.1|
+|[parallel](https://savannah.gnu.org/projects/parallel/)|20210322|
+|[parameterized](https://github.com/wolever/parameterized)|0.9.0|
+|[patchelf](https://github.com/NixOS/patchelf)|0.12, 0.17.2, 0.18.0|
+|[phonopy](https://atztogo.github.io/phonopy/)|2.27.0|
+|[phyx](https://github.com/FePhyFoFum/phyx)|1.3|
+|[picard](https://broadinstitute.github.io/picard/)|2.18.14, 2.25.6|
+|[pigz](https://zlib.net/pigz/)|2.6, 2.7|
+|[pixman](http://www.pixman.org/)|0.40.0, 0.42.2|
+|[pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)|0.29.2, 0.29.2|
+|[pkgconf](https://github.com/pkgconf/pkgconf)|1.8.0, 1.8.0, 1.9.3, 2.2.0|
+|[pkgconfig](https://github.com/matze/pkgconfig)|1.5.1, 1.5.5|
+|[plotly.py](https://plot.ly/python)|4.14.3, 5.13.1|
+|[pocl](http://portablecl.org)|1.6, 1.8, 5.0|
+|[poetry](https://python-poetry.org)|1.5.1, 1.7.1, 1.8.3|
+|[poppler](https://poppler.freedesktop.org)|21.06.1, 21.06.1, 22.12.0|
+|[popt](https://github.com/rpm-software-management/popt)|1.16|
+|[postgis](http://postgis.net/)|3.4.2|
+|[printproto](http://xorg.freedesktop.org/)|1.0.5|
+|[prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit)|3.0.36|
+|[protobuf](https://github.com/protocolbuffers/protobuf)|3.14.0, 3.19.4, 23.0|
+|[protobuf-python](https://github.com/google/protobuf/)|3.14.0, 3.19.4, 4.23.0|
+|[psycopg2](https://psycopg.org/)|2.9.9|
+|[pugixml](https://pugixml.org/)|1.12.1|
+|[py-cpuinfo](https://github.com/workhorsy/py-cpuinfo)|9.0.0|
+|[py3Dmol](https://github.com/3dmol/3Dmol.js/tree/master/py3Dmol)|2.0.1.post1, 2.1.0|
+|[pyFFTW](https://github.com/pyFFTW/pyFFTW)|0.13.1|
+|[pySCENIC](https://github.com/aertslab/pySCENIC)|0.12.1|
+|[pybind11](https://pybind11.readthedocs.io)|2.6.0, 2.6.2, 2.10.3, 2.12.0, 2.12.0|
+|[pydantic](https://github.com/samuelcolvin/pydantic)|2.5.3|
+|[pyfaidx](https://pypi.python.org/pypi/pyfaidx)|0.7.2.1|
+|[pyproj](https://pyproj4.github.io/pyproj)|3.5.0|
+|[pytest](https://docs.pytest.org/en/latest/)|7.4.2|
+|[pytest-flakefinder](https://github.com/dropbox/pytest-flakefinder)|1.1.0|
+|[pytest-rerunfailures](https://github.com/pytest-dev/pytest-rerunfailures)|12.0|
+|[pytest-shard](https://github.com/AdamGleave/pytest-shard)|0.1.2|
+|[pytest-workflow](https://github.com/LUMC/pytest-workflow)|2.0.1|
+|[pytest-xdist](https://github.com/pytest-dev/pytest-xdist)|2.3.0, 3.3.1|
+|[python-igraph](https://igraph.org/python)|0.9.8, 0.11.4|
+|[python-isal](https://github.com/pycompression/python-isal)|0.11.1|
+|[qrupdate](https://sourceforge.net/projects/qrupdate/)|1.1.2|
+|[rMATS-turbo](https://github.com/Xinglab/rmats-turbo)|4.1.1, 4.1.2, 4.2.0|
+|[rasterio](https://github.com/mapbox/rasterio)|1.3.8|
+|[re2c](https://re2c.org)|2.0.3, 3.0|
+|[rpmrebuild](http://rpmrebuild.sourceforge.net/)|2.16, 2.18|
+|[ruamel.yaml](https://sourceforge.net/projects/ruamel-yaml)|0.17.21, 0.17.21|
+|[samblaster](https://github.com/GregoryFaust/samblaster)|0.1.26|
+|[scanpy](https://scanpy.readthedocs.io/en/stable/)|1.9.8|
+|[scikit-build](https://scikit-build.readthedocs.io/en/latest)|0.11.1, 0.11.1, 0.17.2, 0.17.6|
+|[scikit-build-core](https://scikit-build.readthedocs.io/en/latest/)|0.9.3|
+|[scikit-image](https://scikit-image.org/)|0.18.1, 0.18.1, 0.18.3, 0.21.0|
+|[scikit-learn](https://scikit-learn.org/stable/index.html)|0.20.4, 0.23.2, 0.23.2, 0.24.1, 1.2.1|
+|[segemehl](https://www.bioinf.uni-leipzig.de/Software/segemehl/)|0.3.4|
+|[seqtk](https://github.com/lh3/seqtk/)|1.3|
+|[setuptools](https://pypi.org/project/setuptools)|64.0.3|
+|[setuptools-rust](https://github.com/PyO3/setuptools-rust)|1.9.0|
+|[shRNA](https://github.com/brevans/pipe_shRNA)|0.1|
+|[siscone](https://siscone.hepforge.org/)|3.0.5|
+|[slurm-drmaa](https://github.com/natefoo/slurm-drmaa)|1.1.3|
+|[snakemake](https://snakemake.readthedocs.io)|7.32.3|
+|[snappy](https://github.com/google/snappy)|1.1.8, 1.1.9, 1.1.10|
+|[sparsehash](https://github.com/sparsehash/sparsehash)|2.0.4|
+|[spglib-python](https://pypi.python.org/pypi/spglib)|2.0.2, 2.3.1|
+|[statsmodels](https://www.statsmodels.org/)|0.12.1, 0.14.0|
+|[sympy](https://sympy.org/)|1.7.1, 1.12|
+|[t-SNE-CUDA](https://github.com/CannyLab/tsne-cuda)|3.0.1|
+|[tabix](http://samtools.sourceforge.net)|0.2.6|
+|[tbb](https://github.com/oneapi-src/oneTBB)|2020.3, 2021.9.0, 2021.10.0, 2021.13.0|
+|[tcsh](https://www.tcsh.org)|6.22.03, 6.24.07|
+|[tensorboard](https://github.com/tensorflow/tensorboard)|2.15.1|
+|[tesseract](https://github.com/tesseract-ocr/tesseract)|5.3.0, 5.3.0|
+|[texlive](https://tug.org)|20220321, 20220321, 20220321|
+|[time](https://www.gnu.org/software/time/)|1.9|
+|[tmux](https://github.com/tmux/tmux/)|3.4|
+|[topaz](http://cb.csail.mit.edu/cb/topaz/)|0.2.5, 0.2.5.20240417|
+|[torchvision](https://github.com/pytorch/vision)|0.10.0, 0.16.0|
+|[tqdm](https://github.com/tqdm/tqdm)|4.56.2, 4.60.0, 4.64.1|
+|[ttyd](https://tsl0922.github.io/ttyd/)|1.7.7|
+|[typing-extensions](https://github.com/python/typing/blob/master/typing_extensions/README.rst)|3.7.4.3, 4.9.0|
+|[umap-learn](https://umap-learn.readthedocs.io/en/latest/)|0.5.3|
+|[unifdef](https://github.com/fanf2/unifdef)|2.12|
+|[unrar](https://www.rarlab.com/)|7.0.1|
+|[utf8proc](https://github.com/JuliaStrings/utf8proc)|2.5.0, 2.8.0|
+|[util-linux](https://www.kernel.org/pub/linux/utils/util-linux)|2.36, 2.38.1|
+|[virtualenv](https://github.com/pypa/virtualenv)|20.23.1, 20.26.2|
+|[watershed-workflow](https://environmental-modeling-workflows.github.io/watershed-workflow/build/html/index.html)|1.4.0, 1.4.0, 1.5.0|
+|[wget](https://www.gnu.org/software/wget)|1.20.3|
+|[wpebackend-fdo](https://wpewebkit.org/)|1.14.1|
+|[wrapt](https://pypi.org/project/wrapt/)|1.15.0|
+|[wxPython](https://www.wxpython.org/)|4.2.1|
+|[wxWidgets](https://www.wxwidgets.org)|3.1.4, 3.1.4, 3.2.0, 3.2.2.1|
+|[x264](https://www.videolan.org/developers/x264.html)|20201026, 20230226|
+|[x265](https://x265.org/)|3.3, 3.5|
+|[xarray](https://github.com/pydata/xarray)|2023.4.2, 2023.4.2|
+|[xextproto](http://www.freedesktop.org/wiki/Software/xlibs)|7.3.0|
+|[xmlf90](https://launchpad.net/xmlf90)|1.5.4|
+|[xorg-macros](https://gitlab.freedesktop.org/xorg/util/macros)|1.19.2, 1.19.3, 1.20.1|
+|[xpdf](https://www.xpdfreader.com/)|4.04|
+|[xprop](https://www.x.org/wiki/)|1.2.5, 1.2.5|
+|[xtb](https://xtb-docs.readthedocs.io)|6.5.1, 6.6.0, 6.6.1, 6.7.1|
+|[xxd](https://www.vim.org)|8.2.4220, 9.0.1696|
+|[yaml-cpp](https://github.com/jbeder/yaml-cpp)|0.7.0, 0.7.0|
+|[ycga-public](https://github.com/ycrc/ycga-public)|1.6.0, 1.7.2, 1.7.3, 1.7.4, 1.7.5, 1.7.6, 1.7.7|
+|[zlib](https://www.zlib.net/)|1.2.11, 1.2.11, 1.2.11, 1.2.12, 1.2.12, 1.2.13, 1.3.1, 1.3.1|
+|[zstd](https://facebook.github.io/zstd)|1.4.5, 1.5.2, 1.5.6|
 

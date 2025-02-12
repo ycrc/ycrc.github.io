@@ -20,14 +20,11 @@ def get_spider():
 def make_table(module_list):
     module_table = ''
 
-    module_table += f'=== \"{cluster}\"\n'
-    module_table += f'    ## Modules available on the {cluster} cluster.\n'
-    module_table += f'    \n'
-    module_table += f'    |Package|Versions|\n    |---|---|\n'
+    module_table += f'|Package|Versions|\n    |---|---|\n'
 
     for m in module_list:
         try:
-            module_table += f'    |[{m["package"]}]({m["url"]})|{",".join([v["versionName"].split("-")[0] for v in m["versions"]])}|\n'
+            module_table += f'|[{m["package"]}]({m["url"]})|{",".join([v["versionName"].split("-")[0] for v in m["versions"]])}|\n'
         except KeyError:
             pass
 
