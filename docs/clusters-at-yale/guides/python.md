@@ -51,7 +51,7 @@ See our guide for more detailed instructions.
 module load miniconda
 conda create -n py3_env python=3 numpy scipy matplotlib ipython jupyter jupyterlab
 # use later
-module purge && module load miniconda
+module reset && module load miniconda
 conda activate py3_env
 ```
 

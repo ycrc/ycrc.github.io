@@ -168,7 +168,7 @@ For some versions of R, the `Rmpi` package needs to be installed first. Then we 
 #SBATCH -n 4 
 #SBATCH -t 5:00
 
-module purge
+module reset
 module load R/4.4.1-foss-2022b
 
 srun Rscript ex1.R

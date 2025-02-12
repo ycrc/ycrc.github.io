@@ -122,7 +122,7 @@ This directory will contain all the outputs from your simulation as well as logs
 
 #### Common Build Issues
 
-Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run `module purge` before the `module load` to ensure a reproducible environment.
+Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run `module reset` before the `module load` to ensure a reproducible environment.
 
 If you get an error saying `ERROR: Error gathering provenance information from manage_externals`, rerun the build using the suggested flag, e.g. `./case.build --skip-provenance-check`.  
 

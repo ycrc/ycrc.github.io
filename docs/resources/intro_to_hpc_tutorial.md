@@ -111,7 +111,7 @@ Now that you have completed both an interactive and batch job, try using Jupyter
 ``` bash
 
 # Purge any loaded modules
-module purge
+module reset
 
 # Build your environment dropdown tab on OOD
 ycrc_conda_env.sh update

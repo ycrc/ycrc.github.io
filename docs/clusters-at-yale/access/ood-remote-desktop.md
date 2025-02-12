@@ -9,6 +9,12 @@ The Remote Desktop app simplifies the configuration of a VNC desktop session on 
 
 To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Remote Desktop from the Interactive Apps menu or the dashboard and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
 
+## Graphics quality
+
+As shown below, there are sliders for compression and image quality in the remote desktop launch control. These two settings can significantly impact the look and feel of your Remote Desktop. For maximum performance in most modern settings, we recommend sliding the image quality slider all the way to the right ('9', or 'high'). If you don't like how this turns out in the resulting browser tab/window that appears, you can always close the tab, choose a new slider setting, and launch again.
+
+![starting](/img/ood_remote_starting.png){: .medium}
+
 ## Copy/Paste
 
 In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.

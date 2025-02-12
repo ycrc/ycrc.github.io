@@ -71,11 +71,11 @@ module unload R
 Or unload all modules at once with:
 
 ``` bash
-module purge
+module reset
 ```
 
 !!! warning "Purge Lightly"
-    `module purge` will alert you to a sticky module that is always loaded called `StdEnv`. Avoid unloading `StdEnv` unless explicitly told to do so, othewise you will lose some important setup for the cluster you are on.
+    We used to recommend `module purge` instead of `module reset` for module unloading. However, `module purge` is slower and also prints a deceptive warning about a 'sticky' module called `StdEnv` that these commands leave loaded. Avoid unloading `StdEnv` unless explicitly told to do so, otherwise you will lose some important setup for the cluster you are on.
 
 ### Module Collections
 
