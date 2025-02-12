@@ -31,6 +31,14 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). 
 For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/bouchet/).
 
+## Installed Applications
+
+A large number of software and applications are installed on our clusters.
+These are made available to researchers via [software modules](/applications/modules/).
+
+??? summary "Available Software Modules (click to expand)"
+    ---8<-- "snippets/bouchet_modules.md"
+
 ## Partitions and Hardware
 
 ### Public Partitions

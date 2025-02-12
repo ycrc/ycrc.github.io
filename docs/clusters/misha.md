@@ -20,6 +20,14 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status).
 
+## Installed Applications
+
+A large number of software and applications are installed on our clusters.
+These are made available to researchers via [software modules](/applications/modules/).
+
+??? summary "Available Software Modules (click to expand)"
+    ---8<-- "snippets/misha_modules.md"
+
 ## Partitions and Hardware
 
 Misha is made up of several kinds of compute nodes. We group them into  (sometimes overlapping) [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes. By combining the `--partition` and [`--constraint`](/clusters-at-yale/job-scheduling/resource-requests#features-and-constraints) Slurm options you can more finely control what nodes your jobs can run on.
