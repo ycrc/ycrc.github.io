@@ -1,4 +1,4 @@
-=== "Milgram"
+=== "milgram"
 
     |Package|Versions|
     |---|---|
