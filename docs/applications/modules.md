@@ -5,6 +5,15 @@ To facilitate the diverse work that happens on the YCRC clusters we compile, ins
 !!! warning
     Avoid loading Python or R modules simultaneously with [conda](/clusters-at-yale/guides/conda) environments. This will almost always break something.
 
+## Installed Software Modules
+??? summary "Available Software Modules (click to expand)"
+    ---8<-- "snippets/bouchet_modules.md"
+    ---8<-- "snippets/grace_modules.md"
+    ---8<-- "snippets/mccleary_modules.md"
+    ---8<-- "snippets/milgram_modules.md"
+    ---8<-- "snippets/misha_modules.md"
+
+
 ## Find Modules
 
 ### All Available Modules
