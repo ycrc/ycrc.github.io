@@ -1,4 +1,4 @@
-=== "Misha"
+=== "misha"
 
     |Package|Versions|
     |---|---|
