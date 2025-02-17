@@ -89,5 +89,6 @@ rstudio
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment and make sure `r-base r-essentials` are both included.
 
 ### RStudio Server does not respond
-If you encounter a grey screen after clicking the "Connect to RStudio Server" button, terminate the RStudio session and run `clean-rstudio.sh` in a [terminal](/clusters-at-yale/access/ood#terminal.
+If you encounter a grey screen after clicking the "Connect to RStudio Server" 
+button, terminate the RStudio session and run `clean_rstudio.sh` in a [terminal](/clusters-at-yale/access/ood#terminal.
 
