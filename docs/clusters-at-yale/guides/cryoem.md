@@ -30,7 +30,8 @@ We have GPU-enabled versions of RELION available on McCleary as [software module
 
 #### Example Job Parameters
 
-RELION reserves one worker (slurm task) for orchestrating an MPI-based job, which they call the "master". This can lead to inefficient jobs where there are tasks that could be using a GPU but are stuck being the master process. You can request a better layout for your job with a [heterogenous job](https://slurm.schedmd.com/heterogeneous_jobs.html), allocating CPUs on a cpu-only compute node for the task that will not use GPUs. Here is an example 3D refinement job submission script (replace `choose_a_version` with the version you want to use):
+RELION reserves one worker (slurm task) for orchestrating an MPI-based job, which 
+they call the "master". This can lead to inefficient jobs where there are tasks that could be using a GPU but are stuck being the master process. You can request a better layout for your job with a [heterogeneous job](https://slurm.schedmd.com/heterogeneous_jobs.html), allocating CPUs on a cpu-only compute node for the task that will not use GPUs. Here is an example 3D refinement job submission script (replace `choose_a_version` with the version you want to use):
 
 ``` bash
 #!/bin/bash

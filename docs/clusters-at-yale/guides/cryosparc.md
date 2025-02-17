@@ -4,7 +4,8 @@ Getting CryoSPARC set up and running on the YCRC clusters is something of a task
 
 ## Install
 
-Before you get started, you will need to request a licence from Structura [from their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
+Before you get started, you will need to request a license from Structura [from 
+their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
 
 ### 1. Set up Environment
 

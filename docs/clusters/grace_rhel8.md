@@ -1,6 +1,7 @@
 # Grace Operating System Upgrade
 
-Grace's previous operating system, Red Hat (RHEL) 7, will be offically end-of-life in 2024 and will no longer be supported with security patches by the developer.
+Grace's previous operating system, Red Hat (RHEL) 7, will be officially end-of-life 
+in 2024 and will no longer be supported with security patches by the developer.
 Therefore Grace has been upgraded to RHEL 8 during the August maintenance window, August 15-17, 2023.
 This provides a number of key benefits to Grace:
 
@@ -68,7 +69,8 @@ This partition will remain available until the December maintenance window.
 
 !!! Warning
     Some of the applications in the new shared apps tree may not work perfectly on the legacy RHEL7 nodes. 
-    When running jobs in the legacy partition, you should therefore run `module reset` at the begining of interactive sessions and add it to the start of your batch scripts. 
+    When running jobs in the legacy partition, you should therefore run `module 
+reset` at the beginning of interactive sessions and add it to the start of your batch scripts. 
     This will ensure that you only load modules built for RHEL7.
 
 ## Report Issues

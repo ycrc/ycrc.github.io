@@ -113,7 +113,8 @@ A reminder of the removal will be sent to the instructor to see if it needs to b
 If you have a research account on the cluster, you can transfer any data you want to save from your course account to your research account.
 
 !!! warning
-    Make sure there is sufficient free space in your research account storage to accomodate any data you are transferring from your course account using `getquota`.
+    Make sure there is sufficient free space in your research account storage to 
+accommodate any data you are transferring from your course account using `getquota`.
 
 1. Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.
 

@@ -48,7 +48,8 @@ Make sure to:
 
 ### Windows and Panes
 
-`tmux` allows you to create, toggle between and manipulate panes and windows in your session. A window is the whole screen that `tmux` displays to you. Panes are subdivisions in the curent window, where each runs an independent terminal. Especially at first, you probably won't need more than one pane at a time. Multiple windows can be created and run off-screen. Here is an example where this may be useful.
+`tmux` allows you to create, toggle between and manipulate panes and windows in your 
+session. A window is the whole screen that `tmux` displays to you. Panes are subdivisions in the current window, where each runs an independent terminal. Especially at first, you probably won't need more than one pane at a time. Multiple windows can be created and run off-screen. Here is an example where this may be useful.
 
 Say you just submitted an interactive job that is running on a compute node inside your `tmux` session.
 

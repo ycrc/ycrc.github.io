@@ -74,7 +74,7 @@ The log file with information about how to connect will be in the directory you 
 #### MacOS and Linux
 
 On a Mac or Linux machine, you can start the tunnel with an SSH command. 
-You can check the output from the job you started to get the specifc info you need.
+You can check the output from the job you started to get the specific info you need.
 
 #### Windows
 
