@@ -206,6 +206,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/LLMs/</loc>
+         <lastmod>2025-02-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/alphafold/</loc>
          <lastmod>2025-02-18</lastmod>
          <changefreq>daily</changefreq>
