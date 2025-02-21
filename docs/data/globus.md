@@ -68,7 +68,7 @@ You will need to be on the Yale VPN is you are off campus or connecting to a sec
 1. Right-Click and select "Download"
 
 ### URL links to your Globus files
-To obtain a direct URL (HTTPS) link to a file in a Globus collection, right link and select "Get Link". Then click on the copy icon to the right of the option "access the selected file directly". Note that this link will only work for Globus users with access permission to that file.
+To obtain a direct URL (HTTPS) link to a file in a Globus collection, right click and select "Get Link". Then click on the copy icon to the right of the option "access the selected file directly". Note that this link will only work for Globus users with access permission to that file.
 
 ### Manage Your Endpoints
 
