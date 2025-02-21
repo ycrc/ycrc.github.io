@@ -9,7 +9,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
 
 ### 1. Set up Environment
 
-First, get an interactive session or an Open Ondemand Remote Desktop in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.
+First, get an [interactive session](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop) in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.
 
 Then choose a location for installing the software, such as under your project directory.
 
@@ -64,6 +64,12 @@ cd ${install_path}/cryosparc_master
 --initial_firstname "Firstname" \
 --initial_lastname "Lastname"
 ```
+
+!!!warning
+     If the installer prompts you with, i.e., 'Add bin directory to your ~/.bashrc ?', be sure to answer yes.
+
+     Otherwise, you will get a 'command not found' error when you try to run cryosparc.
+											 
 
 !!!warning
      If you are installing a version of CryoSPARC older than 4.4.0, add the additional line
