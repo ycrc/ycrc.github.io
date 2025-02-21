@@ -67,6 +67,9 @@ You will need to be on the Yale VPN is you are off campus or connecting to a sec
 1. In the main pane, navigate to your file
 1. Right-Click and select "Download"
 
+### URL links to your Globus files
+To obtain a direct URL (HTTPS) link to a file in a Globus collection, right link and select "Get Link". Then click on the copy icon to the right of the option "access the selected file directly". Note that this link will only work for Globus users with access permission to that file.
+
 ### Manage Your Endpoints
 
 To manage your endpoints, such as delete an endpoint, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Endpoint](https://app.globus.org/endpoints) on the Globus website.
