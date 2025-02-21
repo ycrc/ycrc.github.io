@@ -2655,7 +2655,7 @@
 <p>Before you get started, you will need to request a license from Structura <a href="https://cryosparc.com/download/">from 
 their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
-<p>First, get an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a> in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.</p>
+<p>First, log onto a GPU compute node, either as an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. Remember to request a non-zero number of GPUs, using a partition like 'gpu' ('gpu_devel' is fine for initial cryosparc installation).</p>
 <p>Then choose a location for installing the software, such as under your project directory.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
