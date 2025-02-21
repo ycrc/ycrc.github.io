@@ -2655,7 +2655,7 @@
 <p>Before you get started, you will need to request a license from Structura <a href="https://cryosparc.com/download/">from 
 their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
-<p>First, get an interactive session or an Open Ondemand Remote Desktop in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.</p>
+<p>First, get an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a> in a partition with GPUs that you have access to.  Remember to request a non-zero number of GPUs.</p>
 <p>Then choose a location for installing the software, such as under your project directory.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
@@ -2700,6 +2700,11 @@ mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
 --initial_firstname<span class="w"> </span><span class="s2">&quot;Firstname&quot;</span><span class="w"> </span><span class="se">\</span>
 --initial_lastname<span class="w"> </span><span class="s2">&quot;Lastname&quot;</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the installer prompts you with, i.e., 'Add bin directory to your ~/.bashrc ?', be sure to answer yes.</p>
+<p>Otherwise, you will get a 'command not found' error when you try to run cryosparc.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you are installing a version of CryoSPARC older than 4.4.0, add the additional line</p>
@@ -2844,7 +2849,7 @@ which topaz
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2025</span>
       
     
   </small>
