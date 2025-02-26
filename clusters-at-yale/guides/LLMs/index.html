@@ -2497,36 +2497,6 @@
 <li>Localized LLMs provide users with the flexibility to control which model/version is implemented, increasing research efficiency</li>
 <li>YCRC GPUs are free of charge and can currently run models up to 320 GB of vRAM.</li>
 </ul>
-<h1 id="installing-huggingfaceollama-to-run-llms">Installing HuggingFace/Ollama to run LLMs</h1>
-<p>Users can use HuggingFace inside of a miniconda environment or use an ollama executable to download and run LLMs.</p>
-<p>This table outlines how to set up your environment to install HuggingFace or Ollama:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">huggingface</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="c1">###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session</span>
-<span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
-salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
-
-<span class="c1">###need pytorch installed to use huggingface    </span>
-conda<span class="w"> </span>activate<span class="w"> </span>huggingface<span class="w">    </span>
-pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124
-
-<span class="c1">###load into jupyter notebook application on OOD</span>
-module<span class="w"> </span>reset
-ycrc_conda_env.sh<span class="w"> </span>update
-</code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">ollama</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="c1">###Create directory to store executable</span>
-mkdir<span class="w"> </span>ollama
-<span class="nb">cd</span><span class="w"> </span>ollama
-curl<span class="w"> </span>-L<span class="w"> </span>https://ollama.com/download/ollama-linux-amd64.tgz<span class="w"> </span>-o<span class="w"> </span>ollama-linux-amd64.tgz
-tar<span class="w"> </span>-xvf<span class="w"> </span>ollama-linux-amd64.gz
-<span class="c1">###turn ollama into executable</span>
-chmod<span class="w"> </span>+x<span class="w"> </span>bin/ollama
-</code></pre></div>
-</div>
-</div>
 <h1 id="gpu-availability-on-ycrc-resources">GPU availability on YCRC Resources</h1>
 <p>Once you have your LLM program setup, you can run the models on any of our GPU partitions (gpu_devel, gpu, and gpu_scavenge for McCleary and Grace, or gpu and scavenge for Milgram).</p>
 <p>The YCRC clusters have a variety of GPUs available to be used for LLMs. Depending on the GPU used, the amount of memory (vRAM) can vary significantly. Depending on the process, a researcher's desired LLM model may not run without a large enough GPU.
@@ -2657,13 +2627,38 @@ Starting at the 37 minute mark of the video.</p>
 <p>It is recommended to start your research with interactive sessions and then once common bugs have been eliminated, to move to batch submissions where stronger resources are available.</p>
 <p>If a minimum amount of vRAM is needed that is higher than the respective cluster's smallest GPU, then you can use the constraint flag in Slurm to specify GPU types.</p>
 <p>For example, if you need 40 GB of vRAM, you can add this flag to request only a100 and a100-80G GPUs:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
 salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--Constraint<span class="o">=</span><span class="s2">&quot;a100|a100-80g&quot;</span>
 
 <span class="c1">#####submission script</span>
 <span class="c1">#SBATCH --Constraint=&quot;a100|a100-80g&quot;</span>
 </code></pre></div>
-To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>.
+<p>if you are using ollama, you are now ready to go. We have ollama as a module, so you can simply type:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ollama
+</code></pre></div>
+<p>and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.</p>
+<h1 id="installing-huggingface-to-run-llms">Installing HuggingFace to run LLMs</h1>
+<p>Users can use HuggingFace inside of a miniconda environment or use the ollama module to download and run LLMs.</p>
+<p>This table outlines how to set up your environment to install HuggingFace:</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">huggingface</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session</span>
+<span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
+
+<span class="c1">###need pytorch installed to use huggingface    </span>
+conda<span class="w"> </span>activate<span class="w"> </span>huggingface<span class="w">    </span>
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124
+
+<span class="c1">###load into jupyter notebook application on OOD</span>
+module<span class="w"> </span>reset
+ycrc_conda_env.sh<span class="w"> </span>update
+</code></pre></div>
+</div>
+</div>
+<h2 id="interactive-submissions">Interactive submissions</h2>
+<p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>.
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:</p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">huggingface</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request an OOD session using Jupyter notebook using these steps:</span>
