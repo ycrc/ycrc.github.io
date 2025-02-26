@@ -2582,6 +2582,7 @@ information about what the model is for. </p>
 success in searching for models in their specific field (law, chemistry, etc). Researchers can enter their subject of interest on the ollama or huggingface model page and find
 models specific to their field. These models have the additional advantage of normally being smaller than the general purpose models, which will give greater flexibility
 to resource requirements.</p>
+<p>If you are unsure how much vRAM you need to load a model, you could launch the model on a larger GPU and use our job monitoring application, <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/">jobstats</a> to see how much vRAM you are using.</p>
 <h2 id="what-about-retrieval-augmented-generationrag-and-fine-tuning">What about Retrieval Augmented Generation(RAG) and Fine-Tuning?</h2>
 <p>If interested in doing more complex methods with LLM such as RAG or fine-tuning, then additional vRAM will be required. This table displays general vRAM requirements for said methods:</p>
 <table>
@@ -2617,7 +2618,7 @@ to resource requirements.</p>
 <p>The key things to note in the table above are:</p>
 <ul>
 <li>any additional modification to LLMs will require additional vRAM on GPUs</li>
-<li>researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as QLoRA</li>
+<li>researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as <a href="https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337">QLoRA</a></li>
 <li>creating models from scratch isn't a feasible approach and likely won't compare to existing models available for download</li>
 </ul>
 <h1 id="running-llms-on-the-cluster">Running LLMs on the cluster</h1>
@@ -2725,7 +2726,7 @@ ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2025</span>
       
     
   </small>
