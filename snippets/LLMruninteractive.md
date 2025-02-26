@@ -1,3 +1,23 @@
+=== "ollama"
+
+    ```bash
+    ###request compute node with GPU (add --Constraint=GPUTYPES if needed)
+    salloc --partition=gpu_devel --cpus-per-task=1 --time=4:00:00 --mem=5G --gpus=1  
+    
+    ###load ollama module if it isn't loaded
+    module load ollama
+
+    ####launch server to access models. The & symbol causes the server to run in the background of the allocated node
+    ollama serve&
+
+    #####hit enter to proceed for more input
+    ###run model of interest, replace llama3.2:3b with model of interest
+    ollama run llama3.2:3b
+
+    ###enter prompts
+    why is the sky blue?
+    ```
+
 === "huggingface"
 
     ```bash
@@ -22,21 +42,4 @@
     
     # Use model to generate text
     generator("Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone")
-    ```
-
-=== "ollama"
-
-    ```bash
-    ###request compute node with GPU (add --Constraint=GPUTYPES if needed)
-    salloc --partition=gpu_devel --cpus-per-task=1 --time=4:00:00 --mem=5G --gpus=1  
-    
-    ###load ollama by launching server in background
-    /PATH/TO/ollama/bin/ollama serve&
-
-    #####hit enter to proceed for more input
-    ###run model of interest, replace llama3.2:3b with model of interest
-    /PATH/TO/ollama/bin/ollama run llama3.2:3b
-
-    ###enter prompts
-    why is the sky blue?
     ```
