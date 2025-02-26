@@ -55,6 +55,7 @@ success in searching for models in their specific field (law, chemistry, etc). R
 models specific to their field. These models have the additional advantage of normally being smaller than the general purpose models, which will give greater flexibility
 to resource requirements.
 
+If you are unsure how much vRAM you need to load a model, you could launch the model on a larger GPU and use our job monitoring application, [jobstats](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) to see how much vRAM you are using.
 ## What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
 
 If interested in doing more complex methods with LLM such as RAG or fine-tuning, then additional vRAM will be required. This table displays general vRAM requirements for said methods:
@@ -70,7 +71,7 @@ If interested in doing more complex methods with LLM such as RAG or fine-tuning,
 The key things to note in the table above are:
 
  - any additional modification to LLMs will require additional vRAM on GPUs
- - researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as QLoRA
+ - researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as [QLoRA](https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337)
  - creating models from scratch isn't a feasible approach and likely won't compare to existing models available for download
 
 #Running LLMs on the cluster
@@ -153,5 +154,3 @@ ollama run llama3.1 why is the sky blue > response.txt
 ```
 
 For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert some of the symbols that are outputted in the traditional .out file from a batch submission.
-
- 
