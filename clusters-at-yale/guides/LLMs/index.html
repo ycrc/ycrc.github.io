@@ -2638,7 +2638,7 @@ salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span 
 </code></pre></div>
 <p>and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.</p>
 <h1 id="installing-huggingface-to-run-llms">Installing HuggingFace to run LLMs</h1>
-<p>Users can use HuggingFace inside of a miniconda environment or use the ollama module to download and run LLMs.</p>
+<p>Users can use HuggingFace inside of a miniconda environment/jupyter notebook.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session</span>
 <span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
 salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
