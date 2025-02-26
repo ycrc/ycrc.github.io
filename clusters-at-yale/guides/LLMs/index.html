@@ -2639,28 +2639,24 @@ salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span 
 <p>and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.</p>
 <h1 id="installing-huggingface-to-run-llms">Installing HuggingFace to run LLMs</h1>
 <p>Users can use HuggingFace inside of a miniconda environment or use the ollama module to download and run LLMs.</p>
-<p>This table outlines how to set up your environment to install HuggingFace:</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">huggingface</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session</span>
 <span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
 salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
 module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
 
-<span class="c1">###need pytorch installed to use huggingface    </span>
-conda<span class="w"> </span>activate<span class="w"> </span>huggingface<span class="w">    </span>
+<span class="c1">###need pytorch installed to use huggingface</span>
+conda<span class="w"> </span>activate<span class="w"> </span>huggingface
 pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124
 
 <span class="c1">###load into jupyter notebook application on OOD</span>
 module<span class="w"> </span>reset
 ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
-</div>
-</div>
 <h2 id="interactive-submissions">Interactive submissions</h2>
-<p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>.
+<p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>. However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">huggingface</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">huggingface</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request an OOD session using Jupyter notebook using these steps:</span>
 <span class="m">1</span>.<span class="w"> </span>Click<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>dropdown<span class="w"> </span>box<span class="w"> </span><span class="o">(</span>Environment<span class="w"> </span>Setup<span class="o">)</span><span class="w"> </span>and<span class="w"> </span><span class="k">select</span><span class="w"> </span>your<span class="w"> </span>conda<span class="w"> </span>environment<span class="w"> </span>with<span class="w"> </span>HuggingFace<span class="w"> </span>installed.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>can<span class="err">&#39;</span>t<span class="w"> </span>find<span class="w"> </span>it,<span class="w"> </span>please<span class="w"> </span>refer<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>instructions<span class="w"> </span>above.
 <span class="m">2</span>.<span class="w"> </span>Under<span class="w"> </span>Partitions,<span class="w"> </span><span class="k">select</span><span class="w"> </span>GPU_devel
@@ -2684,7 +2680,7 @@ from<span class="w"> </span>transformers<span class="w"> </span>import<span clas
 generator<span class="o">(</span><span class="s2">&quot;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone&quot;</span><span class="o">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">ollama</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">ollama</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
 salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w">  </span>
 
