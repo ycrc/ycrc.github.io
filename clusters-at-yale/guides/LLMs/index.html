@@ -2656,7 +2656,25 @@ ycrc_conda_env.sh<span class="w"> </span>update
 <h2 id="interactive-submissions">Interactive submissions</h2>
 <p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>. However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">huggingface</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">ollama</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w">  </span>
+
+<span class="c1">###load ollama module if it isn&#39;t loaded</span>
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+<span class="c1">####launch server to access models. The &amp; symbol causes the server to run in the background of the allocated node</span>
+ollama<span class="w"> </span>serve<span class="p">&amp;</span>
+
+<span class="c1">#####hit enter to proceed for more input</span>
+<span class="c1">###run model of interest, replace llama3.2:3b with model of interest</span>
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
+
+<span class="c1">###enter prompts</span>
+why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">huggingface</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request an OOD session using Jupyter notebook using these steps:</span>
 <span class="m">1</span>.<span class="w"> </span>Click<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>dropdown<span class="w"> </span>box<span class="w"> </span><span class="o">(</span>Environment<span class="w"> </span>Setup<span class="o">)</span><span class="w"> </span>and<span class="w"> </span><span class="k">select</span><span class="w"> </span>your<span class="w"> </span>conda<span class="w"> </span>environment<span class="w"> </span>with<span class="w"> </span>HuggingFace<span class="w"> </span>installed.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>can<span class="err">&#39;</span>t<span class="w"> </span>find<span class="w"> </span>it,<span class="w"> </span>please<span class="w"> </span>refer<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>instructions<span class="w"> </span>above.
 <span class="m">2</span>.<span class="w"> </span>Under<span class="w"> </span>Partitions,<span class="w"> </span><span class="k">select</span><span class="w"> </span>GPU_devel
@@ -2680,34 +2698,23 @@ from<span class="w"> </span>transformers<span class="w"> </span>import<span clas
 generator<span class="o">(</span><span class="s2">&quot;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone&quot;</span><span class="o">)</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">ollama</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
-salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w">  </span>
-
-<span class="c1">###load ollama by launching server in background</span>
-/PATH/TO/ollama/bin/ollama<span class="w"> </span>serve<span class="p">&amp;</span>
-
-<span class="c1">#####hit enter to proceed for more input</span>
-<span class="c1">###run model of interest, replace llama3.2:3b with model of interest</span>
-/PATH/TO/ollama/bin/ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
-
-<span class="c1">###enter prompts</span>
-why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
-</code></pre></div>
-</div>
 </div>
 <h2 id="batch-submissions">Batch submissions</h2>
 <p>Once your research is ready for batch submissions, there are only some small modifications required to convert your process.</p>
 <p>For HuggingFace, you can employ a method called <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-jupyter/">papermill</a> under the header of Command-Line Execution of Jupyter Notebooks.</p>
 <p>For Ollama, you can submit an inference request like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#######launch the ollama server, the &amp; tells it to run in the background, allowing the script to continue</span>
-/PATH/TO/ollama/bin/ollama<span class="w"> </span>serve<span class="w"> </span><span class="p">&amp;</span>
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+ollama<span class="w"> </span>serve<span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1">######make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server</span>
+<span class="c1">######this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example</span>
 sleep<span class="w"> </span><span class="m">10</span>
 
 <span class="c1">######runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt</span>
-/PATH/TO/ollama/bin/ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"> </span>why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue<span class="w"> </span>&gt;<span class="w"> </span>response.txt
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"> </span>why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue<span class="w"> </span>&gt;<span class="w"> </span>response.txt
 </code></pre></div>
 <p>For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert some of the symbols that are outputted in the traditional .out file from a batch submission.</p>
                 
