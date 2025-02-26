@@ -7,11 +7,19 @@ Tensorflow and tensorflow-gpu are now the same package since tensorflow 2 was re
 module avail tensorflow
 ```
 
+
 #Installing Tensorflow
 If you need a specific version of tensorflow or are working with specific python packages in a miniconda environment, then you will likely need to install your own version of tensorflow. Each version of tensorflow requires a specific version of CUDA and cudnn to be installed. You can refer to this [website](https://www.tensorflow.org/install/source#tested_build_configurations).
 
+To use miniconda, you will need to be on a compute node or the conda command will be killed, and if you want to test GPU compatibility, then that node will need to have a gpu. You can request a compute node with a GPU like so:
 
-This table outlines how to install each version of tensorflow from 2.15-2.11:
+```bash
+######request compute node from gpu_devel partition for 2 hours with 2 cpus and 10 GB of RAM
+salloc --partition=gpu_devel --cpus-per-task=2 --mem=10G --gpus=1 --time=2:00:00
+
+```
+
+This table outlines how to install each version of tensorflow from 2.11+. You will need to be on a compute node for miniconda to work:
 
 --8<-- "snippets/tensorflowinstall.md"
 
@@ -21,9 +29,7 @@ If tensorflow is installed correctly, then it should be able to detect any GPUs 
 
 ```bash
 
-#####request compute allocation with a gpu node
-salloc --partition=gpu_devel --cpus-per-task=1 --gpus=1 -t 4:00:00
-
+#####on existing gpu_devel session or new session
 #####load tensorflow miniconda environment
 
 module load miniconda
