@@ -2617,7 +2617,7 @@
 <p>Be aware that your job, when started from a requeue, will still re-run the entire original submission script. It will only resume progress if your program has the its own ability to checkpoint and restart from previous progress.</p>
 <h3 id="track-history-of-a-requeued-job">Track History of a Requeued Job</h3>
 <p>When a scavenge job is requeued after preemption, it retains the same job id. However, this can make it difficult to track the history of the job (how many times it was requeued, how long it ran for each time). To view the full history of your job use the <code>--duplicates</code> flag for the <code>sacct</code> command.</p>
-<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>-j<span class="w"> </span>&lt;jobid&gt;<span class="w"> </span>--duplicates
+<div class="highlight"><pre><span></span><code>sacct -j &lt;jobid&gt; --duplicates
 </code></pre></div>
 <h2 id="scavenge-gpus">Scavenge GPUs</h2>
 <p>On Grace and McCleary, we also have a <code>scavenge_gpu</code> partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
@@ -2626,10 +2626,10 @@
 <p>On Grace, we have a <code>scavenge_mpi</code> partition, that contains all scavenge-able nodes similar to the <code>mpi</code> partition and has higher priority for those node than normal scavenge. <code>scavenge_mpi</code> is subject to the same preemption model as <code>scavenge</code> and the <a href="/clusters-at-yale/job-scheduling/mpi/">same use case restrictions</a> as the regular <code>mpi</code> partition (multi-node, tightly couple parallel codes). You can see the full count of MPI nodes in the Partition tables on the respective cluster pages.</p>
 <h2 id="research-available-nodes">Research Available Nodes</h2>
 <p>If you are interested in specific hardware and its availability, you can use the <code>sinfo</code> command to query how many of each type of node is available and what features it lists. For example:</p>
-<div class="highlight"><pre><span></span><code>sinfo<span class="w"> </span>-e<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%.6D|%c|%G|%b&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>column<span class="w"> </span>-ts<span class="w"> </span><span class="s2">&quot;|&quot;</span>
+<div class="highlight"><pre><span></span><code>sinfo -e -o <span class="s2">&quot;%.6D|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
 </code></pre></div>
 <p>will show you the kinds of nodes available, and</p>
-<div class="highlight"><pre><span></span><code>sinfo<span class="w"> </span>-e<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%.6D|%T|%c|%G|%b&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>column<span class="w"> </span>-ts<span class="w"> </span><span class="s2">&quot;|&quot;</span>
+<div class="highlight"><pre><span></span><code>sinfo -e -o <span class="s2">&quot;%.6D|%T|%c|%G|%b&quot;</span> <span class="p">|</span> column -ts <span class="s2">&quot;|&quot;</span>
 </code></pre></div>
 <p>will break out how many nodes in each state (e.g. allocated, mixed, idle) there are. For more options see the official <a href="https://slurm.schedmd.com/sinfo.html"><code>sinfo</code> documentation</a>.</p>
                 
