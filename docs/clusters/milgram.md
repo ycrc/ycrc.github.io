@@ -67,5 +67,5 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 |Partition  | Root Directory            | Storage                                 | File Count | Backups | Snapshots |
 |-----------|---------------------------|-----------------------------------------|------------|---------|-----------|
 | home      | `/gpfs/milgram/home`      | 125GiB/user                             | 500,000    | Yes     | >=2 days  |
-| project   | `/gpfs/milgram/project`   | 1TiB/group, increase to 4TiB on request. <br>FAS PI: 10TiB/group; increase with Nick/Kia | 5,000,000  | Yes     | >=2 days  |
+| project   | `/gpfs/milgram/project`   | 1TiB/group, increase to 4TiB on request. <br>Psych PIs: 10TiB/group; increase with Nick/Kia | 5,000,000  | Yes     | >=2 days  |
 | scratch60 | `/gpfs/milgram/scratch60` | 20TiB/group                             | 15,000,000 | No      | No        |
