@@ -10,14 +10,6 @@ Running LLMs locally has the following advantages:
  - Localized LLMs provide users with the flexibility to control which model/version is implemented, increasing research efficiency
  - YCRC GPUs are free of charge and can currently run models up to 320 GB of vRAM.
 
-#Installing HuggingFace/Ollama to run LLMs
-
-Users can use HuggingFace inside of a miniconda environment or use an ollama executable to download and run LLMs.
-
-This table outlines how to set up your environment to install HuggingFace or Ollama:
-
---8<-- "snippets/LLMsetup.md"
-
 #GPU availability on YCRC Resources
 
 Once you have your LLM program setup, you can run the models on any of our GPU partitions (gpu_devel, gpu, and gpu_scavenge for McCleary and Grace, or gpu and scavenge for Milgram).
@@ -63,6 +55,7 @@ success in searching for models in their specific field (law, chemistry, etc). R
 models specific to their field. These models have the additional advantage of normally being smaller than the general purpose models, which will give greater flexibility
 to resource requirements.
 
+If you are unsure how much vRAM you need to load a model, you could launch the model on a larger GPU and use our job monitoring application, [jobstats](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) to see how much vRAM you are using.
 ## What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
 
 If interested in doing more complex methods with LLM such as RAG or fine-tuning, then additional vRAM will be required. This table displays general vRAM requirements for said methods:
@@ -78,7 +71,7 @@ If interested in doing more complex methods with LLM such as RAG or fine-tuning,
 The key things to note in the table above are:
 
  - any additional modification to LLMs will require additional vRAM on GPUs
- - researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as QLoRA
+ - researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as [QLoRA](https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337)
  - creating models from scratch isn't a feasible approach and likely won't compare to existing models available for download
 
 #Running LLMs on the cluster
@@ -101,7 +94,38 @@ salloc --partition gpu_devel --Constraint="a100|a100-80g"
 #####submission script
 #SBATCH --Constraint="a100|a100-80g"
 ```
-To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on [Open on Demand](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/).
+
+if you are using ollama, you are now ready to go. We have ollama as a module, so you can simply type:
+
+```bash
+module load ollama
+```
+
+and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.
+
+#Installing HuggingFace to run LLMs
+
+Users can use HuggingFace inside of a miniconda environment/jupyter notebook.
+
+```bash
+###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session
+###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition
+salloc --partition=devel --cpus-per-task=2 --time=1:00:00 --mem=32G ###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition
+module load miniconda
+conda create --name huggingface python=3.11.* transformers accelerate tokenizers datasets jupyter jupyterlab
+
+###need pytorch installed to use huggingface
+conda activate huggingface
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+###load into jupyter notebook application on OOD
+module reset
+ycrc_conda_env.sh update
+```
+
+## Interactive submissions
+
+To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on [Open on Demand](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/). However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:
 
 --8<-- "snippets/LLMruninteractive.md"
@@ -116,15 +140,17 @@ For Ollama, you can submit an inference request like so:
 
 ```bash
 #######launch the ollama server, the & tells it to run in the background, allowing the script to continue
-/PATH/TO/ollama/bin/ollama serve &
+module reset
+module load ollama
+
+ollama serve &
 
 ######make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server
+######this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example
 sleep 10
 
 ######runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt
-/PATH/TO/ollama/bin/ollama run llama3.1 why is the sky blue > response.txt
+ollama run llama3.1 why is the sky blue > response.txt
 ```
 
 For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert some of the symbols that are outputted in the traditional .out file from a batch submission.
-
- 
