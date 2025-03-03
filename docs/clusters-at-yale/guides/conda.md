@@ -12,30 +12,20 @@ For your convenience, we provide a relatively recent version of [Miniconda](http
 
 Note: If you are on Milgram and run out of space in your home directory for Conda, you can either reinstall your environment in your project space (see below) or [contact us](/#web-and-email-support) for help with your home quota.
 
-## Defaults We Set
-
-On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
-
-Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
-
-``` yaml
-env_prompt: '({name})'
-auto_activate_base: false
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-```
-
 ## Setup Your Environment
 
-### Load the `miniconda` Module
+### Start an Interactive Session and Load the `miniconda` Module
+
+Due to potentially heavy CPU usage when building environments, miniconda environment creation will not work when you are on the login node. 
+To use miniconda, you must first be on a compute node either via OOD remote desktop or via [salloc](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/) to request a compute node:
 
 ``` bash
+###request a compute node on the devel partition for 2 hours with 4 cpus and 15 GB of RAM
+salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
+
+###load the miniconda module
 module load miniconda
 ```
-
-You can save this to your default module collection by using `module save`. See our [module documentation](/applications/modules) for more details.
 
 ### Create a `conda` Environment
 
@@ -56,14 +46,31 @@ module load miniconda
 conda create -n legacy_application python=2.7 openblas
 ```
 
-If you want a good starting point for interactive data science in R/Python Jupyter Notebooks:
+If you want a good starting point for interactive data science in Python Jupyter Notebooks:
 
 ``` bash
 module load miniconda
-conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter r-irkernel r-ggplot2 r-tidyverse
+conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter jupyter lab
+
+####load environment into OOD jupyter notebook
+module reset
+ycrc_conda_env.sh update
 ```
 
-Note that you can also install jupyterlab instead of, or alongside jupyter. 
+## Defaults We Set
+
+On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
+
+Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
+
+``` yaml
+env_prompt: '({name})'
+auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+```
 
 ### Conda Channels
 
@@ -78,18 +85,9 @@ conda create -n brian2 brian2
 # conda create -n brian2 --channel conda-forge brian2
 ```
 
-You can also install packages from Bioconda, for example:
-
-``` bash
-module load miniconda
-conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
-# normally you would need this:
-# conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
-```
-
 ## Use Your Environment
 
-To use the applications in your environment, run the following:
+To use the applications in your environment, run the following, on a compute node:
 
 ``` bash
 module load miniconda
@@ -114,7 +112,7 @@ To make sure that you are running in your project environment in a submission sc
 #SBATCH --cpus-per-task 4
 #SBATCH --mem-per-cpu=6000
 
-
+module reset
 module load miniconda
 
 conda activate env_name
@@ -149,6 +147,10 @@ If you have run `conda init` in the past, you may be locked to an old version of
 ``` bash
 sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
+
+### killed during creation
+
+If your environment is failing to build and isn't sending a message or just saying: killed, you are likely on a login node. Please read above about creating an environment to properly request a compute node.
 
 ### Permission Denied
 
