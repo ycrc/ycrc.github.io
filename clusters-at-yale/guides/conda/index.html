@@ -1821,26 +1821,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaults-we-set" class="md-nav__link">
-    Defaults We Set
-  </a>
-  
-    <nav class="md-nav" aria-label="Defaults We Set">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conda-channels" class="md-nav__link">
-    Conda Channels
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-your-environment" class="md-nav__link">
     Use Your Environment
   </a>
@@ -1858,6 +1838,26 @@
           <li class="md-nav__item">
   <a href="#in-a-job-script" class="md-nav__link">
     In a Job Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults-we-set" class="md-nav__link">
+    Defaults We Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Defaults We Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-channels" class="md-nav__link">
+    Conda Channels
   </a>
   
 </li>
@@ -2745,26 +2745,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#defaults-we-set" class="md-nav__link">
-    Defaults We Set
-  </a>
-  
-    <nav class="md-nav" aria-label="Defaults We Set">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conda-channels" class="md-nav__link">
-    Conda Channels
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#use-your-environment" class="md-nav__link">
     Use Your Environment
   </a>
@@ -2782,6 +2762,26 @@
           <li class="md-nav__item">
   <a href="#in-a-job-script" class="md-nav__link">
     In a Job Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults-we-set" class="md-nav__link">
+    Defaults We Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Defaults We Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-channels" class="md-nav__link">
+    Conda Channels
   </a>
   
 </li>
@@ -2974,24 +2974,6 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 module<span class="w"> </span>reset
 ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
-<h2 id="defaults-we-set">Defaults We Set</h2>
-<p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
-<p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
-<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">channels</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
-</code></pre></div>
-<h3 id="conda-channels">Conda Channels</h3>
-<p>Community-lead collections of packages that you can install with <code>conda</code> are provided with channels. Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
-<p>You can create a new environment called <code>brian2</code> (specified with the <code>-n</code> option) and install <a href="http://briansimulator.org/">Brian2</a> into it with the following:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brian2<span class="w"> </span>brian2
-<span class="c1"># normally you would need this:</span>
-<span class="c1"># conda create -n brian2 --channel conda-forge brian2</span>
-</code></pre></div>
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To use the applications in your environment, run the following, on a compute node:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
@@ -3016,6 +2998,24 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 
 conda<span class="w"> </span>activate<span class="w"> </span>env_name
 python<span class="w"> </span>analyses.py
+</code></pre></div>
+<h2 id="defaults-we-set">Defaults We Set</h2>
+<p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
+<p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
+<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">channels</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+</code></pre></div>
+<h3 id="conda-channels">Conda Channels</h3>
+<p>Community-lead collections of packages that you can install with <code>conda</code> are provided with channels. Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
+<p>You can create a new environment called <code>brian2</code> (specified with the <code>-n</code> option) and install <a href="http://briansimulator.org/">Brian2</a> into it with the following:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brian2<span class="w"> </span>brian2
+<span class="c1"># normally you would need this:</span>
+<span class="c1"># conda create -n brian2 --channel conda-forge brian2</span>
 </code></pre></div>
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
 <p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> or use <a href="https://docs.conda.io/projects/conda/en/latest/commands/search.html"><code>conda search</code></a> to find the names of packages you would like to install:</p>
