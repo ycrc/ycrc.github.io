@@ -57,34 +57,6 @@ module reset
 ycrc_conda_env.sh update
 ```
 
-## Defaults We Set
-
-On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
-
-Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
-
-``` yaml
-env_prompt: '({name})'
-auto_activate_base: false
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-```
-
-### Conda Channels
-
-Community-lead collections of packages that you can install with `conda` are provided with channels. Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
-
-You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
-
-``` bash
-module load miniconda
-conda create -n brian2 brian2
-# normally you would need this:
-# conda create -n brian2 --channel conda-forge brian2
-```
-
 ## Use Your Environment
 
 To use the applications in your environment, run the following, on a compute node:
@@ -117,6 +89,34 @@ module load miniconda
 
 conda activate env_name
 python analyses.py
+```
+
+## Defaults We Set
+
+On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
+
+Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
+
+``` yaml
+env_prompt: '({name})'
+auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+```
+
+### Conda Channels
+
+Community-lead collections of packages that you can install with `conda` are provided with channels. Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
+
+You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
+
+``` bash
+module load miniconda
+conda create -n brian2 brian2
+# normally you would need this:
+# conda create -n brian2 --channel conda-forge brian2
 ```
 
 ### Find and Install Additional Packages
