@@ -24,7 +24,7 @@ If you have any questions about Yale’s partnership at MGHPCC or the Bouchet cl
 
 ## Access the Cluster
 
-Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or [Open OnDemand](/clusters-at-yale/access/ood) at https://ood-bouchet.ycrc.yale.edu.
+Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or [Open OnDemand](/clusters-at-yale/access/ood) at [https://ood-bouchet.ycrc.yale.edu](https://ood-bouchet.ycrc.yale.edu).
 
 ## System Status and Monitoring
 
