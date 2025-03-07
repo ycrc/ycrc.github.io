@@ -2575,20 +2575,20 @@ Here we will use the <code>--dependency</code> flag for sbatch and the <code>aft
 <span class="c1">#SBATCH --job-name=DataTransfer</span>
 <span class="c1">#SBATCH -t 30:00</span>
 
-rsync -avP remote_host:/path/to/data.csv <span class="nv">$HOME</span>/project/
+rsync<span class="w"> </span>-avP<span class="w"> </span>remote_host:/path/to/data.csv<span class="w"> </span><span class="nv">$HOME</span>/project/
 </code></pre></div>
 The second step is controlled by <code>step2.sh</code>:</p>
 <p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=DataProcess</span>
 <span class="c1">#SBATCH -t 5:00:00</span>
 
-module load miniconda
-<span class="nb">source</span> activate my_env
-python my_script.py <span class="nv">$HOME</span>/project/data.csv
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>my_env
+python<span class="w"> </span>my_script.py<span class="w"> </span><span class="nv">$HOME</span>/project/data.csv
 </code></pre></div>
 When we submit the first step (using the command <code>sbatch step1.sh</code>) we obtain the jobid number for that job.
 We then submit the second step adding in the <code>--dependency</code> flag to tell Slurm that this job requires the first job to finish before it can start:</p>
-<div class="highlight"><pre><span></span><code>sbatch --dependency<span class="o">=</span>afterok:56761133 step2.sh
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:56761133<span class="w"> </span>step2.sh
 </code></pre></div>
 <p>When the 'transfer' job finishes successfully (without an error exit code) the 'processing' step will begin.
 While this is a simple dependency structure, it is possible to have multiple dependencies or more complicated structure.</p>
@@ -2596,23 +2596,23 @@ While this is a simple dependency structure, it is possible to have multiple dep
 <p>One frequent use-case is a clean-up job that runs after all other jobs have finished. 
 This is a common way to collect results from processing multiple files into a single output file. 
 This can be done using the <code>--dependency=singleton:&lt;job_id&gt;</code> flag that will wait until all previously launched jobs <em>with the same name and user</em> have finished.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ squeue -u tl397
-             JOBID PARTITION     NAME     USER    ST      SUBMIT_TIME       NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-          <span class="m">12345670</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          <span class="m">12345671</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          ...
-          <span class="m">12345678</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          <span class="m">12345679</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
+<div class="highlight"><pre><span></span><code><span class="o">[</span>tl397@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>squeue<span class="w"> </span>-u<span class="w"> </span>tl397
+<span class="w">             </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w">    </span>ST<span class="w">      </span>SUBMIT_TIME<span class="w">       </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="w">          </span><span class="m">12345670</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span><span class="m">12345671</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span>...
+<span class="w">          </span><span class="m">12345678</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span><span class="m">12345679</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
 
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ sbatch --dependency<span class="o">=</span>singleton --job-name<span class="o">=</span>JobName cleanup.sh
-<span class="o">[</span>tl397@grace1 ~<span class="o">]</span>$ squeue -u tl397
-             JOBID PARTITION     NAME     USER    ST      SUBMIT_TIME       NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-          <span class="m">12345670</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          <span class="m">12345671</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          ...
-          <span class="m">12345678</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          <span class="m">12345679</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     c01n08
-          <span class="m">12345680</span>       day   JobName    tl397   R    <span class="m">2020</span>-05-27T11:54     <span class="o">(</span>Dependency<span class="o">)</span>
+<span class="o">[</span>tl397@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>--dependency<span class="o">=</span>singleton<span class="w"> </span>--job-name<span class="o">=</span>JobName<span class="w"> </span>cleanup.sh
+<span class="o">[</span>tl397@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>squeue<span class="w"> </span>-u<span class="w"> </span>tl397
+<span class="w">             </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w">    </span>ST<span class="w">      </span>SUBMIT_TIME<span class="w">       </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="w">          </span><span class="m">12345670</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span><span class="m">12345671</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span>...
+<span class="w">          </span><span class="m">12345678</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span><span class="m">12345679</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span>c01n08
+<span class="w">          </span><span class="m">12345680</span><span class="w">       </span>day<span class="w">   </span>JobName<span class="w">    </span>tl397<span class="w">   </span>R<span class="w">    </span><span class="m">2020</span>-05-27T11:54<span class="w">     </span><span class="o">(</span>Dependency<span class="o">)</span>
 </code></pre></div>
 <p>This last job will wait to run until all previous jobs with name <code>JobName</code> finish. </p>
 <h2 id="further-reading">Further Reading</h2>
