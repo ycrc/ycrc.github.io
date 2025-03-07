@@ -16,12 +16,13 @@ Communication will be sent to all users of the respective cluster both 4 weeks a
 The schedule for the regular cluster maintenance is posted below. 
 Please be mindful of these dates and schedule your work accordingly to avoid disruptions.
 
-| Date           | Cluster  |
-|----------------|----------|
-| Jun 4-6 2024   | Grace    |
-| Aug 20-22 2024 | Milgram  |
-| Oct 15-17 2024 | McCleary |
-| Dec 3-5 2024   | Grace    |
+| Date            | Cluster  |
+|-----------------|----------|
+| Early June 2025 | Grace    |
+| Early June 2025 | Milgram  |
+| Early June 2025 | McCleary |
+| Early June 2025 | Bouchet  |
+| TBA             | Misha    |
 
 Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
 We will give as much notice as possible in advance of these maintenance outages.
