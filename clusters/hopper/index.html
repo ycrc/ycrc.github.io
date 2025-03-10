@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2637,6 +2637,7 @@ By default, nodes are shared with multiple jobs and users.
 If the security of your project requires isolation, you must submit your jobs with <code>-X</code> flag to ensure an exclusive allocation.
 Such projects will be clearly identified during the approval and onboarding process.
 Data written to a node’s local disk is not visible to any other job and is automatically removed after the run completes (this is not in place for beta).</p>
+<p>At this stage of the beta, Slurm will not send job status emails, so please login to check the status of your jobs.</p>
 <p>While the VDI will lock sessions after a certain amount of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>Details on the partitions and concurrent usage limits will be posted at a later date.</p>
@@ -2704,7 +2705,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2025</span>
       
     
   </small>
