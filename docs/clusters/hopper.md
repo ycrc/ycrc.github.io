@@ -99,6 +99,8 @@ If the security of your project requires isolation, you must submit your jobs wi
 Such projects will be clearly identified during the approval and onboarding process.
 Data written to a node’s local disk is not visible to any other job and is automatically removed after the run completes (this is not in place for beta).
 
+At this stage of the beta, Slurm will not send job status emails, so please login to check the status of your jobs.
+
 While the VDI will lock sessions after a certain amount of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.
 
 ## Partitions and Hardware
