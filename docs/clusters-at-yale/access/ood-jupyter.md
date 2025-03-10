@@ -22,7 +22,8 @@ When it launches you can open the standard Jupyter interface where you can start
 
 ### Root Directory
 
-The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example a purchased storage allocation, you need to create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems) to that directory in your home directory.
+The Jupyter root directory is set to your Home when started. Project and Scratch can 
+be accessed via their respective symlinks in Home. If you want to access a directory that cannot be accessed through your home directory, for example a purchased storage allocation, you need to create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems) to that directory in your home directory.
 
 ### Conda Environments 
 

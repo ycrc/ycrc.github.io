@@ -186,6 +186,7 @@ nav:
             - clusters-at-yale/guides/nextflow.md
             - clusters-at-yale/guides/r.md
             - clusters-at-yale/guides/vasp.md
+            - clusters-at-yale/guides/LLMs.md
         - Tools:
             - clusters-at-yale/guides/containers.md
             - clusters-at-yale/guides/mysql.md

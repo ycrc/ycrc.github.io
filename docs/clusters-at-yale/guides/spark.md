@@ -83,7 +83,7 @@ Navigating to the web-interface URL yields an overview like this:
 ## Spark batch job
 
 While the interactive workflow is useful for testing, it can be an inefficient use of allocated resources.
-It is therefore preferrable to submit jobs as part of the Spark sbatch script.
+It is therefore preferable to submit jobs as part of the Spark sbatch script.
 
 This example first starts up the Spark server as before, but then immediately submits work to the server via the `spark-submit` script.
 Note, replace the placeholder with the real path to the analysis code.

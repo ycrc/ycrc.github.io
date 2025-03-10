@@ -1267,7 +1267,8 @@ With few exceptions, jobs submitted to private partitions are not considered whe
         |2|6240|36|163|cascadelake, avx512, 6240, nogpu, bigtmp, standard, pi|
 
 ### YCGA Partitions
-The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.
+The following partitions are intended for projects related to the [Yale Center for 
+Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other projects. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.
 
 ??? summary "YCGA Partitions (click to expand)"
     === "ycga"

@@ -183,4 +183,5 @@ You can view documentation while on the cluster using the command:
 man module
 ```
 
-There is even more information at the [offical Lmod website](https://www.tacc.utexas.edu/research/tacc-research/lmod/) and [related documentation](https://lmod.readthedocs.io).
+There is even more information at the [official Lmod 
+website](https://www.tacc.utexas.edu/research/tacc-research/lmod/) and [related documentation](https://lmod.readthedocs.io).

@@ -2,7 +2,7 @@
 
 ## What is version control?
 
-Version contol is an easy and powerful way to track changes to your work. 
+Version control is an easy and powerful way to track changes to your work. 
 This extends from code to writing documents (if using LaTeX/Tex). 
 It produces and saves "tagged" copies of your project so that you don't need to worry about breaking your 
 code-base.

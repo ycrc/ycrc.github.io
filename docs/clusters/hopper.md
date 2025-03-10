@@ -86,7 +86,8 @@ Data will be purged from the staging area after a TBD amount of time.
 
 All software must be approved and installed by YCRC staff, typically as [modules](/applications/modules).
 No software may be installed by users, including conda environments and R packages.
-A researcher's own analysis scripts, such as Python, R, MATLAB or bash scripts, do not qualify as software and are permissable to upload and run on the cluster without approval.
+A researcher's own analysis scripts, such as Python, R, MATLAB or bash scripts, do 
+not qualify as software and are permissible to upload and run on the cluster without approval.
 If you are unclear if your workflow qualifies as software, please contact your administrator for clarifications.
 In the future, YCRC plans to make certain approved R and Python libraries available via a local clone of the repositories. 
 

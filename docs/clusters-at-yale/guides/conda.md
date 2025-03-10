@@ -1,6 +1,7 @@
 # Conda
 
-[Conda](https://conda.io/projects/conda/en/latest/index.html) is a package, dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the [modules](/applications/modules) that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See [Conda's official command-line reference](https://docs.conda.io/projects/conda/en/latest/commands.html) and [the offical docs for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for detailed instructions. Here we present essential instructions and site-specific info.
+[Conda](https://conda.io/projects/conda/en/latest/index.html) is a package, 
+dependency, and environment manager. It allows you to maintain different, often incompatible, sets of applications side-by-side. It has become a popular choice for managing pipelines that involve several tools, especially when multiple languages are involved. These sets of applications and their dependencies are kept in Conda environments, which you can switch between as your work dictates. Compared to the [modules](/applications/modules) that we provide, there are often newer and more varied packages available that you can manage yourself, but they may not be as well optimized for the clusters. See [Conda's official command-line reference](https://docs.conda.io/projects/conda/en/latest/commands.html) and [the official docs for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for detailed instructions. Here we present essential instructions and site-specific info.
 
 !!! Warning
     Mixing modules and conda-managed software is almost never a good idea. When constructing an environment for your work you should load either modules or a conda environment. If you get stuck, you [can always ask us for help](/#get-help).
@@ -11,30 +12,20 @@ For your convenience, we provide a relatively recent version of [Miniconda](http
 
 Note: If you are on Milgram and run out of space in your home directory for Conda, you can either reinstall your environment in your project space (see below) or [contact us](/#web-and-email-support) for help with your home quota.
 
-## Defaults We Set
-
-On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
-
-Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
-
-``` yaml
-env_prompt: '({name})'
-auto_activate_base: false
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-```
-
 ## Setup Your Environment
 
-### Load the `miniconda` Module
+### Start an Interactive Session and Load the `miniconda` Module
+
+Due to potentially heavy CPU usage when building environments, miniconda environment creation will not work when you are on the login node. 
+To use miniconda, you must first be on a compute node either via OOD remote desktop or via [salloc](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/) to request a compute node:
 
 ``` bash
+###request a compute node on the devel partition for 2 hours with 4 cpus and 15 GB of RAM
+salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
+
+###load the miniconda module
 module load miniconda
 ```
-
-You can save this to your default module collection by using `module save`. See our [module documentation](/applications/modules) for more details.
 
 ### Create a `conda` Environment
 
@@ -55,40 +46,20 @@ module load miniconda
 conda create -n legacy_application python=2.7 openblas
 ```
 
-If you want a good starting point for interactive data science in R/Python Jupyter Notebooks:
+If you want a good starting point for interactive data science in Python Jupyter Notebooks:
 
 ``` bash
 module load miniconda
-conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter r-irkernel r-ggplot2 r-tidyverse
-```
+conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter jupyter lab
 
-Note that you can also install jupyterlab instead of, or alongside jupyter. 
-
-### Conda Channels
-
-Community-lead collections of packages that you can install with `conda` are provided with channels. Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
-
-You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
-
-``` bash
-module load miniconda
-conda create -n brian2 brian2
-# normally you would need this:
-# conda create -n brian2 --channel conda-forge brian2
-```
-
-You can also install packages from Bioconda, for example:
-
-``` bash
-module load miniconda
-conda create -n bioinfo biopython bedtools bowtie2 repeatmasker
-# normally you would need this:
-# conda create -n bioinfo --channel conda-forge --channel bioconda biopython bedtools bowtie2 repeatmasker
+####load environment into OOD jupyter notebook
+module reset
+ycrc_conda_env.sh update
 ```
 
 ## Use Your Environment
 
-To use the applications in your environment, run the following:
+To use the applications in your environment, run the following, on a compute node:
 
 ``` bash
 module load miniconda
@@ -113,11 +84,39 @@ To make sure that you are running in your project environment in a submission sc
 #SBATCH --cpus-per-task 4
 #SBATCH --mem-per-cpu=6000
 
-
+module reset
 module load miniconda
 
 conda activate env_name
 python analyses.py
+```
+
+## Defaults We Set
+
+On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
+
+Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
+
+``` yaml
+env_prompt: '({name})'
+auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+```
+
+### Conda Channels
+
+Community-lead collections of packages that you can install with `conda` are provided with channels. Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
+
+You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
+
+``` bash
+module load miniconda
+conda create -n brian2 brian2
+# normally you would need this:
+# conda create -n brian2 --channel conda-forge brian2
 ```
 
 ### Find and Install Additional Packages
@@ -148,6 +147,10 @@ If you have run `conda init` in the past, you may be locked to an old version of
 ``` bash
 sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
+
+### killed during creation
+
+If your environment is failing to build and isn't sending a message or just saying: killed, you are likely on a login node. Please read above about creating an environment to properly request a compute node.
 
 ### Permission Denied
 
@@ -240,7 +243,7 @@ In this environment, the versions of python and numpy were pinned during install
 
 #### Build a New Environment
 
-To create a new environment using all the enumerated pacakges:
+To create a new environment using all the enumerated packages:
 
 ```sh
 module load miniconda
