@@ -2640,7 +2640,171 @@ Data written to a node’s local disk is not visible to any other job and is aut
 <p>At this stage of the beta, Slurm will not send job status emails, so please login to check the status of your jobs.</p>
 <p>While the VDI will lock sessions after a certain amount of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
-<p>Details on the partitions and concurrent usage limits will be posted at a later date.</p>
+<p>See each tab below for more information about the available common use partitions.</p>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
+<p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>52</td>
+<td>cpugen:emeraldrapids</td>
+<td>64</td>
+<td>976</td>
+<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">devel</label><div class="tabbed-content">
+<p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>cpugen:emeraldrapids</td>
+<td>64</td>
+<td>976</td>
+<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">gpu</label><div class="tabbed-content">
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>cpugen:emeraldrapids</td>
+<td>48</td>
+<td>976</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>cpugen:emeraldrapids, cpumodel:6542Y, gpumodel:a5000, common:yes</td>
+</tr>
+<tr>
+<td>9</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:l40s, common:yes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>a40</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:a40, common:yes</td>
+</tr>
+<tr>
+<td>15</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>h100</td>
+<td>4</td>
+<td>80</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:h100, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">bigmem</label><div class="tabbed-content">
+<p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>cpugen:emeraldrapids</td>
+<td>64</td>
+<td>1953</td>
+<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>cpugen:sapphirerapids</td>
+<td>64</td>
+<td>3906</td>
+<td>cpugen:sapphirerapids, cpumodel:8462Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <h2 id="storage">Storage</h2>
 <p>Hopper has access to one filesystem called <code>weston</code>. 
 Weston is a VAST filesystem similar to the <code>palmer</code> filesystem on Grace and McCleary, with the additional of encryption-at-rest for all user data.
@@ -2705,7 +2869,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2025</span>
       
     
   </small>
