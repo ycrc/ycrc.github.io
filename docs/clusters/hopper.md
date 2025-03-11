@@ -106,7 +106,9 @@ While the VDI will lock sessions after a certain amount of idle time, jobs submi
 
 ## Partitions and Hardware
 
-Details on the partitions and concurrent usage limits will be posted at a later date.
+See each tab below for more information about the available common use partitions.
+
+--8<-- "snippets/hopper_partitions.md"
 
 ## Storage
 
