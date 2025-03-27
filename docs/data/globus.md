@@ -104,7 +104,7 @@ To transfer or share data between two personal endpoints, you will need to reque
 
 1. Click on the following link: [Globus OneDrive Endpoint](https://app.globus.org/file-manager?origin_id=923b3fbe-ffd2-4a8e-b4ad-be207fd33faa)
 1. Log into Globus, if needed.
-1. The first time you log into the endpoint, you will be asked ot grant access to your OneDrive account.  Click to allow access and be taken through the approval process.
+1. The first time you log into the endpoint, you will be asked to grant access to your OneDrive account.  Click to allow access and be taken through the approval process.
 1. After granting approval, you will be able to access the top level of your Yale OneDrive via the Globus Collection "Yale OneDrive".
 
 ## Set Up a [Dropbox](https://www.dropbox.com) Endpoint
