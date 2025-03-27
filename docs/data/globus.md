@@ -74,6 +74,26 @@ To obtain a direct URL (HTTPS) link to a file in a Globus collection, right clic
 
 To manage your endpoints, such as delete an endpoint, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Endpoint](https://app.globus.org/endpoints) on the Globus website.
 
+## Step by Step: Share Your Data as a Collection
+
+To share large file collections within Yale and to external collaborators, you can use a Globus 'Collection' using the below procedure:
+
+1. Log onto the Globus app using your Yale netid credentials; then click 'File Manager' and type 'mccleary' into the Collection text box. A collection 'Yale CRC McCleary' should show up in the results (circled in red below); click on it.<br>  
+![clipboard](/img/globus_doc1_final.png){: .medium}
+1. In the resulting panel, navigate to the location you wish to share by double clicking folder names and/or clicking 'Up one folder'. Then click 'Share' (circled in red below):<br>  
+![clipboard](/img/globus_doc2_final.png){: .medium}
+1. In the resulting panel, click on 'Add Guest Collection' (circled in red below):<br>  
+![clipboard](/img/globus_doc3_final.png){: .medium}
+1. In the resulting panel, give your collection a name in the 'Display Name' text box; then click on 'Create Collection' (circled in red below):<br>  
+![clipboard](/img/globus_doc4_final.png){: .medium}
+1. In the resulting panel, click on 'Add Permissions - Share With' (circled in red below):<br>  
+![clipboard](/img/globus_doc5_final.png){: .medium}
+1. In the resulting panel, choose appropriate options in 'Share With' and 'Username or Email' according to how you would like to share. The safest option is to share with a specific globus user, first checking with your collaborator to ensure they have a globus username; then you should be able to find them in the 'Username or Email' search box. Alternatively, the public (anonymous) option allows even non-globus users to download your data if they receive the link; obviously this option is the least secure. When you are finished adding permissions, click 'Done' if necessary to go to the next screen.<br>  
+![clipboard](/img/globus_doc6_final.png){: .medium}
+1. Finally, to get a shareable URL link to your new collection, click 'Show link for sharing' (circled in red below):<br>  
+![clipboard](/img/globus_doc7_final.png){: .medium}
+
+
 ## Set Up an Endpoint on Your Computer
 
 You can set up your own endpoint for transferring data to and from your own computer with [Globus Connect Personal](https://www.globus.org/globus-connect). 
