@@ -2756,7 +2756,14 @@ gibbs:project          GRP             3832       10240     3,350,198    10,000,
 palmer:scratch         GRP                0       10240           903    15,000,000 No        60 days        
 gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,000 No        No
 </code></pre></div>
-<p>The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the <code>getquota</code> output for users who have data in that directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Notes</p>
+</div>
+<ol>
+<li>The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br></li>
+<li>Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  </li>
+<li>Purchased storage allocations will only appear in the <code>getquota</code> output for users who have data in that directory.</li>
+</ol>
 <h2 id="purchase-additional-storage">Purchase Additional Storage</h2>
 <p>For long-term allocations, additional project storage spaces can be purchased on one of our shared filesystems, which provides similar functionality to the primary project storage. This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see <a href="https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy">Storage Expiration Policy</a>).</p>
 <p>For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found <a href="https://research.computing.yale.edu/billing-hpc-services">here</a> (CAS login required).</p>
@@ -2815,7 +2822,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2025</span>
       
     
   </small>

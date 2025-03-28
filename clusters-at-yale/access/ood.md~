@@ -64,6 +64,8 @@ You can launch a traditional command-line interface on the cluster by selecting 
 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 
+Note, we received a report that cutting and pasting to the OOD Shell app may not always work with Google Chrome. If you experience troubles with copy/paste functions, try switching to another browser.
+
 ## Interactive Apps
 
 We have deployed a selection of common graphical programs, such as Remote Desktop, Jupyter, RStudtio, and MATLAB, as Interactive Apps on the Web Portal.

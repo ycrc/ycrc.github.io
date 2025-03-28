@@ -17,6 +17,8 @@ As shown below, there are sliders for compression and image quality in the remot
 
 ## Copy/Paste
 
-In some browsers, you may have to use a special text box to copy and paste from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
+Copy and paste functions in Remote Desktop use a distinct clipboard from your computer's native one. Some web browsers (Edge, Chrome) can automatically sync these two clipboards. However, if this does not work in your browser you can use a special text box to copy and paste to and from the Remote Desktop App. Click the arrow on the left side of your window for a menu, then click the clipboard icon to get access to your Remote Desktop's clipboard.
+
+Note, even for browsers like Edge and Chrome that automatically sync the Remote Desktop clipboard, copying and pasting can be glitchy: for example, when pasting from another application to Remote Desktop, you may get the wrong result (clipboard contents out of date) until you use your pointer to click on a window within Remote Desktop.
 
 ![clipboard](/img/ood_remote_clipboard.png){: .medium}
