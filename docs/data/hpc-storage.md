@@ -81,7 +81,10 @@ palmer:scratch         GRP                0       10240           903    15,000,
 gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,000 No        No
 ```
 
-The per-user breakdown is only generated periodically, and the summary at the bottom is close to real-time. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
+!!! note "Notes"
+1. The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br>
+1. Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  
+1. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
 ## Purchase Additional Storage
 
