@@ -102,4 +102,21 @@ For further information on running AlphaFold 2, see EMBL-EBI's
 
 AlphaFold 3 on the YCRC clusters is currrently a work in progress.  Note that one signficant change
 is the model parameter [Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md).
+BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
+This requires registering with [Google](https://forms.gle/svvpY4u2jsHEwWYS6) and agreeing to the above terms of use.
+Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.
+Then run with
+```sh
+alphafold YourDirName
+```
+where YourDirName is the path to the folder containing your af_input and models folders.
 
+The input configuration differs from AlphaFold 2, but is similar to the server format.
+See the [AlphaFold 3 documentation](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md) for details.
+The database location has been set automatically.
+
+Note that AlphaFold 3 will only run on A100 or better GPUs by default.
+To run on sequences up to 1280 on a V100, add to your 'alphafold' command the flag
+```sh
+--flash_attention_implementation=xla
+```
