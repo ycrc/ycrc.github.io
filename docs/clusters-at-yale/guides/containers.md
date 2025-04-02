@@ -1,10 +1,10 @@
 # Containers
 
 !!!warning
-    The Singularity project has been renamed [Apptainer](https://apptainer.org). Everything should still work the same, including the 'singularity' command.  If you find it not working as expected, please [contact us](https://docs.ycrc.yale.edu/#get-help).
+    On the Yale clusters, **Apptainer is not installed on login nodes.** You will need to run it from compute nodes.
 
 !!!warning
-    On the Yale clusters, **Apptainer is not installed on login nodes.** You will need to run it from compute nodes.
+    The Singularity project has been renamed [Apptainer](https://apptainer.org). Everything should still work the same, including the 'singularity' command.  If you find it not working as expected, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
 [Apptainer](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459) (formerly Singularity) is a Linux container technology that is well suited to use in shared-user environments such as the [clusters](/clusters) we maintain at Yale. It is similar to [Docker](https://docs.docker.com/); You can bring with you a stack of software, libraries, and a Linux operating system that is independent of the host computer you run the container on. This can be very useful if you want to share your software environment with other researchers or yourself across several computers. Because Apptainer containers run as the user that started them and mount home directories by default, you can usually see the data you're interested in working on that is stored on a host computer without any extra work. Additionally, a container containing a program of interest will come preinstalled if built correctly, removing the need to install the program of interest yourself.
 
@@ -28,6 +28,9 @@ apptainer build tensorflow-10.0-py3.sif docker://tensorflow/tensorflow:1.10.0-py
 # from Singularity Hub (no longer updated)
 apptainer build bioconvert-latest.sif shub://biokit/bioconvert:latest
 ```
+
+!!!warning
+    On the Yale clusters, **Apptainer is not installed on login nodes**. <br>Trying to run apptainer on the login nodes will give an error like '-bash: /bin/apptainer: Permission denied'
 
 Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
 
