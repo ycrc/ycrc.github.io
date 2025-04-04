@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1696,6 +1696,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../data/nih-data/" class="md-nav__link">
+        NIH Controlled-Access Data and Repositories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../data/glossary/" class="md-nav__link">
         Glossary
       </a>
@@ -2618,10 +2632,10 @@
 <h2 id="common-slurm-commands">Common Slurm Commands</h2>
 <p>For an exhaustive list of commands and their official manuals, see the <a href="https://slurm.schedmd.com/man_index.html">SchedMD Man Pages</a>. Below are some of the most common commands used to interact with the scheduler.</p>
 <p>Submit a script called <code>my_job.sh</code> as a job (<a href="#batch-jobs">see below</a> for details):</p>
-<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>my_job.sh
+<div class="highlight"><pre><span></span><code>sbatch my_job.sh
 </code></pre></div>
 <p>List your queued and running jobs:</p>
-<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>--me
+<div class="highlight"><pre><span></span><code>squeue --me
 </code></pre></div>
 <p>Cancel a queued job or kill a running job, <em>e.g.</em> a job with ID 12345:</p>
 <!--- if this is bash the numbers turn red -->
@@ -2743,7 +2757,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <p>Interactive jobs can be used for testing and troubleshooting code. Requesting an interactive job will allocate resources and log you into a shell on a compute node.</p>
 <p>You can start an interactive job using the <code>salloc</code> command. Unless specified otherwise using the <code>-p</code> flag (see above), all <code>salloc</code> requests will go to the <code>devel</code> partition on the cluster. Note that interactive jobs are typically allowed on private partitions, while on most <em>public</em> partitions (except 'devel') they are not.</p>
 <p>For example, to request an interactive job with 8GB of RAM for 2 hours:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-t<span class="w"> </span><span class="m">2</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>8G
+<div class="highlight"><pre><span></span><code>salloc -t <span class="m">2</span>:00:00 --mem<span class="o">=</span>8G
 </code></pre></div>
 <p>This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type <code>exit</code> or <kbd>Ctrl</kbd>+<kbd>d</kbd> </p>
 <div class="admonition tip">
@@ -2752,7 +2766,7 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 </div>
 <h3 id="graphical-applications">Graphical applications</h3>
 <p>Many graphical applications are well served with the <a href="/clusters-at-yale/access/ood/#remote-desktop">Open OnDemand Remote Desktop app</a>. If you would like to use X11 forwarding, first make sure it is <a href="/clusters-at-yale/access/x11">installed and configured</a>. Then, add the <code>--x11</code> flag to an interactive job request:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--x11
+<div class="highlight"><pre><span></span><code>salloc --x11
 </code></pre></div>
 <h2 id="batch-jobs">Batch Jobs</h2>
 <p>You can submit a script as a batch job, <em>i.e.</em> one that can be run non-interactively in batches. These submission scripts are comprised of three parts:</p>
@@ -2768,13 +2782,13 @@ See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU an
 <span class="c1">#SBATCH --time=2:00:00</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>MATLAB/2021a
+module reset
+module load MATLAB/2021a
 
-matlab<span class="w"> </span>-batch<span class="w"> </span><span class="s2">&quot;your_script&quot;</span>
+matlab -batch <span class="s2">&quot;your_script&quot;</span>
 </code></pre></div>
 <p>Save <a href="/_static/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
-<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>example_job.sh
+<div class="highlight"><pre><span></span><code>sbatch example_job.sh
 </code></pre></div>
 <p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>.</p>
                 

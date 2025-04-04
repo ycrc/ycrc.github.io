@@ -73,6 +73,15 @@ Yale Orange Accent: #bd5319;
     background-color: #00356b;
 }
 
+.md-typeset .md-button {
+    color: #286dc0;
+}
+
+.md-typeset .md-button:focus, .md-typeset .md-button:hover{
+    border-color: #286dc0;
+    background-color: #286dc0;
+}
+
 /* Tables */
 .md-typeset table:not([class]) th{
     min-width: 0rem;
