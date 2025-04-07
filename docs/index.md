@@ -1,6 +1,10 @@
+
+!!! warning "NIH Controlled-Access Data and Repositories"
+    Effective January 25, 2025, new or renewed Data Use Certifications for NIH Controlled-Access Data and Repositories must adher to the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf). While YCRC's new [Hopper cluster](/clusters/hopper) is in development, Yale has completed appropriate documentation for [McCleary](/clusters/mccleary) to be used as an approved location of NIH Controlled-Access Data and Repositories, with the certain conditions. See our [NIH Controlled-Access Data documentation](/data/nih-data) for more information and to request access.
+
+
 !!! tip "The Bouchet Cluster is Now Available"
     The Bouchet HPC cluster, YCRC first installation at MGHPCC, is now in production. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, are dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this spring we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
-
 
 
 # Introduction

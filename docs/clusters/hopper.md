@@ -18,6 +18,8 @@ The Hopper HPC cluster will be available in a closed beta early 2025.
 Beta access is by invitation only.
 Hopper is expected to be in production and available to Yale researchers for use with ePHI, CUI and certain other types of sensitive data in summer 2025.
 
+Researchers using NIH Controlled-Access Data and Repositories [can use McCleary until July](/data/nih-data).
+
 If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please [reach out to us](/).
 
 
