@@ -1,7 +1,7 @@
 # NIH Controlled-Access Data and Repositories
 
 Effective January 25, 2025, adherence to the updated security standards in the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf) is included in new or renewed Data Use Certifications or similar agreements.
-This means that such data must be stored and computed against on a NIST 800-171 compliant environment.
+This means that such data must be stored and computed in a NIST 800-171 compliant environment.
 YCRC's new [Hopper cluster](/clusters/hopper) as well as a secure version of SpinUp is expected be available and HIPAA/NIST 800-171 compliant this summer. 
 
 In the meantime, the NIH is allowing environments with Plans of Action and Milestones (POAMs) to mitigate security risks to be considered compliant.
