@@ -104,7 +104,7 @@ Should return `BLASTDB=/home/me/db/blast`, which means you set the `BLASTDB` env
 ## Build Your Own Container with Definition Files
 
 You can define a container image to be exactly how you want/need it to be, including applications, libraries, and files of your choosing with a [definition file](https://apptainer.org/docs/user/main/quick_start.html#apptainer-definition-files).
-Apptainer definition files are similar to Docker's `Dockerfile`, but use different syntax.
+Apptainer definition files are similar to Docker's `Dockerfile` (see [Converting Dockerfiles](/clusters-at-yale/guides/containers/#converting-dockerfiles) below), but use different syntax.
 For full definition files and more documentation please see [the Apptainer site](https://apptainer.org/docs/user/main/definition_files.html).
 
 ### Header
@@ -184,4 +184,29 @@ To finally build your container after saving your definition file as `my_app.def
 
 ``` bash
 apptainer build my_app.sif my_app.def
+```
+
+## Converting Dockerfiles
+
+If you have a Dockerfile that you would like use with Apptainer, you can [convert](https://singularityhub.github.io/singularity-cli/recipes) it to an Apptainer definition file using [Singularity Python](https://singularityhub.github.io/singularity-cli/) (spython).
+
+!!! info "Note"
+    The available Apptainer documentation may not be fully updated to reflect the name change from Singularity; as of now (April 2025) the documentation for Dockerfile conversion using spython still refers to Singularity Recipes rather than Apptainer definition files.
+
+You can use [conda](/clusters-at-yale/guides/conda/) to build an 'spython' conda environment and do the conversion as follows:
+
+```
+# Build and activate a conda module for singularity python, "spython"
+module load miniconda
+conda create --name spython conda-forge::spython
+conda activate spython
+
+# Convert the dockerfile to an Apptainer definition file
+spython recipe Dockerfile > my_container.def
+
+# Build the apptainer image
+apptainer build my_container.sif my_container.def
+
+# Run an interactive shell in the container environment
+apptainer shell --shell /bin/bash my_container.sif
 ```
