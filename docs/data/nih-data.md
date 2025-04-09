@@ -18,7 +18,7 @@ McCleary, under the following conditions, is the ONLY shared computing environme
 ### Data Storage
 
 To ensure compliance, McCleary now has a special storage space, located at `/vast/palmer/nih`, for storing Controlled-Access Data.
-All NIH Controlled-Access Data and Repositories and derivatives cannot be storage in another location on McCleary or any other YCRC cluster.
+**No NIH Controlled-Access Data and associated derivatives can be stored in any other location on McCleary nor on any other YCRC cluster.**
 Approved projects will be granted a directory and quota under `/vast/palmer/nih`. In order to facilitate the affected work and due to the short term solution on McCleary, storage quota within reason will be granted free of charge.
 
 ### Data Transfer
