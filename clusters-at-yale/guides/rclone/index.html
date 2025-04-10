@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/rclone/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2662,394 +2662,394 @@ In the examples, we name our remote cloud storage as 'remote' in the configurati
 You can provide any name you want. </p>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Google Drive</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for Google Drive.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c03n06<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
-No<span class="w"> </span>remotes<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-n/s/q&gt;<span class="w"> </span>n
-name&gt;<span class="w"> </span>remote
-Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Alias<span class="w"> </span><span class="k">for</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>remote
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c03n06 ~<span class="o">]</span>$ rclone config
+No remotes found - make a new one
+n<span class="o">)</span> New remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+n/s/q&gt; n
+name&gt; remote
+Type of storage to configure.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value
+ <span class="m">1</span> / 1Fichier
+   <span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+ <span class="m">2</span> / Alias <span class="k">for</span> an existing remote
+   <span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
 <span class="o">[</span>...<span class="o">]</span>
-<span class="m">15</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Drive
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
+<span class="m">15</span> / Google Drive
+   <span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
 <span class="o">[</span>...<span class="o">]</span>
-<span class="m">42</span><span class="w"> </span>/<span class="w"> </span>seafile
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;seafile&quot;</span>
-Storage&gt;<span class="w"> </span><span class="m">15</span>
-**<span class="w"> </span>See<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>drive<span class="w"> </span>backend<span class="w"> </span>at:<span class="w"> </span>https://rclone.org/drive/<span class="w"> </span>**
+<span class="m">42</span> / seafile
+   <span class="se">\ </span><span class="s2">&quot;seafile&quot;</span>
+Storage&gt; <span class="m">15</span>
+** See <span class="nb">help</span> <span class="k">for</span> drive backend at: https://rclone.org/drive/ **
 
-Google<span class="w"> </span>Application<span class="w"> </span>Client<span class="w"> </span>Id
-Setting<span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>is<span class="w"> </span>recommended.
-See<span class="w"> </span>https://rclone.org/drive/#making-your-own-client-id<span class="w"> </span><span class="k">for</span><span class="w"> </span>how<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>own.
-If<span class="w"> </span>you<span class="w"> </span>leave<span class="w"> </span>this<span class="w"> </span>blank,<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>use<span class="w"> </span>an<span class="w"> </span>internal<span class="w"> </span>key<span class="w"> </span>which<span class="w"> </span>is<span class="w"> </span>low<span class="w"> </span>performance.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-client_id&gt;<span class="w"> </span>
-OAuth<span class="w"> </span>Client<span class="w"> </span>Secret
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-client_secret&gt;<span class="w"> </span>
-Scope<span class="w"> </span>that<span class="w"> </span>rclone<span class="w"> </span>should<span class="w"> </span>use<span class="w"> </span>when<span class="w"> </span>requesting<span class="w"> </span>access<span class="w"> </span>from<span class="w"> </span>drive.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Full<span class="w"> </span>access<span class="w"> </span>all<span class="w"> </span>files,<span class="w"> </span>excluding<span class="w"> </span>Application<span class="w"> </span>Data<span class="w"> </span>Folder.
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Read-only<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>file<span class="w"> </span>metadata<span class="w"> </span>and<span class="w"> </span>file<span class="w"> </span>contents.
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive.readonly&quot;</span>
-<span class="w">   </span>/<span class="w"> </span>Access<span class="w"> </span>to<span class="w"> </span>files<span class="w"> </span>created<span class="w"> </span>by<span class="w"> </span>rclone<span class="w"> </span>only.
-<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>These<span class="w"> </span>are<span class="w"> </span>visible<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>drive<span class="w"> </span>website.
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>File<span class="w"> </span>authorization<span class="w"> </span>is<span class="w"> </span>revoked<span class="w"> </span>when<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>deauthorizes<span class="w"> </span>the<span class="w"> </span>app.
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive.file&quot;</span>
-<span class="w">   </span>/<span class="w"> </span>Allows<span class="w"> </span><span class="nb">read</span><span class="w"> </span>and<span class="w"> </span>write<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Application<span class="w"> </span>Data<span class="w"> </span>folder.
-<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>visible<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>drive<span class="w"> </span>website.
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive.appfolder&quot;</span>
-<span class="w">   </span>/<span class="w"> </span>Allows<span class="w"> </span>read-only<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span>file<span class="w"> </span>metadata<span class="w"> </span>but
-<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>allow<span class="w"> </span>any<span class="w"> </span>access<span class="w"> </span>to<span class="w"> </span><span class="nb">read</span><span class="w"> </span>or<span class="w"> </span>download<span class="w"> </span>file<span class="w"> </span>content.
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive.metadata.readonly&quot;</span>
-scope&gt;<span class="w"> </span><span class="m">1</span>
-ID<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>root<span class="w"> </span>folder
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id <span class="k">for</span> how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_id&gt; 
+OAuth Client Secret
+Leave blank normally.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_secret&gt; 
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value
+ <span class="m">1</span> / Full access all files, excluding Application Data Folder.
+   <span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
+ <span class="m">2</span> / Read-only access to file metadata and file contents.
+   <span class="se">\ </span><span class="s2">&quot;drive.readonly&quot;</span>
+   / Access to files created by rclone only.
+ <span class="m">3</span> <span class="p">|</span> These are visible <span class="k">in</span> the drive website.
+   <span class="p">|</span> File authorization is revoked when the user deauthorizes the app.
+   <span class="se">\ </span><span class="s2">&quot;drive.file&quot;</span>
+   / Allows <span class="nb">read</span> and write access to the Application Data folder.
+ <span class="m">4</span> <span class="p">|</span> This is not visible <span class="k">in</span> the drive website.
+   <span class="se">\ </span><span class="s2">&quot;drive.appfolder&quot;</span>
+   / Allows read-only access to file metadata but
+ <span class="m">5</span> <span class="p">|</span> does not allow any access to <span class="nb">read</span> or download file content.
+   <span class="se">\ </span><span class="s2">&quot;drive.metadata.readonly&quot;</span>
+scope&gt; <span class="m">1</span>
+ID of the root folder
+Leave blank normally.
 
-Fill<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span><span class="s2">&quot;Computers&quot;</span><span class="w"> </span>folders<span class="w"> </span><span class="o">(</span>see<span class="w"> </span>docs<span class="o">)</span>,<span class="w"> </span>or<span class="w"> </span><span class="k">for</span><span class="w"> </span>rclone<span class="w"> </span>to<span class="w"> </span>use
-a<span class="w"> </span>non<span class="w"> </span>root<span class="w"> </span>folder<span class="w"> </span>as<span class="w"> </span>its<span class="w"> </span>starting<span class="w"> </span>point.
+Fill <span class="k">in</span> to access <span class="s2">&quot;Computers&quot;</span> folders <span class="o">(</span>see docs<span class="o">)</span>, or <span class="k">for</span> rclone to use
+a non root folder as its starting point.
 
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-root_folder_id&gt;<span class="w"> </span>
-Service<span class="w"> </span>Account<span class="w"> </span>Credentials<span class="w"> </span>JSON<span class="w"> </span>file<span class="w"> </span>path<span class="w"> </span>
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Needed<span class="w"> </span>only<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>use<span class="w"> </span>SA<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>interactive<span class="w"> </span>login.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+root_folder_id&gt; 
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only <span class="k">if</span> you want use SA instead of interactive login.
 
-Leading<span class="w"> </span><span class="sb">`</span>~<span class="sb">`</span><span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>expanded<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span>as<span class="w"> </span>will<span class="w"> </span>environment<span class="w"> </span>variables<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nv">RCLONE_CONFIG_DIR</span><span class="si">}</span><span class="sb">`</span>.
+Leading <span class="sb">`</span>~<span class="sb">`</span> will be expanded <span class="k">in</span> the file name as will environment variables such as <span class="sb">`</span><span class="si">${</span><span class="nv">RCLONE_CONFIG_DIR</span><span class="si">}</span><span class="sb">`</span>.
 
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-service_account_file&gt;<span class="w"> </span>
-Edit<span class="w"> </span>advanced<span class="w"> </span>config?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span>
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-y/n&gt;<span class="w"> </span>n
-Remote<span class="w"> </span>config
-Use<span class="w"> </span>auto<span class="w"> </span>config?
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>sure
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>working<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>remote<span class="w"> </span>or<span class="w"> </span>headless<span class="w"> </span>machine
-y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-n<span class="o">)</span><span class="w"> </span>No
-y/n&gt;<span class="w"> </span>y
-If<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>open<span class="w"> </span>automatically<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>link:<span class="w"> </span>http://127.0.0.1:53682/auth?state<span class="o">=</span>6glRr_mpEORxHevlOaaYyw
-Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>authorize<span class="w"> </span>rclone<span class="w"> </span><span class="k">for</span><span class="w"> </span>access
-Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>code...
-Got<span class="w"> </span>code
-Configure<span class="w"> </span>this<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>Shared<span class="w"> </span>Drive<span class="w"> </span><span class="o">(</span>Team<span class="w"> </span>Drive<span class="o">)</span>?
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-y/n&gt;<span class="w"> </span>n
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+service_account_file&gt; 
+Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; n
+Remote config
+Use auto config?
+ * Say Y <span class="k">if</span> not sure
+ * Say N <span class="k">if</span> you are working on a remote or headless machine
+y<span class="o">)</span> Yes <span class="o">(</span>default<span class="o">)</span>
+n<span class="o">)</span> No
+y/n&gt; y
+If your browser doesn<span class="err">&#39;</span>t open automatically go to the following link: http://127.0.0.1:53682/auth?state<span class="o">=</span>6glRr_mpEORxHevlOaaYyw
+Log <span class="k">in</span> and authorize rclone <span class="k">for</span> access
+Waiting <span class="k">for</span> code...
+Got code
+Configure this as a Shared Drive <span class="o">(</span>Team Drive<span class="o">)</span>?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; n
 --------------------
 <span class="o">[</span>remote<span class="o">]</span>
-<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>drive
-<span class="nv">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>drive
-<span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;ya29.A0ArdaM-mBYFKBE2gieODvdANCZRV6Y8QHhQF-lY74E9fr1HTLOwwLRuoQQbO9P-Jdip62YYhqXfcuWT0KLKGdhUb9M8g2Z4XEQqoNLwZyA-FA2AAYYBqB&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;Bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;1//0dDu3r6KVakgYIARAAGA0NwF-L9IrWIuG7_f44x-uLR2vvBocf4q-KnQVhlkm18TO2Fn0GjJp-cArWfj5kY84&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-02-25T17:28:18.629507046-05</span>
+<span class="nb">type</span> <span class="o">=</span> drive
+<span class="nv">scope</span> <span class="o">=</span> drive
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;ya29.A0ArdaM-mBYFKBE2gieODvdANCZRV6Y8QHhQF-lY74E9fr1HTLOwwLRuoQQbO9P-Jdip62YYhqXfcuWT0KLKGdhUb9M8g2Z4XEQqoNLwZyA-FA2AAYYBqB&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;Bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;1//0dDu3r6KVakgYIARAAGA0NwF-L9IrWIuG7_f44x-uLR2vvBocf4q-KnQVhlkm18TO2Fn0GjJp-cArWfj5kY84&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-02-25T17:28:18.629507046-05</span>
 <span class="s2">:00&quot;</span><span class="o">}</span>
 --------------------
-y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
-y/e/d&gt;<span class="w"> </span>y
-Current<span class="w"> </span>remotes:
+y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
+Current remotes:
 
-Name<span class="w">                 </span><span class="nv">Type</span>
-<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
-remote<span class="w">               </span>drive
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
+remote               drive
 
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
-r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
-c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-e/n/d/r/c/s/q&gt;<span class="w"> </span>q
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q
 </code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OneDrive</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for Microsoft OneDrive.  This example was done inside a remote desktop in OOD, so rclone was able
 to start the browser to authenticate.  If you run this on a normal command line, you'll need to say 'N' at that step.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@r811u30n01.milgram<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
-<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:09:57<span class="w"> </span>NOTICE:<span class="w"> </span>Config<span class="w"> </span>file<span class="w"> </span><span class="s2">&quot;/home/rdb9/.config/rclone/rclone.conf&quot;</span><span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>using<span class="w"> </span>defaults
-No<span class="w"> </span>remotes<span class="w"> </span>found,<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one?
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-n/s/q&gt;<span class="w"> </span>n
+<div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@r811u30n01.milgram ~<span class="o">]</span>$ rclone config
+<span class="m">2024</span>/08/06 <span class="m">11</span>:09:57 NOTICE: Config file <span class="s2">&quot;/home/rdb9/.config/rclone/rclone.conf&quot;</span> not found - using defaults
+No remotes found, make a new one?
+n<span class="o">)</span> New remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+n/s/q&gt; n
 
-Enter<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>new<span class="w"> </span>remote.
-name&gt;<span class="w"> </span>yaleonedrive
+Enter name <span class="k">for</span> new remote.
+name&gt; yaleonedrive
 
-Option<span class="w"> </span>Storage.
-Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value.
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>fichier<span class="o">)</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Akamai<span class="w"> </span>NetStorage
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>netstorage<span class="o">)</span>
+Option Storage.
+Type of storage to configure.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value.
+ <span class="m">1</span> / 1Fichier
+   <span class="se">\ </span><span class="o">(</span>fichier<span class="o">)</span>
+ <span class="m">2</span> / Akamai NetStorage
+   <span class="se">\ </span><span class="o">(</span>netstorage<span class="o">)</span>
 ...
-<span class="m">30</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Blob<span class="w"> </span>Storage
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>azureblob<span class="o">)</span>
-<span class="m">31</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>OneDrive
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>onedrive<span class="o">)</span>
-<span class="m">32</span><span class="w"> </span>/<span class="w"> </span>OpenDrive
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>opendrive<span class="o">)</span>
+<span class="m">30</span> / Microsoft Azure Blob Storage
+   <span class="se">\ </span><span class="o">(</span>azureblob<span class="o">)</span>
+<span class="m">31</span> / Microsoft OneDrive
+   <span class="se">\ </span><span class="o">(</span>onedrive<span class="o">)</span>
+<span class="m">32</span> / OpenDrive
+   <span class="se">\ </span><span class="o">(</span>opendrive<span class="o">)</span>
 ...
-Storage&gt;<span class="w"> </span><span class="m">31</span>
+Storage&gt; <span class="m">31</span>
 
-Option<span class="w"> </span>client_id.
-OAuth<span class="w"> </span>Client<span class="w"> </span>Id.
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-client_id&gt;<span class="w"> </span>
+Option client_id.
+OAuth Client Id.
+Leave blank normally.
+Enter a value. Press Enter to leave empty.
+client_id&gt; 
 
-Option<span class="w"> </span>client_secret.
-OAuth<span class="w"> </span>Client<span class="w"> </span>Secret.
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-client_secret&gt;<span class="w"> </span>
+Option client_secret.
+OAuth Client Secret.
+Leave blank normally.
+Enter a value. Press Enter to leave empty.
+client_secret&gt; 
 
-Option<span class="w"> </span>region.
-Choose<span class="w"> </span>national<span class="w"> </span>cloud<span class="w"> </span>region<span class="w"> </span><span class="k">for</span><span class="w"> </span>OneDrive.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>string<span class="w"> </span>value.
-Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span>global<span class="o">)</span>.
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Global
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>global<span class="o">)</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span><span class="k">for</span><span class="w"> </span>US<span class="w"> </span>Government
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>us<span class="o">)</span>
-<span class="w"> </span><span class="m">3</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Germany
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>de<span class="o">)</span>
-<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Azure<span class="w"> </span>and<span class="w"> </span>Office<span class="w"> </span><span class="m">365</span><span class="w"> </span>operated<span class="w"> </span>by<span class="w"> </span>Vnet<span class="w"> </span>Group<span class="w"> </span><span class="k">in</span><span class="w"> </span>China
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>cn<span class="o">)</span>
-region&gt;<span class="w"> </span>
+Option region.
+Choose national cloud region <span class="k">for</span> OneDrive.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own string value.
+Press Enter <span class="k">for</span> the default <span class="o">(</span>global<span class="o">)</span>.
+ <span class="m">1</span> / Microsoft Cloud Global
+   <span class="se">\ </span><span class="o">(</span>global<span class="o">)</span>
+ <span class="m">2</span> / Microsoft Cloud <span class="k">for</span> US Government
+   <span class="se">\ </span><span class="o">(</span>us<span class="o">)</span>
+ <span class="m">3</span> / Microsoft Cloud Germany
+   <span class="se">\ </span><span class="o">(</span>de<span class="o">)</span>
+ <span class="m">4</span> / Azure and Office <span class="m">365</span> operated by Vnet Group <span class="k">in</span> China
+   <span class="se">\ </span><span class="o">(</span>cn<span class="o">)</span>
+region&gt; 
 
-Edit<span class="w"> </span>advanced<span class="w"> </span>config?
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-y/n&gt;<span class="w"> </span>
+Edit advanced config?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; 
 
-Use<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>to<span class="w"> </span>automatically<span class="w"> </span>authenticate<span class="w"> </span>rclone<span class="w"> </span>with<span class="w"> </span>remote?
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>machine<span class="w"> </span>running<span class="w"> </span>rclone<span class="w"> </span>has<span class="w"> </span>a<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>use
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>running<span class="w"> </span>rclone<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span><span class="o">(</span>remote<span class="o">)</span><span class="w"> </span>machine<span class="w"> </span>without<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>access
-If<span class="w"> </span>not<span class="w"> </span>sure<span class="w"> </span>try<span class="w"> </span>Y.<span class="w"> </span>If<span class="w"> </span>Y<span class="w"> </span>failed,<span class="w"> </span>try<span class="w"> </span>N.
+Use web browser to automatically authenticate rclone with remote?
+ * Say Y <span class="k">if</span> the machine running rclone has a web browser you can use
+ * Say N <span class="k">if</span> running rclone on a <span class="o">(</span>remote<span class="o">)</span> machine without web browser access
+If not sure try Y. If Y failed, try N.
 
-y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-n<span class="o">)</span><span class="w"> </span>No
-y/n&gt;<span class="w"> </span>y
+y<span class="o">)</span> Yes <span class="o">(</span>default<span class="o">)</span>
+n<span class="o">)</span> No
+y/n&gt; y
 
-<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>If<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>open<span class="w"> </span>automatically<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>link:<span class="w"> </span>http://127.0.0.1:53682/auth?state<span class="o">=</span>Xt0h7NYaFt1F6ogeDRC0iQ
-<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>authorize<span class="w"> </span>rclone<span class="w"> </span><span class="k">for</span><span class="w"> </span>access
-<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>code...
-<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:13:45<span class="w"> </span>NOTICE:<span class="w"> </span>Got<span class="w"> </span>code
-Option<span class="w"> </span>config_type.
-Type<span class="w"> </span>of<span class="w"> </span>connection
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>string<span class="w"> </span>value.
+<span class="m">2024</span>/08/06 <span class="m">11</span>:12:43 NOTICE: If your browser doesn<span class="err">&#39;</span>t open automatically go to the following link: http://127.0.0.1:53682/auth?state<span class="o">=</span>Xt0h7NYaFt1F6ogeDRC0iQ
+<span class="m">2024</span>/08/06 <span class="m">11</span>:12:43 NOTICE: Log <span class="k">in</span> and authorize rclone <span class="k">for</span> access
+<span class="m">2024</span>/08/06 <span class="m">11</span>:12:43 NOTICE: Waiting <span class="k">for</span> code...
+<span class="m">2024</span>/08/06 <span class="m">11</span>:13:45 NOTICE: Got code
+Option config_type.
+Type of connection
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> an existing string value.
 
-<span class="o">[</span><span class="w"> </span>choose<span class="w"> </span>defaults<span class="w"> </span>from<span class="w"> </span>now<span class="w"> </span>on<span class="o">]</span>
+<span class="o">[</span> choose defaults from now on<span class="o">]</span>
 
-Keep<span class="w"> </span>this<span class="w"> </span><span class="s2">&quot;yaleonedrive&quot;</span><span class="w"> </span>remote?
-y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
-y/e/d&gt;<span class="w"> </span>
+Keep this <span class="s2">&quot;yaleonedrive&quot;</span> remote?
+y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; 
 
-Current<span class="w"> </span>remotes:
+Current remotes:
 
-Name<span class="w">                 </span><span class="nv">Type</span>
-<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
-yaleonedrive<span class="w">         </span>onedrive
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
+yaleonedrive         onedrive
 
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
-r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
-c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-e/n/d/r/c/s/q&gt;<span class="w"> </span>q
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q
 </code></pre></div>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Box</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for Yale Box.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c14n07<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
-No<span class="w"> </span>remotes<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-n/s/q&gt;<span class="w"> </span>n
-name&gt;<span class="w"> </span>remote
-Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c14n07 ~<span class="o">]</span>$ rclone config
+No remotes found - make a new one
+n<span class="o">)</span> New remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+n/s/q&gt; n
+name&gt; remote
+Type of storage to configure.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value
+ <span class="m">1</span> / 1Fichier
+   <span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
 <span class="o">[</span>...<span class="o">]</span>
-<span class="w"> </span><span class="m">6</span><span class="w"> </span>/<span class="w"> </span>Box
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;box&quot;</span>
+ <span class="m">6</span> / Box
+   <span class="se">\ </span><span class="s2">&quot;box&quot;</span>
 <span class="o">[</span>...<span class="o">]</span>
-Storage&gt;<span class="w"> </span>box
-**<span class="w"> </span>See<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>box<span class="w"> </span>backend<span class="w"> </span>at:<span class="w"> </span>https://rclone.org/box/<span class="w"> </span>**
+Storage&gt; box
+** See <span class="nb">help</span> <span class="k">for</span> box backend at: https://rclone.org/box/ **
 
-Box<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Id.
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-client_id&gt;<span class="w"> </span>
-Box<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Secret
-Leave<span class="w"> </span>blank<span class="w"> </span>normally.
-Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-client_secret&gt;<span class="w"> </span>
-Edit<span class="w"> </span>advanced<span class="w"> </span>config?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span>
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No
-y/n&gt;<span class="w"> </span>n
-Remote<span class="w"> </span>config
-Use<span class="w"> </span>auto<span class="w"> </span>config?
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>sure
-<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>working<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>remote<span class="w"> </span>or<span class="w"> </span>headless<span class="w"> </span>machine
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No
-y/n&gt;<span class="w"> </span>y
-If<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>open<span class="w"> </span>automatically<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>link:<span class="w"> </span>http://127.0.0.1:53682/auth
-Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>authorize<span class="w"> </span>rclone<span class="w"> </span><span class="k">for</span><span class="w"> </span>access
-Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>code...
-Got<span class="w"> </span>code
+Box App Client Id.
+Leave blank normally.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_id&gt; 
+Box App Client Secret
+Leave blank normally.
+Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_secret&gt; 
+Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No
+y/n&gt; n
+Remote config
+Use auto config?
+ * Say Y <span class="k">if</span> not sure
+ * Say N <span class="k">if</span> you are working on a remote or headless machine
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No
+y/n&gt; y
+If your browser does not open automatically go to the following link: http://127.0.0.1:53682/auth
+Log <span class="k">in</span> and authorize rclone <span class="k">for</span> access
+Waiting <span class="k">for</span> code...
+Got code
 --------------------
 <span class="o">[</span>remote<span class="o">]</span>
-<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>box
-<span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2019-10-21T11:00:36.839586736-04:00&quot;</span><span class="o">}</span>
+<span class="nb">type</span> <span class="o">=</span> box
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2019-10-21T11:00:36.839586736-04:00&quot;</span><span class="o">}</span>
 --------------------
-y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
-y/e/d&gt;<span class="w"> </span>y
-Current<span class="w"> </span>remotes:
+y<span class="o">)</span> Yes this is OK
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
+Current remotes:
 
-Name<span class="w">                 </span><span class="nv">Type</span>
-<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
-remote<span class="w">               </span>box
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
+remote               box
 
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
-r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
-c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-e/n/d/r/c/s/q&gt;<span class="w"> </span>q
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q
 </code></pre></div>
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">S3</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for an S3 provider such as aws.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@login1.mccleary<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
-Enter<span class="w"> </span>configuration<span class="w"> </span>password:
+<div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@login1.mccleary ~<span class="o">]</span>$ rclone config
+Enter configuration password:
 password:
-Current<span class="w"> </span>remotes:
+Current remotes:
 
-Name<span class="w">                 </span><span class="nv">Type</span>
-<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
+Name                 <span class="nv">Type</span>
+<span class="o">====</span>                 <span class="o">====</span>
 
 <span class="o">[</span>...<span class="o">]</span>
 
-e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
-n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
-d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
-r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
-c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
-s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
-q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
-e/n/d/r/c/s/q&gt;<span class="w"> </span>n
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; n
 <span class="sb">```</span>bash
 
-Enter<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>new<span class="w"> </span>remote.
-name&gt;<span class="w"> </span>remote
+Enter name <span class="k">for</span> new remote.
+name&gt; remote
 
-Option<span class="w"> </span>Storage.
-Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value.
+Option Storage.
+Type of storage to configure.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value.
 
 <span class="o">[</span>...<span class="o">]</span>
 
-<span class="w"> </span><span class="m">5</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>S3<span class="w"> </span>Compliant<span class="w"> </span>Storage<span class="w"> </span>Providers<span class="w"> </span>including<span class="w"> </span>AWS,<span class="w"> </span>Alibaba,<span class="w"> </span>Ceph,<span class="w"> </span>China<span class="w"> </span>Mobile,<span class="w"> </span>Cloudflare,<span class="w"> </span>ArvanCloud,<span class="w"> </span>DigitalOcean,<span class="w"> </span>Dreamhost,<span class="w"> </span>Huawei<span class="w"> </span>OBS,<span class="w"> </span>IBM<span class="w"> </span>COS,<span class="w"> </span>IDrive<span class="w"> </span>e2,<span class="w"> </span>IONOS<span class="w"> </span>Cloud,<span class="w"> </span>Liara,<span class="w"> </span>Lyve<span class="w"> </span>Cloud,<span class="w"> </span>Minio,<span class="w"> </span>Netease,<span class="w"> </span>RackCorp,<span class="w"> </span>Scaleway,<span class="w"> </span>SeaweedFS,<span class="w"> </span>StackPath,<span class="w"> </span>Storj,<span class="w"> </span>Tencent<span class="w"> </span>COS,<span class="w"> </span>Qiniu<span class="w"> </span>and<span class="w"> </span>Wasabi
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>s3<span class="o">)</span>
+ <span class="m">5</span> / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, China Mobile, Cloudflare, ArvanCloud, DigitalOcean, Dreamhost, Huawei OBS, IBM COS, IDrive e2, IONOS Cloud, Liara, Lyve Cloud, Minio, Netease, RackCorp, Scaleway, SeaweedFS, StackPath, Storj, Tencent COS, Qiniu and Wasabi
+   <span class="se">\ </span><span class="o">(</span>s3<span class="o">)</span>
 <span class="o">[</span>...<span class="o">]</span>
-Storage&gt;<span class="w"> </span><span class="m">5</span>
+Storage&gt; <span class="m">5</span>
 
-Option<span class="w"> </span>provider.
-Choose<span class="w"> </span>your<span class="w"> </span>S3<span class="w"> </span>provider.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value.
-Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>Web<span class="w"> </span>Services<span class="w"> </span><span class="o">(</span>AWS<span class="o">)</span><span class="w"> </span>S3
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>AWS<span class="o">)</span>
+Option provider.
+Choose your S3 provider.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value.
+Press Enter to leave empty.
+ <span class="m">1</span> / Amazon Web Services <span class="o">(</span>AWS<span class="o">)</span> S3
+   <span class="se">\ </span><span class="o">(</span>AWS<span class="o">)</span>
 <span class="o">[</span>...<span class="o">]</span>
-provider&gt;<span class="w"> </span><span class="m">1</span>
+provider&gt; <span class="m">1</span>
 
-Option<span class="w"> </span>env_auth.
-Get<span class="w"> </span>AWS<span class="w"> </span>credentials<span class="w"> </span>from<span class="w"> </span>runtime<span class="w"> </span><span class="o">(</span>environment<span class="w"> </span>variables<span class="w"> </span>or<span class="w"> </span>EC2/ECS<span class="w"> </span>meta<span class="w"> </span>data<span class="w"> </span><span class="k">if</span><span class="w"> </span>no<span class="w"> </span>env<span class="w"> </span>vars<span class="o">)</span>.
-Only<span class="w"> </span>applies<span class="w"> </span><span class="k">if</span><span class="w"> </span>access_key_id<span class="w"> </span>and<span class="w"> </span>secret_access_key<span class="w"> </span>is<span class="w"> </span>blank.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>boolean<span class="w"> </span>value<span class="w"> </span><span class="o">(</span><span class="nb">true</span><span class="w"> </span>or<span class="w"> </span><span class="nb">false</span><span class="o">)</span>.
-Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="nb">false</span><span class="o">)</span>.
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Enter<span class="w"> </span>AWS<span class="w"> </span>credentials<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>step.
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span><span class="nb">false</span><span class="o">)</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Get<span class="w"> </span>AWS<span class="w"> </span>credentials<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>environment<span class="w"> </span><span class="o">(</span>env<span class="w"> </span>vars<span class="w"> </span>or<span class="w"> </span>IAM<span class="o">)</span>.
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span><span class="nb">true</span><span class="o">)</span>
-env_auth&gt;<span class="w"> </span>
+Option env_auth.
+Get AWS credentials from runtime <span class="o">(</span>environment variables or EC2/ECS meta data <span class="k">if</span> no env vars<span class="o">)</span>.
+Only applies <span class="k">if</span> access_key_id and secret_access_key is blank.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own boolean value <span class="o">(</span><span class="nb">true</span> or <span class="nb">false</span><span class="o">)</span>.
+Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="nb">false</span><span class="o">)</span>.
+ <span class="m">1</span> / Enter AWS credentials <span class="k">in</span> the next step.
+   <span class="se">\ </span><span class="o">(</span><span class="nb">false</span><span class="o">)</span>
+ <span class="m">2</span> / Get AWS credentials from the environment <span class="o">(</span>env vars or IAM<span class="o">)</span>.
+   <span class="se">\ </span><span class="o">(</span><span class="nb">true</span><span class="o">)</span>
+env_auth&gt; 
 
-Option<span class="w"> </span>access_key_id.
-AWS<span class="w"> </span>Access<span class="w"> </span>Key<span class="w"> </span>ID.
-Leave<span class="w"> </span>blank<span class="w"> </span><span class="k">for</span><span class="w"> </span>anonymous<span class="w"> </span>access<span class="w"> </span>or<span class="w"> </span>runtime<span class="w"> </span>credentials.
-Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-access_key_id&gt;<span class="w"> </span>***************
+Option access_key_id.
+AWS Access Key ID.
+Leave blank <span class="k">for</span> anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+access_key_id&gt; ***************
 
-Option<span class="w"> </span>secret_access_key.
-AWS<span class="w"> </span>Secret<span class="w"> </span>Access<span class="w"> </span>Key<span class="w"> </span><span class="o">(</span>password<span class="o">)</span>.
-Leave<span class="w"> </span>blank<span class="w"> </span><span class="k">for</span><span class="w"> </span>anonymous<span class="w"> </span>access<span class="w"> </span>or<span class="w"> </span>runtime<span class="w"> </span>credentials.
-Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-secret_access_key&gt;<span class="w"> </span>*************
+Option secret_access_key.
+AWS Secret Access Key <span class="o">(</span>password<span class="o">)</span>.
+Leave blank <span class="k">for</span> anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+secret_access_key&gt; *************
 
-Option<span class="w"> </span>region.
-Region<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to.
-Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value.
-Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
-<span class="w">   </span>/<span class="w"> </span>The<span class="w"> </span>default<span class="w"> </span>endpoint<span class="w"> </span>-<span class="w"> </span>a<span class="w"> </span>good<span class="w"> </span>choice<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>unsure.
-<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>US<span class="w"> </span>Region,<span class="w"> </span>Northern<span class="w"> </span>Virginia,<span class="w"> </span>or<span class="w"> </span>Pacific<span class="w"> </span>Northwest.
-<span class="w">   </span><span class="p">|</span><span class="w"> </span>Leave<span class="w"> </span>location<span class="w"> </span>constraint<span class="w"> </span>empty.
-<span class="w">   </span><span class="se">\ </span><span class="o">(</span>us-east-1<span class="o">)</span>
-<span class="w">   </span>/<span class="w"> </span>US<span class="w"> </span>East<span class="w"> </span><span class="o">(</span>Ohio<span class="o">)</span><span class="w"> </span>Region.
+Option region.
+Region to connect to.
+Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value.
+Press Enter to leave empty.
+   / The default endpoint - a good choice <span class="k">if</span> you are unsure.
+ <span class="m">1</span> <span class="p">|</span> US Region, Northern Virginia, or Pacific Northwest.
+   <span class="p">|</span> Leave location constraint empty.
+   <span class="se">\ </span><span class="o">(</span>us-east-1<span class="o">)</span>
+   / US East <span class="o">(</span>Ohio<span class="o">)</span> Region.
 <span class="o">[</span>...<span class="o">]</span>
 
-<span class="o">[</span>take<span class="w"> </span>defaults<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>remaining<span class="w"> </span>questions
+<span class="o">[</span>take defaults <span class="k">for</span> all remaining questions
 
-Edit<span class="w"> </span>advanced<span class="w"> </span>config?
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-y/n&gt;<span class="w"> </span>n
+Edit advanced config?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; n
 
-Configuration<span class="w"> </span>complete.
+Configuration complete.
 Options:
--<span class="w"> </span>type:<span class="w"> </span>s3
--<span class="w"> </span>provider:<span class="w"> </span>AWS
--<span class="w"> </span>access_key_id:<span class="w"> </span>***************
--<span class="w"> </span>secret_access_key:<span class="w"> </span>****************
--<span class="w"> </span>region:<span class="w"> </span>us-east-1
+- type: s3
+- provider: AWS
+- access_key_id: ***************
+- secret_access_key: ****************
+- region: us-east-1
 </code></pre></div>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>if you want to use rclone for a shared google drive, you should answer 'y' when it asks whether you want to configure it as a Shared Drive.</p>
-<div class="highlight"><pre><span></span><code>Configure<span class="w"> </span>this<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>Shared<span class="w"> </span>Drive<span class="w"> </span><span class="o">(</span>Team<span class="w"> </span>Drive<span class="o">)</span>?
-y<span class="o">)</span><span class="w"> </span>Yes
-n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
-y/n&gt;<span class="w"> </span>y
+<div class="highlight"><pre><span></span><code>Configure this as a Shared Drive <span class="o">(</span>Team Drive<span class="o">)</span>?
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No <span class="o">(</span>default<span class="o">)</span>
+y/n&gt; y
 </code></pre></div>
 </div>
 <div class="admonition tip">
@@ -3065,12 +3065,12 @@ You should replace it with the actual name you have picked up for the cloud stor
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you forgot the name of the cloud storage you have configured, run <code>rclone config show</code> and the name will be shown in <code>[]</code>. 
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rclone<span class="w"> </span>config<span class="w"> </span>show
+<div class="highlight"><pre><span></span><code>$ rclone config show
 <span class="o">[</span>remote<span class="o">]</span>
-<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>drive
-<span class="nv">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>drive
-<span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;mytoken&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-07-09T22:13:56.452750648-04:00&quot;</span><span class="o">}</span>
-<span class="nv">root_folder_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myid
+<span class="nb">type</span> <span class="o">=</span> drive
+<span class="nv">scope</span> <span class="o">=</span> drive
+<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;mytoken&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2021-07-09T22:13:56.452750648-04:00&quot;</span><span class="o">}</span>
+<span class="nv">root_folder_id</span> <span class="o">=</span> myid
 </code></pre></div></p>
 </div>
 <h3 id="list-files">List files</h3>
