@@ -46,6 +46,16 @@ ycrc_clean_rstudio.sh
 
 This will remove any temporary files created by RStudio and allow it to start anew.
 
+## Updating the conda drop-down menu in RStudio Server app
+
+If you have created R conda environments (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal))
+then you can make these available within RStudio Server app. From the terminal, execute the following commands:
+
+``` bash
+ycrc_conda_env.sh update
+```
+
+
 ## Run RStudio in Remote Desktop
 
 While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be beneficial. 
@@ -90,5 +100,5 @@ If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environme
 
 ### RStudio Server does not respond
 If you encounter a grey screen after clicking the "Connect to RStudio Server" 
-button, terminate the RStudio session and run `clean_rstudio.sh` in a [terminal](/clusters-at-yale/access/ood#terminal.
+button, terminate the RStudio session and run `clean_rstudio.sh` in a [terminal](/clusters-at-yale/access/ood#terminal).
 
