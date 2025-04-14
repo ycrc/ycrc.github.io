@@ -21,6 +21,7 @@ We currently support endpoints for the following clusters.
 
 | Cluster                        | Globus Endpoint     |
 |--------------------------------|---------------------|
+| [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet`        |
 | [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |

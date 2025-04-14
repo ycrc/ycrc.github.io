@@ -24,7 +24,7 @@ Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     #ControlPath /tmp/%h_%p_%r
     #ControlPersist 2h
 
-Host mccleary grace milgram misha
+Host bouchet grace mccleary milgram misha
     HostName %h.ycrc.yale.edu
 ```
 
