@@ -1011,7 +1011,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |6|6442|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
+        |6|6442Y|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
         |4|6342|48|1999|icelake, avx512, 6342, nogpu, standard, pi, bigtmp|
         |6|6342|48|487|icelake, avx512, 6342, nogpu, standard, pi, bigtmp|
 
@@ -1070,7 +1070,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |2|6442|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
+        |2|6442Y|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
         |2|8268|48|355|cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp, oldest|
         |1|6234|16|1505|cascadelake, avx512, nogpu, 6234, pi, bigtmp, oldest|
 
@@ -1371,7 +1371,7 @@ With few exceptions, jobs submitted to private partitions are not considered whe
 
         |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
         |---|---|---|---|---|
-        |12|6442|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
+        |12|6442Y|48|487|icelake, avx512, 6442Y, nogpu, standard, pi, bigtmp|
         |12|8268|48|355|cascadelake, avx512, 8268, nogpu, standard, pi, bigtmp, oldest|
         |6|6136|24|88|hdr, skylake, avx512, 6136, nogpu, standard, common, bigtmp|
 
