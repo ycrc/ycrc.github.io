@@ -31,6 +31,7 @@
 
     ###inside the notebook
     ####import necessary python functions
+    ###this will vary depending on the model being used. Refer to the huggingface website use this model button for explicit instructions for a model.
     from transformers import pipeline, AutoModelForCausalLLM, AutoTokenizer
 
     ###set tokenizer and model to download LLM, can replace distilgpt2 with preferred model

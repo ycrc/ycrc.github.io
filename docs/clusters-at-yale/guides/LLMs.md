@@ -116,7 +116,7 @@ conda create --name huggingface python=3.11.* transformers accelerate tokenizers
 
 ###need pytorch installed to use huggingface
 conda activate huggingface
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 --force
 
 ###load into jupyter notebook application on OOD
 module reset
