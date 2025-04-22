@@ -49,7 +49,7 @@ To generate the report simply run (replacing the ID number of the job in questio
   * Have a nice day!
 ```
 
-When viewed from a web-browser, these statistics are enhanced with plots of performance over time.
+When viewed from our [User portal graphical interface](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#user-portal), these statistics are enhanced with plots of performance over time.
 
 ![jobstats web](/img/ood_jobstats.jpg)
 
