@@ -75,6 +75,7 @@ Yale Orange Accent: #bd5319;
 
 .md-typeset .md-button {
     color: #286dc0;
+    margin-left: 25%;
 }
 
 .md-typeset .md-button:focus, .md-typeset .md-button:hover{

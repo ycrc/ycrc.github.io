@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/alphafold/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1165,8 +1165,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/cmd-line-args/" class="md-nav__link">
-        Pass Values into Jobs
+      <a href="../../job-scheduling/jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -1179,8 +1179,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/jobstats/" class="md-nav__link">
-        Job Performance Monitoring
+      <a href="../../job-scheduling/priority-tier/" class="md-nav__link">
+        Priority Tier
       </a>
     </li>
   
@@ -1221,6 +1221,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
+        Scavenge Partition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-scheduling/mpi/" class="md-nav__link">
+        MPI Partition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../job-scheduling/dependency/" class="md-nav__link">
         Jobs with Dependencies
       </a>
@@ -1249,36 +1277,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/priority-tier/" class="md-nav__link">
-        Priority Tier
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
-        Scavenge Partition
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/mpi/" class="md-nav__link">
-        MPI Partition
+      <a href="../../job-scheduling/cmd-line-args/" class="md-nav__link">
+        Pass Values into Jobs
       </a>
     </li>
   
@@ -2531,15 +2531,15 @@ it should be executed using a <a href="/clusters-at-yale/job-scheduling/#batch-j
 </code></pre></div></p>
 <p>Heteromer:
 <div class="highlight"><pre><span></span><code>&gt;sequence_1
-&lt;SEQUENCE<span class="w"> </span>A&gt;
+&lt;SEQUENCE A&gt;
 &gt;sequence_2
-&lt;SEQUENCE<span class="w"> </span>A&gt;
+&lt;SEQUENCE A&gt;
 &gt;sequence_3
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 &gt;sequence_4
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 &gt;sequence_5
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 ...
 </code></pre></div></p>
 <p>Copy or download the <a href="/docs/_static/files/alphafold_monomer.sh">batch script template</a>
@@ -2560,21 +2560,21 @@ and modify for your specific use case.</p>
 <span class="c1">#SBATCH --constraint &quot;a100|rtx5000|a5000|rtx3090&quot;</span>
 
 <span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
+module reset
+module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 
 <span class="c1">## Provide settings for running various components in parallel</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w">   </span><span class="c1"># defaults to 4 if not set</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="c1"># defaults to 8 if not set</span>
+<span class="nb">export</span> <span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span>   <span class="c1"># defaults to 4 if not set</span>
+<span class="nb">export</span> <span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> <span class="c1"># defaults to 8 if not set</span>
 <span class="c1">## Choose name for output folder    </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
+<span class="nb">export</span> <span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
 
 <span class="c1">## Remove old output folder and recreate for new run</span>
-rm<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+rm -r <span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+mkdir -p <span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
 
 <span class="c1">## run AlphaFold</span>
-alphafold<span class="w"> </span>--output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span><span class="w"> </span>--model_preset<span class="o">=</span>monomer<span class="w"> </span>--fasta_paths<span class="o">=</span>YourSequence.fasta<span class="w"> </span>--max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
+alphafold --output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span> --model_preset<span class="o">=</span>monomer --fasta_paths<span class="o">=</span>YourSequence.fasta --max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
 </code></pre></div>
 <p>For a multimer, use a multimer input file and "--model_preset=multimer".</p>
 <p>To run multiple sequences one after the other, specify the files as a comma-separated list;
@@ -2592,7 +2592,7 @@ BEFORE RUNNING, you must obtain your own copy of the parameters file (not all th
 This requires registering with <a href="https://forms.gle/svvpY4u2jsHEwWYS6">Google</a> and agreeing to the above terms of use.
 Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.
 Then run with
-<div class="highlight"><pre><span></span><code>alphafold<span class="w"> </span>YourDirName
+<div class="highlight"><pre><span></span><code>alphafold YourDirName
 </code></pre></div>
 where YourDirName is the path to the folder containing your af_input and models folders.</p>
 <p>The input configuration differs from AlphaFold 2, but is similar to the server format.

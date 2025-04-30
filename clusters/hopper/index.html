@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1165,8 +1165,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/cmd-line-args/" class="md-nav__link">
-        Pass Values into Jobs
+      <a href="../../clusters-at-yale/job-scheduling/jobstats/" class="md-nav__link">
+        Job Performance Monitoring
       </a>
     </li>
   
@@ -1179,8 +1179,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/jobstats/" class="md-nav__link">
-        Job Performance Monitoring
+      <a href="../../clusters-at-yale/job-scheduling/priority-tier/" class="md-nav__link">
+        Priority Tier
       </a>
     </li>
   
@@ -1221,6 +1221,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../clusters-at-yale/job-scheduling/scavenge/" class="md-nav__link">
+        Scavenge Partition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/job-scheduling/mpi/" class="md-nav__link">
+        MPI Partition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../clusters-at-yale/job-scheduling/dependency/" class="md-nav__link">
         Jobs with Dependencies
       </a>
@@ -1249,36 +1277,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/priority-tier/" class="md-nav__link">
-        Priority Tier
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/scavenge/" class="md-nav__link">
-        Scavenge Partition
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters-at-yale/job-scheduling/mpi/" class="md-nav__link">
-        MPI Partition
+      <a href="../../clusters-at-yale/job-scheduling/cmd-line-args/" class="md-nav__link">
+        Pass Values into Jobs
       </a>
     </li>
   
@@ -2534,6 +2534,26 @@
     Software
   </a>
   
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-and-python-packages" class="md-nav__link">
+    R and Python Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-models" class="md-nav__link">
+    LLM Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2578,15 +2598,15 @@
 <p><img alt="Grace Hopper" class="cluster-portrait" src="/img/Grace-Hopper.jpg" /></p>
 <p>Hopper is a shared-use resource for all researchers at Yale University.
 The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Murray Hopper</a>, who received her Ph.D. in Mathematics from Yale in 1934. </p>
-<p>When in production, Hopper will have been assessed by an external auditor for NIST 800-171 and HIPAA compliance, ensuring it is suitable for high performance computation of ePHI, CUI and certain other types of sensitive data.
+<p>When in production, Hopper will have been assessed by an external auditor for NIST 800-171 and HIPAA compliance, ensuring it is suitable for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data, CUI and certain other types of sensitive data.
 Hopper consists of a variety of standard compute and GPU-enabled nodes and mounts an encrypted shared filesystem.</p>
-<p>Hopper will be jointly support by the YCRC and HSIT to ensure a high level of service and facilitate secure computational research.
+<p>Hopper is jointly supported by the YCRC and HSIT to ensure a high level of service and facilitate secure computational research.
 Hopper is one of a number of secure computing environments, such as SpinUp+ and <a href="https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform">CHP</a>, developed to support a variety of secure computing needs.
 As the Hopper production launch approaches, support staff will be available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.</p>
 <hr />
-<p>The Hopper HPC cluster will be available in a closed beta early 2025.
+<p>The Hopper HPC cluster is currently in a closed beta as of early 2025.
 Beta access is by invitation only.
-Hopper is expected to be in production and available to Yale researchers for use with ePHI, CUI and certain other types of sensitive data in summer 2025.</p>
+Hopper is expected to be in production and available to Yale researchers for use with ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data, CUI and certain other types of sensitive data in summer 2025.</p>
 <p>Researchers using NIH Controlled-Access Data and Repositories <a href="/data/nih-data">can use McCleary until July</a>.</p>
 <p>If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please <a href="/">reach out to us</a>.</p>
 <div class="admonition info">
@@ -2620,7 +2640,7 @@ Failure to complete the review by the due date will result in the locking of all
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
 The VDI will provide a virtual desktop with the standard YCRC cluster interfaces, such as the <a href="/clusters-at-yale/access/ood">Open OnDemand Web Portal</a> and command line terminal access, to access files, run commands, and launch jobs.
 To protect the security of the data on Hopper, the VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts.</p>
-<p>To access the VDI, navigate to (URL Coming Soon) in a web browser.</p>
+<p>To access the VDI, navigate to <code>hopper1.ycrc.yale.edu</code> in a web browser.</p>
 <h2 id="transfer-data">Transfer Data</h2>
 <p>Data may only be transferred to and from Hopper using an approved method as described below.
 By default, all internet access is blocked, with only certain approved remote sites whitelisted.
@@ -2632,19 +2652,38 @@ Please contact us for approval and transfer assistance, including details on the
 <p>Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our <a href="/data/globus">Globus documentation</a>.
 The user then must <a href="https://forms.gle/YigxQdbvobaH7YDT6">submit a request to the YCRC</a> to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
-If your data is large (&gt;100G), please submit your request <em>prior</em> to uploading the data so we can facilitate the larger transfer.</p>
+If your data is large (&gt;200G), please submit your request <em>prior</em> to uploading the data so we can facilitate the larger transfer.</p>
 <p>Downloading of low-risk files from the cluster is the same process, but in reverse.
-Submit a request to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
-For data exporting, an additional attestion is required that the data is low-risk.
+<a href="https://forms.gle/YigxQdbvobaH7YDT6">submit a request to the YCRC</a> to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.
 Data will be purged from the staging area after a TBD amount of time.</p>
 <h2 id="software">Software</h2>
-<p>All software must be approved and installed by YCRC staff, typically as <a href="/applications/modules">modules</a>.
-No software may be installed by users, including conda environments and R packages.
+<p>All software must be approved and installed by YCRC staff, typically as <a href="/applications/modules">software modules</a>.
+No software may be installed by users.
 A researcher's own analysis scripts, such as Python, R, MATLAB or bash scripts, do 
 not qualify as software and are permissible to upload and run on the cluster without approval.
-If you are unclear if your workflow qualifies as software, please contact your administrator for clarifications.
-In the future, YCRC plans to make certain approved R and Python libraries available via a local clone of the repositories. </p>
+If you are unclear if your workflow qualifies as software, please contact your administrator for clarifications.</p>
+<h3 id="r-and-python-packages">R and Python Packages</h3>
+<p>We have set up a monitored proxy to PyPI and CRAN to allow you to install your own 
+Python and R packages using the standard methods (i.e. <code>pip</code>, <code>install.packages</code>). 
+From the hopper1 login node (where you go when you connect via ThinLinc), you can now 
+use conda with the default Conda repo (not conda-forge or bioconductor) and pip to create your own environments.</p>
+<h3 id="llm-models">LLM Models</h3>
+<p>LLM models, such as Llama, qualify as software so must be approved and installed by YCRC staff.</p>
+<p>We have made commonly requested LLM models available as <a href="/applications/modules">software modules</a> for easier offline use.</p>
+<p>To use an offline LLM model, run <code>module load &lt;module name&gt;</code>.
+Run <code>module display &lt;module name&gt;</code> to determine the environment variable for the model path.
+Reference the environment variable (e.g. <code>LLM_LLAMA</code>) for the model path in your python commands. For example: </p>
+<div class="highlight"><pre><span></span><code>model_path = os.environ[&quot;LLM_LLAMA&quot;]
+model = LlamaForCausalLM.from_pretrained(model_path, local_files_only=True)
+
+OR
+
+model_path = os.environ[&quot;LLM_LLAMA&quot;]
+pipeline = transformers.pipeline(&quot;text-generation&quot;, model=model_path, model_kwargs={&quot;torch_dtype&quot;: torch.bfloat16}, device_map=&quot;auto&quot;)
+</code></pre></div>
+<p>If you need additional LLM models that are not yet installed, <a href="/#get-help">contact us</a> to request that we add it.
+Please be selective when requesting very large models (e.g. &gt; 100B parameters)--due to their large size we can only host a limited number of these models.</p>
 <h2 id="submit-jobs">Submit Jobs</h2>
 <p>Jobs are run using Slurm in the usual way, either using interactive or batch allocations.<br />
 All jobs must specify a ‘project’ account using the <code>-A</code> flag.
@@ -2853,7 +2892,7 @@ Only users in a specific project will be able to access that project's storage s
 <td>125GiB/user</td>
 <td>500,000</td>
 <td>Not Yet</td>
-<td>&gt;=2 days</td>
+<td>7 days</td>
 <td></td>
 </tr>
 <tr>
@@ -2862,7 +2901,7 @@ Only users in a specific project will be able to access that project's storage s
 <td>4TiB/project</td>
 <td>5,000,000</td>
 <td>Not Yet</td>
-<td>&gt;=2 days</td>
+<td>7 days</td>
 <td></td>
 </tr>
 <tr>
@@ -2884,7 +2923,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2025</span>
       
     
   </small>
