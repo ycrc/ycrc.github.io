@@ -136,15 +136,15 @@ nav:
             - clusters-at-yale/job-scheduling/resource-requests.md
             - clusters-at-yale/job-scheduling/getusage.md
             - clusters-at-yale/job-scheduling/common-job-failures.md
-            - clusters-at-yale/job-scheduling/cmd-line-args.md
             - clusters-at-yale/job-scheduling/jobstats.md
+            - clusters-at-yale/job-scheduling/priority-tier.md
             - clusters-at-yale/job-scheduling/fairshare.md
             - clusters-at-yale/job-scheduling/dsq.md
-            - clusters-at-yale/job-scheduling/dependency.md
-            - clusters-at-yale/job-scheduling/scrontab.md
-            - clusters-at-yale/job-scheduling/priority-tier.md
             - clusters-at-yale/job-scheduling/scavenge.md
             - clusters-at-yale/job-scheduling/mpi.md
+            - clusters-at-yale/job-scheduling/dependency.md
+            - clusters-at-yale/job-scheduling/scrontab.md
+            - clusters-at-yale/job-scheduling/cmd-line-args.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
         - clusters-at-yale/glossary.md
     - Data & Storage:

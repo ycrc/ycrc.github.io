@@ -11,8 +11,10 @@ The new compute charging model was developed in close collaboration with faculty
 
 ## Access
 
-Access to Priority Tier partitions is granted upon request through the [Priority Tier Access Request Form](https://docs.google.com/forms/d/1gXaOiOwmU-YY1Q5k2mJJRmEHTeJcBs9BlkJ7n1akF1Q).
-This form must be submitted by the group’s PI (or delegate).
+Access to Priority Tier partitions is granted upon request through the Priority Tier Access Request Form.
+**This form must be submitted by the group’s PI (or delegate)**.
+
+[Request Priority Tier Access](https://docs.google.com/forms/d/1gXaOiOwmU-YY1Q5k2mJJRmEHTeJcBs9BlkJ7n1akF1Q){ .md-button }
 
 During the Priority Tier onboarding process, the YCRC will require certain information before access can be granted.
 
