@@ -118,9 +118,9 @@ To get a list of your collections, run:
 module savelist
 ```
 
-## `ml`: A Convinient Tool
+## `ml`: A Convenient Tool
 
-Lmod provides a convinient tool called `ml` to simplify all of the module commands. 
+Lmod provides a convenient tool called `ml` to simplify all of the module commands. 
 
 #### List Module Loaded
 
