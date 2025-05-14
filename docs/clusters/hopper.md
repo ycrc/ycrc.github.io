@@ -5,7 +5,7 @@
 Hopper is a shared-use resource for all researchers at Yale University.
 The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
 
-When in production, Hopper will have been assessed by an external auditor for NIST 800-171 and HIPAA compliance, ensuring it is suitable for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data, CUI and certain other types of sensitive data.
+When in production, Hopper will have been assessed by an external auditor for NIST 800-171 and HIPAA compliance, ensuring it is suitable for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), CUI and certain other types of sensitive data.
 Hopper consists of a variety of standard compute and GPU-enabled nodes and mounts an encrypted shared filesystem.
 
 Hopper is jointly supported by the YCRC and HSIT to ensure a high level of service and facilitate secure computational research.
