@@ -18,11 +18,12 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 
 | Date            | Cluster  |
 |-----------------|----------|
-| Early June 2025 | Grace    |
-| Early June 2025 | Milgram  |
-| Early June 2025 | McCleary |
-| Early June 2025 | Bouchet  |
-| TBA             | Misha    |
+| June 9-12      | Grace    |
+| June 9-12    | Milgram  |
+| June 10-12 | McCleary |
+| June 2-5  | Bouchet  |
+| June 2-5  | Hopper  |
+| June  9-12       | Misha    |
 
 Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
 We will give as much notice as possible in advance of these maintenance outages.

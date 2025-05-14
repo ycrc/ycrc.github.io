@@ -98,6 +98,7 @@ nav:
             - clusters/milgram.md
             - clusters/misha.md
             - clusters/bouchet.md
+            - clusters/hopper.md
             - "Maintenance": clusters/maintenance.md
         - user-group.md
         - About the YCRC: https://research.computing.yale.edu/about
