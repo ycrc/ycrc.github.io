@@ -3711,7 +3711,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </table>
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=a5000:2</code> would request 2 NVIDIA RTX A5000 GPUs per node.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx5000ada:2</code> would request 2 NVIDIA RTX 5000 Ada GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
