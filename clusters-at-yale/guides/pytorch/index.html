@@ -2526,12 +2526,13 @@
 </code></pre></div>
 <h1 id="installing-pytorch-in-a-miniconda-environment">Installing Pytorch in a miniconda environment</h1>
 <p>If you find that there is not a module available on the cluster for the version of pytorch you need, and/or you are using a complex miniconda environment as part of your workflow, then you may benefit from installing pytorch yourself inside a miniconda environment.</p>
-<p>Click this link, <a href="https://pytorch.org/get-started/locally/">installing pytorch</a>, to be directed to the pytorch website to install the latest version of pytorch.</p>
+<p>To install pytorch, first activate or create a conda environment with python ≥ 3.9, then use pip to install pytorch using the command from pytorch's installation guide.</p>
+<p>To access the guide, click this link: <a href="https://pytorch.org/get-started/locally/">installing pytorch</a>. You will be directed to the pytorch website to install the latest version of pytorch.</p>
 <p>You will be greeted with a table like the one below:</p>
 <p><img alt="pytorch" src="/img/pytorch_start_locally.png" /></p>
-<p>Please make sure your selections match the image above, i.e., Stable, linux, conda, and Python. Either CUDA version will work on the clusters, and CPU should be selected if you do not plan on using GPUs with your pytorch installation.</p>
-<p>Then copy the install command to install pytorch into your existing environment. Please make sure you are off the login node or the install will fail.</p>
-<p>If building a new environment, you can instead use the conda create command as outlined at this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">site</a>.</p>
+<p>Please make sure your selections match the image above, i.e., Stable PyTorch Build, Linux, Pip, and Python. All three CUDA version will work on the clusters. Alternatively, select CPU if you do not plan on using GPUs with your pytorch installation.</p>
+<p>Then copy the Pip command to install pytorch into the conda environment you just created. Please make sure you are off the login node or the install will fail.</p>
+<p>If you choose to install pytorch into a new conda environment, you can follow the process outlined at this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">site</a>.</p>
 <h1 id="installing-older-versions-of-pytorch">Installing older versions of pytorch</h1>
 <p>To install older versions of pytorch, you can find instructions at this <a href="https://pytorch.org/get-started/previous-versions">site</a>.</p>
                 
@@ -2542,7 +2543,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 15, 2025</span>
       
     
   </small>
