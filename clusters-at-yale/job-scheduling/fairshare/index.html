@@ -1277,6 +1277,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concurrent-usage-limits" class="md-nav__link">
+    Concurrent Usage Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#backfill" class="md-nav__link">
     Backfill
   </a>
@@ -2594,6 +2601,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concurrent-usage-limits" class="md-nav__link">
+    Concurrent Usage Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#backfill" class="md-nav__link">
     Backfill
   </a>
@@ -2633,6 +2647,10 @@
 <p>In addition to fairshare, any pending job will accrue priority over time, which can help overcome small fairshare penalties. To see the factors affecting your job's priority, run the following <code>sprio</code> command:</p>
 <div class="highlight"><pre><span></span><code>sprio -j &lt;job_id&gt;
 </code></pre></div>
+<h2 id="concurrent-usage-limits">Concurrent Usage Limits</h2>
+<p>In order to prevent individual users or groups from dominating public partitions on our clusters, all public partitions have concurrent usage limits.
+For example, if a user reaches their "Maximum CPUs per user" limit, additional jobs will remain pending with status "QOSMaxCpuPerUserLimit"  until some of their currently running jobs complete, thus reserving resources for other users.
+Please see the partitions tables on the <a href="/clusters/">individual cluster pages</a> for the respective limits in each partition.</p>
 <h2 id="backfill">Backfill</h2>
 <p>In addition to the main scheduling cycle, where jobs are run in the order of priority and availability of resources, all jobs are also considered for "backfill". Backfill is a mechanism which will let jobs with lower priority score start before high priority jobs if they can fit in around them. For example, if a higher priority job needs 4 nodes with 20 cores on each node and it will have to wait 30 hours for those resources to be available, if a lower priority job only needs a couple cores for an hour, Slurm will run that job in the meantime.</p>
 <p>For this reason, it is important to request accurate walltime limits for your jobs. If your job only requires 2 hours to run, but you request 24 hours, the likelihood that your job will be backfilled is greatly lowered. Moreover, for performance reasons, the backfill scheduler on Grace only looks at the top 10 jobs by each user. Therefore, if you bundle similar jobs into job arrays (see <a href="/clusters-at-yale/job-scheduling/dsq">dSQ</a>), the backfill cycle will consider more of your jobs since entire job arrays only count as one job for the limit accounting.</p>
@@ -2644,7 +2662,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 15, 2025</span>
       
     
   </small>
