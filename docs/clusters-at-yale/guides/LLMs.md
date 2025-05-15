@@ -83,16 +83,19 @@ Starting at the 37 minute mark of the video.
 
 It is recommended to start your research with interactive sessions and then once common bugs have been eliminated, to move to batch submissions where stronger resources are available.
 
-If a minimum amount of vRAM is needed that is higher than the respective cluster's smallest GPU, then you can use the constraint flag in Slurm to specify GPU types.
+By default, Slurm provisions GPU requests with available GPUs having the lowest vRAM. LLMs often require more vRAM than the smallest GPU available, so they won't run on the GPU Slurm provides by default.
 
-For example, if you need 40 GB of vRAM, you can add this flag to request only a100 and a100-80G GPUs:
+For example, say your LLM needs 16 GB of vRAM and you request a single GPU. If the smallest available GPU in your partition has 11 GB (e.g., an rtx2080ti), Slurm may give you this GPU by default. This would cause your job to fail due to a lack of vRAM.
+
+In this case, you can specify GPUs with more vRAM using the `--constraint` flag. In the example above, you could specify rtx5000 or v100 GPUs, which have more vRAM.
+
 
 ```bash
 #####interactive
-salloc --partition gpu_devel --Constraint="a100|a100-80g"
+salloc --partition gpu_devel --constraint="rtx5000|v100"
 
 #####submission script
-#SBATCH --Constraint="a100|a100-80g"
+#SBATCH --constraint="rtx5000|v100"
 ```
 
 if you are using ollama, you are now ready to go. We have ollama as a module, so you can simply type:
