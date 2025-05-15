@@ -30,6 +30,13 @@ In addition to fairshare, any pending job will accrue priority over time, which 
 sprio -j <job_id>
 ```
 
+## Concurrent Usage Limits
+
+In order to prevent individual users or groups from dominating public partitions on our clusters, all public partitions have concurrent usage limits.
+For example, if a user reaches their "Maximum CPUs per user" limit, additional jobs will remain pending with status "QOSMaxCpuPerUserLimit"  until some of their currently running jobs complete, thus reserving resources for other users.
+Please see the partitions tables on the [individual cluster pages](/clusters/) for the respective limits in each partition.
+
+
 ## Backfill
 
 In addition to the main scheduling cycle, where jobs are run in the order of priority and availability of resources, all jobs are also considered for "backfill". Backfill is a mechanism which will let jobs with lower priority score start before high priority jobs if they can fit in around them. For example, if a higher priority job needs 4 nodes with 20 cores on each node and it will have to wait 30 hours for those resources to be available, if a lower priority job only needs a couple cores for an hour, Slurm will run that job in the meantime.
