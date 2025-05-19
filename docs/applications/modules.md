@@ -140,7 +140,7 @@ ml Python/3.8.6-GCCcore-10.2.0
 ml -Python
 ```
 
-#### With `moudle` Sub-commands
+#### With `module` Sub-commands
 
 `ml` can be used to replace the `module` command. It can take all the sub-commands from `module` and works the same way as `module` does.
 
@@ -155,6 +155,35 @@ ml purge
 ml save test
 ml restore test
 ```
+
+## Fast module loading
+
+Large modules with many dependencies can take tens of seconds to load, becoming unwieldy to work with. This is also true of [collections](/applications/modules/#module-collections). 
+
+To address this you can upgrade `ml` by loading our experimental module [`mlq`](https://github.com/cvsindelar/mlq) (Module Loading-Quick):
+
+```
+ml mlq
+```
+
+Thereafter, `ml` will speed up module loading with pre-built "shortcuts" when possible. This will keep module-loading times down to a few seconds in most cases.
+
+You can also build your own shortcuts with `-b` option, which allows shortcuts to function like collections but load much more quickly.
+
+Note that shortcut modules are limited to working by themselves, not with other modules. You can continue to load modules the ordinary way with the `module` function, i.e. `module load <mod>`.
+
+Example use cases:
+```
+ml mlq                    # Loads the mlq module
+ml -e                     # Lists existing shortcuts
+ml -b R/4.4.1-foss-2022b  # Build a shortcut for R/4.4.1-foss-2022b
+ml R/4.4.1-foss-2022b     # Loads the R shortcut
+ml miniconda              # (if no 'miniconda' shortcut) uses lmod 'ml' to load the miniconda module
+ml reset                  # Unloads all modules- including shortcuts- except for mlq, which stays loaded
+module reset              # Unloads all modules as well as mlq
+```
+
+Use `ml -h` for more options and examples.
 
 ## Environment Variables
 
