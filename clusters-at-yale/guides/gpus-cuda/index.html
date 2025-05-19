@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/gpus-cuda/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2650,32 +2650,32 @@
 <h2 id="monitor-activity-and-drivers">Monitor Activity and Drivers</h2>
 <p>The CUDA libraries you load will allow you to compile code against them. To run CUDA-enabled code you must also be running on a node with a gpu allocated and a compatible driver installed. The minimum driver versions are listed on <a href="https://docs.nvidia.com/deploy/cuda-compatibility/index.html">this nvidia developer site</a>.</p>
 <p>You can check the available GPUs, their current usage, installed version of the nvidia drivers, and more with the command <a href="https://developer.nvidia.com/nvidia-system-management-interface"><code>nvidia-smi</code></a>. Either in an interactive job or after connecting to a node running your job with <code>ssh</code>,  <code>nvidia-smi</code> output should look something like this:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>user@gpu01 ~<span class="o">]</span>$ nvidia-smi
+<div class="highlight"><pre><span></span><code><span class="o">[</span>user@gpu01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>nvidia-smi
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> NVIDIA-SMI <span class="m">460</span>.32.03    Driver Version: <span class="m">460</span>.32.03    CUDA Version: <span class="m">11</span>.2     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">460</span>.32.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">460</span>.32.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.2<span class="w">     </span><span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
-<span class="p">|</span> GPU  Name        Persistence-M<span class="p">|</span> Bus-Id        Disp.A <span class="p">|</span> Volatile Uncorr. ECC <span class="p">|</span>
-<span class="p">|</span> Fan  Temp  Perf  Pwr:Usage/Cap<span class="p">|</span>         Memory-Usage <span class="p">|</span> GPU-Util  Compute M. <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
 <span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
-<span class="p">|</span>   <span class="m">0</span>  GeForce GTX <span class="m">108</span>...  On   <span class="p">|</span> <span class="m">00000000</span>:02:00.0 Off <span class="p">|</span>                  N/A <span class="p">|</span>
-<span class="p">|</span> <span class="m">23</span>%   34C    P8     9W / 250W <span class="p">|</span>      1MiB / 11178MiB <span class="p">|</span>      <span class="m">0</span>%      Default <span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>GeForce<span class="w"> </span>GTX<span class="w"> </span><span class="m">108</span>...<span class="w">  </span>On<span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:02:00.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="m">23</span>%<span class="w">   </span>34C<span class="w">    </span>P8<span class="w">     </span>9W<span class="w"> </span>/<span class="w"> </span>250W<span class="w"> </span><span class="p">|</span><span class="w">      </span>1MiB<span class="w"> </span>/<span class="w"> </span>11178MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">0</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
 +-------------------------------+----------------------+----------------------+
 
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> Processes:                                                       GPU Memory <span class="p">|</span>
-<span class="p">|</span>  GPU       PID   Type   Process name                             Usage      <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Processes:<span class="w">                                                       </span>GPU<span class="w"> </span>Memory<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>GPU<span class="w">       </span>PID<span class="w">   </span>Type<span class="w">   </span>Process<span class="w"> </span>name<span class="w">                             </span>Usage<span class="w">      </span><span class="p">|</span>
 <span class="p">|</span><span class="o">=============================================================================</span><span class="p">|</span>
-<span class="p">|</span>  No running processes found                                                 <span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>No<span class="w"> </span>running<span class="w"> </span>processes<span class="w"> </span>found<span class="w">                                                 </span><span class="p">|</span>
 +-----------------------------------------------------------------------------+
 </code></pre></div>
 <p>Here we see that the node <code>gpu01</code> is running driver version 460.32.03 and is compatible with CUDA version 11.2. There are no processes using the GPU allocated to this job.</p>
 <h2 id="software">Software</h2>
 <h3 id="cuda-cudnn-tensorflow-and-pytorch-availability-on-cluster">Cuda, cuDNN, tensorflow, and pytorch availability on cluster</h3>
 <p>We have built certain versions of CUDA, cuDNN, tensorflow, and pytorch on all the clusters YCRC maintains. If one of the versions of these modules aligns with the version needed for your research, then there may be no need to install these programs yourself. To list all the modules available for these programs:</p>
-<div class="highlight"><pre><span></span><code>module avail cuda/
-module avail cudnn/
-module avail tensorflow
-module avail pytorch
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>cuda/
+module<span class="w"> </span>avail<span class="w"> </span>cudnn/
+module<span class="w"> </span>avail<span class="w"> </span>tensorflow
+module<span class="w"> </span>avail<span class="w"> </span>pytorch
 </code></pre></div>
 <h3 id="tensorflow">Tensorflow</h3>
 <p>Instructions for installing tensorflow on our clusters can be found <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/">here</a></p>
@@ -2683,7 +2683,7 @@ module avail pytorch
 <p>Instructions for installing PyTorch on our clusters can be found <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">here</a></p>
 <h2 id="compile-c-or-cpp-files-with-cuda-code">Compile <code>.c</code> or <code>.cpp</code> Files with CUDA code</h2>
 <p>By default, <code>nvcc</code> expects that host code is in files with a <code>.c</code> or <code>.cpp</code> extension, and device code is in files with a <code>.cu</code> extension. When you mix device code in a <code>.c</code> or <code>.cpp</code> file with host code, the device code will not be recoganized by <code>nvcc</code> unless you add this flag: <code>-x cu</code>.  </p>
-<div class="highlight"><pre><span></span><code>nvcc -x cu mycuda.cpp -o mycuda.exe
+<div class="highlight"><pre><span></span><code>nvcc<span class="w"> </span>-x<span class="w"> </span>cu<span class="w"> </span>mycuda.cpp<span class="w"> </span>-o<span class="w"> </span>mycuda.exe
 </code></pre></div>
                 
                   
