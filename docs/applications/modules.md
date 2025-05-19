@@ -176,8 +176,12 @@ Example use cases:
 ```
 ml mlq                    # Loads the mlq module
 ml -e                     # Lists existing shortcuts
-ml -b R/4.4.1-foss-2022b  # Build a shortcut for R/4.4.1-foss-2022b
-ml R/4.4.1-foss-2022b     # Loads the R shortcut
+ml R                      # Loads the R shortcut (default version)
+
+ml -b my_r R/4.3.2-foss-2022b MACS2/2.2.9.1-foss-2022b
+                          # Build a shortcut 'my_r' with R and MACS modules
+			  
+ml my_r                   # Loads the my_env shortcut
 ml miniconda              # (if no 'miniconda' shortcut) uses lmod 'ml' to load the miniconda module
 ml reset                  # Unloads all modules- including shortcuts- except for mlq, which stays loaded
 module reset              # Unloads all modules as well as mlq
