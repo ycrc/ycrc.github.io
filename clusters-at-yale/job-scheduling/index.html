@@ -2801,6 +2801,14 @@ module<span class="w"> </span>load<span class="w"> </span>MATLAB/2021a
 
 matlab<span class="w"> </span>-batch<span class="w"> </span><span class="s2">&quot;your_script&quot;</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">No Space After #SBATCH</p>
+<p>When writing SLURM directives, make sure there is no space between the <code>#</code> and <code>SBATCH</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --option=value  # Correct</span>
+<span class="c1"># SBATCH --option=value  # Incorrect - will be ignored</span>
+</code></pre></div>
+<p>Directives with a space after the <code>#</code> will be treated as comments and ignored by SLURM.</p>
+</div>
 <p>Save <a href="/_static/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>example_job.sh
 </code></pre></div>
@@ -2813,7 +2821,7 @@ matlab<span class="w"> </span>-batch<span class="w"> </span><span class="s2">&qu
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 20, 2025</span>
       
     
   </small>
