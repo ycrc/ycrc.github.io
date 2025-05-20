@@ -109,6 +109,18 @@ See our page of [Submission Script Examples](/clusters-at-yale/job-scheduling/sl
 ``` bash
 --8<-- "docs/_static/files/example_job.sh"
 ```
+
+!!! warning "No Space After #SBATCH"
+    When writing SLURM directives, make sure there is no space between the `#` and `SBATCH`. 
+    
+    ```bash
+    #SBATCH --option=value  # Correct
+    # SBATCH --option=value  # Incorrect - will be ignored
+    ```
+    
+    Directives with a space after the `#` will be treated as comments and ignored by SLURM.
+
+
     
 Save [this file](/_static/files/example_job.sh) as `example_job.sh`, then submit it with:
 
