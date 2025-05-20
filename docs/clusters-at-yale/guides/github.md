@@ -156,5 +156,4 @@ This is perfect for a research group or collaboration and can include non-Yale a
 - [YCRC Version Control Bootcamp](https://research.computing.yale.edu/training/ycrc-bootcamps/version-control-git)
 - [Educational GitHub](https://education.github.com)
 - [GitHub's Try-it](http://try.github.io)
-- [Instruqt Getting Started With Git](https://play.instruqt.com/public/topics/getting-started-with-git)
 
