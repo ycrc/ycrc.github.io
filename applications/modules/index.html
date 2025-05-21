@@ -13585,8 +13585,10 @@ ml<span class="w"> </span>restore<span class="w"> </span><span class="nb">test</
 </code></pre></div>
 <h2 id="fast-module-loading">Fast module loading</h2>
 <p>Large modules with many dependencies can take tens of seconds to load, becoming unwieldy to work with. This is also true of <a href="/applications/modules/#module-collections">collections</a>. </p>
-<p>To address this you can upgrade <code>ml</code> by loading our experimental module <a href="https://github.com/cvsindelar/mlq"><code>mlq</code></a> (Module Loading-Quick):</p>
-<div class="highlight"><pre><span></span><code>ml mlq
+<p>To address this you can upgrade the command <code>ml</code> (<a href="/applications/modules/#with-module-sub-commands">above</a>) by loading our experimental module <a href="https://github.com/cvsindelar/mlq"><code>mlq</code></a> (Module Loading-Quick):</p>
+<div class="highlight"><pre><span></span><code>module load mlq
+# alternatively:
+ml mlq
 </code></pre></div>
 <p>Thereafter, <code>ml</code> will speed up module loading with pre-built "shortcuts" when possible. This will keep module-loading times down to a few seconds in most cases.</p>
 <p>You can also build your own shortcuts with <code>-b</code> option, which allows shortcuts to function like collections but load much more quickly.</p>
