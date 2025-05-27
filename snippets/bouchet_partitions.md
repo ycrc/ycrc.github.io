@@ -28,6 +28,99 @@
     |---|---|---|---|---|
     |2|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
+=== "day"
+
+    !!! alert "Coming Soon"
+        The `day` partition nodes are coming soon and will be available for general-purpose computing. 
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the devel partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`24:00:00`|
+    |Maximum CPUs per user|`1000`|
+    |Maximum CPUs per group|`2500`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |72|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+
+=== "week"
+
+    !!! alert "Coming Soon!"
+        The `week` partition nodes are coming soon and will be available for general-purpose computing. 
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the devel partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`7-00:00:00`|
+    |Maximum CPUs per user|`128`|
+    |Maximum CPUs per group|`256`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |24|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+
+=== "bigmem"
+
+    !!! alert "Coming Soon!"
+        The `bigmem` partition nodes are coming soon and will be available for general-purpose computing. 
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the devel partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`24:00:00`|
+    |Maximum Mem per user|`4000 GB`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |4|cpugen:emeraldrapids|64|4000|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+
+
 === "gpu"
 
     Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=rtx5000ada:2` would request 2 NVIDIA RTX 5000 Ada GPUs per node.
