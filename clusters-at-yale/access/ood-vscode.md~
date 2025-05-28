@@ -1,0 +1,86 @@
+# VSCode
+
+[Visual Studio Code](https://code.visualstudio.com) is a popular development tool that is widely used by our researchers.
+
+There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.
+
+
+## VSCode on Remote Desktop:
+
+The easiest way to run VSCode is to use [our Open OnDemand web portal](/clusters-at-yale/access/ood). First, start a Remote Desktop [interactive session](/clusters-at-yale/access/ood/#launch-an-interactive-app). As noted in our [Remote Deskop documentation](/clusters-at-yale/access/ood-remote-desktop/), we recommend to [adjust the 'image quality' slider bar](/clusters-at-yale/access/ood-remote-desktop/#graphics-quality) all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:
+
+```
+module load VSCode
+vscode
+```
+
+## Setting up SSH tunneling to run VS Code Server on a cluster node
+
+The above method will probably give most users a workable solution for using VSCode. However, one issue with the Remote Desktop is graphics responsiveness: particularly when scrolling, window behavior can become laggy and imprecise.
+
+If this (or something else) is a problem for you, a solution is to run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. However, while there are several extensions that allow VSCode users to connect to remote servers over SSH, these are imperfect and can drop the connection. Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
+
+We are testing an alternative method for SSH tunneling with VSCode, similar the [method we recommend for Jupyter notebooks](/clusters-at-yale/guides/jupyter_ssh/). This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).
+
+If you'd like to try this tunneling method, please use the following steps:
+
+1. Create a vscode server batch script called `vscode_slurm.sh` and submit it to the queue with `sbatch vscode_slurm.sh`. The script source code is attached below.
+
+ 2. After this script successfully starts running, use the last line of the logfile `vscode_slurm.txt` (in the directory you submitted the job from) to set up a connection from the cluster to your own VScode app on a remote computer. The last line of vscode_slurm.txt will look like:
+```
+To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX
+```
+						      
+3. Run your local VSCode app. Then, connect to the server from within the app as follows: 
+
+    - Go to the `Welcome` screen (Help -> Welcome)
+    - Click `Connect to...` 
+    - Click `Connect to tunnel...`
+    - Click `Github` 
+    - Click on your cluster node which should be listed as, i.e. `r30406n03mccleary.ycrc.yale.edu`
+
+vscode_slurm.sh:
+```
+#!/bin/bash
+
+#SBATCH --partition=day
+#SBATCH -t 1-00:00:00
+#SBATCH -c 1
+#SBATCH --mem=10G
+#SBATCH --output=vscode_slurm.txt
+
+# vscode_slurm.sh
+
+# Usage:
+
+# sbatch vscode_slurm.sh
+
+# After this script successfully starts running, use the last line of the
+#  the logfile 'vscode_slurm.txt' (in the directory you submitted the job from)
+#  to set up a connection from the cluster to your own VScode app on a remote computer.
+#  An example last line will look like:
+
+######################
+# vscode_slurm.txt
+######################
+# ...
+# To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX
+######################
+
+# Note: if you will use a shared partition for this job, we suggest 
+#  the 'day' queue. If many users start requesting multi-day jobs with this method,
+#  it becomes more likely some users may accidently leave their
+#  VSCode jobs running when not in use.
+# This could lead to unnecessary resource consumption on the computing clusters.
+
+module load VSCode
+
+code tunnel
+```
+
+## Code Server
+
+The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
+To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Code Server from the Interactive Apps menu in the portal and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
+
+

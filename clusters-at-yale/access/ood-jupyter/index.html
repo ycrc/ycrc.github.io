@@ -2725,9 +2725,9 @@ be accessed via their respective symlinks in Home. If you want to access a direc
 <p>We recommend you use <a href="/clusters-at-yale/guides/conda">miniconda</a> to manage your Jupyter environments.
 You can create Conda environments from the <a href="/clusters-at-yale/access/ood#terminal">Web Portal terminal interface</a> or from a terminal-based login to the clusters.
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda create -y -n notebook_env python jupyter numpy pandas matplotlib
-ycrc_conda_env.sh update
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>notebook_env<span class="w"> </span>python<span class="w"> </span>jupyter<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <p>Note that you <strong>must</strong> include jupyter in the list of packages you give to the <code>conda create</code> command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.</p>
 <p>The <code>ycrc_conda_env.sh update</code> command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. <em>To update the list you must run this command</em>.</p>
@@ -2758,11 +2758,11 @@ papermill /path/to/notebook.ipynb /path/to/output.ipynb
 <h3 id="jupyter-cannot-be-started-properly">Jupyter cannot be started properly</h3>
 <ol>
 <li>If you are trying to launch <code>jupyter-notebook</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-notebook
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-notebook
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 <li>If you are trying to launch <code>jupyter-lab</code>, make sure it is available in your jupyter conda environment:
-<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1 ~<span class="o">]</span>$ which jupyter-lab
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ycrc_default<span class="o">)[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>jupyter-lab
 /gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 </code></pre></div></li>
 </ol>

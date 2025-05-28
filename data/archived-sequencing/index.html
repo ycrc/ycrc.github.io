@@ -2587,22 +2587,22 @@
 </div>
 <p>Very large tar files over 500GB, sometimes fail to download.  If you run into problems, contact us at hpc@yale.edu and we can
 manually download it.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch60/somedir
-tar –xvf /SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/scratch60/somedir
+tar<span class="w"> </span>–xvf<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/path/to/file.tar
 </code></pre></div>
 <p>Inside the project tar files are the fastq files, which have been compressed using <code>quip</code>. If your pipeline cannot read quip files directly, you will need to uncompress them before using them.</p>
-<div class="highlight"><pre><span></span><code>module load Quip
-quip –d M20_ACAGTG_L008_R1_009.fastq.qp
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Quip
+quip<span class="w"> </span>–d<span class="w"> </span>M20_ACAGTG_L008_R1_009.fastq.qp
 </code></pre></div>
 <p>For your convenience, we have a tool, <code>restore</code>, that will download a tar file, untar it, and uncompress all quip files.</p>
-<div class="highlight"><pre><span></span><code>module load ycga-public
-restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
+restore<span class="w"> </span>–t<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 </code></pre></div>
 <p>If you have trouble locating your files, you can use the utility <code>locateRun</code>, using any substring of the original run name. <code>locateRun</code> is in the same module as restore.</p>
-<div class="highlight"><pre><span></span><code>locateRun C9374AN
+<div class="highlight"><pre><span></span><code>locateRun<span class="w"> </span>C9374AN
 </code></pre></div>
 <p>Restore spends most of the time running quip. You can parallelize and thereby speed up that process using the <code>-n</code> flag.</p>
-<div class="highlight"><pre><span></span><code>restore –n <span class="m">20</span> ...
+<div class="highlight"><pre><span></span><code>restore<span class="w"> </span>–n<span class="w"> </span><span class="m">20</span><span class="w"> </span>...
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2616,19 +2616,19 @@ restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 <p>Imagine that user rdb9 wants to restore data from run BHJWZZBCX3</p>
 <h3 id="step-1">step 1</h3>
 <p>Initialize compute node with 20 cores
-<div class="highlight"><pre><span></span><code>salloc -c <span class="m">20</span>
-module load ycga-public
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-c<span class="w"> </span><span class="m">20</span>
+module<span class="w"> </span>load<span class="w"> </span>ycga-public
 </code></pre></div></p>
 <h3 id="step-2">step 2</h3>
 <p>Find the run location
-<div class="highlight"><pre><span></span><code>$ locateRun BHJWZZBCX3
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>locateRun<span class="w"> </span>BHJWZZBCX3
 /ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3.deleted
 /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
 </code></pre></div></p>
 <p>Note that the original run location has been deleted, but the archive location is listed.</p>
 <h3 id="step-3">step 3</h3>
 <p>List the contents of the archived run, and locate the desired project tarball:
-<div class="highlight"><pre><span></span><code>$ ls -1 /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-1<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3
 210305_D00306_1337_BHJWZZBCX3_0.tar
 210305_D00306_1337_BHJWZZBCX3_0_Unaligned_Project_Jdm222.tar
 210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar
@@ -2637,7 +2637,7 @@ module load ycga-public
 <p>We want 210305_D00306_1337_BHJWZZBCX3_1_Unaligned-1_Project_Rdb9.tar, matching our netid.</p>
 <h3 id="step-4">step 4</h3>
 <p>Use the restore utility to copy and uncompress the fastq files from the tar file.  By default, restore will start 20 threads, which matches our srun above.  The restore will likely take several minutes. To see progress, you can use the -v flag.
-<div class="highlight"><pre><span></span><code>restore -v -t /SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
+<div class="highlight"><pre><span></span><code>restore<span class="w"> </span>-v<span class="w"> </span>-t<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA-A2/archive/ycga-gpfs/sequencers/illumina/sequencerV/runs/210305_D00306_1337_BHJWZZBCX3/210305_D00306_1337_BHJWKHBCX3_1_Unaligned-1_Project_Rdb9.tar
 </code></pre></div></p>
 <p>The restored fastq files will written to a directory like this: 
 <div class="highlight"><pre><span></span><code>210305_D00306_1337_BHJWZZBCX3/Data/Intensities/BaseCalls/Unaligned*/Project_*
