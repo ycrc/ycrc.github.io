@@ -160,9 +160,11 @@ ml restore test
 
 Large modules with many dependencies can take tens of seconds to load, becoming unwieldy to work with. This is also true of [collections](/applications/modules/#module-collections). 
 
-To address this you can upgrade `ml` by loading our experimental module [`mlq`](https://github.com/cvsindelar/mlq) (Module Loading-Quick):
+To address this you can upgrade the command `ml` ([above](/applications/modules/#ml-a-convenient-tool)) by loading our experimental module [`mlq`](https://github.com/cvsindelar/mlq) (Module Loading-Quick):
 
 ```
+module load mlq
+# alternatively:
 ml mlq
 ```
 
@@ -181,7 +183,7 @@ ml R                      # Loads the R shortcut (default version)
 ml -b my_r R/4.3.2-foss-2022b MACS2/2.2.9.1-foss-2022b
                           # Build a shortcut 'my_r' with R and MACS modules
 			  
-ml my_r                   # Loads the my_env shortcut
+ml my_r                   # Loads the my_r shortcut
 ml miniconda              # (if no 'miniconda' shortcut) uses lmod 'ml' to load the miniconda module
 ml reset                  # Unloads all modules- including shortcuts- except for mlq, which stays loaded
 module reset              # Unloads all modules as well as mlq
@@ -218,3 +220,4 @@ man module
 
 There is even more information at the [official Lmod 
 website](https://www.tacc.utexas.edu/research/tacc-research/lmod/) and [related documentation](https://lmod.readthedocs.io).
+
