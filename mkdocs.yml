@@ -165,6 +165,7 @@ nav:
                 - data/archive.md
                 - data/external.md
                 - data/group-change.md
+                - "Hosting a UCSC Track Hub": data/hosting-UCSC-trackhub.md
             - data/glossary.md
 
 
