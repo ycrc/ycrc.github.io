@@ -28,7 +28,7 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 
 ## System Status and Monitoring
 
-For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/milgram/).
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/milgram/).
 
 ## Installed Applications
 

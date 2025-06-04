@@ -18,7 +18,7 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 
 ## System Status and Monitoring
 
-For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/support/hpc/system-status).
+For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/system-status).
 
 ## Installed Applications
 
