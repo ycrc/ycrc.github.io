@@ -2,7 +2,7 @@
 
 ![Stanley](/img/Stanley-Milgram.jpg){: .cluster-portrait}
 
-Milgram is a HIPAA aligned cluster intended for use on projects that may involve sensitive data. This applies to both storage and computation. If you have any questions about this policy, please [contact us](/#get-help).
+Milgram is intended for use on projects that may involve sensitive data. This applies to both storage and computation. If you have any questions about this policy, please [contact us](/#get-help).
 
 Milgram is named for Dr. Stanley Milgram, a psychologist who researched the behavioral motivations behind social awareness in individuals and obedience to authority figures. He conducted several famous experiments during his professorship at Yale University including the lost-letter experiment, the small-world experiment, and the Milgram experiment.
 
