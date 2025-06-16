@@ -1,8 +1,6 @@
-#Large Language Models (LLMs) on Research Computing Hardware
+# Large Language Models (LLMs) on Research Computing Hardware
 
 The YCRC's research computing infrastructure can be used to run localized version of LLM models. 
-
-LLMs can be run locally on any of the YCRC's clusters but if using PHI or PII data, then users must use Milgram.
 
 Running LLMs locally has the following advantages:
 
@@ -10,7 +8,7 @@ Running LLMs locally has the following advantages:
  - Localized LLMs provide users with the flexibility to control which model/version is implemented, increasing research efficiency
  - YCRC GPUs are free of charge and can currently run models up to 320 GB of vRAM.
 
-#GPU availability on YCRC Resources
+# GPU availability on YCRC Resources
 
 Once you have your LLM program setup, you can run the models on any of our GPU partitions (gpu_devel, gpu, and gpu_scavenge for McCleary and Grace, or gpu and scavenge for Milgram).
 
@@ -33,7 +31,7 @@ The YCRC's hardware operates on a scheduling based system where users request re
 **Requesting larger GPUs will have longer wait time due to increased demand among researchers**. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.
 
-#Choosing a local LLM
+# Choose a local LLM
 
 There are hundreds of different LLMs available for download in both [huggingface](https://huggingface.co/models) and [ollama](https://ollama.com/search).
 Each of which use a specific amount of vRAM (GPU memory). These models usually have this naming format - Model_Name_#B where #B represents the number of parameters the
@@ -126,7 +124,7 @@ module reset
 ycrc_conda_env.sh update
 ```
 
-## Interactive submissions
+## Interactive Submissions
 
 To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on [Open on Demand](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/). However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:
