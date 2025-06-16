@@ -20,7 +20,7 @@
     
     
       
-        <title>LLMs - Yale Center for Research Computing</title>
+        <title>Large Language Models (LLMs) on Research Computing Hardware - Yale Center for Research Computing</title>
       
     
     
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              LLMs
+              Large Language Models (LLMs) on Research Computing Hardware
             
           </span>
         </div>
@@ -2019,7 +2019,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        LLMs
+        Large Language Models (LLMs) on Research Computing Hardware
       </a>
       
     </li>
@@ -2532,7 +2532,6 @@
                 
                 <h1 id="large-language-models-llms-on-research-computing-hardware">Large Language Models (LLMs) on Research Computing Hardware</h1>
 <p>The YCRC's research computing infrastructure can be used to run localized version of LLM models. </p>
-<p>LLMs can be run locally on any of the YCRC's clusters but if using PHI or PII data, then users must use Milgram.</p>
 <p>Running LLMs locally has the following advantages:</p>
 <ul>
 <li>User data inputted into model is more secure as local LLM models don't have online access and aren't sharing inputted information with any public entity.</li>
@@ -2584,7 +2583,7 @@ Navigate down to the header, Public Partitions, and choose the gpu or gpu_devel 
 The YCRC's hardware operates on a scheduling based system where users request resources and wait in a queue until said resources are available. 
 <strong>Requesting larger GPUs will have longer wait time due to increased demand among researchers</strong>. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.</p>
-<h1 id="choosing-a-local-llm">Choosing a local LLM</h1>
+<h1 id="choose-a-local-llm">Choose a local LLM</h1>
 <p>There are hundreds of different LLMs available for download in both <a href="https://huggingface.co/models">huggingface</a> and <a href="https://ollama.com/search">ollama</a>.
 Each of which use a specific amount of vRAM (GPU memory). These models usually have this naming format - Model_Name_#B where #B represents the number of parameters the
 model was trained on, i.e., 7B = 7 Billion parameters. For inference (direct communication with the model like ChatGPT), then only enough vRAM to load the model is required. This table displays the general vRAM requirements for common parameters without any quantization:</p>
@@ -2697,7 +2696,7 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 module reset
 ycrc_conda_env.sh update
 </code></pre></div>
-<h2 id="interactive-submissions">Interactive submissions</h2>
+<h2 id="interactive-submissions">Interactive Submissions</h2>
 <p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>. However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">ollama</label><div class="tabbed-content">
@@ -2770,7 +2769,7 @@ ollama run llama3.1 why is the sky blue &gt; response.txt
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 15, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2025</span>
       
     
   </small>
