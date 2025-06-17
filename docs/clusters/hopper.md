@@ -64,12 +64,25 @@ This training must be renewed annually.
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
 The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.
-To protect the security of the data on Hopper, the VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts.
 
 To access the VDI, navigate to `hopper1.ycrc.yale.edu` in a web browser.
 
 [Hopper Login (VPN required)](https://hopper1.ycrc.yale.edu){ .md-button }
 
+### Security Restrictions
+
+To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of addition restrictions beyond other YCRC systems.
+
+- The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. 
+- Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).
+- If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.
+- You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.
+
+## Report an Issue
+
+If you run into an issue on Hopper and would think it would be helpful to take a picture of your session (e.g. to record an error message), click the "Report an Issue" icon on your VDI desktop.
+This will place a capture of your screen in a folder where it can be reviewed by YCRC staff.
+Please notify YCRC staff in [your help request](/) if you have recorded your issue in this way.
 
 ## Transfer Data
 
@@ -80,11 +93,11 @@ All transfers of any type will be logged, and users remain responsible for follo
 ### High-Risk Data
 
 All high-risk data transfers, either onto or out of the cluster, require approval.
-Please [contact us](/#get-help) for approval and transfer assistance, including details on the data.
+Please [contact us](/#get-help) for approval and transfer assistance, including details on the data such as origin and approximate size.
 
 ### Low-Risk Data
 
-Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale Hopper Low Risk" collection into a user-specific staging directory.
+Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale CRC Hopper Low Risk" collection into a user-specific staging directory.
 For details on using Globus, please read our [Globus documentation](/data/globus).
 The user then must submit a request to the YCRC to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
 If your data is large (>200G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
