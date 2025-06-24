@@ -17,7 +17,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per user|`324`|
+    |Maximum CPUs per user|`216`|
+    |Maximum memory per user|`1080G`|
 
     **Available Compute Nodes**
 
@@ -90,7 +91,7 @@
 
 === "gpu"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=a5000:2` would request 2 NVIDIA RTX A5000 GPUs per node.
 
     **Request Defaults**
 
@@ -117,6 +118,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |3|6542|48|975|h100|4|80|emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100|
     |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
 
 === "scavenge"
@@ -150,8 +152,8 @@
     |20|6342|48|478||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
     |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
     |17|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
-    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
     |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).

@@ -266,7 +266,7 @@ def collapse_memory_differences(partition_hardware, has_gpus):
 def sort_hardware(partition_hardware):
 
 
-    node_gens = ["saphirerapids", "sapphirerapids", "icelake", "cascadelake", "skylake", "broadwell", "haswell", "epyc", "milan"]
+    node_gens = ["emeraldrapids", "saphirerapids", "sapphirerapids", "icelake", "cascadelake", "skylake", "broadwell", "haswell", "epyc", "milan"]
     nodes_by_gen = {}
 
     for node_type in partition_hardware:
@@ -275,7 +275,7 @@ def sort_hardware(partition_hardware):
             if feature in node_gens:
                 node_gen = feature
                 break
-
+    
         if node_gen not in nodes_by_gen.keys():
             nodes_by_gen[node_gen] = []
 
