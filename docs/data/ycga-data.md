@@ -59,7 +59,7 @@ YCGA-produced sequence data is initially written to YCGA's main storage system, 
 - ~60 days after sequencing, the fastq files are written to an archive.  This archive exists in two geographically distinct copies for safety.
 - ~365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See below for instructions for retrieving archived data.
 
-All compression of sequence data is lossless.  Gzip is used for data stored on the main storage, and quip is used for data stored on the archive.
+All compression of sequence data is lossless.  Gzip (extension '.gz') is used for data stored on the main storage, and quip (extension '.qp'; see our docs [here](/data/archived-sequencing/)) is used for data stored on the archive.
 Disaster recovery is provided by the archive copy.
 
 ## Accessing Sequence Data
