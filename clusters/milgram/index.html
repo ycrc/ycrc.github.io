@@ -3893,7 +3893,11 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>324</code></td>
+<td><code>216</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1080G</code></td>
 </tr>
 </tbody>
 </table>
@@ -4031,7 +4035,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </table>
 </div>
 <input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=a5000:2</code> would request 2 NVIDIA RTX A5000 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4076,6 +4080,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>3</td>
+<td>6542</td>
+<td>48</td>
+<td>975</td>
+<td>h100</td>
+<td>4</td>
+<td>80</td>
+<td>emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100</td>
+</tr>
 <tr>
 <td>2</td>
 <td>5222</td>
@@ -4162,16 +4176,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest</td>
 </tr>
 <tr>
-<td>10</td>
-<td>6240</td>
-<td>36</td>
-<td>372</td>
-<td>rtx2080ti</td>
-<td>4</td>
-<td>11</td>
-<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest</td>
-</tr>
-<tr>
 <td>2</td>
 <td>5222</td>
 <td>8</td>
@@ -4180,6 +4184,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>4</td>
 <td>16</td>
 <td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+</tr>
+<tr>
+<td>10</td>
+<td>6240</td>
+<td>36</td>
+<td>372</td>
+<td>rtx2080ti</td>
+<td>4</td>
+<td>11</td>
+<td>cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest</td>
 </tr>
 </tbody>
 </table>
