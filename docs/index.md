@@ -4,7 +4,7 @@
 
 
 !!! tip "The Bouchet Cluster is Now Available"
-    The Bouchet HPC cluster, YCRC first installation at MGHPCC, is now in production. The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, are dedicated to tightly coupled parallel workflows, such as those run in the “mpi” partition on the Grace cluster. Later on this spring we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data. See the [Bouchet page](/clusters/bouchet) for more information and updates.
+    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet contains approximately 10,000 direct-liquid-cooled cores as well was 48 NVIDIA A5000Ada GPUs. 80 NVIDIA H200 GPUs will be added to Bouchet in early July. Accounts on Bouchet can be requested now via the [YCRC Account Request Form](https://research.computing.yale.edu/support/hpc/account-request). See the [Bouchet page](/clusters/bouchet) for more information and updates.
 
 
 # Introduction

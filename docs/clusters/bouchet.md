@@ -9,11 +9,7 @@ Yale [recently joined the Massachusetts Green High Performance Computing Center 
 ## Announcing the Bouchet HPC Cluster
 
 !!! info "Bouchet In Production"
-    The Bouchet HPC cluster is now in production for tightly coupled, parallel workloads. Please see the [Bouchet Getting Started](/clusters/bouchet_getting_started/) for more information.
-
-The first installation of nodes, approximately 4,000 direct-liquid-cooled cores, will be dedicated to tightly coupled parallel workflows, such as those run in the `mpi` partition on the Grace cluster. 
-Later on this year we will be acquiring and installing a large number of general purpose compute nodes as well as GPU-enabled compute nodes. 
-At that point Bouchet will be available to all Yale researchers for computational work involving low-risk data.
+    The Bouchet HPC cluster is now available to all Yale Researchers.
 
 Ultimately, Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. 
 However, we are still in the early stages of planning that transition and will continue to operate both Grace and McCleary in their current form for a number of years. 
@@ -23,6 +19,9 @@ To this effect, we will be convening a faculty advisory committee this fall to e
 If you have any questions about Yale’s partnership at MGHPCC or the Bouchet cluster, please [reach out to us](/).
 
 ## Access the Cluster
+
+!!! info "Get Started on Bouchet"
+    Please see the [Bouchet Getting Started](/clusters/bouchet_getting_started/) for more information on key differences about Bouchet compared to Grace and McCleary.
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or [Open OnDemand](/clusters-at-yale/access/ood) at [https://ood-bouchet.ycrc.yale.edu](https://ood-bouchet.ycrc.yale.edu).
 

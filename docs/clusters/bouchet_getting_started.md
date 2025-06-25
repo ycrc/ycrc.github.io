@@ -2,27 +2,6 @@
 
 The Bouchet HPC cluster is YCRC's first installation at [Massachusetts High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc). 
 Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward.
-The first installations of nodes, approximately 4,000 direct-liquid-cooled cores, are dedicated to tightly coupled parallel workflows like those using `MPI`. 
-A second set of nodes will be installed in early 2025 aimed at general purpose workflows, including GPU-accelerated work. 
-
-Compared to the existing `mpi` partition Bouchet provides several key improvements:
-
-1. Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes 
-2. Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available
-3. The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance
-
-## Access the Cluster
-
-Access to the Bouchet can be requested via the [Account Request From](https://research.computing.yale.edu/support/hpc/account-request). Currently, we are explicitly and exclusively seeking tightly coupled, parallel workloads.
-
-Once you have an account, the cluster can be accessed [via ssh](/clusters-at-yale/access). 
-You can log in with the command:
-
-```
-ssh NETID@bouchet.ycrc.yale.edu
-```
-
-Open OnDemand for Bouchet will be available in the future. Additionally, the implementation of certain utility commands that are available on other clusters is still in progress.  
 
 ## Key Differences from Other Clusters
 
@@ -38,11 +17,19 @@ However, be careful about copying existing files from `$HOME` to project spaces,
 
 ### Partition
 
-Currently, `devel` and `mpi` partitions are available. 
 For detailed information about job limits and available compute nodes in each 
 partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
 Please use `devel` partition for code development, debugging, and compilation. 
 Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.   
+
+#### `mpi` partition
+
+Compared to the existing `mpi` partition Bouchet provides several key improvements:
+
+1. Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes 
+2. Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available
+3. The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance
+
 
 ### Storage
 
@@ -60,40 +47,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 
 ### Transfer data from other clusters
 
-To transfer data from other clusters to Bouchet, we encourage using [`rsync`](/data/transfer/#rsync). 
-`rsync` is a commonly used command-line tool for remote transfers between two systems. 
-Globus is not yet available on Bouchet.
-
-Before getting started with the transfer with `rsync`, we first need to enable access to Bouchet from other clusters. 
-Please run the following command on Bouchet:
-
-```
-cat ~/.ssh/id_rsa.pub
-```
-
-and copy and paste the output to our [SSH key uploader](https://sshkeys.ycrc.yale.edu/). 
-The propagation of this public key to other clusters can take a few minutes. 
-
-To initiate the transfer from Bouchet cluster, log into the `transfer` node via ssh:
-
-```
-[an492@login1.bouchet ~]$ ssh transfer1
-[an492@transfer1.bouchet ~]$
-```
-and run the `rsync` commands on the `transfer` node. 
-
-We recommend using the following flags with the `rsync` command:
-```
-rsync -avP NETID@transfer-CLUSTER.ycrc.yale.edu:/path/to/existing/data /path/to/new/home/for/data
-```
-Here the `-a` will run transfer in `archive` mode, which preserves ownership, permissions, and creation/modification times. Additionally, the `-v` will run in `verbose` mode where the name of every file is printed out, and `-P` displays a progress bar. 
-
-As an example, to transfer a directory (named `mydata`) from Grace project directory to Bouchet project directory:
-```
-rsync -avP NETID@transfer-grace.ycrc.yale.edu:/gpfs/gibbs/project/GROUP/NETID/mydata /nfs/roberts/project/GROUP/NETID 
-```
-
-For `rsync` transfers that may take a while, it is best to run the transfer inside a [tmux](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/) sesseion. 
+To transfer data from other clusters to Bouchet, we encourage using [Globus](/data/globus/).
 
 
 ### Applications and software

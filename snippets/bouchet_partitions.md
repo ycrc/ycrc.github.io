@@ -26,12 +26,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |2|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "day"
-
-    !!! alert "Coming Soon"
-        The `day` partition nodes are coming soon and will be available for general-purpose computing. 
 
     **Request Defaults**
 
@@ -57,7 +54,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |72|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |46|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "week"
 
@@ -92,9 +89,6 @@
 
 === "bigmem"
 
-    !!! alert "Coming Soon!"
-        The `bigmem` partition nodes are coming soon and will be available for general-purpose computing. 
-
     **Request Defaults**
 
     Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
@@ -118,7 +112,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |4|cpugen:emeraldrapids|64|4000|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |4|cpugen:emeraldrapids|64|4014|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 
 === "gpu"
@@ -229,5 +223,6 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |58|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |48|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |60|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
