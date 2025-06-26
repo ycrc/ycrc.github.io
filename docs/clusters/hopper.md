@@ -77,6 +77,8 @@ To protect the security of the data on Hopper and to comply with NIST 800-171 an
 - Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).
 - If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.
 - You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.
+- Do not put sensitive data (e.g. patient information, personal identifiers) in directory names or job names, which might inadvertently expose this information.
+
 
 ## Report an Issue
 
