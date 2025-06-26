@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/LLMs/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2018,9 +2018,95 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Large Language Models (LLMs) on Research Computing Hardware
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Large Language Models (LLMs) on Research Computing Hardware
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-availability-on-ycrc-resources" class="md-nav__link">
+    GPU availability on YCRC Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-a-local-llm" class="md-nav__link">
+    Choose a local LLM
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose a local LLM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-about-retrieval-augmented-generationrag-and-fine-tuning" class="md-nav__link">
+    What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-llms-on-the-cluster" class="md-nav__link">
+    Running LLMs on the cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-huggingface-to-run-llms" class="md-nav__link">
+    Installing HuggingFace to run LLMs
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing HuggingFace to run LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-submissions" class="md-nav__link">
+    Interactive Submissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-submissions" class="md-nav__link">
+    Batch submissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2515,6 +2601,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-availability-on-ycrc-resources" class="md-nav__link">
+    GPU availability on YCRC Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-a-local-llm" class="md-nav__link">
+    Choose a local LLM
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose a local LLM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-about-retrieval-augmented-generationrag-and-fine-tuning" class="md-nav__link">
+    What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-llms-on-the-cluster" class="md-nav__link">
+    Running LLMs on the cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-huggingface-to-run-llms" class="md-nav__link">
+    Installing HuggingFace to run LLMs
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing HuggingFace to run LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-submissions" class="md-nav__link">
+    Interactive Submissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-submissions" class="md-nav__link">
+    Batch submissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2538,7 +2693,7 @@
 <li>Localized LLMs provide users with the flexibility to control which model/version is implemented, increasing research efficiency</li>
 <li>YCRC GPUs are free of charge and can currently run models up to 320 GB of vRAM.</li>
 </ul>
-<h1 id="gpu-availability-on-ycrc-resources">GPU availability on YCRC Resources</h1>
+<h2 id="gpu-availability-on-ycrc-resources">GPU availability on YCRC Resources</h2>
 <p>Once you have your LLM program setup, you can run the models on any of our GPU partitions (gpu_devel, gpu, and gpu_scavenge for McCleary and Grace, or gpu and scavenge for Milgram).</p>
 <p>The YCRC clusters have a variety of GPUs available to be used for LLMs. Depending on the GPU used, the amount of memory (vRAM) can vary significantly. Depending on the process, a researcher's desired LLM model may not run without a large enough GPU.
 LLMs are designed to automatically detect multiple GPUs on the same node and all of the HPC's GPU nodes contain four GPUs. This means that if a researcher requests 4 a100-80g GPUs, they will receive 320 GB of GPU memory (80 GB x 4).</p>
@@ -2583,7 +2738,7 @@ Navigate down to the header, Public Partitions, and choose the gpu or gpu_devel 
 The YCRC's hardware operates on a scheduling based system where users request resources and wait in a queue until said resources are available. 
 <strong>Requesting larger GPUs will have longer wait time due to increased demand among researchers</strong>. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.</p>
-<h1 id="choose-a-local-llm">Choose a local LLM</h1>
+<h2 id="choose-a-local-llm">Choose a local LLM</h2>
 <p>There are hundreds of different LLMs available for download in both <a href="https://huggingface.co/models">huggingface</a> and <a href="https://ollama.com/search">ollama</a>.
 Each of which use a specific amount of vRAM (GPU memory). These models usually have this naming format - Model_Name_#B where #B represents the number of parameters the
 model was trained on, i.e., 7B = 7 Billion parameters. For inference (direct communication with the model like ChatGPT), then only enough vRAM to load the model is required. This table displays the general vRAM requirements for common parameters without any quantization:</p>
@@ -2624,7 +2779,7 @@ success in searching for models in their specific field (law, chemistry, etc). R
 models specific to their field. These models have the additional advantage of normally being smaller than the general purpose models, which will give greater flexibility
 to resource requirements.</p>
 <p>If you are unsure how much vRAM you need to load a model, you could launch the model on a larger GPU and use our job monitoring application, <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/">jobstats</a> to see how much vRAM you are using.</p>
-<h2 id="what-about-retrieval-augmented-generationrag-and-fine-tuning">What about Retrieval Augmented Generation(RAG) and Fine-Tuning?</h2>
+<h3 id="what-about-retrieval-augmented-generationrag-and-fine-tuning">What about Retrieval Augmented Generation(RAG) and Fine-Tuning?</h3>
 <p>If interested in doing more complex methods with LLM such as RAG or fine-tuning, then additional vRAM will be required. This table displays general vRAM requirements for said methods:</p>
 <table>
 <thead>
@@ -2662,7 +2817,7 @@ to resource requirements.</p>
 <li>researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as <a href="https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337">QLoRA</a></li>
 <li>creating models from scratch isn't a feasible approach and likely won't compare to existing models available for download</li>
 </ul>
-<h1 id="running-llms-on-the-cluster">Running LLMs on the cluster</h1>
+<h2 id="running-llms-on-the-cluster">Running LLMs on the cluster</h2>
 <p>Now that we have selected our model and understand what our resource requirements are, we can finally move on to actually running the LLM of interest.</p>
 <p>Researchers can run LLMs using interactive or batch submissions. The key differences between interactive submissions and batch submissions can be found in our <a href="https://www.youtube.com/watch?v=SaiXaC0jRjE">Intro to HPC video</a>
 Starting at the 37 minute mark of the video.</p>
@@ -2671,94 +2826,94 @@ Starting at the 37 minute mark of the video.</p>
 <p>For example, say your LLM needs 16 GB of vRAM and you request a single GPU. If the smallest available GPU in your partition has 11 GB (e.g., an rtx2080ti), Slurm may give you this GPU by default. This would cause your job to fail due to a lack of vRAM.</p>
 <p>In this case, you can specify GPUs with more vRAM using the <code>--constraint</code> flag. In the example above, you could specify rtx5000 or v100 GPUs, which have more vRAM.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
-salloc --partition gpu_devel --constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
 
 <span class="c1">#####submission script</span>
 <span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <p>if you are using ollama, you are now ready to go. We have ollama as a module, so you can simply type:</p>
-<div class="highlight"><pre><span></span><code>module load ollama
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ollama
 </code></pre></div>
 <p>and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.</p>
-<h1 id="installing-huggingface-to-run-llms">Installing HuggingFace to run LLMs</h1>
+<h2 id="installing-huggingface-to-run-llms">Installing HuggingFace to run LLMs</h2>
 <p>Users can use HuggingFace inside of a miniconda environment/jupyter notebook.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">###Miniconda requires uses to be on a compute node. You can either use salloc (below) or start an OOD remote desktop session</span>
 <span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
-salloc --partition<span class="o">=</span>devel --cpus-per-task<span class="o">=</span><span class="m">2</span> --time<span class="o">=</span><span class="m">1</span>:00:00 --mem<span class="o">=</span>32G <span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
-module load miniconda
-conda create --name huggingface <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.* transformers accelerate tokenizers datasets jupyter jupyterlab
+salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
 
 <span class="c1">###need pytorch installed to use huggingface</span>
-conda activate huggingface
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 --force
+conda<span class="w"> </span>activate<span class="w"> </span>huggingface
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124<span class="w"> </span>--force
 
 <span class="c1">###load into jupyter notebook application on OOD</span>
-module reset
-ycrc_conda_env.sh update
+module<span class="w"> </span>reset
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
-<h2 id="interactive-submissions">Interactive Submissions</h2>
+<h3 id="interactive-submissions">Interactive Submissions</h3>
 <p>To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/">Open on Demand</a>. However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">ollama</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
-salloc --partition<span class="o">=</span>gpu_devel --cpus-per-task<span class="o">=</span><span class="m">1</span> --time<span class="o">=</span><span class="m">4</span>:00:00 --mem<span class="o">=</span>5G --gpus<span class="o">=</span><span class="m">1</span>  
+salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w">  </span>
 
 <span class="c1">###load ollama module if it isn&#39;t loaded</span>
-module load ollama
+module<span class="w"> </span>load<span class="w"> </span>ollama
 
 <span class="c1">####launch server to access models. The &amp; symbol causes the server to run in the background of the allocated node</span>
-ollama serve<span class="p">&amp;</span>
+ollama<span class="w"> </span>serve<span class="p">&amp;</span>
 
 <span class="c1">#####hit enter to proceed for more input</span>
 <span class="c1">###run model of interest, replace llama3.2:3b with model of interest</span>
-ollama run llama3.2:3b
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
 
 <span class="c1">###enter prompts</span>
-why is the sky blue?
+why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
 </code></pre></div>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">huggingface</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">###request an OOD session using Jupyter notebook using these steps:</span>
-<span class="m">1</span>. Click the first dropdown box <span class="o">(</span>Environment Setup<span class="o">)</span> and <span class="k">select</span> your conda environment with HuggingFace installed. If you can<span class="err">&#39;</span>t find it, please refer to the installation instructions above.
-<span class="m">2</span>. Under Partitions, <span class="k">select</span> GPU_devel
-<span class="m">3</span>. If specific GPUs are needed, check the box, <span class="k">select</span> check the box to view more options, and enter your constraint <span class="nb">command</span> under Additional job options
-<span class="m">4</span>. Click launch session
+<span class="m">1</span>.<span class="w"> </span>Click<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>dropdown<span class="w"> </span>box<span class="w"> </span><span class="o">(</span>Environment<span class="w"> </span>Setup<span class="o">)</span><span class="w"> </span>and<span class="w"> </span><span class="k">select</span><span class="w"> </span>your<span class="w"> </span>conda<span class="w"> </span>environment<span class="w"> </span>with<span class="w"> </span>HuggingFace<span class="w"> </span>installed.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>can<span class="err">&#39;</span>t<span class="w"> </span>find<span class="w"> </span>it,<span class="w"> </span>please<span class="w"> </span>refer<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>instructions<span class="w"> </span>above.
+<span class="m">2</span>.<span class="w"> </span>Under<span class="w"> </span>Partitions,<span class="w"> </span><span class="k">select</span><span class="w"> </span>GPU_devel
+<span class="m">3</span>.<span class="w"> </span>If<span class="w"> </span>specific<span class="w"> </span>GPUs<span class="w"> </span>are<span class="w"> </span>needed,<span class="w"> </span>check<span class="w"> </span>the<span class="w"> </span>box,<span class="w"> </span><span class="k">select</span><span class="w"> </span>check<span class="w"> </span>the<span class="w"> </span>box<span class="w"> </span>to<span class="w"> </span>view<span class="w"> </span>more<span class="w"> </span>options,<span class="w"> </span>and<span class="w"> </span>enter<span class="w"> </span>your<span class="w"> </span>constraint<span class="w"> </span><span class="nb">command</span><span class="w"> </span>under<span class="w"> </span>Additional<span class="w"> </span>job<span class="w"> </span>options
+<span class="m">4</span>.<span class="w"> </span>Click<span class="w"> </span>launch<span class="w"> </span>session
 
-At this point, you should now have a running session <span class="k">in</span> OOD. You can <span class="k">then</span> open your notebook and start a new script and load your model like so:
+At<span class="w"> </span>this<span class="w"> </span>point,<span class="w"> </span>you<span class="w"> </span>should<span class="w"> </span>now<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>session<span class="w"> </span><span class="k">in</span><span class="w"> </span>OOD.<span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span><span class="k">then</span><span class="w"> </span>open<span class="w"> </span>your<span class="w"> </span>notebook<span class="w"> </span>and<span class="w"> </span>start<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>script<span class="w"> </span>and<span class="w"> </span>load<span class="w"> </span>your<span class="w"> </span>model<span class="w"> </span>like<span class="w"> </span>so:
 
 <span class="c1">###inside the notebook</span>
 <span class="c1">####import necessary python functions</span>
 <span class="c1">###this will vary depending on the model being used. Refer to the huggingface website use this model button for explicit instructions for a model.</span>
-from transformers import pipeline, AutoModelForCausalLLM, AutoTokenizer
+from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>pipeline,<span class="w"> </span>AutoModelForCausalLLM,<span class="w"> </span>AutoTokenizer
 
 <span class="c1">###set tokenizer and model to download LLM, can replace distilgpt2 with preferred model</span>
-<span class="nv">tokenizer</span> <span class="o">=</span> AutoTokenizer.from_pretrained<span class="o">(</span><span class="s2">&quot;distilgpt2&quot;</span><span class="o">)</span>
-<span class="nv">model</span> <span class="o">=</span> AutoModelForCausalLM.from_pretrained<span class="o">(</span><span class="s2">&quot;distilgpt2&quot;</span><span class="o">)</span>
+<span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span><span class="s2">&quot;distilgpt2&quot;</span><span class="o">)</span>
+<span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span><span class="s2">&quot;distilgpt2&quot;</span><span class="o">)</span>
 
 <span class="c1">###specify task for LLM model, in this case, we are generating text</span>
-<span class="nv">generator</span> <span class="o">=</span> pipeline<span class="o">(</span><span class="nv">task</span><span class="o">=</span><span class="s2">&quot;text-generation&quot;</span>, <span class="nv">model</span><span class="o">=</span>model, <span class="nv">tokenizer</span><span class="o">=</span>tokenizer<span class="o">)</span>
+<span class="nv">generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>pipeline<span class="o">(</span><span class="nv">task</span><span class="o">=</span><span class="s2">&quot;text-generation&quot;</span>,<span class="w"> </span><span class="nv">model</span><span class="o">=</span>model,<span class="w"> </span><span class="nv">tokenizer</span><span class="o">=</span>tokenizer<span class="o">)</span>
 
 <span class="c1"># Use model to generate text</span>
 generator<span class="o">(</span><span class="s2">&quot;Three Rings for the Elven-kings under the sky, Seven for the Dwarf-lords in their halls of stone&quot;</span><span class="o">)</span>
 </code></pre></div>
 </div>
 </div>
-<h2 id="batch-submissions">Batch submissions</h2>
+<h3 id="batch-submissions">Batch submissions</h3>
 <p>Once your research is ready for batch submissions, there are only some small modifications required to convert your process.</p>
 <p>For HuggingFace, you can employ a method called <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-jupyter/">papermill</a> under the header of Command-Line Execution of Jupyter Notebooks.</p>
 <p>For Ollama, you can submit an inference request like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#######launch the ollama server, the &amp; tells it to run in the background, allowing the script to continue</span>
-module reset
-module load ollama
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>ollama
 
-ollama serve <span class="p">&amp;</span>
+ollama<span class="w"> </span>serve<span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1">######make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server</span>
 <span class="c1">######this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example</span>
-sleep <span class="m">10</span>
+sleep<span class="w"> </span><span class="m">10</span>
 
 <span class="c1">######runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt</span>
-ollama run llama3.1 why is the sky blue &gt; response.txt
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"> </span>why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue<span class="w"> </span>&gt;<span class="w"> </span>response.txt
 </code></pre></div>
 <p>For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert some of the symbols that are outputted in the traditional .out file from a batch submission.</p>
                 
@@ -2769,7 +2924,7 @@ ollama run llama3.1 why is the sky blue &gt; response.txt
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2025</span>
       
     
   </small>
