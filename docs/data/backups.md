@@ -21,7 +21,7 @@ As long as your files existed in the form you want them in before the most recen
 | Palmer PI (Grace, McCleary) | `/vast/palmer/pi/group`      | `/vast/palmer/pi/group/.snapshot`      |
 | Home (Grace)                | `/vast/palmer/home.grace`    | `/vast/palmer/home.grace/.snapshot`    |
 | Home (McCleary)             | `/vast/palmer/home.mccleary` | `/vast/palmer/home.mccleary/.snapshot` |
-| YCGA (McCleary)             | `/gpfs/ycga`                 | `/gpfs/ycga/.snapshots`                |
+| YCGA (McCleary)             | `/gpfs/ycga`                 | `/gpfs/ycga/project/.snapshots`        |
 | Home (Milgram)              | `/gpfs/milgram/home`         | `/gpfs/milgram/home/.snapshots`        |
 | Project (Milgram)           | `/gpfs/milgram/project`      | `/gpfs/milgram/project/.snapshots`     |
 | PI (Milgram)                | `/gpfs/milgram/pi/group`     | `/gpfs/milgram/pi/group/.snapshots`    |

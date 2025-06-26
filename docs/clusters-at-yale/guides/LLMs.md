@@ -8,7 +8,7 @@ Running LLMs locally has the following advantages:
  - Localized LLMs provide users with the flexibility to control which model/version is implemented, increasing research efficiency
  - YCRC GPUs are free of charge and can currently run models up to 320 GB of vRAM.
 
-# GPU availability on YCRC Resources
+## GPU availability on YCRC Resources
 
 Once you have your LLM program setup, you can run the models on any of our GPU partitions (gpu_devel, gpu, and gpu_scavenge for McCleary and Grace, or gpu and scavenge for Milgram).
 
@@ -31,7 +31,7 @@ The YCRC's hardware operates on a scheduling based system where users request re
 **Requesting larger GPUs will have longer wait time due to increased demand among researchers**. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.
 
-# Choose a local LLM
+## Choose a local LLM
 
 There are hundreds of different LLMs available for download in both [huggingface](https://huggingface.co/models) and [ollama](https://ollama.com/search).
 Each of which use a specific amount of vRAM (GPU memory). These models usually have this naming format - Model_Name_#B where #B represents the number of parameters the
@@ -54,7 +54,7 @@ models specific to their field. These models have the additional advantage of no
 to resource requirements.
 
 If you are unsure how much vRAM you need to load a model, you could launch the model on a larger GPU and use our job monitoring application, [jobstats](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) to see how much vRAM you are using.
-## What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
+### What about Retrieval Augmented Generation(RAG) and Fine-Tuning?
 
 If interested in doing more complex methods with LLM such as RAG or fine-tuning, then additional vRAM will be required. This table displays general vRAM requirements for said methods:
 
@@ -72,7 +72,7 @@ The key things to note in the table above are:
  - researchers should avoid the high cost of traditional fine-tuning and use cost-effective methods such as [QLoRA](https://medium.com/@amodwrites/a-definitive-guide-to-qlora-fine-tuning-falcon-7b-with-peft-78f500a1f337)
  - creating models from scratch isn't a feasible approach and likely won't compare to existing models available for download
 
-#Running LLMs on the cluster
+##Running LLMs on the cluster
 
 Now that we have selected our model and understand what our resource requirements are, we can finally move on to actually running the LLM of interest.
 
@@ -104,7 +104,7 @@ module load ollama
 
 and Ollama will be ready to run on the allocated GPUs. Please scroll down to Interactive submissions to see how to run Ollama.
 
-#Installing HuggingFace to run LLMs
+##Installing HuggingFace to run LLMs
 
 Users can use HuggingFace inside of a miniconda environment/jupyter notebook.
 
@@ -124,14 +124,14 @@ module reset
 ycrc_conda_env.sh update
 ```
 
-## Interactive Submissions
+### Interactive Submissions
 
 To run HuggingFace interactively, it is recommended to use our Jupyter Notebook application on [Open on Demand](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/). However, you could also run inside a python script with similar syntax
 For Ollama, using a terminal is the cleanest method to run an interactive session. The steps for running both methods are below:
 
 --8<-- "snippets/LLMruninteractive.md"
 
-##Batch submissions
+###Batch submissions
 
 Once your research is ready for batch submissions, there are only some small modifications required to convert your process.
 
