@@ -2,25 +2,14 @@
 
 ![Grace Hopper](/img/Grace-Hopper.jpg){: .cluster-portrait}
 
-Hopper is a shared-use resource for all researchers at Yale University.
-The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
-
-- - -
-
-When in production, Hopper will have been reviewed by an external assessor for NIST 800-171 and HIPAA compliance, ensuring it is suitable for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), CUI and certain other types of sensitive data.
+Hopper is a shared-use resource for all researchers at Yale University for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), CUI and certain other types of sensitive data.
 Hopper consists of a variety of standard compute and GPU-enabled nodes and mounts an encrypted shared filesystem.
+The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
 
 Hopper is jointly supported by the YCRC and HSIT to ensure a high level of service and facilitate secure computational research.
 Hopper is one of a number of secure computing environments, such as SpinUp+ and [CHP](https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform), developed to support a variety of secure computing needs.
-As the Hopper production launch approaches, support staff will be available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.
+Support staff are available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.
 
-- - -
-
-Hopper is expected to be in production and available to Yale researchers for use with ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), CUI and certain other types of sensitive data in summer 2025.
-
-Researchers using NIH Controlled-Access Data and Repositories [can use McCleary until Hopper is available](/data/nih-data).
-
-If you have any questions about Yale’s partnership at MGHPCC or the Hopper cluster, please [reach out to us](/).
 
 ## Access the Cluster
 
@@ -35,8 +24,7 @@ Once a project is approved, the project's PI is responisible for the approval of
 PIs are also required to conduct a quarterly review of user accounts on their projects.
 Failure to complete the review by the due date will result deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.
 
-**A project request form will be posted shortly.**
-
+Email us at (research.computing@yale.edu)[mailto:research.computing@yale.edu] to inquire about using Hopper.
 
 ### Accounts
 
@@ -95,7 +83,11 @@ All transfers of any type will be logged, and users remain responsible for follo
 ### High-Risk Data
 
 All high-risk data transfers, either onto or out of the cluster, require approval.
-Please [contact us](/#get-help) for approval and transfer assistance, including details on the data such as origin and approximate size.
+
+[Submit High-Risk Incoming Data Transfer Request](https://forms.gle/bcW9AKLu8c5nRrAV7){ .md-button }
+
+For outgoing high-risk data transfers, contact us at (research.computing@yale.edu)[mailto:research.computing@yale.edu].
+
 
 ### Low-Risk Data
 
