@@ -26,7 +26,10 @@ vram_dict = {
     "rtx5000": "16",
     "rtx8000": "48",
     "h100": "80",
-}
+    "rtx_5000_ada": "32",
+    "rtx5000ada": "32",
+    "h200": "141",
+    }
 
 # Commons partitions, their display order
 commons = {
