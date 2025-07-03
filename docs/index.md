@@ -4,7 +4,7 @@
 
 
 !!! tip "The Bouchet Cluster is Now Available"
-    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet contains approximately 10,000 direct-liquid-cooled cores as well was 48 NVIDIA A5000Ada GPUs. 80 NVIDIA H200 GPUs will be added to Bouchet in early July. Accounts on Bouchet can be requested now via the [YCRC Account Request Form](https://research.computing.yale.edu/support/hpc/account-request). See the [Bouchet page](/clusters/bouchet) for more information and updates.
+    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet contains approximately 10,000 direct-liquid-cooled cores as well as 80 NVIDIA H200 GPUs and 48 NVIDIA A5000Ada GPUs. See the [Bouchet page](/clusters/bouchet) for more information.
 
 
 # Introduction
