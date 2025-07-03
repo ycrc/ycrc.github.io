@@ -24,7 +24,7 @@ Once a project is approved, the project's PI is responisible for the approval of
 PIs are also required to conduct a quarterly review of user accounts on their projects.
 Failure to complete the review by the due date will result deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.
 
-Email us at (research.computing@yale.edu)[mailto:research.computing@yale.edu] to inquire about using Hopper.
+Email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) to inquire about using Hopper.
 
 ### Accounts
 
@@ -86,7 +86,7 @@ All high-risk data transfers, either onto or out of the cluster, require approva
 
 [Submit High-Risk Incoming Data Transfer Request](https://forms.gle/bcW9AKLu8c5nRrAV7){ .md-button }
 
-For outgoing high-risk data transfers, contact us at (research.computing@yale.edu)[mailto:research.computing@yale.edu].
+For outgoing high-risk data transfers, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
 
 ### Low-Risk Data
