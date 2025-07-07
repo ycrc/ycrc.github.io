@@ -35,6 +35,7 @@ vram_dict = {
 commons = {
     "general*": "Use the general partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "day*": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
+    "day": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "interactive": "Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
     "devel": "Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
