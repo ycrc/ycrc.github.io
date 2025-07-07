@@ -40,7 +40,8 @@ commons = {
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
     "long": "Use the long partition for jobs that need a longer runtime than week allows.",
     "transfer": "Use the transfer partition to stage data for your jobs to and from [cluster storage](/data/#staging-data).",
-    "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=a5000:2` would request 2 NVIDIA RTX A5000 GPUs per node.",
+    "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=rtx_5000_ada:2` would request 2 NVIDIA RTX 5000 Ada GPUs per node.",
+    "gpu_h200": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=h200:2` would request 2 NVIDIA H200 GPUs per node.",
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
     "mpi": "Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description.",
@@ -52,7 +53,7 @@ commons = {
 # look for MemSpecLimit in slurm node config
 mem_spec_limit = 6 #GiB
 cpu_regex = re.compile(r"cpugen:([a-z0-9]+)")
-gres_regex = re.compile(r"gpu:([a-z0-9]+):(\d+)")
+gres_regex = re.compile(r"gpu:([a-z0-9_]+):(\d+)")
 sinfo_cols = ["partition", "nodes", "cpus", "memory", "gres", "features"]
 out_cols = ["Count", "CPU Type", "CPUs/Node", "Memory/Node (GiB)", "Node Features"]
 out_cols_gpu = out_cols[:4] + ["GPU Type", "GPUs/Node", "vRAM/GPU (GB)"] + out_cols[4:]
@@ -93,7 +94,7 @@ def get_part_hardware():
         ["sinfo", "--noheader", "-eo", "%P|%D|%c|%m|%G|%b"], universal_newlines=True
     ).split("\n"):
         line_dict = dict(zip(sinfo_cols, part_line.split("|")))
-
+        
         if line_dict["partition"] != "":
             if line_dict["cpus"] == "0":
                 continue
