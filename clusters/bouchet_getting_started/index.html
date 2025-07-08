@@ -2519,22 +2519,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#partition" class="md-nav__link">
-    Partition
+  <a href="#partitions" class="md-nav__link">
+    Partitions
   </a>
-  
-    <nav class="md-nav" aria-label="Partition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mpi-partition" class="md-nav__link">
-    mpi partition
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2600,18 +2587,12 @@ This setup makes the process of group change easier and can also accommodate
 PI groups on Bouchet take the form <code>pi_&lt;netid of the pi&gt;</code>, instead of <code>&lt;lastname of pi&gt;</code> to avoid collisions and confusion between PIs who share a lastname.  <br />
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from <code>$HOME</code> to project spaces, as those files may need to have their group ownership updated.</p>
-<h3 id="partition">Partition</h3>
+<h3 id="partitions">Partitions</h3>
 <p>For detailed information about job limits and available compute nodes in each 
 partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. 
 Please use <code>devel</code> partition for code development, debugging, and compilation. 
-Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes.   </p>
-<h4 id="mpi-partition"><code>mpi</code> partition</h4>
-<p>Compared to the existing <code>mpi</code> partition Bouchet provides several key improvements:</p>
-<ol>
-<li>Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes </li>
-<li>Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available</li>
-<li>The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance</li>
-</ol>
+Jobs submitted to <a href="/clusters-at-yale/job-scheduling/mpi/"><code>mpi</code> partitions</a> need to request at least two nodes and are allocated full nodes. <br />
+The H200 GPUs are available in a dedicated partition (<code>gpu_h200</code>) and are available for all users.</p>
 <h3 id="storage">Storage</h3>
 <p>Bouchet's filesystem, Roberts, is an all-flash storage system from VAST data and does not have a GPFS filesystem. 
 <code>/nfs/roberts/</code> hosts Bouchet's home, project, and scratch directories. 
@@ -2650,7 +2631,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 <p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/globus/">Globus</a>.</p>
 <h3 id="applications-and-software">Applications and software</h3>
 <p>Commonly used software is available as <a href="/applications/modules/">modules</a>, similar to other clusters. 
-Currently, all software is compiled and installed with the 2022b version of the toolchain on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
+Currently, all software is compiled and installed with the 2022b or 2024a versions of the toolchains on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
 If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the <code>devel</code> partition of Bouchet. 
 Because Bouchet does not have a GPFS filesystem, be sure to turn off any GPFS related optimization configuration. </p>
 <h2 id="report-issues">Report Issues</h2>
@@ -2664,7 +2645,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2025</span>
       
     
   </small>
