@@ -15,21 +15,13 @@ PI groups on Bouchet take the form `pi_<netid of the pi>`, instead of `<lastname
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from `$HOME` to project spaces, as those files may need to have their group ownership updated.
 
-### Partition
+### Partitions
 
 For detailed information about job limits and available compute nodes in each 
 partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
 Please use `devel` partition for code development, debugging, and compilation. 
 Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.   
-
-#### `mpi` partition
-
-Compared to the existing `mpi` partition Bouchet provides several key improvements:
-
-1. Bouchet MPI nodes are 64-core Emerald Rapids Platinum 8562Y+ nodes, which are several generations newer compared to current Skylake 6136 nodes 
-2. Each compute node in Bouchet has 487GiB of usable RAM, significantly more than the 88GiB/node currently available
-3. The installed software packages in Bouchet are compiled specifically for the Emerald Rapids architecture to provide optimal performance
-
+The H200 GPUs are available in a dedicated partition (`gpu_h200`) and are available for all users.
 
 ### Storage
 
@@ -53,7 +45,7 @@ To transfer data from other clusters to Bouchet, we encourage using [Globus](/da
 ### Applications and software
 
 Commonly used software is available as [modules](/applications/modules/), similar to other clusters. 
-Currently, all software is compiled and installed with the 2022b version of the toolchain on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
+Currently, all software is compiled and installed with the 2022b or 2024a versions of the toolchains on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
 If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the `devel` partition of Bouchet. 
 Because Bouchet does not have a GPFS filesystem, be sure to turn off any GPFS related optimization configuration. 
 
