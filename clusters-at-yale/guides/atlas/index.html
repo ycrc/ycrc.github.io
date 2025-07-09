@@ -2533,35 +2533,35 @@
                 <h1 id="atlas-computing-environment">ATLAS Computing Environment</h1>
 <p>Software for the <a href="https://home.web.cern.ch/science/experiments/atlas">ATLAS experiment</a> is available on our clusters via <a href="https://cernvm.cern.ch/fs/">CVMFS</a>.
 The ATLAS user interface can be set up by adding these lines to your <code>.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">ATLAS_LOCAL_ROOT_BASE</span><span class="o">=</span>/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
-<span class="nb">alias</span> <span class="nv">setupATLAS</span><span class="o">=</span><span class="s1">&#39;source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ATLAS_LOCAL_ROOT_BASE</span><span class="o">=</span>/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+<span class="nb">alias</span><span class="w"> </span><span class="nv">setupATLAS</span><span class="o">=</span><span class="s1">&#39;source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh&#39;</span>
 </code></pre></div>
 <p>Then simply running <code>setupATLAS -h</code> will show all the options available:</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login2.grace ~<span class="o">]</span>$ setupATLAS -h
+<p><div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login2.grace<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>setupATLAS<span class="w"> </span>-h
 
-Usage: atlasLocalSetup.sh <span class="o">[</span>options<span class="o">]</span>
-       or setupATLAS <span class="o">[</span>options<span class="o">]</span>
+Usage:<span class="w"> </span>atlasLocalSetup.sh<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+<span class="w">       </span>or<span class="w"> </span>setupATLAS<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 
-    This sets up the ATLAS environment <span class="k">for</span> a cluster user
+<span class="w">    </span>This<span class="w"> </span>sets<span class="w"> </span>up<span class="w"> </span>the<span class="w"> </span>ATLAS<span class="w"> </span>environment<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>cluster<span class="w"> </span>user
 
-    You need to <span class="nb">set</span> the environment variable ATLAS_LOCAL_ROOT_BASE first.
+<span class="w">    </span>You<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span>ATLAS_LOCAL_ROOT_BASE<span class="w"> </span>first.
 
-    Options <span class="o">(</span>to override defaults<span class="o">)</span> are:
-     -3                           Use python3 <span class="k">in</span> tools <span class="o">(</span><span class="k">if</span> available<span class="o">)</span>
-     -2               Use python/python2 <span class="k">in</span> tools <span class="o">(</span><span class="k">if</span> available<span class="o">)</span>
-     -h  --help                   Print this <span class="nb">help</span> message
-     -q  --quiet                  Print no output
-     -p  --noLocalPostSetup       Skip running local/site post-setup script
-     -r  --relocateCvmfs          Use relocated cvmfs
-     -t  --test<span class="o">=</span>STRING            Comma delimited strings <span class="k">for</span> dev/test flags
-     -c  --container<span class="o">=</span>name         setupATLAS <span class="k">in</span> a container
-                                   Type setupATLAS -c -h <span class="k">for</span> <span class="nb">help</span>
+<span class="w">    </span>Options<span class="w"> </span><span class="o">(</span>to<span class="w"> </span>override<span class="w"> </span>defaults<span class="o">)</span><span class="w"> </span>are:
+<span class="w">     </span>-3<span class="w">                           </span>Use<span class="w"> </span>python3<span class="w"> </span><span class="k">in</span><span class="w"> </span>tools<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>available<span class="o">)</span>
+<span class="w">     </span>-2<span class="w">               </span>Use<span class="w"> </span>python/python2<span class="w"> </span><span class="k">in</span><span class="w"> </span>tools<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>available<span class="o">)</span>
+<span class="w">     </span>-h<span class="w">  </span>--help<span class="w">                   </span>Print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message
+<span class="w">     </span>-q<span class="w">  </span>--quiet<span class="w">                  </span>Print<span class="w"> </span>no<span class="w"> </span>output
+<span class="w">     </span>-p<span class="w">  </span>--noLocalPostSetup<span class="w">       </span>Skip<span class="w"> </span>running<span class="w"> </span>local/site<span class="w"> </span>post-setup<span class="w"> </span>script
+<span class="w">     </span>-r<span class="w">  </span>--relocateCvmfs<span class="w">          </span>Use<span class="w"> </span>relocated<span class="w"> </span>cvmfs
+<span class="w">     </span>-t<span class="w">  </span>--test<span class="o">=</span>STRING<span class="w">            </span>Comma<span class="w"> </span>delimited<span class="w"> </span>strings<span class="w"> </span><span class="k">for</span><span class="w"> </span>dev/test<span class="w"> </span>flags
+<span class="w">     </span>-c<span class="w">  </span>--container<span class="o">=</span>name<span class="w">         </span>setupATLAS<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>container
+<span class="w">                                   </span>Type<span class="w"> </span>setupATLAS<span class="w"> </span>-c<span class="w"> </span>-h<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">help</span>
 
-Comma delimited arguments to -t/--test option are:
- cmtSL6-dev Use dev version of cmtSL6
- devatlr    Use CERN FRONTIER servlet <span class="k">for</span> developers
- postRel-dev    Uses a dev version of the post release setup <span class="k">for</span> ATLAS releases
- tokens     Use tokens <span class="k">for</span> validation instead of X509 <span class="o">(</span>where available<span class="o">)</span>
+Comma<span class="w"> </span>delimited<span class="w"> </span>arguments<span class="w"> </span>to<span class="w"> </span>-t/--test<span class="w"> </span>option<span class="w"> </span>are:
+<span class="w"> </span>cmtSL6-dev<span class="w"> </span>Use<span class="w"> </span>dev<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>cmtSL6
+<span class="w"> </span>devatlr<span class="w">    </span>Use<span class="w"> </span>CERN<span class="w"> </span>FRONTIER<span class="w"> </span>servlet<span class="w"> </span><span class="k">for</span><span class="w"> </span>developers
+<span class="w"> </span>postRel-dev<span class="w">    </span>Uses<span class="w"> </span>a<span class="w"> </span>dev<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>post<span class="w"> </span>release<span class="w"> </span>setup<span class="w"> </span><span class="k">for</span><span class="w"> </span>ATLAS<span class="w"> </span>releases
+<span class="w"> </span>tokens<span class="w">     </span>Use<span class="w"> </span>tokens<span class="w"> </span><span class="k">for</span><span class="w"> </span>validation<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>X509<span class="w"> </span><span class="o">(</span>where<span class="w"> </span>available<span class="o">)</span>
 </code></pre></div>
 We recommend referring to the <a href="https://twiki.atlas-canada.ca/bin/view/AtlasCanada/ComputingPage">ATLAS Canada TWiki</a> for more information and detailed start-up guides. </p>
                 

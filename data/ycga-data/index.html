@@ -2942,27 +2942,27 @@ true locations of the files.</p>
 <p>Sequencing data that is still within the retention period can be directly accessed in a variety of ways.  You can use the URL that YGCA provided you to do a direct download, either to your own storage on the cluster, or to your own computer.  This can be done using any standard http download tool: a browser, wget, curl, cyberduck, etc.  However, these files are typically very large, and making copies of them will consume your disk space.  It is usually better to make links to the files that YCGA maintains.  Below, we explain how to do that for each sequencer type.</p>
 <h4 id="illumina-not-10x-data">Illumina (not 10x) data:</h4>
 <p>We recommend that you use the ycgaFastq utility to make links to the fastq files.  ycgaFastq is part of the ycga-public module.  To make links, on any node on McCleary, do:</p>
-<p><div class="highlight"><pre><span></span><code>$ module load ycga-public
-$ ycgaFastq fcb.ycga.yale.edu:3010/randomstring/sample
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ycga-public
+$<span class="w"> </span>ycgaFastq<span class="w"> </span>fcb.ycga.yale.edu:3010/randomstring/sample
 </code></pre></div>
 If the run has been archived and deleted, ycgaFastq will retrieve the data</p>
 <p>ycgaFastq has several alternative invocations:</p>
 <p>If you don't know the URL, you can use the 
 sample submitter's netid and the flowcell (run) name:</p>
-<div class="highlight"><pre><span></span><code>$ ycgaFastq rdb9 AHFH66DSXX
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>rdb9<span class="w"> </span>AHFH66DSXX
 </code></pre></div>
 <p>If you have a path to the original location of the sequencing data, ycgaFastq can retrieve the data using that, even if the run has been archived and deleted:
-<div class="highlight"><pre><span></span><code>$ ycgaFastq /ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>/ycga-gpfs/sequencers/illumina/sequencerD/runs/190607_A00124_0104_AHLF3MMSXX/Data/Intensities/BaseCalls/Unaligned-2/Project_Lz438
 </code></pre></div></p>
 <p>If you have a ruddle_paths.txt file that contains the paths to all of the data files in a dataset, you can
 use ycgaFastq as well:</p>
-<div class="highlight"><pre><span></span><code>$ ycgaFastq ruddle_paths.txt
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ycgaFastq<span class="w"> </span>ruddle_paths.txt
 </code></pre></div>
 <p>ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the <a href="http://campuspress.yale.edu/knightlab/ruddle/ycgafastq">documentation</a> or contact us.</p>
 <h4 id="10x-or-pacbio-data">10x or Pacbio data</h4>
 <p>We recommend that you use the URLFetch utility to make links to the fastq files.  ycgaFastq is part of the ycga-public module.  To make links, on any node on McCleary, do:</p>
-<div class="highlight"><pre><span></span><code>module load ycga-public
-URLFetch http://fcb.ycga.yale.edu:3010/randomstring/folder
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
+URLFetch<span class="w"> </span>http://fcb.ycga.yale.edu:3010/randomstring/folder
 </code></pre></div>
 <h3 id="accessing-archived-data">Accessing archived data</h3>
 <p>The sequence archive has been moved from Storage@Yale to AWS Deep Glacier.  This was done for several reasons, including improved performance, security, reliability, and cost.
@@ -2972,20 +2972,20 @@ However, retrieving data from Deep Glacier requires a two step process: an initi
 <p>You may also continue to use the ycgaFastq command for archived Illumina data.  This command currently still accesses the previous Storage@Yale archive, but will soon be migrated to use the AWS Deep Glacier archive.  At that point, ycgaFastq will block for 12 hours while the data is retrieved.</p>
 <h3 id="using-archived-data">Using archived data</h3>
 <p>After downloading an archive tar file, you can unpack it using the tar command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scratch60/somedir
-tar –xvf /gpfs/ycga/sequencers/restored/netid/file.tar
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/scratch60/somedir
+tar<span class="w"> </span>–xvf<span class="w"> </span>/gpfs/ycga/sequencers/restored/netid/file.tar
 </code></pre></div>
 <p>Inside the project tar files are the fastq files.  For older archived data the fastq files have been further compressed using quip. If your pipeline cannot read quip files
 directly, you will need to uncompress them before using them.</p>
-<div class="highlight"><pre><span></span><code>module load Quip
-quip –d M20_ACAGTG_L008_R1_009.fastq.qp
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Quip
+quip<span class="w"> </span>–d<span class="w"> </span>M20_ACAGTG_L008_R1_009.fastq.qp
 </code></pre></div>
 <p>For your convenience, we have a tool, <code>restore</code>, that will untar and uncompress all quip files in a tar file:</p>
-<div class="highlight"><pre><span></span><code>module load ycga-public
-restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycga-public
+restore<span class="w"> </span>–t<span class="w"> </span>/SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 </code></pre></div>
 <p>Restore spends most of the time running quip. You can parallelize and speed up that process using the <code>-n</code> flag.</p>
-<div class="highlight"><pre><span></span><code>restore –n <span class="m">32</span> ...
+<div class="highlight"><pre><span></span><code>restore<span class="w"> </span>–n<span class="w"> </span><span class="m">32</span><span class="w"> </span>...
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2997,8 +2997,8 @@ restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 /gpfs/ycga/sequencers/restored/rdb9/161021_D00596R_0145_BCA1H7ANXX_0_Project_Rdb9.tar</p>
 <h4 id="step-2">step 2</h4>
 <p>Copy the file to your own space, e.g. ~/scratch
-<div class="highlight"><pre><span></span><code>cp /gpfs/ycga/sequencers/restored/rdb9/161021_D00596R_0145_BCA1H7ANXX_0_Project_Rdb9.tar ~/scratch
-<span class="nb">cd</span> ~/scratch
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/gpfs/ycga/sequencers/restored/rdb9/161021_D00596R_0145_BCA1H7ANXX_0_Project_Rdb9.tar<span class="w"> </span>~/scratch
+<span class="nb">cd</span><span class="w"> </span>~/scratch
 </code></pre></div></p>
 <h4 id="step-3">step 3</h4>
 <p>Create a batch script to uncompress the data</p>
@@ -3007,12 +3007,12 @@ restore –t /SAY/archive/YCGA-729009-YCGA/archive/path/to/file.tar
 <span class="c1">#SBATCH -c 32 -p ycga</span>
 <span class="c1">#SBATCH --mail-type=all</span>
 
-module load ycga-public
-restore -v -t 161021_D00596R_0145_BCA1H7ANXX_0_Project_Rdb9.tar
+module<span class="w"> </span>load<span class="w"> </span>ycga-public
+restore<span class="w"> </span>-v<span class="w"> </span>-t<span class="w"> </span>161021_D00596R_0145_BCA1H7ANXX_0_Project_Rdb9.tar
 </code></pre></div></p>
 <h4 id="step-4">step 4</h4>
 <p>Submit the job</p>
-<div class="highlight"><pre><span></span><code>sbatch job.script
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>job.script
 </code></pre></div>
 <p>The restored fastq files will written to a directory like this: 
 <div class="highlight"><pre><span></span><code>161021_D00596R_0145_BCA1H7ANXX/Data/Intensities/BaseCalls/Unaligned/Project_Rdb9/...
