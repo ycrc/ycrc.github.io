@@ -38,7 +38,13 @@ Alternatively, you can put the above code in `.Rprofile` in your home directory 
 
 ## Troubleshoot: RStudio Server app does not respond
 
-We have been observing that users' RStudio Server App configuration files seem to become corrupted from time to time; this may cause RStudio to become sluggish or even completely stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.
+We have been observing that users' RStudio Server App configuration files seem to become corrupted from time to time; as a result, the RStudio App may hang while starting with the message:
+
+```
+Your session is currently starting... Please be patient as this process can take a few minutes
+```
+
+or it may otherwise become sluggish or even completely stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.
 
 To recover from such behavior, terminate any running or pending RStudio sessions and then run the following command in a [terminal](/clusters-at-yale/access/ood#terminal):
 
@@ -58,12 +64,13 @@ The second option will basically delete all previous OOD records of your RStudio
 
 ## Using R Conda with the RStudio Server App
 
-If you have created [R conda environments](/clusters-at-yale/guides/r/#conda-based-r-environments) (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal)) then you can make these available within RStudio Server app, from the 'R version' drop-down menu. From the terminal, execute the following command:
+If you have created [R conda environments](/clusters-at-yale/guides/r/#conda-based-r-environments) (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal)) then you can make these available to the RStudio Server app. From the terminal, execute the following command:
 
 ``` bash
 ycrc_conda_env.sh update
 ```
 
+Your R conda environments should now show up in the 'R version' drop-down menu. 
 
 ## Run RStudio in Remote Desktop
 
