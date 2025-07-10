@@ -45,9 +45,11 @@ To recover from such behavior, terminate any running or pending RStudio sessions
 ```
 ycrc_clean_rstudio.sh
 
-# or, if the above fails (enter 'y' to the prompt after confirming no RStudio sessions are running):
+# or, if the above fails to fix the problem, do:
 
 ycrc_clean_rstudio.sh -f
+
+# (enter 'y' to the prompt after confirming no RStudio sessions are running)
 ```
 
 This will remove any temporary files created by RStudio and allow it to start anew.
