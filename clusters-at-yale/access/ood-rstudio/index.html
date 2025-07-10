@@ -2748,12 +2748,12 @@ You can do it in your code as follows: </p>
 
 ycrc_clean_rstudio.sh -f
 
-# (enter &#39;y&#39; to the prompt after confirming no RStudio sessions are running)
+# (enter &#39;y&#39; at the prompt after confirming no RStudio sessions are running)
 </code></pre></div>
 <p>This will remove any temporary files created by RStudio and allow it to start anew.</p>
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
 <h2 id="using-r-conda-with-the-rstudio-server-app">Using R Conda with the RStudio Server App</h2>
-<p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available within RStudio Server app. From the terminal, execute the following command:</p>
+<p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available within RStudio Server app, from the 'R version' drop-down menu. From the terminal, execute the following command:</p>
 <div class="highlight"><pre><span></span><code>ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <h2 id="run-rstudio-in-remote-desktop">Run RStudio in Remote Desktop</h2>
