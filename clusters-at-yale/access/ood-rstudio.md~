@@ -36,9 +36,9 @@ options(bitmapType='cairo')
 
 Alternatively, you can put the above code in `.Rprofile` in your home directory and the option will be picked up automatically. 
 
-## Troubleshoot: RStudio Server does not respond
+## Troubleshoot: RStudio Server app does not respond
 
-We have been observing that users' RStudio server app files seem to become corrupted from time to time; this may cause RStudio to become sluggish or even completey stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.
+We have been observing that users' RStudio Server App configuration files seem to become corrupted from time to time; this may cause RStudio to become sluggish or even completely stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.
 
 To recover from such behavior, terminate any running or pending RStudio sessions and then run the following command in a [terminal](/clusters-at-yale/access/ood#terminal):
 
@@ -49,17 +49,16 @@ ycrc_clean_rstudio.sh
 
 ycrc_clean_rstudio.sh -f
 
-# (enter 'y' to the prompt after confirming no RStudio sessions are running)
+# (enter 'y' at the prompt after confirming no RStudio sessions are running)
 ```
 
 This will remove any temporary files created by RStudio and allow it to start anew.
 
 The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.
 
-## Updating the conda drop-down menu in RStudio Server app
+## Using R Conda with the RStudio Server App
 
-If you have created R conda environments (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal))
-then you can make these available within RStudio Server app. From the terminal, execute the following command:
+If you have created [R conda environments](/clusters-at-yale/guides/r/#conda-based-r-environments) (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal)) then you can make these available within RStudio Server app, from the 'R version' drop-down menu. From the terminal, execute the following command:
 
 ``` bash
 ycrc_conda_env.sh update
