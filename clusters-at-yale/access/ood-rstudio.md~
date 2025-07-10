@@ -45,9 +45,11 @@ To recover from such behavior, terminate any running or pending RStudio sessions
 ```
 ycrc_clean_rstudio.sh
 
-# or, if the above fails (enter 'y' to the prompt after confirming no RStudio sessions are running):
+# or, if the above fails to fix the problem, do:
 
 ycrc_clean_rstudio.sh -f
+
+# (enter 'y' to the prompt after confirming no RStudio sessions are running)
 ```
 
 This will remove any temporary files created by RStudio and allow it to start anew.
@@ -104,6 +106,6 @@ conda install rstudio-desktop
 rstudio
 ```
 
-## Troubleshoot: RStudio with Conda R
+### Troubleshoot: RStudio with Conda R
 
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment, making sure `r-base r-essentials` are both included; then

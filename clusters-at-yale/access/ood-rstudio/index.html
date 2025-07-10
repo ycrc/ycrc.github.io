@@ -903,15 +903,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot-rstudio-server-does-not-respond" class="md-nav__link">
-    Troubleshoot: RStudio Server does not respond
+  <a href="#troubleshoot-rstudio-server-app-does-not-respond" class="md-nav__link">
+    Troubleshoot: RStudio Server app does not respond
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-conda-drop-down-menu-in-rstudio-server-app" class="md-nav__link">
-    Updating the conda drop-down menu in RStudio Server app
+  <a href="#using-r-conda-with-the-rstudio-server-app" class="md-nav__link">
+    Using R Conda with the RStudio Server App
   </a>
   
 </li>
@@ -2651,15 +2651,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshoot-rstudio-server-does-not-respond" class="md-nav__link">
-    Troubleshoot: RStudio Server does not respond
+  <a href="#troubleshoot-rstudio-server-app-does-not-respond" class="md-nav__link">
+    Troubleshoot: RStudio Server app does not respond
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-conda-drop-down-menu-in-rstudio-server-app" class="md-nav__link">
-    Updating the conda drop-down menu in RStudio Server app
+  <a href="#using-r-conda-with-the-rstudio-server-app" class="md-nav__link">
+    Using R Conda with the RStudio Server App
   </a>
   
 </li>
@@ -2739,8 +2739,8 @@ You can do it in your code as follows: </p>
 <div class="highlight"><pre><span></span><code>options<span class="o">(</span><span class="nv">bitmapType</span><span class="o">=</span><span class="s1">&#39;cairo&#39;</span><span class="o">)</span>
 </code></pre></div>
 <p>Alternatively, you can put the above code in <code>.Rprofile</code> in your home directory and the option will be picked up automatically. </p>
-<h2 id="troubleshoot-rstudio-server-does-not-respond">Troubleshoot: RStudio Server does not respond</h2>
-<p>We have been observing that users' RStudio server app files seem to become corrupted from time to time; this may cause RStudio to become sluggish or even completey stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.</p>
+<h2 id="troubleshoot-rstudio-server-app-does-not-respond">Troubleshoot: RStudio Server app does not respond</h2>
+<p>We have been observing that users' RStudio Server App configuration files seem to become corrupted from time to time; this may cause RStudio to become sluggish or even completely stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.</p>
 <p>To recover from such behavior, terminate any running or pending RStudio sessions and then run the following command in a <a href="/clusters-at-yale/access/ood#terminal">terminal</a>:</p>
 <div class="highlight"><pre><span></span><code>ycrc_clean_rstudio.sh
 
@@ -2752,9 +2752,8 @@ ycrc_clean_rstudio.sh -f
 </code></pre></div>
 <p>This will remove any temporary files created by RStudio and allow it to start anew.</p>
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
-<h2 id="updating-the-conda-drop-down-menu-in-rstudio-server-app">Updating the conda drop-down menu in RStudio Server app</h2>
-<p>If you have created R conda environments (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>)
-then you can make these available within RStudio Server app. From the terminal, execute the following command:</p>
+<h2 id="using-r-conda-with-the-rstudio-server-app">Using R Conda with the RStudio Server App</h2>
+<p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available within RStudio Server app. From the terminal, execute the following command:</p>
 <div class="highlight"><pre><span></span><code>ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <h2 id="run-rstudio-in-remote-desktop">Run RStudio in Remote Desktop</h2>
