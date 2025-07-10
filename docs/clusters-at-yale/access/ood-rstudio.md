@@ -106,6 +106,6 @@ conda install rstudio-desktop
 rstudio
 ```
 
-## Troubleshoot: RStudio with Conda R
+### Troubleshoot: RStudio with Conda R
 
 If you see `NOT_FOUND` in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment, making sure `r-base r-essentials` are both included; then
