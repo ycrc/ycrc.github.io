@@ -2744,9 +2744,11 @@ You can do it in your code as follows: </p>
 <p>To recover from such behavior, terminate any running or pending RStudio sessions and then run the following command in a <a href="/clusters-at-yale/access/ood#terminal">terminal</a>:</p>
 <div class="highlight"><pre><span></span><code>ycrc_clean_rstudio.sh
 
-# or, if the above fails (enter &#39;y&#39; to the prompt after confirming no RStudio sessions are running):
+# or, if the above fails to fix the problem, do:
 
 ycrc_clean_rstudio.sh -f
+
+# (enter &#39;y&#39; to the prompt after confirming no RStudio sessions are running)
 </code></pre></div>
 <p>This will remove any temporary files created by RStudio and allow it to start anew.</p>
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
@@ -2794,7 +2796,7 @@ rstudio
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2025</span>
       
     
   </small>
