@@ -18,15 +18,15 @@ vscode
 
 The above method will probably give most users a workable solution for using VSCode. However, one issue with the Remote Desktop is graphics responsiveness: particularly when scrolling, window behavior can become laggy and imprecise.
 
-If this (or something else) is a problem for you, a solution is to run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. However, while there are several extensions that allow VSCode users to connect to remote servers over SSH, these are imperfect and can drop the connection. Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.
+If this (or something else) is a problem for you, you can run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. The process is very similar the [method we recommend for Jupyter notebooks](/clusters-at-yale/guides/jupyter_ssh/). This is done with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).
 
-We are testing an alternative method for SSH tunneling with VSCode, similar the [method we recommend for Jupyter notebooks](/clusters-at-yale/guides/jupyter_ssh/). This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).
+!!! note "Note"
+    While you can also tunnel directly to the login nodes (several VSCode extensions allow VSCode users to connect to remote servers over SSH), this has some drawbacks: (1) the resulting connections can be unstable; (2) VS Code can initiate computationally expensive processes (compilers, etc) that put undue burden on our clusters' login nodes, where resources are limited.
 
-If you'd like to try this tunneling method, please use the following steps:
 
 1. Create a vscode server batch script called `vscode_slurm.sh` and submit it to the queue with `sbatch vscode_slurm.sh`. The script source code is attached below.
 
- 2. After this script successfully starts running, use the last line of the logfile `vscode_slurm.txt` (in the directory you submitted the job from) to set up a connection from the cluster to your own VScode app on a remote computer. The last line of vscode_slurm.txt will look like:
+2. After this script successfully starts running, use the last line of the logfile `vscode_slurm.txt` (in the directory you submitted the job from) to set up a connection from the cluster to your own VScode app on a remote computer. The last line of vscode_slurm.txt will look like:
 ```
 To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX
 ```
