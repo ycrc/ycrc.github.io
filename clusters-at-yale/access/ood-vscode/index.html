@@ -901,6 +901,19 @@
     Setting up SSH tunneling to run VS Code Server on a cluster node
   </a>
   
+    <nav class="md-nav" aria-label="Setting up SSH tunneling to run VS Code Server on a cluster node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoot-vscode_slurmsh-script-fails" class="md-nav__link">
+    Troubleshoot: vscode_slurm.sh script fails
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2581,6 +2594,19 @@
     Setting up SSH tunneling to run VS Code Server on a cluster node
   </a>
   
+    <nav class="md-nav" aria-label="Setting up SSH tunneling to run VS Code Server on a cluster node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshoot-vscode_slurmsh-script-fails" class="md-nav__link">
+    Troubleshoot: vscode_slurm.sh script fails
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2617,9 +2643,11 @@ vscode
 </code></pre></div>
 <h2 id="setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node">Setting up SSH tunneling to run VS Code Server on a cluster node</h2>
 <p>The above method will probably give most users a workable solution for using VSCode. However, one issue with the Remote Desktop is graphics responsiveness: particularly when scrolling, window behavior can become laggy and imprecise.</p>
-<p>If this (or something else) is a problem for you, a solution is to run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. However, while there are several extensions that allow VSCode users to connect to remote servers over SSH, these are imperfect and can drop the connection. Additionally, these remote sessions connect to the clusters' login nodes, where resources are limited.</p>
-<p>We are testing an alternative method for SSH tunneling with VSCode, similar the <a href="/clusters-at-yale/guides/jupyter_ssh/">method we recommend for Jupyter notebooks</a>. This is done in coordination with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).</p>
-<p>If you'd like to try this tunneling method, please use the following steps:</p>
+<p>If this (or something else) is a problem for you, you can run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. The process is very similar the <a href="/clusters-at-yale/guides/jupyter_ssh/">method we recommend for Jupyter notebooks</a>. This is done with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While you can also tunnel directly to the login nodes (several VSCode extensions allow VSCode users to connect to remote servers over SSH), this has some drawbacks: (1) the resulting connections can be unstable; (2) VS Code can initiate computationally expensive processes (compilers, etc) that put undue burden on our clusters' login nodes, where resources are limited.</p>
+</div>
 <ol>
 <li>
 <p>Create a vscode server batch script called <code>vscode_slurm.sh</code> and submit it to the queue with <code>sbatch vscode_slurm.sh</code>. The script source code is attached below.</p>
@@ -2677,6 +2705,13 @@ module load VSCode
 
 code tunnel
 </code></pre></div></p>
+<h3 id="troubleshoot-vscode_slurmsh-script-fails">Troubleshoot: vscode_slurm.sh script fails</h3>
+<p>If you are unable to connect using this procedure, but it worked for you previously, it may be that VSCode was terminated abruptly and left a lock file hanging around. If the vscode_slurm.txt file created by the batch script contains repeated lines like:</p>
+<div class="highlight"><pre><span></span><code>warn error access singleton, retrying: the process holding the singleton lock file code server
+</code></pre></div>
+<p>then you can restore the ability to connect by removing the lock file as described in this <a href="https://github.com/microsoft/vscode-remote-release/issues/9806#issuecomment-2135635511">link</a>:</p>
+<div class="highlight"><pre><span></span><code>rm ~/.vscode/cli/tunnel-stable.lock                                                                                     
+</code></pre></div>
 <h2 id="code-server">Code Server</h2>
 <p>The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
 To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood">Web Portals</a> and choose Code Server from the Interactive Apps menu in the portal and then follow the instructions for <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">launching an interactive app</a>.</p>
@@ -2688,7 +2723,7 @@ To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2025</span>
       
     
   </small>
