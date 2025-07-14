@@ -226,3 +226,25 @@ R
 !!!warning
     Conda-based R may not work properly with parallel packages like `Rmpi` when running across multiple compute nodes.
     In general, it's best to use the module installation of R for anything which requires MPI.
+
+## Troubleshoot: R crashes on startup with LC_CTYPE warning
+
+R has a strange bug that can cause it to crash on startup when you log on remotely to a YCRC cluster terminal.
+
+You will see the following messages printed out as it crashes:
+```
+During startup - Warning message:
+Setting LC_CTYPE failed, using "C" 
+
+ *** caught segfault ***
+address (nil), cause 'memory not mapped'
+```
+
+This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.
+
+To avoid this crash, connect to the YCRC cluster with your terminal as usual, but before running R type into the terminal the command:
+
+``` bash
+unset LC_CTYPE
+# or alternatively: 'export LC_CTYPE=en_US.UTF-8' or 'export LC_ALL=en_US.UTF-8'
+```
