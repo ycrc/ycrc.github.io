@@ -2097,6 +2097,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshoot-r-crashes-on-startup-with-lc_ctype-warning" class="md-nav__link">
+    Troubleshoot: R crashes on startup with LC_CTYPE warning
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2710,6 +2717,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshoot-r-crashes-on-startup-with-lc_ctype-warning" class="md-nav__link">
+    Troubleshoot: R crashes on startup with LC_CTYPE warning
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2887,6 +2901,20 @@ R
 <p>Conda-based R may not work properly with parallel packages like <code>Rmpi</code> when running across multiple compute nodes.
 In general, it's best to use the module installation of R for anything which requires MPI.</p>
 </div>
+<h2 id="troubleshoot-r-crashes-on-startup-with-lc_ctype-warning">Troubleshoot: R crashes on startup with LC_CTYPE warning</h2>
+<p>R has a strange bug that can cause it to crash on startup when you log on remotely to a YCRC cluster terminal.</p>
+<p>You will see the following messages printed out as it crashes:
+<div class="highlight"><pre><span></span><code>During startup - Warning message:
+Setting LC_CTYPE failed, using &quot;C&quot; 
+
+ *** caught segfault ***
+address (nil), cause &#39;memory not mapped&#39;
+</code></pre></div></p>
+<p>This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.</p>
+<p>To avoid this crash, connect to the YCRC cluster with your terminal as usual, but before running R type into the terminal the command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">unset</span><span class="w"> </span>LC_CTYPE
+<span class="c1"># or alternatively: &#39;export LC_CTYPE=en_US.UTF-8&#39; or &#39;export LC_ALL=en_US.UTF-8&#39;</span>
+</code></pre></div>
                 
                   
                     
