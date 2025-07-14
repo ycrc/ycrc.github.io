@@ -78,6 +78,20 @@ module load VSCode
 code tunnel
 ```
 
+### Troubleshoot: vscode_slurm.sh script fails
+
+If you are unable to connect using this procedure, but it worked for you previously, it may be that VSCode was terminated abruptly and left a lock file hanging around. If the vscode_slurm.txt file created by the batch script contains repeated lines like:
+
+```
+warn error access singleton, retrying: the process holding the singleton lock file code server
+```
+
+then you can restore the ability to connect by removing the lock file as described in this [link](https://github.com/microsoft/vscode-remote-release/issues/9806#issuecomment-2135635511):
+
+```
+rm ~/.vscode/cli/tunnel-stable.lock                                                                                     
+```
+
 ## Code Server
 
 The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
