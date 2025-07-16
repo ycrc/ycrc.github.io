@@ -1,19 +1,17 @@
 # NIH Controlled-Access Data and Repositories
 
 Effective January 25, 2025, adherence to the updated security standards in the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf) is included in new or renewed Data Use Certifications or similar agreements.
-This means that such data must be stored and computed in a NIST 800-171 compliant environment.
-YCRC's new [Hopper cluster](/clusters/hopper) as well as a secure version of SpinUp is expected be available and HIPAA/NIST 800-171 compliant this summer. 
+Such data must be stored and computed in a NIST 800-171 compliant environment.
 
-In the meantime, the NIH is allowing environments with Plans of Action and Milestones (POAMs) to mitigate security risks to be considered compliant.
-As of April 4th, 2025, Yale has completed appropriate documentation for McCleary.
-[McCleary](/clusters/mccleary) is now an approved location of specifically NIH Controlled-Access Data and Repositories, with the following conditions.
-McCleary, under the following conditions, is the ONLY shared computing environment at Yale suitable for NIH Controlled-Access Data and Repositories.
+This data can be now hosted and analyzed on YCRC's new NIST 800-171 compliant Hopper cluster. See the [Hopper documentation](/clusters/hopper) for information on requesting access.
 
 !!! info
 	A list of NIH Controlled-Access Data and Repositories can be found on the [NIH Website](https://sharing.nih.gov/accessing-data/NIH-security-best-practices).
 
 
-## Special Conditions to Ensure Compliance
+## Special Conditions to Ensure Compliance on the McCleary Interim Solution
+
+Note, this interim solution is being phased out and all new NIH Controlled-Access Data projects will use Hopper.
 
 ### Data Storage
 
