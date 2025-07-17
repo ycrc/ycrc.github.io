@@ -84,6 +84,19 @@ Yale Orange Accent: #bd5319;
     background-color: #286dc0;
 }
 
+.get-help{
+    padding: 7px 15px;
+    background-color: #bd5319;
+    margin: 5px 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14pt;
+}
+
+.get-help:hover{
+    background-color: #286dc0;
+}
+
 /* Tables */
 .md-typeset table:not([class]) th{
     min-width: 0rem;
