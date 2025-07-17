@@ -20,7 +20,9 @@ To best serve the research community, we provide one-on-one consulting and use a
 
 ### Web and Email Support
 
-To submit requests, issues, or questions please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Your login credentials there are your email and a password of your choosing, not your CAS password.
+To submit requests, issues, or questions please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or you can sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Your login credentials there are your email and a password of your choosing, not your CAS password.
+
+[Submit Help Request](mailto:hpc@yale.edu){ .md-button }
 
 Once received, our system will send an automated response with a link to a ticket. From there we'll track your ticket and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.
 
@@ -28,7 +30,7 @@ Once received, our system will send an automated response with a link to a ticke
 
 The YCRC hosts weekly office hours via Zoom on **Wednesdays at 11am-12pm EST**. Every Wednesday, Research support team members will be available to answer questions about the HPC clusters, data storage, cluster usage, etc. No appointments are necessary.
 
-Link: [https://yale.zoom.us/my/ycrcsupport](https://yale.zoom.us/my/ycrcsupport)
+[Join Office Hours](https://yale.zoom.us/my/ycrcsupport){ .md-button }
 
 Phone: 203-432-9666 (2-ZOOM if on-campus)or 646 568 7788; Meeting ID: 224 666 8665
 

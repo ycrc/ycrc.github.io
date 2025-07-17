@@ -90,6 +90,9 @@
       </div>
     {% endif %}
 
+    <div>
+      <a href="/#get-help" class="get-help">Need Help?</a>
+    </div>
     <!-- Search Interface -->
     {% if "search" in config["plugins"] %}
       <label class="md-header__button md-icon" for="__search">
@@ -99,12 +102,7 @@
     {% endif %}
 
 
-    <!-- Repository containing source -->
-    {% if config.repo_url %}
-      <div class="md-header-nav__source">
-        {% include "partials/source.html" %}
-      </div>
-    {% endif %}
+
 
   </nav>
   {% if "navigation.tabs.sticky" in features %}
