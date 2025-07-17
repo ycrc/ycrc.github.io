@@ -16,6 +16,7 @@
 
     |Limit|Value|
     |---|---|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per group|`2000`|
     |Maximum memory per group|`30000G`|
     |Maximum CPUs per user|`1000`|
@@ -27,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |46|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |94|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "devel"
 
@@ -48,7 +49,7 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`06:00:00`|
-    |Maximum CPUs per user|`32`|
+    |Maximum CPUs per user|`16`|
     |Maximum submitted jobs per user|`2`|
 
     **Available Compute Nodes**
@@ -80,7 +81,9 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
+    |Maximum GPUs per group|`32`|
     |Maximum GPUs per user|`16`|
+    |Maximum running jobs per user|`8`|
 
     **Available Compute Nodes**
 
@@ -111,7 +114,9 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
+    |Maximum GPUs per group|`32`|
     |Maximum GPUs per user|`16`|
+    |Maximum running jobs per user|`8`|
 
     **Available Compute Nodes**
 
@@ -171,6 +176,7 @@
 
     |Limit|Value|
     |---|---|
+    |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per user|`64`|
     |Maximum memory per user|`4000G`|
 
@@ -211,5 +217,4 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |60|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-    |48|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
