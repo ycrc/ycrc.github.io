@@ -2,12 +2,12 @@
 
 ![Grace Hopper](/img/Grace-Hopper.jpg){: .cluster-portrait}
 
-Hopper is a shared-use resource for all researchers at Yale University for high performance computation of ePHI, [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), CUI and certain other types of sensitive data.
+Hopper is a shared-use resource for all researchers at Yale University for high performance computation of [electronic Protected Health Information (ePHI)](https://en.wikipedia.org/wiki/Protected_health_information), [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), [Controlled Unclassified Information (CUI)](https://en.wikipedia.org/wiki/Controlled_Unclassified_Information) and [certain other types of sensitive data](https://cybersecurity.yale.edu/data-classification).
 Hopper consists of a variety of standard compute and GPU-enabled nodes and mounts an encrypted shared filesystem.
 The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
 
-Hopper is jointly supported by the YCRC and HSIT to ensure a high level of service and facilitate secure computational research.
-Hopper is one of a number of secure computing environments, such as SpinUp+ and [CHP](https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform), developed to support a variety of secure computing needs.
+Hopper is jointly supported by the YCRC and [Health Sciences Information Technology (HSIT)](https://healthsciencesit.yale.edu/) to ensure a high level of service and facilitate secure computational research.
+Hopper is one of a number of secure computing environments, such as SpinUp+ and [CHP/SAFE](https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform), developed to support a variety of secure computing needs.
 Support staff are available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.
 
 
@@ -15,6 +15,10 @@ Support staff are available to assist researchers with identifying and accessing
     The next quarterly maintenance for Hopper is scheduled for September 24th. During this time the cluster will be unavailable.
 
 ## Access the Cluster
+
+Early access usage on Hopper is at no-cost.
+Computations and storage on Hopper will ultimately be subject to charges.
+More information will be provided as it is available.
 
 
 ### Projects
@@ -27,20 +31,25 @@ Once a project is approved, the project's PI is responisible for the approval of
 PIs are also required to conduct a quarterly review of user accounts on their projects.
 Failure to complete the review by the due date will result deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.
 
+Projects will also be deactivated if their expiration date has elapsed (if applicable) or otherwise at the PI's discretion.
+
 Email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) to inquire about using Hopper.
 
 ### Accounts
 
-All accounts must be associated with an active project and approved by projects' PIs. 
+All accounts must be associated with an active project and approved by projects' PIs.
+
 Accounts will be deactivated when any of the following occurs: 
 
-- Account is no longer associated with any active projects
+- Account is no longer associated with any active projects 
 - Account is inactive for more than one year 
 - Owner leaves the university
 - Owner fails to renew required training
 
 Before using Hopper, all users must successfully complete the a training program which includes NIST 800-171 and HIPAA training.
 Once the associated PI approves the account, the user will get an email prompt to the training.
+All users must complete the full training program, regardless of the risk classification of their data, but they will not be 
+required to retake any training that is up-to-date (e.g. HIPAA training).
 Users can take the training in advance if desired via the button below.
 This training must be renewed annually.
 
@@ -83,15 +92,6 @@ Data may only be transferred to and from Hopper using an approved method as desc
 By default, all internet access is blocked, with only certain approved remote sites whitelisted.
 All transfers of any type will be logged, and users remain responsible for following the restrictions that apply to their data. 
 
-### High-Risk Data
-
-All high-risk data transfers, either onto or out of the cluster, require approval.
-
-[Submit High-Risk Incoming Data Transfer Request](https://forms.gle/bcW9AKLu8c5nRrAV7){ .md-button }
-
-For outgoing high-risk data transfers, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
-
-
 ### Low-Risk Data
 
 Low-risk files, such as scripts or low-risk data, can be uploaded to Hopper using Globus via the "Yale CRC Hopper Low Risk" collection into a user-specific staging directory.
@@ -102,9 +102,16 @@ If your data is large (>200G), please submit your request _prior_ to uploading t
 Downloading of low-risk files from the cluster is the same process, but in reverse.
 submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.
-Data will be purged from the staging area after a TBD amount of time.
 
 [Submit Low-Risk Transfer Request](https://forms.gle/YigxQdbvobaH7YDT6){ .md-button }
+
+### All Other Data
+
+Transfers of any data other than low-risk data (see above), either onto or out of the cluster, require approval.
+
+[Submit Incoming High-Risk Data Transfer Request](https://forms.gle/bcW9AKLu8c5nRrAV7){ .md-button }
+
+For outgoing transfers of high-risk classification data, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
 ## Software
 
@@ -113,6 +120,8 @@ No software may be installed by users.
 A researcher's own analysis scripts, such as Python, R, MATLAB or bash scripts, do 
 not qualify as software and are permissible to upload and run on the cluster without approval.
 If you are unclear if your workflow qualifies as software, please contact your administrator for clarifications.
+
+To request software be installed on Hopper, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
 ### R and Python Packages
 
