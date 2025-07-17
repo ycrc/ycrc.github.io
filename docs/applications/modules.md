@@ -160,7 +160,7 @@ ml restore test
 
 Large modules with many dependencies can take tens of seconds to load, becoming unwieldy to work with. This is also true of [collections](/applications/modules/#module-collections). 
 
-To address this you can upgrade the command `ml` ([above](/applications/modules/#ml-a-convenient-tool)) by loading our experimental module [`mlq`](https://github.com/cvsindelar/mlq) (Module Loading-Quick):
+To address this you can upgrade the command `ml` ([above](/applications/modules/#ml-a-convenient-tool)) by loading our fast module loader module [`mlq`](https://github.com/cvsindelar/mlq) (Module Loading-Quick):
 
 ```
 module load mlq
