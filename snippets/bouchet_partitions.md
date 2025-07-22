@@ -28,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |94|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |88|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "devel"
 
@@ -59,6 +59,38 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |2|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+
+=== "week"
+
+    Use the week partition for jobs that need a longer runtime than day allows.
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    **Job Limits**
+
+    Jobs submitted to the week partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`7-00:00:00`|
+    |Maximum CPUs per group|`256`|
+    |Maximum memory per group|`3840G`|
+    |Maximum CPUs per user|`128`|
+    |Maximum memory per user|`1920G`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
+    |---|---|---|---|---|
+    |6|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "gpu"
 
