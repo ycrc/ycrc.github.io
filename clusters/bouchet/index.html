@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/bouchet/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -3672,7 +3672,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:8"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3724,7 +3724,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>94</td>
+<td>88</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
@@ -3786,7 +3786,68 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">week</label><div class="tabbed-content">
+<p>Use the week partition for jobs that need a longer runtime than day allows.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the week partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>3840G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>128</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>1920G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>cpugen:emeraldrapids</td>
+<td>64</td>
+<td>990</td>
+<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx_5000_ada:2</code> would request 2 NVIDIA RTX 5000 Ada GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3853,7 +3914,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">gpu_h200</label><div class="tabbed-content">
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu_h200</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=h200:2</code> would request 2 NVIDIA H200 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3920,7 +3981,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3983,7 +4044,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4036,7 +4097,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">mpi</label><div class="tabbed-content">
+<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">mpi</label><div class="tabbed-content">
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
