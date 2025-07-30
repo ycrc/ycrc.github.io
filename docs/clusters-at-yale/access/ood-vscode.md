@@ -4,6 +4,8 @@
 
 There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.
 
+!!!warning
+    To protect the security of the data, the use of [Cursor](https://cursor.com/) and [GitHub Copilot](https://github.com/features/copilot) on Milgram is not permitted. 
 
 ## VSCode on Remote Desktop:
 
@@ -23,6 +25,8 @@ If this (or something else) is a problem for you, you can run VSCode on your loc
 !!! note "Note"
     While you can also tunnel directly to the login nodes (several VSCode extensions allow VSCode users to connect to remote servers over SSH), this has some drawbacks: (1) the resulting connections can be unstable; (2) VS Code can initiate computationally expensive processes (compilers, etc) that put undue burden on our clusters' login nodes, where resources are limited.
 
+!!!warning
+    To protect the security of the data on Milgram, setting up SSH tunneling to connect your local VSCode to a Milgram compute node is not permitted.
 
 1. Create a vscode server batch script called `vscode_slurm.sh` and submit it to the queue with `sbatch vscode_slurm.sh`. The script source code is attached below.
 
@@ -96,5 +100,9 @@ rm ~/.vscode/cli/tunnel-stable.lock
 
 The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
 To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Code Server from the Interactive Apps menu in the portal and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
+
+
+
+
 
 
