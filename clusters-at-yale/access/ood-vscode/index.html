@@ -2625,6 +2625,10 @@
                 <h1 id="vscode">VSCode</h1>
 <p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.</p>
 <p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To protect the security of the data, the use of <a href="https://cursor.com/">Cursor</a> and <a href="https://github.com/features/copilot">GitHub Copilot</a> on Milgram is not permitted. </p>
+</div>
 <h2 id="vscode-on-remote-desktop">VSCode on Remote Desktop:</h2>
 <p>The easiest way to run VSCode is to use our Open OnDemand web portal. First, start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a>. As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Deskop documentation</a>, we recommend to <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">adjust the 'image quality' slider bar</a> all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:</p>
 <div class="highlight"><pre><span></span><code>module load VSCode
@@ -2636,6 +2640,10 @@ vscode
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>While you can also tunnel directly to the login nodes (several VSCode extensions allow VSCode users to connect to remote servers over SSH), this has some drawbacks: (1) the resulting connections can be unstable; (2) VS Code can initiate computationally expensive processes (compilers, etc) that put undue burden on our clusters' login nodes, where resources are limited.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To protect the security of the data on Milgram, setting up SSH tunneling to connect your local VSCode to a Milgram compute node is not permitted.</p>
 </div>
 <ol>
 <li>
@@ -2712,7 +2720,7 @@ To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2025</span>
       
     
   </small>
