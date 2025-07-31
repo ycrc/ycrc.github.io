@@ -31,11 +31,11 @@ Jobs submitted to a Priority Tier partition precede all pending jobs in the corr
 The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs.
 Any compute resources not in use by a Priority Tier partition are available for use by the Standard Tier partitions.
 
-| Partition       | Description       | Grace                             | McCleary                          | Milgram |
-|-----------------|-------------------|-----------------------------------|-----------------------------------|-----------|
-| `priority`      | similar to `day`  | Intel Ice Lake Nodes              | Intel Ice Lake Nodes              |  Intel Cascade Lake Nodes |
-| `priority_gpu`  | similar to `gpu`  | A100, A5000 GPU-enabled Nodes | A100, A5000 GPU-enabled Nodes |  NA | 
-| `priority_mpi`  | similar to `mpi`  | Intel Skylake Nodes |  NA | NA  |
+| Partition       | Description       | Bouchet                     | Grace          | McCleary       | Milgram            |
+|-----------------|-------------------|-----------------------------|----------------|----------------|--------------------|
+| `priority`      | similar to `day`  | Intel Emerald Rapids Nodes | Intel Ice Lake Nodes | Intel Ice Lake Nodes | Intel Cascade Lake Nodes |
+| `priority_gpu`  | similar to `gpu`  | RTX 5000 GPU               | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
+| `priority_mpi`  | similar to `mpi`  | Intel Emerald Rapids       | Intel Skylake        |  N/A                  |  N/A                    |
 
 At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
 
