@@ -26,10 +26,7 @@ During the Priority Tier onboarding process, the YCRC will require certain infor
 
 ### Job Submission
 
-Starting on December 1st, there is a new tier of partitions on [Grace](/clusters/grace/), [McCleary](/clusters/mccleary/) and [Milgram](/clusters/milgram/). Priority Tier partitions will be added to [Bouchet](/clusters/bouchet/) when it enters production.
-Jobs submitted to a Priority Tier partition precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. 
-The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs.
-Any compute resources not in use by a Priority Tier partition are available for use by the Standard Tier partitions.
+As of December 1st, 2024, we introduced Priority Tier partitions on [Grace](/clusters/grace/), [McCleary](/clusters/mccleary/) and [Milgram](/clusters/milgram/), and subsequently on [Bouchet](/clusters/bouchet/) now that it is in production. Jobs submitted to a Priority Tier partition precede all pending jobs in the corresponding standard tier partitions in the scheduling queue to provide a “fast-lane”. The Priority Tier partitions are composed of the YCRC’s newest nodes and GPUs. Any compute resources not in use by a Priority Tier partition are available for use by the Standard Tier partitions.
 
 | Partition       | Description       | Bouchet                     | Grace          | McCleary       | Milgram            |
 |-----------------|-------------------|-----------------------------|----------------|----------------|--------------------|
