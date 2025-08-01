@@ -90,7 +90,10 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 
 For long-term allocations, additional project storage spaces can be purchased on one of our shared filesystems, which provides similar functionality to the primary project storage. This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/services/high-performance-computing/storage-expiration-policy)).
 
-For shorter-term or smaller allocations, we have a monthly billing option. More details on this option can be found [here](https://research.computing.yale.edu/billing-hpc-services) (CAS login required).
+For shorter-term or smaller allocations, we have a monthly billing option. 
+Additional project-style storage can be provided at a rate of $5 per TiB per month. 
+Agreements for such storage will run through the end of the fiscal year and be renewable in June for the next year when appropriate.
+Storage charges are based on requested allocation, not actual usage.
 
 Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
 

@@ -16,11 +16,6 @@ Support staff are available to assist researchers with identifying and accessing
 
 ## Access the Cluster
 
-Early access usage on Hopper is at no-cost.
-Computations and storage on Hopper will ultimately be subject to charges.
-More information will be provided as it is available.
-
-
 ### Projects
 
 Unlikely other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
@@ -164,6 +159,31 @@ Such projects will be clearly identified during the approval and onboarding proc
 At the moment, Slurm will not send job status emails, so please login to check the status of your jobs.
 
 While the VDI will lock sessions after 20 minutes of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.
+
+
+## Rate Structure
+
+Early access usage on Hopper is at no-cost.
+Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.
+
+|  Type          | Subtype(s)     | Service Units  | Cost per Hour  |
+|----------------|----------------|------|-------|
+| Compute Hour\* |  -               | 1    |  $0.004 |
+| GPU Hour       | A40, L40s, A5000 | 122.5 | $0.490 |
+| GPU Hour       | H100            | 247.5 | $0.990 |
+| GPU Hour       | H200            | 372.5 | $1.490 |
+
+\* *Number of Service Units (SUs) per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB*
+
+Usage is billed for actual runtime, not requested walltime of a job. 
+However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
+
+Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5 per TiB per month.
+Storage charges are based on requested allocation, not actual usage.
+
+Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
+To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculator](https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M).
+
 
 ## Partitions and Hardware
 
