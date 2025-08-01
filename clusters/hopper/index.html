@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -620,6 +620,13 @@
         <li class="md-nav__item">
   <a href="#submit-jobs" class="md-nav__link">
     Submit Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-structure" class="md-nav__link">
+    Rate Structure
   </a>
   
 </li>
@@ -2768,6 +2775,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rate-structure" class="md-nav__link">
+    Rate Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#partitions-and-hardware" class="md-nav__link">
     Partitions and Hardware
   </a>
@@ -2811,9 +2825,6 @@ Support staff are available to assist researchers with identifying and accessing
 <p>The next quarterly maintenance for Hopper is scheduled for September 24th. During this time the cluster will be unavailable.</p>
 </div>
 <h2 id="access-the-cluster">Access the Cluster</h2>
-<p>Early access usage on Hopper is at no-cost.
-Computations and storage on Hopper will ultimately be subject to charges.
-More information will be provided as it is available.</p>
 <h3 id="projects">Projects</h3>
 <p>Unlikely other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
 Projects are named <code>&lt;pi_netid&gt;_&lt;project_code&gt;</code>.
@@ -2915,6 +2926,52 @@ If the security of your project requires isolation, you must submit your jobs wi
 Such projects will be clearly identified during the approval and onboarding process.</p>
 <p>At the moment, Slurm will not send job status emails, so please login to check the status of your jobs.</p>
 <p>While the VDI will lock sessions after 20 minutes of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.</p>
+<h2 id="rate-structure">Rate Structure</h2>
+<p>Early access usage on Hopper is at no-cost.
+Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subtype(s)</th>
+<th>Service Units</th>
+<th>Cost per Hour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compute Hour*</td>
+<td>-</td>
+<td>1</td>
+<td>$0.004</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>A40, L40s, A5000</td>
+<td>122.5</td>
+<td>$0.490</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>H100</td>
+<td>247.5</td>
+<td>$0.990</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>H200</td>
+<td>372.5</td>
+<td>$1.490</td>
+</tr>
+</tbody>
+</table>
+<p>* <em>Number of Service Units (SUs) per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB</em></p>
+<p>Usage is billed for actual runtime, not requested walltime of a job. 
+However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.</p>
+<p>Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5 per TiB per month.
+Storage charges are based on requested allocation, not actual usage.</p>
+<p>Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
+To assist with cost estimates and budgeting, we provide a <a href="https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M">Hopper Cost Calculator</a>.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>See each tab below for more information about the available common use partitions.</p>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">day</label><div class="tabbed-content">
@@ -3145,7 +3202,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 1, 2025</span>
       
     
   </small>
