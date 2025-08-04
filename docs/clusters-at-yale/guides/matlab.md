@@ -14,10 +14,10 @@ Run one of the commands below, which will list available versions and the corres
 module avail matlab
 ```
 
-Load the appropriate module file. For example, to run version R2021a:
+Load the appropriate module file. For example, to run version R2023b:
 
 ```
-module load MATLAB/2021a
+module load MATLAB/2023b
 ```
 
 The module load command sets up your environment, including the PATH to find the proper version of the MATLAB program.
@@ -40,7 +40,7 @@ salloc -c 4 --mem 16G -t 4:00:00
 Once your interactive session starts, you can load the appropriate module file and start MATLAB
 
 ```
-module load MATLAB/2021a
+module load MATLAB/2023b
 
 # launch the MATLAB command line prompt
 maltab -nodisplay
@@ -63,7 +63,7 @@ Create a batch script with the [resource requests](/clusters-at-yale/job-schedul
 #SBATCH --mem 18G
 #SBATCH -t 8:00:00
 
-module load MATLAB/2021a
+module load MATLAB/2023b
 # assuming you have your_script.m in the current directory
 matlab -batch "your_script"
 
