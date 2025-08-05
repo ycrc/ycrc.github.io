@@ -1,6 +1,6 @@
 # Courses
 
-The YCRC Grace and McCleary clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.
+The YCRC Bouchet cluster can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.
 
 !!! warning
     All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.
@@ -42,14 +42,10 @@ Course members must use the course URL to log in to course accounts on Open OnDe
 To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
 
 ```
-ssh courseid_netid@grace.ycrc.yale.edu
-
-# or
-
-ssh courseid_netid@mccleary.ycrc.yale.edu
+ssh courseid_netid@bouchet.ycrc.yale.edu
 ```
 
-If you already have a permanent researcher account (one that is just your netid) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, [upload your new key](https://sshkeys.ycrc.yale.edu/) and it will be delivered to all of your accounts within a few minutes.
+If you already have a permanent researcher account (one that is just your NetID) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, [upload your new key](https://sshkeys.ycrc.yale.edu/) and it will be delivered to all of your accounts within a few minutes.
 
 
 ## Course Storage
@@ -60,9 +56,9 @@ See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-stor
 
 
 
-## Node Reservations
+## Dedicated Nodes for Courses
 
-*If* the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available in an `education` or `education_gpu` partition. The nodes can be requested using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing the partitions with any other courses that also requested nodes. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
+Dedicated nodes for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
 
 Course members are welcome to use the public partitions of the cluster. However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
@@ -72,7 +68,7 @@ Course members are welcome to use the public partitions of the cluster. However,
 salloc -p education 
 ```
 
-or if your instructor has reserved GPU nodes
+or if you need to request a GPU
 
 ```
 salloc -p education_gpu --gpus=1
@@ -86,7 +82,7 @@ Add the following to your submission script:
 #SBATCH -p education
 ```
 
-or if your instructor has reserved GPU nodes
+or if you need to request a GPU
 
 ```
 #SBATCH -p education_gpu --gpus=1
@@ -98,7 +94,7 @@ In any of the app submission forms, type the correct paritition name into the "P
 
 ## Cluster Maintenance
 
-Each cluster is inaccessible twice a year for a three day regularly scheduled maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/support/hpc/system-status).
+Bouchet is inaccessible once a year for a regularly scheduled maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
 
 Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
 
@@ -106,15 +102,14 @@ Please account for the cluster unavailability when developing course schedules a
 
 As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. 
 
-A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not receive a reminder.** Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.
+A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). **Students will not receive a reminder.** Instructors, if you would like to retain course materials for future semesters, please submit a request to hpc@yale.edu to have the materials stored in our course repository. 
 
 ### Transfer Data to Research Account
 
 If you have a research account on the cluster, you can transfer any data you want to save from your course account to your research account.
 
 !!! warning
-    Make sure there is sufficient free space in your research account storage to 
-accommodate any data you are transferring from your course account using `getquota`.
+    Make sure there is sufficient free space in your research account storage to accommodate any data you are transferring from your course account using `getquota`.
 
 1. Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.
 
@@ -124,20 +119,20 @@ accommodate any data you are transferring from your course account using `getquo
     # home directory
     setfacl -m u:netid:rX /home/courseid_netid
 
-    # project directory on Grace and McCleary
-    setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
+    # project directory on Bouchet
+    setfacl -m u:netid:rX /nfs/roberts/project/courseid/courseid_netid
 
     ```
 
 1. Log in as your research account. Check that you can access the above paths.
 
-1. Move to the `transfer` node with `ssh transfer`. If you are transferring a lot of data, open a [tmux](/clusters-at-yale/guides/tmux/) session so the transfer can continue if you disconnect from the cluster.
+1. Move to the `transfer` node with `ssh transfer1`. If you are transferring a lot of data, open a [tmux](/clusters-at-yale/guides/tmux/) session so the transfer can continue if you disconnect from the cluster.
 
 1. Initiate a copy of the desired data using `rsync`. For example:
 
     ```
-    mkdir /gpfs/gibbs/project/group/netid/my_course_data
-    rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project/group/netid/my_course_data
+    mkdir /nfs/roberts/project/group/netid/my_course_data
+    rsync -av /nfs/roberts/project/courseid/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data
     ```
 
 
