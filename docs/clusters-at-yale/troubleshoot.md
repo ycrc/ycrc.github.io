@@ -4,7 +4,8 @@
 
 If you are having trouble logging into a cluster, please use the checklist below to check for common issues:
 
-- [ ] Make sure you have submitted an [account request](https://research.computing.yale.edu/support/hpc/account-request) and have gotten word that we created your account for the cluster.
+- [ ] Make sure you have submitted an [account request](https://research.computing.yale.edu/account-request) and 
+have gotten word that we created your account for the cluster.
 - [ ] Make sure that the cluster is online in the [System Status](http://research.computing.yale.edu/system-status) page.
 - [ ] Check the hostname for the cluster. See the [clusters page](/clusters) for a list.
 - [ ] Verify that your [ssh keys](/clusters-at-yale/access/#what-are-ssh-keys) are setup correctly
