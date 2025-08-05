@@ -107,7 +107,8 @@ nav:
     - User Guide:
         - clusters-at-yale/index.md
         - clusters-at-yale/access/accounts.md
-        - Request an Account: https://research.computing.yale.edu/account-request
+        - Request an Account: 
+https://docs.google.com/forms/d/e/1FAIpQLSeYXuWS07rOYxX7D9BZkeikQTrsg4WTn0PmDE2oUPLoVcsUHA/viewform
         - clusters-at-yale/help-requests.md
         - clusters-at-yale/troubleshoot.md
         - Access the Clusters:
