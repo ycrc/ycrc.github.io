@@ -1042,11 +1042,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-reservations" class="md-nav__link">
-    Node Reservations
+  <a href="#dedicated-nodes-for-courses" class="md-nav__link">
+    Dedicated Nodes for Courses
   </a>
   
-    <nav class="md-nav" aria-label="Node Reservations">
+    <nav class="md-nav" aria-label="Dedicated Nodes for Courses">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2679,11 +2679,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-reservations" class="md-nav__link">
-    Node Reservations
+  <a href="#dedicated-nodes-for-courses" class="md-nav__link">
+    Dedicated Nodes for Courses
   </a>
   
-    <nav class="md-nav" aria-label="Node Reservations">
+    <nav class="md-nav" aria-label="Dedicated Nodes for Courses">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2757,7 +2757,7 @@
                 
                 
                 <h1 id="courses">Courses</h1>
-<p>The YCRC Grace and McCleary clusters can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.</p>
+<p>The YCRC Bouchet cluster can be made available for Yale courses with a suitable computational component. The YCRC hosts over a dozen courses on the clusters every semester.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.</p>
@@ -2786,47 +2786,42 @@ Use the URL for your course web portal will resolve the problem.</p>
 </div>
 <h3 id="ssh-access">SSH Access</h3>
 <p>To access your course account via terminal and <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/"><code>ssh</code> authentication</a>, connect to the cluster using your course account name. For example:</p>
-<div class="highlight"><pre><span></span><code>ssh courseid_netid@grace.ycrc.yale.edu
-
-# or
-
-ssh courseid_netid@mccleary.ycrc.yale.edu
+<div class="highlight"><pre><span></span><code>ssh courseid_netid@bouchet.ycrc.yale.edu
 </code></pre></div>
-<p>If you already have a permanent researcher account (one that is just your netid) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, <a href="https://sshkeys.ycrc.yale.edu/">upload your new key</a> and it will be delivered to all of your accounts within a few minutes.</p>
+<p>If you already have a permanent researcher account (one that is just your NetID) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, <a href="https://sshkeys.ycrc.yale.edu/">upload your new key</a> and it will be delivered to all of your accounts within a few minutes.</p>
 <h2 id="course-storage">Course Storage</h2>
 <p>Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.</p>
 <p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
-<h2 id="node-reservations">Node Reservations</h2>
-<p><em>If</em> the instructor has coordinated with the YCRC for dedicated nodes for the course, they are available in an <code>education</code> or <code>education_gpu</code> partition. The nodes can be requested using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing the partitions with any other courses that also requested nodes. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
+<h2 id="dedicated-nodes-for-courses">Dedicated Nodes for Courses</h2>
+<p>Dedicated nodes for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
 <p>Course members are welcome to use the public partitions of the cluster. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
 <h3 id="interactive-jobs">Interactive Jobs</h3>
 <div class="highlight"><pre><span></span><code>salloc -p education 
 </code></pre></div>
-<p>or if your instructor has reserved GPU nodes</p>
+<p>or if you need to request a GPU</p>
 <div class="highlight"><pre><span></span><code>salloc -p education_gpu --gpus=1
 </code></pre></div>
 <h3 id="batch-jobs">Batch Jobs</h3>
 <p>Add the following to your submission script:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH -p education
 </code></pre></div>
-<p>or if your instructor has reserved GPU nodes</p>
+<p>or if you need to request a GPU</p>
 <div class="highlight"><pre><span></span><code>#SBATCH -p education_gpu --gpus=1
 </code></pre></div>
 <h3 id="web-portal">Web Portal</h3>
 <p>In any of the app submission forms, type the correct paritition name into the "Partition" field.</p>
 <h2 id="cluster-maintenance">Cluster Maintenance</h2>
-<p>Each cluster is inaccessible twice a year for a three day regularly scheduled maintenance. The maintenance schedule is published <a href="https://research.computing.yale.edu/support/hpc/system-status">here</a>.</p>
+<p>Bouchet is inaccessible once a year for a regularly scheduled maintenance. The maintenance schedule is published <a href="https://research.computing.yale.edu/system-status">here</a>.</p>
 <p>Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.</p>
 <h2 id="end-of-semester-course-deletion">End of Semester Course Deletion</h2>
 <p>As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to hpc@yale.edu to transfer the data into your research account. </p>
-<p>A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). <strong>Students will not receive a reminder.</strong> Instructors, if you would like to retain course materials for future semesters, please copy them off the cluster or to a research account.</p>
+<p>A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). <strong>Students will not receive a reminder.</strong> Instructors, if you would like to retain course materials for future semesters, please submit a request to hpc@yale.edu to have the materials stored in our course repository. </p>
 <h3 id="transfer-data-to-research-account">Transfer Data to Research Account</h3>
 <p>If you have a research account on the cluster, you can transfer any data you want to save from your course account to your research account.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure there is sufficient free space in your research account storage to </p>
+<p>Make sure there is sufficient free space in your research account storage to accommodate any data you are transferring from your course account using <code>getquota</code>.</p>
 </div>
-<p>accommodate any data you are transferring from your course account using <code>getquota</code>.</p>
 <ol>
 <li>
 <p>Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.</p>
@@ -2836,20 +2831,20 @@ ssh courseid_netid@mccleary.ycrc.yale.edu
 <div class="highlight"><pre><span></span><code># home directory
 setfacl -m u:netid:rX /home/courseid_netid
 
-# project directory on Grace and McCleary
-setfacl -m u:netid:rX /gpfs/gibbs/project/courseid/courseid_netid
+# project directory on Bouchet
+setfacl -m u:netid:rX /nfs/roberts/project/courseid/courseid_netid
 </code></pre></div>
 </li>
 <li>
 <p>Log in as your research account. Check that you can access the above paths.</p>
 </li>
 <li>
-<p>Move to the <code>transfer</code> node with <code>ssh transfer</code>. If you are transferring a lot of data, open a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session so the transfer can continue if you disconnect from the cluster.</p>
+<p>Move to the <code>transfer</code> node with <code>ssh transfer1</code>. If you are transferring a lot of data, open a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session so the transfer can continue if you disconnect from the cluster.</p>
 </li>
 <li>
 <p>Initiate a copy of the desired data using <code>rsync</code>. For example:</p>
-<div class="highlight"><pre><span></span><code>mkdir /gpfs/gibbs/project/group/netid/my_course_data
-rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project/group/netid/my_course_data
+<div class="highlight"><pre><span></span><code>mkdir /nfs/roberts/project/group/netid/my_course_data
+rsync -av /nfs/roberts/project/courseid/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data
 </code></pre></div>
 </li>
 </ol>
@@ -2861,7 +2856,7 @@ rsync -av /gpfs/gibbs/project/courseid/courseid_netid/mydata /gpfs/gibbs/project
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2025</span>
       
     
   </small>
