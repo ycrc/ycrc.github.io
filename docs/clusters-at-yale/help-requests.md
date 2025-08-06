@@ -4,7 +4,8 @@ See our [Get Help](/#get-help) section for ways to get assistance, from email su
 When requesting assistance provide the information described below (where applicable), so we can most effectively assist you.
 Before requesting assistance, we encourage you to take a look at the relevant documentation on this site.
 
-If you are new to the cluster, please watch our [Intro to HPC tutorial](https://www.youtube.com/watch?v=5U-9GCavX0s) available on the [YCRC YouTube Channel](https://ycrc.yale.edu/youtube) as it covers many common usages of the systems.
+If you are new to the cluster, please watch our [Intro to HPC tutorial](http://research.computing.yale.edu/intro-to-hpc) available on the [YCRC 
+YouTube Channel](https://ycrc.yale.edu/youtube) as it covers many common usages of the systems.
 
 ## Troubleshoot Login
 
