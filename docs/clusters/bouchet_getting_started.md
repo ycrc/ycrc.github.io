@@ -1,6 +1,6 @@
 # Bouchet Getting Started
 
-The Bouchet HPC cluster is YCRC's first installation at [Massachusetts High Performance Computing Center (MGHPCC)](https://research.computing.yale.edu/about/yale-joins-mghpcc). 
+The Bouchet HPC cluster is YCRC's first installation at [Massachusetts High Performance Computing Center (MGHPCC)](https://www.mghpcc.org/). 
 Bouchet is the planned successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward.
 
 ## Key Differences from Other Clusters

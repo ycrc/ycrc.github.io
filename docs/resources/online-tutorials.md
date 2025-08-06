@@ -83,7 +83,6 @@ It is possible to run Linux terminals and applications from within a Windows ins
 
 ### mpi4py
 
-* [YCRC Workshop: mpi4py](https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf)
 * [mpi4py example scripts](https://github.com/ycrc/mpi4py-examples)
 * [Documentation for mpi4py](https://mpi4py.readthedocs.io/en/stable/tutorial.html)
 
