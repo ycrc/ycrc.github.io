@@ -47,17 +47,35 @@ include as much detail as possible about your request and we'll find the right p
 
 | Specialist | Cluster(s) | Areas of Focus |
 | --- | --- | --- |
-|[Kathleen McKiernan](https://research.computing.yale.edu/about/staff/kathleen-mckiernan)| All | Getting Started  | 
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/about/leadership-team/robert-bjornson)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R  |
-|[Sam Friedman](https://research.computing.yale.edu/about/staff/sam-friedman)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/about/research-scientists-staff/thomas-langford)|[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
-|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/about/staff/aya-nawano)| [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/about/staff/kaylea-nelson)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, MPI, Python  |
-|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/about/staff/michael-rothberg)| [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python, Matlab |
-|[Chuck Sindelar, Ph.D.](https://research.computing.yale.edu/about/staff/charles-sindelar)|[McCleary](/clusters/mccleary) | Life Sciences, Cryo-EM/Structural Biology, Python, MPI, C/C++, Matlab |
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/about/staff/michael-strickler)|[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
-|[Ping Luo](https://research.computing.yale.edu/about/staff/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
-|[Misha Guy, Ph.D.](https://research.computing.yale.edu/about/staff/misha-guy)| | [SRSC Software](https://research.computing.yale.edu/services/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
+|[Kathleen McKiernan](https://research.computing.yale.edu/profile/kathleen-mckiernan)| All | Getting Started  | 
+|[Rob Bjornson, 
+Ph.D.](https://research.computing.yale.edu/profile/robert-bjornson-phd)|[McCleary](/clusters/mccleary) 
+| Life Sciences, Bioinformatics, Python, R  |
+|[Sam Friedman](https://research.computing.yale.edu/profile/sam-friedman)|[McCleary](/clusters/mccleary) | Life 
+Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
+|[Tom Langford, 
+Ph.D.](https://research.computing.yale.edu/profile/thomas-langford-phd)|[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| 
+Physics, EPS dept, Python, MPI |
+|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/profile/aya-nawano-phd)| 
+[Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
+|[Kaylea Nelson, 
+Ph.D.](https://research.computing.yale.edu/profile/kaylea-nelson-phd)|[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| 
+Astronomy, MPI, Python  |
+|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/profile/michael-rothberg-phd)| 
+[Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python, Matlab |
+|[Ben Carlson, Ph.D.](https://research.computing.yale.edu/profile/ben-carlson-phd)|
+[Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML |
+|[Chuck Sindelar, 
+Ph.D.](https://research.computing.yale.edu/profile/chuck-sindelar-phd)|[McCleary](/clusters/mccleary) 
+| Life Sciences, Cryo-EM/Structural Biology, Python, MPI, C/C++, Matlab |
+|[Michael Strickler, 
+Ph.D.](https://research.computing.yale.edu/profile/michael-strickler-phd)|[McCleary](/clusters/mccleary) 
+| Life Sciences, Structural Biology |
+|[Ping Luo](https://wti.yale.edu/profile/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai 
+Institute, Psychology dept, Open OnDemand |
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/profile/misha-guy-phd)| | [SRSC 
+Software](https://research.computing.yale.edu/science-research-software-core) and Mathematica (email at 
+mikhael.guy@yale.edu for appointment) |
 
 
 ### Q&A Platform
@@ -66,7 +84,10 @@ The YCRC hosts a Q&A platform at [ask.cyberinfrastructure.org](http://ask.cyberi
 
 ## Acknowledge the YCRC
 
-If publishing work performed on a YCRC cluster or with assistance from YCRC staff, we greatly appreciate acknowledgement of our staff and computing time in your publication. A list of YCRC staff can be found on our [Staff page](https://research.computing.yale.edu/about/staff), and the clusters are summarized on our [HPC Resources page](/clusters). Example acknowledgement below: 
+If publishing work performed on a YCRC cluster or with assistance from YCRC staff, we greatly appreciate 
+acknowledgement of our staff and computing time in your publication. A list of YCRC staff can be found on our 
+[Staff page](https://research.computing.yale.edu/about-us/meet-the-team), and the clusters are summarized on our 
+[HPC Resources page](/clusters). Example acknowledgement below: 
 
 > We thank the Yale Center for Research Computing, specifically [YCRC staff member name(s)], for guidance and assistance in computation run on the [cluster name here] cluster.
 
