@@ -35,7 +35,7 @@ salloc --mem-per-cpu=8G
 
 ### Use Less Memory
 
-This method is usually a little more involved, and is easier if you can inspect the code you are using. Watching your [job's resource usage](/clusters-at-yale/job-scheduling/resource-usage), attending [a workshop](https://research.computing.yale.edu/training/writing-efficient-r-code), or [getting in touch](/#get-help) with us are good places to start.
+This method is usually a little more involved, and is easier if you can inspect the code you are using. Watching your [job's resource usage](/clusters-at-yale/job-scheduling/resource-usage), attending a workshop, or [getting in touch](/#get-help) with us are good places to start.
 
 ## Disk Quotas
 
