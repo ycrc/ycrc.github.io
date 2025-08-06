@@ -7,7 +7,7 @@ Hopper consists of a variety of standard compute and GPU-enabled nodes and mount
 The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
 
 Hopper is jointly supported by the YCRC and [Health Sciences Information Technology (HSIT)](https://healthsciencesit.yale.edu/) to ensure a high level of service and facilitate secure computational research.
-Hopper is one of a number of secure computing environments, such as SpinUp+ and [CHP/SAFE](https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform), developed to support a variety of secure computing needs.
+Hopper is one of a number of secure computing environments, such as [SpinupPlus](https://medicine.yale.edu/ybic/computational-resources/yale/) and [CHP/SAFE](https://medicine.yale.edu/ybic/computational-resources/ynhhs/#computational-health-platform), developed to support a variety of secure computing needs.
 Support staff are available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.
 
 
@@ -40,6 +40,7 @@ Accounts will be deactivated when any of the following occurs:
 - Account is inactive for more than one year 
 - Owner leaves the university
 - Owner fails to renew required training
+- Owner fails to follow security measures (e.g. takes photos of screens, does not segment work into projects with specific personnel permissions, includes non-authorized data, etc.)
 
 Before using Hopper, all users must successfully complete the a training program which includes NIST 800-171 and HIPAA training.
 Once the associated PI approves the account, the user will get an email prompt to the training.
