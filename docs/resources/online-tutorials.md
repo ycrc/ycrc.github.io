@@ -4,7 +4,7 @@
 
 ### Introduction to Linux
 
-* [YCRC Workshop: Practical Introduction to Linux](https://ycrc.github.io/PIL/), ([Video](https://research.computing.yale.edu/ycrc-bootcamp-practical-introduction-linux)) *Recommended
+* [YCRC Workshop: Practical Introduction to Linux](https://ycrc.github.io/PIL/), ([Video](https://www.youtube.com/watch?v=_kMHT_tkweo)) *Recommended
 * [Most Commonly Used Commands - RedHat.com](https://www.redhat.com/sysadmin/10-commands-terminal)
 * [Command Line for Beginners - Ubuntu.com](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 
