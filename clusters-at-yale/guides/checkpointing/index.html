@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/checkpointing/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2550,11 +2550,11 @@ This will ensure that if your job is interrupted you will be able to restart it 
 <p>DMTCP "Distributed Multithreaded Checkpointing" allows you to easily save the state of your running job and restart it from 
 that point.  This can be very useful if your job fails for any number of reasons: it exceeds the time limit, is preempted from scavenge, the compute node crashes, etc.</p>
 <p>DMTCP does not require any changes to your code or recompilation.  It should work on most sequential or multithreaded/multiprocessing programs as is.</p>
-<div class="highlight"><pre><span></span><code>module load DMTCP
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>DMTCP
 </code></pre></div>
 <h2 id="run-your-job-interactively-under-dmtcp">Run Your Job Interactively Under DMTCP</h2>
 <p>For this simple example, we'll use this python script <code>count.py</code>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2562,13 +2562,13 @@ that point.  This can be very useful if your job fails for any number of reasons
   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Run the script interactively using <code>dmtcp_launch</code>:</p>
-<div class="highlight"><pre><span></span><code>dmtcp_launch -i <span class="m">5</span> python3 count.py 
+<div class="highlight"><pre><span></span><code>dmtcp_launch<span class="w"> </span>-i<span class="w"> </span><span class="m">5</span><span class="w"> </span>python3<span class="w"> </span>count.py<span class="w"> </span>
 </code></pre></div>
 <p>It will begin printing to the terminal.  In the background, DMTCP will be writing a checkpoint file every 5 seconds.<br />
 Let it count for a while, then kill it with <kbd>Ctrl</kbd>+<kbd>c</kbd>.</p>
 <p>If you look in that directory, you'll see several files related to DMTCP. The *.dmtcp file is the checkpoint file.<br />
 To restart the job from the last checkpoint, do:</p>
-<div class="highlight"><pre><span></span><code>dmtcp_restart -i <span class="m">5</span> *.dmtcp 
+<div class="highlight"><pre><span></span><code>dmtcp_restart<span class="w"> </span>-i<span class="w"> </span><span class="m">5</span><span class="w"> </span>*.dmtcp<span class="w"> </span>
 </code></pre></div>
 <p>In practice, you'll most likely want to use DMTCP to checkpoint batch jobs, rather than interactive sessions.     </p>
 <h2 id="checkpoint-a-batch-job">Checkpoint a Batch Job</h2>
@@ -2576,16 +2576,16 @@ To restart the job from the last checkpoint, do:</p>
 how long it takes to write your application's checkpoint file, and tune your interval accordingly.  </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-module load DMTCP
+module<span class="w"> </span>load<span class="w"> </span>DMTCP
 
-dmtcp_launch -i <span class="m">300</span> python count.py
+dmtcp_launch<span class="w"> </span>-i<span class="w"> </span><span class="m">300</span><span class="w"> </span>python<span class="w"> </span>count.py
 </code></pre></div>
 <p>Then, if the job fails, you can resubmit it with this script:
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-module load DMTCP
+module<span class="w"> </span>load<span class="w"> </span>DMTCP
 
-dmtcp_restart -i <span class="m">300</span> *.dmtcp
+dmtcp_restart<span class="w"> </span>-i<span class="w"> </span><span class="m">300</span><span class="w"> </span>*.dmtcp
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2611,33 +2611,33 @@ automatically requeue the job if it is preempted or times out:</p>
 <span class="c1">#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out</span>
 <span class="c1">#SBATCH --open-mode=append</span>
 
-<span class="nb">trap</span> <span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="m">10</span>
+<span class="nb">trap</span><span class="w"> </span><span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span><span class="w"> </span><span class="m">10</span>
 
 <span class="c1">#edit following line to put the appropriate module</span>
-module load DMTCP
+module<span class="w"> </span>load<span class="w"> </span>DMTCP
 
 <span class="nv">cnt</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_RESTART_COUNT</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&quot;SLURM_RESTART_COUNT = </span><span class="nv">$cnt</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SLURM_RESTART_COUNT = </span><span class="nv">$cnt</span><span class="s2">&quot;</span>
 
-dmtcp_coordinator -i <span class="m">5</span> --daemon --port <span class="m">0</span> --port-file /tmp/port
-<span class="nb">export</span> <span class="nv">DMTCP_COORD_PORT</span><span class="o">=</span><span class="k">$(</span>&lt;/tmp/port<span class="k">)</span>
+dmtcp_coordinator<span class="w"> </span>-i<span class="w"> </span><span class="m">5</span><span class="w"> </span>--daemon<span class="w"> </span>--port<span class="w"> </span><span class="m">0</span><span class="w"> </span>--port-file<span class="w"> </span>/tmp/port
+<span class="nb">export</span><span class="w"> </span><span class="nv">DMTCP_COORD_PORT</span><span class="o">=</span><span class="k">$(</span>&lt;/tmp/port<span class="k">)</span>
 
-<span class="k">if</span> <span class="o">[[</span> <span class="nv">$cnt</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]]</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;doing launch&quot;</span>
-    rm -f *.dmtcp <span class="p">&amp;</span>
-    dmtcp_launch -j python count.py 
-<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$cnt</span> &gt; <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;doing restart&quot;</span>
-    dmtcp_restart -j *.dmtcp <span class="p">&amp;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing launch&quot;</span>
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span>dmtcp_launch<span class="w"> </span>-j<span class="w"> </span>python<span class="w"> </span>count.py<span class="w"> </span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing restart&quot;</span>
+<span class="w">    </span>dmtcp_restart<span class="w"> </span>-j<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
 <span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span> <span class="nb">exit</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span>
 <span class="k">fi</span>
 <span class="nb">wait</span>
 </code></pre></div>
 <p>Launch the job with sbatch, and watch the numbers appear in the slurm*.out file.<br />
 Then, simulate preemption by doing:</p>
-<div class="highlight"><pre><span></span><code>$ scontrol requeue <span class="m">123456789</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scontrol<span class="w"> </span>requeue<span class="w"> </span><span class="m">123456789</span>
 </code></pre></div>
 <p>Because the script specified --requeue, the job will be returned to pending.  Slurm automatically sets a "Begin Time" a couple of minutes
 in the future, so the job will pend until then, at which point it will
@@ -2676,28 +2676,28 @@ as above.</p>
 <span class="c1">#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job times out</span>
 <span class="c1">#SBATCH --open-mode=append</span>
 
-<span class="nb">trap</span> <span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="m">10</span>
+<span class="nb">trap</span><span class="w"> </span><span class="s2">&quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue </span><span class="si">${</span><span class="nv">SLURM_JOBID</span><span class="si">}</span><span class="s2">  &quot;</span><span class="w"> </span><span class="m">10</span>
 
 <span class="c1">#edit following line to put the appropriate module</span>
-module load NAMD/2.12-multicore
-module load DMTCP
+module<span class="w"> </span>load<span class="w"> </span>NAMD/2.12-multicore
+module<span class="w"> </span>load<span class="w"> </span>DMTCP
 
 <span class="nv">cnt</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_RESTART_COUNT</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&quot;SLURM_RESTARTCOUNT = </span><span class="nv">$cnt</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SLURM_RESTARTCOUNT = </span><span class="nv">$cnt</span><span class="s2">&quot;</span>
 
-dmtcp_coordinator -i <span class="m">90</span> --daemon --port <span class="m">0</span> --port-file /tmp/port
-<span class="nb">export</span> <span class="nv">DMTCP_COORD_HOST</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span>
-<span class="nb">export</span> <span class="nv">DMTCP_COORD_PORT</span><span class="o">=</span><span class="k">$(</span>&lt;/tmp/port<span class="k">)</span>
+dmtcp_coordinator<span class="w"> </span>-i<span class="w"> </span><span class="m">90</span><span class="w"> </span>--daemon<span class="w"> </span>--port<span class="w"> </span><span class="m">0</span><span class="w"> </span>--port-file<span class="w"> </span>/tmp/port
+<span class="nb">export</span><span class="w"> </span><span class="nv">DMTCP_COORD_HOST</span><span class="o">=</span><span class="sb">`</span>hostname<span class="sb">`</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DMTCP_COORD_PORT</span><span class="o">=</span><span class="k">$(</span>&lt;/tmp/port<span class="k">)</span>
 
-<span class="k">if</span> <span class="o">[[</span> <span class="nv">$cnt</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]]</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span>
 <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;doing launch&quot;</span>
-    dmtcp_launch namd2 +ppn <span class="nv">$SLURM_CPUS_ON_NODE</span> stmv.namd <span class="p">&amp;</span>
-<span class="k">elif</span> <span class="o">[[</span> <span class="nv">$cnt</span> &gt; <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;doing restart&quot;</span>
-    dmtcp_restart *.dmtcp <span class="p">&amp;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing launch&quot;</span>
+<span class="w">    </span>dmtcp_launch<span class="w"> </span>namd2<span class="w"> </span>+ppn<span class="w"> </span><span class="nv">$SLURM_CPUS_ON_NODE</span><span class="w"> </span>stmv.namd<span class="w"> </span><span class="p">&amp;</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$cnt</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;doing restart&quot;</span>
+<span class="w">    </span>dmtcp_restart<span class="w"> </span>*.dmtcp<span class="w"> </span><span class="p">&amp;</span>
 <span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span> <span class="nb">exit</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Failed to restart the job, exit&quot;</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span>
 <span class="k">fi</span>
 <span class="nb">wait</span>
 </code></pre></div>
