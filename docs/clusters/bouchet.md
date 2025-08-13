@@ -2,7 +2,7 @@
 
 ![Edward Bouchet](/img/edward-bouchet.jpg){: .cluster-portrait}
 
-The Bouchet HPC cluster is YCRC's first installation at Massachusetts High Performance Computing Center (MGHPCC). Bouchet contains approximately 10,000 direct-liquid-cooled cores as well as 80 NVIDIA H200 GPUs from the AI Initiative and 48 NVIDIA A5000Ada GPUs. Bouchet is composed of 64 core nodes each with 1TB of RAM for general purpose compute and 4TB RAM large memory nodes for memory intensive workloads. Bouchet also has a dedicated “mpi” partition specifically designed for tightly-coupled parallel workloads. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
+The Bouchet HPC cluster is YCRC's first installation at Massachusetts High Performance Computing Center (MGHPCC). Bouchet contains approximately 10,000 direct-liquid-cooled cores as well as 80 NVIDIA H200 GPUs from the AI Initiative and 48 NVIDIA RTX 5000 ADA GPUs. Bouchet is composed of 64 core nodes each with 1TB of RAM for general purpose compute and 4TB RAM large memory nodes for memory intensive workloads. Bouchet also has a dedicated “mpi” partition specifically designed for tightly-coupled parallel workloads. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
 
 - - -
 
