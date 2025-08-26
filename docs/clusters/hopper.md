@@ -49,7 +49,7 @@ required to retake any training that is up-to-date (e.g. HIPAA training).
 Users can take the training in advance if desired via the button below.
 This training must be renewed annually.
 
-[Take Hopper Required Training](https://tinyurl.com/hopper-training){ .md-button }
+[Take Hopper Required Training](http://research.computing.yale.edu/regulated-research-training{ .md-button }
 
 
 ### Log In
@@ -99,13 +99,13 @@ Downloading of low-risk files from the cluster is the same process, but in rever
 submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.
 
-[Submit Low-Risk Transfer Request](https://forms.gle/YigxQdbvobaH7YDT6){ .md-button }
+[Submit Low-Risk Transfer Request](http://research.computing.yale.edu/hopper-low-risk-transfer){ .md-button }
 
 ### All Other Data
 
 Transfers of any data other than low-risk data (see above), either onto or out of the cluster, require approval.
 
-[Submit Incoming High-Risk Data Transfer Request](https://forms.gle/bcW9AKLu8c5nRrAV7){ .md-button }
+[Submit Incoming Sensitive Data Transfer Request](http://research.computing.yale.edu/hopper-sensitive-transfer){ .md-button }
 
 For outgoing transfers of high-risk classification data, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
