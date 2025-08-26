@@ -49,7 +49,7 @@ required to retake any training that is up-to-date (e.g. HIPAA training).
 Users can take the training in advance if desired via the button below.
 This training must be renewed annually.
 
-[Take Hopper Required Training](http://research.computing.yale.edu/regulated-research-training{ .md-button }
+[Take Hopper Required Training](http://research.computing.yale.edu/regulated-research-training){ .md-button }
 
 
 ### Log In
@@ -57,7 +57,7 @@ This training must be renewed annually.
 !!! info
     Connections to Hopper can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
-Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
+Once you have [an account](https://research.computing.yale.edu/hopper-account-request) (linked form is only for existing projects, see above to request a new project), the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
 The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.
 
@@ -99,13 +99,13 @@ Downloading of low-risk files from the cluster is the same process, but in rever
 submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.
 
-[Submit Low-Risk Transfer Request](http://research.computing.yale.edu/hopper-low-risk-transfer){ .md-button }
+[Submit Low-Risk Transfer Request](https://research.computing.yale.edu/hopper-low-risk-transfer){ .md-button }
 
 ### All Other Data
 
 Transfers of any data other than low-risk data (see above), either onto or out of the cluster, require approval.
 
-[Submit Incoming Sensitive Data Transfer Request](http://research.computing.yale.edu/hopper-sensitive-transfer){ .md-button }
+[Submit Incoming Sensitive Data Transfer Request](https://research.computing.yale.edu/hopper-sensitive-transfer){ .md-button }
 
 For outgoing transfers of high-risk classification data, contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
