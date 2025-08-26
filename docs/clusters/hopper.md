@@ -34,6 +34,17 @@ Email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) to
 
 All accounts must be associated with an active project and approved by projects' PIs.
 
+Additional accounts on *existing* projects (see above to request a new project) can be requested
+by submitting the [Hopper Account Request Form](https://research.computing.yale.edu/hopper-account-request).
+
+Before access is granted, users must successfully complete the training program linked below,
+which includes NIST 800-171 and HIPAA training. 
+All users must complete the full training program, regardless of the risk classification of their data,
+but they will not be required to retake any training that is up-to-date (e.g. HIPAA training).
+This training must be renewed annually.
+
+[Hopper Required Training](http://research.computing.yale.edu/regulated-research-training){ .md-button }
+
 Accounts will be deactivated when any of the following occurs: 
 
 - Account is no longer associated with any active projects 
@@ -42,14 +53,6 @@ Accounts will be deactivated when any of the following occurs:
 - Owner fails to renew required training
 - Owner fails to follow security measures (e.g. takes photos of screens, does not segment work into projects with specific personnel permissions, includes non-authorized data, etc.)
 
-Before using Hopper, all users must successfully complete the a training program which includes NIST 800-171 and HIPAA training.
-Once the associated PI approves the account, the user will get an email prompt to the training.
-All users must complete the full training program, regardless of the risk classification of their data, but they will not be 
-required to retake any training that is up-to-date (e.g. HIPAA training).
-Users can take the training in advance if desired via the button below.
-This training must be renewed annually.
-
-[Take Hopper Required Training](http://research.computing.yale.edu/regulated-research-training){ .md-button }
 
 
 ### Log In
@@ -57,7 +60,7 @@ This training must be renewed annually.
 !!! info
     Connections to Hopper can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
-Once you have [an account](https://research.computing.yale.edu/hopper-account-request) (linked form is only for existing projects, see above to request a new project), the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
+Once you have an account, the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
 The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.
 
