@@ -53,8 +53,6 @@ Accounts will be deactivated when any of the following occurs:
 - Owner fails to renew required training
 - Owner fails to follow security measures (e.g. takes photos of screens, does not segment work into projects with specific personnel permissions, includes non-authorized data, etc.)
 
-
-
 ### Log In
 
 !!! info

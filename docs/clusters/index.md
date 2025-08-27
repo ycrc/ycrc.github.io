@@ -1,4 +1,4 @@
-# HPC Resources
+# Computing Resources
 
 The YCRC maintains and supports a number of high performance computing systems for the Yale research community. Our high performance computing systems are named after [notable members of the Yale community](https://research.computing.yale.edu/about/hpc-resources).
 
