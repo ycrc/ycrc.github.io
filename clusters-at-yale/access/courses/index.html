@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1042,11 +1042,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dedicated-nodes-for-courses" class="md-nav__link">
-    Dedicated Nodes for Courses
+  <a href="#partitions-for-courses" class="md-nav__link">
+    Partitions for Courses
   </a>
   
-    <nav class="md-nav" aria-label="Dedicated Nodes for Courses">
+    <nav class="md-nav" aria-label="Partitions for Courses">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2679,11 +2679,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dedicated-nodes-for-courses" class="md-nav__link">
-    Dedicated Nodes for Courses
+  <a href="#partitions-for-courses" class="md-nav__link">
+    Partitions for Courses
   </a>
   
-    <nav class="md-nav" aria-label="Dedicated Nodes for Courses">
+    <nav class="md-nav" aria-label="Partitions for Courses">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2792,8 +2792,8 @@ Use the URL for your course web portal will resolve the problem.</p>
 <h2 id="course-storage">Course Storage</h2>
 <p>Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.</p>
 <p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
-<h2 id="dedicated-nodes-for-courses">Dedicated Nodes for Courses</h2>
-<p>Dedicated nodes for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
+<h2 id="partitions-for-courses">Partitions for Courses</h2>
+<p>Compute resources for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
 <p>Course members are welcome to use the public partitions of the cluster. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
 <h3 id="interactive-jobs">Interactive Jobs</h3>
 <div class="highlight"><pre><span></span><code>salloc -p education 
@@ -2856,7 +2856,7 @@ rsync -av /nfs/roberts/project/courseid/courseid_netid/mydata /nfs/roberts/proje
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2025</span>
       
     
   </small>
