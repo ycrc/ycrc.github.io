@@ -58,6 +58,9 @@ Accounts will be deactivated when any of the following occurs:
 !!! info
     Connections to Hopper can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
+!!! warning
+    Note, connections to the VPN need to be younger than 24hrs to connect to Hopper. If you are unable to connect to Hopper please try resetting your VPN connection.
+
 Once you have an account, the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
 The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.

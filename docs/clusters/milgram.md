@@ -26,6 +26,9 @@ Once you have [an account](https://research.computing.yale.edu/support/hpc/accou
 !!! info
     Connections to Milgram can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
+!!! warning
+    Note, connections to the VPN need to be younger than 24hrs to connect to Milgram. If you are unable to connect to Milgram please try resetting your VPN connection.
+
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/system-status). For a current node-level view of job activity, see the [cluster monitor page (VPN only)](http://cluster.ycrc.yale.edu/milgram/).
