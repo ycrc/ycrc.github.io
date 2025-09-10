@@ -592,6 +592,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#job-submission-before-maintenance" class="md-nav__link">
+    Job Submission before Maintenance
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2549,6 +2556,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#job-submission-before-maintenance" class="md-nav__link">
+    Job Submission before Maintenance
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2598,6 +2612,15 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 </table>
 <p>Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
 We will give as much notice as possible in advance of these maintenance outages.</p>
+<h2 id="job-submission-before-maintenance">Job Submission before Maintenance</h2>
+<p>As the maintenance window approaches, the Slurm scheduler will not start any job if the job’s requested wallclock time extends
+past the start of the maintenance period. If you run squeue, such jobs will show as
+pending jobs with the reason "ReqNodeNotAvail."  However, by reducing your job's requested wallclock time, you may be able to
+run the job before the maintenance begins.</p>
+<p>You can run the command "htnm" (short for "hours_to_next_maintenance") to determine the number of hours until the next maintenance
+period.  Submit the job with a shorter time limit using "-t" or "--time".</p>
+<p>Held jobs will automatically return to active status after the maintenance period, at which time they will run in normal
+priority order.  All running jobs will be terminated at the start of the maintenance period.  Please plan accordingly.</p>
                 
                   
                     
@@ -2606,7 +2629,7 @@ We will give as much notice as possible in advance of these maintenance outages.
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 16, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2025</span>
       
     
   </small>
