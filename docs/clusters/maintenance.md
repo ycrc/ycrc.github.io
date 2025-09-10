@@ -23,3 +23,16 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 
 Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
 We will give as much notice as possible in advance of these maintenance outages.
+
+## Job Submission before Maintenance
+
+As the maintenance window approaches, the Slurm scheduler will not start any job if the job’s requested wallclock time extends
+past the start of the maintenance period. If you run squeue, such jobs will show as
+pending jobs with the reason "ReqNodeNotAvail."  However, by reducing your job's requested wallclock time, you may be able to
+run the job before the maintenance begins.
+
+You can run the command "htnm" (short for "hours_to_next_maintenance") to determine the number of hours until the next maintenance
+period.  Submit the job with a shorter time limit using "-t" or "--time".
+
+Held jobs will automatically return to active status after the maintenance period, at which time they will run in normal
+priority order.  All running jobs will be terminated at the start of the maintenance period.  Please plan accordingly.
