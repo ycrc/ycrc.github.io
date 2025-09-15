@@ -48,7 +48,7 @@ vscode_slurm.sh:
 #!/bin/bash
 
 #SBATCH --partition=day
-#SBATCH -t 1-00:00:00
+#SBATCH -t 8:00:00
 #SBATCH -c 1
 #SBATCH --mem=10G
 #SBATCH --output=vscode_slurm.txt
