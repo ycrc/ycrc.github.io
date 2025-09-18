@@ -37,6 +37,9 @@ All accounts must be associated with an active project and approved by projects'
 Additional accounts on *existing* projects (see above to request a new project) can be requested
 by submitting the [Hopper Account Request Form](https://research.computing.yale.edu/hopper-account-request).
 
+!!! warning "Sponsored Netids"
+    At the moment we cannot provide Hopper accounts for Sponsored Netids due to the current background screening security requirements. Yale Information Security is exploring other avenues for granting access approval but we do not have an estimate for availability. We apologize for any inconvenience.
+
 Before access is granted, users must successfully complete the training program linked below,
 which includes NIST 800-171 and HIPAA training. 
 All users must complete the full training program, regardless of the risk classification of their data,
@@ -59,7 +62,7 @@ Accounts will be deactivated when any of the following occurs:
     Connections to Hopper can only be made from the Yale VPN (`access.yale.edu`)--even if you are already on campus (YaleSecure or ethernet). See our [VPN page](/clusters-at-yale/access/vpn) for setup instructions.
 
 !!! warning
-    Note, connections to the VPN need to be younger than 24hrs to connect to Hopper. If you are unable to connect to Hopper please try resetting your VPN connection.
+    Connections to the VPN need to be younger than 24 hours to connect to Hopper. If you are unable to connect to Hopper, please try disconnecting from and reconnecting to the Yale VPN.
 
 Once you have an account, the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
