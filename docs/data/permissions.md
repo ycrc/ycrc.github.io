@@ -39,7 +39,7 @@ Upon request we can setup directories for sharing scripts or data across your re
 
 ## Share With Specific Users or Other Groups
 
-It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch`, you need first share your `project` or `scratch`, and then share the sub-directory. Here are some simple scenarios.
+It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` (with its counterpart, `getfacl`) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch`, you need first share your `project` or `scratch`, and then share the sub-directory. Here are some simple scenarios.
     
 
 ### Share a Directory with All Members of a Group
@@ -74,6 +74,14 @@ setfacl -R -d -m u:aa111:rwX shared
 ```
 
 Note that only the owner of a file or directory can run setfacl on it.
+
+### List Sharing Permissions of a Directory
+
+To see what permissions setfacl has placed on a directory called `shared`:
+
+```
+getfacl shared
+```
 
 ### Remove Sharing of a Directory
 
