@@ -544,6 +544,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#private-partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2633,6 +2640,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#private-partitions" class="md-nav__link">
+    Private Partitions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3702,11 +3716,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>1000</code></td>
+<td><code>1200</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
-<td><code>15000G</code></td>
+<td><code>18000G</code></td>
 </tr>
 </tbody>
 </table>
@@ -3724,7 +3738,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>88</td>
+<td>85</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
@@ -3838,7 +3852,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>6</td>
+<td>4</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
@@ -3877,11 +3891,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>16</code></td>
+<td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
-<td><code>8</code></td>
+<td><code>32</code></td>
 </tr>
 </tbody>
 </table>
@@ -3902,7 +3916,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>10</td>
+<td>8</td>
 <td>cpugen:emeraldrapids</td>
 <td>48</td>
 <td>479</td>
@@ -3948,7 +3962,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
-<td><code>8</code></td>
+<td><code>16</code></td>
 </tr>
 </tbody>
 </table>
@@ -4007,7 +4021,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>4</code></td>
+<td><code>2</code></td>
 </tr>
 <tr>
 <td>Maximum submitted jobs per user</td>
@@ -4066,11 +4080,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>64</code></td>
+<td><code>128</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
-<td><code>4000G</code></td>
+<td><code>8000G</code></td>
 </tr>
 </tbody>
 </table>
@@ -4151,6 +4165,66 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </table>
 </div>
 </div>
+<h3 id="private-partitions">Private Partitions</h3>
+<p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
+<details class="summary">
+<summary>PI Partitions (click to expand)</summary>
+<div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">pi_co54</label><div class="tabbed-content">
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=UNLIMITED
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the pi_co54 partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>cpugen:emeraldrapids</td>
+<td>32</td>
+<td>488</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 <h2 id="storage">Storage</h2>
 <p>Bouchet has access to one filesystem called Roberts. 
 Roberts is an all-flash, NFS filesystem similar to the Palmer filesystem on Grace and McCleary.
