@@ -52,6 +52,7 @@ vscode_slurm.sh:
 #SBATCH -c 1
 #SBATCH --mem=10G
 #SBATCH --output=vscode_slurm.txt
+#SBATCH --mail-type ALL
 
 # vscode_slurm.sh
 
