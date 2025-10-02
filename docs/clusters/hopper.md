@@ -76,7 +76,7 @@ To access the VDI, navigate to `hopper1.ycrc.yale.edu` in a web browser.
 
 To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of addition restrictions beyond other YCRC systems.
 
-- The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. 
+- The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. (See below for tips on copy/paste *within* Hopper).
 - Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).
 - If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.
 - You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.
@@ -167,6 +167,19 @@ Such projects will be clearly identified during the approval and onboarding proc
 At the moment, Slurm will not send job status emails, so please login to check the status of your jobs.
 
 While the VDI will lock sessions after 20 minutes of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.
+
+
+## Copy/Paste
+
+The VDI prevents copy/pasting to the host computer in order to prevent unrestricted, unmonitored transfer of data between Hopper and the host computer.
+This restrictions allows Hopper users to access the environment from their own personal machines rather than a secure computer.
+
+There is the ability to copy/paste *within* Hopper using the Linux Terminal keyboard shortcuts (as well as right-clicking), Shift+Control+C and Shift+Control+V. 
+These keyboard shortcuts can be customized on a per-user basis by:
+
+- Right-click in Terminal and click "Show Menubar"
+- Select Edit > Keyboard Shortcuts...
+- Modified the desired keyboard shortcuts
 
 
 ## Rate Structure
