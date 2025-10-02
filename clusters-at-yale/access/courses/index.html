@@ -1001,6 +1001,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#for-instructors" class="md-nav__link">
+    For Instructors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#course-id" class="md-nav__link">
     Course ID
   </a>
@@ -2638,6 +2645,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#for-instructors" class="md-nav__link">
+    For Instructors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#course-id" class="md-nav__link">
     Course ID
   </a>
@@ -2762,10 +2776,9 @@
 <p class="admonition-title">Warning</p>
 <p>All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">For Instructors</p>
-<p>If you are interested in using a YCRC cluster in your Yale course, fill out <a href="https://research.computing.yale.edu/course-request">this form</a>. If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.</p>
-</div>
+<h2 id="for-instructors">For Instructors</h2>
+<p>If you are interested in using a YCRC cluster in your Yale course, please fill out the course account request form. If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.</p>
+<p><a class="md-button" href="https://research.computing.yale.edu/course-request">Submit Course Account Request</a></p>
 <h2 id="course-id">Course ID</h2>
 <p>Your course will be give a specific <code>courseid</code> based on the Yale course catalog number. This <code>courseid</code> will be used in the course account names and web portal.</p>
 <h2 id="course-accounts">Course Accounts</h2>
@@ -2790,7 +2803,7 @@ Use the URL for your course web portal will resolve the problem.</p>
 </code></pre></div>
 <p>If you already have a permanent researcher account (one that is just your NetID) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, <a href="https://sshkeys.ycrc.yale.edu/">upload your new key</a> and it will be delivered to all of your accounts within a few minutes.</p>
 <h2 id="course-storage">Course Storage</h2>
-<p>Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.</p>
+<p>Courses on the YCRC clusters are typically granted a standard 4TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 4TiB, please contact us at research.computing@yale.edu.</p>
 <p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
 <h2 id="partitions-for-courses">Partitions for Courses</h2>
 <p>Compute resources for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
@@ -2856,7 +2869,7 @@ rsync -av /nfs/roberts/project/courseid/courseid_netid/mydata /nfs/roberts/proje
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 2, 2025</span>
       
     
   </small>
