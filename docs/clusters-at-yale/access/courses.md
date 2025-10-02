@@ -5,8 +5,10 @@ The YCRC Bouchet cluster can be made available for Yale courses with a suitable 
 !!! warning
     All course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester.
 
-!!! info "For Instructors"
-    If you are interested in using a YCRC cluster in your Yale course, fill out [this form](https://research.computing.yale.edu/course-request). If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.
+## For Instructors
+ If you are interested in using a YCRC cluster in your Yale course, please fill out the course account request form. If at all possible, please let us know of your interest in using a cluster at least two weeks prior to start of classes so we can plan accordingly, even if you have used the cluster in a previous semester.
+
+[Submit Course Account Request](https://research.computing.yale.edu/course-request){ .md-button }
 
 
 ## Course ID
@@ -50,7 +52,7 @@ If you already have a permanent researcher account (one that is just your NetID)
 
 ## Course Storage
 
-Courses on the YCRC clusters are typically granted a standard 1TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 1TiB, please contact us at research.computing@yale.edu.
+Courses on the YCRC clusters are typically granted a standard 4TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 4TiB, please contact us at research.computing@yale.edu.
 
 See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
 
