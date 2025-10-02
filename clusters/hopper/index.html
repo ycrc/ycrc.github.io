@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -620,6 +620,13 @@
         <li class="md-nav__item">
   <a href="#submit-jobs" class="md-nav__link">
     Submit Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copypaste" class="md-nav__link">
+    Copy/Paste
   </a>
   
 </li>
@@ -2775,6 +2782,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#copypaste" class="md-nav__link">
+    Copy/Paste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rate-structure" class="md-nav__link">
     Rate Structure
   </a>
@@ -2873,7 +2887,7 @@ The VDI provides a virtual desktop with the standard YCRC cluster interfaces, su
 <h3 id="security-restrictions">Security Restrictions</h3>
 <p>To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of addition restrictions beyond other YCRC systems.</p>
 <ul>
-<li>The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. </li>
+<li>The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. (See below for tips on copy/paste <em>within</em> Hopper).</li>
 <li>Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).</li>
 <li>If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.</li>
 <li>You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.</li>
@@ -2936,6 +2950,16 @@ If the security of your project requires isolation, you must submit your jobs wi
 Such projects will be clearly identified during the approval and onboarding process.</p>
 <p>At the moment, Slurm will not send job status emails, so please login to check the status of your jobs.</p>
 <p>While the VDI will lock sessions after 20 minutes of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.</p>
+<h2 id="copypaste">Copy/Paste</h2>
+<p>The VDI prevents copy/pasting to the host computer in order to prevent unrestricted, unmonitored transfer of data between Hopper and the host computer.
+This restrictions allows Hopper users to access the environment from their own personal machines rather than a secure computer.</p>
+<p>There is the ability to copy/paste <em>within</em> Hopper using the Linux Terminal keyboard shortcuts (as well as right-clicking), Shift+Control+C and Shift+Control+V. 
+These keyboard shortcuts can be customized on a per-user basis by:</p>
+<ul>
+<li>Right-click in Terminal and click "Show Menubar"</li>
+<li>Select Edit &gt; Keyboard Shortcuts...</li>
+<li>Modified the desired keyboard shortcuts</li>
+</ul>
 <h2 id="rate-structure">Rate Structure</h2>
 <p>Early access usage on Hopper is at no-cost.
 Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.</p>
@@ -3212,7 +3236,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 2, 2025</span>
       
     
   </small>
