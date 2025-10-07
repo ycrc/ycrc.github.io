@@ -2701,6 +2701,13 @@ Navigate down to the header, Public Partitions, and choose the gpu or gpu_devel 
 </thead>
 <tbody>
 <tr>
+<td>Bouchet</td>
+<td>h200</td>
+<td>560 GB</td>
+<td>80</td>
+<td>40</td>
+</tr>
+<tr>
 <td>Grace</td>
 <td>a100-80g</td>
 <td>320 GB</td>
@@ -2716,14 +2723,14 @@ Navigate down to the header, Public Partitions, and choose the gpu or gpu_devel 
 </tr>
 <tr>
 <td>Milgram</td>
-<td>rtx5000</td>
-<td>64 GB</td>
+<td>h100</td>
+<td>320 GB</td>
+<td>12</td>
 <td>8</td>
-<td>N/A</td>
 </tr>
 </tbody>
 </table>
-<p>It is important to note the number of GPUs that are available on the cluster. Our largest GPUs only account for 10-15% of the GPU capability on the YCRC research computing infrastructure.
+<p>It is important to note the number of GPUs that are available on the cluster. Our largest GPUs only account for 30% of the GPU capability on the YCRC research computing infrastructure.
 The YCRC's hardware operates on a scheduling based system where users request resources and wait in a queue until said resources are available. 
 <strong>Requesting larger GPUs will have longer wait time due to increased demand among researchers</strong>. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.</p>
@@ -2913,7 +2920,7 @@ ollama run llama3.1 why is the sky blue &gt; response.txt
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2025</span>
       
     
   </small>
