@@ -239,15 +239,35 @@ In principle, you can request multiple nodes for your job session, and configure
 [Topaz](https://cb.csail.mit.edu/cb/topaz/) is a pipeline for particle picking in cryo-electron microscopy images using
 convolutional neural networks. It can optionally be used from inside CryoSPARC using our cluster module.
 
-### 1. In an interactive cluster session, load the desired Topaz module and determine the location of the executable; e.g.,
+### 1. In an interactive cluster session, prepare an executable file that loads our topaz module:
 
 ```
-module load topaz/0.2.5.20240417-foss-2022b-CUDA-12.0.0
-which topaz
-/vast/palmer/apps/avx2/software/topaz/0.2.5.20240417-foss-2022b-CUDA-12.0.0/bin/topaz
+cat > ~/topaz.sh << EOF
+#!/usr/bin/env bash
+if command -v conda > /dev/null 2>&1; then
+    conda deactivate > /dev/null 2>&1 || true  # ignore any errors
+    conda deactivate > /dev/null 2>&1 || true  # ignore any errors
+fi
+unset _CE_CONDA
+unset CONDA_DEFAULT_ENV
+unset CONDA_EXE
+unset CONDA_PREFIX
+unset CONDA_PROMPT_MODIFIER
+unset CONDA_PYTHON_EXE
+unset CONDA_SHLVL
+unset PYTHONPATH
+unset LD_PRELOAD
+unset LD_LIBRARY_PATH
+
+module load topaz/0.2.5-fosscuda-2020b
+exec topaz $@
+EOF
+
+chmod a+x ~/topaz.sh
+echo ~/topaz.sh
 ```
    
-### 2. In a running CryoSPARC instance, add this executable to the General settings:
+### 2. In a running CryoSPARC instance, add the path to this executable (the last output line printed by the above bash code) to the General settings:
 ![](/img/TopazCryosparc.png)
 
 ### 3. Consult the [CryoSPARC guide](https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz)
