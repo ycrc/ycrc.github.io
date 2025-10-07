@@ -22,11 +22,12 @@ A quick summary of maximum GPU memory available on a single node and total numbe
 
 | Cluster      | Largest GPU  | Maximum vRam (Four GPUs) | Total Available  | Number of other GPUs available |
 |--------------|--------------|--------------------------|------------------|--------------------------------|
+| Bouchet      | h200         | 560 GB                   | 80               | 40                             |
 | Grace        | a100-80g     | 320 GB                   | 16               | 132                            |
 | McCleary     | a100-80g     | 320 GB                   | 12               | 92                             |
-| Milgram      | rtx5000      | 64 GB                    | 8                | N/A                            | 
+| Milgram      | h100         | 320 GB                   | 12               | 8                              | 
 
-It is important to note the number of GPUs that are available on the cluster. Our largest GPUs only account for 10-15% of the GPU capability on the YCRC research computing infrastructure.
+It is important to note the number of GPUs that are available on the cluster. Our largest GPUs only account for 30% of the GPU capability on the YCRC research computing infrastructure.
 The YCRC's hardware operates on a scheduling based system where users request resources and wait in a queue until said resources are available. 
 **Requesting larger GPUs will have longer wait time due to increased demand among researchers**. Therefore, it is suggested to start a research process with a lower precision model that
 can fit on smaller GPUs. This will provide quicker access to resources and a faster troubleshooting method. Once confident in the operation of the research process, researchers can upgrade their model precision/size for more accurate results if necessary while avoiding wasting resources/time on failed jobs.
