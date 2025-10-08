@@ -239,10 +239,9 @@ In principle, you can request multiple nodes for your job session, and configure
 [Topaz](https://cb.csail.mit.edu/cb/topaz/) is a pipeline for particle picking in cryo-electron microscopy images using
 convolutional neural networks. It can optionally be used from inside CryoSPARC using our cluster module.
 
-### 1. In an interactive cluster session, prepare an executable file that loads our topaz module:
+### 1. In an interactive cluster session, prepare an executable bash script 'topaz.sh' that loads our topaz module and runs topaz:
 
 ```
-cat > ~/topaz.sh << EOF
 #!/usr/bin/env bash
 if command -v conda > /dev/null 2>&1; then
     conda deactivate > /dev/null 2>&1 || true  # ignore any errors
@@ -261,16 +260,17 @@ unset LD_LIBRARY_PATH
 
 module load topaz/0.2.5-fosscuda-2020b
 exec topaz $@
-EOF
+```
 
-chmod a+x ~/topaz.sh
-echo ~/topaz.sh
+### 2. Make the topaz.sh script executable:
+```
+chmod a+x <PATH-TO>/topaz.sh
 ```
    
-### 2. In a running CryoSPARC instance, add the path to this executable (the last output line printed by the above bash code) to the General settings:
+### 3. In a running CryoSPARC instance, add the executable '<PATH-TO/topaz.sh' to the General settings:
 ![](/img/TopazCryosparc.png)
 
-### 3. Consult the [CryoSPARC guide](https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz)
+### 4. Consult the [CryoSPARC guide](https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz)
 for details on using Topaz with CryoSPARC.
 
 ## Troubleshoot
