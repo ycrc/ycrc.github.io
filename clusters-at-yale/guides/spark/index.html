@@ -1215,7 +1215,7 @@
   
     <li class="md-nav__item">
       <a href="../../job-scheduling/dsq/" class="md-nav__link">
-        Job Arrays with dSQ
+        Job Arrays
       </a>
     </li>
   
@@ -2709,7 +2709,7 @@ spark-start
 spark-submit<span class="w"> </span>--master<span class="w"> </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--executor-cores<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--executor-memory<span class="w"> </span>5G<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--total-executor-cores<span class="w"> </span><span class="k">$((</span><span class="nv">SLURM_CPUS_ON_NODE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--total-executor-cores<span class="w"> </span><span class="k">$((</span>SLURM_CPUS_ON_NODE<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>/path/to/custom/analysis.py
 </code></pre></div>
 The Spark web-interface is accessible after setting up the ssh tunnel as described above. </p>
