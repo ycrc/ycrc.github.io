@@ -28,6 +28,11 @@ List your queued and running jobs:
 squeue --me
 ```
 
+List all jobs in the queue of a given partition:
+``` bash
+squeue -p <partition>
+```
+
 Cancel a queued job or kill a running job, *e.g.* a job with ID 12345:
 
 <!--- if this is bash the numbers turn red -->
@@ -130,3 +135,12 @@ sbatch example_job.sh
 
 When the job finishes the output should be stored in a file called `slurm-jobid.out`, where `jobid` is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html).
 
+### Estimating Job Launch Time
+
+To estimate when your job should reach the top of the queue and begin running, you can use the `--test-only` flag with the `sbatch` command. This will print the Slurm scheduler's best estimate of when your job will start running given the resources requested.
+
+This can be a useful method to investigate the queue-time impacts of changing resource requests.
+
+``` bash
+sbatch --test-only my_job.sh
+```
