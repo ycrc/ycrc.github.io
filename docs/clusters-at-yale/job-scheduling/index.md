@@ -46,12 +46,17 @@ Check status of a job, *e.g.* a job with ID 12345:
 sacct -j 12345
 ```
 
+Check when a job is expected to run, and what resources it will be allocated:
+``` text
+sacct -j 12345 --start
+```
+
 Check how efficiently a job ran, *e.g.* a job with ID 12345:
 
 ``` text
-seff 12345
+jobstats 12345
 ```
-See our [Monitor CPU and Memory page](/clusters-at-yale/job-scheduling/resource-usage) for more on tracking the resources your job actually uses.
+See our [Job Performance Monitoring](/clusters-at-yale/job-scheduling/jobstats) page for more info on tracking the resources your job actually uses.
 
 <a id="directives"></a>
 ## Common Job Request Options
