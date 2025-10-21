@@ -155,7 +155,7 @@ sbatch dsq-joblist-yyyy-mm-dd.sh
 
 ### Manage Your dSQ Job
 
-For details on managing your dSQ job (e.g., `scancel`, `squeue`), refer to the (Manage Job Array)[https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/#manage-job-array] section above. Keep in mind that index dSQ uses **starts at zero**, so the 3rd line in your job file will have an index of 2.
+For details on managing your dSQ job (e.g., `scancel`, `squeue`), refer to the [Manage Job Array](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/#manage-job-array) section above. Keep in mind that index dSQ uses **starts at zero**, so the 3rd line in your job file will have an index of 2.
 
 
 ### dSQ Output
