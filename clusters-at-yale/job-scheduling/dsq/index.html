@@ -1336,15 +1336,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#dsqautopsy" class="md-nav__link">
     dSQAutopsy
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2715,15 +2715,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#dsqautopsy" class="md-nav__link">
     dSQAutopsy
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2857,7 +2857,7 @@ Optional Arguments:
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>dsq-joblist-yyyy-mm-dd.sh
 </code></pre></div>
 <h3 id="manage-your-dsq-job">Manage Your dSQ Job</h3>
-<p>For details on monitoring or managing your array (e.g., <code>scancel</code>, <code>squeue</code>), refer to the Manage Job Array section above. Keep in mind that index dSQ uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2.</p>
+<p>For details on managing your dSQ job (e.g., <code>scancel</code>, <code>squeue</code>), refer to the (Manage Job Array)[https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/#manage-job-array] section above. Keep in mind that index dSQ uses <strong>starts at zero</strong>, so the 3rd line in your job file will have an index of 2.</p>
 <h3 id="dsq-output">dSQ Output</h3>
 <p>dSQ creates a file named <code>job_jobid_status.tsv</code>, unless you suppress this output with <code>--supress-stats-file</code>. This file will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:</p>
 <ul>
@@ -2869,7 +2869,7 @@ Optional Arguments:
 <li>Time_Elapsed: in seconds.</li>
 <li>Job: the line from your job file.</li>
 </ul>
-<h2 id="dsqautopsy">dSQAutopsy</h2>
+<h3 id="dsqautopsy">dSQAutopsy</h3>
 <p>You can use dSQAutopsy or <code>dsqa</code> to create a simple report of the array of jobs, and a new jobsfile that contains just the jobs you want to re-run if you specify the original jobsfile. Options listed below</p>
 <div class="highlight"><pre><span></span><code>  -j JOB_ID, --job-id JOB_ID
                         The Job ID of a running or completed dSQ Array
