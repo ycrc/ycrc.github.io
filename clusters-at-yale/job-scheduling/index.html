@@ -2690,10 +2690,13 @@
 <p>Check status of a job, <em>e.g.</em> a job with ID 12345:</p>
 <div class="highlight"><pre><span></span><code>sacct -j 12345
 </code></pre></div>
+<p>Check when a job is expected to run, and what resources it will be allocated:
+<div class="highlight"><pre><span></span><code>sacct -j 12345 --start
+</code></pre></div></p>
 <p>Check how efficiently a job ran, <em>e.g.</em> a job with ID 12345:</p>
-<p><div class="highlight"><pre><span></span><code>seff 12345
+<p><div class="highlight"><pre><span></span><code>jobstats 12345
 </code></pre></div>
-See our <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitor CPU and Memory page</a> for more on tracking the resources your job actually uses.</p>
+See our <a href="/clusters-at-yale/job-scheduling/jobstats">Job Performance Monitoring</a> page for more info on tracking the resources your job actually uses.</p>
 <p><a id="directives"></a></p>
 <h2 id="common-job-request-options">Common Job Request Options</h2>
 <p>These options modify the size, length and behavior of jobs you submit. They can be specified when calling <code>salloc</code> or <code>sbatch</code>, or saved to a <a href="#batch-jobs">batch script</a>. Options specified on the command line to <code>sbatch</code> will override those in a batch script. See our <a href="/clusters-at-yale/job-scheduling/resource-requests">Request Compute Resources page</a> for discussion on the differences between <code>--ntasks</code> and <code>--cpus-per-task</code>, constraints, GPUs, etc. If options are left unspecified defaults are used.</p>
