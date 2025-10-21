@@ -5,18 +5,22 @@ account](/clusters-at-yale/access) on the cluster(s) you want to transfer data t
 
 ## Data Transfer Nodes
 
-Each cluster has dedicated nodes specially networked for high speed transfers both on and off-campus using the Yale Science Network. You may use transfer nodes to transfer data from your local machine using one of the below methods. From off-cluster, the nodes are accessible at the following hostnames. You must still be on-campus or on the [VPN](/clusters-at-yale/access/vpn/) to access the transfer nodes.
+Each cluster has dedicated nodes specially networked for high speed transfers both on and off-campus using the Yale Science Network. 
+You may use transfer nodes to transfer data from your local machine using one of the below methods. 
+From off-cluster, the nodes are accessible at the following hostnames. 
+You must still be on-campus or on the [VPN](/clusters-at-yale/access/vpn/) to access the transfer nodes.
 
 | Cluster   | Transfer Node                          |
 |-----------|----------------------------------------|
-| Bouchet   | `transfer1-bouchet.ycrc.yale.edu`        |
-| Grace     | `transfer-grace.ycrc.yale.edu`          |
+| Bouchet   | `transfer-bouchet.ycrc.yale.edu`       |
+| Grace     | `transfer-grace.ycrc.yale.edu`         |
 | McCleary  | `transfer-mccleary.ycrc.yale.edu`      |
-| Milgram   | `transfer-milgram.ycrc.yale.edu`        |
-| Misha   | `transfer-misha.ycrc.yale.edu`        |
+| Milgram   | `transfer-milgram.ycrc.yale.edu`       |
+| Misha     | `transfer-misha.ycrc.yale.edu`         |
 
 
-From the login node of any cluster, you can `ssh` into the transfer node. This is useful for transferring data to or from locations other than your local machine (see below for details).
+From the login node of any cluster, you can `ssh` into the transfer node. 
+This is useful for transferring data to or from locations other than your local machine (see below for details).
 
 ```
 [netID@cluster ~] ssh transfer
@@ -37,9 +41,9 @@ On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/
 #### Cyberduck (Mac/Linux)
 
 **Windows Computers Disclaimer**: Recent updates as of 12/18/2024 have made Cyberduck incompatible with the authentication methods used on our clusters.
-                If interested in using a client on windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows).
+                If interested in using a client on Windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows).
 
-You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (OSX)](https://cyberduck.io/). You will need to configure the client with:
+You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (macOS)](https://cyberduck.io/). You will need to configure the client with:
 
 * Your netid as the "Username"
 * Cluster transfer node (see above) as the "Server"
@@ -82,19 +86,19 @@ The from and to can each be a filename or a directory/folder on the computer you
 Using the example netid `abc123`, following is run on your computer's local terminal.
 
 ``` bash
-scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
 ```
 
-In this example, `myfile.txt` is copied to the directory `/home/fas/admins/abc123/test:` on Grace. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
+In this example, `myfile.txt` is copied to the directory `/home/abc123/test/` on Grace. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
 
 ``` bash
-scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
 ```
 
 #### Example: Transfer a Directory to a Cluster
 
 ``` bash
-scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/test
+scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
 ```
 
 In this example, the contents of `mydirectory` are transferred. The `-r` indicates that the copy is recursive.
@@ -104,42 +108,76 @@ In this example, the contents of `mydirectory` are transferred. The `-r` indicat
 Assuming you would like the files copied to your current directory:
 
 ``` bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt .
+scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt .
 ```
 
 Note that `.` represents your current working directory.
 To specify the destination, simply replace the `.` with the full path:
 
 ``` bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/fas/admins/abc123/myfile.txt /path/myfolder
+scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt /path/myfolder
 ```
 
-## Transfer Data to/from Other Locations
+## Transfer Data Between Clusters
 
 ### Globus Endpoints
 
-Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
+Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. 
+Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
-*  We have configured endpoints for most of the Yale clusters and many other institutions and compute facilities have Globus endpoints. 
+* We have configured endpoints for most of the Yale clusters and many other institutions and compute facilities have Globus endpoints. 
 * You can also use Globus to transfer data to/from Eliapps Google Drive and S3 buckets.
 
 ### Cluster Transfer Nodes
 
-You can use the cluster transfer nodes to download/upload data to locations off-cluster. For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/data/staging) for additional information. For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. On Milgram, which does not have a transfer node, you can initiate the transfers from a login node. However, please be mindful of that other users will also be using the login nodes for regular cluster operations.
+You can transfer data between clusters using the transfer nodes.
+Connecting from one cluster to another is made simple and smooth by using [`ssh-agent`](https://en.wikipedia.org/wiki/Ssh-agent) to forward your ssh keys. 
+This avoids the need to explicitly add each cluster's ssh key to the list of Authorized Keys. 
 
 !!! Tip
     If you are running a large transfer without [Globus](/data/globus), run it inside a [tmux](/clusters-at-yale/guides/tmux/) session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.
 
-#### rsync
 
-```
+```bash
+# add ssh keys to ssh-agent
+[user@local ~]$ ssh-add
+
+# ssh to cluster with forwarded agent 
+[user@local ~]$ ssh -A netID@mccleary.ycrc.yale.edu
+
 # connect to the transfer node from the login node
-[netID@cluster ~] ssh transfer
+[netID@mccleary ~]$ ssh -A transfer
+
 # copy data to cluster storage
-[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/scratch60/
+[netID@transfer1-mccleary ~]$ rsync -avP $HOME/path/to/data netID@transfer-bouchet.ycrc.yale.edu:~/
 ```
 
-#### Rclone
+The rsync connection will use the forwarded key and you will not need to reauthenticate. 
+
+## Transfer Data To Off Site
+
+If the location you are transfering to supports Globus, that is the preferred tool for transferring large data off-site.
+Please see [our Globus page](/data/globus) for more details.
+
+For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/data/staging) for additional information. 
+For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. 
+
+### rsync
+
+```bash
+# connect to the transfer node from the login node
+[netID@bouchet ~] ssh transfer
+
+# pull data from remote to cluster
+[netID@transfer1-bouchet ~]$ rsync -avP user_name@remote_host:/path/to/data ./
+
+# push data from cluster to remote
+[netID@transfer1-bouchet ~]$ rsync -avP ~/path/to/data user_name@remote_host:/path/to/data 
+
+```
+
+
+### Rclone
 
 To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](https://rclone.org/). It is installed on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:
 

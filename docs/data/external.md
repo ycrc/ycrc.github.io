@@ -35,7 +35,7 @@ If your web application goes beyond simply serving static data, the best solutio
 follow the spinup [instructions on requesting public access to a web server](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/643170314/Requesting+Public+Access+to+a+Spinup+Hosted+Web+Application+or+Website)
 
 !!! info
-   Running a VM 24x7 can incur significant costs on spinup, depending on the size of the VM.  
+    Running a VM 24x7 can incur significant costs on spinup, depending on the size of the VM.  
 
 ## Private Share Using Globus
 
