@@ -1873,25 +1873,25 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#defaults-we-set" class="md-nav__link">
-    Defaults We Set
-  </a>
-  
-    <nav class="md-nav" aria-label="Defaults We Set">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#conda-channels" class="md-nav__link">
     Conda Channels
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-ycrc-channels-and-paths" class="md-nav__link">
+    Default YCRC Channels and Paths
+  </a>
+  
+    <nav class="md-nav" aria-label="Default YCRC Channels and Paths">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#find-and-install-additional-packages" class="md-nav__link">
@@ -1921,6 +1921,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#permission-denied" class="md-nav__link">
+    Permission Denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#conda-version-doesnt-match-the-module-loaded" class="md-nav__link">
     Conda version doesn't match the module loaded
   </a>
@@ -1930,13 +1937,6 @@
           <li class="md-nav__item">
   <a href="#killed-during-creation" class="md-nav__link">
     killed during creation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
-    Permission Denied
   </a>
   
 </li>
@@ -2797,25 +2797,25 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#defaults-we-set" class="md-nav__link">
-    Defaults We Set
-  </a>
-  
-    <nav class="md-nav" aria-label="Defaults We Set">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#conda-channels" class="md-nav__link">
     Conda Channels
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-ycrc-channels-and-paths" class="md-nav__link">
+    Default YCRC Channels and Paths
+  </a>
+  
+    <nav class="md-nav" aria-label="Default YCRC Channels and Paths">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#find-and-install-additional-packages" class="md-nav__link">
@@ -2845,6 +2845,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#permission-denied" class="md-nav__link">
+    Permission Denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#conda-version-doesnt-match-the-module-loaded" class="md-nav__link">
     Conda version doesn't match the module loaded
   </a>
@@ -2854,13 +2861,6 @@
           <li class="md-nav__item">
   <a href="#killed-during-creation" class="md-nav__link">
     killed during creation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#permission-denied" class="md-nav__link">
-    Permission Denied
   </a>
   
 </li>
@@ -2984,7 +2984,8 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 </code></pre></div>
 <h3 id="create-a-conda-environment">Create a <code>conda</code> Environment</h3>
 <p>To create an environment use the <a href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code>conda create</code></a> command. Environment files are saved to the first path in <code>$CONDA_ENVS_PATH</code>, or where you specify with the <code>--prefix</code> option. You should give your environments names that are meaningful to you, so you can more easily keep track of their purposes.</p>
-<p>Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although sometimes unavoidable for Python, we recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications. If needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
+<p>We recommend against heavily mixing the use of <code>conda</code> and <code>pip</code> to install applications, if possible (this may sometimes be unavoidable for Python). If <code>pip</code> is needed, try to get as much installed with <code>conda</code>, then use <code>pip</code> to get the rest of the way to your desired environment.</p>
+<p>Also, we recommend specifying as many packages as possible at environment creation time (during <code>conda create ...</code>) to help minimize broken dependencies. This is because 'dependency resolution', the process used by Conda and other package managers (such as <code>pip</code>) to find packages that work together, can be hard and messy when it is done piecemeal.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For added reproducibility and control, specify versions of packages to be installed using <code>conda</code> with <code>packagename=version</code> syntax. E.g. <code>numpy=1.14</code></p>
@@ -3030,23 +3031,23 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>env_name
 python<span class="w"> </span>analyses.py
 </code></pre></div>
-<h2 id="defaults-we-set">Defaults We Set</h2>
-<p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>conda_envs</code> and <code>conda_pkgs</code> in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.</p>
-<p>Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to <a href="https://conda-forge.org/#about"><code>conda-forge</code></a> and <a href="https://bioconda.github.io/"><code>bioconda</code></a>, which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> on managing channels. Below is the <code>.condarc</code> for the miniconda module.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
-<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">channels</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
-</code></pre></div>
 <h3 id="conda-channels">Conda Channels</h3>
-<p>Community-lead collections of packages that you can install with <code>conda</code> are provided with channels. Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
+<p>Community-lead collections of packages that you can install with <code>conda</code> are provided with <code>channels</code> (the sources to find packages). Some labs will provide their own software using this method. A few popular examples are <a href="https://conda-forge.org/">Conda Forge</a> and <a href="https://bioconda.github.io/">Bioconda</a>, which we set for you by default. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">Conda docs</a> for more info about managing channels.</p>
 <p>You can create a new environment called <code>brian2</code> (specified with the <code>-n</code> option) and install <a href="http://briansimulator.org/">Brian2</a> into it with the following:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>brian2<span class="w"> </span>brian2
 <span class="c1"># normally you would need this:</span>
 <span class="c1"># conda create -n brian2 --channel conda-forge brian2</span>
+</code></pre></div>
+<h2 id="default-ycrc-channels-and-paths">Default YCRC Channels and Paths</h2>
+<p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>.conda/envs</code> and <code>.conda/pkgs</code> in your home directory. For some users, these locations may be symlinked to folders in your project directory where there is room for conda files (conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems).</p>
+<p>Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.'</p>
+<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
+<span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">channels</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
+<span class="nt">solver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libmamba</span>
 </code></pre></div>
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
 <p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> or use <a href="https://docs.conda.io/projects/conda/en/latest/commands/search.html"><code>conda search</code></a> to find the names of packages you would like to install:</p>
@@ -3059,14 +3060,14 @@ conda<span class="w"> </span>search<span class="w"> </span>numpy
 </code></pre></div>
 <p>Without <code>gcc_linux-64</code>, the code will be compiled using the system compiler and libraries. You will experience run-time errors when running the code in the conda environment. </p>
 <h2 id="troubleshoot">Troubleshoot</h2>
+<h3 id="permission-denied">Permission Denied</h3>
+<p>With conda, a fairly common 'gotcha' to is to forget to activate your environment before running additional install commands, i.e. with <code>conda install</code> or <code>pip install</code>. This results in 'permission denied' errors on the YCRC systems. Please make sure you have both created and activated your environment before installing additional packages.</p>
 <h3 id="conda-version-doesnt-match-the-module-loaded">Conda version doesn't match the module loaded</h3>
 <p>If you have run <code>conda init</code> in the past, you may be locked to an old version of <code>conda</code>. You can run the following to fix this:</p>
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h3 id="killed-during-creation">killed during creation</h3>
 <p>If your environment is failing to build and isn't sending a message or just saying: killed, you are likely on a login node. Please read above about creating an environment to properly request a compute node.</p>
-<h3 id="permission-denied">Permission Denied</h3>
-<p>If you get a permission denied error when running <code>conda install</code> or <code>pip install</code> for a package, make sure you have created an environment and activated it or activated an existing one first.</p>
 <h3 id="bash-conda-no-such-file-or-directory">bash: conda: No such file or directory</h3>
 <p>If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the <code>minconda</code> module and rerunning your <code>conda activate env_name</code> command.</p>
 <h3 id="could-not-find-environment">Could not find environment</h3>
