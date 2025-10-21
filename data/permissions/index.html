@@ -2736,7 +2736,7 @@ drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
 <div class="highlight"><pre><span></span><code>umask 002
 </code></pre></div>
 <h3 id="shared-group-directories">Shared Group Directories</h3>
-<p>Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for all group members. If interested, <a href="/#get-help">contact us</a> to request such a directory.</p>
+<p>By default, cluster groups are created with a <code>shared</code> directory located under their <code>project</code> directory with the purpose of offering a centralized location for storing scripts and data across your research group. These directories are set with read-only permissions for the group (so no one accidentally modifies something) but read and write permissions for all group members can be set by our team. If your group would like to modify these permissions or have not received a <code>shared</code> directory, <a href="/#get-help">contact us</a> and our team can assist.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
 <p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> (with its counterpart, <code>getfacl</code>) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch</code>, you need first share your <code>project</code> or <code>scratch</code>, and then share the sub-directory. Here are some simple scenarios.</p>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
@@ -2779,7 +2779,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 25, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
       
     
   </small>
