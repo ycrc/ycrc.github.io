@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/vpn/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -991,6 +991,26 @@
   <a href="#linux" class="md-nav__link">
     Linux
   </a>
+  
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-gui" class="md-nav__link">
+    Using a GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line" class="md-nav__link">
+    Using the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2602,6 +2622,26 @@
     Linux
   </a>
   
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-gui" class="md-nav__link">
+    Using a GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line" class="md-nav__link">
+    Using the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2654,10 +2694,25 @@
 <h3 id="linux">Linux</h3>
 <p>On Linux, you can use <a href="http://www.infradead.org/openconnect">openconnect</a> to connect to one of Yale's VPNs. If you are using the standard Gnome-based distros, use the commands below to install.</p>
 <p>Ubuntu/Debian</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>network-manager-openconnect-gnome
+<div class="highlight"><pre><span></span><code>sudo apt install network-manager-openconnect-gnome
 </code></pre></div>
 <p>Fedora/CentOS</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>NetworkManager-openconnect
+<div class="highlight"><pre><span></span><code>sudo yum install NetworkManager-openconnect
+</code></pre></div>
+<h4 id="using-a-gui">Using a GUI</h4>
+<p>Right-click on the NetworkManager icon and select "Edit connections...".</p>
+<p>Click the "+" at the bottom to add a new connection.</p>
+<p><img alt="New connection." class="large" src="/img/NewLinuxConnection.png" /></p>
+<p>For connection type, choose "Cisco AnyConnect or OpenConnect (Openconnect)".</p>
+<p><img alt="Select connection." class="medium" src="/img/CreateLinuxVPN.png" /></p>
+<p>Choose a helpful name for the connection (e.g., "Yale"), and fill out the fields as shown.</p>
+<p><img alt="Configure connection." class="medium" src="/img/ConfigureLinuxVPN.png" /></p>
+<p>Note the activation and specification of the Trojan scanner script, which should have been
+installed along with OpenConnect.</p>
+<p>Save this connection, and it will be available from the NetworkManager app's pop-up menu
+under "VPN connections".</p>
+<h4 id="using-the-command-line">Using the command line</h4>
+<div class="highlight"><pre><span></span><code>nmcli con add <span class="nb">type</span> vpn con-name Yale-VPN -- vpn-type openconnect vpn.data <span class="s2">&quot;gateway=access.yale.edu,protocol=anyconnect,useragent=AnyConnect Linux_64 4.10.07061&quot;</span>
 </code></pre></div>
 <h2 id="connect-via-vpn">Connect via VPN</h2>
 <p>You will need to connect via the VPN client using the profile "access.yale.edu".</p>
@@ -2680,7 +2735,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
       
     
   </small>

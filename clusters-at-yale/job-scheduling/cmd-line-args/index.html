@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/cmd-line-args/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2684,7 +2684,7 @@ Here we will work through how to implement these two approaches in both Python a
 <p>In python, environment variables are accessed via the <code>os</code> package (<a href="https://docs.python.org/3/library/os.html">docs page</a>).
 In particular, we can use <code>os.getenv</code> to retrieve environment variables set prior to launching the python script.</p>
 <p>For example, consider a python script designed to process a data file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -2694,11 +2694,11 @@ In particular, we can use <code>os.getenv</code> to retrieve environment variabl
 </code></pre></div>
 <p>We can use an environment variable (<code>INPUT_DATA_FILE</code>) to provide the filename of the data to be processed.
 The python script (<code>my_script.py</code>) is modified to retrieve this variable and analyze the given datafile:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;INPUT_DATA_FILE&quot;</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -2707,21 +2707,21 @@ The python script (<code>my_script.py</code>) is modified to retrieve this varia
     <span class="k">return</span> <span class="n">output</span>
 </code></pre></div>
 <p>To process this data file, you would simply run:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">INPUT_DATA_FILE</span><span class="o">=</span>/path/to/file/input_0.dat
-python<span class="w"> </span>my_script.py
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">INPUT_DATA_FILE</span><span class="o">=</span>/path/to/file/input_0.dat
+python my_script.py
 </code></pre></div>
 <p>This avoids having to modify the python script to change which datafile is processed, we only need to change the environment variable.</p>
 <h3 id="command-line-arguments">Command-line Arguments</h3>
 <p>Similarly, one can use command-line arguments to pass values into a script.
 In python, there are two main packages designed for handling arguments.
 First is the simple <code>sys.argv</code> function which parses command-line arguments into a list of strings:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
 <p>Running this with a few arguments:</p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>my_script.py<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
+<p><div class="highlight"><pre><span></span><code>$ python my_script.py a b c
 my_script.py
 a
 b
@@ -2734,23 +2734,23 @@ Take a look at their documentation for examples of how to use <code>argparse</co
 <p>Just as with Python, R provides comparable utilities to access command-line arguments and environment variables.</p>
 <h3 id="environment-variables_1">Environment Variables</h3>
 <p>The <code>Sys.getenv</code> utility (<a href="https://rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.getenv">docs page</a>) works nearly identically to the Python implementation.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;HOSTNAME&#39;</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;grace2.grace.hpc.yale.internal&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;HOSTNAME&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;grace2.grace.hpc.yale.internal&quot;</span>
 </code></pre></div>
 <p>Just like Python, these values are always returned as <code>string</code> representations, so if the variable of interest is a number it will need to be cast into an integer using <code>as.numeric()</code>.</p>
 <h3 id="command-line-arguments_1">Command-line Arguments</h3>
 <p>To collect command-line arguments in R use the <code>commandArgs</code> function:</p>
-<div class="highlight"><pre><span></span><code><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 
-<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
-<span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">x</span> <span class="n">in</span> <span class="n">args</span><span class="p">){</span>
+   <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The <code>trailingOnly=TRUE</code> option will limit <code>args</code> to contain only those arguments which follow the script:</p>
-<div class="highlight"><pre><span></span><code>Rscript<span class="w"> </span>my_script.R<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;a&quot;</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;b&quot;</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;c&quot;</span>
+<div class="highlight"><pre><span></span><code>Rscript my_script.R a b c
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;a&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;b&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="s2">&quot;c&quot;</span>
 </code></pre></div>
 <p>There is a more advanced and detailed package for managing command-line arguments called <code>optparse</code> (<a href="https://cran.r-project.org/web/packages/optparse/">docs page</a>).
 This can be used to create more featured scripts in a similar way to Python's <code>argparse</code>.</p>
