@@ -31,7 +31,9 @@ module load miniconda
 
 To create an environment use the [`conda create`](https://docs.conda.io/projects/conda/en/latest/commands/create.html) command. Environment files are saved to the first path in `$CONDA_ENVS_PATH`, or where you specify with the `--prefix` option. You should give your environments names that are meaningful to you, so you can more easily keep track of their purposes.
 
-Because dependency resolution is hard and messy, we find specifying as many packages as possible at environment creation time can help minimize broken dependencies. Although sometimes unavoidable for Python, we recommend against heavily mixing the use of `conda` and `pip` to install applications. If needed, try to get as much installed with `conda`, then use `pip` to get the rest of the way to your desired environment.
+We recommend against heavily mixing the use of `conda` and `pip` to install applications, if possible (this may sometimes be unavoidable for Python). If `pip` is needed, try to get as much installed with `conda`, then use `pip` to get the rest of the way to your desired environment.
+
+Also, we recommend specifying as many packages as possible at environment creation time (during `conda create ...`) to help minimize broken dependencies. This is because 'dependency resolution', the process used by Conda and other package managers (such as `pip`) to find packages that work together, can be hard and messy when it is done piecemeal.
 
 !!! tip
     For added reproducibility and control, specify versions of packages to be installed using `conda` with `packagename=version` syntax. E.g. `numpy=1.14`
@@ -91,24 +93,9 @@ conda activate env_name
 python analyses.py
 ```
 
-## Defaults We Set
-
-On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `conda_envs` and `conda_pkgs` in your project directory where there is more quota available. Conda will install to and search in these directories for environments and cached packages.
-
-Starting with minconda module version 4.8.3 we set the default channels (the sources to find packages) to [`conda-forge`](https://conda-forge.org/#about) and [`bioconda`](https://bioconda.github.io/), which provide a wider array of packages than the default channels do. We have found it saves a lot of typing. If you would like to override these defaults, see the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) on managing channels. Below is the `.condarc` for the miniconda module.
-
-``` yaml
-env_prompt: '({name})'
-auto_activate_base: false
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-```
-
 ### Conda Channels
 
-Community-lead collections of packages that you can install with `conda` are provided with channels. Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
+Community-lead collections of packages that you can install with `conda` are provided with `channels` (the sources to find packages). Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
 
 You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
 
@@ -117,6 +104,21 @@ module load miniconda
 conda create -n brian2 brian2
 # normally you would need this:
 # conda create -n brian2 --channel conda-forge brian2
+```
+
+## Default YCRC Channels and Paths
+
+On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `.conda/envs` and `.conda/pkgs` in your home directory. For some users, these locations may be symlinked to folders in your project directory where there is room for conda files (conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems).
+
+Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.'
+
+``` yaml
+env_prompt: '({name})'
+auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+solver: libmamba
 ```
 
 ### Find and Install Additional Packages
@@ -140,6 +142,10 @@ Without `gcc_linux-64`, the code will be compiled using the system compiler and 
 
 ## Troubleshoot
 
+### Permission Denied
+
+With conda, a fairly common 'gotcha' to is to forget to activate your environment before running additional install commands, i.e. with `conda install` or `pip install`. This results in 'permission denied' errors on the YCRC systems. Please make sure you have both created and activated your environment before installing additional packages.
+
 ### Conda version doesn't match the module loaded
 
 If you have run `conda init` in the past, you may be locked to an old version of `conda`. You can run the following to fix this:
@@ -151,10 +157,6 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ### killed during creation
 
 If your environment is failing to build and isn't sending a message or just saying: killed, you are likely on a login node. Please read above about creating an environment to properly request a compute node.
-
-### Permission Denied
-
-If you get a permission denied error when running `conda install` or `pip install` for a package, make sure you have created an environment and activated it or activated an existing one first.
 
 ### bash: conda: No such file or directory
 

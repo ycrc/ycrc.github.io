@@ -65,12 +65,7 @@ include as much detail as possible about your request and we'll find the right p
 
 ### Office Hours via Zoom
 
-The YCRC hosts weekly office hours via Zoom on **Wednesdays at 11am-12pm EST**. Every Wednesday, Research Support Team 
-Members will be available to answer questions about the HPC clusters, data storage, cluster usage, etc. No appointments
- are necessary. Each participant will be allotted 15 minutes to discuss their issues/questions with more time 
-potentially available in cases where there is not a large queue. If it is more than 24 hours until Office Hours, there 
-will likely be a faster response/solution to your issue via ticket submission to research.computing@yale.edu. For 15 
-minute consultations, some examples of appropriate office hour topics include:
+The YCRC hosts weekly office hours via Zoom on **Wednesdays at 11am-12pm EST and Thursdays at 2pm-3pm EST**. Every Wednesday, Research Support Team Members will be available to answer questions about the HPC clusters, data storage, cluster usage, etc. No appointments are necessary. Each participant will be allotted 15 minutes to discuss their issues/questions with more time potentially available in cases where there is not a large queue. If it is more than 24 hours until Office Hours, there will likely be a faster response/solution to your issue via ticket submission to research.computing@yale.edu. For 15 minute consultations, some examples of appropriate office hour topics include:
 
 - general questions about YCRC systems such as partitions, access, resources, etc.
 - novice user questions

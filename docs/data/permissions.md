@@ -35,7 +35,7 @@ umask 002
 
 ### Shared Group Directories
 
-Upon request we can setup directories for sharing scripts or data across your research group. These directories can either have read-only permissions for the group (so no one accidentally modifies something) or read and write permissions for all group members. If interested, [contact us](/#get-help) to request such a directory.
+By default, cluster groups are created with a `shared` directory located under their `project` directory with the purpose of offering a centralized location for storing scripts and data across your research group. These directories are set with read-only permissions for the group (so no one accidentally modifies something) but read and write permissions for all group members can be set by our team. If your group would like to modify these permissions or have not received a `shared` directory, [contact us](/#get-help) and our team can assist.
 
 ## Share With Specific Users or Other Groups
 

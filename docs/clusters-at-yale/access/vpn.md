@@ -23,11 +23,46 @@ Fedora/CentOS
 sudo yum install NetworkManager-openconnect
 ```
 
+#### Using a GUI
+
+Right-click on the NetworkManager icon and select "Edit connections...".
+
+Click the "+" at the bottom to add a new connection.
+
+![New connection.](/img/NewLinuxConnection.png){: .large}
+
+For connection type, choose "Cisco AnyConnect or OpenConnect (Openconnect)".
+
+![Select connection.](/img/CreateLinuxVPN.png){: .medium}
+
+Choose a helpful name for the connection (e.g., "Yale"), and fill out the fields as shown.
+
+![Configure connection.](/img/ConfigureLinuxVPN.png){: .medium}
+
+Note the activation and specification of the Trojan scanner script, which should have been
+installed along with OpenConnect.
+
+Save this connection, and it will be available as a checkbox from the NetworkManager app's pop-up menu
+under "VPN connections".
+
+#### Using the command line
+
+``` bash
+nmcli con add type vpn con-name Yale-VPN -- vpn-type openconnect vpn.data "gateway=access.yale.edu,protocol=anyconnect,useragent=AnyConnect Linux_64 4.10.07061"
+```
 ## Connect via VPN
 
 You will need to connect via the VPN client using the profile "access.yale.edu".
 
+### MacOS
+
 ![VPN client.](/img/vpn1.png){: .medium}
+
+### Linux
+
+![Linuxm VPN client.](/img/ConnectLinuxVPN.png){: .medium}
+
+Select Login to launch authentication in a web browser.
 
 ### Multi-factor Authentication (MFA)
 
