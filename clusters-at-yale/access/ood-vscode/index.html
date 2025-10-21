@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -879,23 +879,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vscode-on-remote-desktop" class="md-nav__link">
-    VSCode on Remote Desktop:
+  <a href="#choosing-a-method" class="md-nav__link">
+    Choosing a Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node" class="md-nav__link">
-    Setting up SSH tunneling to run VS Code Server on a cluster node
+  <a href="#code-server" class="md-nav__link">
+    Code Server
   </a>
   
-    <nav class="md-nav" aria-label="Setting up SSH tunneling to run VS Code Server on a cluster node">
+    <nav class="md-nav" aria-label="Code Server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshoot-vscode_slurmsh-script-fails" class="md-nav__link">
-    Troubleshoot: vscode_slurm.sh script fails
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
@@ -906,8 +906,103 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-server" class="md-nav__link">
-    Code Server
+  <a href="#remote-tunnel" class="md-nav__link">
+    Remote Tunnel
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Tunnel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-instructions" class="md-nav__link">
+    Setup Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode_slurmsh-script" class="md-nav__link">
+    vscode_slurm.sh Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-ssh-via-compute-node-advanced-users" class="md-nav__link">
+    Remote SSH via Compute Node (Advanced Users)
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote SSH via Compute Node (Advanced Users)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-using-salloc-for-interactive-sessions" class="md-nav__link">
+    Method 1: Using salloc for Interactive Sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-using-a-batch-job-for-longer-sessions" class="md-nav__link">
+    Method 2: Using a Batch Job for Longer Sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-configuration" class="md-nav__link">
+    SSH Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos-and-linux" class="md-nav__link">
+    macOS and Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-from-vscode" class="md-nav__link">
+    Connecting from VSCode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-desktop-not-recommended" class="md-nav__link">
+    Remote Desktop (Not Recommended)
   </a>
   
 </li>
@@ -2572,23 +2667,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vscode-on-remote-desktop" class="md-nav__link">
-    VSCode on Remote Desktop:
+  <a href="#choosing-a-method" class="md-nav__link">
+    Choosing a Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node" class="md-nav__link">
-    Setting up SSH tunneling to run VS Code Server on a cluster node
+  <a href="#code-server" class="md-nav__link">
+    Code Server
   </a>
   
-    <nav class="md-nav" aria-label="Setting up SSH tunneling to run VS Code Server on a cluster node">
+    <nav class="md-nav" aria-label="Code Server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshoot-vscode_slurmsh-script-fails" class="md-nav__link">
-    Troubleshoot: vscode_slurm.sh script fails
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
@@ -2599,8 +2694,103 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-server" class="md-nav__link">
-    Code Server
+  <a href="#remote-tunnel" class="md-nav__link">
+    Remote Tunnel
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Tunnel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-instructions" class="md-nav__link">
+    Setup Instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode_slurmsh-script" class="md-nav__link">
+    vscode_slurm.sh Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-ssh-via-compute-node-advanced-users" class="md-nav__link">
+    Remote SSH via Compute Node (Advanced Users)
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote SSH via Compute Node (Advanced Users)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-1-using-salloc-for-interactive-sessions" class="md-nav__link">
+    Method 1: Using salloc for Interactive Sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-using-a-batch-job-for-longer-sessions" class="md-nav__link">
+    Method 2: Using a Batch Job for Longer Sessions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-configuration" class="md-nav__link">
+    SSH Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos-and-linux" class="md-nav__link">
+    macOS and Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-from-vscode" class="md-nav__link">
+    Connecting from VSCode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-desktop-not-recommended" class="md-nav__link">
+    Remote Desktop (Not Recommended)
   </a>
   
 </li>
@@ -2624,95 +2814,241 @@
                 
                 <h1 id="vscode">VSCode</h1>
 <p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.</p>
-<p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>To protect the security of the data, the use of <a href="https://cursor.com/">Cursor</a> and <a href="https://github.com/features/copilot">GitHub Copilot</a> on Milgram is not permitted. </p>
+<p>To protect the security of the data, the use of <a href="https://cursor.com/">Cursor</a> and <a href="https://github.com/features/copilot">GitHub Copilot</a> on the Milgram cluster is not permitted.</p>
 </div>
-<h2 id="vscode-on-remote-desktop">VSCode on Remote Desktop:</h2>
-<p>The easiest way to run VSCode is to use our Open OnDemand web portal. First, start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a>. As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Deskop documentation</a>, we recommend to <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">adjust the 'image quality' slider bar</a> all the way to the right if this is not the default. Then, to start VSCode, type the following in a terminal window within your Remote Deskop session:</p>
-<div class="highlight"><pre><span></span><code>module load VSCode
-vscode
-</code></pre></div>
-<h2 id="setting-up-ssh-tunneling-to-run-vs-code-server-on-a-cluster-node">Setting up SSH tunneling to run VS Code Server on a cluster node</h2>
-<p>The above method will probably give most users a workable solution for using VSCode. However, one issue with the Remote Desktop is graphics responsiveness: particularly when scrolling, window behavior can become laggy and imprecise.</p>
-<p>If this (or something else) is a problem for you, you can run VSCode on your local machine and set it up to remotely connect with YCRC clusters using an 'SSH tunnel'. The process is very similar the <a href="/clusters-at-yale/guides/jupyter_ssh/">method we recommend for Jupyter notebooks</a>. This is done with a batch script that starts up a VSCode server on a compute cluster node; you then connect to the server with your VSCode app on your local machine (i.e., your laptop).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>While you can also tunnel directly to the login nodes (several VSCode extensions allow VSCode users to connect to remote servers over SSH), this has some drawbacks: (1) the resulting connections can be unstable; (2) VS Code can initiate computationally expensive processes (compilers, etc) that put undue burden on our clusters' login nodes, where resources are limited.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>To protect the security of the data on Milgram, setting up SSH tunneling to connect your local VSCode to a Milgram compute node is not permitted.</p>
-</div>
-<ol>
+<h2 id="choosing-a-method">Choosing a Method</h2>
+<p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences:</p>
+<ul>
 <li>
-<p>Create a vscode server batch script called <code>vscode_slurm.sh</code> and submit it to the queue with <code>sbatch vscode_slurm.sh</code>. The script source code is attached below.</p>
+<p><strong><a href="#code-server">Code Server</a></strong> (Recommended): A web-based VSCode instance running on a compute node, accessed through your browser via Open OnDemand. This is the recommended method for most users as it provides a stable connection and requires no local configuration.</p>
 </li>
 <li>
-<p>After this script successfully starts running, use the last line of the logfile <code>vscode_slurm.txt</code> (in the directory you submitted the job from) to set up a connection from the cluster to your own VScode app on a remote computer. The last line of vscode_slurm.txt will look like:
+<p><strong><a href="#remote-tunnel-advanced-users">Remote Tunnel</a></strong>: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. <strong>Note: Not permitted on Milgram due to security requirements.</strong></p>
+</li>
+<li>
+<p><strong><a href="#remote-ssh-via-compute-node">Remote SSH</a></strong>: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.</p>
+</li>
+<li>
+<p><strong><a href="#remote-desktop-not-recommended">Remote Desktop</a></strong>: A legacy method that runs VSCode in a graphical Remote Desktop session on Open OnDemand. Not recommended due to graphics responsiveness issues.</p>
+</li>
+</ul>
+<h2 id="code-server">Code Server</h2>
+<p><strong>This is the recommended method for most users.</strong></p>
+<p>The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser.</p>
+<h3 id="getting-started">Getting Started</h3>
+<ol>
+<li>Connect to one of the cluster <a href="/clusters-at-yale/access/ood">Web Portals</a></li>
+<li>Choose "Code Server" from the Interactive Apps menu</li>
+<li>Follow the instructions for <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">launching an interactive app</a></li>
+<li>Once the job starts, click "Connect to Code Server" to open VSCode in your browser</li>
+</ol>
+<p>This method works on all YCRC clusters.</p>
+<h2 id="remote-tunnel">Remote Tunnel</h2>
+<p>This method allows you to use your local VSCode installation and connect to a VSCode server running on a cluster compute node via GitHub authentication. This is suitable for advanced users who prefer to use their desktop VSCode with their own extensions and settings.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to data security requirements, the Remote Tunnel method is not permitted on Milgram.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do not recommend connecting your Remote Tunnel session directly to the login nodes, as this can result in instability and undue burden on the login nodes. Please follow the below instructions to connect to a compute node.</p>
+</div>
+<h3 id="setup-instructions">Setup Instructions</h3>
+<ol>
+<li>
+<p>Create a vscode server batch script called <code>vscode_slurm.sh</code> and submit it to the queue with <code>sbatch vscode_slurm.sh</code>. The script source code is below.</p>
+</li>
+<li>
+<p>After this script successfully starts running, check the last line of the logfile <code>vscode_slurm.txt</code> (in the directory you submitted the job from). The last line will look like:
 <div class="highlight"><pre><span></span><code>To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX
 </code></pre></div></p>
 </li>
 <li>
-<p>Run your local VSCode app. Then, connect to the server from within the app as follows: </p>
+<p>Open your web browser and navigate to the GitHub device login URL shown in the log file. Enter the code to authenticate.</p>
+</li>
+<li>
+<p>Run your local VSCode app. Then, connect to the server from within the app as follows:</p>
 <ul>
-<li>Go to the <code>Welcome</code> screen (Help -&gt; Welcome)</li>
-<li>Click <code>Connect to...</code> </li>
-<li>Click <code>Connect to tunnel...</code></li>
-<li>Click <code>Github</code> </li>
-<li>Click on your cluster node which should be listed as, i.e. <code>r30406n03mccleary.ycrc.yale.edu</code></li>
+<li>Press <code>F1</code> or <code>Cmd/Ctrl+Shift+P</code> to open the Command Palette</li>
+<li>Type "Remote-Tunnel: Connect to Tunnel" and select it</li>
+<li>Select the "GitHub" option for authentication, and log in if needed.</li>
+<li>Select the tunnel listed, typically by its hostname.</li>
+<li>VSCode will connect through a secure tunnel to the compute node and automatically start the VSCode server</li>
 </ul>
 </li>
 </ol>
-<p>vscode_slurm.sh:
-<div class="highlight"><pre><span></span><code>#!/bin/bash
+<h3 id="vscode_slurmsh-script">vscode_slurm.sh Script</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-#SBATCH --partition=day
-#SBATCH -t 8:00:00
-#SBATCH -c 1
-#SBATCH --mem=10G
-#SBATCH --output=vscode_slurm.txt
-#SBATCH --mail-type ALL
+<span class="c1">#SBATCH --partition=devel</span>
+<span class="c1">#SBATCH -t 6:00:00</span>
+<span class="c1">#SBATCH -c 1</span>
+<span class="c1">#SBATCH --mem=10G</span>
+<span class="c1">#SBATCH --output=vscode_slurm.txt</span>
 
-# vscode_slurm.sh
+<span class="c1"># vscode_slurm.sh</span>
 
-# Usage:
+<span class="c1"># Usage:</span>
+<span class="c1"># sbatch vscode_slurm.sh</span>
 
-# sbatch vscode_slurm.sh
+<span class="c1"># After this script successfully starts running, use the last line of the</span>
+<span class="c1"># logfile &#39;vscode_slurm.txt&#39; (in the directory you submitted the job from)</span>
+<span class="c1"># to set up a connection from the cluster to your own VSCode app on a remote computer.</span>
+<span class="c1"># An example last line will look like:</span>
 
-# After this script successfully starts running, use the last line of the
-#  the logfile &#39;vscode_slurm.txt&#39; (in the directory you submitted the job from)
-#  to set up a connection from the cluster to your own VScode app on a remote computer.
-#  An example last line will look like:
+<span class="c1">######################</span>
+<span class="c1"># vscode_slurm.txt</span>
+<span class="c1">######################</span>
+<span class="c1"># ...</span>
+<span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX</span>
+<span class="c1">######################</span>
 
-######################
-# vscode_slurm.txt
-######################
-# ...
-# To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX
-######################
-
-# Note: if you will use a shared partition for this job, we suggest 
-#  the &#39;day&#39; queue. If many users start requesting multi-day jobs with this method,
-#  it becomes more likely some users may accidently leave their
-#  VSCode jobs running when not in use.
-# This could lead to unnecessary resource consumption on the computing clusters.
-
-module load VSCode
-
-code tunnel
+module<span class="w"> </span>load<span class="w"> </span>VSCode
+code<span class="w"> </span>tunnel
+</code></pre></div>
+<h2 id="remote-ssh-via-compute-node-advanced-users">Remote SSH via Compute Node (Advanced Users)</h2>
+<p>This method allows you to use your local VSCode installation with the Remote-SSH extension to connect directly to a compute node. This is an alternative for users who want to use their local VSCode but cannot or prefer not to use the Remote Tunnel method with GitHub authentication.</p>
+<div class="admonition note">
+<p class="admonition-title">Important</p>
+<p>Do not connect directly to login nodes with VSCode Remote-SSH. VS Code can initiate computationally expensive processes (compilers, language servers, etc.) that put undue burden on the login nodes where resources are limited. Always connect to a compute node as described below.</p>
+</div>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>VSCode installed on your local machine</li>
+<li>The <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote-SSH extension</a> installed in VSCode</li>
+</ul>
+<h3 id="method-1-using-salloc-for-interactive-sessions">Method 1: Using salloc for Interactive Sessions</h3>
+<ol>
+<li>
+<p><strong>Request a compute node interactively:</strong>
+   <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>10G
 </code></pre></div></p>
-<h3 id="troubleshoot-vscode_slurmsh-script-fails">Troubleshoot: vscode_slurm.sh script fails</h3>
-<p>If you are unable to connect using this procedure, but it worked for you previously, it may be that VSCode was terminated abruptly and left a lock file hanging around. If the vscode_slurm.txt file created by the batch script contains repeated lines like:</p>
-<div class="highlight"><pre><span></span><code>warn error access singleton, retrying: the process holding the singleton lock file code server
+</li>
+<li>
+<p><strong>Once the job is allocated, note the compute node hostname</strong> by running:
+   <div class="highlight"><pre><span></span><code>hostname
 </code></pre></div>
-<p>then you can restore the ability to connect by removing the lock file as described in this <a href="https://github.com/microsoft/vscode-remote-release/issues/9806#issuecomment-2135635511">link</a>:</p>
-<div class="highlight"><pre><span></span><code>rm ~/.vscode/cli/tunnel-stable.lock                                                                                     
+   This will return something like <code>r209u11n04.mccleary.ycrc.yale.edu</code>, <code>a11231u01n01.mghpcc.ycrc.yale.edu</code>, etc.</p>
+</li>
+<li>
+<p><strong>Configure your local SSH setup</strong> (see SSH Configuration section below).</p>
+</li>
+<li>
+<p><strong>Connect from VSCode</strong> using the Remote-SSH extension.</p>
+</li>
+<li>
+<p><strong>Keep your terminal session open</strong> - if you exit the salloc session, the compute node allocation will end and your VSCode connection will be lost.</p>
+</li>
+</ol>
+<h3 id="method-2-using-a-batch-job-for-longer-sessions">Method 2: Using a Batch Job for Longer Sessions</h3>
+<ol>
+<li>
+<p><strong>Create a batch script</strong> called <code>vscode_ssh.sh</code>:
+   <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=devel</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --mem=10G</span>
+<span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
+
+<span class="c1"># Print the hostname to the log file</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># Keep the job alive</span>
+<span class="c1"># VSCode will connect via SSH and start its server automatically</span>
+sleep<span class="w"> </span>6h
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Submit the job:</strong>
+   <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>vscode_ssh.sh
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Check the log file</strong> to get the compute node hostname:
+   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Configure your local SSH setup</strong> with the compute node name (see below).</p>
+</li>
+</ol>
+<h3 id="ssh-configuration">SSH Configuration</h3>
+<p>You need to configure SSH on your local machine to connect through the login node to the compute node.</p>
+<h4 id="macos-and-linux">macOS and Linux</h4>
+<p>Add the following to your <code>~/.ssh/config</code> file on your <strong>local machine</strong>:</p>
+<div class="highlight"><pre><span></span><code># Connection to cluster login node (example for Grace cluster)
+Host grace
+    HostName grace.ycrc.yale.edu
+    User YOUR_NETID
+    IdentityFile ~/.ssh/SSH_KEY_FILE
+
+# Connection to compute node via login node
+Host grace-compute
+    HostName COMPUTE_NODE_NAME
+    User YOUR_NETID
+    ProxyJump grace
 </code></pre></div>
-<h2 id="code-server">Code Server</h2>
-<p>The Code Server app launches an open source version of VSCode in a job on a compute node and opens in your web browser, providing a stable connection that is not subject to the strict limits on the login.
-To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood">Web Portals</a> and choose Code Server from the Interactive Apps menu in the portal and then follow the instructions for <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">launching an interactive app</a>.</p>
+<p>Replace:
+- <code>YOUR_NETID</code> with your Yale NetID
+- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
+- <code>SSH_KEY_FILE</code> with the path to the SSH key file you created for the cluster (e.g., <code>~/.ssh/id_rsa</code>)</p>
+<p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
+<h4 id="windows">Windows</h4>
+<p>Add the following to your SSH config file on your <strong>local Windows machine</strong>. The config file is typically located at <code>C:\Users\YOUR_USERNAME\.ssh\config</code> (you may need to create this file if it doesn't exist):</p>
+<div class="highlight"><pre><span></span><code># Connection to cluster login node
+Host grace
+    HostName grace.ycrc.yale.edu
+    User YOUR_NETID
+    IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
+
+# Connection to compute node via login node
+Host grace-compute
+    HostName COMPUTE_NODE_NAME
+    User YOUR_NETID
+    ProxyJump grace
+</code></pre></div>
+<p>Replace:
+- <code>YOUR_USERNAME</code> with your Windows username
+- <code>YOUR_NETID</code> with your Yale NetID
+- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
+- <code>SSH_KEY_FILE</code> with the name of your SSH key file (e.g., <code>id_rsa</code>)</p>
+<p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
+<div class="admonition tip">
+<p class="admonition-title">Creating the config file on Windows</p>
+<p>If the <code>.ssh</code> folder or <code>config</code> file doesn't exist, you can create it:</p>
+<ol>
+<li>Open PowerShell or Command Prompt</li>
+<li>Run: <code>mkdir $env:USERPROFILE\.ssh</code> (if the folder doesn't exist)</li>
+<li>Run: <code>notepad $env:USERPROFILE\.ssh\config</code></li>
+<li>This will open Notepad where you can paste the configuration and save the file</li>
+</ol>
+</div>
+<h3 id="connecting-from-vscode">Connecting from VSCode</h3>
+<ol>
+<li>Open VSCode on your local machine</li>
+<li>Press <code>F1</code> or <code>Cmd/Ctrl+Shift+P</code> to open the Command Palette</li>
+<li>Type "Remote-SSH: Connect to Host" and select it</li>
+<li>Choose <code>grace-compute</code> (or whatever you named the host in your config)</li>
+<li>VSCode will connect through the login node to your compute node and automatically start the VSCode server</li>
+</ol>
+<p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.</p>
+<h2 id="remote-desktop-not-recommended">Remote Desktop (Not Recommended)</h2>
+<div class="admonition warning">
+<p class="admonition-title">Not Recommended</p>
+<p>This method is no longer recommended. We strongly recommend using <a href="#code-server">Code Server</a> instead for a better experience.</p>
+</div>
+<ol>
+<li>Use the Open OnDemand web portal to start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a></li>
+<li>As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop documentation</a>, we recommend adjusting the <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">image quality slider bar</a> all the way to the right if this is not the default</li>
+<li>In a terminal window within your Remote Desktop session, run:
+   <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>VSCode
+vscode
+</code></pre></div></li>
+</ol>
                 
                   
                     
@@ -2721,7 +3057,7 @@ To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
       
     
   </small>
