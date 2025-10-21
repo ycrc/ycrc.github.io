@@ -1028,6 +1028,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#multi-factor-authentication-mfa" class="md-nav__link">
     Multi-factor Authentication (MFA)
   </a>
@@ -2658,6 +2672,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#multi-factor-authentication-mfa" class="md-nav__link">
     Multi-factor Authentication (MFA)
   </a>
@@ -2709,14 +2737,18 @@
 <p><img alt="Configure connection." class="medium" src="/img/ConfigureLinuxVPN.png" /></p>
 <p>Note the activation and specification of the Trojan scanner script, which should have been
 installed along with OpenConnect.</p>
-<p>Save this connection, and it will be available from the NetworkManager app's pop-up menu
+<p>Save this connection, and it will be available as a checkbox from the NetworkManager app's pop-up menu
 under "VPN connections".</p>
 <h4 id="using-the-command-line">Using the command line</h4>
 <div class="highlight"><pre><span></span><code>nmcli con add <span class="nb">type</span> vpn con-name Yale-VPN -- vpn-type openconnect vpn.data <span class="s2">&quot;gateway=access.yale.edu,protocol=anyconnect,useragent=AnyConnect Linux_64 4.10.07061&quot;</span>
 </code></pre></div>
 <h2 id="connect-via-vpn">Connect via VPN</h2>
 <p>You will need to connect via the VPN client using the profile "access.yale.edu".</p>
+<h3 id="macos">MacOS</h3>
 <p><img alt="VPN client." class="medium" src="/img/vpn1.png" /></p>
+<h3 id="linux_1">Linux</h3>
+<p><img alt="Linuxm VPN client." class="medium" src="/img/ConnectLinuxVPN.png" /></p>
+<p>Select Login to launch authentication in a web browser.</p>
 <h3 id="multi-factor-authentication-mfa">Multi-factor Authentication (MFA)</h3>
 <p>Authentication for the VPN requires multi-factor authentication via Duo in addition to your normal Yale credentials (email address  and netid password). After you select "Connect" in the above dialog box, it will launch a web page with a prompt to login with your email address, netid password and MFA method.</p>
 <p>You can click "Other options" to choose your authentication method. </p>
