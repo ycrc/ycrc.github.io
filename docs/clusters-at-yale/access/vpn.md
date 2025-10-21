@@ -42,7 +42,7 @@ Choose a helpful name for the connection (e.g., "Yale"), and fill out the fields
 Note the activation and specification of the Trojan scanner script, which should have been
 installed along with OpenConnect.
 
-Save this connection, and it will be available from the NetworkManager app's pop-up menu
+Save this connection, and it will be available as a checkbox from the NetworkManager app's pop-up menu
 under "VPN connections".
 
 #### Using the command line
@@ -54,7 +54,15 @@ nmcli con add type vpn con-name Yale-VPN -- vpn-type openconnect vpn.data "gatew
 
 You will need to connect via the VPN client using the profile "access.yale.edu".
 
+### MacOS
+
 ![VPN client.](/img/vpn1.png){: .medium}
+
+### Linux
+
+![Linuxm VPN client.](/img/ConnectLinuxVPN.png){: .medium}
+
+Select Login to launch authentication in a web browser.
 
 ### Multi-factor Authentication (MFA)
 
