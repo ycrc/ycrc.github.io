@@ -34,7 +34,7 @@ conda activate env_name
 python my_script.py image_${SLURM_ARRAY_TASK_ID}.jpg
 ```
 
-In this script, the `--array=1-1000` option defines 1000 array jobs with index values from 1 to 1000. For each job, Slurm sets the environment variable `SLURM_ARRAY_TASK_ID` to the array index (e.g.,1,2,3,...1000). Each job runs the same commands but analyzes a unique image file (image_1.jpg, image_2.jpg...,image_1000.jpg). **The resources you request will be given to each job in the array **, e.g. requesting 4 GiB of RAM with dSQ will run each individual job with a separate 4 GiB of RAM available. Run `sbatch --help` or see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for more info on sbatch options. The `--output=slurm-%A.%a.out` option makes sure that each job's output is written to a unique file named with the job's ID(%A) and its array index(%a).     
+In this script, the `--array=1-1000` option defines 1000 array jobs with index values from 1 to 1000. For each job, Slurm sets the environment variable `SLURM_ARRAY_TASK_ID` to the array index (e.g.,1,2,3,...1000). Each job runs the same commands but analyzes a unique image file (image_1.jpg, image_2.jpg...,image_1000.jpg). **The resources you request will be given to each job in the array **, e.g. requesting 4 GiB of RAM in the batch script will run each individual job with a separate 4 GiB of RAM available. Run `sbatch --help` or see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html) for more info on sbatch options. The `--output=slurm-%A.%a.out` option makes sure that each job's output is written to a unique file named with the job's ID(%A) and its array index(%a).     
 
 ### Step 2: Submit Batch script
 
