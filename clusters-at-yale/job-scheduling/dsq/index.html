@@ -2771,7 +2771,7 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>env_name
 python<span class="w"> </span>my_script.py<span class="w"> </span>image_<span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>.jpg
 </code></pre></div>
-<p>In this script, the <code>--array=1-1000</code> option defines 1000 array jobs with index values from 1 to 1000. For each job, Slurm sets the environment variable <code>SLURM_ARRAY_TASK_ID</code> to the array index (e.g.,1,2,3,...1000). Each job runs the same commands but analyzes a unique image file (image_1.jpg, image_2.jpg...,image_1000.jpg). <strong>The resources you request will be given to each job in the array </strong>, e.g. requesting 4 GiB of RAM with dSQ will run each individual job with a separate 4 GiB of RAM available. Run <code>sbatch --help</code> or see the <a href="https://slurm.schedmd.com/sbatch.html">official Slurm documentation</a> for more info on sbatch options. The <code>--output=slurm-%A.%a.out</code> option makes sure that each job's output is written to a unique file named with the job's ID(%A) and its array index(%a).     </p>
+<p>In this script, the <code>--array=1-1000</code> option defines 1000 array jobs with index values from 1 to 1000. For each job, Slurm sets the environment variable <code>SLURM_ARRAY_TASK_ID</code> to the array index (e.g.,1,2,3,...1000). Each job runs the same commands but analyzes a unique image file (image_1.jpg, image_2.jpg...,image_1000.jpg). <strong>The resources you request will be given to each job in the array </strong>, e.g. requesting 4 GiB of RAM in the batch script will run each individual job with a separate 4 GiB of RAM available. Run <code>sbatch --help</code> or see the <a href="https://slurm.schedmd.com/sbatch.html">official Slurm documentation</a> for more info on sbatch options. The <code>--output=slurm-%A.%a.out</code> option makes sure that each job's output is written to a unique file named with the job's ID(%A) and its array index(%a).     </p>
 <h3 id="step-2-submit-batch-script">Step 2: Submit Batch script</h3>
 <p>To submit your batch script, use the <code>sbatch</code> command:
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>job-array.sh
@@ -2900,7 +2900,7 @@ PREEMPTED      1     0
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 23, 2025</span>
       
     
   </small>
