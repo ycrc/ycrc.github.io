@@ -43,7 +43,7 @@ follow the spinup [instructions on requesting public access to a web server](htt
 
 1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to share from in the collection field (e.g. "Yale CRC Grace")
 1. Click the Share button on the right
-1. Click on "Add a Shared Endpoint"
+1. Click on "Add Guest Collection"
 1. Next to Path, click "Browse" to find and select the directory you want to share
 1. Add other details as desired and click on "Create Share"
 1. Click on "Add Permissions -- Share With"
