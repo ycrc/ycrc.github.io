@@ -2522,8 +2522,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-test" class="md-nav__link">
-    4. Test
+  <a href="#4-add-the-cryosparc-commands-to-your-system-path" class="md-nav__link">
+    4. Add the cryosparc commands to your system PATH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-test" class="md-nav__link">
+    5. Test
   </a>
   
 </li>
@@ -2740,20 +2747,26 @@ mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If the installer prompts you with, i.e., 'Add bin directory to your ~/.bashrc ?', be sure to answer yes.</p>
-<p>Otherwise, you will get a 'command not found' error when you try to run cryosparc.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
 <p>If you are installing a version of CryoSPARC older than 4.4.0, add the additional line</p>
 <div class="highlight"><pre><span></span><code>--cudapath<span class="w"> </span><span class="nv">$cuda_path</span><span class="w"> </span><span class="se">\</span>
 </code></pre></div>
 <p>after the --ssdpath line.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Set location of CryoSPARC executables</span>
+<h3 id="4-add-the-cryosparc-commands-to-your-system-path">4. Add the cryosparc commands to your system PATH</h3>
+<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The installer will likely prompt you with, i.e., 'Add bin directory to your ~/.bashrc ?',
+ but this doesn't work in recent cryosparc installer script versions, at least on the YCRC clusters.
+ Please make sure you do the above two 'echo export ...; commands, or you will likely get a 'command not found'
+ error when you try to run cryosparc.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make the CryoSPARC executables visible in the current shell, for testing (below)</span>
 <span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
-<h3 id="4-test">4. Test</h3>
+<h3 id="5-test">5. Test</h3>
 <p>The installation process will normally attempt to launch CryoSPARC automatically.  Check its status and launch manually if need be.</p>
 <div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>status
 cryosparcm<span class="w"> </span>start<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>running<span class="o">)</span><span class="w"> </span>
@@ -2905,7 +2918,7 @@ exec topaz $@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2025</span>
       
     
   </small>
