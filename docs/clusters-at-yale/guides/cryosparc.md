@@ -66,12 +66,6 @@ cd ${install_path}/cryosparc_master
 ```
 
 !!!warning
-     If the installer prompts you with, i.e., 'Add bin directory to your ~/.bashrc ?', be sure to answer yes.
-
-     Otherwise, you will get a 'command not found' error when you try to run cryosparc.
-											 
-
-!!!warning
      If you are installing a version of CryoSPARC older than 4.4.0, add the additional line
 
      ``` bash
@@ -80,13 +74,27 @@ cd ${install_path}/cryosparc_master
 
      after the --ssdpath line.
 
+### 4. Add the cryosparc commands to your system PATH
+
+``` bash
+     echo export PATH="${install_path}/cryosparc_master/bin:\$PATH" >> ~/.bashrc
+     echo export PATH="${install_path}/cryosparc_worker/bin:\$PATH" >> ~/.bashrc
+```
+
+!!!warning
+     The installer will likely prompt you with, i.e., 'Add bin directory to your ~/.bashrc ?',
+     but this doesn't work in recent cryosparc installer script versions, at least on the YCRC clusters.
+     Please make sure you do the above two 'echo export ...; commands, or you will likely get a 'command not found'
+     error when you try to run cryosparc.
+											 
+
 ``` bash
 
-# Set location of CryoSPARC executables
+# Make the CryoSPARC executables visible in the current shell, for testing (below)
 source ~/.bashrc
 ```
 
-### 4. Test
+### 5. Test
 
 The installation process will normally attempt to launch CryoSPARC automatically.  Check its status and launch manually if need be.
 
