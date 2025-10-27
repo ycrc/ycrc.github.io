@@ -2774,7 +2774,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s1"> has PID: </span><span class="si">{</span><span class="n">PID</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>We then execute this code (named <code>mpi_simple.py</code>) by running the following on the command line:</p>
-<div class="codehilite"><pre><span></span><code>mpirun -n 4 python mpi_simple.py
+<div class="codehilite"><pre><span></span><code><span class="nx">mpirun</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="nx">mpi_simple</span><span class="p">.</span><span class="nx">py</span>
 </code></pre></div>
 
 <p>The <code>mpirun</code> command is a wrapper for the MPI interface.</p>
@@ -2789,8 +2789,8 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 
 <h3 id="ex-2-point-to-point-communicators">Ex 2: Point to Point Communicators</h3>
 <p>The most basic communication operators are "<code>send</code>" and "<code>recv</code>". These can be a bit tricky since they are "blocking" commands and can cause the program to hang.</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">comm</span>.<span class="k">send</span><span class="ss">(</span><span class="nv">obj</span>,<span class="w"> </span><span class="nv">dest</span>,<span class="w"> </span><span class="nv">tag</span><span class="o">=</span><span class="mi">0</span><span class="ss">)</span>
-<span class="nv">comm</span>.<span class="nv">recv</span><span class="ss">(</span><span class="nv">source</span><span class="o">=</span><span class="nv">MPI</span>.<span class="nv">ANY_SOURCE</span>,<span class="w"> </span><span class="nv">tag</span><span class="o">=</span><span class="nv">MPI</span>.<span class="nv">ANY_TAG</span>,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="nv">None</span><span class="ss">)</span>
+<div class="codehilite"><pre><span></span><code>comm.send(obj, dest, tag=0)
+comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </code></pre></div>
 
 <ul>
