@@ -216,4 +216,5 @@ nav:
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
 
             - resources/national-hpcs.md
+            - "National AI Research Resource (NAIRR)": resources/nairr.md
             - resources/glossary.md
