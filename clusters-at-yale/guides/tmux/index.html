@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tmux/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2521,6 +2521,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../resources/nairr/" class="md-nav__link">
+        National AI Research Resource (NAIRR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../resources/glossary/" class="md-nav__link">
         Glossary
       </a>
@@ -2610,14 +2624,14 @@
 <p><code>tmux</code> is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. <code>tmux</code> is a great way to save an interactive session between connections you make to the clusters. You can reconnect to the session from a workstation in your lab or from your laptop from home!</p>
 <h2 id="get-started">Get Started</h2>
 <p>To begin a <code>tmux</code> session named myproject, type</p>
-<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>myproject
+<div class="highlight"><pre><span></span><code>tmux new -s myproject
 </code></pre></div>
 <p>You should see a bar across the bottom of your terminal window now that gives you some information about your session. If you are disconnected or detached from this session, anything you were doing will still be there waiting when you reattach</p>
 <p>The most important shortcut to remember is <kbd>Ctrl</kbd>+<kbd>b</kbd> (hold the ctrl or control key, then type "b"). This is how you signal to <code>tmux</code> that the following keystroke is meant for it and not the session you are working in. For example: if you want to gracefully detach from your session, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd>, then <kbd>d</kbd> for detach. To reattach to our sample <code>tmux</code> session after detatching, type:</p>
-<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>myproject
+<div class="highlight"><pre><span></span><code>tmux attach -t myproject
 <span class="c1">#If you are lazy and have only one session running,</span>
 <span class="c1">#This works too:</span>
-tmux<span class="w"> </span>a
+tmux a
 </code></pre></div>
 <p>Lines starting with a "#" denote a commented line, which aren't read as code</p>
 <p>Finally, to exit, you can type <code>exit</code> or <kbd>Ctrl</kbd>+<kbd>d</kbd></p>
@@ -2645,17 +2659,17 @@ For example, if you are logged in to grace1, use <code>ssh -Y grace2</code> to r
 <p><code>tmux</code> allows you to create, toggle between and manipulate panes and windows in your 
 session. A window is the whole screen that <code>tmux</code> displays to you. Panes are subdivisions in the current window, where each runs an independent terminal. Especially at first, you probably won't need more than one pane at a time. Multiple windows can be created and run off-screen. Here is an example where this may be useful.</p>
 <p>Say you just submitted an interactive job that is running on a compute node inside your <code>tmux</code> session.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>analysis
+<div class="highlight"><pre><span></span><code><span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ tmux new -s analysis
 <span class="c1"># I am in my tmux session now</span>
-<span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>salloc
-<span class="o">[</span>ms725@c14n02<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>./my_fancy_analysis.sh
+<span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ salloc
+<span class="o">[</span>ms725@c14n02 ~<span class="o">]</span>$ ./my_fancy_analysis.sh
 </code></pre></div>
 <p>Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running <code>top</code> there. Split your window by typing:</p>
 <p><kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>%</kbd></p>
 <p><code>ssh</code> into the compute node you are working on, then run top to watch your work as it runs all from the same window.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># I&#39;m in a new pane now.</span>
-<span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>c14n02
-<span class="o">[</span>ms725@c14n02<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>top
+<span class="o">[</span>ms725@grace1 ~<span class="o">]</span>$ ssh c14n02
+<span class="o">[</span>ms725@c14n02 ~<span class="o">]</span>$ top
 </code></pre></div>
 <p>Your view will look something like this:</p>
 <p><img alt="tmux" src="/img/tmux-michael.png" /></p>
