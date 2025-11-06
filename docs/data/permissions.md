@@ -40,7 +40,9 @@ By default, cluster groups are created with a `shared` directory located under t
 ## Share With Specific Users or Other Groups
 
 It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command `setfacl` (with its counterpart, `getfacl`) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your `project` or `scratch` directories, rather than `home`. When sharing a sub-directory in your `project` or `scratch`, you need first share your `project` or `scratch`, and then share the sub-directory. Here are some simple scenarios.
-    
+
+!!!note
+    On Bouchet cluster, `project` and `scratch` directories are configured with different permission settings than on other clusters. As a result, the methods described below for sharing a directory does not work on Bouchet. If you need to share a directory with specific users or other groups on Bouchet, please [contact us](/#get-help    ) for assistance. 
 
 ### Share a Directory with All Members of a Group
 
