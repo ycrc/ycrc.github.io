@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/permissions/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2753,6 +2753,10 @@ drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
 <p>By default, cluster groups are created with a <code>shared</code> directory located under their <code>project</code> directory with the purpose of offering a centralized location for storing scripts and data across your research group. These directories are set with read-only permissions for the group (so no one accidentally modifies something) but read and write permissions for all group members can be set by our team. If your group would like to modify these permissions or have not received a <code>shared</code> directory, <a href="/#get-help">contact us</a> and our team can assist.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
 <p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> (with its counterpart, <code>getfacl</code>) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch</code>, you need first share your <code>project</code> or <code>scratch</code>, and then share the sub-directory. Here are some simple scenarios.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Bouchet cluster, <code>project</code> and <code>scratch</code> directories are configured with different permission settings than on other clusters. As a result, the methods described below for sharing a directory does not work on Bouchet. If you need to share a directory with specific users or other groups on Bouchet, please <a href="/#get-help">contact us</a> for assistance. </p>
+</div>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> in your project directory with group <code>othergroup</code>:</p>
 <div class="highlight"><pre><span></span><code>setfacl -m g:othergroup:rx $(readlink -f ~/project)
@@ -2793,7 +2797,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2025</span>
       
     
   </small>
