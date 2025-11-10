@@ -33,4 +33,4 @@ We maintain several high performance storage systems. Listed below are these sha
 | Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary         | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | YCGA           | /gpfs/ycga    | 3.0 PiB  | McCleary                | IBM Spectrum Scale (GPFS) | YCGA storage                             |
 | Milgram       | /gpfs/milgram | 3.0 PiB  | Milgram\*               | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
-| Radev/Marilyn | /gpfs/radev   | 2.0 PiB  | Misha\*                 | IBM Spectrum Scale (GPFS) | Misha primary storage                    |
+| Radev | /gpfs/radev   | 2.0 PiB  | Misha\*                 | IBM Spectrum Scale (GPFS) | Misha primary storage                    |

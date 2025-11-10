@@ -8,9 +8,6 @@ Misha is named for [Dr. Misha Mahowald](https://en.wikipedia.org/wiki/Misha_Maho
 
 - - -
 
-!!! info "Beta"
-    Misha is currently in closed beta. For access, please contact Ping Luo (ping.luo@yale.edu). 
-
 ## Access the Cluster
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or through the [Open OnDemand web portal](/clusters-at-yale/access/ood/).
