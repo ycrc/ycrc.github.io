@@ -17,10 +17,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`512`|
-    |Maximum memory per group|`3840G`|
+    |Maximum CPUs per group|`1024`|
+    |Maximum memory per group|`37.50T`|
     |Maximum CPUs per user|`512`|
-    |Maximum memory per user|`1280G`|
+    |Maximum memory per user|`20T`|
 
     **Available Compute Nodes**
 
@@ -28,7 +28,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |18|6458|64|479|sapphirerapids, avx512, 6458q, common|
+    |18|6458|64|479|sapphirerapids, avx512, 6458Q, common|
 
 === "devel"
 
@@ -50,7 +50,6 @@
     |---|---|
     |Maximum job time limit|`06:00:00`|
     |Maximum CPUs per user|`10`|
-    |Maximum GPUs per user|`4`|
     |Maximum memory per user|`70G`|
 
     **Available Compute Nodes**
@@ -59,7 +58,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|479|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|479|sapphirerapids, avx512, 6458Q, common|
 
 === "week"
 
@@ -91,11 +90,11 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|6458|64|479|sapphirerapids, avx512, 6458q, common|
+    |6|6458|64|479|sapphirerapids, avx512, 6458Q, common|
 
 === "gpu"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=a5000:2` would request 2 NVIDIA RTX A5000 GPUs per node.
 
     **Request Defaults**
 
@@ -114,8 +113,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
-    |Maximum CPUs per group|`192`|
-    |Maximum GPUs per group|`24`|
+    |Maximum CPUs per group|`384`|
+    |Maximum GPUs per group|`36`|
     |Maximum CPUs per user|`192`|
     |Maximum GPUs per user|`18`|
 
@@ -125,10 +124,13 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
-    |2|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442, doubleprecision, common, gpu, h100|
-    |6|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
-    |5|6326|32|1000|a100|4|80|icelake, avx512, 6326, doubleprecision, a100, a100-80g, common|
+    |8|6542|48|975|h100|4|80|emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100|
+    |4|6542|48|975|h200|4|141|emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h200|
+    |4|6442|48|975|h100|4|80|sapphirerapids, avx512, 6442Y, doubleprecision, common, gpu, h100|
+    |2|6458|48|975|h100|4|80|sapphirerapids, avx512, 6458Q, doubleprecision, common, gpu, h100|
+    |3|6442|48|975|l40s|4|48|sapphirerapids, avx512, 6442Y, doubleprecision, common, gpu, l40s|
+    |4|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
+    |6|6326|32|1000|a100|4|80|icelake, avx512, 6326, doubleprecision, a100, a100-80g, common|
 
 === "gpu_devel"
 
@@ -150,10 +152,10 @@
 
     |Limit|Value|
     |---|---|
-    |Maximum job time limit|`12:00:00`|
-    |Maximum CPUs per user|`10`|
-    |Maximum GPUs per user|`4`|
-    |Maximum memory per user|`100G`|
+    |Maximum job time limit|`06:00:00`|
+    |Maximum CPUs per user|`4`|
+    |Maximum GPUs per user|`1`|
+    |Maximum memory per user|`32G`|
 
     **Available Compute Nodes**
 
@@ -161,7 +163,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|6326|32|1000||||icelake, avx512, 6326, doubleprecision, a100, a100-80g-MIG, common|
+    |2|6326|32|975|a40|4|48|icelake, avx512, 6326, doubleprecision, a40, common|
 
 === "bigmem"
 
@@ -191,5 +193,5 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|6458|64|1991|sapphirerapids, avx512, 6458q, common|
+    |2|6458|64|1991|sapphirerapids, avx512, 6458Q, common|
 
