@@ -52,7 +52,7 @@ If you want a good starting point for interactive data science in Python Jupyter
 
 ``` bash
 module load miniconda
-conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter jupyter lab
+conda create -n ds_notebook python numpy scipy pandas matplotlib notebook
 
 ####load environment into OOD jupyter notebook
 module reset
@@ -234,12 +234,12 @@ channels:
 dependencies:
   - scipy
   - numpy=1.21
-  - jupyter
+  - notebook
   - python=3.8
 
 ```
 
-In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.
+In this environment, the versions of python and numpy were pinned during installation, but scipy and notebook were left to get the most recent compatible version.
 
 
 

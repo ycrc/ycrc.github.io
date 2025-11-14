@@ -47,7 +47,7 @@
 
     ```bash
     module load miniconda
-    conda create --name tf-condacuda python=3.11.* numpy pandas matplotlib jupyter cudatoolkit=11.8.0 
+    conda create --name tf-condacuda python=3.11.* numpy pandas matplotlib notebook cudatoolkit=11.8.0 
     conda activate tf-condacuda
     pip install nvidia-cudnn-cu11==8.6.0.163
 
@@ -68,7 +68,7 @@
 
     ```bash
     module load miniconda
-    conda create --name tf-condacuda python=3.10.* numpy pandas matplotlib jupyter cudatoolkit=11.3.1 cudnn=8.2.1
+    conda create --name tf-condacuda python=3.10.* numpy pandas matplotlib notebook cudatoolkit=11.3.1 cudnn=8.2.1
     conda activate tf-condacuda
 
     # Store system paths to cuda libraries for gpu communication

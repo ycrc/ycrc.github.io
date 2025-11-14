@@ -18,7 +18,7 @@ salloc
 module load miniconda
 
 # Create a test environment with Conda that contains the default Python version
-conda create -yn tutorial_env python jupyter
+conda create -yn tutorial_env python notebook
 
 # Activate the new environment
 conda activate tutorial_env

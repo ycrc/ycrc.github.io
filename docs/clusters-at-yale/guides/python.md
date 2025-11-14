@@ -49,7 +49,7 @@ See our guide for more detailed instructions.
 ``` bash
 # install once
 module load miniconda
-conda create -n py3_env python=3 numpy scipy matplotlib ipython jupyter jupyterlab
+conda create -n py3_env python=3 numpy scipy matplotlib notebook
 # use later
 module reset && module load miniconda
 conda activate py3_env

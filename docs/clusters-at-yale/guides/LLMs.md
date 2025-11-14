@@ -114,7 +114,7 @@ Users can use HuggingFace inside of a miniconda environment/jupyter notebook.
 ###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition
 salloc --partition=devel --cpus-per-task=2 --time=1:00:00 --mem=32G ###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition
 module load miniconda
-conda create --name huggingface python=3.11.* transformers accelerate tokenizers datasets jupyter jupyterlab
+conda create --name huggingface python=3.11.* transformers accelerate tokenizers datasets notebook
 
 ###need pytorch installed to use huggingface
 conda activate huggingface
