@@ -2851,7 +2851,7 @@ salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span 
 <span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
 salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span><span class="c1">###requests 2 cpus for 1 hour and 32 GB of memory on the devel partition</span>
 module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>notebook
 
 <span class="c1">###need pytorch installed to use huggingface</span>
 conda<span class="w"> </span>activate<span class="w"> </span>huggingface
@@ -2934,7 +2934,7 @@ ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2025</span>
       
     
   </small>

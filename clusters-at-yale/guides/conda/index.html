@@ -3014,7 +3014,7 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 </code></pre></div>
 <p>If you want a good starting point for interactive data science in Python Jupyter Notebooks:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ds_notebook<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>ipython<span class="w"> </span>jupyter<span class="w"> </span>jupyter<span class="w"> </span>lab
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ds_notebook<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>notebook
 
 <span class="c1">####load environment into OOD jupyter notebook</span>
 module<span class="w"> </span>reset
@@ -3127,10 +3127,10 @@ channels:
 dependencies:
   - scipy
   - numpy=1.21
-  - jupyter
+  - notebook
   - python=3.8
 </code></pre></div>
-<p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
+<p>In this environment, the versions of python and numpy were pinned during installation, but scipy and notebook were left to get the most recent compatible version.</p>
 <h4 id="build-a-new-environment">Build a New Environment</h4>
 <p>To create a new environment using all the enumerated packages:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
@@ -3146,7 +3146,7 @@ The yaml file can be edited to change the name of the new environment.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2025</span>
       
     
   </small>

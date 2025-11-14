@@ -2666,28 +2666,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-in-a-running-cryosparc-instance-add-the-executable-path-totopazsh-to-the-general-settings" class="md-nav__link">
-    3. In a running CryoSPARC instance, add the executable '&lt;PATH-TO/topaz.sh' to the General settings:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-consult-the-cryosparc-guide" class="md-nav__link">
-    4. Consult the CryoSPARC guide
+  <a href="#3-in-a-running-cryosparc-instance-add-the-executable" class="md-nav__link">
+    3. In a running CryoSPARC instance, add the executable '
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshoot" class="md-nav__link">
-    Troubleshoot
-  </a>
   
 </li>
       
@@ -2915,15 +2901,7 @@ exec topaz $@
 <h3 id="2-make-the-topazsh-script-executable">2. Make the topaz.sh script executable:</h3>
 <div class="highlight"><pre><span></span><code>chmod a+x &lt;PATH-TO&gt;/topaz.sh
 </code></pre></div>
-<h3 id="3-in-a-running-cryosparc-instance-add-the-executable-path-totopazsh-to-the-general-settings">3. In a running CryoSPARC instance, add the executable '&lt;PATH-TO/topaz.sh' to the General settings:</h3>
-<p><img alt="" src="/img/TopazCryosparc.png" /></p>
-<h3 id="4-consult-the-cryosparc-guide">4. Consult the <a href="https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz">CryoSPARC guide</a></h3>
-<p>for details on using Topaz with CryoSPARC.</p>
-<h2 id="troubleshoot">Troubleshoot</h2>
-<p>If you are unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Check /tmp and /tmp/${USER} for the existence of a cryosparc<em>.sock file or a mongo</em>.sock file.  If they are owned by you, you can just remove them, and CryoSPARC should start normally.  If they are not owned by you, and you have reserved the GPUs, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
-<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
+<h3 id="3-in-a-running-cryosparc-instance-add-the-executable">3. In a running CryoSPARC instance, add the executable '</h3>
                 
                   
                     

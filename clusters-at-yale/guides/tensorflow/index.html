@@ -2586,7 +2586,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>tf14<span class="w"
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">tensorflow 2.13/2.12</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.8.0<span class="w"> </span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>notebook<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.8.0<span class="w"> </span>
 conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 pip<span class="w"> </span>install<span class="w"> </span>nvidia-cudnn-cu11<span class="o">==</span><span class="m">8</span>.6.0.163
 
@@ -2605,7 +2605,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 </div>
 <input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><label for="__tabbed_1_5">tensorflow 2.11</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3.1<span class="w"> </span><span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.2.1
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf-condacuda<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.*<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>notebook<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.3.1<span class="w"> </span><span class="nv">cudnn</span><span class="o">=</span><span class="m">8</span>.2.1
 conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 
 <span class="c1"># Store system paths to cuda libraries for gpu communication</span>
