@@ -229,8 +229,8 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 !!! Warning
     Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
 
-|Fileset       | Root Directory                     | Storage          | File Count | Backups | Snapshots | Notes |
-|--------------|------------------------------------|------------------|------------|---------|-----------|-------|
-| home         | `/home`                            | 125GiB/user      | 500,000    | No      | 7 days  |       |
-| work         | `/nfs/weston/work_<project>`       | 1TiB/project     | 5,000,000  | No      | 7 days  |       |
-| scratch      | `/nfs/weston/scratch_<project>`    | 10TiB/project    | 15,000,000 | No      | No        |       |
+|Fileset       | Root Directory                              | Storage          | File Count | Backups | Snapshots | Notes |
+|--------------|---------------------------------------------|------------------|------------|---------|-----------|-------|
+| home         | `/home`                                     | 125GiB/user      | 500,000    | No      | 7 days    |       |
+| work         | `/nfs/weston/work/<pi>_<projectcode>`       | 1TiB/project     | 5,000,000  | No      | 7 days    |       |
+| scratch      | `/nfs/weston/scratch/<pi>_<projectcode>`    | 10TiB/project    | 15,000,000 | No      | No        |       |
