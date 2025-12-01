@@ -2661,23 +2661,23 @@
 <h2 id="compress-your-data">Compress Your Data</h2>
 <p>Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or <a href="/resources/online-tutorials">tar</a>, portions of your data for ease of storage and retrieval.
 For example, to create a compressed archive of a directory you can do the following:</p>
-<p><div class="highlight"><pre><span></span><code>tar -cvzf archive-2021-04-26.tar.gz ./data_for_archival
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-cvzf<span class="w"> </span>archive-2021-04-26.tar.gz<span class="w"> </span>./data_for_archival
 </code></pre></div>
 This will create a new file (<code>archive-2021-04-26.tar.gz</code>) which contains all the data from within <code>data_for_archival</code> and is compressed to minimize storage requirements.
 This file can then be transferred to any off-site backup or archive location.</p>
 <h2 id="list-and-extract-data-from-existing-archive">List and Extract Data From Existing Archive</h2>
 <p>You can list the contents of an archive file like this:</p>
-<p><div class="highlight"><pre><span></span><code>tar -ztvf archive-2021-04-26.tar.gz
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-ztvf<span class="w"> </span>archive-2021-04-26.tar.gz
 </code></pre></div>
 which will print the full list of every file within the archive.
 The clusters also have the <code>lz</code> tool installed that provides a shorter way to list the contents:</p>
-<div class="highlight"><pre><span></span><code>lz archive-2021-04-26.tar.gz
+<div class="highlight"><pre><span></span><code>lz<span class="w"> </span>archive-2021-04-26.tar.gz
 </code></pre></div>
 <p>You can then extract a single file from a large tar-file without decompressing the full thing:</p>
-<p><div class="highlight"><pre><span></span><code>tar -zxvf archive-2021-04-26.tar.gz path/to/file.txt
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-zxvf<span class="w"> </span>archive-2021-04-26.tar.gz<span class="w"> </span>path/to/file.txt
 </code></pre></div>
 There is an alternative syntax that is more legible:</p>
-<p><div class="highlight"><pre><span></span><code>tar --extract --file<span class="o">=</span>archive-2021-04-26.tar.gz file.txt
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>--extract<span class="w"> </span>--file<span class="o">=</span>archive-2021-04-26.tar.gz<span class="w"> </span>file.txt
 </code></pre></div>
 Either should work fine on the clusters.</p>
 <h2 id="tips-for-sy-archive-tier">Tips for S@Y Archive Tier</h2>
