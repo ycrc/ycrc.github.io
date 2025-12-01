@@ -106,12 +106,13 @@ For more information on specific tools in the User Portal, check out the followi
 
 - [Monitor Overall Slurm Usage](/clusters-at-yale/job-scheduling/getusage/#open-ondemand-web-app)
 - [Job Performance Monitoring](/clusters-at-yale/job-scheduling/jobstats/)
+- [File Quotas ('getquota')](/data/hpc-storage/#check-your-usage-and-quotas)
 
 ## Troubleshoot the Web Portal
 
 ### An OOD session is started and then completed immediately
 
-1. Check if your quota is full by running [getquota](/data/hpc-storage/#check-your-usage-and-quotas) or checking the [User Portal](#user-portal).
+1. Check if your quota is full by running [getquota](/data/hpc-storage/#check-your-usage-and-quotas) or checking the [User Portal](#user-portal). If your home directory is full, this may disable your OOD interface; in this case, you will need to connect to the clusters via [SSH](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/). In the worst case, if you have not set up an SSH connection yet and your OOD doesn't work anymore, please [contact us](/#web-and-email-support) and we'll help you sort the problem.
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly).
 3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel8.
 
