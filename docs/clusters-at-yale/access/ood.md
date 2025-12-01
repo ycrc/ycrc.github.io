@@ -111,7 +111,7 @@ For more information on specific tools in the User Portal, check out the followi
 
 ### An OOD session is started and then completed immediately
 
-1. Check if your quota is full by running `getquota` or checking the [User Portal](#user-portal).
+1. Check if your quota is full by running [getquota](/data/hpc-storage/#check-your-usage-and-quotas) or checking the [User Portal](#user-portal).
 2. Reset your `.bashrc` and `.bash_profile` to their original contents (you can backup the startup files before resetting them. Add the changes back one at a time to see if one or more of the changes would affect OOD from starting properly).
 3. Remove the default module collection file `$HOME/.lmod.d/default.cluster-rhel8.
 
