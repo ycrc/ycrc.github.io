@@ -713,24 +713,38 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/policies/" class="md-nav__link">
+        Cluster Usage Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -759,18 +773,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_2">
+        <label class="md-nav__link" for="__nav_2_7_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_2">
+        <label class="md-nav__title" for="__nav_2_7_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -862,18 +876,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_3">
+        <label class="md-nav__link" for="__nav_2_7_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_3">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -988,18 +1002,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1093,18 +1107,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_9">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -2618,16 +2632,16 @@
 salloc
 
 <span class="c1"># Load the Miniconda module</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module load miniconda
 
 <span class="c1"># Create a test environment with Conda that contains the default Python version</span>
-conda<span class="w"> </span>create<span class="w"> </span>-yn<span class="w"> </span>tutorial_env<span class="w"> </span>python<span class="w"> </span>notebook
+conda create -yn tutorial_env python notebook
 
 <span class="c1"># Activate the new environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>tutorial_env
+conda activate tutorial_env
 
 <span class="c1"># Deactivate the new environment</span>
-conda<span class="w"> </span>deactivate
+conda deactivate
 
 <span class="c1"># Exit your interactive job to free the resources</span>
 <span class="nb">exit</span>
@@ -2661,33 +2675,33 @@ conda<span class="w"> </span>deactivate
 <span class="c1">#SBATCH --mem-per-cpu=2MB</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module load miniconda
 
-<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>tutorial_env
+<span class="nb">source</span> activate tutorial_env
 
-python<span class="w"> </span>message_decode_tutorial.py
+python message_decode_tutorial.py
 </code></pre></div>
 <p>Because the partition isn't specified for this job, it will run on the cluster's default partition. From there, you can go back to the shell window, navigate to your project directory and run the sbatch command to begin your batch job like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Navigate to the project directory</span>
-<span class="nb">cd</span><span class="w"> </span>project
+<span class="nb">cd</span> project
 
 <span class="c1"># Use Slurm to start a batch job</span>
-sbatch<span class="w"> </span>batch_tutorial.sh
+sbatch batch_tutorial.sh
 </code></pre></div>
 <p>Once you receive an email saying the job is complete, navigate to your home-space through the shell window on Open OnDemand. Within this directory you will find a file called <code>decoded_example.txt</code>. To quickly see the file contents, use the <code>cat</code> command to print the file's contents on the standard output, revealing the decoded message like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your homespace (replacing NETID with your netID)</span>
-<span class="nb">cd</span><span class="w"> </span>/home/NETID
+<span class="nb">cd</span> /home/NETID
 
 <span class="c1"># Print out the decoded message</span>
-cat<span class="w"> </span>decoded_example.txt
+cat decoded_example.txt
 </code></pre></div>
 <h2 id="part-3-interactive-apps-on-ood">Part 3: Interactive Apps on OOD</h2>
 <p>Now that you have completed both an interactive and batch job, try using Jupyter Notebooks on Open OnDemand for your work. This can be done in the shell window like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Purge any loaded modules</span>
-module<span class="w"> </span>reset
+module reset
 
 <span class="c1"># Build your environment dropdown tab on OOD</span>
-ycrc_conda_env.sh<span class="w"> </span>update
+ycrc_conda_env.sh update
 </code></pre></div>
 <p>Now that this is completed, return to the Open OnDemand homepage and select the <strong>Interactive Apps</strong> dropdown tab in the top navigation bar. From there you can select <strong>Jupyter</strong> and load the job submission request form. To select your resources, make sure to consult our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> as well as the specific cluster's partition information to ensure you're selecting the appropriate resources for your job's needs.</p>
 <p>Once the session is submitted and running, connect to the notebook and navigate to your working directory. From there you can either select the <strong>Upload</strong> button to upload an existing Jupyter notebook file or select the <strong>New</strong> button to create a new notebook.</p>

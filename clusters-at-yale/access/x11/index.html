@@ -714,6 +714,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Cluster Usage Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -723,18 +737,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -763,18 +777,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_2">
+        <label class="md-nav__link" for="__nav_2_7_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_2">
+        <label class="md-nav__title" for="__nav_2_7_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -868,18 +882,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_3">
+        <label class="md-nav__link" for="__nav_2_7_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_3">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -1057,18 +1071,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1162,18 +1176,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_9">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -2635,7 +2649,7 @@ You should see a simple analog clock window pop up.</p>
 <li>When using ssh to log in to the clusters, use the <code>-Y</code> option to enable X11 forwarding. Example: <code>ssh -Y netid@grace.ycrc.yale.edu</code></li>
 </ol>
 <p>Note: if you get the error "cannot open display", please open an X-Quartz terminal and run the following command, and then log in to the cluster from the X-Quartz terminal:</p>
-<div class="highlight"><pre><span></span><code>launchctl<span class="w"> </span>load<span class="w"> </span>-w<span class="w"> </span>/Library/LaunchAgents/org.macosforge.xquartz.startx.plist
+<div class="highlight"><pre><span></span><code>launchctl load -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist
 </code></pre></div>
 <h2 id="on-windows">On Windows</h2>
 <p>We recommend <a href="/clusters-at-yale/access/ssh/#windows">MobaXterm</a> for connecting to the clusters from Windows. It is configured for X11 forwarding out of the box and should require no additional configuration or software.</p>
@@ -2643,7 +2657,7 @@ You should see a simple analog clock window pop up.</p>
 <p>A quick and simple test to check if X11 forwarding is working is to run the command <code>xclock</code> in the session you expect to be forwarding. After a short delay, you should see a window with a simple clock pop up.</p>
 <h2 id="submit-an-x11-enabled-job">Submit an X11 enabled Job</h2>
 <p>Once configured, you'll usually want to use X11 forwarding on a compute node to do your work. To allocate a simple interactive session with X11 forwarding:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--x11
+<div class="highlight"><pre><span></span><code>salloc --x11
 </code></pre></div>
 <p>For more Slurm options, see our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a>.</p>
                 

@@ -713,24 +713,38 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/policies/" class="md-nav__link">
+        Cluster Usage Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -759,18 +773,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_2">
+        <label class="md-nav__link" for="__nav_2_7_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_2">
+        <label class="md-nav__title" for="__nav_2_7_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -862,18 +876,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_3">
+        <label class="md-nav__link" for="__nav_2_7_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_3">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -988,18 +1002,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1093,18 +1107,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_9">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -2595,20 +2609,20 @@ originally installed in <code>/gpfs/gibbs/project/oldgrp/user123</code>,
 and we want to move it to the project directory of the new group. </p>
 <p>First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.<br />
 Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
-conda<span class="w"> </span>activate<span class="w"> </span>myenv
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>myenv.yml
-conda<span class="w"> </span>deactivate
+<div class="highlight"><pre><span></span><code>module load miniconda
+<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
+<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
+conda activate myenv
+conda env <span class="nb">export</span> &gt; myenv.yml
+conda deactivate
 </code></pre></div></p>
 <p>Now, start a new login session, submit an interactive job, and rebuild the conda env in your new storage space.
 When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to the right locations by the system, 
 so you don't have to set them explicitly. 
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>grace
+<div class="highlight"><pre><span></span><code>ssh grace
 salloc
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>myenv.yml
+module load miniconda
+conda env create -f myenv.yml
 </code></pre></div></p>
                 
                   

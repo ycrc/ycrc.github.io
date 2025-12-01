@@ -714,6 +714,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Cluster Usage Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -723,18 +737,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -765,18 +779,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_2">
+        <label class="md-nav__link" for="__nav_2_7_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_2">
+        <label class="md-nav__title" for="__nav_2_7_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -1032,18 +1046,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_3">
+        <label class="md-nav__link" for="__nav_2_7_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_3">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -1158,18 +1172,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1263,18 +1277,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_9">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -2919,8 +2933,8 @@
 <span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX</span>
 <span class="c1">######################</span>
 
-module<span class="w"> </span>load<span class="w"> </span>VSCode
-code<span class="w"> </span>tunnel
+module load VSCode
+code tunnel
 </code></pre></div>
 <h2 id="remote-ssh-via-compute-node-advanced-users">Remote SSH via Compute Node (Advanced Users)</h2>
 <p>This method allows you to use your local VSCode installation with the Remote-SSH extension to connect directly to a compute node. This is an alternative for users who want to use their local VSCode but cannot or prefer not to use the Remote Tunnel method with GitHub authentication.</p>
@@ -2937,7 +2951,7 @@ code<span class="w"> </span>tunnel
 <ol>
 <li>
 <p><strong>Request a compute node interactively:</strong>
-   <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>10G
+   <div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --time<span class="o">=</span><span class="m">6</span>:00:00 --cpus-per-task<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>10G
 </code></pre></div></p>
 </li>
 <li>
@@ -2968,22 +2982,22 @@ code<span class="w"> </span>tunnel
 <span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
 
 <span class="c1"># Print the hostname to the log file</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># Keep the job alive</span>
 <span class="c1"># VSCode will connect via SSH and start its server automatically</span>
-sleep<span class="w"> </span>6h
+sleep 6h
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Submit the job:</strong>
-   <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>vscode_ssh.sh
+   <div class="highlight"><pre><span></span><code>sbatch vscode_ssh.sh
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Check the log file</strong> to get the compute node hostname:
-   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
+   <div class="highlight"><pre><span></span><code>cat vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
 </code></pre></div></p>
 </li>
 <li>
@@ -3059,7 +3073,7 @@ Host grace-compute
 <li>Use the Open OnDemand web portal to start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a></li>
 <li>As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop documentation</a>, we recommend adjusting the <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">image quality slider bar</a> all the way to the right if this is not the default</li>
 <li>In a terminal window within your Remote Desktop session, run:
-   <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>VSCode
+   <div class="highlight"><pre><span></span><code>module load VSCode
 vscode
 </code></pre></div></li>
 </ol>

@@ -126,6 +126,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/policies/</loc>
+         <lastmod>2025-12-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/troubleshoot/</loc>
          <lastmod>2025-12-01</lastmod>
          <changefreq>daily</changefreq>
