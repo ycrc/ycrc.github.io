@@ -2756,7 +2756,10 @@ be accessed via their respective symlinks in Home. If you want to access a direc
 <p>We recommend you use <a href="/clusters-at-yale/guides/conda">miniconda</a> to manage your Jupyter environments.
 You can create Conda environments from the <a href="/clusters-at-yale/access/ood#terminal">Web Portal terminal interface</a> or from a terminal-based login to the clusters.
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+<div class="highlight"><pre><span></span><code><span class="c1">###request a compute node on the devel partition for 2 hours with 4 cpus and 15 GB of RAM</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--mem<span class="o">=</span>15G<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span>
+
+module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>notebook_env<span class="w"> </span>python<span class="w"> </span>notebook<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib
 ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
@@ -2805,7 +2808,7 @@ papermill /path/to/notebook.ipynb /path/to/output.ipynb
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
       
     
   </small>

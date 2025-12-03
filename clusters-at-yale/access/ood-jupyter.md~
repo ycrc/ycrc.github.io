@@ -22,7 +22,8 @@ When it launches you can open the standard Jupyter interface where you can start
 
 ### Root Directory
 
-The Jupyter root directory is set to your Home when started. Project and Scratch can be accessed via their respective symlinks in Home. If you want to access a directory that cannot be acessed through your home directory, for example a purchased storage allocation, you need to create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems) to that directory in your home directory.
+The Jupyter root directory is set to your Home when started. Project and Scratch can 
+be accessed via their respective symlinks in Home. If you want to access a directory that cannot be accessed through your home directory, for example a purchased storage allocation, you need to create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems) to that directory in your home directory.
 
 ### Conda Environments 
 
@@ -40,11 +41,11 @@ For example, if you want to create an environment with many commonly used scient
 
 ``` bash
 module load miniconda
-conda create -y -n notebook_env python jupyter numpy pandas matplotlib
+conda create -y -n notebook_env python notebook numpy pandas matplotlib
 ycrc_conda_env.sh update
 ```
 
-Note that you **must** include jupyter in the list of packages you give to the `conda create` command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
+Note that you **must** include notebook in the list of packages you give to the `conda create` command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
 															    
 The `ycrc_conda_env.sh update` command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. *To update the list you must run this command*.
 
@@ -76,7 +77,7 @@ This can be run inside a batch job that might look like this:
 #SBATCH -c 1
 #SBATCH -t 6:00:00
 
-module purge
+module reset
 module load miniconda
 conda activate my_env
 papermill /path/to/notebook.ipynb /path/to/output.ipynb
@@ -97,5 +98,5 @@ Variables can also be parameterized and passed in as command-line options so tha
 2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
 ```bash
 (ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
-/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-lab
 ```
