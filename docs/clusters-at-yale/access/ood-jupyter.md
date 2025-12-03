@@ -40,6 +40,9 @@ You can create Conda environments from the [Web Portal terminal interface](/clus
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
 
 ``` bash
+###request a compute node on the devel partition for 2 hours with 4 cpus and 15 GB of RAM
+salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
+
 module load miniconda
 conda create -y -n notebook_env python notebook numpy pandas matplotlib
 ycrc_conda_env.sh update
