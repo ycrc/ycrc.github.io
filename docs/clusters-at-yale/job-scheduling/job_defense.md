@@ -21,3 +21,8 @@ After 1 hour, another email is sent out and the job is cancelled.
 
 For the second type of jobs, the warning is sent out after 1 hour of GPU idleness anywhere in the job, with cancellation after 2 hours of idle GPUs. 
 
+
+## Getting help
+
+If you have jobs that have been cancelled we encourage you to reach out to use at [research.computing@yale.edu](mailto:research.computing@yale.edu) so that we can assist in the debugging process. 
+
