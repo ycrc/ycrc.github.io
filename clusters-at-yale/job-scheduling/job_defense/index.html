@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/isca/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/job_defense/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
-        <title>Isca - Yale Center for Research Computing</title>
+        <title>Automated Detection of Idle Resources - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#isca" class="md-skip">
+        <a href="#automated-detection-of-idle-resources" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Isca
+              Automated Detection of Idle Resources
             
           </span>
         </div>
@@ -243,13 +243,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         User Guide
       </a>
     </li>
@@ -275,15 +277,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../guides/" class="md-tabs__link">
         Software & Tools
       </a>
     </li>
@@ -616,12 +616,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -1100,14 +1102,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" checked>
       
       
       
@@ -1130,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Run Jobs with Slurm
       </a>
     </li>
@@ -1144,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
+      <a href="../resource-requests/" class="md-nav__link">
         Request Compute Resources
       </a>
     </li>
@@ -1156,11 +1160,60 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/job_defense/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Automated Detection of Idle Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Automated Detection of Idle Resources
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idle-gpu-jobs" class="md-nav__link">
+    Idle GPU jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1172,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/getusage/" class="md-nav__link">
+      <a href="../getusage/" class="md-nav__link">
         Monitor Overall Slurm Usage
       </a>
     </li>
@@ -1186,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/common-job-failures/" class="md-nav__link">
+      <a href="../common-job-failures/" class="md-nav__link">
         Common Job Failures
       </a>
     </li>
@@ -1200,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/jobstats/" class="md-nav__link">
+      <a href="../jobstats/" class="md-nav__link">
         Job Performance Monitoring
       </a>
     </li>
@@ -1214,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/priority-tier/" class="md-nav__link">
+      <a href="../priority-tier/" class="md-nav__link">
         Priority Tier
       </a>
     </li>
@@ -1228,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/fairshare/" class="md-nav__link">
+      <a href="../fairshare/" class="md-nav__link">
         Priority & Wait Time
       </a>
     </li>
@@ -1242,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/dsq/" class="md-nav__link">
+      <a href="../dsq/" class="md-nav__link">
         Job Arrays
       </a>
     </li>
@@ -1256,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/scavenge/" class="md-nav__link">
+      <a href="../scavenge/" class="md-nav__link">
         Scavenge Partition
       </a>
     </li>
@@ -1270,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/mpi/" class="md-nav__link">
+      <a href="../mpi/" class="md-nav__link">
         MPI Partition
       </a>
     </li>
@@ -1284,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/dependency/" class="md-nav__link">
+      <a href="../dependency/" class="md-nav__link">
         Jobs with Dependencies
       </a>
     </li>
@@ -1298,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/scrontab/" class="md-nav__link">
+      <a href="../scrontab/" class="md-nav__link">
         Recurring Jobs
       </a>
     </li>
@@ -1312,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/cmd-line-args/" class="md-nav__link">
+      <a href="../cmd-line-args/" class="md-nav__link">
         Pass Values into Jobs
       </a>
     </li>
@@ -1326,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../job-scheduling/slurm-examples/" class="md-nav__link">
+      <a href="../slurm-examples/" class="md-nav__link">
         Submission Script Examples
       </a>
     </li>
@@ -1521,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rclone/" class="md-nav__link">
+      <a href="../../guides/rclone/" class="md-nav__link">
         Rclone
       </a>
     </li>
@@ -1695,14 +1748,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -1725,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../guides/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -1737,16 +1788,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
@@ -1795,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
+      <a href="../../guides/python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -1809,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conda/" class="md-nav__link">
+      <a href="../../guides/conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1823,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pytorch/" class="md-nav__link">
+      <a href="../../guides/pytorch/" class="md-nav__link">
         Pytorch
       </a>
     </li>
@@ -1837,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tensorflow/" class="md-nav__link">
+      <a href="../../guides/tensorflow/" class="md-nav__link">
         Tensorflow
       </a>
     </li>
@@ -1851,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpi4py/" class="md-nav__link">
+      <a href="../../guides/mpi4py/" class="md-nav__link">
         MPI with Python
       </a>
     </li>
@@ -1872,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../atlas/" class="md-nav__link">
+      <a href="../../guides/atlas/" class="md-nav__link">
         ATLAS Computing Environment
       </a>
     </li>
@@ -1886,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cesm/" class="md-nav__link">
+      <a href="../../guides/cesm/" class="md-nav__link">
         CESM/CAM
       </a>
     </li>
@@ -1900,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../comsol/" class="md-nav__link">
+      <a href="../../guides/comsol/" class="md-nav__link">
         COMSOL
       </a>
     </li>
@@ -1914,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gaussian/" class="md-nav__link">
+      <a href="../../guides/gaussian/" class="md-nav__link">
         Gaussian
       </a>
     </li>
@@ -1926,74 +1975,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Isca
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../guides/isca/" class="md-nav__link">
         Isca
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-isca" class="md-nav__link">
-    Install Isca
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-the-environment" class="md-nav__link">
-    Update the Environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-an-experiment-and-update-the-flags" class="md-nav__link">
-    Select an Experiment and Update the Flags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-isca" class="md-nav__link">
-    Run Isca
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2005,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../matlab/" class="md-nav__link">
+      <a href="../../guides/matlab/" class="md-nav__link">
         MATLAB
       </a>
     </li>
@@ -2019,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mathematica/" class="md-nav__link">
+      <a href="../../guides/mathematica/" class="md-nav__link">
         Mathematica
       </a>
     </li>
@@ -2033,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../namd/" class="md-nav__link">
+      <a href="../../guides/namd/" class="md-nav__link">
         NAMD
       </a>
     </li>
@@ -2047,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nextflow/" class="md-nav__link">
+      <a href="../../guides/nextflow/" class="md-nav__link">
         Nextflow
       </a>
     </li>
@@ -2061,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../r/" class="md-nav__link">
+      <a href="../../guides/r/" class="md-nav__link">
         R
       </a>
     </li>
@@ -2075,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vasp/" class="md-nav__link">
+      <a href="../../guides/vasp/" class="md-nav__link">
         VASP
       </a>
     </li>
@@ -2089,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLMs/" class="md-nav__link">
+      <a href="../../guides/LLMs/" class="md-nav__link">
         Large Language Models (LLMs) on Research Computing Hardware
       </a>
     </li>
@@ -2138,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../containers/" class="md-nav__link">
+      <a href="../../guides/containers/" class="md-nav__link">
         Containers
       </a>
     </li>
@@ -2152,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mysql/" class="md-nav__link">
+      <a href="../../guides/mysql/" class="md-nav__link">
         Mysql
       </a>
     </li>
@@ -2166,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../parallel/" class="md-nav__link">
+      <a href="../../guides/parallel/" class="md-nav__link">
         Parallel
       </a>
     </li>
@@ -2180,7 +2166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tmux/" class="md-nav__link">
+      <a href="../../guides/tmux/" class="md-nav__link">
         tmux
       </a>
     </li>
@@ -2194,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../virtualgl/" class="md-nav__link">
+      <a href="../../guides/virtualgl/" class="md-nav__link">
         VirtualGL
       </a>
     </li>
@@ -2208,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xvfb/" class="md-nav__link">
+      <a href="../../guides/xvfb/" class="md-nav__link">
         XVFB
       </a>
     </li>
@@ -2257,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cryoem/" class="md-nav__link">
+      <a href="../../guides/cryoem/" class="md-nav__link">
         Cryo-EM on McCleary
       </a>
     </li>
@@ -2271,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../github/" class="md-nav__link">
+      <a href="../../guides/github/" class="md-nav__link">
         GitHub
       </a>
     </li>
@@ -2285,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../github_pages/" class="md-nav__link">
+      <a href="../../guides/github_pages/" class="md-nav__link">
         GitHub Pages
       </a>
     </li>
@@ -2299,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpus-cuda/" class="md-nav__link">
+      <a href="../../guides/gpus-cuda/" class="md-nav__link">
         GPUs and CUDA
       </a>
     </li>
@@ -2313,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spark/" class="md-nav__link">
+      <a href="../../guides/spark/" class="md-nav__link">
         Spark
       </a>
     </li>
@@ -2606,29 +2592,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-isca" class="md-nav__link">
-    Install Isca
+  <a href="#idle-gpu-jobs" class="md-nav__link">
+    Idle GPU jobs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-the-environment" class="md-nav__link">
-    Update the Environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-an-experiment-and-update-the-flags" class="md-nav__link">
-    Select an Experiment and Update the Flags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-isca" class="md-nav__link">
-    Run Isca
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
   </a>
   
 </li>
@@ -2645,60 +2617,31 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/isca.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/job-scheduling/job_defense.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="isca">Isca</h1>
-<p>Isca is a framework used for idealized global circulation modelling.
-We recommend that you install it for yourself individually as the code expects to be able to modify its source code files.
-It is relatively straighforward to install into a conda environment as described below.</p>
-<h2 id="install-isca">Install Isca</h2>
-<p>Install it for just your user as a Python <a href="/clusters-at-yale/guides/python/#conda-based-python-environments">conda</a> environment called "isca".</p>
-<div class="highlight"><pre><span></span><code>module load netCDF-Fortran/4.5.3-gompi-2020b
-
-module load miniconda  
-
-module save isca  
-mkdir ~/programs  
-cd ~/programs  
-git clone https://www.github.com/execlim/isca.git
-conda create -n isca python=3.7
-
-conda activate isca
-
-conda install tqdm  
-
-cd isca/src/extra/python  
-pip install -e .
-</code></pre></div>
-<p>Then add the following to your <code>.bashrc</code> file</p>
-<div class="highlight"><pre><span></span><code># Isca
-
-# directory of the Isca source code
-export GFDL_BASE=$HOME/programs/isca
-# &quot;environment&quot; configuration for grace
-export GFDL_ENV=gfortran
-# temporary working directory used in running the model
-export GFDL_WORK=$PALMER_SCRATCH/gfdl_work
-# directory for storing model output
-export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
-</code></pre></div>
-<h2 id="update-the-environment">Update the Environment</h2>
-<p>Open <code>$HOME/programs/isca/postprocessing/mppnccombine_run.sh</code> and remove the following line:</p>
-<div class="highlight"><pre><span></span><code>module reset
-</code></pre></div>
-<h2 id="select-an-experiment-and-update-the-flags">Select an Experiment and Update the Flags</h2>
-<p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>
-<div class="highlight"><pre><span></span><code>cb.compile_flags.extend([&#39;-fallow-argument-mismatch&#39;, &#39;-fallow-invalid-boz&#39;])
-</code></pre></div>
-<h2 id="run-isca">Run Isca</h2>
-<p>The above commands only need to be run once to set everything up. To use it, you will first always need to run:</p>
-<div class="highlight"><pre><span></span><code>module restore isca
-conda activate isca
-</code></pre></div>
-<p>Then you should be able to compile and launch your ISCA models.</p>
+                <h1 id="automated-detection-of-idle-resources">Automated Detection of Idle Resources</h1>
+<p>The resources that power our computing systems are expensive to procure, operate, and maintain.
+Allocated resources that are not used efficiently reduce available computing to all members of the YCRC community and degrade the overall computing experience.
+In particular, idle GPUs are particularly damaging due to their limited number, large demand, and high operating cost. 
+In the past, we have manually searched for jobs with idle resources and cancelled them to enable other researchers to use these GPUs. 
+However, the growing number of GPUs has made this challening to enforce uniformly. 
+In accordance to our <a href="/clusters-at-yale/policies">Cluster Usage Policies</a>, we have now implemented automations that detect idle resources and manages notifications and cancellations. 
+This ensures that resources are not wasted and works to reduce wait times for pending jobs, thereby improving everyone's experience. </p>
+<h2 id="idle-gpu-jobs">Idle GPU jobs</h2>
+<p>This daemon currently is configured to look at jobs running in Bouchet's non-interactive GPU partitions (<code>gpu</code>, <code>gpu_h200</code>, <code>priority_gpu</code>, and <code>scavenge_gpu</code>). 
+We have two criteria:</p>
+<ol>
+<li>Jobs which never use the GPU at all</li>
+<li>Jobs which use a GPU for some of the job, but then leave the GPUs idle for long periods of time</li>
+</ol>
+<p>For the former, we have implemented a warning email notification when a job has been runing for 30 minutes without using a GPU at all. 
+After 1 hour, another email is sent out and the job is cancelled. </p>
+<p>For the second type of jobs, the warning is sent out after 1 hour of GPU idleness anywhere in the job, with cancellation after 2 hours of idle GPUs. </p>
+<h2 id="getting-help">Getting help</h2>
+<p>If you have jobs that have been cancelled we encourage you to reach out to use at <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a> so that we can assist in the debugging process. </p>
                 
                   
                     
@@ -2707,7 +2650,7 @@ conda activate isca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
       
     
   </small>

@@ -426,6 +426,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/job_defense/</loc>
+         <lastmod>2025-12-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/</loc>
          <lastmod>2025-12-03</lastmod>
          <changefreq>daily</changefreq>
