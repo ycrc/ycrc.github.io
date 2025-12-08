@@ -39,7 +39,7 @@ Also, we recommend specifying as many packages as possible at environment creati
     For added reproducibility and control, specify versions of packages to be installed using `conda` with `packagename=version` syntax. E.g. `numpy=1.14`
 
 !!! Warning
-    You will need to request an [interactive job](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) with the `salloc` command when you create a new `conda` environment or install packages into an existing `conda` environment.   
+    To avoid bogging down the login nodes, don't forget to request an [interactive job](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) with the `salloc` command when you create a new `conda` environment or install packages into an existing `conda` environment.
 
 For example, if you have a legacy application that needs Python 2 and OpenBLAS:
 
@@ -48,9 +48,10 @@ module load miniconda
 conda create -n legacy_application python=2.7 openblas
 ```
 
-If you want a good starting point for interactive data science in Python Jupyter Notebooks:
-
+You can also [set up your conda environment](/clusters-at-yale/access/ood-jupyter/#set-up-an-environment) for use with our interactive Open Ondemand (OOD) Jupyter Notebook apps. For example:
+					       
 ``` bash
+salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
 module load miniconda
 conda create -n ds_notebook python numpy scipy pandas matplotlib notebook
 

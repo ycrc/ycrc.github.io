@@ -44,11 +44,19 @@ For example, if you want to create an environment with many commonly used scient
 salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
 
 module load miniconda
+
+# To create a Jupyter/OOD compatible conda environment from scratch:
 conda create -y -n notebook_env python notebook numpy pandas matplotlib
+
+# Alternatively, to make an existing environment compatible with Jupyter OOD:
+conda activate notebook_env
+conda install notebook
+
+# To add your environment to the OOD Jupyter miniconda menu:
 ycrc_conda_env.sh update
 ```
 
-Note that you **must** include notebook in the list of packages you give to the `conda create` command above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
+Note that your conda environment **must** include `notebook` in its installed packages, using either the original `conda create` command or subsequently, with `conda activate <...>; conda install notebook` as above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
 															    
 The `ycrc_conda_env.sh update` command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. *To update the list you must run this command*.
 
