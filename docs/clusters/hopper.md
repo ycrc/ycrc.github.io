@@ -199,7 +199,7 @@ Computations and storage on Hopper will be subject to the following charges star
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
 
-Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5 per TiB per month.
+Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
 
 Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
