@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/simplequeue/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/job_defense/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
-        <title>SimpleQueue - Yale Center for Research Computing</title>
+        <title>Automated Detection of Idle Resources - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simplequeue" class="md-skip">
+        <a href="#automated-detection-of-idle-resources" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              SimpleQueue
+              Automated Detection of Idle Resources
             
           </span>
         </div>
@@ -216,6 +216,8 @@
 <!-- Determine class according to level -->
 
 
+  
+
 
 
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
@@ -241,13 +243,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         User Guide
       </a>
     </li>
@@ -612,12 +616,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -1096,14 +1102,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" checked>
       
       
       
@@ -1152,11 +1160,60 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../job_defense/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Automated Detection of Idle Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Automated Detection of Idle Resources
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idle-gpu-jobs" class="md-nav__link">
+    Idle GPU jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2535,42 +2592,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-simplequeue-job" class="md-nav__link">
-    Example SimpleQueue Job
+  <a href="#idle-gpu-jobs" class="md-nav__link">
+    Idle GPU jobs
   </a>
-  
-    <nav class="md-nav" aria-label="Example SimpleQueue Job">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-task-list" class="md-nav__link">
-    Step 1: Create Task List
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-create-submission-script" class="md-nav__link">
-    Step 2: Create Submission Script
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-submit-your-job" class="md-nav__link">
-    Step 3: Submit Your Job
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-important-options" class="md-nav__link">
-    Other Important Options
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
   </a>
   
 </li>
@@ -2587,74 +2617,31 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/job-scheduling/simplequeue.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/job-scheduling/job_defense.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="simplequeue">SimpleQueue</h1>
-<p>SimpleQueue is a tool written here to streamline submission of a large number of jobs using a task file. It has a number of advantages:</p>
-<ul>
-<li>You can run more of your sequential jobs concurrently, since there is a limit on the number of individual qsubs you can run simultaneously.</li>
-<li>You only have one job to keep track of.</li>
-<li>If you need to shut everything down, you only need to kill one job.</li>
-<li>SimpleQueue keeps track of the status of individual jobs.</li>
-</ul>
-<p><em>Note that version 3.0+ of SimpleQueue differs from earlier versions in important ways, in particular the meaning of -n. If you have been using an earlier version, please read the following carefully!</em></p>
-<p>SimpleQueue is available as <a href="/cluster-at-yale/applications/modules">a module</a> on our clusters. Run:</p>
-<div class="highlight"><pre><span></span><code>module avail simplequeue
-</code></pre></div>
-<p>to locate the simplequeue module on your cluster of choice.</p>
-<h2 id="example-simplequeue-job">Example SimpleQueue Job</h2>
-<p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that 80 cpus working together will be enough to finish the job in a reasonable time.</p>
-<h3 id="step-1-create-task-list">Step 1: Create Task List</h3>
-<p>The first step is to create a file with a list of the "tasks" you want to run. Each task corresponds to what you might otherwise have run as a single job. A task can be a simple command invocation, or a sequence of commands. You can call the task file anything, but for this example assume it's called "tasklist.txt" and contains:</p>
-<div class="highlight"><pre><span></span><code>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample2
-...
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1000
-</code></pre></div>
-<p>For simplicity, we'll assume that tasklist, input fastq files, and indexed genome are in a directory called <code>~/genome_proj/mapping</code>.</p>
-<h3 id="step-2-create-submission-script">Step 2: Create Submission Script</h3>
-<p>Load the SimpleQueue module, then create the launch script using:</p>
-<div class="highlight"><pre><span></span><code>sqCreateScript -q general -N genome_map -n <span class="m">80</span> tasklist.txt &gt; run.sh
-</code></pre></div>
-<p>These parameters specify that the job, named genome_map, will be submitted to the general queue/partition. This job will find 80 free cores, start 80 workers on them, and begin processing tasks from the taskfile <code>tasklist.txt</code>.</p>
-<p>sqCreateScript takes a number of options. They differ somewhat from cluster to cluster, particularly the default values for queue, walltime, and memory. You can run sqCreateScript without any arguments to see the exact options on your cluster.</p>
-<div class="highlight"><pre><span></span><code>Usage:
-
-  -h, --help            show this help message and exit
-  -n WORKERS, --workers=WORKERS
-                        Number of workers to use. Not required. Defaults to 1.
-  -c CORES, --cores=CORES
-                        Number of cores to request per worker. Defaults to 1.
-  -m MEM, --mem=MEM     Memory per worker. Not required. Defaults to 1G
-  -w WALLTIME, --walltime=WALLTIME
-                        Walltime to request for the Slurm Job in form
-                        [[D-]HH:]MM:SS. Not required. Defaults to 1:00:00.
-  -q QUEUE, --queue=QUEUE
-                        Name of queue to use. Not required. Defaults to
-                        general
-  -N NAME, --name=NAME  Base job name to use. Not required. Defaults to
-                        SimpleQueue.
-  --logdir=LOGDIR       Name of logging directory. Defaults to
-                        SQ_Files_${SLURM_JOB_ID}.
-</code></pre></div>
-<h3 id="step-3-submit-your-job">Step 3: Submit Your Job</h3>
-<p>Now you can simply submit <code>run.sh</code> to the scheduler. All of the important scheduler options (queue, number of tasks, number of cpus per task) will have been set in the script so you needn't worry about them.</p>
-<p>Shortly after run.sh begins running, you should see a directory appear called <code>SQ_Files_jobid</code> where jobid is the jobid the scheduler assigned your job. This directory contains logs from all the tasks that are run during your job.</p>
-<p>In addition, there are a few other files that record information about the job as a whole. Of these, the most important one is <code>SQ.log</code>. It should be reviewed if you encounter a problem with a run.</p>
-<p>Assuming that all goes well, tasks from the tasklist file will be scheduled automatically onto the cpus you acquired until all the tasks have completed. At that time, the job will terminate, and you'll see several summary files:</p>
-<ul>
-<li><code>scheduler_jobid_out.txt</code>: this is the stdout from simple queue proper (it is generally empty).</li>
-<li><code>scheduler_jobid_err.txt</code>: this is the stderr from simple queue proper (it is generally a copy of <code>SQ.log</code>).</li>
-<li><code>tasklist.txt.STATUS</code>: this contains a list of all the tasks that were run, including exit status, start time, end time, pid, node run on, and the command run.</li>
-<li><code>tasklist.txt.REMAINING</code>: Failed or uncompleted tasks will be listed in this file in the same format as tasklist, so that those tasks can be easily rerun. You should review the status files related to these tasks to understand why they did not complete. This list is provided for convenience. It is always a good idea to scan tasklist.STATUS to double check which tasks did in fact complete with a normal exit status.</li>
-<li><code>tasklist.txt.ROGUES</code>: The simple queue system attempts to ensure that all tasks launched eventually exit (normally or abnormally). If it fails to get confirmation that a task has exited, information about the command will be written to this file. This information can be used to hunt down and kill run away processes.</li>
-</ul>
-<h2 id="other-important-options">Other Important Options</h2>
-<p>If your individual tasks need more than the default memory allocated on your cluster, you can specify a different value using -m. For example: <code>sqCreateScript -m 10g -n 4 ... tasklist &gt; run.sh</code> would request 10GiB of RAM for each of your workers.</p>
-<p>If your jobs are themselves multithreaded, you can request that your workers have multiple cores using the -c option: <code>sqCreateScript -c 20 -n 4 ... tasklist &gt; run.sh</code> This would create 4 workers, each having access to 20 cores.</p>
+                <h1 id="automated-detection-of-idle-resources">Automated Detection of Idle Resources</h1>
+<p>The resources that power our computing systems are expensive to procure, operate, and maintain.
+Allocated resources that are not used efficiently reduce available computing to all members of the YCRC community and degrade the overall computing experience.
+In particular, idle GPUs are particularly damaging due to their limited number, large demand, and high operating cost. 
+In the past, we have manually searched for jobs with idle resources and cancelled them to enable other researchers to use these GPUs. 
+However, the growing number of GPUs has made this challening to enforce uniformly. 
+In accordance to our <a href="/clusters-at-yale/policies">Cluster Usage Policies</a>, we have now implemented automations that detect idle resources and manages notifications and cancellations. 
+This ensures that resources are not wasted and works to reduce wait times for pending jobs, thereby improving everyone's experience. </p>
+<h2 id="idle-gpu-jobs">Idle GPU jobs</h2>
+<p>This daemon currently is configured to look at jobs running in Bouchet's non-interactive GPU partitions (<code>gpu</code>, <code>gpu_h200</code>, <code>priority_gpu</code>, and <code>scavenge_gpu</code>). 
+We have two criteria:</p>
+<ol>
+<li>Jobs which never use the GPU at all</li>
+<li>Jobs which use a GPU for some of the job, but then leave the GPUs idle for long periods of time</li>
+</ol>
+<p>For the former, we have implemented a warning email notification when a job has been runing for 30 minutes without using a GPU at all. 
+After 1 hour, another email is sent out and the job is cancelled. </p>
+<p>For the second type of jobs, the warning is sent out after 1 hour of GPU idleness anywhere in the job, with cancellation after 2 hours of idle GPUs. </p>
+<h2 id="getting-help">Getting help</h2>
+<p>If you have jobs that have been cancelled we encourage you to reach out to use at <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a> so that we can assist in the debugging process. </p>
                 
                   
                     
@@ -2663,7 +2650,7 @@ module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
       
     
   </small>

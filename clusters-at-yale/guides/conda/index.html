@@ -713,24 +713,38 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Cluster Usage Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6">
+        <label class="md-nav__link" for="__nav_2_7">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -759,18 +773,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_2">
+        <label class="md-nav__link" for="__nav_2_7_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_2">
+        <label class="md-nav__title" for="__nav_2_7_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -862,18 +876,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_6_3">
+        <label class="md-nav__link" for="__nav_2_7_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_6_3">
+        <label class="md-nav__title" for="__nav_2_7_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -988,18 +1002,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_8">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1093,18 +1107,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_9">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_9">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -1132,6 +1146,20 @@
     <li class="md-nav__item">
       <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
         Request Compute Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../job-scheduling/job_defense/" class="md-nav__link">
+        Automated Detection of Idle Resources
       </a>
     </li>
   
@@ -3006,15 +3034,16 @@ module load miniconda
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You will need to request an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the <code>salloc</code> command when you create a new <code>conda</code> environment or install packages into an existing <code>conda</code> environment.   </p>
+<p>To avoid bogging down the login nodes, don't forget to request an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a> with the <code>salloc</code> command when you create a new <code>conda</code> environment or install packages into an existing <code>conda</code> environment.</p>
 </div>
 <p>For example, if you have a legacy application that needs Python 2 and OpenBLAS:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
 conda create -n legacy_application <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 openblas
 </code></pre></div>
-<p>If you want a good starting point for interactive data science in Python Jupyter Notebooks:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda create -n ds_notebook python numpy scipy pandas matplotlib ipython jupyter jupyter lab
+<p>You can also <a href="/clusters-at-yale/access/ood-jupyter/#set-up-an-environment">set up your conda environment</a> for use with our interactive Open Ondemand (OOD) Jupyter Notebook apps. For example:</p>
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --mem<span class="o">=</span>15G --time<span class="o">=</span><span class="m">2</span>:00:00 --cpus-per-task<span class="o">=</span><span class="m">2</span>
+module load miniconda
+conda create -n ds_notebook python numpy scipy pandas matplotlib notebook
 
 <span class="c1">####load environment into OOD jupyter notebook</span>
 module reset
@@ -3127,10 +3156,10 @@ channels:
 dependencies:
   - scipy
   - numpy=1.21
-  - jupyter
+  - notebook
   - python=3.8
 </code></pre></div>
-<p>In this environment, the versions of python and numpy were pinned during installation, but scipy and jupyter were left to get the most recent compatible version.</p>
+<p>In this environment, the versions of python and numpy were pinned during installation, but scipy and notebook were left to get the most recent compatible version.</p>
 <h4 id="build-a-new-environment">Build a New Environment</h4>
 <p>To create a new environment using all the enumerated packages:</p>
 <div class="highlight"><pre><span></span><code>module load miniconda
@@ -3146,7 +3175,7 @@ The yaml file can be edited to change the name of the new environment.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2025</span>
       
     
   </small>
