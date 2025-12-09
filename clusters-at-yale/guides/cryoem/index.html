@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryoem/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -713,38 +713,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../policies/" class="md-nav__link">
-        Cluster Usage Policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7">
+        <label class="md-nav__link" for="__nav_2_6">
           Access the Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Access the Clusters" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_7">
+        <label class="md-nav__title" for="__nav_2_6">
           <span class="md-nav__icon md-icon"></span>
           Access the Clusters
         </label>
@@ -773,18 +759,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_2" type="checkbox" id="__nav_2_7_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_2" type="checkbox" id="__nav_2_6_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7_2">
+        <label class="md-nav__link" for="__nav_2_6_2">
           Web Portal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Web Portal" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_2">
+        <label class="md-nav__title" for="__nav_2_6_2">
           <span class="md-nav__icon md-icon"></span>
           Web Portal
         </label>
@@ -876,18 +862,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7_3" type="checkbox" id="__nav_2_7_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6_3" type="checkbox" id="__nav_2_6_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_7_3">
+        <label class="md-nav__link" for="__nav_2_6_3">
           SSH Connection
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH Connection" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_7_3">
+        <label class="md-nav__title" for="__nav_2_6_3">
           <span class="md-nav__icon md-icon"></span>
           SSH Connection
         </label>
@@ -1002,18 +988,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_8">
+        <label class="md-nav__link" for="__nav_2_7">
           Applications & Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Applications & Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_8">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Applications & Software
         </label>
@@ -1107,18 +1093,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_9">
+        <label class="md-nav__link" for="__nav_2_8">
           Job Scheduling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Job Scheduling" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_9">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Job Scheduling
         </label>
@@ -1146,20 +1132,6 @@
     <li class="md-nav__item">
       <a href="../../job-scheduling/resource-requests/" class="md-nav__link">
         Request Compute Resources
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../job-scheduling/job_defense/" class="md-nav__link">
-        Automated Detection of Idle Resources
       </a>
     </li>
   
@@ -2807,9 +2779,9 @@ they call the "master". This can lead to inefficient jobs where there are tasks 
 <span class="c1">#SBATCH hetjob</span>
 <span class="c1">#SBATCH --partition=gpu --ntasks 4 -c2 -N1 --mem-per-cpu=16G --gpus-per-task=1 </span>
 
-module<span class="w"> </span>load<span class="w"> </span>RELION/choose_a_version
+module load RELION/choose_a_version
 
-srun<span class="w"> </span>--pack-group<span class="o">=</span><span class="m">0</span>,1<span class="w"> </span>relion_refine_mpi<span class="w"> </span>--o<span class="w"> </span>hetero/refine3D/job0001<span class="w"> </span>...<span class="w"> </span>--dont_combine_weights_via_disc<span class="w"> </span>--j<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span>--gpu
+srun --pack-group<span class="o">=</span><span class="m">0</span>,1 relion_refine_mpi --o hetero/refine3D/job0001 ... --dont_combine_weights_via_disc --j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> --gpu
 </code></pre></div>
 <p>This job submission request will result in RELION using a single task/worker on a general purpose CPU node, and efficiently find four GPUs even if they aren't all available on the same compute node. Each GPU node task/worker will have a dedicated GPU, two CPU cores, and 30GiB total memory. </p>
 <h3 id="eman2">EMAN2</h3>
@@ -2820,7 +2792,7 @@ srun<span class="w"> </span>--pack-group<span class="o">=</span><span class="m">
 <p>At present, we have a mostly working <a href="/clusters-at-yale/guides/containers/">apptainer container</a> for EMAN2.3 available here: </p>
 <p><code>/gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif</code></p>
 <p>To run a program from EMAN2 using this container you would use a command like:</p>
-<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>/gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif<span class="w"> </span>e2projectmanager.py
+<div class="highlight"><pre><span></span><code>apptainer <span class="nb">exec</span> /gpfs/ysm/datasets/cryoem/eman2.3_ubuntu18.04.sif e2projectmanager.py
 </code></pre></div>
 <h3 id="cryosparc">Cryosparc</h3>
 <p>We have a <a href="/clusters-at-yale/guides/cryosparc/">whole separate page</a> about this one, it is a bit involved.</p>
