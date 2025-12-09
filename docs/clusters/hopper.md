@@ -207,7 +207,7 @@ However, all compute resources (CPUs, memory, GPUs) allocated to a job are bille
 
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
-Purchased storage will be located at `/nfs/weston/pi/<project_name>`. 
+Purchased storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`. 
 Storage charges are based on requested allocation, not actual usage.
 [Contact us](/#get-help) to request additional storage allocations.
 
@@ -242,4 +242,4 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 | home         | `/home`                                     | 125GiB/user      | 500,000    | No      | 7 days    |       |
 | work         | `/nfs/weston/work/<pi>_<projectcode>`       | 1TiB/project     | 5,000,000  | No      | 7 days    |       |
 | scratch      | `/nfs/weston/scratch/<pi>_<projectcode>`    | 10TiB/project    | 15,000,000 | No      | No        |       |
-| pi           | `/nfs/weston/<pi>_<projectcode>`            | varies           | varies     | No      | No        |       |
+| pi           | `/nfs/weston/pi/<pi>_<projectcode>`         | varies           | varies     | No      | No        |       |
