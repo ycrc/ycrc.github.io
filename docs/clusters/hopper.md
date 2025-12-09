@@ -184,8 +184,12 @@ These keyboard shortcuts can be customized on a per-user basis by:
 
 ## Rate Structure
 
-Early access usage on Hopper is at no-cost.
-Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.
+Early access usage on Hopper is at no-cost. Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.
+
+Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
+To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculator](https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M).
+
+### Compute
 
 |  Type          | Subtype(s)     | Service Units  | Cost per Hour  |
 |----------------|----------------|------|-------|
@@ -199,11 +203,13 @@ Computations and storage on Hopper will be subject to the following charges star
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
 
+### Purchase Storage
+
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
-
-Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
-To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculator](https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M).
+Purchased storage will be located at `/nfs/weston/pi/<project_name>`. 
+Storage charges are based on requested allocation, not actual usage.
+[Contact us](/#get-help) to request additional storage allocations.
 
 
 ## Partitions and Hardware
@@ -224,6 +230,8 @@ You can also get a list of the absolute paths to your directories with the `mydi
 Top-level folder permissions are managed by YCRC and cannot be modified by users.
 Only users in a specific project will be able to access that project's storage spaces. 
 
+See [Purchased Storage rates](/clusters/hopper/#purchase-storage) above for details on purchasing storage.
+
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
@@ -234,3 +242,4 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 | home         | `/home`                                     | 125GiB/user      | 500,000    | No      | 7 days    |       |
 | work         | `/nfs/weston/work/<pi>_<projectcode>`       | 1TiB/project     | 5,000,000  | No      | 7 days    |       |
 | scratch      | `/nfs/weston/scratch/<pi>_<projectcode>`    | 10TiB/project    | 15,000,000 | No      | No        |       |
+| pi           | `/nfs/weston/<pi>_<projectcode>`            | varies           | varies     | No      | No        |       |
