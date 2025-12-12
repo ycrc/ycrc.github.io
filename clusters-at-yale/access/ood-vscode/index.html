@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2947,8 +2947,8 @@
 <span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX</span>
 <span class="c1">######################</span>
 
-module load VSCode
-code tunnel
+module<span class="w"> </span>load<span class="w"> </span>VSCode
+code<span class="w"> </span>tunnel
 </code></pre></div>
 <h2 id="remote-ssh-via-compute-node-advanced-users">Remote SSH via Compute Node (Advanced Users)</h2>
 <p>This method allows you to use your local VSCode installation with the Remote-SSH extension to connect directly to a compute node. This is an alternative for users who want to use their local VSCode but cannot or prefer not to use the Remote Tunnel method with GitHub authentication.</p>
@@ -2965,7 +2965,7 @@ code tunnel
 <ol>
 <li>
 <p><strong>Request a compute node interactively:</strong>
-   <div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --time<span class="o">=</span><span class="m">6</span>:00:00 --cpus-per-task<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>10G
+   <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>10G
 </code></pre></div></p>
 </li>
 <li>
@@ -2996,22 +2996,22 @@ code tunnel
 <span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
 
 <span class="c1"># Print the hostname to the log file</span>
-<span class="nb">echo</span> <span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># Keep the job alive</span>
 <span class="c1"># VSCode will connect via SSH and start its server automatically</span>
-sleep 6h
+sleep<span class="w"> </span>6h
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Submit the job:</strong>
-   <div class="highlight"><pre><span></span><code>sbatch vscode_ssh.sh
+   <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>vscode_ssh.sh
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Check the log file</strong> to get the compute node hostname:
-   <div class="highlight"><pre><span></span><code>cat vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
+   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
 </code></pre></div></p>
 </li>
 <li>
@@ -3075,7 +3075,13 @@ Host grace-compute
 <li>Press <code>F1</code> or <code>Cmd/Ctrl+Shift+P</code> to open the Command Palette</li>
 <li>Type "Remote-SSH: Connect to Host" and select it</li>
 <li>Choose <code>grace-compute</code> (or whatever you named the host in your config)</li>
-<li>VSCode will connect through the login node to your compute node and automatically start the VSCode server</li>
+<li>
+<p>At this point, at least on some machines (we have seen this on Windows but not on Apple laptops), VSCode may appear to get stuck with the message 'Setting up SSH Host bouchet-compute (details)' in the bottom of the window. This means you need to authenticate, but you will need to find the hidden prompt first.</p>
+<p>To do this, click on the blue highlighted 'details' to reveal a set of tabs at the bottom of the window, and click on the 'TERMINAL' tab. There you can respond to the Duo two-factor prompt to complete the connection.</p>
+</li>
+<li>
+<p>VSCode will then connect through the login node to your compute node and automatically start the VSCode server</p>
+</li>
 </ol>
 <p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.</p>
 <h2 id="remote-desktop-not-recommended">Remote Desktop (Not Recommended)</h2>
@@ -3087,7 +3093,7 @@ Host grace-compute
 <li>Use the Open OnDemand web portal to start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a></li>
 <li>As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop documentation</a>, we recommend adjusting the <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">image quality slider bar</a> all the way to the right if this is not the default</li>
 <li>In a terminal window within your Remote Desktop session, run:
-   <div class="highlight"><pre><span></span><code>module load VSCode
+   <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>VSCode
 vscode
 </code></pre></div></li>
 </ol>
@@ -3099,7 +3105,7 @@ vscode
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 12, 2025</span>
       
     
   </small>
