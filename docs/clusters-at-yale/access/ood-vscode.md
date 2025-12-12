@@ -226,7 +226,11 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 2. Press `F1` or `Cmd/Ctrl+Shift+P` to open the Command Palette
 3. Type "Remote-SSH: Connect to Host" and select it
 4. Choose `grace-compute` (or whatever you named the host in your config)
-5. VSCode will connect through the login node to your compute node and automatically start the VSCode server
+5. At this point, at least on some machines (we have seen this on Windows but not on Apple laptops), VSCode may appear to get stuck with the message 'Setting up SSH Host bouchet-compute (details)' in the bottom of the window. This means you need to authenticate, but you will need to find the hidden prompt first.
+
+    To do this, click on the blue highlighted 'details' to reveal a set of tabs at the bottom of the window, and click on the 'TERMINAL' tab. There you can respond to the Duo two-factor prompt to complete the connection.
+
+6. VSCode will then connect through the login node to your compute node and automatically start the VSCode server
 
 When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.
 
