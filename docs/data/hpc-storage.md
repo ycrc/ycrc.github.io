@@ -94,6 +94,9 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 
 When you run out of disk space (or better, when you anticipate it will happen soon), you will need to find out which files/folders consume the most space. The YCRC provides module-based tools to help with this: a GUI app, [QDirstat](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/shundhammer/qdirstat&ved=2ahUKEwinzbKU_b-RAxV0v4kEHRY2ALMQFnoECCAQAQ&usg=AOvVaw3rROIC6Z1bIEq6vM8ODHmX), and a command line tool, ([broot](https://github.com/Canop/broot)). They provide similar functionality, but broot may be faster to run and less resource intensive.
 
+!!! warning "Use with Caution"
+    The `qdirstat` and `broot` programs are intended to be used only very infrequently or for small collections of files, because they can put a heavy load on the cluster storage systems when there are many files to be tallied. If you are dealing with a very large collection of files, please contact us at hpc@yale.edu. We have specialized tools that minimize the filesystem load for these types of problems.
+
 For QDirStat, start our [Remote Desktop OOD app](/clusters-at-yale/access/ood-remote-desktop/), launch a terminal window, and type:
 
 ```
