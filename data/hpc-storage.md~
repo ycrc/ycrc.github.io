@@ -90,6 +90,25 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 1. Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  
 1. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
+## For More Detailed Storage Info
+
+When you run out of disk space (or better, when you anticipate it will happen soon), you will need to find out which files/folders consume the most space. The YCRC provides module-based tools to help with this: a GUI app, [QDirstat](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/shundhammer/qdirstat&ved=2ahUKEwinzbKU_b-RAxV0v4kEHRY2ALMQFnoECCAQAQ&usg=AOvVaw3rROIC6Z1bIEq6vM8ODHmX), and a command line tool, ([broot](https://github.com/Canop/broot)). They provide similar functionality, but broot may be faster to run and less resource intensive.
+
+For QDirStat, start our [Remote Desktop OOD app](/clusters-at-yale/access/ood-remote-desktop/), launch a terminal window, and type:
+
+```
+module load QDirStat
+qdirstat
+```
+
+You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
+
+For broot, type the following into any terminal:
+```
+module load broot
+broot -w
+```
+
 ## Purchase Additional Storage
 
 For long-term allocations, additional project storage spaces can be purchased on one of our shared filesystems, which provides similar functionality to the primary project storage. This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
