@@ -1500,6 +1500,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-more-detailed-storage-info" class="md-nav__link">
+    For More Detailed Storage Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#purchase-additional-storage" class="md-nav__link">
     Purchase Additional Storage
   </a>
@@ -2718,6 +2725,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-more-detailed-storage-info" class="md-nav__link">
+    For More Detailed Storage Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#purchase-additional-storage" class="md-nav__link">
     Purchase Additional Storage
   </a>
@@ -2839,6 +2853,17 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 <li>Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  </li>
 <li>Purchased storage allocations will only appear in the <code>getquota</code> output for users who have data in that directory.</li>
 </ol>
+<h2 id="for-more-detailed-storage-info">For More Detailed Storage Info</h2>
+<p>When you run out of disk space (or better, when you anticipate it will happen soon), you will need to find out which files/folders consume the most space. The YCRC provides module-based tools to help with this: a GUI app, <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://github.com/shundhammer/qdirstat&amp;ved=2ahUKEwinzbKU_b-RAxV0v4kEHRY2ALMQFnoECCAQAQ&amp;usg=AOvVaw3rROIC6Z1bIEq6vM8ODHmX">QDirstat</a>, and a command line tool, (<a href="https://github.com/Canop/broot">broot</a>). They provide similar functionality, but broot may be faster to run and less resource intensive.</p>
+<p>For QDirStat, start our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop OOD app</a>, launch a terminal window, and type:</p>
+<div class="highlight"><pre><span></span><code>module load QDirStat
+qdirstat
+</code></pre></div>
+<p>You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.</p>
+<p>For broot, type the following into any terminal:
+<div class="highlight"><pre><span></span><code>module load broot
+broot -w
+</code></pre></div></p>
 <h2 id="purchase-additional-storage">Purchase Additional Storage</h2>
 <p>For long-term allocations, additional project storage spaces can be purchased on one of our shared filesystems, which provides similar functionality to the primary project storage. This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see <a href="https://research.computing.yale.edu/computing-resources/hpc-policies">Storage Expiration Policy</a>).</p>
 <p>For shorter-term or smaller allocations, we have a monthly billing option. 
@@ -2900,7 +2925,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 1, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2025</span>
       
     
   </small>

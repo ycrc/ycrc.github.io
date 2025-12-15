@@ -1,6 +1,6 @@
 # HPC Storage
 
-Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the `getquota` command on a cluster. No sensitive data can be stored on any cluster storage, except for [Hopper](/clusters/hopper/).
+Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the [getquota](#check-your-usage-and-quotas) command on a cluster. No sensitive data can be stored on any cluster storage, except for [Hopper](/clusters/hopper/).
 
 !!! warning "Backups"
     The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
@@ -48,7 +48,11 @@ You can access this space through a symlink, or shortcut, in your home directory
 
 ## Check Your Usage and Quotas
 
-To inspect your current usage, run the command `getquota`. Here is an example output of the command:
+To inspect your current usage, run the command `getquota` from the [terminal](/clusters-at-yale/access/ood/#terminal) command line.
+
+You may also view the results of getquota from the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), found in the `Utilities` OOD menu; see the table `File System Quota` near the top of the resulting webpage.
+
+Here is an example output of `getquota`:
 
 ``` text
 This script shows information about your quotas on grace.
