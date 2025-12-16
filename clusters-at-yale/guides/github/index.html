@@ -2810,8 +2810,13 @@ backup of your local repositories. </p>
 </ol>
 <h3 id="hosting-a-repository-on-github">Hosting a Repository on GitHub</h3>
 <p>To start, create a repository on GitHub by going to <a href="https://github.com/new">https://github.com/new</a> and providing a name and 
-choose either public or private access.
-Then you can connect your local repository to the GitHub repo (named <code>my_new_repo</code>):</p>
+choose either public or private access.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important: select SSH and not HTTPS</p>
+<p>A 'gotcha' in the GitHub webpage for creating a new repository is that there are two ways to set up the connection between your local repository and the GitHub-hosted remote repository: SSH and HTTPS. Moreover, GitHub may select HTTPS by default. If you set up your connection this way, your attempts to connect will lead to failed password prompts with an error like <code>remote: Invalid username or token. Password authentication is not supported for Git operations.</code>. To avoid this problem, carefully follow the below step!</p>
+</div>
+<p>In the resulting web page, there will be a blue box titled <code>Quick setup - if you've done this kind of thing before</code>. In this box, click on <code>SSH</code> in the 'HTTPS|SSH' selection widget to ensure that your GitHub SSH connection is set up properly.</p>
+<p>Then you can follow the instructions on the GitHub webpage to connect your local repository to the GitHub repo. For example, if you named the repository <code>my_new_repo</code> and your directory in the terminal is within the local repository:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user_name/my_new_repo.git
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
@@ -2862,7 +2867,7 @@ for research use.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump b
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 20, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2025</span>
       
     
   </small>
