@@ -107,7 +107,13 @@ You can now proceed to testing the newly added SSH key:
 
 To start, create a repository on GitHub by going to <https://github.com/new> and providing a name and 
 choose either public or private access.
-Then you can connect your local repository to the GitHub repo (named `my_new_repo`):
+
+!!! warning "Important: select SSH and not HTTPS"
+    A 'gotcha' in the GitHub webpage for creating a new repository is that there are two ways to set up the connection between your local repository and the GitHub-hosted remote repository: SSH and HTTPS. Moreover, GitHub may select HTTPS by default. If you set up your connection this way, your attempts to connect will lead to failed password prompts with an error like `remote: Invalid username or token. Password authentication is not supported for Git operations.`. To avoid this problem, carefully follow the below step!
+
+In the resulting web page, there will be a blue box titled `Quick setup - if you've done this kind of thing before`. In this box, click on `SSH` in the 'HTTPS|SSH' selection widget to ensure that your GitHub SSH connection is set up properly.
+
+Then you can follow the instructions on the GitHub webpage to connect your local repository to the GitHub repo. For example, if you named the repository `my_new_repo` and your directory in the terminal is within the local repository:
 
 ```sh
 git remote add origin git@github.com:user_name/my_new_repo.git
