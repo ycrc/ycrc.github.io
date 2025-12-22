@@ -9,9 +9,7 @@ McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04
 
 - - -
 
-
 !!! warning "NIH Controlled-Access Data and Repositories"
-  !!! warning "NIH Controlled-Access Data and Repositories"
     Effective January 25, 2025, new or renewed Data Use Certifications for NIH Controlled-Access Data and Repositories must adhere to the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf). This data can be now hosted and analyzed on YCRC's NIST 800-171 compliant Hopper cluster. See the [Hopper documentation](/clusters/hopper) for information on requesting access.
 
 ## Access the Cluster
