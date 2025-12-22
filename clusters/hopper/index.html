@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -601,6 +601,13 @@
           <li class="md-nav__item">
   <a href="#r-and-python-packages" class="md-nav__link">
     R and Python Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-ondemand" class="md-nav__link">
+    Open OnDemand
   </a>
   
 </li>
@@ -2825,6 +2832,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#open-ondemand" class="md-nav__link">
+    Open OnDemand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#llm-models" class="md-nav__link">
     LLM Models
   </a>
@@ -2963,7 +2977,7 @@ This training must be renewed annually.</p>
 </div>
 <p>Once you have an account, the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
-The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the <a href="/clusters-at-yale/access/ood">Open OnDemand Web Portal</a> (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.</p>
+The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the <a href="/clusters-at-yale/access/ood">Open OnDemand Web Portal</a> and command line terminal access, to access files, run commands, and launch jobs.</p>
 <p>To access the VDI, navigate to <code>hopper1.ycrc.yale.edu</code> in a web browser.</p>
 <p><a class="md-button" href="https://hopper1.ycrc.yale.edu">Hopper Login (VPN required)</a></p>
 <h3 id="security-restrictions">Security Restrictions</h3>
@@ -3008,6 +3022,10 @@ If you are unclear if your workflow qualifies as software, please contact your a
 Python and R packages using the standard methods (i.e. <code>pip</code>, <code>install.packages</code>). 
 From the <code>hopper1</code> login node (where you go when you connect via the ThinLinc VDI), you can 
 use conda with the default Conda repo (not conda-forge or bioconductor) and <code>pip</code> to create your own environments.</p>
+<h3 id="open-ondemand">Open OnDemand</h3>
+<p>To access the <a href="/clusters-at-yale/access/ood/">Open OnDemand Web Portal</a> on Hopper, open Firefox (available on the top menu bar) within the ThinLinc VDI and
+navigate to <code>ood-hopper.ycrc.yale.edu</code>.
+You will need to reauthenticate on Open OnDemand with your netid, password and DUO.</p>
 <h3 id="llm-models">LLM Models</h3>
 <p>LLM models, such as Llama, qualify as software so must be approved and installed by YCRC staff.</p>
 <p>We have made commonly requested LLM models available as <a href="/applications/modules">software modules</a> for easier offline use.</p>
@@ -3521,7 +3539,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2025</span>
       
     
   </small>
