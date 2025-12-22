@@ -66,7 +66,7 @@ Accounts will be deactivated when any of the following occurs:
 
 Once you have an account, the cluster can be accessed through the Virtual Desktop Infrastructure (VDI).
 The VDI functions as the ‘login node’ and isolates the user from their host computer.
-The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) (coming soon!) and command line terminal access, to access files, run commands, and launch jobs.
+The VDI provides a virtual desktop with the standard YCRC cluster interfaces, such as the [Open OnDemand Web Portal](/clusters-at-yale/access/ood) and command line terminal access, to access files, run commands, and launch jobs.
 
 To access the VDI, navigate to `hopper1.ycrc.yale.edu` in a web browser.
 
@@ -132,6 +132,12 @@ We have set up a monitored proxy to PyPI and CRAN to allow you to install your o
 Python and R packages using the standard methods (i.e. `pip`, `install.packages`). 
 From the `hopper1` login node (where you go when you connect via the ThinLinc VDI), you can 
 use conda with the default Conda repo (not conda-forge or bioconductor) and `pip` to create your own environments.
+
+### Open OnDemand
+
+To access the [Open OnDemand Web Portal](/clusters-at-yale/access/ood/) on Hopper, open Firefox (available on the top menu bar) within the ThinLinc VDI and
+navigate to `ood-hopper.ycrc.yale.edu`.
+You will need to reauthenticate on Open OnDemand with your netid, password and DUO.
 
 ### LLM Models
 
