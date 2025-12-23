@@ -94,4 +94,59 @@ When running a workflow that uses both slurm and local executors, you should sub
 You may also try reducing queueSize to a value less than 100.  If you cannot find a way to reduce your submission rate to an acceptable level, we will consider turning off the submission threshold.  Contact us for more information.
 
 
+## Example using Sarek
+
+[nf-core/sarek](https://nf-co.re/sarek) is an analysis pipeline to detect germline or somatic variants (pre-processing, variant calling and annotation) from WGS / targeted sequencing
+
+
+Sarek can be run on our clusters with a minimum of setup:
+
+1. create a sample_sheet.csv file that lists the input genome files, e.g.:
+```
+patient,sample,lane,fastq_1,fastq_2
+1,5084,1,WES_01.13.25/tumor/data/5084_R1_001.fastq.gz,WES_01.13.25/tumor/data/5084_R2_001.fastq.gz
+2,10202,1,WES_01.13.25/tumor/data/10202_R1_001.fastq.gz,WES_01.13.25/tumor/data/10202_R2_001.fastq.gz
+3,10288,1,WES_01.13.25/tumor/data/10288_R1_001.fastq.gz,WES_01.13.25/tumor/data/10288_R2_001.fastq.gz
+4,10214,1,WES_01.13.25/tumor/data/10214_R1_001.fastq.gz,WES_01.13.25/tumor/data/10214_R2_001.fastq.gz
+5,10215,1,WES_01.13.25/tumor/data/10215_R1_001.fastq.gz,WES_01.13.25/tumor/data/10215_R2_001.fastq.gz
+
+```
+1. create a batch script sarek.sh:
+```
+#!/bin/bash
+
+#SBATCH --job-name=sarek_test
+#SBATCH --mem=80G
+#SBATCH --cpus-per-task=4
+#SBATCH --partition=day
+#SBATCH --time=1-0
+#SBATCH --mail-type=ALL
+
+export  NXF_SINGULARITY_CACHEDIR=${HOME}/palmer_scratch/.singularity
+
+module purge
+module load Nextflow
+
+nextflow run nf-core/sarek \
+        --max_cpus $SLURM_CPUS_PER_TASK \
+        --max_memory 80.GB \
+        --input "sample_sheet.csv" \
+        --outdir "output_test" \
+        --genome GRCm38 \
+        --trim_fastq \
+        --save_mapped \
+        --save_output_as_bam \
+        --tools strelka \
+        -w work \
+        -profile mccleary
+```
+Nextflow will pull everything else automatically, including the pipeline, the apptainer image, and the mccleary profile.  The mccleary profile defines a default configuration that submits all tasks as Slurm jobs.  However, because this
+example has a relatively small number of input files, you should not hit the submission rate issue mentioned previously.
+
+1. submit
+```
+sbatch sarek.sh
+```
+
+Other nf-core pipelines should work similarly.
 
