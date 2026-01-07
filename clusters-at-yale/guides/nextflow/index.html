@@ -2699,8 +2699,17 @@ Nextflow is able to make effective use of slurm when running  on our clusters, u
 </code></pre></div>
 <p>This sets the initial default for the slurm partition, memory, cpus, and time.  Note that nextflow uses different names for many of these values than slurm.
 These same options can be added to specific processes or labels to customize processes more specifically.
-Arbitrary slurm options can be added using clusterOptions, e.g. clusterOptions = '--qos priority’
+Arbitrary slurm options can be added using clusterOptions, e.g. clusterOptions = '--qos priority'
 More information can be found on nextflow's <a href="https://www.nextflow.io/docs/latest/executor.html#slurm">slurm</a> page.</p>
+<p>To respect our SLURM queue limits, we recommend adding an executor block to your nextflow.config:</p>
+<div class="highlight"><pre><span></span><code>executor<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">$slurm</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="nv">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">50</span>
+<span class="w">        </span><span class="nv">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;190/60min&#39;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>This limits Nextflow to 50 queued jobs at a time and a maximum of 190 submissions per 60 minutes, keeping you safely under the cluster's submission threshold.</p>
 <p>Setting executor to slurm will cause all processes to be submitted as slurm jobs, unless otherwise specified (see below).</p>
 <h2 id="nextflow-installation">Nextflow installation</h2>
 <p>You can either use our installed module, or install your own copy of nextflow (for example if you want the very latest version of nextflow).  If you use your own nextflow, be sure to load the Java module.  Our nextflow module does that automatically.</p>
@@ -2800,7 +2809,7 @@ example has a relatively small number of input files, you should not hit the sub
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2026</span>
       
     
   </small>
