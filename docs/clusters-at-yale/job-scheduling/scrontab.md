@@ -22,7 +22,7 @@ EDITOR=nano scrontab -e
 Lines that start with `#SCRON` are treated like the beginning of a new batch job, and work like `#SBATCH` directives for batch jobs. Slurm will ignore `#SBATCH` directives in scripts you run as `scrontab` jobs. You can use most [common `sbatch` options](/clusters-at-yale/job-scheduling/#common-job-request-options) just as you would [using sbatch on the command line](https://slurm.schedmd.com/sbatch.html). The first line after your `SCRON` directives specifies the schedule for your job and the command to run. 
 
 !!! info "Note"
-    All of your `scrontab` jobs will start with your home directory as the working directory. You can change this with the `--chdir` slurm option.
+    All of your `scrontab` jobs will start with your home directory as the working directory. You can change this with the `--chdir` Slurm option.
 
 ### Cron syntax
 
@@ -48,7 +48,7 @@ To your script to ensure that your environment is set up correctly.
 python my_script.py > $(date +"%Y-%m-%d")_myjob_scrontab.out
 ```
 
-If you want to see slurm accounting of a job handled by scrontab, for example job `12345` run:
+If you want to see Slurm accounting of a job handled by scrontab, for example job `12345` run:
 
 ``` bash
 sacct --duplicates --jobs 12345

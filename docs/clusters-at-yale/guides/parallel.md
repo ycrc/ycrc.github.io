@@ -26,7 +26,7 @@ e
 f
 ```
 
-To achieve the same result, `parallel` starts some number of workers and then runs tasks on them.  The number of workers and tasks need not be the same. You specify the number of workers with `-j`. The tasks can be generated with a list of arguments specified after the separator `:::`. For parallel to perform well, you should allocate at least the same number of CPUs as workers with the slurm option `--cpus-per-task` or more simply `-c`.
+To achieve the same result, `parallel` starts some number of workers and then runs tasks on them.  The number of workers and tasks need not be the same. You specify the number of workers with `-j`. The tasks can be generated with a list of arguments specified after the separator `:::`. For parallel to perform well, you should allocate at least the same number of CPUs as workers with the Slurm option `--cpus-per-task` or more simply `-c`.
 
 ``` bash
 salloc -c 4

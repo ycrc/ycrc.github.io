@@ -1,6 +1,6 @@
 # Jobs with Dependencies
 
-SLURM offers a tool which can help string jobs together via dependencies. 
+Slurm offers a tool which can help string jobs together via dependencies. 
 When submitting a job, you can specify that it should wait to run until a specified job has finished. 
 This provides a mechanism to create simple pipelines for managing complicated workflows. 
 
@@ -72,8 +72,8 @@ This last job will wait to run until all previous jobs with name `JobName` finis
 
 ## Further Reading
 
-SLURM provides a number of options for logic controlling dependencies. 
+Slurm provides a number of options for logic controlling dependencies. 
 Most common are the two discussed above, but `--dependency=afternotok:<job_id>` can be useful to control behavior if a job fails. 
-Full discussion of the options can be found on the SLURM manual page for `sbatch` (https://slurm.schedmd.com/sbatch.html).
+Full discussion of the options can be found on the Slurm manual page for `sbatch` (https://slurm.schedmd.com/sbatch.html).
 A very detailed overview, with examples in both bash and python, can also be found at the NIH computing reference: https://hpc.nih.gov/docs/job_dependencies.html.
 
