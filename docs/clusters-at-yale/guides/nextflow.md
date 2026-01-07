@@ -27,8 +27,21 @@ process {
 
 This sets the initial default for the slurm partition, memory, cpus, and time.  Note that nextflow uses different names for many of these values than slurm.
 These same options can be added to specific processes or labels to customize processes more specifically.
-Arbitrary slurm options can be added using clusterOptions, e.g. clusterOptions = '--qos priority’
+Arbitrary slurm options can be added using clusterOptions, e.g. clusterOptions = '--qos priority'
 More information can be found on nextflow's [slurm](https://www.nextflow.io/docs/latest/executor.html#slurm) page.
+
+To respect our SLURM queue limits, we recommend adding an executor block to your nextflow.config:
+
+``` bash
+executor {
+    $slurm {
+        queueSize       = 50
+        submitRateLimit = '190/60min'
+    }
+}
+```
+
+This limits Nextflow to 50 queued jobs at a time and a maximum of 190 submissions per 60 minutes, keeping you safely under the cluster's submission threshold.
 
 Setting executor to slurm will cause all processes to be submitted as slurm jobs, unless otherwise specified (see below).
 
