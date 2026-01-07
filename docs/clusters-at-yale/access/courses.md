@@ -52,7 +52,7 @@ If you already have a permanent researcher account (one that is just your NetID)
 
 ## Course Storage
 
-Courses on the YCRC clusters are typically granted a standard 4TiB project storage quota, as well as 125GiB home directory for each course member. If the course needs additional storage beyond the default 4TiB, please contact us at research.computing@yale.edu.
+Courses on the YCRC clusters are typically granted a standard 4TiB project quota and 10TiB of scratch storage, along with 125GiB home directory for each course member. If the course needs additional storage beyond the default 4TiB, please contact us at research.computing@yale.edu.
 
 See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
 
@@ -96,7 +96,7 @@ In any of the app submission forms, type the correct paritition name into the "P
 
 ## Cluster Maintenance
 
-Bouchet is inaccessible once a year for a regularly scheduled maintenance. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
+Bouchet undergoes regularly scheduled maintenance twice a year. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
 
 Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
 
