@@ -2726,7 +2726,7 @@ Here we will work through how to implement these two approaches in both Python a
 <p>In python, environment variables are accessed via the <code>os</code> package (<a href="https://docs.python.org/3/library/os.html">docs page</a>).
 In particular, we can use <code>os.getenv</code> to retrieve environment variables set prior to launching the python script.</p>
 <p>For example, consider a python script designed to process a data file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -2736,11 +2736,11 @@ In particular, we can use <code>os.getenv</code> to retrieve environment variabl
 </code></pre></div>
 <p>We can use an environment variable (<code>INPUT_DATA_FILE</code>) to provide the filename of the data to be processed.
 The python script (<code>my_script.py</code>) is modified to retrieve this variable and analyze the given datafile:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;INPUT_DATA_FILE&quot;</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -2757,7 +2757,7 @@ python<span class="w"> </span>my_script.py
 <p>Similarly, one can use command-line arguments to pass values into a script.
 In python, there are two main packages designed for handling arguments.
 First is the simple <code>sys.argv</code> function which parses command-line arguments into a list of strings:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -2784,7 +2784,7 @@ Take a look at their documentation for examples of how to use <code>argparse</co
 <p>To collect command-line arguments in R use the <code>commandArgs</code> function:</p>
 <div class="highlight"><pre><span></span><code><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 
-<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">args</span><span class="p">){</span>
 <span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>

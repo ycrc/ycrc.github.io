@@ -2800,7 +2800,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <h2 id="examples">Examples</h2>
 <h3 id="ex-1-rank">Ex 1: Rank</h3>
 <p>This is a simple example where each worker reports their <code>RANK</code> and the process ID running that particular task.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># instantize the communication world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -2816,7 +2816,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s1"> has PID: </span><span class="si">{</span><span class="n">PID</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>We then execute this code (named <code>mpi_simple.py</code>) by running the following on the command line:</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">mpirun</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="nx">mpi_simple</span><span class="p">.</span><span class="nx">py</span>
+<div class="codehilite"><pre><span></span><code>mpirun -n 4 python mpi_simple.py
 </code></pre></div>
 
 <p>The <code>mpirun</code> command is a wrapper for the MPI interface.</p>
@@ -2831,8 +2831,8 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 
 <h3 id="ex-2-point-to-point-communicators">Ex 2: Point to Point Communicators</h3>
 <p>The most basic communication operators are "<code>send</code>" and "<code>recv</code>". These can be a bit tricky since they are "blocking" commands and can cause the program to hang.</p>
-<div class="codehilite"><pre><span></span><code>comm.send(obj, dest, tag=0)
-comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
+<div class="codehilite"><pre><span></span><code><span class="nv">comm</span>.<span class="k">send</span><span class="ss">(</span><span class="nv">obj</span>,<span class="w"> </span><span class="nv">dest</span>,<span class="w"> </span><span class="nv">tag</span><span class="o">=</span><span class="mi">0</span><span class="ss">)</span>
+<span class="nv">comm</span>.<span class="nv">recv</span><span class="ss">(</span><span class="nv">source</span><span class="o">=</span><span class="nv">MPI</span>.<span class="nv">ANY_SOURCE</span>,<span class="w"> </span><span class="nv">tag</span><span class="o">=</span><span class="nv">MPI</span>.<span class="nv">ANY_TAG</span>,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="nv">None</span><span class="ss">)</span>
 </code></pre></div>
 
 <ul>
@@ -2842,7 +2842,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <li><code>status</code> used to retrieve information about recv'd message</li>
 </ul>
 <p>We now we create a file (<code>mpi_comm.py</code>) that contains the following:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
@@ -2862,7 +2862,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <h3 id="ex-3-broadcast">Ex 3: Broadcast</h3>
 <p>Now we will try a slightly more complicated example that involves sending messages and data between processes.
 <div class="highlight"><pre><span></span><code><span class="c1"># Import MPI</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># Define world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -2899,8 +2899,8 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <p>An effective way of distributing computationally intensive tasks is to <code>scatter</code> pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are <code>gathered</code> by <code>RANK_0</code>.</p>
 <p>This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returns to the main task with a <code>Gather</code> call.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># set up MPI world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
