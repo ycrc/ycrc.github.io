@@ -5,7 +5,7 @@ Data associated with YCGA projects and sequencers are located on the YCGA storag
 ## YCGA Access Policy
 
 The McCleary high-performance computing system has specific resources that are dedicated to
-YCGA users. This includes a slurm partition (‘ycga’) and a large parallel storage system
+YCGA users. This includes a Slurm partition ('ycga') and a large parallel storage system
 (/gpfs/ycga). The following policy guidelines govern the use of these resources on McCleary for
 data storage and analysis.
 

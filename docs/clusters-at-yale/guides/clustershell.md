@@ -55,7 +55,7 @@ nodeset -f @job:1234567
 
 #### State group
 
-List expanded node names that are idle according to slurm
+List expanded node names that are idle according to Slurm
 
 ``` bash
 # similar to sinfo -t IDLE -o "%N"

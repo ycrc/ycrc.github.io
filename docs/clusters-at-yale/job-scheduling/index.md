@@ -121,14 +121,14 @@ See our page of [Submission Script Examples](/clusters-at-yale/job-scheduling/sl
 ```
 
 !!! warning "No Space After #SBATCH"
-    When writing SLURM directives, make sure there is no space between the `#` and `SBATCH`. 
+    When writing Slurm directives, make sure there is no space between the `#` and `SBATCH`. 
     
     ```bash
     #SBATCH --option=value  # Correct
     # SBATCH --option=value  # Incorrect - will be ignored
     ```
     
-    Directives with a space after the `#` will be treated as comments and ignored by SLURM.
+    Directives with a space after the `#` will be treated as comments and ignored by Slurm.
 
 
     
