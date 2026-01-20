@@ -2898,7 +2898,9 @@
 <h2 id="use-a-pre-existing-container">Use a Pre-existing Container</h2>
 <p>If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that <a href="/data/transfer">can be transferred</a> to the clusters. You can fetch images from container registries such as <a href="https://hub.docker.com/explore/">Docker Hub</a> or <a href="https://catalog.ngc.nvidia.com/containers">NVidia Container Registry</a>.
 Some common resources for finding existing resources is dockerhub and singularity hub. Although, singularity hub is no longer maintained. Once on the website, you can search for containers by typing in the name of the program or library you are interested in obtaining. This will take you to a list of different containers that match the keyword in the search. From there, you can select a container and follow the instructions below to create the container on our clusters:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># from Docker Hub (https://hub.docker.com/)</span>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem<span class="o">=</span>32G<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>:00:00
+
+<span class="c1"># from Docker Hub (https://hub.docker.com/)</span>
 apptainer<span class="w"> </span>build<span class="w"> </span>ubuntu-18.10.sif<span class="w"> </span>docker://ubuntu:18.10
 apptainer<span class="w"> </span>build<span class="w"> </span>tensorflow-10.0-py3.sif<span class="w"> </span>docker://tensorflow/tensorflow:1.10.0-py3
 
