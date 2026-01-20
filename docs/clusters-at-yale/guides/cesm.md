@@ -163,7 +163,7 @@ In your case directory, there will be a file that looks like `slurm-<job_id>.log
 
 #### CESM Run Logs
 
-If the last few lines of the slurm log direct you to look at `cpl.log.<some_number>` file, change directory to your case “run” directory (usually in your project directory):
+If the last few lines of the Slurm log direct you to look at `cpl.log.<some_number>` file, change directory to your case "run" directory (usually in your project directory):
 
 ``` bash
 cd ~/project/CESM/$CASE/run

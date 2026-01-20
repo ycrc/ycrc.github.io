@@ -11,7 +11,7 @@ The main steps are:
 ### Start the Server
 
 Here is a template for submitting a jupyter-notebook server as a batch job. 
-You may need to edit some of the slurm options, including the time limit or the partition. 
+You may need to edit some of the Slurm options, including the time limit or the partition. 
 You will also need to either load a module that contains `jupyter-notebook`.
 
 !!! tip
@@ -69,7 +69,7 @@ jupyter lab --no-browser --port=${port} --ip=${node}
 Once you have submitted your job and it starts, your notebook server will be ready for you to connect. 
 You can run `squeue -u${USER}` to check. You will see an "R" in the ST or status column for your notebook job if it is running. 
 If you see a "PD" in the status column, you will have to wait for your job to start running to connect. 
-The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the slurm id for your job.
+The log file with information about how to connect will be in the directory you submitted the script from, and be named jupyter-notebook-[jobid].log where jobid is the Slurm ID for your job.
 
 #### MacOS and Linux
 

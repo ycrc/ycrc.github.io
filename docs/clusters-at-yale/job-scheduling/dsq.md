@@ -73,7 +73,7 @@ You can monitor the status of your jobs in Slurm by using `squeue -u <netid>` an
 First, you'll need to generate a job file. 
 Each line of this job file needs to specify exactly what you want run for each job, including any modules that need to be loaded or modifications to your environment variables. 
 Empty lines or lines that begin with `#` will be ignored when submitting your job array. 
-**Note:** slurm jobs start in the directory from which your job was submitted.
+**Note:** Slurm jobs start in the directory from which your job was submitted.
 
 Create a file with the jobs you want to run, one per line. 
 A simple loop that prints your jobs should usually suffice. 
@@ -121,7 +121,7 @@ Optional Arguments:
                         Name of your job array. Defaults to dsq-jobfile
   --max-jobs number     Maximum number of simultaneously running jobs from the job array.
   -o fmt_string, --output fmt_string
-                        Slurm output file pattern. There will be one file per line in your job file. To suppress slurm out files, set this to /dev/null. Defaults to dsq-jobfile-%A_%a-%N.out
+                        Slurm output file pattern. There will be one file per line in your job file. To suppress Slurm out files, set this to /dev/null. Defaults to dsq-jobfile-%A_%a-%N.out
   --status-dir dir      Directory to save the job_jobid_status.tsv file to. Defaults to working directory.
   --suppress-stats-file  Don't save job stats to job_jobid_status.tsv
   --submit              Submit the job array on the fly instead of creating a submission script.

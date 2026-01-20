@@ -47,7 +47,7 @@ Mathematica &
 
 ## Parallel Jobs
 
-Mathematica installed on Yale HPC clusters includes our proprietary scripts to run parallel jobs in SLURM environments. These scripts are designed in a way to allow users to access up to 450 parallel kernels.
+Mathematica installed on Yale HPC clusters includes our proprietary scripts to run parallel jobs in Slurm environments. These scripts are designed in a way to allow users to access up to 450 parallel kernels.
 
 When a user asks for a specific number of kernels, the wait time to get them might differ dramatically depending on requested computing resources as well as on how busy the HPC cluster is at that moment. To reduce waiting time, our scripts try to launch as many kernels as possible at the moment the user asks for them. Most of the time you will not get launched with the same number of kernels as you requested. We recommend checking the final number of parallel kernels you’ve gotten after the launching command has completed no matter if you run a Front End Mathematica session or execute Wolfram script. One of the ways to check this would be the Mathematica command `Length[Kernels[]]`.
 
@@ -61,7 +61,7 @@ where `n` is the number of kernels you want to use. This command launches as man
 ```
 LaunchSlurmKernels[n,"SlurmOptions"]
 ```
-where `SlurmOptions` specifies the [job request options for SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#common-job-request-options). Here are some examples: `LaunchSlurmKernels[40,"-t 12:00:00"]` launches 40 kernels for 12 hours in the default partition; `LaunchSlurmKernels[30,"-p week -t 2-12:00:00"]` launches 30 kernels for 2 days and 12 hours in the week partition; and `LaunchSlurmKernels[100,"--mem 30G"]` launches 100 kernels with 30GB of RAM per kernel and default runtime in the default partition. If the SLURM options violate the restrictions on the partition, it will result in an error. The wall time for your parallel kernels should not exceed the remaining wall time of your main Mathematica session. Since the parallel kernels are child processes of your main session, they will be terminated when your session ends. 
+where `SlurmOptions` specifies the [job request options for Slurm](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#common-job-request-options). Here are some examples: `LaunchSlurmKernels[40,"-t 12:00:00"]` launches 40 kernels for 12 hours in the default partition; `LaunchSlurmKernels[30,"-p week -t 2-12:00:00"]` launches 30 kernels for 2 days and 12 hours in the week partition; and `LaunchSlurmKernels[100,"--mem 30G"]` launches 100 kernels with 30GB of RAM per kernel and default runtime in the default partition. If the Slurm options violate the restrictions on the partition, it will result in an error. The wall time for your parallel kernels should not exceed the remaining wall time of your main Mathematica session. Since the parallel kernels are child processes of your main session, they will be terminated when your session ends. 
 
 You can also manually close the parallel kernels during your session with the following command:
 ```
@@ -71,7 +71,7 @@ which will shut down all currently launched parallel kernels. If you need to ter
 
 ![file_browser](/img/kernel_object.png){: .medium}
 
-When the process running your parallel kernel is terminated by SLURM due to exceeding its wall time, there may not be any indication of this in your main session. However, you will receive error messages when you try to run any Parallel commands. If this is the case, make sure to close the terminated kernels with `CloseKernels[]` command. 
+When the process running your parallel kernel is terminated by Slurm due to exceeding its wall time, there may not be any indication of this in your main session. However, you will receive error messages when you try to run any Parallel commands. If this is the case, make sure to close the terminated kernels with `CloseKernels[]` command. 
 
 You can add more parallel kernels to the already launched kernels by using the same command `LaunchSlurmKernels[n]`. The termination time of the newly added parallel kernels will be different from that of the existing kernels.    
 

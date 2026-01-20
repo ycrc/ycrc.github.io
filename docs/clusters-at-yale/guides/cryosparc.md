@@ -180,7 +180,7 @@ wait
 
 #### b. Adjust the script contents as desired for memory, CPU, time, and partition.
 
-#### c. Submit the script to SLURM.
+#### c. Submit the script to Slurm.
 
 ``` bash
 sbatch YourScriptName
