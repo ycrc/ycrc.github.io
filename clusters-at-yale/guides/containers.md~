@@ -21,6 +21,8 @@ If someone has already built a container that suits your needs, you can use it d
 Some common resources for finding existing resources is dockerhub and singularity hub. Although, singularity hub is no longer maintained. Once on the website, you can search for containers by typing in the name of the program or library you are interested in obtaining. This will take you to a list of different containers that match the keyword in the search. From there, you can select a container and follow the instructions below to create the container on our clusters:
 
 ``` bash
+salloc --mem=32G -c 2 -t 1:00:00
+
 # from Docker Hub (https://hub.docker.com/)
 apptainer build ubuntu-18.10.sif docker://ubuntu:18.10
 apptainer build tensorflow-10.0-py3.sif docker://tensorflow/tensorflow:1.10.0-py3
