@@ -26,7 +26,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |9|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
+    |13|6240|36|181|cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
 
 === "devel"
 
@@ -110,7 +110,7 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
-    |Maximum GPUs per user|`4`|
+    |Maximum GPUs per user|`8`|
 
     **Available Compute Nodes**
 
@@ -119,7 +119,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |3|6542|48|975|h100|4|80|emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
+    |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
 
 === "scavenge"
 
@@ -149,36 +149,16 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |3|6542|48|975|h100|4|80|emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100|
     |20|6342|48|478||||icelake, avx512, 6342, bigtmp, nogpu, standard, pi|
     |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
     |17|6240|36|181||||cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest|
-    |2|5222|8|181|rtx5000|4|16|cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000|
     |10|6240|36|372|rtx2080ti|4|11|cascadelake, avx512, 6240, singleprecision, pi, bigtmp, rtx2080ti, oldest|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
 
 ??? summary "PI Partitions (click to expand)"
-    === "pi_shung"
-
-        **Request Defaults**
-
-        Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
-
-        ``` text
-        --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-        ```
-
-        !!! warning "GPU jobs need GPUs!"
-            Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
-        **Available Compute Nodes**
-
-        Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-        |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
-        |---|---|---|---|---|---|---|---|
-        |1|6326|32|497|a40|4|48|icelake, avx512, pi, 6326, singleprecision, bigtmp, a40|
-
     === "psych_day"
 
         **Request Defaults**
