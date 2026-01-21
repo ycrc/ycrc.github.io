@@ -3950,7 +3950,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
-<td>9</td>
+<td>13</td>
 <td>6240</td>
 <td>36</td>
 <td>181</td>
@@ -4095,7 +4095,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>4</code></td>
+<td><code>8</code></td>
 </tr>
 </tbody>
 </table>
@@ -4126,14 +4126,14 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5222</td>
-<td>8</td>
-<td>181</td>
-<td>rtx5000</td>
+<td>1</td>
+<td>6326</td>
+<td>32</td>
+<td>497</td>
+<td>a40</td>
 <td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
+<td>48</td>
+<td>icelake, avx512, pi, 6326, singleprecision, bigtmp, a40</td>
 </tr>
 </tbody>
 </table>
@@ -4181,6 +4181,16 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </thead>
 <tbody>
 <tr>
+<td>3</td>
+<td>6542</td>
+<td>48</td>
+<td>975</td>
+<td>h100</td>
+<td>4</td>
+<td>80</td>
+<td>emeraldrapids, avx512, 6542Y, doubleprecision, common, gpu, h100</td>
+</tr>
+<tr>
 <td>20</td>
 <td>6342</td>
 <td>48</td>
@@ -4211,16 +4221,6 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <td>cascadelake, avx512, 6240, nogpu, standard, common, bigtmp, oldest</td>
 </tr>
 <tr>
-<td>2</td>
-<td>5222</td>
-<td>8</td>
-<td>181</td>
-<td>rtx5000</td>
-<td>4</td>
-<td>16</td>
-<td>cascadelake, avx512, 5222, doubleprecision, common, bigtmp, rtx5000</td>
-</tr>
-<tr>
 <td>10</td>
 <td>6240</td>
 <td>36</td>
@@ -4238,45 +4238,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>With few exceptions, jobs submitted to private partitions are not considered when calculating your group's <a href="/clusters-at-yale/job-scheduling/fairshare/">Fairshare</a>. Your group can purchase additional hardware for private use, which we will make available as a <code>pi_groupname</code> partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please <a href="/#get-help">contact us</a>.</p>
 <details class="summary">
 <summary>PI Partitions (click to expand)</summary>
-<div class="tabbed-set" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">pi_shung</label><div class="tabbed-content">
-<p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">GPU jobs need GPUs!</p>
-<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
-</div>
-<p><strong>Available Compute Nodes</strong></p>
-<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
-<table>
-<thead>
-<tr>
-<th>Count</th>
-<th>CPU Type</th>
-<th>CPUs/Node</th>
-<th>Memory/Node (GiB)</th>
-<th>GPU Type</th>
-<th>GPUs/Node</th>
-<th>vRAM/GPU (GB)</th>
-<th>Node Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>6326</td>
-<td>32</td>
-<td>497</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>icelake, avx512, pi, 6326, singleprecision, bigtmp, a40</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">psych_day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">psych_day</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4336,7 +4298,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">psych_devel</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">psych_devel</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4396,7 +4358,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">psych_gpu</label><div class="tabbed-content">
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">psych_gpu</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4454,7 +4416,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><label for="__tabbed_3_5">psych_scavenge</label><div class="tabbed-content">
+<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">psych_scavenge</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
@@ -4518,7 +4480,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><label for="__tabbed_3_6">psych_week</label><div class="tabbed-content">
+<input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><label for="__tabbed_3_5">psych_week</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
