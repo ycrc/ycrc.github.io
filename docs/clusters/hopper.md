@@ -213,7 +213,7 @@ However, all compute resources (CPUs, memory, GPUs) allocated to a job are bille
 
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
-Purchased storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`. 
+This additional storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`. 
 Storage charges are based on requested allocation, not actual usage.
 [Contact us](/#get-help) to request additional storage allocations.
 
