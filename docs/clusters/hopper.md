@@ -12,7 +12,7 @@ Support staff are available to assist researchers with identifying and accessing
 
 
 !!! info "Upcoming Maintenance"
-    The next quarterly maintenance for Hopper is scheduled for September 24th. During this time the cluster will be unavailable.
+    The next quarterly maintenance for Hopper is scheduled for March 2026. During this time the cluster will be unavailable.
 
 ## Access the Cluster
 
@@ -190,7 +190,7 @@ These keyboard shortcuts can be customized on a per-user basis by:
 
 ## Rate Structure
 
-Early access usage on Hopper is at no-cost. Computations and storage on Hopper will be subject to the following charges starting January 1st, 2026.
+Early access usage on Hopper is at no-cost. Computations and storage on Hopper will be subject to the following charges starting February 1st, 2026.
 
 Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
 To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculator](https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M).
@@ -209,7 +209,7 @@ To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculato
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
 
-### Purchase Storage
+### Additional Storage
 
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
