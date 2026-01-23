@@ -8,7 +8,13 @@ AlphaFold 2 and [AlphaFold 3](https://github.com/google-deepmind/alphafold3).
 Both versions are available as cluster modules, but are run somewhat differently.
 
 Note that given the duration and resources usually involved in running AlphaFold,
-it should be executed using a [batch script](/clusters-at-yale/job-scheduling/#batch-jobs).
+it should be executed using [batch scripts](/clusters-at-yale/job-scheduling/#batch-jobs).
+
+Additionally, due to the [Idle Resources Policy](/clusters-at-yale/job-scheduling/job_defense/),
+AlphaFold jobs should be split into two parts.  The first stage of AlphaFold involves generating
+Multiple Sequence Alignments (MSAs), which uses only CPUs.  These MSAs are then used as input
+for the model-building step, which uses GPUs. To avoid having your job flagged for idle GPUs,
+submit a job for the MSA calculation, and when that is complete, submit another job for modeling. 
 
 ## AlphaFold 2
 
@@ -46,12 +52,42 @@ Heteromer:
 ...
 ```
 
-Copy or download the [batch script template](/docs/_static/files/alphafold_monomer.sh)
+Copy the MSA batch script template and the model batch script template,
 and modify for your specific use case.
 
 ```sh
 #!/bin/bash
-#SBATCH --job-name=YourJobNameHere
+#SBATCH --job-name=YourMSAJobNameHere
+## General-use partition for CPU-only step
+#SBATCH --partition=day
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=1-00:00:00
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem=80g
+
+## Clear all loaded software modules, and load AlphaFold module
+module reset
+module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
+
+## Provide settings for running various components in parallel
+export ALPHAFOLD_HHBLITS_N_CPU=${SLURM_CPUS_PER_TASK}   # defaults to 4 if not set
+export ALPHAFOLD_JACKHMMER_N_CPU=${SLURM_CPUS_PER_TASK} # defaults to 8 if not set
+## Choose name for output folder    
+export OUTDIR="MyOutputDir"
+
+## Remove old output folder and recreate for new run
+rm -r ${OUTDIR}
+mkdir -p ${OUTDIR}
+
+## run AlphaFold
+alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
+--msas_only
+```
+
+```
+BATCH --job-name=YourModelJobNameHere
 ## General-use partition for accessing GPUs
 #SBATCH --partition=gpu
 ## Maximum job time in Days-Hours:Minutes:Seconds
@@ -72,15 +108,12 @@ module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 ## Provide settings for running various components in parallel
 export ALPHAFOLD_HHBLITS_N_CPU=${SLURM_CPUS_PER_TASK}   # defaults to 4 if not set
 export ALPHAFOLD_JACKHMMER_N_CPU=${SLURM_CPUS_PER_TASK} # defaults to 8 if not set
-## Choose name for output folder    
+## Specify name for output folder that contains already-generated MSAs    
 export OUTDIR="MyOutputDir"
-
-## Remove old output folder and recreate for new run
-rm -r ${OUTDIR}
-mkdir -p ${OUTDIR}
 
 ## run AlphaFold
 alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
+--use_precomputed_msas
 ```
 
 For a multimer, use a multimer input file and "--model_preset=multimer".
