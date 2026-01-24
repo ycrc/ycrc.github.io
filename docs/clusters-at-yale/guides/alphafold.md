@@ -14,7 +14,7 @@ Additionally, due to the [Idle Resources Policy](/clusters-at-yale/job-schedulin
 AlphaFold jobs should be split into two parts.  The first stage of AlphaFold involves generating
 Multiple Sequence Alignments (MSAs), which uses only CPUs.  These MSAs are then used as input
 for the model-building step, which uses GPUs. To avoid having your job flagged for idle GPUs,
-submit a job for the MSA calculation, and when that is complete, submit another job for modeling. 
+submit a job for the MSA calculation, and when that is complete, submit another job for modeling.
 
 ## AlphaFold 2
 
@@ -52,8 +52,21 @@ Heteromer:
 ...
 ```
 
-Copy the MSA batch script template and the model batch script template,
-and modify for your specific use case.
+Copy the MSA batch script and model batch script templates below,
+and modify for your specific use case. Both stages can be submitted at the same time using a
+[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
+as follows:
+
+```sh
+# Submit the first stage:
+sbatch alphafold_msa.sh
+
+# Note the jobid that is reported by the above submission.
+# Then submit the second stage by:
+sbatch --dependency=afterok:<first_stage_jobid> alphafold_model.sh 
+```
+
+alphafold_msa.sh:
 
 ```sh
 #!/bin/bash
@@ -86,8 +99,11 @@ alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequen
 --msas_only
 ```
 
+alphafold_model.sh:
+
 ```
-BATCH --job-name=YourModelJobNameHere
+#!/bin/bash
+#SBATCH --job-name=YourModelJobNameHere
 ## General-use partition for accessing GPUs
 #SBATCH --partition=gpu
 ## Maximum job time in Days-Hours:Minutes:Seconds
