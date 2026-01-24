@@ -1,0 +1,228 @@
+# R
+
+[R](https://www.r-project.org/about.html) is a free software environment for statistical computing and graphics.
+On the Yale Clusters there are a couple ways in which you can set up your R environment.
+There is no R executable provided by default; you have to choose one of the following methods to be able to run R.
+
+## The R Module
+
+We provide several versions of R as [software modules](/applications/modules). By default, these come loaded with a collection of the most common `CRAN` packages ([homepage](https://cran.r-project.org)), as well as `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)). This will include commonly used packages such as Seurat, so user's won't need to install many packages themselves.
+
+### Find and Load R
+
+Find the available versions of R version 4 with:
+
+``` bash
+module avail R/4
+```
+
+To load version 4.4.1:
+
+``` bash
+module load R/4.4.1-foss-2022b
+```
+
+Loading the R module (e.g. `R/4.4.1-foss-2022b`) automatically loads the `R-bundle-CRAN` and the `R-bundle-Bioconductor` modules. With these modules, there are over 1000 R packages installed and ready to use. 
+
+To find if your desired package is available in these modules, you can run `module spider $PACKAGE/$VERSION`:
+
+```bash
+module spider Seurat/5.1.0
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+  Seurat: Seurat/5.1.0 (E)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+    This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names in parentheses show the module location in the software hierarchy.
+
+
+       R-bundle-Bioconductor/3.19-foss-2022b-R-4.4.1
+
+
+Names marked by a trailing (E) are extensions provided by another module.
+
+
+```
+
+So this version of Seurat is included in the `R-bundle-Bioconductor` module for R version 4.4.1. By loading the `R/4.4.1-foss-2022b` module, you can simply run `library(Seurat)` to use that tool without installing it yourself.
+
+### Install Packages
+
+The software modules include many commonly used packages, but you can install additional packages specifically for your account.
+As part of the R software modules we define an environment variable which directs R to install packages to your home space.
+To change the location of where R installs packages, the `R_LIBS_USER` variable can be set in your `~/.bashrc` file:
+
+```
+export R_LIBS_USER=$GIBBS_PROJECT/R/%v
+```
+
+where `%v` is a placeholder for the R major and minor version number (e.g. `4.2`).
+R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.
+
+We recommend you install packages in an [interactive job](/clusters-at-yale/job-scheduling/#interactive-jobs).
+If there is a missing library your package of interest needs, you should be able to load its module.
+If you cannot find a dependency or have trouble installing an R package, [please get in touch with us](/#web-and-email-support).
+
+To get started, request a compute node, load the R module and start R. Trying to install packages on the login node will often fail due to memory restraints:
+
+```bash
+###request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu
+salloc --partition=devel --mem=20G --cpus-per-task=1 --mem=20G
+
+module load R/4.4.1-foss-2022b
+
+R
+# in R
+> install.packages("lattice", repos="http://cran.r-project.org")
+```
+
+This will throw a warning like:
+
+```bash
+Warning in install.packages("lattice", repos = "http://cran.r-project.org") :
+  'lib = "/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
+‘/home/netID/R/4.4.1-foss-2022b’
+to install packages into? (yes/No/cancel) yes
+```
+
+!!!note
+    If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
+    ```
+    mkdir -p $HOME/R/4.4.1-foss-2022b
+    ```
+
+You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
+```
+# List current package locations
+> .libPaths()
+
+# Add new default location to the standard defaults, e.g. project/my_R_libs
+> .libPaths(c("/home/netID/project/my_R_libs/", .libPaths()))
+```
+
+## Run R
+
+We will kill R jobs on the login nodes that are using excessive resources.
+To be a good cluster citizen, launch your R computation in jobs.
+See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detailed information on submitting jobs.
+
+### Interactive Job
+
+To run R interactively, first launch an interactive job on a compute node.
+If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:
+
+``` bash
+salloc --mem=10G -t 4:00:00
+```
+
+Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering `R` on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.
+
+### Batch Mode
+
+To run R in batch mode, create a plain-text batch script to submit.
+In that script, you can run your R script. In this case `myscript.R` is in the same directory as the batch script, batch script contents shown below.
+
+``` bash
+#!/bin/bash
+#SBATCH -J my_r_program
+#SBATCH --mem=10G
+#SBATCH -t 4:00:00
+
+module reset
+module load R/4.4.1-foss-2022b
+Rscript myscript.R
+```
+
+To actually submit the job, run `sbatch my_r_job.sh` where the batch script above was saved as `my_r_job.sh`.
+
+### RStudio
+
+You can run RStudio app via [Open Ondemand](/clusters-at-yale/access/ood/#interactive-apps).
+Here you can select the desired version of R and RStudio and launch an interactive compute session.
+
+### Parallel R
+
+On a cluster you may want to use R in parallel across multiple nodes.
+While there are a few different ways this can be achieved, we recommend using the R software module which already includes `Rmpi`, `parallel`, and `doMC`.
+
+To test it, we can create a simple R script named `ex1.R`
+
+```R
+library("Rmpi")
+
+n<-mpi.comm.size(0)
+me<-mpi.comm.rank(0)
+
+mpi.barrier(0)
+val<-777
+mpi.bcast(val, 1, 0, 0)
+print(paste("me", me, "val", val))
+mpi.barrier(0)
+
+mpi.quit()
+
+```
+
+For some versions of R, the `Rmpi` package needs to be installed first. Then we can launch it with an sbatch script (`ex1.sh`):
+
+```sh
+#!/bin/bash
+
+#SBATCH -n 4 
+#SBATCH -t 5:00
+
+module reset
+module load R/4.4.1-foss-2022b
+
+srun Rscript ex1.R
+```
+
+This script should execute a simple broadcast and complete in a few seconds.
+
+
+## Virtual Display Session
+
+It is common for R to require a display session to save certain types of figures.
+You may see a warning like "unable to start device PNG" or "unable to open connection to X11 display".
+There is a tool, `xvfb`, which can help avoid these issues.
+
+The wrapper `xvfb-run` creates a virtual display session which allows R to create these figures without an X11 session.
+See the guide for [xvfb](/clusters-at-yale/guides/xvfb) for more details.
+
+
+## Conda-based R Environments
+
+If there isn't a module available for the version of R you want, you can set up your own R installation using [Conda](/clusters-at-yale/guides/conda).
+With Conda you can manage your own packages and dependencies, for R, Python, etc.
+
+Most of the time the best way to install R packages for your Conda R environment is via `conda`.
+
+``` bash
+# load miniconda
+module load miniconda
+# create the conda environment including r-base and r-essentials package collections
+conda create --name my_r_env r-base r-essentials
+# activate the environment
+conda activate my_r_env
+
+# Install the lattice package (r-lattice)
+conda install r-lattice
+
+```
+
+If there are packages that conda does not provide, you can install using the `install.packages` function, but this may occasionally not work as well.
+When you install packages with `install.packages` make sure to activate your Conda environment first.
+
+``` bash
+salloc
+module load miniconda
+source activate my_r_env
+R
+# in R
+> install.packages("lattice", repos="http://cran.r-project.org")
+```
+
+!!!warning
+    Conda-based R may not work properly with parallel packages like `Rmpi` when running across multiple compute nodes.
+    In general, it's best to use the module installation of R for anything which requires MPI.
