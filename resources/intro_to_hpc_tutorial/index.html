@@ -1089,6 +1089,179 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_6" type="checkbox" id="__nav_2_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8_6">
+          AI/ML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI/ML" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          AI/ML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/AI/" class="md-nav__link">
+        AI/ML Wiki Navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/gpu-jobstats/" class="md-nav__link">
+        GPU monitoring and detection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/resources/" class="md-nav__link">
+        LLMs and GPU Availability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/ollama/" class="md-nav__link">
+        Ollama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/exercises/" class="md-nav__link">
+        Ollama Exercises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/huggingface/" class="md-nav__link">
+        Hugging Face
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/miniconda-multigpu/" class="md-nav__link">
+        Multi-GPU Submission Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/pythonpackages/" class="md-nav__link">
+        Common AI/ML python package Installation Procedures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/aicodingtools/" class="md-nav__link">
+        AI Coding Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters-at-yale/ai/clarity/" class="md-nav__link">
+        Using Closed-Source Models: API Keys and Clarity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2664,7 +2837,7 @@ conda<span class="w"> </span>deactivate
 <p>Going off of the environment we created in <strong>part 1</strong>, navigate to the <strong>Files</strong> tab in OOD and select your <strong>project</strong> directory. Click the '+ New File' button and name the file <code>message_decode_tutorial.py</code>. Once the new file is created, open this file in the OOD text editor by going to the file, clicking the three-dot <strong>more</strong> button, and selecting <strong>edit</strong> in the dropdown menu like so:</p>
 <p><img alt="file_browser_interface_showing_dropdown_options" class="medium" src="/img/intro_tutorial_textedit.jpg" /></p>
 <p>Once the text editor is open, paste this python example inside of the file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="n">holder</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">letter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>

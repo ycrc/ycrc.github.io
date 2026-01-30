@@ -1089,6 +1089,179 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8_6" type="checkbox" id="__nav_2_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8_6">
+          AI/ML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI/ML" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          AI/ML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/AI/" class="md-nav__link">
+        AI/ML Wiki Navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/gpu-jobstats/" class="md-nav__link">
+        GPU monitoring and detection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/resources/" class="md-nav__link">
+        LLMs and GPU Availability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/ollama/" class="md-nav__link">
+        Ollama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/exercises/" class="md-nav__link">
+        Ollama Exercises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/huggingface/" class="md-nav__link">
+        Hugging Face
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/miniconda-multigpu/" class="md-nav__link">
+        Multi-GPU Submission Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/pythonpackages/" class="md-nav__link">
+        Common AI/ML python package Installation Procedures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/aicodingtools/" class="md-nav__link">
+        AI Coding Tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/clarity/" class="md-nav__link">
+        Using Closed-Source Models: API Keys and Clarity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2800,7 +2973,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <h2 id="examples">Examples</h2>
 <h3 id="ex-1-rank">Ex 1: Rank</h3>
 <p>This is a simple example where each worker reports their <code>RANK</code> and the process ID running that particular task.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># instantize the communication world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -2842,7 +3015,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <li><code>status</code> used to retrieve information about recv'd message</li>
 </ul>
 <p>We now we create a file (<code>mpi_comm.py</code>) that contains the following:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
@@ -2862,7 +3035,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <h3 id="ex-3-broadcast">Ex 3: Broadcast</h3>
 <p>Now we will try a slightly more complicated example that involves sending messages and data between processes.
 <div class="highlight"><pre><span></span><code><span class="c1"># Import MPI</span>
-<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># Define world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -2899,8 +3072,8 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <p>An effective way of distributing computationally intensive tasks is to <code>scatter</code> pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are <code>gathered</code> by <code>RANK_0</code>.</p>
 <p>This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returns to the main task with a <code>Gather</code> call.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
-<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># set up MPI world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
