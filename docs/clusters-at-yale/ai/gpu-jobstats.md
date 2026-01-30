@@ -42,11 +42,15 @@ Below are visual representations of common issues with GPU workflows:
 
 ## Example: CPU bottleneck with data loading - Coming soon!
 
+<!--
 ![Single GPU Jobstats example](assets/ai/jobstats/single_gpu_example.png)
+-->
 
 ## Example: multi-GPU misconfiguration - Coming soon!
 
+<!--
 ![Multi-GPU Jobstats example](assets/ai/jobstats/multigpu_one_active.png)
+-->
 
 ## Using Jobstats to Scale workflows
 

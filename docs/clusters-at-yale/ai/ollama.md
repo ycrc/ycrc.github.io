@@ -113,7 +113,7 @@ GPU usage must be validated using Jobstats.
 ##Hands on Examples
 
 The YCRC hosts a github repository for hands-on examples from the Ollama on HPC workshop provided by YCRC. You can
-access the examples [here](examples.md)
+access the examples [here](exercises.md)
 
 ## YCRC module behavior
 

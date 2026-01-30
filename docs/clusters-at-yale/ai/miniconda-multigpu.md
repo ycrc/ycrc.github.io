@@ -12,7 +12,7 @@ If a job does not use the GPUs requested, it will be killed by our resource moni
 
 For additional Slurm commands to request resources outside of what is shown below, please see - [Slurm job scheduling](../../clusters-at-yale/job-scheduling/index.md)
 
-The YCRC recommends using miniconda to create your AI/ML environments, which is available as a [module](../modules.md)
+The YCRC recommends using miniconda to create your AI/ML environments, which is available as a [module](../../applications/modules.md)
 
 ## Single-node vs multi-node usage
 
