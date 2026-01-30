@@ -132,19 +132,6 @@ nav:
             - "Software Modules": applications/modules.md
             - "Module Toolchains": applications/toolchains.md
             - "Module Lifecycle": applications/lifecycle.md
-            - "AI/ML":
-                - "AI/ML Wiki Navigation": clusters-at-yale/ai/AI.md
-                - "GPU monitoring and detection": clusters-at-yale/ai/gpu-jobstats.md
-                - "LLMs and GPU Availability": clusters-at-yale/ai/resources.md
-                - "Ollama": clusters-at-yale/ai/ollama.md
-                - "Ollama Exercises": clusters-at-yale/ai/exercises.md
-                - "Hugging Face": clusters-at-yale/ai/huggingface.md
-                - "Multi-GPU Submission Scripts": clusters-at-yale/ai/miniconda-multigpu.md
-                - "Common AI/ML python package Installation Procedures": clusters-at-yale/ai/pythonpackages.md
-                - "AI Coding Tools": clusters-at-yale/ai/aicodingtools.md
-                - "Using Closed-Source Models: API Keys and Clarity": clusters-at-yale/ai/clarity.md
-
-
         - Job Scheduling:
             - clusters-at-yale/job-scheduling/index.md
             - clusters-at-yale/job-scheduling/resource-requests.md
@@ -181,6 +168,19 @@ nav:
                 - data/group-change.md
                 - "Hosting a UCSC Track Hub": data/hosting-UCSC-trackhub.md
             - data/glossary.md
+
+    - "AI/ML":
+        - "AI/ML Wiki Navigation": clusters-at-yale/ai/AI.md
+        - "GPU monitoring and detection": clusters-at-yale/ai/gpu-jobstats.md
+        - "LLMs and GPU Availability": clusters-at-yale/ai/resources.md
+        - "Ollama": clusters-at-yale/ai/ollama.md
+        - "Ollama Exercises": clusters-at-yale/ai/exercises.md
+        - "Hugging Face": clusters-at-yale/ai/huggingface.md
+        - "Multi-GPU Submission Scripts": clusters-at-yale/ai/miniconda-multigpu.md
+        - "Common AI/ML python package Installation Procedures": clusters-at-yale/ai/pythonpackages.md
+        - "AI Coding Tools": clusters-at-yale/ai/aicodingtools.md
+        - "Using Closed-Source Models: API Keys and Clarity": clusters-at-yale/ai/clarity.md
+
 
 
     - Software & Tools:
