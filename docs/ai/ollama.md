@@ -5,8 +5,8 @@ Ollama provides a local runtime for running large language models and is support
 On YCRC systems, Ollama is wrapped to make it safe to use on shared GPU nodes. The wrapper provides per-user, per-job isolation and prevents port collisions when multiple Ollama servers are launched on the same node.
 
 This page assumes familiarity with:
-- [Slurm job scheduling](../../clusters-at-yale/job-scheduling/index.md)
-- [Jobstats](../../clusters-at-yale/job-scheduling/jobstats.md)
+- [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md)
+- [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md)
 
 ## Loading the module
 

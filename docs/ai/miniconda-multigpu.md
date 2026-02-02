@@ -7,12 +7,13 @@ It covers both:
 - single-node multi-GPU usage
 - multi-node multi-GPU usage
 
-**Note**: Requesting multiple GPUs will not ensure your job runs faster or that your workflow will use all of the GPUs requested.
-If a job does not use the GPUs requested, it will be killed by our resource monitoring tool, [Jobstats](../../clusters-at-yale/job-scheduling/jobstats.md).
+!!! Note
+    Requesting multiple GPUs will not ensure your job runs faster or that your workflow will use all of the GPUs requested.
+    If a job does not use the GPUs requested, it will be killed by our resource monitoring tool, [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md).
 
-For additional Slurm commands to request resources outside of what is shown below, please see - [Slurm job scheduling](../../clusters-at-yale/job-scheduling/index.md)
+For additional Slurm commands to request resources outside of what is shown below, please see our [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md) documentation.
 
-The YCRC recommends using miniconda to create your AI/ML environments, which is available as a [module](../../applications/modules.md)
+The YCRC recommends using miniconda to create your AI/ML environments, which is available as a [module](../applications/modules.md).
 
 ## Single-node vs multi-node usage
 
@@ -29,7 +30,7 @@ All environments must be created using the miniconda module on a compute node. M
 
 For single node workflows, either [tensorflow](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/) or [pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/) is recommended.
 
-Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu
+Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu.
 
 ## Environment setup - multi node
 

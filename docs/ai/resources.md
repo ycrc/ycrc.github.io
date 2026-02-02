@@ -6,7 +6,7 @@ Running LLMs locally provides the following advantages:
 
 - user data remains local to the cluster [(Security concerns with non-local models)](clarity.md)
 - researchers can control model versions and configurations
-- YCRC GPUs are free of charge (Except the secure data cluster, [Hopper](../../clusters/hopper.md)
+- YCRC GPUs are free of charge (Except the secure data cluster, [Hopper](../clusters/hopper.md)
 - models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)
 
 ## GPU availability on YCRC resources
@@ -38,11 +38,11 @@ For example:
 
 Detailed hardware information is available on the cluster pages:
 
-- [Bouchet](../../clusters/bouchet.md)
-- [Hopper](../../clusters/hopper.md)
-- [Grace](../../clusters/grace.md)
-- [McCleary](../../clusters/mccleary.md)
-- [Milgram](../../clusters/milgram.md)
+- [Bouchet](../clusters/bouchet.md)
+- [Hopper](../clusters/hopper.md)
+- [Grace](../clusters/grace.md)
+- [McCleary](../clusters/mccleary.md)
+- [Milgram](../clusters/milgram.md)
 
 Navigate to the Public Partitions section and select `gpu` or `gpu_devel` to view available hardware.
 

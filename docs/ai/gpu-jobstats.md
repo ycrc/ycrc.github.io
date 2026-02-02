@@ -7,7 +7,7 @@ Jobstats is the primary mechanism for evaluating GPU/CPU usage on Yale Research 
 
 Jobstats provides live reporting of GPU/CPU usage, so you can monitor your job as it runs. 
 
-This page will cover how to interpret your Jobstats outputs for various GPU utilizations so as to highlight potential areas for optimization in your workflow. For instructions on running Jobstats, see [Jobstats](../../clusters-at-yale/job-scheduling/jobstats.md).
+This page will cover how to interpret your Jobstats outputs for various GPU utilizations so as to highlight potential areas for optimization in your workflow. For instructions on running Jobstats, see [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md).
 
 ## Metrics relevant to AI workloads
 

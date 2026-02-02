@@ -1,6 +1,6 @@
 #Python Package Installation Procedures for AI/ML workflows
 
-##Current Recipes available
+##Current Recipes Available
 
 Some Python Packages for AI/ML workflows do not install easily into YCRC systems. Due to this, we have developed 
 installation recipes for commonly requested python packages. As of now, those packages include:
@@ -10,7 +10,7 @@ installation recipes for commonly requested python packages. As of now, those pa
 If you do not see a recipe for a package you need help with, please contact research.computing@yale.edu for
 help installing the package/program.
 
-##Common error associated with AI/ML packages.
+##Common Error Associated with AI/ML Packages
 
 If installing a python package/program for your AI/ML workflow and run into the error:
 

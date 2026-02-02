@@ -99,6 +99,7 @@ nav:
             - clusters/mccleary.md
             - clusters/milgram.md
             - clusters/misha.md
+            - "Data Center Migration": clusters/data-center-migration.md
             - "Maintenance": clusters/maintenance.md
         - user-group.md
         - About the YCRC: https://research.computing.yale.edu/about
@@ -149,6 +150,7 @@ nav:
             - clusters-at-yale/job-scheduling/cmd-line-args.md
             - clusters-at-yale/job-scheduling/slurm-examples.md
         - clusters-at-yale/glossary.md
+
     - Data & Storage:
             - data/index.md
             - data/hpc-storage.md
@@ -169,19 +171,17 @@ nav:
                 - "Hosting a UCSC Track Hub": data/hosting-UCSC-trackhub.md
             - data/glossary.md
 
-    - "AI/ML":
-        - "AI/ML Wiki Navigation": clusters-at-yale/ai/AI.md
-        - "GPU monitoring and detection": clusters-at-yale/ai/gpu-jobstats.md
-        - "LLMs and GPU Availability": clusters-at-yale/ai/resources.md
-        - "Ollama": clusters-at-yale/ai/ollama.md
-        - "Ollama Exercises": clusters-at-yale/ai/exercises.md
-        - "Hugging Face": clusters-at-yale/ai/huggingface.md
-        - "Multi-GPU Submission Scripts": clusters-at-yale/ai/miniconda-multigpu.md
-        - "Common AI/ML python package Installation Procedures": clusters-at-yale/ai/pythonpackages.md
-        - "AI Coding Tools": clusters-at-yale/ai/aicodingtools.md
-        - "Using Closed-Source Models: API Keys and Clarity": clusters-at-yale/ai/clarity.md
-
-
+    - "AI & Machine Learning":
+        - "AI & ML Overview": ai/index.md
+        - "GPU monitoring and detection": ai/gpu-jobstats.md
+        - "LLMs and GPU Availability": ai/resources.md
+        - "Ollama": ai/ollama.md
+        - "Ollama Exercises": ai/exercises.md
+        - "Hugging Face": ai/huggingface.md
+        - "Multi-GPU Submission Scripts": ai/miniconda-multigpu.md
+        - "Common AI/ML python package Installation Procedures": ai/pythonpackages.md
+        - "AI Coding Tools": ai/aicodingtools.md
+        - "Using Closed-Source Models: API Keys and Clarity": ai/clarity.md
 
     - Software & Tools:
         - "Overview": clusters-at-yale/guides/index.md

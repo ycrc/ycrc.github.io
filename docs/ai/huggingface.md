@@ -32,7 +32,7 @@ conda create --name huggingface python=3.11 transformers accelerate tokenizers d
 conda activate huggingface
 ```
 
-[PyTorch](../../clusters-at-yale/guides/pytorch.md) must be installed separately. Make sure to install a version with CUDA.
+[PyTorch](../clusters-at-yale/guides/pytorch.md) must be installed separately. Make sure to install a version with CUDA.
 
 To make the environment available in Open OnDemand Jupyter:
 
@@ -44,7 +44,7 @@ ycrc_conda_env.sh update
 ## Interactive usage
 
 Interactive Hugging Face workflows are best run using the Jupyter Notebook application in
-[Open OnDemand](../../clusters-at-yale/access/ood.md).
+[Open OnDemand](../clusters-at-yale/access/ood.md).
 
 Scripts may also be executed directly from the command line within an interactive allocation.
 
@@ -101,7 +101,7 @@ for other workflows.
 Once a workflow is validated interactively, it can be converted to a batch job.
 
 For notebook-based workflows, Jupyter notebooks can be executed non-interactively using `papermill`. Guidance is available under
-[Command-Line Execution of Jupyter Notebooks](../../clusters-at-yale/access/ood-jupyter/).
+[Command-Line Execution of Jupyter Notebooks](../clusters-at-yale/access/ood-jupyter/).
 
 For script-based workflows, submit the script directly using a Slurm batch script.
 
