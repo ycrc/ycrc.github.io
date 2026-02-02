@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/simplequeue/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -559,8 +559,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/grace-mccleary-decommission/" class="md-nav__link">
-        Grace & McCleary Decommission
+      <a href="../../../clusters/data-center-migration/" class="md-nav__link">
+        Data Center Migration
       </a>
     </li>
   
@@ -2806,22 +2806,22 @@
 </ul>
 <p><em>Note that version 3.0+ of SimpleQueue differs from earlier versions in important ways, in particular the meaning of -n. If you have been using an earlier version, please read the following carefully!</em></p>
 <p>SimpleQueue is available as <a href="/cluster-at-yale/applications/modules">a module</a> on our clusters. Run:</p>
-<div class="highlight"><pre><span></span><code>module avail simplequeue
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>simplequeue
 </code></pre></div>
 <p>to locate the simplequeue module on your cluster of choice.</p>
 <h2 id="example-simplequeue-job">Example SimpleQueue Job</h2>
 <p>For example, imagine that you have 1000 fastq files that correspond to individual samples you want to map to a genome with <code>bowtie2</code> and convert to bam files with <code>samtools</code>. Given some initial testing, you think that 80 cpus working together will be enough to finish the job in a reasonable time.</p>
 <h3 id="step-1-create-task-list">Step 1: Create Task List</h3>
 <p>The first step is to create a file with a list of the "tasks" you want to run. Each task corresponds to what you might otherwise have run as a single job. A task can be a simple command invocation, or a sequence of commands. You can call the task file anything, but for this example assume it's called "tasklist.txt" and contains:</p>
-<div class="highlight"><pre><span></span><code>module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1 --rg SM:sample1 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample2 --rg SM:sample2 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample2.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample2
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample1<span class="w"> </span>--rg<span class="w"> </span>SM:sample1<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample1.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample1
+module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample2<span class="w"> </span>--rg<span class="w"> </span>SM:sample2<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample2.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample2
 ...
-module load bowtie2 samtools<span class="p">;</span> bowtie2 -p <span class="m">8</span> --local --rg-id sample1000 --rg SM:sample1000 --rg LB:sci_seq --rg PL:ILLUMINA -x my_genome -U sample1000.fastq - <span class="p">|</span> samtools view -Shu - <span class="p">|</span> samtools sort  - sample1000
+module<span class="w"> </span>load<span class="w"> </span>bowtie2<span class="w"> </span>samtools<span class="p">;</span><span class="w"> </span>bowtie2<span class="w"> </span>-p<span class="w"> </span><span class="m">8</span><span class="w"> </span>--local<span class="w"> </span>--rg-id<span class="w"> </span>sample1000<span class="w"> </span>--rg<span class="w"> </span>SM:sample1000<span class="w"> </span>--rg<span class="w"> </span>LB:sci_seq<span class="w"> </span>--rg<span class="w"> </span>PL:ILLUMINA<span class="w"> </span>-x<span class="w"> </span>my_genome<span class="w"> </span>-U<span class="w"> </span>sample1000.fastq<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-Shu<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w">  </span>-<span class="w"> </span>sample1000
 </code></pre></div>
 <p>For simplicity, we'll assume that tasklist, input fastq files, and indexed genome are in a directory called <code>~/genome_proj/mapping</code>.</p>
 <h3 id="step-2-create-submission-script">Step 2: Create Submission Script</h3>
 <p>Load the SimpleQueue module, then create the launch script using:</p>
-<div class="highlight"><pre><span></span><code>sqCreateScript -q general -N genome_map -n <span class="m">80</span> tasklist.txt &gt; run.sh
+<div class="highlight"><pre><span></span><code>sqCreateScript<span class="w"> </span>-q<span class="w"> </span>general<span class="w"> </span>-N<span class="w"> </span>genome_map<span class="w"> </span>-n<span class="w"> </span><span class="m">80</span><span class="w"> </span>tasklist.txt<span class="w"> </span>&gt;<span class="w"> </span>run.sh
 </code></pre></div>
 <p>These parameters specify that the job, named genome_map, will be submitted to the general queue/partition. This job will find 80 free cores, start 80 workers on them, and begin processing tasks from the taskfile <code>tasklist.txt</code>.</p>
 <p>sqCreateScript takes a number of options. They differ somewhat from cluster to cluster, particularly the default values for queue, walltime, and memory. You can run sqCreateScript without any arguments to see the exact options on your cluster.</p>
