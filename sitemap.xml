@@ -21,6 +21,56 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/ai/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/aicodingtools/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/clarity/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/exercises/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/gpu-jobstats/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/huggingface/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/miniconda-multigpu/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/ollama/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/pythonpackages/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.ycrc.yale.edu/ai/resources/</loc>
+         <lastmod>2026-02-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/applications/</loc>
          <lastmod>2026-02-02</lastmod>
          <changefreq>daily</changefreq>
@@ -197,56 +247,6 @@
     </url>
     <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/access/x11/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/AI/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/aicodingtools/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/clarity/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/exercises/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/gpu-jobstats/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/huggingface/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/miniconda-multigpu/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/ollama/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/pythonpackages/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/ai/resources/</loc>
          <lastmod>2026-02-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
