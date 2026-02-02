@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/applications/toolchains/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2883,19 +2883,19 @@ intel: iimpi + Intel Math Kernel Library
 </code></pre></div>
 <h2 id="what-versions-match">What Versions Match?</h2>
 <p>To see what versions of sub-toolchains are compatible with their parents, load a <code>foss</code> or <code>intel</code> module of interest and run <code>module list</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>foss/2020b
-<span class="o">[</span>netid@node<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node ~<span class="o">]</span>$ module load foss/2020b
+<span class="o">[</span>netid@node ~<span class="o">]</span>$ module list
 
-Currently<span class="w"> </span>Loaded<span class="w"> </span>Modules:
-<span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>StdEnv<span class="w">                        </span><span class="o">(</span>S<span class="o">)</span><span class="w">   </span><span class="m">7</span><span class="o">)</span><span class="w"> </span>XZ/5.2.5-GCCcore-10.2.0<span class="w">           </span><span class="m">13</span><span class="o">)</span><span class="w"> </span>OpenMPI/4.0.5-GCC-10.2.0
-<span class="w">  </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>GCCcore/10.2.0<span class="w">                      </span><span class="m">8</span><span class="o">)</span><span class="w"> </span>libxml2/2.9.10-GCCcore-10.2.0<span class="w">     </span><span class="m">14</span><span class="o">)</span><span class="w"> </span>OpenBLAS/0.3.12-GCC-10.2.0
-<span class="w">  </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>zlib/1.2.11-GCCcore-10.2.0<span class="w">          </span><span class="m">9</span><span class="o">)</span><span class="w"> </span>libpciaccess/0.16-GCCcore-10.2.0<span class="w">  </span><span class="m">15</span><span class="o">)</span><span class="w"> </span>gompi/2020b
-<span class="w">  </span><span class="m">4</span><span class="o">)</span><span class="w"> </span>binutils/2.35-GCCcore-10.2.0<span class="w">       </span><span class="m">10</span><span class="o">)</span><span class="w"> </span>hwloc/2.2.0-GCCcore-10.2.0<span class="w">        </span><span class="m">16</span><span class="o">)</span><span class="w"> </span>FFTW/3.3.8-gompi-2020b
-<span class="w">  </span><span class="m">5</span><span class="o">)</span><span class="w"> </span>GCC/10.2.0<span class="w">                         </span><span class="m">11</span><span class="o">)</span><span class="w"> </span>UCX/1.9.0-GCCcore-10.2.0<span class="w">          </span><span class="m">17</span><span class="o">)</span><span class="w"> </span>ScaLAPACK/2.1.0-gompi-2020b
-<span class="w">  </span><span class="m">6</span><span class="o">)</span><span class="w"> </span>numactl/2.0.13-GCCcore-10.2.0<span class="w">      </span><span class="m">12</span><span class="o">)</span><span class="w"> </span>libfabric/1.11.0-GCCcore-10.2.0<span class="w">   </span><span class="m">18</span><span class="o">)</span><span class="w"> </span>foss/2020b
+Currently Loaded Modules:
+  <span class="m">1</span><span class="o">)</span> StdEnv                        <span class="o">(</span>S<span class="o">)</span>   <span class="m">7</span><span class="o">)</span> XZ/5.2.5-GCCcore-10.2.0           <span class="m">13</span><span class="o">)</span> OpenMPI/4.0.5-GCC-10.2.0
+  <span class="m">2</span><span class="o">)</span> GCCcore/10.2.0                      <span class="m">8</span><span class="o">)</span> libxml2/2.9.10-GCCcore-10.2.0     <span class="m">14</span><span class="o">)</span> OpenBLAS/0.3.12-GCC-10.2.0
+  <span class="m">3</span><span class="o">)</span> zlib/1.2.11-GCCcore-10.2.0          <span class="m">9</span><span class="o">)</span> libpciaccess/0.16-GCCcore-10.2.0  <span class="m">15</span><span class="o">)</span> gompi/2020b
+  <span class="m">4</span><span class="o">)</span> binutils/2.35-GCCcore-10.2.0       <span class="m">10</span><span class="o">)</span> hwloc/2.2.0-GCCcore-10.2.0        <span class="m">16</span><span class="o">)</span> FFTW/3.3.8-gompi-2020b
+  <span class="m">5</span><span class="o">)</span> GCC/10.2.0                         <span class="m">11</span><span class="o">)</span> UCX/1.9.0-GCCcore-10.2.0          <span class="m">17</span><span class="o">)</span> ScaLAPACK/2.1.0-gompi-2020b
+  <span class="m">6</span><span class="o">)</span> numactl/2.0.13-GCCcore-10.2.0      <span class="m">12</span><span class="o">)</span> libfabric/1.11.0-GCCcore-10.2.0   <span class="m">18</span><span class="o">)</span> foss/2020b
 
-<span class="w">  </span>Where:
-<span class="w">   </span>S:<span class="w">  </span>Module<span class="w"> </span>is<span class="w"> </span>Sticky,<span class="w"> </span>requires<span class="w"> </span>--force<span class="w"> </span>to<span class="w"> </span>unload<span class="w"> </span>or<span class="w"> </span>purge
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
 </code></pre></div>
 <p>Here you see that <code>foss/2020b</code> includes <code>GCCcore/10.2.0</code>, so modules with either the <code>foss-2020b</code> or <code>GCCcore-10.2.0</code> should be compatible.</p>
                 
