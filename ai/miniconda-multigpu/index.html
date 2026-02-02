@@ -2909,12 +2909,12 @@ If a job does not use the GPUs requested, it will be terminated by our resource 
 <h2 id="environment-setup-single-node">Environment setup - single node</h2>
 <p>All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
 <p>For single node workflows, either <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/">tensorflow</a> or <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">pytorch</a> is recommended.</p>
-<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu.</p>
+<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 <h2 id="environment-setup-multi-node">Environment setup - multi node</h2>
 <p>All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
 <p>For multi node workflows, the YCRC recommends <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">pytorch</a>. 
 This is to take advantage of torchrun for job launching, however, tensorflow is also a possible method.</p>
-<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu</p>
+<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 <h2 id="example-single-node-multi-gpu-training-job-slurm-torchrun">Example: single-node multi-GPU training job (Slurm + torchrun)</h2>
 <p>This example requests one node with 2 GPUs and launches one process per GPU using <code>torchrun</code>.</p>
 <p><strong>Note</strong>: You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
