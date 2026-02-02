@@ -30,7 +30,7 @@ All environments must be created using the miniconda module on a compute node. M
 
 For single node workflows, either [tensorflow](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/) or [pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/) is recommended.
 
-Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu.
+Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
 ## Environment setup - multi node
 
@@ -39,7 +39,7 @@ All environments must be created using the miniconda module on a compute node. M
 For multi node workflows, the YCRC recommends [pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/). 
 This is to take advantage of torchrun for job launching, however, tensorflow is also a possible method.
 
-Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please reach out to research.computing@yale.edu
+Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
 ## Example: single-node multi-GPU training job (Slurm + torchrun)
 

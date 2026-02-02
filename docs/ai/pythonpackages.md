@@ -7,7 +7,7 @@ installation recipes for commonly requested python packages. As of now, those pa
 
 - [flash attention](https://docs.ycrc.yale.edu/clusters-at-yale/ai/pythonpackages/#flash-attention)
 
-If you do not see a recipe for a package you need help with, please contact research.computing@yale.edu for
+If you do not see a recipe for a package you need help with, please [contact us](https://docs.ycrc.yale.edu/#get-help) for
 help installing the package/program.
 
 ##Common Error Associated with AI/ML Packages
@@ -18,7 +18,7 @@ If installing a python package/program for your AI/ML workflow and run into the 
 glibc 2.32+ not found
 ```
 
-Then please contact research.computing@yale.edu for help installing the package. This error is a result of the
+Then please [contact us](https://docs.ycrc.yale.edu/#get-help) for help installing the package. This error is a result of the
 operating system available on YCRC Computing Systems and will require building the program/package from source.
 
 ##Flash Attention

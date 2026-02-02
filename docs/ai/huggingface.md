@@ -19,7 +19,7 @@ The YCRC supports all AI/ML workflows. However, we generally recommend [Ollama](
 as a beginner. Hugging Face provides significantly more flexibility in model development and control and is suitable
 for high level users. Hugging Face also provides access to more models than Ollama. 
 
-Ultimately, there is no wrong choice. If you run into any issues with your workflows, please contact research.computing@yale.edu.
+Ultimately, there is no wrong choice. If you run into any issues with your workflows, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
 ## Environment setup
 
