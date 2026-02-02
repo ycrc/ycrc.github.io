@@ -28,7 +28,7 @@ Failure to complete the review by the due date will result deactivation of the p
 
 Projects will also be deactivated if their expiration date has elapsed (if applicable) or otherwise at the PI's discretion.
 
-Email us at [research.computing@yale.edu](mailto:research.computing@yale.edu) to inquire about using Hopper.
+[Request Hopper Project](https://research.computing.yale.edu/secure-project-request){ .md-button }
 
 ### Accounts
 
