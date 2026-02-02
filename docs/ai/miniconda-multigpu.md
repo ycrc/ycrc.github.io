@@ -9,7 +9,7 @@ It covers both:
 
 !!! Note
     Requesting multiple GPUs will not ensure your job runs faster or that your workflow will use all of the GPUs requested.
-    If a job does not use the GPUs requested, it will be killed by our resource monitoring tool, [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md).
+    If a job does not use the GPUs requested, it will be terminated by our resource monitoring tool, [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md).
 
 For additional Slurm commands to request resources outside of what is shown below, please see our [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md) documentation.
 

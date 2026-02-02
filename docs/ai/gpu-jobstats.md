@@ -60,8 +60,8 @@ Below are visual representations of common issues with GPU workflows:
      - Note: You shouldn't need to modify batch size as it was already optimized for one GPU
 - For complex workflows with multinode GPUs, see [multinode GPU jobs](miniconda-multigpu.md)
 
-## Jobstats killed my job!
+## Jobstats terminated my job!
 
-As of 2026, Jobstats will kill jobs that aren't using GPUs effectively (<10% usage). This is to ensure that GPUs, a limited and competitive resource,
+As of 2026, Jobstats will terminate jobs that aren't using GPUs effectively (<10% usage). This is to ensure that GPUs, a limited and competitive resource,
  is available to researchers that will benefit from the computing power GPUs provide. 
-If you are having issues with Jobstats killing your jobs, please reach out to research.computing@yale.edu and we will be happy to help.
+If you are having issues with Jobstats terminating your jobs, please reach out to research.computing@yale.edu and we will be happy to help.
