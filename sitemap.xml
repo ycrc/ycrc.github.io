@@ -111,7 +111,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.ycrc.yale.edu/clusters/data-center-migration/</loc>
+         <loc>https://docs.ycrc.yale.edu/clusters/grace-mccleary-decommission/</loc>
          <lastmod>2026-02-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -136,22 +136,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.ycrc.yale.edu/clusters/mccleary-farnam-ruddle/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.ycrc.yale.edu/clusters/mccleary/</loc>
          <lastmod>2026-02-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.ycrc.yale.edu/clusters/milgram/</loc>
-         <lastmod>2026-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.ycrc.yale.edu/clusters/milgram_rhel8/</loc>
          <lastmod>2026-02-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
