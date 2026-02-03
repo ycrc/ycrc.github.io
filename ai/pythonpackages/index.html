@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/ai/pythonpackages/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2879,91 +2879,91 @@ installation recipes for commonly requested python packages. As of now, those pa
 help installing the package/program.</p>
 <h2 id="common-error-associated-with-aiml-packages">Common Error Associated with AI/ML Packages</h2>
 <p>If installing a python package/program for your AI/ML workflow and run into the error:</p>
-<div class="highlight"><pre><span></span><code>glibc <span class="m">2</span>.32+ not found
+<div class="highlight"><pre><span></span><code>glibc<span class="w"> </span><span class="m">2</span>.32+<span class="w"> </span>not<span class="w"> </span>found
 </code></pre></div>
 <p>Then please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a> for help installing the package. This error is a result of the
 operating system available on YCRC Computing Systems and will require building the program/package from source.</p>
 <h2 id="flash-attention">Flash Attention</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">###request a compute node on day for 24 hours with 200 GB of memory and 20 cpus</span>
-salloc --partition<span class="o">=</span>day --mem<span class="o">=</span>200G --time<span class="o">=</span><span class="m">1</span>- --cpus-per-task<span class="o">=</span><span class="m">20</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>day<span class="w"> </span>--mem<span class="o">=</span>200G<span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>-<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">20</span>
 
 <span class="c1">##create initial environment</span>
-module load miniconda
+module<span class="w"> </span>load<span class="w"> </span>miniconda
 
-conda create -n <span class="nb">test</span> <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12.* uv ninja packaging cuda-version<span class="o">=</span><span class="m">12</span>.8 cuda-nvcc<span class="o">=</span><span class="m">12</span>.8 psutil -c nvidia 
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12.*<span class="w"> </span>uv<span class="w"> </span>ninja<span class="w"> </span>packaging<span class="w"> </span>cuda-version<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>cuda-nvcc<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>psutil<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>
 
-conda activate <span class="nb">test</span>
+conda<span class="w"> </span>activate<span class="w"> </span><span class="nb">test</span>
 
 <span class="c1">###install pytorch with cuda 12.8 (12.8 is necessary to match B200 architecture)</span>
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu128
 
 <span class="c1">###Load YCRC Cuda 12.8 module for nvcc detection</span>
-module load CUDA/12.8
+module<span class="w"> </span>load<span class="w"> </span>CUDA/12.8
 
 <span class="c1">###get flash attention package and setup for install</span>
-git clone https://github.com/Dao-AILab/flash-attention
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Dao-AILab/flash-attention
 
-<span class="nb">cd</span> flash-attention 
+<span class="nb">cd</span><span class="w"> </span>flash-attention<span class="w"> </span>
 
-git submodule update --init --recursive
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 
 <span class="c1">###make some cluster settings to install only for specific GPU architectures available (B200s, H200s, A100s, etc)</span>
-<span class="nb">export</span> <span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;8.9;9.0,10.0&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;8.9;9.0,10.0&quot;</span>
 
 <span class="c1">###stop install from overthreading/overcommitting memory</span>
-<span class="nb">export</span> <span class="nv">MAX_JOBS</span><span class="o">=</span><span class="m">8</span>
-<span class="nb">export</span> <span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="m">8</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MAX_JOBS</span><span class="o">=</span><span class="m">8</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="m">8</span>
 
 <span class="c1">##install package</span>
-python setup.py install
+python<span class="w"> </span>setup.py<span class="w"> </span>install
 </code></pre></div>
 <h2 id="vllm">vllm</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">###create initial environment (make sure to request a compute node with [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/)</span>
-conda create -n vllm <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.* uv setuptools-scm cmake cuda-nvcc<span class="o">=</span><span class="m">12</span>.4 cuda-version<span class="o">=</span><span class="m">12</span>.4 <span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.4.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.19.0 <span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.4.0 pytorch-cuda<span class="o">=</span><span class="m">12</span>.4 cuda-toolkit<span class="o">=</span><span class="m">12</span>.4 cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.4 cuda-runtime<span class="o">=</span><span class="m">12</span>.4 <span class="nv">gcc</span><span class="o">=</span><span class="m">12</span> <span class="nv">gxx</span><span class="o">=</span><span class="m">12</span> -c pytorch -c nvidia -y
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>vllm<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.*<span class="w"> </span>uv<span class="w"> </span>setuptools-scm<span class="w"> </span>cmake<span class="w"> </span>cuda-nvcc<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-version<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.19.0<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-toolkit<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-runtime<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="nv">gxx</span><span class="o">=</span><span class="m">12</span><span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>-y
 
 <span class="c1">###store location of CUDA libraries and executables</span>
-<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
 
 <span class="c1">###download repository for vllm to install from source</span>
-git clone https://github.com/vllm-project/vllm
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vllm-project/vllm
 
-<span class="nb">cd</span> vllm
+<span class="nb">cd</span><span class="w"> </span>vllm
 
-uv pip install -e . --no-build-isolation
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>--no-build-isolation
 </code></pre></div>
 <h2 id="esmfold">esmfold</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">###create initial environment using [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/) on a compute node</span>
 
-conda create -n <span class="nb">test</span> <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10 scipy <span class="nv">deepspeed</span><span class="o">=</span><span class="m">0</span>.15 biopython einops dm-tree ml-collections   <span class="nv">omegaconf</span><span class="o">=</span><span class="m">2</span>.3 hydra-core<span class="o">=</span><span class="m">1</span>.3 modelcif ninja compilers cmake   cuda-compiler<span class="o">=</span><span class="m">12</span>.4 cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.4 cuda-nvcc<span class="o">=</span><span class="m">12</span>.4 nvidia::cuda-libraries-dev<span class="o">=</span><span class="m">12</span>.4 -y
-conda activate <span class="nb">test</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>scipy<span class="w"> </span><span class="nv">deepspeed</span><span class="o">=</span><span class="m">0</span>.15<span class="w"> </span>biopython<span class="w"> </span>einops<span class="w"> </span>dm-tree<span class="w"> </span>ml-collections<span class="w">   </span><span class="nv">omegaconf</span><span class="o">=</span><span class="m">2</span>.3<span class="w"> </span>hydra-core<span class="o">=</span><span class="m">1</span>.3<span class="w"> </span>modelcif<span class="w"> </span>ninja<span class="w"> </span>compilers<span class="w"> </span>cmake<span class="w">   </span>cuda-compiler<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-nvcc<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>nvidia::cuda-libraries-dev<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span><span class="nb">test</span>
 
 <span class="c1">###set variables to find cuda libraries and executables</span>
-<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">&quot;</span>
-<span class="nb">export</span> <span class="nv">CUDACXX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/bin/nvcc&quot;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/lib:</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">&quot;</span>
-mkdir -p <span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/lib64&quot;</span>
-ln -sfn <span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/lib&quot;</span> <span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/lib64&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDACXX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/bin/nvcc&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/lib:</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">&quot;</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/lib64&quot;</span>
+ln<span class="w"> </span>-sfn<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">/targets/x86_64-linux/lib64&quot;</span>
 
 <span class="c1">#1 setup openfold, key dependency for esmfold</span>
-<span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">&quot;</span>
-git clone https://github.com/aqlaboratory/openfold.git
-<span class="nb">cd</span> openfold
-git checkout v1.0.1
-sed -i <span class="s1">&#39;s/-std=c++14/-std=c++17/g&#39;</span> setup.py
+<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$CONDA_PREFIX</span><span class="s2">&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aqlaboratory/openfold.git
+<span class="nb">cd</span><span class="w"> </span>openfold
+git<span class="w"> </span>checkout<span class="w"> </span>v1.0.1
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/-std=c++14/-std=c++17/g&#39;</span><span class="w"> </span>setup.py
 
 <span class="c1">###install pytorch</span>
-pip install <span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.4.0 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.19.0 <span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.4.0   --index-url https://download.pytorch.org/whl/cu124
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.19.0<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w">   </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124
 
 <span class="c1">###tell pytorch what CUDA architectures we are building for</span>
-<span class="nb">export</span> <span class="nv">PYTORCH_NVCC_FLAGS</span><span class="o">=</span><span class="s2">&quot;-gencode=arch=compute_80,code=sm_80 -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_89,code=sm_89 -gencode=arch=compute_90,code=sm_90&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_NVCC_FLAGS</span><span class="o">=</span><span class="s2">&quot;-gencode=arch=compute_80,code=sm_80 -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_89,code=sm_89 -gencode=arch=compute_90,code=sm_90&quot;</span>
 
 <span class="c1"># 2) drop any explicit &#39;-gencode&#39; occurrences to force openfold to build with our designated architectures</span>
-sed -i -E <span class="s2">&quot;/-gencode/d&quot;</span> setup.py
-sed -i -E <span class="s2">&quot;/arch=compute_.*code=sm_.*/d&quot;</span> setup.py
+sed<span class="w"> </span>-i<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;/-gencode/d&quot;</span><span class="w"> </span>setup.py
+sed<span class="w"> </span>-i<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;/arch=compute_.*code=sm_.*/d&quot;</span><span class="w"> </span>setup.py
 
 <span class="c1">###correct compiler in openfold, paste whole segment at one time</span>
-python - <span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
 <span class="s">import re</span>
 <span class="s">p=&quot;setup.py&quot;</span>
 <span class="s">s=open(p,&quot;r&quot;,encoding=&quot;utf-8&quot;).read()</span>
@@ -2975,13 +2975,13 @@ python - <span class="s">&lt;&lt;&#39;PY&#39;</span>
 <span class="s">PY</span>
 
 <span class="c1">###Tell compiler what CUDA architectures to build for (includes up to h200 right now)</span>
-<span class="nb">export</span> <span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;7.5;8.0;8.6;8.9;9.0&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TORCH_CUDA_ARCH_LIST</span><span class="o">=</span><span class="s2">&quot;7.5;8.0;8.6;8.9;9.0&quot;</span>
 
 <span class="c1">###installs openfold, key dependency of esmfold</span>
-python -m pip install . --no-build-isolation --no-deps -v
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--no-build-isolation<span class="w"> </span>--no-deps<span class="w"> </span>-v
 
 <span class="c1">###installs esmfold</span>
-pip install fair-esm
+pip<span class="w"> </span>install<span class="w"> </span>fair-esm
 </code></pre></div>
                 
                   
