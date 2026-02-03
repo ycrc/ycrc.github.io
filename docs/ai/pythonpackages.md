@@ -31,9 +31,9 @@ salloc --partition=day --mem=200G --time=1- --cpus-per-task=20
 ##create initial environment
 module load miniconda
 
-conda create -n test python=3.12.* uv ninja packaging cuda-version=12.8 cuda-nvcc=12.8 psutil -c nvidia 
+conda create -n flash_attn python=3.12.* uv ninja packaging cuda-version=12.8 cuda-nvcc=12.8 psutil -c nvidia 
 
-conda activate test
+conda activate flash_attn
 
 ###install pytorch with cuda 12.8 (12.8 is necessary to match B200 architecture)
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
@@ -60,9 +60,17 @@ python setup.py install
 ```
 
 ##vllm
+
+Create initial environment (make sure to request a compute node with [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/)
+
 ```bash
-###create initial environment (make sure to request a compute node with [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/)
+salloc --partition=devel --mem=20G --cpus-per-task=4 --time=2:00:00
+
+module load miniconda
+
 conda create -n vllm python=3.10.* uv setuptools-scm cmake cuda-nvcc=12.4 cuda-version=12.4 pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.4 cuda-toolkit=12.4 cuda-cudart-dev=12.4 cuda-runtime=12.4 gcc=12 gxx=12 -c pytorch -c nvidia -y
+
+conda activate vllm
 
 ###store location of CUDA libraries and executables
 export CUDA_HOME=$CONDA_PREFIX
@@ -76,11 +84,18 @@ uv pip install -e . --no-build-isolation
 ```
 
 ##esmfold
-```bash
-###create initial environment using [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/) on a compute node
 
-conda create -n test python=3.10 scipy deepspeed=0.15 biopython einops dm-tree ml-collections   omegaconf=2.3 hydra-core=1.3 modelcif ninja compilers cmake   cuda-compiler=12.4 cuda-cudart-dev=12.4 cuda-nvcc=12.4 nvidia::cuda-libraries-dev=12.4 -y
-conda activate test
+Create initial environment using [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/) on a compute node
+
+```bash
+
+salloc -p devel --mem=20G --time=2:00:00 --cpus-per-task=4
+
+
+module load miniconda
+
+conda create -n esmfold python=3.10 scipy deepspeed=0.15 biopython einops dm-tree ml-collections   omegaconf=2.3 hydra-core=1.3 modelcif ninja compilers cmake   cuda-compiler=12.4 cuda-cudart-dev=12.4 cuda-nvcc=12.4 nvidia::cuda-libraries-dev=12.4 -y
+conda activate esmfold
 
 ###set variables to find cuda libraries and executables
 export CUDA_HOME="$CONDA_PREFIX"
