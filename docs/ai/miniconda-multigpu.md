@@ -4,8 +4,8 @@ This page documents supported and commonly used patterns for running GPU workloa
 
 It covers both:
 
-- single-node multi-GPU usage
-- multi-node multi-GPU usage
+- Single-node multi-GPU usage
+- Multi-node multi-GPU usage
 
 !!! Note
     Requesting multiple GPUs will not ensure your job runs faster or that your workflow will use all of the GPUs requested.
@@ -13,9 +13,9 @@ It covers both:
 
 For additional Slurm commands to request resources outside of what is shown below, please see our [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md) documentation.
 
-The YCRC recommends using miniconda to create your AI/ML environments, which is available as a [module](../applications/modules.md).
+The YCRC recommends using Miniconda to create your AI/ML environments, which is available as a [module](../applications/modules.md).
 
-## Single-node vs multi-node usage
+## Single-node vs Multi-node usage
 
 | Pattern | Description | Recommendation | Reason |
 |-------|-------------|----------------|-----------------------------------|
@@ -26,26 +26,18 @@ Single-node multi-GPU should always be attempted before multi-node execution.
 
 ## Environment setup - single node
 
-All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.
+All environments must be created using the Miniconda module on a compute node. Miniconda will fail if you are on the login node.
 
-For single node workflows, either [tensorflow](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/) or [pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/) is recommended.
+For single node workflows, either [Tensorflow](https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/) or [Pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/) is recommended.
 
-Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
-
-## Environment setup - multi node
-
-All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.
-
-For multi node workflows, the YCRC recommends [pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/). 
-This is to take advantage of torchrun for job launching, however, tensorflow is also a possible method.
-
-Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
+Please confirm that Tensorflow/Pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
 ## Example: single-node multi-GPU training job (Slurm + torchrun)
 
 This example requests one node with 2 GPUs and launches one process per GPU using `torchrun`.
 
-**Note**: You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.
+!!! Note
+    You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.
 
 ```bash
 #!/bin/bash
@@ -86,11 +78,22 @@ torchrun \
   --gradient_accumulation_steps ${gr}
 ```
 
-## Example: multi-node multi-GPU training job (Slurm + torchrun)
+## Environment setup - multi node
+
+All environments must be created using the Miniconda module on a compute node. Miniconda will fail if you are on the login node.
+
+For multi-node workflows, the YCRC recommends [Pytorch](https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/). 
+This is to take advantage of torchrun for job launching, however, Tensorflow is also a possible method.
+
+Please confirm that Tensorflow/Pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please [contact us](https://docs.ycrc.yale.edu/#get-help).
+
+
+## Example: Multi-node multi-GPU training job (Slurm + torchrun)
 
 This example requests two nodes with 2 GPUs and launches one process per GPU using `torchrun`.
 
-**Note**: You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.
+!!! Note
+    You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.
 
 ```bash
 #!/bin/bash

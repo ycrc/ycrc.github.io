@@ -6,10 +6,11 @@ Hugging Face can be used on YCRC systems to run large language models through Py
 ## Intended usage
 
 Hugging Face is appropriate for:
-- scripted inference workflows
+
+- Scripted inference workflows
 - Jupyter notebook
-- workflows requiring explicit control over model loading and precision
-- multi-GPU inference on a single node
+- Workflows requiring explicit control over model loading and precision
+- Multi-GPU inference on a single node
 - Retrieval Augmented Generation
 - Fine Tuning
 
@@ -17,7 +18,7 @@ Hugging Face is appropriate for:
 
 The YCRC supports all AI/ML workflows. However, we generally recommend [Ollama](ollama.md) because it is simpler to use
 as a beginner. Hugging Face provides significantly more flexibility in model development and control and is suitable
-for high level users. Hugging Face also provides access to more models than Ollama. 
+for high level users. Hugging Face also provides access to more open-source models than Ollama. 
 
 Ultimately, there is no wrong choice. If you run into any issues with your workflows, please [contact us](https://docs.ycrc.yale.edu/#get-help).
 
@@ -69,13 +70,15 @@ Batch script example of requesting a specific GPU:
 ## Model loading and precision
 
 Automatic dtype selection during model loading is discouraged. Using automatic dtype selection can result in:
-- inefficient memory usage
-- unexpected precision choices
-- failure to load on GPUs with limited vRAM
+
+- Inefficient memory usage
+- Unexpected precision choices
+- Failure to load on GPUs with limited vRAM
 
 Recommended practice:
-- explicitly specify model precision (fp16,int8, etc)
-- validate memory usage on the target GPU type
+
+- Explicitly specify model precision (fp16,int8, etc)
+- Validate memory usage on the target GPU type
 
 Precision selection should be guided by the GPU memory available and the model size.
 
@@ -84,11 +87,12 @@ Precision selection should be guided by the GPU memory available and the model s
 Requesting multiple GPUs does not automatically distribute a model across devices. Multi-GPU usage requires explicit configuration in user code.
 
 When using multiple GPUs on a single node:
-- ensure all GPUs are allocated in the Slurm request
-- configure the framework to shard or distribute the model
-- validate that all GPUs are being used
 
-Please see [here](miniconda-multigpu.md) for instructions on multinode jobs.
+- Ensure all GPUs are allocated in the Slurm request
+- Configure the framework to share or distribute the model
+- Validate that all GPUs are being used
+
+Please see [here](miniconda-multigpu.md) for instructions on multi-GPU jobs.
 
 After execution, confirm GPU memory usage and utilization using
 [Jobstats](gpu-jobstats.md).
@@ -110,7 +114,8 @@ The YCRC does not provide examples for HuggingFace workflows as they change base
 ## Validation
 
 After running a Hugging Face job:
-- confirm the job requested the expected GPU resources
-- inspect GPU memory usage and utilization using Jobstats
-- confirm the number of active GPUs matches the request
-- verify that the model loaded at the intended precision
+
+- Confirm the job requested the expected GPU resources
+- Inspect GPU memory usage and utilization using Jobstats
+- Confirm the number of active GPUs matches the request
+- Verify that the model loaded at the intended precision

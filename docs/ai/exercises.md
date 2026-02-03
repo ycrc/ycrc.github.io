@@ -1,6 +1,6 @@
 # Ollama Exercises
 
-The YCRC hosts a github for exercises for users to accomplish the following tasks with Ollama:
+The YCRC hosts a github with exercises for users to accomplish the following tasks with Ollama:
 
 - Load and run a basic inference request with Ollama in a terminal
 - Use Ollama within a Jupyter Notebook

@@ -21,17 +21,17 @@ module load ollama
 
 Ollama is appropriate for:
 
-- interactive prompting  
+- Interactive prompting  
 - Jupyter Lab notebooks
-- batch inference  
+- Batch inference  
 - Single Node workflows
-- use as a backend for OpenWebUI  
+- Use as a backend for OpenWebUI  
 
 Ollama is not intended for:
 
 - Multi-node inference (not compatible)
-- model training
-- long-running shared services outside a job allocation  
+- Model training
+- Long-running shared services outside a job allocation  
 
 ## Interactive usage
 
@@ -48,7 +48,7 @@ due to a lack of vRAM.
 To see a better summary of resources available, see [here](resources.md)
 
 In this case, you can specify GPUs with more vRAM using the `--constraint` flag. In the example below, you could 
-specify rtx5000 or v100 GPUs, which have more vRAM.
+specify rtx5000 or v100 GPUs, which have more vRAM > 16GB.
 
 
 ```bash
@@ -79,7 +79,43 @@ ollama run llama3.2:3b
 why is the sky blue?
 ```
 
-If an Ollama server is not already running for the current job, one will be started automatically in the background.
+## Jupyter Notebooks with Ollama
+
+For Jupyter Notebooks, you need to do three things:
+
+1. Install Ollama in the conda environment using **pip**. The Miniconda package for Ollama installs the wrong program
+and won't work properly.
+
+    ```bash
+    conda activate my_ollama_env
+
+    pip install ollama
+    ```
+
+2. Load Ollama module prior to requesting resources by using the additional modules open in OOD, or module load ollama
+in a terminal once the Jupyter Notebook has started.
+
+3. Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
+Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.
+
+```bash
+import subprocess,ollama
+
+###starts ollama server
+
+subprocess.run(["ollama", "serve"], check=True)
+###collects host address for notebook
+host = subprocess.check_output(["ollama", "host"], text=True).strip()
+print("ollama host reports:", host)
+###jupyter notebook requires http to be in front of host, this line adds http to host
+if not host.startswith("http://") and not host.startswith("https://"):
+    host = "http://" + host
+print("ollama host for notebook:", host)
+
+###imports client to save host address
+from ollama import Client
+client = Client(host=host)
+```
 
 ## Batch usage
 
@@ -113,7 +149,7 @@ GPU usage must be validated using Jobstats.
 ##Hands on Examples
 
 The YCRC hosts a github repository for hands-on examples from the Ollama on HPC workshop provided by YCRC. You can
-access the examples [here](exercises.md)
+access the examples [here](exercises.md).
 
 ## YCRC module behavior
 
@@ -121,8 +157,8 @@ The YCRC Ollama module replaces the vendor-provided `ollama` binary with a wrapp
 
 Key properties:
 
-- one Ollama server per user, per job, per GPU set: Avoids issues with multiple users using Ollama on same node.  
-- Provides method to cleanly close server
+- One Ollama server per user, per job, per GPU set: Avoids issues with multiple users using Ollama on same node.  
+- Provides easy-to-use method to cleanly close server
 - Warns immediately if no GPU is present
 - Prevents users from launching multiple servers in the same job
 - Automatically stores server location for future instances of Ollama in same job
@@ -138,13 +174,15 @@ If a user wants to use a specific port, they can set the port value prior to oll
 
 ```bash
 export OLLAMA_PORT=11434
+
+ollama serve
 ```
 
 If the requested port is already in use, a different free port will be selected automatically.
 
 ## Discovering the active Ollama server
 
-The module provides helper commands to query the active server.
+The module provides helper commands to query the active server to easily identify location of running Ollama instance.
 
 Print the active host and port:
 
@@ -164,6 +202,6 @@ The server process is terminated cleanly when possible.
 
 After running inference:
 
-- confirm GPU memory usage and utilization using Jobstats  
-- confirm responses are produced as expected  
+- Confirm GPU memory usage and utilization using Jobstats  
+- Confirm responses are produced as expected  
 

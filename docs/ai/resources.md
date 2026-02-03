@@ -1,13 +1,13 @@
 # Available Resources and Recommendations
 
-YCRC research computing infrastructure can be used to run localized large language models on GPU-enabled clusters.
+YCRC Research Computing Infrastructure can be used to run localized large language models on GPU-enabled clusters.
 
 Running LLMs locally provides the following advantages:
 
-- user data remains local to the cluster [(Security concerns with non-local models)](clarity.md)
-- researchers can control model versions and configurations
+- User data remains local to the cluster [(Security concerns with non-local models)](clarity.md)
+- Researchers can control model versions and configurations
 - YCRC GPUs are free of charge (Except the secure data cluster, [Hopper](../clusters/hopper.md)
-- models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)
+- Models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)
 
 ## GPU availability on YCRC resources
 
@@ -16,7 +16,7 @@ Once an LLM workflow is configured, models can be run on any GPU partition:
 - McCleary and Grace: `gpu_devel`, `gpu`, `gpu_scavenge`
 - Milgram: `gpu`, `scavenge`
 - Bouchet: `gpu`, `gpu_h200`, `gpu_devel`
-- Hopper: `gpu`
+- Hopper: `gpu`, `gpu_devel`
 
 GPU memory capacity varies significantly by GPU type. Some models will not run unless sufficient vRAM is available.
 
@@ -24,7 +24,7 @@ All YCRC GPU nodes, except H200s (contain 8 GPUs) contain four GPUs. When a job 
 
 For example:
 
-- requesting four A100-80GB GPUs provides 320 GB of aggregate GPU memory
+- Requesting four A100-80GB GPUs provides 320 GB of aggregate GPU memory
 
 ## Cluster GPU summary
 
@@ -32,9 +32,9 @@ For example:
 |---------|------------|-------------------|------------------------|----------------------|----------------------------|
 | Bouchet | H200       | 1120 GB           | 80                     | 40                   | Very large models, multi-GPU inference, large-scale experimentation |
 | Hopper  | H200       | 1120 GB           | 32                     | 172                  | HIPPA, PHI, PII Data Analysis |
-| Grace   | A100-80GB  | 320 GB            | 16                     | 132                  | Large inference workloads, memory-bound models |
-| McCleary| A100-80GB  | 320 GB            | 12                     | 92                   | General-purpose inference, development, testing |
-| Milgram | H100       | 320 GB            | 12                     | 8                    | Medium Risk Data Workflows |
+| Grace   | A100-80G   | 320 GB            | 16                     | 132                  | Large inference workloads, memory-bound models |
+| McCleary| A100-80G   | 320 GB            | 12                     | 92                   | General-purpose inference, development, testing |
+| Milgram | H100       | 320 GB            | 12                     | 8                    | Medium risk data workflows |
 
 Detailed hardware information is available on the cluster pages:
 
@@ -52,9 +52,9 @@ YCRC operates on a queued scheduling system. Larger GPUs are in higher demand an
 
 Recommendations:
 
-- begin development using smaller models that fit on lower-memory GPUs
-- validate workflows interactively
-- scale model size only after confirming correctness
+- Begin development using smaller models that fit on lower-memory GPUs
+- Validate workflows interactively, including GPU detection
+- Scale model size only after confirming proper detection of resources by your script
 
 This approach reduces queue time and avoids failed jobs.
 
@@ -83,6 +83,8 @@ Approximate GPU memory requirements for inference without quantization:
 Exact requirements are listed on the model's Hugging Face or Ollama page.
 
 Domain-specific models are often smaller and more efficient than general-purpose models and should be preferred when available.
+e.g., if seeking to performan analysis on Law or Medical data, you may find better success finding a model that was developed
+specifically for Law or Medical Documents.
 
 If vRAM requirements are uncertain, run the model on a larger GPU and inspect usage using [Jobstats](gpu-jobstats.md).
 

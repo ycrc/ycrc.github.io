@@ -2,19 +2,19 @@
 
 ## YCRC Support Options
 Due to the exposure risks associated with API coding tools like Claude Code, the YCRC does not formally support 
-researchers who wish to use AI coding tools, such as Claude Code, to aid in their workflow development. It is possible
-to attach agents to your coding environments (VSCode, etc) while in the cluster, but it comes with the following risk.
+researchers who wish to use AI coding tools to aid in their workflow development. It is possible
+to attach agents to your coding environments (VSCode, etc) while in the cluster, but it comes with the following risks.
 
 ## Coding Agents
-AI-driven programs that write code and take actions on your behalf, are increasing in popularity and efficacy. 
+AI-driven programs that write code and take actions on your behalf are increasing in popularity and efficacy. 
 Coding agents are useful and exciting, and their use is permitted on YCRC clusters. However, these programs are 
 powerful and rapidly changing tools that come with many potential risks that you may be unfamiliar with. 
 These risks include the possibility that the agent might:
 
 - expose your or your lab group's data
-- take actions on your behalf, including editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system
+- take actions on your behalf, including: editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system
 - expose your security credentials
-- execute arbitrary, perhaps malicious, code. 
+- execute arbitrary, and perhaps malicious, code. 
 
 Because of coding agents' enhanced capabilities, it is important to follow the best practices recommended by the 
 organizations that created the agents, as well as by independent entities.

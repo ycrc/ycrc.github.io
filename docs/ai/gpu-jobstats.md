@@ -2,8 +2,8 @@
 
 Jobstats is the primary mechanism for evaluating GPU/CPU usage on Yale Research Computing systems. It can display usage in two formats:
 
-- a text summary of a specific job within a terminal
-- a graphical summary of usage/time for a specific job
+- A text summary of a specific job within a terminal
+- A graphical summary of usage/time for a specific job in OOD's user portal
 
 Jobstats provides live reporting of GPU/CPU usage, so you can monitor your job as it runs. 
 
@@ -22,10 +22,11 @@ Relevant metrics include:
 
 All GPU nodes provide access to many GPUs on a single node.
 
-Common observations:
-- only one GPU shows memory usage (issue with multi-GPU setup)
-- low average utilization across devices (not loading enough data on GPU)
-- uneven memory distribution 
+Common observations for struggling jobs:
+
+- Only one GPU shows memory usage (issue with multi-GPU setup)
+- Low average utilization across devices (not loading enough data on GPU)
+- Uneven memory distribution 
 
 These patterns typically indicate misconfigured device placement.
 
@@ -33,9 +34,9 @@ These patterns typically indicate misconfigured device placement.
 
 | Observation | Likely interpretation |
 |------------|----------------------|
-| low memory, low utilization | Batch size too small |
+| Low memory, low utilization | Batch size too small |
 | One GPU active | Multi-GPU misconfiguration |
-| long periods of GPU inactivity | Data loading bottleneck |
+| Long periods of GPU inactivity | Data loading bottleneck |
 | High CPU, low GPU | Model running on CPU/issue with pytorch/tensorflow installation |
 
 Below are visual representations of common issues with GPU workflows:
@@ -52,12 +53,12 @@ Below are visual representations of common issues with GPU workflows:
 ![Multi-GPU Jobstats example](assets/ai/jobstats/multigpu_one_active.png)
 -->
 
-## Using Jobstats to Scale workflows
+## Using Jobstats to scale Workflows
 
 - Start with one GPU and confirm usage. Identify total GPU utilization and memory usage with Jobstats
-- Try tinkering with the amount of data loaded, CPU totals, etc to see how utilization and memory usage changes
+- Try tinkering with the amount of data loaded, CPU totals, etc., to see how utilization and memory usage changes
 - If using entire GPU, try multiple GPUs on same node (will require code modification) and confirm with Jobstats
-     - Note: You shouldn't need to modify batch size as it was already optimized for one GPU
+     - **Note:** You shouldn't need to modify batch size as it was already optimized for one GPU
 - For complex workflows with multinode GPUs, see [multinode GPU jobs](miniconda-multigpu.md)
 
 ## Jobstats terminated my job!
