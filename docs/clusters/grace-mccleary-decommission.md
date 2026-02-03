@@ -1,10 +1,10 @@
-# Data Center Migration
+# Grace and McCleary Decommission
 
-## Overview
+## Data Center Migration
 
 The YCRC is in the process of transitioning from the Yale West Campus Data Center to the [MGHPCC data center](https://news.yale.edu/2025/02/26/yale-grows-capacity-high-performance-computing-ai-related-research). The [Bouchet](bouchet.md) cluster, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet.
 
-## Phased Migration
+## Phased Decommission & Migration
 
 During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.
 
@@ -20,4 +20,4 @@ If you are in Phase 1, you will receive an email shortly with a detailed timelin
 
 If you are in Phase 2 or 3, more detailed information will be provided later this year when the hardware migration dates are finalized.
 
-As always, if you have any questions or concerns, please contact us at research.computing@yale.edu.
+As always, if you have any questions or concerns, please [contact us](/#get-help).
