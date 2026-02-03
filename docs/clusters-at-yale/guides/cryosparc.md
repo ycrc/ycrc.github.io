@@ -66,6 +66,10 @@ cd ${install_path}/cryosparc_master
 ```
 
 !!!warning
+     For now (February 2026) please avoid installing CryoSPARC 5.0 or later on the clusters.
+     It contains a breaking change to our cluster management scripts. We are working on a solution.
+
+!!!warning
      If you are installing a version of CryoSPARC older than 4.4.0, add the additional line
 
      ``` bash
