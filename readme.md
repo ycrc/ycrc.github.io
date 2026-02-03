@@ -12,7 +12,7 @@ All the source files for the site are stored in the branch `src`. **Never** dire
 * Setup your Python environment
 
 ``` bash
-conda create --name mkdocs python
+conda create --name mkdocs python=3.12
 conda activate mkdocs
 pip install -r requirements.txt
 ```
