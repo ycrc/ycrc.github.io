@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -563,8 +563,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../clusters/data-center-migration/" class="md-nav__link">
-        Data Center Migration
+      <a href="../../../clusters/grace-mccleary-decommission/" class="md-nav__link">
+        Grace & McCleary Decommission
       </a>
     </li>
   
@@ -2959,15 +2959,15 @@ To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood"
 In the submission form, you can alos select between a number of R versions.</p>
 <h3 id="change-user-r-package-path">Change User R Package Path</h3>
 <p>To change the default path where packages installed by the user are stored, you need to add the following line of code in your <code>$HOME/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
 </code></pre></div>
 <h3 id="configure-the-graphic-device">Configure the Graphic Device</h3>
 <p>When you plot in a RStudio session, you may encounter the following error:</p>
-<div class="highlight"><pre><span></span><code>Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>RStudioGD<span class="o">()</span><span class="w"> </span>:<span class="w"> </span>
-<span class="w">  </span>Shadow<span class="w"> </span>graphics<span class="w"> </span>device<span class="w"> </span>error:<span class="w"> </span>r<span class="w"> </span>error<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>R<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>error<span class="o">)</span>
-In<span class="w"> </span>addition:<span class="w"> </span>Warning<span class="w"> </span>message:
-In<span class="w"> </span>grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,<span class="w">  </span>:
-<span class="w">  </span>unable<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>X11<span class="w"> </span>display<span class="w"> </span><span class="s1">&#39;&#39;</span>
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> RStudioGD<span class="o">()</span> : 
+  Shadow graphics device error: r error <span class="m">4</span> <span class="o">(</span>R code execution error<span class="o">)</span>
+In addition: Warning message:
+In grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,  :
+  unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
 </code></pre></div>
 <p>To fix the problem, you need to configure your RStudio session to use <code>Cairo</code> for plotting. 
 You can do it in your code as follows: </p>
@@ -2992,7 +2992,7 @@ ycrc_clean_rstudio.sh -f
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
 <h2 id="using-r-conda-with-the-rstudio-server-app">Using R Conda with the RStudio Server App</h2>
 <p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available to the RStudio Server app. From the terminal, execute the following command:</p>
-<div class="highlight"><pre><span></span><code>ycrc_conda_env.sh<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>ycrc_conda_env.sh update
 </code></pre></div>
 <p>Your R conda environments should now show up in the 'R version' drop-down menu. </p>
 <h2 id="run-rstudio-in-remote-desktop">Run RStudio in Remote Desktop</h2>
@@ -3010,8 +3010,8 @@ You will need to wait until the code finishes before you can connect to the same
 you can run RStudio Desktop within a Remote Desktop environment.</p>
 <h3 id="using-r-module-with-rstudio-desktop">Using R module with RStudio Desktop</h3>
 <p>First, start a Remote Desktop instance in the web portal. From the terminal in the Remote Desktop, run the following commands:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R
-module<span class="w"> </span>load<span class="w"> </span>RStudio
+<div class="highlight"><pre><span></span><code>module load R
+module load RStudio
 rstudio
 </code></pre></div>
 <h3 id="using-r-conda-with-rstudio-desktop">Using R Conda with RStudio Desktop</h3>
@@ -3019,9 +3019,9 @@ rstudio
 From the terminal in the Remote Desktop, do <em>not</em> load the modules for R and RStudio. 
 Instead, install 'rstudio-desktop' into your R Conda environment if you have not done so, 
 and then call <code>rstudio</code>.  </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>my_r_env
-conda<span class="w"> </span>install<span class="w"> </span>rstudio-desktop
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda activate my_r_env
+conda install rstudio-desktop
 rstudio
 </code></pre></div>
 <h3 id="troubleshoot-rstudio-with-conda-r">Troubleshoot: RStudio with Conda R</h3>
