@@ -2853,7 +2853,8 @@
                 
                 
                 <h1 id="clarity-api">Clarity API</h1>
-<p>The YCRC recommends using locallized open-source models on the Cluster or Clarity for research purposes due to data exposure risks (See Below).</p>
+<p>The YCRC recommends using locallized open-source models on the Cluster or closed-source models on Clarity for research 
+purposes due to data exposure risks.</p>
 <p>Clarity, managed by ITS, provides Yale-managed access to closed-source language models via a ChatGPT-esque communication interface. Clarity currently provides access to:</p>
 <ul>
 <li>OpenAI models</li>
@@ -2867,17 +2868,18 @@
 <h2 id="issueserrors">Issues/Errors</h2>
 <p>For issues using Clarity, please visit the <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform/known-issues">FAQ</a> or contact <a href="https://yale.service-now.com/it?id=get_help">ITS</a></p>
 <h2 id="api-keys-for-closed-source-models">API Keys for closed-source models</h2>
-<p>If you are a researcher that has access to closed-source models via API keys, the YCRC systems will support accessing the model from the clusters.
+<p>If you are a researcher that has access to closed-source models via API keys, the YCRC systems will support accessing the model from the clusters
+so as to avoid unnecessary data transfers.
 However, using API keys generally means that you are using resources provided by the API key provider, and do not need GPU resources from the YCRC system.
 When submitting jobs with this workflow, please only request these types of resources:</p>
 <ul>
-<li>cpus-per-task: for moving data</li>
-<li>memory: for moving data</li>
-<li>time: to ensure completion of API job </li>
+<li>Cpus: for moving data</li>
+<li>Memory: for moving data</li>
+<li>Time: to ensure completion of API job </li>
 </ul>
 <h2 id="data-exposure-risk">Data Exposure Risk</h2>
 <p>For Clarity, there is little to no data exposure risk. It is a closed system, managed by cloud providers, but where data is contained to within Yale's infrastructure.</p>
-<p>For API keys, however, there is significant more risk:
+<p>For API keys, however, there is significantly more risk:
 API keys send code and data to the company that runs them, e.g., OpenAI, Anthropic, Microsoft, or Google. The service may log or retain your code and data, which may be added to the AI training set, depending on the provider and your account settings. Experiments have shown that many LLMs can be coaxed to resurface their training data or leak code snippets (as an extreme example, in the past, some LLMs would reproduce complete <a href="https://arxiv.org/abs/2601.02671">Harry Potter books</a> when prompted by the book's first sentence). </p>
 <p>Because of this, the YCRC recommends using locallized open-source models on the Cluster or Clarity for research purposes.</p>
                 
@@ -2888,7 +2890,7 @@ API keys send code and data to the company that runs them, e.g., OpenAI, Anthrop
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
       
     
   </small>

@@ -1875,7 +1875,7 @@
       
         <li class="md-nav__item">
   <a href="#single-node-vs-multi-node-usage" class="md-nav__link">
-    Single-node vs multi-node usage
+    Single-node vs Multi-node usage
   </a>
   
 </li>
@@ -1888,13 +1888,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-setup-multi-node" class="md-nav__link">
-    Environment setup - multi node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-single-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
     Example: single-node multi-GPU training job (Slurm + torchrun)
   </a>
@@ -1902,8 +1895,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#environment-setup-multi-node" class="md-nav__link">
+    Environment setup - multi node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-multi-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
-    Example: multi-node multi-GPU training job (Slurm + torchrun)
+    Example: Multi-node multi-GPU training job (Slurm + torchrun)
   </a>
   
 </li>
@@ -2816,7 +2816,7 @@
       
         <li class="md-nav__item">
   <a href="#single-node-vs-multi-node-usage" class="md-nav__link">
-    Single-node vs multi-node usage
+    Single-node vs Multi-node usage
   </a>
   
 </li>
@@ -2829,13 +2829,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-setup-multi-node" class="md-nav__link">
-    Environment setup - multi node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-single-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
     Example: single-node multi-GPU training job (Slurm + torchrun)
   </a>
@@ -2843,8 +2836,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#environment-setup-multi-node" class="md-nav__link">
+    Environment setup - multi node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-multi-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
-    Example: multi-node multi-GPU training job (Slurm + torchrun)
+    Example: Multi-node multi-GPU training job (Slurm + torchrun)
   </a>
   
 </li>
@@ -2870,8 +2870,8 @@
 <p>This page documents supported and commonly used patterns for running GPU workloads across multiple GPUs using Conda-based environments.</p>
 <p>It covers both:</p>
 <ul>
-<li>single-node multi-GPU usage</li>
-<li>multi-node multi-GPU usage</li>
+<li>Single-node multi-GPU usage</li>
+<li>Multi-node multi-GPU usage</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2879,8 +2879,8 @@
 If a job does not use the GPUs requested, it will be terminated by our resource monitoring tool, <a href="../../clusters-at-yale/job-scheduling/jobstats/">Jobstats</a>.</p>
 </div>
 <p>For additional Slurm commands to request resources outside of what is shown below, please see our <a href="../../clusters-at-yale/job-scheduling/">Slurm job scheduling</a> documentation.</p>
-<p>The YCRC recommends using miniconda to create your AI/ML environments, which is available as a <a href="../../applications/modules/">module</a>.</p>
-<h2 id="single-node-vs-multi-node-usage">Single-node vs multi-node usage</h2>
+<p>The YCRC recommends using Miniconda to create your AI/ML environments, which is available as a <a href="../../applications/modules/">module</a>.</p>
+<h2 id="single-node-vs-multi-node-usage">Single-node vs Multi-node usage</h2>
 <table>
 <thead>
 <tr>
@@ -2907,17 +2907,15 @@ If a job does not use the GPUs requested, it will be terminated by our resource 
 </table>
 <p>Single-node multi-GPU should always be attempted before multi-node execution.</p>
 <h2 id="environment-setup-single-node">Environment setup - single node</h2>
-<p>All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
-<p>For single node workflows, either <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/">tensorflow</a> or <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">pytorch</a> is recommended.</p>
-<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
-<h2 id="environment-setup-multi-node">Environment setup - multi node</h2>
-<p>All environments must be created using the miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
-<p>For multi node workflows, the YCRC recommends <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">pytorch</a>. 
-This is to take advantage of torchrun for job launching, however, tensorflow is also a possible method.</p>
-<p>Please confirm that tensorflow/pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
+<p>All environments must be created using the Miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
+<p>For single node workflows, either <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/tensorflow/">Tensorflow</a> or <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">Pytorch</a> is recommended.</p>
+<p>Please confirm that Tensorflow/Pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 <h2 id="example-single-node-multi-gpu-training-job-slurm-torchrun">Example: single-node multi-GPU training job (Slurm + torchrun)</h2>
 <p>This example requests one node with 2 GPUs and launches one process per GPU using <code>torchrun</code>.</p>
-<p><strong>Note</strong>: You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=single_node</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -2927,11 +2925,11 @@ This is to take advantage of torchrun for job launching, however, tensorflow is 
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH --time=10:00</span>
 
-module load miniconda
-conda activate YOUR_ENV
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>YOUR_ENV
 
 <span class="c1">###prevents multithreading which will slow down job</span>
-<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
 
 <span class="c1">#batch size</span>
 <span class="nv">bs</span><span class="o">=</span><span class="m">16</span>
@@ -2946,18 +2944,26 @@ conda activate YOUR_ENV
 <span class="c1">#training script</span>
 <span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
 
-torchrun <span class="se">\</span>
-  --nproc_per_node<span class="o">=</span><span class="nv">$SLURM_GPUS_ON_NODE</span> <span class="se">\</span>
-  <span class="si">${</span><span class="nv">script</span><span class="si">}</span> <span class="se">\</span>
-  --input_folder_path <span class="si">${</span><span class="nv">inputdir</span><span class="si">}</span> <span class="se">\</span>
-  --learning_rate <span class="si">${</span><span class="nv">lr</span><span class="si">}</span> <span class="se">\</span>
-  --batch_size <span class="si">${</span><span class="nv">bs</span><span class="si">}</span> <span class="se">\</span>
-  --num_train_epochs <span class="si">${</span><span class="nv">epoch</span><span class="si">}</span> <span class="se">\</span>
-  --gradient_accumulation_steps <span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
+torchrun<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nproc_per_node<span class="o">=</span><span class="nv">$SLURM_GPUS_ON_NODE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="si">${</span><span class="nv">script</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_folder_path<span class="w"> </span><span class="si">${</span><span class="nv">inputdir</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--learning_rate<span class="w"> </span><span class="si">${</span><span class="nv">lr</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch_size<span class="w"> </span><span class="si">${</span><span class="nv">bs</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num_train_epochs<span class="w"> </span><span class="si">${</span><span class="nv">epoch</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gradient_accumulation_steps<span class="w"> </span><span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
 </code></pre></div>
-<h2 id="example-multi-node-multi-gpu-training-job-slurm-torchrun">Example: multi-node multi-GPU training job (Slurm + torchrun)</h2>
+<h2 id="environment-setup-multi-node">Environment setup - multi node</h2>
+<p>All environments must be created using the Miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
+<p>For multi-node workflows, the YCRC recommends <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">Pytorch</a>. 
+This is to take advantage of torchrun for job launching, however, Tensorflow is also a possible method.</p>
+<p>Please confirm that Tensorflow/Pytorch is installed correctly by having it detect GPUs. If you have issues detecting a GPU, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
+<h2 id="example-multi-node-multi-gpu-training-job-slurm-torchrun">Example: Multi-node multi-GPU training job (Slurm + torchrun)</h2>
 <p>This example requests two nodes with 2 GPUs and launches one process per GPU using <code>torchrun</code>.</p>
-<p><strong>Note</strong>: You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=ddp_multi_node</span>
 <span class="c1">#SBATCH --nodes=2</span>
@@ -2967,18 +2973,18 @@ torchrun <span class="se">\</span>
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH --time=20:00</span>
 
-module load miniconda
-conda activate MY_PYTORCH_ENV
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>MY_PYTORCH_ENV
 
 <span class="c1">###tells job what node is the master node which is necessary for data communication between nodes</span>
-<span class="nb">export</span> <span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol show hostnames <span class="s2">&quot;</span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span> <span class="p">|</span> head -n <span class="m">1</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 <span class="c1">##stores master node as variable for use in the torchrun execution</span>
-<span class="nb">export</span> <span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
 
-<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
 
-<span class="nb">echo</span> <span class="s2">&quot;MASTER_ADDR=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;Launching multi-node distributed training&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;MASTER_ADDR=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Launching multi-node distributed training&quot;</span>
 
 <span class="c1">#batch size</span>
 <span class="nv">bs</span><span class="o">=</span><span class="m">16</span>
@@ -2993,18 +2999,18 @@ conda activate MY_PYTORCH_ENV
 <span class="c1">#training script</span>
 <span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
 
-torchrun <span class="se">\</span>
-  --nnodes<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
-  --nproc_per_node<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_GPUS_ON_NODE</span><span class="si">}</span> <span class="se">\</span>
-  --node_rank<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_NODEID</span><span class="si">}</span> <span class="se">\</span>
-  --master_addr<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span> <span class="se">\</span>
-  --master_port<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_PORT</span><span class="si">}</span> <span class="se">\</span>
-  <span class="si">${</span><span class="nv">script</span><span class="si">}</span> <span class="se">\</span>
-  --input_folder_path <span class="si">${</span><span class="nv">INPUT_FOLDER</span><span class="si">}</span> <span class="se">\</span>
-  --learning_rate <span class="si">${</span><span class="nv">lr</span><span class="si">}</span> <span class="se">\</span>
-  --per_device_batch_size <span class="si">${</span><span class="nv">bs</span><span class="si">}</span> <span class="se">\</span>
-  --num_train_epochs <span class="si">${</span><span class="nv">epoch</span><span class="si">}</span> <span class="se">\</span>
-  --gradient_accumulation_steps <span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
+torchrun<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nnodes<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nproc_per_node<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_GPUS_ON_NODE</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--node_rank<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_NODEID</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--master_addr<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--master_port<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_PORT</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="si">${</span><span class="nv">script</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_folder_path<span class="w"> </span><span class="si">${</span><span class="nv">INPUT_FOLDER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--learning_rate<span class="w"> </span><span class="si">${</span><span class="nv">lr</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--per_device_batch_size<span class="w"> </span><span class="si">${</span><span class="nv">bs</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--num_train_epochs<span class="w"> </span><span class="si">${</span><span class="nv">epoch</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gradient_accumulation_steps<span class="w"> </span><span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
 </code></pre></div>
                 
                   
@@ -3014,7 +3020,7 @@ torchrun <span class="se">\</span>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
       
     
   </small>

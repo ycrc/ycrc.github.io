@@ -2925,29 +2925,31 @@
                 <h1 id="hugging-face">Hugging Face</h1>
 <p>Hugging Face can be used on YCRC systems to run large language models through Python scripts or Jupyter notebooks. This approach provides explicit control over model loading, precision, and GPU placement and is appropriate for scripted workflows and exploratory analysis.</p>
 <h2 id="intended-usage">Intended usage</h2>
-<p>Hugging Face is appropriate for:
-- scripted inference workflows
-- Jupyter notebook
-- workflows requiring explicit control over model loading and precision
-- multi-GPU inference on a single node
-- Retrieval Augmented Generation
-- Fine Tuning</p>
+<p>Hugging Face is appropriate for:</p>
+<ul>
+<li>Scripted inference workflows</li>
+<li>Jupyter notebook</li>
+<li>Workflows requiring explicit control over model loading and precision</li>
+<li>Multi-GPU inference on a single node</li>
+<li>Retrieval Augmented Generation</li>
+<li>Fine Tuning</li>
+</ul>
 <h2 id="ollama-vs-hugging-face">Ollama vs Hugging Face</h2>
 <p>The YCRC supports all AI/ML workflows. However, we generally recommend <a href="../ollama/">Ollama</a> because it is simpler to use
 as a beginner. Hugging Face provides significantly more flexibility in model development and control and is suitable
-for high level users. Hugging Face also provides access to more models than Ollama. </p>
+for high level users. Hugging Face also provides access to more open-source models than Ollama. </p>
 <p>Ultimately, there is no wrong choice. If you run into any issues with your workflows, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 <h2 id="environment-setup">Environment setup</h2>
 <p>Hugging Face must be installed inside a Miniconda environment. Environments must be created on a compute node.</p>
-<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --cpus-per-task<span class="o">=</span><span class="m">2</span> --time<span class="o">=</span><span class="m">1</span>:00:00 --mem<span class="o">=</span>32G
-module load miniconda
-conda create --name huggingface <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11 transformers accelerate tokenizers datasets notebook
-conda activate huggingface
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>notebook
+conda<span class="w"> </span>activate<span class="w"> </span>huggingface
 </code></pre></div>
 <p><a href="../../clusters-at-yale/guides/pytorch/">PyTorch</a> must be installed separately. Make sure to install a version with CUDA.</p>
 <p>To make the environment available in Open OnDemand Jupyter:</p>
-<div class="highlight"><pre><span></span><code>module reset
-ycrc_conda_env.sh update
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>reset
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <h2 id="interactive-usage">Interactive usage</h2>
 <p>Interactive Hugging Face workflows are best run using the Jupyter Notebook application in
@@ -2957,27 +2959,33 @@ ycrc_conda_env.sh update
 <p>By default, Slurm assigns the lowest-memory GPU available in the selected partition. Many LLMs require more vRAM than the smallest available GPU.</p>
 <p>If a model requires more GPU memory, specify a GPU constraint explicitly.</p>
 <p>Interactive example of requesting a specific GPU:</p>
-<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>gpu_devel --constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <p>Batch script example of requesting a specific GPU:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <h2 id="model-loading-and-precision">Model loading and precision</h2>
-<p>Automatic dtype selection during model loading is discouraged. Using automatic dtype selection can result in:
-- inefficient memory usage
-- unexpected precision choices
-- failure to load on GPUs with limited vRAM</p>
-<p>Recommended practice:
-- explicitly specify model precision (fp16,int8, etc)
-- validate memory usage on the target GPU type</p>
+<p>Automatic dtype selection during model loading is discouraged. Using automatic dtype selection can result in:</p>
+<ul>
+<li>Inefficient memory usage</li>
+<li>Unexpected precision choices</li>
+<li>Failure to load on GPUs with limited vRAM</li>
+</ul>
+<p>Recommended practice:</p>
+<ul>
+<li>Explicitly specify model precision (fp16,int8, etc)</li>
+<li>Validate memory usage on the target GPU type</li>
+</ul>
 <p>Precision selection should be guided by the GPU memory available and the model size.</p>
 <h2 id="multi-gpu-usage-on-a-single-node">Multi-GPU usage on a single node</h2>
 <p>Requesting multiple GPUs does not automatically distribute a model across devices. Multi-GPU usage requires explicit configuration in user code.</p>
-<p>When using multiple GPUs on a single node:
-- ensure all GPUs are allocated in the Slurm request
-- configure the framework to shard or distribute the model
-- validate that all GPUs are being used</p>
-<p>Please see <a href="../miniconda-multigpu/">here</a> for instructions on multinode jobs.</p>
+<p>When using multiple GPUs on a single node:</p>
+<ul>
+<li>Ensure all GPUs are allocated in the Slurm request</li>
+<li>Configure the framework to share or distribute the model</li>
+<li>Validate that all GPUs are being used</li>
+</ul>
+<p>Please see <a href="../miniconda-multigpu/">here</a> for instructions on multi-GPU jobs.</p>
 <p>After execution, confirm GPU memory usage and utilization using
 <a href="../gpu-jobstats/">Jobstats</a>.</p>
 <p><strong>Note:</strong> Failing to use all requested GPUs will result in cancellation of your jobs by Jobstats to ensure resource availability
@@ -2989,11 +2997,13 @@ for other workflows.</p>
 <p>For script-based workflows, submit the script directly using a Slurm batch script.</p>
 <p>The YCRC does not provide examples for HuggingFace workflows as they change based on the model desired by the user.</p>
 <h2 id="validation">Validation</h2>
-<p>After running a Hugging Face job:
-- confirm the job requested the expected GPU resources
-- inspect GPU memory usage and utilization using Jobstats
-- confirm the number of active GPUs matches the request
-- verify that the model loaded at the intended precision</p>
+<p>After running a Hugging Face job:</p>
+<ul>
+<li>Confirm the job requested the expected GPU resources</li>
+<li>Inspect GPU memory usage and utilization using Jobstats</li>
+<li>Confirm the number of active GPUs matches the request</li>
+<li>Verify that the model loaded at the intended precision</li>
+</ul>
                 
                   
                     
@@ -3002,7 +3012,7 @@ for other workflows.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
       
     
   </small>

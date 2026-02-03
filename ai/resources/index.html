@@ -2867,13 +2867,13 @@
                 
                 
                 <h1 id="available-resources-and-recommendations">Available Resources and Recommendations</h1>
-<p>YCRC research computing infrastructure can be used to run localized large language models on GPU-enabled clusters.</p>
+<p>YCRC Research Computing Infrastructure can be used to run localized large language models on GPU-enabled clusters.</p>
 <p>Running LLMs locally provides the following advantages:</p>
 <ul>
-<li>user data remains local to the cluster <a href="../clarity/">(Security concerns with non-local models)</a></li>
-<li>researchers can control model versions and configurations</li>
+<li>User data remains local to the cluster <a href="../clarity/">(Security concerns with non-local models)</a></li>
+<li>Researchers can control model versions and configurations</li>
 <li>YCRC GPUs are free of charge (Except the secure data cluster, <a href="../../clusters/hopper/">Hopper</a></li>
-<li>models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)</li>
+<li>Models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)</li>
 </ul>
 <h2 id="gpu-availability-on-ycrc-resources">GPU availability on YCRC resources</h2>
 <p>Once an LLM workflow is configured, models can be run on any GPU partition:</p>
@@ -2881,13 +2881,13 @@
 <li>McCleary and Grace: <code>gpu_devel</code>, <code>gpu</code>, <code>gpu_scavenge</code></li>
 <li>Milgram: <code>gpu</code>, <code>scavenge</code></li>
 <li>Bouchet: <code>gpu</code>, <code>gpu_h200</code>, <code>gpu_devel</code></li>
-<li>Hopper: <code>gpu</code></li>
+<li>Hopper: <code>gpu</code>, <code>gpu_devel</code></li>
 </ul>
 <p>GPU memory capacity varies significantly by GPU type. Some models will not run unless sufficient vRAM is available.</p>
 <p>All YCRC GPU nodes, except H200s (contain 8 GPUs) contain four GPUs. When a job requests four GPUs on the same node, the available GPU memory is the sum of all four devices.</p>
 <p>For example:</p>
 <ul>
-<li>requesting four A100-80GB GPUs provides 320 GB of aggregate GPU memory</li>
+<li>Requesting four A100-80GB GPUs provides 320 GB of aggregate GPU memory</li>
 </ul>
 <h2 id="cluster-gpu-summary">Cluster GPU summary</h2>
 <table>
@@ -2920,7 +2920,7 @@
 </tr>
 <tr>
 <td>Grace</td>
-<td>A100-80GB</td>
+<td>A100-80G</td>
 <td>320 GB</td>
 <td>16</td>
 <td>132</td>
@@ -2928,7 +2928,7 @@
 </tr>
 <tr>
 <td>McCleary</td>
-<td>A100-80GB</td>
+<td>A100-80G</td>
 <td>320 GB</td>
 <td>12</td>
 <td>92</td>
@@ -2940,7 +2940,7 @@
 <td>320 GB</td>
 <td>12</td>
 <td>8</td>
-<td>Medium Risk Data Workflows</td>
+<td>Medium risk data workflows</td>
 </tr>
 </tbody>
 </table>
@@ -2957,9 +2957,9 @@
 <p>YCRC operates on a queued scheduling system. Larger GPUs are in higher demand and typically have longer wait times.</p>
 <p>Recommendations:</p>
 <ul>
-<li>begin development using smaller models that fit on lower-memory GPUs</li>
-<li>validate workflows interactively</li>
-<li>scale model size only after confirming correctness</li>
+<li>Begin development using smaller models that fit on lower-memory GPUs</li>
+<li>Validate workflows interactively, including GPU detection</li>
+<li>Scale model size only after confirming proper detection of resources by your script</li>
 </ul>
 <p>This approach reduces queue time and avoids failed jobs.</p>
 <h2 id="choosing-a-local-llm">Choosing a local LLM</h2>
@@ -3005,7 +3005,9 @@
 </tbody>
 </table>
 <p>Exact requirements are listed on the model's Hugging Face or Ollama page.</p>
-<p>Domain-specific models are often smaller and more efficient than general-purpose models and should be preferred when available.</p>
+<p>Domain-specific models are often smaller and more efficient than general-purpose models and should be preferred when available.
+e.g., if seeking to performan analysis on Law or Medical data, you may find better success finding a model that was developed
+specifically for Law or Medical Documents.</p>
 <p>If vRAM requirements are uncertain, run the model on a larger GPU and inspect usage using <a href="../gpu-jobstats/">Jobstats</a>.</p>
 <h2 id="advanced-methods-overview-only">Advanced methods (overview only)</h2>
 <p>More complex workflows require additional GPU memory:</p>
@@ -3047,7 +3049,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
       
     
   </small>

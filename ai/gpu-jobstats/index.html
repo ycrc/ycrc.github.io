@@ -1840,7 +1840,7 @@
       
         <li class="md-nav__item">
   <a href="#using-jobstats-to-scale-workflows" class="md-nav__link">
-    Using Jobstats to Scale workflows
+    Using Jobstats to scale Workflows
   </a>
   
 </li>
@@ -2865,7 +2865,7 @@
       
         <li class="md-nav__item">
   <a href="#using-jobstats-to-scale-workflows" class="md-nav__link">
-    Using Jobstats to Scale workflows
+    Using Jobstats to scale Workflows
   </a>
   
 </li>
@@ -2897,8 +2897,8 @@
                 <h1 id="gpu-monitoring-with-jobstats">GPU Monitoring with Jobstats</h1>
 <p>Jobstats is the primary mechanism for evaluating GPU/CPU usage on Yale Research Computing systems. It can display usage in two formats:</p>
 <ul>
-<li>a text summary of a specific job within a terminal</li>
-<li>a graphical summary of usage/time for a specific job</li>
+<li>A text summary of a specific job within a terminal</li>
+<li>A graphical summary of usage/time for a specific job in OOD's user portal</li>
 </ul>
 <p>Jobstats provides live reporting of GPU/CPU usage, so you can monitor your job as it runs. </p>
 <p>This page will cover how to interpret your Jobstats outputs for various GPU utilizations so as to highlight potential areas for optimization in your workflow. For instructions on running Jobstats, see <a href="../../clusters-at-yale/job-scheduling/jobstats/">Jobstats</a>.</p>
@@ -2912,10 +2912,12 @@
 </ul>
 <h2 id="jobstats-considerations">Jobstats considerations</h2>
 <p>All GPU nodes provide access to many GPUs on a single node.</p>
-<p>Common observations:
-- only one GPU shows memory usage (issue with multi-GPU setup)
-- low average utilization across devices (not loading enough data on GPU)
-- uneven memory distribution </p>
+<p>Common observations for struggling jobs:</p>
+<ul>
+<li>Only one GPU shows memory usage (issue with multi-GPU setup)</li>
+<li>Low average utilization across devices (not loading enough data on GPU)</li>
+<li>Uneven memory distribution </li>
+</ul>
 <p>These patterns typically indicate misconfigured device placement.</p>
 <h2 id="common-jobstats-patterns">Common Jobstats patterns</h2>
 <table>
@@ -2927,7 +2929,7 @@
 </thead>
 <tbody>
 <tr>
-<td>low memory, low utilization</td>
+<td>Low memory, low utilization</td>
 <td>Batch size too small</td>
 </tr>
 <tr>
@@ -2935,7 +2937,7 @@
 <td>Multi-GPU misconfiguration</td>
 </tr>
 <tr>
-<td>long periods of GPU inactivity</td>
+<td>Long periods of GPU inactivity</td>
 <td>Data loading bottleneck</td>
 </tr>
 <tr>
@@ -2955,12 +2957,12 @@
 ![Multi-GPU Jobstats example](assets/ai/jobstats/multigpu_one_active.png)
 -->
 
-<h2 id="using-jobstats-to-scale-workflows">Using Jobstats to Scale workflows</h2>
+<h2 id="using-jobstats-to-scale-workflows">Using Jobstats to scale Workflows</h2>
 <ul>
 <li>Start with one GPU and confirm usage. Identify total GPU utilization and memory usage with Jobstats</li>
-<li>Try tinkering with the amount of data loaded, CPU totals, etc to see how utilization and memory usage changes</li>
+<li>Try tinkering with the amount of data loaded, CPU totals, etc., to see how utilization and memory usage changes</li>
 <li>If using entire GPU, try multiple GPUs on same node (will require code modification) and confirm with Jobstats<ul>
-<li>Note: You shouldn't need to modify batch size as it was already optimized for one GPU</li>
+<li><strong>Note:</strong> You shouldn't need to modify batch size as it was already optimized for one GPU</li>
 </ul>
 </li>
 <li>For complex workflows with multinode GPUs, see <a href="../miniconda-multigpu/">multinode GPU jobs</a></li>
@@ -2977,7 +2979,7 @@ If you are having issues with Jobstats terminating your jobs, please <a href="ht
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
       
     
   </small>
