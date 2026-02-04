@@ -67,6 +67,8 @@ The second option will basically delete all previous OOD records of your RStudio
 If you have created [R conda environments](/clusters-at-yale/guides/r/#conda-based-r-environments) (i.e, in the [terminal](/clusters-at-yale/access/ood#terminal)) then you can make these available to the RStudio Server app. From the terminal, execute the following command:
 
 ``` bash
+# This command must be run from a YCRC interactive shell (login or compute node)
+#  ***Please note, it won't work on an R terminal***
 ycrc_conda_env.sh update
 ```
 
