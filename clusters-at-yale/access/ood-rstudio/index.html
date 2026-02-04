@@ -2992,7 +2992,9 @@ ycrc_clean_rstudio.sh -f
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
 <h2 id="using-r-conda-with-the-rstudio-server-app">Using R Conda with the RStudio Server App</h2>
 <p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available to the RStudio Server app. From the terminal, execute the following command:</p>
-<div class="highlight"><pre><span></span><code>ycrc_conda_env.sh<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code><span class="c1"># This command must be run from a YCRC interactive shell (login or compute node)</span>
+<span class="c1">#  ***Please note, it won&#39;t work on an R terminal***</span>
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 <p>Your R conda environments should now show up in the 'R version' drop-down menu. </p>
 <h2 id="run-rstudio-in-remote-desktop">Run RStudio in Remote Desktop</h2>
