@@ -1,5 +1,8 @@
 # SimpleQueue
 
+!!! Warning
+    As of 2020, SimpleQueue was deprecated. Please use our new updated and renamed tool, [dSQ](/clusters-at-yale/job-scheduling/dsq/#submit-job-arrays-with-dsq), instead.
+    
 SimpleQueue is a tool written here to streamline submission of a large number of jobs using a task file. It has a number of advantages:
 
 * You can run more of your sequential jobs concurrently, since there is a limit on the number of individual qsubs you can run simultaneously.
