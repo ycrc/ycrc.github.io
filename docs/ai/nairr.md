@@ -16,6 +16,9 @@ You have several options for developing scaling tests and benchmarks. NAIRR offe
 
 ## How to find help
 
-The NAIRR website features informational [documents](https://nairrpilot.org/nairr-pilot-proposal-instructions) and [videos](https://www.youtube.com/watch?v=-moQgySa-GQ&list=PLV-SC0CHLTwdnIngXEHnIlKtHiizerz7b) that provide a detailed description of the proposal development and submission process.
+The NAIRR website features informational [documents](https://nairrpilot.org/nairr-pilot-proposal-instructions) and 
+[videos](https://www.youtube.com/watch?v=-moQgySa-GQ&list=PLV-SC0CHLTwdnIngXEHnIlKtHiizerz7b) that provide a detailed description of the proposal 
+development and submission process.
 
-YCRC staff are also happy to help you with the proposal process, develop a resource request, or run benchmarks on our systems to provide quantitative evidence that you will benefit from NAIRR resources. Please reach out to us for a 1-on-1 consultation at [research.computing@yale.edu](mailto:research.computing@yale.edu).
+YCRC staff are also happy to help you with the proposal process, develop a resource request, or run benchmarks on our systems to provide quantitative 
+evidence that you will benefit from NAIRR resources. Please [contact us](https://docs.ycrc.yale.edu/#get-help) for any questions or assistance.
