@@ -179,6 +179,7 @@ nav:
         - "Ollama Exercises": ai/exercises.md
         - "Hugging Face": ai/huggingface.md
         - "Multi-GPU Submission Scripts": ai/miniconda-multigpu.md
+        - "National AI Research Resource (NAIRR)": ai/nairr.md
         - "Common AI/ML python package Installation Procedures": ai/pythonpackages.md
         - "AI Coding Tools": ai/aicodingtools.md
         - "Using Closed-Source Models: API Keys and Clarity": ai/clarity.md
@@ -230,5 +231,4 @@ nav:
                 - "YCRC YouTube Channel": https://ycrc.yale.edu/youtube
 
             - resources/national-hpcs.md
-            - "National AI Research Resource (NAIRR)": resources/nairr.md
             - resources/glossary.md
