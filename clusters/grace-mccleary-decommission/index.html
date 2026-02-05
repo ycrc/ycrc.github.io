@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace-mccleary-decommission/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -611,6 +611,40 @@
         <li class="md-nav__item">
   <a href="#phased-decommission-migration" class="md-nav__link">
     Phased Decommission &amp; Migration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    Phase 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-timeline" class="md-nav__link">
+    Phase 1 Timeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-my-existing-data-on-grace-or-mccleary" class="md-nav__link">
+    What about My Existing Data on Grace or McCleary?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    Get Help
   </a>
   
 </li>
@@ -2287,20 +2321,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters-at-yale/guides/LLMs/" class="md-nav__link">
-        Large Language Models (LLMs) on Research Computing Hardware
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -2809,6 +2829,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    Phase 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-timeline" class="md-nav__link">
+    Phase 1 Timeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-my-existing-data-on-grace-or-mccleary" class="md-nav__link">
+    What about My Existing Data on Grace or McCleary?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-help" class="md-nav__link">
+    Get Help
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2833,7 +2887,7 @@
 <p>During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.</p>
 <ul>
 <li>
-<p>Phase 1 (first half of 2026): Migration of workloads and data from research groups without dedicated compute nodes and are not YCGA-affiliated.</p>
+<p><a href="#phase-1">Phase 1</a> (first half of 2026): Migration of workloads and data from research groups who do not use dedicated compute nodes or YCGA resources.</p>
 </li>
 <li>
 <p>Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary.</p>
@@ -2843,9 +2897,31 @@
 </li>
 </ul>
 <p><img alt="When Will I Move Flow Chart" class="cluster-diagram" src="/img/when_will_i_move.png" /></p>
-<p>If you are in Phase 1, you will receive an email shortly with a detailed timeline and instructions on migrating your workloads and data off of Grace and McCleary.</p>
 <p>If you are in Phase 2 or 3, more detailed information will be provided later this year when the hardware migration dates are finalized.</p>
-<p>As always, if you have any questions or concerns, please <a href="/#get-help">contact us</a>.</p>
+<h2 id="phase-1">Phase 1</h2>
+<p>Research groups who do not use dedicated compute nodes or YCGA resources will move off of Grace and McCleary in Phase 1. </p>
+<p>If you have been active on Grace or McCleary in the last year, you should already have an account on Bouchet. If you have not used the clusters in more than a year, you will need to <a href="https://research.computing.yale.edu/account-request">request an account</a> on Bouchet. See our <a href="../bouchet_getting_started/">“Getting Started on Bouchet” documentation</a> to familiarize yourself with the system. </p>
+<p>We will also be holding “Transitioning to Bouchet” sessions over the next couple of months, which will be announced in the YCRC monthly newsletter.</p>
+<h3 id="phase-1-timeline">Phase 1 Timeline</h3>
+<ul>
+<li>
+<p>April 1st: <em>Deadline for workload migration.</em> Grace and McCleary logins for Phase 1 users will be disabled. Grace/McCleary data will remain accessible via Globus for two more months.</p>
+</li>
+<li>
+<p>June 1st: <em>Deadline for data migration.</em> Access to Grace/McCleary data via Globus will be disabled.</p>
+</li>
+</ul>
+<h2 id="what-about-my-existing-data-on-grace-or-mccleary">What about My Existing Data on Grace or McCleary?</h2>
+<p><strong>All data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.</strong> You are responsible for identifying the data you would like to keep from your home, project, scratch and any purchased storage and transferring it either to non-HPC storage or to a Bouchet account. </p>
+<p>If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please <a href="/#get-help">contact us</a> if you would like to purchase a storage allocation on Bouchet.</p>
+<div class="admonition warning">
+<p class="admonition-title">NIH Controlled Access Data</p>
+<p>If you have any data on Grace or McCleary that is now covered by the <a href="https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf">NIH Controlled Access Data policies</a>, this data cannot be moved to Bouchet but instead must be moved to the <a href="../hopper/">Hopper</a> HPC cluster. <a href="https://research.computing.yale.edu/secure-project-request">Submit this form to request Hopper access</a>.</p>
+</div>
+<p>We encourage you to use the <code>getquota</code> utility on Grace and/or McCleary to examine the data usage by your group and specific group members. In general, we recommend using <a href="https://docs.ycrc.yale.edu/data/globus/">Globus</a> to migrate data to Bouchet as it is the fastest and most robust method of transferring data between the clusters. </p>
+<p>If you have concerns about transferring your data, such as a particularly large allocation or complicated permission structure, please <a href="/#get-help">reach out to us</a> for assistance.</p>
+<h2 id="get-help">Get Help</h2>
+<p>As always, our Research Support staff members are available to assist. Please <a href="/#get-help">reach out</a> if you have any questions or concerns about what will be moved to Bouchet and when.</p>
                 
                   
                     
@@ -2854,7 +2930,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2026</span>
       
     
   </small>

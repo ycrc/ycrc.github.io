@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/ai/huggingface/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2334,20 +2334,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters-at-yale/guides/LLMs/" class="md-nav__link">
-        Large Language Models (LLMs) on Research Computing Hardware
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -2941,15 +2927,15 @@ for high level users. Hugging Face also provides access to more open-source mode
 <p>Ultimately, there is no wrong choice. If you run into any issues with your workflows, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a>.</p>
 <h2 id="environment-setup">Environment setup</h2>
 <p>Hugging Face must be installed inside a Miniconda environment. Environments must be created on a compute node.</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">2</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>32G
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>huggingface<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>transformers<span class="w"> </span>accelerate<span class="w"> </span>tokenizers<span class="w"> </span>datasets<span class="w"> </span>notebook
-conda<span class="w"> </span>activate<span class="w"> </span>huggingface
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --cpus-per-task<span class="o">=</span><span class="m">2</span> --time<span class="o">=</span><span class="m">1</span>:00:00 --mem<span class="o">=</span>32G
+module load miniconda
+conda create --name huggingface <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11 transformers accelerate tokenizers datasets notebook
+conda activate huggingface
 </code></pre></div>
 <p><a href="../../clusters-at-yale/guides/pytorch/">PyTorch</a> must be installed separately. Make sure to install a version with CUDA.</p>
 <p>To make the environment available in Open OnDemand Jupyter:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>reset
-ycrc_conda_env.sh<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>module reset
+ycrc_conda_env.sh update
 </code></pre></div>
 <h2 id="interactive-usage">Interactive usage</h2>
 <p>Interactive Hugging Face workflows are best run using the Jupyter Notebook application in
@@ -2959,7 +2945,7 @@ ycrc_conda_env.sh<span class="w"> </span>update
 <p>By default, Slurm assigns the lowest-memory GPU available in the selected partition. Many LLMs require more vRAM than the smallest available GPU.</p>
 <p>If a model requires more GPU memory, specify a GPU constraint explicitly.</p>
 <p>Interactive example of requesting a specific GPU:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>gpu_devel --constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <p>Batch script example of requesting a specific GPU:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>

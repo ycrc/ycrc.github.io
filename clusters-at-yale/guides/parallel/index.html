@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/parallel/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2236,20 +2236,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../LLMs/" class="md-nav__link">
-        Large Language Models (LLMs) on Research Computing Hardware
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -2911,9 +2897,9 @@
 <h2 id="basic-examples">Basic Examples</h2>
 <h3 id="loop">Loop</h3>
 <p>Let's parallelize the following bash loop that prints the letters <code>a</code> through <code>f</code> using bash's <a href="https://www.gnu.org/software/bash/manual/bashref.html#Brace-Expansion">brace expansion</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>letter<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span>a..f<span class="o">}</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> letter <span class="k">in</span> <span class="o">{</span>a..f<span class="o">}</span><span class="p">;</span>
 <span class="k">do</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$letter</span>
+    <span class="nb">echo</span> <span class="nv">$letter</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>... which produces the following output:</p>
@@ -2925,34 +2911,34 @@ e
 f
 </code></pre></div>
 <p>To achieve the same result, <code>parallel</code> starts some number of workers and then runs tasks on them.  The number of workers and tasks need not be the same. You specify the number of workers with <code>-j</code>. The tasks can be generated with a list of arguments specified after the separator <code>:::</code>. For parallel to perform well, you should allocate at least the same number of CPUs as workers with the slurm option <code>--cpus-per-task</code> or more simply <code>-c</code>.</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span>
-module<span class="w"> </span>load<span class="w"> </span>parallel
-parallel<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s2">&quot;echo {}&quot;</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span>a..f<span class="o">}</span>
+<div class="highlight"><pre><span></span><code>salloc -c <span class="m">4</span>
+module load parallel
+parallel -j <span class="m">4</span> <span class="s2">&quot;echo {}&quot;</span> ::: <span class="o">{</span>a..f<span class="o">}</span>
 </code></pre></div>
 <p>This runs four workers that each run <code>echo</code>, filling in the argument <code>{}</code> with the next item in the list. This produces the output:</p>
 <h3 id="nested-loop">Nested Loop</h3>
 <p>Let's parallelize the following nested bash loop.</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>letter<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span>a..c<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> letter <span class="k">in</span> <span class="o">{</span>a..c<span class="o">}</span>
 <span class="k">do</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span>number<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..7..2<span class="o">}</span>
-<span class="w">    </span><span class="k">do</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$letter</span><span class="w"> </span><span class="nv">$number</span>
-<span class="w">    </span><span class="k">done</span>
+    <span class="k">for</span> number <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..7..2<span class="o">}</span>
+    <span class="k">do</span>
+        <span class="nb">echo</span> <span class="nv">$letter</span> <span class="nv">$number</span>
+    <span class="k">done</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>... which produces the following output:</p>
-<div class="highlight"><pre><span></span><code>a<span class="w"> </span><span class="m">1</span>
-a<span class="w"> </span><span class="m">2</span>
-a<span class="w"> </span><span class="m">3</span>
-b<span class="w"> </span><span class="m">1</span>
-b<span class="w"> </span><span class="m">2</span>
-b<span class="w"> </span><span class="m">3</span>
-c<span class="w"> </span><span class="m">1</span>
-c<span class="w"> </span><span class="m">2</span>
-c<span class="w"> </span><span class="m">3</span>
+<div class="highlight"><pre><span></span><code>a <span class="m">1</span>
+a <span class="m">2</span>
+a <span class="m">3</span>
+b <span class="m">1</span>
+b <span class="m">2</span>
+b <span class="m">3</span>
+c <span class="m">1</span>
+c <span class="m">2</span>
+c <span class="m">3</span>
 </code></pre></div>
 <p>You can use the <code>:::</code> separator with <code>parallel</code> to specify multiple lists of parameters you would like to iterate over. Then you can refer to them by one-based index, e.g. list one is <code>{1}</code>. Using these, you can ask parallel to execute combinations of parameters. Here is a way to recreate the result of the serial bash loop above:</p>
-<div class="highlight"><pre><span></span><code>parallel<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s2">&quot;echo {1} {2}&quot;</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span>a..c<span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">1</span>..3<span class="o">}</span>
+<div class="highlight"><pre><span></span><code>parallel -j <span class="m">4</span> <span class="s2">&quot;echo {1} {2}&quot;</span> ::: <span class="o">{</span>a..c<span class="o">}</span> ::: <span class="o">{</span><span class="m">1</span>..3<span class="o">}</span>
 </code></pre></div>
 <h2 id="advanced-examples">Advanced Examples</h2>
 <h3 id="md5sum"><code>md5sum</code></h3>
@@ -2961,8 +2947,8 @@ Here is a script that will do that in parallel, using 16 cpus on one node of the
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -c 16</span>
 
-module<span class="w"> </span>load<span class="w"> </span>parallel
-parallel<span class="w"> </span>-j<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span>--plus<span class="w"> </span><span class="s2">&quot;echo {}; md5sum {} &gt; {/fastq.gz/md5sum.new}&quot;</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.fastq.gz&quot;</span><span class="w"> </span>-print<span class="k">)</span>
+module load parallel
+parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> --plus <span class="s2">&quot;echo {}; md5sum {} &gt; {/fastq.gz/md5sum.new}&quot;</span> ::: <span class="k">$(</span>find . -name <span class="s2">&quot;*.fastq.gz&quot;</span> -print<span class="k">)</span>
 </code></pre></div>
 <p>The <code>$(find . -name "*.fastq.gz" -print)</code> portion of the command returns all of the files of interest. They will be plugged into the {} in the md5sum command. <code>{/fastq.gz/md5sum.new}</code> does a string replacement on the filename, producing the desired output filename.  String
 replacement requires the --plus flag to parallel, which enables a number of powerful string manipulation features. Finally, we pass <code>-j ${SLURM_CPUS_PER_TASK}</code> so that parallel will use all of the allocated cpus, however many there are.</p>
@@ -2970,19 +2956,19 @@ replacement requires the --plus flag to parallel, which enables a number of powe
 <p>You want to run a simulation program that takes a number of input parameters, and you want to sample a variety of values for each parameter.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -c 16</span>
-module<span class="w"> </span>load<span class="w"> </span>parallel
-parallel<span class="w"> </span>-j<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span>simulate<span class="w"> </span><span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span><span class="o">{</span><span class="m">2</span><span class="o">}</span><span class="w"> </span><span class="o">{</span><span class="m">3</span><span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">1</span>..5<span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span>
+module load parallel
+parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> simulate <span class="o">{</span><span class="m">1</span><span class="o">}</span> <span class="o">{</span><span class="m">2</span><span class="o">}</span> <span class="o">{</span><span class="m">3</span><span class="o">}</span> ::: <span class="o">{</span><span class="m">1</span>..5<span class="o">}</span> ::: <span class="m">2</span> <span class="m">16</span> ::: <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span>
 </code></pre></div>
 <p>This will run 100 jobs, each with parameters that vary as :</p>
-<div class="highlight"><pre><span></span><code>simulate<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">5</span>
-simulate<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>
-simulate<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">15</span>
+<div class="highlight"><pre><span></span><code>simulate <span class="m">1</span> <span class="m">2</span> <span class="m">5</span>
+simulate <span class="m">1</span> <span class="m">2</span> <span class="m">10</span>
+simulate <span class="m">1</span> <span class="m">2</span> <span class="m">15</span>
 ...
-simulate<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">45</span>
-simulate<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">50</span>
+simulate <span class="m">5</span> <span class="m">16</span> <span class="m">45</span>
+simulate <span class="m">5</span> <span class="m">16</span> <span class="m">50</span>
 </code></pre></div>
 <p>If <code>simulate</code> doesn't create unique output based on parameters, you can use redirection so you can review results from each task. You'll need to use quotes so that the &gt; is seen as part of the command:</p>
-<div class="highlight"><pre><span></span><code>parallel<span class="w"> </span>-j<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="s2">&quot;simulate {1} {2} {3} &gt; results_{1}_{2}_{3}.out&quot;</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">5</span><span class="k">)</span><span class="w"> </span>:::<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">16</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">50</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code>parallel -j <span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> <span class="s2">&quot;simulate {1} {2} {3} &gt; results_{1}_{2}_{3}.out&quot;</span> ::: <span class="k">$(</span>seq <span class="m">1</span> <span class="m">5</span><span class="k">)</span> ::: <span class="m">2</span> <span class="m">16</span> ::: <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span>
 </code></pre></div>
                 
                   
