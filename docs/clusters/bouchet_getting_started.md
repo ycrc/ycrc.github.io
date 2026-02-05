@@ -19,9 +19,6 @@ However, be careful about copying existing files from `$HOME` to project spaces,
 
 For detailed information about job limits and available compute nodes in each 
 partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware). 
-Please use `devel` partition for code development, debugging, and compilation. 
-Jobs submitted to [`mpi` partitions](/clusters-at-yale/job-scheduling/mpi/) need to request at least two nodes and are allocated full nodes.   
-The H200 GPUs are available in a dedicated partition (`gpu_h200`) and are available for all users.
 
 ### Storage
 
