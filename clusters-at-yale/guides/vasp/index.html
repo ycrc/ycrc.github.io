@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/vasp/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2876,7 +2876,7 @@
 <p>For the purposes of VASP, <code>--ntasks-per-node</code> should always equal <code>NCORE</code> (in your INCAR file). Then <code>--nodes</code> should be equal to the total number of cores you want, divided by <code>--ntasks-per-node</code>.</p>
 <p>VASP has two parameters for controlling processor layouts, <code>NCORE</code> and <code>NPAR</code>, but you only need to set one of them. If you set <code>NCORE</code>, you don’t need to set <code>NPAR</code>. Instead VASP will automatically set <code>NPAR</code>.</p>
 <p>In your mpirun line, you should specify the number of MPI tasks as:</p>
-<div class="highlight"><pre><span></span><code>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>vasp_std
 </code></pre></div>
 <h3 id="cores-layout-examples">Cores Layout Examples</h3>
 <p>If you want 40 cores (2 nodes and 20 cpus per node):</p>
@@ -2884,7 +2884,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes=2</span>
 <span class="c1">#SBATCH --ntasks-per-node=20</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>mpirun -n <span class="m">2</span> vasp_std
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>vasp_std
 </code></pre></div>
 <p>in <code>INCAR</code>:</p>
 <div class="highlight"><pre><span></span><code>NCORE=20
@@ -2894,7 +2894,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes=4</span>
 <span class="c1">#SBATCH --ntasks-per-node=10</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>mpirun -n <span class="m">4</span> vasp_std
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span><span class="w"> </span>vasp_std
 </code></pre></div>
 <p>in <code>INCAR</code>:</p>
 <div class="highlight"><pre><span></span><code>NCORE=10
@@ -2905,7 +2905,7 @@
 <p>in your submission script:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>mpirun -n <span class="nv">$SLURM_NTASKS</span> vasp_std
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>vasp_std
 </code></pre></div>
 <p>in <code>INCAR</code>:</p>
 <div class="highlight"><pre><span></span><code>NCORE=24
