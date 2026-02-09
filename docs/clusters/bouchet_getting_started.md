@@ -23,7 +23,7 @@ To check your filesystem groups, run the command `groups`.
 You will see your netid, followed by your group(s).
 
 To check your Slurm (job) groups, run the command `slurm_checkup.sh`. 
-You will see a list of Slurm groups you can submit to using the `-A flag` as well as which group is your default (the one submitted to if `-A` is not specified). 
+You will see a list of Slurm groups you can submit to using the [`-A` flag](https://slurm.schedmd.com/sbatch.html#OPT_account) as well as which group is your default (the one submitted to if `-A` is not specified). 
 If you would like your default Slurm group changed, submit at request to [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
 If your group membership is incorrect or incomplete, you can request updates using the [Group Change Request Form](https://research.computing.yale.edu/group-change).
