@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/bouchet_getting_started/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1490,38 +1490,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../data/nih-data/" class="md-nav__link">
-        NIH Controlled-Access Data and Repositories
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_7">
+        <label class="md-nav__link" for="__nav_3_6">
           Transfer Data
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Transfer Data" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_7">
+        <label class="md-nav__title" for="__nav_3_6">
           <span class="md-nav__icon md-icon"></span>
           Transfer Data
         </label>
@@ -1601,18 +1587,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_8">
+        <label class="md-nav__link" for="__nav_3_7">
           Manage & Share
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Manage & Share" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_7">
           <span class="md-nav__icon md-icon"></span>
           Manage & Share
         </label>
@@ -2737,6 +2723,19 @@
     Primary Group
   </a>
   
+    <nav class="md-nav" aria-label="Primary Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-group-membership" class="md-nav__link">
+    Check Group Membership
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2755,14 +2754,14 @@
         
           <li class="md-nav__item">
   <a href="#transfer-data-from-other-clusters" class="md-nav__link">
-    Transfer data from other clusters
+    Transfer Data from Other Clusters
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#applications-and-software" class="md-nav__link">
-    Applications and software
+    Applications and Software
   </a>
   
 </li>
@@ -2808,6 +2807,14 @@ This setup makes the process of group change easier and can also accommodate
 PI groups on Bouchet take the form <code>pi_&lt;netid of the pi&gt;</code>, instead of <code>&lt;lastname of pi&gt;</code> to avoid collisions and confusion between PIs who share a lastname.  <br />
 Files created in PI-owned project and scratch directories will inherit the correct PI group-ownership.
 However, be careful about copying existing files from <code>$HOME</code> to project spaces, as those files may need to have their group ownership updated.</p>
+<h4 id="check-group-membership">Check Group Membership</h4>
+<p>If you account was automatically created, we strongly recommend that you check your group membership to make sure it is correct.</p>
+<p>To check your filesystem groups, run the command <code>groups</code>.
+You will see your netid, followed by your group(s).</p>
+<p>To check your Slurm (job) groups, run the command <code>slurm_checkup.sh</code>. 
+You will see a list of Slurm groups you can submit to using the <code>-A flag</code> as well as which group is your default (the one submitted to if <code>-A</code> is not specified). 
+If you would like your default Slurm group changed, submit at request to <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a>.</p>
+<p>If your group membership is incorrect or incomplete, you can request updates using the <a href="https://research.computing.yale.edu/group-change">Group Change Request Form</a>.</p>
 <h3 id="partitions">Partitions</h3>
 <p>For detailed information about job limits and available compute nodes in each 
 partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>. </p>
@@ -2845,9 +2852,9 @@ Your project and scratch storage usage and quota are shared with the members of 
 </tr>
 </tbody>
 </table>
-<h3 id="transfer-data-from-other-clusters">Transfer data from other clusters</h3>
+<h3 id="transfer-data-from-other-clusters">Transfer Data from Other Clusters</h3>
 <p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/globus/">Globus</a>.</p>
-<h3 id="applications-and-software">Applications and software</h3>
+<h3 id="applications-and-software">Applications and Software</h3>
 <p>Commonly used software is available as <a href="/applications/modules/">modules</a>, similar to other clusters. 
 Currently, all software is compiled and installed with the 2022b or 2024a versions of the toolchains on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
 If you would like to compile your own code specifically to the Bouchet MPI compute node architecture, you can request an interactive compute session in the <code>devel</code> partition of Bouchet. 
@@ -2863,7 +2870,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2026</span>
       
     
   </small>

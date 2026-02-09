@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/common-job-failures/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1654,38 +1654,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../data/nih-data/" class="md-nav__link">
-        NIH Controlled-Access Data and Repositories
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_7">
+        <label class="md-nav__link" for="__nav_3_6">
           Transfer Data
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Transfer Data" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_7">
+        <label class="md-nav__title" for="__nav_3_6">
           <span class="md-nav__icon md-icon"></span>
           Transfer Data
         </label>
@@ -1765,18 +1751,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_3_8">
+        <label class="md-nav__link" for="__nav_3_7">
           Manage & Share
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Manage & Share" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_8">
+        <label class="md-nav__title" for="__nav_3_7">
           <span class="md-nav__icon md-icon"></span>
           Manage & Share
         </label>
@@ -3042,7 +3028,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --mem-per-cpu=8G</span>
 </code></pre></div>
 <p>In an interactive job:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem-per-cpu<span class="o">=</span>8G
+<div class="highlight"><pre><span></span><code>salloc --mem-per-cpu<span class="o">=</span>8G
 </code></pre></div>
 <h3 id="use-less-memory">Use Less Memory</h3>
 <p>This method is usually a little more involved, and is easier if you can inspect the code you are using. Watching your <a href="/clusters-at-yale/job-scheduling/resource-usage">job's resource usage</a>, attending a workshop, or <a href="/#get-help">getting in touch</a> with us are good places to start.</p>
