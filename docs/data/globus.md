@@ -27,14 +27,13 @@ We currently support endpoints for the following clusters.
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
 | [Hopper Low Risk](/clusters/milgram)   | `Yale CRC Hopper Low Risk`  |
 
-For Grace and McCleary, these endpoints provide access to all files you normally have access to.
+For Bouchet, Grace and McCleary, these endpoints provide access to all files you normally have access to.
 
 For security reasons, Milgram Globus uses a staging area (`/gpfs/milgram/globus/$NETID`). 
 Once uploaded, data should be moved from this staging area to its final location within Milgram.
 Files in the staging area are purged after 21 days.
 
-For Hopper, the Low Risk endpoint mounts a staging area. Once you have staged your data, please submit [this form](https://forms.gle/YigxQdbvobaH7YDT6) to have the files transferred to Hopper.
-If your data is larger than 100G, please submit your request without uploading any data to Globus and we will 
+For Hopper, the Low Risk endpoint mounts a staging area. Once you have staged your data, please submit [this form](https://research.computing.yale.edu/hopper-low-risk-transfer) to have the files transferred to Hopper.
 
 ## Get Started with Globus
 

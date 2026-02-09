@@ -1,6 +1,6 @@
 # Group Change
 
-When your PI is changed, the primary group of your account on the cluster will also be changed. 
+On cluster other than Bouchet or Hopper, when your PI is changed, the primary group of your account on the cluster will also be changed. 
 As a result, you will have a new storage space on the cluster which belongs to the new group, including Home, Project, Scratch,
 etc.
 

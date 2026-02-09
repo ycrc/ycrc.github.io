@@ -157,7 +157,6 @@ nav:
             - data/backups.md
             - data/google-drive.md
             - data/ycga-data.md
-            - data/nih-data.md
             - Transfer Data:
                 - "Transfer to Cluster": data/transfer.md
                 - clusters-at-yale/guides/rclone.md

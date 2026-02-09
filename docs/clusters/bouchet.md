@@ -4,22 +4,16 @@
 
 The Bouchet HPC cluster is YCRC's first installation at Massachusetts High Performance Computing Center (MGHPCC). Bouchet contains approximately 10,000 direct-liquid-cooled cores as well as 80 NVIDIA H200 GPUs from the AI Initiative and 48 NVIDIA RTX 5000 ADA GPUs. Bouchet is composed of 64 core nodes each with 1TB of RAM for general purpose compute and 4TB RAM large memory nodes for memory intensive workloads. Bouchet also has a dedicated “mpi” partition specifically designed for tightly-coupled parallel workloads. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
 
-- - -
+Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. As the YCRC transitions from the Yale West Campus Data Center to the MGHPCC, we will be decommissioning Grace and McCleary in 2026 and all workloads on those systems be moved to Bouchet. All new YCRC purchases (such as the annual compute refresh or the Provost’s AI Initiative GPUs) will be installed at MGHPCC. In 2026, the older equipment on Grace and McCleary will be retired and most compute resources still under warranty will be added to Bouchet. More information about the decommission of Grace and McCleary is available on the [Decommission Page](grace-mccleary-decommission.md). We will be engaging with faculty and users to ensure a smooth transition and minimize disruptions to critical work.
 
-## Announcing the Bouchet HPC Cluster
+We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu). 
 
-!!! info "Bouchet In Production"
-    The Bouchet HPC cluster, including GPUs from the AI Initiative, is now available to all Yale Researchers.
-
-Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. As the YCRC transitions from the Yale West Campus Data Center to the MGHPCC, we will be decommissioning Grace and McCleary in 2026 and all workloads on those systems be moved to Bouchet. All new YCRC purchases (such as the annual compute refresh or the Provost’s AI Initiative GPUs) will be installed at MGHPCC. In 2026, the older equipment on Grace and McCleary will be retired and most compute resources still under warranty will be added to Bouchet. More information about the decommission of Grace and McCleary will be provided soon. We will be engaging with faculty and users to ensure a smooth transition and minimize disruptions to critical work.
-
-We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us as always at hpc@yale.edu) and we will be hosting “Transitioning to Bouchet” information sessions later on this summer. 
-
+---
 
 ## Access the Cluster
 
 !!! info "Get Started on Bouchet"
-    Please see the [Bouchet Getting Started](/clusters/bouchet_getting_started/) for more information on key differences about Bouchet compared to Grace and McCleary.
+    Please see the [Bouchet Getting Started](/clusters/bouchet_getting_started/) for more information on key differences about Bouchet compared to older YCRC clusters.
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or [Open OnDemand](/clusters-at-yale/access/ood) at [https://ood-bouchet.ycrc.yale.edu](https://ood-bouchet.ycrc.yale.edu).
 
@@ -61,6 +55,7 @@ For information on data recovery, see the [Backups and Snapshots](/data/backups)
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
-| home           | `/home`                   | 125GiB/user                             | 500,000    | Not yet | >=2 days  |       |
-| project        | `/nfs/roberts/project`    | 4TiB/group                              | 5,000,000  | No      | >=2 days  |       |
+| home           | `/home`                   | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
+| project        | `/nfs/roberts/project`    | 4TiB/group                              | 5,000,000  | Yes     | >=2 days  |       |
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
+| pi             | `/nfs/roberts/pi`         | varies                                  | vareis     | No      | >=2 days  |       |

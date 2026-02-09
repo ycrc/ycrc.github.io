@@ -2,7 +2,7 @@
 
 ![Grace Hopper](/img/Grace-Hopper.jpg){: .cluster-portrait}
 
-Hopper is a shared-use resource for all researchers at Yale University for high performance computation of [electronic Protected Health Information (ePHI)](https://en.wikipedia.org/wiki/Protected_health_information), [NIH Controlled-Access Data](https://docs.ycrc.yale.edu/data/nih-data), [Controlled Unclassified Information (CUI)](https://en.wikipedia.org/wiki/Controlled_Unclassified_Information) and [certain other types of sensitive data](https://cybersecurity.yale.edu/data-classification).
+Hopper is a shared-use resource for all researchers at Yale University for high performance computation of [electronic Protected Health Information (ePHI)](https://en.wikipedia.org/wiki/Protected_health_information), [NIH Controlled-Access Data](https://sharing.nih.gov/accessing-data/NIH-security-best-practices), [Controlled Unclassified Information (CUI)](https://en.wikipedia.org/wiki/Controlled_Unclassified_Information) and [certain other types of sensitive data](https://cybersecurity.yale.edu/data-classification).
 Hopper consists of a variety of standard compute and GPU-enabled nodes and mounts an encrypted shared filesystem.
 The Hopper cluster is named for the computer scientist and United States Navy Rear Admiral [Grace Murray Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), who received her Ph.D. in Mathematics from Yale in 1934. 
 
