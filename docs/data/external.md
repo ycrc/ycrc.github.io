@@ -13,7 +13,7 @@ First get an account on [Spinup](http://spinup.internal.yale.edu).
     When getting your account on Spinup, you will need to provide a charging account (aka COA). 
  
 
-### Static website
+### Static Website
 
 You can use a static website with a public address to serve data publicly to collaborators or services that need to see the data via http. A common example of this is hosting tracks for the UCSC Genome Browser. 
 Note that this only serves static files.  If you wish to host a dynamic web application, see below.
@@ -30,7 +30,7 @@ That is the probably the easiest way to connect.
 To set up the UCSC Hub, follow their [directions](https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp) to set up the appropriate file heirarchy on
 your static website, using the transfer tool.
 
-### Web-based application
+### Web-based Application
 If your web application goes beyond simply serving static data, the best solution is to create a spinup virtual machine (VM), set up your web application on the VM, then 
 follow the spinup [instructions on requesting public access to a web server](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/643170314/Requesting+Public+Access+to+a+Spinup+Hosted+Web+Application+or+Website)
 
