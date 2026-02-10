@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/google-drive/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1512,8 +1512,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#google-shared-drives-formerly-team-drive" class="md-nav__link">
-    Google Shared Drives (formerly Team Drive)
+  <a href="#google-shared-drives" class="md-nav__link">
+    Google Shared Drives
   </a>
   
 </li>
@@ -2801,8 +2801,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#google-shared-drives-formerly-team-drive" class="md-nav__link">
-    Google Shared Drives (formerly Team Drive)
+  <a href="#google-shared-drives" class="md-nav__link">
+    Google Shared Drives
   </a>
   
 </li>
@@ -2851,16 +2851,28 @@
                 
                 
                 <h1 id="google-drive">Google Drive</h1>
-<p>Through Yale Google Apps for Education (EliApps), researchers have access to 5GB of storage with the option to purchase additional storage as needed. The Globus Google Drive connector allows you to create a Globus endpoint that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.</p>
+<p>Through Yale Google Apps for Education (EliApps), researchers have access to 5GB of storage with the option to purchase additional storage as needed. The Globus Google Drive connector allows you to create a Globus Collection that allows you to use the Globus infrastructure to transfer data into your Google Drive account. As always, no sensitive data (e.g. ePHI, HIPAA) is allowed in Google Drive storage.</p>
 <h2 id="eliapps">EliApps</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong> Changes to Google Drive pricing </strong></p>
+<p>ITS has informed us of a number of changes to the EliApps Google Drive quotas, including shared drives.</p>
+<ul>
+<li><strong>As of 8/15/23, all new EliApps accounts will have a free quota of 5GB.</strong></li>
+<li><strong>As of 7/1/24, all existing EliApps accounts will have a free quota of 5GB.</strong></li>
+<li><strong>Quotas beyond 5GB will be available for $145/TB/yr</strong></li>
+</ul>
+<p>Therefore, you should probably not consider Google Drive on EliApps for storage large amounts of data.  ITS suggested alternatives
+are Storage@Yale, Teams/SharePoint, or DropBox.</p>
+</div>
 <p>If your Yale email account is already an EliApps account (Gmail), then you are all set. If your Yale email is in Microsoft Office365, send an email to the <a href="mailto:helpdesk@yale.edu">ITS helpdesk</a> requesting a "no-email EliApps account". Once it is created you can login to Google Drive using your EliApps account name, which will be of the form <code>netid@yale.edu</code>. The Globus connector is configured to only allow data to be uploaded into EliApps Google Drive accounts.</p>
-<h3 id="google-shared-drives-formerly-team-drive">Google Shared Drives (formerly Team Drive)</h3>
-<p><a href="https://support.google.com/a/users/answer/9310246?hl=en&amp;sjid=16812813776924550361-NA&amp;visit_id=638216600368404114-927829563&amp;ref_topic=9296420&amp;rd=1">Shared Drives</a> is an additional feature for EliApps that 
-is available by request only (through Yale ITS). A Shared Drive is a Google Drive space that aims to solve most ownership and permissions issues present with traditional shared Google Drive folders. Once a 
-Shared Drive is created, e.g. for a project or research group, any data placed in that Drive are owned by the drive and permissions (which accounts can own or access the data) can be easily managed from 
-the Shared Drive interface by drive owners. With Shared Drive, you can be sure the data will stay with the research group as students and postdocs come and go. Although group members are initially provided 
-with a default EliApps Storage quota, this can be increased as needed by reaching out through the <a href="https://yale.service-now.com/it?id=service_offering&amp;sys_id=4f584dcd6fbb31007ee2abcf9f3ee40e">Yale ITS Google Shared 
-page</a>. Aside from these quota limits, there are also <a href="https://support.google.com/a/answer/7338880?hl=en">limits for Google Shared Drives</a> put in place by Google directly. Some are listed below.</p>
+<h3 id="google-shared-drives">Google Shared Drives</h3>
+<p><a href="https://support.google.com/a/users/answer/9310246?hl=en&amp;sjid=16812813776924550361-NA&amp;visit_id=638216600368404114-927829563&amp;ref_topic=9296420&amp;rd=1">Shared Drives</a> is an additional feature for EliApps that is available by request only (through Yale ITS). 
+A Shared Drive is a Google Drive space that aims to solve most ownership and permissions issues present with traditional shared Google Drive folders.
+Once a Shared Drive is created, e.g. for a project or research group, any data placed in that Drive are owned by the drive and permissions (which accounts can own or access the data) can be easily managed from the Shared Drive interface by drive owners.
+With Shared Drive, you can be sure the data will stay with the research group as students and postdocs come and go.
+Aside from these quota limits, there are also <a href="https://support.google.com/a/answer/7338880?hl=en">limits for Google Shared Drives</a> put in place by Google directly.
+Some are listed below.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To keep file counts low (and for easier data retrieval) we <em>highly</em> recommended that you archive your data using zip or <a href="/resources/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive">tar</a>.</p>
@@ -2892,11 +2904,15 @@ page</a>. Aside from these quota limits, there are also <a href="https://support
 </tbody>
 </table>
 <h2 id="local-file-access">Local File Access</h2>
-<p>You can upload and access your data using the web portal and sync data with your local machines via the Google File Stream software. For sync with your local machine, install <a href="https://www.google.com/drive/download/">Drive for desktop</a>. Authenticate with your EliApps account and you will see Google Drive mounted as an additional drive on your machine.</p>
+<p>You can upload and access your data using the web portal and sync data with your local machines via the Google File Stream software.
+For sync with your local machine, install <a href="https://www.google.com/drive/download/">Drive for desktop</a>.
+Authenticate with your EliApps account and you will see Google Drive mounted as an additional drive on your machine.</p>
 <h2 id="rclone">Rclone</h2>
-<p>You can also transfer data using the command line utility <a href="/data/transfer/#rclone">Rclone</a>. Rclone can be used to transfer data to any Google Drive account.</p>
+<p>You can also transfer data using the command line utility <a href="/data/transfer/#rclone">Rclone</a>.
+Rclone can be used to transfer data to any Google Drive account.</p>
 <h2 id="globus-google-drive-connector">Globus Google Drive Connector</h2>
-<p>You can use Globus to transfer data to/from any EliApps Google Drive as well. See our <a href="/data/globus">Globus</a> documentation for more information.</p>
+<p>You can use Globus to transfer data to/from any EliApps Google Drive as well.
+Visit our <a href="/data/globus">Globus</a> documentation for more information.</p>
                 
                   
                     
@@ -2905,7 +2921,7 @@ page</a>. Aside from these quota limits, there are also <a href="https://support
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2026</span>
       
     
   </small>
