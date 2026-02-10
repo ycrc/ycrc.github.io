@@ -2887,7 +2887,7 @@
 <hr />
 <div class="admonition tip">
 <p class="admonition-title">The Bouchet Cluster and Grace &amp; McCleary Decommission</p>
-<p>The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the <a href="/clusters/grace-mccleary-decommission.md">Grace &amp; McCleary Decommission Documentation</a> for more information.</p>
+<p>The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the <a href="/clusters/grace-mccleary-decommission">Grace &amp; McCleary Decommission Documentation</a> for more information.</p>
 </div>
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>Once you have <a href="https://research.computing.yale.edu/support/hpc/account-request">an account</a>, the cluster can be accessed <a href="/clusters-at-yale/access">via ssh</a> or through the <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
@@ -6610,7 +6610,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </div>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="2:10"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:9"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -6787,60 +6787,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">transfer</label><div class="tabbed-content">
-<p>Use the transfer partition to stage data for your jobs to and from <a href="/data/#staging-data">cluster storage</a>.</p>
-<p><strong>Request Defaults</strong></p>
-<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-</code></pre></div>
-<p><strong>Job Limits</strong></p>
-<p>Jobs submitted to the transfer partition are subject to the following limits:</p>
-<table>
-<thead>
-<tr>
-<th>Limit</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Maximum job time limit</td>
-<td><code>1-00:00:00</code></td>
-</tr>
-<tr>
-<td>Maximum running jobs per user</td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td>Maximum CPUs per job</td>
-<td><code>1</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Available Compute Nodes</strong></p>
-<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
-<table>
-<thead>
-<tr>
-<th>Count</th>
-<th>CPU Type</th>
-<th>CPUs/Node</th>
-<th>Memory/Node (GiB)</th>
-<th>Node Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>7642</td>
-<td>8</td>
-<td>237</td>
-<td>epyc, 7642, nogpu, standard, common</td>
-</tr>
-</tbody>
-</table>
-</div>
-<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=a5000:2</code> would request 2 NVIDIA RTX A5000 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -6953,7 +6900,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -7050,7 +6997,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -7117,7 +7064,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">mpi</label><div class="tabbed-content">
+<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">mpi</label><div class="tabbed-content">
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -7170,7 +7117,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -7529,7 +7476,7 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>

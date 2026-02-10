@@ -2843,9 +2843,9 @@
 <p>Some Python Packages for AI/ML workflows do not install easily into YCRC systems. Due to this, we have developed and published 
 installation recipes for commonly requested python packages. As of now, those packages include:</p>
 <ul>
-<li><a href="https://docs.ycrc.yale.edu/clusters-at-yale/ai/pythonpackages/#flash-attention">flash attention</a></li>
-<li><a href="https://docs.ycrc.yale.edu/ai/pythonpackages/#vllm">vllm</a></li>
-<li><a href="https://docs.ycrc.yale.edu/ai/pythonpackages/#esmfold">esmfold</a></li>
+<li><a href="/ai/pythonpackages/#flash-attention">flash attention</a></li>
+<li><a href="/ai/pythonpackages/#vllm">vllm</a></li>
+<li><a href="/ai/pythonpackages/#esmfold">esmfold</a></li>
 </ul>
 <p>If you do not see a recipe for a package you need help with, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a> for
 help installing the package/program.</p>
@@ -2890,7 +2890,7 @@ git submodule update --init --recursive
 python setup.py install
 </code></pre></div>
 <h2 id="vllm">vllm</h2>
-<p>Create initial environment (make sure to request a compute node with <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">miniconda</a></p>
+<p>Create initial environment (make sure to request a compute node with <a href="/clusters-at-yale/guides/conda/">miniconda</a></p>
 <div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --mem<span class="o">=</span>20G --cpus-per-task<span class="o">=</span><span class="m">4</span> --time<span class="o">=</span><span class="m">2</span>:00:00
 
 module load miniconda
@@ -2910,7 +2910,7 @@ git clone https://github.com/vllm-project/vllm
 uv pip install -e . --no-build-isolation
 </code></pre></div>
 <h2 id="esmfold">esmfold</h2>
-<p>Create initial environment using <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">miniconda</a> on a compute node</p>
+<p>Create initial environment using <a href="/clusters-at-yale/guides/conda/">miniconda</a> on a compute node</p>
 <div class="highlight"><pre><span></span><code>salloc -p devel --mem<span class="o">=</span>20G --time<span class="o">=</span><span class="m">2</span>:00:00 --cpus-per-task<span class="o">=</span><span class="m">4</span>
 
 
@@ -2973,7 +2973,7 @@ pip install fair-esm
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2026</span>
       
     
   </small>
