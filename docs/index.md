@@ -3,8 +3,8 @@
     Effective January 25, 2025, new or renewed Data Use Certifications for NIH Controlled-Access Data and Repositories must adhere to the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf). This data can be now hosted and analyzed on YCRC's new NIST 800-171 compliant Hopper cluster. See the [Hopper documentation](/clusters/hopper) for information on requesting access.
 
 
-!!! tip "The Bouchet Cluster is Now Available"
-    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet contains approximately 10,000 direct-liquid-cooled cores as well as 80 NVIDIA H200 GPUs and 48 NVIDIA RTX 5000 Ada GPUs. See the [Bouchet page](/clusters/bouchet) for more information.
+!!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
+    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission.md) for more information.
 
 
 ## Acknowledge the YCRC

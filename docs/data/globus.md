@@ -57,7 +57,7 @@ You can also
 ### Transfer Between Globus Collections
 
 1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the collection you would like to browse in the collection field (e.g. Yale CRC Grace)
-1. Select one or more files you would like to transfer
+1. Navigate to your desired directory and select one or more files and/or directories you would like to transfer
 1. Click on the right-hand side menu option "Transfer or Sync to..."
 1. Enter the second collection name in the right search box (e.g. another cluster or your personal collection)
 1. Navigate to the destination on the second collection for your transfer
