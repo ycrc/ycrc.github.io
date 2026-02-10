@@ -14,6 +14,8 @@ Globus transfers data between computers set up as "collections". The official YC
     Globus does not work for course accounts (`<course_id>_<netid>`).
     Please try the other transfer methods listed in our [Transfer documentation](/data/transfer/) instead.
 
+---
+
 
 ## Cluster Collections
 

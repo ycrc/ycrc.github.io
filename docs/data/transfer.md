@@ -26,46 +26,20 @@ This is useful for transferring data to or from locations other than your local 
 [netID@cluster ~] ssh transfer
 ```
 
-## Transferring Data to/from Your Local Machine
+## Transferring Data to/from Your Computer
 
 ### Graphical Transfer Tools
 
-#### OOD Web Transfers
+#### Web Transfers with Open OnDemand
 
-On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#File-Browser) portals to transfer files. This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
+On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#File-Browser) portals to transfer files.
+This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
 
-#### MobaXterm (Windows)
+### File Transfers with Globus
 
-[MobaXterm](/clusters-at-yale/access/#windows) is an all-in-one graphical client for Windows that includes a transfer pane for each cluster you connect to. Once you have established a connection to the cluster, click on the "Sftp" tab in the left sidebar to see your files on the cluster. You can drag-and-drop data into and out of the SFTP pane to upload and download, respectively.
-
-#### Cyberduck (Mac/Linux)
-
-**Windows Computers Disclaimer**: Recent updates as of 12/18/2024 have made Cyberduck incompatible with the authentication methods used on our clusters.
-                If interested in using a client on Windows, please use MobaXterm where setup instructions can be found [here](/clusters-at-yale/access/#windows).
-
-You can also transfer files between your local computer and a cluster using an FTP client, such as [Cyberduck (macOS)](https://cyberduck.io/). You will need to configure the client with:
-
-* Your netid as the "Username"
-* Cluster transfer node (see above) as the "Server"
-* Select your private key as the "SSH Private Key"
-* Leave "Password" blank (you will be prompted on connection for your ssh key passphrase)
-
-An example configuration of Cyberduck is shown below.
-
-![Cyberduck sample configuration.](/img/cyberduck.png)
-
-##### Cyberduck with MFA
-
-Our clusters require [Multi-Factor Authentication](/clusters-at-yale/access/mfa) so there are a couple additional configuration steps. Under `Cyberduck > Preferences > Transfers > General` change the setting to "Use browser connection" instead of "Open multiple connections".
-
-When you connect type one of the following when prompted with a "Partial authentication success" window.
-
-* "push" to receive a push notification to your smart phone (requires the Duo mobile app)
-* "phone" to receive a phone call
-
-### Large File Transfers (Globus)
-
-You can use the Globus service to perform larger data transfers between your local machine and the clusters. Globus provides a robust and resumable way to transfer larger files or datasets. Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
+You can use the Globus service to perform data transfers between your local machine and the clusters.
+Globus provides a robust and resumable way to transfer larger files or datasets as well as an easy to use interface for tranfers between your local machine and the clusters.
+Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
 ### Command-Line Transfer Tools
 
@@ -154,7 +128,7 @@ This avoids the need to explicitly add each cluster's ssh key to the list of Aut
 
 The rsync connection will use the forwarded key and you will not need to reauthenticate. 
 
-## Transfer Data To Off Site
+## Transfer Data to Outside of Yale
 
 If the location you are transfering to supports Globus, that is the preferred tool for transferring large data off-site.
 Please see [our Globus page](/data/globus) for more details.
@@ -176,24 +150,9 @@ For any data that hosted outside of Yale, you will need to initiate the transfer
 
 ```
 
-
 ### Rclone
 
-To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](https://rclone.org/). It is installed on all of the clusters and can be installed on your computer. You will need to configure it for each kind of storage you would like to transfer to with:
-
-```bash
-rclone configure
-```
-
-You'll be prompted for a name for the connection (e.g mys3), and then details about the connection.  Once you've saved that configuration, you can connect to the transfer node (using `ssh transfer` from the login node) and then use that connection name to copy files with similar syntax to `scp` and `rsync`:
-
-```bash
-rclone copy localpath/myfile mys3:bucketname/
-rclone sync localpath/mydir mys3:bucketname/remotedir
-```
-
-We recommend that you protect your configurations with a password. You'll see that 
-as an option when you run rclone config. Please see [our Rclone page](/clusters-at-yale/guides/rclone/) for additional information on how to set up and use Rclone on the YCRC clusters. For all the Rclone documentation please [refer to the official site](https://rclone.org/docs/).
+To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](/clusters-at-yale/guides/rclone.md). It is installed on all of the clusters and can be installed on your computer.
 
 ### Sites Behind a VPN
 

@@ -159,8 +159,8 @@ nav:
             - data/ycga-data.md
             - Transfer Data:
                 - "Transfer to Cluster": data/transfer.md
-                - clusters-at-yale/guides/rclone.md
                 - data/globus.md
+                - clusters-at-yale/guides/rclone.md
                 - "Stage Data for Compute Jobs": data/staging.md
             - Manage & Share:
                 - data/permissions.md
