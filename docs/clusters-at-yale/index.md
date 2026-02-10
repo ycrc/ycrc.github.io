@@ -49,6 +49,6 @@ There are a number of methods for transferring file between your computer and th
 
 	We offer several courses that range from orientation for beginners to advanced topics on application-specific optimization. Please peruse [our catalog of training](https://research.computing.yale.edu/training) to see what is available.
 
-	Our clusters run the Linux operating system, where we support the use of the Bash shell. If you are new to linux, check out our [Intro to Linux Workshop](https://research.computing.yale.edu/training/ycrc-bootcamps/practical-introduction-linux).
+	Our clusters run the Linux operating system, where we support the use of the Bash shell. If you are new to linux, check out our [Intro to Linux Workshop](https://youtu.be/_kMHT_tkweo?si=135TmpuvVE1MQ6eF).
 
 If you have additional questions/comments, please [contact us](/#get-help).

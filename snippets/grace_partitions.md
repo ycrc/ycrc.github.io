@@ -91,36 +91,6 @@
     |---|---|---|---|---|
     |18|6342|48|487|icelake, avx512, 6342, nogpu, standard, common, bigtmp|
 
-=== "transfer"
-
-    Use the transfer partition to stage data for your jobs to and from [cluster storage](/data/#staging-data).
-
-    **Request Defaults**
-
-    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
-
-    ``` text
-    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-    ```
-
-    **Job Limits**
-
-    Jobs submitted to the transfer partition are subject to the following limits:
-
-    |Limit|Value|
-    |---|---|
-    |Maximum job time limit|`1-00:00:00`|
-    |Maximum running jobs per user|`2`|
-    |Maximum CPUs per job|`1`|
-
-    **Available Compute Nodes**
-
-    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
-    |---|---|---|---|---|
-    |2|7642|8|237|epyc, 7642, nogpu, standard, common|
-
 === "gpu"
 
     Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=a5000:2` would request 2 NVIDIA RTX A5000 GPUs per node.

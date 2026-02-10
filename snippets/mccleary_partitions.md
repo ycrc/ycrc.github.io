@@ -125,35 +125,6 @@
     |---|---|---|---|---|
     |3|6240|36|180|cascadelake, avx512, 6240, nogpu, bigtmp, standard, oldest, common|
 
-=== "transfer"
-
-    Use the transfer partition to stage data for your jobs to and from [cluster storage](/clusters-at-yale/data/#staging-data).
-
-    **Request Defaults**
-
-    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
-
-    ``` text
-    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-    ```
-
-    **Job Limits**
-
-    Jobs submitted to the transfer partition are subject to the following limits:
-
-    |Limit|Value|
-    |---|---|
-    |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per user|`4`|
-    |Maximum running jobs per user|`4`|
-
-    **Available Compute Nodes**
-
-    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
-    |---|---|---|---|---|
-    |2|72|8|227|milan, 72F3, nogpu, standard, common|
 
 === "gpu"
 

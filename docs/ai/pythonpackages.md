@@ -5,9 +5,9 @@
 Some Python Packages for AI/ML workflows do not install easily into YCRC systems. Due to this, we have developed and published 
 installation recipes for commonly requested python packages. As of now, those packages include:
 
-- [flash attention](https://docs.ycrc.yale.edu/clusters-at-yale/ai/pythonpackages/#flash-attention)
-- [vllm](https://docs.ycrc.yale.edu/ai/pythonpackages/#vllm)
-- [esmfold](https://docs.ycrc.yale.edu/ai/pythonpackages/#esmfold)
+- [flash attention](/ai/pythonpackages/#flash-attention)
+- [vllm](/ai/pythonpackages/#vllm)
+- [esmfold](/ai/pythonpackages/#esmfold)
 
 If you do not see a recipe for a package you need help with, please [contact us](https://docs.ycrc.yale.edu/#get-help) for
 help installing the package/program.
@@ -61,7 +61,7 @@ python setup.py install
 
 ##vllm
 
-Create initial environment (make sure to request a compute node with [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/)
+Create initial environment (make sure to request a compute node with [miniconda](/clusters-at-yale/guides/conda/)
 
 ```bash
 salloc --partition=devel --mem=20G --cpus-per-task=4 --time=2:00:00
@@ -85,7 +85,7 @@ uv pip install -e . --no-build-isolation
 
 ##esmfold
 
-Create initial environment using [miniconda](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/) on a compute node
+Create initial environment using [miniconda](/clusters-at-yale/guides/conda/) on a compute node
 
 ```bash
 

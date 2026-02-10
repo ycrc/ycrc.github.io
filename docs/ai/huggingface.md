@@ -105,7 +105,7 @@ for other workflows.
 Once a workflow is validated interactively, it can be converted to a batch job.
 
 For notebook-based workflows, Jupyter notebooks can be executed non-interactively using `papermill`. Guidance is available under
-[Command-Line Execution of Jupyter Notebooks](../clusters-at-yale/access/ood-jupyter/).
+[Command-Line Execution of Jupyter Notebooks](/clusters-at-yale/access/ood-jupyter).
 
 For script-based workflows, submit the script directly using a Slurm batch script.
 
