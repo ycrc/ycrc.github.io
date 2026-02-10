@@ -138,7 +138,7 @@ To manage your collections, such as delete an collection, rename it, or share it
 
 ### Set up a [Google Drive](https://www.google.com/drive/) Collection
 
-The Globus connector is configured to only allow data to be uploaded into [EliApps (Yale's GSuite for Education) Google Drive accounts](/data/google-drive.md). 
+The Globus connector is configured to only allow data to be uploaded into [EliApps (Yale's GSuite for Education) Google Drive accounts](/data/google-drive). 
 
 1. Click on the following link: [Globus Google Drive Collection](https://app.globus.org/file-manager?origin_id=28ae8ae7-b2c6-47b4-badc-da9c1cab1e6e)
 1. Log into Globus, if needed.

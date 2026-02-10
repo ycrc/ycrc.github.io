@@ -34,7 +34,7 @@ We will also be holding “Transitioning to Bouchet” sessions over the next co
 
 ## What about My Existing Data on Grace or McCleary?
 
-**All data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, scratch and any purchased storage and transferring it either to non-HPC storage or to a Bouchet account. 
+**All data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. 
 
 If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please [contact us](/#get-help) if you would like to purchase a storage allocation on Bouchet.
 
