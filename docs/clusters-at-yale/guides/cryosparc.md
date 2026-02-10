@@ -17,6 +17,23 @@ As of February, 2026, the YCRC is transitioning to a new CryoSPARC workflow. If 
 
      after the --ssdpath line.
 
+## Run (2/10/2026 - Experimental)
+
+*For beta testers provided with our `cryosparc-cluster-master.sh` script*: here is a preliminary description and walk-through on how to use it.
+
+Please note, in contrast to our previous cryosparc workflow, the new method *does not use GPU's in the batch script*. Required resources for the script `cryosparc-cluster-master.sh` are minimal and should not be modified. The only change to the #SBATCH directives that may be needed are the running time and partition. Also note, 'worker' nodes are no longer part of this workflow.
+
+To use the new cryosparc workflow, please use the the following steps:
+
+1. **To start your cryosparc server**, submit the 'cryosparc-cluster-master.sh' script using `sbatch cryosparc-cluster-master.sh`. With the script, you may (optionally) change the '#SBATCH -t <time>' and '#SBATCH -p <partition>' directive lines to specify the running time and slurm partition to reflect how long you expect your workflow to take. The default request of 7 days on the 'week' partition, with 1 CPU and 8GB of RAM, should be fine.
+
+2. **To interact with your cryosparc server**, launch a minimal [OnDemand Remote Desktop](/clusters-at-yale/access/ood-remote-desktop) session; 1 CPU, 8GB RAM on the 'devel' partition should suffice. There is no need to request more time than you expect to use your browser for, as you can always launch another Remote Desktop and get back to where you were with no information loss.
+
+3. **When submitting analysis tasks on your cryosparc server**, please note that you will now have several compute lanes to choose from, including 'cpu', 'gpu' and possibly others. The cryosparc GUI will prompt you to select one of these choices after you first click 'submit job' after building the job.
+
+    Cryosparc will then work through the YCRC slurm system to assign your task to an available YCRC compute node. You may then monitor your job through cryosparc itself, and also through the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or by the terminal command 'squeue --me').
+
+
 ## Topaz support (Optional)
 
 [Topaz](https://cb.csail.mit.edu/cb/topaz/) is a pipeline for particle picking in cryo-electron microscopy images using
