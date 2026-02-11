@@ -32,6 +32,10 @@ We currently support collections for the following clusters.
 
 For Bouchet, Grace and McCleary, these collections provide access to all files you normally have access to.
 
+!!! tip "Grace & McCleary Decommission Data Migration"
+
+    The Grace Globus Collection, `Yale CRC Grace`, has been upgraded to provide faster transfer speeds to Bouchet. Both McCleary and Grace users have access to `Yale CRC Grace`. Users with both McCleary and Grace accounts will see their Grace home directories when connecting to the collection, but can also access their McCleary home directory at `/vast/palmer/home.mccleary/<netid>`.
+
 For security reasons, Milgram Globus uses a staging area (`/gpfs/milgram/globus/$NETID`). 
 Once uploaded, data should be moved from this staging area to its final location within Milgram.
 Files in the staging area are purged after 21 days.

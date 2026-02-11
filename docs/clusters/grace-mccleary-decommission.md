@@ -42,7 +42,7 @@ If you have current (not expired) paid storage allocations on either the Palmer 
 
 	If you have any data on Grace or McCleary that is now covered by the [NIH Controlled Access Data policies](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf), this data cannot be moved to Bouchet but instead must be moved to the [Hopper](hopper.md) HPC cluster. [Submit this form to request Hopper access](https://research.computing.yale.edu/secure-project-request).
 
-We encourage you to use the `getquota` utility on Grace and/or McCleary to examine the data usage by your group and specific group members. In general, we recommend using [Globus](https://docs.ycrc.yale.edu/data/globus/) to migrate data to Bouchet as it is the fastest and most robust method of transferring data between the clusters. 
+We encourage you to use the `getquota` utility on Grace and/or McCleary to examine the data usage by your group and specific group members. In general, we recommend using [Globus](/data/globus/) to migrate data to Bouchet as it is the fastest and most robust method of transferring data between the clusters. 
 
 If you have concerns about transferring your data, such as a particularly large allocation or complicated permission structure, please [reach out to us](/#get-help) for assistance.
 
