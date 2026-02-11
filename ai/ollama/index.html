@@ -3002,14 +3002,42 @@ why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>
 <li>
 <p>Install Ollama in the conda environment using <strong>pip</strong>. The Miniconda package for Ollama installs the wrong program
 and won't work properly.</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>my_ollama_env
+<div class="highlight"><pre><span></span><code><span class="c1">### Be on a compute node or request a remote desktop session for compute resources or miniconda will be killed</span>
+salloc<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span><span class="c1">#4 cpus for 1 hour with 10 GB of memory on the devel partition</span>
+
+<span class="c1">###load miniconda module to gain access to conda commands</span>
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+
+<span class="c1">###create initial environment with jupyter compatibility</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_ollama_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>notebook<span class="w"> </span><span class="c1">###can change python version to desired version and/or add other packages</span>
+
+<span class="c1">###install ollama python package using pip</span>
+conda<span class="w"> </span>activate<span class="w"> </span>my_ollama_env
 
 pip<span class="w"> </span>install<span class="w"> </span>ollama
+
+<span class="c1">###load environment into jupyter notebook dropdown</span>
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 </li>
 <li>
-<p>Load Ollama module prior to requesting resources by using the additional modules open in OOD, or module load ollama
-in a terminal once the Jupyter Notebook has started.</p>
+<p>On Jupyter app page on Open On Demand:</p>
+</li>
+<li>
+<p>In version, select dropdown menu and click my_ollama_env. This will load jupyter notebook with the miniconda
+   environment built for ollama.</p>
+</li>
+<li>
+<p>In partitions, select menu and click gpu_devel or gpu to gain access to GPUs in the app menu.</p>
+</li>
+<li>
+<p>In Number of GPUs per node, select desired number of GPUs. Recommendation = 1.</p>
+</li>
+<li>
+<p>Finally, in additional modules for Jupyter, put ollama. This will load the ollama module with the jupyter notebook.</p>
+</li>
+<li>
+<p>Hit the launch button to start the resource request</p>
 </li>
 <li>
 <p>Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
@@ -3032,6 +3060,31 @@ print<span class="o">(</span><span class="s2">&quot;ollama host for notebook:&qu
 <span class="c1">###imports client to save host address</span>
 from<span class="w"> </span>ollama<span class="w"> </span>import<span class="w"> </span>Client
 <span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Client<span class="o">(</span><span class="nv">host</span><span class="o">=</span>host<span class="o">)</span>
+</code></pre></div>
+<ol>
+<li>Download desired model using this cell block:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>client.pull<span class="o">(</span><span class="s2">&quot;llama3.1&quot;</span><span class="o">)</span>
+<span class="c1">###can change llama3.1 to any desired model</span>
+</code></pre></div>
+<ol>
+<li>Use this formatting to prompt the model.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">###prompts model using saved host address</span>
+<span class="nv">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>client.generate<span class="o">(</span>
+<span class="w">    </span><span class="nv">model</span><span class="o">=</span><span class="s2">&quot;llama3.1&quot;</span>,
+<span class="w">    </span><span class="nv">prompt</span><span class="o">=</span><span class="s2">&quot;Design an experiment to test whether water is wet.&quot;</span>,
+<span class="w">    </span><span class="c1">#options is not necessary, but provides the ability to modify response of model</span>
+<span class="w">    </span><span class="nv">options</span><span class="o">={</span>
+<span class="w">        </span><span class="s2">&quot;temperature&quot;</span>:10.0,
+<span class="w">        </span><span class="s2">&quot;num_ctx&quot;</span>:<span class="w"> </span><span class="m">4096</span>,
+<span class="w">        </span><span class="s2">&quot;top_p&quot;</span>:<span class="w"> </span><span class="m">0</span>.1,
+<span class="w">        </span><span class="s2">&quot;num_predict&quot;</span>:<span class="w"> </span><span class="m">10000</span>,
+<span class="w">    </span><span class="o">}</span>,
+<span class="o">)</span>
+
+<span class="c1">#required to actually receive response</span>
+print<span class="o">(</span>resp<span class="o">[</span><span class="s2">&quot;response&quot;</span><span class="o">])</span>
 </code></pre></div>
 <h2 id="batch-usage">Batch usage</h2>
 <p>A typical batch workflow starts the Ollama server in the background, waits for initialization, and then submits 
@@ -3104,7 +3157,7 @@ ollama<span class="w"> </span>serve
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
       
     
   </small>
