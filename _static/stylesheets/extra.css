@@ -56,6 +56,10 @@ Yale Orange Accent: #bd5319;
     color: #63aaff;
 }
 
+.md-typeset .admonition {
+    font-size: .8rem;
+}
+
 .md-tabs__link{
     opacity: 1.0;
 }
