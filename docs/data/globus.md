@@ -23,18 +23,22 @@ We currently support collections for the following clusters.
 
 | Cluster                        | Globus Collections     |
 |--------------------------------|---------------------|
-| [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet`        |
+| [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet`*        |
 | [Hopper Low Risk](/clusters/milgram)   | `Yale CRC Hopper Low Risk`  |
 | [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
 
 
-For Bouchet, Grace and McCleary, these collections provide access to all files you normally have access to.
+\* The Bouchet Collection mounts the storage two levels higher than our other Collections.
+When navigating to full paths in Globus, remove `/nfs/roberts` from your path to avoid errors.
+
 
 !!! tip "Grace & McCleary Decommission Data Migration"
 
     The Grace Globus Collection, `Yale CRC Grace`, has been upgraded to provide faster transfer speeds to Bouchet. Both McCleary and Grace users have access to `Yale CRC Grace`. Users with both McCleary and Grace accounts will see their Grace home directories when connecting to the collection, but can also access their McCleary home directory at `/vast/palmer/home.mccleary/<netid>`.
+
+For Bouchet, Grace and McCleary, these collections provide access to all files you normally have access to.
 
 For security reasons, Milgram Globus uses a staging area (`/gpfs/milgram/globus/$NETID`). 
 Once uploaded, data should be moved from this staging area to its final location within Milgram.
