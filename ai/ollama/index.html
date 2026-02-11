@@ -2997,7 +2997,7 @@ ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
 why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
 </code></pre></div>
 <h2 id="jupyter-notebooks-with-ollama">Jupyter Notebooks with Ollama</h2>
-<p>For Jupyter Notebooks, you need to do three things:</p>
+<p>For Jupyter Notebooks, follow these steps:</p>
 <ol>
 <li>
 <p>Install Ollama in the conda environment using <strong>pip</strong>. The Miniconda package for Ollama installs the wrong program
@@ -3021,11 +3021,11 @@ ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 </li>
 <li>
-<p>On Jupyter app page on Open On Demand:</p>
-</li>
+<p>Request correct resources on Jupyter app page on Open On Demand:</p>
+<ol>
 <li>
 <p>In version, select dropdown menu and click my_ollama_env. This will load jupyter notebook with the miniconda
-   environment built for ollama.</p>
+environment built for ollama.</p>
 </li>
 <li>
 <p>In partitions, select menu and click gpu_devel or gpu to gain access to GPUs in the app menu.</p>
@@ -3038,6 +3038,8 @@ ycrc_conda_env.sh<span class="w"> </span>update
 </li>
 <li>
 <p>Hit the launch button to start the resource request</p>
+</li>
+</ol>
 </li>
 <li>
 <p>Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
