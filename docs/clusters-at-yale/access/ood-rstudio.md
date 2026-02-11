@@ -77,7 +77,7 @@ Your R conda environments should now show up in the 'R version' drop-down menu.
 ## Run RStudio in Remote Desktop
 
 !!!warning
-    The following methods are depracated and no longer work as is; if you need alternative methods for running RStudio, please contact us by email ([hpc@yale.edu](mailto:hpc@yale.edu)) or online ([help.ycrc.yale.edu](https://help.ycrc.yale.edu))
+    The following methods are depracated and no longer work as is; if you need alternative methods for running RStudio, please contact us by email ([research.computing@yale.edu](mailto:research.computing@yale.edu)) or online ([help.ycrc.yale.edu](https://help.ycrc.yale.edu))
 
 While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be beneficial. 
 For example, when a user needs to monitor the R code's progress continuously.

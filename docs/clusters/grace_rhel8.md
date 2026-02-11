@@ -46,7 +46,7 @@ Grace now shares a software module tree with the McCleary cluster, providing a m
 Existing applications will continue to be available during this transition period.
 We plan to deprecate and remove the old application tree during the December 2023 maintenance window.
 
-If you experience any issues with software, please let us know at [hpc@yale.edu](mailto:hpc@yale.edu) and we can look into reinstalling.
+If you experience any issues with software, please let us know at [research.computing@yale.edu](mailto:research.computing@yale.edu) and we can look into reinstalling.
 
 ## Common Errors
 
@@ -61,7 +61,7 @@ To use Python 2.7, we request you setup a [conda environment](/clusters-at-yale/
 ### Missing System Libraries
 
 Some of the existing applications may depend on libraries that are no longer installed in the operating system.
-If you run into these errors please email [hpc@yale.edu](mailto:hpc@yale.edu) and include which application/version you are using along with the full error message.
+If you run into these errors please email [research.computing@yale.edu](mailto:research.computing@yale.edu) and include which application/version you are using along with the full error message.
 We will investigate these on a case-by-case basis and work to get the issue resolved.
 
 There will be a small number of compute nodes reserved with RHEL7 (in a partition named `legacy`) to enable work to continue while we resolve these issues.

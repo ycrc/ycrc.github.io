@@ -137,9 +137,9 @@ The labels section allows you to define metadata for your container:
 ``` bash
 %labels
     Name
-    Maintainer "YCRC Support Team" <hpc@yale.edu>Version v99.9
+    Maintainer "YCRC Support Team" <research.computing@yale.edu>Version v99.9
     Architecture x86_64
-    URL https://research.computing.yale.edu/</hpc@yale.edu>
+    URL https://research.computing.yale.edu/</research.computing@yale.edu>
 ```
 
 You can examine container metadata with the `apptainer inspect` command.

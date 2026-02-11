@@ -90,5 +90,5 @@ Latest month is in-progress (data updated daily at midnight)
 Total usage:          12,706.68 Service-Unit Hours
 ```
 
-Please reach out to hpc@yale.edu with any comments or suggestions about how we can improve `getusage`. 
+Please reach out to research.computing@yale.edu with any comments or suggestions about how we can improve `getusage`. 
 

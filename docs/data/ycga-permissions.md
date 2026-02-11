@@ -8,11 +8,11 @@ This change only impacts data in directories managed by YCGA; it does not impact
 
 In addition, you will no longer be able to directly access or download data from the sequence data archive (/SAY/archive/YCGA-729009-YCGA-A2/archive/…).  To access archived data, you must use ycgaFastq or URLFetch, see below.
 
-We will make this change on Oct 1, 2024.  After that date, if you discover that you no longer have access to your data, please contact hpc@yale.edu.  Please provide the path to the data you wish to access, as well as a list of groups and/or users who you believe should have access.  YCRC and YCGA will review the request and restore access if approved.  Also, if you frequently require access to another group’s sequencing data, we recommend that you ask the group’s PI to add you to their group, which will give you access to all of their sequencing data.
+We will make this change on Oct 1, 2024.  After that date, if you discover that you no longer have access to your data, please contact research.computing@yale.edu.  Please provide the path to the data you wish to access, as well as a list of groups and/or users who you believe should have access.  YCRC and YCGA will review the request and restore access if approved.  Also, if you frequently require access to another group’s sequencing data, we recommend that you ask the group’s PI to add you to their group, which will give you access to all of their sequencing data.
 
 You can check to see who is a member of your group by running 
 /share/admins/bin/lman show groupname.  
-To add users to a group, the PI should send an email to hpc@yale.edu.  You can use this template:
+To add users to a group, the PI should send an email to research.computing@yale.edu.  You can use this template:
 
 
 Please add <netid> to my group, and also make them a member of the ycga group.

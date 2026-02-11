@@ -36,9 +36,9 @@ New videos are added regularly and suggestions for topics can be submitted by em
 
 ### Web and Email Support
 
-To submit requests, issues, or questions and receive a response within 24 hours, please send us an email at [hpc@yale.edu](mailto:hpc@yale.edu) or you can sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Your login credentials there are your email and a password of your choosing, not your CAS password.
+To submit requests, issues, or questions and receive a response within 24 hours, please send us an email at [research.computing@yale.edu](mailto:research.computing@yale.edu) or you can sign on to our online support system at [help.ycrc.yale.edu](https://help.ycrc.yale.edu). Your login credentials there are your email and a password of your choosing, not your CAS password.
 
-[Submit Help Request](mailto:hpc@yale.edu){ .md-button }
+[Submit Help Request](mailto:research.computing@yale.edu){ .md-button }
 
 Once received, our system will send an automated response with a link to a ticket. From there we'll track your ticket and respond within 24 hours, and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.
 

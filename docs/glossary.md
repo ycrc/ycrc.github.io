@@ -1,6 +1,6 @@
 # Glossary
 
-To help clarify the way we refer to certain terms in our user documentation, here is a brief list of some of the words that regularly come up in our documents. Please reach out to us at [hpc@yale.edu](mailto:hpc@yale.edu) if there are any other words that need to be added.
+To help clarify the way we refer to certain terms in our user documentation, here is a brief list of some of the words that regularly come up in our documents. Please reach out to us at [research.computing@yale.edu](mailto:research.computing@yale.edu) if there are any other words that need to be added.
 
 **Account** - used to authenticate and grant permission to access resources
 

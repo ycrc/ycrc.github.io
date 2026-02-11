@@ -19,7 +19,7 @@ Access to Priority Tier partitions is granted upon request through the Priority 
 During the Priority Tier onboarding process, the YCRC will require certain information before access can be granted.
 
 * Charging instructions (COA)
-* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [hpc@yale.edu](mailto:hpc@yale.edu) (all group members should already have cluster accounts requested through the [Account Request Form](https://research.computing.yale.edu/support/hpc/account-request)).
+* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [research.computing@yale.edu](mailto:research.computing@yale.edu) (all group members should already have cluster accounts requested through the [Account Request Form](https://research.computing.yale.edu/support/hpc/account-request)).
 * We also strongly recommend providing an annual usage limit, beyond which no additional computation on Priority Tier will occur (computation in Standard Tier will still be available at no cost). Note this limit can be changed at any time upon request.
 
 ## How to Use Priority Tier Partitions

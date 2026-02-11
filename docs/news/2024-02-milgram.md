@@ -16,7 +16,7 @@ _Februrary 6-8, 2024docs/news/2024-02-milgram.md_
  
 As part of this maintenance, the operating system on Milgram has been upgraded to Red Hat 8.
 
-Jobs submitted prior to maintenance that were held and now released will run under RHEL8 (instead of RHEL7).  This may cause some jobs to not run properly, so we encourage you to check on your job output.  Our [docs page](/clusters/milgram_rhel8/) provides information on the RHEL8 upgrade, including fixes for common problems.  Please notify hpc@yale.edu if you require assistance. 
+Jobs submitted prior to maintenance that were held and now released will run under RHEL8 (instead of RHEL7).  This may cause some jobs to not run properly, so we encourage you to check on your job output.  Our [docs page](/clusters/milgram_rhel8/) provides information on the RHEL8 upgrade, including fixes for common problems.  Please notify research.computing@yale.edu if you require assistance. 
 
 ### Changes to Interactive Partitions and Jobs
  
@@ -26,4 +26,4 @@ The 'interactive' and 'psych_interactive` partitions have been renamed to 'devel
 
 Additionally, all users are limited to 4 interactive app instances (of any type) at one time.  Additional instances will be rejected until you delete older open instances.  For OnDemand jobs, closing the window does not terminate the interactive app job.  To terminate the job, click the "Delete" button in your "My Interactive Apps" page in the web portal.
 
-Please visit the status page at [research.computing.yale.edu/system-status](http://research.computing.yale.edu/system-status) for the latest updates.  If you have questions, comments, or concerns, please contact us at hpc@yale.edu.
+Please visit the status page at [research.computing.yale.edu/system-status](http://research.computing.yale.edu/system-status) for the latest updates.  If you have questions, comments, or concerns, please contact us at research.computing@yale.edu.

@@ -57,7 +57,7 @@ module load mpi4py/3.1.4-gompi-2022b
 
 !!! warning
     `mpi4py` installed via Conda is unaware of the cluster infrastructure and therefore will likely only work on a single compute node.
-    If you wish to get a conda environment working across multiple nodes, please reach out to hpc@yale.edu for assistance.
+    If you wish to get a conda environment working across multiple nodes, please reach out to research.computing@yale.edu for assistance.
 
 ## Cluster Resource Requests
 
