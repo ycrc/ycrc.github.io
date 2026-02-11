@@ -81,7 +81,7 @@ why is the sky blue?
 
 ## Jupyter Notebooks with Ollama
 
-For Jupyter Notebooks, you need to do three things:
+For Jupyter Notebooks, follow these steps:
 
 1. Install Ollama in the conda environment using **pip**. The Miniconda package for Ollama installs the wrong program
 and won't work properly.
@@ -105,18 +105,18 @@ and won't work properly.
     ycrc_conda_env.sh update
     ```
 
-2. On Jupyter app page on Open On Demand:
+2. Request correct resources on Jupyter app page on Open On Demand:
 
-   1. In version, select dropdown menu and click my_ollama_env. This will load jupyter notebook with the miniconda
-   environment built for ollama.
+    1. In version, select dropdown menu and click my_ollama_env. This will load jupyter notebook with the miniconda
+    environment built for ollama.
 
-   2. In partitions, select menu and click gpu_devel or gpu to gain access to GPUs in the app menu.
+    2. In partitions, select menu and click gpu_devel or gpu to gain access to GPUs in the app menu.
 
-   3. In Number of GPUs per node, select desired number of GPUs. Recommendation = 1.
+    3. In Number of GPUs per node, select desired number of GPUs. Recommendation = 1.
 
-   4. Finally, in additional modules for Jupyter, put ollama. This will load the ollama module with the jupyter notebook.
+    4. Finally, in additional modules for Jupyter, put ollama. This will load the ollama module with the jupyter notebook.
 
-   5. Hit the launch button to start the resource request
+    5. Hit the launch button to start the resource request
 
 3. Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
 Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.
