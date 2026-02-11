@@ -2834,7 +2834,7 @@
 <p><strong>If you change your mind about job runtime</strong> after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
 <div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
-<p>You may also use slurm to change the partition a job runs in (again, this needs to be before the job starts running):</p>
+<p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
 <div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </div>
@@ -2881,7 +2881,7 @@ exec topaz $@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
       
     
   </small>
