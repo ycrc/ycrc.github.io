@@ -3070,7 +3070,7 @@ Please try the other transfer methods listed in our <a href="/data/transfer/">Tr
 <tbody>
 <tr>
 <td><a href="/clusters/bouchet">Bouchet</a></td>
-<td><code>Yale CRC Bouchet</code></td>
+<td><code>Yale CRC Bouchet</code>*</td>
 </tr>
 <tr>
 <td><a href="/clusters/milgram">Hopper Low Risk</a></td>
@@ -3090,11 +3090,13 @@ Please try the other transfer methods listed in our <a href="/data/transfer/">Tr
 </tr>
 </tbody>
 </table>
-<p>For Bouchet, Grace and McCleary, these collections provide access to all files you normally have access to.</p>
+<p>* The Bouchet Collection mounts the storage two levels higher than our other Collections.
+When navigating to full paths in Globus, remove <code>/nfs/roberts</code> from your path to avoid errors.</p>
 <div class="admonition tip">
 <p class="admonition-title">Grace &amp; McCleary Decommission Data Migration</p>
 <p>The Grace Globus Collection, <code>Yale CRC Grace</code>, has been upgraded to provide faster transfer speeds to Bouchet. Both McCleary and Grace users have access to <code>Yale CRC Grace</code>. Users with both McCleary and Grace accounts will see their Grace home directories when connecting to the collection, but can also access their McCleary home directory at <code>/vast/palmer/home.mccleary/&lt;netid&gt;</code>.</p>
 </div>
+<p>For Bouchet, Grace and McCleary, these collections provide access to all files you normally have access to.</p>
 <p>For security reasons, Milgram Globus uses a staging area (<code>/gpfs/milgram/globus/$NETID</code>). 
 Once uploaded, data should be moved from this staging area to its final location within Milgram.
 Files in the staging area are purged after 21 days.</p>
