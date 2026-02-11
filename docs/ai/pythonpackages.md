@@ -5,9 +5,9 @@
 Some Python Packages for AI/ML workflows do not install easily into YCRC systems. Due to this, we have developed and published 
 installation recipes for commonly requested python packages. As of now, those packages include:
 
-- [flash attention](/ai/pythonpackages/#flash-attention)
-- [vllm](/ai/pythonpackages/#vllm)
-- [esmfold](/ai/pythonpackages/#esmfold)
+- [flash attention](#flash-attention)
+- [vllm](#vllm)
+- [esmfold](#esmfold)
 
 If you do not see a recipe for a package you need help with, please [contact us](https://docs.ycrc.yale.edu/#get-help) for
 help installing the package/program.

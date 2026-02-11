@@ -87,13 +87,36 @@ For Jupyter Notebooks, you need to do three things:
 and won't work properly.
 
     ```bash
+    ### Be on a compute node or request a remote desktop session for compute resources or miniconda will be killed
+    salloc --cpus-per-task=4 --time=1:00:00 --mem=10G --partition=devel #4 cpus for 1 hour with 10 GB of memory on the devel partition
+    
+    ###load miniconda module to gain access to conda commands
+    module load miniconda
+    
+    ###create initial environment with jupyter compatibility
+    conda create --name my_ollama_env python=3.13 notebook ###can change python version to desired version and/or add other packages
+    
+    ###install ollama python package using pip
     conda activate my_ollama_env
 
     pip install ollama
+
+    ###load environment into jupyter notebook dropdown
+    ycrc_conda_env.sh update
     ```
 
-2. Load Ollama module prior to requesting resources by using the additional modules open in OOD, or module load ollama
-in a terminal once the Jupyter Notebook has started.
+2. On Jupyter app page on Open On Demand:
+
+   1. In version, select dropdown menu and click my_ollama_env. This will load jupyter notebook with the miniconda
+   environment built for ollama.
+
+   2. In partitions, select menu and click gpu_devel or gpu to gain access to GPUs in the app menu.
+
+   3. In Number of GPUs per node, select desired number of GPUs. Recommendation = 1.
+
+   4. Finally, in additional modules for Jupyter, put ollama. This will load the ollama module with the jupyter notebook.
+
+   5. Hit the launch button to start the resource request
 
 3. Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
 Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.
@@ -115,6 +138,33 @@ print("ollama host for notebook:", host)
 ###imports client to save host address
 from ollama import Client
 client = Client(host=host)
+```
+
+4. Download desired model using this cell block:
+
+```bash
+client.pull("llama3.1")
+###can change llama3.1 to any desired model
+```
+
+5. Use this formatting to prompt the model.
+
+```bash
+###prompts model using saved host address
+resp = client.generate(
+    model="llama3.1",
+    prompt="Design an experiment to test whether water is wet.",
+    #options is not necessary, but provides the ability to modify response of model
+    options={
+        "temperature":10.0,
+        "num_ctx": 4096,
+        "top_p": 0.1,
+        "num_predict": 10000,
+    },
+)
+
+#required to actually receive response
+print(resp["response"])
 ```
 
 ## Batch usage
