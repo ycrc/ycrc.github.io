@@ -29,11 +29,31 @@ To use the new cryosparc workflow, please use the the following steps:
 
 2. **To interact with your cryosparc server**, launch a minimal [OnDemand Remote Desktop](/clusters-at-yale/access/ood-remote-desktop) session; 1 CPU, 8GB RAM on the 'devel' partition should suffice. There is no need to request more time than you expect to use your browser for, as you can always launch another Remote Desktop and get back to where you were with no information loss.
 
-3. **When submitting analysis tasks on your cryosparc server**, please note that you will now have several compute lanes to choose from, including 'cpu', 'gpu' and possibly others. The cryosparc GUI will prompt you to select one of these choices after you first click 'submit job' after building the job.
+3. **When submitting analysis tasks on your cryosparc server**, please note that you will now have several compute lanes to choose from, including 'cpu', 'gpu' and (if you have purchased access) 'priority_cpu' and 'priority_gpu'. The cryosparc GUI will prompt you to select one of these choices once you start the job submission process by clicking 'submit job'. **You must then give a job runtime (see below)**
 
-    Cryosparc will then work through the YCRC slurm system to assign your task to an available YCRC compute node. You may then monitor your job through cryosparc itself, and also through the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or by the terminal command 'squeue --me').
+!!!warning
+    **You must specify an appropriate runtime upper limit** for your job, prior to clicking 'submit to lane'; otherwise, **your job may be terminated prematurely**. For jobs than run very quickly like micrograph imports, one hour ('1:00:00') is a safe value. However, for long jobs whose durations are uncertain, we suggest 24 hours ('24:00:00'). If you have a safe and reasonable guess that is smaller, this will help your job start sooner.
 
+    **Currently this option is hidden at the bottom of the submission pane** (right-hand side of the window titled 'Queue P*xxx* J*xxx*'). Scroll to the bottom and click on the purple box that says 'Cluster submission script variables'.  The box will expand to reveal additional options, where you can click on 'Maximum runtime'.
 
+    After you click 'Submit to lane', the YCRC slurm scheduler will assign your task to an available compute node. You may then monitor your job not only through cryosparc itself, but also through the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or by the terminal command 'squeue --me').
+
+!!!note
+    The cryosparc slurm scheduler tries to guess the amount of memory required for a job, which depends on a variety of factors. If you encounter memory-related failures, you may set the 'RAM multiplier' value under 'Cluster submission script variables' to a value greater than one.
+
+!!!note
+    **If you change your mind about job runtime** after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:
+
+    ``` bash
+    scontrol update JobId=1234567 TimeLimit=6:00:00
+    ```
+
+    You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):
+    
+    ``` bash
+    scontrol update JobId=1234567 Partition=priority_gpu
+    ```
+    
 ## Topaz support (Optional)
 
 [Topaz](https://cb.csail.mit.edu/cb/topaz/) is a pipeline for particle picking in cryo-electron microscopy images using
