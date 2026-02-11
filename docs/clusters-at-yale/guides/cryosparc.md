@@ -48,7 +48,7 @@ To use the new cryosparc workflow, please use the the following steps:
     scontrol update JobId=1234567 TimeLimit=6:00:00
     ```
 
-    You may also use slurm to change the partition a job runs in (again, this needs to be before the job starts running):
+    You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):
     
     ``` bash
     scontrol update JobId=1234567 Partition=priority_gpu
