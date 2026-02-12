@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/ai/aicodingtools/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1943,6 +1943,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#security-settings" class="md-nav__link">
+    Security settings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2835,6 +2842,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#security-settings" class="md-nav__link">
+    Security settings
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2858,18 +2872,14 @@
 researchers who wish to use AI coding tools to aid in their workflow development. It is possible
 to attach agents to your coding environments (VSCode, etc) while in the cluster, but it comes with the following risks.</p>
 <h2 id="coding-agents">Coding Agents</h2>
-<p>AI-driven programs that write code and take actions on your behalf are increasing in popularity and efficacy. 
-Coding agents are useful and exciting, and their use is permitted on YCRC clusters. However, these programs are 
-powerful and rapidly changing tools that come with many potential risks that you may be unfamiliar with. 
-These risks include the possibility that the agent might:</p>
+<p>Coding agents, AI-driven programs that write code and take actions on your behalf, are becoming increasingly popular and capable. Although you can use coding agents on YCRC clusters, these tools are evolving quickly and can act with broad authority, introducing risks that may not be immediately obvious. For this reason, it is important to follow established security best practices when using coding agents.</p>
+<p>These risks include the possibility that the agent might:</p>
 <ul>
-<li>expose your or your lab group's data</li>
-<li>take actions on your behalf, including: editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system</li>
-<li>expose your security credentials</li>
-<li>execute arbitrary, and perhaps malicious, code. </li>
+<li>Expose your or your lab group's data</li>
+<li>Take actions on your behalf, including: editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system</li>
+<li>Expose your security credentials</li>
+<li>Execute arbitrary, and perhaps malicious, code. </li>
 </ul>
-<p>Because of coding agents' enhanced capabilities, it is important to follow the best practices recommended by the 
-organizations that created the agents, as well as by independent entities.</p>
 <h2 id="expose-data">Expose data</h2>
 <p>AI coding agents send code and data to the company that runs them, e.g., OpenAI, Anthropic, Microsoft, or Google. 
 The service may log or retain your code and data, which may be added to the AI training set, depending on the provider
@@ -2897,11 +2907,30 @@ others to access your cluster resources or external services.</p>
 code and run it, including malicious code. Coding agents are susceptible to prompt injection attacks, in which an 
 agent is tricked into reading malicious instructions that it then dutifully executes. It could install keyloggers, 
 install backdoors, or perform any other malicious activity you can imagine if a bad actor compromised your account.</p>
-<p>Although these potential hazards are serious, they represent worst-case scenarios. If you follow best practices while 
-operating a coding agent, you will significantly reduce your risk. All coding agents describe best practices for their 
-agents. For example, Anthropic, which produces Claude Code, has the document <a href="https://www.anthropic.com/engineering/claude-code-best-practices">Claude Code: Best practices for agentic coding</a>. 
-Ignoring best practices or making light of them will increase your risk of something unfortunate happening to you or 
-to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.</p>
+<h2 id="security-settings">Security settings</h2>
+<p>Although these potential hazards are serious, they represent worst-case scenarios. If you follow best security practices while operating a coding agent, you will significantly reduce your risk. Most coding agents describe security settings for their agents. See the table below for examples from common coding agents. Ignoring security or making light of it will increase your risk of something unfortunate happening to you or to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Security documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code (Anthropic)</td>
+<td><a href="https://code.claude.com/docs/en/security">https://code.claude.com/docs/en/security</a></td>
+</tr>
+<tr>
+<td>Codex (OpenAI)</td>
+<td><a href="https://developers.openai.com/codex/security">https://developers.openai.com/codex/security</a></td>
+</tr>
+<tr>
+<td>Gemini CLI (Google)</td>
+<td><a href="https://geminicli.com/docs/">https://geminicli.com/docs/</a>. See pages for <a href="https://geminicli.com/docs/cli/trusted-folders/">Trusted Folders</a>, <a href="https://geminicli.com/docs/tools/">Tools</a>, and <a href="https://geminicli.com/docs/cli/sandbox/">Sandboxing</a>.</td>
+</tr>
+</tbody>
+</table>
                 
                   
                     
@@ -2910,7 +2939,7 @@ to your lab mates. Please use these powerful tools wisely and with full knowledg
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2026</span>
       
     
   </small>

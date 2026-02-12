@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -2800,7 +2800,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you are installing a version of CryoSPARC older than 4.4.0, add the additional line</p>
-<div class="highlight"><pre><span></span><code>--cudapath<span class="w"> </span><span class="nv">$cuda_path</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>--cudapath <span class="nv">$cuda_path</span> <span class="se">\</span>
 </code></pre></div>
 <p>after the --ssdpath line.</p>
 </div>
@@ -2832,10 +2832,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>If you change your mind about job runtime</strong> after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </div>
 <h2 id="topaz-support-optional">Topaz support (Optional)</h2>
