@@ -6,18 +6,14 @@ researchers who wish to use AI coding tools to aid in their workflow development
 to attach agents to your coding environments (VSCode, etc) while in the cluster, but it comes with the following risks.
 
 ## Coding Agents
-AI-driven programs that write code and take actions on your behalf are increasing in popularity and efficacy. 
-Coding agents are useful and exciting, and their use is permitted on YCRC clusters. However, these programs are 
-powerful and rapidly changing tools that come with many potential risks that you may be unfamiliar with. 
+Coding agents, AI-driven programs that write code and take actions on your behalf, are becoming increasingly popular and capable. Although you can use coding agents on YCRC clusters, these tools are evolving quickly and can act with broad authority, introducing risks that may not be immediately obvious. For this reason, it is important to follow established security best practices when using coding agents.
+ 
 These risks include the possibility that the agent might:
 
-- expose your or your lab group's data
-- take actions on your behalf, including: editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system
-- expose your security credentials
-- execute arbitrary, and perhaps malicious, code. 
-
-Because of coding agents' enhanced capabilities, it is important to follow the best practices recommended by the 
-organizations that created the agents, as well as by independent entities.
+- Expose your or your lab group's data
+- Take actions on your behalf, including: editing, moving, or deleting files, submitting or canceling your Slurm jobs, or any other action you are allowed to take on the system
+- Expose your security credentials
+- Execute arbitrary, and perhaps malicious, code. 
 
 ## Expose data
 AI coding agents send code and data to the company that runs them, e.g., OpenAI, Anthropic, Microsoft, or Google. 
@@ -50,8 +46,13 @@ code and run it, including malicious code. Coding agents are susceptible to prom
 agent is tricked into reading malicious instructions that it then dutifully executes. It could install keyloggers, 
 install backdoors, or perform any other malicious activity you can imagine if a bad actor compromised your account.
 
-Although these potential hazards are serious, they represent worst-case scenarios. If you follow best practices while 
-operating a coding agent, you will significantly reduce your risk. All coding agents describe best practices for their 
-agents. For example, Anthropic, which produces Claude Code, has the document [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices). 
-Ignoring best practices or making light of them will increase your risk of something unfortunate happening to you or 
-to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.
+## Security settings
+Although these potential hazards are serious, they represent worst-case scenarios. If you follow best security practices while operating a coding agent, you will significantly reduce your risk. Most coding agents describe security settings for their agents. See the table below for examples from common coding agents. Ignoring security or making light of it will increase your risk of something unfortunate happening to you or to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.
+
+| Agent | Security documentation |
+| -------- | ----------------------------- |
+| Claude Code (Anthropic) | [https://code.claude.com/docs/en/security](https://code.claude.com/docs/en/security) |
+| Codex (OpenAI) | [https://developers.openai.com/codex/security](https://developers.openai.com/codex/security) |
+| Gemini CLI (Google) | [https://geminicli.com/docs/](https://geminicli.com/docs/). See pages for [Trusted Folders](https://geminicli.com/docs/cli/trusted-folders/), [Tools](https://geminicli.com/docs/tools/), and [Sandboxing](https://geminicli.com/docs/cli/sandbox/). |
+
+
