@@ -37,6 +37,10 @@ The `ycrc_default` conda environment will be automatically built when you select
 
 We recommend you use [miniconda](/clusters-at-yale/guides/conda) to manage your Jupyter environments.
 You can create Conda environments from the [Web Portal terminal interface](/clusters-at-yale/access/ood#terminal) or from a terminal-based login to the clusters.
+
+!!! warning
+    Please do not use the '--prefix' option when creating your own jupyter/conda environment for OOD; you must use '-n/--name'. This guarantees that your conda environment is located your home directory under '.conda/envs', which is required by our current OnDemand setup. (note, however, that this '.conda' folder, or 'envs' within it, **can** be a symlink pointing elsewhere)
+
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
 
 ``` bash
