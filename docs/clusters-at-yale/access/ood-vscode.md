@@ -93,12 +93,17 @@ module load VSCode
 code tunnel
 ```
 
+!!! note "Note"
+    You can set a custom name for your tunnel by adding the `--name` option to the `code tunnel` command in the script. For example:
+    ```bash
+    code tunnel --name bouchet-vscode
+    ```
 
 ## Remote SSH via Compute Node (Advanced Users)
 
 This method allows you to use your local VSCode installation with the Remote-SSH extension to connect directly to a compute node. This is an alternative for users who want to use their local VSCode but cannot or prefer not to use the Remote Tunnel method with GitHub authentication.
 
-!!! note "Important"
+!!! note "Note"
     Do not connect directly to login nodes with VSCode Remote-SSH. VS Code can initiate computationally expensive processes (compilers, language servers, etc.) that put undue burden on the login nodes where resources are limited. Always connect to a compute node as described below.
 
 ### Prerequisites
