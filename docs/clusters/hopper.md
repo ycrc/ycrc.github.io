@@ -12,7 +12,7 @@ Support staff are available to assist researchers with identifying and accessing
 
 
 !!! info "Upcoming Maintenance"
-    The next quarterly maintenance for Hopper is scheduled for March 2026. During this time the cluster will be unavailable.
+    The next quarterly maintenance for Hopper is scheduled for March 10th 2026. During this time the cluster will be unavailable.
 
 ## Access the Cluster
 
