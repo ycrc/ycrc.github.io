@@ -256,3 +256,42 @@ conda env create --file test_export.yaml
 
 This will create a new environment with the same name `test`.
 The yaml file can be edited to change the name of the new environment.
+
+### Conda-pack to migrate environments 
+
+`conda-pack` ([docs](https://conda.github.io/conda-pack/)) is a tool that packages up an environment into a tar file and enables the environment to be migrated to a new cluster.
+To get started, activate the conda environment and install `conda-pack`
+
+```sh
+module load miniconda
+conda activate my_env
+conda install conda-pack
+conda deactivate
+```
+
+Then the environment can be "packed" up with one command:
+
+```sh
+# Pack environment my_env into my_env.tar.gz
+conda pack -n my_env
+```
+
+This file `my_env.tar.gz` can be copied to a different cluster via Globus or rsync.
+On the new cluster the environment can be setup like this:
+
+```sh
+# Unpack environment into directory `my_env`
+mkdir -p $HOME/.conda/envs/my_env
+tar -xzf my_env.tar.gz -C $HOME/.conda/envs/my_env
+
+# Activate the environment. This adds `my_env/bin` to your path
+source my_env/bin/activate
+
+# Cleanup prefixes from in the active environment.
+conda-unpack
+
+# Deactivate the environment to remove it from your path
+source my_env/bin/deactivate
+```
+After this the environment is fully functional and can be activated just like any other environment.
+
