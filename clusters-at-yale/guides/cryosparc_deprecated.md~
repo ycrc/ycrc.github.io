@@ -1,0 +1,64 @@
+Getting CryoSPARC set up and running on the YCRC clusters is something of a task. This guide is meant for intermediate/advanced users. YCRC staff are working on a CryoSPARC application for [Open OnDemand](/clusters-at-yale/access/ood.md) Until then, venture below at your own peril.
+
+## Install
+
+Before you get started, you will need to request a license from Structura [from 
+their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
+
+### 1. Set up Environment
+
+First, log onto a GPU compute node, either as an [interactive session](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop). Remember to request a non-zero number of GPUs, using a partition like 'gpu' ('gpu_devel' is fine for initial cryosparc installation).
+
+Then choose a location for installing the software, such as under your project directory.
+
+``` bash
+export install_path=${HOME}/project/cryosparc
+mkdir -p ${install_path}
+```
+
+### 2. Set up Directories, Download installers
+
+``` bash
+export LICENSE_ID=Your-cryosparc-license-code-here
+
+ #go get the installers
+cd $install_path
+curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
+
+tar -xf cryosparc_master.tar.gz
+tar -xf cryosparc_worker.tar.gz
+```
+
+### 3. Install the Standalone Server/Worker
+
+``` bash
+
+# Load a cluster CUDA module
+ 
+cd ${install_path}/cryosparc_master
+module load CUDA/12.0.0
+export cuda_path=${EBROOTCUDA}
+
+# Set a temporary password
+export cryosparc_passwd=Password123
+
+export db_path=${install_path}/cryosparc_database
+export worker_path=${install_path}/cryosparc_worker
+export ssd_path=/tmp/${USER}
+mkdir $ssd_path
+export user_email="Your email address"
+
+# Run the installation script
+cd ${install_path}/cryosparc_master
+
+./install.sh --standalone \
+--license $LICENSE_ID \
+--worker_path $worker_path \
+--ssdpath $ssd_path \
+--initial_email $user_email \
+--initial_password $cryosparc_passwd \
+--initial_username ${USER} \
+--initial_firstname "Firstname" \
+--initial_lastname "Lastname"
+```
