@@ -266,6 +266,9 @@ This tool is available in all miniconda modules versions 24.x and higher on grac
 Using this tool, the environment can be "packed" up with one command:
 
 ```sh
+salloc
+module load miniconda
+
 # Pack environment my_env into my_env.tar.gz
 conda pack -n my_env
 ```
