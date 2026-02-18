@@ -260,16 +260,10 @@ The yaml file can be edited to change the name of the new environment.
 ### Conda-pack to migrate environments 
 
 `conda-pack` ([docs](https://conda.github.io/conda-pack/)) is a tool that packages up an environment into a tar file and enables the environment to be migrated to a new cluster.
-To get started, activate the conda environment and install `conda-pack`
 
-```sh
-module load miniconda
-conda activate my_env
-conda install conda-pack
-conda deactivate
-```
+This tool is available in all miniconda modules versions 24.x and higher on grace/mccleary/bouchet.
 
-Then the environment can be "packed" up with one command:
+Using this tool, the environment can be "packed" up with one command:
 
 ```sh
 # Pack environment my_env into my_env.tar.gz
