@@ -54,8 +54,11 @@ YCGA-produced sequence data is initially written to YCGA's main storage system, 
 
 - ~45 days after sequencing, the raw files are deleted.
 - ~60 days after sequencing, the fastq files are written to an archive.  This archive exists in two geographically distinct copies for safety.
-- ~365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See
+- ~180 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See
 below for instructions for retrieving archived data.
+
+!!! warning
+**As of March 31, 2026, the retention time for sequence data will be reduced to 6 months.**
 
 All compression of sequence data is lossless.  Gzip (extension '.gz') is used for data stored on the primary storage.  Illumina sequence files archived prior to 2024 used Quip compression.  (extension '.qp'; see [below](#using-archived-data)).  More recent archived files are stored as Gzip files.
 Disaster recovery is provided by the archive copy.
@@ -138,15 +141,16 @@ In order to make this process as convenient as possible, we have developed a web
 
 After submitting your request, the data will be restored in AWS and downloaded to temporary space on McCleary.  You will receive an email when it is ready, at which time you should copy it to your own space.
 
-You may also continue to use the ycgaFastq command for archived Illumina data.  This command currently still accesses the previous Storage@Yale archive, but will soon be migrated to use the AWS Deep Glacier archive.  At that point, ycgaFastq will block for 12 hours while the data is retrieved.
-
+You may also continue to use the ycgaFastq command for archived Illumina data.  It has been migrated to use the AWS Deep Glacier archive.  When you run ycgaFastq against archived data, you'll be able to provide your email address.  When the data has been retrieved, you'll be emailed. The retrieval time is currently 12 hours.
 
 ### Using archived data
 
-After downloading an archive tar file, you can unpack it using the tar command:
+If you use ycgaFastq, the data will be automatically downloaded and untarred.  Older data will be in Quip format, while more recent data will be gzipped.
+
+If you use the web portal, you'll receive a tar file in a temporary directory.  Unpack it using the tar command:
 
 ``` bash
-cd ~/scratch60/somedir
+cd ~/palmer_scratch/somedir
 tar –xvf /gpfs/ycga/sequencers/restored/netid/file.tar
 ```
 
