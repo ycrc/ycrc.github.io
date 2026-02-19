@@ -3120,9 +3120,13 @@ analysis.</li>
 <ul>
 <li>~45 days after sequencing, the raw files are deleted.</li>
 <li>~60 days after sequencing, the fastq files are written to an archive.  This archive exists in two geographically distinct copies for safety.</li>
-<li>~365 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See
+<li>~180 days after sequencing, all data is deleted from main storage.  Users continue to have access to the data via the archive.  Data is retained on the archive indefinitely.  See
 below for instructions for retrieving archived data.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p><strong>As of March 31, 2026, the retention time for sequence data will be reduced to 6 months.</strong></p>
 <p>All compression of sequence data is lossless.  Gzip (extension '.gz') is used for data stored on the primary storage.  Illumina sequence files archived prior to 2024 used Quip compression.  (extension '.qp'; see <a href="#using-archived-data">below</a>).  More recent archived files are stored as Gzip files.
 Disaster recovery is provided by the archive copy.</p>
 <h2 id="accessing-sequence-data">Accessing Sequence Data</h2>
@@ -3176,10 +3180,11 @@ URLFetch<span class="w"> </span>http://fcb.ycga.yale.edu:3010/randomstring/folde
 However, retrieving data from Deep Glacier requires a two step process: an initial retrieval request, followed by the actual download.  Normal retrieval requests take 48 hours, while expedited requests take 12 hours.  Expedited requests are 8x more expensive for YCGA, so please use normal requests when possible.</p>
 <p>In order to make this process as convenient as possible, we have developed a web-based archive browser <a href="http://archive.ycga.yale.edu">http://archive.ycga.yale.edu</a> that you can use to request an archived file.  This browser works for all data types: Illumina, 10x, and Pacbio.  </p>
 <p>After submitting your request, the data will be restored in AWS and downloaded to temporary space on McCleary.  You will receive an email when it is ready, at which time you should copy it to your own space.</p>
-<p>You may also continue to use the ycgaFastq command for archived Illumina data.  This command currently still accesses the previous Storage@Yale archive, but will soon be migrated to use the AWS Deep Glacier archive.  At that point, ycgaFastq will block for 12 hours while the data is retrieved.</p>
+<p>You may also continue to use the ycgaFastq command for archived Illumina data.  It has been migrated to use the AWS Deep Glacier archive.  When you run ycgaFastq against archived data, you'll be able to provide your email address.  When the data has been retrieved, you'll be emailed. The retrieval time is currently 12 hours.</p>
 <h3 id="using-archived-data">Using archived data</h3>
-<p>After downloading an archive tar file, you can unpack it using the tar command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/scratch60/somedir
+<p>If you use ycgaFastq, the data will be automatically downloaded and untarred.  Older data will be in Quip format, while more recent data will be gzipped.</p>
+<p>If you use the web portal, you'll receive a tar file in a temporary directory.  Unpack it using the tar command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/palmer_scratch/somedir
 tar<span class="w"> </span>–xvf<span class="w"> </span>/gpfs/ycga/sequencers/restored/netid/file.tar
 </code></pre></div>
 <p>Inside the project tar files are the fastq files.  For older archived data the fastq files have been further compressed using quip. If your pipeline cannot read quip files
@@ -3232,7 +3237,7 @@ restore<span class="w"> </span>-v<span class="w"> </span>-t<span class="w"> </sp
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 1, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2026</span>
       
     
   </small>
