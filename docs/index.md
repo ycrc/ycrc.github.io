@@ -42,27 +42,6 @@ To submit requests, issues, or questions and receive a response within 24 hours,
 
 Once received, our system will send an automated response with a link to a ticket. From there we'll track your ticket and respond within 24 hours, and make sure it's handled properly by the right person. Replies via email or the online support system go to the same place and are interchangeable. Constructive feedback is much appreciated.
 
-### One-on-One Support
-
-Research support team members are available by appointment for one-on-one zoom support.  See the table below for information about each person's area of particular focus.
-Please send requests for appointments with a team member to [research.computing@yale.edu](mailto:research.computing@yale.edu).  If you have a general question or are unsure about who to meet with, 
-include as much detail as possible about your request and we'll find the right person for you. Meeting requests will usually be fulfilled within 1-5 working days depending on schedules.
-
-| Specialist | Cluster(s) | Areas of Focus |
-| --- | --- | --- |
-|[Kathleen McKiernan](https://research.computing.yale.edu/profile/kathleen-mckiernan) | All | Getting Started  | 
-|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/profile/robert-bjornson-phd) | [McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R  |
-|[Sam Friedman](https://research.computing.yale.edu/profile/sam-friedman)|[McCleary](/clusters/mccleary) | Life Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
-|[Tom Langford, Ph.D.](https://research.computing.yale.edu/profile/thomas-langford-phd) | [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
-|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/profile/aya-nawano-phd) | [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
-|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/profile/kaylea-nelson-phd) | [Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, MPI, Python  |
-|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/profile/michael-rothberg-phd) | [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python, Matlab |
-|[Ben Carlson, Ph.D.](https://research.computing.yale.edu/profile/ben-carlson-phd) | [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML |
-|[Chuck Sindelar, Ph.D.](https://research.computing.yale.edu/profile/chuck-sindelar-phd) | [McCleary](/clusters/mccleary) | Life Sciences, Cryo-EM/Structural Biology, Python, MPI, C/C++, Matlab |
-|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/profile/michael-strickler-phd) | [McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
-|[Ping Luo](https://wti.yale.edu/profile/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
-|[Misha Guy, Ph.D.](https://research.computing.yale.edu/profile/misha-guy-phd)| | [SRSC Software](https://research.computing.yale.edu/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
-
 ### Office Hours via Zoom
 
 The YCRC hosts weekly office hours via Zoom on **Wednesdays at 11am-12pm EST and Thursdays at 2pm-3pm EST**. Every Wednesday and Thursday, Research Support Team Members will be available to answer questions about the HPC clusters, data storage, cluster usage, etc. No appointments are necessary. Each participant will be allotted 15 minutes to discuss their issues/questions with more time potentially available in cases where there is not a large queue. If it is more than 24 hours until Office Hours, there will likely be a faster response/solution to your issue via ticket submission to research.computing@yale.edu. For 15 minute consultations, some examples of appropriate office hour topics include:
@@ -86,6 +65,28 @@ assigned the appropriate team member to address your issue and receive a respons
 [Join Office Hours](https://yale.zoom.us/my/ycrcsupport){ .md-button }
 
 Phone: 203-432-9666 (2-ZOOM if on-campus)or 646 568 7788; Meeting ID: 224 666 8665
+
+### One-on-One Support
+
+Research support team members are available by appointment for one-on-one zoom support.  See the table below for information about each person's area of particular focus.
+Please send requests for appointments with a team member to [research.computing@yale.edu](mailto:research.computing@yale.edu).  If you have a general question or are unsure about who to meet with, 
+include as much detail as possible about your request and we'll find the right person for you. Meeting requests will usually be fulfilled within 1-5 working days depending on schedules.
+
+| Specialist | Cluster(s) | Areas of Focus |
+| --- | --- | --- |
+|[Kathleen McKiernan](https://research.computing.yale.edu/profile/kathleen-mckiernan) | All | Getting Started  | 
+|[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/profile/robert-bjornson-phd) | [McCleary](/clusters/mccleary)/[Hopper](/clusters/hopper) | Life Sciences, Bioinformatics, Python, R  |
+|[Sam Friedman](https://research.computing.yale.edu/profile/sam-friedman)|[McCleary](/clusters/mccleary)/[Hopper](/clusters/hopper) | Life Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
+|[Tom Langford, Ph.D.](https://research.computing.yale.edu/profile/thomas-langford-phd) | [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
+|[Aya Nawano, Ph.D.](https://research.computing.yale.edu/profile/aya-nawano-phd) | [Grace](/clusters/grace)/[Bouchet](/clusters/bouchet) | Molecular Dynamics, Matlab, C/C++, MPI |
+|[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/profile/kaylea-nelson-phd) | [Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, MPI, Python  |
+|[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/profile/michael-rothberg-phd) | [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python |
+|[Ben Carlson, Ph.D.](https://research.computing.yale.edu/profile/ben-carlson-phd) | [Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML |
+|[Chuck Sindelar, Ph.D.](https://research.computing.yale.edu/profile/chuck-sindelar-phd) | [McCleary](/clusters/mccleary) | Life Sciences, Cryo-EM/Structural Biology, Python, MPI, C/C++, Matlab |
+|[Michael Strickler, Ph.D.](https://research.computing.yale.edu/profile/michael-strickler-phd) | [McCleary](/clusters/mccleary) | Life Sciences, Structural Biology |
+|[Ping Luo](https://wti.yale.edu/profile/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology dept, Open OnDemand |
+|[Misha Guy, Ph.D.](https://research.computing.yale.edu/profile/misha-guy-phd)| | [SRSC Software](https://research.computing.yale.edu/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
+
 
 ### Q&A Platform
 
