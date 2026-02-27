@@ -13,7 +13,7 @@ There are several ways to use Visual Studio Code with the YCRC clusters, dependi
 
 - **[Remote Tunnel](#remote-tunnel-advanced-users)**: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. **Note: Not permitted on Milgram due to security requirements.**
 
-- **[Remote SSH](#remote-ssh-via-compute-node)**: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.
+- **[Remote SSH](#remote-ssh-via-compute-node-advanced-users)**: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.
 
 - **[Remote Desktop](#remote-desktop-not-recommended)**: A legacy method that runs VSCode in a graphical Remote Desktop session on Open OnDemand. Not recommended due to graphics responsiveness issues.
 
@@ -185,9 +185,9 @@ Host grace-compute
 ```
 
 Replace:
-- `YOUR_NETID` with your Yale NetID
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)
-- `SSH_KEY_FILE` with the path to the SSH key file you created for the cluster (e.g., `~/.ssh/id_rsa`)
+- `YOUR_NETID` with your Yale NetID  
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `SSH_KEY_FILE` with the path to the SSH key file you created for the cluster (e.g., `~/.ssh/id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
 
@@ -210,10 +210,10 @@ Host grace-compute
 ```
 
 Replace:
-- `YOUR_USERNAME` with your Windows username
-- `YOUR_NETID` with your Yale NetID
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)
-- `SSH_KEY_FILE` with the name of your SSH key file (e.g., `id_rsa`)
+- `YOUR_USERNAME` with your Windows username  
+- `YOUR_NETID` with your Yale NetID  
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `SSH_KEY_FILE` with the name of your SSH key file (e.g., `id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
 
