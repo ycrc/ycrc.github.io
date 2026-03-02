@@ -23,15 +23,14 @@ We currently support collections for the following clusters.
 
 | Cluster                        | Globus Collections     |
 |--------------------------------|---------------------|
-| [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet`*        |
+| [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet HA`*        |
 | [Hopper Low Risk](/clusters/milgram)   | `Yale CRC Hopper Low Risk`  |
 | [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |
 
 
-\* The Bouchet Collection mounts the storage two levels higher than our other Collections.
-When navigating to full paths in Globus, remove `/nfs/roberts` from your path to avoid errors.
+\* Make sure to use `Yale CRC Bouchet HA`. `Yale CRC Bouchet` (without `HA`) is deprecated and will be removed this spring.
 
 
 !!! tip "Grace & McCleary Decommission Data Migration"
