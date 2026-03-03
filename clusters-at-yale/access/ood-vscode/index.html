@@ -999,8 +999,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#method-2-using-a-batch-job-for-longer-sessions" class="md-nav__link">
-    Method 2: Using a Batch Job for Longer Sessions
+  <a href="#method-2-using-a-batch-job" class="md-nav__link">
+    Method 2: Using a Batch Job
   </a>
   
 </li>
@@ -1041,13 +1041,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remote-desktop-not-recommended" class="md-nav__link">
-    Remote Desktop (Not Recommended)
-  </a>
   
 </li>
       
@@ -2961,8 +2954,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#method-2-using-a-batch-job-for-longer-sessions" class="md-nav__link">
-    Method 2: Using a Batch Job for Longer Sessions
+  <a href="#method-2-using-a-batch-job" class="md-nav__link">
+    Method 2: Using a Batch Job
   </a>
   
 </li>
@@ -3006,13 +2999,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#remote-desktop-not-recommended" class="md-nav__link">
-    Remote Desktop (Not Recommended)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3034,7 +3020,7 @@
 <p><a href="https://code.visualstudio.com">Visual Studio Code</a> is a popular development tool that is widely used by our researchers.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>To protect the security of the data, the use of <a href="https://cursor.com/">Cursor</a> and <a href="https://github.com/features/copilot">GitHub Copilot</a> on the Milgram cluster is not permitted.</p>
+<p>To protect the security of the data, the use of <a href="https://cursor.com/">Cursor</a>, <a href="https://github.com/features/copilot">GitHub Copilot</a> or any externally hosted AI Coding agents on the Milgram cluster is not permitted.</p>
 </div>
 <h2 id="choosing-a-method">Choosing a Method</h2>
 <p>There are several ways to use Visual Studio Code with the YCRC clusters, depending on your specific application and/or preferences:</p>
@@ -3047,9 +3033,6 @@
 </li>
 <li>
 <p><strong><a href="#remote-ssh-via-compute-node-advanced-users">Remote SSH</a></strong>: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.</p>
-</li>
-<li>
-<p><strong><a href="#remote-desktop-not-recommended">Remote Desktop</a></strong>: A legacy method that runs VSCode in a graphical Remote Desktop session on Open OnDemand. Not recommended due to graphics responsiveness issues.</p>
 </li>
 </ul>
 <h2 id="code-server">Code Server</h2>
@@ -3096,8 +3079,15 @@
 <li>VSCode will connect through a secure tunnel to the compute node and automatically start the VSCode server</li>
 </ul>
 </li>
+<li>
+<p>Terminate your VSCode batch job when you are done working for that session using <code>scancel [JOBID]</code>.</p>
+</li>
 </ol>
 <h3 id="vscode_slurmsh-script">vscode_slurm.sh Script</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only submit VSCode jobs to devel partitions (such as <code>devel</code> or <code>gpu_devel</code>). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using <code>scancel</code> to free up resources for other users.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1">#SBATCH --partition=devel</span>
@@ -3120,7 +3110,7 @@
 <span class="c1"># vscode_slurm.txt</span>
 <span class="c1">######################</span>
 <span class="c1"># ...</span>
-<span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX</span>
+<span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX</span>
 <span class="c1">######################</span>
 
 module load VSCode
@@ -3166,7 +3156,11 @@ code tunnel
 <p><strong>Keep your terminal session open</strong> - if you exit the salloc session, the compute node allocation will end and your VSCode connection will be lost.</p>
 </li>
 </ol>
-<h3 id="method-2-using-a-batch-job-for-longer-sessions">Method 2: Using a Batch Job for Longer Sessions</h3>
+<h3 id="method-2-using-a-batch-job">Method 2: Using a Batch Job</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only submit VSCode jobs to devel partitions (such as <code>devel</code> or <code>gpu_devel</code>). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using <code>scancel</code> to free up resources for other users.</p>
+</div>
 <ol>
 <li>
 <p><strong>Create a batch script</strong> called <code>vscode_ssh.sh</code>:
@@ -3198,6 +3192,9 @@ sleep 6h
 </li>
 <li>
 <p><strong>Configure your local SSH setup</strong> with the compute node name (see below).</p>
+</li>
+<li>
+<p><strong>Terminate your VSCode batch job when you are done working</strong> for that session using <code>scancel [JOBID]</code>.</p>
 </li>
 </ol>
 <h3 id="ssh-configuration">SSH Configuration</h3>
@@ -3265,20 +3262,7 @@ Host grace-compute
 <p>VSCode will then connect through the login node to your compute node and automatically start the VSCode server</p>
 </li>
 </ol>
-<p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.</p>
-<h2 id="remote-desktop-not-recommended">Remote Desktop (Not Recommended)</h2>
-<div class="admonition warning">
-<p class="admonition-title">Not Recommended</p>
-<p>This method is no longer recommended. We strongly recommend using <a href="#code-server">Code Server</a> instead for a better experience.</p>
-</div>
-<ol>
-<li>Use the Open OnDemand web portal to start a Remote Desktop <a href="/clusters-at-yale/access/ood/#launch-an-interactive-app">interactive session</a></li>
-<li>As noted in our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop documentation</a>, we recommend adjusting the <a href="/clusters-at-yale/access/ood-remote-desktop/#graphics-quality">image quality slider bar</a> all the way to the right if this is not the default</li>
-<li>In a terminal window within your Remote Desktop session, run:
-   <div class="highlight"><pre><span></span><code>module load VSCode
-vscode
-</code></pre></div></li>
-</ol>
+<p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working** for that session using <code>scancel [JOBID]</code></p>
                 
                   
                     
@@ -3287,7 +3271,7 @@ vscode
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2026</span>
       
     
   </small>

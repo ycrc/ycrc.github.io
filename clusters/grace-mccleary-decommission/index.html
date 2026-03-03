@@ -2876,10 +2876,10 @@
 <p><a href="#phase-1">Phase 1</a> (first half of 2026): Migration of workloads and data from research groups who do not use dedicated compute nodes or YCGA resources.</p>
 </li>
 <li>
-<p>Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary.</p>
+<p>Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.</p>
 </li>
 <li>
-<p>Phase 3 (late 2026, early 2027): Migration of newer commons nodes from Grace and McCleary to Bouchet. Migration of newer dedicated nodes along with their associated research groups and data. Grace will be shut down. McCleary will remain as a YCGA-only cluster for the remaining lifetime of that hardware.</p>
+<p>Phase 3 (late 2026, early 2027): Migration of newer commons nodes from Grace and McCleary to Bouchet. Migration of newer dedicated nodes along with their associated research groups and data. Grace will be shut down. McCleary will remain as a YCGA-only cluster for the remaining lifetime of YCGA-owned hardware.</p>
 </li>
 </ul>
 <p><img alt="When Will I Move Flow Chart" class="cluster-diagram" src="/img/when_will_i_move.png" /></p>
@@ -2899,13 +2899,14 @@
 </ul>
 <h2 id="what-about-my-existing-data-on-grace-or-mccleary">What about My Existing Data on Grace or McCleary?</h2>
 <p><strong>All data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.</strong> You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. </p>
-<p>If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please <a href="/#get-help">contact us</a> if you would like to purchase a storage allocation on Bouchet.</p>
+<p>We encourage you to use the <code>getquota</code> utility on Grace and/or McCleary to examine the data usage by your group and specific group members. We recommend using <a href="/data/globus/">Globus</a> to migrate individual data (i.e. home, project, scratch) to Bouchet as it is the fastest and most robust method of transferring data between the clusters. </p>
+<p>If there are members of your group who are no longer active and their directories contain data you would like to retain, please <a href="/#get-help">reach out to us</a> to change the ownership of those files to an active group member so they can transfer the data. When transferring to Bouchet we recommend uploading the files to either the "shared" directory in project or in the directory of an active group member (rather than perpetuating the inactive group member's directories on Bouchet).</p>
+<p>If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please <a href="/#get-help">contact us</a> if you would like to purchase a storage allocation on Bouchet. </p>
 <div class="admonition warning">
 <p class="admonition-title">NIH Controlled Access Data</p>
 <p>If you have any data on Grace or McCleary that is now covered by the <a href="https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf">NIH Controlled Access Data policies</a>, this data cannot be moved to Bouchet but instead must be moved to the <a href="../hopper/">Hopper</a> HPC cluster. <a href="https://research.computing.yale.edu/secure-project-request">Submit this form to request Hopper access</a>.</p>
 </div>
-<p>We encourage you to use the <code>getquota</code> utility on Grace and/or McCleary to examine the data usage by your group and specific group members. In general, we recommend using <a href="/data/globus/">Globus</a> to migrate data to Bouchet as it is the fastest and most robust method of transferring data between the clusters. </p>
-<p>If you have concerns about transferring your data, such as a particularly large allocation or complicated permission structure, please <a href="/#get-help">reach out to us</a> for assistance.</p>
+<p>If you would like assistance transferring your paid storage allocation or otherwise have questions or concerns about your data transfer, please <a href="/#get-help">reach out to us</a> for assistance.</p>
 <h2 id="get-help">Get Help</h2>
 <p>As always, our Research Support staff members are available to assist. Please <a href="/#get-help">reach out</a> if you have any questions or concerns about what will be moved to Bouchet and when.</p>
                 
@@ -2916,7 +2917,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2026</span>
       
     
   </small>
