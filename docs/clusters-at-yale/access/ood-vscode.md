@@ -2,8 +2,9 @@
 
 [Visual Studio Code](https://code.visualstudio.com) is a popular development tool that is widely used by our researchers.
 
+
 !!!warning
-    To protect the security of the data, the use of [Cursor](https://cursor.com/) and [GitHub Copilot](https://github.com/features/copilot) on the Milgram cluster is not permitted.
+    To protect the security of the data, the use of [Cursor](https://cursor.com/), [GitHub Copilot](https://github.com/features/copilot) or any externally hosted AI Coding agents on the Milgram cluster is not permitted.
 
 ## Choosing a Method
 
@@ -14,8 +15,6 @@ There are several ways to use Visual Studio Code with the YCRC clusters, dependi
 - **[Remote Tunnel](#remote-tunnel-advanced-users)**: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. **Note: Not permitted on Milgram due to security requirements.**
 
 - **[Remote SSH](#remote-ssh-via-compute-node-advanced-users)**: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.
-
-- **[Remote Desktop](#remote-desktop-not-recommended)**: A legacy method that runs VSCode in a graphical Remote Desktop session on Open OnDemand. Not recommended due to graphics responsiveness issues.
 
 ## Code Server
 
@@ -61,7 +60,13 @@ To grant access to the server, please log into https://github.com/login/device a
     - Select the tunnel listed, typically by its hostname.
     - VSCode will connect through a secure tunnel to the compute node and automatically start the VSCode server
 
+
+5. Terminate your VSCode batch job when you are done working for that session using `scancel [JOBID]`.
+
 ### vscode_slurm.sh Script
+
+!!!warning
+Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
 
 ```bash
 #!/bin/bash
@@ -86,7 +91,7 @@ To grant access to the server, please log into https://github.com/login/device a
 # vscode_slurm.txt
 ######################
 # ...
-# To grant access to the server, please log into https://github.com/login/device and use code ​XXXX-XXXX
+# To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX
 ######################
 
 module load VSCode
@@ -130,7 +135,10 @@ This method allows you to use your local VSCode installation with the Remote-SSH
 
 5. **Keep your terminal session open** - if you exit the salloc session, the compute node allocation will end and your VSCode connection will be lost.
 
-### Method 2: Using a Batch Job for Longer Sessions
+### Method 2: Using a Batch Job
+
+!!!warning
+Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
 
 1. **Create a batch script** called `vscode_ssh.sh`:
    ```bash
@@ -161,6 +169,8 @@ This method allows you to use your local VSCode installation with the Remote-SSH
    ```
 
 4. **Configure your local SSH setup** with the compute node name (see below).
+
+5. **Terminate your VSCode batch job when you are done working** for that session using `scancel [JOBID]`.
 
 ### SSH Configuration
 
@@ -239,19 +249,6 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 
 When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.
 
-
-## Remote Desktop (Not Recommended)
-
-!!!warning "Not Recommended"
-    This method is no longer recommended. We strongly recommend using [Code Server](#code-server) instead for a better experience.
-
-1. Use the Open OnDemand web portal to start a Remote Desktop [interactive session](/clusters-at-yale/access/ood/#launch-an-interactive-app)
-2. As noted in our [Remote Desktop documentation](/clusters-at-yale/access/ood-remote-desktop/), we recommend adjusting the [image quality slider bar](/clusters-at-yale/access/ood-remote-desktop/#graphics-quality) all the way to the right if this is not the default
-3. In a terminal window within your Remote Desktop session, run:
-   ```bash
-   module load VSCode
-   vscode
-   ```
 
 
 
