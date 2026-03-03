@@ -66,7 +66,7 @@ To grant access to the server, please log into https://github.com/login/device a
 ### vscode_slurm.sh Script
 
 !!!warning
-Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
+    Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
 
 ```bash
 #!/bin/bash
@@ -138,7 +138,7 @@ This method allows you to use your local VSCode installation with the Remote-SSH
 ### Method 2: Using a Batch Job
 
 !!!warning
-Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
+    Only submit VSCode jobs to devel partitions (such as `devel` or `gpu_devel`). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using `scancel` to free up resources for other users.
 
 1. **Create a batch script** called `vscode_ssh.sh`:
    ```bash
@@ -247,7 +247,7 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 
 6. VSCode will then connect through the login node to your compute node and automatically start the VSCode server
 
-When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node.
+When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working** for that session using `scancel [JOBID]`
 
 
 
