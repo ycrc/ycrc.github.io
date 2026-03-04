@@ -34,7 +34,11 @@ We will also be holding “Transitioning to Bouchet” sessions over the next co
 
 ## What about My Existing Data on Grace or McCleary?
 
-**All data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. 
+**All (non-YCGA) data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. 
+
+!!! warning "NIH Controlled Access Data"
+
+	If you have any data on Grace or McCleary that is now covered by the [NIH Controlled Access Data policies](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf), this data cannot be moved to Bouchet but instead must be moved to the [Hopper](hopper.md) HPC cluster. [Submit this form to request Hopper access](https://research.computing.yale.edu/secure-project-request).
 
 We encourage you to use the `getquota` utility on Grace and/or McCleary to examine the data usage by your group and specific group members. We recommend using [Globus](/data/globus/) to migrate individual data (i.e. home, project, scratch) to Bouchet as it is the fastest and most robust method of transferring data between the clusters. 
 
@@ -42,9 +46,15 @@ If there are members of your group who are no longer active and their directorie
 
 If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please [contact us](/#get-help) if you would like to purchase a storage allocation on Bouchet. 
 
-!!! warning "NIH Controlled Access Data"
+!!!tip "Bouchet Transition Support"
 
-	If you have any data on Grace or McCleary that is now covered by the [NIH Controlled Access Data policies](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf), this data cannot be moved to Bouchet but instead must be moved to the [Hopper](hopper.md) HPC cluster. [Submit this form to request Hopper access](https://research.computing.yale.edu/secure-project-request).
+	In addition to our [twice-weekly virtual Office Hours](/#office-hours-via-zoom), the YCRC team will be available every week in March for *in-person* Bouchet Migration Support Office Hours offering hands-on support. Stop by our office at 160 St Ronan Street— no registration required.
+
+	- Friday, March 6th 2-4pm
+	- Thursday, March 12th 9-11am
+	- Tuesday, March 17th 3-5pm
+	- Wednesday, March 25th 1-3pm
+	- Monday, March 30th 10-12pm
 
 If you would like assistance transferring your paid storage allocation or otherwise have questions or concerns about your data transfer, please [reach out to us](/#get-help) for assistance.
 
