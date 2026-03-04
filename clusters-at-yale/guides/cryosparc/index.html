@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2715,6 +2715,47 @@
     Install
   </a>
   
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-environment" class="md-nav__link">
+    1. Set up Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-directories-download-installers" class="md-nav__link">
+    2. Set up Directories, Download installers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-the-master" class="md-nav__link">
+    3. Install the Master
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-add-the-cryosparc-commands-to-your-system-path-optional" class="md-nav__link">
+    5. Add the cryosparc commands to your system PATH (optional?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-install-the-worker-software-on-a-gpu-node" class="md-nav__link">
+    6. Install the worker software on a GPU node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2790,24 +2831,90 @@
                 
                 
                 <h1 id="cryosparc-on-the-ycrc-clusters">CryoSPARC on the YCRC Clusters</h1>
-<h2 id="install">Install</h2>
-<p>As of February, 2026, the YCRC is transitioning to a new CryoSPARC workflow. If you would like to use this program on the clusters, please <a href="/#get-help">contact us</a>. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For now (February 2026) please avoid installing CryoSPARC 5.0 or later on the clusters.
- It contains a breaking change to our cluster management scripts. We are working on a solution.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>As of February, 2026, the YCRC is transitioning to a new CryoSPARC workflow. The instructions below are for use with this new workflow. If you would like assistance with an alternative configuration, please <a href="/#get-help">contact us</a>. </p>
 </div>
+<h2 id="install">Install</h2>
+<p>Before you get started, you will need to request a license from Structura <a href="https://cryosparc.com/download/">from 
+their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
+<h3 id="1-set-up-environment">1. Set up Environment</h3>
+<p>First, log onto a CPU compute node, either as an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
+<p>Then choose a location for installing the software, such as under your project directory.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc
+mkdir -p <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
+</code></pre></div>
+<h3 id="2-set-up-directories-download-installers">2. Set up Directories, Download installers</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
+
+ <span class="c1">#go get the installers</span>
+<span class="nb">cd</span> <span class="nv">$install_path</span>
+curl -L https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span> -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span> -o cryosparc_worker.tar.gz
+
+tar -xf cryosparc_master.tar.gz
+tar -xf cryosparc_worker.tar.gz
+</code></pre></div>
+<h3 id="3-install-the-master">3. Install the Master</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
+<span class="nb">export</span> <span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
+
+<span class="nb">export</span> <span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
+<span class="nb">export</span> <span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert a number from 39000 to 65535 here&quot;</span>
+
+<span class="c1"># Run the installation script</span>
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
+
+./install.sh --license <span class="nv">$LICENSE_ID</span> <span class="se">\</span>
+             --hostname &lt;master_hostname&gt; <span class="se">\</span>
+             --dbpath <span class="nv">$db_path</span> <span class="se">\</span>
+             --port <span class="nv">$port_number</span>
+
+<span class="c1"># Start CryoSPARC</span>
+./bin/cryosparcm start
+
+<span class="c1"># Create the first (administrative) user</span>
+./bin/cryosparcm createuser --email <span class="s2">&quot;&lt;user email&gt;&quot;</span> <span class="se">\</span>
+                      --password <span class="nv">$cryosparc_password</span> <span class="se">\</span>
+                      --username <span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
+                      --firstname <span class="s2">&quot;&lt;given name&gt;&quot;</span> <span class="se">\</span>
+                      --lastname <span class="s2">&quot;&lt;surname&gt;&quot;</span>
+
+<span class="c1"># Load the environment</span>
+<span class="nb">source</span> ~/.bashrc
+
+<span class="c1"># Stop the master</span>
+./bin/cryosparcm stop
+</code></pre></div>
+<h3 id="5-add-the-cryosparc-commands-to-your-system-path-optional">5. Add the cryosparc commands to your system PATH (optional?)</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you are installing a version of CryoSPARC older than 4.4.0, add the additional line</p>
-<div class="highlight"><pre><span></span><code>--cudapath <span class="nv">$cuda_path</span> <span class="se">\</span>
+<p>The installer will likely prompt you with, i.e., 'Add bin directory to your ~/.bashrc ?',
+ but this doesn't always work in recent cryosparc installer script versions, at least on the YCRC clusters.
+ You can check ~/.bashrc first and see if the paths are already added.  If not, do the following:</p>
+</div>
+<div class="highlight"><pre><span></span><code>     <span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span> &gt;&gt; ~/.bashrc
+     <span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span> &gt;&gt; ~/.bashrc
 </code></pre></div>
-<p>after the --ssdpath line.</p>
+<h3 id="6-install-the-worker-software-on-a-gpu-node">6. Install the worker software on a GPU node</h3>
+<p>Exit the above interactive session, and start an interactive session in a GPU partition (e.g., gpu_devel), requesting one GPU.</p>
+<p>cd YourCryosparcDirectory</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">cd</span> cryosparc_worker
+
+<span class="sb">`</span>grep LICENSE ../cryosparc_master/config.sh<span class="sb">`</span>
+</code></pre></div>
+Note that the above command is enclosed in <strong>single left quotes</strong>.</p>
+<div class="highlight"><pre><span></span><code>./install.sh --license <span class="nv">$CRYOSPARC_LICENSE_ID</span> --yes
+</code></pre></div>
+<p>Exit the interactive session. Master and worker software should now be ready.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are installing a version of CryoSPARC older than 4.4.0, the instructions are somewhat different. <a href="/#get-help">Contact us</a> for assistance.</p>
 </div>
 <h2 id="run-2102026-experimental">Run (2/10/2026 - Experimental)</h2>
-<p><em>For beta testers provided with our <code>cryosparc-cluster-master.sh</code> script</em>: here is a preliminary description and walk-through on how to use it.</p>
+<p>Copy /apps/services/cryosparc/cryosparc-cluster-master.sh to your working directory.</p>
 <p>Please note, in contrast to our previous cryosparc workflow, the new method <em>does not use GPU's in the batch script</em>. Required resources for the script <code>cryosparc-cluster-master.sh</code> are minimal and should not be modified. The only change to the #SBATCH directives that may be needed are the running time and partition. Also note, 'worker' nodes are no longer part of this workflow.</p>
-<p>To use the new cryosparc workflow, please use the the following steps:</p>
+<p>To use the new cryosparc workflow, follow the steps below:</p>
 <ol>
 <li>
 <p><strong>To start your cryosparc server</strong>, submit the 'cryosparc-cluster-master.sh' script using <code>sbatch cryosparc-cluster-master.sh</code>. With the script, you may (optionally) change the '#SBATCH -t <time>' and '#SBATCH -p <partition>' directive lines to specify the running time and slurm partition to reflect how long you expect your workflow to take. The default request of 7 days on the 'week' partition, with 1 CPU and 8GB of RAM, should be fine.</p>
@@ -2881,7 +2988,7 @@ exec topaz $@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2026</span>
       
     
   </small>
