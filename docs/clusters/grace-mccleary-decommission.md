@@ -46,21 +46,21 @@ If there are members of your group who are no longer active and their directorie
 
 If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please [contact us](/#get-help) if you would like to purchase a storage allocation on Bouchet. 
 
-!!!tip "Bouchet Transition Support"
-
-	In addition to our [twice-weekly virtual Office Hours](/#office-hours-via-zoom), the YCRC team will be available every week in March for *in-person* Bouchet Migration Support Office Hours offering hands-on support. Stop by our office at 160 St Ronan Street— no registration required.
-
-	- Friday, March 6th 2-4pm
-	- Thursday, March 12th 9-11am
-	- Tuesday, March 17th 3-5pm
-	- Wednesday, March 25th 1-3pm
-	- Monday, March 30th 10-12pm
-
 If you would like assistance transferring your paid storage allocation or otherwise have questions or concerns about your data transfer, please [reach out to us](/#get-help) for assistance.
-
 
 ## Get Help
 
+If you are new to Bouchet, we recommend reviewing our [“Getting Started on Bouchet” documentation](bouchet_getting_started.md). You can also find a recording of our "Intro to Bouchet" session [here](https://youtu.be/mQMc8y-Z8sY?si=Ubyd7DvX5I9kuaTr). 
+
+In addition to our [twice-weekly virtual Office Hours](/#office-hours-via-zoom), the YCRC team will be available every week in March for *in-person* Bouchet Migration Support Office Hours offering hands-on support. Stop by our office at 160 St Ronan Street— no registration required.
+
+- Friday, March 6th 2-4pm
+- Thursday, March 12th 9-11am
+- Tuesday, March 17th 3-5pm
+- Wednesday, March 25th 1-3pm
+- Monday, March 30th 10-12pm
+
+We also have a recording of our "Transfers with Globus" info session available [here](https://www.youtube.com/watch?v=VCOBLKrWe9M).
 
 As always, our Research Support staff members are available to assist. Please [reach out](/#get-help) if you have any questions or concerns about what will be moved to Bouchet and when.
 
