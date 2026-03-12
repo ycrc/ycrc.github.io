@@ -2756,16 +2756,28 @@
                 
                 
                 <h1 id="bouchet-amd-nodes">Bouchet AMD nodes</h1>
-<p>YCRC has added additional compute nodes to the Bouchet HPC cluster. YCRC has historically deployed Intel-based compute nodes. All the new nodes, however, will utilize AMD processors for the first time in YCRC clusters. We have added 26 CPU-only nodes with 128-core AMD EPYC 9575F Processors, and 8 nodes with 128-core AMD EPYC 9575F processors and 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards per node. Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. </p>
+<p>YCRC has added additional compute nodes to the Bouchet HPC cluster. YCRC has historically deployed Intel-based compute nodes. All the new nodes, however, will utilize AMD processors for the first time in YCRC clusters. We have added: </p>
+<ul>
+<li>26 CPU nodes: 128-core AMD EPYC 9575F processors with 2.2TB RAM per node</li>
+<li>8 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node. </li>
+</ul>
+<p>Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. </p>
 <h2 id="partitions">Partitions</h2>
-<p>The CPU-only AMD nodes are in the <code>day_amd</code> partition, and the GPU AMD nodes are in the <code>gpu_amd</code> parition. </p>
+<p>For testing, the CPU-only AMD nodes are in the <code>day_amd</code> partition, and the GPU AMD nodes are in the <code>gpu_amd</code> parition. </p>
 <p>For detailed information about job limits and available compute nodes in each
 partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">our Bouchet partition documentation</a>.</p>
 <h2 id="software-modules">Software modules</h2>
 <p>We have recompiled most software modules with compilation flags that enabled them to run on both Intel and AMD nodes. If you are running any software compiled with CUDA on the RTX Pro 6000 Blackwell Server Edition GPUs, please use the modules installed with CUDA 12.8.0. Software built with older CUDA versions may fail or result inpoorer performance. If you see any missing modules or experience issues with software modules, please <a href="/">reach out to us</a>.   </p>
 <h2 id="compiling-your-code">Compiling your code</h2>
 <p>If you compile your code optimized for Intel node architecture, it will not run on AMD nodes, and vice versa. To run your code on both Intel and AMD nodes, you need to compile it with a compiler flag that specifies a compatible instruction set. You can compile your code on either types of compute node. </p>
-<p>If you are building your code with GCC, please include the compiler flag <code>--march=x86-64-v4</code>. If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes. If you would still like to run the code on AMD nodes, please compile it with the compiler flag <code>-axCORE-AVX512</code>.</p>
+<p>Recommended compiler flag:</p>
+<ul>
+<li>GCC compilers (<code>gcc</code>, <code>g++</code>, <code>gfortran</code>): <code>-march=x86-64-v4</code></li>
+<li>Legacy Intel compilers (<code>icc</code>, <code>icpc</code>, <code>ifort</code>): <code>-axCORE-AVX512</code></li>
+<li>New Intel compilers (<code>icx</code>, <code>icpx</code>, <code>ifx</code>): <code>-march=x86-64-v4</code></li>
+<li>NVHPC compiler (<code>nvc</code>, <code>nvc++</code>, <code>nvfortran</code>): <code>-tp x86-64-v4</code></li>
+</ul>
+<p>If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes. </p>
 <p>If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (<code>devel</code> for Intel nodes and <code>day_amd</code> for AMD nodes) and compile your code with <code>--martch=native</code> for GCC and <code>-xHost</code> for Intel compilers. Please run your code only on the same architecutre on which it was compiled. </p>
 <p>If you need any assistance compiling your code, please <a href="/">reach out to us</a>.  </p>
 <h2 id="report-issues">Report Issues</h2>
