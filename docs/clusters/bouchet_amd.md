@@ -22,7 +22,7 @@ If you compile your code optimized for Intel node architecture, it will not run 
 
 If you are building your code with GCC, please include the compiler flag `--march=x86-64-v4`. If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes. If you would still like to run the code on AMD nodes, please compile it with the compiler flag `-axCORE-AVX512`.
 
-If you would like to compile your code optimized for a specific node architecture, please request an intereactive compute sesssion on that architecture (`devel` for Intel nodes and `day_amd` for AMD nodes) and compile your code with `--martch=native` for GCC and `-xHost` for Intel compilers. Please run your code only on the same architecutre on which it was compiled. 
+If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (`devel` for Intel nodes and `day_amd` for AMD nodes) and compile your code with `--martch=native` for GCC and `-xHost` for Intel compilers. Please run your code only on the same architecutre on which it was compiled. 
 
 If you need any assistance compiling your code, please [reach out to us](/).  
 
