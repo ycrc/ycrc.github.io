@@ -4,7 +4,7 @@
     As of February, 2026, the YCRC is transitioning to a new CryoSPARC workflow. The instructions below are for use with this new workflow. If you would like assistance with an alternative configuration, please [contact us](/#get-help). 
 
 !!! info
-    To start using the new workflow, you will need to do two things: (1) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine) (2) [update your cryosparc port](#install) - this is very important to avoid conflicts with other cryosparc users.
+    To start using the new workflow, you will need to do two things: (1) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine) (2) [update your cryosparc port](#obtaining-your-unique-cryosparc-port) - this is very important to avoid conflicts with other cryosparc users.
 
 ## Running the YCRC cryosparc workflow
 

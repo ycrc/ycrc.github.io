@@ -2816,13 +2816,26 @@ sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
 </li>
 </ol>
 <h2 id="obtaining-your-unique-cryosparc-port">Obtaining Your Unique Cryosparc Port</h2>
-<p>To use cryosparc with the YCRC cluster workflow, you need to obtain a unique 'port' value that cryosparc uses for displaying web pages, etc. We provide a script for doing this that you can run from a terminal, as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="s">```</span>
-# Experimental script, development in progress
-/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-<span class="s">```</span>
-</code></pre></div>
+<p>To use cryosparc with the YCRC cluster workflow, you must request a unique 'port' value that cryosparc uses for displaying web pages, etc., otherwise, your jobs may clash with another user's.</p>
+<p>We provide a cryosparc port request script that you can run from the terminal. Please note that a request must be made separately for each YCRC cluster you wish to run cryosparc on, and the resulting port numbers will likely differ between clusters.</p>
+<p>To run the script, start a terminal shell on the desired cluster and do:
+<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
+</code></pre></div></p>
+<p>Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. This port number is to be used while <a href="/clusters-at-yale/guides/cryosparc/#install">installing cryosparc</a> ; alternatively, if you have already have a cryosparc installation, please use the following steps to update the cryosparc port:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Let finish (or terminate) any analysis jobs that you may currently be running in cryosparc.</span>
 
+<span class="c1"># 2. Connect to the node where your master cryosparc job is running with the command:</span>
+ssh<span class="w"> </span>&lt;node-where-cryosparc-is-running&gt;
+
+<span class="c1"># 3. Stop cryosparc with the command:</span>
+cryosparcm<span class="w"> </span>stop
+
+<span class="c1"># 4. Back up your cryosparc database with</span>
+cryosparcm<span class="w"> </span>backup<span class="w">    </span><span class="c1"># (this is a fast step, it only takes a few seconds)</span>
+
+<span class="c1"># 5. Run the following command and enter your new port value when prompted:</span>
+cryosparcm<span class="w"> </span>changeport
+</code></pre></div>
 <h2 id="install">Install</h2>
 <p>Before you get started, you will need to request a license from Structura <a href="https://cryosparc.com/download/">from 
 their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
@@ -2849,11 +2862,17 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </li>
 <li>
 <p><strong>Install the Master</strong> :</p>
+<p>First, run the installer:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
+<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
-<span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert a number from 39000 to 65535 here&quot;</span>
+
+<span class="c1"># Request a port number with the following script ; you may proceed with</span>
+<span class="c1">#  the dummy value 63000 while you wait to be assigned an official one</span>
+/apps/services/cryosparc/ycrc_get_cryosparc_port.sh
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
 
 <span class="c1"># Run the installation script</span>
 <span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
@@ -2862,11 +2881,13 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 <span class="w">             </span>--hostname<span class="w"> </span>&lt;master_hostname&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">             </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span><span class="se">\</span>
 <span class="w">             </span>--port<span class="w"> </span><span class="nv">$port_number</span>
-
-<span class="c1"># Start CryoSPARC</span>
+</code></pre></div>
+<p>Then, add yourself as a user:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start CryoSPARC</span>
 ./bin/cryosparcm<span class="w"> </span>start
 
 <span class="c1"># Create the first (administrative) user</span>
+<span class="c1"># Please be sure to substitute the needed fields in the below command:</span>
 ./bin/cryosparcm<span class="w"> </span>createuser<span class="w"> </span>--email<span class="w"> </span><span class="s2">&quot;&lt;user email&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">                      </span>--password<span class="w"> </span><span class="nv">$cryosparc_password</span><span class="w"> </span><span class="se">\</span>
 <span class="w">                      </span>--username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
@@ -2881,13 +2902,14 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </code></pre></div>
 </li>
 <li>
-<p><strong>Add the cryosparc commands to your system PATH (optional?)</strong> :</p>
+<p><strong>Add the cryosparc commands to your system PATH</strong> :</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 </div>
-<p>The installer will likely prompt you with, i.e., 'Add bin directory to your ~/.bashrc ?',
+<p>The installer will have likely prompted you with, i.e., 'Add bin directory to your ~/.bashrc ?',
  but this doesn't fully work in recent cryosparc installer script versions, at least on the YCRC clusters.
- You can check ~/.bashrc first and see if the paths are already added at the end ('# Added by cryosparc').
+ You can check ~/.bashrc first and to make sure <strong>both</strong> paths below are already added at the end
+ ('# Added by cryosparc').
  If one or both are missing (typically we find only the 'master' path and not the 'worker' path), do the following:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
@@ -2895,13 +2917,16 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </li>
 <li>
 <p><strong>Install the worker software on a GPU node</strong> : </p>
-<p>Exit the above interactive session, and start an interactive session in a GPU partition (e.g., gpu_devel), requesting one GPU.</p>
-<p>cd YourCryosparcDirectory</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>cryosparc_worker
+<p>Exit the above interactive session, start a new GPU interactive session, and install the worker:</p>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>8G
+
+<span class="c1"># Go to the worker directory and install the worker</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc<span class="w">     </span><span class="c1"># Or wherever you put your cryosparc directory</span>
+<span class="nb">cd</span><span class="w"> </span>cryosparc_worker
 
 <span class="k">$(</span>grep<span class="w"> </span>LICENSE<span class="w"> </span>../cryosparc_master/config.sh<span class="k">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$CRYOSPARC_LICENSE_ID</span><span class="w"> </span>--yes
+
+./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$CRYOSPARC_LICENSE_ID</span><span class="w"> </span>--yes
 </code></pre></div>
 <p>Exit the interactive session. Master and worker software should now be ready.</p>
 <div class="admonition warning">
@@ -2955,7 +2980,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2026</span>
       
     
   </small>
