@@ -193,6 +193,22 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 
 2. **Consult the [CryoSPARC guide](https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz)** for details on using Topaz with CryoSPARC.
 
+## Troubleshooting cryosparc jobs
+
+Unfortunately, information needed to diagnose cryosparc job failures in cluster lanes can be a bit tedious to track down. Luckily, we have found that most job failures have simple explanations and solutions. The main causes are:
+
+1. **Insufficient memory** : this is probably most common source of cryosparc job failures, but sadly provides little to no diagnostic information within cryosparc itself. If you do not see an obvious source for the job failure within cryosparc, check for a memory failure using our [jobstats tools](/clusters-at-yale/job-scheduling/jobstats/). You will first need find the slurm ID of the failed job; you can find this in the job log file by clicking 'Show from top' and scrolling down to the output lines describing the job submission. If you identify a memory issue as the source of the job crash, fix by changing the 'mem_multiplier' parameter (see above sections under [Running](#running-the-ycrc-cryosparc-workflow)).
+
+2. **Resource requests do not match the requested partition** : if you see a 'Job violates accounting/QOS policy' error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the 'Maximum runtime' parameter (see above sections under [Running](#running-the-ycrc-cryosparc-workflow)).
+
+3. **Drilling down further** : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
+
+4. **Mismatch between cryosparc and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with Cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your Cryosparc to version >= 5.0.0
+
+5. **Cryosparc installation bug**: One of our users experienced a issue where cryosparc GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryosparc python libraries (a buggy CUDA version compatibility check).
+
+Cryosparc can be tricky to debug. Please reach out to us if you encounter difficulties running this program.
+
 ## Troubleshooting (general)
 
 1. **Leftover lock files** : If your submitted cryosparc master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryosparc master job and check if cryosparc is running with 'cryosparcm status', and check your cryosparc master cluster logfile for errors related to the cryosparc data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a `cryosparc*.sock` file or a `mongo*.sock` file.  If they are owned by you, you can just remove them and restart the cryosparc master process with 'cryosparcm start'. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.
@@ -204,13 +220,3 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
     ```
 
 2. **Database corruption** : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
-
-## Troubleshooting cryosparc jobs
-
-Unfortunately, information needed to diagnose cryosparc job failures in cluster lanes can be a bit tedious to track down. Luckily, we have found that most job failures have simple explanations and solutions. The main causes are:
-
-1. **Insufficient memory** : this is probably most common source of cryosparc job failures, but sadly provides little to no diagnostic information within cryosparc itself. If you do not see an obvious source for the job failure within cryosparc, check for a memory failure using our [jobstats tools](/clusters-at-yale/job-scheduling/jobstats/). You will first need find the slurm ID of the failed job; you can find this in the job log file by clicking 'Show from top' and scrolling down to the output lines describing the job submission. If you identify a memory issue as the source of the job crash, fix by changing the 'mem_multiplier' parameter (see above sections under [Running](#running-the-ycrc-cryosparc-workflow)).
-
-2. **Resource requests do not match the requested partition** : if you see a 'Job violates accounting/QOS policy' error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the 'Maximum runtime' parameter (see above sections under [Running](#running-the-ycrc-cryosparc-workflow)).
-
-3. **Drilling down further** : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
