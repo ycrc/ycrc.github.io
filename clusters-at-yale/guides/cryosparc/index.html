@@ -2739,15 +2739,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-general" class="md-nav__link">
-    Troubleshooting (general)
+  <a href="#troubleshooting-cryosparc-jobs" class="md-nav__link">
+    Troubleshooting cryosparc jobs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-cryosparc-jobs" class="md-nav__link">
-    Troubleshooting cryosparc jobs
+  <a href="#troubleshooting-general" class="md-nav__link">
+    Troubleshooting (general)
   </a>
   
 </li>
@@ -2947,18 +2947,6 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <p><strong>Consult the <a href="https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz">CryoSPARC guide</a></strong> for details on using Topaz with CryoSPARC.</p>
 </li>
 </ol>
-<h2 id="troubleshooting-general">Troubleshooting (general)</h2>
-<ol>
-<li>
-<p><strong>Leftover lock files</strong> : If your submitted cryosparc master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryosparc master job and check if cryosparc is running with 'cryosparcm status', and check your cryosparc master cluster logfile for errors related to the cryosparc data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryosparc master process with 'cryosparcm start'. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
-<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
-</li>
-<li>
-<p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-</li>
-</ol>
 <h2 id="troubleshooting-cryosparc-jobs">Troubleshooting cryosparc jobs</h2>
 <p>Unfortunately, information needed to diagnose cryosparc job failures in cluster lanes can be a bit tedious to track down. Luckily, we have found that most job failures have simple explanations and solutions. The main causes are:</p>
 <ol>
@@ -2970,6 +2958,25 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 </li>
 <li>
 <p><strong>Drilling down further</strong> : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., <code>P1_J2_slurm.log</code>, <code>P1_J2_slurm.err</code>, <code>job.log</code>) and also a copy of the slurm submission script (<code>queue_sub_script.sh</code>). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.</p>
+</li>
+<li>
+<p><strong>Mismatch between cryosparc and GPU/CUDA</strong> Newer graphics cards being installed on the Bouchet cluster are incompatible with Cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your Cryosparc to version &gt;= 5.0.0</p>
+</li>
+<li>
+<p><strong>Cryosparc installation bug</strong>: One of our users experienced a issue where cryosparc GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryosparc python libraries (a buggy CUDA version compatibility check).</p>
+</li>
+</ol>
+<p>Cryosparc can be tricky to debug. Please reach out to us if you encounter difficulties running this program.</p>
+<h2 id="troubleshooting-general">Troubleshooting (general)</h2>
+<ol>
+<li>
+<p><strong>Leftover lock files</strong> : If your submitted cryosparc master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryosparc master job and check if cryosparc is running with 'cryosparcm status', and check your cryosparc master cluster logfile for errors related to the cryosparc data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryosparc master process with 'cryosparcm start'. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
+<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
 </li>
 </ol>
                 
