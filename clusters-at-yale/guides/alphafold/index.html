@@ -2722,6 +2722,26 @@
     AlphaFold 3
   </a>
   
+    <nav class="md-nav" aria-label="AlphaFold 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bouchet" class="md-nav__link">
+    Bouchet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mccleary" class="md-nav__link">
+    McCleary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2771,15 +2791,15 @@ submit a job for the MSA calculation, and when that is complete, submit another 
 </code></pre></div></p>
 <p>Heteromer:
 <div class="highlight"><pre><span></span><code>&gt;sequence_1
-&lt;SEQUENCE<span class="w"> </span>A&gt;
+&lt;SEQUENCE A&gt;
 &gt;sequence_2
-&lt;SEQUENCE<span class="w"> </span>A&gt;
+&lt;SEQUENCE A&gt;
 &gt;sequence_3
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 &gt;sequence_4
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 &gt;sequence_5
-&lt;SEQUENCE<span class="w"> </span>B&gt;
+&lt;SEQUENCE B&gt;
 ...
 </code></pre></div></p>
 <p>Copy the MSA batch script and model batch script templates below,
@@ -2787,11 +2807,13 @@ and modify for your specific use case. Both stages can be submitted at the same 
 <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>
 as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Submit the first stage:</span>
-sbatch<span class="w"> </span>alphafold_msa.sh
+sbatch alphafold_msa.sh
 
 <span class="c1"># Note the jobid that is reported by the above submission.</span>
-<span class="c1"># Then submit the second stage by:</span>
-sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh<span class="w"> </span>
+<span class="c1"># Then if you have set the correct input directories corresponding to the MSA outputs,</span>
+<span class="c1"># optionally submit the second stage by:</span>
+sbatch --dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt; alphafold_model.sh
+<span class="c1"># Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. </span>
 </code></pre></div>
 <p>alphafold_msa.sh:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2804,23 +2826,24 @@ sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;fi
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem=80g</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
 
 <span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
+module reset
+module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 
 <span class="c1">## Provide settings for running various components in parallel</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w">   </span><span class="c1"># defaults to 4 if not set</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="c1"># defaults to 8 if not set</span>
+<span class="nb">export</span> <span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span>   <span class="c1"># defaults to 4 if not set</span>
+<span class="nb">export</span> <span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span> <span class="c1"># defaults to 8 if not set</span>
 <span class="c1">## Choose name for output folder    </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
+<span class="nb">export</span> <span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
 
 <span class="c1">## Remove old output folder and recreate for new run</span>
-rm<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+rm -r <span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+mkdir -p <span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
 
 <span class="c1">## run AlphaFold</span>
-alphafold<span class="w"> </span>--output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span><span class="w"> </span>--model_preset<span class="o">=</span>monomer<span class="w"> </span>--fasta_paths<span class="o">=</span>YourSequence.fasta<span class="w"> </span>--max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
+alphafold --output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span> --model_preset<span class="o">=</span>monomer --fasta_paths<span class="o">=</span>YourSequence.fasta --max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
 --msas_only
 </code></pre></div>
 <p>alphafold_model.sh:</p>
@@ -2867,16 +2890,205 @@ function of sequence length</a>.</p>
 is the model parameter <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md">Terms of Use</a>.
 BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
 This requires registering with <a href="https://forms.gle/svvpY4u2jsHEwWYS6">Google</a> and agreeing to the above terms of use.
-Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.
-Then run with
-<div class="highlight"><pre><span></span><code>alphafold<span class="w"> </span>YourDirName
+Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.</p>
+<h3 id="bouchet">Bouchet</h3>
+<p>On Bouchet, AlphaFold 3 is launched in a manner similar to 2, but with some modifications to the flags.</p>
+<p>alphafold_msa.sh:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
+<span class="c1">## General-use partition for CPU-only step</span>
+<span class="c1">#SBATCH --partition=day</span>
+<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
+<span class="c1">#SBATCH --time=1-00:00:00</span>
+<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
+<span class="c1">#SBATCH --mem-per-cpu=80g</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
+module reset
+module load AlphaFold/3.0.1-20251021-foss-2024a-CUDA-12.6.0
+
+<span class="c1"># Select full path to working directory</span>
+<span class="nv">RUNDIR</span><span class="o">=</span><span class="sb">`</span>readlink -f <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="sb">`</span>
+
+<span class="c1"># Edit to specify input folder name containing initial alphafold_input.json</span>
+<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">&quot;af_input&quot;</span>
+
+<span class="c1"># Edit to specify filename of input JSON file</span>
+<span class="nv">INPUTFILE</span><span class="o">=</span><span class="s2">&quot;fold_input.json&quot;</span>
+
+<span class="c1"># Edit to specify output folder name for MSA</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUT</span><span class="si">}</span>
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>
+
+<span class="c1"># run AlphaFold</span>
+  alphafold <span class="se">\</span>
+  --jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --json_path<span class="o">=</span><span class="si">${</span><span class="nv">INPUTFOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUTFILE</span><span class="si">}</span> <span class="se">\</span>
+  --model_dir<span class="o">=</span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/models <span class="se">\</span>
+  --db_dir<span class="o">=</span><span class="nv">$DB_DIR</span> <span class="se">\</span>
+  --output_dir<span class="o">=</span><span class="nv">$MSAFOLDER</span> <span class="se">\</span>
+  --norun_inference
 </code></pre></div>
-where YourDirName is the path to the folder containing your af_input and models folders.</p>
-<p>The input configuration differs from AlphaFold 2, but is similar to the server format.
-See the <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md">AlphaFold 3 documentation</a> for details.
-The database location has been set automatically.</p>
+<p>alphafold_model.sh:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=YourModelJobNameHere</span>
+<span class="c1">## General-use partition for accessing GPUs;</span>
+<span class="c1">## may optionally try gpu_devel, as GPU step often takes &lt; 6 hours</span>
+<span class="c1">#SBATCH --partition=gpu</span>
+<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
+<span class="c1">#SBATCH --time=4:00:00</span>
+<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
+<span class="c1">#SBATCH --mem=80g</span>
+<span class="c1">## Must explicitly request GPU resources and number of GPUs</span>
+<span class="c1">#SBATCH --gpus=1</span>
+<span class="c1">#SBATCH --constraint &quot;a100-80g&quot;</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
+module reset
+module load AlphaFold/3.0.1-20251021-foss-2024a-CUDA-12.6.0
+
+<span class="c1"># Select full path to current working directory</span>
+<span class="nv">RUNDIR</span><span class="o">=</span><span class="sb">`</span>readlink -f <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="sb">`</span>
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>
+
+<span class="c1"># Edit to specify name of folder containing output from prior MSA run</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+
+<span class="c1"># Edit to specify name of final output folder for models </span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;af_output&quot;</span>
+
+<span class="c1"># Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json</span>
+<span class="c1"># This is usually based on the name: field from your initial input.</span>
+<span class="nv">MSA</span><span class="o">=</span><span class="s2">&quot;2PV7&quot;</span>
+
+<span class="c1">#Edit to specify name of final output folder for models</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output&quot;</span>
+
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">OUTPUT</span><span class="si">}</span>
+
+<span class="c1"># run alphafold</span>
+alphafold <span class="se">\</span>
+  --jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --json_path<span class="o">=</span><span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>_data.json <span class="se">\</span>
+  --model_dir<span class="o">=</span>models <span class="se">\</span>
+  --db_dir<span class="o">=</span><span class="nv">$ALPHAFOLD_DATA_DIR</span> <span class="se">\</span>
+  --output_dir<span class="o">=</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>_output <span class="se">\</span>
+  --norun_data_pipeline
+</code></pre></div>
+<p>The database location has been set automatically.</p>
+<h3 id="mccleary">McCleary</h3>
+<p>On McCleary, AlphaFold is installed in a <a href="/clusters-at-yale/guides/containers">container</a>, which requires
+a somewhat more complicated command for running the split version.</p>
+<p>alphafold_msa.sh (McCleary version):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
+<span class="c1">## General-use partition for CPU-only step</span>
+<span class="c1">#SBATCH --partition=day</span>
+<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
+<span class="c1">#SBATCH --time=1-00:00:00</span>
+<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
+<span class="c1">#SBATCH --mem-per-cpu=80g</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
+module reset
+module load AlphaFold/3.0.1
+
+<span class="c1"># Select full path to working directory</span>
+<span class="nv">RUNDIR</span><span class="o">=</span><span class="sb">`</span>readlink -f <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="sb">`</span>
+<span class="nb">cd</span> <span class="nv">$RUNDIR</span>
+
+<span class="c1"># Edit to specify input folder name and filename for initial json</span>
+<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">&quot;af_input&quot;</span>
+<span class="nv">INPUTFILENAME</span><span class="o">=</span><span class="s2">&quot;alphafold_input.json&quot;</span>
+
+<span class="c1"># Edit to specify output folder name for MSA</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUT</span><span class="si">}</span>
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>
+
+<span class="c1"># run AlphaFold</span>
+apptainer <span class="nb">exec</span> <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/<span class="si">${</span><span class="nv">INPUTFOLDER</span><span class="si">}</span>:/root/af_input <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>:/root/af_msa <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/models:/root/models <span class="se">\</span>
+  --bind <span class="nv">$ALPHAFOLD_DATA_DIR</span>:/root/public_databases <span class="se">\</span>
+  <span class="nv">$EBROOTALPHAFOLD</span>/AlphaFold.sif python /app/alphafold/run_alphafold.py <span class="se">\</span>
+  --jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --json_path<span class="o">=</span>/root/af_input/<span class="si">${</span><span class="nv">INPUTFILENAME</span><span class="si">}</span> <span class="se">\</span>
+  --model_dir<span class="o">=</span>/root/models <span class="se">\</span>
+  --db_dir<span class="o">=</span>/root/public_databases <span class="se">\</span>
+  --output_dir<span class="o">=</span>/root/af_msa <span class="se">\</span>
+  --norun_inference
+</code></pre></div>
+<p>alphafold_model.sh (McCleary version):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=YourModelJobNameHere</span>
+<span class="c1">## General-use partition for accessing GPUs;</span>
+<span class="c1">## may optionally try gpu_devel, as GPU step often takes &lt; 6 hours</span>
+<span class="c1">#SBATCH --partition=gpu</span>
+<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
+<span class="c1">#SBATCH --time=4:00:00</span>
+<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
+<span class="c1">#SBATCH --mem=80g</span>
+<span class="c1">## Must explicitly request GPU resources and number of GPUs</span>
+<span class="c1">#SBATCH --gpus=1</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
+module reset
+module load AlphaFold/3.0.1
+
+<span class="c1"># Select full path to current working directory</span>
+<span class="nv">RUNDIR</span><span class="o">=</span><span class="sb">`</span>readlink -f <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="sb">`</span>
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>
+
+<span class="c1"># Edit to specify name of folder containing output from prior MSA run</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+
+<span class="c1"># Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json</span>
+<span class="c1"># This is usually based on the name: field from your initial input.</span>
+<span class="nv">MSA</span><span class="o">=</span><span class="s2">&quot;MyPrefix&quot;</span>
+
+<span class="c1">#Edit to specify name of final output folder for models</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output&quot;</span>
+
+mkdir -p <span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">OUTPUT</span><span class="si">}</span>
+
+<span class="c1"># run alphafold</span>
+apptainer <span class="nb">exec</span> --nv <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>:/root/af_msa <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/<span class="si">${</span><span class="nv">OUTPUT</span><span class="si">}</span>:/root/af_output <span class="se">\</span>
+  --bind <span class="nv">$RUNDIR</span>/models:/root/models <span class="se">\</span>
+  --bind <span class="nv">$ALPHAFOLD_DATA_DIR</span>:/root/public_databases <span class="se">\</span>
+  <span class="nv">$EBROOTALPHAFOLD</span>/AlphaFold.sif python /app/alphafold/run_alphafold.py <span class="se">\</span>
+  --jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span> <span class="se">\</span>
+  --json_path<span class="o">=</span>/root/af_msa/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>_data.json <span class="se">\</span>
+  --model_dir<span class="o">=</span>/root/models <span class="se">\</span>
+  --db_dir<span class="o">=</span>/root/public_databases <span class="se">\</span>
+  --output_dir<span class="o">=</span>/root/af_output <span class="se">\</span>
+  --norun_data_pipeline
+</code></pre></div>
+<p>See the <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md">AlphaFold 3 documentation</a> for details.</p>
 <p>Note that AlphaFold 3 will only run on A100 or better GPUs by default.
-To run on sequences up to 1280 on a V100, add to your 'alphafold' command the flag
+To run on sequences up to 1280 on a V100 on McCleary, add to your 'alphafold' command the flag
 <div class="highlight"><pre><span></span><code>--flash_attention_implementation<span class="o">=</span>xla
 </code></pre></div></p>
                 
@@ -2887,7 +3099,7 @@ To run on sequences up to 1280 on a V100, add to your 'alphafold' command the fl
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2026</span>
       
     
   </small>
