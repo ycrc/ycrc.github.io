@@ -10,7 +10,7 @@ Both Intel and AMD processors use the x86-64 instruction set, but there are arch
 
 ## Partitions
 
-For testing, the CPU-only AMD nodes are in the `day_amd` partition, and the GPU AMD nodes are in the `gpu_amd` parition. 
+For testing, the CPU-only AMD nodes are in the `day_amd` partition, and the GPU AMD nodes are in the `gpu_rtx6000` parition. 
 
 For detailed information about job limits and available compute nodes in each
 partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware).
