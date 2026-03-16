@@ -29,6 +29,8 @@ vram_dict = {
     "rtx_5000_ada": "32",
     "rtx5000ada": "32",
     "h200": "141",
+    "rtx_pro_6000_blackwell": "96",
+    "b200": "193",
     }
 
 # Commons partitions, their display order
@@ -36,12 +38,14 @@ commons = {
     "general*": "Use the general partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "day*": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "day": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
+    "day_amd": "Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.",
     "interactive": "Use the interactive partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
     "devel": "Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.",
     "week": "Use the week partition for jobs that need a longer runtime than day allows.",
     "long": "Use the long partition for jobs that need a longer runtime than week allows.",
     "transfer": "Use the transfer partition to stage data for your jobs to and from [cluster storage](/data/#staging-data).",
     "gpu": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=rtx_5000_ada:2` would request 2 NVIDIA RTX 5000 Ada GPUs per node.",
+    "gpu_rtx6000": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=rtx_pro_6000_blackwell:2` would request 2 NVIDIA RTX Pro 6000 Blackwell GPUs per node.",
     "gpu_h200": "Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=h200:2` would request 2 NVIDIA H200 GPUs per node.",
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
@@ -271,7 +275,7 @@ def collapse_memory_differences(partition_hardware, has_gpus):
 def sort_hardware(partition_hardware):
 
 
-    node_gens = ["emeraldrapids", "saphirerapids", "sapphirerapids", "icelake", "cascadelake", "skylake", "broadwell", "haswell", "epyc", "milan"]
+    node_gens = ["turin", "emeraldrapids", "saphirerapids", "sapphirerapids", "icelake", "cascadelake", "skylake", "broadwell", "haswell", "epyc", "milan"]
     nodes_by_gen = {}
 
     for node_type in partition_hardware:
