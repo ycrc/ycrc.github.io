@@ -3885,7 +3885,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="2:10"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:12"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3937,7 +3937,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>83</td>
+<td>84</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
@@ -3946,7 +3946,68 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">devel</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">day_amd</label><div class="tabbed-content">
+<p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the day_amd partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per group</td>
+<td><code>2000</code></td>
+</tr>
+<tr>
+<td>Maximum memory per group</td>
+<td><code>30000G</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>1200</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>18000G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>26</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>cpugen:turin, cpumodel:9575f, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">devel</label><div class="tabbed-content">
 <p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -3968,7 +4029,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>16</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td>Maximum memory per user</td>
+<td><code>120G</code></td>
 </tr>
 <tr>
 <td>Maximum submitted jobs per user</td>
@@ -3999,7 +4064,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">week</label><div class="tabbed-content">
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">week</label><div class="tabbed-content">
 <p>Use the week partition for jobs that need a longer runtime than day allows.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4021,19 +4086,19 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum CPUs per group</td>
-<td><code>256</code></td>
-</tr>
-<tr>
-<td>Maximum memory per group</td>
-<td><code>3840G</code></td>
-</tr>
-<tr>
-<td>Maximum CPUs per user</td>
 <td><code>128</code></td>
 </tr>
 <tr>
+<td>Maximum memory per group</td>
+<td><code>2T</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per user</td>
+<td><code>64</code></td>
+</tr>
+<tr>
 <td>Maximum memory per user</td>
-<td><code>1920G</code></td>
+<td><code>1T</code></td>
 </tr>
 </tbody>
 </table>
@@ -4051,7 +4116,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>4</td>
+<td>6</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
@@ -4060,7 +4125,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx_5000_ada:2</code> would request 2 NVIDIA RTX 5000 Ada GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4086,15 +4151,90 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per group</td>
-<td><code>32</code></td>
+<td><code>8</code></td>
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>32</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per group</td>
+<td><code>8</code></td>
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
-<td><code>32</code></td>
+<td><code>6</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>cpugen:emeraldrapids</td>
+<td>48</td>
+<td>479</td>
+<td>rtx_5000_ada</td>
+<td>4</td>
+<td>32</td>
+<td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">gpu_rtx6000</label><div class="tabbed-content">
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx_pro_6000_blackwell:2</code> would request 2 NVIDIA RTX Pro 6000 Blackwell GPUs per node.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the gpu_rtx6000 partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>2-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per group</td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per group</td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>6</code></td>
 </tr>
 </tbody>
 </table>
@@ -4116,18 +4256,18 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <tbody>
 <tr>
 <td>8</td>
-<td>cpugen:emeraldrapids</td>
-<td>48</td>
-<td>479</td>
-<td>rtx_5000_ada</td>
-<td>4</td>
-<td>32</td>
-<td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>rtx_pro_6000_blackwell</td>
+<td>8</td>
+<td>96</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
 </tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">gpu_h200</label><div class="tabbed-content">
+<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">gpu_h200</label><div class="tabbed-content">
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=h200:2</code> would request 2 NVIDIA H200 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4161,7 +4301,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
-<td><code>10</code></td>
+<td><code>6</code></td>
 </tr>
 </tbody>
 </table>
@@ -4194,7 +4334,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><label for="__tabbed_2_6">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4224,7 +4364,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>1</code></td>
+<td><code>2</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
@@ -4257,6 +4397,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
+<td>3</td>
+<td>cpugen:emeraldrapids</td>
+<td>48</td>
+<td>479</td>
+<td>rtx_5000_ada</td>
+<td>4</td>
+<td>32</td>
+<td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
+</tr>
+<tr>
 <td>1</td>
 <td>cpugen:emeraldrapids</td>
 <td>48</td>
@@ -4266,20 +4416,10 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>141</td>
 <td>cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes</td>
 </tr>
-<tr>
-<td>4</td>
-<td>cpugen:emeraldrapids</td>
-<td>48</td>
-<td>479</td>
-<td>rtx_5000_ada</td>
-<td>4</td>
-<td>32</td>
-<td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
-</tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><label for="__tabbed_2_7">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4332,7 +4472,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">mpi</label><div class="tabbed-content">
+<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">mpi</label><div class="tabbed-content">
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4360,6 +4500,10 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>Maximum nodes per user</td>
 <td><code>32</code></td>
 </tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>6</code></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Available Compute Nodes</strong></p>
@@ -4385,7 +4529,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><label for="__tabbed_2_11">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4395,6 +4539,22 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Available Compute Nodes</strong></p>
 <p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
 <table>
@@ -4414,16 +4574,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <tr>
 <td>10</td>
 <td>cpugen:emeraldrapids</td>
-<td>48</td>
-<td>1995</td>
-<td>h200</td>
-<td>8</td>
-<td>141</td>
-<td>cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes</td>
-</tr>
-<tr>
-<td>10</td>
-<td>cpugen:emeraldrapids</td>
 <td>32</td>
 <td>488</td>
 <td>l40s</td>
@@ -4432,7 +4582,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no</td>
 </tr>
 <tr>
-<td>10</td>
+<td>12</td>
 <td>cpugen:emeraldrapids</td>
 <td>48</td>
 <td>479</td>
@@ -4440,6 +4590,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>32</td>
 <td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
+</tr>
+<tr>
+<td>96</td>
+<td>cpugen:emeraldrapids</td>
+<td>64</td>
+<td>990</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
 <tr>
 <td>4</td>
@@ -4452,6 +4612,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
 <tr>
+<td>10</td>
+<td>cpugen:emeraldrapids</td>
+<td>48</td>
+<td>1995</td>
+<td>h200</td>
+<td>8</td>
+<td>141</td>
+<td>cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes</td>
+</tr>
+<tr>
 <td>60</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
@@ -4461,20 +4631,10 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td></td>
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
-<tr>
-<td>94</td>
-<td>cpugen:emeraldrapids</td>
-<td>64</td>
-<td>990</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
-</tr>
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4484,6 +4644,22 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
 </div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the scavenge_gpu partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>1-00:00:00</code></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Available Compute Nodes</strong></p>
 <p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
 <table>
@@ -4503,15 +4679,15 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <tr>
 <td>10</td>
 <td>cpugen:emeraldrapids</td>
+<td>32</td>
+<td>488</td>
+<td>l40s</td>
+<td>4</td>
 <td>48</td>
-<td>1995</td>
-<td>h200</td>
-<td>8</td>
-<td>141</td>
-<td>cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes</td>
+<td>cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no</td>
 </tr>
 <tr>
-<td>8</td>
+<td>12</td>
 <td>cpugen:emeraldrapids</td>
 <td>48</td>
 <td>479</td>
@@ -4523,12 +4699,12 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <tr>
 <td>10</td>
 <td>cpugen:emeraldrapids</td>
-<td>32</td>
-<td>488</td>
-<td>l40s</td>
-<td>4</td>
 <td>48</td>
-<td>cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no</td>
+<td>1995</td>
+<td>h200</td>
+<td>8</td>
+<td>141</td>
+<td>cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes</td>
 </tr>
 </tbody>
 </table>
