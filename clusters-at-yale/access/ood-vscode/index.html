@@ -3211,11 +3211,12 @@ Host grace
 Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
+    IdentityFile ~/.ssh/SSH_KEY_FILE
     ProxyJump grace
 </code></pre></div>
 <p>Replace:
-- <code>YOUR_NETID</code> with your Yale NetID<br />
-- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)<br />
+- <code>YOUR_NETID</code> with your Yale NetID
+- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
 - <code>SSH_KEY_FILE</code> with the path to the SSH key file you created for the cluster (e.g., <code>~/.ssh/id_rsa</code>)  </p>
 <p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
 <h4 id="windows">Windows</h4>
@@ -3230,12 +3231,13 @@ Host grace
 Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
+    IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
     ProxyJump grace
 </code></pre></div>
 <p>Replace:
-- <code>YOUR_USERNAME</code> with your Windows username<br />
-- <code>YOUR_NETID</code> with your Yale NetID<br />
-- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)<br />
+- <code>YOUR_USERNAME</code> with your Windows username
+- <code>YOUR_NETID</code> with your Yale NetID
+- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
 - <code>SSH_KEY_FILE</code> with the name of your SSH key file (e.g., <code>id_rsa</code>)  </p>
 <p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
 <div class="admonition tip">
@@ -3271,7 +3273,7 @@ Host grace-compute
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2026</span>
       
     
   </small>
