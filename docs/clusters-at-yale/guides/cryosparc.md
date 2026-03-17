@@ -82,7 +82,8 @@ Due to security constraints, we must handle these requests manually, but we have
     # Run the below command to print your assigned cryosparc port. The output should read like:
     #    Your current cryosparc port :  39000
     #      needs to be updated to the YCRC-assigned port value of : 61020
-    
+
+    cryosparcm stop
     /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
     
     # Run the following command and type 'y' when prompted
@@ -144,7 +145,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     cd ${install_path}/cryosparc_master
 
     ./install.sh --license $LICENSE_ID \
-                 --hostname <master_hostname> \
+                 --hostname $(hostname) \
                  --dbpath $db_path \
                  --port $port_number
     ```
