@@ -52,6 +52,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 
 To transfer data from other clusters to Bouchet, we encourage using [Globus](/data/globus/).
 
+However, please note that a special method is required to transfer your old conda environments to Bouchet. Just copying the environment folders won't work, and moreover the transfer would be very slow due to the large number of files involved. While the safest route is probably to rebuild your conda environments from scratch, you may try migrating your conda environments with a tool called `conda-pack` ; please see our User Guide instructions [here](/clusters-at-yale/guides/conda/#conda-pack-to-migrate-environments)
 
 ### Applications and Software
 
