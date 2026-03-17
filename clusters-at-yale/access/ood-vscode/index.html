@@ -3214,10 +3214,12 @@ Host grace-compute
     IdentityFile ~/.ssh/SSH_KEY_FILE
     ProxyJump grace
 </code></pre></div>
-<p>Replace:
-- <code>YOUR_NETID</code> with your Yale NetID
-- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
-- <code>SSH_KEY_FILE</code> with the path to the SSH key file you created for the cluster (e.g., <code>~/.ssh/id_rsa</code>)  </p>
+<p>Replace:</p>
+<ul>
+<li><code>YOUR_NETID</code> with your Yale NetID  </li>
+<li><code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)  </li>
+<li><code>SSH_KEY_FILE</code> with the path to the SSH key file you created for the cluster (e.g., <code>~/.ssh/id_rsa</code>)  </li>
+</ul>
 <p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
 <h4 id="windows">Windows</h4>
 <p>Add the following to your SSH config file on your <strong>local Windows machine</strong>. The config file is typically located at <code>C:\Users\YOUR_USERNAME\.ssh\config</code> (you may need to create this file if it doesn't exist):</p>
@@ -3234,11 +3236,13 @@ Host grace-compute
     IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
     ProxyJump grace
 </code></pre></div>
-<p>Replace:
-- <code>YOUR_USERNAME</code> with your Windows username
-- <code>YOUR_NETID</code> with your Yale NetID
-- <code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)
-- <code>SSH_KEY_FILE</code> with the name of your SSH key file (e.g., <code>id_rsa</code>)  </p>
+<p>Replace:</p>
+<ul>
+<li><code>YOUR_USERNAME</code> with your Windows username  </li>
+<li><code>YOUR_NETID</code> with your Yale NetID  </li>
+<li><code>COMPUTE_NODE_NAME</code> with the full hostname from step 2 or 3 (e.g., <code>r209u10n01.grace.ycrc.yale.edu</code>)  </li>
+<li><code>SSH_KEY_FILE</code> with the name of your SSH key file (e.g., <code>id_rsa</code>)  </li>
+</ul>
 <p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
 <div class="admonition tip">
 <p class="admonition-title">Creating the config file on Windows</p>
