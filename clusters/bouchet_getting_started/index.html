@@ -2854,6 +2854,7 @@ Your project and scratch storage usage and quota are shared with the members of 
 </table>
 <h3 id="transfer-data-from-other-clusters">Transfer Data from Other Clusters</h3>
 <p>To transfer data from other clusters to Bouchet, we encourage using <a href="/data/globus/">Globus</a>.</p>
+<p>However, please note that a special method is required to transfer your old conda environments to Bouchet. Just copying the environment folders won't work, and moreover the transfer would be very slow due to the large number of files involved. While the safest route is probably to rebuild your conda environments from scratch, you may try migrating your conda environments with a tool called <code>conda-pack</code> ; please see our User Guide instructions <a href="/clusters-at-yale/guides/conda/#conda-pack-to-migrate-environments">here</a></p>
 <h3 id="applications-and-software">Applications and Software</h3>
 <p>Commonly used software is available as <a href="/applications/modules/">modules</a>, similar to other clusters. 
 Currently, all software is compiled and installed with the 2022b or 2024a versions of the toolchains on Bouchet, even if the same software version is installed with an older toolchain (e.g. 2020b) on other clusters.
@@ -2870,7 +2871,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2026</span>
       
     
   </small>
