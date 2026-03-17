@@ -2849,6 +2849,7 @@ cryosparcm<span class="w"> </span>database<span class="w"> </span>backup<span cl
 <span class="c1">#    Your current cryosparc port :  39000</span>
 <span class="c1">#      needs to be updated to the YCRC-assigned port value of : 61020</span>
 
+cryosparcm<span class="w"> </span>stop
 /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
 
 <span class="c1"># Run the following command and type &#39;y&#39; when prompted</span>
@@ -2905,7 +2906,7 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 <span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
 
 ./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$LICENSE_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--hostname<span class="w"> </span>&lt;master_hostname&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span><span class="se">\</span>
 <span class="w">             </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span><span class="se">\</span>
 <span class="w">             </span>--port<span class="w"> </span><span class="nv">$port_number</span>
 </code></pre></div>

@@ -58,21 +58,43 @@ To run the script, start a terminal shell on the desired cluster and do:
 
 Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. This port number is to be used while [installing cryosparc](/clusters-at-yale/guides/cryosparc/#install) ; alternatively, if you have already have a cryosparc installation, please use the following steps to update the cryosparc port:
 
-``` bash
-# 1. Let finish (or terminate) any analysis jobs that you may currently be running in cryosparc.
+1. Cancel any existing cryosparc jobs. You may first want to let finish (or terminate) any analysis jobs currently running in cryosparc.
 
-# 2. Connect to the node where your master cryosparc job is running with the command:
-ssh <node-where-cryosparc-is-running>
+2. In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
+ find out what compute node it's running on and connect to the node with ssh:
+    ``` bash
+    # Run `sbatch` and note the jobID it prints upon starting:
+    sbatch -p devel -t 1:00:00 --mem=8G /apps/services/cryosparc/cryosparc-cluster-master.sh
+    
+    # Run `squeue` and note the compute node of your job (i.e. 'a1132u05n01')
+    squeue -j <jobID>
 
-# 3. Stop cryosparc with the command:
-cryosparcm stop
+    # Connect to the node with ssh:
+    ssh <node-where-cryosparc-is-running>
+    ```
+    
+3. Stop cryosparc, backup the database, and then run the cryosparc command to change the port:
+    ``` bash
+    cryosparcm stop
+    cryosparcm database backup    # (this is a fast step, it should take under 60 seconds)
+                                  # Note, in cryosparc versions < 5 the syntax may be 'cryosparcm backup'
 
-# 4. Back up your cryosparc database with
-cryosparcm backup    # (this is a fast step, it only takes a few seconds)
+    # Run the below command to print your assigned cryosparc port. The output should read like:
+    #    Your current cryosparc port :  39000
+    #      needs to be updated to the YCRC-assigned port value of : 61020
+    
+    /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
+    
+    # Run the following command and type 'y' when prompted
+    # Note, it is normal to see warnings at the stage like
+    #    'Warning: Could not get database status (attempt 1/3)'
+    
+    cryosparcm changeport <new port value>
 
-# 5. Run the following command and enter your new port value when prompted:
-cryosparcm changeport
-```
+    # Cryosparc should then restart successfully and print the standard connection messages followed
+    #  by 'Checking database... OK'
+    ```
+4. Logout from the compute node and cancel the short cryosparc job with `scancel <jobid>`. You may now submit a new master job with `sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh` as described above.
 						    
 ## Install
 
