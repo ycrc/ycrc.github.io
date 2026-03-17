@@ -191,12 +191,13 @@ Host grace
 Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
+    IdentityFile ~/.ssh/SSH_KEY_FILE
     ProxyJump grace
 ```
 
 Replace:
-- `YOUR_NETID` with your Yale NetID  
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `YOUR_NETID` with your Yale NetID
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)
 - `SSH_KEY_FILE` with the path to the SSH key file you created for the cluster (e.g., `~/.ssh/id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
@@ -216,13 +217,14 @@ Host grace
 Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
+    IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
     ProxyJump grace
 ```
 
 Replace:
-- `YOUR_USERNAME` with your Windows username  
-- `YOUR_NETID` with your Yale NetID  
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `YOUR_USERNAME` with your Windows username
+- `YOUR_NETID` with your Yale NetID
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)
 - `SSH_KEY_FILE` with the name of your SSH key file (e.g., `id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
