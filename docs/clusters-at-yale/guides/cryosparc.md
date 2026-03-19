@@ -110,7 +110,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     # Below, substitute your actual project folder and netID according to the template given:
     export install_path=${HOME}/project_pi_<your_pi_netID>/<your_netid>/cryosparc
 
-# Note, on the older mccleary/grace clusters, the above line would instead be:
+    # Note, on the older mccleary/grace clusters, the above line would instead be:
     #  export install_path=${HOME}/project/cryosparc    
     ```
 
