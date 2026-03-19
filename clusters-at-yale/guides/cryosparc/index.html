@@ -2731,6 +2731,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#topaz-support" class="md-nav__link">
+    Topaz Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-cryosparc-jobs" class="md-nav__link">
+    Troubleshooting cryosparc jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-general" class="md-nav__link">
+    Troubleshooting (general)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2850,17 +2871,13 @@ their website</a>. These instructions are somewhat modified from the <a href="ht
 <li>
 <p><strong>Set up Environment</strong> : First, log onto a CPU compute node, either as an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
 <p>Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:</p>
-<p>``` bash</p>
-<h1 id="below-substitute-your-actual-project-folder-and-netid-according-to-the-template-given">Below, substitute your actual project folder and netID according to the template given:</h1>
-<p>export install_path=${HOME}/project_pi_<your_pi_netID>/<your_netid>/cryosparc</p>
-</li>
-</ol>
-<h1 id="note-on-the-older-mcclearygrace-clusters-the-above-line-would-instead-be">Note, on the older mccleary/grace clusters, the above line would instead be:</h1>
-<div class="codehilite"><pre><span></span><code><span class="c1">#  export install_path=${HOME}/project/cryosparc    </span>
-<span class="err">```</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Below, substitute your actual project folder and netID according to the template given:</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project_pi_&lt;your_pi_netID&gt;/&lt;your_netid&gt;/cryosparc
 
-<ol>
+<span class="c1"># Note, on the older mccleary/grace clusters, the above line would instead be:</span>
+<span class="c1">#  export install_path=${HOME}/project/cryosparc    </span>
+</code></pre></div>
+</li>
 <li>
 <p><strong>Set up Directories, Download installers</strong> :</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here

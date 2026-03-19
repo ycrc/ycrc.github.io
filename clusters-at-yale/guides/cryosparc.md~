@@ -104,11 +104,14 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
 
 1. **Set up Environment** : First, log onto a CPU compute node, either as an [interactive session](/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](/clusters-at-yale/access/ood/#remote-desktop). ('devel' is fine for initial cryosparc master installation).
 
-    Then choose a location for installing the software, such as under your project directory.
+    Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:
 
     ``` bash
-    export install_path=${HOME}/project/cryosparc
-    mkdir -p ${install_path}
+    # Below, substitute your actual project folder and netID according to the template given:
+    export install_path=${HOME}/project_pi_<your_pi_netID>/<your_netid>/cryosparc
+
+# Note, on the older mccleary/grace clusters, the above line would instead be:
+    #  export install_path=${HOME}/project/cryosparc    
     ```
 
 2. **Set up Directories, Download installers** :
@@ -117,6 +120,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     export LICENSE_ID=Your-cryosparc-license-code-here
 
     #go get the installers
+    mkdir -p ${install_path}
     cd $install_path
     curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
     curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
