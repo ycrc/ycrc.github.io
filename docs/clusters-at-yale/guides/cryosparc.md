@@ -10,17 +10,26 @@
 
 To use the new cryosparc workflow, follow the steps below:
 
-1. **To start your cryosparc server**, submit the 'cryosparc-cluster-master.sh' script using:
+1. **Start your cryosparc server**, submit the 'cryosparc-cluster-master.sh' script using:
     ```
     sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh
-
+    
     # To override the default runtime and partition, which may be useful for shorter runs,
     #  add the corresponding flags before the script name in your sbatch command, i.e.:
     sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
     ```
+
+    Once this job starts running, you will need the address for your cryosparc web UI.
+    You can get this by running, i.e. `grep http <your slurm outputfile>`, where the slurm filename
+    will look like `cryosparc-master-r209u08n01-2550317.out`. The web address you want looks like:
+
+    `http://r209u08n01.mccleary.ycrc.yale.edu:61130`
+
     Please note, in contrast to our previous cryosparc workflow, this batch script *does not use GPUs* and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.
 
-2. **To interact with your cryosparc server**, launch a minimal [OnDemand Remote Desktop](/clusters-at-yale/access/ood-remote-desktop) session; 1 CPU, 8GB RAM on the 'devel' partition should suffice. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.
+2. **Open the cryosparc UI with firefox : ** To interact with your cryosparc server, launch a minimal [OnDemand Remote Desktop](/clusters-at-yale/access/ood-remote-desktop) session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.
+
+    Alternatively, you may set up the cryosparc UI to run on your local web browser by configuring a Remote SSH connection with your local computer; we have User Guide instructions for this [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/#ssh-configuration).
 
 3. **Submit job** : Once you start the job submission process by clicking on 'Submit job' in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: 'cpu', 'gpu', 'gpu_devel' as well as 'priority_cpu' and 'priority_gpu' if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
@@ -63,7 +72,7 @@ Due to security constraints, we must handle these requests manually, but we have
 2. In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
  find out what compute node it's running on and connect to the node with ssh:
     ``` bash
-    # Run `sbatch` and note the jobID it prints upon starting:
+    # Launch cryosparc with `sbatch` and note the jobID it prints upon starting:
     sbatch -p devel -t 1:00:00 --mem=8G /apps/services/cryosparc/cryosparc-cluster-master.sh
     
     # Run `squeue` and note the compute node of your job (i.e. 'a1132u05n01')
