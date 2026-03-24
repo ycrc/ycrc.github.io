@@ -152,7 +152,7 @@ For any data that hosted outside of Yale, you will need to initiate the transfer
 
 ### Rclone
 
-To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](/clusters-at-yale/guides/rclone.md). It is installed on all of the clusters and can be installed on your computer.
+To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using [Rclone](/clusters-at-yale/guides/rclone/). It is installed on all of the clusters and can be installed on your computer.
 
 ### Sites Behind a VPN
 
