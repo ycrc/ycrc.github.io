@@ -2711,16 +2711,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-the-ycrc-cryosparc-workflow" class="md-nav__link">
-    Running the YCRC cryosparc workflow
+  <a href="#obtain-your-unique-cryosparc-port" class="md-nav__link">
+    Obtain Your Unique Cryosparc Port
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtain Your Unique Cryosparc Port">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-installations" class="md-nav__link">
+    New installations
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#obtaining-your-unique-cryosparc-port" class="md-nav__link">
-    Obtaining Your Unique Cryosparc Port
+        
+          <li class="md-nav__item">
+  <a href="#existing-installations-changing-your-current-port" class="md-nav__link">
+    Existing installations (changing your current port)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2732,8 +2745,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#topaz-support" class="md-nav__link">
-    Topaz Support
+  <a href="#run-the-ycrc-cryosparc-workflow" class="md-nav__link">
+    Run the YCRC cryosparc workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-topaz" class="md-nav__link">
+    Add Topaz
   </a>
   
 </li>
@@ -2772,61 +2792,19 @@
                 <h1 id="cryosparc-on-the-ycrc-clusters">CryoSPARC on the YCRC Clusters</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>As of February, 2026, the YCRC is transitioning to a new CryoSPARC workflow. The instructions below are for use with this new workflow. If you would like assistance with an alternative configuration, please <a href="/#get-help">contact us</a>. </p>
+<p>To start using the new workflow, you will need to do two things: (1) <a href="#obtaining-your-unique-cryosparc-port">request / update your cryosparc port</a> - this is very important to avoid conflicts with other cryosparc users. (2) <a href="#install">install cryosparc</a> if you haven't done so already (your existing installation should work fine).</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>To start using the new workflow, you will need to do two things: (1) <a href="#install">install cryosparc</a> if you haven't done so already (your existing installation should work fine) (2) <a href="#obtaining-your-unique-cryosparc-port">update your cryosparc port</a> - this is very important to avoid conflicts with other cryosparc users.</p>
-</div>
-<h2 id="running-the-ycrc-cryosparc-workflow">Running the YCRC cryosparc workflow</h2>
-<p>To use the new cryosparc workflow, follow the steps below:</p>
-<ol>
-<li>
-<p><strong>Start your cryosparc server</strong>, submit the 'cryosparc-cluster-master.sh' script using:
-    <div class="highlight"><pre><span></span><code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh
-
-# To override the default runtime and partition, which may be useful for shorter runs,
-#  add the corresponding flags before the script name in your sbatch command, i.e.:
-sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
-</code></pre></div></p>
-<p>Once this job starts running, you will need the address for your cryosparc web UI.
-You can get this by running, i.e. <code>grep http &lt;your slurm outputfile&gt;</code>, where the slurm filename
-will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web address you want looks like:</p>
-<p><code>http://r209u08n01.mccleary.ycrc.yale.edu:61130</code></p>
-<p>Please note, in contrast to our previous cryosparc workflow, this batch script <em>does not use GPUs</em> and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.</p>
-</li>
-<li>
-<p><strong>Open the cryosparc UI with firefox : </strong> To interact with your cryosparc server, launch a minimal <a href="/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop</a> session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.</p>
-<p>Alternatively, you may set up the cryosparc UI to run on your local web browser by configuring a Remote SSH connection with your local computer; we have User Guide instructions for this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/#ssh-configuration">here</a>.</p>
-</li>
-<li>
-<p><strong>Submit job</strong> : Once you start the job submission process by clicking on 'Submit job' in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: 'cpu', 'gpu', 'gpu_devel' as well as 'priority_cpu' and 'priority_gpu' if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
-</li>
-<li>
-<p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled 'Queue P<em>xxx</em> J<em>xxx</em>'). Click on the purple box beneath your selected compute lane, labeled 'Cluster submission script variables'. The box will expand to reveal two additional options. Click on 'Maximum runtime' and give your value in hours:minutes:seconds format (i.e. 1:00:00).
-    The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryosparc easier for users to manage.</p>
-</li>
-<li>
-<p><strong>Optionally specify a 'memory multiplier</strong> : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types such as 2D classification and template matching we have found that this guess can underestimate the memory requirements, <strong>leading to memory-related job failures</strong>. If a job crashes unexpectedly, find the job ID in the cryosparc log and run jobstats to pinpoint the problem (see the <a href="">troubleshooting cryosparc jobs</a> section below).</p>
-<p>To fix this type of memory issue, set the 'RAM multiplier' to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. 'RAM multiplier' is found in the 'Cluster submission script variables' along with 'Maximum runtime' (described above).</p>
-</li>
-<li>
-<p><strong>Click 'Submit to lane'</strong> : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command 'squeue --me').</p>
-<p>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
-</code></pre></div>
-<p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
-</code></pre></div>
-</li>
-</ol>
-<h2 id="obtaining-your-unique-cryosparc-port">Obtaining Your Unique Cryosparc Port</h2>
+<h2 id="obtain-your-unique-cryosparc-port">Obtain Your Unique Cryosparc Port</h2>
 <p>To use cryosparc with the YCRC cluster workflow, you must request a unique 'port' value that cryosparc uses for displaying web pages, etc., otherwise, your jobs may clash with another user's.</p>
 <p>We provide a cryosparc port request script that you can run from the terminal. Please note that a request must be made separately for each YCRC cluster you wish to run cryosparc on, and the resulting port numbers will likely differ between clusters.</p>
 <p>To run the script, start a terminal shell on the desired cluster and do:
 <div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
 </code></pre></div></p>
-<p>Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. This port number is to be used while <a href="/clusters-at-yale/guides/cryosparc/#install">installing cryosparc</a> ; alternatively, if you have already have a cryosparc installation, please use the following steps to update the cryosparc port:</p>
+<p>Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. </p>
+<h3 id="new-installations">New installations</h3>
+<p>Use the port number you have obtained when <a href="#install">installing cryosparc</a>.</p>
+<h3 id="existing-installations-changing-your-current-port">Existing installations (changing your current port)</h3>
+<p>If you have already have a cryosparc installation, please use the following steps to update the cryosparc port:</p>
 <ol>
 <li>
 <p>Cancel any existing cryosparc jobs. You may first want to let finish (or terminate) any analysis jobs currently running in cryosparc.</p>
@@ -2867,7 +2845,7 @@ cryosparcm changeport &lt;new port value&gt;
 <span class="c1">#  by &#39;Checking database... OK&#39;</span>
 </code></pre></div></p>
 </li>
-<li>Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described above.</li>
+<li>Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described in our <a href="#running-the-ycrc-cryosparc-workflow">workflow instructions</a>.</li>
 </ol>
 <h2 id="install">Install</h2>
 <p>Before you get started, you will need to request a license from Structura <a href="https://cryosparc.com/download/">from 
@@ -2972,7 +2950,49 @@ tar -xf cryosparc_worker.tar.gz
 </div>
 </li>
 </ol>
-<h2 id="topaz-support">Topaz Support</h2>
+<h2 id="run-the-ycrc-cryosparc-workflow">Run the YCRC cryosparc workflow</h2>
+<p>To use the new cryosparc workflow, follow the steps below:</p>
+<ol>
+<li>
+<p><strong>Start your cryosparc server</strong>, submit the 'cryosparc-cluster-master.sh' script using:
+    <div class="highlight"><pre><span></span><code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh
+
+# To override the default runtime and partition, which may be useful for shorter runs,
+#  add the corresponding flags before the script name in your sbatch command, i.e.:
+sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
+</code></pre></div></p>
+<p>Once this job starts running, you will need the address for your cryosparc web UI.
+You can get this by running, i.e. <code>grep http &lt;your slurm outputfile&gt;</code>, where the slurm filename
+will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web address you want looks like:</p>
+<p><code>http://r209u08n01.mccleary.ycrc.yale.edu:61130</code></p>
+<p>Please note, in contrast to our previous cryosparc workflow, this batch script <em>does not use GPUs</em> and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.</p>
+</li>
+<li>
+<p><strong>Open the cryosparc UI with firefox : </strong> To interact with your cryosparc server, launch a minimal <a href="/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop</a> session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.</p>
+<p>Alternatively, you may set up the cryosparc UI to run on your local web browser by configuring a Remote SSH connection with your local computer; we have User Guide instructions for this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/#ssh-configuration">here</a>.</p>
+</li>
+<li>
+<p><strong>Submit job</strong> : Once you start the job submission process by clicking on 'Submit job' in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: 'cpu', 'gpu', 'gpu_devel' as well as 'priority_cpu' and 'priority_gpu' if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
+</li>
+<li>
+<p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled 'Queue P<em>xxx</em> J<em>xxx</em>'). Click on the purple box beneath your selected compute lane, labeled 'Cluster submission script variables'. The box will expand to reveal two additional options. Click on 'Maximum runtime' and give your value in hours:minutes:seconds format (i.e. 1:00:00).
+    The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryosparc easier for users to manage.</p>
+</li>
+<li>
+<p><strong>Optionally specify a 'memory multiplier</strong> : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types such as 2D classification and template matching we have found that this guess can underestimate the memory requirements, <strong>leading to memory-related job failures</strong>. If a job crashes unexpectedly, find the job ID in the cryosparc log and run jobstats to pinpoint the problem (see the <a href="">troubleshooting cryosparc jobs</a> section below).</p>
+<p>To fix this type of memory issue, set the 'RAM multiplier' to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. 'RAM multiplier' is found in the 'Cluster submission script variables' along with 'Maximum runtime' (described above).</p>
+</li>
+<li>
+<p><strong>Click 'Submit to lane'</strong> : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command 'squeue --me').</p>
+<p>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+</code></pre></div>
+<p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
+</code></pre></div>
+</li>
+</ol>
+<h2 id="add-topaz">Add Topaz</h2>
 <p><a href="https://cb.csail.mit.edu/cb/topaz/">Topaz</a> is a pipeline for particle picking in cryo-electron microscopy images using
 convolutional neural networks. It can optionally be used from inside CryoSPARC using our cluster module.</p>
 <ol>
@@ -3024,7 +3044,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2026</span>
       
     
   </small>
