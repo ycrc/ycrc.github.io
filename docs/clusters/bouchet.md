@@ -4,7 +4,7 @@
 
 The Bouchet HPC cluster is shared-use resource for researchers at Yale. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
 
-Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. More information about the decommission of Grace and McCleary is available on the [Decommission Page](grace-mccleary-decommission). We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu). 
+Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. More information about the decommission of Grace and McCleary is available on the [Decommission Page](/clusters/grace-mccleary-decommission). We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu). 
 
 ---
 
