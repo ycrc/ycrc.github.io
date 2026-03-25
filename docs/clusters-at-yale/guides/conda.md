@@ -280,6 +280,9 @@ This file `my_env.tar.gz` can be copied to a different cluster via Globus or rsy
 On the new cluster the environment can be setup like this:
 
 ```sh
+salloc
+module load miniconda
+
 # Unpack environment into directory `my_env`
 mkdir -p $HOME/.conda/envs/my_env
 tar -xzf my_env.tar.gz -C $HOME/.conda/envs/my_env
@@ -292,6 +295,10 @@ conda-unpack
 
 # Deactivate the environment to remove it from your path
 source $HOME/.conda/envs/my_env/bin/deactivate
+
+# Make sure key packages integral to conda are up to date:
+conda activate my_env
+conda install -y -c conda-forge openssl ca-certificates --force-reinstall
 ```
 After this the environment is fully functional and can be activated just like any other environment.
 
@@ -343,7 +350,7 @@ ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
 # If you encounter repeated conda pack errors of the above type, it can be easier
 #   just to clean out your entire '~/.conda/pkgs' contents.
 # Conda only uses its 'pkgs' folder for temporary storage, so if you are not building
-#   or packing environments and can be safely deleted. After making sure you have
+#   or packing environments it can be safely deleted. After making sure you have
 #   no actively building or packing conda processes, do:
 /bin/rm -r $USER/.conda/pkgs/*
 ```
