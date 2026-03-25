@@ -3366,6 +3366,19 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 
 <span class="c1"># Pack environment my_env into my_env.tar.gz</span>
 conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </span>my_env
+
+<span class="c1"># If conda pack fails with an error, you may try the options:</span>
+<span class="c1">#   --ignore-missing-files or --ignore-editable-packages</span>
+
+<span class="c1"># Example errors:</span>
+<span class="c1">#    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]</span>
+<span class="c1"># Fix with:</span>
+conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </span>my_env<span class="w"> </span>--ignore-missing-files
+
+<span class="c1">#   CondaPackError: Cannot pack an environment with editable packages [...]</span>
+Files<span class="w"> </span>managed<span class="w"> </span>by<span class="w"> </span>conda<span class="w"> </span>were<span class="w"> </span>found<span class="w"> </span>to<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>deleted/overwritten
+<span class="c1"># Fix with:</span>
+conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </span>my_env<span class="w"> </span>--ignore-editable-packages
 </code></pre></div>
 <p>This file <code>my_env.tar.gz</code> can be copied to a different cluster via Globus or rsync.
 On the new cluster the environment can be setup like this:</p>
@@ -3391,7 +3404,7 @@ After this the environment is fully functional and can be activated just like an
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2026</span>
       
     
   </small>
