@@ -285,13 +285,13 @@ mkdir -p $HOME/.conda/envs/my_env
 tar -xzf my_env.tar.gz -C $HOME/.conda/envs/my_env
 
 # Activate the environment. This adds `my_env/bin` to your path
-source my_env/bin/activate
+source $HOME/.conda/envs/my_env/bin/activate
 
 # Cleanup prefixes from in the active environment.
 conda-unpack
 
 # Deactivate the environment to remove it from your path
-source my_env/bin/deactivate
+source $HOME/.conda/envs/my_env/bin/deactivate
 ```
 After this the environment is fully functional and can be activated just like any other environment.
 

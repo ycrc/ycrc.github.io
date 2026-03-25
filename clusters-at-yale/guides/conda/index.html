@@ -3373,7 +3373,10 @@ conda<span class="w"> </span>pack<span class="w"> </span>-n<span class="w"> </sp
 </div>
 <p>This file <code>my_env.tar.gz</code> can be copied to a different cluster via Globus or rsync.
 On the new cluster the environment can be setup like this:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># Unpack environment into directory `my_env`</span>
+<p><div class="highlight"><pre><span></span><code>salloc
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+
+<span class="c1"># Unpack environment into directory `my_env`</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/.conda/envs/my_env
 tar<span class="w"> </span>-xzf<span class="w"> </span>my_env.tar.gz<span class="w"> </span>-C<span class="w"> </span><span class="nv">$HOME</span>/.conda/envs/my_env
 
@@ -3385,6 +3388,10 @@ conda-unpack
 
 <span class="c1"># Deactivate the environment to remove it from your path</span>
 <span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/.conda/envs/my_env/bin/deactivate
+
+<span class="c1"># Make sure key packages integral to conda are up to date:</span>
+conda<span class="w"> </span>activate<span class="w"> </span>my_env
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>openssl<span class="w"> </span>ca-certificates<span class="w"> </span>--force-reinstall
 </code></pre></div>
 After this the environment is fully functional and can be activated just like any other environment.</p>
 <div class="admonition note">
@@ -3435,7 +3442,7 @@ ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
 # If you encounter repeated conda pack errors of the above type, it can be easier
 #   just to clean out your entire &#39;~/.conda/pkgs&#39; contents.
 # Conda only uses its &#39;pkgs&#39; folder for temporary storage, so if you are not building
-#   or packing environments and can be safely deleted. After making sure you have
+#   or packing environments it can be safely deleted. After making sure you have
 #   no actively building or packing conda processes, do:
 /bin/rm -r $USER/.conda/pkgs/*
 </code></pre></div>
