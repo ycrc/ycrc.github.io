@@ -271,21 +271,10 @@ module load miniconda
 
 # Pack environment my_env into my_env.tar.gz
 conda pack -n my_env
-
-# If conda pack fails with an error, you may try the options:
-#   --ignore-missing-files or --ignore-editable-packages
-
-# Example errors:
-#    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]
-# Fix with:
-conda pack -n my_env --ignore-missing-files
-
-#   CondaPackError: Cannot pack an environment with editable packages [...]
-Files managed by conda were found to have been deleted/overwritten
-# Fix with:
-conda pack -n my_env --ignore-editable-packages
-
 ```
+
+!!! note
+    If the above command fails with an error, don't fret! See the note at the end of this section.
 
 This file `my_env.tar.gz` can be copied to a different cluster via Globus or rsync.
 On the new cluster the environment can be setup like this:
@@ -306,3 +295,55 @@ source my_env/bin/deactivate
 ```
 After this the environment is fully functional and can be activated just like any other environment.
 
+!!! note
+    Conda pack seems be finicky on our YCRC clusters, but we have identified workarounds to resolve the errors reported so far. These are listed below:
+
+```
+####################################
+# If conda pack fails with an error, you may try the options:
+#   --ignore-missing-files or --ignore-editable-packages
+
+# If conda pack fails reporting a missing file/folder in your .conda/pkgs folder,
+#  try deleting the entire folder within pkgs: /bin/rm -r .conda/pkgs/problem_pkg_folder
+####################################
+
+####################################
+# Example errors:
+
+####################################
+#    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]
+# Fix with:
+conda pack -n my_env --ignore-missing-files
+
+####################################
+#   CondaPackError: Cannot pack an environment with editable packages [...]
+# Fix with:
+conda pack -n my_env --ignore-editable-packages
+
+####################################
+# Traceback (most recent call last):
+# File "/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py", line 154, in main
+#   pack(name=args.name,
+#   ...
+# FileNotFoundError: [Errno 2] No such file or directory: '/home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'
+
+# Fix as below:
+#   (note the extra precautionary measure with rm -r, where any typos/mistakes can do a lot of damage)
+
+# A. Surgical method:
+# 1. Strip the trailing path info from the directory listed in the error, leaving only the package name
+#    (see example below)
+# 2. Use 'ls <bad pkgs dir>' to list the offending package directory.
+# 3. Check that the list target directory is really the one you intended
+# 4. Use the up arrow to retrieve the ls command, then carefully edit to replace 'ls -d' with 'rm -r'
+# Example:
+ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
+
+# B. Nuclear method
+# If you encounter repeated conda pack errors of the above type, it can be easier
+#   just to clean out your entire '~/.conda/pkgs' contents.
+# Conda only uses its 'pkgs' folder for temporary storage, so if you are not building
+#   or packing environments and can be safely deleted. After making sure you have
+#   no actively building or packing conda processes, do:
+/bin/rm -r $USER/.conda/pkgs/*
+```
