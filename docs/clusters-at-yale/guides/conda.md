@@ -271,6 +271,20 @@ module load miniconda
 
 # Pack environment my_env into my_env.tar.gz
 conda pack -n my_env
+
+# If conda pack fails with an error, you may try the options:
+#   --ignore-missing-files or --ignore-editable-packages
+
+# Example errors:
+#    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]
+# Fix with:
+conda pack -n my_env --ignore-missing-files
+
+#   CondaPackError: Cannot pack an environment with editable packages [...]
+Files managed by conda were found to have been deleted/overwritten
+# Fix with:
+conda pack -n my_env --ignore-editable-packages
+
 ```
 
 This file `my_env.tar.gz` can be copied to a different cluster via Globus or rsync.
