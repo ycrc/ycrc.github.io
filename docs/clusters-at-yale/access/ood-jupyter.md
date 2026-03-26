@@ -29,14 +29,14 @@ be accessed via their respective symlinks in Home. If you want to access a direc
 
 Make sure that you chose the correct Conda environment for your job from the drop-down menu.
 
-#### `ycrc_default`
+#### ycrc_default
 
 The `ycrc_default` conda environment will be automatically built when you select it for the first time from the Jupyter app.
 
 #### Set Up an Environment
 
 We recommend you use [miniconda](/clusters-at-yale/guides/conda) to manage your Jupyter environments.
-You can create Conda environments from the [Web Portal terminal interface](/clusters-at-yale/access/ood#terminal) or from a terminal-based login to the clusters.
+You can create Conda environments from the [Web Portal terminal interface](/clusters-at-yale/access/ood#terminal) or from a terminal-based login to the clusters. **Be sure to include the 'notebook' package** in your environment; this is required for your environment to work with our Jupyter app.
 
 !!! warning
     Please do not use the '--prefix' option when creating your own jupyter/conda environment for OOD; you must use '-n/--name'. This guarantees that your conda environment is located your home directory under '.conda/envs', which is required by our current OnDemand setup. (note, however, that this '.conda' folder, or 'envs' within it, **can** be a symlink pointing elsewhere)
