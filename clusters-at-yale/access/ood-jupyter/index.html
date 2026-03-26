@@ -2940,11 +2940,11 @@ When it launches you can open the standard Jupyter interface where you can start
 be accessed via their respective symlinks in Home. If you want to access a directory that cannot be accessed through your home directory, for example a purchased storage allocation, you need to create a <a href="https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems">symlink</a> to that directory in your home directory.</p>
 <h3 id="conda-environments">Conda Environments</h3>
 <p>Make sure that you chose the correct Conda environment for your job from the drop-down menu.</p>
-<h4 id="ycrc_default"><code>ycrc_default</code></h4>
+<h4 id="ycrc_default">ycrc_default</h4>
 <p>The <code>ycrc_default</code> conda environment will be automatically built when you select it for the first time from the Jupyter app.</p>
 <h4 id="set-up-an-environment">Set Up an Environment</h4>
 <p>We recommend you use <a href="/clusters-at-yale/guides/conda">miniconda</a> to manage your Jupyter environments.
-You can create Conda environments from the <a href="/clusters-at-yale/access/ood#terminal">Web Portal terminal interface</a> or from a terminal-based login to the clusters.</p>
+You can create Conda environments from the <a href="/clusters-at-yale/access/ood#terminal">Web Portal terminal interface</a> or from a terminal-based login to the clusters. <strong>Be sure to include the 'notebook' package</strong> in your environment; this is required for your environment to work with our Jupyter app.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please do not use the '--prefix' option when creating your own jupyter/conda environment for OOD; you must use '-n/--name'. This guarantees that your conda environment is located your home directory under '.conda/envs', which is required by our current OnDemand setup. (note, however, that this '.conda' folder, or 'envs' within it, <strong>can</strong> be a symlink pointing elsewhere)</p>
@@ -3010,7 +3010,7 @@ papermill /path/to/notebook.ipynb /path/to/output.ipynb
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2026</span>
       
     
   </small>
