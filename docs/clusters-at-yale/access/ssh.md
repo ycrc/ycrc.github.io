@@ -18,7 +18,7 @@ For more advanced use cases that are not well supported by the [Web Portal (Open
 
 ## What are SSH keys
 
-SSH (Secure Shell) keys are a set of two pieces of information that you use to identify yourself and encrypt communication to and from a server. Usually this takes the form of two files: a public key (often saved as `id_rsa.pub`) and a private key (`id_rsa` or `id_rsa.ppk`). To use an analogy, your public key is like a lock and your private key is what unlocks it. It is ok for others to see the lock (public key), but anyone who knows the private key can open your lock (and impersonate you).
+SSH (Secure Shell) keys are a set of two pieces of information that you use to identify yourself and encrypt communication to and from a server. Usually this takes the form of two files: a public key (often saved as `id_ed25519.pub`) and a private key (`id_ed25519` or `id_rsa.ppk`). To use an analogy, your public key is like a lock and your private key is what unlocks it. It is ok for others to see the lock (public key), but anyone who knows the private key can open your lock (and impersonate you).
 
 When you connect to a remote server in order to sign in, it will present your lock. You prove your identity by unlocking it with your secret key. As you continue communicating with the remote server, the data sent to you is also locked with your public key such that only you can unlock it with your private key.
 
@@ -44,8 +44,8 @@ ssh-keygen
 Your terminal should respond:
 
 ```
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/yourusername/.ssh/id_ed25519):
 
 ```
 
@@ -61,12 +61,12 @@ Choose a secure passphrase. Your passphrase will prevent access to your account 
 Enter same passphrase again:
 ```
 
-Enter the passphrase again. The key pair is generated and written to a directory called `.ssh` in your home directory. The public key is stored in `~/.ssh/id_rsa.pub`. If you forget your passphrase, it cannot be recovered. Instead, you will need to generate and upload a new SSH key pair.
+Enter the passphrase again. The key pair is generated and written to a directory called `.ssh` in your home directory. The public key is stored in `~/.ssh/id_ed25519.pub`. If you forget your passphrase, it cannot be recovered. Instead, you will need to generate and upload a new SSH key pair.
 
 Next, upload your public SSH key on the cluster. Run the following command in a terminal:
 
 ```
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 
 Copy and paste the output to our [SSH key uploader](https://sshkeys.ycrc.yale.edu/). Note: It can take a few minutes for newly uploaded keys to sync out to the clusters so your login may not work immediately.
