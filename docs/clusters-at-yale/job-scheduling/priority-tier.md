@@ -88,8 +88,10 @@ The SUs of a compute job are calculated as follows:
 | Compute Hour\* |  -     | 1   | $0.004 |
 | GPU Hour       | A5000  | 15  | $0.060 |
 | GPU Hour       | RTX5000ada  | 15  | $0.060 |
+| GPU Hour       | RTXPro6000  | 65  | $0.26 |
 | GPU Hour       | A100   | 100 | $0.400 |
 | GPU Hour       | H200   | 300 | $1.200 |
+| GPU Hour       | B200   | 370 | $1.480 |
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
