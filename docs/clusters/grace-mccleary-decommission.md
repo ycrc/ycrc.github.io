@@ -22,9 +22,7 @@ If you are in Phase 2 or 3, more detailed information will be provided later thi
 
 Research groups who do not use dedicated compute nodes or YCGA resources will move off of Grace and McCleary in Phase 1. 
 
-If you have been active on Grace or McCleary in the last year, you should already have an account on Bouchet. If you have not used the clusters in more than a year, you will need to [request an account](https://research.computing.yale.edu/account-request) on Bouchet. See our [“Getting Started on Bouchet” documentation](bouchet_getting_started.md) to familiarize yourself with the system. 
-
-We will also be holding “Transitioning to Bouchet” sessions over the next couple of months, which will be announced in the YCRC monthly newsletter.
+If you have been active on Grace or McCleary in the last year, you should already have an account on Bouchet. If you have not used the clusters in more than a year, you will need to [request an account](https://research.computing.yale.edu/account-request) on Bouchet. See our [“Getting Started on Bouchet” documentation](bouchet_getting_started.md) to familiarize yourself with the system. See below for information on transferring data.
 
 ### Phase 1 Timeline
 
@@ -32,9 +30,22 @@ We will also be holding “Transitioning to Bouchet” sessions over the next co
 
 - June 1st: *Deadline for data migration.* Access to Grace/McCleary data via Globus will be disabled.
 
+
+## Phase 2
+
+Later on in 2026 we will reach out to groups that use YCGA data and resources about transferring any data and workload to Bouchet that are not associated with YCGA.
+Data and workloads associated with YCGA can and should stay on McCleary, which will remain as YCGA-only cluster for another couple years.
+
+You will be responsible for identifying the non-YCGA data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account but we are available to assist with that process.
+
+## Phase 3
+
+Once the timeline for the hardware migration has been finalized (Summer 2026 or later), we will be in contact about preparing to migrate your workloads and data to Bouchet.
+
+
 ## What about My Existing Data on Grace or McCleary?
 
-!!! note "Phase 1 Storage Access Available Until June 1st, 2026"
+!!! alert "Phase 1 Storage Access Available Until June 1st, 2026"
 
 	While Phase 1 accounts are no longer able to log in to Grace or McCleary after April 1st, these accounts can still access Grace and McCleary storage via the ["Yale CRC Grace" Globus Collection](https://docs.ycrc.yale.edu/data/globus/#cluster-collections) until June 1st so they can transfer data off the cluster (to Bouchet or other storage options).
 

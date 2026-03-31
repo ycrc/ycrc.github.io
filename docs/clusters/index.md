@@ -13,9 +13,9 @@ We maintain and support three Red Hat Linux compute clusters, listed below. Plea
 
 | Cluster Name        | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                            |
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
-| [Bouchet](bouchet)  | 11,000             | 180                 | `bouchet.ycrc.yale.edu`       | all research with low-risk data, including tightly coupled (InfiniBand)   |
+| [Bouchet](bouchet)  | 16,000             | 230                 | `bouchet.ycrc.yale.edu`       | all research with low-risk data, including tightly coupled (InfiniBand)   |
 | [Hopper](hopper)    | 6,000              | 100                 | ---                           | NIST 800-171, HIPAA and other sensitive data |
-| [Grace](grace)      | 26,000             | 670                 | `grace.ycrc.yale.edu`         | general and highly parallel, tightly coupled (InfiniBand)         |
+| [Grace](grace)      | 25,000             | 570                 | `grace.ycrc.yale.edu`         | general and highly parallel, tightly coupled (InfiniBand)         |
 | [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | medical and life science, [YCGA](http://ycga.yale.edu/)           |
 | [Milgram](milgram)  | 2,000              | 50                  | `milgram.ycrc.yale.edu`       | sensitive data                                    |
 | [Misha](misha)      | 2,000              | 40                  | `misha.ycrc.yale.edu`         | [Wu Tsai Institute](http://wti.yale.edu)                          |
@@ -28,7 +28,7 @@ We maintain several high performance storage systems. Listed below are these sha
 | Name     | Path          | Size     | Mounting Clusters       | File System Software      | Purpose                                  |
 |----------|---------------|----------|-------------------------|---------------------------|------------------------------------------|
 | Roberts  | /nfs/roberts  | 3.6 PiB  | Bouchet\*               | VAST                      | Bouchet primary storage                  |
-| Weston        | /nfs/weston  | 2.4 PiB  | Hopper\*     | VAST                      | home, work, scratch storage, purchased work-style storage |
+| Weston        | /nfs/weston  | 2.4 PiB  | Hopper\*     | VAST                      | Hopper primary storage |
 | Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | VAST                      | home, scratch storage, purchased project-style storage |
 | Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary         | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
 | YCGA           | /gpfs/ycga    | 3.0 PiB  | McCleary                | IBM Spectrum Scale (GPFS) | YCGA storage                             |
