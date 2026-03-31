@@ -31,8 +31,8 @@ As of December 1st, 2024, we introduced Priority Tier partitions on [Grace](/clu
 | Partition       | Description       | Bouchet                     | Grace          | McCleary       | Milgram            |
 |-----------------|-------------------|-----------------------------|----------------|----------------|--------------------|
 | `priority`      | similar to `day`  | Intel Emerald Rapids Nodes | Intel Ice Lake Nodes | Intel Ice Lake Nodes | Intel Cascade Lake Nodes |
-| `priority_gpu`  | similar to `gpu`  | RTX 5000 GPU               | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
-| `priority_mpi`  | similar to `mpi`  | Intel Emerald Rapids       | Intel Skylake        |  N/A                  |  N/A                    |
+| `priority_gpu`  | similar to `gpu`  | rtx_5000_ada, rtx_pro_6000_blackwell, <br> h200, b200  | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
+| `priority_mpi`  | similar to `mpi`  | Intel Emerald Rapids Nodes      | Intel Skylake        |  N/A                  |  N/A                    |
 
 At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
 
@@ -86,12 +86,12 @@ The SUs of a compute job are calculated as follows:
 |  Type | Subtype   | Service Units  | Cost per Hour  |
 |----------------|--------|-----|--------|
 | Compute Hour\* |  -     | 1   | $0.004 |
-| GPU Hour       | A5000  | 15  | $0.060 |
-| GPU Hour       | RTX5000ada  | 15  | $0.060 |
-| GPU Hour       | RTXPro6000  | 65  | $0.26 |
-| GPU Hour       | A100   | 100 | $0.400 |
-| GPU Hour       | H200   | 300 | $1.200 |
-| GPU Hour       | B200   | 370 | $1.480 |
+| GPU Hour       | a5000  | 15  | $0.060 |
+| GPU Hour       | rtx_5000_ada  | 15  | $0.060 |
+| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.26 |
+| GPU Hour       | a100   | 100 | $0.400 |
+| GPU Hour       | h200   | 300 | $1.200 |
+| GPU Hour       | b200   | 370 | $1.480 |
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
 
