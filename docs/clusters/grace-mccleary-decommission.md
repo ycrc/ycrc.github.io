@@ -34,6 +34,11 @@ We will also be holding “Transitioning to Bouchet” sessions over the next co
 
 ## What about My Existing Data on Grace or McCleary?
 
+!!! note "Phase 1 Storage Access Available Until June 1st, 2026"
+
+	While Phase 1 accounts are no longer able to log in to Grace or McCleary after April 1st, these accounts can still access Grace and McCleary storage via the ["Yale CRC Grace" Globus Collection](https://docs.ycrc.yale.edu/data/globus/#cluster-collections) until June 1st so they can transfer data off the cluster (to Bouchet or other storage options).
+
+
 **All (non-YCGA) data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. 
 
 !!! warning "NIH Controlled Access Data"
