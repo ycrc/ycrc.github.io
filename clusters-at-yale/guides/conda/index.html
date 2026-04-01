@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -3424,7 +3424,7 @@ conda pack -n my_env --ignore-editable-packages
 # File &quot;/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py&quot;, line 154, in main
 #   pack(name=args.name,
 #   ...
-# FileNotFoundError: [Errno 2] No such file or directory: &#39;/home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files&#39;
+# FileNotFoundError: [Errno 2] No such file or directory: &#39;/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files&#39;
 
 # Fix as below:
 #   (note the extra precautionary measure with rm -r, where any typos/mistakes can do a lot of damage)
@@ -3436,7 +3436,7 @@ conda pack -n my_env --ignore-editable-packages
 # 3. Check that the list target directory is really the one you intended
 # 4. Use the up arrow to retrieve the ls command, then carefully edit to replace &#39;ls -d&#39; with &#39;rm -r&#39;
 # Example:
-ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
+ls -d /home/&lt;netid&gt;/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
 
 # B. Nuclear method
 # If you encounter repeated conda pack errors of the above type, it can be easier
@@ -3454,7 +3454,7 @@ ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 1, 2026</span>
       
     
   </small>
