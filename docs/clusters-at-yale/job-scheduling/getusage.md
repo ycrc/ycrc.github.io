@@ -5,11 +5,16 @@ We perform nightly queries of Slurm's database to aggregate usage (in ServiceUni
 Service Units are a weighted combination of CPUs, memory, and GPUs allocated for each job. 
 The relative weights are derived from the approximate cost of these different resources. 
 
-|  Type | Subtype   | Service Units  | 
-|----------------|--------|-----|
-| Compute Hour\* |  -     | 1   |
-| GPU Hour       | A5000  | 15  |
-| GPU Hour       | A100   | 100 |
+|  Type          | Subtype          | Service Units  | 
+|----------------|------------------|-----|
+| Compute Hour\* |  -               | 1   |
+| GPU Hour       | A5000            | 15  |
+| GPU Hour       | RTX5000ada       | 15  |
+| GPU Hour       | RTX6000blackwell | 65  |
+| GPU Hour       | A100             | 100 |
+| GPU Hour       | H200             | 300 |
+| GPU Hour       | b200             | 370 |
+
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB. 
 
