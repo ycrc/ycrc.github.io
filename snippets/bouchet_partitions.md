@@ -19,8 +19,8 @@
     |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per group|`2000`|
     |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`1728`|
-    |Maximum memory per user|`18000G`|
+    |Maximum CPUs per user|`768`|
+    |Maximum memory per user|`11520G`|
 
     **Available Compute Nodes**
 
@@ -51,8 +51,8 @@
     |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per group|`2000`|
     |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`1728`|
-    |Maximum memory per user|`18000G`|
+    |Maximum CPUs per user|`768`|
+    |Maximum memory per user|`11520G`|
 
     **Available Compute Nodes**
 
@@ -81,8 +81,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`06:00:00`|
-    |Maximum CPUs per user|`8`|
-    |Maximum memory per user|`120G`|
+    |Maximum CPUs per user|`4`|
+    |Maximum memory per user|`60G`|
     |Maximum submitted jobs per user|`2`|
 
     **Available Compute Nodes**
