@@ -332,7 +332,7 @@ conda pack -n my_env --ignore-editable-packages
 # File "/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py", line 154, in main
 #   pack(name=args.name,
 #   ...
-# FileNotFoundError: [Errno 2] No such file or directory: '/home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'
+# FileNotFoundError: [Errno 2] No such file or directory: '/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'
 
 # Fix as below:
 #   (note the extra precautionary measure with rm -r, where any typos/mistakes can do a lot of damage)
@@ -344,7 +344,7 @@ conda pack -n my_env --ignore-editable-packages
 # 3. Check that the list target directory is really the one you intended
 # 4. Use the up arrow to retrieve the ls command, then carefully edit to replace 'ls -d' with 'rm -r'
 # Example:
-ls -d /home/dd2298/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
+ls -d /home/<netid>/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
 
 # B. Nuclear method
 # If you encounter repeated conda pack errors of the above type, it can be easier
