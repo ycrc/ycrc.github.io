@@ -9,11 +9,11 @@ The relative weights are derived from the approximate cost of these different re
 |----------------|------------------|-----|
 | Compute Hour\* |  -               | 1   |
 | GPU Hour       | A5000            | 15  |
-| GPU Hour       | RTX5000ada       | 15  |
-| GPU Hour       | RTX6000blackwell | 65  |
+| GPU Hour       | RTX5000 Ada       | 15  |
+| GPU Hour       | RTX6000 Blackwell | 65  |
 | GPU Hour       | A100             | 100 |
 | GPU Hour       | H200             | 300 |
-| GPU Hour       | b200             | 370 |
+| GPU Hour       | B200             | 370 |
 
 
 \* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB. 
