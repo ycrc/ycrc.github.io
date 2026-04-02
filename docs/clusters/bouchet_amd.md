@@ -3,14 +3,17 @@
 YCRC has added additional compute nodes to the Bouchet HPC cluster. YCRC has historically deployed Intel-based compute nodes. All the new nodes, however, will utilize AMD processors for the first time in YCRC clusters. We have added: 
 
 - 26 CPU nodes: 128-core AMD EPYC 9575F processors with 2.2TB RAM per node
-- 8 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node. 
+- 8 GPU nodes (RTX Pro 6000 Blackwell): 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node 
+- 3 GPU nodes (B200): 128-core AMD EPYC 9575F processors with 8 NVIDIA B200 GPU cards (193GB vRAM each) per node
 
 Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. 
 
-
 ## Partitions
 
-For testing, the CPU-only AMD nodes are in the `day_amd` partition, and the GPU AMD nodes are in the `gpu_rtx6000` parition. 
+For testing, the AMD nodes are in the following partitions:
+- CPU-only AMD nodes: `day_amd`
+- RTX Pro 6000 Blackwell nodes: `gpu_rtx6000`
+- B200 nodes: `gpu_b200` 
 
 For detailed information about job limits and available compute nodes in each
 partition, please refer to [our Bouchet partition documentation](/clusters/bouchet/#partitions-and-hardware).
@@ -18,7 +21,7 @@ partition, please refer to [our Bouchet partition documentation](/clusters/bouch
 
 ## Software modules
 
-We have recompiled most software modules with compilation flags that enabled them to run on both Intel and AMD nodes. If you are running any software compiled with CUDA on the RTX Pro 6000 Blackwell Server Edition GPUs, please use the modules installed with CUDA 12.8.0. Software built with older CUDA versions may fail or result inpoorer performance. If you see any missing modules or experience issues with software modules, please [reach out to us](/).   
+We have recompiled most software modules with compilation flags that enabled them to run on both Intel and AMD nodes. If you are running any software compiled with CUDA on RTX Pro 6000 Blackwell or B200 GPUs, please use the modules installed with CUDA 12.8.0. Software built with older CUDA versions may fail or result in poorer performance. If you see any missing modules or experience issues with software modules, please [reach out to us](/).   
 
 
 ## Compiling your code
