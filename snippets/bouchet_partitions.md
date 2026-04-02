@@ -190,7 +190,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |1|cpugen:turin|128|2251|rtx_pro_6000_blackwell|7|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |7|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
 
 === "gpu_h200"
 
@@ -224,6 +225,39 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |9|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
+
+=== "gpu_b200"
+
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=b200:2` would request 2 NVIDIA B200 GPUs per node.
+
+    **Request Defaults**
+
+    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
+
+    ``` text
+    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+    ```
+
+    !!! warning "GPU jobs need GPUs!"
+        Jobs submitted to this partition  do not request a GPU by default. You must request one with the [`--gpus`](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) option.
+    **Job Limits**
+
+    Jobs submitted to the gpu_b200 partition are subject to the following limits:
+
+    |Limit|Value|
+    |---|---|
+    |Maximum job time limit|`2-00:00:00`|
+    |Maximum GPUs per group|`32`|
+    |Maximum GPUs per user|`16`|
+    |Maximum running jobs per user|`6`|
+
+    **Available Compute Nodes**
+
+    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
+
+    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
+    |---|---|---|---|---|---|---|---|
+    |3|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
 
 === "gpu_devel"
 
