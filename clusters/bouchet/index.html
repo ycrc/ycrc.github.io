@@ -3884,7 +3884,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="2:12"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:13"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4250,7 +4250,17 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>8</td>
+<td>1</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>rtx_pro_6000_blackwell</td>
+<td>7</td>
+<td>96</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
+</tr>
+<tr>
+<td>7</td>
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
@@ -4329,7 +4339,74 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">gpu_devel</label><div class="tabbed-content">
+<input id="__tabbed_2_8" name="__tabbed_2" type="radio" /><label for="__tabbed_2_8">gpu_b200</label><div class="tabbed-content">
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=b200:2</code> would request 2 NVIDIA B200 GPUs per node.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GPU jobs need GPUs!</p>
+<p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
+</div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the gpu_b200 partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>2-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per group</td>
+<td><code>32</code></td>
+</tr>
+<tr>
+<td>Maximum GPUs per user</td>
+<td><code>16</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>6</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>GPU Type</th>
+<th>GPUs/Node</th>
+<th>vRAM/GPU (GB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>b200</td>
+<td>8</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">gpu_devel</label><div class="tabbed-content">
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4414,7 +4491,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_9" name="__tabbed_2" type="radio" /><label for="__tabbed_2_9">bigmem</label><div class="tabbed-content">
+<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">bigmem</label><div class="tabbed-content">
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4467,7 +4544,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_10" name="__tabbed_2" type="radio" /><label for="__tabbed_2_10">mpi</label><div class="tabbed-content">
+<input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><label for="__tabbed_2_11">mpi</label><div class="tabbed-content">
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4524,7 +4601,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_11" name="__tabbed_2" type="radio" /><label for="__tabbed_2_11">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4629,7 +4706,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><label for="__tabbed_2_13">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
