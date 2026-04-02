@@ -3,14 +3,15 @@
 YCRC has added additional compute nodes to the Bouchet HPC cluster. YCRC has historically deployed Intel-based compute nodes. All the new nodes, however, will utilize AMD processors for the first time in YCRC clusters. We have added: 
 
 - 26 CPU nodes: 128-core AMD EPYC 9575F processors with 2.2TB RAM per node
-- 8 GPU nodes (RTX Pro 6000 Blackwell): 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node 
-- 3 GPU nodes (B200): 128-core AMD EPYC 9575F processors with 8 NVIDIA B200 GPU cards (193GB vRAM each) per node
+- 8 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node 
+- 3 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA B200 GPU cards (193GB vRAM each) per node
 
 Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. 
 
 ## Partitions
 
 For testing, the AMD nodes are in the following partitions:
+
 - CPU-only AMD nodes: `day_amd`
 - RTX Pro 6000 Blackwell nodes: `gpu_rtx6000`
 - B200 nodes: `gpu_b200` 
