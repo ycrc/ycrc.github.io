@@ -17,7 +17,7 @@ Your home directory is where your sessions begin by default. Its intended use is
 
 ### Project
 
-Quota: 1 TiB and 5,000,000 files per group, expanded to 4 TiB on request
+Quota: 4 TiB and 5,000,000 files per group
 
 Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project. 
 
