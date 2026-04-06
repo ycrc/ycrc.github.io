@@ -300,57 +300,49 @@ source $HOME/.conda/envs/my_env/bin/deactivate
 conda activate my_env
 conda install -y -c conda-forge openssl ca-certificates --force-reinstall
 ```
-After this the environment is fully functional and can be activated just like any other environment.
+After this, the environment is fully functional and can be activated just like any other environment.
 
-!!! note
-    Conda pack seems be finicky on our YCRC clusters, but we have identified workarounds to resolve the errors reported so far. These are listed below:
+#### Conda-pack workarounds
 
-```
-####################################
-# If conda pack fails with an error, you may try the options:
-#   --ignore-missing-files or --ignore-editable-packages
+Conda pack seems be finicky on our YCRC clusters, but we have identified workarounds to resolve the errors reported so far, as below:
 
-# If conda pack fails reporting a missing file/folder in your .conda/pkgs folder,
-#  try deleting the entire folder within pkgs: /bin/rm -r .conda/pkgs/problem_pkg_folder
-####################################
+1. If your `conda pack [...]` command fails with a 'deleted/overwritten' error:
+    ```bash
+    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]
+    ```
+    
+    -> add the option `--ignore-missing-files`:
+    ```
+    conda pack -n my_env --ignore-missing-files
+    ```
 
-####################################
-# Example errors:
+2. If your `conda pack [...]` command fails with an 'editable packages' error::
+    ```bash
+    CondaPackError: Cannot pack an environment with editable packages [...]
+    ```
 
-####################################
-#    CondaPackError: Files managed by conda were found to have been deleted/overwritten [...]
-# Fix with:
-conda pack -n my_env --ignore-missing-files
+    -> add the option `--ignore-editable-packages`:
+    ```
+    conda pack -n my_env --ignore-editable-packages
+    ```
 
-####################################
-#   CondaPackError: Cannot pack an environment with editable packages [...]
-# Fix with:
-conda pack -n my_env --ignore-editable-packages
+3. If conda pack fails reporting a missing file/folder:
+    ```bash
+    Traceback (most recent call last):
+    File "/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py", line 154, in main
+      ...
+    FileNotFoundError: [Errno 2] No such file or directory: '/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'
+    ```
+    -> try deleting the entire folder within pkgs, i.e.:
+    ```bash
+    # NOTE: Be sure to specify the entire problem package, not just the subfolder printed in the error message
+    /bin/rm -r .conda/pkgs/<problem_pkg_folder>
+    ```
+    
+    If the 'above missing file/folder' (above) occurs repeatedly while you try to package your environment, you may use the following 'nuclear' option. Note, Conda only uses its 'pkgs' folder for temporary storage, so if you are not building or packing environments its contents can be safely deleted.
 
-####################################
-# Traceback (most recent call last):
-# File "/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py", line 154, in main
-#   pack(name=args.name,
-#   ...
-# FileNotFoundError: [Errno 2] No such file or directory: '/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'
-
-# Fix as below:
-#   (note the extra precautionary measure with rm -r, where any typos/mistakes can do a lot of damage)
-
-# A. Surgical method:
-# 1. Strip the trailing path info from the directory listed in the error, leaving only the package name
-#    (see example below)
-# 2. Use 'ls <bad pkgs dir>' to list the offending package directory.
-# 3. Check that the list target directory is really the one you intended
-# 4. Use the up arrow to retrieve the ls command, then carefully edit to replace 'ls -d' with 'rm -r'
-# Example:
-ls -d /home/<netid>/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0
-
-# B. Nuclear method
-# If you encounter repeated conda pack errors of the above type, it can be easier
-#   just to clean out your entire '~/.conda/pkgs' contents.
-# Conda only uses its 'pkgs' folder for temporary storage, so if you are not building
-#   or packing environments it can be safely deleted. After making sure you have
-#   no actively building or packing conda processes, do:
-/bin/rm -r $USER/.conda/pkgs/*
-```
+    ```bash
+    # First, please be sure you have no actively building or packing conda processes.
+    # Then, do:
+    /bin/rm -r $USER/.conda/pkgs/*
+    ```
