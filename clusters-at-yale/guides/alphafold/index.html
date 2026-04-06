@@ -2927,8 +2927,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span
 
 <span class="c1"># run AlphaFold</span>
 <span class="w">  </span>alphafold<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--json_path<span class="o">=</span><span class="si">${</span><span class="nv">INPUTFOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUTFILE</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model_dir<span class="o">=</span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--db_dir<span class="o">=</span><span class="nv">$DB_DIR</span><span class="w"> </span><span class="se">\</span>
@@ -2977,8 +2977,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span
 
 <span class="c1"># run alphafold</span>
 alphafold<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--json_path<span class="o">=</span><span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>_data.json<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model_dir<span class="o">=</span>models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--db_dir<span class="o">=</span><span class="nv">$ALPHAFOLD_DATA_DIR</span><span class="w"> </span><span class="se">\</span>
@@ -3027,8 +3027,8 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 <span class="w">  </span>--bind<span class="w"> </span><span class="nv">$RUNDIR</span>/models:/root/models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--bind<span class="w"> </span><span class="nv">$ALPHAFOLD_DATA_DIR</span>:/root/public_databases<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="nv">$EBROOTALPHAFOLD</span>/AlphaFold.sif<span class="w"> </span>python<span class="w"> </span>/app/alphafold/run_alphafold.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--json_path<span class="o">=</span>/root/af_input/<span class="si">${</span><span class="nv">INPUTFILENAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model_dir<span class="o">=</span>/root/models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--db_dir<span class="o">=</span>/root/public_databases<span class="w"> </span><span class="se">\</span>
@@ -3078,8 +3078,8 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 <span class="w">  </span>--bind<span class="w"> </span><span class="nv">$RUNDIR</span>/models:/root/models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--bind<span class="w"> </span><span class="nv">$ALPHAFOLD_DATA_DIR</span>:/root/public_databases<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="nv">$EBROOTALPHAFOLD</span>/AlphaFold.sif<span class="w"> </span>python<span class="w"> </span>/app/alphafold/run_alphafold.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span>SLURM_CPUS_PER_TASK<span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--jackhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--nhmmer_n_cpu<span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="k">))</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--json_path<span class="o">=</span>/root/af_msa/<span class="si">${</span><span class="nv">MSA</span><span class="si">}</span>_data.json<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--model_dir<span class="o">=</span>/root/models<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--db_dir<span class="o">=</span>/root/public_databases<span class="w"> </span><span class="se">\</span>
