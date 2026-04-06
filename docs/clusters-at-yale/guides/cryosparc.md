@@ -46,7 +46,7 @@ If you have already have a cryosparc installation, please use the following step
 
     # Run the below command to print your assigned cryosparc port. The output should read like:
     #    Your current cryosparc port :  39000
-    #      needs to be updated to the YCRC-assigned port value of : 61020
+    #      needs to be updated to the YCRC-assigned port value of : <new_id>
 
     cryosparcm stop
     /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
