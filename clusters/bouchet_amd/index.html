@@ -2762,7 +2762,7 @@
 <li>8 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node </li>
 <li>3 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA B200 GPU cards (193GB vRAM each) per node</li>
 </ul>
-<p>Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. </p>
+<p>Both Intel and AMD processors use the x86-64 instruction set, but there are architectural differences that can impact the software compilation process and application performance. </p>
 <h2 id="partitions">Partitions</h2>
 <p>For testing, the AMD nodes are in the following partitions:</p>
 <ul>
@@ -2784,7 +2784,7 @@ partition, please refer to <a href="/clusters/bouchet/#partitions-and-hardware">
 <li>NVHPC compiler (<code>nvc</code>, <code>nvc++</code>, <code>nvfortran</code>): <code>-tp x86-64-v4</code></li>
 </ul>
 <p>If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes. </p>
-<p>If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (<code>devel</code> for Intel nodes and <code>day_amd</code> for AMD nodes) and compile your code with <code>--martch=native</code> for GCC and <code>-xHost</code> for Intel compilers. Please run your code only on the same architecutre on which it was compiled. </p>
+<p>If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (<code>devel</code> for Intel nodes and <code>day_amd</code> for AMD nodes) and compile your code with <code>--martch=native</code> for GCC and <code>-xHost</code> for Intel compilers. Please run your code only on the same architecture on which it was compiled. </p>
 <p>If you need any assistance compiling your code, please <a href="/">reach out to us</a>.  </p>
 <h2 id="report-issues">Report Issues</h2>
 <p>If you discover issues when running your workflow or experience performance issues, feel free to <a href="/">contact</a> us for assistance. 
@@ -2797,7 +2797,7 @@ Please include the working directory, the commands that were run, the software m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 8, 2026</span>
       
     
   </small>
