@@ -1,8 +1,12 @@
 # Share Data Outside Yale
 
 ## Share data using Microsoft OneDrive
-Yale ITS's recommended way to send other people large files is by
-using Microsoft OneDrive.  See [details](https://yale.service-now.com/it?id=support_article&sys_id=eeece8c91bfb6010806141d8cd4bcb58).
+Yale ITS's recommended way to send other people large files is by using Microsoft OneDrive.
+This straightforward to do using our [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop/) app:
+
+1. Launch an instance of Remote Desktop, taking care to request enough time for all transfers to complete before the app terminates.
+2. Within Remote Desktop, open a Firefox web browser and navigate to the [Yale OneDrive Site](https://yaleedu-my.sharepoint.com), and sign in with your netID credentials.
+3. Use the GUI upload functions to transfer files between your cluster directory and Onedrive.
 
 ## Public Website
 
