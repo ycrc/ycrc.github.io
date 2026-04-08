@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2813,33 +2813,33 @@
 <p>In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
  find out what compute node it's running on and connect to the node with ssh:
     <div class="highlight"><pre><span></span><code><span class="c1"># Launch cryosparc with `sbatch` and note the jobID it prints upon starting:</span>
-sbatch -p devel -t <span class="m">1</span>:00:00 --mem<span class="o">=</span>8G /apps/services/cryosparc/cryosparc-cluster-master.sh
+sbatch<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>/apps/services/cryosparc/cryosparc-cluster-master.sh
 
 <span class="c1"># Run `squeue` and note the compute node of your job (i.e. &#39;a1132u05n01&#39;)</span>
-squeue -j &lt;jobID&gt;
+squeue<span class="w"> </span>-j<span class="w"> </span>&lt;jobID&gt;
 
 <span class="c1"># Connect to the node with ssh:</span>
-ssh &lt;node-where-cryosparc-is-running&gt;
+ssh<span class="w"> </span>&lt;node-where-cryosparc-is-running&gt;
 </code></pre></div></p>
 </li>
 <li>
 <p>Stop cryosparc, backup the database, and then run the cryosparc command to change the port:
-    <div class="highlight"><pre><span></span><code>cryosparcm stop
-cryosparcm database backup    <span class="c1"># (this is a fast step, it should take under 60 seconds)</span>
-                              <span class="c1"># Note, in cryosparc versions &lt; 5 the syntax may be &#39;cryosparcm backup&#39;</span>
+    <div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
+cryosparcm<span class="w"> </span>database<span class="w"> </span>backup<span class="w">    </span><span class="c1"># (this is a fast step, it should take under 60 seconds)</span>
+<span class="w">                              </span><span class="c1"># Note, in cryosparc versions &lt; 5 the syntax may be &#39;cryosparcm backup&#39;</span>
 
 <span class="c1"># Run the below command to print your assigned cryosparc port. The output should read like:</span>
 <span class="c1">#    Your current cryosparc port :  39000</span>
 <span class="c1">#      needs to be updated to the YCRC-assigned port value of : &lt;new_id&gt;</span>
 
-cryosparcm stop
+cryosparcm<span class="w"> </span>stop
 /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
 
 <span class="c1"># Run the following command and type &#39;y&#39; when prompted</span>
 <span class="c1"># Note, it is normal to see warnings at the stage like</span>
 <span class="c1">#    &#39;Warning: Could not get database status (attempt 1/3)&#39;</span>
 
-cryosparcm changeport &lt;new port value&gt;
+cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span class="w"> </span>port<span class="w"> </span>value&gt;
 
 <span class="c1"># Cryosparc should then restart successfully and print the standard connection messages followed</span>
 <span class="c1">#  by &#39;Checking database... OK&#39;</span>
@@ -2855,7 +2855,7 @@ their website</a>. These instructions are somewhat modified from the <a href="ht
 <p><strong>Set up Environment</strong> : First, log onto a CPU compute node, either as an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
 <p>Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Below, substitute your actual project folder and netID according to the template given:</span>
-<span class="nb">export</span> <span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project_pi_&lt;your_pi_netID&gt;/&lt;your_netid&gt;/cryosparc
+<span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project_pi_&lt;your_pi_netID&gt;/&lt;your_netid&gt;/cryosparc
 
 <span class="c1"># Note, on the older mccleary/grace clusters, the above line would instead be:</span>
 <span class="c1">#  export install_path=${HOME}/project/cryosparc    </span>
@@ -2863,57 +2863,57 @@ their website</a>. These instructions are somewhat modified from the <a href="ht
 </li>
 <li>
 <p><strong>Set up Directories, Download installers</strong> :</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
 
 <span class="c1">#go get the installers</span>
-mkdir -p <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
-<span class="nb">cd</span> <span class="nv">$install_path</span>
-curl -L https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span> -o cryosparc_master.tar.gz
-curl -L https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span> -o cryosparc_worker.tar.gz
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
+curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_master.tar.gz
+curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_worker.tar.gz
 
-tar -xf cryosparc_master.tar.gz
-tar -xf cryosparc_worker.tar.gz
+tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_master.tar.gz
+tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </code></pre></div>
 </li>
 <li>
 <p><strong>Install the Master</strong> :</p>
 <p>First, run the installer:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
-<span class="nb">export</span> <span class="nv">cryosparc_password</span><span class="o">=</span>Password123
+<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
 
-<span class="nb">export</span> <span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
+<span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
 
 <span class="c1"># Request a port number with the following script ; you may proceed with</span>
 <span class="c1">#  the dummy value 63000 while you wait to be assigned an official one</span>
 /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
 
-<span class="nb">export</span> <span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
 
 <span class="c1"># Run the installation script</span>
-<span class="nb">cd</span> <span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
 
-./install.sh --license <span class="nv">$LICENSE_ID</span> <span class="se">\</span>
-             --hostname <span class="k">$(</span>hostname<span class="k">)</span> <span class="se">\</span>
-             --dbpath <span class="nv">$db_path</span> <span class="se">\</span>
-             --port <span class="nv">$port_number</span>
+./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$LICENSE_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>--port<span class="w"> </span><span class="nv">$port_number</span>
 </code></pre></div>
 <p>Then, add yourself as a user:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Start CryoSPARC</span>
-./bin/cryosparcm start
+./bin/cryosparcm<span class="w"> </span>start
 
 <span class="c1"># Create the first (administrative) user</span>
 <span class="c1"># Please be sure to substitute the needed fields in the below command:</span>
-./bin/cryosparcm createuser --email <span class="s2">&quot;&lt;user email&gt;&quot;</span> <span class="se">\</span>
-                      --password <span class="nv">$cryosparc_password</span> <span class="se">\</span>
-                      --username <span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
-                      --firstname <span class="s2">&quot;&lt;given name&gt;&quot;</span> <span class="se">\</span>
-                      --lastname <span class="s2">&quot;&lt;surname&gt;&quot;</span>
+./bin/cryosparcm<span class="w"> </span>createuser<span class="w"> </span>--email<span class="w"> </span><span class="s2">&quot;&lt;user email&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>--password<span class="w"> </span><span class="nv">$cryosparc_password</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>--username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>--firstname<span class="w"> </span><span class="s2">&quot;&lt;given name&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>--lastname<span class="w"> </span><span class="s2">&quot;&lt;surname&gt;&quot;</span>
 
 <span class="c1"># Load the environment</span>
-<span class="nb">source</span> ~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
 
 <span class="c1"># Stop the master</span>
-./bin/cryosparcm stop
+./bin/cryosparcm<span class="w"> </span>stop
 </code></pre></div>
 </li>
 <li>
@@ -2926,22 +2926,22 @@ tar -xf cryosparc_worker.tar.gz
  You can check ~/.bashrc first and to make sure <strong>both</strong> paths below are already added at the end
  ('# Added by cryosparc').
  If one or both are missing (typically we find only the 'master' path and not the 'worker' path), do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span> &gt;&gt; ~/.bashrc
-<span class="nb">echo</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span> &gt;&gt; ~/.bashrc
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 </li>
 <li>
 <p><strong>Install the worker software on a GPU node</strong> : </p>
 <p>Exit the above interactive session, start a new GPU interactive session, and install the worker:</p>
-<div class="highlight"><pre><span></span><code>salloc -p gpu_devel --gpus<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>8G
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>8G
 
 <span class="c1"># Go to the worker directory and install the worker</span>
-<span class="nb">cd</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc     <span class="c1"># Or wherever you put your cryosparc directory</span>
-<span class="nb">cd</span> cryosparc_worker
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc<span class="w">     </span><span class="c1"># Or wherever you put your cryosparc directory</span>
+<span class="nb">cd</span><span class="w"> </span>cryosparc_worker
 
-<span class="k">$(</span>grep LICENSE ../cryosparc_master/config.sh<span class="k">)</span>
+<span class="k">$(</span>grep<span class="w"> </span>LICENSE<span class="w"> </span>../cryosparc_master/config.sh<span class="k">)</span>
 
-./install.sh --license <span class="nv">$CRYOSPARC_LICENSE_ID</span> --yes
+./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$CRYOSPARC_LICENSE_ID</span><span class="w"> </span>--yes
 </code></pre></div>
 <p>Exit the interactive session. Master and worker software should now be ready.</p>
 <div class="admonition warning">
@@ -2985,10 +2985,10 @@ will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web add
 <li>
 <p><strong>Click 'Submit to lane'</strong> : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command 'squeue --me').</p>
 <p>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </li>
 </ol>
