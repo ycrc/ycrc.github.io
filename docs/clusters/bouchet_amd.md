@@ -6,7 +6,7 @@ YCRC has added additional compute nodes to the Bouchet HPC cluster. YCRC has his
 - 8 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA RTX Pro 6000 Blackwell Server Edition GPU cards (96GB vRAM each) per node 
 - 3 GPU nodes: 128-core AMD EPYC 9575F processors with 8 NVIDIA B200 GPU cards (193GB vRAM each) per node
 
-Both Intel and AMD processors use the x86-64 instruction set, but there are architectual differences that can impact the software compilation process and application performance. 
+Both Intel and AMD processors use the x86-64 instruction set, but there are architectural differences that can impact the software compilation process and application performance. 
 
 ## Partitions
 
@@ -38,7 +38,7 @@ Recommended compiler flag:
 
 If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes. 
 
-If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (`devel` for Intel nodes and `day_amd` for AMD nodes) and compile your code with `--martch=native` for GCC and `-xHost` for Intel compilers. Please run your code only on the same architecutre on which it was compiled. 
+If you would like to compile your code optimized for a specific node architecture to potentially achieve better performance, please request an intereactive compute sesssion on that architecture (`devel` for Intel nodes and `day_amd` for AMD nodes) and compile your code with `--martch=native` for GCC and `-xHost` for Intel compilers. Please run your code only on the same architecture on which it was compiled. 
 
 If you need any assistance compiling your code, please [reach out to us](/).  
 
