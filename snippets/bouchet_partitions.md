@@ -190,8 +190,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|cpugen:turin|128|2251|rtx_pro_6000_blackwell|7|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
-    |7|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
 
 === "gpu_h200"
 
@@ -257,7 +256,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |3|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
+    |5|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
 
 === "gpu_devel"
 
@@ -424,7 +423,7 @@
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
 
 ### Private Partitions
-With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). 
+With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
 
 ??? summary "PI Partitions (click to expand)"
     === "pi_co54"
