@@ -141,26 +141,62 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 
 ### LLM Models
 
-LLM models, such as Llama, qualify as software so must be approved and installed by YCRC staff.
+### LLM Models
 
-We have made commonly requested LLM models available as [software modules](/applications/modules) for easier offline use.
+Large Language Models (LLMs) are available on the cluster through a shared, offline Hugging Face cache managed by YCRC.
 
-To use an offline LLM model, run `module load <module name>`.
-Run `module display <module name>` to determine the environment variable for the model path.
-Reference the environment variable (e.g. `LLM_LLAMA`) for the model path in your python commands. For example: 
+Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.
 
-```
-model_path = os.environ["LLM_LLAMA"]
-model = LlamaForCausalLM.from_pretrained(model_path, local_files_only=True)
+#### Loading the LLM Environment
 
-OR
+Load the shared module to configure your environment:
 
-model_path = os.environ["LLM_LLAMA"]
-pipeline = transformers.pipeline("text-generation", model=model_path, model_kwargs={"torch_dtype": torch.bfloat16}, device_map="auto")
+```bash
+module load llms
 ```
 
-If you need additional LLM models that are not yet installed, [contact us](/#get-help) to request that we add it.
-Please be selective when requesting very large models (e.g. > 100B parameters)--due to their large size we can only host a limited number of these models.
+This will:
+- Set HF_HOME to the shared model cache at `/apps/large_language_models`
+- Enable fully offline usage (no external downloads)
+
+#### Listing Available Models
+
+To list all available models:
+
+```bash
+llms-list
+```
+
+To filter models by name:
+
+```bash
+llms-list llama
+llms-list qwen
+```
+
+The output corresponds directly to Hugging Face repository IDs.
+
+#### Using Models in Python
+
+Models can be loaded using standard Hugging Face APIs. No environment variables are required.
+
+```bash
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_id = "meta-llama/Llama-3.1-70B"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id)
+```
+
+#### Requesting New Models
+
+If a model is not available:
+
+1. Confirm it is not listed via `llms-list`
+2. Contact research.computing@yale.edu to request installation
+
+Please be selective when requesting very large models (e.g. >100B parameters), as storage and infrastructure constraints limit the number of large models that can be hosted.
 
 ## Submit Jobs
 
