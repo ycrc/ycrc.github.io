@@ -633,13 +633,6 @@
     LLM Models
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#llm-models_1" class="md-nav__link">
-    LLM Models
-  </a>
-  
     <nav class="md-nav" aria-label="LLM Models">
       <ul class="md-nav__list">
         
@@ -3060,13 +3053,6 @@
     LLM Models
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#llm-models_1" class="md-nav__link">
-    LLM Models
-  </a>
-  
     <nav class="md-nav" aria-label="LLM Models">
       <ul class="md-nav__list">
         
@@ -3285,16 +3271,17 @@ use conda with the default Conda repo (not conda-forge or bioconductor) and <cod
 navigate to <code>ood-hopper.ycrc.yale.edu</code>.
 You will need to reauthenticate on Open OnDemand with your netid, password and DUO.</p>
 <h3 id="llm-models">LLM Models</h3>
-<h3 id="llm-models_1">LLM Models</h3>
 <p>Large Language Models (LLMs) are available on the cluster through a shared, offline Hugging Face cache managed by YCRC.</p>
 <p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
 <h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
 <p>Load the shared module to configure your environment:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
 </code></pre></div>
-<p>This will:
-- Set HF_HOME to the shared model cache at <code>/apps/large_language_models</code>
-- Enable fully offline usage (no external downloads)</p>
+<p>This will:</p>
+<ul>
+<li>Set HF_HOME to the shared model cache at <code>/apps/large_language_models</code></li>
+<li>Enable fully offline usage (no external downloads)</li>
+</ul>
 <h4 id="listing-available-models">Listing Available Models</h4>
 <p>To list all available models:</p>
 <div class="highlight"><pre><span></span><code>llms-list
