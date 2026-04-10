@@ -141,8 +141,6 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 
 ### LLM Models
 
-### LLM Models
-
 Large Language Models (LLMs) are available on the cluster through a shared, offline Hugging Face cache managed by YCRC.
 
 Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.
@@ -156,6 +154,7 @@ module load llms
 ```
 
 This will:
+
 - Set HF_HOME to the shared model cache at `/apps/large_language_models`
 - Enable fully offline usage (no external downloads)
 
