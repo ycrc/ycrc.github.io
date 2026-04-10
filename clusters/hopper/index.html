@@ -635,6 +635,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#llm-models_1" class="md-nav__link">
+    LLM Models
+  </a>
+  
+    <nav class="md-nav" aria-label="LLM Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-the-llm-environment" class="md-nav__link">
+    Loading the LLM Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-available-models" class="md-nav__link">
+    Listing Available Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-models-in-python" class="md-nav__link">
+    Using Models in Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-new-models" class="md-nav__link">
+    Requesting New Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3021,6 +3062,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#llm-models_1" class="md-nav__link">
+    LLM Models
+  </a>
+  
+    <nav class="md-nav" aria-label="LLM Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-the-llm-environment" class="md-nav__link">
+    Loading the LLM Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-available-models" class="md-nav__link">
+    Listing Available Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-models-in-python" class="md-nav__link">
+    Using Models in Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-new-models" class="md-nav__link">
+    Requesting New Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3203,21 +3285,41 @@ use conda with the default Conda repo (not conda-forge or bioconductor) and <cod
 navigate to <code>ood-hopper.ycrc.yale.edu</code>.
 You will need to reauthenticate on Open OnDemand with your netid, password and DUO.</p>
 <h3 id="llm-models">LLM Models</h3>
-<p>LLM models, such as Llama, qualify as software so must be approved and installed by YCRC staff.</p>
-<p>We have made commonly requested LLM models available as <a href="/applications/modules">software modules</a> for easier offline use.</p>
-<p>To use an offline LLM model, run <code>module load &lt;module name&gt;</code>.
-Run <code>module display &lt;module name&gt;</code> to determine the environment variable for the model path.
-Reference the environment variable (e.g. <code>LLM_LLAMA</code>) for the model path in your python commands. For example: </p>
-<div class="highlight"><pre><span></span><code>model_path = os.environ[&quot;LLM_LLAMA&quot;]
-model = LlamaForCausalLM.from_pretrained(model_path, local_files_only=True)
-
-OR
-
-model_path = os.environ[&quot;LLM_LLAMA&quot;]
-pipeline = transformers.pipeline(&quot;text-generation&quot;, model=model_path, model_kwargs={&quot;torch_dtype&quot;: torch.bfloat16}, device_map=&quot;auto&quot;)
+<h3 id="llm-models_1">LLM Models</h3>
+<p>Large Language Models (LLMs) are available on the cluster through a shared, offline Hugging Face cache managed by YCRC.</p>
+<p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
+<h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
+<p>Load the shared module to configure your environment:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
 </code></pre></div>
-<p>If you need additional LLM models that are not yet installed, <a href="/#get-help">contact us</a> to request that we add it.
-Please be selective when requesting very large models (e.g. &gt; 100B parameters)--due to their large size we can only host a limited number of these models.</p>
+<p>This will:
+- Set HF_HOME to the shared model cache at <code>/apps/large_language_models</code>
+- Enable fully offline usage (no external downloads)</p>
+<h4 id="listing-available-models">Listing Available Models</h4>
+<p>To list all available models:</p>
+<div class="highlight"><pre><span></span><code>llms-list
+</code></pre></div>
+<p>To filter models by name:</p>
+<div class="highlight"><pre><span></span><code>llms-list<span class="w"> </span>llama
+llms-list<span class="w"> </span>qwen
+</code></pre></div>
+<p>The output corresponds directly to Hugging Face repository IDs.</p>
+<h4 id="using-models-in-python">Using Models in Python</h4>
+<p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
+<div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
+
+<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+
+<span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+</code></pre></div>
+<h4 id="requesting-new-models">Requesting New Models</h4>
+<p>If a model is not available:</p>
+<ol>
+<li>Confirm it is not listed via <code>llms-list</code></li>
+<li>Contact research.computing@yale.edu to request installation</li>
+</ol>
+<p>Please be selective when requesting very large models (e.g. &gt;100B parameters), as storage and infrastructure constraints limit the number of large models that can be hosted.</p>
 <h2 id="submit-jobs">Submit Jobs</h2>
 <p>Jobs are run <a href="/clusters-at-yale/job-scheduling">using Slurm in the usual way</a>, either using interactive or batch allocations.<br />
 All jobs must specify a ‘project’ account using the <code>-A</code> flag.
@@ -3715,7 +3817,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 10, 2026</span>
       
     
   </small>
