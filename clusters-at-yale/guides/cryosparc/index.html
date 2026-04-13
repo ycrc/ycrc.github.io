@@ -2852,6 +2852,11 @@ cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span
 their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
 <ol>
 <li>
+<p><strong>Request a YCRC Cryosparc Port Number</strong> : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned Cryosparc port number.
+<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
+</code></pre></div></p>
+</li>
+<li>
 <p><strong>Set up Environment</strong> : First, log onto a CPU compute node, either as an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
 <p>Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Below, substitute your actual project folder and netID according to the template given:</span>
@@ -2877,16 +2882,16 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </li>
 <li>
 <p><strong>Install the Master</strong> :</p>
-<p>First, run the installer:</p>
+<p>Once you have received your YCRC Cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to <strong>insert your port number</strong> in the corresponding line below (<code>export port_number="...</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
 
-<span class="c1"># Request a port number with the following script ; you may proceed with</span>
-<span class="c1">#  the dummy value 63000 while you wait to be assigned an official one</span>
-/apps/services/cryosparc/ycrc_get_cryosparc_port.sh
-
+<span class="c1"># Define YCRC cryosparc port number: If you really want, you may proceed with</span>
+<span class="c1">#  the dummy value 63000 if you haven&#39;t received your official one.</span>
+<span class="c1"># However, the steps to update once you get your real one are somewhat arduous- </span>
+<span class="c1">#  see &#39;Existing installations (changing your current port)&#39; above</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
 
 <span class="c1"># Run the installation script</span>
@@ -3044,7 +3049,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2026</span>
       
     
   </small>
