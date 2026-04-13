@@ -67,7 +67,12 @@ If you have already have a cryosparc installation, please use the following step
 Before you get started, you will need to request a license from Structura [from 
 their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
 
-1. **Set up Environment** : First, log onto a CPU compute node, either as an [interactive session](/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](/clusters-at-yale/access/ood/#remote-desktop). ('devel' is fine for initial cryosparc master installation).
+1. **Request a YCRC Cryosparc Port Number** : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned Cryosparc port number.
+```
+/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
+```
+
+2. **Set up Environment** : First, log onto a CPU compute node, either as an [interactive session](/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](/clusters-at-yale/access/ood/#remote-desktop). ('devel' is fine for initial cryosparc master installation).
 
     Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:
 
@@ -79,7 +84,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     #  export install_path=${HOME}/project/cryosparc    
     ```
 
-2. **Set up Directories, Download installers** :
+3. **Set up Directories, Download installers** :
 
     ``` bash
     export LICENSE_ID=Your-cryosparc-license-code-here
@@ -94,9 +99,9 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     tar -xf cryosparc_worker.tar.gz
     ```
 
-3. **Install the Master** :
+4. **Install the Master** :
 
-    First, run the installer:
+    Once you have received your YCRC Cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to **insert your port number** in the corresponding line below (`export port_number="...`)
 
     ``` bash
     # Define temporary password, database location, and server port number
@@ -104,10 +109,10 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
 
     export db_path=${install_path}/cryosparc_database
 
-    # Request a port number with the following script ; you may proceed with
-    #  the dummy value 63000 while you wait to be assigned an official one
-    /apps/services/cryosparc/ycrc_get_cryosparc_port.sh
-    
+    # Define YCRC cryosparc port number: If you really want, you may proceed with
+    #  the dummy value 63000 if you haven't received your official one.
+    # However, the steps to update once you get your real one are somewhat arduous- 
+    #  see 'Existing installations (changing your current port)' above
     export port_number="Insert your port number here"
 
     # Run the installation script
@@ -140,7 +145,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     ./bin/cryosparcm stop
     ```
 
-4. **Add the cryosparc commands to your system PATH** :
+5. **Add the cryosparc commands to your system PATH** :
 
     !!!warning
      The installer will have likely prompted you with, i.e., 'Add bin directory to your ~/.bashrc ?',
@@ -154,7 +159,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     echo export PATH="${install_path}/cryosparc_worker/bin:\$PATH" >> ~/.bashrc
     ```
 
-5. **Install the worker software on a GPU node** : 
+6. **Install the worker software on a GPU node** : 
      
     Exit the above interactive session, start a new GPU interactive session, and install the worker:
     
