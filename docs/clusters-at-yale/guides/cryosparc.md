@@ -1,7 +1,7 @@
 # CryoSPARC on the YCRC Clusters
 
 !!! info
-    To start using the new workflow, you will need to do two things: (1) [request / update your cryosparc port](#obtaining-your-unique-cryosparc-port) - this is very important to avoid conflicts with other cryosparc users. (2) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine).
+    To start using the new workflow, you will need to do three things: (1) [request / update your cryosparc port](#obtaining-your-unique-cryosparc-port) - this is very important to avoid conflicts with other cryosparc users. (2) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine). (3) [launch and run cryosparc the new way](#run-the-ycrc-cryosparc-workflow)
 
 ## Obtain Your Unique Cryosparc Port
 
@@ -200,6 +200,10 @@ To use the new cryosparc workflow, follow the steps below:
 
     Please note, in contrast to our previous cryosparc workflow, this batch script *does not use GPUs* and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.
 
+    !!!warning
+        Please do not launch more than one instance of the cryosparc-cluster-master.sh batch script at a time.
+        Your cryosparc license does not allow this and the cryosparc jobs will conflict with each other and fail.
+    
 2. **Open the cryosparc UI with firefox : ** To interact with your cryosparc server, launch a minimal [OnDemand Remote Desktop](/clusters-at-yale/access/ood-remote-desktop) session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.
 
     Alternatively, you may set up the cryosparc UI to run on your local web browser by configuring a Remote SSH connection with your local computer; we have User Guide instructions for this [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/#ssh-configuration).
