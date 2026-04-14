@@ -2890,17 +2890,22 @@ git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w
 python<span class="w"> </span>setup.py<span class="w"> </span>install
 </code></pre></div>
 <h2 id="vllm">vllm</h2>
-<p>Create initial environment (make sure to request a compute node with <a href="/clusters-at-yale/guides/conda/">miniconda</a></p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--mem<span class="o">=</span>20G<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00
+<p>Create initial environment (make sure to request a compute node with <a href="/clusters-at-yale/guides/conda/">miniconda</a>
+salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
 
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>vllm<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.*<span class="w"> </span>uv<span class="w"> </span>setuptools-scm<span class="w"> </span>cmake<span class="w"> </span>cuda-nvcc<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-version<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.19.0<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.4.0<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-toolkit<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span>cuda-runtime<span class="o">=</span><span class="m">12</span>.4<span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="nv">gxx</span><span class="o">=</span><span class="m">12</span><span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>-y
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>vllm<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12.*<span class="w"> </span>uv<span class="w"> </span>setuptools-scm<span class="w"> </span>cmake<span class="w"> </span>cuda-nvcc<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>cuda-version<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>cuda-toolkit<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>cuda-cudart-dev<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span>cuda-runtime<span class="o">=</span><span class="m">12</span>.8<span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="nv">gxx</span><span class="o">=</span><span class="m">12</span><span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>-y
 
 conda<span class="w"> </span>activate<span class="w"> </span>vllm
 
-<span class="c1">###store location of CUDA libraries and executables</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
+<span class="c1">###install torch</span>
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu128
+
+<span class="c1">###install missing dependencies for vllm</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pybind11<span class="w"> </span><span class="s2">&quot;setuptools&gt;=77.0.3,&lt;81.0.0&quot;</span>
+
+<span class="c1">###load CUDA 12.8 module for cuda_home dependencies and cuda packages</span>
+ml<span class="w"> </span>CUDA/12.8
 
 <span class="c1">###download repository for vllm to install from source</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vllm-project/vllm
@@ -2973,7 +2978,7 @@ pip<span class="w"> </span>install<span class="w"> </span>fair-esm
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2026</span>
       
     
   </small>
