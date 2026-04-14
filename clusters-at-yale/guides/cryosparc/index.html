@@ -2792,7 +2792,7 @@
                 <h1 id="cryosparc-on-the-ycrc-clusters">CryoSPARC on the YCRC Clusters</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>To start using the new workflow, you will need to do two things: (1) <a href="#obtaining-your-unique-cryosparc-port">request / update your cryosparc port</a> - this is very important to avoid conflicts with other cryosparc users. (2) <a href="#install">install cryosparc</a> if you haven't done so already (your existing installation should work fine).</p>
+<p>To start using the new workflow, you will need to do three things: (1) <a href="#obtaining-your-unique-cryosparc-port">request / update your cryosparc port</a> - this is very important to avoid conflicts with other cryosparc users. (2) <a href="#install">install cryosparc</a> if you haven't done so already (your existing installation should work fine). (3) <a href="#run-the-ycrc-cryosparc-workflow">launch and run cryosparc the new way</a></p>
 </div>
 <h2 id="obtain-your-unique-cryosparc-port">Obtain Your Unique Cryosparc Port</h2>
 <p>To use cryosparc with the YCRC cluster workflow, you must request a unique 'port' value that cryosparc uses for displaying web pages, etc., otherwise, your jobs may clash with another user's.</p>
@@ -2971,6 +2971,11 @@ You can get this by running, i.e. <code>grep http &lt;your slurm outputfile&gt;<
 will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web address you want looks like:</p>
 <p><code>http://r209u08n01.mccleary.ycrc.yale.edu:61130</code></p>
 <p>Please note, in contrast to our previous cryosparc workflow, this batch script <em>does not use GPUs</em> and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not launch more than one instance of the cryosparc-cluster-master.sh batch script at a time.
+Your cryosparc license does not allow this and the cryosparc jobs will conflict with each other and fail.</p>
+</div>
 </li>
 <li>
 <p><strong>Open the cryosparc UI with firefox : </strong> To interact with your cryosparc server, launch a minimal <a href="/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop</a> session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.</p>
@@ -3049,7 +3054,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2026</span>
       
     
   </small>
