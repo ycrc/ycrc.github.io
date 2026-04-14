@@ -62,18 +62,24 @@ python setup.py install
 ##vllm
 
 Create initial environment (make sure to request a compute node with [miniconda](/clusters-at-yale/guides/conda/)
+salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00
 
 ```bash
-salloc --partition=devel --mem=20G --cpus-per-task=4 --time=2:00:00
 
 module load miniconda
 
-conda create -n vllm python=3.10.* uv setuptools-scm cmake cuda-nvcc=12.4 cuda-version=12.4 pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=12.4 cuda-toolkit=12.4 cuda-cudart-dev=12.4 cuda-runtime=12.4 gcc=12 gxx=12 -c pytorch -c nvidia -y
+conda create -n vllm python=3.12.* uv setuptools-scm cmake cuda-nvcc=12.8 cuda-version=12.8 cuda-toolkit=12.8 cuda-cudart-dev=12.8 cuda-runtime=12.8 gcc=12 gxx=12 -c pytorch -c nvidia -y
 
 conda activate vllm
 
-###store location of CUDA libraries and executables
-export CUDA_HOME=$CONDA_PREFIX
+###install torch
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+
+###install missing dependencies for vllm
+uv pip install pybind11 "setuptools>=77.0.3,<81.0.0"
+
+###load CUDA 12.8 module for cuda_home dependencies and cuda packages
+ml CUDA/12.8
 
 ###download repository for vllm to install from source
 git clone https://github.com/vllm-project/vllm
