@@ -49,7 +49,7 @@ Once you have staged your data, please submit [this form](https://research.compu
 ## Get Started with Globus
 
 Below we describe how to authenticate and transfer using Globus collections.
-We also recommend reviewing the [Officila Globus Documentation](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
+We also recommend reviewing the [Official Globus Documentation](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
 
 ### Authenticate
 You can also 
