@@ -20,7 +20,7 @@
     
     
       
-        <title>Group Change - Yale Center for Research Computing</title>
+        <title>Changing Groups - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#group-change" class="md-skip">
+        <a href="#changing-groups" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Group Change
+              Changing Groups
             
           </span>
         </div>
@@ -1670,12 +1670,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Group Change
+          Changing Groups
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Group Change
+        Changing Groups
       </a>
       
         
@@ -1695,8 +1695,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rebuild-a-conda-environment-after-group-change" class="md-nav__link">
-    Rebuild a Conda Environment after Group Change
+  <a href="#group-changes-on-older-clusters" class="md-nav__link">
+    Group Changes on Older Clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuilding-r-packages-after-switching-groups" class="md-nav__link">
+    Rebuilding R packages after Switching Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild-a-conda-environment-after-switching-groups" class="md-nav__link">
+    Rebuild a Conda Environment after Switching Groups
   </a>
   
 </li>
@@ -2761,8 +2775,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rebuild-a-conda-environment-after-group-change" class="md-nav__link">
-    Rebuild a Conda Environment after Group Change
+  <a href="#group-changes-on-older-clusters" class="md-nav__link">
+    Group Changes on Older Clusters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuilding-r-packages-after-switching-groups" class="md-nav__link">
+    Rebuilding R packages after Switching Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild-a-conda-environment-after-switching-groups" class="md-nav__link">
+    Rebuild a Conda Environment after Switching Groups
   </a>
   
 </li>
@@ -2784,16 +2812,21 @@
                   </a>
                 
                 
-                <h1 id="group-change">Group Change</h1>
-<p>On cluster other than Bouchet or Hopper, when your PI is changed, the primary group of your account on the cluster will also be changed. 
-As a result, you will have a new storage space on the cluster which belongs to the new group, including Home, Project, Scratch,
-etc.</p>
-<p>We will change the primary group of your cluster account to the new group and will move all the files stored in your 
-old storage space into the new storage space. However, some local installations most likely will not be able to work 
-properly after being moved. In particular, Conda environments and R packages will fail. You need to rebuild them<br />
-in your new space under the new group.</p>
+                <h1 id="changing-groups">Changing Groups</h1>
+<p>From time to time, YCRC users may enter collaborations with new PI's or switch groups entirely. In this case you may use the <a href="https://research.computing.yale.edu/group-change">YCRC Group Change Request Form</a> to adjust your group affiliations.</p>
+<p>When you switch groups or are added to a group, new storage will be become available to you in the your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PI's.</p>
+<h2 id="group-changes-on-older-clusters">Group Changes on Older Clusters</h2>
+<p>When you switch groups (older) clusters other than Bouchet and Hopper, 
+your Home folder will need to be migrated. The technical reason for this is that on these older clusters,
+your account primary group changes when you switch PI's. In these cases, we will change the primary
+group of your cluster account to the new group and will move all the files stored in your old storage 
+space into the new storage space.</p>
+<p>After this migration, some local installations most likely will not be able to work properly after being moved.
+In particular, Conda environments and R packages will fail. You need to rebuild them in your new space under
+the new group.</p>
+<h2 id="rebuilding-r-packages-after-switching-groups">Rebuilding R packages after Switching Groups</h2>
 <p>For R packages, you just need to reinstall them with <code>install.packages()</code>. </p>
-<h2 id="rebuild-a-conda-environment-after-group-change">Rebuild a Conda Environment after Group Change</h2>
+<h2 id="rebuild-a-conda-environment-after-switching-groups">Rebuild a Conda Environment after Switching Groups</h2>
 <p>We will use an example to illustrate how to rebuild a conda env after group change. Assume the conda env is 
 originally installed in <code>/gpfs/gibbs/project/oldgrp/user123</code>,
 and we want to move it to the project directory of the new group. </p>
@@ -2822,7 +2855,7 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2026</span>
       
     
   </small>
