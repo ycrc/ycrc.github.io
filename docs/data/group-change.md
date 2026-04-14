@@ -1,17 +1,26 @@
-# Group Change
+# Changing Groups
 
-On cluster other than Bouchet or Hopper, when your PI is changed, the primary group of your account on the cluster will also be changed. 
-As a result, you will have a new storage space on the cluster which belongs to the new group, including Home, Project, Scratch,
-etc.
+From time to time, YCRC users may enter collaborations with new PI's or switch groups entirely. In this case you may use the [YCRC Group Change Request Form](https://research.computing.yale.edu/group-change) to adjust your group affiliations.
 
-We will change the primary group of your cluster account to the new group and will move all the files stored in your 
-old storage space into the new storage space. However, some local installations most likely will not be able to work 
-properly after being moved. In particular, Conda environments and R packages will fail. You need to rebuild them  
-in your new space under the new group.
+When you switch groups or are added to a group, new storage will be become available to you in the your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PI's.
+
+## Group Changes on Older Clusters
+
+When you switch groups (older) clusters other than Bouchet and Hopper, 
+your Home folder will need to be migrated. The technical reason for this is that on these older clusters,
+your account primary group changes when you switch PI's. In these cases, we will change the primary
+group of your cluster account to the new group and will move all the files stored in your old storage 
+space into the new storage space.
+
+After this migration, some local installations most likely will not be able to work properly after being moved.
+In particular, Conda environments and R packages will fail. You need to rebuild them in your new space under
+the new group.
+
+## Rebuilding R packages after Switching Groups
 
 For R packages, you just need to reinstall them with `install.packages()`. 
 
-## Rebuild a Conda Environment after Group Change
+## Rebuild a Conda Environment after Switching Groups
 
 We will use an example to illustrate how to rebuild a conda env after group change. Assume the conda env is 
 originally installed in `/gpfs/gibbs/project/oldgrp/user123`,
