@@ -27,8 +27,7 @@ sacct -j <jobid> --duplicates
 
 ## Scavenge GPUs
 
-On Grace and McCleary, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways
-(e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Partition tables on the respective cluster pages.
+On Bouchet, Grace and McCleary, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways (e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Partition tables on the respective cluster pages.
 
 ## Scavenge MPI Nodes
 

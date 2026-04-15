@@ -26,6 +26,7 @@ The Open OnDemand User Portals host an interactive data dashboard that provide t
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
+| [Bouchet](/clusters/bouchet)   | [ood-bouchet.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage]
 | [Grace](/clusters/grace)       | [ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage](https://ood-grace.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage)         |
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage](https://ood-mccleary.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage](https://ood-milgram.ycrc.yale.edu/pun/sys/ycrc_userportal/clusterusage)     |

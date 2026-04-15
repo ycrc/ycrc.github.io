@@ -127,7 +127,8 @@ This method allows you to use your local VSCode installation with the Remote-SSH
    ```bash
    hostname
    ```
-   This will return something like `r209u11n04.mccleary.ycrc.yale.edu`, `a11231u01n01.mghpcc.ycrc.yale.edu`, etc.
+   This will return something like `r209u11n04.bouchet.ycrc.yale.edu`, 
+`a11231u01n01.mghpcc.ycrc.yale.edu`, etc.
 
 3. **Configure your local SSH setup** (see SSH Configuration section below).
 
