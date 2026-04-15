@@ -7,7 +7,7 @@ The YCRC HPC Policies can found [here](https://research.computing.yale.edu/servi
 * User accounts are personal to individual users and may not be shared. Never give your password or ssh key to anyone else. Never allow another individual to use your account. 
 * Do not run jobs, transfers or computation on a login node, instead [submit jobs](/clusters-at-yale/job-scheduling/).
 * Similarly, transfer nodes are only for data transfers. Do not run jobs or computation on the transfer nodes.
-* Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters/milgram).
+* Do not store any [high risk data](https://cybersecurity.yale.edu/protectyourdata) on the clusters, except [Milgram](/clusters/milgram) and [Hopper](/clusters/hopper).
 * Jobs must be submitted to partitions in alignment with the stated purposes and limits of those partitions.
 * Do not run large numbers of very short (less than a minute) jobs.
 * Terminate interactive or Open OnDemand session when no longer in use. Idle sessions may be canceled without warning.
