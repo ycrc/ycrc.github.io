@@ -67,7 +67,7 @@ If you have already have a cryosparc installation, please use the following step
 Before you get started, you will need to request a license from Structura [from 
 their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
 
-1. **Request a YCRC Cryosparc Port Number** : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned Cryosparc port number.
+1. **Request a YCRC Cryosparc Port Number** : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
 ```
 /apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
 ```
@@ -101,7 +101,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
 
 4. **Install the Master** :
 
-    Once you have received your YCRC Cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to **insert your port number** in the corresponding line below (`export port_number="...`)
+    Once you have received your YCRC cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to **insert your port number** in the corresponding line below (`export port_number="...`)
 
     ``` bash
     # Define temporary password, database location, and server port number
@@ -251,7 +251,7 @@ Unfortunately, information needed to diagnose cryosparc job failures in cluster 
 
 3. **Drilling down further** : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
 
-4. **Mismatch between cryosparc and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with Cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your Cryosparc to version >= 5.0.0
+4. **Mismatch between cryosparc and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryosparc to version >= 5.0.0
 
 5. **Cryosparc installation bug**: One of our users experienced a issue where cryosparc GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryosparc python libraries (a buggy CUDA version compatibility check).
 
@@ -268,3 +268,14 @@ Cryosparc can be tricky to debug. Please reach out to us if you encounter diffic
     ```
 
 2. **Database corruption** : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
+
+3. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryosparc page. This can be fixed by resetting Firefox's history and cache data for the cryosparc site. To do this, open firefox and then:
+
+    - Select 'Manage history' (click on the Firefox hamburger menu at the window upper right, then click 'History' -> 'Manage History')
+    - Click on the search box and type 'ycrc.yale.edu'
+    - Right click on any cryosparc history entries, select 'Forget About This Site...', then click 'Forget'
+    - Repeat until there are no more cryosparc entries left
+    - Close the history window and select 'Settings' from the Firefox hamburger menu
+    - Click 'Privacy & Security', scroll down to 'Cookies and Site Data', and click 'Manage Data...'
+    - If you see any remaining cryosparc entries, click on them and select 'Remove Selected', then 'Save Changes'
+    - Quit and restart firefox ; hopefully you can now successfully load the cryosparc page
