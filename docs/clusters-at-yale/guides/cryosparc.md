@@ -279,3 +279,4 @@ Cryosparc can be tricky to debug. Please reach out to us if you encounter diffic
     - Click 'Privacy & Security', scroll down to 'Cookies and Site Data', and click 'Manage Data...'
     - If you see any remaining cryosparc entries, click on them and select 'Remove Selected', then 'Save Changes'
     - Quit and restart firefox ; hopefully you can now successfully load the cryosparc page
+    - If this doesn't work the first time, repeating the above steps one or two times more may still resolve the issue
