@@ -2852,7 +2852,7 @@ cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span
 their website</a>. These instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
 <ol>
 <li>
-<p><strong>Request a YCRC Cryosparc Port Number</strong> : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned Cryosparc port number.
+<p><strong>Request a YCRC Cryosparc Port Number</strong> : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
 <div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
 </code></pre></div></p>
 </li>
@@ -2882,7 +2882,7 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 </li>
 <li>
 <p><strong>Install the Master</strong> :</p>
-<p>Once you have received your YCRC Cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to <strong>insert your port number</strong> in the corresponding line below (<code>export port_number="...</code>)</p>
+<p>Once you have received your YCRC cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to <strong>insert your port number</strong> in the corresponding line below (<code>export port_number="...</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
 
@@ -3027,7 +3027,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <p><strong>Drilling down further</strong> : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., <code>P1_J2_slurm.log</code>, <code>P1_J2_slurm.err</code>, <code>job.log</code>) and also a copy of the slurm submission script (<code>queue_sub_script.sh</code>). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.</p>
 </li>
 <li>
-<p><strong>Mismatch between cryosparc and GPU/CUDA</strong> Newer graphics cards being installed on the Bouchet cluster are incompatible with Cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your Cryosparc to version &gt;= 5.0.0</p>
+<p><strong>Mismatch between cryosparc and GPU/CUDA</strong> Newer graphics cards being installed on the Bouchet cluster are incompatible with cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryosparc to version &gt;= 5.0.0</p>
 </li>
 <li>
 <p><strong>Cryosparc installation bug</strong>: One of our users experienced a issue where cryosparc GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryosparc python libraries (a buggy CUDA version compatibility check).</p>
@@ -3045,6 +3045,19 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <li>
 <p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
 </li>
+<li>
+<p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryosparc page. This can be fixed by resetting Firefox's history and cache data for the cryosparc site. To do this, open firefox and then:</p>
+<ul>
+<li>Select 'Manage history' (click on the Firefox hamburger menu at the window upper right, then click 'History' -&gt; 'Manage History')</li>
+<li>Click on the search box and type 'ycrc.yale.edu'</li>
+<li>Right click on any cryosparc history entries, select 'Forget About This Site...', then click 'Forget'</li>
+<li>Repeat until there are no more cryosparc entries left</li>
+<li>Close the history window and select 'Settings' from the Firefox hamburger menu</li>
+<li>Click 'Privacy &amp; Security', scroll down to 'Cookies and Site Data', and click 'Manage Data...'</li>
+<li>If you see any remaining cryosparc entries, click on them and select 'Remove Selected', then 'Save Changes'</li>
+<li>Quit and restart firefox ; hopefully you can now successfully load the cryosparc page</li>
+</ul>
+</li>
 </ol>
                 
                   
@@ -3054,7 +3067,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2026</span>
       
     
   </small>
