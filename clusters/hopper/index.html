@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/hopper/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -3275,7 +3275,7 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
 <h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
 <p>Load the shared module to configure your environment:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
+<div class="highlight"><pre><span></span><code>module load llms
 </code></pre></div>
 <p>This will:</p>
 <ul>
@@ -3287,18 +3287,18 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <div class="highlight"><pre><span></span><code>llms-list
 </code></pre></div>
 <p>To filter models by name:</p>
-<div class="highlight"><pre><span></span><code>llms-list<span class="w"> </span>llama
-llms-list<span class="w"> </span>qwen
+<div class="highlight"><pre><span></span><code>llms-list llama
+llms-list qwen
 </code></pre></div>
 <p>The output corresponds directly to Hugging Face repository IDs.</p>
 <h4 id="using-models-in-python">Using Models in Python</h4>
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
-<div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
+<div class="highlight"><pre><span></span><code>from transformers import AutoModelForCausalLM, AutoTokenizer
 
-<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="nv">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
 
-<span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
-<span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="nv">tokenizer</span> <span class="o">=</span> AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="nv">model</span> <span class="o">=</span> AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
 </code></pre></div>
 <h4 id="requesting-new-models">Requesting New Models</h4>
 <p>If a model is not available:</p>
