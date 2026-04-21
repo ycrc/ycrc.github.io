@@ -11,6 +11,9 @@ The cluster initially contains 248 B200 GPUs and 152 RTX6000 Pro Blackwell GPUs 
 AICR will be available in Spring 2026.
 AICR availability and information on how to request access will be announced to the YCRC user mailing list and the YCRC Bulldog newsletter.
 
+Later in 2026 access to AICR will be granted via an internal Yale proposal process (details to be announced).
+All active projects will be expected to submit to and be approved through that process to continue to have AICR access.
+
 ## Installed Applications
 
 A large number of software and applications are installed on our clusters, including AICR.
