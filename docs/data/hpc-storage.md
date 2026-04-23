@@ -25,12 +25,12 @@ You can access this space through a symlink, or shortcut, in your home directory
 
 Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within `project`. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.
 
-#### Paid Additional Storage
+#### Additional Paid Storage
 
 Quota: varies
 
 Storage paid for for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
-See [below](#paid-additional-storage) for details on requesting additional storage. 
+See [below](#request-additional-storage) for details on requesting additional storage. 
 
 Paid storage, if applicable, is assigned on one of our two storage systems:
 
@@ -113,7 +113,7 @@ module load broot
 broot -w
 ```
 
-## Paid Additional Storage
+## Request Additional Storage
 
 !!! warning "Pause on Additional Storage Allocations"
     We are currently unable to accept any new or increased paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please [visit our documentation](/data/staging/) or reach out to us for assistance on staging data from other storage locations.
