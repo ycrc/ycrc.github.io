@@ -25,13 +25,14 @@ You can access this space through a symlink, or shortcut, in your home directory
 
 Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within `project`. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.
 
-#### Purchased Storage
+#### Paid Additional Storage
 
 Quota: varies
 
-Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
-See [below](#purchase-additional-storage) for details on purchasing storage. 
-Purchased storage, if applicable, is assigned on one of our two storage systems:
+Storage paid for for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
+See [below](#paid-additional-storage) for details on requesting additional storage. 
+
+Paid storage, if applicable, is assigned on one of our two storage systems:
 
 * on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name
 * on the Palmer filesystem in a `/vast/palmer/pi/` directory under the group's name  
@@ -112,18 +113,26 @@ module load broot
 broot -w
 ```
 
-## Purchase Additional Storage
+## Paid Additional Storage
 
-For long-term allocations, additional project storage spaces can be purchased on one of our shared filesystems, which provides similar functionality to the primary project storage. This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). The price covers all costs, including administration, power, cooling, networking, etc. YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
+!!! warning "Pause on Additional Storage Allocations"
+    We are currently unable to accept any new paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please [visit our documentation](/data/staging/) or reach out to us for assistance on staging data from other storage locations.
 
-For shorter-term or smaller allocations, we have a monthly billing option. 
-Additional project-style storage can be provided at a rate of $5 per TiB per month. 
-Agreements for such storage will run through the end of the fiscal year and be renewable in June for the next year when appropriate.
+Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
+The price covers all costs, including administration, power, cooling, networking, etc.
+Agreements for such storage will run through the end of the fiscal year and be renewabled in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.
 
-Please note that, as with existing project storage, purchased storage will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. Please [contact us](/#get-help) with your requirements and budget to start the purchasing process.
+For long-term allocations, additional project-style storage spaces can be paid for as a 5 year alloation.
+This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). 
+YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
 
-Purchased storage, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. The file count limits for different size allocations are listed above. 
+Please note that data in paid storage allocation will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. 
+
+Please [contact us](/#get-help) with your requirements and budget to start the agreement process.
+
+Paid storage allocation, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
+The file count limits for different size allocations are listed above. 
 If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.
 
 | Allocation Quota | File Count Limit |
