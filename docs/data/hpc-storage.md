@@ -116,7 +116,7 @@ broot -w
 ## Paid Additional Storage
 
 !!! warning "Pause on Additional Storage Allocations"
-    We are currently unable to accept any new paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please [visit our documentation](/data/staging/) or reach out to us for assistance on staging data from other storage locations.
+    We are currently unable to accept any new or increased paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please [visit our documentation](/data/staging/) or reach out to us for assistance on staging data from other storage locations.
 
 Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
 The price covers all costs, including administration, power, cooling, networking, etc.
