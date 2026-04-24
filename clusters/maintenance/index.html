@@ -616,22 +616,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#all-clusters-except-hopper" class="md-nav__link">
-    All Clusters except Hopper
+  <a href="#maintenance-on-all-clusters-except-hopper" class="md-nav__link">
+    Maintenance on All Clusters except Hopper
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hopper-maintenance" class="md-nav__link">
-    Hopper Maintenance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#schedule" class="md-nav__link">
-    Schedule
+  <a href="#maintenance-on-hopper" class="md-nav__link">
+    Maintenance on Hopper
   </a>
   
 </li>
@@ -2782,22 +2775,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#all-clusters-except-hopper" class="md-nav__link">
-    All Clusters except Hopper
+  <a href="#maintenance-on-all-clusters-except-hopper" class="md-nav__link">
+    Maintenance on All Clusters except Hopper
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hopper-maintenance" class="md-nav__link">
-    Hopper Maintenance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#schedule" class="md-nav__link">
-    Schedule
+  <a href="#maintenance-on-hopper" class="md-nav__link">
+    Maintenance on Hopper
   </a>
   
 </li>
@@ -2827,23 +2813,8 @@
                 
                 
                 <h1 id="cluster-maintenance">Cluster Maintenance</h1>
-<p>Each YCRC cluster undergoes regular scheduled maintenance.
-All cluster other than Hopper have scheduled maintenance twice a year, while Hopper has maintenance quarterly.
-During the maintenance, the cluster is unavailable, logins are deactivated and all pending jobs are held. </p>
-<p>Communication will be sent to all users of the respective cluster both 4 weeks and 1 week prior to the maintenance period.</p>
-<h2 id="all-clusters-except-hopper">All Clusters except Hopper</h2>
-<p>The June maintenance is scheduled for three days, from Tuesday morning through end of day Thursday of the respective week. 
-Unless otherwise stated, the storage for that cluster will also be inaccessible during the June maintenance.
-We use this opportunity when jobs are not running and there are no users on the machine to make upgrades and changes that would be disruptive. 
-These activities include updating and patching the compute resources including the compute nodes, networking, service nodes and storage as well as making changes to critical infrastructure.
-In many cases, the cluster may return to service early and, under extenuating circumstances, we may choose to extend maintenance if necessary to make sure the system is stable before restoring access and jobs.</p>
-<p>In December we perform a shorter, limited disruption maintenance where the cluster is updated on a rolling basis.
-While the storage and login nodes are available throughout the maintenance, we will have a reduced capacity of compute nodes during the maintenance.</p>
-<h2 id="hopper-maintenance">Hopper Maintenance</h2>
-<p>Hopper maintenance is quarterly and each maintenance period is one day.</p>
-<h2 id="schedule">Schedule</h2>
-<p>The schedule for the regular cluster maintenance is posted below. 
-Please be mindful of these dates and schedule your work accordingly to avoid disruptions.</p>
+<p>Each YCRC cluster undergoes regular scheduled maintenance.</p>
+<p>Please be mindful of these dates and schedule your work accordingly to avoid disruptions.</p>
 <table>
 <thead>
 <tr>
@@ -2853,7 +2824,7 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 </thead>
 <tbody>
 <tr>
-<td>June 8th</td>
+<td>June 8</td>
 <td>Hopper</td>
 </tr>
 <tr>
@@ -2862,8 +2833,20 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 </tr>
 </tbody>
 </table>
+<p>Communication will be sent to all users of the respective cluster both 4 weeks and 1 week prior to the maintenance period.</p>
 <p>Occasionally we will schedule additional maintenance periods beyond those listed above, and potentially with shorter notices, if urgent work arises, such as power work on the data center or critical upgrades for stability or security. 
 We will give as much notice as possible in advance of these maintenance outages.</p>
+<h2 id="maintenance-on-all-clusters-except-hopper">Maintenance on All Clusters except Hopper</h2>
+<p>The June maintenance is scheduled for three days, from Tuesday morning through end of day Thursday of the respective week. 
+Unless otherwise stated, logins, Open OnDemand and storage for that cluster will also be inaccessible during the June maintenance.
+We use this opportunity when jobs are not running and there are no users on the machine to make upgrades and changes that would be disruptive. 
+These activities include updating and patching the compute resources including the compute nodes, networking, service nodes and storage as well as making changes to critical infrastructure.
+In many cases, the cluster may return to service early and, under extenuating circumstances, we may choose to extend maintenance if necessary to make sure the system is stable before restoring access and jobs.</p>
+<p>In December we perform a shorter, limited disruption maintenance where the cluster is updated on a rolling basis.
+While the storage and login nodes are available throughout the maintenance, we will have a reduced capacity of compute nodes during the maintenance.</p>
+<h2 id="maintenance-on-hopper">Maintenance on Hopper</h2>
+<p>Hopper maintenance is quarterly and each maintenance period is one day.
+Unless otherwise stated, logins, Open OnDemand and storage for the cluster will also be inaccessible during the quarterly maintenance.</p>
 <h2 id="job-submission-before-maintenance">Job Submission before Maintenance</h2>
 <p>As the maintenance window approaches, the Slurm scheduler will not start any job if the job’s requested wallclock time extends
 past the start of the maintenance period. If you run squeue, such jobs will show as
