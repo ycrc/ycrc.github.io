@@ -2855,6 +2855,329 @@
                 <div class="blog-post">
     
     <div class="blog-post-description">
+        <h2 id="april-2026">April 2026</h2>
+<h3 id="new-compute-nodes-available-on-bouchet">New Compute Nodes Available on Bouchet</h3>
+<p>YCRC has purchased additional compute and GPU nodes that are now available for your use on Bouchet. We invested primarily in GPU capabilities, in response to the continued demand for accelerator-based computing.</p>
+<ul>
+<li><strong>CPU Expansion:</strong> 26 new nodes (128 CPUs each) are now available in the <code>day_amd</code> partition. These 3,300+ cores will be merged into the <code>day</code> and <code>week</code> partitions over time, representing a 50% increase in the available cores in these partitions.</li>
+<li><strong>GPU Upgrades:</strong> 64 RTX6000 Pro Blackwell (Server Edition) GPUs (96GB VRAM, 8 cards per node) are now available in the <code>gpu_rtx6000</code> partition.</li>
+<li><strong>AI Initiative GPUs:</strong> 56 flagship B200 GPUs (193GB VRAM, 8 cards per node) with dedicated high-speed networking have been received and are being installed now. These cards will soon be available in the <code>gpu_b200</code> partition and will enable training of larger foundation models on YCRC infrastructure.</li>
+<li><strong>AMD Architecture:</strong> All new nodes have AMD CPUs; in the past, YCRC has typically deployed Intel CPUs. The AMD chips offer higher core-density while outperforming the current generation of Intel CPUs. There are some architectural differences between the new AMD chips and the existing Bouchet Intel-based chips that may impact software compilation and application performance. Please visit <a href="/clusters/bouchet_amd/">Bouchet AMD nodes</a> for additional information.</li>
+</ul>
+<h3 id="cryosparc-upgrade">CryoSPARC Upgrade</h3>
+<p>YCRC has introduced a new workflow for CryoSPARC structural biology software on the Bouchet and McCleary clusters. This addresses CryoSPARC's tendency to leave valuable GPU resources sitting idle on cluster servers, and also introduces compatibility with the latest CryoSPARC versions 5.0.x. Please consult our <a href="/clusters-at-yale/guides/cryosparc/">User Guide CryoSPARC page</a> for details on how to start using the new workflow.</p>
+<h3 id="grace-mccleary-decommissioning">Grace &amp; McCleary Decommissioning</h3>
+<p>The YCRC is in the process of transitioning computing and storage resources from the Yale West Campus Data Center to the MGHPCC data center. The <a href="/clusters/bouchet/">Bouchet cluster</a>, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and non-YCGA portions of McCleary. During this phased migration:</p>
+<ul>
+<li>Grace will be fully decommissioned as a standalone cluster.</li>
+<li>The McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads.</li>
+<li>Newer nodes from Grace and McCleary and some attached storage will be moved to MGHPCC and added to Bouchet as additional capacity.</li>
+</ul>
+<h4 id="phase-1">Phase 1</h4>
+<p>Over the next few months, in Phase 1 of the decommission, Grace and McCleary users who do not use dedicated compute nodes or YCGA resources need to:</p>
+<ol>
+<li>Move their data off of those systems.</li>
+<li>Transition workloads to Bouchet.</li>
+</ol>
+<p>Phase 1 users should have received an email — please contact us if you think you qualify for Phase 1 and have not received any communications. All other users will receive communications about Phases 2 and 3 this summer.</p>
+<p>For more information, visit the <a href="/clusters/grace-mccleary-decommission/">Grace &amp; McCleary Decommission page</a>.</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: April 01, 2026
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="march-2026">March 2026</h2>
+<h3 id="grace-mccleary-decommissioning">Grace &amp; McCleary Decommissioning</h3>
+<p>The YCRC is in the process of transitioning computing and storage resources from the Yale West Campus Data Center to the MGHPCC data center. The <a href="/clusters/bouchet/">Bouchet cluster</a>, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and non-YCGA portions of McCleary. During this phased migration:</p>
+<ul>
+<li>Grace will be fully decommissioned as a standalone cluster.</li>
+<li>The McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads.</li>
+<li>Newer nodes from Grace and McCleary and some attached storage will be moved to MGHPCC and added to Bouchet as additional capacity.</li>
+</ul>
+<h4 id="phase-1">Phase 1</h4>
+<p>Over the next few months, in Phase 1 of the decommission, Grace and McCleary users who do not use dedicated compute nodes or YCGA resources need to:</p>
+<ol>
+<li>Move their data off of those systems.</li>
+<li>Transition workloads to Bouchet.</li>
+</ol>
+<p>Phase 1 users should have received an email — please contact us if you think you qualify for Phase 1 and have not received any communications. All other users will receive communications about Phases 2 and 3 this summer.</p>
+<p>For more information, visit the <a href="/clusters/grace-mccleary-decommission/">Grace &amp; McCleary Decommission page</a>.</p>
+<h3 id="globus-tips-for-mccleary-users">Globus Tips for McCleary Users</h3>
+<p>The Grace <a href="/data/globus/">Globus</a> Collection, "Yale CRC Grace", has been upgraded to provide faster transfer speeds to Bouchet. Both McCleary and Grace users have access to "Yale CRC Grace". Users with both McCleary and Grace accounts will see their Grace home directories when connecting to the collection, but can also access their McCleary home directory at <code>/vast/palmer/home.mccleary/&lt;netid&gt;</code>.</p>
+<p>All YCGA data should stay on McCleary. The YCGA compute nodes and YCGA sequencing data will remain on McCleary and only on McCleary for the remaining lifetime of the YCGA-owned hardware (another couple of years).</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: March 01, 2026
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="february-2026">February 2026</h2>
+<h3 id="ai-documentation">AI Documentation</h3>
+<p>In-depth documentation on AI on Yale Research Computing Resources is now available on the YCRC docs page (<a href="/ai/">https://docs.ycrc.yale.edu/ai/</a>). Topics include:</p>
+<ul>
+<li>Understanding GPU availability and beginner LLM tips on YCRC systems</li>
+<li>Instructions for using Ollama, including examples</li>
+<li>Instructions for setting up Hugging Face</li>
+<li>Guidance on using Jobstats to understand GPU performance and improving job completion speed</li>
+<li>Installation guidance for <code>flash_attention</code>, <code>vllm</code>, and <code>esmfold</code></li>
+<li>Clarity on benefits for API-based models (OpenAI, etc.)</li>
+</ul>
+<h3 id="gpu-and-llm-resources-on-the-clusters">GPU and LLM Resources on the Clusters</h3>
+<p>For a quick summary of available GPU resources on each cluster and a general recommendation of ideal workflows, please visit <a href="https://docs.ycrc.yale.edu/ai/resources/#cluster-gpu-summary">https://docs.ycrc.yale.edu/ai/resources/#cluster-gpu-summary</a>.</p>
+<h3 id="ai-coding-agents-warning">AI Coding Agents Warning</h3>
+<p>AI coding agents are powerful and exciting new tools. While AI chatbots can suggest code snippets and provide guidance on potential actions you can take, AI coding agents go further by taking the reins — actually editing your code or executing actions on your behalf. While useful, this means these tools come with significant risks. AI coding agents could:</p>
+<ul>
+<li>Exfiltrate and expose data, code, or login credentials</li>
+<li>Delete, edit, or move your data</li>
+<li>Execute malicious code</li>
+</ul>
+<p>When running coding agents on your laptop, these risks are limited to you. On a high-performance cluster, risks extend to others, including your labmates' data and security, as well as publicly shared resources. Following best security practices significantly reduces the risk of an unfortunate scenario. If you are considering or currently using a coding agent, please read <a href="https://docs.ycrc.yale.edu/ai/aicodingtools/">YCRC's warning about AI coding tools</a> to understand your risks and how you can best protect yourself and others.</p>
+<h3 id="announcing-the-aicr-cluster">Announcing the AICR Cluster</h3>
+<p>We are excited to announce that a new AI-focused computing cluster, <a href="https://www.mghpcc.org/sc/project/mghpcc-ai-computing-resource-aicr/">AICR</a>, will be available to Yale researchers later this year. AICR is a new collaborative compute resource at the MGHPCC that will provide advanced computing and data infrastructure for MGHPCC members (including Yale), partners, and the Massachusetts AI Hub. The cluster will initially contain hundreds of NVIDIA B200 and RTX6000 Pro GPUs for AI and AI-enabled research. More information will be available in the coming months, including how to request access.</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: February 01, 2026
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="january-2026">January 2026</h2>
+<h3 id="happy-new-year-from-the-ycrc-team">Happy New Year from the YCRC Team!</h3>
+<p>As we begin 2026, we're energized by the innovative research happening across Yale and grateful to support your computational work. Here's to a productive and successful year ahead.</p>
+<h3 id="ycrc-attends-yale-ai-research-support-retreat">YCRC Attends Yale AI Research Support Retreat</h3>
+<p>In early December, several YCRC staff members attended Yale's AI Research Support Retreat at West Campus. The retreat gathered AI research support staff from Yale's departments and colleges to share notes and best practices and understand the varied needs of researchers.</p>
+<p>The retreat had an open, collaborative format. The day started with short, roundtable discussions in small groups, each led by a representative from the participating organizations (YCRC led one of these discussions). This format enabled a free-flowing conversation in which participants could share their understanding of YCRC's role in the broader solution space at Yale and learn more about YCRC's services and offerings.</p>
+<p>The day also featured short presentations from participating organizations and from researchers using AI at Yale. YCRC presented ideas to increase LLM accessibility and use precious GPU resources more efficiently through new services dedicated to inference workloads. Stay tuned for updates in this area.</p>
+<p>Overall, the retreat effectively brought support personnel together and identified several areas where Yale can improve the cohesion, breadth, and efficiency of AI support for its researchers.</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: January 01, 2026
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="december-2025">December 2025</h2>
+<h3 id="reminder-of-upcoming-cluster-maintenance">Reminder of Upcoming Cluster Maintenance</h3>
+<p>There will be two cluster maintenance events this month:</p>
+<ul>
+<li>Hopper — December 10</li>
+<li>Grace, Bouchet, Milgram, Misha, McCleary — December 17–18</li>
+</ul>
+<p>Reminder emails outlining the details were sent to the affected users. For more information, please visit <a href="https://research.computing.yale.edu/system-status">https://research.computing.yale.edu/system-status</a>. For assistance, contact <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a>.</p>
+<h3 id="leveraging-yales-bouchet-hpc-cluster-for-molecular-simulations">Leveraging Yale's Bouchet HPC Cluster for Molecular Simulations</h3>
+<p>On November 10th, YCRC Computational Research Support Analyst, Aya Nawano, Ph.D., delivered a Bouchet presentation at the second annual <a href="https://cmsesymposium.yale.edu/2025-cmse-symposium">Computational Molecular Sciences &amp; Engineering Symposium</a>. Hosted by the research group of Professor Corey O'Hern, the symposium featured talks on molecular modeling and scientific computing by graduate students, postdocs, and faculty from research groups across Yale. Aya discussed the Bouchet cluster's current hardware, future expansions, available molecular simulation software, and benchmark results.</p>
+<h3 id="ycrc-staff-members-receive-the-lorimer-award-for-outstanding-staff-contributions">YCRC Staff Members Receive the Lorimer Award for Outstanding Staff Contributions</h3>
+<p>YCRC staff members Adam Munro, Senior High Performance Computing System Administrator, and Matthew Petersen, High Performance Computing System Administrator, have been recognized by President Maurie McInnis with the Linda Lorimer Award for Distinguished Service, as part of a cross-departmental team responsible for ensuring that Yale has technology services to support research projects involving regulated data.</p>
+<p>Driven by a shared purpose, this team of six from the Yale Center for Research Computing, Information Technology Services, and Yale School of Medicine developed groundbreaking computing platforms for the secure analysis of high-risk data, enabling researchers to pursue breakthrough discoveries while complying with some of the most stringent regulations, focusing specifically on HIPAA and NIST 800-171.</p>
+<p>For information about all of this year's award recipients, visit <a href="https://your.yale.edu/working-at-yale/staff-recognition/linda-lorimer-award/award-recipients">https://your.yale.edu/working-at-yale/staff-recognition/linda-lorimer-award/award-recipients</a>.</p>
+<h3 id="ycrc-team-at-sc25">YCRC Team at SC25</h3>
+<p>During the week of November 16th, members of the YCRC staff attended the annual <a href="https://sc25.supercomputing.org/">SC25</a> in St. Louis, MO. The team had the opportunity to meet with many peer institutions to discuss common challenges, and to learn about the latest trends and offerings from vendors and industry experts. We look forward to incorporating new ideas and solutions from SC25 in YCRC's offerings going forward.</p>
+<p>The MGHPCC SC25 virtual booth featured several of Yale's computational research projects; you can learn more by visiting the <a href="https://www.mghpcc.org/sc/yale-university/">MGHPCC SC25 page</a>. In addition, Executive Director Ruth Marinshaw was part of a team of experienced community professionals leading an all-day tutorial on "Delivering HPC: Procurement, Cost Models, Metrics, Value and More."</p>
+<h3 id="llms-github-repository-release">LLMs GitHub Repository Release</h3>
+<p>YCRC has created a <a href="https://github.com/ycrc/llms-on-hpc">GitHub repository</a> with the code workflow to accompany the recent workshop on using LLMs on Yale's clusters. The workflow has been revised to use our recently updated Ollama module, which simplifies using Ollama on the cluster. To enable anyone to use the repository (whether or not you attended the workshop and received a Bouchet course account), it assumes you are using your regular HPC account and includes notes for working on clusters other than Bouchet. Any interested user can now access the workshop <a href="https://docs.google.com/presentation/d/1lw5FUAJuziGIb5GpviSy2t-Swo2EU-aZ/edit?usp=sharing&amp;ouid=105690574600061947997&amp;rtpof=true&amp;sd=true">presentation</a> and run the workflow to discover how to use LLMs on the cluster.</p>
+    </div>
+    <div class="blog-post-extra">
+        Published: December 01, 2025
+    </div>
+    <hr />
+</div>
+
+                
+            
+        </div>
+    
+        
+        <div class="page" id="page2">
+
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="november-2025">November 2025</h2>
+<h3 id="bouchet-expansion">Bouchet Expansion</h3>
+<p>As part of our annual investment, YCRC has ordered additional compute nodes for Bouchet. The majority of capital expenditures are again put towards GPU nodes, meeting the demand for accelerated computing.</p>
+<ul>
+<li><strong>CPU Expansion:</strong> 26 nodes (128 CPUs each) will add 3,300+ cores to the <code>day</code> and <code>week</code> partitions, representing a 50% increase in the available cores in these partitions.</li>
+<li><strong>GPU Upgrades:</strong> We're adding 64 RTX6000 Pro Blackwell (Server Edition) GPUs (96GB VRAM, 8 cards per node), expanding the <code>gpu</code> and <code>gpu_devel</code> partitions from 48 to 112 cards.</li>
+<li><strong>AI Initiative:</strong> Through the AI Initiative, we're acquiring 56 flagship B200 GPUs (193GB VRAM, 8 cards per node) with dedicated high-speed networking between cards, enabling training of large foundation models on YCRC infrastructure.</li>
+<li><strong>AMD Architecture:</strong> All new nodes will utilize AMD chips for the first time at YCRC. These chips offer higher core-density while outperforming their Intel competitors.</li>
+</ul>
+<p>We are excited for these new resources and hope to have them available in Spring 2026.</p>
+<h3 id="ollama-improvements">Ollama Improvements</h3>
+<p>The Ollama module has been upgraded to make running large language models on Yale systems faster, simpler, and more reliable.</p>
+<ul>
+<li><strong>Simpler startup:</strong> <code>ollama serve</code></li>
+<li>Automatically starts the Ollama server on a free port</li>
+<li>Automatically assigns <code>OLLAMA_HOST</code> to allow access to the running server</li>
+<li><strong>GPU detection</strong></li>
+<li>Detects presence of GPUs and warns of slow LLM usage if not on a GPU</li>
+<li>Provides an example command to request GPUs</li>
+<li><strong>Collision prevention</strong></li>
+<li>A free port on the node is automatically assigned on launch (per unique resource allocation)</li>
+<li>Attempts to launch a new server on the same compute allocation will point to the currently running server</li>
+<li><strong>Interface consistency</strong></li>
+<li>Ollama commands are consistent across interactive, batch, and Jupyter notebooks</li>
+<li><strong>Additional commands:</strong></li>
+<li><code>ollama-host</code> — prints the host address of the running Ollama server</li>
+<li><code>ollama-down</code> — cleanly shuts down the server</li>
+<li>To access the full list of commands after loading the module (<code>module load ollama/0.93</code>), type <code>ollama --help</code></li>
+</ul>
+<h3 id="utilization-of-h200-gpus-on-bouchet">Utilization of H200 GPUs on Bouchet</h3>
+<p>We are delighted to share that the H200 GPUs on Bouchet have demonstrated exceptional utilization in their first three months of operation. The 80-card deployment has maintained a 93.4% allocation rate, supporting 174 researchers across the university. To date, over 160,000 GPU-hours have been used, equivalent to $1.5M+ if spent on AWS cloud instances.</p>
+<p>These GPUs have already made notable contributions to scientific research at the university, significantly expanding the availability and accessibility of accelerated computing.</p>
+<h3 id="software-updates">Software Updates</h3>
+<ul>
+<li>AlphaFold 3 is now available on Bouchet</li>
+</ul>
+    </div>
+    <div class="blog-post-extra">
+        Published: November 01, 2025
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
+        <h2 id="october-2025">October 2025</h2>
+<h3 id="intro-to-hpc-youtube">Intro to HPC YouTube</h3>
+<p>In September, we offered two Introduction to High Performance Computing workshops focused on Yale's clusters. These hands-on sessions welcomed 60 new cluster users. Thank you to everyone who attended! If you missed the live training, you can watch the recorded version on our YouTube channel: <a href="https://research.computing.yale.edu/intro-to-hpc">https://research.computing.yale.edu/intro-to-hpc</a></p>
+<h3 id="bouchet-info-session-recording-available">Bouchet Info Session Recording Available</h3>
+<p>In this session, Senior Computational Research Support Analyst, Tom Langford, Ph.D., explains the key differences between our legacy clusters and Bouchet, and provides guidance to help users transition successfully. <a href="https://youtu.be/GZ7_bDhPXqU">Access the recording on YCRC's YouTube Channel</a>.</p>
+<p>We encourage all users to transition to Bouchet to take advantage of its powerful computing resources. The cluster is built with our newest and fastest computing resources, currently featuring:</p>
+<ul>
+<li>11,000 CPUs</li>
+<li>128 GPUs, including 80 H200 cards</li>
+</ul>
+<p>To learn more about Bouchet and request access, visit <a href="/clusters/bouchet/">https://docs.ycrc.yale.edu/clusters/bouchet/</a></p>
+    </div>
+    <div class="blog-post-extra">
+        Published: October 01, 2025
+    </div>
+    <hr />
+</div>
+
+                
+            
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                    
+                
+                
+                <div class="blog-post">
+    
+    <div class="blog-post-description">
         <h2 id="september-2025">September 2025</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="announcing-hopper-the-new-ycrc-secure-hpc-cluster">Announcing Hopper, the new YCRC Secure HPC Cluster</h4>
@@ -2973,6 +3296,12 @@ Please <a href="/#get-help">contact us</a> for assistance. </p>
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page3">
+
+            
                 
                 
                 
@@ -3037,12 +3366,6 @@ Please <a href="/#get-help">contact us</a> for assistance. </p>
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page2">
-
             
                 
                 
@@ -3169,6 +3492,12 @@ Location:  YCRC Auditorium, 160 St Ronan Street</em></p>
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page4">
+
+            
                 
                 
                 
@@ -3241,12 +3570,6 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page3">
-
             
                 
                 
@@ -3350,6 +3673,12 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
 </div>
 
                 
+            
+        </div>
+    
+        
+        <div class="page" id="page5">
+
             
                 
                 
@@ -3462,12 +3791,6 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page4">
-
             
                 
                 
@@ -3594,6 +3917,12 @@ non-A100 GPU: 15 SU
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page6">
+
+            
                 
                 
                 
@@ -3672,12 +4001,6 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page5">
-
             
                 
                 
@@ -3798,6 +4121,12 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page7">
+
+            
                 
                 
                 
@@ -3875,12 +4204,6 @@ Milgram: <a href="ood-milgram.ycrc.yale.edu/pun/sys/ycrc_getusage">ood-milgram.y
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page6">
-
             
                 
                 
@@ -3994,6 +4317,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page8">
+
+            
                 
                 
                 
@@ -4059,12 +4388,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page7">
-
             
                 
                 
@@ -4212,6 +4535,12 @@ papermill /path/to/notebook.ipynb
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page9">
+
+            
                 
                 
                 
@@ -4305,12 +4634,6 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page8">
-
             
                 
                 
@@ -4441,6 +4764,12 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page10">
+
+            
                 
                 
                 
@@ -4521,12 +4850,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page9">
-
             
                 
                 
@@ -4633,6 +4956,12 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page11">
+
+            
                 
                 
                 
@@ -4706,12 +5035,6 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page10">
-
             
                 
                 
@@ -4863,6 +5186,12 @@ wait
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page12">
+
+            
                 
                 
                 
@@ -4952,12 +5281,6 @@ P09r07n28.grace.hpc.yale.internal
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page11">
-
             
                 
                 
@@ -5103,6 +5426,12 @@ P09r07n28.grace.hpc.yale.internal
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page13">
+
+            
                 
                 
                 
@@ -5185,12 +5514,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page12">
-
             
                 
                 
@@ -5305,6 +5628,12 @@ Please contact us if this change affects your workflow so we can resolve the iss
 
                 
             
+        </div>
+    
+        
+        <div class="page" id="page14">
+
+            
                 
                 
                 
@@ -5387,12 +5716,6 @@ Please contact us if this change affects your workflow so we can resolve the iss
 </div>
 
                 
-            
-        </div>
-    
-        
-        <div class="page" id="page13">
-
             
                 
                 
@@ -5556,6 +5879,8 @@ Your home directory can always be referenced in bash and submission scripts and 
             <a class="page-number" href="#blog-p12">12</a>
         
             <a class="page-number" href="#blog-p13">13</a>
+        
+            <a class="page-number" href="#blog-p14">14</a>
         
     </div>
     
