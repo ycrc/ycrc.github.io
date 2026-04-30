@@ -1,3 +1,8 @@
+!!! danger "2026-04-30: Security Vulnerability Limited Service Interruption"
+    Due to a severe security vulnerability discovered last night in the Linux kernel, YCRC will be implementing a security patches today. This will involve rebooting all nodes, starting with the login nodes immediately. This may disrupt interactive compute sessions.
+    We are working on a plan for patching the compute nodes with the goal of minimal disruption to running jobs if possible. We will update you with more information as we can.
+    Thank you for your understanding as we work to ensure the clusters are secure.
+
 !!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
     The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and non-YCGA portions of McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
 
