@@ -1,7 +1,7 @@
 # CryoSPARC on the YCRC Clusters
 
 !!! info
-    To start using the new workflow, you will need to do three things: (1) [request / update your cryosparc port](#obtaining-your-unique-cryosparc-port) - this is very important to avoid conflicts with other cryosparc users. (2) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine). (3) [launch and run cryosparc the new way](#run-the-ycrc-cryosparc-workflow)
+    To start using the new workflow, you will need to do three things: (1) [request / update your cryosparc port](#obtain-your-unique-cryosparc-port) - this is very important to avoid conflicts with other cryosparc users. (2) [install cryosparc](#install) if you haven't done so already (your existing installation should work fine). (3) [launch and run cryosparc the new way](#run-the-ycrc-cryosparc-workflow)
 
 ## Obtain Your Unique Cryosparc Port
 
