@@ -13,14 +13,14 @@
         <meta name="author" content="YCRC">
       
       
-        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/cryosparc/">
+        <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/maya/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
-        <title>CryoSPARC on the YCRC Clusters - Yale Center for Research Computing</title>
+        <title>Maya - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cryosparc-on-the-ycrc-clusters" class="md-skip">
+        <a href="#maya" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              CryoSPARC on the YCRC Clusters
+              Maya
             
           </span>
         </div>
@@ -2711,63 +2711,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#obtain-your-unique-cryosparc-port" class="md-nav__link">
-    Obtain Your Unique Cryosparc Port
-  </a>
-  
-    <nav class="md-nav" aria-label="Obtain Your Unique Cryosparc Port">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-installations" class="md-nav__link">
-    New installations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#existing-installations-changing-your-current-port" class="md-nav__link">
-    Existing installations (changing your current port)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
+  <a href="#load-the-module" class="md-nav__link">
+    Load the Module
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-ycrc-cryosparc-workflow" class="md-nav__link">
-    Run the YCRC cryosparc workflow
+  <a href="#interactive-gui" class="md-nav__link">
+    Interactive GUI
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-topaz" class="md-nav__link">
-    Add Topaz
+  <a href="#batch-mode" class="md-nav__link">
+    Batch Mode
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-cryosparc-jobs" class="md-nav__link">
-    Troubleshooting cryosparc jobs
+  <a href="#parallel-mode" class="md-nav__link">
+    Parallel Mode
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-general" class="md-nav__link">
-    Troubleshooting (general)
+  <a href="#getting-help" class="md-nav__link">
+    Getting Help
   </a>
   
 </li>
@@ -2784,292 +2757,147 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/cryosparc.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ycrc/ycrc.github.io/tree/src/docs/clusters-at-yale/guides/maya.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="cryosparc-on-the-ycrc-clusters">CryoSPARC on the YCRC Clusters</h1>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>To start using the new workflow, you will need to do three things: (1) <a href="#obtain-your-unique-cryosparc-port">request / update your cryosparc port</a> - this is very important to avoid conflicts with other cryosparc users. (2) <a href="#install">install cryosparc</a> if you haven't done so already (your existing installation should work fine). (3) <a href="#run-the-ycrc-cryosparc-workflow">launch and run cryosparc the new way</a></p>
+                <h1 id="maya">Maya</h1>
+<p><a href="https://www.autodesk.com/products/maya/">Autodesk Maya</a> 2026.2 is available on Bouchet as an Apptainer-based module. It includes Arnold, Bifrost, LookdevX, MayaUSD, and Adobe Substance 3D, and is licensed against the YCRC network license server.</p>
+<h2 id="load-the-module">Load the Module</h2>
+<div class="highlight"><pre><span></span><code>module load Maya
+</code></pre></div>
+<p>This puts the following commands on your <code>PATH</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mayagui</code></td>
+<td>Launch the Maya GUI (interactive, GPU node)</td>
+</tr>
+<tr>
+<td><code>maya</code></td>
+<td>Standard <code>maya</code> binary (container-wrapped, headless)</td>
+</tr>
+<tr>
+<td><code>mayapy</code></td>
+<td>Maya's bundled Python interpreter</td>
+</tr>
+<tr>
+<td><code>Render</code></td>
+<td>Standalone renderer (Arnold, etc.)</td>
+</tr>
+<tr>
+<td><code>maya-batch</code></td>
+<td>Run a scene in batch mode through a Slurm job</td>
+</tr>
+<tr>
+<td><code>maya-parallel</code></td>
+<td>Split a scene's frame range across parallel Slurm jobs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interactive-gui">Interactive GUI</h2>
+<p>The Maya GUI is resource-intensive and requires a GPU to run. We recommend launching it inside a <a href="/clusters-at-yale/access/ood/">Remote Desktop session</a> on the <a href="/clusters-at-yale/access/ood">Open OnDemand</a> web portal.</p>
+<ol>
+<li>From the OOD dashboard, start a <strong>Remote Desktop</strong> session on a GPU partition (e.g. <code>gpu</code> or <code>gpu_devel</code>), requesting at least 1 GPU, 2 CPUs, and 8GB of memory.</li>
+<li>
+<p>Once the desktop opens, launch a terminal and run:</p>
+<div class="highlight"><pre><span></span><code>module load Maya
+mayagui
+</code></pre></div>
+</li>
+</ol>
+<p><code>mayagui</code> auto-detects the GPU and runs Maya's Viewport 2.0 through VirtualGL. On the first launch it will register your account against the network license server; subsequent launches reuse the cached registration in <code>~/.autodesk_maya/</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you see "No GPU — VP2 will use software rendering" at startup, you launched on a non-GPU node. Exit and restart on a GPU partition — software rendering is too slow to be usable.</p>
 </div>
-<h2 id="obtain-your-unique-cryosparc-port">Obtain Your Unique Cryosparc Port</h2>
-<p>To use cryosparc with the YCRC cluster workflow, you must request a unique 'port' value that cryosparc uses for displaying web pages, etc., otherwise, your jobs may clash with another user's.</p>
-<p>We provide a cryosparc port request script that you can run from the terminal. Please note that a request must be made separately for each YCRC cluster you wish to run cryosparc on, and the resulting port numbers will likely differ between clusters.</p>
-<p>To run the script, start a terminal shell on the desired cluster and do:
-<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-</code></pre></div></p>
-<p>Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. </p>
-<h3 id="new-installations">New installations</h3>
-<p>Use the port number you have obtained when <a href="#install">installing cryosparc</a>.</p>
-<h3 id="existing-installations-changing-your-current-port">Existing installations (changing your current port)</h3>
-<p>If you have already have a cryosparc installation, please use the following steps to update the cryosparc port:</p>
-<ol>
-<li>
-<p>Cancel any existing cryosparc jobs. You may first want to let finish (or terminate) any analysis jobs currently running in cryosparc.</p>
-</li>
-<li>
-<p>In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
- find out what compute node it's running on and connect to the node with ssh:
-    <div class="highlight"><pre><span></span><code><span class="c1"># Launch cryosparc with `sbatch` and note the jobID it prints upon starting:</span>
-sbatch<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>/apps/services/cryosparc/cryosparc-cluster-master.sh
+<h2 id="batch-mode">Batch Mode</h2>
+<p>For headless runs (rendering, simulation playback, scripted scene processing) use <code>maya-batch</code> from inside a Slurm job. An example script is below:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name=maya_batch
+#SBATCH --partition=day
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
 
-<span class="c1"># Run `squeue` and note the compute node of your job (i.e. &#39;a1132u05n01&#39;)</span>
-squeue<span class="w"> </span>-j<span class="w"> </span>&lt;jobID&gt;
-
-<span class="c1"># Connect to the node with ssh:</span>
-ssh<span class="w"> </span>&lt;node-where-cryosparc-is-running&gt;
-</code></pre></div></p>
-</li>
-<li>
-<p>Stop cryosparc, backup the database, and then run the cryosparc command to change the port:
-    <div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
-cryosparcm<span class="w"> </span>database<span class="w"> </span>backup<span class="w">    </span><span class="c1"># (this is a fast step, it should take under 60 seconds)</span>
-<span class="w">                              </span><span class="c1"># Note, in cryosparc versions &lt; 5 the syntax may be &#39;cryosparcm backup&#39;</span>
-
-<span class="c1"># Run the below command to print your assigned cryosparc port. The output should read like:</span>
-<span class="c1">#    Your current cryosparc port :  39000</span>
-<span class="c1">#      needs to be updated to the YCRC-assigned port value of : &lt;new_id&gt;</span>
-
-cryosparcm<span class="w"> </span>stop
-/apps/services/cryosparc/ycrc_get_cryosparc_port.sh
-
-<span class="c1"># Run the following command and type &#39;y&#39; when prompted</span>
-<span class="c1"># Note, it is normal to see warnings at the stage like</span>
-<span class="c1">#    &#39;Warning: Could not get database status (attempt 1/3)&#39;</span>
-
-cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span class="w"> </span>port<span class="w"> </span>value&gt;
-
-<span class="c1"># Cryosparc should then restart successfully and print the standard connection messages followed</span>
-<span class="c1">#  by &#39;Checking database... OK&#39;</span>
-</code></pre></div></p>
-</li>
-<li>Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described in our <a href="#run-the-ycrc-cryosparc-workflow">workflow instructions</a>.</li>
-</ol>
-<h2 id="install">Install</h2>
-<p>The following installation instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
-<ol>
-<li>
-<p><strong>Request a Cryosparc License and Request a YCRC Cryosparc Port Number</strong> : Do both of these things <strong>right away</strong>, as they are quick and easy, and it could take up to day to get the needed responses.</p>
-<ul>
-<li>
-<p>For the Cryosparc License: visit the Structura website and <a href="https://cryosparc.com/download/">fill out the License Request Form</a>.</p>
-</li>
-<li>
-<p>For the YCRC Cryosparc Port Number: Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
-<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Set up Environment</strong> : First, log onto a CPU compute node, either as an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
-<p>Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Log onto compute node</span>
-salloc<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">6</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>16G
-
-<span class="c1"># Below, substitute your actual project folder and netID according to the template given:</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project_pi_&lt;your_pi_netID&gt;/&lt;your_netid&gt;/cryosparc
-
-<span class="c1"># Note, on the older mccleary/grace clusters, the above line would instead be:</span>
-<span class="c1">#  export install_path=${HOME}/project/cryosparc    </span>
+module load Maya
+maya-batch /path/to/your_scene.mb
 </code></pre></div>
-</li>
-<li>
-<p><strong>Set up Directories, Download installers</strong> :</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
-
-<span class="c1">#go get the installers</span>
-mkdir<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_master.tar.gz
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_worker.tar.gz
-
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_master.tar.gz
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
+<p>Submit with:</p>
+<div class="highlight"><pre><span></span><code>sbatch example_batch.sbatch
 </code></pre></div>
-</li>
-<li>
-<p><strong>Install the Master</strong> :</p>
-<p>Once you have received your YCRC cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to <strong>insert your port number</strong> in the corresponding line below (<code>export port_number="...</code>)</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
-
-<span class="c1"># Define YCRC cryosparc port number: If you really want, you may proceed with</span>
-<span class="c1">#  the dummy value 63000 if you haven&#39;t received your official one.</span>
-<span class="c1"># However, the steps to update once you get your real one are somewhat arduous- </span>
-<span class="c1">#  see &#39;Existing installations (changing your current port)&#39; above</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
-
-<span class="c1"># Run the installation script</span>
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
-
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$LICENSE_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--port<span class="w"> </span><span class="nv">$port_number</span>
+<p><code>maya-batch</code> steps the scene through its full frame range and writes a per-frame CSV of keyframed animation values next to the scene file. Use <code>maya-batch --help</code> for the full option list (custom frame range, output directory, etc.).</p>
+<p>For arbitrary scripted work, you can also call the underlying <code>maya</code> or <code>mayapy</code> binaries directly:</p>
+<div class="highlight"><pre><span></span><code>maya -batch -file scene.mb -command &quot;python(\&quot;import my_module; my_module.run()\&quot;)&quot;
+mayapy my_script.py
 </code></pre></div>
-<p>Then, add yourself as a user:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Start CryoSPARC</span>
-./bin/cryosparcm<span class="w"> </span>start
-
-<span class="c1"># Create the first (administrative) user</span>
-<span class="c1"># Please be sure to substitute the needed fields in the below command:</span>
-./bin/cryosparcm<span class="w"> </span>createuser<span class="w"> </span>--email<span class="w"> </span><span class="s2">&quot;&lt;user email&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--password<span class="w"> </span><span class="nv">$cryosparc_password</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--firstname<span class="w"> </span><span class="s2">&quot;&lt;given name&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--lastname<span class="w"> </span><span class="s2">&quot;&lt;surname&gt;&quot;</span>
-
-<span class="c1"># Load the environment</span>
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-
-<span class="c1"># Stop the master</span>
-./bin/cryosparcm<span class="w"> </span>stop
+<h2 id="parallel-mode">Parallel Mode</h2>
+<p>For long scenes where each frame is <strong>independent</strong> (pose sweeps, geometry queries driven by pre-keyed animation, etc.), <code>maya-parallel</code> splits the frame range across multiple Slurm jobs and merges the resulting CSVs once all chunks finish:</p>
+<div class="highlight"><pre><span></span><code>module load Maya
+maya-parallel scene.mb --chunks 16 --cpus 16 --memory 32G --time 24:00:00
 </code></pre></div>
-</li>
-<li>
-<p><strong>Add the cryosparc commands to your system PATH</strong> :</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-</div>
-<p>The installer will have likely prompted you with, i.e., 'Add bin directory to your ~/.bashrc ?',
- but this doesn't fully work in recent cryosparc installer script versions, at least on the YCRC clusters.
- You can check ~/.bashrc first and to make sure <strong>both</strong> paths below are already added at the end
- ('# Added by cryosparc').
- If one or both are missing (typically we find only the 'master' path and not the 'worker' path), do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</code></pre></div>
-</li>
-<li>
-<p><strong>Install the worker software on a GPU node</strong> : </p>
-<p>Exit the above interactive session, start a new GPU interactive session, and install the worker:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>8G
-
-<span class="c1"># Go to the worker directory and install the worker</span>
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc<span class="w">     </span><span class="c1"># Or wherever you put your cryosparc directory</span>
-<span class="nb">cd</span><span class="w"> </span>cryosparc_worker
-
-<span class="k">$(</span>grep<span class="w"> </span>LICENSE<span class="w"> </span>../cryosparc_master/config.sh<span class="k">)</span>
-
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$CRYOSPARC_LICENSE_ID</span><span class="w"> </span>--yes
-</code></pre></div>
-<p>Exit the interactive session. Master and worker software should now be ready.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you are installing a version of CryoSPARC older than 4.4.0, the instructions are somewhat different. <a href="/#get-help">Contact us</a> for assistance.</p>
-</div>
-</li>
-</ol>
-<h2 id="run-the-ycrc-cryosparc-workflow">Run the YCRC cryosparc workflow</h2>
-<p>To use the new cryosparc workflow, follow the steps below:</p>
-<ol>
-<li>
-<p><strong>Start your cryosparc server</strong>, submit the 'cryosparc-cluster-master.sh' script using:
-    <div class="highlight"><pre><span></span><code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh
-
-# To override the default runtime and partition, which may be useful for shorter runs,
-#  add the corresponding flags before the script name in your sbatch command, i.e.:
-sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
-</code></pre></div></p>
-<p>Once this job starts running, you will need the address for your cryosparc web UI.
-You can get this by running, i.e. <code>grep http &lt;your slurm outputfile&gt;</code>, where the slurm filename
-will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web address you want looks like:</p>
-<p><code>http://r209u08n01.mccleary.ycrc.yale.edu:61130</code></p>
-<p>Please note, in contrast to our previous cryosparc workflow, this batch script <em>does not use GPUs</em> and requires only minimal resources to run the 'master' cryosparc process. The default batch script parameters specify 7 days on the 'week' partition, with 1 CPU and 32 GB of RAM.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please do not launch more than one instance of the cryosparc-cluster-master.sh batch script at a time.
-Your cryosparc license does not allow this and the cryosparc jobs will conflict with each other and fail.</p>
-</div>
-</li>
-<li>
-<p><strong>Open the cryosparc UI with firefox : </strong> To interact with your cryosparc server, launch a minimal <a href="/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop</a> session (1 CPU, 8GB RAM on the 'devel' partition should suffice), launch firefox, and load cryosparc web address you got in the previous step. There is no need to request more time than you expect to use your browser for, as the cryosparc server continues running as a separate batch job and you can always launch another Remote Desktop and get back to where you were.</p>
-<p>Alternatively, you may set up the cryosparc UI to run on your local web browser by configuring a Remote SSH connection with your local computer; we have User Guide instructions for this <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-vscode/#ssh-configuration">here</a>.</p>
-</li>
-<li>
-<p><strong>Submit job</strong> : Once you start the job submission process by clicking on 'Submit job' in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: 'cpu', 'gpu', 'gpu_devel' as well as 'priority_cpu' and 'priority_gpu' if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
-</li>
-<li>
-<p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled 'Queue P<em>xxx</em> J<em>xxx</em>'). Click on the purple box beneath your selected compute lane, labeled 'Cluster submission script variables'. The box will expand to reveal two additional options. Click on 'Maximum runtime' and give your value in hours:minutes:seconds format (i.e. 1:00:00).
-    The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryosparc easier for users to manage.</p>
-</li>
-<li>
-<p><strong>Optionally specify a 'memory multiplier'</strong> : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types such as 2D classification and template matching we have found that this guess can underestimate the memory requirements, <strong>leading to memory-related job failures</strong>. If a job crashes unexpectedly, find the job ID in the cryosparc log and run jobstats to pinpoint the problem (see the <a href="">troubleshooting cryosparc jobs</a> section below).</p>
-<p>To fix this type of memory issue, set the 'RAM multiplier' to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. 'RAM multiplier' is found in the 'Cluster submission script variables' along with 'Maximum runtime' (described above).</p>
-</li>
-<li>
-<p><strong>Click 'Submit to lane'</strong> : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command 'squeue --me').</p>
-<p>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
-</code></pre></div>
-<p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
-</code></pre></div>
-</li>
-</ol>
-<h2 id="add-topaz">Add Topaz</h2>
-<p><a href="https://cb.csail.mit.edu/cb/topaz/">Topaz</a> is a pipeline for particle picking in cryo-electron microscopy images using
-convolutional neural networks. It can optionally be used from inside CryoSPARC using our cluster module.</p>
-<ol>
-<li>
-<p><strong>In a running CryoSPARC instance, add the executable '&lt;PATH-TO/topaz.sh' to the General settings</strong> :
-    <img alt="" src="/img/TopazCryosparc.png" /></p>
-</li>
-<li>
-<p><strong>Consult the <a href="https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz">CryoSPARC guide</a></strong> for details on using Topaz with CryoSPARC.</p>
-</li>
-</ol>
-<h2 id="troubleshooting-cryosparc-jobs">Troubleshooting cryosparc jobs</h2>
-<p>Unfortunately, information needed to diagnose cryosparc job failures in cluster lanes can be a bit tedious to track down. Luckily, we have found that most job failures have simple explanations and solutions. The main causes are:</p>
-<ol>
-<li>
-<p><strong>Insufficient memory</strong> : this is probably most common source of cryosparc job failures, but sadly provides little to no diagnostic information within cryosparc itself. If you do not see an obvious source for the job failure within cryosparc, check for a memory failure using our <a href="/clusters-at-yale/job-scheduling/jobstats/">jobstats tools</a>. You will first need find the slurm ID of the failed job; you can find this in the job log file by clicking 'Show from top' and scrolling down to the output lines describing the job submission. If you identify a memory issue as the source of the job crash, fix by changing the 'mem_multiplier' parameter (see above sections under <a href="#run-the-ycrc-cryosparc-workflow">Running</a>).</p>
-</li>
-<li>
-<p><strong>Resource requests do not match the requested partition</strong> : if you see a 'Job violates accounting/QOS policy' error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the 'Maximum runtime' parameter (see above sections under <a href="#run-the-ycrc-cryosparc-workflow">Running</a>).</p>
-</li>
-<li>
-<p><strong>Drilling down further</strong> : Within the cryosparc interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., <code>P1_J2_slurm.log</code>, <code>P1_J2_slurm.err</code>, <code>job.log</code>) and also a copy of the slurm submission script (<code>queue_sub_script.sh</code>). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.</p>
-</li>
-<li>
-<p><strong>Mismatch between cryosparc and GPU/CUDA</strong> Newer graphics cards being installed on the Bouchet cluster are incompatible with cryosparc versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryosparc to version &gt;= 5.0.0</p>
-</li>
-<li>
-<p><strong>Cryosparc installation bug</strong>: One of our users experienced a issue where cryosparc GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryosparc python libraries (a buggy CUDA version compatibility check).</p>
-</li>
-</ol>
-<p>Cryosparc can be tricky to debug. Please reach out to us if you encounter difficulties running this program.</p>
-<h2 id="troubleshooting-general">Troubleshooting (general)</h2>
-<ol>
-<li>
-<p><strong>Leftover lock files</strong> : If your submitted cryosparc master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryosparc master job and check if cryosparc is running with 'cryosparcm status', and check your cryosparc master cluster logfile for errors related to the cryosparc data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryosparc master process with 'cryosparcm start'. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
-<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
-</li>
-<li>
-<p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-</li>
-<li>
-<p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryosparc page. This can be fixed by resetting Firefox's history and cache data for the cryosparc site. To do this, open firefox and then:</p>
-<ul>
-<li>Select 'Manage history' (click on the Firefox hamburger menu at the window upper right, then click 'History' -&gt; 'Manage History')</li>
-<li>Click on the search box and type 'ycrc.yale.edu'</li>
-<li>Right click on any cryosparc history entries, select 'Forget About This Site...', then click 'Forget'</li>
-<li>Repeat until there are no more cryosparc entries left</li>
-<li>Close the history window and select 'Settings' from the Firefox hamburger menu</li>
-<li>Click 'Privacy &amp; Security', scroll down to 'Cookies and Site Data', and click 'Manage Data...'</li>
-<li>If you see any remaining cryosparc entries, click on them and select 'Remove Selected', then 'Save Changes'</li>
-<li>Quit and restart firefox ; hopefully you can now successfully load the cryosparc page</li>
-<li>If this doesn't work the first time, repeating the above steps one or two times more may still resolve the issue</li>
-</ul>
-</li>
-</ol>
+<p>This submits 16 chunk jobs plus a dependent merge job that produces <code>&lt;scene&gt;_results.csv</code>. Common options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--chunks N</code></td>
+<td>16</td>
+<td>Number of parallel chunk jobs</td>
+</tr>
+<tr>
+<td><code>--cpus N</code></td>
+<td>16</td>
+<td>CPUs per chunk</td>
+</tr>
+<tr>
+<td><code>--memory SIZE</code></td>
+<td>32G</td>
+<td>Memory per chunk</td>
+</tr>
+<tr>
+<td><code>--time DUR</code></td>
+<td>24:00:00</td>
+<td>Wall time per chunk</td>
+</tr>
+<tr>
+<td><code>--partition P</code></td>
+<td>day</td>
+<td>Slurm partition for chunk + merge jobs</td>
+</tr>
+<tr>
+<td><code>--start N</code></td>
+<td>auto-detect from scene</td>
+<td>First frame</td>
+</tr>
+<tr>
+<td><code>--end N</code></td>
+<td>auto-detect from scene</td>
+<td>Last frame</td>
+</tr>
+<tr>
+<td><code>--output-dir D</code></td>
+<td><code>./&lt;scene&gt;_parallel</code></td>
+<td>Where chunk CSVs, logs, and results land</td>
+</tr>
+</tbody>
+</table>
+<p><code>maya-parallel</code> is only correct when frames don't depend on prior simulation state — don't use it for cached fluid/cloth sims that carry state forward in time.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If Maya fails to check out a license, GUI rendering looks corrupt, or a batch job hangs, please <a href="/#get-help">contact us</a>. This is a new and complex software to run on the cluster, so please don't hesitate to reach out for assistance.</p>
                 
                   
                     
@@ -3078,7 +2906,7 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2026</span>
       
     
   </small>
