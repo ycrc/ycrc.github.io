@@ -124,7 +124,64 @@ patient,sample,lane,fastq_1,fastq_2
 5,10215,1,WES_01.13.25/tumor/data/10215_R1_001.fastq.gz,WES_01.13.25/tumor/data/10215_R2_001.fastq.gz
 
 ```
-1. create a batch script sarek.sh:
+
+1. Create a `bouchet.config` next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of `<group>`.:
+```groovy
+params {
+    config_profile_name        = 'bouchet'
+    config_profile_description = 'Bouchet Cluster at Yale'
+    config_profile_contact     = 'YCRC, research.computing@yale.edu'
+    config_profile_url         = 'https://docs.ycrc.yale.edu/clusters/bouchet/'
+}
+
+apptainer {
+    enabled    = true
+    autoMounts = true
+}
+
+// Cache pulled images under group scratch so they survive between jobs.
+// Replace 'pi_<group>' with your own PI group (run `groups` to find it).
+env {
+    NXF_APPTAINER_CACHEDIR   = "${System.getenv('HOME')}/scratch_pi_<group>/.apptainer"
+    NXF_SINGULARITY_CACHEDIR = "${System.getenv('HOME')}/scratch_pi_<group>/.singularity"
+}
+
+executor {
+    name            = 'slurm'
+    queueSize       = 50
+    submitRateLimit = '190/60min'
+}
+
+process {
+    // Single-node ceiling for the standard 'day'/'week' nodes.
+    resourceLimits = [
+        memory: 983.GB,
+        cpus: 64,
+        time: 168.h
+    ]
+
+    // Long jobs go to week (max 7d). Short jobs first try scavenge (preemptible);
+    // on retry #3+ fall back to the regular day partition.
+    queue = { task.time > 24.h ? 'week' : task.attempt < 3 ? 'scavenge' : 'day' }
+    errorStrategy = { task.exitStatus in (1) ? 'finish' : 'retry' }
+    maxRetries = 2
+    scratch = 'true'
+    executor = 'slurm'
+
+    // GPU label: default to one rtx_5000_ada on the public 'gpu' partition.
+    withLabel:'process_gpu' {
+        queue            = 'gpu'
+        accelerator      = 1
+        clusterOptions   = '--gpus=rtx_5000_ada:1'
+        containerOptions = { workflow.containerEngine == 'singularity' || workflow.containerEngine == 'apptainer' ? '--nv' :
+                             ( workflow.containerEngine == 'docker' ? '--gpus all' : null ) }
+        memory = 32.GB
+        time   = 24.h
+    }
+}
+```
+
+2. create a batch script sarek.sh:
 ```
 #!/bin/bash
 
@@ -135,9 +192,11 @@ patient,sample,lane,fastq_1,fastq_2
 #SBATCH --time=1-0
 #SBATCH --mail-type=ALL
 
-export  NXF_SINGULARITY_CACHEDIR=${HOME}/palmer_scratch/.singularity
+# Replace 'pi_<group>' with your own PI group (run `groups` to find it).
+export NXF_APPTAINER_CACHEDIR=${HOME}/scratch_pi_<group>/.apptainer
+export NXF_SINGULARITY_CACHEDIR=${HOME}/scratch_pi_<group>/.singularity
 
-module purge
+module reset
 module load Nextflow
 
 nextflow run nf-core/sarek \
@@ -151,12 +210,13 @@ nextflow run nf-core/sarek \
         --save_output_as_bam \
         --tools strelka \
         -w work \
-        -profile mccleary
+        -profile apptainer \
+        -c bouchet.config
 ```
-Nextflow will pull everything else automatically, including the pipeline, the apptainer image, and the mccleary profile.  The mccleary profile defines a default configuration that submits all tasks as Slurm jobs.  However, because this
+Nextflow will pull everything else automatically, including the pipeline and the apptainer image.  `bouchet.config` defines a default configuration that submits all tasks as Slurm jobs.  However, because this
 example has a relatively small number of input files, you should not hit the submission rate issue mentioned previously.
 
-1. submit
+3. submit
 ```
 sbatch sarek.sh
 ```
