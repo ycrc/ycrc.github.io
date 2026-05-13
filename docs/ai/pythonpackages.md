@@ -68,12 +68,12 @@ salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00
 
 module load miniconda
 
-conda create -n vllm python=3.12.* uv setuptools-scm cmake cuda-nvcc=12.8 cuda-version=12.8 cuda-toolkit=12.8 cuda-cudart-dev=12.8 cuda-runtime=12.8 gcc=12 gxx=12 -c pytorch -c nvidia -y
+conda create -n vllm python=3.12.* uv setuptools-scm cmake gcc=12 gxx=12 ninja packaging psutil
 
 conda activate vllm
 
 ###install torch
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+uv pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
 
 ###install missing dependencies for vllm
 uv pip install pybind11 "setuptools>=77.0.3,<81.0.0"
@@ -82,7 +82,7 @@ uv pip install pybind11 "setuptools>=77.0.3,<81.0.0"
 ml CUDA/12.8
 
 ###download repository for vllm to install from source
-git clone https://github.com/vllm-project/vllm
+git clone --branch v0.19.1 --depth 1 https://github.com/vllm-project/vllm
 
 cd vllm
 
