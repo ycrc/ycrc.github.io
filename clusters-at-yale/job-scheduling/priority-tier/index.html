@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/priority-tier/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1344,6 +1344,20 @@
   
     <nav class="md-nav" aria-label="Rate Structure">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fy27-rate-service-units" class="md-nav__link">
+    FY27 Rate &amp; Service Units**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fy24-fy26-rate-service-units" class="md-nav__link">
+    FY24-FY26 Rate &amp; Service Units
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#annual-usage-limit" class="md-nav__link">
@@ -2906,6 +2920,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#fy27-rate-service-units" class="md-nav__link">
+    FY27 Rate &amp; Service Units**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fy24-fy26-rate-service-units" class="md-nav__link">
+    FY24-FY26 Rate &amp; Service Units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#annual-usage-limit" class="md-nav__link">
     Annual Usage Limit
   </a>
@@ -3035,8 +3063,66 @@ Computations in Standard Tier will not affect your priority in Priority Tier and
 Communications will be sent if and when this is being considered.</p>
 <h2 id="rate-structure">Rate Structure</h2>
 <p>The new charging model for computations run on a Priority Tier partition is Service Unit (SU) based at a rate of $0.004/SU/hour.
+This rate will increase to $0.005/SU/hour effective July 1, 2026 (pending final approval from the University Service Provider Operating Committee).
 This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
 The SUs of a compute job are calculated as follows:</p>
+<h3 id="fy27-rate-service-units">FY27 Rate &amp; Service Units**</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subtype</th>
+<th>Service Units</th>
+<th>Cost per Hour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compute Hour*</td>
+<td>-</td>
+<td>1</td>
+<td>$0.005</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>a5000</td>
+<td>15</td>
+<td>$0.075</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>rtx_5000_ada</td>
+<td>35</td>
+<td>$0.175</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>rtx_pro_6000_blackwell</td>
+<td>65</td>
+<td>$0.400</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>a100</td>
+<td>80</td>
+<td>$0.400</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>h200</td>
+<td>240</td>
+<td>$1.200</td>
+</tr>
+<tr>
+<td>GPU Hour</td>
+<td>b200</td>
+<td>300</td>
+<td>$1.500</td>
+</tr>
+</tbody>
+</table>
+<p>** <em>pending final approval from the University Service Provider Operating Committee</em></p>
+<h3 id="fy24-fy26-rate-service-units">FY24-FY26 Rate &amp; Service Units</h3>
 <table>
 <thead>
 <tr>
@@ -3069,7 +3155,7 @@ The SUs of a compute job are calculated as follows:</p>
 <td>GPU Hour</td>
 <td>rtx_pro_6000_blackwell</td>
 <td>65</td>
-<td>$0.26</td>
+<td>$0.260</td>
 </tr>
 <tr>
 <td>GPU Hour</td>
@@ -3091,7 +3177,7 @@ The SUs of a compute job are calculated as follows:</p>
 </tr>
 </tbody>
 </table>
-<p>* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB</p>
+<p>* <em>Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB</em></p>
 <p>Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.</p>
 <p>Usage is billed monthly, with the bills expected the first week of the following month. To assist with cost estimates and budgeting, see below for tools for calculating charges.</p>
@@ -3116,7 +3202,7 @@ Keep an eye on the YCRC Bulldog User News in coming months for information about
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2026</span>
       
     
   </small>
