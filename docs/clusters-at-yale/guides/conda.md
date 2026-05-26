@@ -122,6 +122,9 @@ channels:
 solver: libmamba
 ```
 
+!!! Note
+    The YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#60-day-scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations on the number of files your home directory can have (conda creates huge numbers of very small files). By putting 'pkgs' in the scratch directory, we ensure that the cached conda files insde are discarded after 60 days, to minimize the burden on our filesystem. 
+
 ### Find and Install Additional Packages
 
 You can search [Anaconda Cloud](https://anaconda.org/) or use [`conda search`](https://docs.conda.io/projects/conda/en/latest/commands/search.html) to find the names of packages you would like to install:
