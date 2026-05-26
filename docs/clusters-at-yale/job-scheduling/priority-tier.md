@@ -81,7 +81,7 @@ Communications will be sent if and when this is being considered.
 
 The new charging model for computations run on a Priority Tier partition is Service Unit (SU) based at a rate of $0.004/SU/hour.
 This rate will increase to $0.005/SU/hour effective July 1, 2026 (pending final approval from the University Service Provider Operating Committee).
-This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
+This rate is derived to closely match the prorated cost of a similar dedicated node over its warrantied period.
 The SUs of a compute job are calculated as follows:
 
 ### FY27 Rate & Service Units**
