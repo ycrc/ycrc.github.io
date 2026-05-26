@@ -80,20 +80,37 @@ Communications will be sent if and when this is being considered.
 ## Rate Structure
 
 The new charging model for computations run on a Priority Tier partition is Service Unit (SU) based at a rate of $0.004/SU/hour.
+This rate will increase to $0.005/SU/hour effective July 1, 2026 (pending final approval from the University Service Provider Operating Committee).
 This rate is derived to closely match the prorated cost of a similar dedicated node over a 5 year expected lifetime.
 The SUs of a compute job are calculated as follows:
+
+### FY27 Rate & Service Units**
+|  Type | Subtype   | Service Units  | Cost per Hour  |
+|----------------|--------|-----|--------|
+| Compute Hour\* |  -     | 1   | $0.005 |
+| GPU Hour       | a5000  | 15  | $0.075 |
+| GPU Hour       | rtx_5000_ada  | 35  | $0.175 |
+| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.400 |
+| GPU Hour       | a100   | 80 | $0.400 |
+| GPU Hour       | h200   | 240 | $1.200 |
+| GPU Hour       | b200   | 300 | $1.500 |
+
+\*\* _pending final approval from the University Service Provider Operating Committee_
+
+
+### FY24-FY26 Rate & Service Units
 
 |  Type | Subtype   | Service Units  | Cost per Hour  |
 |----------------|--------|-----|--------|
 | Compute Hour\* |  -     | 1   | $0.004 |
 | GPU Hour       | a5000  | 15  | $0.060 |
 | GPU Hour       | rtx_5000_ada  | 15  | $0.060 |
-| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.26 |
+| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.260 |
 | GPU Hour       | a100   | 100 | $0.400 |
 | GPU Hour       | h200   | 300 | $1.200 |
 | GPU Hour       | b200   | 370 | $1.480 |
 
-\* Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB
+\* _Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB_
 
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
