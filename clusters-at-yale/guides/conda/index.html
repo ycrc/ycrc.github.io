@@ -3308,6 +3308,10 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
 <span class="nt">solver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libmamba</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your <a href="/data/hpc-storage/#project">project</a> and <a href="/data/hpc-storage/#60-day-scratch">scratch</a> directories, respectively (use <code>ls -l ~/.conda</code> to view the symlink locations). We do this to address technical limitations on the number of files your home directory can have (conda creates huge numbers of very small files). By putting 'pkgs' in the scratch directory, we ensure that the cached conda files insde are discarded after 60 days, to minimize the burden on our filesystem. </p>
+</div>
 <h3 id="find-and-install-additional-packages">Find and Install Additional Packages</h3>
 <p>You can search <a href="https://anaconda.org/">Anaconda Cloud</a> or use <a href="https://docs.conda.io/projects/conda/en/latest/commands/search.html"><code>conda search</code></a> to find the names of packages you would like to install:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
@@ -3465,7 +3469,7 @@ FileNotFoundError:<span class="w"> </span><span class="o">[</span>Errno<span cla
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 1, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2026</span>
       
     
   </small>
