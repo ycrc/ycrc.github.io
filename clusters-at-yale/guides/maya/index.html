@@ -2731,6 +2731,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parallel-mode" class="md-nav__link">
+    Parallel Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting Help
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2751,7 +2765,8 @@
                 <h1 id="maya">Maya</h1>
 <p><a href="https://www.autodesk.com/products/maya/">Autodesk Maya</a> 2026.2 is available on Bouchet as an Apptainer-based module. It includes Arnold, Bifrost, LookdevX, MayaUSD, and Adobe Substance 3D, and is licensed against the YCRC network license server.</p>
 <h2 id="load-the-module">Load the Module</h2>
-<p><code>module load Maya</code></p>
+<div class="highlight"><pre><span></span><code>module load Maya
+</code></pre></div>
 <p>This puts the following commands on your <code>PATH</code>:</p>
 <table>
 <thead>
@@ -2793,8 +2808,9 @@
 <li>From the OOD dashboard, start a <strong>Remote Desktop</strong> session on a GPU partition (e.g. <code>gpu</code> or <code>gpu_devel</code>), requesting at least 1 GPU, 2 CPUs, and 8GB of memory.</li>
 <li>
 <p>Once the desktop opens, launch a terminal and run:</p>
-<p><code>module load Maya
-mayagui</code></p>
+<div class="highlight"><pre><span></span><code>module load Maya
+mayagui
+</code></pre></div>
 </li>
 </ol>
 <p><code>mayagui</code> auto-detects the GPU and runs Maya's Viewport 2.0 through VirtualGL. On the first launch it will register your account against the network license server; subsequent launches reuse the cached registration in <code>~/.autodesk_maya/</code>.</p>
@@ -2804,26 +2820,29 @@ mayagui</code></p>
 </div>
 <h2 id="batch-mode">Batch Mode</h2>
 <p>For headless runs (rendering, simulation playback, scripted scene processing) use <code>maya-batch</code> from inside a Slurm job. An example script is below:</p>
-<p>```</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-job-namemaya_batch">SBATCH --job-name=maya_batch</h1>
-<h1 id="sbatch-partitionday">SBATCH --partition=day</h1>
-<h1 id="sbatch-time240000">SBATCH --time=24:00:00</h1>
-<h1 id="sbatch-cpus-per-task16">SBATCH --cpus-per-task=16</h1>
-<h1 id="sbatch-mem64g">SBATCH --mem=64G</h1>
-<p>module load Maya
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name=maya_batch
+#SBATCH --partition=day
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+
+module load Maya
 maya-batch /path/to/your_scene.mb
-```</p>
+</code></pre></div>
 <p>Submit with:</p>
-<p><code>sbatch example_batch.sbatch</code></p>
+<div class="highlight"><pre><span></span><code>sbatch example_batch.sbatch
+</code></pre></div>
 <p><code>maya-batch</code> steps the scene through its full frame range and writes a per-frame CSV of keyframed animation values next to the scene file. Use <code>maya-batch --help</code> for the full option list (custom frame range, output directory, etc.).</p>
 <p>For arbitrary scripted work, you can also call the underlying <code>maya</code> or <code>mayapy</code> binaries directly:</p>
-<p><code>maya -batch -file scene.mb -command "python(\"import my_module; my_module.run()\")"
-mayapy my_script.py</code></p>
+<div class="highlight"><pre><span></span><code>maya -batch -file scene.mb -command &quot;python(\&quot;import my_module; my_module.run()\&quot;)&quot;
+mayapy my_script.py
+</code></pre></div>
 <h2 id="parallel-mode">Parallel Mode</h2>
 <p>For long scenes where each frame is <strong>independent</strong> (pose sweeps, geometry queries driven by pre-keyed animation, etc.), <code>maya-parallel</code> splits the frame range across multiple Slurm jobs and merges the resulting CSVs once all chunks finish:</p>
-<p><code>module load Maya
-maya-parallel scene.mb --chunks 16 --cpus 16 --memory 32G --time 24:00:00</code></p>
+<div class="highlight"><pre><span></span><code>module load Maya
+maya-parallel scene.mb --chunks 16 --cpus 16 --memory 32G --time 24:00:00
+</code></pre></div>
 <p>This submits 16 chunk jobs plus a dependent merge job that produces <code>&lt;scene&gt;_results.csv</code>. Common options:</p>
 <table>
 <thead>

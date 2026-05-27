@@ -1352,6 +1352,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#core-layouts" class="md-nav__link">
+    Core Layouts
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2781,6 +2788,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#core-layouts" class="md-nav__link">
+    Core Layouts
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2821,12 +2835,11 @@ As with our GPU partitions, if you would like to make use of available cores on 
 <h2 id="compilation">Compilation</h2>
 <p>The <code>devel</code> partitions on Grace and Bouchet each have a node that is identical to the <code>mpi</code> partition nodes. 
 If you choose to compile your code with advanced optimization flags specific to the new generation of compute nodes, you can request that node in the <code>devel</code> partition:</p>
-<p>```</p>
-<h1 id="grace">Grace</h1>
-<p>--partition devel --constraint skylake </p>
-<h1 id="bouchet">Bouchet</h1>
-<p>--partition devel --constraint cpugen:emeraldrapids
-```</p>
+<div class="highlight"><pre><span></span><code># Grace 
+--partition devel --constraint skylake 
+# Bouchet
+--partition devel --constraint cpugen:emeraldrapids
+</code></pre></div>
 <h2 id="core-layouts">Core Layouts</h2>
 <p>Please review the <a href="/clusters-at-yale/job-scheduling/resource-requests">Request Compute Resources</a> documentation for the appropriate Slurm flags for different types of core and node layouts. 
 If you have any questions, feel free to <a href="/#get-help">contact us</a>.</p>

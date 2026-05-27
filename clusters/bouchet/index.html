@@ -3888,8 +3888,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the day partition are subject to the following limits:</p>
 <table>
@@ -3949,8 +3949,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the day_amd partition are subject to the following limits:</p>
 <table>
@@ -4010,8 +4010,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the devel partition are subject to the following limits:</p>
 <table>
@@ -4067,8 +4067,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the week partition for jobs that need a longer runtime than day allows.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the week partition are subject to the following limits:</p>
 <table>
@@ -4128,8 +4128,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx_5000_ada:2</code> would request 2 NVIDIA RTX 5000 Ada GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4199,8 +4199,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=rtx_pro_6000_blackwell:2</code> would request 2 NVIDIA RTX Pro 6000 Blackwell GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4266,8 +4266,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=h200:2</code> would request 2 NVIDIA H200 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4333,8 +4333,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=b200:2</code> would request 2 NVIDIA B200 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4400,8 +4400,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4485,8 +4485,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
 <table>
@@ -4538,8 +4538,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=498688</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=498688
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the mpi partition are subject to the following limits:</p>
 <table>
@@ -4595,8 +4595,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4700,8 +4700,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -4779,8 +4779,8 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <div class="tabbed-set" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">pi_co54</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>

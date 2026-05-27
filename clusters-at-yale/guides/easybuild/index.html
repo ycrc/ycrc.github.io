@@ -2724,6 +2724,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#search-for-easyconfig-files" class="md-nav__link">
+    Search for Easyconfig files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-easybuild" class="md-nav__link">
+    Install with EasyBuild
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-locally-installed-modules" class="md-nav__link">
+    Use locally installed modules
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2754,8 +2775,9 @@
 </ul>
 <h2 id="get-started">Get Started</h2>
 <p>To get started with installing software with EasyBuild, request an interactive session on the oldest available nodes and load the EasyBuild module:</p>
-<p><code>salloc --cpus-per-task 4 --constraint oldest 
-module load EasyBuild</code></p>
+<div class="highlight"><pre><span></span><code>salloc --cpus-per-task 4 --constraint oldest 
+module load EasyBuild
+</code></pre></div>
 <h2 id="configure-easybuild">Configure EasyBuild</h2>
 <p>Some of the important configurations settings are:</p>
 <ul>
@@ -2764,40 +2786,43 @@ module load EasyBuild</code></p>
 <li><a href="https://docs.easybuild.io/configuration/#installpath">Software and module install path</a>: by default, software install path is <code>$HOME/.local/easybuild/software</code> and module install path is <code>$HOME/.local/easybuild/modules/all</code>. </li>
 </ul>
 <p>You can look up the current configuration of EasyBuild with the following command:
-```
-eb --show-config</p>
-<h1 id="_1"></h1>
-<h1 id="current-easybuild-configuration">Current EasyBuild configuration</h1>
-<h1 id="c-command-line-argument-d-default-value-e-environment-variable-f-configuration-file">(C: command line argument, D: default value, E: environment variable, F: configuration file)</h1>
-<h1 id="_2"></h1>
-<p>buildpath      (D) = /home/testuser/.local/easybuild/build
+<div class="highlight"><pre><span></span><code>eb --show-config
+
+#
+# Current EasyBuild configuration
+# (C: command line argument, D: default value, E: environment variable, F: configuration file)
+#
+buildpath      (D) = /home/testuser/.local/easybuild/build
 containerpath  (D) = /home/testuser/.local/easybuild/containers
 installpath    (D) = /home/testuser/.local/easybuild
 repositorypath (D) = /home/testuser/.local/easybuild/ebfiles_repo
 robot-paths    (D) = /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
 sourcepath     (D) = /home/testuser/.local/easybuild/sources
-<code>If you wish to change any of these paths, you can do so using several methods including command-line arguments, environment variables and configuration files. For more details, take a look at the [documentation](https://docs.easybuild.io/configuration/). For example, if you would like to use a configuration file, please create a `config.cfg` file in `$HOME/.config/easybuild`:</code>
-cat $HOME/.config/easybuild/config.cfg</p>
-<p>[config]
+</code></pre></div>
+If you wish to change any of these paths, you can do so using several methods including command-line arguments, environment variables and configuration files. For more details, take a look at the <a href="https://docs.easybuild.io/configuration/">documentation</a>. For example, if you would like to use a configuration file, please create a <code>config.cfg</code> file in <code>$HOME/.config/easybuild</code>:
+<div class="highlight"><pre><span></span><code>cat $HOME/.config/easybuild/config.cfg
+
+[config]
 buildpath=/dev/shm/%(USER)s/build
 installpath=/gpfs/gibbs/project/testuser/testuser/apps
-sourcepath=/gpfs/gibbs/project/testuser/testuser/source</p>
-<p><code>This configuration will change the output of `eb --show-config` to:</code></p>
-<h1 id="current-easybuild-configuration_1">Current EasyBuild configuration</h1>
-<h1 id="c-command-line-argument-d-default-value-e-environment-variable-f-configuration-file_1">(C: command line argument, D: default value, E: environment variable, F: configuration file)</h1>
-<h1 id="_3"></h1>
-<p>buildpath      (F) = /dev/shm/testuser/build
+sourcepath=/gpfs/gibbs/project/testuser/testuser/source
+</code></pre></div>
+This configuration will change the output of <code>eb --show-config</code> to:
+<div class="highlight"><pre><span></span><code># Current EasyBuild configuration
+# (C: command line argument, D: default value, E: environment variable, F: configuration file)
+#
+buildpath      (F) = /dev/shm/testuser/build
 containerpath  (D) = /home/testuser/.local/easybuild/containers
 installpath    (F) = /gpfs/gibbs/project/testuser/testuser/apps
 repositorypath (D) = /home/testuser/.local/easybuild/ebfiles_repo
 robot-paths    (D) = /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
 sourcepath     (F) = /gpfs/gibbs/project/testuser/testuser/source
-```</p>
+</code></pre></div></p>
 <h2 id="search-for-easyconfig-files">Search for Easyconfig files</h2>
 <p>To install software with EasyBuild, you need easyconfig files. Easyconfig files specify build parameters such as name, toolchain, sources, and dependencies. To searc for an existing easyconfig file for a specific softwar in the EasyBuild repository, you can use the <code>--search</code> or <code>-S</code> option:
-```
-eb -S HPCG</p>
-<p>== found valid index for /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs, so using it...
+<div class="highlight"><pre><span></span><code>eb -S HPCG
+
+== found valid index for /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs, so using it...
 CFGS1=/vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
  * $CFGS1/h/HPCG/HPCG-3.0-foss-2016b.eb
  * $CFGS1/h/HPCG/HPCG-3.0-foss-2018b.eb
@@ -2814,26 +2839,33 @@ CFGS1=/vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs
  * $CFGS1/h/HPCG/HPCG-3.1-intel-2022a.eb
  * $CFGS1/h/HPCG/HPCG-3.1-intel-2022b.eb
  * $CFGS1/h/HPCG/HPCG-3.1-intel-2023a.eb
- * $CFGS1/h/HPCG/HPCG-3.1_fix-loop-upper-bound-variable-to-be-explicitly-designated-as-shared.patch</p>
-<p>Note: 2 matching archived easyconfig(s) found, use --consider-archived-easyconfigs to see them</p>
-<p><code>The config file typically has the name format `software-version-toolchain-version.eb`. Make sure to choose easyconfig files that uses the available [toolchains](https://docs.ycrc.yale.edu/applications/toolchains/) on our clusters. If you wish to edit the easyconfig file, copy and paste it in your own cluster space. For example:</code>
-cp /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs/h/HPCG/HPCG-3.1-intel-2022b.eb $HOME
-<code>Let's say we added a new patch and `versionsuffix = '-patched'` to the easyconfig file. If you change source files and patches in the easyconfig files, please update the [checksums](https://docs.easybuild.io/writing-easyconfig-files/?h=inject#common_easyconfig_param_sources):</code>
-eb --inject-checksums --force HPCG-3.1-intel-2022b.eb
-```</p>
+ * $CFGS1/h/HPCG/HPCG-3.1_fix-loop-upper-bound-variable-to-be-explicitly-designated-as-shared.patch
+
+Note: 2 matching archived easyconfig(s) found, use --consider-archived-easyconfigs to see them
+</code></pre></div>
+The config file typically has the name format <code>software-version-toolchain-version.eb</code>. Make sure to choose easyconfig files that uses the available <a href="https://docs.ycrc.yale.edu/applications/toolchains/">toolchains</a> on our clusters. If you wish to edit the easyconfig file, copy and paste it in your own cluster space. For example:
+<div class="highlight"><pre><span></span><code>cp /vast/palmer/apps/avx2/software/EasyBuild/4.9.3/easybuild/easyconfigs/h/HPCG/HPCG-3.1-intel-2022b.eb $HOME
+</code></pre></div>
+Let's say we added a new patch and <code>versionsuffix = '-patched'</code> to the easyconfig file. If you change source files and patches in the easyconfig files, please update the <a href="https://docs.easybuild.io/writing-easyconfig-files/?h=inject#common_easyconfig_param_sources">checksums</a>:
+<div class="highlight"><pre><span></span><code>eb --inject-checksums --force HPCG-3.1-intel-2022b.eb
+</code></pre></div></p>
 <h2 id="install-with-easybuild">Install with EasyBuild</h2>
 <p>Before you install software with EasyBuild, you can perform a dry-run installation of software:
-<code>eb HPCG-3.1-intel-2022b.eb --dry-run</code>
+<div class="highlight"><pre><span></span><code>eb HPCG-3.1-intel-2022b.eb --dry-run
+</code></pre></div>
 This will list all dependent software packages and indicate whether they are already installed as modules on the cluster.  </p>
 <p>To install a software and create a module, run the following command:
-<code>eb HPCG-3.1-intel-2022b.eb</code></p>
+<div class="highlight"><pre><span></span><code>eb HPCG-3.1-intel-2022b.eb
+</code></pre></div></p>
 <h2 id="use-locally-installed-modules">Use locally installed modules</h2>
 <p>You can use the command:
-<code>module use $HOME/.local/easybuild/modules/all
-module load HPCG/3.1-intel-2022b-patched</code>
+<div class="highlight"><pre><span></span><code>module use $HOME/.local/easybuild/modules/all
+module load HPCG/3.1-intel-2022b-patched
+</code></pre></div>
 then <code>module avail</code> command will display modules installed locally.</p>
 <p>You can also update $MODULEPATH in your $HOME/.bashrc file. Add this line:
-<code>export MODULEPATH=$MODULEPATH:$HOME/.local/easybuild/modules/all</code></p>
+<div class="highlight"><pre><span></span><code>export MODULEPATH=$MODULEPATH:$HOME/.local/easybuild/modules/all
+</code></pre></div></p>
                 
                   
                     

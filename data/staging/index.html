@@ -1617,6 +1617,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#storageyale-transfers" class="md-nav__link">
+    Storage@Yale Transfers
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage@Yale Transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfersbatch" class="md-nav__link">
+    transfer.sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2781,6 +2801,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#storageyale-transfers" class="md-nav__link">
+    Storage@Yale Transfers
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage@Yale Transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfersbatch" class="md-nav__link">
+    transfer.sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2806,16 +2846,15 @@ Since the <em>permanent</em> home of the data remains on off-cluster storage, yo
 <h2 id="interactive-transfers">Interactive Transfers</h2>
 <p>For interactive transfers, please see our <a href="/data/transfer/">Transfer Data</a> page for a more complete list of ways to move data efficiently to and from the clusters.  </p>
 <p>A sample workflow using <code>rsync</code> would be:</p>
-<p>``` bash</p>
-<h1 id="connect-to-the-transfer-node-from-the-login-node">connect to the transfer node from the login node</h1>
-<p>[netID@cluster ~] ssh transfer</p>
-<h1 id="copy-data-to-temporary-cluster-storage">copy data to temporary cluster storage</h1>
-<p>[netID@transfer ~]$ rsync -avP netID@department_server:/path/to/data $HOME/palmer_scratch/</p>
-<h1 id="process-data-on-cluster">process data on cluster</h1>
-<p>[netID@transfer ~]$ sbatch data_processing.sh</p>
-<h1 id="return-results-to-permanent-storage-for-safe-keeping">return results to permanent storage for safe-keeping</h1>
-<p>[netID@transfer ~]$ rsync -avP $HOME/palmer_scratch/output_data netID@department_server:/path/to/outputs/
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
+<span class="o">[</span>netID@cluster<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>ssh<span class="w"> </span>transfer
+<span class="c1"># copy data to temporary cluster storage</span>
+<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span>netID@department_server:/path/to/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+<span class="c1"># process data on cluster</span>
+<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>data_processing.sh
+<span class="c1"># return results to permanent storage for safe-keeping</span>
+<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/output_data<span class="w"> </span>netID@department_server:/path/to/outputs/
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To protect your transfer from network interruptions between your computer and the transfer node, launch your <code>rsync</code> inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node.</p>
@@ -2825,14 +2864,15 @@ Since the <em>permanent</em> home of the data remains on off-cluster storage, yo
 The process is somewhat simpler than the above example because we do not need to <code>rsync</code> the data, and can instead use <code>cp</code> directly.</p>
 <p>Here, we have modified the <code>transfer.sbatch</code> file from above:</p>
 <h3 id="transfersbatch">transfer.sbatch</h3>
-<p>```bash</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-partitionday">SBATCH --partition=day</h1>
-<h1 id="sbatch-time60000">SBATCH --time=6:00:00</h1>
-<h1 id="sbatch-cpus-per-task1">SBATCH --cpus-per-task=1</h1>
-<h1 id="sbatch-job-namemy_transfer">SBATCH --job-name=my_transfer</h1>
-<p>cp /SAY/standard/my_say_share/data $HOME/palmer_scratch/</p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --partition=day</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=1</span>
+<span class="c1">#SBATCH --job-name=my_transfer</span>
+
+cp<span class="w"> </span>/SAY/standard/my_say_share/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+</code></pre></div>
 <p>This will transfer <code>data</code> from the Storage@Yale share to <code>palmer_scratch</code> where it can be processed on any of the compute nodes.</p>
                 
                   

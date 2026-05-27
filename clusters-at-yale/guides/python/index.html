@@ -2069,6 +2069,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-python" class="md-nav__link">
+    Run Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-job" class="md-nav__link">
+    Interactive Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-mode" class="md-nav__link">
+    Batch Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebooks" class="md-nav__link">
+    Jupyter Notebooks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2823,6 +2857,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-python" class="md-nav__link">
+    Run Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-job" class="md-nav__link">
+    Interactive Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-mode" class="md-nav__link">
+    Batch Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-notebooks" class="md-nav__link">
+    Jupyter Notebooks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2850,14 +2918,14 @@ We strongly recommend that you use one of the methods below to set up your own p
 We include frozen versions of many common packages used for scientific computing.</p>
 <h3 id="find-and-load-python">Find and Load Python</h3>
 <p>Find the available versions of Python version 3 with:</p>
-<p><code>bash
-module avail Python/3</code></p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>Python/3
+</code></pre></div>
 <p>To load version 3.8.6:</p>
-<p><code>bash
-module load Python/3.8.6-foss-2020b</code></p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Python/3.8.6-foss-2020b
+</code></pre></div>
 <p>To show installed Python packages and their versions for the <code>Python/3.8.6-foss-2020b</code> module:</p>
-<p><code>bash
-module help Python/3.8.6-foss-2020b</code></p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>Python/3.8.6-foss-2020b
+</code></pre></div>
 <h3 id="install-packages">Install Packages</h3>
 <p>We recommend <em><em>against</em></em> installing python packages with <code>pip</code> after having loaded the Python module. 
 Doing so installs them to your home directory in a way that does not make it clear to other python installs what environment the packages you installed belong to. 
@@ -2871,14 +2939,13 @@ If you do <code>pip</code> install packages, do so in an interactive job submitt
 <h2 id="conda-based-python-environments">Conda-based Python Environments</h2>
 <p>You can easily set up multiple Python installations side-by-side using the <code>conda</code> command. With Conda you can manage your own packages and dependencies for Python, R, etc. 
 See our guide for more detailed instructions. </p>
-<p>``` bash</p>
-<h1 id="install-once">install once</h1>
-<p>module load miniconda
-conda create -n py3_env python=3 numpy scipy matplotlib notebook</p>
-<h1 id="use-later">use later</h1>
-<p>module reset &amp;&amp; module load miniconda
-conda activate py3_env
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># install once</span>
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py3_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>matplotlib<span class="w"> </span>notebook
+<span class="c1"># use later</span>
+module<span class="w"> </span>reset<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>py3_env
+</code></pre></div>
 <h2 id="run-python">Run Python</h2>
 <p>We will kill Python jobs on the login nodes that are using excessive resources. 
 To be a good cluster citizen, launch your computation in jobs. 
@@ -2886,22 +2953,22 @@ See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for m
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run Python interactively, first launch an interactive job on a compute node. 
 If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<p><code>bash
-salloc --mem=10G -t 4:00:00</code></p>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
+</code></pre></div>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start <code>python</code> or <code>ipython</code> on your command prompt. 
 If you are happy with your Python commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
 <p>To run Python in batch mode, create a plain-text batch script to submit. In that script, you call your Python script. 
 In this case <code>myscript.py</code> is in the same directory as the batch script, batch script contents shown below.</p>
-<p>``` bash</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-j-my_python_program">SBATCH -J my_python_program</h1>
-<h1 id="sbatch-mem10g">SBATCH --mem=10G</h1>
-<h1 id="sbatch-t-40000">SBATCH -t 4:00:00</h1>
-<p>module load miniconda
-conda activate py3_env
-python myscript.py
-```</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -J my_python_program</span>
+<span class="c1">#SBATCH --mem=10G</span>
+<span class="c1">#SBATCH -t 4:00:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>py3_env
+python<span class="w"> </span>myscript.py
+</code></pre></div>
 <p>To actually submit the job, run <code>sbatch my_py_job.sh</code> where the batch script above was saved as <code>my_py_job.sh</code>.</p>
 <h3 id="jupyter-notebooks">Jupyter Notebooks</h3>
 <p>You can run Jupyter notebooks &amp; JupyterLab by submitting your notebook server as a job. See our <a href="/clusters-at-yale/guides/jupyter">page dedicated to Jupyter</a> for more info.</p>

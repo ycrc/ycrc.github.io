@@ -2750,75 +2750,6 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#binbash" class="md-nav__link">
-    !/bin/bash
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sbatch-p-day" class="md-nav__link">
-    SBATCH -p day
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sbatch-t-240000" class="md-nav__link">
-    SBATCH -t 24:00:00
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sbatch-c-1" class="md-nav__link">
-    SBATCH -c 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sbatch-signalb1030-send-the-signal-10-at-30s-before-job-finishes" class="md-nav__link">
-    SBATCH --signal=B:10@30 # send the signal 10 at 30s before job finishes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sbatch-requeue-mark-this-job-eligible-for-requeueing" class="md-nav__link">
-    SBATCH --requeue        # mark this job eligible for requeueing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-a-trap-that-catches-the-signal-and-requeues-the-job" class="md-nav__link">
-    define a trap that catches the signal and requeues the job
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-main-code-with-the-to-background-the-task" class="md-nav__link">
-    run the main code, with the &amp; to “background” the task
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wait-for-either-the-main-code-to-finish-to-receive-the-signal" class="md-nav__link">
-    wait for either the main code to finish to receive the signal
-  </a>
-  
-    <nav class="md-nav" aria-label="wait for either the main code to finish to receive the signal">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#software-highlights" class="md-nav__link">
     Software Highlights
@@ -2848,6 +2779,8 @@
                   </a>
                 
                 
+                  <h1>2022 11</h1>
+                
                 <h2 id="november-2022">November 2022</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="ruddle-maintenance">Ruddle Maintenance</h4>
@@ -2857,20 +2790,22 @@
 <h4 id="requeue-after-timeout">Requeue after Timeout</h4>
 <p>The YCRC clusters all have maximum time-limits that sometimes are shorter than a job needs to finish. This can be a frustration for researchers trying to get a simulation or a project finished. However, a number of workflows have the ability to periodically save the status of a process to a file and restart from where it left off. This is often referred to as "checkpointing" and is built into many standard software tools, like Gaussian and Gromacs. </p>
 <p>Slurm is able to send a signal to your job just before it runs out of time. Upon receiving this signal, you can have your job save its current status and automatically submit a new version of the job which picks up where it left off.  Here is an example of a simple script that resubmits a job after receiving the <code>TIMEOUT</code> signal:</p>
-<p>```</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-p-day">SBATCH -p day</h1>
-<h1 id="sbatch-t-240000">SBATCH -t 24:00:00</h1>
-<h1 id="sbatch-c-1">SBATCH -c 1</h1>
-<h1 id="sbatch-signalb1030-send-the-signal-10-at-30s-before-job-finishes">SBATCH --signal=B:10@30 # send the signal <code>10</code> at 30s before job finishes</h1>
-<h1 id="sbatch-requeue-mark-this-job-eligible-for-requeueing">SBATCH --requeue        # mark this job eligible for requeueing</h1>
-<h1 id="define-a-trap-that-catches-the-signal-and-requeues-the-job">define a <code>trap</code> that catches the signal and requeues the job</h1>
-<p>trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10</p>
-<h1 id="run-the-main-code-with-the-to-background-the-task">run the main code, with the <code>&amp;</code> to “background” the task</h1>
-<p>./my_code.exe &amp;</p>
-<h1 id="wait-for-either-the-main-code-to-finish-to-receive-the-signal">wait for either the main code to finish to receive the signal</h1>
-<p>wait
-```</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH -p day
+#SBATCH -t 24:00:00
+#SBATCH -c 1
+#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job finishes
+#SBATCH --requeue        # mark this job eligible for requeueing
+
+# define a `trap` that catches the signal and requeues the job
+trap &quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue ${SLURM_JOBID}  &quot; 10
+
+# run the main code, with the `&amp;` to “background” the task
+./my_code.exe &amp;
+
+# wait for either the main code to finish to receive the signal
+wait
+</code></pre></div>
 <p>This tells Slurm to send <code>SIGNAL10</code> at ~30s before the job finishes. Then we define an action (or <code>trap</code>) based on this signal which requeues the job. Don’t forget to add the <code>&amp;</code> to the end of the main executable and the <code>wait</code> command so that the trap is able to catch the signal. </p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>

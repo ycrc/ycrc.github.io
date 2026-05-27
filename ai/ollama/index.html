@@ -1836,25 +1836,68 @@
     Interactive usage
   </a>
   
-    <nav class="md-nav" aria-label="Interactive usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interactive" class="md-nav__link">
-    interactive
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebooks-with-ollama" class="md-nav__link">
+    Jupyter Notebooks with Ollama
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#submission-script" class="md-nav__link">
-    submission script
+      
+        <li class="md-nav__item">
+  <a href="#batch-usage" class="md-nav__link">
+    Batch usage
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-usage" class="md-nav__link">
+    GPU usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-examples" class="md-nav__link">
+    Hands on Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ycrc-module-behavior" class="md-nav__link">
+    YCRC module behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-port-collision-prevention" class="md-nav__link">
+    Automatic port collision prevention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovering-the-active-ollama-server" class="md-nav__link">
+    Discovering the active Ollama server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stopping-the-server" class="md-nav__link">
+    Stopping the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    Validation
+  </a>
   
 </li>
       
@@ -2811,25 +2854,68 @@
     Interactive usage
   </a>
   
-    <nav class="md-nav" aria-label="Interactive usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interactive" class="md-nav__link">
-    interactive
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-notebooks-with-ollama" class="md-nav__link">
+    Jupyter Notebooks with Ollama
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#submission-script" class="md-nav__link">
-    submission script
+      
+        <li class="md-nav__item">
+  <a href="#batch-usage" class="md-nav__link">
+    Batch usage
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-usage" class="md-nav__link">
+    GPU usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-examples" class="md-nav__link">
+    Hands on Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ycrc-module-behavior" class="md-nav__link">
+    YCRC module behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-port-collision-prevention" class="md-nav__link">
+    Automatic port collision prevention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovering-the-active-ollama-server" class="md-nav__link">
+    Discovering the active Ollama server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stopping-the-server" class="md-nav__link">
+    Stopping the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    Validation
+  </a>
   
 </li>
       
@@ -2858,9 +2944,9 @@
 - <a href="../../clusters-at-yale/job-scheduling/jobstats/">Jobstats</a></p>
 <h2 id="loading-the-module">Loading the module</h2>
 <p>Ollama is provided as a YCRC module and must be loaded inside a Slurm allocation on a compute node.</p>
-<p><code>bash
-module avail ollama
-module load ollama</code></p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>ollama
+module<span class="w"> </span>load<span class="w"> </span>ollama
+</code></pre></div>
 <h2 id="intended-usage">Intended usage</h2>
 <p>Ollama is appropriate for:</p>
 <ul>
@@ -2887,45 +2973,52 @@ due to a lack of vRAM.</p>
 <p>To see a better summary of resources available, see <a href="../resources/">here</a></p>
 <p>In this case, you can specify GPUs with more vRAM using the <code>--constraint</code> flag. In the example below, you could 
 specify rtx5000 or v100 GPUs, which have more vRAM &gt; 16GB.</p>
-<p>```bash</p>
-<h5 id="interactive">interactive</h5>
-<p>salloc --partition gpu_devel --constraint="rtx5000|v100"</p>
-<h5 id="submission-script">submission script</h5>
-<h1 id="sbatch-constraintrtx5000v100">SBATCH --constraint="rtx5000|v100"</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
+salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+
+<span class="c1">#####submission script</span>
+<span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
+</code></pre></div>
 <p>Within an interactive allocation, models can be run directly from a terminal like so:</p>
-<p>```bash</p>
-<h3 id="request-compute-node-with-gpu-add-constraintgputypes-if-needed">request compute node with GPU (add --Constraint=GPUTYPES if needed)</h3>
-<p>salloc --partition=gpu_devel --cpus-per-task=1 --time=4:00:00 --mem=5G --gpus=1</p>
-<h3 id="load-ollama-module-if-it-isnt-loaded">load ollama module if it isn't loaded</h3>
-<p>module load ollama</p>
-<h4 id="launch-server-to-access-models">launch server to access models.</h4>
-<p>ollama serve</p>
-<h5 id="hit-enter-to-proceed-for-more-input">hit enter to proceed for more input</h5>
-<h3 id="run-model-of-interest-replace-llama323b-with-model-of-interest">run model of interest, replace llama3.2:3b with model of interest</h3>
-<p>ollama run llama3.2:3b</p>
-<h3 id="enter-prompts">enter prompts</h3>
-<p>why is the sky blue?
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span>
+
+<span class="c1">###load ollama module if it isn&#39;t loaded</span>
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+<span class="c1">####launch server to access models.</span>
+ollama<span class="w"> </span>serve
+
+<span class="c1">#####hit enter to proceed for more input</span>
+<span class="c1">###run model of interest, replace llama3.2:3b with model of interest</span>
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
+
+<span class="c1">###enter prompts</span>
+why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
+</code></pre></div>
 <h2 id="jupyter-notebooks-with-ollama">Jupyter Notebooks with Ollama</h2>
 <p>For Jupyter Notebooks, follow these steps:</p>
 <ol>
 <li>
 <p>Install Ollama in the conda environment using <strong>pip</strong>. The Miniconda package for Ollama installs the wrong program
 and won't work properly.</p>
-<p>```bash</p>
-<h3 id="be-on-a-compute-node-or-request-a-remote-desktop-session-for-compute-resources-or-miniconda-will-be-killed">Be on a compute node or request a remote desktop session for compute resources or miniconda will be killed</h3>
-<p>salloc --cpus-per-task=4 --time=1:00:00 --mem=10G --partition=devel #4 cpus for 1 hour with 10 GB of memory on the devel partition</p>
-<h3 id="load-miniconda-module-to-gain-access-to-conda-commands">load miniconda module to gain access to conda commands</h3>
-<p>module load miniconda</p>
-<h3 id="create-initial-environment-with-jupyter-compatibility">create initial environment with jupyter compatibility</h3>
-<p>conda create --name my_ollama_env python=3.13 notebook ###can change python version to desired version and/or add other packages</p>
-<h3 id="install-ollama-python-package-using-pip">install ollama python package using pip</h3>
-<p>conda activate my_ollama_env</p>
-<p>pip install ollama</p>
-<h3 id="load-environment-into-jupyter-notebook-dropdown">load environment into jupyter notebook dropdown</h3>
-<p>ycrc_conda_env.sh update
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">### Be on a compute node or request a remote desktop session for compute resources or miniconda will be killed</span>
+salloc<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span><span class="c1">#4 cpus for 1 hour with 10 GB of memory on the devel partition</span>
+
+<span class="c1">###load miniconda module to gain access to conda commands</span>
+module<span class="w"> </span>load<span class="w"> </span>miniconda
+
+<span class="c1">###create initial environment with jupyter compatibility</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_ollama_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>notebook<span class="w"> </span><span class="c1">###can change python version to desired version and/or add other packages</span>
+
+<span class="c1">###install ollama python package using pip</span>
+conda<span class="w"> </span>activate<span class="w"> </span>my_ollama_env
+
+pip<span class="w"> </span>install<span class="w"> </span>ollama
+
+<span class="c1">###load environment into jupyter notebook dropdown</span>
+ycrc_conda_env.sh<span class="w"> </span>update
+</code></pre></div>
 </li>
 <li>
 <p>Request correct resources on Jupyter app page on Open On Demand:</p>
@@ -2953,61 +3046,64 @@ environment built for ollama.</p>
 Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.</p>
 </li>
 </ol>
-<p>```bash
-import subprocess,ollama</p>
-<h3 id="starts-ollama-server">starts ollama server</h3>
-<p>subprocess.run(["ollama", "serve"], check=True)</p>
-<h3 id="collects-host-address-for-notebook">collects host address for notebook</h3>
-<p>host = subprocess.check_output(["ollama", "host"], text=True).strip()
-print("ollama host reports:", host)</p>
-<h3 id="jupyter-notebook-requires-http-to-be-in-front-of-host-this-line-adds-http-to-host">jupyter notebook requires http to be in front of host, this line adds http to host</h3>
-<p>if not host.startswith("http://") and not host.startswith("https://"):
-    host = "http://" + host
-print("ollama host for notebook:", host)</p>
-<h3 id="imports-client-to-save-host-address">imports client to save host address</h3>
-<p>from ollama import Client
-client = Client(host=host)
-```</p>
+<div class="highlight"><pre><span></span><code>import<span class="w"> </span>subprocess,ollama
+
+<span class="c1">###starts ollama server</span>
+
+subprocess.run<span class="o">([</span><span class="s2">&quot;ollama&quot;</span>,<span class="w"> </span><span class="s2">&quot;serve&quot;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">check</span><span class="o">=</span>True<span class="o">)</span>
+<span class="c1">###collects host address for notebook</span>
+<span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>subprocess.check_output<span class="o">([</span><span class="s2">&quot;ollama&quot;</span>,<span class="w"> </span><span class="s2">&quot;host&quot;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">text</span><span class="o">=</span>True<span class="o">)</span>.strip<span class="o">()</span>
+print<span class="o">(</span><span class="s2">&quot;ollama host reports:&quot;</span>,<span class="w"> </span>host<span class="o">)</span>
+<span class="c1">###jupyter notebook requires http to be in front of host, this line adds http to host</span>
+<span class="k">if</span><span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">&quot;http://&quot;</span><span class="o">)</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">&quot;https://&quot;</span><span class="o">)</span>:
+<span class="w">    </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://&quot;</span><span class="w"> </span>+<span class="w"> </span>host
+print<span class="o">(</span><span class="s2">&quot;ollama host for notebook:&quot;</span>,<span class="w"> </span>host<span class="o">)</span>
+
+<span class="c1">###imports client to save host address</span>
+from<span class="w"> </span>ollama<span class="w"> </span>import<span class="w"> </span>Client
+<span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Client<span class="o">(</span><span class="nv">host</span><span class="o">=</span>host<span class="o">)</span>
+</code></pre></div>
 <ol>
 <li>Download desired model using this cell block:</li>
 </ol>
-<p>```bash
-client.pull("llama3.1")</p>
-<h3 id="can-change-llama31-to-any-desired-model">can change llama3.1 to any desired model</h3>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>client.pull<span class="o">(</span><span class="s2">&quot;llama3.1&quot;</span><span class="o">)</span>
+<span class="c1">###can change llama3.1 to any desired model</span>
+</code></pre></div>
 <ol>
 <li>Use this formatting to prompt the model.</li>
 </ol>
-<p>```bash</p>
-<h3 id="prompts-model-using-saved-host-address">prompts model using saved host address</h3>
-<p>resp = client.generate(
-    model="llama3.1",
-    prompt="Design an experiment to test whether water is wet.",
-    #options is not necessary, but provides the ability to modify response of model
-    options={
-        "temperature":10.0,
-        "num_ctx": 4096,
-        "top_p": 0.1,
-        "num_predict": 10000,
-    },
-)</p>
-<h1 id="required-to-actually-receive-response">required to actually receive response</h1>
-<p>print(resp["response"])
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">###prompts model using saved host address</span>
+<span class="nv">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>client.generate<span class="o">(</span>
+<span class="w">    </span><span class="nv">model</span><span class="o">=</span><span class="s2">&quot;llama3.1&quot;</span>,
+<span class="w">    </span><span class="nv">prompt</span><span class="o">=</span><span class="s2">&quot;Design an experiment to test whether water is wet.&quot;</span>,
+<span class="w">    </span><span class="c1">#options is not necessary, but provides the ability to modify response of model</span>
+<span class="w">    </span><span class="nv">options</span><span class="o">={</span>
+<span class="w">        </span><span class="s2">&quot;temperature&quot;</span>:10.0,
+<span class="w">        </span><span class="s2">&quot;num_ctx&quot;</span>:<span class="w"> </span><span class="m">4096</span>,
+<span class="w">        </span><span class="s2">&quot;top_p&quot;</span>:<span class="w"> </span><span class="m">0</span>.1,
+<span class="w">        </span><span class="s2">&quot;num_predict&quot;</span>:<span class="w"> </span><span class="m">10000</span>,
+<span class="w">    </span><span class="o">}</span>,
+<span class="o">)</span>
+
+<span class="c1">#required to actually receive response</span>
+print<span class="o">(</span>resp<span class="o">[</span><span class="s2">&quot;response&quot;</span><span class="o">])</span>
+</code></pre></div>
 <h2 id="batch-usage">Batch usage</h2>
 <p>A typical batch workflow starts the Ollama server in the background, waits for initialization, and then submits 
 inference requests.</p>
-<p>```bash</p>
-<h6 id="launch-the-ollama-server-the-tells-it-to-run-in-the-background-allowing-the-script-to-continue">#launch the ollama server, the &amp; tells it to run in the background, allowing the script to continue</h6>
-<p>module reset
-module load ollama</p>
-<p>ollama serve</p>
-<h6 id="make-slurm-wait-10-seconds-before-advancing-in-the-script-this-gives-the-necessary-time-to-launch-the-llm-server">make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server</h6>
-<h6 id="this-time-may-need-updating-for-larger-models-llama-3370b-requires-60-seconds-for-example">this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example</h6>
-<p>sleep 10</p>
-<h6 id="runs-the-llm-model-31-with-the-prompt-why-is-the-sky-blue-and-passes-the-response-into-a-file-called-responsetxt">runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt</h6>
-<p>ollama run llama3.1 why is the sky blue &gt; response.txt
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#######launch the ollama server, the &amp; tells it to run in the background, allowing the script to continue</span>
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+ollama<span class="w"> </span>serve
+
+<span class="c1">######make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server</span>
+<span class="c1">######this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example</span>
+sleep<span class="w"> </span><span class="m">10</span>
+
+<span class="c1">######runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt</span>
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"> </span>why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue<span class="w"> </span>&gt;<span class="w"> </span>response.txt
+</code></pre></div>
 <p>For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert 
 some of the symbols that are outputted in the traditional .out file from a batch submission.</p>
 <h2 id="gpu-usage">GPU usage</h2>
@@ -3031,10 +3127,10 @@ access the examples <a href="../exercises/">here</a>.</p>
 GPU node, which would cause Ollama to error out and fail for any user on that node. The YCRC Ollama automatically 
 detects a free port and assigns to the user when they run Ollama serve. That port is then exported as OLLAMA_HOST.</p>
 <p>If a user wants to use a specific port, they can set the port value prior to ollama serve like so:</p>
-<p>```bash
-export OLLAMA_PORT=11434</p>
-<p>ollama serve
-```</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_PORT</span><span class="o">=</span><span class="m">11434</span>
+
+ollama<span class="w"> </span>serve
+</code></pre></div>
 <p>If the requested port is already in use, a different free port will be selected automatically.</p>
 <h2 id="discovering-the-active-ollama-server">Discovering the active Ollama server</h2>
 <p>The module provides helper commands to query the active server to easily identify location of running Ollama instance.</p>

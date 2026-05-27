@@ -2270,6 +2270,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#grace-mpi-partition" class="md-nav__link">
+    Grace mpi partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-performance" class="md-nav__link">
+    Additional Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    Additional Reading
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2793,6 +2814,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#grace-mpi-partition" class="md-nav__link">
+    Grace mpi partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-performance" class="md-nav__link">
+    Additional Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-reading" class="md-nav__link">
+    Additional Reading
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2820,40 +2862,40 @@
 <p>For the purposes of VASP, <code>--ntasks-per-node</code> should always equal <code>NCORE</code> (in your INCAR file). Then <code>--nodes</code> should be equal to the total number of cores you want, divided by <code>--ntasks-per-node</code>.</p>
 <p>VASP has two parameters for controlling processor layouts, <code>NCORE</code> and <code>NPAR</code>, but you only need to set one of them. If you set <code>NCORE</code>, you don’t need to set <code>NPAR</code>. Instead VASP will automatically set <code>NPAR</code>.</p>
 <p>In your mpirun line, you should specify the number of MPI tasks as:</p>
-<p><code>bash
-mpirun -n $SLURM_NTASKS vasp_std</code></p>
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>vasp_std
+</code></pre></div>
 <h3 id="cores-layout-examples">Cores Layout Examples</h3>
 <p>If you want 40 cores (2 nodes and 20 cpus per node):</p>
 <p>in your submission script:</p>
-<p>``` bash</p>
-<h1 id="sbatch-nodes2">SBATCH --nodes=2</h1>
-<h1 id="sbatch-ntasks-per-node20">SBATCH --ntasks-per-node=20</h1>
-<p>```</p>
-<p><code>bash
-mpirun -n 2 vasp_std</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --ntasks-per-node=20</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>vasp_std
+</code></pre></div>
 <p>in <code>INCAR</code>:</p>
-<p><code>NCORE=20</code></p>
+<div class="highlight"><pre><span></span><code>NCORE=20
+</code></pre></div>
 <p>You may however find that the wait time to get 20 cores on two nodes can be very long since cores request via <code>--cpus-per-task</code> can’t span multiple nodes. Instead you might want to try breaking it up into smaller chunks. Therefore, try:</p>
 <p>in your submission script:</p>
-<p>``` bash</p>
-<h1 id="sbatch-nodes4">SBATCH --nodes=4</h1>
-<h1 id="sbatch-ntasks-per-node10">SBATCH --ntasks-per-node=10</h1>
-<p>```</p>
-<p><code>bash
-mpirun -n 4 vasp_std</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --nodes=4</span>
+<span class="c1">#SBATCH --ntasks-per-node=10</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span><span class="w"> </span>vasp_std
+</code></pre></div>
 <p>in <code>INCAR</code>:</p>
-<p><code>NCORE=10</code></p>
+<div class="highlight"><pre><span></span><code>NCORE=10
+</code></pre></div>
 <p>which would likely spread over 4 nodes using 10 cores each and spend less time in the queue.</p>
 <h2 id="grace-mpi-partition">Grace mpi partition</h2>
 <p>On Grace's <code>mpi</code> parttion, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
 <p>in your submission script:</p>
-<p>``` bash</p>
-<h1 id="sbatch-ntasks48-some-multiple-of-24">SBATCH --ntasks=48 # some multiple of 24</h1>
-<p>```</p>
-<p><code>bash
-mpirun -n $SLURM_NTASKS vasp_std</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>vasp_std
+</code></pre></div>
 <p>in <code>INCAR</code>:</p>
-<p><code>NCORE=24</code></p>
+<div class="highlight"><pre><span></span><code>NCORE=24
+</code></pre></div>
 <h2 id="additional-performance">Additional Performance</h2>
 <p>Some users have found that if they actually assign 2 MPI tasks per node (rather than 1), they see even better performance because the MPI tasks doesn't span the two sockets on the node. To try this, set <code>NCORE</code> to half of your nodes' core count and increase <code>mpirun -n</code> to twice the number of nodes you requested.</p>
 <h2 id="additional-reading">Additional Reading</h2>

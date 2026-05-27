@@ -2858,33 +2858,33 @@
 <p><a href="https://www.nextflow.io/">Nextflow</a> is a very popular workflow tool, especially in bioinformatics.  It automates workflow processing, is very portable, and has excellent reporting.
 Nextflow is able to make effective use of slurm when running  on our clusters, using slurm submissions for running processes and achieving a high level of parallelism.  However, there are a few gotchas and things to know about.</p>
 <p>First, to specify slurm as the executor, add the following executor default to the process specification in nextflow.config. </p>
-<p><code>bash
-Process { 
-    …
-   executor = 'slurm'
-    …
-}</code></p>
+<div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<span class="w">    </span>…
+<span class="w">   </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span>…
+<span class="o">}</span>
+</code></pre></div>
 <p>You can add other slurm-related options, for example:</p>
-<p><code>bash
-process {
-    executor = 'slurm'
-    queue = 'day'
-    memory = '200 GB'
-    cpus = 32
-    Time = 4h
-}</code></p>
+<div class="highlight"><pre><span></span><code>process<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;day&#39;</span>
+<span class="w">    </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;200 GB&#39;</span>
+<span class="w">    </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span><span class="nv">Time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>4h
+<span class="o">}</span>
+</code></pre></div>
 <p>This sets the initial default for the slurm partition, memory, cpus, and time.  Note that nextflow uses different names for many of these values than slurm.
 These same options can be added to specific processes or labels to customize processes more specifically.
 Arbitrary slurm options can be added using clusterOptions, e.g. clusterOptions = '--qos priority'
 More information can be found on nextflow's <a href="https://www.nextflow.io/docs/latest/executor.html#slurm">slurm</a> page.</p>
 <p>To respect our SLURM queue limits, we recommend adding an executor block to your nextflow.config:</p>
-<p><code>bash
-executor {
-    $slurm {
-        queueSize       = 50
-        submitRateLimit = '190/60min'
-    }
-}</code></p>
+<div class="highlight"><pre><span></span><code>executor<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">$slurm</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="nv">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">50</span>
+<span class="w">        </span><span class="nv">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;190/60min&#39;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>This limits Nextflow to 50 queued jobs at a time and a maximum of 190 submissions per 60 minutes, keeping you safely under the cluster's submission threshold.</p>
 <p>Setting executor to slurm will cause all processes to be submitted as slurm jobs, unless otherwise specified (see below).</p>
 <h2 id="nextflow-installation">Nextflow installation</h2>
@@ -2900,30 +2900,29 @@ executor {
 <p>We recommend that you configure your workflow to specify small, short jobs as using the local executor, leaving the larger and longer running jobs to the slurm executor.
 The cleanest way to do this is to give those processes a specific ‘label’, e.g. process_local, and then set the executor for that label to be ‘local’.</p>
 <p>For example:</p>
-<p>``` bash 
- process Fastqc {
-   label 'process_local'
-   …
-}</p>
-<p>Process {
-    …
-     withLabel:process_local {
-          executor = 'local'
-    …
-}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>process<span class="w"> </span>Fastqc<span class="w"> </span><span class="o">{</span>
+<span class="w">   </span>label<span class="w"> </span><span class="s1">&#39;process_local&#39;</span>
+<span class="w">   </span>…
+<span class="o">}</span>
+
+Process<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>…
+<span class="w">     </span>withLabel:process_local<span class="w"> </span><span class="o">{</span>
+<span class="w">          </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
+<span class="w">    </span>…
+<span class="o">}</span>
+</code></pre></div>
 <p>Oftentimes, if you are using a well developed workflow, the configuration will already use labels to “classify” each of the processes, so that resource requirements are only mentioned once per class, rather than for every process.  For example, a workflow might define the class ‘process_single’, which is used to tag small, quick running processes.  In that case, you can simply add executor = local to the withLabel for that label:</p>
-<p>``` bash
-Process {
-     …
-     withLabel:process_single {
-         executor = 'local'
-         cpus = 1
-         memory = { maxMem(2.GB * task.attempt) }
-     }
-     …
-}</p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span>
+<span class="w">     </span>…
+<span class="w">     </span>withLabel:process_single<span class="w"> </span><span class="o">{</span>
+<span class="w">         </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
+<span class="w">         </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">         </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>maxMem<span class="o">(</span><span class="m">2</span>.GB<span class="w"> </span>*<span class="w"> </span>task.attempt<span class="o">)</span><span class="w"> </span><span class="o">}</span>
+<span class="w">     </span><span class="o">}</span>
+<span class="w">     </span>…
+<span class="o">}</span>
+</code></pre></div>
 <h2 id="running-a-hybrid-workflow">Running a hybrid workflow</h2>
 <p>When running a workflow that uses both slurm and local executors, you should submit the run as a batch job of a single task and multiple cpus.  Give the batch job a reasonable number of cpus, depending on how many local processes you want to run simultaneously (e.g. 32).  The local processes will all run within the main batch job, and the slurm processes will be submitted as separate slurm jobs.  If done correctly this should keep you below the 200 submissions/hour threshold.</p>
 <p>You may also try reducing queueSize to a value less than 100.  If you cannot find a way to reduce your submission rate to an acceptable level, we will consider turning off the submission threshold.  Contact us for more information.</p>
@@ -2931,91 +2930,95 @@ Process {
 <p><a href="https://nf-co.re/sarek">nf-core/sarek</a> is an analysis pipeline to detect germline or somatic variants (pre-processing, variant calling and annotation) from WGS / targeted sequencing</p>
 <p>Sarek can be run on our clusters with a minimum of setup:</p>
 <ol>
-<li>create a sample_sheet.csv file that lists the input genome files, e.g.:
-```
-patient,sample,lane,fastq_1,fastq_2
+<li>
+<p>create a sample_sheet.csv file that lists the input genome files, e.g.:
+<div class="highlight"><pre><span></span><code>patient,sample,lane,fastq_1,fastq_2
 1,5084,1,WES_01.13.25/tumor/data/5084_R1_001.fastq.gz,WES_01.13.25/tumor/data/5084_R2_001.fastq.gz
 2,10202,1,WES_01.13.25/tumor/data/10202_R1_001.fastq.gz,WES_01.13.25/tumor/data/10202_R2_001.fastq.gz
 3,10288,1,WES_01.13.25/tumor/data/10288_R1_001.fastq.gz,WES_01.13.25/tumor/data/10288_R2_001.fastq.gz
 4,10214,1,WES_01.13.25/tumor/data/10214_R1_001.fastq.gz,WES_01.13.25/tumor/data/10214_R2_001.fastq.gz
-5,10215,1,WES_01.13.25/tumor/data/10215_R1_001.fastq.gz,WES_01.13.25/tumor/data/10215_R2_001.fastq.gz</li>
-</ol>
-<p>```</p>
-<ol>
-<li>Create a <code>bouchet.config</code> next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of <code>&lt;group&gt;</code>.:
-```groovy
-params {
-    config_profile_name        = 'bouchet'
-    config_profile_description = 'Bouchet Cluster at Yale'
-    config_profile_contact     = 'YCRC, research.computing@yale.edu'
-    config_profile_url         = 'https://docs.ycrc.yale.edu/clusters/bouchet/'
-}</li>
-</ol>
-<p>apptainer {
-    enabled    = true
-    autoMounts = true
-}</p>
-<p>// Cache pulled images under group scratch so they survive between jobs.
-// Replace 'pi_<group>' with your own PI group (run <code>groups</code> to find it).
-env {
-    NXF_APPTAINER_CACHEDIR   = "${System.getenv('HOME')}/scratch_pi_<group>/.apptainer"
-    NXF_SINGULARITY_CACHEDIR = "${System.getenv('HOME')}/scratch_pi_<group>/.singularity"
-}</p>
-<p>executor {
-    name            = 'slurm'
-    queueSize       = 50
-    submitRateLimit = '190/60min'
-}</p>
-<p>process {
-    // Single-node ceiling for the standard 'day'/'week' nodes.
-    resourceLimits = [
-        memory: 983.GB,
-        cpus: 64,
-        time: 168.h
-    ]</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// Long jobs go to week (max 7d). Short jobs first try scavenge (preemptible);</span>
-<span class="c1">// on retry #3+ fall back to the regular day partition.</span>
-<span class="n">queue</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">24.</span><span class="n">h</span><span class="w"> </span>?<span class="w"> </span><span class="s">&#39;week&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">attempt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>?<span class="w"> </span><span class="s">&#39;scavenge&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;day&#39;</span><span class="w"> </span><span class="p">}</span>
-<span class="n">errorStrategy</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">exitStatus</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>?<span class="w"> </span><span class="s">&#39;finish&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;retry&#39;</span><span class="w"> </span><span class="p">}</span>
-<span class="n">maxRetries</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="n">scratch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;true&#39;</span>
-<span class="n">executor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;slurm&#39;</span>
+5,10215,1,WES_01.13.25/tumor/data/10215_R1_001.fastq.gz,WES_01.13.25/tumor/data/10215_R2_001.fastq.gz
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a <code>bouchet.config</code> next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of <code>&lt;group&gt;</code>.:
+<div class="highlight"><pre><span></span><code><span class="n">params</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">config_profile_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bouchet&#39;</span>
+<span class="w">    </span><span class="n">config_profile_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bouchet Cluster at Yale&#39;</span>
+<span class="w">    </span><span class="n">config_profile_contact</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YCRC, research.computing@yale.edu&#39;</span>
+<span class="w">    </span><span class="n">config_profile_url</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://docs.ycrc.yale.edu/clusters/bouchet/&#39;</span>
+<span class="o">}</span>
 
-<span class="c1">// GPU label: default to one rtx_5000_ada on the public &#39;gpu&#39; partition.</span>
-<span class="n">withLabel</span><span class="p">:</span><span class="s">&#39;process_gpu&#39;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">queue</span><span class="w">            </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;gpu&#39;</span>
-<span class="w">    </span><span class="n">accelerator</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="n">clusterOptions</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;--gpus=rtx_5000_ada:1&#39;</span>
-<span class="w">    </span><span class="n">containerOptions</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">workflow</span><span class="p">.</span><span class="n">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;singularity&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">workflow</span><span class="p">.</span><span class="n">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;apptainer&#39;</span><span class="w"> </span>?<span class="w"> </span><span class="s">&#39;--nv&#39;</span><span class="w"> </span><span class="p">:</span>
-<span class="w">                         </span><span class="p">(</span><span class="w"> </span><span class="n">workflow</span><span class="p">.</span><span class="n">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;docker&#39;</span><span class="w"> </span>?<span class="w"> </span><span class="s">&#39;--gpus all&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">null</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="n">memory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">32.</span><span class="n">GB</span>
-<span class="w">    </span><span class="n">time</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="mf">24.</span><span class="n">h</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="n">apptainer</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">enabled</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="n">autoMounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="o">}</span>
 
-<p>}
-```</p>
-<ol>
-<li>create a batch script sarek.sh:
-```</li>
-</ol>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-job-namesarek_test">SBATCH --job-name=sarek_test</h1>
-<h1 id="sbatch-mem80g">SBATCH --mem=80G</h1>
-<h1 id="sbatch-cpus-per-task4">SBATCH --cpus-per-task=4</h1>
-<h1 id="sbatch-partitionday">SBATCH --partition=day</h1>
-<h1 id="sbatch-time1-0">SBATCH --time=1-0</h1>
-<h1 id="sbatch-mail-typeall">SBATCH --mail-type=ALL</h1>
-<h1 id="replace-pi_-with-your-own-pi-group-run-groups-to-find-it">Replace 'pi_<group>' with your own PI group (run <code>groups</code> to find it).</h1>
-<p>export NXF_APPTAINER_CACHEDIR=${HOME}/scratch_pi_<group>/.apptainer
-export NXF_SINGULARITY_CACHEDIR=${HOME}/scratch_pi_<group>/.singularity</p>
-<p>module reset
-module load Nextflow</p>
-<p>nextflow run nf-core/sarek \
+<span class="c1">// Cache pulled images under group scratch so they survive between jobs.</span>
+<span class="c1">// Replace &#39;pi_&lt;group&gt;&#39; with your own PI group (run `groups` to find it).</span>
+<span class="n">env</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">NXF_APPTAINER_CACHEDIR</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${System.getenv(&#39;HOME&#39;)}/scratch_pi_&lt;group&gt;/.apptainer&quot;</span>
+<span class="w">    </span><span class="n">NXF_SINGULARITY_CACHEDIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${System.getenv(&#39;HOME&#39;)}/scratch_pi_&lt;group&gt;/.singularity&quot;</span>
+<span class="o">}</span>
+
+<span class="n">executor</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span><span class="n">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">    </span><span class="n">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;190/60min&#39;</span>
+<span class="o">}</span>
+
+<span class="n">process</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="c1">// Single-node ceiling for the standard &#39;day&#39;/&#39;week&#39; nodes.</span>
+<span class="w">    </span><span class="n">resourceLimits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="nl">memory:</span><span class="w"> </span><span class="mi">983</span><span class="o">.</span><span class="na">GB</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">cpus:</span><span class="w"> </span><span class="mi">64</span><span class="o">,</span>
+<span class="w">        </span><span class="nl">time:</span><span class="w"> </span><span class="mi">168</span><span class="o">.</span><span class="na">h</span>
+<span class="w">    </span><span class="o">]</span>
+
+<span class="w">    </span><span class="c1">// Long jobs go to week (max 7d). Short jobs first try scavenge (preemptible);</span>
+<span class="w">    </span><span class="c1">// on retry #3+ fall back to the regular day partition.</span>
+<span class="w">    </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">24</span><span class="o">.</span><span class="na">h</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;week&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;scavenge&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;day&#39;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="n">errorStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">exitStatus</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;finish&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;retry&#39;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="n">maxRetries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="n">scratch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;true&#39;</span>
+<span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+
+<span class="w">    </span><span class="c1">// GPU label: default to one rtx_5000_ada on the public &#39;gpu&#39; partition.</span>
+<span class="w">    </span><span class="nl">withLabel:</span><span class="s1">&#39;process_gpu&#39;</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">queue</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;gpu&#39;</span>
+<span class="w">        </span><span class="n">accelerator</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">clusterOptions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;--gpus=rtx_5000_ada:1&#39;</span>
+<span class="w">        </span><span class="n">containerOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;singularity&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;apptainer&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;--nv&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">                             </span><span class="o">(</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;docker&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;--gpus all&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
+<span class="w">        </span><span class="n">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="o">.</span><span class="na">GB</span>
+<span class="w">        </span><span class="n">time</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="o">.</span><span class="na">h</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>create a batch script sarek.sh:
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --job-name=sarek_test
+#SBATCH --mem=80G
+#SBATCH --cpus-per-task=4
+#SBATCH --partition=day
+#SBATCH --time=1-0
+#SBATCH --mail-type=ALL
+
+# Replace &#39;pi_&lt;group&gt;&#39; with your own PI group (run `groups` to find it).
+export NXF_APPTAINER_CACHEDIR=${HOME}/scratch_pi_&lt;group&gt;/.apptainer
+export NXF_SINGULARITY_CACHEDIR=${HOME}/scratch_pi_&lt;group&gt;/.singularity
+
+module reset
+module load Nextflow
+
+nextflow run nf-core/sarek \
         --max_cpus $SLURM_CPUS_PER_TASK \
         --max_memory 80.GB \
-        --input "sample_sheet.csv" \
-        --outdir "output_test" \
+        --input &quot;sample_sheet.csv&quot; \
+        --outdir &quot;output_test&quot; \
         --genome GRCm38 \
         --trim_fastq \
         --save_mapped \
@@ -3024,12 +3027,15 @@ module load Nextflow</p>
         -w work \
         -profile apptainer \
         -c bouchet.config
-<code>``
-Nextflow will pull everything else automatically, including the pipeline and the apptainer image.</code>bouchet.config` defines a default configuration that submits all tasks as Slurm jobs.  However, because this
+</code></pre></div>
+Nextflow will pull everything else automatically, including the pipeline and the apptainer image.  <code>bouchet.config</code> defines a default configuration that submits all tasks as Slurm jobs.  However, because this
 example has a relatively small number of input files, you should not hit the submission rate issue mentioned previously.</p>
-<ol>
-<li>submit
-<code>sbatch sarek.sh</code></li>
+</li>
+<li>
+<p>submit
+<div class="highlight"><pre><span></span><code>sbatch sarek.sh
+</code></pre></div></p>
+</li>
 </ol>
 <p>Other nf-core pipelines should work similarly.</p>
                 

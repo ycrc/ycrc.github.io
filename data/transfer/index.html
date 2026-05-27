@@ -1676,6 +1676,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#transfer-data-to-outside-of-yale" class="md-nav__link">
+    Transfer Data to Outside of Yale
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Data to Outside of Yale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    rsync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    Rclone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sites-behind-a-vpn" class="md-nav__link">
+    Sites Behind a VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2983,6 +3017,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#transfer-data-to-outside-of-yale" class="md-nav__link">
+    Transfer Data to Outside of Yale
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Data to Outside of Yale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    rsync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    Rclone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sites-behind-a-vpn" class="md-nav__link">
+    Sites Behind a VPN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3040,7 +3108,8 @@ You must still be on-campus or on the <a href="/clusters-at-yale/access/vpn/">VP
 </table>
 <p>From the login node of any cluster, you can <code>ssh</code> into the transfer node. 
 This is useful for transferring data to or from locations other than your local machine (see below for details).</p>
-<p><code>[netID@cluster ~] ssh transfer</code></p>
+<div class="highlight"><pre><span></span><code>[netID@cluster ~] ssh transfer
+</code></pre></div>
 <h2 id="transferring-data-tofrom-your-computer">Transferring Data to/from Your Computer</h2>
 <h3 id="graphical-transfer-tools">Graphical Transfer Tools</h3>
 <h4 id="web-transfers-with-open-ondemand">Web Transfers with Open OnDemand</h4>
@@ -3054,28 +3123,28 @@ Please see <a href="/data/globus">our Globus page</a> for Yale-specific document
 <h4 id="scp-and-rsync-macoslinuxlinux-on-windows">scp and rsync (macOS/Linux/Linux on Windows)</h4>
 <p>Linux and macOS users can use <a href="https://linux.die.net/man/1/scp">scp</a> or <a href="http://linux.die.net/man/1/rsync">rsync</a>. Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.</p>
 <p>scp and sftp are both used from a Terminal window. The basic syntax of <code>scp</code> is</p>
-<p><code>bash
-scp [from] [to]</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span><span class="o">[</span>from<span class="o">]</span><span class="w"> </span><span class="o">[</span>to<span class="o">]</span>
+</code></pre></div>
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
-<p><code>bash
-scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+</code></pre></div>
 <p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/abc123/test/</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<p><code>bash
-scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/home/xyz/myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+</code></pre></div>
 <h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
-<p><code>bash
-scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>mydirectory<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+</code></pre></div>
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
-<p><code>bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt .</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>.
+</code></pre></div>
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<p><code>bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt /path/myfolder</code></p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>/path/myfolder
+</code></pre></div>
 <h2 id="transfer-data-between-clusters">Transfer Data Between Clusters</h2>
 <h3 id="globus-endpoints">Globus Endpoints</h3>
 <p>Globus is a web-enabled GridFTP service that transfers large datasets fast, securely, and reliably between computers configured to be endpoints. 
@@ -3092,16 +3161,18 @@ This avoids the need to explicitly add each cluster's ssh key to the list of Aut
 <p class="admonition-title">Tip</p>
 <p>If you are running a large transfer without <a href="/data/globus">Globus</a>, run it inside a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session on the transfer node. This protects your transfer from network interruptions between your computer and the transfer node.</p>
 </div>
-<p>```bash</p>
-<h1 id="add-ssh-keys-to-ssh-agent">add ssh keys to ssh-agent</h1>
-<p>[user@local ~]$ ssh-add</p>
-<h1 id="ssh-to-cluster-with-forwarded-agent">ssh to cluster with forwarded agent</h1>
-<p>[user@local ~]$ ssh -A netID@mccleary.ycrc.yale.edu</p>
-<h1 id="connect-to-the-transfer-node-from-the-login-node">connect to the transfer node from the login node</h1>
-<p>[netID@mccleary ~]$ ssh -A transfer</p>
-<h1 id="copy-data-to-cluster-storage">copy data to cluster storage</h1>
-<p>[netID@transfer1-mccleary ~]$ rsync -avP $HOME/path/to/data netID@transfer-bouchet.ycrc.yale.edu:~/
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># add ssh keys to ssh-agent</span>
+<span class="o">[</span>user@local<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh-add
+
+<span class="c1"># ssh to cluster with forwarded agent </span>
+<span class="o">[</span>user@local<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>-A<span class="w"> </span>netID@mccleary.ycrc.yale.edu
+
+<span class="c1"># connect to the transfer node from the login node</span>
+<span class="o">[</span>netID@mccleary<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>-A<span class="w"> </span>transfer
+
+<span class="c1"># copy data to cluster storage</span>
+<span class="o">[</span>netID@transfer1-mccleary<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span><span class="nv">$HOME</span>/path/to/data<span class="w"> </span>netID@transfer-bouchet.ycrc.yale.edu:~/
+</code></pre></div>
 <p>The rsync connection will use the forwarded key and you will not need to reauthenticate. </p>
 <h2 id="transfer-data-to-outside-of-yale">Transfer Data to Outside of Yale</h2>
 <p>If the location you are transfering to supports Globus, that is the preferred tool for transferring large data off-site.
@@ -3109,14 +3180,15 @@ Please see <a href="/data/globus">our Globus page</a> for more details.</p>
 <p>For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on <a href="/data/staging">Staging Data</a> for additional information. 
 For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. </p>
 <h3 id="rsync">rsync</h3>
-<p>```bash</p>
-<h1 id="connect-to-the-transfer-node-from-the-login-node_1">connect to the transfer node from the login node</h1>
-<p>[netID@bouchet ~] ssh transfer</p>
-<h1 id="pull-data-from-remote-to-cluster">pull data from remote to cluster</h1>
-<p>[netID@transfer1-bouchet ~]$ rsync -avP user_name@remote_host:/path/to/data ./</p>
-<h1 id="push-data-from-cluster-to-remote">push data from cluster to remote</h1>
-<p>[netID@transfer1-bouchet ~]$ rsync -avP ~/path/to/data user_name@remote_host:/path/to/data </p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
+<span class="o">[</span>netID@bouchet<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>ssh<span class="w"> </span>transfer
+
+<span class="c1"># pull data from remote to cluster</span>
+<span class="o">[</span>netID@transfer1-bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span>user_name@remote_host:/path/to/data<span class="w"> </span>./
+
+<span class="c1"># push data from cluster to remote</span>
+<span class="o">[</span>netID@transfer1-bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span>~/path/to/data<span class="w"> </span>user_name@remote_host:/path/to/data<span class="w"> </span>
+</code></pre></div>
 <h3 id="rclone">Rclone</h3>
 <p>To move data to and from cloud storage (Box, Dropbox, Wasabi, AWS S3, or Google Cloud Storage, etc.), we recommend using <a href="/clusters-at-yale/guides/rclone/">Rclone</a>. It is installed on all of the clusters and can be installed on your computer.</p>
 <h3 id="sites-behind-a-vpn">Sites Behind a VPN</h3>

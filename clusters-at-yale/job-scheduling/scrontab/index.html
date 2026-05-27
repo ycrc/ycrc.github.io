@@ -1400,6 +1400,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-a-daily-simulation" class="md-nav__link">
+    Run a Daily Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-weekly-transfer-job" class="md-nav__link">
+    Run a Weekly Transfer Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-output-from-each-run-in-a-separate-file" class="md-nav__link">
+    Capture output from each run in a separate file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2821,6 +2855,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-a-daily-simulation" class="md-nav__link">
+    Run a Daily Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-weekly-transfer-job" class="md-nav__link">
+    Run a Weekly Transfer Job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-output-from-each-run-in-a-separate-file" class="md-nav__link">
+    Capture output from each run in a separate file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2852,8 +2920,8 @@
 <h2 id="set-up-your-scrontab">Set Up Your <code>scrontab</code></h2>
 <h3 id="edit-your-scrontab">Edit Your <code>scrontab</code></h3>
 <p>Run <code>scrontab -e</code> to edit your <code>scrontab</code> file. If you prefer to use <code>nano</code> to edit files, run</p>
-<p><code>bash
-EDITOR=nano scrontab -e</code>
+<p><div class="highlight"><pre><span></span><code><span class="nv">EDITOR</span><span class="o">=</span>nano<span class="w"> </span>scrontab<span class="w"> </span>-e
+</code></pre></div>
 Lines that start with <code>#SCRON</code> are treated like the beginning of a new batch job, and work like <code>#SBATCH</code> directives for batch jobs. Slurm will ignore <code>#SBATCH</code> directives in scripts you run as <code>scrontab</code> jobs. You can use most <a href="/clusters-at-yale/job-scheduling/#common-job-request-options">common <code>sbatch</code> options</a> just as you would <a href="https://slurm.schedmd.com/sbatch.html">using sbatch on the command line</a>. The first line after your <code>SCRON</code> directives specifies the schedule for your job and the command to run. </p>
 <div class="admonition info">
 <p class="admonition-title">Note</p>
@@ -2863,8 +2931,8 @@ Lines that start with <code>#SCRON</code> are treated like the beginning of a ne
 <p>Crontab syntax is specified in five columns, to specify minutes, hours, days of the month, months, and days of the week. Especially at first you may find it easiest to use a helper application to generate your cron date fields, such as <a href="http://crontab-generator.org/">crontab-generator</a> or <a href="https://crontab.cronhub.io/">cronhub.io</a>. You can also use the short-hand syntax <code>@hourly</code>, <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code>, and <code>@yearly</code> instead of the five separate columns.</p>
 <h3 id="what-to-run">What to Run</h3>
 <p>If you're running a script it must be marked as executable. Jobs handled by scrontab do not run in a full login shell, so if you have customized your <code>.bashrc</code> file you need to add:</p>
-<p><code>bash
-source ~/.bashrc</code>
+<p><div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
 To your script to ensure that your environment is set up correctly.</p>
 <div class="admonition info">
 <p class="admonition-title">Note</p>
@@ -2874,40 +2942,36 @@ To your script to ensure that your environment is set up correctly.</p>
 <p class="admonition-title">Note</p>
 <p>Your <code>scrontab</code> jobs will appear to have the same JobID every time they run until the next time you edit your <code>scrontab</code> file (they are being requeued). This means that only the most recent job will be logged to the default output file. If you want deeper history, you should redirect output in your scripts to filenames with something more unique in their names, like a date or timestamp, e.g.</p>
 </div>
-<p>``` bash</p>
-<p>python my_script.py &gt; $(date +"%Y-%m-%d")_myjob_scrontab.out
-```</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>my_script.py<span class="w"> </span>&gt;<span class="w"> </span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">&quot;%Y-%m-%d&quot;</span><span class="k">)</span>_myjob_scrontab.out
+</code></pre></div>
 <p>If you want to see slurm accounting of a job handled by scrontab, for example job <code>12345</code> run:</p>
-<p>``` bash
-sacct --duplicates --jobs 12345</p>
-<h1 id="or-with-short-options">or with short options</h1>
-<p>sacct -Dj 12345
-```</p>
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>--duplicates<span class="w"> </span>--jobs<span class="w"> </span><span class="m">12345</span>
+<span class="c1"># or with short options</span>
+sacct<span class="w"> </span>-Dj<span class="w"> </span><span class="m">12345</span>
+</code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="run-a-daily-simulation">Run a Daily Simulation</h3>
 <p>This example submits a 6-hour simulation eligible to start every day at 12:00 AM.</p>
-<p>``` bash</p>
-<h1 id="scron-time-60000">SCRON --time 6:00:00</h1>
-<h1 id="scron-cpus-per-task-4">SCRON --cpus-per-task 4</h1>
-<h1 id="scron-name-daily_sim">SCRON --name "daily_sim"</h1>
-<h1 id="scron-chdir-homenetidproject">SCRON --chdir /home/netid/project</h1>
-<h1 id="scron-o-my_simulationsj-outtxt">SCRON -o my_simulations/%j-out.txt</h1>
-<p>@daily ./simulation_v2_final.sh
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SCRON --time 6:00:00</span>
+<span class="c1">#SCRON --cpus-per-task 4</span>
+<span class="c1">#SCRON --name &quot;daily_sim&quot;</span>
+<span class="c1">#SCRON --chdir /home/netid/project</span>
+<span class="c1">#SCRON -o my_simulations/%j-out.txt</span>
+@daily<span class="w"> </span>./simulation_v2_final.sh
+</code></pre></div>
 <h3 id="run-a-weekly-transfer-job">Run a Weekly Transfer Job</h3>
 <p>This example submits a transfer script eligible to start every Wednesday at 8:00 PM.</p>
-<p>``` bash</p>
-<h1 id="scron-time-10000">SCRON --time 1:00:00</h1>
-<h1 id="scron-partition-transfer">SCRON --partition transfer</h1>
-<h1 id="scron-chdir-homenetidprojectto_transfer">SCRON --chdir /home/netid/project/to_transfer</h1>
-<h1 id="scron-o-transfer_log_jtxt">SCRON -o transfer_log_%j.txt</h1>
-<p>0 20 * * 3 ./rclone_commands.sh
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SCRON --time 1:00:00</span>
+<span class="c1">#SCRON --partition transfer</span>
+<span class="c1">#SCRON --chdir /home/netid/project/to_transfer</span>
+<span class="c1">#SCRON -o transfer_log_%j.txt</span>
+<span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="m">3</span><span class="w"> </span>./rclone_commands.sh
+</code></pre></div>
 <h3 id="capture-output-from-each-run-in-a-separate-file">Capture output from each run in a separate file</h3>
 <p>Normally scrontab will clobber the output file from the previous run on each execution, since
 each execution uses the same jobid.  This can be avoided using a redirect to a date-stamped file.</p>
-<p><code>bash
-0 20 * * 3 ./commands.sh &gt; myjob_$(date +%Y%m%d%H%M).out</code></p>
+<div class="highlight"><pre><span></span><code><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="m">3</span><span class="w"> </span>./commands.sh<span class="w"> </span>&gt;<span class="w"> </span>myjob_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d%H%M<span class="k">)</span>.out
+</code></pre></div>
                 
                   
                     
