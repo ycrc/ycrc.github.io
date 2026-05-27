@@ -2173,27 +2173,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#update-the-environment" class="md-nav__link">
-    Update the Environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-an-experiment-and-update-the-flags" class="md-nav__link">
-    Select an Experiment and Update the Flags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-isca" class="md-nav__link">
-    Run Isca
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2788,27 +2767,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#update-the-environment" class="md-nav__link">
-    Update the Environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-an-experiment-and-update-the-flags" class="md-nav__link">
-    Select an Experiment and Update the Flags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-isca" class="md-nav__link">
-    Run Isca
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2832,48 +2790,41 @@ We recommend that you install it for yourself individually as the code expects t
 It is relatively straighforward to install into a conda environment as described below.</p>
 <h2 id="install-isca">Install Isca</h2>
 <p>Install it for just your user as a Python <a href="/clusters-at-yale/guides/python/#conda-based-python-environments">conda</a> environment called "isca".</p>
-<div class="highlight"><pre><span></span><code>module load netCDF-Fortran/4.5.3-gompi-2020b
-
-module load miniconda  
-
-module save isca  
-mkdir ~/programs  
-cd ~/programs  
+<p>```
+module load netCDF-Fortran/4.5.3-gompi-2020b</p>
+<p>module load miniconda  </p>
+<p>module save isca<br />
+mkdir ~/programs<br />
+cd ~/programs<br />
 git clone https://www.github.com/execlim/isca.git
-conda create -n isca python=3.7
-
-conda activate isca
-
-conda install tqdm  
-
-cd isca/src/extra/python  
+conda create -n isca python=3.7</p>
+<p>conda activate isca</p>
+<p>conda install tqdm  </p>
+<p>cd isca/src/extra/python<br />
 pip install -e .
-</code></pre></div>
+```</p>
 <p>Then add the following to your <code>.bashrc</code> file</p>
-<div class="highlight"><pre><span></span><code># Isca
-
-# directory of the Isca source code
-export GFDL_BASE=$HOME/programs/isca
-# &quot;environment&quot; configuration for grace
-export GFDL_ENV=gfortran
-# temporary working directory used in running the model
-export GFDL_WORK=$PALMER_SCRATCH/gfdl_work
-# directory for storing model output
-export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
-</code></pre></div>
+<p>```</p>
+<h1 id="isca_1">Isca</h1>
+<h1 id="directory-of-the-isca-source-code">directory of the Isca source code</h1>
+<p>export GFDL_BASE=$HOME/programs/isca</p>
+<h1 id="environment-configuration-for-grace">"environment" configuration for grace</h1>
+<p>export GFDL_ENV=gfortran</p>
+<h1 id="temporary-working-directory-used-in-running-the-model">temporary working directory used in running the model</h1>
+<p>export GFDL_WORK=$PALMER_SCRATCH/gfdl_work</p>
+<h1 id="directory-for-storing-model-output">directory for storing model output</h1>
+<p>export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
+```</p>
 <h2 id="update-the-environment">Update the Environment</h2>
 <p>Open <code>$HOME/programs/isca/postprocessing/mppnccombine_run.sh</code> and remove the following line:</p>
-<div class="highlight"><pre><span></span><code>module reset
-</code></pre></div>
+<p><code>module reset</code></p>
 <h2 id="select-an-experiment-and-update-the-flags">Select an Experiment and Update the Flags</h2>
 <p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>
-<div class="highlight"><pre><span></span><code>cb.compile_flags.extend([&#39;-fallow-argument-mismatch&#39;, &#39;-fallow-invalid-boz&#39;])
-</code></pre></div>
+<p><code>cb.compile_flags.extend(['-fallow-argument-mismatch', '-fallow-invalid-boz'])</code></p>
 <h2 id="run-isca">Run Isca</h2>
 <p>The above commands only need to be run once to set everything up. To use it, you will first always need to run:</p>
-<div class="highlight"><pre><span></span><code>module restore isca
-conda activate isca
-</code></pre></div>
+<p><code>module restore isca
+conda activate isca</code></p>
 <p>Then you should be able to compile and launch your ISCA models.</p>
                 
                   

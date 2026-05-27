@@ -1880,20 +1880,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-setup-multi-node" class="md-nav__link">
-    Environment setup - multi node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-multi-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
-    Example: Multi-node multi-GPU training job (Slurm + torchrun)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2807,20 +2793,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-setup-multi-node" class="md-nav__link">
-    Environment setup - multi node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-multi-node-multi-gpu-training-job-slurm-torchrun" class="md-nav__link">
-    Example: Multi-node multi-GPU training job (Slurm + torchrun)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2888,43 +2860,40 @@ If a job does not use the GPUs requested, it will be terminated by our resource 
 <p class="admonition-title">Note</p>
 <p>You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --job-name=single_node</span>
-<span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks-per-node=1</span>
-<span class="c1">#SBATCH --gpus-per-node=2</span>
-<span class="c1">#SBATCH --cpus-per-task=2</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH --time=10:00</span>
-
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>YOUR_ENV
-
-<span class="c1">###prevents multithreading which will slow down job</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
-
-<span class="c1">#batch size</span>
-<span class="nv">bs</span><span class="o">=</span><span class="m">16</span>
-<span class="c1">#number of training cycles</span>
-<span class="nv">epoch</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#learning rate</span>
-<span class="nv">lr</span><span class="o">=</span>3e-5
-<span class="c1">#input folder</span>
-<span class="nv">inputdir</span><span class="o">=</span><span class="s2">&quot;/path/to/my/input&quot;</span>
-<span class="c1">#gradient accumalation steps</span>
-<span class="nv">gr</span><span class="o">=</span><span class="m">2</span>
-<span class="c1">#training script</span>
-<span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
-
-torchrun<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nproc_per_node<span class="o">=</span><span class="nv">$SLURM_GPUS_ON_NODE</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="si">${</span><span class="nv">script</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--input_folder_path<span class="w"> </span><span class="si">${</span><span class="nv">inputdir</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--learning_rate<span class="w"> </span><span class="si">${</span><span class="nv">lr</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--batch_size<span class="w"> </span><span class="si">${</span><span class="nv">bs</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--num_train_epochs<span class="w"> </span><span class="si">${</span><span class="nv">epoch</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--gradient_accumulation_steps<span class="w"> </span><span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
-</code></pre></div>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-job-namesingle_node">SBATCH --job-name=single_node</h1>
+<h1 id="sbatch-nodes1">SBATCH --nodes=1</h1>
+<h1 id="sbatch-ntasks-per-node1">SBATCH --ntasks-per-node=1</h1>
+<h1 id="sbatch-gpus-per-node2">SBATCH --gpus-per-node=2</h1>
+<h1 id="sbatch-cpus-per-task2">SBATCH --cpus-per-task=2</h1>
+<h1 id="sbatch-mem10g">SBATCH --mem=10G</h1>
+<h1 id="sbatch-time1000">SBATCH --time=10:00</h1>
+<p>module load miniconda
+conda activate YOUR_ENV</p>
+<h3 id="prevents-multithreading-which-will-slow-down-job">prevents multithreading which will slow down job</h3>
+<p>export OMP_NUM_THREADS=1</p>
+<h1 id="batch-size">batch size</h1>
+<p>bs=16</p>
+<h1 id="number-of-training-cycles">number of training cycles</h1>
+<p>epoch=1</p>
+<h1 id="learning-rate">learning rate</h1>
+<p>lr=3e-5</p>
+<h1 id="input-folder">input folder</h1>
+<p>inputdir="/path/to/my/input"</p>
+<h1 id="gradient-accumalation-steps">gradient accumalation steps</h1>
+<p>gr=2</p>
+<h1 id="training-script">training script</h1>
+<p>script="/path/to/my/script.py"</p>
+<p>torchrun \
+  --nproc_per_node=$SLURM_GPUS_ON_NODE \
+  ${script} \
+  --input_folder_path ${inputdir} \
+  --learning_rate ${lr} \
+  --batch_size ${bs} \
+  --num_train_epochs ${epoch} \
+  --gradient_accumulation_steps ${gr}
+```</p>
 <h2 id="environment-setup-multi-node">Environment setup - multi node</h2>
 <p>All environments must be created using the Miniconda module on a compute node. Miniconda will fail if you are on the login node.</p>
 <p>For multi-node workflows, the YCRC recommends <a href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pytorch/">Pytorch</a>. 
@@ -2936,54 +2905,49 @@ This is to take advantage of torchrun for job launching, however, Tensorflow is 
 <p class="admonition-title">Note</p>
 <p>You may not need all the variables declared within the torchrun portion of the below script, or need different variables. Modify as necessary.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --job-name=ddp_multi_node</span>
-<span class="c1">#SBATCH --nodes=2</span>
-<span class="c1">#SBATCH --ntasks-per-node=1</span>
-<span class="c1">#SBATCH --gpus-per-node=2</span>
-<span class="c1">#SBATCH --cpus-per-task=2</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH --time=20:00</span>
-
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>MY_PYTORCH_ENV
-
-<span class="c1">###tells job what node is the master node which is necessary for data communication between nodes</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-<span class="c1">##stores master node as variable for use in the torchrun execution</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;MASTER_ADDR=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Launching multi-node distributed training&quot;</span>
-
-<span class="c1">#batch size</span>
-<span class="nv">bs</span><span class="o">=</span><span class="m">16</span>
-<span class="c1">#number of training cycles</span>
-<span class="nv">epoch</span><span class="o">=</span><span class="m">1</span>
-<span class="c1">#learning rate</span>
-<span class="nv">lr</span><span class="o">=</span>3e-5
-<span class="c1">#input folder</span>
-<span class="nv">inputdir</span><span class="o">=</span><span class="s2">&quot;/path/to/my/input&quot;</span>
-<span class="c1">#gradient accumalation steps</span>
-<span class="nv">gr</span><span class="o">=</span><span class="m">2</span>
-<span class="c1">#training script</span>
-<span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
-
-torchrun<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nnodes<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--nproc_per_node<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_GPUS_ON_NODE</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--node_rank<span class="o">=</span><span class="si">${</span><span class="nv">SLURM_NODEID</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--master_addr<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--master_port<span class="o">=</span><span class="si">${</span><span class="nv">MASTER_PORT</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="si">${</span><span class="nv">script</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--input_folder_path<span class="w"> </span><span class="si">${</span><span class="nv">INPUT_FOLDER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--learning_rate<span class="w"> </span><span class="si">${</span><span class="nv">lr</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--per_device_batch_size<span class="w"> </span><span class="si">${</span><span class="nv">bs</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--num_train_epochs<span class="w"> </span><span class="si">${</span><span class="nv">epoch</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--gradient_accumulation_steps<span class="w"> </span><span class="si">${</span><span class="nv">gr</span><span class="si">}</span>
-</code></pre></div>
+<p>```bash</p>
+<h1 id="binbash_1">!/bin/bash</h1>
+<h1 id="sbatch-job-nameddp_multi_node">SBATCH --job-name=ddp_multi_node</h1>
+<h1 id="sbatch-nodes2">SBATCH --nodes=2</h1>
+<h1 id="sbatch-ntasks-per-node1_1">SBATCH --ntasks-per-node=1</h1>
+<h1 id="sbatch-gpus-per-node2_1">SBATCH --gpus-per-node=2</h1>
+<h1 id="sbatch-cpus-per-task2_1">SBATCH --cpus-per-task=2</h1>
+<h1 id="sbatch-mem10g_1">SBATCH --mem=10G</h1>
+<h1 id="sbatch-time2000">SBATCH --time=20:00</h1>
+<p>module load miniconda
+conda activate MY_PYTORCH_ENV</p>
+<h3 id="tells-job-what-node-is-the-master-node-which-is-necessary-for-data-communication-between-nodes">tells job what node is the master node which is necessary for data communication between nodes</h3>
+<p>export MASTER_ADDR=$(scontrol show hostnames "$SLURM_NODELIST" | head -n 1)</p>
+<h2 id="stores-master-node-as-variable-for-use-in-the-torchrun-execution">stores master node as variable for use in the torchrun execution</h2>
+<p>export MASTER_PORT=29500</p>
+<p>export OMP_NUM_THREADS=1</p>
+<p>echo "MASTER_ADDR=${MASTER_ADDR}"
+echo "Launching multi-node distributed training"</p>
+<h1 id="batch-size_1">batch size</h1>
+<p>bs=16</p>
+<h1 id="number-of-training-cycles_1">number of training cycles</h1>
+<p>epoch=1</p>
+<h1 id="learning-rate_1">learning rate</h1>
+<p>lr=3e-5</p>
+<h1 id="input-folder_1">input folder</h1>
+<p>inputdir="/path/to/my/input"</p>
+<h1 id="gradient-accumalation-steps_1">gradient accumalation steps</h1>
+<p>gr=2</p>
+<h1 id="training-script_1">training script</h1>
+<p>script="/path/to/my/script.py"</p>
+<p>torchrun \
+  --nnodes=2 \
+  --nproc_per_node=${SLURM_GPUS_ON_NODE} \
+  --node_rank=${SLURM_NODEID} \
+  --master_addr=${MASTER_ADDR} \
+  --master_port=${MASTER_PORT} \
+  ${script} \
+  --input_folder_path ${INPUT_FOLDER} \
+  --learning_rate ${lr} \
+  --per_device_batch_size ${bs} \
+  --num_train_epochs ${epoch} \
+  --gradient_accumulation_steps ${gr}
+```</p>
                 
                   
                     

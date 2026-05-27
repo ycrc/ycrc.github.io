@@ -2740,36 +2740,36 @@
                 <h1 id="atlas-computing-environment">ATLAS Computing Environment</h1>
 <p>Software for the <a href="https://home.web.cern.ch/science/experiments/atlas">ATLAS experiment</a> is available on our clusters via <a href="https://cernvm.cern.ch/fs/">CVMFS</a>.
 The ATLAS user interface can be set up by adding these lines to your <code>.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ATLAS_LOCAL_ROOT_BASE</span><span class="o">=</span>/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
-<span class="nb">alias</span><span class="w"> </span><span class="nv">setupATLAS</span><span class="o">=</span><span class="s1">&#39;source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh&#39;</span>
-</code></pre></div>
+<p><code>sh
+export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'</code></p>
 <p>Then simply running <code>setupATLAS -h</code> will show all the options available:</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login2.grace<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>setupATLAS<span class="w"> </span>-h
+<p>```sh
+[testuser@login2.grace ~]$ setupATLAS -h</p>
+<p>Usage: atlasLocalSetup.sh [options]
+       or setupATLAS [options]</p>
+<div class="codehilite"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">sets</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">ATLAS</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">cluster</span><span class="w"> </span><span class="n">user</span>
 
-Usage:<span class="w"> </span>atlasLocalSetup.sh<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
-<span class="w">       </span>or<span class="w"> </span>setupATLAS<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+<span class="n">You</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">ATLAS_LOCAL_ROOT_BASE</span><span class="w"> </span><span class="n">first</span><span class="o">.</span>
 
-<span class="w">    </span>This<span class="w"> </span>sets<span class="w"> </span>up<span class="w"> </span>the<span class="w"> </span>ATLAS<span class="w"> </span>environment<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>cluster<span class="w"> </span>user
-
-<span class="w">    </span>You<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span>ATLAS_LOCAL_ROOT_BASE<span class="w"> </span>first.
-
-<span class="w">    </span>Options<span class="w"> </span><span class="o">(</span>to<span class="w"> </span>override<span class="w"> </span>defaults<span class="o">)</span><span class="w"> </span>are:
-<span class="w">     </span>-3<span class="w">                           </span>Use<span class="w"> </span>python3<span class="w"> </span><span class="k">in</span><span class="w"> </span>tools<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>available<span class="o">)</span>
-<span class="w">     </span>-2<span class="w">               </span>Use<span class="w"> </span>python/python2<span class="w"> </span><span class="k">in</span><span class="w"> </span>tools<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>available<span class="o">)</span>
-<span class="w">     </span>-h<span class="w">  </span>--help<span class="w">                   </span>Print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message
-<span class="w">     </span>-q<span class="w">  </span>--quiet<span class="w">                  </span>Print<span class="w"> </span>no<span class="w"> </span>output
-<span class="w">     </span>-p<span class="w">  </span>--noLocalPostSetup<span class="w">       </span>Skip<span class="w"> </span>running<span class="w"> </span>local/site<span class="w"> </span>post-setup<span class="w"> </span>script
-<span class="w">     </span>-r<span class="w">  </span>--relocateCvmfs<span class="w">          </span>Use<span class="w"> </span>relocated<span class="w"> </span>cvmfs
-<span class="w">     </span>-t<span class="w">  </span>--test<span class="o">=</span>STRING<span class="w">            </span>Comma<span class="w"> </span>delimited<span class="w"> </span>strings<span class="w"> </span><span class="k">for</span><span class="w"> </span>dev/test<span class="w"> </span>flags
-<span class="w">     </span>-c<span class="w">  </span>--container<span class="o">=</span>name<span class="w">         </span>setupATLAS<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>container
-<span class="w">                                   </span>Type<span class="w"> </span>setupATLAS<span class="w"> </span>-c<span class="w"> </span>-h<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">help</span>
-
-Comma<span class="w"> </span>delimited<span class="w"> </span>arguments<span class="w"> </span>to<span class="w"> </span>-t/--test<span class="w"> </span>option<span class="w"> </span>are:
-<span class="w"> </span>cmtSL6-dev<span class="w"> </span>Use<span class="w"> </span>dev<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>cmtSL6
-<span class="w"> </span>devatlr<span class="w">    </span>Use<span class="w"> </span>CERN<span class="w"> </span>FRONTIER<span class="w"> </span>servlet<span class="w"> </span><span class="k">for</span><span class="w"> </span>developers
-<span class="w"> </span>postRel-dev<span class="w">    </span>Uses<span class="w"> </span>a<span class="w"> </span>dev<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>post<span class="w"> </span>release<span class="w"> </span>setup<span class="w"> </span><span class="k">for</span><span class="w"> </span>ATLAS<span class="w"> </span>releases
-<span class="w"> </span>tokens<span class="w">     </span>Use<span class="w"> </span>tokens<span class="w"> </span><span class="k">for</span><span class="w"> </span>validation<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>X509<span class="w"> </span><span class="o">(</span>where<span class="w"> </span>available<span class="o">)</span>
+<span class="n">Options</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="w"> </span><span class="n">override</span><span class="w"> </span><span class="n">defaults</span><span class="p">)</span><span class="w"> </span><span class="n">are</span><span class="p">:</span>
+<span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="w">                           </span><span class="n">Use</span><span class="w"> </span><span class="n">python3</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">tools</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">available</span><span class="p">)</span>
+<span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w">               </span><span class="n">Use</span><span class="w"> </span><span class="n">python</span><span class="o">/</span><span class="n">python2</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">tools</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">available</span><span class="p">)</span>
+<span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w">  </span><span class="o">--</span><span class="n">help</span><span class="w">                   </span><span class="n">Print</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">message</span>
+<span class="w"> </span><span class="o">-</span><span class="n">q</span><span class="w">  </span><span class="o">--</span><span class="n">quiet</span><span class="w">                  </span><span class="n">Print</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">output</span>
+<span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">  </span><span class="o">--</span><span class="n">noLocalPostSetup</span><span class="w">       </span><span class="n">Skip</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">local</span><span class="o">/</span><span class="n">site</span><span class="w"> </span><span class="n">post</span><span class="o">-</span><span class="n">setup</span><span class="w"> </span><span class="n">script</span>
+<span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w">  </span><span class="o">--</span><span class="n">relocateCvmfs</span><span class="w">          </span><span class="n">Use</span><span class="w"> </span><span class="n">relocated</span><span class="w"> </span><span class="n">cvmfs</span>
+<span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w">  </span><span class="o">--</span><span class="n">test</span><span class="o">=</span><span class="n">STRING</span><span class="w">            </span><span class="n">Comma</span><span class="w"> </span><span class="n">delimited</span><span class="w"> </span><span class="n">strings</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dev</span><span class="o">/</span><span class="n">test</span><span class="w"> </span><span class="n">flags</span>
+<span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w">  </span><span class="o">--</span><span class="n">container</span><span class="o">=</span><span class="n">name</span><span class="w">         </span><span class="n">setupATLAS</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">container</span>
+<span class="w">                               </span><span class="n">Type</span><span class="w"> </span><span class="n">setupATLAS</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span>
 </code></pre></div>
+
+<p>Comma delimited arguments to -t/--test option are:
+ cmtSL6-dev Use dev version of cmtSL6
+ devatlr    Use CERN FRONTIER servlet for developers
+ postRel-dev    Uses a dev version of the post release setup for ATLAS releases
+ tokens     Use tokens for validation instead of X509 (where available)</p>
+<p>```
 We recommend referring to the <a href="https://twiki.atlas-canada.ca/bin/view/AtlasCanada/ComputingPage">ATLAS Canada TWiki</a> for more information and detailed start-up guides. </p>
                 
                   

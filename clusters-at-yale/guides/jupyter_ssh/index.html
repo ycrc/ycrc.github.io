@@ -2717,40 +2717,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#start-the-tunnel" class="md-nav__link">
-    Start the Tunnel
-  </a>
-  
-    <nav class="md-nav" aria-label="Start the Tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-linux" class="md-nav__link">
-    MacOS and Linux
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#browse-the-notebook" class="md-nav__link">
-    Browse the Notebook
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2786,48 +2752,44 @@ You will also need to either load a module that contains <code>jupyter-notebook<
 Make sure that you have installed Jupyter in your conda environment. We recommend <code>jupyterlab</code> which provides a nice user interface.</p>
 </div>
 <p>Save your edited version of this script on the cluster, and submit it with <code>sbatch</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition devel</span>
-<span class="c1">#SBATCH --cpus-per-task 1</span>
-<span class="c1">#SBATCH --mem-per-cpu 8G</span>
-<span class="c1">#SBATCH --time 6:00:00</span>
-<span class="c1">#SBATCH --job-name jupyter-notebook</span>
-<span class="c1">#SBATCH --output jupyter-notebook-%J.log</span>
-
-<span class="c1"># get tunneling info</span>
-<span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-<span class="nv">port</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i8000-9999<span class="w"> </span>-n1<span class="k">)</span>
-<span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span>
-<span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-<span class="nv">cluster</span><span class="o">=</span><span class="nv">$CLUSTER</span>
-<span class="nv">token</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$RANDOM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">30</span><span class="k">)</span>
-
-<span class="c1"># print tunneling instructions jupyter-log</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
-<span class="s2">For more info and how to connect from windows,</span>
-<span class="s2">   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/</span>
-<span class="s2">MacOS or linux terminal command to create your ssh tunnel</span>
-<span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
-<span class="s2">Windows MobaXterm info</span>
-<span class="s2">Forwarded port:same as remote port</span>
-<span class="s2">Remote server: </span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
-<span class="s2">Remote port: </span><span class="si">${</span><span class="nv">port</span><span class="si">}</span>
-<span class="s2">SSH server: </span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
-<span class="s2">SSH login: </span><span class="nv">$user</span>
-<span class="s2">SSH port: 22</span>
-<span class="s2">Use a Browser on your local machine to go to:</span>
-<span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/lab?token=</span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">  (prefix w/ https:// if using password)</span>
-<span class="s2">&quot;</span>
-
-<span class="c1"># load modules or conda environments here</span>
-<span class="c1"># module load miniconda; conda activate ENV_NAME</span>
-<span class="c1"># or</span>
-<span class="c1"># module load  </span>
-
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">JUPYTER_TOKEN</span><span class="o">=</span><span class="nv">$token</span>
-jupyter<span class="w"> </span>lab<span class="w"> </span>--no-browser<span class="w"> </span>--port<span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="w"> </span>--ip<span class="o">=</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-partition-devel">SBATCH --partition devel</h1>
+<h1 id="sbatch-cpus-per-task-1">SBATCH --cpus-per-task 1</h1>
+<h1 id="sbatch-mem-per-cpu-8g">SBATCH --mem-per-cpu 8G</h1>
+<h1 id="sbatch-time-60000">SBATCH --time 6:00:00</h1>
+<h1 id="sbatch-job-name-jupyter-notebook">SBATCH --job-name jupyter-notebook</h1>
+<h1 id="sbatch-output-jupyter-notebook-jlog">SBATCH --output jupyter-notebook-%J.log</h1>
+<h1 id="get-tunneling-info">get tunneling info</h1>
+<p>XDG_RUNTIME_DIR=""
+port=$(shuf -i8000-9999 -n1)
+node=$(hostname -s)
+user=$(whoami)
+cluster=$CLUSTER
+token=$(echo $RANDOM | md5sum | head -c 30)</p>
+<h1 id="print-tunneling-instructions-jupyter-log">print tunneling instructions jupyter-log</h1>
+<p>echo -e "
+For more info and how to connect from windows,
+   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/
+MacOS or linux terminal command to create your ssh tunnel
+ssh -N -L ${port}:${node}:${port} ${user}@${cluster}.ycrc.yale.edu
+Windows MobaXterm info
+Forwarded port:same as remote port
+Remote server: ${node}
+Remote port: ${port}
+SSH server: ${cluster}.ycrc.yale.edu
+SSH login: $user
+SSH port: 22
+Use a Browser on your local machine to go to:
+localhost:${port}/lab?token=${token}  (prefix w/ https:// if using password)
+"</p>
+<h1 id="load-modules-or-conda-environments-here">load modules or conda environments here</h1>
+<h1 id="module-load-miniconda-conda-activate-env_name">module load miniconda; conda activate ENV_NAME</h1>
+<h1 id="or">or</h1>
+<h1 id="module-load">module load</h1>
+<p>export JUPYTER_TOKEN=$token
+jupyter lab --no-browser --port=${port} --ip=${node}
+```</p>
 <h3 id="start-the-tunnel">Start the Tunnel</h3>
 <p>Once you have submitted your job and it starts, your notebook server will be ready for you to connect. 
 You can run <code>squeue -u${USER}</code> to check. You will see an "R" in the ST or status column for your notebook job if it is running. 

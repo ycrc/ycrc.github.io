@@ -1004,20 +1004,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#store-passphrase-and-use-ssh-agent-on-macos" class="md-nav__link">
-    Store Passphrase and Use SSH Agent on macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-agent-on-windows" class="md-nav__link">
-    SSH Agent on Windows
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2783,20 +2769,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#store-passphrase-and-use-ssh-agent-on-macos" class="md-nav__link">
-    Store Passphrase and Use SSH Agent on macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-agent-on-windows" class="md-nav__link">
-    SSH Agent on Windows
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2818,64 +2790,59 @@
 <h2 id="example-ssh-config">Example SSH <code>config</code></h2>
 <p>The following configuration is an example ssh client configuration file specific to our clusters. You can use it on Linux, <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>, and macOS. It allows you to use tab completion of the clusters, without the <code>.ycrc.yale.edu</code> suffixes (i.e. <code>ssh bouchet</code> or <code>scp ~/my_file bouchet:my_file</code> should work). It will also allow you to re-use and multiplex authenticated sessions. This means although the clusters require <a href="/clusters-at-yale/access/mfa">Duo MFA</a>, it will not force you to re-authenticate, as you use the same ssh connection to host multiple sessions. If you attempt to close your first connection with others running, it will wait until all others are closed.</p>
 <p>Save the text below to <code>~/.ssh/config</code> and replace <code>NETID</code> with your Yale netid. Lines that begin with <code>#</code> will be ignored.</p>
-<div class="highlight"><pre><span></span><code># If you use a ssh key that is named something other than id_rsa,
-# you can specify your private key like this:
-# IdentityFile ~/.ssh/other_key_rsa
-
-# Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
-# On a Mac you still need xquartz installed
-
-Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
+<p>```</p>
+<h1 id="if-you-use-a-ssh-key-that-is-named-something-other-than-id_rsa">If you use a ssh key that is named something other than id_rsa,</h1>
+<h1 id="you-can-specify-your-private-key-like-this">you can specify your private key like this:</h1>
+<h1 id="identityfile-sshother_key_rsa">IdentityFile ~/.ssh/other_key_rsa</h1>
+<h1 id="uncomment-the-forwardx11-options-line-to-enable-x11-forwarding-by-default-no-y-necessary">Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)</h1>
+<h1 id="on-a-mac-you-still-need-xquartz-installed">On a Mac you still need xquartz installed</h1>
+<p>Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
     # Uncomment the two lines below
     #ControlMaster auto
     #ControlPath /tmp/%h_%p_%r
-    #ControlPersist 2h
-
-Host bouchet grace mccleary milgram misha
+    #ControlPersist 2h</p>
+<p>Host bouchet grace mccleary milgram misha
     HostName %h.ycrc.yale.edu
-</code></pre></div>
+```</p>
 <p>For more info on ssh configuration, run:</p>
-<div class="highlight"><pre><span></span><code>man<span class="w"> </span>ssh_config
-</code></pre></div>
+<p><code>bash
+man ssh_config</code></p>
 <h2 id="store-passphrase-and-use-ssh-agent-on-macos">Store Passphrase and Use SSH Agent on macOS</h2>
 <p>By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># In MacOS version 12.0 Monterey or newer</span>
-ssh-add<span class="w"> </span>--apple-use-keychain<span class="w"> </span>~/.ssh/id_rsa
-
-<span class="c1"># Older MacOS version</span>
-ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="in-macos-version-120-monterey-or-newer">In MacOS version 12.0 Monterey or newer</h1>
+<p>ssh-add --apple-use-keychain ~/.ssh/id_rsa</p>
+<h1 id="older-macos-version">Older MacOS version</h1>
+<p>ssh-add -K ~/.ssh/id_rsa
+```</p>
 <p>Or whatever your private key file is named.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: <code>/usr/bin/ssh-add</code></p>
 </div>
 <p>Then and add the following to your <code>~/.ssh/config</code> file (create this file if it doesn't exist, or add these settings to the <code>Host *.ycrc.yale.edu ...</code> rule if it does).</p>
-<div class="highlight"><pre><span></span><code>Host *.ycrc.yale.edu mccleary grace milgram misha
+<p><code>Host *.ycrc.yale.edu mccleary grace milgram misha
     UseKeychain yes
-    AddKeystoAgent yes
-</code></pre></div>
+    AddKeystoAgent yes</code></p>
 <p>You can view a list of the keys currently in your agent with:</p>
-<div class="highlight"><pre><span></span><code>ssh-add<span class="w"> </span>-L
-</code></pre></div>
+<p><code>bash
+ssh-add -L</code></p>
 <h2 id="ssh-agent-on-windows">SSH Agent on Windows</h2>
 <p>In a PowerShell terminal:
-<div class="highlight"><pre><span></span><code><span class="c"># By default the ssh-agent service is disabled. Configure it to start automatically.</span>
-<span class="c"># Make sure you&#39;re running as an Administrator.</span>
-<span class="nb">Get-Service</span> <span class="n">ssh-agent</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
-
-<span class="c"># Start the service</span>
-<span class="nb">Start-Service</span> <span class="n">ssh-agent</span>
-
-<span class="c"># This should return a status of Running</span>
-<span class="nb">Get-Service</span> <span class="n">ssh-agent</span>
-
-<span class="c"># Now load your key files into ssh-agent</span>
-<span class="n">ssh-add</span> <span class="nv">$env:USERPROFILE</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\&lt;</span><span class="n">your_keyfile</span><span class="p">&gt;</span>
-</code></pre></div></p>
+```powershell</p>
+<h1 id="by-default-the-ssh-agent-service-is-disabled-configure-it-to-start-automatically">By default the ssh-agent service is disabled. Configure it to start automatically.</h1>
+<h1 id="make-sure-youre-running-as-an-administrator">Make sure you're running as an Administrator.</h1>
+<p>Get-Service ssh-agent | Set-Service -StartupType Automatic</p>
+<h1 id="start-the-service">Start the service</h1>
+<p>Start-Service ssh-agent</p>
+<h1 id="this-should-return-a-status-of-running">This should return a status of Running</h1>
+<p>Get-Service ssh-agent</p>
+<h1 id="now-load-your-key-files-into-ssh-agent">Now load your key files into ssh-agent</h1>
+<p>ssh-add $env:USERPROFILE.ssh\<your_keyfile>
+```</p>
                 
                   
                     

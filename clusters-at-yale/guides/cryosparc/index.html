@@ -2737,41 +2737,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-the-ycrc-cryosparc-workflow" class="md-nav__link">
-    Run the YCRC cryosparc workflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-topaz" class="md-nav__link">
-    Add Topaz
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-cryosparc-jobs" class="md-nav__link">
-    Troubleshooting cryosparc jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-general" class="md-nav__link">
-    Troubleshooting (general)
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2798,8 +2763,7 @@
 <p>To use cryosparc with the YCRC cluster workflow, you must request a unique 'port' value that cryosparc uses for displaying web pages, etc., otherwise, your jobs may clash with another user's.</p>
 <p>We provide a cryosparc port request script that you can run from the terminal. Please note that a request must be made separately for each YCRC cluster you wish to run cryosparc on, and the resulting port numbers will likely differ between clusters.</p>
 <p>To run the script, start a terminal shell on the desired cluster and do:
-<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-</code></pre></div></p>
+<code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh</code></p>
 <p>Due to security constraints, we must handle these requests manually, but we have streamlined the process so we can respond promptly, after which you will be notified by an automated email. </p>
 <h3 id="new-installations">New installations</h3>
 <p>Use the port number you have obtained when <a href="#install">installing cryosparc</a>.</p>
@@ -2812,40 +2776,35 @@
 <li>
 <p>In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
  find out what compute node it's running on and connect to the node with ssh:
-    <div class="highlight"><pre><span></span><code><span class="c1"># Launch cryosparc with `sbatch` and note the jobID it prints upon starting:</span>
-sbatch<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>/apps/services/cryosparc/cryosparc-cluster-master.sh
-
-<span class="c1"># Run `squeue` and note the compute node of your job (i.e. &#39;a1132u05n01&#39;)</span>
-squeue<span class="w"> </span>-j<span class="w"> </span>&lt;jobID&gt;
-
-<span class="c1"># Connect to the node with ssh:</span>
-ssh<span class="w"> </span>&lt;node-where-cryosparc-is-running&gt;
-</code></pre></div></p>
+    <code>`` bash
+    # Launch cryosparc with</code>sbatch` and note the jobID it prints upon starting:
+    sbatch -p devel -t 1:00:00 --mem=8G /apps/services/cryosparc/cryosparc-cluster-master.sh</p>
+<h1 id="run-squeue-and-note-the-compute-node-of-your-job-ie-a1132u05n01">Run <code>squeue</code> and note the compute node of your job (i.e. 'a1132u05n01')</h1>
+<p>squeue -j <jobID></p>
+<h1 id="connect-to-the-node-with-ssh">Connect to the node with ssh:</h1>
+<p>ssh <node-where-cryosparc-is-running>
+```</p>
 </li>
 <li>
 <p>Stop cryosparc, backup the database, and then run the cryosparc command to change the port:
-    <div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
-cryosparcm<span class="w"> </span>database<span class="w"> </span>backup<span class="w">    </span><span class="c1"># (this is a fast step, it should take under 60 seconds)</span>
-<span class="w">                              </span><span class="c1"># Note, in cryosparc versions &lt; 5 the syntax may be &#39;cryosparcm backup&#39;</span>
-
-<span class="c1"># Run the below command to print your assigned cryosparc port. The output should read like:</span>
-<span class="c1">#    Your current cryosparc port :  39000</span>
-<span class="c1">#      needs to be updated to the YCRC-assigned port value of : &lt;new_id&gt;</span>
-
-cryosparcm<span class="w"> </span>stop
-/apps/services/cryosparc/ycrc_get_cryosparc_port.sh
-
-<span class="c1"># Run the following command and type &#39;y&#39; when prompted</span>
-<span class="c1"># Note, it is normal to see warnings at the stage like</span>
-<span class="c1">#    &#39;Warning: Could not get database status (attempt 1/3)&#39;</span>
-
-cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span class="w"> </span>port<span class="w"> </span>value&gt;
-
-<span class="c1"># Cryosparc should then restart successfully and print the standard connection messages followed</span>
-<span class="c1">#  by &#39;Checking database... OK&#39;</span>
-</code></pre></div></p>
+    ``` bash
+    cryosparcm stop
+    cryosparcm database backup    # (this is a fast step, it should take under 60 seconds)
+                                  # Note, in cryosparc versions &lt; 5 the syntax may be 'cryosparcm backup'</p>
+<h1 id="run-the-below-command-to-print-your-assigned-cryosparc-port-the-output-should-read-like">Run the below command to print your assigned cryosparc port. The output should read like:</h1>
+<h1 id="your-current-cryosparc-port-39000">Your current cryosparc port :  39000</h1>
+<h1 id="needs-to-be-updated-to-the-ycrc-assigned-port-value-of">needs to be updated to the YCRC-assigned port value of : <new_id></h1>
+<p>cryosparcm stop
+/apps/services/cryosparc/ycrc_get_cryosparc_port.sh</p>
+<h1 id="run-the-following-command-and-type-y-when-prompted">Run the following command and type 'y' when prompted</h1>
+<h1 id="note-it-is-normal-to-see-warnings-at-the-stage-like">Note, it is normal to see warnings at the stage like</h1>
+<h1 id="warning-could-not-get-database-status-attempt-13">'Warning: Could not get database status (attempt 1/3)'</h1>
+<p>cryosparcm changeport <new port value></p>
+<h1 id="cryosparc-should-then-restart-successfully-and-print-the-standard-connection-messages-followed">Cryosparc should then restart successfully and print the standard connection messages followed</h1>
+<h1 id="by-checking-database-ok">by 'Checking database... OK'</h1>
+<p><code>``
+4. Logout from the compute node and cancel the short cryosparc job with</code>scancel <jobid><code>. You may now submit a new master job with</code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh` as described in our <a href="#run-the-ycrc-cryosparc-workflow">workflow instructions</a>.</p>
 </li>
-<li>Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described in our <a href="#run-the-ycrc-cryosparc-workflow">workflow instructions</a>.</li>
 </ol>
 <h2 id="install">Install</h2>
 <p>The following installation instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>
@@ -2858,78 +2817,70 @@ cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span
 </li>
 <li>
 <p>For the YCRC Cryosparc Port Number: Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
-<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-</code></pre></div></p>
+<code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh</code></p>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>Set up Environment</strong> : First, log onto a CPU compute node, either as an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. ('devel' is fine for initial cryosparc master installation).</p>
 <p>Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Log onto compute node</span>
-salloc<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">6</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>16G
-
-<span class="c1"># Below, substitute your actual project folder and netID according to the template given:</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project_pi_&lt;your_pi_netID&gt;/&lt;your_netid&gt;/cryosparc
-
-<span class="c1"># Note, on the older mccleary/grace clusters, the above line would instead be:</span>
-<span class="c1">#  export install_path=${HOME}/project/cryosparc    </span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="log-onto-compute-node">Log onto compute node</h1>
+<p>salloc -p devel -t 6:00:00 --mem=16G</p>
+<h1 id="below-substitute-your-actual-project-folder-and-netid-according-to-the-template-given">Below, substitute your actual project folder and netID according to the template given:</h1>
+<p>export install_path=${HOME}/project_pi_<your_pi_netID>/<your_netid>/cryosparc</p>
+<h1 id="note-on-the-older-mcclearygrace-clusters-the-above-line-would-instead-be">Note, on the older mccleary/grace clusters, the above line would instead be:</h1>
+<h1 id="export-install_pathhomeprojectcryosparc">export install_path=${HOME}/project/cryosparc</h1>
+<p>```</p>
 </li>
 <li>
 <p><strong>Set up Directories, Download installers</strong> :</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
-
-<span class="c1">#go get the installers</span>
-mkdir<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_master.tar.gz
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_worker.tar.gz
-
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_master.tar.gz
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
-</code></pre></div>
+<p>``` bash
+export LICENSE_ID=Your-cryosparc-license-code-here</p>
+<h1 id="go-get-the-installers">go get the installers</h1>
+<p>mkdir ${install_path}
+cd $install_path
+curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz</p>
+<p>tar -xf cryosparc_master.tar.gz
+tar -xf cryosparc_worker.tar.gz
+```</p>
 </li>
 <li>
 <p><strong>Install the Master</strong> :</p>
 <p>Once you have received your YCRC cryosparc port number (step 1 above), run the installer using the steps below. Please be sure to <strong>insert your port number</strong> in the corresponding line below (<code>export port_number="...</code>)</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Define temporary password, database location, and server port number</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_password</span><span class="o">=</span>Password123
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
-
-<span class="c1"># Define YCRC cryosparc port number: If you really want, you may proceed with</span>
-<span class="c1">#  the dummy value 63000 if you haven&#39;t received your official one.</span>
-<span class="c1"># However, the steps to update once you get your real one are somewhat arduous- </span>
-<span class="c1">#  see &#39;Existing installations (changing your current port)&#39; above</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">port_number</span><span class="o">=</span><span class="s2">&quot;Insert your port number here&quot;</span>
-
-<span class="c1"># Run the installation script</span>
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
-
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$LICENSE_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--hostname<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--dbpath<span class="w"> </span><span class="nv">$db_path</span><span class="w"> </span><span class="se">\</span>
-<span class="w">             </span>--port<span class="w"> </span><span class="nv">$port_number</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="define-temporary-password-database-location-and-server-port-number">Define temporary password, database location, and server port number</h1>
+<p>export cryosparc_password=Password123</p>
+<p>export db_path=${install_path}/cryosparc_database</p>
+<h1 id="define-ycrc-cryosparc-port-number-if-you-really-want-you-may-proceed-with">Define YCRC cryosparc port number: If you really want, you may proceed with</h1>
+<h1 id="the-dummy-value-63000-if-you-havent-received-your-official-one">the dummy value 63000 if you haven't received your official one.</h1>
+<h1 id="however-the-steps-to-update-once-you-get-your-real-one-are-somewhat-arduous-">However, the steps to update once you get your real one are somewhat arduous-</h1>
+<h1 id="see-existing-installations-changing-your-current-port-above">see 'Existing installations (changing your current port)' above</h1>
+<p>export port_number="Insert your port number here"</p>
+<h1 id="run-the-installation-script">Run the installation script</h1>
+<p>cd ${install_path}/cryosparc_master</p>
+<p>./install.sh --license $LICENSE_ID \
+             --hostname $(hostname) \
+             --dbpath $db_path \
+             --port $port_number
+```</p>
 <p>Then, add yourself as a user:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Start CryoSPARC</span>
-./bin/cryosparcm<span class="w"> </span>start
-
-<span class="c1"># Create the first (administrative) user</span>
-<span class="c1"># Please be sure to substitute the needed fields in the below command:</span>
-./bin/cryosparcm<span class="w"> </span>createuser<span class="w"> </span>--email<span class="w"> </span><span class="s2">&quot;&lt;user email&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--password<span class="w"> </span><span class="nv">$cryosparc_password</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--firstname<span class="w"> </span><span class="s2">&quot;&lt;given name&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">                      </span>--lastname<span class="w"> </span><span class="s2">&quot;&lt;surname&gt;&quot;</span>
-
-<span class="c1"># Load the environment</span>
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-
-<span class="c1"># Stop the master</span>
-./bin/cryosparcm<span class="w"> </span>stop
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="start-cryosparc">Start CryoSPARC</h1>
+<p>./bin/cryosparcm start</p>
+<h1 id="create-the-first-administrative-user">Create the first (administrative) user</h1>
+<h1 id="please-be-sure-to-substitute-the-needed-fields-in-the-below-command">Please be sure to substitute the needed fields in the below command:</h1>
+<p>./bin/cryosparcm createuser --email "<user email>" \
+                      --password $cryosparc_password \
+                      --username ${USER} \
+                      --firstname "<given name>" \
+                      --lastname "<surname>"</p>
+<h1 id="load-the-environment">Load the environment</h1>
+<p>source ~/.bashrc</p>
+<h1 id="stop-the-master">Stop the master</h1>
+<p>./bin/cryosparcm stop
+```</p>
 </li>
 <li>
 <p><strong>Add the cryosparc commands to your system PATH</strong> :</p>
@@ -2941,23 +2892,21 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
  You can check ~/.bashrc first and to make sure <strong>both</strong> paths below are already added at the end
  ('# Added by cryosparc').
  If one or both are missing (typically we find only the 'master' path and not the 'worker' path), do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</code></pre></div>
+<p><code>bash
+echo export PATH="${install_path}/cryosparc_master/bin:\$PATH" &gt;&gt; ~/.bashrc
+echo export PATH="${install_path}/cryosparc_worker/bin:\$PATH" &gt;&gt; ~/.bashrc</code></p>
 </li>
 <li>
 <p><strong>Install the worker software on a GPU node</strong> : </p>
 <p>Exit the above interactive session, start a new GPU interactive session, and install the worker:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>8G
-
-<span class="c1"># Go to the worker directory and install the worker</span>
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc<span class="w">     </span><span class="c1"># Or wherever you put your cryosparc directory</span>
-<span class="nb">cd</span><span class="w"> </span>cryosparc_worker
-
-<span class="k">$(</span>grep<span class="w"> </span>LICENSE<span class="w"> </span>../cryosparc_master/config.sh<span class="k">)</span>
-
-./install.sh<span class="w"> </span>--license<span class="w"> </span><span class="nv">$CRYOSPARC_LICENSE_ID</span><span class="w"> </span>--yes
-</code></pre></div>
+<p>``` bash
+salloc -p gpu_devel --gpus=1 --mem=8G</p>
+<h1 id="go-to-the-worker-directory-and-install-the-worker">Go to the worker directory and install the worker</h1>
+<p>cd ${HOME}/project/cryosparc     # Or wherever you put your cryosparc directory
+cd cryosparc_worker</p>
+<p>$(grep LICENSE ../cryosparc_master/config.sh)</p>
+<p>./install.sh --license $CRYOSPARC_LICENSE_ID --yes
+```</p>
 <p>Exit the interactive session. Master and worker software should now be ready.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2970,12 +2919,12 @@ tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
 <ol>
 <li>
 <p><strong>Start your cryosparc server</strong>, submit the 'cryosparc-cluster-master.sh' script using:
-    <div class="highlight"><pre><span></span><code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh
-
-# To override the default runtime and partition, which may be useful for shorter runs,
-#  add the corresponding flags before the script name in your sbatch command, i.e.:
-sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
-</code></pre></div></p>
+    ```
+    sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</p>
+<h1 id="to-override-the-default-runtime-and-partition-which-may-be-useful-for-shorter-runs">To override the default runtime and partition, which may be useful for shorter runs,</h1>
+<h1 id="add-the-corresponding-flags-before-the-script-name-in-your-sbatch-command-ie">add the corresponding flags before the script name in your sbatch command, i.e.:</h1>
+<p>sbatch -t 6:00:00 -p devel /apps/services/cryosparc/cryosparc-cluster-master.sh
+```</p>
 <p>Once this job starts running, you will need the address for your cryosparc web UI.
 You can get this by running, i.e. <code>grep http &lt;your slurm outputfile&gt;</code>, where the slurm filename
 will look like <code>cryosparc-master-r209u08n01-2550317.out</code>. The web address you want looks like:</p>
@@ -3005,11 +2954,11 @@ Your cryosparc license does not allow this and the cryosparc jobs will conflict 
 <li>
 <p><strong>Click 'Submit to lane'</strong> : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command 'squeue --me').</p>
 <p>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
-</code></pre></div>
+<p><code>bash
+scontrol update JobId=1234567 TimeLimit=6:00:00</code></p>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
-</code></pre></div>
+<p><code>bash
+scontrol update JobId=1234567 Partition=priority_gpu</code></p>
 </li>
 </ol>
 <h2 id="add-topaz">Add Topaz</h2>
@@ -3049,8 +2998,9 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <li>
 <p><strong>Leftover lock files</strong> : If your submitted cryosparc master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryosparc master job and check if cryosparc is running with 'cryosparcm status', and check your cryosparc master cluster logfile for errors related to the cryosparc data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryosparc master process with 'cryosparcm start'. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
 <p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="rm-f-cryosparc_db_pathwiredtigerlock-cryosparc_db_pathmongodlock">rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</h1>
+<p>```</p>
 </li>
 <li>
 <p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryosparc's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the 'cryosparc_database' folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>

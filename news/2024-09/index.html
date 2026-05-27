@@ -2791,9 +2791,9 @@
 <p><em>Before using the Clarity AI chatbot, please review <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform#training">training resources</a> and <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform/clarity-platform-faqs">guidance</a> on appropriate use.</em></p>
 <h4 id="job-performance-monitoring">Job Performance Monitoring</h4>
 <p>We have recently deployed a new tool for measuring and monitoring job performance called <code>jobstats</code>. Available on all clusters, <code>jobstats</code> provides a report of the utilization of CPU, Memory, and GPU resources for in-progress and recently completed jobs. To generate the report simply run (replacing the ID number of the job in question):</p>
-<div class="highlight"><pre><span></span><code>[ab123@grace ~]$ jobstats 123456789
-
-======================================================================
+<p>```
+[ab123@grace ~]$ jobstats 123456789</p>
+<p>======================================================================
                          Slurm Job Statistics
 ======================================================================
          Job ID: 123456789
@@ -2807,21 +2807,22 @@
         Cluster: grace
      Start Time: Thu Sep 5, 2024 at 10:58 AM
        Run Time: 1-06:43:41 (in progress)
-     Time Limit: 4-04:00:00
-
-                         Overall Utilization
-======================================================================
-  CPU utilization  [|||||||||||||                            26%]
-  CPU memory usage [||||                                      8%]
-
-                         Detailed Utilization
-======================================================================
-  CPU utilization per node (CPU time used/run time)
-      r816u29n04: 1-07:48:36/5-02:54:45 (efficiency=25.9%)
-
-  CPU memory usage per node - used/allocated
-      r816u29n04: 19.9GB/256.0GB (5.0GB/64.0GB per core of 4)
+     Time Limit: 4-04:00:00</p>
+<div class="codehilite"><pre><span></span><code>                     Overall Utilization
 </code></pre></div>
+
+<p>======================================================================
+  CPU utilization  [|||||||||||||                            26%]
+  CPU memory usage [||||                                      8%]</p>
+<div class="codehilite"><pre><span></span><code>                     Detailed Utilization
+</code></pre></div>
+
+<p>======================================================================
+  CPU utilization per node (CPU time used/run time)
+      r816u29n04: 1-07:48:36/5-02:54:45 (efficiency=25.9%)</p>
+<p>CPU memory usage per node - used/allocated
+      r816u29n04: 19.9GB/256.0GB (5.0GB/64.0GB per core of 4)</p>
+<p>```</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
 <li><strong>R/4.4.1-foss-2022b</strong> is now available on all clusters</li>

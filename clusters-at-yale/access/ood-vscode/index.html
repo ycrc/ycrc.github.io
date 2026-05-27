@@ -976,74 +976,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#remote-ssh-via-compute-node-advanced-users" class="md-nav__link">
-    Remote SSH via Compute Node (Advanced Users)
-  </a>
-  
-    <nav class="md-nav" aria-label="Remote SSH via Compute Node (Advanced Users)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-1-using-salloc-for-interactive-sessions" class="md-nav__link">
-    Method 1: Using salloc for Interactive Sessions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-2-using-a-batch-job" class="md-nav__link">
-    Method 2: Using a Batch Job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-configuration" class="md-nav__link">
-    SSH Configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-linux" class="md-nav__link">
-    macOS and Linux
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-from-vscode" class="md-nav__link">
-    Connecting from VSCode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2931,74 +2863,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#remote-ssh-via-compute-node-advanced-users" class="md-nav__link">
-    Remote SSH via Compute Node (Advanced Users)
-  </a>
-  
-    <nav class="md-nav" aria-label="Remote SSH via Compute Node (Advanced Users)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-1-using-salloc-for-interactive-sessions" class="md-nav__link">
-    Method 1: Using salloc for Interactive Sessions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-2-using-a-batch-job" class="md-nav__link">
-    Method 2: Using a Batch Job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-configuration" class="md-nav__link">
-    SSH Configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-linux" class="md-nav__link">
-    macOS and Linux
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-from-vscode" class="md-nav__link">
-    Connecting from VSCode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3063,8 +2927,7 @@
 </li>
 <li>
 <p>After this script successfully starts running, check the last line of the logfile <code>vscode_slurm.txt</code> (in the directory you submitted the job from). The last line will look like:
-<div class="highlight"><pre><span></span><code>To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX
-</code></pre></div></p>
+<code>To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX</code></p>
 </li>
 <li>
 <p>Open your web browser and navigate to the GitHub device login URL shown in the log file. Enter the code to authenticate.</p>
@@ -3088,39 +2951,34 @@
 <p class="admonition-title">Warning</p>
 <p>Only submit VSCode jobs to devel partitions (such as <code>devel</code> or <code>gpu_devel</code>). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using <code>scancel</code> to free up resources for other users.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH --partition=devel</span>
-<span class="c1">#SBATCH -t 6:00:00</span>
-<span class="c1">#SBATCH -c 1</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH --output=vscode_slurm.txt</span>
-
-<span class="c1"># vscode_slurm.sh</span>
-
-<span class="c1"># Usage:</span>
-<span class="c1"># sbatch vscode_slurm.sh</span>
-
-<span class="c1"># After this script successfully starts running, use the last line of the</span>
-<span class="c1"># logfile &#39;vscode_slurm.txt&#39; (in the directory you submitted the job from)</span>
-<span class="c1"># to set up a connection from the cluster to your own VSCode app on a remote computer.</span>
-<span class="c1"># An example last line will look like:</span>
-
-<span class="c1">######################</span>
-<span class="c1"># vscode_slurm.txt</span>
-<span class="c1">######################</span>
-<span class="c1"># ...</span>
-<span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX</span>
-<span class="c1">######################</span>
-
-module<span class="w"> </span>load<span class="w"> </span>VSCode
-code<span class="w"> </span>tunnel
-</code></pre></div>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-partitiondevel">SBATCH --partition=devel</h1>
+<h1 id="sbatch-t-60000">SBATCH -t 6:00:00</h1>
+<h1 id="sbatch-c-1">SBATCH -c 1</h1>
+<h1 id="sbatch-mem10g">SBATCH --mem=10G</h1>
+<h1 id="sbatch-outputvscode_slurmtxt">SBATCH --output=vscode_slurm.txt</h1>
+<h1 id="vscode_slurmsh">vscode_slurm.sh</h1>
+<h1 id="usage">Usage:</h1>
+<h1 id="sbatch-vscode_slurmsh">sbatch vscode_slurm.sh</h1>
+<h1 id="after-this-script-successfully-starts-running-use-the-last-line-of-the">After this script successfully starts running, use the last line of the</h1>
+<h1 id="logfile-vscode_slurmtxt-in-the-directory-you-submitted-the-job-from">logfile 'vscode_slurm.txt' (in the directory you submitted the job from)</h1>
+<h1 id="to-set-up-a-connection-from-the-cluster-to-your-own-vscode-app-on-a-remote-computer">to set up a connection from the cluster to your own VSCode app on a remote computer.</h1>
+<h1 id="an-example-last-line-will-look-like">An example last line will look like:</h1>
+<h6 id="_1"></h6>
+<h1 id="vscode_slurmtxt">vscode_slurm.txt</h1>
+<h6 id="_2"></h6>
+<h1 id="_3">...</h1>
+<h1 id="to-grant-access-to-the-server-please-log-into-httpsgithubcomlogindevice-and-use-code-xxxx-xxxx">To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX</h1>
+<h6 id="_4"></h6>
+<p>module load VSCode
+code tunnel
+```</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can set a custom name for your tunnel by adding the <code>--name</code> option to the <code>code tunnel</code> command in the script. For example:
-<div class="highlight"><pre><span></span><code>code<span class="w"> </span>tunnel<span class="w"> </span>--name<span class="w"> </span>bouchet-vscode
-</code></pre></div></p>
+<code>bash
+code tunnel --name bouchet-vscode</code></p>
 </div>
 <h2 id="remote-ssh-via-compute-node-advanced-users">Remote SSH via Compute Node (Advanced Users)</h2>
 <p>This method allows you to use your local VSCode installation with the Remote-SSH extension to connect directly to a compute node. This is an alternative for users who want to use their local VSCode but cannot or prefer not to use the Remote Tunnel method with GitHub authentication.</p>
@@ -3137,13 +2995,13 @@ code<span class="w"> </span>tunnel
 <ol>
 <li>
 <p><strong>Request a compute node interactively:</strong>
-   <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>10G
-</code></pre></div></p>
+   <code>bash
+   salloc --partition=devel --time=6:00:00 --cpus-per-task=1 --mem=10G</code></p>
 </li>
 <li>
 <p><strong>Once the job is allocated, note the compute node hostname</strong> by running:
-   <div class="highlight"><pre><span></span><code>hostname
-</code></pre></div>
+   <code>bash
+   hostname</code>
    This will return something like <code>r209u11n04.bouchet.ycrc.yale.edu</code>, 
 <code>a11231u01n01.mghpcc.ycrc.yale.edu</code>, etc.</p>
 </li>
@@ -3163,33 +3021,32 @@ code<span class="w"> </span>tunnel
 <p>Only submit VSCode jobs to devel partitions (such as <code>devel</code> or <code>gpu_devel</code>). VSCode jobs found in other partitions may be terminated without notice. Always terminate your VSCode session when you are done using <code>scancel</code> to free up resources for other users.</p>
 </div>
 <ol>
-<li>
-<p><strong>Create a batch script</strong> called <code>vscode_ssh.sh</code>:
-   <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=devel</span>
-<span class="c1">#SBATCH --time=6:00:00</span>
-<span class="c1">#SBATCH --cpus-per-task=1</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
-
-<span class="c1"># Print the hostname to the log file</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
-
-<span class="c1"># Keep the job alive</span>
-<span class="c1"># VSCode will connect via SSH and start its server automatically</span>
-sleep<span class="w"> </span>6h
-</code></pre></div></p>
-</li>
+<li><strong>Create a batch script</strong> called <code>vscode_ssh.sh</code>:
+   ```bash
+   #!/bin/bash
+   #SBATCH --partition=devel
+   #SBATCH --time=6:00:00
+   #SBATCH --cpus-per-task=1
+   #SBATCH --mem=10G
+   #SBATCH --output=vscode_ssh-%J.log</li>
+</ol>
+<p># Print the hostname to the log file
+   echo "VSCode SSH session ready on node: $(hostname -s)"
+   echo "Full hostname: $(hostname)"</p>
+<p># Keep the job alive
+   # VSCode will connect via SSH and start its server automatically
+   sleep 6h
+   ```</p>
+<ol>
 <li>
 <p><strong>Submit the job:</strong>
-   <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>vscode_ssh.sh
-</code></pre></div></p>
+   <code>bash
+   sbatch vscode_ssh.sh</code></p>
 </li>
 <li>
 <p><strong>Check the log file</strong> to get the compute node hostname:
-   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
-</code></pre></div></p>
+   <code>bash
+   cat vscode_ssh-[JOBID].log</code></p>
 </li>
 <li>
 <p><strong>Configure your local SSH setup</strong> with the compute node name (see below).</p>
@@ -3202,19 +3059,19 @@ sleep<span class="w"> </span>6h
 <p>You need to configure SSH on your local machine to connect through the login node to the compute node.</p>
 <h4 id="macos-and-linux">macOS and Linux</h4>
 <p>Add the following to your <code>~/.ssh/config</code> file on your <strong>local machine</strong>:</p>
-<div class="highlight"><pre><span></span><code># Connection to cluster login node (example for Grace cluster)
-Host grace
+<p>```ssh-config</p>
+<h1 id="connection-to-cluster-login-node-example-for-grace-cluster">Connection to cluster login node (example for Grace cluster)</h1>
+<p>Host grace
     HostName grace.ycrc.yale.edu
     User YOUR_NETID
-    IdentityFile ~/.ssh/SSH_KEY_FILE
-
-# Connection to compute node via login node
-Host grace-compute
+    IdentityFile ~/.ssh/SSH_KEY_FILE</p>
+<h1 id="connection-to-compute-node-via-login-node">Connection to compute node via login node</h1>
+<p>Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
     IdentityFile ~/.ssh/SSH_KEY_FILE
     ProxyJump grace
-</code></pre></div>
+```</p>
 <p>Replace:</p>
 <ul>
 <li><code>YOUR_NETID</code> with your Yale NetID  </li>
@@ -3224,19 +3081,19 @@ Host grace-compute
 <p>Modify the <code>Host</code> and <code>HostName</code> as needed for the cluster you are using.</p>
 <h4 id="windows">Windows</h4>
 <p>Add the following to your SSH config file on your <strong>local Windows machine</strong>. The config file is typically located at <code>C:\Users\YOUR_USERNAME\.ssh\config</code> (you may need to create this file if it doesn't exist):</p>
-<div class="highlight"><pre><span></span><code># Connection to cluster login node
-Host grace
+<p>```ssh-config</p>
+<h1 id="connection-to-cluster-login-node">Connection to cluster login node</h1>
+<p>Host grace
     HostName grace.ycrc.yale.edu
     User YOUR_NETID
-    IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
-
-# Connection to compute node via login node
-Host grace-compute
+    IdentityFile C:\Users\YOUR_USERNAME.ssh\SSH_KEY_FILE</p>
+<h1 id="connection-to-compute-node-via-login-node_1">Connection to compute node via login node</h1>
+<p>Host grace-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
-    IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
+    IdentityFile C:\Users\YOUR_USERNAME.ssh\SSH_KEY_FILE
     ProxyJump grace
-</code></pre></div>
+```</p>
 <p>Replace:</p>
 <ul>
 <li><code>YOUR_USERNAME</code> with your Windows username  </li>

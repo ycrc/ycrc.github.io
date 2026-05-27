@@ -3278,8 +3278,7 @@ For more information and instructions on how to retrieve your files,visit <a hre
 <li><strong>Clear your browser cache completely.</strong> Use a private browsing window or clear your entire browser cache (not just the last 24 hours). This resolves most session-related issues.</li>
 <li><strong>For unresponsive RStudio sessions:</strong> If RStudio becomes slow or stops responding, terminate the session and run this command at the shell prompt:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>ycrc_clean_rstudio.sh
-</code></pre></div>
+<p><code>ycrc_clean_rstudio.sh</code></p>
 <p>This removes temporary RStudio files and allows a fresh start.</p>
 <p>Need more help? Additional troubleshooting steps are available in <a href="/access/ood/">our R documentation</a>.
 Please <a href="/#get-help">contact us</a> for assistance. </p>
@@ -3747,9 +3746,9 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
 <p><em>Before using the Clarity AI chatbot, please review <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform#training">training resources</a> and <a href="https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform/clarity-platform-faqs">guidance</a> on appropriate use.</em></p>
 <h4 id="job-performance-monitoring">Job Performance Monitoring</h4>
 <p>We have recently deployed a new tool for measuring and monitoring job performance called <code>jobstats</code>. Available on all clusters, <code>jobstats</code> provides a report of the utilization of CPU, Memory, and GPU resources for in-progress and recently completed jobs. To generate the report simply run (replacing the ID number of the job in question):</p>
-<div class="highlight"><pre><span></span><code>[ab123@grace ~]$ jobstats 123456789
-
-======================================================================
+<p>```
+[ab123@grace ~]$ jobstats 123456789</p>
+<p>======================================================================
                          Slurm Job Statistics
 ======================================================================
          Job ID: 123456789
@@ -3763,21 +3762,22 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
         Cluster: grace
      Start Time: Thu Sep 5, 2024 at 10:58 AM
        Run Time: 1-06:43:41 (in progress)
-     Time Limit: 4-04:00:00
-
-                         Overall Utilization
-======================================================================
-  CPU utilization  [|||||||||||||                            26%]
-  CPU memory usage [||||                                      8%]
-
-                         Detailed Utilization
-======================================================================
-  CPU utilization per node (CPU time used/run time)
-      r816u29n04: 1-07:48:36/5-02:54:45 (efficiency=25.9%)
-
-  CPU memory usage per node - used/allocated
-      r816u29n04: 19.9GB/256.0GB (5.0GB/64.0GB per core of 4)
+     Time Limit: 4-04:00:00</p>
+<div class="codehilite"><pre><span></span><code>                     Overall Utilization
 </code></pre></div>
+
+<p>======================================================================
+  CPU utilization  [|||||||||||||                            26%]
+  CPU memory usage [||||                                      8%]</p>
+<div class="codehilite"><pre><span></span><code>                     Detailed Utilization
+</code></pre></div>
+
+<p>======================================================================
+  CPU utilization per node (CPU time used/run time)
+      r816u29n04: 1-07:48:36/5-02:54:45 (efficiency=25.9%)</p>
+<p>CPU memory usage per node - used/allocated
+      r816u29n04: 19.9GB/256.0GB (5.0GB/64.0GB per core of 4)</p>
+<p>```</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
 <li><strong>R/4.4.1-foss-2022b</strong> is now available on all clusters</li>
@@ -3898,11 +3898,10 @@ With Ollama, researchers can download and run popular LLMs offline, which enhanc
 <p>"MATLAB (Web)" is now available as an Open OnDemand app. A MATLAB session is connected directly to your web browser tab, rather than launched via a Remote Desktop session as with the traditional MATLAB app. This allows more of the requested resources to be dedicated to MATLAB itself.  Page through the full App list in Open OnDemand to launch. (Note that this is a work in progress that might not yet have all the functionality of a regular MATLAB session.)</p>
 <h4 id="fairshare-weights-adjustment">FairShare Weights Adjustment</h4>
 <p>Periodically we adjust the relative impact of resource allocations on a group’s FairShare (the way that the scheduler determines which job gets scheduled next). We have adjusted the “service unit” weights for memory and GPUs to better match their cost to acquire and maintain:</p>
-<div class="highlight"><pre><span></span><code>CPU: 1 SU
+<p><code>CPU: 1 SU
 Memory: 0.067 (15G/SU)
 A100 GPU: 100 SU
-non-A100 GPU: 15 SU
-</code></pre></div>
+non-A100 GPU: 15 SU</code></p>
 <p>For more information about FairShare and how we use it to ensure equity in scheduling, please visit <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/fairshare/">our docs page</a>.</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
@@ -4267,8 +4266,7 @@ improved node management system</p>
 <p><a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/mfa/">Multi-Factor authentication via Duo</a> is now required for ssh for all users on Grace after the maintenance.  For most usage, this additional step is minimally invasive and makes our clusters much more secure. However, for users who use graphical transfer tools such as Cyberduck, please see <a href="https://docs.ycrc.yale.edu/data/transfer/#cyberduck-with-mfa">our MFA transfer documentation</a>.</p>
 <h3 id="transfer-node-host-key-change">Transfer Node Host Key Change</h3>
 <p>The ssh host key for Grace's transfer node was changed during the maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login. To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):</p>
-<div class="highlight"><pre><span></span><code>ssh-keygen -R transfer-grace.ycrc.yale.edu
-</code></pre></div>
+<p><code>ssh-keygen -R transfer-grace.ycrc.yale.edu</code></p>
 <p>If you are using a GUI, such as MobaXterm, you will need to manually edit your known host file and remove the list related to Grace.
 For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/home/.ssh</code>.</p>
 <p>Then attempt a new login and accept the new host key.</p>
@@ -4415,22 +4413,20 @@ For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/ho
 <p>Many scientific workflows start as interactive Jupyter notebooks, and our Open OnDemand portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively. </p>
 <p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
 <p>To get started, install papermill into your Conda environments:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda install papermill
-</code></pre></div>
+<p><code>module load miniconda
+conda install papermill</code></p>
 <p>Then you can simply evaluate a notebook, preserving figures and output inside the notebook, like this:</p>
-<div class="highlight"><pre><span></span><code>papermill /path/to/notebook.ipynb
-</code></pre></div>
+<p><code>papermill /path/to/notebook.ipynb</code></p>
 <p>This can be run inside a batch job that might look like this:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-#SBATCH -p day
-#SBATCH -c 1
-#SBATCH -t 6:00:00
-
-module unload miniconda
+<p>```</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-p-day">SBATCH -p day</h1>
+<h1 id="sbatch-c-1">SBATCH -c 1</h1>
+<h1 id="sbatch-t-60000">SBATCH -t 6:00:00</h1>
+<p>module unload miniconda
 conda activate my_env
-papermill /path/to/notebook.ipynb
-</code></pre></div>
+papermill /path/to/notebook.ipynb</p>
+<p>```</p>
 <p>Variables can also be parameterized and passed in as command-line options so that you can run multiple copies simultaneously with different input variables. For more information see the [Papermill docs pages](https://papermill.readthedocs.io/.</p>
     </div>
     <div class="blog-post-extra">
@@ -4570,8 +4566,7 @@ papermill /path/to/notebook.ipynb
 <h3 id="upgrade-to-red-hat-8">Upgrade to Red Hat 8</h3>
 <p>As part of this maintenance, the operating system on Grace has been upgraded to Red Hat 8.  A new unified software tree that is shared with the McCleary cluster has been created.</p>
 <p>The ssh host keys for Grace's login nodes were changed during the maintenance, which will result in a "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" error when you attempt to login. To access the cluster again, first remove the old host keys with the following command (if accessing the cluster via command line):</p>
-<div class="highlight"><pre><span></span><code>ssh-keygen -R grace.hpc.yale.edu
-</code></pre></div>
+<p><code>ssh-keygen -R grace.hpc.yale.edu</code></p>
 <p>If you are using a GUI, such as MobaXterm, you will need to manually edit your known host file and remove the list related to Grace.
 For MobaXterm, this file is located (by default) in <code>Documents/MobaXterm/home/.ssh</code>.</p>
 <p>Then attempt a new login and accept the new host key.</p>
@@ -5061,24 +5056,21 @@ We encourage you to test your workloads and prepare to migrate from Ruddle to Mc
 <h4 id="apptainer-upgrade-on-grace-and-ruddle">Apptainer Upgrade on Grace and Ruddle</h4>
 <p>The newest version of Apptainer (v1.1, available now on Ruddle and, after December maintenance, on Grace) comes the ability to create containers without needing elevated privileges (i.e. <code>sudo</code> access). This greatly simplifies the container workflow as you no longer need a separate system to build a container from a definition file. You can simply create a definition file and run the build command. </p>
 <p>For example, to create a simple toy container from this def file (<code>lolcow.def</code>):</p>
-<div class="highlight"><pre><span></span><code>BootStrap: docker
-From: ubuntu:20.04
-
-%post
+<p>```
+BootStrap: docker
+From: ubuntu:20.04</p>
+<p>%post
     apt-get -y update
-    apt-get -y install cowsay lolcat
-
-%environment
+    apt-get -y install cowsay lolcat</p>
+<p>%environment
     export LC_ALL=C
-    export PATH=/usr/games:$PATH
-
-%runscript
+    export PATH=/usr/games:$PATH</p>
+<p>%runscript
     date | cowsay | lolcat
-</code></pre></div>
+```</p>
 <p>You can run:</p>
-<div class="highlight"><pre><span></span><code>salloc -p interactive -c 4 
-apptainer build lolcow.sif lolcow.def
-</code></pre></div>
+<p><code>salloc -p interactive -c 4 
+apptainer build lolcow.sif lolcow.def</code></p>
 <p>This upgrade is live on Ruddle and will be applied on Grace during the December maintenance. For more information, please see the <a href="https://apptainer.org/docs/user/main/">Apptainer documentation site </a> and <a href="/clusters-at-yale/guides/containers/">our docs page on containers</a>.  </p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
@@ -5156,22 +5148,20 @@ apptainer build lolcow.sif lolcow.def
 <h4 id="requeue-after-timeout">Requeue after Timeout</h4>
 <p>The YCRC clusters all have maximum time-limits that sometimes are shorter than a job needs to finish. This can be a frustration for researchers trying to get a simulation or a project finished. However, a number of workflows have the ability to periodically save the status of a process to a file and restart from where it left off. This is often referred to as "checkpointing" and is built into many standard software tools, like Gaussian and Gromacs. </p>
 <p>Slurm is able to send a signal to your job just before it runs out of time. Upon receiving this signal, you can have your job save its current status and automatically submit a new version of the job which picks up where it left off.  Here is an example of a simple script that resubmits a job after receiving the <code>TIMEOUT</code> signal:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-#SBATCH -p day
-#SBATCH -t 24:00:00
-#SBATCH -c 1
-#SBATCH --signal=B:10@30 # send the signal `10` at 30s before job finishes
-#SBATCH --requeue        # mark this job eligible for requeueing
-
-# define a `trap` that catches the signal and requeues the job
-trap &quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue ${SLURM_JOBID}  &quot; 10
-
-# run the main code, with the `&amp;` to “background” the task
-./my_code.exe &amp;
-
-# wait for either the main code to finish to receive the signal
-wait
-</code></pre></div>
+<p>```</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-p-day">SBATCH -p day</h1>
+<h1 id="sbatch-t-240000">SBATCH -t 24:00:00</h1>
+<h1 id="sbatch-c-1">SBATCH -c 1</h1>
+<h1 id="sbatch-signalb1030-send-the-signal-10-at-30s-before-job-finishes">SBATCH --signal=B:10@30 # send the signal <code>10</code> at 30s before job finishes</h1>
+<h1 id="sbatch-requeue-mark-this-job-eligible-for-requeueing">SBATCH --requeue        # mark this job eligible for requeueing</h1>
+<h1 id="define-a-trap-that-catches-the-signal-and-requeues-the-job">define a <code>trap</code> that catches the signal and requeues the job</h1>
+<p>trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10</p>
+<h1 id="run-the-main-code-with-the-to-background-the-task">run the main code, with the <code>&amp;</code> to “background” the task</h1>
+<p>./my_code.exe &amp;</p>
+<h1 id="wait-for-either-the-main-code-to-finish-to-receive-the-signal">wait for either the main code to finish to receive the signal</h1>
+<p>wait
+```</p>
 <p>This tells Slurm to send <code>SIGNAL10</code> at ~30s before the job finishes. Then we define an action (or <code>trap</code>) based on this signal which requeues the job. Don’t forget to add the <code>&amp;</code> to the end of the main executable and the <code>wait</code> command so that the trap is able to catch the signal. </p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
@@ -5256,17 +5246,16 @@ wait
 <p>Additionally, the Gibbs storage system will be unavailable on Grace and Ruddle on Oct 4 to deploy an urgent firmware fix. All jobs on those clusters will be held, and no new jobs will be able to start during the upgrade to avoid job failures.</p>
 <h4 id="new-command-for-interactive-jobs">New Command for Interactive Jobs</h4>
 <p>The new version of Slurm (the scheduler) has improved the process of launching an interactive compute job. Instead of the clunky <code>srun --pty bash</code> syntax from previous versions, this is now replaced with <code>salloc</code>. In addition, the interactive partition is now the default partition for jobs launched using <code>salloc</code>. Thus a simple (1 core, 1 hour) interactive job can be requested like this:</p>
-<div class="highlight"><pre><span></span><code>salloc
-</code></pre></div>
+<p><code>salloc</code></p>
 <p>which will submit the job and then move your shell to the allocated compute node. </p>
 <p>For MPI users, this allows multi-node parallel jobs to be properly launched inside an interactive compute job, which did not work as expected previously. For example, here is a two-node job, launched with <code>salloc</code> and then a parallel job-step launched with <code>srun</code>:</p>
-<div class="highlight"><pre><span></span><code>[user@grace1 ~]$ salloc --nodes 2 --ntasks 2 --cpus-per-task 1
-salloc: Nodes p09r07n[24,28] are ready for job
-
-[user@p09r07n24 ~]$ srun hostname
+<p>```
+[user@grace1 ~]$ salloc --nodes 2 --ntasks 2 --cpus-per-task 1
+salloc: Nodes p09r07n[24,28] are ready for job</p>
+<p>[user@p09r07n24 ~]$ srun hostname
 p09r07n24.grace.hpc.yale.internal
 P09r07n28.grace.hpc.yale.internal
-</code></pre></div>
+```</p>
 <p>For more information on <code>salloc</code>, please refer to <a href="https://slurm.schedmd.com/salloc.html">Slurm’s documentation</a>.</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>
@@ -5302,23 +5291,27 @@ P09r07n28.grace.hpc.yale.internal
 <h3 id="announcements">Announcements</h3>
 <h4 id="software-module-extensions">Software Module Extensions</h4>
 <p>Our software module utility (<a href="https://lmod.readthedocs.io/en/latest/">Lmod</a>) has been enhanced to enable searching for Python and R (among other software) extensions. This is a very helpful way to know which software modules contain a specific library or package. For example, to see what versions of <code>ggplot2</code> are available, use the <code>module spider</code> command. </p>
-<div class="highlight"><pre><span></span><code>$ module spider ggplot2
---------------------------------------------------------
-  ggplot2:
---------------------------------------------------------
-     Versions:
-        ggplot2/3.3.2 (E)
-        ggplot2/3.3.3 (E)
-        ggplot2/3.3.5 (E)
+<p>```
+$ module spider ggplot2</p>
+<hr />
+<h2 id="ggplot2">ggplot2:</h2>
+<div class="codehilite"><pre><span></span><code> Versions:
+    ggplot2/3.3.2 (E)
+    ggplot2/3.3.3 (E)
+    ggplot2/3.3.5 (E)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ module spider ggplot2/3.3.5
------------------------------------------------------------
-  ggplot2: ggplot2/3.3.5 (E)
------------------------------------------------------------
-    This extension is provided by the following modules. To access the extension you must load one of the following modules. Note that any module names in parentheses show the module location in the software hierarchy.
 
-       R/4.2.0-foss-2020b
+<p>```</p>
+<p>```
+$ module spider ggplot2/3.3.5</p>
+<hr />
+<h2 id="ggplot2-ggplot2335-e">ggplot2: ggplot2/3.3.5 (E)</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">modules</span><span class="o">.</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">modules</span><span class="o">.</span><span class="w"> </span><span class="n">Note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">parentheses</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">software</span><span class="w"> </span><span class="n">hierarchy</span><span class="o">.</span>
+
+<span class="w">   </span><span class="n">R</span><span class="o">/</span><span class="mf">4.2</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2020</span><span class="n">b</span>
 </code></pre></div>
+
+<p>```</p>
 <p>This indicates that by loading the <code>R/4.2.0-foss-2020b</code> module you will gain access to <code>ggplot2/3.3.5</code>. </p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>

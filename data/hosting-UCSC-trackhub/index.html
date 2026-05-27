@@ -2909,7 +2909,7 @@ To host your own custom track data for public use, you can create a UCSC Custom 
 </div>
 <h2 id="1-create-a-custom-track-hub-directory-on-the-cluster">1. Create a custom track hub directory on the cluster</h2>
 <p>The track hub directory is a directory on the cluster that contains the files defining the track hub and its component data files, as well as necessary metadata. The format of the track hub directory is expected to match the <a href="https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp.html#Setup">UCSC Custom Track Hub format</a>. For example:
-<div class="highlight"><pre><span></span><code>myHub
+<code>myHub
     ├── hg19
     │   ├── dnase.html
     │   ├── dnaseLiver.bigBed
@@ -2920,8 +2920,7 @@ To host your own custom track data for public use, you can create a UCSC Custom 
     │   └── trackDb.txt
     ├── genomes.txt
     ├── hub.html
-    └── hub.txt
-</code></pre></div>
+    └── hub.txt</code>
 For details on each of the UCSC Custom Track Hub files, see the UCSC documentation linked above.  </p>
 <h2 id="2-create-a-static-website-on-yale-spinup-to-host-the-files-publicly">2. Create a static website on Yale Spinup to host the files publicly</h2>
 <p>Yale Spinup is a platform for hosting cloud computing resources on Amazon Web Services (AWS).

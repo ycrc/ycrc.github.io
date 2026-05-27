@@ -2578,20 +2578,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#part-2-batch-jobs" class="md-nav__link">
-    Part 2: Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-interactive-apps-on-ood" class="md-nav__link">
-    Part 3: Interactive Apps on OOD
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2781,20 +2767,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#part-2-batch-jobs" class="md-nav__link">
-    Part 2: Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-interactive-apps-on-ood" class="md-nav__link">
-    Part 3: Interactive Apps on OOD
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2818,81 +2790,72 @@
 <p>Once the new shell window is loaded, you will be able use this interface like your local command interface. Now that you're setup in a shell window, you can begin the first task like so:</p>
 <h2 id="part-1-interactive-jobs">Part 1: Interactive Jobs</h2>
 <p>Inside of the shell window, start an interactive job with the default resource requests. Once you are allocated space off the login node, load the Miniconda module and create a <a href="/clusters-at-yale/guides/conda">Conda environment</a> for this exercise. This can be done like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Ask for an interactive session</span>
-salloc
-
-<span class="c1"># Load the Miniconda module</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-<span class="c1"># Create a test environment with Conda that contains the default Python version</span>
-conda<span class="w"> </span>create<span class="w"> </span>-yn<span class="w"> </span>tutorial_env<span class="w"> </span>python<span class="w"> </span>notebook
-
-<span class="c1"># Activate the new environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>tutorial_env
-
-<span class="c1"># Deactivate the new environment</span>
-conda<span class="w"> </span>deactivate
-
-<span class="c1"># Exit your interactive job to free the resources</span>
-<span class="nb">exit</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="ask-for-an-interactive-session">Ask for an interactive session</h1>
+<p>salloc</p>
+<h1 id="load-the-miniconda-module">Load the Miniconda module</h1>
+<p>module load miniconda</p>
+<h1 id="create-a-test-environment-with-conda-that-contains-the-default-python-version">Create a test environment with Conda that contains the default Python version</h1>
+<p>conda create -yn tutorial_env python notebook</p>
+<h1 id="activate-the-new-environment">Activate the new environment</h1>
+<p>conda activate tutorial_env</p>
+<h1 id="deactivate-the-new-environment">Deactivate the new environment</h1>
+<p>conda deactivate</p>
+<h1 id="exit-your-interactive-job-to-free-the-resources">Exit your interactive job to free the resources</h1>
+<p>exit
+```</p>
 <h2 id="part-2-batch-jobs">Part 2: Batch Jobs</h2>
 <p>Going off of the environment we created in <strong>part 1</strong>, navigate to the <strong>Files</strong> tab in OOD and select your <strong>project</strong> directory. Click the '+ New File' button and name the file <code>message_decode_tutorial.py</code>. Once the new file is created, open this file in the OOD text editor by going to the file, clicking the three-dot <strong>more</strong> button, and selecting <strong>edit</strong> in the dropdown menu like so:</p>
 <p><img alt="file_browser_interface_showing_dropdown_options" class="medium" src="/img/intro_tutorial_textedit.jpg" /></p>
 <p>Once the text editor is open, paste this python example inside of the file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="n">holder</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">letter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">holder</span> <span class="o">=</span> <span class="n">holder</span> <span class="o">+</span> <span class="n">message</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">holder</span>
-
-<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy</span><span class="se">\</span>
-<span class="s1">Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf</span><span class="se">\</span>
-<span class="s1">o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC&#39;</span>
-
-<span class="n">cypher</span> <span class="o">=</span> <span class="n">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cypher</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div>
+<p>``` python</p>
+<p>def message_decode_tutorial(message, c):
+    holder = ""
+    for letter in range(0, len(message)):
+        if (letter + 1) % c == 0:
+            holder = holder + message[letter]
+    return holder</p>
+<p>message = 'gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy\
+Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf\
+o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC'</p>
+<p>cypher = message_decode_tutorial(message, 10)</p>
+<p>with open('/home/NETID/decoded_example.txt','w+') as output:
+    print(cypher, file=output)</p>
+<p>```</p>
 <p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your homespace.</p>
 <p>From here, navigate back to your project directory and select the '+ New File' button, this time naming it <code>batch_tutorial.sh</code>. Using <a href="/clusters-at-yale/job-scheduling/#common-job-request-options">Slurm options</a> to define resource requests for this job, paste the following code inside of this file like you did the previous file:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH --job-name=message_decode_tutorial</span>
-<span class="c1">#SBATCH --time=1:00</span>
-<span class="c1">#SBATCH --mem-per-cpu=2MB</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
-
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>tutorial_env
-
-python<span class="w"> </span>message_decode_tutorial.py
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-job-namemessage_decode_tutorial">SBATCH --job-name=message_decode_tutorial</h1>
+<h1 id="sbatch-time100">SBATCH --time=1:00</h1>
+<h1 id="sbatch-mem-per-cpu2mb">SBATCH --mem-per-cpu=2MB</h1>
+<h1 id="sbatch-mail-typeall">SBATCH --mail-type=ALL</h1>
+<p>module load miniconda</p>
+<p>source activate tutorial_env</p>
+<p>python message_decode_tutorial.py</p>
+<p>```</p>
 <p>Because the partition isn't specified for this job, it will run on the cluster's default partition. From there, you can go back to the shell window, navigate to your project directory and run the sbatch command to begin your batch job like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to the project directory</span>
-<span class="nb">cd</span><span class="w"> </span>project
-
-<span class="c1"># Use Slurm to start a batch job</span>
-sbatch<span class="w"> </span>batch_tutorial.sh
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="navigate-to-the-project-directory">Navigate to the project directory</h1>
+<p>cd project</p>
+<h1 id="use-slurm-to-start-a-batch-job">Use Slurm to start a batch job</h1>
+<p>sbatch batch_tutorial.sh</p>
+<p>```</p>
 <p>Once you receive an email saying the job is complete, navigate to your home-space through the shell window on Open OnDemand. Within this directory you will find a file called <code>decoded_example.txt</code>. To quickly see the file contents, use the <code>cat</code> command to print the file's contents on the standard output, revealing the decoded message like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your homespace (replacing NETID with your netID)</span>
-<span class="nb">cd</span><span class="w"> </span>/home/NETID
-
-<span class="c1"># Print out the decoded message</span>
-cat<span class="w"> </span>decoded_example.txt
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="navigate-to-your-homespace-replacing-netid-with-your-netid">Navigate to your homespace (replacing NETID with your netID)</h1>
+<p>cd /home/NETID</p>
+<h1 id="print-out-the-decoded-message">Print out the decoded message</h1>
+<p>cat decoded_example.txt</p>
+<p>```</p>
 <h2 id="part-3-interactive-apps-on-ood">Part 3: Interactive Apps on OOD</h2>
 <p>Now that you have completed both an interactive and batch job, try using Jupyter Notebooks on Open OnDemand for your work. This can be done in the shell window like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Purge any loaded modules</span>
-module<span class="w"> </span>reset
-
-<span class="c1"># Build your environment dropdown tab on OOD</span>
-ycrc_conda_env.sh<span class="w"> </span>update
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="purge-any-loaded-modules">Purge any loaded modules</h1>
+<p>module reset</p>
+<h1 id="build-your-environment-dropdown-tab-on-ood">Build your environment dropdown tab on OOD</h1>
+<p>ycrc_conda_env.sh update</p>
+<p>```</p>
 <p>Now that this is completed, return to the Open OnDemand homepage and select the <strong>Interactive Apps</strong> dropdown tab in the top navigation bar. From there you can select <strong>Jupyter</strong> and load the job submission request form. To select your resources, make sure to consult our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> as well as the specific cluster's partition information to ensure you're selecting the appropriate resources for your job's needs.</p>
 <p>Once the session is submitted and running, connect to the notebook and navigate to your working directory. From there you can either select the <strong>Upload</strong> button to upload an existing Jupyter notebook file or select the <strong>New</strong> button to create a new notebook.</p>
 <p>To help with this, make sure to look over the <a href="/clusters-at-yale/guides/jupyter/">YCRC Jupyter Notebook information</a> as well as <a href="https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html">Jupyter's User Interface page</a>.</p>

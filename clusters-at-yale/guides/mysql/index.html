@@ -2908,113 +2908,95 @@ without any special privileges.  It uses an Apptainer <a href="https://www.hpc.i
 developed by Robert Grandin at Iowa State (Thanks!) </p>
 <p>All of the following must be done on an allocated compute node.  Do not do this on the login node!</p>
 <h3 id="step-1-create-an-installation-directory-somewhere-and-cd-to-it">Step 1: Create an installation directory somewhere, and cd to it</h3>
-<div class="highlight"><pre><span></span><code>mkdir ~/project/mysql
-cd ~/project/mysql
-</code></pre></div>
+<p><code>mkdir ~/project/mysql
+cd ~/project/mysql</code></p>
 <h3 id="step-2-create-two-config-files">Step 2: Create two config files</h3>
 <p>Put the following in ~/.my.cnf.  Note that you should change the password in both files
 to something else.</p>
-<div class="highlight"><pre><span></span><code>[mysqld]
+<p>```
+[mysqld]
 innodb_use_native_aio=0
-init-file=${HOME}/.mysqlrootpw
-
-[client]
+init-file=${HOME}/.mysqlrootpw</p>
+<p>[client]
 user=root
-password=&#39;my-secret-pw&#39;
-</code></pre></div>
+password='my-secret-pw'
+```</p>
 <p>Put the following in ~/.mysqlrootpw
-<div class="highlight"><pre><span></span><code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;my-secret-pw&#39;);
-</code></pre></div></p>
+<code>SET PASSWORD FOR 'root'@'localhost' = PASSWORD('my-secret-pw');</code></p>
 <h3 id="step-3-create-data-directories-for-mysql">Step 3: Create data directories for mysql</h3>
-<div class="highlight"><pre><span></span><code>mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
-</code></pre></div>
+<p><code>mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld</code></p>
 <h3 id="step-4-make-a-link-to-the-mysql-image-file">Step 4: Make a link to the mysql image file</h3>
 <p>The mysqld image file can be found under the apps tree on each cluster.
 For example, on Grace:</p>
-<div class="highlight"><pre><span></span><code>/vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg
-</code></pre></div>
+<p><code>/vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg</code></p>
 <p>We recommend that you make a link to it in your mysql directory:</p>
-<div class="highlight"><pre><span></span><code>ln -s /vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg mysql.simg
-</code></pre></div>
+<p><code>ln -s /vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg mysql.simg</code></p>
 <h3 id="step-5-start-the-container-note-that-this-doesnt-actually-start-the-service-yet">Step 5: Start the container.  Note that this doesn't actually start the service yet.</h3>
-<div class="highlight"><pre><span></span><code>apptainer instance start --bind ${HOME} \
+<p><code>apptainer instance start --bind ${HOME} \
     --bind ${PWD}/mysql/var/lib/mysql/:/var/lib/mysql \
     --bind ${PWD}/mysql/run/mysqld:/run/mysqld \
-    ./mysql.simg mysql
-</code></pre></div>
+    ./mysql.simg mysql</code></p>
 <p>To check that it is running:</p>
-<div class="highlight"><pre><span></span><code>apptainer instance list
-</code></pre></div>
+<p><code>apptainer instance list</code></p>
 <h3 id="step-6-start-the-mysqld-server-within-the-container">Step 6: Start the mysqld server within the container</h3>
-<div class="highlight"><pre><span></span><code>apptainer run instance://mysql
-</code></pre></div>
+<p><code>apptainer run instance://mysql</code></p>
 <p>You'll see lots of output, but at the end you should see a message like this
-<div class="highlight"><pre><span></span><code>2022-02-21T17:16:21.104527Z 0 [Note] mysqld: ready for connections.
-Version: &#39;5.7.21&#39;  socket: &#39;/var/run/mysqld/mysqld.sock&#39;  port: 3306  MySQL Community Server (GPL)
-</code></pre></div></p>
+<code>2022-02-21T17:16:21.104527Z 0 [Note] mysqld: ready for connections.
+Version: '5.7.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)</code></p>
 <h3 id="step-7-enter-the-running-container">Step 7: Enter the running container</h3>
-<div class="highlight"><pre><span></span><code>apptainer exec instance://mysql /bin/bash
-</code></pre></div>
+<p><code>apptainer exec instance://mysql /bin/bash</code></p>
 <p>Connect locally as root user while in the container, using the password you set in the config files in step 2.
-<div class="highlight"><pre><span></span><code>Singularity&gt; mysql -u root -p
+```
+Singularity&gt; mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 3
-Server version: 5.7.21 MySQL Community Server (GPL)
-
-Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
+Server version: 5.7.21 MySQL Community Server (GPL)</p>
+<p>Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
-owners.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-mysql&gt;
-</code></pre></div></p>
+owners.</p>
+<p>Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</p>
+<p>mysql&gt;
+```</p>
 <p>Success!  The server is working!  Type exit to get out of mysql, but remain in the container:</p>
 <h3 id="step-8-add-a-database-user-and-permit-it-to-login-remotely">Step 8: Add a database user and permit it to login remotely</h3>
 <p>Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. <br />
 This is one way to do that from the container shell. </p>
 <p>You should probably substitute your name for elmerfudd and a better password for mypasswd!</p>
-<div class="highlight"><pre><span></span><code>mysql -e &quot;GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION&quot;
-mysql -e &quot;FLUSH PRIVILEGES&quot;
-</code></pre></div>
+<p><code>mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION"
+mysql -e "FLUSH PRIVILEGES"</code></p>
 <p>Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
-<div class="highlight"><pre><span></span><code>mysql -u elmerfudd -h 127.0.0.1 -p
-</code></pre></div></p>
+<code>mysql -u elmerfudd -h 127.0.0.1 -p</code></p>
 <p>Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g. c22n01) instead of 127.0.0.1
-<div class="highlight"><pre><span></span><code>mysql -u elmerfudd -h c22n01 -p
-</code></pre></div></p>
+<code>mysql -u elmerfudd -h c22n01 -p</code></p>
 <p>While connected, you can try actually using the server in the usual way to create a database and table:
-<div class="highlight"><pre><span></span><code>MySQL [(none)]&gt; create database rob;
-Query OK, 1 row affected (0.00 sec)
-
-MySQL [(none)]&gt; use rob
+```
+MySQL [(none)]&gt; create database rob;
+Query OK, 1 row affected (0.00 sec)</p>
+<p>MySQL [(none)]&gt; use rob
 Database changed
 MySQL [rob]&gt; create table users (name VARCHAR(20), id INT);
-Query OK, 0 rows affected (0.11 sec)
-
-...
-</code></pre></div></p>
+Query OK, 0 rows affected (0.11 sec)</p>
+<p>...
+```</p>
 <p>Success!  You've earned a reward of your choice!</p>
 <h3 id="step-9-shut-the-container-down">Step 9 Shut the container down.</h3>
-<div class="highlight"><pre><span></span><code>apptainer instance stop mysql
-</code></pre></div>
+<p><code>apptainer instance stop mysql</code></p>
 <p>Now that everything is installed, the next time you want to start the server, you'll only need to do steps 5 (starting the container)
 and 6 (starting the mysql server).</p>
 <p>Note that you'll run into a problem if two mysql instances are run on the same compute node, since by default they each
 try to use port 3306.  The simplest solution is to specify a non-standard port in your .my.cnf file:</p>
-<div class="highlight"><pre><span></span><code>[mysqld]
+<p>```
+[mysqld]
 port=3310
 innodb_use_native_aio=0
-init-file=${HOME}/.mysqlrootpw
-
-[client]
+init-file=${HOME}/.mysqlrootpw</p>
+<p>[client]
 port=3310
 user=root
-password=&#39;my-secret-pw&#39;
-</code></pre></div>
+password='my-secret-pw'
+```</p>
                 
                   
                     

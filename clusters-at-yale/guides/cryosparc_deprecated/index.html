@@ -2739,111 +2739,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#4-add-the-cryosparc-commands-to-your-system-path" class="md-nav__link">
-    4. Add the cryosparc commands to your system PATH
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-test" class="md-nav__link">
-    5. Test
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
-    Run
-  </a>
-  
-    <nav class="md-nav" aria-label="Run">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-submit-a-batch-script" class="md-nav__link">
-    1. Submit a batch script
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Submit a batch script">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-copy-the-batch-script-template-below-into-a-file-in-the-desired-directory-on-the-cluster" class="md-nav__link">
-    a. Copy the batch script template below into a file in the desired directory on the cluster.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-adjust-the-script-contents-as-desired-for-memory-cpu-time-and-partition" class="md-nav__link">
-    b. Adjust the script contents as desired for memory, CPU, time, and partition.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-submit-the-script-to-slurm" class="md-nav__link">
-    c. Submit the script to SLURM.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-check-the-contents-of-the-job-output-file-to-make-sure-that-cryosparc-has-launched" class="md-nav__link">
-    d. Check the contents of the job output file to make sure that CryoSPARC has launched.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-in-an-open-ondemand-remote-desktop-session-open-the-firefox-web-browser-and-enter-the-name-of-the-compute-node-your-batch-job-is-running-on" class="md-nav__link">
-    e. In an Open OnDemand Remote Desktop session, open the Firefox web browser, and enter the name of the compute node your batch job is running on
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#f-you-can-exit-your-remote-desktop-session-without-terminating-cryosparc-and-reconnect-to-your-cryosparc-instance-later" class="md-nav__link">
-    f. You can exit your Remote Desktop session without terminating CryoSPARC, and reconnect to your CryoSPARC instance later.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#g-cryosparc-will-shut-down-automatically-when-time-runs-out-if-you-want-to-stop-it-before-this-simply-cancel-the-batch-job" class="md-nav__link">
-    g. CryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-relaunching-in-an-interactive-session-not-generally-recommended-as-noted-above" class="md-nav__link">
-    2. Relaunching in an interactive session (not generally recommended, as noted above)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-on-multiple-nodes" class="md-nav__link">
-    Running on multiple nodes
-  </a>
   
 </li>
       
@@ -2876,53 +2773,48 @@ their website</a>. These instructions are somewhat modified from the <a href="ht
 <h3 id="1-set-up-environment">1. Set up Environment</h3>
 <p>First, log onto a GPU compute node, either as an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs">interactive session</a> or an <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop">Open Ondemand Remote Desktop</a>. Remember to request a non-zero number of GPUs, using a partition like 'gpu' ('gpu_devel' is fine for initial cryosparc installation).</p>
 <p>Then choose a location for installing the software, such as under your project directory.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">install_path</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/project/cryosparc
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>
-</code></pre></div>
+<p><code>bash
+export install_path=${HOME}/project/cryosparc
+mkdir -p ${install_path}</code></p>
 <h3 id="2-set-up-directories-download-installers">2. Set up Directories, Download installers</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LICENSE_ID</span><span class="o">=</span>Your-cryosparc-license-code-here
-
-<span class="w"> </span><span class="c1">#go get the installers</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$install_path</span>
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/master-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_master.tar.gz
-curl<span class="w"> </span>-L<span class="w"> </span>https://get.cryosparc.com/download/worker-latest/<span class="nv">$LICENSE_ID</span><span class="w"> </span>-o<span class="w"> </span>cryosparc_worker.tar.gz
-
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_master.tar.gz
-tar<span class="w"> </span>-xf<span class="w"> </span>cryosparc_worker.tar.gz
-</code></pre></div>
+<p>``` bash
+export LICENSE_ID=Your-cryosparc-license-code-here</p>
+<p>#go get the installers
+cd $install_path
+curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz</p>
+<p>tar -xf cryosparc_master.tar.gz
+tar -xf cryosparc_worker.tar.gz
+```</p>
 <h3 id="3-install-the-standalone-serverworker">3. Install the Standalone Server/Worker</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Load a cluster CUDA module</span>
-
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
-module<span class="w"> </span>load<span class="w"> </span>CUDA/12.0.0
-<span class="nb">export</span><span class="w"> </span><span class="nv">cuda_path</span><span class="o">=</span><span class="si">${</span><span class="nv">EBROOTCUDA</span><span class="si">}</span>
-
-<span class="c1"># Set a temporary password</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">cryosparc_passwd</span><span class="o">=</span>Password123
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">db_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_database
-<span class="nb">export</span><span class="w"> </span><span class="nv">worker_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_worker
-<span class="nb">export</span><span class="w"> </span><span class="nv">ssd_path</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
-mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">user_email</span><span class="o">=</span><span class="s2">&quot;Your email address&quot;</span>
-
-<span class="c1"># Run the installation script</span>
-<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
-
-./install.sh<span class="w"> </span>--standalone<span class="w"> </span><span class="se">\</span>
---license<span class="w"> </span><span class="nv">$LICENSE_ID</span><span class="w"> </span><span class="se">\</span>
---worker_path<span class="w"> </span><span class="nv">$worker_path</span><span class="w"> </span><span class="se">\</span>
---ssdpath<span class="w"> </span><span class="nv">$ssd_path</span><span class="w"> </span><span class="se">\</span>
---initial_email<span class="w"> </span><span class="nv">$user_email</span><span class="w"> </span><span class="se">\</span>
---initial_password<span class="w"> </span><span class="nv">$cryosparc_passwd</span><span class="w"> </span><span class="se">\</span>
---initial_username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
---initial_firstname<span class="w"> </span><span class="s2">&quot;Firstname&quot;</span><span class="w"> </span><span class="se">\</span>
---initial_lastname<span class="w"> </span><span class="s2">&quot;Lastname&quot;</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="load-a-cluster-cuda-module">Load a cluster CUDA module</h1>
+<p>cd ${install_path}/cryosparc_master
+module load CUDA/12.0.0
+export cuda_path=${EBROOTCUDA}</p>
+<h1 id="set-a-temporary-password">Set a temporary password</h1>
+<p>export cryosparc_passwd=Password123</p>
+<p>export db_path=${install_path}/cryosparc_database
+export worker_path=${install_path}/cryosparc_worker
+export ssd_path=/tmp/${USER}
+mkdir $ssd_path
+export user_email="Your email address"</p>
+<h1 id="run-the-installation-script">Run the installation script</h1>
+<p>cd ${install_path}/cryosparc_master</p>
+<p>./install.sh --standalone \
+--license $LICENSE_ID \
+--worker_path $worker_path \
+--ssdpath $ssd_path \
+--initial_email $user_email \
+--initial_password $cryosparc_passwd \
+--initial_username ${USER} \
+--initial_firstname "Firstname" \
+--initial_lastname "Lastname"
+```</p>
 <h3 id="4-add-the-cryosparc-commands-to-your-system-path">4. Add the cryosparc commands to your system PATH</h3>
-<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</code></pre></div>
+<p><code>bash
+     echo export PATH="${install_path}/cryosparc_master/bin:\$PATH" &gt;&gt; ~/.bashrc
+     echo export PATH="${install_path}/cryosparc_worker/bin:\$PATH" &gt;&gt; ~/.bashrc</code></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The installer will likely prompt you with, i.e., 'Add bin directory to your ~/.bashrc ?',
@@ -2930,18 +2822,19 @@ mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
  Please make sure you do the above two 'echo export ...; commands, or you will likely get a 'command not found'
  error when you try to run cryosparc.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Make the CryoSPARC executables visible in the current shell, for testing (below)</span>
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="make-the-cryosparc-executables-visible-in-the-current-shell-for-testing-below">Make the CryoSPARC executables visible in the current shell, for testing (below)</h1>
+<p>source ~/.bashrc
+```</p>
 <h3 id="5-test">5. Test</h3>
 <p>The installation process will normally attempt to launch CryoSPARC automatically.  Check its status and launch manually if need be.</p>
-<div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>status
-cryosparcm<span class="w"> </span>start<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>running<span class="o">)</span><span class="w"> </span>
-</code></pre></div>
+<p><code>bash
+cryosparcm status
+cryosparcm start (if not running)</code></p>
 <p>If everything is running, you should be able to launch Firefox and see the CryoSPARC login interface at http://localhost:39000.</p>
 <p>When you are done testing, shut down CryoSPARC,</p>
-<div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
-</code></pre></div>
+<p><code>bash
+cryosparcm stop</code></p>
 <p>and exit your interactive session.</p>
 <h2 id="run">Run</h2>
 <p>There are two approaches to running CryoSPARC for data processing: directly in an interactive session as above, and in a remote
@@ -2952,58 +2845,50 @@ in the following directions reconfigures the node name to match the current comp
 <p>The following batch script template illustrates how to set up a remote CryoSPARC session.  By default, it will create an output file whose name
 contains the compute node that CryoSPARC has been launched on.</p>
 <h4 id="a-copy-the-batch-script-template-below-into-a-file-in-the-desired-directory-on-the-cluster">a. Copy the batch script template below into a file in the desired directory on the cluster.</h4>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=gpu</span>
-<span class="c1">#SBATCH --time=2-00:00:00</span>
-<span class="c1">#SBATCH --mem=64G</span>
-<span class="c1">#SBATCH -N 1 -c 8</span>
-<span class="c1">#SBATCH --gpus=4</span>
-<span class="c1">#SBATCH --signal=B:10@60 # send the signal &#39;10&#39; at 60s before job finishes</span>
-<span class="c1">#SBATCH --job-name=CryoSPARC-batch</span>
-<span class="c1">#SBATCH --output=&quot;cryosparc-%N-%j.out&quot;</span>
-
-<span class="k">function</span><span class="w"> </span>cleanup<span class="o">()</span>
-<span class="o">{</span>
-<span class="w">    </span>date
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Shutting down CryoSPARC @ &quot;</span><span class="p">;</span><span class="w"> </span>date
-<span class="w">    </span>cryosparcm<span class="w"> </span>start
-<span class="w">    </span>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
-<span class="w">    </span>cryosparcm<span class="w"> </span>stop
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done&quot;</span>
-<span class="o">}</span>
-
-<span class="c1"># Shut down CryoSPARC cleanly when timeout is imminent</span>
-<span class="nb">trap</span><span class="w"> </span>cleanup<span class="w"> </span><span class="m">10</span>
-
-<span class="c1"># Shut down CryoSPARC cleanly when scancel is invoked</span>
-<span class="nb">trap</span><span class="w"> </span>cleanup<span class="w"> </span><span class="m">15</span>
-
-mkdir<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-
-sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-
-<span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-
-cryosparcm<span class="w"> </span>start
-
-<span class="c1"># Forcibly add the current node as a worker</span>
-cryosparcw<span class="w"> </span>connect<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--worker<span class="w"> </span><span class="nv">$worker_host</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--master<span class="w"> </span><span class="nv">$master_host</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--port<span class="w"> </span><span class="m">39000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--ssdpath<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--cpus<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
-
-sleep<span class="w"> </span>infinity<span class="w"> </span><span class="p">&amp;</span>
-<span class="nb">wait</span>
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-partitiongpu">SBATCH --partition=gpu</h1>
+<h1 id="sbatch-time2-000000">SBATCH --time=2-00:00:00</h1>
+<h1 id="sbatch-mem64g">SBATCH --mem=64G</h1>
+<h1 id="sbatch-n-1-c-8">SBATCH -N 1 -c 8</h1>
+<h1 id="sbatch-gpus4">SBATCH --gpus=4</h1>
+<h1 id="sbatch-signalb1060-send-the-signal-10-at-60s-before-job-finishes">SBATCH --signal=B:10@60 # send the signal '10' at 60s before job finishes</h1>
+<h1 id="sbatch-job-namecryosparc-batch">SBATCH --job-name=CryoSPARC-batch</h1>
+<h1 id="sbatch-outputcryosparc-n-jout">SBATCH --output="cryosparc-%N-%j.out"</h1>
+<p>function cleanup()
+{
+    date
+    echo -n "Shutting down CryoSPARC @ "; date
+    cryosparcm start
+    cryosparcm cli "remove_scheduler_target_node('$worker_host')"
+    cryosparcm stop
+    echo "Done"
+}</p>
+<h1 id="shut-down-cryosparc-cleanly-when-timeout-is-imminent">Shut down CryoSPARC cleanly when timeout is imminent</h1>
+<p>trap cleanup 10</p>
+<h1 id="shut-down-cryosparc-cleanly-when-scancel-is-invoked">Shut down CryoSPARC cleanly when scancel is invoked</h1>
+<p>trap cleanup 15</p>
+<p>mkdir /tmp/${USER}
+export master_host=$(hostname)
+export worker_host=$(hostname)
+export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")</p>
+<p>sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh</p>
+<p>source $base_dir/config.sh</p>
+<p>cryosparcm start</p>
+<h1 id="forcibly-add-the-current-node-as-a-worker">Forcibly add the current node as a worker</h1>
+<p>cryosparcw connect \
+        --worker $worker_host \
+        --master $master_host \
+        --port 39000 \
+        --ssdpath /tmp/${USER} \
+        --cpus $SLURM_CPUS_PER_TASK</p>
+<p>sleep infinity &amp;
+wait
+```</p>
 <h4 id="b-adjust-the-script-contents-as-desired-for-memory-cpu-time-and-partition">b. Adjust the script contents as desired for memory, CPU, time, and partition.</h4>
 <h4 id="c-submit-the-script-to-slurm">c. Submit the script to SLURM.</h4>
-<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>YourScriptName
-</code></pre></div>
+<p><code>bash
+sbatch YourScriptName</code></p>
 <h4 id="d-check-the-contents-of-the-job-output-file-to-make-sure-that-cryosparc-has-launched">d. Check the contents of the job output file to make sure that CryoSPARC has launched.</h4>
 <h4 id="e-in-an-open-ondemand-remote-desktop-session-open-the-firefox-web-browser-and-enter-the-name-of-the-compute-node-your-batch-job-is-running-on">e. In an Open OnDemand Remote Desktop session, open the Firefox web browser, and enter the name of the compute node your batch job is running on</h4>
 <p>(obtainable from the output filename, or from squeue).</p>
@@ -3011,35 +2896,32 @@ sleep<span class="w"> </span>infinity<span class="w"> </span><span class="p">&am
 <p>This should present you with the CryoSPARC login screen.</p>
 <h4 id="f-you-can-exit-your-remote-desktop-session-without-terminating-cryosparc-and-reconnect-to-your-cryosparc-instance-later">f. You can exit your Remote Desktop session without terminating CryoSPARC, and reconnect to your CryoSPARC instance later.</h4>
 <h4 id="g-cryosparc-will-shut-down-automatically-when-time-runs-out-if-you-want-to-stop-it-before-this-simply-cancel-the-batch-job">g. CryoSPARC will shut down automatically when time runs out.  If you want to stop it before this, simply cancel the batch job.</h4>
-<div class="highlight"><pre><span></span><code>scancel<span class="w"> </span>YourJobID
-</code></pre></div>
+<p><code>bash
+scancel YourJobID</code></p>
 <h3 id="2-relaunching-in-an-interactive-session-not-generally-recommended-as-noted-above">2. Relaunching in an interactive session (not generally recommended, as noted above)</h3>
 <p>Once you have started a new GPU node session,</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-
-sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-
-<span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
-
-cryosparcm<span class="w"> </span>start
-
-<span class="c1"># Forcibly add the current node as a worker</span>
-cryosparcw<span class="w"> </span>connect<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--worker<span class="w"> </span><span class="nv">$worker_host</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--master<span class="w"> </span><span class="nv">$master_host</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--port<span class="w"> </span><span class="m">39000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--ssdpath<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>--cpus<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span>
-</code></pre></div>
+<p>``` bash
+mkdir -p /tmp/${USER}
+export master_host=$(hostname)
+export worker_host=$(hostname)
+export base_dir=$(dirname "$(dirname "$(which cryosparcm)")")</p>
+<p>sed -i.bak 's/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'"$master_host"'\"/g' $base_dir/config.sh</p>
+<p>source $base_dir/config.sh</p>
+<p>cryosparcm start</p>
+<h1 id="forcibly-add-the-current-node-as-a-worker_1">Forcibly add the current node as a worker</h1>
+<p>cryosparcw connect \
+        --worker $worker_host \
+        --master $master_host \
+        --port 39000 \
+        --ssdpath /tmp/${USER} \
+        --cpus $SLURM_CPUS_PER_TASK
+```</p>
 <p>and then connect to https://localhost:39000 as above.</p>
 <p>Among other things, this will not perform the automatic cleanup of CryoSPARC lockfiles or of previous worker nodes,
 so you will want to manually run shutdown and worker removal when you are done with CryoSPARC:</p>
-<div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
-cryosparcm<span class="w"> </span>stop
-</code></pre></div>
+<p><code>bash
+cryosparcm cli "remove_scheduler_target_node('$worker_host')"
+cryosparcm stop</code></p>
 <h2 id="running-on-multiple-nodes">Running on multiple nodes</h2>
 <p>In principle, you can request multiple nodes for your job session, and configure CryoSPARC to use additional nodes as worker nodes. Contact YCRC staff for assistance.</p>
                 
