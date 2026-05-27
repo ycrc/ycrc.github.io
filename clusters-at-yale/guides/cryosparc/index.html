@@ -2811,8 +2811,8 @@
 </li>
 <li>
 <p>In a login terminal, start a new, short-running instance of cryosparc in the devel partition,
- find out what compute node it's running on and connect to the node with ssh:
-    <div class="highlight"><pre><span></span><code><span class="c1"># Launch cryosparc with `sbatch` and note the jobID it prints upon starting:</span>
+ find out what compute node it's running on and connect to the node with ssh:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Launch cryosparc with `sbatch` and note the jobID it prints upon starting:</span>
 sbatch<span class="w"> </span>-p<span class="w"> </span>devel<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>/apps/services/cryosparc/cryosparc-cluster-master.sh
 
 <span class="c1"># Run `squeue` and note the compute node of your job (i.e. &#39;a1132u05n01&#39;)</span>
@@ -2820,11 +2820,11 @@ squeue<span class="w"> </span>-j<span class="w"> </span>&lt;jobID&gt;
 
 <span class="c1"># Connect to the node with ssh:</span>
 ssh<span class="w"> </span>&lt;node-where-cryosparc-is-running&gt;
-</code></pre></div></p>
+</code></pre></div>
 </li>
 <li>
-<p>Stop cryosparc, backup the database, and then run the cryosparc command to change the port:
-    <div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
+<p>Stop cryosparc, backup the database, and then run the cryosparc command to change the port:</p>
+<p><div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>stop
 cryosparcm<span class="w"> </span>database<span class="w"> </span>backup<span class="w">    </span><span class="c1"># (this is a fast step, it should take under 60 seconds)</span>
 <span class="w">                              </span><span class="c1"># Note, in cryosparc versions &lt; 5 the syntax may be &#39;cryosparcm backup&#39;</span>
 
@@ -2843,9 +2843,9 @@ cryosparcm<span class="w"> </span>changeport<span class="w"> </span>&lt;new<span
 
 <span class="c1"># Cryosparc should then restart successfully and print the standard connection messages followed</span>
 <span class="c1">#  by &#39;Checking database... OK&#39;</span>
-</code></pre></div></p>
+</code></pre></div>
+4. Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described in our <a href="#run-the-ycrc-cryosparc-workflow">workflow instructions</a>.</p>
 </li>
-<li>Logout from the compute node and cancel the short cryosparc job with <code>scancel &lt;jobid&gt;</code>. You may now submit a new master job with <code>sbatch /apps/services/cryosparc/cryosparc-cluster-master.sh</code> as described in our <a href="#run-the-ycrc-cryosparc-workflow">workflow instructions</a>.</li>
 </ol>
 <h2 id="install">Install</h2>
 <p>The following installation instructions are somewhat modified from the <a href="https://cryosparc.com/docs/reference/install/">official CryoSPARC documentation</a>. </p>

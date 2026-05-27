@@ -64,19 +64,26 @@ If you have already have a cryosparc installation, please use the following step
 						    
 ## Install
 
-Before you get started, you will need to request a license from Structura [from 
-their website](https://cryosparc.com/download/). These instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
+The following installation instructions are somewhat modified from the [official CryoSPARC documentation](https://cryosparc.com/docs/reference/install/). 
 
-1. **Request a YCRC Cryosparc Port Number** : Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
-```
-/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
-```
+1. **Request a Cryosparc License and Request a YCRC Cryosparc Port Number** : Do both of these things **right away**, as they are quick and easy, and it could take up to day to get the needed responses.
+
+    - For the Cryosparc License: visit the Structura website and [fill out the License Request Form](https://cryosparc.com/download/).
+
+    - For the YCRC Cryosparc Port Number: Start a terminal shell on the desired cluster and paste the following command. A message will be printed, confirming that an email request has been sent to the YCRC. We will email you by the next day with an assigned cryosparc port number.
+    ```
+    /apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
+    ```
 
 2. **Set up Environment** : First, log onto a CPU compute node, either as an [interactive session](/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](/clusters-at-yale/access/ood/#remote-desktop). ('devel' is fine for initial cryosparc master installation).
 
     Then choose a location for installing the software. This may require 30 GB or more of storage, so we recommend your project directory:
 
     ``` bash
+
+    # Log onto compute node
+    salloc -p devel -t 6:00:00 --mem=16G
+    
     # Below, substitute your actual project folder and netID according to the template given:
     export install_path=${HOME}/project_pi_<your_pi_netID>/<your_netid>/cryosparc
 
@@ -90,7 +97,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
     export LICENSE_ID=Your-cryosparc-license-code-here
 
     #go get the installers
-    mkdir -p ${install_path}
+    mkdir ${install_path}
     cd $install_path
     curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
     curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
