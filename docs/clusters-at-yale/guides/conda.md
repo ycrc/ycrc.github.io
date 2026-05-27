@@ -109,7 +109,7 @@ conda create -n brian2 brian2
 
 ## Default YCRC Channels and Paths
 
-On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `.conda/envs` and `.conda/pkgs` in your home directory. For some users, these locations may be symlinked to folders in your project directory where there is room for conda files (conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems).
+On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `.conda/envs` and `.conda/pkgs` in your home directory. For some users, these locations may be symlinked to folders in your project and/or scratch directories where there is room for conda files (see note below).
 
 Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.'
 
@@ -123,7 +123,7 @@ solver: libmamba
 ```
 
 !!! Note
-    The YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#60-day-scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations on the number of files your home directory can have (conda creates huge numbers of very small files). By putting 'pkgs' in the scratch directory, we ensure that the cached conda files insde are discarded after 60 days, to minimize the burden on our filesystem. 
+    On Bouchet and newer clusters, the YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#60-day-scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations: conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems. By putting 'pkgs' in the scratch directory, we ensure that the cached conda files inside are discarded after 60 days, to minimize the filesystem burden.
 
 ### Find and Install Additional Packages
 
