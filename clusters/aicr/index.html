@@ -2715,6 +2715,19 @@
     Access the Cluster
   </a>
   
+    <nav class="md-nav" aria-label="Access the Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificate-signed-ssh-keys" class="md-nav__link">
+    Certificate-signed SSH Keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2759,17 +2772,56 @@
 <p><a href="https://www.mass.gov/news/governor-healey-advances-states-ai-leadership-with-major-investments-in-massachusetts-ai-hub">AICR</a> is a multi-institution AI-focused computing cluster at MGHPCC that will be available to Yale researchers later this year.
 The system is designed to accelerate AI innovation by providing the compute and data capacity essential for cutting-edge development.
 This effort is a partnership between the Massachusetts Commonwealth and MGHPCC’s six member universities—Boston University, Harvard University, MIT, Northeastern University, the University of Massachusetts, and Yale University.</p>
-<p>The cluster initially contains 248 B200 GPUs and 152 RTX6000 Pro Blackwell GPUs for AI and AI-enabled research. </p>
+<p>The cluster initially contains 248 B200 GPUs and 152 RTX Pro 6000 Blackwell GPUs for AI and AI-enabled research. </p>
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <p>AICR will be available in Spring 2026.
 AICR availability and information on how to request access will be announced to the YCRC user mailing list and the YCRC Bulldog newsletter.</p>
 <p>Later in 2026 access to AICR will be granted via an internal Yale proposal process (details to be announced).
 All active projects will be expected to submit to and be approved through that process to continue to have AICR access.</p>
+<h3 id="certificate-signed-ssh-keys">Certificate-signed SSH Keys</h3>
+<p>AICR uses certificate-signed SSH keys that are generated for you and put into your account. To get these keys you:</p>
+<ul>
+<li>Log into http://ood.aicr.ai with your CAS credentials</li>
+<li>Open the File Browser and download the aicr_keys.zip file </li>
+</ul>
+<p>To install these keys follow these steps:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># copy keys to local $HOME/.ssh directory</span>
+cp aicr_keys/id_ed25519_aicr* <span class="nv">$HOME</span>/.ssh/
+
+<span class="c1"># fix permissions on private key</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>/.ssh/
+chmod <span class="m">600</span> id_ed25519_aicr
+
+<span class="c1"># To change passphrase (initial passphrase is in aicr_keys/.passphrase):</span>
+ssh-keygen -p -f <span class="nv">$HOME</span>/.ssh/id_ed25519_aicr
+
+<span class="c1"># Then (needs passphrase):</span>
+ssh-add id_ed25519_aicr
+
+<span class="c1">#To log in:</span>
+ssh username@login.aicr.ai
+</code></pre></div>
+Your AICR username is your netid followed by <code>_yale</code>, for example: <code>abc123_yale</code>.⠀</p>
 <h2 id="installed-applications">Installed Applications</h2>
 <p>A large number of software and applications are installed on our clusters, including AICR.
 AICR software will be made available to researchers via <a href="/applications/modules/">software modules</a>. </p>
+<p>During Early Access researchers you will need to add this line to your <code>$HOME/.bashrc</code> file to get access to our software modules:</p>
+<div class="highlight"><pre><span></span><code>export MODULEPATH=/apps/yale/modules/2026.1:/apps/yale/modules/2024a:/apps/yale/modules/system:$MODULEPATH
+</code></pre></div>
+<p>This will eventually be replaced by a StdEnv, but that is still in progress.</p>
+<p>If you need a specific application that is not present, let us know and we can install it for you.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
-<p>AICR initially contains 248 B200 GPUs and 152 RTX6000 Pro Blackwell GPUs, grouped into <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. More information on the partition layout will be available soon.</p>
+<p>AICR initially contains 248 B200 GPUs and 152 RTX Pro 6000 Blackwell GPUs, grouped into <a href="/clusters-at-yale/job-scheduling">Slurm partitions</a> meant to serve different purposes. 
+Currently, there are five partitions:</p>
+<ul>
+<li><code>cpu</code>: a small CPU-only partition for jobs which do not require GPU cars</li>
+<li><code>rtx-devel</code> and <code>b200-devel</code>: interactive access to GPUs, comprised of ~10% of the available cards</li>
+<li><code>rtx-batch</code> and <code>b200-batch</code>: large, batch-job-only partitions </li>
+</ul>
+<p>All nodes feature the same AMD 9575F CPUs with 128 cores (across two sockets). 
+The CPU nodes offer 1TB of RAM, while the GPU nodes all have 2.2TB. </p>
+<p>Note, the default job parameters are slightly different than YCRC clusters. 
+The most notable differences are the default time-limit of 15 minutes and the default memory allocation of 1GB.  </p>
 <h2 id="storage">Storage</h2>
 <p>AICR has access to an all-flash, NFS filesystem similar to the Roberts filesystem on Bouchet and the Palmer filesystem on Grace and McCleary.</p>
 <table>
@@ -2822,7 +2874,7 @@ AICR software will be made available to researchers via <a href="/applications/m
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 21, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 28, 2026</span>
       
     
   </small>
