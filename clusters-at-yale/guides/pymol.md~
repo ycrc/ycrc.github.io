@@ -13,8 +13,8 @@ As an alternative to buying a license, the open-source version of Pymol is avail
 
     - Mac/Linux: open a standard terminal window (this is the 'Terminal' app in MacOS) and then type, i.e.:
     ``` sh
-    cd ~/Downloads         # or wherever the downloaded file is
-    bash Miniforge3-Darwin-arm64.sh
+    cd ~/Downloads                   # or wherever the downloaded file is
+    bash Miniforge3-Darwin-arm64.sh  # substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.
 
     # Optional steps:
     # Set up conda so your operating system recognizes it, if you will use conda for other apps:
