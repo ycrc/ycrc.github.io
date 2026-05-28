@@ -396,6 +396,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/pymol/</loc>
+         <lastmod>2026-05-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/clusters-at-yale/guides/python/</loc>
          <lastmod>2026-05-28</lastmod>
          <changefreq>daily</changefreq>
