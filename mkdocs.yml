@@ -95,6 +95,7 @@ nav:
             - "Overview": clusters/index.md
             - clusters/bouchet.md
             - clusters/hopper.md
+            - clusters/aicr.md
             - clusters/mccleary.md
             - clusters/milgram.md
             - clusters/misha.md

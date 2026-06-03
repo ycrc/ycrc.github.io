@@ -6,20 +6,28 @@ This effort is a partnership between the Massachusetts Commonwealth and MGHPCCâ€
 
 The cluster initially contains 248 B200 GPUs and 152 RTX Pro 6000 Blackwell GPUs for AI and AI-enabled research. 
 
+
+## AICR User Documentation
+
+Below you will find Yale-specific AICR information.
+For all other AICR documentation, please visit the official AICR Documentation.
+
+[AICR User Documentation](https://docs.aicr.ai){ .md-button }
+
 ## Access the Cluster
 
-AICR will be available in Spring 2026.
+AICR is currently in alpha and will be available in for Early Access in Spring 2026.
 AICR availability and information on how to request access will be announced to the YCRC user mailing list and the YCRC Bulldog newsletter.
 
 Later in 2026 access to AICR will be granted via an internal Yale proposal process (details to be announced).
-All active projects will be expected to submit to and be approved through that process to continue to have AICR access.
+All Early Access users will be expected to submit to and be approved through that process to continue to have AICR access.
 
 ### Certificate-signed SSH Keys
 
 AICR uses certificate-signed SSH keys that are generated for you and put into your account. To get these keys you:
 
-- Log into http://ood.aicr.ai with your CAS credentials
-- Open the File Browser and download the aicr\_keys.zip file 
+- Log into [http://ood.aicr.ai](http://ood.aicr.ai) with your Yale netid and password (**not** your AICR username)
+- Open the File Browser and download the `aicr_keys.zip` file 
 
 To install these keys follow these steps:
 
@@ -38,23 +46,28 @@ ssh-keygen -p -f $HOME/.ssh/id_ed25519_aicr
 ssh-add id_ed25519_aicr
 
 #To log in:
-ssh username@login.aicr.ai
+ssh aicr_username@login.aicr.ai
 ```
 Your AICR username is your netid followed by `_yale`, for example: `abc123_yale`.â €
 
+
+## Get Help
+
+Support for Yale researchers on AICR is provided by the YCRC.
+Users can contact us for assistance with AICR at [research.computing@yale.edu](mailto:research.computing@yale.edu) and other ways of [engaging with YCRC Research Support](/#get-help).
 
 ## Installed Applications
 
 A large number of software and applications are installed on our clusters, including AICR.
 AICR software will be made available to researchers via [software modules](/applications/modules/). 
 
-During Early Access researchers you will need to add this line to your `$HOME/.bashrc` file to get access to our software modules:
+During Alpha, you will need to load the Yale-specific `StdEnv` module to get access to our software modules:
 
 ```
-export MODULEPATH=/apps/yale/modules/2026.1:/apps/yale/modules/2024a:/apps/yale/modules/system:$MODULEPATH
+module load yale/StdEnv
 ```
 
-This will eventually be replaced by a StdEnv, but that is still in progress.
+In the coming weeks, the Yale `StdEnv` module will be automatically loaded on login for all Yale users.
 
 If you need a specific application that is not present, let us know and we can install it for you.
 
@@ -73,14 +86,24 @@ The CPU nodes offer 1TB of RAM, while the GPU nodes all have 2.2TB.
 Note, the default job parameters are slightly different than YCRC clusters. 
 The most notable differences are the default time-limit of 15 minutes and the default memory allocation of 1GB.  
 
+More information on AICR partitions and associated limits can be found in the [AICR Documentation](https://docs.aicr.ai/running-jobs/slurm-basics/#partitions).
+
 ## Storage
 
 AICR has access to an all-flash, NFS filesystem similar to the Roberts filesystem on Bouchet and the Palmer filesystem on Grace and McCleary.
 
+Note: Scratch is a per user directory and quota, not a shared directory like other YCRC clusters.
+
+No storage on AICR is backed up.
+Self-service snapshots are available for home and work on the main AICR filesystem but do not provide protection against many types of storage failures.
+We encourage you to back up all critical data to a secondary storage location.
+
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
-| home           | TBD | 100GiB/user                             | 500,000    | No     | 7 days  |       |
-| work        | TBD     | TBD | TBD | No      | 7 days  |       |
-| scratch        | TBD    | 10TiB/user                             | 15,000,000 | No      | No        |       |
+| home           | `/home/<username>` | 100GiB/user                             | 500,000    | No     | 7 days  |       |
+| work        | `/work/yale/<project>`     | 1TiB/project\* | 5,000,000 | No      | 7 days  |       |
+| scratch        | `/scratch/<username>`    | 10TiB/user                             | 15,000,000 | No      | No        |  30-day purge     |
+
+\* Additional storage quota may be available upon request with appropriate justification.
 

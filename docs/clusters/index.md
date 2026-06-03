@@ -15,6 +15,7 @@ We maintain and support three Red Hat Linux compute clusters, listed below. Plea
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
 | [Bouchet](bouchet)  | 16,000             | 230                 | `bouchet.ycrc.yale.edu`       | all research with low-risk data, including tightly coupled (InfiniBand)   |
 | [Hopper](hopper)    | 6,000              | 100                 | ---                           | NIST 800-171, HIPAA and other sensitive data |
+| [AICR](aicr)        | 7,000              | 50                  | Early Access Spring 2026      | Large-scale AI/ML workloads   |
 | [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | [YCGA](http://ycga.yale.edu/)           |
 | [Milgram](milgram)  | 2,000              | 50                  | `milgram.ycrc.yale.edu`       | unregulated sensitive data                                  |
 | [Misha](misha)      | 2,000              | 40                  | `misha.ycrc.yale.edu`         | [Wu Tsai Institute](http://wti.yale.edu)                          |
