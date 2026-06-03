@@ -1,6 +1,6 @@
 # CryoSPARC on the YCRC Clusters
 
-CryoSPARC is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.
+CryoSPARC is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software on our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.
 
 _(June 2026): We have newly streamlined our cryoSPARC workflow, both for installation and running the app._
 
