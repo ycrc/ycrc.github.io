@@ -104,17 +104,9 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 ### General cryoSPARC issues
 
-1. **Leftover lock files** : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with `cryosparcm status`, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a `cryosparc*.sock` file or a `mongo*.sock` file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with `cryosparcm start`. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.
+1. **Database corruption** : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the `cryosparc_database` folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
 
-    If your database won't start and *_you're sure_* there isn't another server running, you can remove lock files and try again.
-
-    ``` bash
-    # rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock
-    ```
-
-2. **Database corruption** : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the `cryosparc_database` folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
-
-3. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:
+2. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:
 
     - Select `Manage history` (click on the Firefox hamburger menu at the window upper right, then click `History` -> `Manage History`)
     - Click on the search box and type `ycrc.yale.edu`
@@ -125,3 +117,13 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
     - If you see any remaining cryoSPARC entries, click on them and select `Remove Selected`, then `Save Changes`
     - Quit and restart firefox ; hopefully you can now successfully load the cryoSPARC page
     - If this doesn't work the first time, repeating the above steps one or two times more may still resolve the issue
+
+3. **Leftover lock files** : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with `cryosparcm status`, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a `cryosparc*.sock` file or a `mongo*.sock` file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with `cryosparcm start`. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.
+
+    If your database won't start and *_you're sure_* there isn't another server running, you can remove lock files and try again.
+
+    ``` bash
+    # source $(dirname "$(dirname "$(which cryosparcm 2> /dev/null)")")/config.sh
+    # rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock
+    ```
+
