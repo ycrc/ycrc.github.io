@@ -4,7 +4,7 @@ CryoSPARC is widely used and powerful structural biology tool. The YCRC has deve
 
 _(June 2026): We have newly streamlined our cryoSPARC workflow, both for installation and running the app._
 
-!!! info
+!!! Note
     CryoSPARC can be tricky to debug. If/when you encounter problems, please check our growing list of [troubleshooting tips](#troubleshooting) that are shared at the bottom of this page. Please do not hesitate to [contact us](https://docs.ycrc.yale.edu/#web-and-email-support) if you encounter difficulties running this program.
 
 ## Install
@@ -38,7 +38,7 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 ## Run the YCRC cryosparc workflow
 To use the new cryosparc workflow, follow the steps below:
 
-1. **Launch your cryosparc server** : Use the following command in the cluster terminal login node:
+1. **Launch your cryosparc server** : In a new cluster terminal window (login node is fine), enter the following command:
     ```
     ycrc_launch_cryosparc.sh
     ```
@@ -106,6 +106,14 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 1. **Database corruption** : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the `cryosparc_database` folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
 
+    ``` bash
+    cd $(dirname "$(dirname "$(dirname "$(which cryosparcm)")")")
+    mv cryosparc_database cryosparc_database_corrupt
+
+    # Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for <good_backup_date> in the command below:
+    cp -a "../.snapshot/<good_backup_date>/cryosparc/cryosparc_database" .
+    ```
+
 2. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:
 
     - Select `Manage history` (click on the Firefox hamburger menu at the window upper right, then click `History` -> `Manage History`)
@@ -123,7 +131,7 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
     If your database won't start and *_you're sure_* there isn't another server running, you can remove lock files and try again.
 
     ``` bash
-    # source $(dirname "$(dirname "$(which cryosparcm 2> /dev/null)")")/config.sh
+    # source $(dirname "$(dirname "$(which cryosparcm)")")/config.sh
     # rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock
     ```
 
