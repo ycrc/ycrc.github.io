@@ -25,7 +25,7 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 3. **Run the Installer** : Once you have received your cryoSPARC license and YCRC port number, run the installer by pasting the following command in a cluster terminal (again, login node is fine):
 
     ``` bash
-    /apps/services/cryosparc/ycrc_prepare_cryosparc.sh
+    /apps/services/cryosparc/ycrc_prepare_cryosparc.sh <your-cryosparc-license>
     ```
 
     - The script will launch a pair of batch jobs in the background and print helpful info. You will receive confirmation emails upon completion of the jobs.
