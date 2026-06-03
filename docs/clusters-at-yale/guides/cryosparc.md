@@ -36,7 +36,9 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
         **Older cryoSPARC versions** : Please note that our script installs the latest version of cryoSPARC. If you wish to use an older version of CryoSPARC, please follow [these instructions](https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-updating-to-cryosparc-v5#downgrade-from-cryosparc-v5-to-v4) to downgrade cryoSPARC after the YCRC installation script has finished.
     
 ## Run the YCRC cryosparc workflow
-To use the new cryosparc workflow, follow the steps below:
+To use the new cryosparc workflow, follow the steps below.
+
+**Please note** : if you have already been using an older cryoSPARC workflow, you may be notified that a 'YCRC cryoSPARC port' has been requested. It is fine to use your old workflow in the meantime, while you wait for email notification that your port has been assigned.
 
 1. **Launch your cryosparc server** : In a new cluster terminal window (login node is fine), enter the following command:
     ```
