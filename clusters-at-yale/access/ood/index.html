@@ -3073,9 +3073,9 @@ You can drag-and-drop to download and upload files and directories, and move fil
 <p>You can also use the built-in file editor to view and edit files from your browser without having to download and upload scripts.</p>
 <h3 id="customize-favorite-paths">Customize Favorite Paths</h3>
 <p>You are able to customize favorite paths in the file browser. Use the scripts below to add, remove, and list customized paths:</p>
-<div class="highlight"><pre><span></span><code>  ood_add_path
-  ood_remove_path
-  ood_list_path
+<div class="highlight"><pre><span></span><code><span class="w">  </span>ood_add_path
+<span class="w">  </span>ood_remove_path
+<span class="w">  </span>ood_list_path
 </code></pre></div>
 <p>When you run <code>ood_add_path</code> from a terminal command line, it will prompt you to add one path at a time, until you type <code>n</code> to discontinue. 
 <code>ood_remove_path</code> allows you to remove any of the paths added by you and <code>ood_list_path</code> will list all the paths added by you. </p>
@@ -3131,10 +3131,10 @@ For more information on specific tools in the User Portal, check out the followi
 <h3 id="remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly">Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly</h3>
 <ol>
 <li>Make sure there is no initialization left by <code>conda init</code> in your <code>.bashrc</code>. Clean it with 
-<div class="highlight"><pre><span></span><code>sed -i.bak -ne <span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span> ~/.bashrc
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
 </code></pre></div></li>
 <li>Run <code>dbus-launch</code> and make sure you see the following output:
-<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1 ~<span class="o">]</span>$ which dbus-launch
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>dbus-launch
 /usr/bin/dbus-launch
 </code></pre></div></li>
 </ol>
