@@ -2930,20 +2930,20 @@ All Early Access users will be expected to submit to and be approved through tha
 </ul>
 <p>To install these keys follow these steps:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># copy keys to local $HOME/.ssh directory</span>
-cp<span class="w"> </span>aicr_keys/id_ed25519_aicr*<span class="w"> </span><span class="nv">$HOME</span>/.ssh/
+cp aicr_keys/id_ed25519_aicr* <span class="nv">$HOME</span>/.ssh/
 
 <span class="c1"># fix permissions on private key</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/.ssh/
-chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>id_ed25519_aicr
+<span class="nb">cd</span> <span class="nv">$HOME</span>/.ssh/
+chmod <span class="m">600</span> id_ed25519_aicr
 
 <span class="c1"># To change passphrase (initial passphrase is in aicr_keys/.passphrase):</span>
-ssh-keygen<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_ed25519_aicr
+ssh-keygen -p -f <span class="nv">$HOME</span>/.ssh/id_ed25519_aicr
 
 <span class="c1"># Then (needs passphrase):</span>
-ssh-add<span class="w"> </span>id_ed25519_aicr
+ssh-add id_ed25519_aicr
 
 <span class="c1">#To log in:</span>
-ssh<span class="w"> </span>aicr_username@login.aicr.ai
+ssh aicr_username@login.aicr.ai
 </code></pre></div>
 Your AICR username is your netid followed by <code>_yale</code>, for example: <code>abc123_yale</code>.⠀</p>
 <h2 id="get-help">Get Help</h2>

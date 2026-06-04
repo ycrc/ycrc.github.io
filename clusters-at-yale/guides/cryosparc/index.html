@@ -2827,7 +2827,7 @@
 </li>
 <li>
 <p><strong>Run the Installer</strong> : Once you have received your cryoSPARC license and YCRC port number, run the installer by pasting the following command in a cluster terminal (again, login node is fine):</p>
-<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_prepare_cryosparc.sh<span class="w"> </span>&lt;your-cryosparc-license&gt;
+<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_prepare_cryosparc.sh &lt;your-cryosparc-license&gt;
 </code></pre></div>
 <ul>
 <li>
@@ -2881,10 +2881,10 @@
 <ul>
 <li>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
+<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </li>
 </ol>
@@ -2924,11 +2924,11 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <ol>
 <li>
 <p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+mv cryosparc_database cryosparc_database_corrupt
 
 <span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_backup_date&gt; in the command below:</span>
-cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
+cp -a <span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span> .
 </code></pre></div>
 </li>
 <li>
