@@ -1,74 +1,56 @@
 # Mysql
 
-[Mysql](https://www.mysql.com) is a popular relational database.  Because a database is usually thought of as a persistent service, it is not ordinarily run on HPC clusters, since
+[MySQL](https://www.mysql.com) is a popular relational database. It has a community-developed free-to-use variant [MariaDB](https://mariadb.org) that is recommended for non-commercial use.  Because a database is usually thought of as a persistent service, it is not ordinarily run on HPC clusters, since
 allocations on an HPC cluster are temporary.  If you need a persistent mysql database server, we recommend either installing mysql on a server in your
 lab, or using ITS's [Spinup](https://spinup.internal.yale.edu) service.  In either case, the mysql server can be accessed remotely from the HPC clusters.
 
-Spinup has serverless database servers (mysql and postgres) that can automatically sleep when not being accessed.  While asleep, you only pay for the data storage. 
+Spinup has serverless database servers (MySQL, PostgreSQL, and Microsoft SQL) that can automatically sleep when not being accessed.  While asleep, you only pay for the data storage. 
 
-However, there are some use cases for running a mysql server on the cluster that do make sense.  For example, some applications store their data in a 
-mysql database that only needs to run when the application runs.  Most instructions for installing mysql involve creating a persistent server and 
-require admin privileges.  The instructions that follow walk you through the process of running a mysql server using [Apptainer](/clusters-at-yale/guides/containers) on a cluster compute node 
-without any special privileges.  It uses an Apptainer [container](https://www.hpc.iastate.edu/guides/containers/mysql-server) 
-developed by Robert Grandin at Iowa State (Thanks!) 
+However, there are some use cases for running a MySQL/MariaDB server on the cluster that do make sense.  For example, some applications store their data in a 
+mysql database that only needs to run when the application runs.  Most instructions for installing MySQL involve creating a persistent server and 
+require admin privileges.  The instructions that follow walk you through the process of running a MariaDB server using [Apptainer](/clusters-at-yale/guides/containers) on a cluster compute node 
+without any special privileges.  It uses a container created from an existing [Docker Hub](https://hub.docker.com) template. If you want to use the original MySQL instead, the process is very similar. Contact the YCRC for assistance.
 
 All of the following must be done on an allocated compute node.  Do not do this on the login node!
 
 ### Step 1: Create an installation directory somewhere, and cd to it
 
 ```
-mkdir ~/project/mysql
-cd ~/project/mysql
+mkdir ~/project/mariadb
+cd ~/project/mariadb
+```
+When working with containers, it is usually helpful to avoid directory "shortcuts" and use the real location of the directory. Since ${HOME}/project is a shortcut, switch to the actual location first:
+```
+cd `readlink -f ${PWD}`
+```
+This will place you in the "actual" location of your project directory, which you can check via the "pwd" command.
+
+### Step 2: Create data directories for MariaDB
+```
+mkdir -p ${PWD}/var/lib/mysql ${PWD}l/run/mariadb
 ```
 
-### Step 2: Create two config files
+### Step 3: Create a MariaDB container
 
-Put the following in ~/.my.cnf.  Note that you should change the password in both files
-to something else.
-
-```
-[mysqld]
-innodb_use_native_aio=0
-init-file=${HOME}/.mysqlrootpw
-
-[client]
-user=root
-password='my-secret-pw'
-```
-
-Put the following in ~/.mysqlrootpw
-```
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('my-secret-pw');
-```
-
-### Step 3: Create data directories for mysql
-```
-mkdir -p ${PWD}/mysql/var/lib/mysql ${PWD}/mysql/run/mysqld
-```
-
-### Step 4: Make a link to the mysql image file
-
-The mysqld image file can be found under the apps tree on each cluster.
-For example, on Grace:
+Generate a local image of the desired release of MariaDB from Docker Hub. You can select the "latest" tag  to get the newest release, but it is usually helpful to know what particular version you are running. In this example we are pulling down a Red Hat 9 (ubi9) image with MariaDB 11.7.2, to closely match with the client tools installed on the clusters (as of May 2026).
 
 ```
-/vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg
+apptainer pull docker://mariadb:11.7.2-ubi9
 ```
 
-We recommend that you make a link to it in your mysql directory:
+This will create an image named mariadb_11.7.2-ubi9.sif in the current directory. For ease of use, or to allow switching versions, make a short link name:
+```
+ln -s mariadb_11.72.-ubi9.sif mariadb.sif
+```
+
+### Step 4: Start the container and the MariaDB server, with no initial root password
 
 ```
-ln -s /vast/palmer/apps/apptainer/images/mysqld-5.7.21.simg mysql.simg
-```
-
-
-### Step 5: Start the container.  Note that this doesn't actually start the service yet.
-
-```
-apptainer instance start --bind ${HOME} \
-    --bind ${PWD}/mysql/var/lib/mysql/:/var/lib/mysql \
-    --bind ${PWD}/mysql/run/mysqld:/run/mysqld \
-    ./mysql.simg mysql
+apptainer instance run --contain \
+    --bind ${PWD}/var/lib/mysql/:/var/lib/mysql \
+    --bind ${PWD}/run/mariadb:/run/mariadb \
+    --env MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1 \
+    ./mariadb.sif mariadb-instance
 ```
 
 To check that it is running:
@@ -76,64 +58,79 @@ To check that it is running:
 ```
 apptainer instance list
 ```
-
-### Step 6: Start the mysqld server within the container
-
 ```
-apptainer run instance://mysql
+ps -fu ${USER} | grep mariadbd
 ```
+There should be an instance listed, and "mariadbd" should be running on the node.
 
-You'll see lots of output, but at the end you should see a message like this
+### Step 5: Enter MariaDB in the running container
 ```
-2022-02-21T17:16:21.104527Z 0 [Note] mysqld: ready for connections.
-Version: '5.7.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -u root
 ```
+```
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 6
+Server version: 11.7.2-MariaDB MariaDB Server
 
-### Step 7: Enter the running container
-```
-apptainer exec instance://mysql /bin/bash
-```
-
-Connect locally as root user while in the container, using the password you set in the config files in step 2.
-```
-Singularity> mysql -u root -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 3
-Server version: 5.7.21 MySQL Community Server (GPL)
-
-Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql>
+MariaDB [(none)]>
 ```
+Success!  The server is working!   You will now probably want to set a password for the server root account:
+```
+MariaDB [(none)]> ALTER USER 'root'@'%' IDENTIFIED BY 'my-secret-pw';
+Query OK, 0 rows affected (0.002 sec)
 
-Success!  The server is working!  Type exit to get out of mysql, but remain in the container:
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.001 sec)
 
-### Step 8: Add a database user and permit it to login remotely
-Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions.   
-This is one way to do that from the container shell. 
+MariaDB [(none)]> exit
+```
+Check that you can now connect with the password you set.
+```
+apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -h 127.0.0.1 -u root -p
+```
+```
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 11.7.2-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> 
+```
+You can also specify the password on the command line (e.g., "-pmy-secret-pw").
+
+### Step 6: Add a database user and permit it to login remotely
+Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. This is one way to do that from the container.
 
 You should probably substitute your name for elmerfudd and a better password for mypasswd!
 
 ```
-mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION"
-mysql -e "FLUSH PRIVILEGES"
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.002 sec)
+
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [(none)]> 
 ```
 
 Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
 ```
+module load MariaDB/11.7.0-GCC-13.3.0
 mysql -u elmerfudd -h 127.0.0.1 -p
 ```
 
-Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g. c22n01) instead of 127.0.0.1
+Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g.r205u23n02 ) instead of 127.0.0.1
 ```
-mysql -u elmerfudd -h c22n01 -p
+module load MariaDB/11.7.0-GCC-13.3.0
+mysql -u elmerfudd -h r205u23n02 -p
 ```
 
 While connected, you can try actually using the server in the usual way to create a database and table:
@@ -151,28 +148,34 @@ Query OK, 0 rows affected (0.11 sec)
 
 Success!  You've earned a reward of your choice!
 
-### Step 9 Shut the container down.
-
+### Step 7: Shut the container down.
+In the compute node session where you initially launched the instance:
 ```
-apptainer instance stop mysql
+apptainer instance stop mariadb-instance
 ```
 
-Now that everything is installed, the next time you want to start the server, you'll only need to do steps 5 (starting the container)
-and 6 (starting the mysql server).
+Now that everything is installed, the next time you want to start the server, you'll only need to do step 5 (running the container instance). If you set a root password, you can omit the --env setting for empty root password.
 
+### Step 8: Set up default login credentials (optional)
+For connections from outside the container, you can place the credentials for the account you are using into the file ${HOME}/.my.cnf
+```
+[client]
+user=elmerfudd
+password='mypasswd'
+```
+Then any invocations of mysql / mariadb from outside the container to automatically connect with elmerfudd's username and password.
+### Troubleshooting
 Note that you'll run into a problem if two mysql instances are run on the same compute node, since by default they each
 try to use port 3306.  The simplest solution is to specify a non-standard port in your .my.cnf file:
 
 ```
-[mysqld]
+[mariadbd]
 port=3310
-innodb_use_native_aio=0
-init-file=${HOME}/.mysqlrootpw
 
 [client]
 port=3310
-user=root
-password='my-secret-pw'
+user=elmerfudd
+password='mypasswd'
 ```
 
 
