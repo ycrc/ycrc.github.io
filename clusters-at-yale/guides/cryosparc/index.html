@@ -2877,7 +2877,7 @@
 <p>To fix this type of memory issue, set the <code>RAM multiplier</code> to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. <code>RAM multiplier</code> is found in the <code>Cluster submission script variables</code> along with <code>Maximum runtime</code> (described above).</p>
 </li>
 <li>
-<p>Job types where we have seen this problem include:  'Local Refinement', '2D Classification' and '2D Template Natching'</p>
+<p>Job types where we have seen this problem include:  'Local Refinement', '2D Classification' and '2D Template Matching'</p>
 </li>
 </ul>
 </li>
@@ -2910,13 +2910,13 @@ convolutional neural networks. It can optionally be used from inside CryoSPARC u
 <h3 id="cryosparc-job-issues">CryoSPARC job issues</h3>
 <ol>
 <li>
-<p><strong>Insufficient memory</strong> : this is probably most common source of cryoSPARC job failures, other than not specifying enough runtime. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, check for a memory failure using our <a href="/clusters-at-yale/job-scheduling/jobstats/">jobstats tools</a>:</p>
+<p><strong>Insufficient memory</strong> : this is probably most common source of cryoSPARC job failures, other than not <strong>specifying enough runtime</strong>. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, check for a memory failure using our <a href="/clusters-at-yale/job-scheduling/jobstats/">jobstats tools</a>:</p>
 <ul>
 <li>
 <p>Go to the OnDemand <a href="/clusters-at-yale/access/ood/#user-portal">User Portal</a>, click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.</p>
 </li>
 <li>
-<p>If this was the problem, increase the job memory by changing the <code>mem_multiplier</code> parameter- see 'Optionally specify a memory multiplier' under <a href="#run-the-ycrc-cryosparc-workflow">Running</a> for details on how to do this.</p>
+<p>If this was the problem, increase the job memory by changing the <code>mem_multiplier</code> parameter- see 'Optionally specify a memory multiplier' under <a href="#run-the-ycrc-cryosparc-workflow">Run the YCRC cryosparc workflow</a> for details on how to do this.</p>
 </li>
 </ul>
 </li>
