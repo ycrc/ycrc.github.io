@@ -60,9 +60,11 @@ To use the new cryosparc workflow, follow the steps below.
     !!! Note
         The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryosparc easier for users to manage.
 
-5. **Optionally specify a 'memory multiplier'** : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types such as 2D classification and template matching we have found that this guess can underestimate the memory requirements, **leading to memory-related job failures**. If a job crashes unexpectedly, find the job ID in the cryosparc log and run jobstats to pinpoint the problem (see the [troubleshooting cryosparc jobs]() section below).
+5. **Optionally specify a 'memory multiplier'** : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to memory-related job failures**. If a job crashes unexpectedly, find the job ID in the cryosparc log and run `jobstats` to confirm whether this is a memory issue ('State: OUT_OF_MEMORY'; see [CryoSPARC job issues](#cryosparc_job_issues) in our Troubleshooting section).
 
     - To fix this type of memory issue, set the `RAM multiplier` to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. `RAM multiplier` is found in the `Cluster submission script variables` along with `Maximum runtime` (described above).
+
+    - Job types where we have seen this problem include:  'Local Refinement', '2D Classification' and '2D Template Matching'
 
 6. **Click 'Submit to lane'** : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryosparc GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command `squeue --me`).
 
@@ -94,7 +96,11 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 ### CryoSPARC job issues
 
-1. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, but sadly provides little to no diagnostic information within cryoSPARC itself. If you do not see an obvious source for the job failure within cryoSPARC, check for a memory failure using our [jobstats tools](/clusters-at-yale/job-scheduling/jobstats/). You will first need find the slurm ID of the failed job; you can find this in the job log file by clicking `Show from top` and scrolling down to the output lines describing the job submission. If you identify a memory issue as the source of the job crash, fix by changing the `mem_multiplier` parameter (see above sections under [Running](#run-the-ycrc-cryosparc-workflow)).
+1. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, other than not **specifying enough runtime**. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, check for a memory failure using our [jobstats tools](/clusters-at-yale/job-scheduling/jobstats/):
+
+    - Go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
+
+    - If this was the problem, increase the job memory by changing the `mem_multiplier` parameter- see 'Optionally specify a memory multiplier' under [Run the YCRC cryosparc workflow](#run-the-ycrc-cryosparc-workflow) for details on how to do this.
 
 2. **Resource requests do not match the requested partition** : if you see a `Job violates accounting/QOS policy` error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the `Maximum runtime` parameter (see above sections under [Running](#run-the-ycrc-cryosparc-workflow)).
 
