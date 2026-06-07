@@ -11,7 +11,7 @@ _(June 2026): We have newly streamlined our cryoSPARC workflow, both for install
 
 To operate cryoSPARC on a YCRC cluster, please use our installer script following the steps below. This automates the procedure described in the [official cryoSPARC documentation](https://cryosparc.com/docs/reference/install/), and integrates the installation within our YCRC HPC framework.
 
-**Please do steps 1 and 2 below right away**, as they are quick and easy, and it could take up to day to get the needed responses.
+**Please do steps 1 and 2 below right away**, as they are quick and easy, and it could take up to a day to get the needed responses.
 
 1. **Request a cryoSPARC License** : Visit the Structura website and [fill out the License Request Form](https://cryosparc.com/download/).
 
