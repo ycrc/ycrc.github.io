@@ -11,7 +11,11 @@ As an alternative to buying a license, the open-source version of Pymol is avail
 
     - Windows: Double-click the installer to run, and click through all the steps to install with default options (please choose the `User` install unless you know what you are doing). Note, you can also customize the installation to taste- this will not interfere with Pymol.
 
-    - Mac/Linux: open a standard terminal window (this is the 'Terminal' app in MacOS) and then type, i.e.:
+    - Mac/Linux: open a standard terminal window (this is the 'Terminal' app in MacOS) and then type the following command to run the installer.
+
+    !!! Note
+        When the installer asks to automatically initialize conda, **respond yes to the 'Proceed with initialization?' prompt. _This is not the default!_ **
+    
     ``` sh
     cd ~/Downloads                   # or wherever the downloaded file is
     bash Miniforge3-Darwin-arm64.sh  # substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.
