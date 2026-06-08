@@ -40,18 +40,25 @@ To use the new cryosparc workflow, follow the steps below.
 
 **Please note** : if you have already been using an older cryoSPARC workflow, you may be notified that a 'YCRC cryoSPARC port' has been requested. It is fine to use your old workflow in the meantime, while you wait for email notification that your port has been assigned.
 
-1. **Launch your cryosparc server** : In a new cluster terminal window (login node is fine), enter the following command:
+1. **Launch your cryosparc server** : In a new cluster terminal window (login node is fine), enter one of the following commands, depending on how long your workflow is expected to run for:
+
+    - For shorter workflows that will take no more than 6 hours to complete ('devel' partition):
     ```
     ycrc_launch_cryosparc.sh
     ```
+    
+    - For longer workflows add your preferred slurm options: CPU partition, runtime, etc. Note that since the job might not launch right away, it can be convenient to add email notifications:    
+    ```
+    ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
+    ```
 
-2. **Connect to the cryoSPARC GUI with your web browser** : `ycrc_launch_cryosparc.sh` will print instructions on how to connect to the cryoSPARC GUI. You may choose one of two options:
+2. **Connect to the cryoSPARC GUI with your web browser** : After cryoSPARC is successfully launched, `ycrc_launch_cryosparc.sh` will print instructions on how to connect to the cryoSPARC GUI. Note that you may also use `ycrc_launch_cryosparc.sh -v` after launching to obtain more detailed connection info and instructions.
+
+    You have two options for connecting to the cryoSPARC GUI:
 
     A. Connecting from your local laptop web browser
 
     B. Launching a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) and using firefox. We suggest using the following options for your session: `devel` partition with 1 CPU and 32 GB RAM, up to 6 hours runtime.
-
-    - Note, you may re-run `ycrc_launch_cryosparc.sh` after the initial launch to obtain this connection info anytime.
 
 3. **Submit job** : Once you start the job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
@@ -60,9 +67,11 @@ To use the new cryosparc workflow, follow the steps below.
     !!! Note
         The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryosparc easier for users to manage.
 
-5. **Optionally specify a 'memory multiplier'** : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to memory-related job failures**. If a job crashes unexpectedly, find the job ID in the cryosparc log and run `jobstats` to confirm whether this is a memory issue ('State: OUT_OF_MEMORY'; see [CryoSPARC job issues](#cryosparc_job_issues) in our Troubleshooting section).
+5. **Optionally specify a 'memory multiplier'** : When cryosparc submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to out-of-memory failures** that cause jobs to crash unexpectedly.
 
-    - To fix this type of memory issue, set the `RAM multiplier` to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. `RAM multiplier` is found in the `Cluster submission script variables` along with `Maximum runtime` (described above).
+    - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
+
+    - If this was the problem, set the `RAM multiplier` to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. `RAM multiplier` is found in the `Cluster submission script variables` purple expansion box along with `Maximum runtime` (described above).
 
     - Job types where we have seen this problem include:  'Local Refinement', '2D Classification' and '2D Template Matching'
 
@@ -96,19 +105,19 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 ### CryoSPARC job issues
 
-1. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, other than not **specifying enough runtime**. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, check for a memory failure using our [jobstats tools](/clusters-at-yale/job-scheduling/jobstats/):
+1. **Insufficient runtime** : As noted in [Run the YCRC cryosparc workflow](#run-the-ycrc-cryosparc-workflow) you **must** specify the job runtime. However, this step is easy to overlook; moreover, your job may still run out of time if your specified runtime was not conservative enough.
 
-    - Go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
+    - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs. If you see 'TIMEOUT' under the 'State' column, try increasing the job runtime.
 
-    - If this was the problem, increase the job memory by changing the `mem_multiplier` parameter- see 'Optionally specify a memory multiplier' under [Run the YCRC cryosparc workflow](#run-the-ycrc-cryosparc-workflow) for details on how to do this.
+2. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, other than not specifying enough runtime. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, the cause is likely insufficient memory. Please see 'Optionally specify a memory multiplier' under [Run the YCRC cryosparc workflow](#run-the-ycrc-cryosparc-workflow) for details on how to diagnose and fix this.
 
-2. **Resource requests do not match the requested partition** : if you see a `Job violates accounting/QOS policy` error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the `Maximum runtime` parameter (see above sections under [Running](#run-the-ycrc-cryosparc-workflow)).
+3. **Resource requests do not match the requested partition** : if you see a `Job violates accounting/QOS policy` error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the `Maximum runtime` parameter (see above sections under [Running](#run-the-ycrc-cryosparc-workflow)).
 
-3. **Drilling down further** : Within the cryoSPARC interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
+4. **Drilling down further** : Within the cryoSPARC interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
 
-4. **Mismatch between cryoSPARC and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with cryoSPARC versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryoSPARC to version >= 5.0.0
+5. **Mismatch between cryoSPARC and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with cryoSPARC versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryoSPARC to version >= 5.0.0
 
-5. **CryoSPARC installation bug**: One of our users experienced a issue where cryoSPARC GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryoSPARC python libraries (a buggy CUDA version compatibility check).
+6. **CryoSPARC installation bug**: One of our users experienced a issue where cryoSPARC GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryoSPARC python libraries (a buggy CUDA version compatibility check).
 
 ### General cryoSPARC issues
 
