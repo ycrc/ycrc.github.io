@@ -2824,7 +2824,13 @@
 <p>Windows: Double-click the installer to run, and click through all the steps to install with default options (please choose the <code>User</code> install unless you know what you are doing). Note, you can also customize the installation to taste- this will not interfere with Pymol.</p>
 </li>
 <li>
-<p>Mac/Linux: open a standard terminal window (this is the 'Terminal' app in MacOS) and then type, i.e.:
+<p>Mac/Linux: open a standard terminal window (this is the 'Terminal' app in MacOS) and then type the following command to run the installer.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the installer asks to automatically initialize conda, <strong>respond yes to the 'Proceed with initialization?' prompt. <em>This is not the default!</em> </strong></p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Downloads<span class="w">                   </span><span class="c1"># or wherever the downloaded file is</span>
 bash<span class="w"> </span>Miniforge3-Darwin-arm64.sh<span class="w">  </span><span class="c1"># substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.</span>
 
@@ -2834,9 +2840,7 @@ bash<span class="w"> </span>Miniforge3-Darwin-arm64.sh<span class="w">  </span><
 
 <span class="c1"># Prevent conda from affecting default Python settings in your terminal windows:</span>
 ~/miniforge3/bin/conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
-</code></pre></div></p>
-</li>
-</ul>
+</code></pre></div>
 </li>
 <li>
 <p><strong>Start a terminal</strong> : This sets you up to run the Pymol installation command(s) in the next step.</p>
