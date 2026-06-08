@@ -41,7 +41,7 @@ Google Drive is a cloud service for file storage, document editing and sharing. 
 - **No sensitive data (e.g. ePHI, HIPAA) for cluster mounts**
 - **Can be mounted on the cluster or computers on campus (but not both)**
 
-Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares can either be accessible on campus computers or the clusters, but not both. 
+Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares are accessible on campus computers and data stored on them can be transferred to and from the clusters using the Globus app (see below)
 
 | Type        | Use                                                                            |
 |-------------|--------------------------------------------------------------------------------|
@@ -52,10 +52,14 @@ Storage @ Yale (S@Y) is a central storage service provided by ITS. S@Y shares ca
 
 For pricing information, see the [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400). All prices are charged monthly for storage used at that time.
 
-To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). If you would like to request a share that is mounted on the clusters, **specify in your request that the share be mounted from the HPC clusters**. If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
+To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). 
 
-!!! note "Cluster I/O Performance"
-    Since cluster-mounted S@Y shares do *not* provide sufficient performance for use in jobs, they are not mounted on our compute or login nodes. To access S@Y on the clusters, connect to one of the transfer nodes to [stage the data](/data/staging) to [Project](/data/#project) or [Scratch60](/data/#60-day-scratch) before running jobs.
+**Globus access** : To access S@Y on the clusters, use [Globus](/data/globus) with the 'Yale CRC McCleary' mount point (Path: '/SAY') and [stage the data](/data/staging) to [Project](/data/#project) or [Scratch60](/data/#60-day-scratch) before running jobs.
+
+If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
+
+!!! warning "Transfer node access to S@Y discontinued"
+    Please note, we will no **longer be supporting use of transfer nodes** for accessing S@Y data on Bouchet and newer clusters; legacy support for this on McCleary will be discontinued sometime in 2026. 
 
 ## Microsoft Teams/SharePoint
 
