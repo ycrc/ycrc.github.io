@@ -20,10 +20,6 @@ As an alternative to buying a license, the open-source version of Pymol is avail
     cd ~/Downloads                   # or wherever the downloaded file is
     bash Miniforge3-Darwin-arm64.sh  # substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.
 
-    # Optional steps:
-    # Set up conda so your operating system recognizes it, if you will use conda for other apps:
-    ~/miniforge3/bin/conda init
-
     # Prevent conda from affecting default Python settings in your terminal windows:
     ~/miniforge3/bin/conda config --set auto_activate_base false
     ```
