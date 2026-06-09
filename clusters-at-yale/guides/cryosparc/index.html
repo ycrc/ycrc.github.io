@@ -2855,11 +2855,16 @@
 </li>
 </ol>
 <h2 id="start-the-ycrc-cryosparc-workflow">Start the YCRC cryoSPARC workflow</h2>
-<p>To use the new cryosPARC workflow, follow the steps below.</p>
+<p>To use the new cryoSPARC workflow, follow the steps below. Note that if you do these within a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a>, the cryoSPARC GUI will automatically open in firefox. </p>
 <ol>
 <li>
-<p><strong>Launch your cryoSPARC server</strong> : In a new cluster terminal window (login node is fine), enter one of the following commands, depending on how long your workflow is expected to run for:</p>
+<p><strong>Launch your cryoSPARC server</strong> : In a new cluster terminal window, run <code>ycrc_launch_cryosparc.sh</code>. Note that options are available to control how long your server will run for, what partition, etc.</p>
 <ul>
+<li>
+<p>There are two main ways to run the GUI server:</p>
+<p>A. If launched from a cluster login node, <code>ycrc_launch_cryosparc.sh</code> will print directions on how to connect to the GUI.</p>
+<p>B. If you will launch from a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a>, please note that minimal resources are required; we suggest the following options: <code>devel</code> partition with 1 CPU and 32 GB RAM, up to 6 hours runtime.</p>
+</li>
 <li>
 <p>For shorter workflows that will take no more than 6 hours to complete ('devel' partition):
 <div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh
@@ -2873,10 +2878,15 @@
 </ul>
 </li>
 <li>
-<p><strong>Connect to the cryoSPARC GUI with your web browser</strong> : After cryoSPARC is successfully launched, <code>ycrc_launch_cryosparc.sh</code> will print instructions on how to connect to the cryoSPARC GUI. Note that you may also use <code>ycrc_launch_cryosparc.sh -v</code> after launching to obtain more detailed connection info and instructions.</p>
-<p>You have two options for connecting to the cryoSPARC GUI:</p>
-<p>A. Connecting from your local laptop web browser</p>
-<p>B. Launching a minimal <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a> and using firefox. We suggest using the following options for your session: <code>devel</code> partition with 1 CPU and 32 GB RAM, up to 6 hours runtime.</p>
+<p><strong>Connect to the cryoSPARC GUI with your web browser</strong> : After cryoSPARC is successfully launched, </p>
+<ul>
+<li>
+<p>Alternatively, <code>ycrc_launch_cryosparc.sh</code> will print instructions on how to connect your local web browser (i.e. on your laptop) to the cryoSPARC GUI.</p>
+</li>
+<li>
+<p>Note that you may also use <code>ycrc_launch_cryosparc.sh -v</code> after launching to obtain more detailed connection info and instructions.</p>
+</li>
+</ul>
 </li>
 </ol>
 <h2 id="run-cryosparc-jobs">Run cryoSPARC jobs</h2>
@@ -2996,7 +3006,7 @@ cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2026</span>
       
     
   </small>
