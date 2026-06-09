@@ -1,6 +1,6 @@
 # CryoSPARC on the YCRC Clusters
 
-CryoSPARC is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software on our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.
+[CryoSPARC](https://cryosparc.com) is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software on our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.
 
 _(June 2026): We have newly streamlined our cryoSPARC workflow, both for installation and running the app._
 
@@ -9,7 +9,7 @@ _(June 2026): We have newly streamlined our cryoSPARC workflow, both for install
 
 ## Set Up/Install
 
-To operate cryoSPARC on a YCRC cluster, please use our installer script following the steps below. This automates the procedure described in the [official cryoSPARC documentation](https://cryosparc.com/docs/reference/install/), and integrates the installation within our YCRC HPC framework.
+To operate cryoSPARC on a YCRC cluster, please use our installer script following the steps below. This automates the procedure described in the [official cryoSPARC documentation](https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure), and integrates the installation within our YCRC HPC framework.
 
 **Please do steps 1 and 2 below right away**, as they are quick and easy, and it could take up to a day to get the needed responses.
 
@@ -44,9 +44,9 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
 
 !!! note
-    By default, `ycrc_launch_cryosparc.sh` will run cryoSPARC on the `devel` partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
+    By default, `ycrc_launch_cryosparc.sh` **sets a 6-hour time limit for your workflow** and runs the main cryoSPARC process on the `devel` partition. **To customize for longer workflows**, add '--partition' and '--time' slurm options to the command line when running this script. However,  please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. Example:
     ```
-    ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
+    ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu
     ```
     (note that email notifications are convenient for longer jobs, since they might not start right away)
 

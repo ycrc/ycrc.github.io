@@ -53,9 +53,7 @@ The archive tier of Storage@Yale is a cloud-based system. It provides an archive
 To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.
 
 !!!note
-    Just as for the [S@Y Active Tier](/data/#storage-yale), direct access from the cluster should be
-    specified when requesting the share.  Direct access from the cluster is only authorized for
-    Low and Moderate risk data.
+    Just as for the [S@Y Active Tier](/data/#storage-yale), [Globus](/data/globus) is used to transfer cluster data to and from S@Y archive storage. Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.
 
 When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
 
