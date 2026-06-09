@@ -2811,14 +2811,14 @@
                 
                 
                 <h1 id="cryosparc-on-the-ycrc-clusters">CryoSPARC on the YCRC Clusters</h1>
-<p>CryoSPARC is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software on our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.</p>
+<p><a href="https://cryosparc.com">CryoSPARC</a> is widely used and powerful structural biology tool. The YCRC has developed a workflow to facilitate use of this software on our clusters. Instructions on how to install and use cryoSPARC on YCRC clusters are given below.</p>
 <p><em>(June 2026): We have newly streamlined our cryoSPARC workflow, both for installation and running the app.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>CryoSPARC can be tricky to debug. If/when you encounter problems, please check our growing list of <a href="#troubleshooting">troubleshooting tips</a> that are shared at the bottom of this page. Please do not hesitate to <a href="https://docs.ycrc.yale.edu/#web-and-email-support">contact us</a> if you encounter difficulties running this program.</p>
 </div>
 <h2 id="set-upinstall">Set Up/Install</h2>
-<p>To operate cryoSPARC on a YCRC cluster, please use our installer script following the steps below. This automates the procedure described in the <a href="https://cryosparc.com/docs/reference/install/">official cryoSPARC documentation</a>, and integrates the installation within our YCRC HPC framework.</p>
+<p>To operate cryoSPARC on a YCRC cluster, please use our installer script following the steps below. This automates the procedure described in the <a href="https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure">official cryoSPARC documentation</a>, and integrates the installation within our YCRC HPC framework.</p>
 <p><strong>Please do steps 1 and 2 below right away</strong>, as they are quick and easy, and it could take up to a day to get the needed responses.</p>
 <p><strong>If you have already installed cryoSPARC</strong> : Skip step 1. When you do step 2, you may be notified that a 'YCRC cryoSPARC port' has been requested. If so, it is fine to use your old workflow in the meantime, while you wait for email notification that your port has been assigned.</p>
 <ol>
@@ -2858,8 +2858,8 @@
 <p>After you run the above setup/install script, run our helper script <code>ycrc_launch_cryosparc.sh</code> (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, <code>ycrc_launch_cryosparc.sh</code> will run cryoSPARC on the <code>devel</code> partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
-<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
+<p>By default, <code>ycrc_launch_cryosparc.sh</code> <strong>sets a 6-hour time limit for your workflow</strong> and runs the main cryoSPARC process on the <code>devel</code> partition. <strong>To customize for longer workflows</strong>, add '--partition' and '--time' slurm options to the command line when running this script. However,  please <strong>do not request GPU's</strong>- these are only used in batch jobs <em>spawned</em> by the main cryoSPARC process. Example:
+<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu
 </code></pre></div>
 (note that email notifications are convenient for longer jobs, since they might not start right away)</p>
 </div>
