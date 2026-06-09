@@ -4,7 +4,7 @@ CryoSPARC is widely used and powerful structural biology tool. The YCRC has deve
 
 _(June 2026): We have newly streamlined our cryoSPARC workflow, both for installation and running the app._
 
-!!! Note
+!!! note
     CryoSPARC can be tricky to debug. If/when you encounter problems, please check our growing list of [troubleshooting tips](#troubleshooting) that are shared at the bottom of this page. Please do not hesitate to [contact us](https://docs.ycrc.yale.edu/#web-and-email-support) if you encounter difficulties running this program.
 
 ## Set Up/Install
@@ -14,8 +14,6 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 **Please do steps 1 and 2 below right away**, as they are quick and easy, and it could take up to a day to get the needed responses.
 
 **If you have already installed cryoSPARC** : Skip step 1. When you do step 2, you may be notified that a 'YCRC cryoSPARC port' has been requested. If so, it is fine to use your old workflow in the meantime, while you wait for email notification that your port has been assigned.
-
-
 
 1. **Request a cryoSPARC License** : Visit the Structura website and [fill out the License Request Form](https://cryosparc.com/download/).
 
@@ -32,20 +30,22 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
     /apps/services/cryosparc/ycrc_prepare_cryosparc.sh
     ```
 
-    - If the cryoSPARC software is not already installed in your HPC account, the script will prompt you for your cryoSPARC license
+    - If the cryoSPARC software is not already installed in your HPC account, you will be prompted for your cryoSPARC license. A pair of batch jobs will then be launched in the background, and helpful info printed. You will receive confirmation emails upon completion of the jobs.
     
-    - The script will launch a pair of batch jobs in the background and print helpful info. You will receive confirmation emails upon completion of the jobs.
+    - If cryoSPARC **_is_** already installed, this step just makes available the helper script `ycrc_launch_cryosparc.sh` and finishes very quickly. It's ok to run `ycrc_prepare_cryosparc.sh` even while running a job with your old cryoSPARC workflow. Just be aware the new workflow won't be able to run until the old cryoSPARC job has finished.
 
     - If the installation fails, for example if you do not have enough space available in your project account, please [contact us](https://docs.ycrc.yale.edu/#web-and-email-support) for assistance.
 
-    !!! Note
+    !!! note
         **Older cryoSPARC versions** : Please note that our script installs the latest version of cryoSPARC. If you wish to use an older version of CryoSPARC, please follow [these instructions](https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-updating-to-cryosparc-v5#downgrade-from-cryosparc-v5-to-v4) to downgrade cryoSPARC after the YCRC installation script has finished.
     
-## Launch cryoSPARC and connect to the GUI
+## Launch CryoSPARC and connect to the GUI
 
-After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh`. The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
+After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
 
-!!! Note
+When logging in to the cryoSPARC GUI for the first time, use your Yale email and 'Password123' (installer default password).
+
+!!! note
     By default, `ycrc_launch_cryosparc.sh` will run cryoSPARC on the `devel` partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
     ```
     ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
@@ -54,9 +54,9 @@ After you run the above setup/install script, run our helper script `ycrc_launch
 
 Choose between the following two methods to connect to the cryoSPARC GUI:
 
-**Option A: Connect via Local Web Browser** : Start a cluster login node terminal shell, and then run `ycrc_launch_cryosparc.sh`. 
+**Option A: Connect via Local Web Browser.** Start a cluster login node terminal shell, and then run `ycrc_launch_cryosparc.sh`. Follow the printed instructions to connect your local browser to the cluster with SSH, and then open the listed cryoSPARC GUI web address.
 
-**Option B: Connect via Remote Desktop** : Launch a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run `ycrc_launch_cryosparc.sh` from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.
+**Option B: Connect via Remote Desktop.** Launch a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run `ycrc_launch_cryosparc.sh` from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.
 
 Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
 
@@ -64,12 +64,12 @@ Also note that once cryoSPARC has started, you may close Remote Desktop sessions
 
 For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
-## Run cryoSPARC jobs
+## Run CryoSPARC Jobs
 3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
 4. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
 
-    !!! Note
+    !!! note
         The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryoSPARC easier for users to manage.
 
 5. **Optionally specify a 'memory multiplier'** : When cryoSPARC submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to out-of-memory failures** that cause jobs to crash unexpectedly.
@@ -110,13 +110,13 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 ### CryoSPARC job issues
 
-1. **Insufficient runtime** : As noted in [Run the YCRC cryoSPARC workflow](#run-the-ycrc-cryosparc-workflow) you **must** specify the job runtime. However, this step is easy to overlook; moreover, your job may still run out of time if your specified runtime was not conservative enough.
+1. **Insufficient runtime** : As noted in [Run CryoSPARC Jobs](#run-cryosparc-jobs) you **must** specify the job runtime. However, this step is easy to overlook; moreover, your job may still run out of time if your specified runtime was not conservative enough.
 
     - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs. If you see 'TIMEOUT' under the 'State' column, try increasing the job runtime.
 
-2. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, other than not specifying enough runtime. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, the cause is likely insufficient memory. Please see 'Optionally specify a memory multiplier' under [Run the YCRC cryoSPARC workflow](#run-the-ycrc-cryosparc-workflow) for details on how to diagnose and fix this.
+2. **Insufficient memory** : this is probably most common source of cryoSPARC job failures, other than not specifying enough runtime. Unfortunately, cryoSPARC itself provides little or no diagnostic information on this type of problem. If you do not see an obvious source for the job failure within cryoSPARC, the cause is likely insufficient memory. Please see 'Optionally specify a memory multiplier' under [Run CryoSPARC Jobs](#run-cryosparc-jobs) for details on how to diagnose and fix this.
 
-3. **Resource requests do not match the requested partition** : if you see a `Job violates accounting/QOS policy` error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the `Maximum runtime` parameter (see above sections under [Running](#run-the-ycrc-cryosparc-workflow)).
+3. **Resource requests do not match the requested partition** : if you see a `Job violates accounting/QOS policy` error message and/or a job submission fails immediately (before the process even starts running) this indicates the requested job runtime (or, possibly, memory) may exceed the allowed user limit in a given partition. To fix, switch partitions or change the `Maximum runtime` parameter (see above sections under [Run CryoSPARC Jobs](#run-cryosparc-jobs)).
 
 4. **Drilling down further** : Within the cryoSPARC interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
 
@@ -124,7 +124,7 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 6. **CryoSPARC installation bug**: One of our users experienced a issue where cryoSPARC GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryoSPARC python libraries (a buggy CUDA version compatibility check).
 
-### General cryoSPARC issues
+### General CryoSPARC issues
 
 1. **Database corruption** : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our [daily project folder snapshots](/data/backups/#retrieve-data-from-snapshots) to restore a previous version of the `cryosparc_database` folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.
 
