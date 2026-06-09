@@ -56,13 +56,14 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
 
 **Option B: Connect via Remote Desktop.** Launch a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run `ycrc_launch_cryosparc.sh` from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.
 
-- Use your Yale email and 'Password123' (installer default password) to log onto the cryoSPARC GUI.
+!!! info
+    - Use your Yale email and 'Password123' (installer default password) to log onto the cryoSPARC GUI.
 
-- Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
+    - Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
 
-- Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running `ycrc_launch_cryosparc.sh` again, using either of options A or B.
+    - Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running `ycrc_launch_cryosparc.sh` again, using either of options A or B.
 
-- For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
+    - For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
 ## Run CryoSPARC Jobs
 3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
@@ -77,6 +78,8 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
     - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
 
     - If this was the problem, set the `RAM multiplier` to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. `RAM multiplier` is found in the `Cluster submission script variables` purple expansion box along with `Maximum runtime` (described above).
+
+    - CryoSPARC may be particularly susceptible to this problem when analyzing very many particles (i.e. multiple millions) and/or large box sizes (i.e. dimensions of 768x768).
 
     - Job types where we have seen this problem include:  '2D Classification', '2D Template Matching', 'Local Refinement', and 'Ab-Initio Reconstruction'
 
