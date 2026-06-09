@@ -2746,8 +2746,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-the-ycrc-cryosparc-workflow" class="md-nav__link">
-    Start the YCRC cryoSPARC workflow
+  <a href="#launch-cryosparc-and-connect-to-the-gui" class="md-nav__link">
+    Launch cryoSPARC and connect to the GUI
   </a>
   
 </li>
@@ -2854,45 +2854,25 @@
 </div>
 </li>
 </ol>
-<h2 id="start-the-ycrc-cryosparc-workflow">Start the YCRC cryoSPARC workflow</h2>
-<p>To use the new cryoSPARC workflow, follow the steps below. Note that if you do these within a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a>, the cryoSPARC GUI will automatically open in firefox. </p>
-<ol>
-<li>
-<p><strong>Launch your cryoSPARC server</strong> : In a new cluster terminal window, run <code>ycrc_launch_cryosparc.sh</code>. Note that options are available to control how long your server will run for, what partition, etc.</p>
-<ul>
-<li>
-<p>There are two main ways to run the GUI server:</p>
-<p>A. If launched from a cluster login node, <code>ycrc_launch_cryosparc.sh</code> will print directions on how to connect to the GUI.</p>
-<p>B. If you will launch from a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a>, please note that minimal resources are required; we suggest the following options: <code>devel</code> partition with 1 CPU and 32 GB RAM, up to 6 hours runtime.</p>
-</li>
-<li>
-<p>For shorter workflows that will take no more than 6 hours to complete ('devel' partition):
-<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh
-</code></pre></div></p>
-</li>
-<li>
-<p>For longer workflows add your preferred slurm options: CPU partition, runtime, etc. Note that since the job might not launch right away, it can be convenient to add email notifications:  <br />
+<h2 id="launch-cryosparc-and-connect-to-the-gui">Launch cryoSPARC and connect to the GUI</h2>
+<p>After you run the above setup/install script, run our helper script <code>ycrc_launch_cryosparc.sh</code>. The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, <code>ycrc_launch_cryosparc.sh</code> will run cryoSPARC on the <code>devel</code> partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
 <div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Connect to the cryoSPARC GUI with your web browser</strong> : After cryoSPARC is successfully launched, </p>
-<ul>
-<li>
-<p>Alternatively, <code>ycrc_launch_cryosparc.sh</code> will print instructions on how to connect your local web browser (i.e. on your laptop) to the cryoSPARC GUI.</p>
-</li>
-<li>
-<p>Note that you may also use <code>ycrc_launch_cryosparc.sh -v</code> after launching to obtain more detailed connection info and instructions.</p>
-</li>
-</ul>
-</li>
-</ol>
+</code></pre></div>
+(note that email notifications are convenient for longer jobs, since they might not start right away)</p>
+</div>
+<p>Choose between the following two methods to connect to the cryoSPARC GUI:</p>
+<p><strong>Option A: Connect via Local Web Browser</strong> : Start a cluster login node terminal shell, and then run <code>ycrc_launch_cryosparc.sh</code>. </p>
+<p><strong>Option B: Connect via Remote Desktop</strong> : Launch a minimal <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a> (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run <code>ycrc_launch_cryosparc.sh</code> from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.</p>
+<p>Note that these methods have different pros and cons. While <strong>option A</strong> provides a more fluid and seamless interface, <strong>option B</strong> may be more reliable under certain circumstances.</p>
+<p>Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running <code>ycrc_launch_cryosparc.sh</code> again, using either of options A or B.</p>
+<p>For more detailed connection info and instructions, use <code>ycrc_launch_cryosparc.sh -v</code>.</p>
 <h2 id="run-cryosparc-jobs">Run cryoSPARC jobs</h2>
 <ol>
 <li>
-<p><strong>Submit job</strong> : Once you start the job submission process by clicking on <code>Submit job</code> in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: <code>cpu</code>, <code>gpu</code>, <code>gpu_devel</code> as well as <code>priority_cpu</code> and <code>priority_gpu</code> if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
+<p><strong>Submit job</strong> : Once you start the cryoSPARC job submission process by clicking on <code>Submit job</code> in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: <code>cpu</code>, <code>gpu</code>, <code>gpu_devel</code> as well as <code>priority_cpu</code> and <code>priority_gpu</code> if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
 </li>
 <li>
 <p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled <code>Queue P*xxx* J*xxx*</code>). Click on the purple box beneath your selected compute lane, labeled <code>Cluster submission script variables</code>. The box will expand to reveal two additional options. Click on <code>Maximum runtime</code> and give your value in hours:minutes:seconds format (i.e. 1:00:00).</p>
