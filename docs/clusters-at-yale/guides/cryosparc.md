@@ -41,34 +41,31 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
     !!! Note
         **Older cryoSPARC versions** : Please note that our script installs the latest version of cryoSPARC. If you wish to use an older version of CryoSPARC, please follow [these instructions](https://guide.cryosparc.com/setup-configuration-and-management/software-system-guides/guide-updating-to-cryosparc-v5#downgrade-from-cryosparc-v5-to-v4) to downgrade cryoSPARC after the YCRC installation script has finished.
     
-## Start the YCRC cryoSPARC workflow
-To use the new cryoSPARC workflow, follow the steps below. Note that if you do these within a [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop), the cryoSPARC GUI will automatically open in firefox. 
+## Launch cryoSPARC and connect to the GUI
 
-1. **Launch your cryoSPARC server** : In a new cluster terminal window, run `ycrc_launch_cryosparc.sh`. Note that options are available to control how long your server will run for, what partition, etc.
+After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh`. The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
 
-    - There are two main ways to run the GUI server:
-
-        A. If launched from a cluster login node, `ycrc_launch_cryosparc.sh` will print directions on how to connect to the GUI.
-
-        B. If you will launch from a [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop), please note that minimal resources are required; we suggest the following options: `devel` partition with 1 CPU and 32 GB RAM, up to 6 hours runtime.
-
-    - For shorter workflows that will take no more than 6 hours to complete ('devel' partition):
-    ```
-    ycrc_launch_cryosparc.sh
-    ```
-    
-    - For longer workflows add your preferred slurm options: CPU partition, runtime, etc. Note that since the job might not launch right away, it can be convenient to add email notifications:    
+!!! Note
+    By default, `ycrc_launch_cryosparc.sh` will run cryoSPARC on the `devel` partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
     ```
     ycrc_launch_cryosparc.sh -t 3-00:00:00 -p week --mail-user=your.email@yale.edu
     ```
+    (note that email notifications are convenient for longer jobs, since they might not start right away)
 
-2. **Connect to the cryoSPARC GUI with your web browser** : After cryoSPARC is successfully launched, 
-    - Alternatively, `ycrc_launch_cryosparc.sh` will print instructions on how to connect your local web browser (i.e. on your laptop) to the cryoSPARC GUI.
+Choose between the following two methods to connect to the cryoSPARC GUI:
 
-    - Note that you may also use `ycrc_launch_cryosparc.sh -v` after launching to obtain more detailed connection info and instructions.
+**Option A: Connect via Local Web Browser** : Start a cluster login node terminal shell, and then run `ycrc_launch_cryosparc.sh`. 
+
+**Option B: Connect via Remote Desktop** : Launch a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run `ycrc_launch_cryosparc.sh` from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.
+
+Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
+
+Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running `ycrc_launch_cryosparc.sh` again, using either of options A or B.
+
+For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
 ## Run cryoSPARC jobs
-3. **Submit job** : Once you start the job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
+3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
 4. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
 
