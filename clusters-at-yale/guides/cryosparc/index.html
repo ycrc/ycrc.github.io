@@ -2866,6 +2866,8 @@
 <p>Choose between the following two methods to connect to the cryoSPARC GUI:</p>
 <p><strong>Option A: Connect via Local Web Browser.</strong> Start a cluster login node terminal shell, and then run <code>ycrc_launch_cryosparc.sh</code>. Follow the printed instructions to connect your local browser to the cluster with SSH, and then open the listed cryoSPARC GUI web address.</p>
 <p><strong>Option B: Connect via Remote Desktop.</strong> Launch a minimal <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop">OnDemand Remote Desktop session</a> (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run <code>ycrc_launch_cryosparc.sh</code> from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <ul>
 <li>
 <p>Use your Yale email and 'Password123' (installer default password) to log onto the cryoSPARC GUI.</p>
@@ -2880,6 +2882,7 @@
 <p>For more detailed connection info and instructions, use <code>ycrc_launch_cryosparc.sh -v</code>.</p>
 </li>
 </ul>
+</div>
 <h2 id="run-cryosparc-jobs">Run CryoSPARC Jobs</h2>
 <ol>
 <li>
@@ -2900,6 +2903,9 @@
 </li>
 <li>
 <p>If this was the problem, set the <code>RAM multiplier</code> to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. <code>RAM multiplier</code> is found in the <code>Cluster submission script variables</code> purple expansion box along with <code>Maximum runtime</code> (described above).</p>
+</li>
+<li>
+<p>CryoSPARC may be particularly susceptible to this problem when analyzing very many particles (i.e. multiple millions) and/or large box sizes (i.e. dimensions of 768x768).</p>
 </li>
 <li>
 <p>Job types where we have seen this problem include:  '2D Classification', '2D Template Matching', 'Local Refinement', and 'Ab-Initio Reconstruction'</p>
