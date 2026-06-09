@@ -43,8 +43,6 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 
 After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
 
-When logging in to the cryoSPARC GUI for the first time, use your Yale email and 'Password123' (installer default password).
-
 !!! note
     By default, `ycrc_launch_cryosparc.sh` will run cryoSPARC on the `devel` partition, setting a 6-hour time limit for your workflow. To customize for longer workflows, add slurm options when running this script, for example:
     ```
@@ -58,11 +56,13 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
 
 **Option B: Connect via Remote Desktop.** Launch a minimal [OnDemand Remote Desktop session](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop) (we suggest the following options: devel partition with 1 CPU, 8 GB RAM, up to 6 hours runtime). Then run `ycrc_launch_cryosparc.sh` from a terminal window within the desktop environment. Once cryoSPARC starts running, the GUI will automatically open in firefox.
 
-Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
+- Use your Yale email and 'Password123' (installer default password) to log onto the cryoSPARC GUI.
 
-Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running `ycrc_launch_cryosparc.sh` again, using either of options A or B.
+- Note that these methods have different pros and cons. While **option A** provides a more fluid and seamless interface, **option B** may be more reliable under certain circumstances.
 
-For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
+- Also note that once cryoSPARC has started, you may close Remote Desktop sessions and browser windows at any time; your cryoSPARC jobs will continue undisturbed. Thereafter, reconnect to the cryoSPARC GUI by running `ycrc_launch_cryosparc.sh` again, using either of options A or B.
+
+- For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
 ## Run CryoSPARC Jobs
 3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
