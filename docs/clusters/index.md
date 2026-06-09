@@ -28,10 +28,10 @@ We maintain several high performance storage systems. Listed below are these sha
 
 | Name     | Path          | Size     | Mounting Clusters       | File System Software      | Purpose                                  |
 |----------|---------------|----------|-------------------------|---------------------------|------------------------------------------|
-| Roberts  | /nfs/roberts  | 3.6 PiB  | Bouchet\*               | VAST                      | Bouchet primary storage                  |
+| Roberts  | /nfs/roberts  | 3.5 PiB  | Bouchet\*               | VAST                      | Bouchet primary storage                  |
 | Weston        | /nfs/weston  | 2.4 PiB  | Hopper\*     | VAST                      | Hopper primary storage |
-| Palmer   | /vast/palmer  | 700 TiB  | Grace\*, McCleary\*     | VAST                      | home, scratch storage, purchased project-style storage |
-| Gibbs    | /gpfs/gibbs   | 14.0 PiB | Grace, McCleary         | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
-| YCGA           | /gpfs/ycga    | 3.0 PiB  | McCleary                | IBM Spectrum Scale (GPFS) | YCGA storage                             |
+| Palmer   | /vast/palmer  | 6.3 PiB  | Grace\*, McCleary\*     | VAST                      | home, scratch storage, purchased project-style storage |
+| Gibbs    | /gpfs/gibbs   | 11.0 PiB | Grace, McCleary         | IBM Spectrum Scale (GPFS) | project, purchased project-style storage |
+| YCGA           | /gpfs/ycga    | 3.7 PiB  | McCleary                | IBM Spectrum Scale (GPFS) | YCGA storage                             |
 | Milgram       | /gpfs/milgram | 3.0 PiB  | Milgram\*               | IBM Spectrum Scale (GPFS) | Milgram primary storage                  |
 | Radev | /gpfs/radev   | 2.0 PiB  | Misha\*                 | IBM Spectrum Scale (GPFS) | Misha primary storage                    |
