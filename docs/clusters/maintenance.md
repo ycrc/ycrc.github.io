@@ -6,8 +6,8 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 
 | Date            | Cluster  |
 |-----------------|----------|
-| June 8      | Hopper  |
-| June 16-18     | Other clusters | 
+| 2026 June 15-18      | Bouchet \& Hopper  |
+| 2026 June 16-18      | Other clusters |
 
 Communication will be sent to all users of the respective cluster both 4 weeks and 1 week prior to the maintenance period.
 
@@ -16,19 +16,19 @@ We will give as much notice as possible in advance of these maintenance outages.
 
 ## Maintenance on All Clusters except Hopper
 
-The June maintenance is scheduled for three days, from Tuesday morning through end of day Thursday of the respective week. 
-Unless otherwise stated, logins, Open OnDemand and storage for that cluster will also be inaccessible during the June maintenance.
-We use this opportunity when jobs are not running and there are no users on the machine to make upgrades and changes that would be disruptive. 
+The June maintenance is scheduled from Monday morning through end of day Thursday of the respective week.
+Unless otherwise stated, logins, Open OnDemand and storage for that cluster will be inaccessible during the June maintenance.
+We use this opportunity when jobs are not running and there are no users on the machine to perform upgrades and implement changes that would otherwise be disruptive to user activity.
 These activities include updating and patching the compute resources including the compute nodes, networking, service nodes and storage as well as making changes to critical infrastructure.
-In many cases, the cluster may return to service early and, under extenuating circumstances, we may choose to extend maintenance if necessary to make sure the system is stable before restoring access and jobs.
+In some cases, the cluster may return to service early. Under extenuating circumstances, we may choose to extend maintenance if necessary to make sure the system is stable before restoring access and jobs.
 
-In December we perform a shorter, limited disruption maintenance where the cluster is updated on a rolling basis.
+In December we typically perform a shorter, limited disruption maintenance where a cluster is updated on a rolling basis.
 While the storage and login nodes are available throughout the maintenance, we will have a reduced capacity of compute nodes during the maintenance.
 
 
 ## Maintenance on Hopper
 
-Hopper maintenance is quarterly and each maintenance period is one day.
+Hopper maintenance is quarterly and each maintenance period is usually one day.
 Unless otherwise stated, logins, Open OnDemand and storage for the cluster will also be inaccessible during the quarterly maintenance.
 
 ## Job Submission before Maintenance
