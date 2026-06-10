@@ -6,7 +6,7 @@ Please be mindful of these dates and schedule your work accordingly to avoid dis
 
 | Date            | Cluster  |
 |-----------------|----------|
-| 2026 June 15-18      | Bouchet \& Hopper  |
+| 2026 June 15-18      | Bouchet & Hopper  |
 | 2026 June 16-18      | Other clusters |
 
 Communication will be sent to all users of the respective cluster both 4 weeks and 1 week prior to the maintenance period.
