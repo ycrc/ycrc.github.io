@@ -1544,6 +1544,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage-details-for-support-as-of-jan-25-2023-1200" class="md-nav__link">
+    Usage Details for support (as of Jan 25 2023 12:00)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quota-summary-for-support-as-of-right-now-palmer-stats-are-gathered-once-a-day" class="md-nav__link">
+    Quota Summary for support (as of right now [*palmer stats are gathered once a day])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-more-detailed-storage-info" class="md-nav__link">
     For More Detailed Storage Info
   </a>
@@ -2929,6 +2943,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage-details-for-support-as-of-jan-25-2023-1200" class="md-nav__link">
+    Usage Details for support (as of Jan 25 2023 12:00)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quota-summary-for-support-as-of-right-now-palmer-stats-are-gathered-once-a-day" class="md-nav__link">
+    Quota Summary for support (as of right now [*palmer stats are gathered once a day])
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-more-detailed-storage-info" class="md-nav__link">
     For More Detailed Storage Info
   </a>
@@ -3020,35 +3048,34 @@ See <a href="#request-additional-storage">below</a> for details on requesting ad
 <p>To inspect your current usage, run the command <code>getquota</code> from the <a href="/clusters-at-yale/access/ood/#terminal">terminal</a> command line.</p>
 <p>You may also view the results of getquota from the OnDemand <a href="/clusters-at-yale/access/ood/#user-portal">User Portal</a>, found in the <code>Utilities</code> OOD menu; see the table <code>File System Quota</code> near the top of the resulting webpage.</p>
 <p>Here is an example output of <code>getquota</code>:</p>
-<div class="highlight"><pre><span></span><code>This script shows information about your quotas on grace.
+<p>``` text
+This script shows information about your quotas on grace.
 If you plan to poll this sort of information extensively,
-please contact us for help at research.computing@yale.edu
-
-## Usage Details for support (as of Jan 25 2023 12:00)
-Fileset                User  Usage (GiB) File Count   
----------------------- ----- ---------- -------------
-gibbs:project          ahs3         568       121,786
+please contact us for help at research.computing@yale.edu</p>
+<h2 id="usage-details-for-support-as-of-jan-25-2023-1200">Usage Details for support (as of Jan 25 2023 12:00)</h2>
+<p>Fileset                User  Usage (GiB) File Count   </p>
+<hr />
+<p>gibbs:project          ahs3         568       121,786
 gibbs:project          kln26        435       423,219
 gibbs:project          ms725        233       456,736
 gibbs:project          pl543        427     1,551,959
 gibbs:project          rdb9        1952     1,049,346
-gibbs:project          tl397        605     2,573,824
-----
-gibbs:pi_support       ahs3           0             1
+gibbs:project          tl397        605     2,573,824</p>
+<hr />
+<p>gibbs:pi_support       ahs3           0             1
 gibbs:pi_support       kln26       5886    14,514,143
 gibbs:pi_support       ms725      19651     2,692,158
 gibbs:pi_support       pl543        328       142,936
 gibbs:pi_support       rdb9        1047       165,553
-gibbs:pi_support       tl397        175       118,038
-
-## Quota Summary for support (as of right now [*palmer stats are gathered once a day])
-Fileset                Type    Usage (GiB)  Quota (GiB) File Count    File Limit    Backup    Purged   
----------------------- ------- ------------ ----------- ------------- ------------- --------- ---------
-palmer:home.grace      USR               63         125       216,046       500,000 Yes       No        
-gibbs:project          GRP             3832       10240     3,350,198    10,000,000 No        No        
-palmer:scratch         GRP                0       10240           903    15,000,000 No        60 days        
+gibbs:pi_support       tl397        175       118,038</p>
+<h2 id="quota-summary-for-support-as-of-right-now-palmer-stats-are-gathered-once-a-day">Quota Summary for support (as of right now [*palmer stats are gathered once a day])</h2>
+<p>Fileset                Type    Usage (GiB)  Quota (GiB) File Count    File Limit    Backup    Purged   </p>
+<hr />
+<p>palmer:home.grace      USR               63         125       216,046       500,000 Yes       No      <br />
+gibbs:project          GRP             3832       10240     3,350,198    10,000,000 No        No      <br />
+palmer:scratch         GRP                0       10240           903    15,000,000 No        60 days      <br />
 gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,000 No        No
-</code></pre></div>
+```</p>
 <div class="admonition note">
 <p class="admonition-title">Notes</p>
 </div>
@@ -3064,14 +3091,12 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 <p>The <code>qdirstat</code> and <code>broot</code> programs are intended to be used only very infrequently or for small collections of files, because they can put a heavy load on the cluster storage systems when there are many files to be tallied. If you are dealing with a very large collection of files, please contact us at research.computing@yale.edu. We have specialized tools that minimize the filesystem load for these types of problems.</p>
 </div>
 <p>For QDirStat, start our <a href="/clusters-at-yale/access/ood-remote-desktop/">Remote Desktop OOD app</a>, launch a terminal window, and type:</p>
-<div class="highlight"><pre><span></span><code>module load QDirStat
-qdirstat
-</code></pre></div>
+<p><code>module load QDirStat
+qdirstat</code></p>
 <p>You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.</p>
 <p>For broot, type the following into any terminal:
-<div class="highlight"><pre><span></span><code>module load broot
-broot -w
-</code></pre></div></p>
+<code>module load broot
+broot -w</code></p>
 <h2 id="request-additional-storage">Request Additional Storage</h2>
 <div class="admonition warning">
 <p class="admonition-title">Pause on Additional Storage Allocations</p>
