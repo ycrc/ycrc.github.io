@@ -2879,34 +2879,37 @@
 <h2 id="compress-your-data">Compress Your Data</h2>
 <p>Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or <a href="/resources/online-tutorials">tar</a>, portions of your data for ease of storage and retrieval.
 For example, to create a compressed archive of a directory you can do the following:</p>
-<p>```sh
-tar -cvzf archive-2021-04-26.tar.gz ./data_for_archival</p>
-<p><code>``
-This will create a new file (</code>archive-2021-04-26.tar.gz<code>) which contains all the data from within</code>data_for_archival` and is compressed to minimize storage requirements.
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-cvzf<span class="w"> </span>archive-2021-04-26.tar.gz<span class="w"> </span>./data_for_archival
+</code></pre></div>
+This will create a new file (<code>archive-2021-04-26.tar.gz</code>) which contains all the data from within <code>data_for_archival</code> and is compressed to minimize storage requirements.
 This file can then be transferred to any off-site backup or archive location.</p>
 <h2 id="list-and-extract-data-from-existing-archive">List and Extract Data From Existing Archive</h2>
 <p>You can list the contents of an archive file like this:</p>
-<p><code>sh
-tar -ztvf archive-2021-04-26.tar.gz</code>
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-ztvf<span class="w"> </span>archive-2021-04-26.tar.gz
+</code></pre></div>
 which will print the full list of every file within the archive.
 The clusters also have the <code>lz</code> tool installed that provides a shorter way to list the contents:</p>
-<p><code>sh
-lz archive-2021-04-26.tar.gz</code></p>
+<div class="highlight"><pre><span></span><code>lz<span class="w"> </span>archive-2021-04-26.tar.gz
+</code></pre></div>
 <p>You can then extract a single file from a large tar-file without decompressing the full thing:</p>
-<p><code>sh
-tar -zxvf archive-2021-04-26.tar.gz path/to/file.txt</code>
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-zxvf<span class="w"> </span>archive-2021-04-26.tar.gz<span class="w"> </span>path/to/file.txt
+</code></pre></div>
 There is an alternative syntax that is more legible:</p>
-<p><code>sh
-tar --extract --file=archive-2021-04-26.tar.gz file.txt</code>
+<p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>--extract<span class="w"> </span>--file<span class="o">=</span>archive-2021-04-26.tar.gz<span class="w"> </span>file.txt
+</code></pre></div>
 Either should work fine on the clusters.</p>
 <h2 id="tips-for-sy-archive-tier">Tips for S@Y Archive Tier</h2>
 <p>The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
 <p>To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Just as for the <a href="/data/#storage-yale">S@Y Active Tier</a>, <a href="/data/globus">Globus</a> is used to transfer cluster data to and from S@Y archive storage. Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.</p>
+<p>Just as for the <a href="/data/#storage-yale">S@Y Active Tier</a>, <a href="/data/globus">Globus</a> is used to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY'). Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.</p>
 </div>
-<p>When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>not</strong> use Globus to move or rename files and folders that are already in the archive; <strong>neither should you try this</strong> with the Linux 'mv' command (i.e. within the /SAY folder on the transfer node) <strong>or any other method</strong>. The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them. If you accidentally <strong>do</strong> try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system. If you encounter this or any related issue while working with S@Y archives, <strong>please contact us ASAP</strong> at <a href="mailto:research.support@yale.edu">research.support@yale.edu</a> !</p>
+</div>
+<p>When you write files to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
 <p>However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2933,7 +2936,7 @@ Either should work fine on the clusters.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2026</span>
       
     
   </small>

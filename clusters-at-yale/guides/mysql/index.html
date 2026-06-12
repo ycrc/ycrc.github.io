@@ -2935,103 +2935,127 @@ require admin privileges.  The instructions that follow walk you through the pro
 without any special privileges.  It uses a container created from an existing <a href="https://hub.docker.com">Docker Hub</a> template. If you want to use the original MySQL instead, the process is very similar. Contact the YCRC for assistance.</p>
 <p>All of the following must be done on an allocated compute node.  Do not do this on the login node!</p>
 <h3 id="step-1-create-an-installation-directory-somewhere-and-cd-to-it">Step 1: Create an installation directory somewhere, and cd to it</h3>
-<p><code>mkdir ~/project/mariadb
-cd ~/project/mariadb</code>
+<p><div class="highlight"><pre><span></span><code>mkdir ~/project/mariadb
+cd ~/project/mariadb
+</code></pre></div>
 When working with containers, it is usually helpful to avoid directory "shortcuts" and use the real location of the directory. Since ${HOME}/project is a shortcut, switch to the actual location first:
-<code>cd `readlink -f ${PWD}`</code>
+<div class="highlight"><pre><span></span><code>cd `readlink -f ${PWD}`
+</code></pre></div>
 This will place you in the "actual" location of your project directory, which you can check via the "pwd" command.</p>
 <h3 id="step-2-create-data-directories-for-mariadb">Step 2: Create data directories for MariaDB</h3>
-<p><code>mkdir -p ${PWD}/var/lib/mysql ${PWD}l/run/mariadb</code></p>
+<div class="highlight"><pre><span></span><code>mkdir -p ${PWD}/var/lib/mysql ${PWD}l/run/mariadb
+</code></pre></div>
 <h3 id="step-3-create-a-mariadb-container">Step 3: Create a MariaDB container</h3>
 <p>Generate a local image of the desired release of MariaDB from Docker Hub. You can select the "latest" tag  to get the newest release, but it is usually helpful to know what particular version you are running. In this example we are pulling down a Red Hat 9 (ubi9) image with MariaDB 11.7.2, to closely match with the client tools installed on the clusters (as of May 2026).</p>
-<p><code>apptainer pull docker://mariadb:11.7.2-ubi9</code></p>
+<div class="highlight"><pre><span></span><code>apptainer pull docker://mariadb:11.7.2-ubi9
+</code></pre></div>
 <p>This will create an image named mariadb_11.7.2-ubi9.sif in the current directory. For ease of use, or to allow switching versions, make a short link name:
-<code>ln -s mariadb_11.72.-ubi9.sif mariadb.sif</code></p>
+<div class="highlight"><pre><span></span><code>ln -s mariadb_11.72.-ubi9.sif mariadb.sif
+</code></pre></div></p>
 <h3 id="step-4-start-the-container-and-the-mariadb-server-with-no-initial-root-password">Step 4: Start the container and the MariaDB server, with no initial root password</h3>
-<p><code>apptainer instance run --contain \
+<div class="highlight"><pre><span></span><code>apptainer instance run --contain \
     --bind ${PWD}/var/lib/mysql/:/var/lib/mysql \
     --bind ${PWD}/run/mariadb:/run/mariadb \
     --env MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1 \
-    ./mariadb.sif mariadb-instance</code></p>
+    ./mariadb.sif mariadb-instance
+</code></pre></div>
 <p>To check that it is running:</p>
-<p><code>apptainer instance list</code>
-<code>ps -fu ${USER} | grep mariadbd</code>
+<p><div class="highlight"><pre><span></span><code>apptainer instance list
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ps -fu ${USER} | grep mariadbd
+</code></pre></div>
 There should be an instance listed, and "mariadbd" should be running on the node.</p>
 <h3 id="step-5-enter-mariadb-in-the-running-container">Step 5: Enter MariaDB in the running container</h3>
-<p><code>apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -u root</code>
-```
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
+<p><div class="highlight"><pre><span></span><code>apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -u root
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 6
-Server version: 11.7.2-MariaDB MariaDB Server</p>
-<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
-<p>Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</p>
-<p>MariaDB [(none)]&gt;
-<code>Success!  The server is working!   You will now probably want to set a password for the server root account:</code>
-MariaDB [(none)]&gt; ALTER USER 'root'@'%' IDENTIFIED BY 'my-secret-pw';
-Query OK, 0 rows affected (0.002 sec)</p>
-<p>MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.001 sec)</p>
-<p>MariaDB [(none)]&gt; exit
-<code>Check that you can now connect with the password you set.</code>
-apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -h 127.0.0.1 -u root -p
-<code></code>
-Enter password: 
+Server version: 11.7.2-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt;
+</code></pre></div>
+Success!  The server is working!   You will now probably want to set a password for the server root account:
+<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;my-secret-pw&#39;;
+Query OK, 0 rows affected (0.002 sec)
+
+MariaDB [(none)]&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [(none)]&gt; exit
+</code></pre></div>
+Check that you can now connect with the password you set.
+<div class="highlight"><pre><span></span><code>apptainer exec --contain --bind ${PWD}/run:/run/mariadb instance://mariadb-instance mariadb -h 127.0.0.1 -u root -p
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Enter password: 
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
-Server version: 11.7.2-MariaDB MariaDB Server</p>
-<p>Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.</p>
-<p>Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</p>
-<p>MariaDB [(none)]&gt; 
-```
+Server version: 11.7.2-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; 
+</code></pre></div>
 You can also specify the password on the command line (e.g., "-pmy-secret-pw").</p>
 <h3 id="step-6-add-a-database-user-and-permit-it-to-login-remotely">Step 6: Add a database user and permit it to login remotely</h3>
 <p>Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. This is one way to do that from the container.</p>
 <p>You should probably substitute your name for elmerfudd and a better password for mypasswd!</p>
-<p>```
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION;
-Query OK, 0 rows affected (0.002 sec)</p>
-<p>MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.001 sec)</p>
-<p>MariaDB [(none)]&gt; 
-```</p>
+<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION;
+Query OK, 0 rows affected (0.002 sec)
+
+MariaDB [(none)]&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [(none)]&gt; 
+</code></pre></div>
 <p>Type exit to leave the container.  From that compute node, but outside the container, try connecting with:
-<code>module load MariaDB/11.7.0-GCC-13.3.0
-mysql -u elmerfudd -h 127.0.0.1 -p</code></p>
+<div class="highlight"><pre><span></span><code>module load MariaDB/11.7.0-GCC-13.3.0
+mysql -u elmerfudd -h 127.0.0.1 -p
+</code></pre></div></p>
 <p>Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g.r205u23n02 ) instead of 127.0.0.1
-<code>module load MariaDB/11.7.0-GCC-13.3.0
-mysql -u elmerfudd -h r205u23n02 -p</code></p>
+<div class="highlight"><pre><span></span><code>module load MariaDB/11.7.0-GCC-13.3.0
+mysql -u elmerfudd -h r205u23n02 -p
+</code></pre></div></p>
 <p>While connected, you can try actually using the server in the usual way to create a database and table:
-```
-MySQL [(none)]&gt; create database rob;
-Query OK, 1 row affected (0.00 sec)</p>
-<p>MySQL [(none)]&gt; use rob
+<div class="highlight"><pre><span></span><code>MySQL [(none)]&gt; create database rob;
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [(none)]&gt; use rob
 Database changed
 MySQL [rob]&gt; create table users (name VARCHAR(20), id INT);
-Query OK, 0 rows affected (0.11 sec)</p>
-<p>...
-```</p>
+Query OK, 0 rows affected (0.11 sec)
+
+...
+</code></pre></div></p>
 <p>Success!  You've earned a reward of your choice!</p>
 <h3 id="step-7-shut-the-container-down">Step 7: Shut the container down.</h3>
 <p>In the compute node session where you initially launched the instance:
-<code>apptainer instance stop mariadb-instance</code></p>
+<div class="highlight"><pre><span></span><code>apptainer instance stop mariadb-instance
+</code></pre></div></p>
 <p>Now that everything is installed, the next time you want to start the server, you'll only need to do step 5 (running the container instance). If you set a root password, you can omit the --env setting for empty root password.</p>
 <h3 id="step-8-set-up-default-login-credentials-optional">Step 8: Set up default login credentials (optional)</h3>
 <p>For connections from outside the container, you can place the credentials for the account you are using into the file ${HOME}/.my.cnf
-<code>[client]
+<div class="highlight"><pre><span></span><code>[client]
 user=elmerfudd
-password='mypasswd'</code>
+password=&#39;mypasswd&#39;
+</code></pre></div>
 Then any invocations of mysql / mariadb from outside the container to automatically connect with elmerfudd's username and password.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <p>Note that you'll run into a problem if two mysql instances are run on the same compute node, since by default they each
 try to use port 3306.  The simplest solution is to specify a non-standard port in your .my.cnf file:</p>
-<p>```
-[mariadbd]
-port=3310</p>
-<p>[client]
+<div class="highlight"><pre><span></span><code>[mariadbd]
+port=3310
+
+[client]
 port=3310
 user=elmerfudd
-password='mypasswd'
-```</p>
+password=&#39;mypasswd&#39;
+</code></pre></div>
                 
                   
                     

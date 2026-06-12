@@ -2885,14 +2885,17 @@
 <h3 id="fairshare">Fairshare</h3>
 <p>To ensure well-balanced access to cluster resources, we institute a fairshare system on our clusters. In practice this means jobs have a priority score that dictates when it can be run in relation to other jobs. This score is affected by the amount of CPU-equivalent hours used by a group in the past few weeks. The number of CPU-equivalents allocated to a job is defined as the larger of (a) the number of requested cores and (b) the total amount of requested memory divided by the default memory per core (usually 5G/core). If a group has used a large amount of CPU-equivalent hours, their jobs are given a lower priority score and therefore will take longer to start if the cluster is busy. Regardless of a job's prority, the scheduler still considers all jobs for backfill (see below).</p>
 <p>To see all pending jobs sorted by priority (jobs with higher priority at the top), use the following <code>squeue</code> command:</p>
-<p><code>squeue --sort=-p -t PD -p &lt;partition_name&gt;</code></p>
+<div class="highlight"><pre><span></span><code>squeue --sort=-p -t PD -p &lt;partition_name&gt;
+</code></pre></div>
 <p>To monitor usage of members of your group, run the <code>sshare</code> command:</p>
-<p><code>sshare -a -A &lt;group&gt;</code></p>
+<div class="highlight"><pre><span></span><code>sshare -a -A &lt;group&gt;
+</code></pre></div>
 <p>Note: Resources used on private partitions do not count affect fairshare.</p>
 <p>Similarly, resources used in the scavenge partition cost 10% of comparable resources in the other partitions.</p>
 <h3 id="length-of-time-in-queue">Length of Time in Queue</h3>
 <p>In addition to fairshare, any pending job will accrue priority over time, which can help overcome small fairshare penalties. To see the factors affecting your job's priority, run the following <code>sprio</code> command:</p>
-<p><code>sprio -j &lt;job_id&gt;</code></p>
+<div class="highlight"><pre><span></span><code>sprio -j &lt;job_id&gt;
+</code></pre></div>
 <h2 id="concurrent-usage-limits">Concurrent Usage Limits</h2>
 <p>In order to prevent individual users or groups from dominating public partitions on our clusters, all public partitions have concurrent usage limits.
 For example, if a user reaches their "Maximum CPUs per user" limit, additional jobs will remain pending with status "QOSMaxCpuPerUserLimit"  until some of their currently running jobs complete, thus reserving resources for other users.

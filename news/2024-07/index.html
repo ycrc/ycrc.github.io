@@ -2817,10 +2817,11 @@
 <p>"MATLAB (Web)" is now available as an Open OnDemand app. A MATLAB session is connected directly to your web browser tab, rather than launched via a Remote Desktop session as with the traditional MATLAB app. This allows more of the requested resources to be dedicated to MATLAB itself.  Page through the full App list in Open OnDemand to launch. (Note that this is a work in progress that might not yet have all the functionality of a regular MATLAB session.)</p>
 <h4 id="fairshare-weights-adjustment">FairShare Weights Adjustment</h4>
 <p>Periodically we adjust the relative impact of resource allocations on a group’s FairShare (the way that the scheduler determines which job gets scheduled next). We have adjusted the “service unit” weights for memory and GPUs to better match their cost to acquire and maintain:</p>
-<p><code>CPU: 1 SU
+<div class="highlight"><pre><span></span><code>CPU: 1 SU
 Memory: 0.067 (15G/SU)
 A100 GPU: 100 SU
-non-A100 GPU: 15 SU</code></p>
+non-A100 GPU: 15 SU
+</code></pre></div>
 <p>For more information about FairShare and how we use it to ensure equity in scheduling, please visit <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/fairshare/">our docs page</a>.</p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>

@@ -2481,6 +2481,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-git" class="md-nav__link">
+    Configuring git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-remote-repositories-on-github" class="md-nav__link">
+    Working with remote repositories on GitHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with remote repositories on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-a-repository-on-github" class="md-nav__link">
+    Hosting a Repository on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#educational-github" class="md-nav__link">
+    Educational GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-links" class="md-nav__link">
+    Resources and links
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2823,6 +2871,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-git" class="md-nav__link">
+    Configuring git
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-remote-repositories-on-github" class="md-nav__link">
+    Working with remote repositories on GitHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with remote repositories on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-a-repository-on-github" class="md-nav__link">
+    Hosting a Repository on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#educational-github" class="md-nav__link">
+    Educational GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-links" class="md-nav__link">
+    Resources and links
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2858,41 +2954,41 @@ This helps prevent repetative naming or <code>project_final_final2_v3.txt</code>
 It acts as a record of all the edits, along with the ability to compare the current version to previous commits. </p>
 <h2 id="how-to-create-a-git-repository">How to create a <code>git</code> repository</h2>
 <p>You can create a repository at any time by running the following commands:</p>
-<p>```sh
-cd /path/to/your/project</p>
-<h1 id="initialize-the-repository">initialize the repository</h1>
-<p>git init</p>
-<h1 id="add-files-to-be-tracked">add files to be tracked</h1>
-<p>git add main.py input.txt </p>
-<h1 id="commit-the-files-to-the-repository-creating-the-first-snapshot">commit the files to the repository, creating the first snapshot</h1>
-<p>git commit -m "Initial Commit"
-```</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/project
+
+<span class="c1"># initialize the repository</span>
+git<span class="w"> </span>init
+
+<span class="c1"># add files to be tracked</span>
+git<span class="w"> </span>add<span class="w"> </span>main.py<span class="w"> </span>input.txt<span class="w"> </span>
+
+<span class="c1"># commit the files to the repository, creating the first snapshot</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial Commit&quot;</span>
+</code></pre></div>
 <p>This sets up a repository containing a single snapshot of the project's two files.
 We can then edit these files and commit the changes into a new snapshot:</p>
-<p>```sh</p>
-<h1 id="edit-files">edit files</h1>
-<p>echo "changed this file" &gt;&gt; input.txt
-$ git status
-On branch main
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)</p>
-<div class="codehilite"><pre><span></span><code>modified:   input.txt
-</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># edit files</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;changed this file&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>input.txt
+$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>main
+Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
 
-<p>no changes added to commit (use "git add" and/or "git commit -a")
-<code>``
-Finally, we can stage</code>input.txt` and then commit the changes:</p>
-<p>```sh</p>
-<h1 id="stage-changes-for-commit">stage changes for commit</h1>
-<p>git add input.txt
-git commit -m "modified input file"</p>
-<p>```</p>
+<span class="w">    </span>modified:<span class="w">   </span>input.txt
+
+no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</code></pre></div>
+Finally, we can stage <code>input.txt</code> and then commit the changes:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># stage changes for commit</span>
+git<span class="w"> </span>add<span class="w"> </span>input.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;modified input file&quot;</span>
+</code></pre></div>
 <h2 id="configuring-git">Configuring <code>git</code></h2>
 <p>It's very helpful to configure your email and username with <code>git</code>:</p>
-<p><code>sh
-git config --global user.name "Your Name"
-git config --global user.email "your.email@yale.edu"</code>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@yale.edu&quot;</span>
+</code></pre></div>
 This will then tag your changes with your name and email when collaborating with people on a larger 
 project. </p>
 <h2 id="working-with-remote-repositories-on-github">Working with remote repositories on GitHub</h2>
@@ -2925,26 +3021,25 @@ choose either public or private access.</p>
 </div>
 <p>In the resulting web page, there will be a blue box titled <code>Quick setup - if you've done this kind of thing before</code>. In this box, click on <code>SSH</code> in the 'HTTPS|SSH' selection widget to ensure that your GitHub SSH connection is set up properly.</p>
 <p>Then you can follow the instructions on the GitHub webpage to connect your local repository to the GitHub repo. For example, if you named the repository <code>my_new_repo</code> and your directory in the terminal is within the local repository:</p>
-<p><code>sh
-git remote add origin git@github.com:user_name/my_new_repo.git
-git push -u origin main</code></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:user_name/my_new_repo.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
 <p>Alternatively, a repository can be created on GitHub and then cloned to your local machine:
-```sh
-$ git clone git@github.com:user_name/my_new_repo.git
-Cloning into 'my_new_repo'...
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Receiving objects: 100% (3/3), done.</p>
-<p><code>``
-This creates a new directory (</code>my_new_repo`) where you can place all your code.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:user_name/my_new_repo.git
+Cloning<span class="w"> </span>into<span class="w"> </span><span class="s1">&#39;my_new_repo&#39;</span>...
+remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Counting<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+remote:<span class="w"> </span>Total<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>reused<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>delta<span class="w"> </span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span>pack-reused<span class="w"> </span><span class="m">0</span>
+Receiving<span class="w"> </span>objects:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>,<span class="w"> </span><span class="k">done</span>.
+</code></pre></div>
+This creates a new directory (<code>my_new_repo</code>) where you can place all your code.</p>
 <p>After making any changes and commiting them to the local repository, you can "push" them to a remote repository:</p>
-<p>```sh</p>
-<h1 id="commit-to-local-repository">commit to local repository</h1>
-<p>git commit -m "new changes"</p>
-<h1 id="push-commits-to-remote-repository-on-github">push commits to remote repository on GitHub</h1>
-<p>git push</p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># commit to local repository</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;new changes&quot;</span>
+
+<span class="c1"># push commits to remote repository on GitHub</span>
+git<span class="w"> </span>push
+</code></pre></div>
 <h2 id="educational-github">Educational GitHub</h2>
 <p>All students and research staff are able to request free Educational discounts from GitHub. 
 This provides a "Pro" account for free, including unlimited private repositories. </p>

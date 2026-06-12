@@ -2827,15 +2827,16 @@
 </li>
 <li>
 <p><strong>Request a YCRC cryoSPARC Port Number</strong> : Start a terminal shell on the desired cluster (login node is fine, no need to use a compute node) and paste the following command:
-    <code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh</code></p>
+    <div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_get_cryosparc_port.sh    
+</code></pre></div></p>
 <ul>
 <li>A message will be printed, confirming that an email request has been sent to the YCRC. We will do the assignment by the next working day, and you will be automatically notified by email when this is completed.</li>
 </ul>
 </li>
 <li>
 <p><strong>Run the Setup/Install Script</strong> : Once you have received your cryoSPARC license and YCRC port number, run the installer by pasting the following command in a cluster terminal (again, login node is fine):</p>
-<p><code>bash
-/apps/services/cryosparc/ycrc_prepare_cryosparc.sh</code></p>
+<div class="highlight"><pre><span></span><code>/apps/services/cryosparc/ycrc_prepare_cryosparc.sh
+</code></pre></div>
 <ul>
 <li>
 <p>If the cryoSPARC software is not already installed in your HPC account, you will be prompted for your cryoSPARC license. A pair of batch jobs will then be launched in the background, and helpful info printed. You will receive confirmation emails upon completion of the jobs.</p>
@@ -2858,7 +2859,8 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default, <code>ycrc_launch_cryosparc.sh</code> <strong>sets a 6-hour time limit for your workflow</strong> and runs the main cryoSPARC process on the <code>devel</code> partition. <strong>To customize for longer workflows</strong>, add '--partition' and '--time' slurm options to the command line when running this script. However,  please <strong>do not request GPU's</strong>- these are only used in batch jobs <em>spawned</em> by the main cryoSPARC process. Example:
-<code>ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu</code>
+<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu
+</code></pre></div>
 (note that email notifications are convenient for longer jobs, since they might not start right away)</p>
 </div>
 <p>Choose between the following two methods to connect to the cryoSPARC GUI:</p>
@@ -2915,11 +2917,11 @@
 <ul>
 <li>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</li>
 </ul>
-<p><code>bash
-scontrol update JobId=1234567 TimeLimit=6:00:00</code></p>
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+</code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<p><code>bash
-scontrol update JobId=1234567 Partition=priority_gpu</code></p>
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
+</code></pre></div>
 </li>
 </ol>
 <h2 id="add-topaz">Add Topaz</h2>
@@ -2964,12 +2966,12 @@ convolutional neural networks. It can optionally be used from inside cryoSPARC u
 <ol>
 <li>
 <p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-<p>``` bash
-cd $(dirname "$(dirname "$(dirname "$(which cryosparcm)")")")
-mv cryosparc_database cryosparc_database_corrupt</p>
-<h1 id="now-substitute-ie-snapshot_2026-06-02_17_00_00_utc-for-in-the-command-below">Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for <good_backup_date> in the command below:</h1>
-<p>cp -a "../.snapshot/<good_backup_date>/cryosparc/cryosparc_database" .
-```</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
+
+<span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_backup_date&gt; in the command below:</span>
+cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
+</code></pre></div>
 </li>
 <li>
 <p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:</p>
@@ -2988,10 +2990,9 @@ mv cryosparc_database cryosparc_database_corrupt</p>
 <li>
 <p><strong>Leftover lock files</strong> : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with <code>cryosparcm status</code>, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with <code>cryosparcm start</code>. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
 <p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<p>``` bash</p>
-<h1 id="source-dirname-dirname-which-cryosparcmconfigsh">source $(dirname "$(dirname "$(which cryosparcm)")")/config.sh</h1>
-<h1 id="rm-f-cryosparc_db_pathwiredtigerlock-cryosparc_db_pathmongodlock">rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># source $(dirname &quot;$(dirname &quot;$(which cryosparcm)&quot;)&quot;)/config.sh</span>
+<span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
+</code></pre></div>
 </li>
 </ol>
                 

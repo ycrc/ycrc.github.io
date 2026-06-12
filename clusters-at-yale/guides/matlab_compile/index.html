@@ -2781,31 +2781,34 @@
 <h2 id="compile-matlab">Compile MATLAB</h2>
 <p>When compiling MATLAB code, the compilation process generates several additional files. To maintain organization in your current directory, it is recommended to create a new directory specifically for the compiled files.</p>
 <p>For example, to compile function1.m, function2.m, and function3.m, where function1.m is the main MATLAB function you call: </p>
-<p><code>mkdir compiled_scripts
+<div class="highlight"><pre><span></span><code>mkdir compiled_scripts
 cd compiled_scripts
 salloc 
 module load MATLAB/2022b
-mcc -m function1 function2 function3</code></p>
+mcc -m function1 function2 function3
+</code></pre></div>
 <p>This will generate multiple files, including the executable named  <code>function1</code>. Please note that there are <a href="https://www.mathworks.com/help/compiler/unsupported-functions.html">functions that are not supported by MATLAB compiler</a>.</p>
 <h2 id="run-the-executable">Run the Executable</h2>
 <p>Load the MATLAB Runtime and GCCcore modules to run the executable. Always ensure that you load the same version of the MATLAB Runtime as the version of MATLAB you used for compilation.</p>
-<p><code>module load MCR/R2022b.5 GCCCore 
-./function1 &lt;argument_list&gt;</code></p>
+<div class="highlight"><pre><span></span><code>module load MCR/R2022b.5 GCCCore 
+./function1 &lt;argument_list&gt; 
+</code></pre></div>
 <p>The argument list is the list of input parameters for function1.m.</p>
 <h2 id="job-arrays">Job Arrays</h2>
 <p>If you are running a large number of jobs with job arrays, we recommend setting up a unique directory for each job to use as a cache location. You can use the /tmp space on the compute node. Here is an example of a batch script:</p>
-<p>```</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="sbatch-job-name-myjob">SBATCH --job-name myjob</h1>
-<h1 id="sbatch-array-1-100">SBATCH --array 1-100</h1>
-<h1 id="sbatch-mem-5g">SBATCH --mem 5G</h1>
-<h1 id="sbatch-t-10000">SBATCH -t 1:00:00</h1>
-<p>mcr_cache_root=/tmp/$USER/MCR_CACHE_ROOT_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name myjob
+#SBATCH --array 1-100
+#SBATCH --mem 5G
+#SBATCH -t 1:00:00
+
+mcr_cache_root=/tmp/$USER/MCR_CACHE_ROOT_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}
 mkdir -p $mcr_cache_root
-export MCR_CACHE_ROOT=$mcr_cache_root</p>
-<p>module load MCR/2022b.5 GCCcore 
+export MCR_CACHE_ROOT=$mcr_cache_root
+
+module load MCR/2022b.5 GCCcore 
 ./function1.sh ${SLURM_ARRAY_TASK_ID}
-```</p>
+</code></pre></div>
                 
                   
                     

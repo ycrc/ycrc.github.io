@@ -1332,8 +1332,70 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#priority_gpu-partitions" class="md-nav__link">
+    priority_gpu Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fairshare-and-concurrent-utilization-limits" class="md-nav__link">
+    Fairshare and Concurrent Utilization Limits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-structure" class="md-nav__link">
+    Rate Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Rate Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fy27-rate-service-units" class="md-nav__link">
+    FY27 Rate &amp; Service Units**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fy24-fy26-rate-service-units" class="md-nav__link">
+    FY24-FY26 Rate &amp; Service Units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annual-usage-limit" class="md-nav__link">
+    Annual Usage Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-charges-and-review-usage" class="md-nav__link">
+    Estimate Charges and Review Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-upcoming-improvements" class="md-nav__link">
+    Other Upcoming Improvements
+  </a>
   
 </li>
       
@@ -2858,8 +2920,70 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#priority_gpu-partitions" class="md-nav__link">
+    priority_gpu Partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fairshare-and-concurrent-utilization-limits" class="md-nav__link">
+    Fairshare and Concurrent Utilization Limits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-structure" class="md-nav__link">
+    Rate Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Rate Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fy27-rate-service-units" class="md-nav__link">
+    FY27 Rate &amp; Service Units**
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fy24-fy26-rate-service-units" class="md-nav__link">
+    FY24-FY26 Rate &amp; Service Units
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annual-usage-limit" class="md-nav__link">
+    Annual Usage Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate-charges-and-review-usage" class="md-nav__link">
+    Estimate Charges and Review Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-upcoming-improvements" class="md-nav__link">
+    Other Upcoming Improvements
+  </a>
   
 </li>
       
@@ -2946,17 +3070,15 @@ These group account names take the form <code>prio_groupname</code>, where <code
 PIs can elect to have multiple Slurm group accounts for different projects, each with their own COA, for direct connection between certain computation and the associated grant or other source of funds.
 In these instances the additional Slurm group accounts will take the form <code>prio_groupname_projectid</code>.</p>
 <p>In either instance, the Priority Tier Slurm group account <em>must</em> be specified in the job submission script using the <code>-A</code> flag</p>
-<p>```</p>
-<h1 id="sbatch-a-prio_groupname">SBATCH -A prio_groupname</h1>
-<h3 id="or">or</h3>
-<h1 id="sbatch-a-prio_groupname_projectid">SBATCH -A prio_groupname_projectid</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>#SBATCH -A prio_groupname
+### or
+#SBATCH -A prio_groupname_projectid
+</code></pre></div>
 <p>Only <code>prio_</code> groups can access the Priority Tier partitions and they cannot be used in the Standard Tier partitions (see below section on Fairshare for more information on why this is). </p>
 <h3 id="priority_gpu-partitions"><code>priority_gpu</code> Partitions</h3>
 <p>To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, we strongly recommend being specific about the GPU model if any job submissions.</p>
-<p>```</p>
-<h1 id="sbatch-gpusa1001">SBATCH --gpus=a100:1</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --gpus=a100:1
+</code></pre></div>
 <h3 id="fairshare-and-concurrent-utilization-limits">Fairshare and Concurrent Utilization Limits</h3>
 <p>All YCRC clusters are governed by a set of "fairness" control. 
 "Fairshare” is an algorithm that controls moment-to-moment priority of a job based on recent use of the cluster. 
