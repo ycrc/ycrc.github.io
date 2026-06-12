@@ -53,9 +53,12 @@ The archive tier of Storage@Yale is a cloud-based system. It provides an archive
 To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.
 
 !!!note
-    Just as for the [S@Y Active Tier](/data/#storage-yale), [Globus](/data/globus) is used to transfer cluster data to and from S@Y archive storage. Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.
+    Just as for the [S@Y Active Tier](/data/#storage-yale), [Globus](/data/globus) is used to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY'). Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.
 
-When you write to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
+!!!warning
+    Do **not** use Globus to move or rename files and folders that are already in the archive; **neither should you try this** with the Linux 'mv' command (i.e. within the /SAY folder on the transfer node) **or any other method**. The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them. If you accidentally **do** try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system. If you encounter this or any related issue while working with S@Y archives, **please contact us ASAP** at [research.support@yale.edu](mailto:research.support@yale.edu) !
+    
+When you write files to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
 
 However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.
 
