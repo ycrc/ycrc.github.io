@@ -2,24 +2,24 @@
 
 The YCRC maintains and supports a number of high performance computing systems for the Yale research community. Our high performance computing systems are named after [notable members of the Yale community](https://research.computing.yale.edu/about/hpc-resources).
 
-Each YCRC cluster undergoes regular scheduled maintenance twice a year, see [our maintenance schedule](/clusters/maintenance) for more details.
+Each YCRC cluster undergoes regular scheduled maintenance, see [our maintenance schedule](/clusters/maintenance) for more details.
 
 For proposals, we provide [a description of our facilities, equipment, and other resources for HPC and research computing](https://docs.google.com/document/d/1TRoXlMd8muiFP8NUp6g00tl0QAV5P8KScnC0vBv6oBA).
 
 ## Compute
 
-We maintain and support three Red Hat Linux compute clusters, listed below. Please click on cluster names for more information. 
+We maintain and support Linux compute clusters, listed below. Please click on cluster names for more information. 
 
 
-| Cluster Name        | Approx. Core Count | Approx. Node Count | Login Address<img width=200/> | Purpose                                                            |
+| Cluster Name        | Approx. Core Count | Approx. GPU Count [High-End/Midrange] | Login Address<img width=200/> | Purpose                                                            |
 |---------------------|--------------------|---------------------|-------------------------------|-------------------------------------------------------------------|
-| [Bouchet](bouchet)  | 16,000             | 230                 | `bouchet.ycrc.yale.edu`       | all research with low-risk data, including tightly coupled (InfiniBand)   |
-| [Hopper](hopper)    | 6,000              | 100                 | ---                           | NIST 800-171, HIPAA and other sensitive data |
-| [AICR](aicr)        | 7,000              | 50                  | Early Access Spring 2026      | Large-scale AI/ML workloads   |
-| [McCleary](mccleary)| 13,000             | 340                 | `mccleary.ycrc.yale.edu`      | [YCGA](http://ycga.yale.edu/)           |
-| [Milgram](milgram)  | 2,000              | 50                  | `milgram.ycrc.yale.edu`       | unregulated sensitive data                                  |
-| [Misha](misha)      | 2,000              | 40                  | `misha.ycrc.yale.edu`         | [Wu Tsai Institute](http://wti.yale.edu)                          |
-| [Grace](grace)      | 25,000             | 570                 | `grace.ycrc.yale.edu`         | decommissioning in 2026--not accepting new groups         |
+| [Bouchet](bouchet)  | 16,000             | 130/140                 | `bouchet.ycrc.yale.edu`       | all research with low-risk data, including tightly coupled (InfiniBand)   |
+| [Hopper](hopper)    | 6,000              | 100/120                | ---                           | NIST 800-171, HIPAA and other sensitive data |
+| [AICR](aicr)        | 7,000              | 250/150            | Early Access Spring 2026      | Large-scale AI/ML workloads   |
+| [McCleary](mccleary)| 13,000             | -/275                 | `mccleary.ycrc.yale.edu`      | [YCGA](http://ycga.yale.edu/)           |
+| [Milgram](milgram)  | 2,000              | 12/44                 | `milgram.ycrc.yale.edu`       | unregulated sensitive data                                  |
+| [Misha](misha)      | 2,000              | 72/60                 | `misha.ycrc.yale.edu`         | [Wu Tsai Institute](http://wti.yale.edu)                          |
+| [Grace](grace)      | 25,000             | -/50                 | `grace.ycrc.yale.edu`         | decommissioning in 2026--not accepting new groups         |
 
 
 ## Storage
