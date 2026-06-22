@@ -19,8 +19,8 @@
     |Maximum job time limit|`1-00:00:00`|
     |Maximum CPUs per group|`2000`|
     |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`768`|
-    |Maximum memory per user|`11520G`|
+    |Maximum CPUs per user|`1000`|
+    |Maximum memory per user|`15000G`|
 
     **Available Compute Nodes**
 
@@ -28,39 +28,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |84|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-
-=== "day_amd"
-
-    Use the day partition for most batch jobs. This is the default if you don't specify one with `--partition`.
-
-    **Request Defaults**
-
-    Unless specified, your jobs will run with the following options to `salloc` and `sbatch` options for this partition.
-
-    ``` text
-    --time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
-    ```
-
-    **Job Limits**
-
-    Jobs submitted to the day_amd partition are subject to the following limits:
-
-    |Limit|Value|
-    |---|---|
-    |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`2000`|
-    |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`768`|
-    |Maximum memory per user|`11520G`|
-
-    **Available Compute Nodes**
-
-    Requests for `--cpus-per-task` and `--mem` can't exceed what is available on a single compute node.
-
-    |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
-    |---|---|---|---|---|
-    |26|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
+    |12|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
+    |6|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
+    |72|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "devel"
 
@@ -91,6 +61,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
+    |1|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
     |4|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "week"
@@ -114,8 +85,8 @@
     |Maximum job time limit|`7-00:00:00`|
     |Maximum CPUs per group|`128`|
     |Maximum memory per group|`2T`|
-    |Maximum CPUs per user|`64`|
-    |Maximum memory per user|`1T`|
+    |Maximum CPUs per user|`96`|
+    |Maximum memory per user|`1.50T`|
 
     **Available Compute Nodes**
 
@@ -123,7 +94,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |7|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |14|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
 
 === "gpu"
 
@@ -223,7 +194,7 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |9|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
+    |7|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
 
 === "gpu_b200"
 
@@ -281,7 +252,7 @@
     |Maximum job time limit|`06:00:00`|
     |Maximum CPUs per user|`12`|
     |Maximum GPUs per user|`2`|
-    |Maximum memory per user|`120G`|
+    |Maximum memory per user|`256G`|
     |Maximum running jobs per user|`1`|
     |Maximum submitted jobs per user|`1`|
 
@@ -291,6 +262,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |1|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |1|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |1|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |3|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
 
@@ -354,6 +327,7 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |60|cpugen:emeraldrapids|64|487|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |20|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "scavenge"
 
@@ -383,12 +357,16 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |7|cpugen:turin|192|1487||||cpugen:turin, cpumodel:9655, common:yes|
+    |26|cpugen:turin|128|2251||||cpugen:turin, cpumodel:9575f, common:yes|
+    |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
+    |60|cpugen:emeraldrapids|64|487||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
     |96|cpugen:emeraldrapids|64|990||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |4|cpugen:emeraldrapids|64|4014||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-    |60|cpugen:emeraldrapids|64|487||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "scavenge_gpu"
 
@@ -418,9 +396,11 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
+    |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
+    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
