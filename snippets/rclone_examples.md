@@ -14,16 +14,16 @@
     Enter a string value. Press Enter for the default ("").
     Choose a number from below, or type in your own value
      1 / 1Fichier
-       \ "fichier"
-     2 / Alias for an existing remote
-       \ "alias"
+       \ (fichier)
+     2 / Akamai NetStorage
+       \ (netstorage)
     [...]
-    15 / Google Drive
-       \ "drive"
+    24 / Google Drive
+       \ (drive)
     [...]
-    42 / seafile
-       \ "seafile"
-    Storage> 15
+    42 / Microsoft OneDrive
+       \ (onedrive)
+    Storage> 24
     ** See help for drive backend at: https://rclone.org/drive/ **
     
     Google Application Client Id
