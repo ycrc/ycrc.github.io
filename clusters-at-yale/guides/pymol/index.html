@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/pymol/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2831,11 +2831,11 @@
 <p class="admonition-title">Note</p>
 <p>When the installer asks to automatically initialize conda, <strong>respond yes to the 'Proceed with initialization?' prompt. <em>This is not the default!</em> </strong></p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Downloads                   <span class="c1"># or wherever the downloaded file is</span>
-bash Miniforge3-Darwin-arm64.sh  <span class="c1"># substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.</span>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Downloads<span class="w">                   </span><span class="c1"># or wherever the downloaded file is</span>
+bash<span class="w"> </span>Miniforge3-Darwin-arm64.sh<span class="w">  </span><span class="c1"># substitute as appropriate: Miniforge3-Linux-x86_64.sh, etc.</span>
 
 <span class="c1"># Prevent conda from affecting default Python settings in your terminal windows:</span>
-~/miniforge3/bin/conda config --set auto_activate_base <span class="nb">false</span>
+~/miniforge3/bin/conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
 </code></pre></div>
 </li>
 <li>
@@ -2854,14 +2854,14 @@ bash Miniforge3-Darwin-arm64.sh  <span class="c1"># substitute as appropriate: M
 <ul>
 <li>
 <p>Linux or Windows:
-<div class="highlight"><pre><span></span><code>conda create -n pymol -c conda-forge -c schrodinger pymol-open-source
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pymol<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>schrodinger<span class="w"> </span>pymol-open-source
 </code></pre></div></p>
 </li>
 <li>
 <p>MacOS ONLY:
-<div class="highlight"><pre><span></span><code>conda create --platform osx-64 -n pymol
-conda activate pymol
-conda install -c conda-forge -c schrodinger pymol-open-source
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--platform<span class="w"> </span>osx-64<span class="w"> </span>-n<span class="w"> </span>pymol
+conda<span class="w"> </span>activate<span class="w"> </span>pymol
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>schrodinger<span class="w"> </span>pymol-open-source
 </code></pre></div></p>
 </li>
 </ul>
