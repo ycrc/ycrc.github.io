@@ -29,7 +29,7 @@ On computing nodes there is a fast SSD mounted at `/tmp`. You can use this as a 
 
 Many Cryo-EM applications can make use of GPUs as co-processors. In order to use a GPU on YCRC clusters you must allocate a job on a partition with GPUs available and explicitly request GPU(s). Make sure to familiarize yourself with our documentation on [scheduling jobs](/clusters-at-yale/job-scheduling/) and [requesting specific resources](/clusters-at-yale/job-scheduling/resource-requests/).
 
-In addition to public [partitions](/clusters/mccleary/#public-partitions) that give you access to GPUs, there are `pi_cryoem` and `pi_tomo` partitions which are limited to users of the Cryo-EM resources on campus. Please coordinate with the staff from West Campus and CCMI ([See here for contact info](https://cryoem.yale.edu/contact)) for access.
+In addition to public [partitions](/clusters/mccleary/#public-partitions) that give you access to GPUs, there are `pi_cryoem` and `pi_tomography` partitions which are limited to users of the Cryo-EM resources on campus.  Please coordinate with the YCR staff ([see here for contact info](https://research.yale.edu/cores/cryoem/gpu-nodes)) for access.
 
 ## Software
 
