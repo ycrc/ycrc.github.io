@@ -3289,9 +3289,14 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ds_notebook<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>notebook
 
-<span class="c1">####load environment into OOD jupyter notebook</span>
 module<span class="w"> </span>reset
+
+<span class="c1"># Finally, you must do these two steps to add your environment to the OOD Jupyter miniconda menu:</span>
+<span class="c1"># 1. Run the update script</span>
 ycrc_conda_env.sh<span class="w"> </span>update
+
+<span class="c1"># 2. Now refresh the OOD Jupyter menu by clicking:</span>
+<span class="c1">#         Develop -&gt; Restart Web Server</span>
 </code></pre></div>
 <h2 id="use-your-environment">Use Your Environment</h2>
 <p>To use the applications in your environment, run the following, on a compute node:</p>
@@ -3497,7 +3502,7 @@ FileNotFoundError:<span class="w"> </span><span class="o">[</span>Errno<span cla
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2026</span>
       
     
   </small>

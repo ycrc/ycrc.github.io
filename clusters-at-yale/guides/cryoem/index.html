@@ -2447,6 +2447,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transferring-data-from-the-microscopes" class="md-nav__link">
+    Transferring data from the microscopes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#storage" class="md-nav__link">
     Storage
   </a>
@@ -2877,6 +2884,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#transferring-data-from-the-microscopes" class="md-nav__link">
+    Transferring data from the microscopes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#storage" class="md-nav__link">
     Storage
   </a>
@@ -2989,7 +3003,20 @@
                 
                 
                 <h1 id="cryogenic-electron-microscopy-cryo-em-data-processing-on-mccleary">Cryogenic Electron Microscopy (Cryo-EM) Data Processing on McCleary</h1>
-<p>Below is a work in progress collection of general hints, tips and tricks for running your work on <a href="/clusters/mccleary">McCleary</a>. As always, if anything below is unclear or could use updating, please let us know <a href="/#get-help">during office hours, via email or through our web ticketing system</a>.</p>
+<p>Below is a work in progress collection of general hints, tips and tricks for running your work on <a href="/clusters">YCRC clusters</a>. As always, if anything below is unclear or could use updating, please let us know <a href="/#get-help">during office hours, via email or through our web ticketing system</a>.</p>
+<h2 id="transferring-data-from-the-microscopes">Transferring data from the microscopes</h2>
+<p>Cryo-EM micrograph data from the various Yale facilities are synced to a common YCRC storage location during data collection. Currently this is hosted on the <a href="/clusters/mccleary">mccleary</a> cluster, found at the following location:</p>
+<div class="codehilite"><pre><span></span><code>/vast/palmer/pi/cryoem/&lt;yale-em-facility&gt;/&lt;date-tag&gt;
+</code></pre></div>
+
+<p>For transferring your cryo-EM data to another location (i.e., the YCRC bouchet cluster or a Yale server), you can use the <a href="https://docs.ycrc.yale.edu/data/globus">Globus</a> tool.</p>
+<p>Once logged onto Globus, type 'mccleary' into the endpoint box and select the "Yale CRC McCleary" endpoint; then, navigate to your data directory within <code>/vast/palmer/pi/cryoem/</code>.</p>
+<p>Next, for your Globus destination endpoint, type the name of the target location (i.e. bouchet) and select the appropriate item from the list that pops up (i.e. 'Bouchet HA'); then, navigate/create a suitable destination folder.</p>
+<p>You are now ready to transfer files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently (as of 2026), cryo-EM users require an active account on the mccleary cluster to access their cryo-EM data. If you do not have one, or if your account was disabled as part of the <a href="/clusters/grace-mccleary-decommission/#data-center-migration">data center migration to bouchet</a> please use <a href="/clusters-at-yale/access/accounts/#request-an-account">this form</a> to request/reactivate your mccleary account; add the text 'cryo-EM user' to the <code>special request or comments</code> field at the end of the form.</p>
+</div>
 <h2 id="storage">Storage</h2>
 <p>Be wary of you and your group's storage quotas. Run <code>getquota</code> from time to time to make sure there isn't usage you aren't expecting. We strongly recommend that you archive raw data off-cluster, as <strong>only home directories are backed up</strong>. Let us know if you need extra space and we can work with you to find a solution that is right for your project and your group.</p>
 <p>On computing nodes there is a fast SSD mounted at <code>/tmp</code>. You can use this as a fast local cache if your program can take advantage of it. Note however that a node's '/tmp' is purged of user data as soon as the user's last job on that node is completed.</p>
@@ -3038,7 +3065,7 @@ srun<span class="w"> </span>--pack-group<span class="o">=</span><span class="m">
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2026</span>
       
     
   </small>

@@ -2990,11 +2990,14 @@ conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </
 conda<span class="w"> </span>activate<span class="w"> </span>notebook_env
 conda<span class="w"> </span>install<span class="w"> </span>notebook
 
-<span class="c1"># To add your environment to the OOD Jupyter miniconda menu:</span>
+<span class="c1"># Finally, you must do these two steps to add your environment to the OOD Jupyter miniconda menu:</span>
+<span class="c1"># 1. Run the update script</span>
 ycrc_conda_env.sh<span class="w"> </span>update
+<span class="c1"># 2. Now refresh the OOD Jupyter menu by clicking:</span>
+<span class="c1">#         Develop -&gt; Restart Web Server</span>
 </code></pre></div>
 <p>Note that your conda environment <strong>must</strong> include <code>notebook</code> in its installed packages, using either the original <code>conda create</code> command or subsequently, with <code>conda activate &lt;...&gt;; conda install notebook</code> as above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.</p>
-<p>The <code>ycrc_conda_env.sh update</code> command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. <em>To update the list you must run this command</em>.</p>
+<p>It is also important to run the <code>ycrc_conda_env.sh update</code> command above, followed by restarting the OOD web server. If you don't do this, your conda environment won't show up on the Jupyter drop-down menu list. <em>To update the list you must do these last two steps</em>.</p>
 <h2 id="command-line-execution-of-jupyter-notebooks">Command-Line Execution of Jupyter Notebooks</h2>
 <p>Many scientific workflows start as interactive Jupyter notebooks, and our Web Portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively.</p>
 <p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
@@ -3038,7 +3041,7 @@ papermill /path/to/notebook.ipynb /path/to/output.ipynb
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2026</span>
       
     
   </small>
