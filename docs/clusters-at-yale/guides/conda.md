@@ -55,9 +55,14 @@ salloc --partition=devel --mem=15G --time=2:00:00 --cpus-per-task=2
 module load miniconda
 conda create -n ds_notebook python numpy scipy pandas matplotlib notebook
 
-####load environment into OOD jupyter notebook
 module reset
+
+# Finally, you must do these two steps to add your environment to the OOD Jupyter miniconda menu:
+# 1. Run the update script
 ycrc_conda_env.sh update
+
+# 2. Now refresh the OOD Jupyter menu by clicking:
+#         Develop -> Restart Web Server
 ```
 
 ## Use Your Environment

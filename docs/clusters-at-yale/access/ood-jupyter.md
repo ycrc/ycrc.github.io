@@ -56,13 +56,17 @@ conda create -y -n notebook_env python notebook numpy pandas matplotlib
 conda activate notebook_env
 conda install notebook
 
-# To add your environment to the OOD Jupyter miniconda menu:
+# Finally, you must do these two steps to add your environment to the OOD Jupyter miniconda menu:
+# 1. Run the update script
 ycrc_conda_env.sh update
+# 2. Now refresh the OOD Jupyter menu by clicking:
+#         Develop -> Restart Web Server
+
 ```
 
 Note that your conda environment **must** include `notebook` in its installed packages, using either the original `conda create` command or subsequently, with `conda activate <...>; conda install notebook` as above. Otherwise, the conda environment will fail inside of the OpenOndemand Jupyter instance.
 															    
-The `ycrc_conda_env.sh update` command above is also important. Without it, your conda environment list on the Jupyter form will not update automatically. *To update the list you must run this command*.
+It is also important to run the `ycrc_conda_env.sh update` command above, followed by restarting the OOD web server. If you don't do this, your conda environment won't show up on the Jupyter drop-down menu list. *To update the list you must do these last two steps*.
 
 ## Command-Line Execution of Jupyter Notebooks
 
