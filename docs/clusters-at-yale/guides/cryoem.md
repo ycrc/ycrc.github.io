@@ -1,6 +1,23 @@
 # Cryogenic Electron Microscopy (Cryo-EM) Data Processing on McCleary
 
-Below is a work in progress collection of general hints, tips and tricks for running your work on [McCleary](/clusters/mccleary). As always, if anything below is unclear or could use updating, please let us know [during office hours, via email or through our web ticketing system](/#get-help).
+Below is a work in progress collection of general hints, tips and tricks for running your work on [YCRC clusters](/clusters). As always, if anything below is unclear or could use updating, please let us know [during office hours, via email or through our web ticketing system](/#get-help).
+
+## Transferring data from the microscopes
+
+Cryo-EM micrograph data from the various Yale facilities are synced to a common YCRC storage location during data collection. Currently this is hosted on the [mccleary](/clusters/mccleary) cluster, found at the following location:
+
+    /vast/palmer/pi/cryoem/<yale-em-facility>/<date-tag>
+
+For transferring your cryo-EM data to another location (i.e., the YCRC bouchet cluster or a Yale server), you can use the [Globus](https://docs.ycrc.yale.edu/data/globus) tool.
+
+Once logged onto Globus, type 'mccleary' into the endpoint box and select the "Yale CRC McCleary" endpoint; then, navigate to your data directory within `/vast/palmer/pi/cryoem/`.
+
+Next, for your Globus destination endpoint, type the name of the target location (i.e. bouchet) and select the appropriate item from the list that pops up (i.e. 'Bouchet HA'); then, navigate/create a suitable destination folder.
+
+You are now ready to transfer files.
+
+!!! Note
+    Currently (as of 2026), cryo-EM users require an active account on the mccleary cluster to access their cryo-EM data. If you do not have one, or if your account was disabled as part of the [data center migration to bouchet](/clusters/grace-mccleary-decommission/#data-center-migration) please use [this form](/clusters-at-yale/access/accounts/#request-an-account) to request/reactivate your mccleary account; add the text 'cryo-EM user' to the `special request or comments` field at the end of the form.
 
 ## Storage
 
