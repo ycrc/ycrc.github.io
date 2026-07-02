@@ -62,7 +62,11 @@ See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-stor
 
 Compute resources for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
 
-Course members are welcome to use the public partitions of the cluster. However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
+Course members are welcome to use the [public partitions of the cluster](https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions). However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
+
+See each tab below for more information about the available education partitions.
+
+--8<-- "snippets/education_partitions.md"
 
 ### Interactive Jobs
 
