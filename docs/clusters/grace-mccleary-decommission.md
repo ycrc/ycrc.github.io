@@ -8,7 +8,7 @@ The YCRC is in the process of transitioning from the Yale West Campus Data Cente
 
 During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.
 
-- [Phase 1](#phase-1) (first half of 2026): Migration of workloads and data from research groups who do not use dedicated compute nodes or YCGA resources.
+- [Phase 1](#phase-1) (**Complete**): Migration of workloads and data from research groups who do not use dedicated compute nodes, CyroEM resources or YCGA resources.
 
 - Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.
 
@@ -20,16 +20,8 @@ If you are in Phase 2 or 3, more detailed information will be provided later thi
 
 ## Phase 1
 
-Research groups who do not use dedicated compute nodes or YCGA resources will move off of Grace and McCleary in Phase 1. 
-
-If you have been active on Grace or McCleary in the last year, you should already have an account on Bouchet. If you have not used the clusters in more than a year, you will need to [request an account](https://research.computing.yale.edu/account-request) on Bouchet. See our [“Getting Started on Bouchet” documentation](bouchet_getting_started.md) to familiarize yourself with the system. See below for information on transferring data.
-
-### Phase 1 Timeline
-
--  April 1st: *Deadline for workload migration.* Grace and McCleary logins for Phase 1 users will be disabled. Grace/McCleary data will remain accessible via Globus for two more months.
-
-- June 1st: *Deadline for data migration.* Access to Grace/McCleary data via Globus will be disabled.
-
+Research groups who do not use dedicated compute nodes or YCGA resources were moved off of Grace and McCleary in Phase 1.
+As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.
 
 ## Phase 2
 
@@ -44,11 +36,6 @@ Once the timeline for the hardware migration has been finalized (Summer 2026 or 
 
 
 ## What about My Existing Data on Grace or McCleary?
-
-!!! alert "Phase 1 Storage Access Available Until June 1st, 2026"
-
-	While Phase 1 accounts are no longer able to log in to Grace or McCleary after April 1st, these accounts can still access Grace and McCleary storage via the ["Yale CRC Grace" Globus Collection](https://docs.ycrc.yale.edu/data/globus/#cluster-collections) until June 1st so they can transfer data off the cluster (to Bouchet or other storage options).
-
 
 **All (non-YCGA) data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.** You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. 
 
@@ -68,17 +55,9 @@ If you would like assistance transferring your paid storage allocation or otherw
 
 If you are new to Bouchet, we recommend reviewing our [“Getting Started on Bouchet” documentation](bouchet_getting_started.md). You can also find a recording of our "Intro to Bouchet" session [here](https://youtu.be/mQMc8y-Z8sY?si=Ubyd7DvX5I9kuaTr). 
 
-In addition to our [twice-weekly virtual Office Hours](/#office-hours-via-zoom), the YCRC team will be available every week in March for *in-person* Bouchet Migration Support Office Hours offering hands-on support. Stop by our office at 160 St Ronan Street— no registration required.
-
-- Friday, March 6th 2-4pm
-- Thursday, March 12th 9-11am
-- Tuesday, March 17th 3-5pm
-- Wednesday, March 25th 1-3pm
-- Monday, March 30th 10-12pm
-
 We also have a recording of our "Transfers with Globus" info session available [here](https://www.youtube.com/watch?v=VCOBLKrWe9M).
 
-As always, our Research Support staff members are available to assist. Please [reach out](/#get-help) if you have any questions or concerns about what will be moved to Bouchet and when.
+As always, our Research Support staff members are available to assist, including at our [twice-weekly virtual Office Hours](/#office-hours-via-zoom). Please [reach out](/#get-help) if you have any questions or concerns about what will be moved to Bouchet and when.
 
 
 
