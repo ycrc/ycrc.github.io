@@ -83,7 +83,7 @@ The Priority Tier service is Service Unit (SU) based at a rate of $0.005/SU/hour
 This rate is derived to closely match the prorated cost of a similar dedicated node over its warrantied period.
 The SUs of a compute job are calculated as follows:
 
-### FY27 Rate & Service Units**
+### FY27 Rate & Service Units
 |  Type | Subtype   | Service Units  | Cost per Hour  |
 |----------------|--------|-----|--------|
 | Compute Hour\* |  -     | 1   | $0.005 |
@@ -95,7 +95,7 @@ The SUs of a compute job are calculated as follows:
 | GPU Hour       | b200   | 300 | $1.500 |
 
 \* _Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB_
-\*\* effective July 1, 2026 
+
 
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
