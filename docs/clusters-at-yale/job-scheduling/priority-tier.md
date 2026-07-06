@@ -95,7 +95,7 @@ The SUs of a compute job are calculated as follows:
 | GPU Hour       | b200   | 300 | $1.500 |
 
 \* _Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB_
-\*\* effective July 1, 2026. _pending final approval from the University Service Provider Operating Committee_
+\*\* effective July 1, 2026 
 
 Usage is billed for actual runtime, not requested walltime of a job. 
 However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
