@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/access/advanced-config/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -1028,6 +1028,13 @@
         <li class="md-nav__item">
   <a href="#ssh-agent-on-windows" class="md-nav__link">
     SSH Agent on Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-tunneling-for-local-applications" class="md-nav__link">
+    SSH tunneling for local applications
   </a>
   
 </li>
@@ -2825,6 +2832,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh-tunneling-for-local-applications" class="md-nav__link">
+    SSH tunneling for local applications
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2904,6 +2918,47 @@ ssh-add -K ~/.ssh/id_rsa
 <span class="c"># Now load your key files into ssh-agent</span>
 <span class="n">ssh-add</span> <span class="nv">$env:USERPROFILE</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\&lt;</span><span class="n">your_keyfile</span><span class="p">&gt;</span>
 </code></pre></div></p>
+<h2 id="ssh-tunneling-for-local-applications">SSH tunneling for local applications</h2>
+<p>Note: These instructions work with recent versions of macOS. You may have to adjust them to work with other operating systems.</p>
+<p>SSH tunneling can allow local applications to connect to YCRC clusters. Connecting to the cluster requires two-factor authentication. Some applications, such as <a href="/clusters-at-yale/access/ood-vscode">VSCode</a> or <a href="clusters-at-yale/guides/jupyter_ssh">Jupyter Notebooks</a>, can handle this form of authentication, but others, such as Claude Science, do not currently support it. For programs like these, you can establish the tunnel separately in the terminal and perform authentication there. Then, you can point the application to the authenticated tunnel. This is a general approach that also works with VSCode or Notebooks.</p>
+<p>There are many different ways to set up a local tunnel using SSH. The approach outlined below has two main parts</p>
+<ol>
+<li>A one-time SSH configuration step.</li>
+<li>A few simple commands to allocate a compute node and connect to it.</li>
+</ol>
+<p>First, add these two host blocks to <code>~/.ssh/config</code>, replacing YOUR_NETID and PATH_TO_YOUR_SSH_KEY. You only need to perform this step once</p>
+<p>These instructions assume you are on bouchet but can be adjusted for other clusters. The first block, <code>bouchet-tunnel</code> will be used when you establish the tunnel. Once you have the tunnel running, you will point your application to <code>bouchet-compute</code>, which will then use the tunnel to connect to the cluster.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Used to establish a tunnel to a bouchet compute node</span>
+Host bouchet-tunnel
+   HostName bouchet.ycrc.yale.edu
+   User YOUR_NETID
+   SessionType none
+   ExitOnForwardFailure yes
+   ServerAliveInterval <span class="m">30</span>
+   ServerAliveCountMax <span class="m">4</span>
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
+
+<span class="c1"># Used to connect a local application to the tunnel</span>
+Host bouchet-compute
+   HostName localhost
+   Port <span class="m">2222</span>
+   User YOUR_NET_ID
+   UserKnownHostsFile ~/.ssh/known_hosts_bouchet-compute
+   StrictHostKeyChecking accept-new
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
+</code></pre></div>
+<p>Second, request a compute node and start a tunnel to it. You'll have to run these commands every time you request a new compute node.</p>
+<p>On Bouchet, allocate a compute node
+<div class="highlight"><pre><span></span><code>salloc
+hostname -s <span class="c1">#e.g, a1130u05n01</span>
+</code></pre></div></p>
+<p>Open a local terminal on your laptop and start the local tunnel. Use the host name from your allocated compute node from the previous step. This example uses <code>a1130u05n01</code>, but you should update the command to reflect the host name of your allocated compute node.</p>
+<div class="highlight"><pre><span></span><code>ssh -L <span class="m">2222</span>:a1130u05n01:22 bouchet-tunnel
+</code></pre></div>
+<p>Within the terminal, you will be asked to authenticate using two-factor authentication. After authenticating, SSH prints "Success. Logging you in...", and then pauses. Keep the terminal open; closing it will close the tunnel.</p>
+<p>Your tunnel is now open! Refer to application specific instructions to connect your application to <code>bouchet-compute</code></p>
                 
                   
                     
@@ -2912,7 +2967,7 @@ ssh-add -K ~/.ssh/id_rsa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2026</span>
       
     
   </small>
