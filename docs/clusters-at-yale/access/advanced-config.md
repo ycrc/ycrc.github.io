@@ -84,3 +84,59 @@ Get-Service ssh-agent
 # Now load your key files into ssh-agent
 ssh-add $env:USERPROFILE\.ssh\<your_keyfile>
 ```
+
+## SSH tunneling for local applications
+
+Note: These instructions work with recent versions of macOS. You may have to adjust them to work with other operating systems.
+
+SSH tunneling can allow local applications to connect to YCRC clusters. Connecting to the cluster requires two-factor authentication. Some applications, such as [VSCode](/clusters-at-yale/access/ood-vscode) or [Jupyter Notebooks](clusters-at-yale/guides/jupyter_ssh), can handle this form of authentication, but others, such as Claude Science, do not currently support it. For programs like these, you can establish the tunnel separately in the terminal and perform authentication there. Then, you can point the application to the authenticated tunnel. This is a general approach that also works with VSCode or Notebooks.
+
+There are many different ways to set up a local tunnel using SSH. The approach outlined below has two main parts
+
+1. A one-time SSH configuration step.
+2. A few simple commands to allocate a compute node and connect to it.
+
+First, add these two host blocks to `~/.ssh/config`, replacing YOUR_NETID and PATH_TO_YOUR_SSH_KEY. You only need to perform this step once
+
+These instructions assume you are on bouchet but can be adjusted for other clusters. The first block, `bouchet-tunnel` will be used when you establish the tunnel. Once you have the tunnel running, you will point your application to `bouchet-compute`, which will then use the tunnel to connect to the cluster.
+
+```bash
+# Used to establish a tunnel to a bouchet compute node
+Host bouchet-tunnel
+   HostName bouchet.ycrc.yale.edu
+   User YOUR_NETID
+   SessionType none
+   ExitOnForwardFailure yes
+   ServerAliveInterval 30
+   ServerAliveCountMax 4
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
+
+# Used to connect a local application to the tunnel
+Host bouchet-compute
+   HostName localhost
+   Port 2222
+   User YOUR_NET_ID
+   UserKnownHostsFile ~/.ssh/known_hosts_bouchet-compute
+   StrictHostKeyChecking accept-new
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
+```
+
+Second, request a compute node and start a tunnel to it. You'll have to run these commands every time you request a new compute node.
+
+On Bouchet, allocate a compute node
+```bash
+salloc
+hostname -s #e.g, a1130u05n01
+```
+
+Open a local terminal on your laptop and start the local tunnel. Use the host name from your allocated compute node from the previous step. This example uses `a1130u05n01`, but you should update the command to reflect the host name of your allocated compute node.
+
+```bash
+ssh -L 2222:a1130u05n01:22 bouchet-tunnel
+```
+
+Within the terminal, you will be asked to authenticate using two-factor authentication. After authenticating, SSH prints "Success. Logging you in...", and then pauses. Keep the terminal open; closing it will close the tunnel.
+
+Your tunnel is now open! Refer to application specific instructions to connect your application to `bouchet-compute`
