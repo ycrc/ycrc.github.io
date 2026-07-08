@@ -1927,39 +1927,52 @@
     Coding Agents
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Coding Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#expose-data" class="md-nav__link">
     Expose data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#perform-undesirable-actions" class="md-nav__link">
     Perform undesirable actions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#leak-credentials" class="md-nav__link">
     Leak credentials
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#execute-unknown-code" class="md-nav__link">
     Execute unknown code
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#security-settings" class="md-nav__link">
     Security settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claude-science" class="md-nav__link">
+    Claude Science
   </a>
   
 </li>
@@ -2840,39 +2853,52 @@
     Coding Agents
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Coding Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#expose-data" class="md-nav__link">
     Expose data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#perform-undesirable-actions" class="md-nav__link">
     Perform undesirable actions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#leak-credentials" class="md-nav__link">
     Leak credentials
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#execute-unknown-code" class="md-nav__link">
     Execute unknown code
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#security-settings" class="md-nav__link">
     Security settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claude-science" class="md-nav__link">
+    Claude Science
   </a>
   
 </li>
@@ -2908,7 +2934,7 @@ to attach agents to your coding environments (VSCode, etc) while in the cluster,
 <li>Expose your security credentials</li>
 <li>Execute arbitrary, and perhaps malicious, code. </li>
 </ul>
-<h2 id="expose-data">Expose data</h2>
+<h3 id="expose-data">Expose data</h3>
 <p>AI coding agents send code and data to the company that runs them, e.g., OpenAI, Anthropic, Microsoft, or Google. 
 The service may log or retain your code and data, which may be added to the AI training set, depending on the provider
  and your account settings. Experiments have shown that many LLMs can be coaxed to resurface their training data or 
@@ -2917,7 +2943,7 @@ when prompted by the book's first sentence). A less obvious issue is that coding
  by your user. On a local laptop, there is a concerning amount of data exposure for your own data. On a cluster, this 
 means the agent can also expose any data you have read access to, such as your labmates through the 'project' directory, 
 shared data sets, or user-facing systems files. </p>
-<h2 id="perform-undesirable-actions">Perform undesirable actions</h2>
+<h3 id="perform-undesirable-actions">Perform undesirable actions</h3>
 <p>A coding agent acts on your behalf with your full set of permissions. This means it can do anything you are allowed to 
 do, including editing file contents, changing file permissions, and deleting your (or your lab group's) data. It might 
 install unknown software, alter shared conda environments, or commit to shared git repos. It can submit or cancel Slurm 
@@ -2926,16 +2952,16 @@ many cluster workflows rely on shared scripts, environments, or repositories, un
 users without their knowledge. Reports of coding agents deleting production databases, ignoring explicit instructions 
 not to read certain files, and many other stories proliferate on the internet. Although these are rare, extreme 
 examples, it is important to be aware of what is possible. Proper safeguards will reduce the risk of their occurrence.</p>
-<h2 id="leak-credentials">Leak credentials</h2>
+<h3 id="leak-credentials">Leak credentials</h3>
 <p>Coding agents may read configuration files, environment variables, or hidden files that contain credentials 
 (e.g., SSH keys, API tokens, cloud credentials, or Slurm configuration). If exposed, these credentials could allow 
 others to access your cluster resources or external services.</p>
-<h2 id="execute-unknown-code">Execute unknown code</h2>
+<h3 id="execute-unknown-code">Execute unknown code</h3>
 <p>A coding agent can go much further than simply running bash commands as you. It could, in theory, generate or download 
 code and run it, including malicious code. Coding agents are susceptible to prompt injection attacks, in which an 
 agent is tricked into reading malicious instructions that it then dutifully executes. It could install keyloggers, 
 install backdoors, or perform any other malicious activity you can imagine if a bad actor compromised your account.</p>
-<h2 id="security-settings">Security settings</h2>
+<h3 id="security-settings">Security settings</h3>
 <p>Although these potential hazards are serious, they represent worst-case scenarios. If you follow best security practices while operating a coding agent, you will significantly reduce your risk. Most coding agents describe security settings for their agents. See the table below for examples from common coding agents. Ignoring security or making light of it will increase your risk of something unfortunate happening to you or to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.</p>
 <table>
 <thead>
@@ -2959,6 +2985,13 @@ install backdoors, or perform any other malicious activity you can imagine if a 
 </tr>
 </tbody>
 </table>
+<h2 id="claude-science">Claude Science</h2>
+<p><a href="https://www.anthropic.com/news/claude-science-ai-workbench">Claude Science</a> can be connected to the cluster by establishing a local tunnel to a compute node. The <a href="/clusters-at-yale/access/advanced-config/#ssh-tunneling-for-local-applications">SSH tunneling for local applications</a> page describes how to open a local tunnel.</p>
+<p>After you set up the tunnel, you can connect Claude Science to it. </p>
+<p>Open Claude Science, then click Customize -&gt; Compute -&gt; + Add SSH host. Pick <code>bouchet-compute</code>. The connection should work and report "connected". </p>
+<p>You only need to perform this setup once, but the connection won't work unless you have a tunnel open.</p>
+<p>Try the connection in a prompt, e.g., "Print the first few lines of ~/myfile.txt on bouchet-compute".</p>
+<p>Note that operating coding agents on the clusters comes with some risks, not just to yourself but to others in your lab. Please take a moment to read our warning about AI coding tools at the beginning of this page.</p>
                 
                   
                     
@@ -2967,7 +3000,7 @@ install backdoors, or perform any other malicious activity you can imagine if a 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2026</span>
       
     
   </small>
