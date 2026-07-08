@@ -15,7 +15,7 @@ These risks include the possibility that the agent might:
 - Expose your security credentials
 - Execute arbitrary, and perhaps malicious, code. 
 
-## Expose data
+### Expose data
 AI coding agents send code and data to the company that runs them, e.g., OpenAI, Anthropic, Microsoft, or Google. 
 The service may log or retain your code and data, which may be added to the AI training set, depending on the provider
  and your account settings. Experiments have shown that many LLMs can be coaxed to resurface their training data or 
@@ -25,7 +25,7 @@ when prompted by the book's first sentence). A less obvious issue is that coding
 means the agent can also expose any data you have read access to, such as your labmates through the 'project' directory, 
 shared data sets, or user-facing systems files. 
 
-## Perform undesirable actions
+### Perform undesirable actions
 A coding agent acts on your behalf with your full set of permissions. This means it can do anything you are allowed to 
 do, including editing file contents, changing file permissions, and deleting your (or your lab group's) data. It might 
 install unknown software, alter shared conda environments, or commit to shared git repos. It can submit or cancel Slurm 
@@ -35,18 +35,18 @@ users without their knowledge. Reports of coding agents deleting production data
 not to read certain files, and many other stories proliferate on the internet. Although these are rare, extreme 
 examples, it is important to be aware of what is possible. Proper safeguards will reduce the risk of their occurrence.
 
-## Leak credentials
+### Leak credentials
 Coding agents may read configuration files, environment variables, or hidden files that contain credentials 
 (e.g., SSH keys, API tokens, cloud credentials, or Slurm configuration). If exposed, these credentials could allow 
 others to access your cluster resources or external services.
 
-## Execute unknown code
+### Execute unknown code
 A coding agent can go much further than simply running bash commands as you. It could, in theory, generate or download 
 code and run it, including malicious code. Coding agents are susceptible to prompt injection attacks, in which an 
 agent is tricked into reading malicious instructions that it then dutifully executes. It could install keyloggers, 
 install backdoors, or perform any other malicious activity you can imagine if a bad actor compromised your account.
 
-## Security settings
+### Security settings
 Although these potential hazards are serious, they represent worst-case scenarios. If you follow best security practices while operating a coding agent, you will significantly reduce your risk. Most coding agents describe security settings for their agents. See the table below for examples from common coding agents. Ignoring security or making light of it will increase your risk of something unfortunate happening to you or to your lab mates. Please use these powerful tools wisely and with full knowledge of the risks involved.
 
 | Agent | Security documentation |
@@ -56,3 +56,16 @@ Although these potential hazards are serious, they represent worst-case scenario
 | Gemini CLI (Google) | [https://geminicli.com/docs/](https://geminicli.com/docs/). See pages for [Trusted Folders](https://geminicli.com/docs/cli/trusted-folders/), [Tools](https://geminicli.com/docs/tools/), and [Sandboxing](https://geminicli.com/docs/cli/sandbox/). |
 
 
+## Claude Science
+
+[Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench) can be connected to the cluster by establishing a local tunnel to a compute node. The [SSH tunneling for local applications](/clusters-at-yale/access/advanced-config/#ssh-tunneling-for-local-applications) page describes how to open a local tunnel.
+
+After you set up the tunnel, you can connect Claude Science to it. 
+
+Open Claude Science, then click Customize -> Compute -> + Add SSH host. Pick `bouchet-compute`. The connection should work and report "connected". 
+
+You only need to perform this setup once, but the connection won't work unless you have a tunnel open.
+
+Try the connection in a prompt, e.g., "Print the first few lines of ~/myfile.txt on bouchet-compute".
+
+Note that operating coding agents on the clusters comes with some risks, not just to yourself but to others in your lab. Please take a moment to read our warning about AI coding tools at the beginning of this page.
