@@ -130,3 +130,7 @@ Save [this file](/files/example_job.sh) as `example_job.sh`, then submit it with
 
 * When referring to software (e.g. Slurm or Conda), capitalize the name of the software (unless it really isn't correct, eg "iOS"). If you are referring to the associated command (e.g. `conda`), place the command in backticks.
 * When specifying gigabytes/gibibytes, just use the first letter (e.g. G or T), to avoid confusing between the two. A description of our convention is described in storage documentation pages (we generally use gibibytes everywhere).
+
+### Website Forms
+* Website forms are stored in [ycrc website google drive](https://drive.google.com/drive/folders/112izn-b9pv80lrAFm-lLsASRgPWaCT1g?usp=drive_link)
+* See [Forms README](https://docs.google.com/document/d/1cK--G2Pk_H0hnoQALGkDU7Pc06D0TU7xS57cfVZhlyA/edit?usp=sharing) for summary listing.
