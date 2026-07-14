@@ -34,9 +34,12 @@ Regardless of cluster access, users are responsible for storing their data withi
 
 The YCRC can provide access to the clusters and Yale’s network for collaborators at other institutions through Yale’s “Sponsored NetID” service. To request access for a new collaborator or extend access for a departing student or post doc, have your business office fill out the [Sponsored NetID Request Form](https://yale.service-now.com/it?id=service_offering&sys_id=6b4a8551db967e402de17ecfbf96193f) and [VPN Access Request Form](https://yale.service-now.com/it?id=service_offering&sys_id=c4684dcd6fbb31007ee2abcf9f3ee4f2). After receiving the sponsored NetID, you may submit the [HPC Account Request Form](https://research.computing.yale.edu/account-request).
 
-### Request an Account
+## Request an Account
 
-You may request an account on a cluster using the [account request form](https://research.computing.yale.edu/account-request).  User accounts are personal to individual users and may not be shared. Under no circumstances may any user make use of another user’s account.
+You may request an account on a cluster using the [account request form](https://research.computing.yale.edu/account-request).  User accounts are personal to individual users and may not be shared. Under no circumstances may any user make use of another user’s account. Your account should be created within 1-2 business days of when we receive confirmation from your PI. 
+
+!!! Note
+    **Please check with your PI** as soon as you submit your account request; when you submit this form, a confirmation email request is automatically sent to your PI. They **must** respond to this email for the account request to move forward. It can be very helpful to remind your PI of this before the email gets buried! 
 
 ## Inactive Accounts and Account Deletion
 
