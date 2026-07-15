@@ -2855,13 +2855,14 @@
 </li>
 </ol>
 <h2 id="launch-cryosparc-and-connect-to-the-gui">Launch CryoSPARC and connect to the GUI</h2>
-<p>After you run the above setup/install script, run our helper script <code>ycrc_launch_cryosparc.sh</code> (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.</p>
+<p>After you run the above setup/install script, run our helper script <code>ycrc_launch_cryosparc.sh</code> (see below for specific instructions). The script will offer a convenient list of queuing options (you can also specify your own); it then submits a cryoSPARC 'master' batch job and prints instructions on how to connect to the cryoSPARC GUI.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, <code>ycrc_launch_cryosparc.sh</code> <strong>sets a 6-hour time limit for your workflow</strong> and runs the main cryoSPARC process on the <code>devel</code> partition. <strong>To customize for longer workflows</strong>, add '--partition' and '--time' slurm options to the command line when running this script. However,  please <strong>do not request GPU's</strong>- these are only used in batch jobs <em>spawned</em> by the main cryoSPARC process. Example:
-<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu
-</code></pre></div>
-(note that email notifications are convenient for longer jobs, since they might not start right away)</p>
+<p>Please <strong>do not request GPU's</strong>- these are only used in batch jobs <em>spawned</em> by the main cryoSPARC process. However, f you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
+<div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
+#     or 
+ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
+</code></pre></div></p>
 </div>
 <p>Choose between the following two methods to connect to the cryoSPARC GUI:</p>
 <p><strong>Option A: Connect via Local Web Browser.</strong> Start a cluster login node terminal shell, and then run <code>ycrc_launch_cryosparc.sh</code>. Follow the printed instructions to connect your local browser to the cluster with SSH, and then open the listed cryoSPARC GUI web address.</p>
@@ -3003,7 +3004,7 @@ cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2026</span>
       
     
   </small>
