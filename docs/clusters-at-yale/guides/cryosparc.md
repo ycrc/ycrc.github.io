@@ -41,14 +41,15 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
     
 ## Launch CryoSPARC and connect to the GUI
 
-After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will submit a cryoSPARC batch job and then print instructions on how to connect to the cryoSPARC GUI.
+After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will offer a convenient list of queuing options (you can also specify your own); it then submits a cryoSPARC 'master' batch job and prints instructions on how to connect to the cryoSPARC GUI.
 
 !!! note
-    By default, `ycrc_launch_cryosparc.sh` **sets a 6-hour time limit for your workflow** and runs the main cryoSPARC process on the `devel` partition. **To customize for longer workflows**, add '--partition' and '--time' slurm options to the command line when running this script. However,  please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. Example:
+    Please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, f you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
     ```
-    ycrc_launch_cryosparc.sh --time 3-00:00:00 --partition week --mail-user=your.email@yale.edu
+    ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
+    #     or 
+    ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
     ```
-    (note that email notifications are convenient for longer jobs, since they might not start right away)
 
 Choose between the following two methods to connect to the cryoSPARC GUI:
 
