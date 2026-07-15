@@ -10,7 +10,7 @@ The Grace cluster is is named for the computer scientist and United States Navy 
 - - -
 
 !!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
-    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
+    Grace is being decommissioned in 2026 and has been replaced by the [Bouchet cluster](bouchet). New Grace accounts are only approved for groups with dedicated nodes. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
 
 ## Access the Cluster
 

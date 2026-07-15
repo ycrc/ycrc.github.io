@@ -16,7 +16,7 @@ For all other AICR documentation, please visit the official AICR Documentation.
 
 ## Access the Cluster
 
-AICR is currently in alpha and will be available in for Early Access in Spring 2026.
+AICR is currently in alpha and will be available in for Early Access in Summer 2026.
 AICR availability and information on how to request access will be announced to the YCRC user mailing list and the YCRC Bulldog newsletter.
 
 Later in 2026 access to AICR will be granted via an internal Yale proposal process (details to be announced).

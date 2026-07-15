@@ -10,7 +10,7 @@ McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04
 - - -
 
 !!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
-    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
+    McCleary is being downsized in 2026 and, for most use cases, has been replaced by the [Bouchet cluster](bouchet). New McCleary accounts are only approved for groups who use [YCGA](http://ycga.yale.edu/) resources, [CyroEM](https://cryoem.yale.edu/) resources and those with dedicated nodes. Research involving regulated sensitive data (e.g NIH Controlled Access Data or PHI) should be performed on the [Hopper](hopper) cluster. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
 
 ## Access the Cluster
 
