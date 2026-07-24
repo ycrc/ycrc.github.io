@@ -79,20 +79,20 @@ Communications will be sent if and when this is being considered.
 
 ## Rate Structure
 
-The Priority Tier service is Service Unit (SU) based at a rate of $0.005/SU/hour.
+The Priority Tier service is Service Unit (SU) based at a rate of $0.0049/SU/hour.
 This rate is derived to closely match the prorated cost of a similar dedicated node over its warrantied period.
 The SUs of a compute job are calculated as follows:
 
 ### FY27 Rate & Service Units
 |  Type | Subtype   | Service Units  | Cost per Hour  |
 |----------------|--------|-----|--------|
-| Compute Hour\* |  -     | 1   | $0.005 |
-| GPU Hour       | a5000  | 15  | $0.075 |
-| GPU Hour       | rtx_5000_ada  | 35  | $0.175 |
-| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.400 |
-| GPU Hour       | a100   | 80 | $0.400 |
-| GPU Hour       | h200   | 240 | $1.200 |
-| GPU Hour       | b200   | 300 | $1.500 |
+| Compute Hour\* |  -     | 1   | $0.0049 |
+| GPU Hour       | a5000  | 15  | $0.0735 |
+| GPU Hour       | rtx_5000_ada  | 35  | $0.1715 |
+| GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.3185 |
+| GPU Hour       | a100   | 80 | $0.392 |
+| GPU Hour       | h200   | 240 | $1.176 |
+| GPU Hour       | b200   | 300 | $1.47 |
 
 \* _Number of SUs per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB_
 
