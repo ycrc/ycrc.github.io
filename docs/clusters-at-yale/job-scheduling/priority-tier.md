@@ -89,6 +89,8 @@ The SUs of a compute job are calculated as follows:
 | Compute Hour\* |  -     | 1   | $0.0049 |
 | GPU Hour       | a5000  | 15  | $0.0735 |
 | GPU Hour       | rtx_5000_ada  | 35  | $0.1715 |
+| GPU Hour       | a40  | 35  | $0.1715 |
+| GPU Hour       | l40s  | 40  | $0.0.196 |
 | GPU Hour       | rtx_pro_6000_blackwell  | 65  | $0.3185 |
 | GPU Hour       | a100   | 80 | $0.392 |
 | GPU Hour       | h200   | 240 | $1.176 |
