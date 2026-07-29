@@ -31,7 +31,7 @@ As of December 1st, 2024, we introduced Priority Tier partitions on [Grace](/clu
 | Partition       | Description       | Bouchet                     | Grace          | McCleary       | Milgram            |
 |-----------------|-------------------|-----------------------------|----------------|----------------|--------------------|
 | `priority`      | similar to `day`  | Intel Emerald Rapids Nodes | Intel Ice Lake Nodes | Intel Ice Lake Nodes | Intel Cascade Lake Nodes |
-| `priority_gpu`  | similar to `gpu`  | rtx_5000_ada, rtx_pro_6000_blackwell, <br> h200, b200  | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
+| `priority_gpu`  | similar to `gpu`  | rtx_5000_ada, a40, l40s, <br> rtx_pro_6000_blackwell, <br> h200, b200  | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
 | `priority_mpi`  | similar to `mpi`  | Intel Emerald Rapids Nodes      | Intel Skylake        |  N/A                  |  N/A                    |
 
 At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
