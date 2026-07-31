@@ -2887,7 +2887,7 @@ ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
 <h2 id="run-cryosparc-jobs">Run CryoSPARC Jobs</h2>
 <ol>
 <li>
-<p><strong>Submit job</strong> : Once you start the cryoSPARC job submission process by clicking on <code>Submit job</code> in the job builder, the cryosparc GUI will prompt you to choose a compute lane that individual jobs will be submitted to. YCRC has set up the following lanes for your use: <code>cpu</code>, <code>gpu</code>, <code>gpu_devel</code> as well as <code>priority_cpu</code> and <code>priority_gpu</code> if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
+<p><strong>Submit job</strong> : Once you start the cryoSPARC job submission process by clicking on <code>Submit job</code> in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to. YCRC has set up the following partitions for your use as cryoSPARC lanes: <code>cpu</code>, <code>gpu</code>, <code>gpu_devel</code> as well as <code>priority_cpu</code> and <code>priority_gpu</code> if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
 </li>
 <li>
 <p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled <code>Queue P*xxx* J*xxx*</code>). Click on the purple box beneath your selected compute lane, labeled <code>Cluster submission script variables</code>. The box will expand to reveal two additional options. Click on <code>Maximum runtime</code> and give your value in hours:minutes:seconds format (i.e. 1:00:00).</p>
@@ -2918,10 +2918,10 @@ ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
 <ul>
 <li>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </li>
 </ol>
@@ -2967,11 +2967,11 @@ convolutional neural networks. It can optionally be used from inside cryoSPARC u
 <ol>
 <li>
 <p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-mv cryosparc_database cryosparc_database_corrupt
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
 
 <span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_backup_date&gt; in the command below:</span>
-cp -a <span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span> .
+cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
 </code></pre></div>
 </li>
 <li>
@@ -3004,7 +3004,7 @@ cp -a <span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cry
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 31, 2026</span>
       
     
   </small>
