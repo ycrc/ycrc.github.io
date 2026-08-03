@@ -2880,15 +2880,15 @@ Host bouchet grace mccleary milgram misha
     HostName %h.ycrc.yale.edu
 </code></pre></div>
 <p>For more info on ssh configuration, run:</p>
-<div class="highlight"><pre><span></span><code>man<span class="w"> </span>ssh_config
+<div class="highlight"><pre><span></span><code>man ssh_config
 </code></pre></div>
 <h2 id="store-passphrase-and-use-ssh-agent-on-macos">Store Passphrase and Use SSH Agent on macOS</h2>
 <p>By default, macOS won't always remember your ssh key passphrase and keep your ssh key in the agent for SSH agent forwarding. In order to not repeatedly enter your passphrase and instead store it in your keychain, enter the following command on your Mac (just once):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># In MacOS version 12.0 Monterey or newer</span>
-ssh-add<span class="w"> </span>--apple-use-keychain<span class="w"> </span>~/.ssh/id_rsa
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 <span class="c1"># Older MacOS version</span>
-ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_rsa
 </code></pre></div>
 <p>Or whatever your private key file is named.</p>
 <div class="admonition note">
@@ -2901,7 +2901,7 @@ ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
     AddKeystoAgent yes
 </code></pre></div>
 <p>You can view a list of the keys currently in your agent with:</p>
-<div class="highlight"><pre><span></span><code>ssh-add<span class="w"> </span>-L
+<div class="highlight"><pre><span></span><code>ssh-add -L
 </code></pre></div>
 <h2 id="ssh-agent-on-windows">SSH Agent on Windows</h2>
 <p>In a PowerShell terminal:
@@ -2929,33 +2929,33 @@ ssh-add<span class="w"> </span>-K<span class="w"> </span>~/.ssh/id_rsa
 <p>First, add these two host blocks to <code>~/.ssh/config</code>, replacing YOUR_NETID and PATH_TO_YOUR_SSH_KEY. You only need to perform this step once</p>
 <p>These instructions assume you are on bouchet but can be adjusted for other clusters. The first block, <code>bouchet-tunnel</code> will be used when you establish the tunnel. Once you have the tunnel running, you will point your application to <code>bouchet-compute</code>, which will then use the tunnel to connect to the cluster.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Used to establish a tunnel to a bouchet compute node</span>
-Host<span class="w"> </span>bouchet-tunnel
-<span class="w">   </span>HostName<span class="w"> </span>bouchet.ycrc.yale.edu
-<span class="w">   </span>User<span class="w"> </span>YOUR_NETID
-<span class="w">   </span>SessionType<span class="w"> </span>none
-<span class="w">   </span>ExitOnForwardFailure<span class="w"> </span>yes
-<span class="w">   </span>ServerAliveInterval<span class="w"> </span><span class="m">30</span>
-<span class="w">   </span>ServerAliveCountMax<span class="w"> </span><span class="m">4</span>
-<span class="w">   </span>IdentityFile<span class="w"> </span>PATH_TO_YOUR_SSH_KEY
-<span class="w">   </span>IdentitiesOnly<span class="w"> </span>yes
+Host bouchet-tunnel
+   HostName bouchet.ycrc.yale.edu
+   User YOUR_NETID
+   SessionType none
+   ExitOnForwardFailure yes
+   ServerAliveInterval <span class="m">30</span>
+   ServerAliveCountMax <span class="m">4</span>
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
 
 <span class="c1"># Used to connect a local application to the tunnel</span>
-Host<span class="w"> </span>bouchet-compute
-<span class="w">   </span>HostName<span class="w"> </span>localhost
-<span class="w">   </span>Port<span class="w"> </span><span class="m">2222</span>
-<span class="w">   </span>User<span class="w"> </span>YOUR_NET_ID
-<span class="w">   </span>UserKnownHostsFile<span class="w"> </span>~/.ssh/known_hosts_bouchet-compute
-<span class="w">   </span>StrictHostKeyChecking<span class="w"> </span>accept-new
-<span class="w">   </span>IdentityFile<span class="w"> </span>PATH_TO_YOUR_SSH_KEY
-<span class="w">   </span>IdentitiesOnly<span class="w"> </span>yes
+Host bouchet-compute
+   HostName localhost
+   Port <span class="m">2222</span>
+   User YOUR_NET_ID
+   UserKnownHostsFile ~/.ssh/known_hosts_bouchet-compute
+   StrictHostKeyChecking accept-new
+   IdentityFile PATH_TO_YOUR_SSH_KEY
+   IdentitiesOnly yes
 </code></pre></div>
 <p>Second, request a compute node and start a tunnel to it. You'll have to run these commands every time you request a new compute node.</p>
 <p>On Bouchet, allocate a compute node
 <div class="highlight"><pre><span></span><code>salloc
-hostname<span class="w"> </span>-s<span class="w"> </span><span class="c1">#e.g, a1130u05n01</span>
+hostname -s <span class="c1">#e.g, a1130u05n01</span>
 </code></pre></div></p>
 <p>Open a local terminal on your laptop and start the local tunnel. Use the host name from your allocated compute node from the previous step. This example uses <code>a1130u05n01</code>, but you should update the command to reflect the host name of your allocated compute node.</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">2222</span>:a1130u05n01:22<span class="w"> </span>bouchet-tunnel
+<div class="highlight"><pre><span></span><code>ssh -L <span class="m">2222</span>:a1130u05n01:22 bouchet-tunnel
 </code></pre></div>
 <p>Within the terminal, you will be asked to authenticate using two-factor authentication. After authenticating, SSH prints "Success. Logging you in...", and then pauses. Keep the terminal open; closing it will close the tunnel.</p>
 <p>Your tunnel is now open! Refer to application specific instructions to connect your application to <code>bouchet-compute</code></p>
