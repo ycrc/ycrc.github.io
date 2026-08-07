@@ -49,7 +49,7 @@ If you want to share data in your Project or Scratch directory, see the [permiss
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch` are purged if they are older than 30 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|

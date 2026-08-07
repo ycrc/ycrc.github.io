@@ -1,6 +1,6 @@
 # HPC Storage
 
-Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the [getquota](#check-your-usage-and-quotas) command on a cluster. No sensitive data can be stored on any cluster storage, except for [Hopper](/clusters/hopper/).
+Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the [getquota](#check-your-usage-and-quotas) command on a cluster. No sensitive data can be stored on any cluster storage, except for [Hopper](/clusters/hopper/).
 
 !!! warning "Backups"
     The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
@@ -39,11 +39,11 @@ Paid storage, if applicable, is assigned on one of our two storage systems:
 
 Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.
 
-### 60-Day Scratch
+### Scratch
 
 Quota: 10 TiB and 15,000,000 files per group
 
-60-day scratch is intended to be used for storing temporary data. Any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than 60 days old. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#purchase-additional-storage) if you need additional longer term storage.**
+scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#purchase-additional-storage) if you need additional longer term storage.**
 
 You can access this space through a symlink, or shortcut, in your home directory called `project_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)),  `palmer_scratch` ([McCleary/Grace](/clusters/mccleary)), or `scratch60` ([Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
 
