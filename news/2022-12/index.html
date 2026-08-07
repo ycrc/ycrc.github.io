@@ -2818,24 +2818,21 @@
 <h4 id="apptainer-upgrade-on-grace-and-ruddle">Apptainer Upgrade on Grace and Ruddle</h4>
 <p>The newest version of Apptainer (v1.1, available now on Ruddle and, after December maintenance, on Grace) comes the ability to create containers without needing elevated privileges (i.e. <code>sudo</code> access). This greatly simplifies the container workflow as you no longer need a separate system to build a container from a definition file. You can simply create a definition file and run the build command. </p>
 <p>For example, to create a simple toy container from this def file (<code>lolcow.def</code>):</p>
-<div class="highlight"><pre><span></span><code>BootStrap: docker
-From: ubuntu:20.04
-
-%post
+<p>```
+BootStrap: docker
+From: ubuntu:20.04</p>
+<p>%post
     apt-get -y update
-    apt-get -y install cowsay lolcat
-
-%environment
+    apt-get -y install cowsay lolcat</p>
+<p>%environment
     export LC_ALL=C
-    export PATH=/usr/games:$PATH
-
-%runscript
+    export PATH=/usr/games:$PATH</p>
+<p>%runscript
     date | cowsay | lolcat
-</code></pre></div>
+```</p>
 <p>You can run:</p>
-<div class="highlight"><pre><span></span><code>salloc -p interactive -c 4 
-apptainer build lolcow.sif lolcow.def
-</code></pre></div>
+<p><code>salloc -p interactive -c 4 
+apptainer build lolcow.sif lolcow.def</code></p>
 <p>This upgrade is live on Ruddle and will be applied on Grace during the December maintenance. For more information, please see the <a href="https://apptainer.org/docs/user/main/">Apptainer documentation site </a> and <a href="/clusters-at-yale/guides/containers/">our docs page on containers</a>.  </p>
 <h3 id="software-highlights">Software Highlights</h3>
 <ul>

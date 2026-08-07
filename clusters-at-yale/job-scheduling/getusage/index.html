@@ -2915,19 +2915,18 @@ The relative weights are derived from the approximate cost of these different re
 <p><img alt="getusage" src="/img/ood-getusage.png" /></p>
 <h2 id="command-line-getusage">Command-line <code>getusage</code></h2>
 <p>These aggrigates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage --help
-
- Usage: getusage <span class="o">[</span>OPTIONS<span class="o">]</span>
-
-╭─ Options ──────────────────────────────────────────────────────────────────╮
-│ --user       -u      TEXT  User name <span class="o">[</span>default: Current user<span class="o">]</span>               │
-│ --group      -g      TEXT  Slurm Account <span class="o">[</span>default: Default Account<span class="o">]</span>        │
-│ --cluster    -c      TEXT  Filter usage by cluster CLUSTER <span class="o">[</span>default: All<span class="o">]</span>  │
+<p>```sh
+[testuser@login1.grace ~]$ getusage --help</p>
+<p>Usage: getusage [OPTIONS]</p>
+<p>╭─ Options ──────────────────────────────────────────────────────────────────╮
+│ --user       -u      TEXT  User name [default: Current user]               │
+│ --group      -g      TEXT  Slurm Account [default: Default Account]        │
+│ --cluster    -c      TEXT  Filter usage by cluster CLUSTER [default: All]  │
 │ --partition  -p            Break usage down by partition                   │
 │ --summary    -s            Only report monthly summary                     │
 │ --help                     Show this message and exit.                     │
 ╰────────────────────────────────────────────────────────────────────────────╯
-</code></pre></div>
+```</p>
 <div class="admonition info">
 <p class="admonition-title">Multiple Accounts</p>
 <p>If you belong to multiple accounts, you can specify them with the <code>-g</code> flag. 
@@ -2935,36 +2934,36 @@ By default, <code>getusage</code> displays information about your "default" Slur
 If you wish to view your secondary account's usage (or for <a href="/clusters-at-yale/job-scheduling/priority-tier">priority tier</a> accounts, specify them like: <code>getusage -g prio_account</code></p>
 </div>
 <p>Running without any arguments produces a report for the full fiscal year (starting in July):</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.grace ~<span class="o">]</span>$ getusage
-Monthly usage <span class="o">(</span><span class="k">in</span> su_hours<span class="o">)</span> <span class="k">for</span> testuser
+<p>```sh
+[testuser@login1.grace ~]$ getusage
+Monthly usage (in su_hours) for testuser
 ────────────────────────────────────────────────────────────────────────────────
                                  Standard         PI
                Cluster  User
-<span class="m">2024</span> July      grace    user1      <span class="m">456</span>.19       <span class="m">0</span>.00
-               mccleary user2       <span class="m">33</span>.67       <span class="m">0</span>.00
-<span class="m">2024</span> August    grace    user1      <span class="m">366</span>.15       <span class="m">0</span>.00
-               mccleary user2       <span class="m">46</span>.40       <span class="m">0</span>.00
-<span class="m">2024</span> September grace    user1      <span class="m">360</span>.24       <span class="m">0</span>.00
-                        user3        <span class="m">2</span>.02       <span class="m">7</span>.28
-                        user5        <span class="m">0</span>.01       <span class="m">0</span>.00
-               mccleary user2       <span class="m">39</span>.35       <span class="m">0</span>.00
-<span class="m">2024</span> October   grace    user3      <span class="m">544</span>.93   <span class="m">5</span>,659.68
-               mccleary user2        <span class="m">5</span>.28       <span class="m">0</span>.00
-<span class="m">2024</span> November  grace    user4      <span class="m">526</span>.84      <span class="m">14</span>.27
-                        user3    <span class="m">4</span>,442.07     <span class="m">169</span>.76
-               mccleary user2       <span class="m">32</span>.54       <span class="m">0</span>.00
+2024 July      grace    user1      456.19       0.00
+               mccleary user2       33.67       0.00
+2024 August    grace    user1      366.15       0.00
+               mccleary user2       46.40       0.00
+2024 September grace    user1      360.24       0.00
+                        user3        2.02       7.28
+                        user5        0.01       0.00
+               mccleary user2       39.35       0.00
+2024 October   grace    user3      544.93   5,659.68
+               mccleary user2        5.28       0.00
+2024 November  grace    user4      526.84      14.27
+                        user3    4,442.07     169.76
+               mccleary user2       32.54       0.00
 Monthly Summary
-Latest month is <span class="k">in</span>-progress <span class="o">(</span>data updated daily at midnight<span class="o">)</span>
+Latest month is in-progress (data updated daily at midnight)
 ────────────────────────────────────────────────────────────────────────────────
                 Standard            PI
-<span class="m">2024</span>-07-31        <span class="m">489</span>.87          <span class="m">0</span>.00
-<span class="m">2024</span>-08-31        <span class="m">412</span>.55          <span class="m">0</span>.00
-<span class="m">2024</span>-09-30        <span class="m">401</span>.62          <span class="m">7</span>.28
-<span class="m">2024</span>-10-31        <span class="m">550</span>.22      <span class="m">5</span>,659.68
-<span class="m">2024</span>-11-30      <span class="m">5</span>,001.44        <span class="m">184</span>.03
-
-Total usage:          <span class="m">12</span>,706.68 Service-Unit Hours
-</code></pre></div>
+2024-07-31        489.87          0.00
+2024-08-31        412.55          0.00
+2024-09-30        401.62          7.28
+2024-10-31        550.22      5,659.68
+2024-11-30      5,001.44        184.03</p>
+<p>Total usage:          12,706.68 Service-Unit Hours
+```</p>
 <p>Please reach out to research.computing@yale.edu with any comments or suggestions about how we can improve <code>getusage</code>. </p>
                 
                   
