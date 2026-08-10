@@ -1,38 +1,7 @@
-# NHCE Rules of Behavior
+# NHCE (Hopper) Rules of Behavior
 
 **NIST SP 800-171 and HIPAA Compliant Environments**
-Yale University
-Version 0.7.4 — August 6, 2026
-
-*Sensitivity: Low — Distribution Permitted without Permission*
-
----
-
-## Table of Contents
-
-1. Background
-2. Yale's Information Technology Appropriate Use Policy
-3. Authorized Use
-4. Access Control
-5. Software Use
-6. Data Protection
-7. Network Use
-8. Email Use
-9. Media Handling
-   - A. General Prohibition of Portable Media
-   - B. Portable Media Exceptions
-   - C. Sanitization
-   - D. Marking
-   - E. Ownership
-10. Social Media
-11. Mobile Devices
-12. Monitoring and Enforcement
-    - A. Security Reviews
-    - B. Handling Compliance Issues
-13. Review and Updates
-    - A. Rules Changes
-    - B. User Notification
-14. Acknowledgement
+Version 0.7.4
 
 ---
 
@@ -44,14 +13,14 @@ To this end, all personnel working with NHCE systems must review and agree to th
 
 This RoB is comprised of two components:
 
-1. Yale University's Information Technology Appropriate Use Policy and
+1. Yale University's [Information Technology Appropriate Use Policy](https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy) and
 2. The additional rules herein, which apply to all NHCE users
 
 By reviewing this RoB, you agree to adhere to both components.
 
 ## 2. Yale's Information Technology Appropriate Use Policy
 
-The University's IT Appropriate Use Policy may be found at: https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy.
+The University's IT Appropriate Use Policy may be found at: [https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy](docs/clusters/hopper-rob.md.
 
 In addition to Yale's IT Appropriate Use Policy, the following rules must be agreed to and followed for a user to access the NHCE.
 
@@ -75,9 +44,9 @@ Only authorized software may be installed and used on NHCE resources. Users must
 
 Users are responsible for protecting the confidentiality of data, including CUI and ePHI, by following appropriate procedures with respect to the processing, storage and transmission of these data. All electronic CUI and ePHI must be encrypted when in flight and at rest. Screensharing and screenshots are prohibited. Physical materials (e.g., paper) containing CUI and ePHI must be stored in locked drawers/cabinets within secure office facilities. Users shall not share CUI/ePHI data with unauthorized parties and will abide by the provisions of all relevant University policies, standards, and procedures.
 
-Suspected incidents are to be reported in a timely manner to the ISO via the Report an Incident webpage or by contacting YU's Help Desk. Alternatively, ePHI incidents are to be reported immediately to YU's HIPAA Security Officer Hotline (203-627-4665).
+Suspected incidents are to be reported in a timely manner to the ISO via the [Report an Incident](https://cybersecurity.yale.edu/get-help/report/report-incident) webpage or by contacting [YU's Help Desk](https://yale.service-now.com/it?id=get_help). Alternatively, ePHI incidents are to be reported immediately to YU's HIPAA Security Officer Hotline (203-627-4665).
 
-Should users, system administrators, or system owners be unable to operate from their designated workplace (e.g., their office at YU), they must find alternate accommodations. Such accommodations will meet or exceed the security requirements of the designated workplace. [YALE-MSS-4.1] This will entail a separate, lockable room where the user can work, along with the arrangement of display devices so as to prevent visibility from any window. The use of privacy screens or other visual restrictions may be employed as an alternate means to block display visibility. The user is not permitted to work in a public space, such as a coffee shop, restaurant, airport terminal, etc. Should the user be unable to find any suitable alternate accommodations, they must cease work and contact their supervisor or system owner for assistance.
+Should users, system administrators, or system owners be unable to operate from their designated workplace (e.g., their office at YU), they must find alternate accommodations. Such accommodations will meet or exceed the security requirements of the designated workplace. ([YALE-MSS-4.1](https://cybersecurity.yale.edu/mss/4/1)]) This will entail a separate, lockable room where the user can work, along with the arrangement of display devices so as to prevent visibility from any window. The use of privacy screens or other visual restrictions may be employed as an alternate means to block display visibility. The user is not permitted to work in a public space, such as a coffee shop, restaurant, airport terminal, etc. Should the user be unable to find any suitable alternate accommodations, they must cease work and contact their supervisor or system owner for assistance.
 
 ## 7. Network Use
 
