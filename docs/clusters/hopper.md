@@ -11,9 +11,6 @@ Hopper is one of a number of secure computing environments, such as [SpinupPlus]
 Support staff are available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.
 
 
-!!! info "Upcoming Maintenance"
-    The next quarterly maintenance for Hopper is scheduled for September 15th 2026. During this time the cluster will be unavailable.
-
 ## Access the Cluster
 
 ### Projects
