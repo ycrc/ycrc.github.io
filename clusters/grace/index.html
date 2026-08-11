@@ -6642,8 +6642,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the day partition are subject to the following limits:</p>
 <table>
@@ -6709,8 +6709,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the devel partition to jobs with which you need ongoing interaction. For example, exploratory analyses or debugging compilation.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the devel partition are subject to the following limits:</p>
 <table>
@@ -6766,8 +6766,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the week partition for jobs that need a longer runtime than day allows.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the week partition are subject to the following limits:</p>
 <table>
@@ -6819,8 +6819,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=a5000:2</code> would request 2 NVIDIA RTX A5000 GPUs per node.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -6932,8 +6932,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7029,8 +7029,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the bigmem partition for jobs that have memory requirements other partitions can't handle.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the bigmem partition are subject to the following limits:</p>
 <table>
@@ -7096,8 +7096,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our <a href="/clusters-at-yale/job-scheduling/mpi">MPI documentation</a> if your workload fits this description.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=184320</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --exclusive --mem=184320
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the mpi partition are subject to the following limits:</p>
 <table>
@@ -7149,8 +7149,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7508,8 +7508,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7621,8 +7621,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <div class="tabbed-set" data-tabs="3:36"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">pi_anticevic</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7695,8 +7695,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">pi_balou</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_balou partition are subject to the following limits:</p>
 <table>
@@ -7746,8 +7746,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">pi_berry</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_berry partition are subject to the following limits:</p>
 <table>
@@ -7797,8 +7797,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">pi_chem_chase</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7861,8 +7861,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><label for="__tabbed_3_5">pi_cholab</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -7935,8 +7935,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><label for="__tabbed_3_6">pi_cowles</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_cowles partition are subject to the following limits:</p>
 <table>
@@ -7987,8 +7987,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_7" name="__tabbed_3" type="radio" /><label for="__tabbed_3_7">pi_econ_io</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_econ_io partition are subject to the following limits:</p>
 <table>
@@ -8031,8 +8031,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_8" name="__tabbed_3" type="radio" /><label for="__tabbed_3_8">pi_econ_lp</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_econ_lp partition are subject to the following limits:</p>
 <table>
@@ -8096,8 +8096,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_9" name="__tabbed_3" type="radio" /><label for="__tabbed_3_9">pi_esi</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_esi partition are subject to the following limits:</p>
 <table>
@@ -8144,8 +8144,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_10" name="__tabbed_3" type="radio" /><label for="__tabbed_3_10">pi_fedorov</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_fedorov partition are subject to the following limits:</p>
 <table>
@@ -8195,8 +8195,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_11" name="__tabbed_3" type="radio" /><label for="__tabbed_3_11">pi_gelernter</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_gelernter partition are subject to the following limits:</p>
 <table>
@@ -8239,8 +8239,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_12" name="__tabbed_3" type="radio" /><label for="__tabbed_3_12">pi_hammes_schiffer</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -8313,8 +8313,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_13" name="__tabbed_3" type="radio" /><label for="__tabbed_3_13">pi_hodgson</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_hodgson partition are subject to the following limits:</p>
 <table>
@@ -8357,8 +8357,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_14" name="__tabbed_3" type="radio" /><label for="__tabbed_3_14">pi_holland</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_holland partition are subject to the following limits:</p>
 <table>
@@ -8408,8 +8408,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_15" name="__tabbed_3" type="radio" /><label for="__tabbed_3_15">pi_howard</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_howard partition are subject to the following limits:</p>
 <table>
@@ -8452,8 +8452,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_16" name="__tabbed_3" type="radio" /><label for="__tabbed_3_16">pi_jorgensen</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_jorgensen partition are subject to the following limits:</p>
 <table>
@@ -8496,8 +8496,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_17" name="__tabbed_3" type="radio" /><label for="__tabbed_3_17">pi_kim_theodore</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_kim_theodore partition are subject to the following limits:</p>
 <table>
@@ -8547,8 +8547,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_18" name="__tabbed_3" type="radio" /><label for="__tabbed_3_18">pi_korenaga</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_korenaga partition are subject to the following limits:</p>
 <table>
@@ -8591,8 +8591,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_19" name="__tabbed_3" type="radio" /><label for="__tabbed_3_19">pi_lederman</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -8645,8 +8645,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_20" name="__tabbed_3" type="radio" /><label for="__tabbed_3_20">pi_levine</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=1952</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=1952
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_levine partition are subject to the following limits:</p>
 <table>
@@ -8689,8 +8689,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_21" name="__tabbed_3" type="radio" /><label for="__tabbed_3_21">pi_lora</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=3840
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_lora partition are subject to the following limits:</p>
 <table>
@@ -8740,8 +8740,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_22" name="__tabbed_3" type="radio" /><label for="__tabbed_3_22">pi_manohar</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_manohar partition are subject to the following limits:</p>
 <table>
@@ -8798,8 +8798,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_23" name="__tabbed_3" type="radio" /><label for="__tabbed_3_23">pi_mingarelli</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_mingarelli partition are subject to the following limits:</p>
 <table>
@@ -8856,8 +8856,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_24" name="__tabbed_3" type="radio" /><label for="__tabbed_3_24">pi_ohern</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_ohern partition are subject to the following limits:</p>
 <table>
@@ -8907,8 +8907,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_25" name="__tabbed_3" type="radio" /><label for="__tabbed_3_25">pi_owen_miller</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_owen_miller partition are subject to the following limits:</p>
 <table>
@@ -8965,8 +8965,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_26" name="__tabbed_3" type="radio" /><label for="__tabbed_3_26">pi_padmanabhan</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_padmanabhan partition are subject to the following limits:</p>
 <table>
@@ -9009,8 +9009,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_27" name="__tabbed_3" type="radio" /><label for="__tabbed_3_27">pi_panda</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -9113,8 +9113,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_28" name="__tabbed_3" type="radio" /><label for="__tabbed_3_28">pi_poland</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_poland partition are subject to the following limits:</p>
 <table>
@@ -9157,8 +9157,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_29" name="__tabbed_3" type="radio" /><label for="__tabbed_3_29">pi_polimanti</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_polimanti partition are subject to the following limits:</p>
 <table>
@@ -9208,8 +9208,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_30" name="__tabbed_3" type="radio" /><label for="__tabbed_3_30">pi_seto</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_seto partition are subject to the following limits:</p>
 <table>
@@ -9252,8 +9252,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_31" name="__tabbed_3" type="radio" /><label for="__tabbed_3_31">pi_spielman</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_spielman partition are subject to the following limits:</p>
 <table>
@@ -9296,8 +9296,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_32" name="__tabbed_3" type="radio" /><label for="__tabbed_3_32">pi_sweeney</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -9350,8 +9350,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_33" name="__tabbed_3" type="radio" /><label for="__tabbed_3_33">pi_tsmith</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_tsmith partition are subject to the following limits:</p>
 <table>
@@ -9401,8 +9401,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_34" name="__tabbed_3" type="radio" /><label for="__tabbed_3_34">pi_vaccaro</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_vaccaro partition are subject to the following limits:</p>
 <table>
@@ -9445,8 +9445,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_35" name="__tabbed_3" type="radio" /><label for="__tabbed_3_35">pi_ying_rex</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -9499,8 +9499,8 @@ To terminate the job, click the "Delete" button in your "My Interactive Apps" pa
 <input id="__tabbed_3_36" name="__tabbed_3" type="radio" /><label for="__tabbed_3_36">pi_zhu</label><div class="tabbed-content">
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the pi_zhu partition are subject to the following limits:</p>
 <table>

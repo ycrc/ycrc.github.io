@@ -1128,6 +1128,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#web-portal" class="md-nav__link">
+    Web Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-maintenance" class="md-nav__link">
+    Cluster Maintenance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-of-semester-course-deletion" class="md-nav__link">
+    End of Semester Course Deletion
+  </a>
+  
+    <nav class="md-nav" aria-label="End of Semester Course Deletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data-to-research-account" class="md-nav__link">
+    Transfer Data to Research Account
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2926,6 +2960,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#web-portal" class="md-nav__link">
+    Web Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-maintenance" class="md-nav__link">
+    Cluster Maintenance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-of-semester-course-deletion" class="md-nav__link">
+    End of Semester Course Deletion
+  </a>
+  
+    <nav class="md-nav" aria-label="End of Semester Course Deletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfer-data-to-research-account" class="md-nav__link">
+    Transfer Data to Research Account
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2964,18 +3032,21 @@
 <p>All course-related accounts are subject to <a href="/clusters-at-yale/access/accounts/">the same policies and expectation as standard accounts</a>.</p>
 <h3 id="course-specific-web-portal">Course-specific Web Portal</h3>
 <p>Your course also has a course-specific web portal, based on <a href="/clusters-at-yale/access/ood/">Open OnDemand</a>, accessible via the URL (replacing <code>courseid</code> with the id given to your course):</p>
-<p><code>courseid.ycrc.yale.edu</code></p>
+<div class="highlight"><pre><span></span><code>courseid.ycrc.yale.edu
+</code></pre></div>
 <p>Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you only have a course participant account, but try to log in through the cluster web portal URL, you will get an error in the browser:
-<code>Error -- can't find user for cpsc424_test
-Run 'nginx_stage --help' to see a full list of available command line options.</code>
+<div class="highlight"><pre><span></span><code>Error -- can&#39;t find user for cpsc424_test
+Run &#39;nginx_stage --help&#39; to see a full list of available command line options.
+</code></pre></div>
 Use the URL for your course web portal will resolve the problem.</p>
 </div>
 <h3 id="ssh-access">SSH Access</h3>
 <p>To access your course account via terminal and <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/"><code>ssh</code> authentication</a>, connect to the cluster using your course account name. For example:</p>
-<p><code>ssh courseid_netid@bouchet.ycrc.yale.edu</code></p>
+<div class="highlight"><pre><span></span><code>ssh courseid_netid@bouchet.ycrc.yale.edu
+</code></pre></div>
 <p>If you already have a permanent researcher account (one that is just your NetID) on one of the clusters, the course account will already be setup with any ssh keys previously uploaded to your researcher account. To add a new key, <a href="https://sshkeys.ycrc.yale.edu/">upload your new key</a> and it will be delivered to all of your accounts within a few minutes.</p>
 <h2 id="course-storage">Course Storage</h2>
 <p>Courses on the YCRC clusters are typically granted a standard 4TiB project quota and 10TiB of scratch storage, along with 125GiB home directory for each course member. If the course needs additional storage beyond the default 4TiB, please contact us at research.computing@yale.edu.</p>
@@ -2988,8 +3059,8 @@ Use the URL for your course web portal will resolve the problem.</p>
 <p>Use the education partition for CPU-only jobs.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <p><strong>Job Limits</strong></p>
 <p>Jobs submitted to the education partition are subject to the following limits:</p>
 <table>
@@ -3049,8 +3120,8 @@ Use the URL for your course web portal will resolve the problem.</p>
 <p>Use the education_gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
-<p><code>text
---time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120</code></p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=5120
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">GPU jobs need GPUs!</p>
 <p>Jobs submitted to this partition  do not request a GPU by default. You must request one with the <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus"><code>--gpus</code></a> option.</p>
@@ -3110,18 +3181,18 @@ Use the URL for your course web portal will resolve the problem.</p>
 </div>
 </div>
 <h3 id="interactive-jobs">Interactive Jobs</h3>
-<p><code>salloc -p education</code></p>
+<div class="highlight"><pre><span></span><code>salloc -p education 
+</code></pre></div>
 <p>or if you need to request a GPU</p>
-<p><code>salloc -p education_gpu --gpus=1</code></p>
+<div class="highlight"><pre><span></span><code>salloc -p education_gpu --gpus=1
+</code></pre></div>
 <h3 id="batch-jobs">Batch Jobs</h3>
 <p>Add the following to your submission script:</p>
-<p>```</p>
-<h1 id="sbatch-p-education">SBATCH -p education</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>#SBATCH -p education
+</code></pre></div>
 <p>or if you need to request a GPU</p>
-<p>```</p>
-<h1 id="sbatch-p-education_gpu-gpus1">SBATCH -p education_gpu --gpus=1</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>#SBATCH -p education_gpu --gpus=1
+</code></pre></div>
 <h3 id="web-portal">Web Portal</h3>
 <p>In any of the app submission forms, type the correct paritition name into the "Partition" field.</p>
 <h2 id="cluster-maintenance">Cluster Maintenance</h2>
@@ -3146,10 +3217,9 @@ Use the URL for your course web portal will resolve the problem.</p>
 </li>
 <li>
 <p>Grant your research account access to your course account home directory (substitute in your courseid and netid in the example).</p>
-<p>```</p>
-<h1 id="home-directory">home directory</h1>
-<p>setfacl -m u:netid:rX /home/courseid_netid
-```</p>
+<div class="highlight"><pre><span></span><code># home directory
+setfacl -m u:netid:rX /home/courseid_netid
+</code></pre></div>
 </li>
 <li>
 <p>Log in as your research account. Check that you can access the above paths.</p>
@@ -3159,8 +3229,9 @@ Use the URL for your course web portal will resolve the problem.</p>
 </li>
 <li>
 <p>Initiate a copy of the desired data using <code>rsync</code>. For example:</p>
-<p><code>mkdir /nfs/roberts/project/group/netid/my_course_data
-rsync -av /home/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data</code></p>
+<div class="highlight"><pre><span></span><code>mkdir /nfs/roberts/project/group/netid/my_course_data
+rsync -av /home/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data
+</code></pre></div>
 </li>
 </ol>
                 
