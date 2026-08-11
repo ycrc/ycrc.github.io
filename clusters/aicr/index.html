@@ -572,34 +572,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#get-help" class="md-nav__link">
-    Get Help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installed-applications" class="md-nav__link">
-    Installed Applications
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partitions-and-hardware" class="md-nav__link">
-    Partitions and Hardware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
-    Storage
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2863,34 +2835,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#get-help" class="md-nav__link">
-    Get Help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installed-applications" class="md-nav__link">
-    Installed Applications
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partitions-and-hardware" class="md-nav__link">
-    Partitions and Hardware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
-    Storage
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2929,23 +2873,20 @@ All Early Access users will be expected to submit to and be approved through tha
 <li>Open the File Browser and download the <code>aicr_keys.zip</code> file </li>
 </ul>
 <p>To install these keys follow these steps:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># copy keys to local $HOME/.ssh directory</span>
-cp<span class="w"> </span>aicr_keys/id_ed25519_aicr*<span class="w"> </span><span class="nv">$HOME</span>/.ssh/
-
-<span class="c1"># fix permissions on private key</span>
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/.ssh/
-chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>id_ed25519_aicr
-
-<span class="c1"># To change passphrase (initial passphrase is in aicr_keys/.passphrase):</span>
-ssh-keygen<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>/.ssh/id_ed25519_aicr
-
-<span class="c1"># Then (needs passphrase):</span>
-ssh-add<span class="w"> </span>id_ed25519_aicr
-
-<span class="c1">#To log in:</span>
-ssh<span class="w"> </span>aicr_username@login.aicr.ai
-</code></pre></div>
-Your AICR username is your netid followed by <code>_yale</code>, for example: <code>abc123_yale</code>.⠀</p>
+<p>```sh</p>
+<h1 id="copy-keys-to-local-homessh-directory">copy keys to local $HOME/.ssh directory</h1>
+<p>cp aicr_keys/id_ed25519_aicr* $HOME/.ssh/</p>
+<h1 id="fix-permissions-on-private-key">fix permissions on private key</h1>
+<p>cd $HOME/.ssh/
+chmod 600 id_ed25519_aicr</p>
+<h1 id="to-change-passphrase-initial-passphrase-is-in-aicr_keyspassphrase">To change passphrase (initial passphrase is in aicr_keys/.passphrase):</h1>
+<p>ssh-keygen -p -f $HOME/.ssh/id_ed25519_aicr</p>
+<h1 id="then-needs-passphrase">Then (needs passphrase):</h1>
+<p>ssh-add id_ed25519_aicr</p>
+<h1 id="to-log-in">To log in:</h1>
+<p>ssh aicr_username@login.aicr.ai
+<code>``
+Your AICR username is your netid followed by</code>_yale<code>, for example:</code>abc123_yale`.⠀</p>
 <h2 id="get-help">Get Help</h2>
 <p>Support for Yale researchers on AICR is provided by the YCRC.
 Users can contact us for assistance with AICR at <a href="mailto:research.computing@yale.edu">research.computing@yale.edu</a> and other ways of <a href="/#get-help">engaging with YCRC Research Support</a>.</p>
@@ -2953,8 +2894,7 @@ Users can contact us for assistance with AICR at <a href="mailto:research.comput
 <p>A large number of software and applications are installed on our clusters, including AICR.
 AICR software will be made available to researchers via <a href="/applications/modules/">software modules</a>. </p>
 <p>During Alpha, you will need to load the Yale-specific <code>StdEnv</code> module to get access to our software modules:</p>
-<div class="highlight"><pre><span></span><code>module load yale/StdEnv
-</code></pre></div>
+<p><code>module load yale/StdEnv</code></p>
 <p>In the coming weeks, the Yale <code>StdEnv</code> module will be automatically loaded on login for all Yale users.</p>
 <p>If you need a specific application that is not present, let us know and we can install it for you.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>

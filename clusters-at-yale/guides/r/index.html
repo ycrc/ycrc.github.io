@@ -2279,6 +2279,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seurat-seurat510-e" class="md-nav__link">
+    Seurat: Seurat/5.1.0 (E)
+  </a>
+  
+    <nav class="md-nav" aria-label="Seurat: Seurat/5.1.0 (E)">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#install-packages" class="md-nav__link">
     Install Packages
@@ -2286,70 +2299,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-r" class="md-nav__link">
-    Run R
-  </a>
-  
-    <nav class="md-nav" aria-label="Run R">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#interactive-job" class="md-nav__link">
-    Interactive Job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#batch-mode" class="md-nav__link">
-    Batch Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parallel-r" class="md-nav__link">
-    Parallel R
+  <a href="#request-a-compute-node-on-the-devel-partition-for-4-hours-with-20-gb-of-ram-and-1-cpu" class="md-nav__link">
+    request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#virtual-display-session" class="md-nav__link">
-    Virtual Display Session
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshoot-r-crashes-on-startup-with-lc_ctype-warning" class="md-nav__link">
-    Troubleshoot: R crashes on startup with LC_CTYPE warning
-  </a>
   
 </li>
       
@@ -2885,6 +2843,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seurat-seurat510-e" class="md-nav__link">
+    Seurat: Seurat/5.1.0 (E)
+  </a>
+  
+    <nav class="md-nav" aria-label="Seurat: Seurat/5.1.0 (E)">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#install-packages" class="md-nav__link">
     Install Packages
@@ -2892,70 +2863,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-r" class="md-nav__link">
-    Run R
-  </a>
-  
-    <nav class="md-nav" aria-label="Run R">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#interactive-job" class="md-nav__link">
-    Interactive Job
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#batch-mode" class="md-nav__link">
-    Batch Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
-    RStudio
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parallel-r" class="md-nav__link">
-    Parallel R
+  <a href="#request-a-compute-node-on-the-devel-partition-for-4-hours-with-20-gb-of-ram-and-1-cpu" class="md-nav__link">
+    request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#virtual-display-session" class="md-nav__link">
-    Virtual Display Session
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda-based-r-environments" class="md-nav__link">
-    Conda-based R Environments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshoot-r-crashes-on-startup-with-lc_ctype-warning" class="md-nav__link">
-    Troubleshoot: R crashes on startup with LC_CTYPE warning
-  </a>
   
 </li>
       
@@ -2984,69 +2900,71 @@ There is no R executable provided by default; you have to choose one of the foll
 <p>We provide several versions of R as <a href="/applications/modules">software modules</a>. By default, these come loaded with a collection of the most common <code>CRAN</code> packages (<a href="https://cran.r-project.org">homepage</a>), as well as <code>bioconductor</code> bioinformatics packages (<a href="https://www.bioconductor.org">homepage</a>). This will include commonly used packages such as Seurat, so user's won't need to install many packages themselves.</p>
 <h3 id="find-and-load-r">Find and Load R</h3>
 <p>Find the available versions of R version 4 with:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>R/4
-</code></pre></div>
+<p><code>bash
+module avail R/4</code></p>
 <p>To load version 4.4.1:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/4.4.1-foss-2022b
-</code></pre></div>
+<p><code>bash
+module load R/4.4.1-foss-2022b</code></p>
 <p>Loading the R module (e.g. <code>R/4.4.1-foss-2022b</code>) automatically loads the <code>R-bundle-CRAN</code> and the <code>R-bundle-Bioconductor</code> modules. With these modules, there are over 1000 R packages installed and ready to use. </p>
 <p>To find if your desired package is available in these modules, you can run <code>module spider $PACKAGE/$VERSION</code>:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>spider<span class="w"> </span>Seurat/5.1.0
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-<span class="w">  </span>Seurat:<span class="w"> </span>Seurat/5.1.0<span class="w"> </span><span class="o">(</span>E<span class="o">)</span>
---------------------------------------------------------------------------------------------------------------------------------------------------------
-<span class="w">    </span>This<span class="w"> </span>extension<span class="w"> </span>is<span class="w"> </span>provided<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>modules.<span class="w"> </span>To<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>extension<span class="w"> </span>you<span class="w"> </span>must<span class="w"> </span>load<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>modules.<span class="w"> </span>Note<span class="w"> </span>that<span class="w"> </span>any<span class="w"> </span>module<span class="w"> </span>names<span class="w"> </span><span class="k">in</span><span class="w"> </span>parentheses<span class="w"> </span>show<span class="w"> </span>the<span class="w"> </span>module<span class="w"> </span>location<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>software<span class="w"> </span>hierarchy.
-
-
-<span class="w">       </span>R-bundle-Bioconductor/3.19-foss-2022b-R-4.4.1
+<p>```bash
+module spider Seurat/5.1.0</p>
+<hr />
+<h2 id="seurat-seurat510-e">Seurat: Seurat/5.1.0 (E)</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">provided</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">modules</span><span class="o">.</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">extension</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">modules</span><span class="o">.</span><span class="w"> </span><span class="n">Note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">parentheses</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">software</span><span class="w"> </span><span class="n">hierarchy</span><span class="o">.</span>
 
 
-Names<span class="w"> </span>marked<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>trailing<span class="w"> </span><span class="o">(</span>E<span class="o">)</span><span class="w"> </span>are<span class="w"> </span>extensions<span class="w"> </span>provided<span class="w"> </span>by<span class="w"> </span>another<span class="w"> </span>module.
+<span class="w">   </span><span class="n">R</span><span class="o">-</span><span class="n">bundle</span><span class="o">-</span><span class="n">Bioconductor</span><span class="o">/</span><span class="mf">3.19</span><span class="o">-</span><span class="n">foss</span><span class="o">-</span><span class="mi">2022</span><span class="n">b</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mf">4.4</span><span class="o">.</span><span class="mi">1</span>
 </code></pre></div>
+
+<p>Names marked by a trailing (E) are extensions provided by another module.</p>
+<p>```</p>
 <p>So this version of Seurat is included in the <code>R-bundle-Bioconductor</code> module for R version 4.4.1. By loading the <code>R/4.4.1-foss-2022b</code> module, you can simply run <code>library(Seurat)</code> to use that tool without installing it yourself.</p>
 <h3 id="install-packages">Install Packages</h3>
 <p>The software modules include many commonly used packages, but you can install additional packages specifically for your account.
 As part of the R software modules we define an environment variable which directs R to install packages to your home space.
 To change the location of where R installs packages, the <code>R_LIBS_USER</code> variable can be set in your <code>~/.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code>export R_LIBS_USER=$GIBBS_PROJECT/R/%v
-</code></pre></div>
+<p><code>export R_LIBS_USER=$GIBBS_PROJECT/R/%v</code></p>
 <p>where <code>%v</code> is a placeholder for the R major and minor version number (e.g. <code>4.2</code>).
 R will replace this variable with the correct value automatically to segregate packages installed with different versions of R.</p>
 <p>We recommend you install packages in an <a href="/clusters-at-yale/job-scheduling/#interactive-jobs">interactive job</a>.
 If there is a missing library your package of interest needs, you should be able to load its module.
 If you cannot find a dependency or have trouble installing an R package, <a href="/#web-and-email-support">please get in touch with us</a>.</p>
 <p>To get started, request a compute node, load the R module and start R. Trying to install packages on the login node will often fail due to memory restraints:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">###request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu</span>
-salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--mem<span class="o">=</span>20G<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>20G
-
-module<span class="w"> </span>load<span class="w"> </span>R/4.4.1-foss-2022b
-
-R
-<span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
-</code></pre></div>
+<p>```bash</p>
+<h3 id="request-a-compute-node-on-the-devel-partition-for-4-hours-with-20-gb-of-ram-and-1-cpu">request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu</h3>
+<p>salloc --partition=devel --mem=20G --cpus-per-task=1 --mem=20G</p>
+<p>module load R/4.4.1-foss-2022b</p>
+<p>R</p>
+<h1 id="in-r">in R</h1>
+<blockquote>
+<p>install.packages("lattice", repos="http://cran.r-project.org")
+```</p>
+</blockquote>
 <p>This will throw a warning like:</p>
-<div class="highlight"><pre><span></span><code>Warning<span class="w"> </span><span class="k">in</span><span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span><span class="w"> </span>:
-<span class="w">  </span><span class="s1">&#39;lib = &quot;/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library&quot;&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>writable
-Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>a<span class="w"> </span>personal<span class="w"> </span>library<span class="w"> </span>instead?<span class="w"> </span><span class="o">(</span>yes/No/cancel<span class="o">)</span><span class="w"> </span>yes
-Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>personal<span class="w"> </span>library
+<p><code>bash
+Warning in install.packages("lattice", repos = "http://cran.r-project.org") :
+  'lib = "/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
 ‘/home/netID/R/4.4.1-foss-2022b’
-to<span class="w"> </span>install<span class="w"> </span>packages<span class="w"> </span>into?<span class="w"> </span><span class="o">(</span>yes/No/cancel<span class="o">)</span><span class="w"> </span>yes
-</code></pre></div>
+to install packages into? (yes/No/cancel) yes</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you encounter a permission error because the installation does not prompt you to create a personal library, create the directory in the default location in your home directory for the version of R you are using; e.g.,
-<div class="highlight"><pre><span></span><code>mkdir -p $HOME/R/4.4.1-foss-2022b
-</code></pre></div></p>
+<code>mkdir -p $HOME/R/4.4.1-foss-2022b</code></p>
 </div>
 <p>You can customize where packages are installed and accessed for a particular R session using the .libPaths function in R:
-<div class="highlight"><pre><span></span><code># List current package locations
-&gt; .libPaths()
-
-# Add new default location to the standard defaults, e.g. project/my_R_libs
-&gt; .libPaths(c(&quot;/home/netID/project/my_R_libs/&quot;, .libPaths()))
-</code></pre></div></p>
+```</p>
+<h1 id="list-current-package-locations">List current package locations</h1>
+<blockquote>
+<p>.libPaths()</p>
+</blockquote>
+<h1 id="add-new-default-location-to-the-standard-defaults-eg-projectmy_r_libs">Add new default location to the standard defaults, e.g. project/my_R_libs</h1>
+<blockquote>
+<p>.libPaths(c("/home/netID/project/my_R_libs/", .libPaths()))
+```</p>
+</blockquote>
 <h2 id="run-r">Run R</h2>
 <p>We will kill R jobs on the login nodes that are using excessive resources.
 To be a good cluster citizen, launch your R computation in jobs.
@@ -3054,21 +2972,21 @@ See our <a href="/clusters-at-yale/job-scheduling">Slurm documentation</a> for m
 <h3 id="interactive-job">Interactive Job</h3>
 <p>To run R interactively, first launch an interactive job on a compute node.
 If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>-t<span class="w"> </span><span class="m">4</span>:00:00
-</code></pre></div>
+<p><code>bash
+salloc --mem=10G -t 4:00:00</code></p>
 <p>Once your interactive session starts, you can load the appropriate module or Conda environment (see above) and start R by entering <code>R</code> on your command prompt. If you are happy with your R commands, save them to a file which can then be submitted and run as a batch job.</p>
 <h3 id="batch-mode">Batch Mode</h3>
 <p>To run R in batch mode, create a plain-text batch script to submit.
 In that script, you can run your R script. In this case <code>myscript.R</code> is in the same directory as the batch script, batch script contents shown below.</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH -J my_r_program</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH -t 4:00:00</span>
-
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>R/4.4.1-foss-2022b
-Rscript<span class="w"> </span>myscript.R
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-j-my_r_program">SBATCH -J my_r_program</h1>
+<h1 id="sbatch-mem10g">SBATCH --mem=10G</h1>
+<h1 id="sbatch-t-40000">SBATCH -t 4:00:00</h1>
+<p>module reset
+module load R/4.4.1-foss-2022b
+Rscript myscript.R
+```</p>
 <p>To actually submit the job, run <code>sbatch my_r_job.sh</code> where the batch script above was saved as <code>my_r_job.sh</code>.</p>
 <h3 id="rstudio">RStudio</h3>
 <p>You can run RStudio app via <a href="/clusters-at-yale/access/ood/#interactive-apps">Open Ondemand</a>.
@@ -3077,30 +2995,26 @@ Here you can select the desired version of R and RStudio and launch an interacti
 <p>On a cluster you may want to use R in parallel across multiple nodes.
 While there are a few different ways this can be achieved, we recommend using the R software module which already includes <code>Rmpi</code>, <code>parallel</code>, and <code>doMC</code>.</p>
 <p>To test it, we can create a simple R script named <code>ex1.R</code></p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
-
-<span class="n">n</span><span class="o">&lt;-</span><span class="nf">mpi.comm.size</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-<span class="n">me</span><span class="o">&lt;-</span><span class="nf">mpi.comm.rank</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-
-<span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-<span class="n">val</span><span class="o">&lt;-</span><span class="m">777</span>
-<span class="nf">mpi.bcast</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;me&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;val&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
-<span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
-
-<span class="nf">mpi.quit</span><span class="p">()</span>
-</code></pre></div>
+<p>```R
+library("Rmpi")</p>
+<p>n&lt;-mpi.comm.size(0)
+me&lt;-mpi.comm.rank(0)</p>
+<p>mpi.barrier(0)
+val&lt;-777
+mpi.bcast(val, 1, 0, 0)
+print(paste("me", me, "val", val))
+mpi.barrier(0)</p>
+<p>mpi.quit()</p>
+<p>```</p>
 <p>For some versions of R, the <code>Rmpi</code> package needs to be installed first. Then we can launch it with an sbatch script (<code>ex1.sh</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH -n 4 </span>
-<span class="c1">#SBATCH -t 5:00</span>
-
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>R/4.4.1-foss-2022b
-
-srun<span class="w"> </span>Rscript<span class="w"> </span>ex1.R
-</code></pre></div>
+<p>```sh</p>
+<h1 id="binbash_1">!/bin/bash</h1>
+<h1 id="sbatch-n-4">SBATCH -n 4</h1>
+<h1 id="sbatch-t-500">SBATCH -t 5:00</h1>
+<p>module reset
+module load R/4.4.1-foss-2022b</p>
+<p>srun Rscript ex1.R
+```</p>
 <p>This script should execute a simple broadcast and complete in a few seconds.</p>
 <h2 id="virtual-display-session">Virtual Display Session</h2>
 <p>It is common for R to require a display session to save certain types of figures.
@@ -3112,25 +3026,28 @@ See the guide for <a href="/clusters-at-yale/guides/xvfb">xvfb</a> for more deta
 <p>If there isn't a module available for the version of R you want, you can set up your own R installation using <a href="/clusters-at-yale/guides/conda">Conda</a>.
 With Conda you can manage your own packages and dependencies, for R, Python, etc.</p>
 <p>Most of the time the best way to install R packages for your Conda R environment is via <code>conda</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># load miniconda</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-<span class="c1"># create the conda environment including r-base and r-essentials package collections</span>
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_r_env<span class="w"> </span>r-base<span class="w"> </span>r-essentials
-<span class="c1"># activate the environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>my_r_env
-
-<span class="c1"># Install the lattice package (r-lattice)</span>
-conda<span class="w"> </span>install<span class="w"> </span>r-lattice
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="load-miniconda">load miniconda</h1>
+<p>module load miniconda</p>
+<h1 id="create-the-conda-environment-including-r-base-and-r-essentials-package-collections">create the conda environment including r-base and r-essentials package collections</h1>
+<p>conda create --name my_r_env r-base r-essentials</p>
+<h1 id="activate-the-environment">activate the environment</h1>
+<p>conda activate my_r_env</p>
+<h1 id="install-the-lattice-package-r-lattice">Install the lattice package (r-lattice)</h1>
+<p>conda install r-lattice</p>
+<p>```</p>
 <p>If there are packages that conda does not provide, you can install using the <code>install.packages</code> function, but this may occasionally not work as well.
 When you install packages with <code>install.packages</code> make sure to activate your Conda environment first.</p>
-<div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>my_r_env
-R
-<span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
-</code></pre></div>
+<p>``` bash
+salloc
+module load miniconda
+source activate my_r_env
+R</p>
+<h1 id="in-r_1">in R</h1>
+<blockquote>
+<p>install.packages("lattice", repos="http://cran.r-project.org")
+```</p>
+</blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Conda-based R may not work properly with parallel packages like <code>Rmpi</code> when running across multiple compute nodes.
@@ -3139,17 +3056,18 @@ In general, it's best to use the module installation of R for anything which req
 <h2 id="troubleshoot-r-crashes-on-startup-with-lc_ctype-warning">Troubleshoot: R crashes on startup with LC_CTYPE warning</h2>
 <p>R has a strange bug that can cause it to crash on startup when you log on remotely to a YCRC cluster terminal.</p>
 <p>You will see the following messages printed out as it crashes:
-<div class="highlight"><pre><span></span><code>During startup - Warning message:
-Setting LC_CTYPE failed, using &quot;C&quot; 
-
- *** caught segfault ***
-address (nil), cause &#39;memory not mapped&#39;
-</code></pre></div></p>
+```
+During startup - Warning message:
+Setting LC_CTYPE failed, using "C" </p>
+<p><strong><em> caught segfault </em></strong>
+address (nil), cause 'memory not mapped'
+```</p>
 <p>This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.</p>
 <p>To avoid this crash, connect to the YCRC cluster with your terminal as usual, but before running R type into the terminal the command:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">unset</span><span class="w"> </span>LC_CTYPE
-<span class="c1"># or alternatively: &#39;export LC_CTYPE=en_US.UTF-8&#39; or &#39;export LC_ALL=en_US.UTF-8&#39;</span>
-</code></pre></div>
+<p>``` bash
+unset LC_CTYPE</p>
+<h1 id="or-alternatively-export-lc_ctypeen_usutf-8-or-export-lc_allen_usutf-8">or alternatively: 'export LC_CTYPE=en_US.UTF-8' or 'export LC_ALL=en_US.UTF-8'</h1>
+<p>```</p>
                 
                   
                     

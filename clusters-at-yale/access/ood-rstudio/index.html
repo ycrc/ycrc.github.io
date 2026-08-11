@@ -956,47 +956,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#using-r-conda-with-the-rstudio-server-app" class="md-nav__link">
-    Using R Conda with the RStudio Server App
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-rstudio-in-remote-desktop" class="md-nav__link">
-    Run RStudio in Remote Desktop
-  </a>
-  
-    <nav class="md-nav" aria-label="Run RStudio in Remote Desktop">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-r-module-with-rstudio-desktop" class="md-nav__link">
-    Using R module with RStudio Desktop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-r-conda-with-rstudio-desktop" class="md-nav__link">
-    Using R Conda with RStudio Desktop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#troubleshoot-rstudio-with-conda-r" class="md-nav__link">
-    Troubleshoot: RStudio with Conda R
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2892,47 +2851,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#using-r-conda-with-the-rstudio-server-app" class="md-nav__link">
-    Using R Conda with the RStudio Server App
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-rstudio-in-remote-desktop" class="md-nav__link">
-    Run RStudio in Remote Desktop
-  </a>
-  
-    <nav class="md-nav" aria-label="Run RStudio in Remote Desktop">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-r-module-with-rstudio-desktop" class="md-nav__link">
-    Using R module with RStudio Desktop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-r-conda-with-rstudio-desktop" class="md-nav__link">
-    Using R Conda with RStudio Desktop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#troubleshoot-rstudio-with-conda-r" class="md-nav__link">
-    Troubleshoot: RStudio with Conda R
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2959,43 +2877,41 @@ To get started, connect to one of cluster <a href="/clusters-at-yale/access/ood"
 In the submission form, you can alos select between a number of R versions.</p>
 <h3 id="change-user-r-package-path">Change User R Package Path</h3>
 <p>To change the default path where packages installed by the user are stored, you need to add the following line of code in your <code>$HOME/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_LIBS_USER</span><span class="o">=</span>path_to_your_local_r_packages
-</code></pre></div>
+<p><code>bash
+export R_LIBS_USER=path_to_your_local_r_packages</code></p>
 <h3 id="configure-the-graphic-device">Configure the Graphic Device</h3>
 <p>When you plot in a RStudio session, you may encounter the following error:</p>
-<div class="highlight"><pre><span></span><code>Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>RStudioGD<span class="o">()</span><span class="w"> </span>:<span class="w"> </span>
-<span class="w">  </span>Shadow<span class="w"> </span>graphics<span class="w"> </span>device<span class="w"> </span>error:<span class="w"> </span>r<span class="w"> </span>error<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>R<span class="w"> </span>code<span class="w"> </span>execution<span class="w"> </span>error<span class="o">)</span>
-In<span class="w"> </span>addition:<span class="w"> </span>Warning<span class="w"> </span>message:
-In<span class="w"> </span>grDevices:::png<span class="o">(</span><span class="s2">&quot;/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png&quot;</span>,<span class="w">  </span>:
-<span class="w">  </span>unable<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>X11<span class="w"> </span>display<span class="w"> </span><span class="s1">&#39;&#39;</span>
-</code></pre></div>
+<p><code>bash
+Error in RStudioGD() : 
+  Shadow graphics device error: r error 4 (R code execution error)
+In addition: Warning message:
+In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
+  unable to open connection to X11 display ''</code></p>
 <p>To fix the problem, you need to configure your RStudio session to use <code>Cairo</code> for plotting. 
 You can do it in your code as follows: </p>
-<div class="highlight"><pre><span></span><code>options<span class="o">(</span><span class="nv">bitmapType</span><span class="o">=</span><span class="s1">&#39;cairo&#39;</span><span class="o">)</span>
-</code></pre></div>
+<p><code>bash
+options(bitmapType='cairo')</code></p>
 <p>Alternatively, you can put the above code in <code>.Rprofile</code> in your home directory and the option will be picked up automatically. </p>
 <h2 id="troubleshoot-rstudio-server-app-does-not-respond">Troubleshoot: RStudio Server app does not respond</h2>
 <p>We have been observing that users' RStudio Server App configuration files seem to become corrupted from time to time; as a result, the RStudio App may hang while starting with the message:</p>
-<div class="highlight"><pre><span></span><code>Your session is currently starting... Please be patient as this process can take a few minutes
-</code></pre></div>
+<p><code>Your session is currently starting... Please be patient as this process can take a few minutes</code></p>
 <p>or it may otherwise become sluggish or even completely stop responding. We are working to track down the cause of the issue(s); a possible trigger could be ungraceful termination of a previous RStudio session, for example crashing due to a memory error, rather than exiting normally.</p>
 <p>To recover from such behavior, terminate any running or pending RStudio sessions and then run the following command in a <a href="/clusters-at-yale/access/ood#terminal">terminal</a>:</p>
-<div class="highlight"><pre><span></span><code>ycrc_clean_rstudio.sh
-
-# or, if the above fails to fix the problem, do:
-
-ycrc_clean_rstudio.sh -f
-
-# (enter &#39;y&#39; at the prompt after confirming no RStudio sessions are running)
-</code></pre></div>
+<p>```
+ycrc_clean_rstudio.sh</p>
+<h1 id="or-if-the-above-fails-to-fix-the-problem-do">or, if the above fails to fix the problem, do:</h1>
+<p>ycrc_clean_rstudio.sh -f</p>
+<h1 id="enter-y-at-the-prompt-after-confirming-no-rstudio-sessions-are-running">(enter 'y' at the prompt after confirming no RStudio sessions are running)</h1>
+<p>```</p>
 <p>This will remove any temporary files created by RStudio and allow it to start anew.</p>
 <p>The second option will basically delete all previous OOD records of your RStudio sessions; this shouldn't be a problem since these records are rarely if ever useful.</p>
 <h2 id="using-r-conda-with-the-rstudio-server-app">Using R Conda with the RStudio Server App</h2>
 <p>If you have created <a href="/clusters-at-yale/guides/r/#conda-based-r-environments">R conda environments</a> (i.e, in the <a href="/clusters-at-yale/access/ood#terminal">terminal</a>) then you can make these available to the RStudio Server app. From the terminal, execute the following command:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># This command must be run from a YCRC interactive shell (login or compute node)</span>
-<span class="c1">#  ***Please note, it won&#39;t work on an R terminal***</span>
-ycrc_conda_env.sh<span class="w"> </span>update
-</code></pre></div>
+<p>``` bash</p>
+<h1 id="this-command-must-be-run-from-a-ycrc-interactive-shell-login-or-compute-node">This command must be run from a YCRC interactive shell (login or compute node)</h1>
+<h1 id="please-note-it-wont-work-on-an-r-terminal"><strong><em>Please note, it won't work on an R terminal</em></strong></h1>
+<p>ycrc_conda_env.sh update
+```</p>
 <p>Your R conda environments should now show up in the 'R version' drop-down menu. </p>
 <h2 id="run-rstudio-in-remote-desktop">Run RStudio in Remote Desktop</h2>
 <div class="admonition warning">
@@ -3012,20 +2928,20 @@ You will need to wait until the code finishes before you can connect to the same
 you can run RStudio Desktop within a Remote Desktop environment.</p>
 <h3 id="using-r-module-with-rstudio-desktop">Using R module with RStudio Desktop</h3>
 <p>First, start a Remote Desktop instance in the web portal. From the terminal in the Remote Desktop, run the following commands:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R
-module<span class="w"> </span>load<span class="w"> </span>RStudio
-rstudio
-</code></pre></div>
+<p><code>bash
+module load R
+module load RStudio
+rstudio</code></p>
 <h3 id="using-r-conda-with-rstudio-desktop">Using R Conda with RStudio Desktop</h3>
 <p>If you want to use R in a Conda environment, start a Remote Desktop instance in the web portal first. 
 From the terminal in the Remote Desktop, do <em>not</em> load the modules for R and RStudio. 
 Instead, install 'rstudio-desktop' into your R Conda environment if you have not done so, 
 and then call <code>rstudio</code>.  </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>my_r_env
-conda<span class="w"> </span>install<span class="w"> </span>rstudio-desktop
-rstudio
-</code></pre></div>
+<p><code>bash
+module load miniconda
+conda activate my_r_env
+conda install rstudio-desktop
+rstudio</code></p>
 <h3 id="troubleshoot-rstudio-with-conda-r">Troubleshoot: RStudio with Conda R</h3>
 <p>If you see <code>NOT_FOUND</code> in "Conda R Environment", it means your Conda R environment has not been properly installed. You may need to reinstall your Conda R environment, making sure <code>r-base r-essentials</code> are both included; then</p>
                 

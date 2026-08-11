@@ -2783,6 +2783,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#binbash" class="md-nav__link">
+    !/bin/bash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-p-day" class="md-nav__link">
+    SBATCH -p day
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-c-1" class="md-nav__link">
+    SBATCH -c 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-t-60000" class="md-nav__link">
+    SBATCH -t 6:00:00
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2800,8 +2828,6 @@
                   </a>
                 
                 
-                  <h1>2023 10</h1>
-                
                 <h2 id="october-2023">October 2023</h2>
 <h3 id="announcements">Announcements</h3>
 <h4 id="mccleary-maintenance">McCleary Maintenance</h4>
@@ -2812,22 +2838,20 @@
 <p>Many scientific workflows start as interactive Jupyter notebooks, and our Open OnDemand portal has dramatically simplified deploying these notebooks on cluster resources.  However, the step from running notebooks interactively to running jobs as a batch script can be challenging and is often a barrier to migrating to using <code>sbatch</code> to run workflows non-interactively. </p>
 <p>To help solve this problem, there are a handful of utilities that can execute a notebook as if you were manually hitting "shift-Enter" for each cell. Of note is <a href="https://papermill.readthedocs.io/en/latest/">Papermill</a> which provides a powerful set of tools to bridge between interactive and batch-mode computing.</p>
 <p>To get started, install papermill into your Conda environments:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda install papermill
-</code></pre></div>
+<p><code>module load miniconda
+conda install papermill</code></p>
 <p>Then you can simply evaluate a notebook, preserving figures and output inside the notebook, like this:</p>
-<div class="highlight"><pre><span></span><code>papermill /path/to/notebook.ipynb
-</code></pre></div>
+<p><code>papermill /path/to/notebook.ipynb</code></p>
 <p>This can be run inside a batch job that might look like this:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-#SBATCH -p day
-#SBATCH -c 1
-#SBATCH -t 6:00:00
-
-module unload miniconda
+<p>```</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-p-day">SBATCH -p day</h1>
+<h1 id="sbatch-c-1">SBATCH -c 1</h1>
+<h1 id="sbatch-t-60000">SBATCH -t 6:00:00</h1>
+<p>module unload miniconda
 conda activate my_env
-papermill /path/to/notebook.ipynb
-</code></pre></div>
+papermill /path/to/notebook.ipynb</p>
+<p>```</p>
 <p>Variables can also be parameterized and passed in as command-line options so that you can run multiple copies simultaneously with different input variables. For more information see the [Papermill docs pages](https://papermill.readthedocs.io/.</p>
                 
                   
