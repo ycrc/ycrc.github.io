@@ -44,12 +44,12 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will offer a convenient list of queuing options (you can also specify your own); it then submits a cryoSPARC 'master' batch job and prints instructions on how to connect to the cryoSPARC GUI.
 
 !!! note
-    Please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, f you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
-    ```
-    ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
-    #     or 
-    ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
-    ```
+    Please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
+
+```
+ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
+ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
+```
 
 Choose between the following two methods to connect to the cryoSPARC GUI:
 
