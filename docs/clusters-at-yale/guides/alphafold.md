@@ -178,7 +178,9 @@ alphafold_msa.sh:
 
 ## Clear all loaded software modules, and load AlphaFold module
 module reset
-module load AlphaFold/3.0.1-20251021-foss-2024a-CUDA-12.6.0
+## Edit to set desired AlphaFold module version;
+## search available versions via "module avail AlphaFold/"
+module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
 
 # Select full path to working directory
 RUNDIR=`readlink -f ${PWD}`
@@ -226,8 +228,10 @@ alphafold_model.sh:
 #SBATCH --mail-type=ALL
 
 ## Clear all loaded software modules, and load AlphaFold module
-module reset
-module load AlphaFold/3.0.1-20251021-foss-2024a-CUDA-12.6.0
+module rese
+## Edit to set desired AlphaFold module version;
+## search available versions via "module avail AlphaFold/"
+module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
 
 # Select full path to current working directory
 RUNDIR=`readlink -f ${PWD}`
