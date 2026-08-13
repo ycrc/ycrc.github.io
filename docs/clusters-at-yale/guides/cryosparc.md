@@ -136,21 +136,29 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
     cd $(dirname "$(dirname "$(dirname "$(which cryosparcm)")")")
     mv cryosparc_database cryosparc_database_corrupt
 
-    # Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for <good_backup_date> in the command below:
-    cp -a "../.snapshot/<good_backup_date>/cryosparc/cryosparc_database" .
+    # Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for <good_snapshot> in the command below:
+    cp -a "../.snapshot/<good_snapshot>/cryosparc/cryosparc_database" .
     ```
 
-2. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:
+2. **Browser issues** : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's profile data as follows. From a terminal window, do:
 
-    - Select `Manage history` (click on the Firefox hamburger menu at the window upper right, then click `History` -> `Manage History`)
-    - Click on the search box and type `ycrc.yale.edu`
-    - Right click on any cryoSPARC history entries, select `Forget About This Site...`, then click `Forget`
-    - Repeat until there are no more cryoSPARC entries left
-    - Close the history window and select `Settings` from the Firefox hamburger menu
-    - Click `Privacy & Security`, scroll down to `Cookies and Site Data`, and click `Manage Data...`
-    - If you see any remaining cryoSPARC entries, click on them and select `Remove Selected`, then `Save Changes`
-    - Quit and restart firefox ; hopefully you can now successfully load the cryoSPARC page
-    - If this doesn't work the first time, repeating the above steps one or two times more may still resolve the issue
+    ``` bash
+    # Reset firefox to its 'pristine' state with no user profiles or cache data:
+    cd ~/
+    mkdir -p firefox_broken/cache
+    mv .mozilla/firefox/ firefox_broken/
+    mv .cache/mozilla/firefox/ firefox_broken/cache/
+
+    # Get rid of the corrupted files
+    /bin/rm -r firefox_broken
+    ```
+    
+    Optionally, you can also restore your user profiles from the most recent, uncorrupted [snapshot backup](/data/backups/#retrieve-data-from-snapshots):
+    ``` bash
+    cd ~/
+    # Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for <good_snapshot> in the command below:
+    cp -r .snapshot/<good_snapshot>_UTC/.mozilla/firefox/ .mozilla
+    ```
 
 3. **Leftover lock files** : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with `cryosparcm status`, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a `cryosparc*.sock` file or a `mongo*.sock` file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with `cryosparcm start`. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.
 
