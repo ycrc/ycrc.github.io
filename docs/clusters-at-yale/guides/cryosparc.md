@@ -82,7 +82,7 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
 
     - CryoSPARC may be particularly susceptible to this problem when analyzing very many particles (i.e. multiple millions) and/or large box sizes (i.e. dimensions of 768x768).
 
-    - Job types where we have seen this problem include:  '2D Classification', '2D Template Matching', 'Local Refinement', and 'Ab-Initio Reconstruction'
+    - Job types where we have seen this problem include:  '2D Classification', '2D Template Matching', 'Local Refinement', 'Ab-Initio Reconstruction', and 'Micrograph Denoiser'.
 
 6. **Click 'Submit to lane'** : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryoSPARC GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command `squeue --me`).
 
