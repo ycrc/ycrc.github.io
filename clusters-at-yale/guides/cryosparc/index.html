@@ -2969,23 +2969,26 @@ convolutional neural networks. It can optionally be used from inside cryoSPARC u
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
 mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
 
-<span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_backup_date&gt; in the command below:</span>
-cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_backup_date&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
+<span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_snapshot&gt; in the command below:</span>
+cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_snapshot&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
 </code></pre></div>
 </li>
 <li>
-<p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's history and cache data for the page. To do this, open firefox and then:</p>
-<ul>
-<li>Select <code>Manage history</code> (click on the Firefox hamburger menu at the window upper right, then click <code>History</code> -&gt; <code>Manage History</code>)</li>
-<li>Click on the search box and type <code>ycrc.yale.edu</code></li>
-<li>Right click on any cryoSPARC history entries, select <code>Forget About This Site...</code>, then click <code>Forget</code></li>
-<li>Repeat until there are no more cryoSPARC entries left</li>
-<li>Close the history window and select <code>Settings</code> from the Firefox hamburger menu</li>
-<li>Click <code>Privacy &amp; Security</code>, scroll down to <code>Cookies and Site Data</code>, and click <code>Manage Data...</code></li>
-<li>If you see any remaining cryoSPARC entries, click on them and select <code>Remove Selected</code>, then <code>Save Changes</code></li>
-<li>Quit and restart firefox ; hopefully you can now successfully load the cryoSPARC page</li>
-<li>If this doesn't work the first time, repeating the above steps one or two times more may still resolve the issue</li>
-</ul>
+<p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's profile data as follows. From a terminal window, do:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Reset firefox to its &#39;pristine&#39; state with no user profiles or cache data:</span>
+<span class="nb">cd</span><span class="w"> </span>~/
+mkdir<span class="w"> </span>-p<span class="w"> </span>firefox_broken/cache
+mv<span class="w"> </span>.mozilla/firefox/<span class="w"> </span>firefox_broken/
+mv<span class="w"> </span>.cache/mozilla/firefox/<span class="w"> </span>firefox_broken/cache/
+
+<span class="c1"># Get rid of the corrupted files</span>
+/bin/rm<span class="w"> </span>-r<span class="w"> </span>firefox_broken
+</code></pre></div>
+<p>Optionally, you can also restore your user profiles from the most recent, uncorrupted <a href="/data/backups/#retrieve-data-from-snapshots">snapshot backup</a>:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/
+<span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_snapshot&gt; in the command below:</span>
+cp<span class="w"> </span>-r<span class="w"> </span>.snapshot/&lt;good_snapshot&gt;_UTC/.mozilla/firefox/<span class="w"> </span>.mozilla
+</code></pre></div></p>
 </li>
 <li>
 <p><strong>Leftover lock files</strong> : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with <code>cryosparcm status</code>, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with <code>cryosparcm start</code>. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
