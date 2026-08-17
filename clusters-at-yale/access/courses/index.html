@@ -1167,6 +1167,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    Frequently Asked Questions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2999,6 +3006,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    Frequently Asked Questions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3194,46 +3208,46 @@ Use the URL for your course web portal will resolve the problem.</p>
 <div class="highlight"><pre><span></span><code>#SBATCH -p education_gpu --gpus=1
 </code></pre></div>
 <h3 id="web-portal">Web Portal</h3>
-<p>In any of the app submission forms, type the correct paritition name into the "Partition" field.</p>
+<p>In any of the app submission forms, select the correct paritition name into the "Partition" field.</p>
 <h2 id="cluster-maintenance">Cluster Maintenance</h2>
-<p>Bouchet undergoes regularly scheduled maintenance twice a year. The maintenance schedule is published <a href="https://research.computing.yale.edu/system-status">here</a>.</p>
+<p>Bouchet undergoes regularly scheduled maintenance throughout the year. The maintenance schedule is published <a href="https://research.computing.yale.edu/system-status">here</a>.</p>
 <p>Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.</p>
 <h2 id="end-of-semester-course-deletion">End of Semester Course Deletion</h2>
 <p>As mentioned above, all course allocations are temporary. All associated accounts and data will be removed one month after the last day of exams for that semester. If you would like to retain any data in your course account, please download it prior to the deletion date or, if applicable, submit a request to research.computing@yale.edu to transfer the data into your research account. </p>
 <p>A reminder of the removal will be sent to the instructor to see if it needs to be delayed for any incompletes (for example). <strong>Students will not receive a reminder.</strong> Instructors, if you would like to retain course materials for future semesters, please submit a request to research.computing@yale.edu to have the materials stored in our course repository. </p>
 <h3 id="transfer-data-to-research-account">Transfer Data to Research Account</h3>
-<p>If you have a research account on Bouchet, you can transfer data you want to save from your course account's home directory to your research account.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure there is sufficient free space in your research account storage to accommodate any data you are transferring from your course account using <code>getquota</code>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If your course and your research accounts are on different clusters, or if you need to transfer data from your course account's project or scratch directory to your research account, please <a href="/#get-help">contact us</a> for assistance.</p>
-</div>
-<ol>
+<p>If you have a research account on one of our clusters and would like to transfer data from your course account to it, please <a href="/#get-help">contact us</a> for assistance.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<ul>
 <li>
-<p>Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.</p>
+<p><strong>Which partition should I use for my course work?</strong><br />
+  Use the <code>education</code> partition for CPU workloads and <code>education_gpu</code> for GPU workloads whenever possible. These partitions are intended for course use and generally provide more resources that are readily available to students. Course members may also use public partitions such as <code>day</code> and <code>gpu_devel</code> when needed.</p>
 </li>
 <li>
-<p>Grant your research account access to your course account home directory (substitute in your courseid and netid in the example).</p>
-<div class="highlight"><pre><span></span><code># home directory
-setfacl -m u:netid:rX /home/courseid_netid
-</code></pre></div>
+<p><strong>Why does my Jupyter or RStudio session not start in the <code>education</code> partition?</strong><br />
+  The partition may be busy, or one or more compute nodes may be unavailable. If your session still has not started after 5 minutes, you can try the public <code>day</code> partition. Submitting multiple sessions will not help your session start sooner and may increase overall wait times for all the course members.</p>
 </li>
 <li>
-<p>Log in as your research account. Check that you can access the above paths.</p>
+<p><strong>I’m getting <code>Error – failed to map user (NetID)</code></strong><br />
+  Make sure you are using your course-specific URL, such as <code>coursename.ycrc.yale.edu</code>. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.</p>
 </li>
 <li>
-<p>Move to the <code>transfer</code> node with <code>ssh transfer1</code>. If you are transferring a lot of data, open a <a href="/clusters-at-yale/guides/tmux/">tmux</a> session so the transfer can continue if you disconnect from the cluster.</p>
+<p><strong>My session is running, but I’m unable to load the JupyterLab or RStudio interface</strong><br />
+  Please <a href="/#get-help">contact us</a> for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.</p>
 </li>
 <li>
-<p>Initiate a copy of the desired data using <code>rsync</code>. For example:</p>
-<div class="highlight"><pre><span></span><code>mkdir /nfs/roberts/project/group/netid/my_course_data
-rsync -av /home/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data
-</code></pre></div>
+<p><strong>I’m getting <code>This website is under heavy load (queue full)</code> or <code>Proxy error</code></strong><br />
+  Please <a href="/#get-help">contact us</a> for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.</p>
 </li>
-</ol>
+<li>
+<p><strong>I have a question about an assignment or coursework, or I need help troubleshooting my code</strong><br />
+  Please contact your instructor or TA first. They are the best resource for questions about assignments, course content, and troubleshooting course-specific code.</p>
+</li>
+<li>
+<p><strong>Can I use my course account for research or personal projects?</strong><br />
+  No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed.</p>
+</li>
+</ul>
                 
                   
                     
@@ -3242,7 +3256,7 @@ rsync -av /home/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2026</span>
       
     
   </small>
