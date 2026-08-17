@@ -114,37 +114,28 @@ If you have a research account on one of our clusters and would like to transfer
 
 ## Frequently Asked Questions
 
-### I’m getting `Error – failed to map user (NetID)`
+- **Which partition should I use for my course work?**  
+  Use the `education` partition for CPU workloads and `education_gpu` for GPU workloads whenever possible. These partitions are intended for course use and generally provide more resources that are readily available to students. Course members may also use public partitions such as `day` and `gpu_devel` when needed.
 
-Make sure you are using your course-specific URL:
+- **Why does my Jupyter or RStudio session not start in the `education` partition?**  
+  The partition may be busy, or one or more compute nodes may be unavailable. If your session still has not started after 5 minutes, you can try the public `day` partition. Submitting multiple sessions will not help your session start sooner and may increase overall wait times for all the course members.
 
-`coursename.ycrc.yale.edu`
+- **I’m getting `Error – failed to map user (NetID)`**  
+  Make sure you are using your course-specific URL, such as `coursename.ycrc.yale.edu`. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
 
-This error usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
+- **My session is running, but I’m unable to load the JupyterLab or RStudio interface**  
+  Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
 
-### Why does my interactive session not start?
+- **I’m getting `This website is under heavy load (queue full)` or `Proxy error`**  
+  Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
 
-The partition may be busy, or one or more compute nodes may be unavailable.
+- **I have a question about an assignment or coursework, or I need help troubleshooting my code**  
+  Please contact your instructor or TA first. They are the best resource for questions about assignments, course content, and troubleshooting course-specific code.
 
-Wait about 5 minutes. If your session still has not started, try a public partition such as `day` for CPU sessions or `gpu_devel` for GPU sessions.
+- **Can I use my course account for research or personal projects?**  
+  No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed.
 
-Submitting multiple sessions will not help your session start sooner and may increase overall wait times.
 
-### My session is running, but I’m unable to load the JupyterLab or RStudio interface
-
-Please [contact us](/#get-help) for assistance. We generally respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
-
-### I’m getting `This website is under heavy load (queue full)` or `Proxy error`
-
-Please [contact us](/#get-help) for assistance. We generally respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
-
-### I have a question about an assignment or coursework, or I need help troubleshooting my code
-
-Please contact your instructor or TA first. They are the best resource for questions about assignments, course content, and troubleshooting course-specific code.
-
-### Can I use my course account for research or personal projects?
-
-No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed. 
 
 
 
