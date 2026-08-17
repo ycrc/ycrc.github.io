@@ -10,7 +10,6 @@ The YCRC Bouchet cluster can be made available for Yale courses with a suitable 
 
 [Submit Course Account Request](https://research.computing.yale.edu/course-request){ .md-button }
 
-
 ## Course ID
 
 Your course will be give a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names and web portal.
@@ -57,7 +56,6 @@ Courses on the YCRC clusters are typically granted a standard 4TiB project quota
 See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-storage/) for details about the different classifications of storage.
 
 
-
 ## Partitions for Courses
 
 Compute resources for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
@@ -96,11 +94,11 @@ or if you need to request a GPU
 
 ### Web Portal
 
-In any of the app submission forms, type the correct paritition name into the "Partition" field.
+In any of the app submission forms, select the correct paritition name into the "Partition" field.
 
 ## Cluster Maintenance
 
-Bouchet undergoes regularly scheduled maintenance twice a year. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
+Bouchet undergoes regularly scheduled maintenance throughout the year. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
 
 Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
 
@@ -112,33 +110,49 @@ A reminder of the removal will be sent to the instructor to see if it needs to b
 
 ### Transfer Data to Research Account
 
-If you have a research account on Bouchet, you can transfer data you want to save from your course account's home directory to your research account.
+If you have a research account on one of our clusters and would like to transfer data from your course account to it, please [contact us](/#get-help) for assistance.
 
-!!! warning
-    Make sure there is sufficient free space in your research account storage to accommodate any data you are transferring from your course account using `getquota`.
+## Frequently Asked Questions
 
-!!! Note
-    If your course and your research accounts are on different clusters, or if you need to transfer data from your course account's project or scratch directory to your research account, please [contact us](/#get-help) for assistance.
+### I’m getting `Error – failed to map user (NetID)`
 
-1. Login to the cluster using your course account either via Terminal or the Shell app in the OOD web portal.
+Make sure you are using your course-specific URL:
 
-1. Grant your research account access to your course account home directory (substitute in your courseid and netid in the example).
+`coursename.ycrc.yale.edu`
 
-    ```
-    # home directory
-    setfacl -m u:netid:rX /home/courseid_netid
-    ```
+This error usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
 
-1. Log in as your research account. Check that you can access the above paths.
+### Why does my interactive session not start?
 
-1. Move to the `transfer` node with `ssh transfer1`. If you are transferring a lot of data, open a [tmux](/clusters-at-yale/guides/tmux/) session so the transfer can continue if you disconnect from the cluster.
+The partition may be busy, or one or more compute nodes may be unavailable.
 
-1. Initiate a copy of the desired data using `rsync`. For example:
+Wait about 5 minutes. If your session still has not started, try a public partition such as `day` for CPU sessions or `gpu_devel` for GPU sessions.
 
-    ```
-    mkdir /nfs/roberts/project/group/netid/my_course_data
-    rsync -av /home/courseid_netid/mydata /nfs/roberts/project/group/netid/my_course_data
-    ```
+Submitting multiple sessions will not help your session start sooner and may increase overall wait times.
+
+### My session is running, but I’m unable to load the JupyterLab or RStudio interface
+
+Please [contact us](/#get-help) for assistance. We generally respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
+
+### I’m getting `This website is under heavy load (queue full)` or `Proxy error`
+
+Please [contact us](/#get-help) for assistance. We generally respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
+
+### I have a question about an assignment or coursework, or I need help troubleshooting my code
+
+Please contact your instructor or TA first. They are the best resource for questions about assignments, course content, and troubleshooting course-specific code.
+
+### Can I use my course account for research or personal projects?
+
+No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed. 
+
+
+
+
+
+
+
+
 
 
 
