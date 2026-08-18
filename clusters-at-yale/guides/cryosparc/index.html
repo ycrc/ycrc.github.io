@@ -2965,13 +2965,26 @@ convolutional neural networks. It can optionally be used from inside cryoSPARC u
 <h3 id="general-cryosparc-issues">General CryoSPARC issues</h3>
 <ol>
 <li>
-<p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may damage cryoSPARC's 'mongo' database. If it cannot be repaired, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
+<p><strong>Database corruption</strong> : Occasionally a crash or other interrupted task may disrupt or damage cryoSPARC's 'mongo' database. If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly.</p>
+<p>To see if you have a problem with your cryoSPARC database, login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with <code>cryosparcm status</code>. If you see that many or all of cryoSPARC's components are 'NOT RUNNING', do <code>cryosparcm stop</code>, followed by <code>cryosparcm start</code>. If you see <code>Warning: Could not get database status (attempt 1/3)</code>, etc., then you need to fix the cryoSPARC database.</p>
+<p>Often you can fix this problem by removing lock files and trying again:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. BE SURE to stop cryosparc first!</span>
+<span class="c1">#  Find your compute node by using &#39;squeue --me&#39; and looking for a &#39;cryoSPAR..&#39; job name</span>
+ssh<span class="w"> </span>&lt;cryosparc_compute_node&gt;
+cryosparcm<span class="w"> </span>stop
+
+<span class="c1"># 2. Get the path to the lock files and remove them:</span>
+<span class="nb">source</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>/config.sh
+rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$CRYOSPARC_DB_PATH</span>/WiredTiger.lock<span class="w"> </span><span class="nv">$CRYOSPARC_DB_PATH</span>/mongod.lock
+</code></pre></div>
+<p>If the above step does not resuscitate the cryoSPARC database, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
 mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
 
 <span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_snapshot&gt; in the command below:</span>
 cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_snapshot&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
 </code></pre></div>
+<p>If you have cryoSPARC database issues but are hesitant to try the above steps, or they do not work for you, please contact YCRC staff ASAP for assistance. Don't wait; we can only recover previous uncorrupted copies of your cryoSPARC database if they are in our snapshots, which only last a couple days!</p>
 </li>
 <li>
 <p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's profile data as follows. From a terminal window, do:</p>
@@ -2990,13 +3003,6 @@ mv<span class="w"> </span>.cache/mozilla/firefox/<span class="w"> </span>firefox
 cp<span class="w"> </span>-r<span class="w"> </span>.snapshot/&lt;good_snapshot&gt;_UTC/.mozilla/firefox/<span class="w"> </span>.mozilla
 </code></pre></div></p>
 </li>
-<li>
-<p><strong>Leftover lock files</strong> : If your submitted cryoSPARC master job is running but unable to start a new CryoSPARC instance, the likeliest reason is leftover files from a previous run that was not shut down properly. Login to the compute node of your cryoSPARC master job and check if cryoSPARC is running with <code>cryosparcm status</code>, and check your cryoSPARC master cluster logfile for errors related to the cryoSPARC data base and/or 'mongo'. If a cryosparcm has failed to run and/or you see signs of a database problem, check /tmp and /tmp/${USER} on the compute node for the existence of a <code>cryosparc*.sock</code> file or a <code>mongo*.sock</code> file.  If they are owned by you, you can just remove them and restart the cryoSPARC master process with <code>cryosparcm start</code>. If these files are present but are not owned by you, then it is likely due to another user's interrupted job.  Contact YCRC staff for assistance.</p>
-<p>If your database won't start and <em><em>you're sure</em></em> there isn't another server running, you can remove lock files and try again.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># source $(dirname &quot;$(dirname &quot;$(which cryosparcm)&quot;)&quot;)/config.sh</span>
-<span class="c1"># rm -f $CRYOSPARC_DB_PATH/WiredTiger.lock $CRYOSPARC_DB_PATH/mongod.lock</span>
-</code></pre></div>
-</li>
 </ol>
                 
                   
@@ -3006,7 +3012,7 @@ cp<span class="w"> </span>-r<span class="w"> </span>.snapshot/&lt;good_snapshot&
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2026</span>
       
     
   </small>
