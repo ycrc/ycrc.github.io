@@ -67,7 +67,7 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
     - For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
 ## Run CryoSPARC Jobs
-3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to. YCRC has set up the following partitions for your use as cryoSPARC lanes: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
+3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to). YCRC has set up the following partitions for your use as cryoSPARC lanes: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
 4. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
 
