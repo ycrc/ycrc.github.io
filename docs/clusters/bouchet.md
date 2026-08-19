@@ -15,6 +15,8 @@ Bouchet is the successor to both Grace and McCleary, with the majority of HPC in
 
 Once you have [an account](https://research.computing.yale.edu/support/hpc/account-request), the cluster can be accessed [via ssh](/clusters-at-yale/access) or [Open OnDemand](/clusters-at-yale/access/ood) at [https://ood-bouchet.ycrc.yale.edu](https://ood-bouchet.ycrc.yale.edu).
 
+All users must abide by the [Bouchet Rules of Behavior](bouchet-rob.md).
+
 ## System Status and Monitoring
 
 For system status messages and the schedule for upcoming maintenance, please see the [system status page](https://research.computing.yale.edu/system-status). 
