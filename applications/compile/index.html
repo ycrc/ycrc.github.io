@@ -1130,6 +1130,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#compiling-for-both-intel-and-amd-nodes" class="md-nav__link">
+    Compiling for both Intel and AMD nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#illegal-instruction-instructions" class="md-nav__link">
     Illegal Instruction Instructions
   </a>
@@ -2871,6 +2878,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#compiling-for-both-intel-and-amd-nodes" class="md-nav__link">
+    Compiling for both Intel and AMD nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#illegal-instruction-instructions" class="md-nav__link">
     Illegal Instruction Instructions
   </a>
@@ -2964,8 +2978,18 @@
 <p>How to get software you need up and running on the clusters.</p>
 <h2 id="caveat-emptor"><em>caveat emptor</em></h2>
 <p>We recommend either use existing <a href="/applications/modules">software modules</a>, <a href="/clusters-at-yale/guides/conda">Conda</a>, <a href="/clusters-at-yale/guides/containers">Apptainer</a>, or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.</p>
-<p>When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.</p>
+<p>When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application on any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. On clusters containing both Intel and AMD nodes, you will also need to make sure that the compiled application uses an instruction set supported by both CPU architectures. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.</p>
 <p>Each of the cluster pages (see the <a href="/clusters">HPC Resources</a> page for a list) has a "Compute Node Configurations" section where nodes are roughly listed from oldest to newest.</p>
+<h3 id="compiling-for-both-intel-and-amd-nodes">Compiling for both Intel and AMD nodes</h3>
+<p>To run your code on both Intel and AMD nodes, you need to compile it with a compiler flag that specifies a compatible instruction set. You can compile your code on either types of compute node.</p>
+<p>Recommended compiler flag:</p>
+<ul>
+<li>GCC compilers (<code>gcc</code>, <code>g++</code>, <code>gfortran</code>): <code>-march=x86-64-v4</code></li>
+<li>Legacy Intel compilers (<code>icc</code>, <code>icpc</code>, <code>ifort</code>): <code>-axCORE-AVX512</code></li>
+<li>New Intel compilers (<code>icx</code>, <code>icpx</code>, <code>ifx</code>): <code>-march=x86-64-v4</code></li>
+<li>NVHPC compiler (<code>nvc</code>, <code>nvc++</code>, <code>nvfortran</code>): <code>-tp x86-64-v4</code></li>
+</ul>
+<p>If you are using Intel compilers, we recommend compiling and running your workflow on the Intel nodes.</p>
 <h3 id="illegal-instruction-instructions">Illegal Instruction Instructions</h3>
 <p>You may find that software compiled on newer compute nodes will fail with the error <code>Illegal instruction (core dumped)</code>. This includes R/Python libraries that include code that compiles from source. To remedy this issue make sure to always either:</p>
 <ul>
@@ -3022,7 +3046,7 @@ mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2026</span>
       
     
   </small>
