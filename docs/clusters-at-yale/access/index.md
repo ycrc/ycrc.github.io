@@ -11,6 +11,8 @@ To log on the cluster, you must first [request an account](https://research.comp
 
 For most users, we recommend using the web portal, Open OnDemand, to access the clusters. For hostnames and more instructions see our [Open OnDemand](/clusters-at-yale/access/ood) documentation.
 
-## SSH Connection
+!!! note "Note"
+    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your accounts is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
 
+## SSH Connection
 For more advanced use cases that are not well supported by the Web Portal (Open OnDemand), you can connect to the clusters over the more traditional [SSH connection](/clusters-at-yale/access/ssh).
