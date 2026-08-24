@@ -17,10 +17,9 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`2000`|
-    |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`1000`|
-    |Maximum memory per user|`15000G`|
+    |Maximum CPUs per user|`16`|
+    |Maximum memory per user|`200G`|
+    |Maximum running jobs per user|`4`|
 
     **Available Compute Nodes**
 
@@ -28,7 +27,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |2|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |1|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
+    |5|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
 
 === "education_gpu"
 
@@ -60,5 +60,6 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |4|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
+    |3|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
+    |1|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
 
