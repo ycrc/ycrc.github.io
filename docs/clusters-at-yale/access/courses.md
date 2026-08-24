@@ -18,7 +18,7 @@ Your course will be give a specific `courseid` based on the Yale course catalog 
 
 All members of a course, including the instructor and TFs will be given temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are distinct from any research accounts a course member may already have. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
 
-All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/).
+All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/) and [Rules of Behavior](https://docs.ycrc.yale.edu/clusters/bouchet-rob/).
 
 ### Course-specific Web Portal
 
@@ -98,7 +98,7 @@ In any of the app submission forms, select the correct paritition name into the 
 
 ## Cluster Maintenance
 
-Bouchet undergoes regularly scheduled maintenance throughout the year. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
+Bouchet undergoes regularly scheduled maintenance four times a year. The maintenance schedule is published [here](https://research.computing.yale.edu/system-status).
 
 Please account for the cluster unavailability when developing course schedules and (for students) completing your assignments.
 
@@ -123,7 +123,10 @@ If you have a research account on one of our clusters and would like to transfer
 - **I’m getting `Error – failed to map user (NetID)`**  
   Make sure you are using your course-specific URL, such as `coursename.ycrc.yale.edu`. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
 
-- **My session is running, but I’m unable to load the JupyterLab or RStudio interface**  
+- **My session is running, but I’m unable to load the RStudio interface**
+  Please try the troubleshooting steps [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/#troubleshoot-rstudio-server-app-does-not-respond). If this does not resolve the issue, please Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
+
+- **My session is running, but I’m unable to load the JupyterLab interface**  
   Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
 
 - **I’m getting `This website is under heavy load (queue full)` or `Proxy error`**  
