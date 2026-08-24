@@ -123,8 +123,8 @@ If you have a research account on one of our clusters and would like to transfer
 - **I’m getting `Error – failed to map user (NetID)`**  
   Make sure you are using your course-specific URL, such as `coursename.ycrc.yale.edu`. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
 
-- **My session is running, but I’m unable to load the RStudio interface**
-  Please try the troubleshooting steps [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/#troubleshoot-rstudio-server-app-does-not-respond). If this does not resolve the issue, please Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
+- **My session is running, but I’m unable to load the RStudio interface** 
+  Please try the troubleshooting steps [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/#troubleshoot-rstudio-server-app-does-not-respond). If this does not resolve the issue, please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
 
 - **My session is running, but I’m unable to load the JupyterLab interface**  
   Please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
