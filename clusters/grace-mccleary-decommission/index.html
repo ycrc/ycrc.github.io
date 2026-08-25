@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace-mccleary-decommission/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -637,15 +637,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    Phase 2
+  <a href="#groups-that-use-ycga-resources" class="md-nav__link">
+    Groups that use YCGA resources
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    Phase 3
+  <a href="#groups-that-use-dedicated-partitions" class="md-nav__link">
+    Groups that use dedicated partitions
   </a>
   
 </li>
@@ -2852,15 +2852,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-2" class="md-nav__link">
-    Phase 2
+  <a href="#groups-that-use-ycga-resources" class="md-nav__link">
+    Groups that use YCGA resources
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-3" class="md-nav__link">
-    Phase 3
+  <a href="#groups-that-use-dedicated-partitions" class="md-nav__link">
+    Groups that use dedicated partitions
   </a>
   
 </li>
@@ -2898,7 +2898,7 @@
                 
                 <h1 id="grace-and-mccleary-decommission">Grace and McCleary Decommission</h1>
 <h2 id="data-center-migration">Data Center Migration</h2>
-<p>The YCRC is in the process of transitioning from the Yale West Campus Data Center to the <a href="https://news.yale.edu/2025/02/26/yale-grows-capacity-high-performance-computing-ai-related-research">MGHPCC data center</a>. The <a href="../bouchet/">Bouchet</a> cluster, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and most data and workloads on those systems will be moved to Bouchet.</p>
+<p>The YCRC is in the process of transitioning from the Yale West Campus Data Center to the <a href="https://news.yale.edu/2025/02/26/yale-grows-capacity-high-performance-computing-ai-related-research">MGHPCC data center</a>. The <a href="../bouchet/">Bouchet</a> cluster, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and all non-YCGA data and workloads will be moved to Bouchet.</p>
 <h2 id="phased-decommission-migration">Phased Decommission &amp; Migration</h2>
 <p>During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.</p>
 <ul>
@@ -2909,7 +2909,7 @@
 <p>Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.</p>
 </li>
 <li>
-<p>Phase 3 (late 2026, early 2027): Migration of newer commons nodes from Grace and McCleary to Bouchet. Migration of newer dedicated nodes along with their associated research groups and data. Grace will be shut down. McCleary will remain as a YCGA-only cluster for the remaining lifetime of YCGA-owned hardware.</p>
+<p>Phase 3 (late 2026, early 2027): Migration of newer commons nodes from Grace and McCleary to Bouchet. Migration of newer dedicated nodes along with their associated research groups and data. Grace will be shut down. McCleary will remain as a YCGA-only cluster for the remaining lifetime of YCGA-owned hardware (at least late 2027).</p>
 </li>
 </ul>
 <p><img alt="When Will I Move Flow Chart" class="cluster-diagram" src="/img/when_will_i_move.png" /></p>
@@ -2917,25 +2917,20 @@
 <h2 id="phase-1">Phase 1</h2>
 <p>Research groups who do not use dedicated compute nodes or YCGA resources were moved off of Grace and McCleary in Phase 1.
 As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.</p>
-<h2 id="phase-2">Phase 2</h2>
-<p>Later on in 2026 we will reach out to groups that use YCGA data and resources about transferring any data and workload to Bouchet that are not associated with YCGA.
-Data and workloads associated with YCGA can and should stay on McCleary, which will remain as YCGA-only cluster for another couple years.</p>
-<p>You will be responsible for identifying the non-YCGA data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account but we are available to assist with that process.</p>
-<h2 id="phase-3">Phase 3</h2>
-<p>Once the timeline for the hardware migration has been finalized (Summer 2026 or later), we will be in contact about preparing to migrate your workloads and data to Bouchet.</p>
+<h2 id="groups-that-use-ycga-resources">Groups that use YCGA resources</h2>
+<p>YCGA users, whether or not you use additional dedicated nodes, will retain access to McCleary for the rest of its lifetime for YCGA-related workloads (likely another couple years). This winter we will reach out to YCGA users about moving non-YCGA data and workflows to Bouchet, but there is no action required at this time.</p>
+<p>When you do move your data, you will be responsible for identifying the non-YCGA data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account but we will be available to assist with that process.</p>
+<h2 id="groups-that-use-dedicated-partitions">Groups that use dedicated partitions</h2>
+<p>All non-YCGA hardware will either be moved to Bouchet or decommissioned, depending on age. All dedicated partitions on Grace and McCleary (other than YCGA) will be decommissioned at the time of the data center migration this winter. Only nodes still under warranty as of January 1st, 2027 will be deployed into dedicated partitions at MGHPCC onto the Bouchet cluster. We will contact each partition’s PI to confirm the future status of their dedicated partitions.</p>
+<p><strong>Non-YCGA users who use dedicated nodes</strong> will lose access to Grace, which will be shut down permanently, and/or McCleary. Later this fall we will reach out about moving data and workflows to Bouchet but there is nothing to do at this time.</p>
 <h2 id="what-about-my-existing-data-on-grace-or-mccleary">What about My Existing Data on Grace or McCleary?</h2>
-<p><strong>All (non-YCGA) data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.</strong> You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. </p>
+<p>We are currently experiencing a storage shortage on Bouchet, so <strong>we kindly request that you leave any existing data on Grace and/or McCleary on those clusters for now</strong>. We have purchased additional storage for Bouchet that should be available this fall. When that is available we will reach out again to provide information about data transfers.</p>
+<p>If you have a paid storage allocation, only current (not expired) paid storage allocations will be considered for migration, so please respond in a timely manner to communications from the YCRC regarding renewing agreements to avoid losing access to your data.</p>
 <div class="admonition warning">
 <p class="admonition-title">NIH Controlled Access Data</p>
-<p>If you have any data on Grace or McCleary that is now covered by the <a href="https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf">NIH Controlled Access Data policies</a>, this data cannot be moved to Bouchet but instead must be moved to the <a href="../hopper/">Hopper</a> HPC cluster. <a href="https://research.computing.yale.edu/secure-project-request">Submit this form to request Hopper access</a>.</p>
+<p>If you have any data on Grace or McCleary that is now covered by the <a href="https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf">NIH Controlled Access Data policies</a>, this data cannot be moved to Bouchet but instead must be moved to the <a href="../hopper/">Hopper</a> HPC cluster. <a href="https://research.computing.yale.edu/secure-project-request">Submit this form to request Hopper access</a></p>
 </div>
-<p>We encourage you to use the <code>getquota</code> utility on Grace and/or McCleary to examine the data usage by your group and specific group members. We recommend using <a href="/data/globus/">Globus</a> to migrate individual data (i.e. home, project, scratch) to Bouchet as it is the fastest and most robust method of transferring data between the clusters. </p>
-<p>If there are members of your group who are no longer active and their directories contain data you would like to retain, please <a href="/#get-help">reach out to us</a> to change the ownership of those files to an active group member so they can transfer the data. When transferring to Bouchet we recommend uploading the files to either the "shared" directory in project or in the directory of an active group member (rather than perpetuating the inactive group member's directories on Bouchet).</p>
-<p>If you have current (not expired) paid storage allocations on either the Palmer or Gibbs storage system, an allocation of the same size is now available on Bouchet on the all-flash Roberts storage system for you to transfer data into (Phase 1 only for now.). If your storage allocation is expired, please <a href="/#get-help">contact us</a> if you would like to purchase a storage allocation on Bouchet. </p>
-<p>If you would like assistance transferring your paid storage allocation or otherwise have questions or concerns about your data transfer, please <a href="/#get-help">reach out to us</a> for assistance.</p>
 <h2 id="get-help">Get Help</h2>
-<p>If you are new to Bouchet, we recommend reviewing our <a href="../bouchet_getting_started/">“Getting Started on Bouchet” documentation</a>. You can also find a recording of our "Intro to Bouchet" session <a href="https://youtu.be/mQMc8y-Z8sY?si=Ubyd7DvX5I9kuaTr">here</a>. </p>
-<p>We also have a recording of our "Transfers with Globus" info session available <a href="https://www.youtube.com/watch?v=VCOBLKrWe9M">here</a>.</p>
 <p>As always, our Research Support staff members are available to assist, including at our <a href="/#office-hours-via-zoom">twice-weekly virtual Office Hours</a>. Please <a href="/#get-help">reach out</a> if you have any questions or concerns about what will be moved to Bouchet and when.</p>
                 
                   
@@ -2945,7 +2940,7 @@ Data and workloads associated with YCGA can and should stay on McCleary, which w
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2026</span>
       
     
   </small>
