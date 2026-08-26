@@ -2917,10 +2917,10 @@ ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
 <ul>
 <li>Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">6</span>:00:00
 </code></pre></div>
 <p>You may also use slurm to change the partition a job runs in (again, you need to do this before the job starts running):</p>
-<div class="highlight"><pre><span></span><code>scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span> <span class="nv">Partition</span><span class="o">=</span>priority_gpu
+<div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>update<span class="w"> </span><span class="nv">JobId</span><span class="o">=</span><span class="m">1234567</span><span class="w"> </span><span class="nv">Partition</span><span class="o">=</span>priority_gpu
 </code></pre></div>
 </li>
 </ol>
@@ -2970,37 +2970,37 @@ convolutional neural networks. It can optionally be used from inside cryoSPARC u
 <p>Often you can fix this problem by removing lock files and trying again:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. BE SURE to stop cryosparc first!</span>
 <span class="c1">#  Find your compute node by using &#39;squeue --me&#39; and looking for a &#39;cryoSPAR..&#39; job name</span>
-ssh &lt;cryosparc_compute_node&gt;
-cryosparcm stop
+ssh<span class="w"> </span>&lt;cryosparc_compute_node&gt;
+cryosparcm<span class="w"> </span>stop
 
 <span class="c1"># 2. Get the path to the lock files and remove them:</span>
-<span class="nb">source</span> <span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>/config.sh
-rm -f <span class="nv">$CRYOSPARC_DB_PATH</span>/WiredTiger.lock <span class="nv">$CRYOSPARC_DB_PATH</span>/mongod.lock
+<span class="nb">source</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>/config.sh
+rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$CRYOSPARC_DB_PATH</span>/WiredTiger.lock<span class="w"> </span><span class="nv">$CRYOSPARC_DB_PATH</span>/mongod.lock
 </code></pre></div>
 <p>If the above step does not resuscitate the cryoSPARC database, you can make use of our <a href="/data/backups/#retrieve-data-from-snapshots">daily project folder snapshots</a> to restore a previous version of the <code>cryosparc_database</code> folder from the past several days. This can avoid a long and painful troubleshooting process with minimal loss of work.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="k">$(</span>which cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
-mv cryosparc_database cryosparc_database_corrupt
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+mv<span class="w"> </span>cryosparc_database<span class="w"> </span>cryosparc_database_corrupt
 
 <span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_snapshot&gt; in the command below:</span>
-cp -a <span class="s2">&quot;../.snapshot/&lt;good_snapshot&gt;/cryosparc/cryosparc_database&quot;</span> .
+cp<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;../.snapshot/&lt;good_snapshot&gt;/cryosparc/cryosparc_database&quot;</span><span class="w"> </span>.
 </code></pre></div>
 <p>If you have cryoSPARC database issues but are hesitant to try the above steps, or they do not work for you, please contact YCRC staff ASAP for assistance. Don't wait; we can only recover previous uncorrupted copies of your cryoSPARC database if they are in our snapshots, which only last a couple days!</p>
 </li>
 <li>
 <p><strong>Browser issues</strong> : Firefox's cache files can become corrupted under certain circumstances (i.e. browser crash) leading to a blank screen when visiting the cryoSPARC GUI page. This can be fixed by resetting Firefox's profile data as follows. From a terminal window, do:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Reset firefox to its &#39;pristine&#39; state with no user profiles or cache data:</span>
-<span class="nb">cd</span> ~/
-mkdir -p firefox_broken/cache
-mv .mozilla/firefox/ firefox_broken/
-mv .cache/mozilla/firefox/ firefox_broken/cache/
+<span class="nb">cd</span><span class="w"> </span>~/
+mkdir<span class="w"> </span>-p<span class="w"> </span>firefox_broken/cache
+mv<span class="w"> </span>.mozilla/firefox/<span class="w"> </span>firefox_broken/
+mv<span class="w"> </span>.cache/mozilla/firefox/<span class="w"> </span>firefox_broken/cache/
 
 <span class="c1"># Get rid of the corrupted files</span>
-/bin/rm -r firefox_broken
+/bin/rm<span class="w"> </span>-r<span class="w"> </span>firefox_broken
 </code></pre></div>
 <p>Optionally, you can also restore your user profiles from the most recent, uncorrupted <a href="/data/backups/#retrieve-data-from-snapshots">snapshot backup</a>:
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/
 <span class="c1"># Now substitute, i.e., snapshot_2026-06-02_17_00_00_UTC for &lt;good_snapshot&gt; in the command below:</span>
-cp -r .snapshot/&lt;good_snapshot&gt;_UTC/.mozilla/firefox/ .mozilla
+cp<span class="w"> </span>-r<span class="w"> </span>.snapshot/&lt;good_snapshot&gt;_UTC/.mozilla/firefox/<span class="w"> </span>.mozilla
 </code></pre></div></p>
 </li>
 </ol>
