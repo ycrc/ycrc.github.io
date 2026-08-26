@@ -6,6 +6,9 @@ Ark is a nearline storage service provided by YCRC. It is intended for the safe 
 
 ## Frequently Asked Questions
 
+### Is Ark available now? ###
+We are currently in an early adopter rollout, but expect to open the service more widely very soon.  Please contact us if you are interested so we can let you know when it is available generally.
+
 ### What is Ark's intended use?
 
 Ark is for data that is not currently in active use, but will be used again in the future. Shares can scale to 100s of terabytes.
@@ -16,13 +19,13 @@ Ark costs $2/TiB/month for allocated quota. You are charged for that quota wheth
 
 ### How will I be charged for Ark storage?
 
-You will receive a monthly statement that details your allocated quota, current usage? and the associated charge.
+You will receive a monthly statement that details your allocated quota, current usage and the associated charge.
 
 ### How do I request Ark space?
 
 Only PIs (faculty) can request space on Ark. Other members of the group can be given access to the space on request.
 
-Please fill out `<website link>`. You will be asked for the following information:
+To request Ark space, email ycrc@yale.edu. You will be asked for the following information:
 
 - Valid COA for charging
 - NetIDs of all group members who should have access
@@ -34,7 +37,7 @@ We ask that requests be at least 10 TiB. In addition, due to capacity limits, we
 
 ### How is the Ark share organized?
 
-Ark shares are laid out much like projects on the HPC clusters. A subdirectory is created for each share user. That directory is readable by all users of that share, but writable only by the specific user. In addition, a `_shared_` subdirectory is created that is readable and writable by all share users.
+Ark shares are laid out much like projects on the HPC clusters. A subdirectory is created for each share user. That directory is readable by all users of that share, but writable only by the specific user. In addition, a _shared_ subdirectory is created that is readable and writable by all share users.
 
 The set of users that have access to a share is determined by the share owner (PI) , and is not related to or the necessarily the same as that PI's HPC group.
 
@@ -52,7 +55,7 @@ Ark is available in two ways:
 
 **Globus**
 
-- Connect to the Ark Globus endpoint, and navigate to `<sharename>`. We will confirm your `<sharename>` with you after approval of your Ark storage request.
+- Connect to the Ark Globus endpoint "Yale CRC Ark", and navigate to `<sharename>`. We will confirm your `<sharename>` with you after approval of your Ark storage request.
 - From there you can stage data to Bouchet cluster storage (e.g. scratch) or transfer to any other Globus endpoint.
 
 **Mount your Ark storage on your own computer**

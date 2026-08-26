@@ -14,6 +14,17 @@ Each of these quotas limit both the amount in bytes and number of files you can 
 
 Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#purchase-additional-storage) for more information.
 
+## ARK Nearline Storage
+
+- **Capacity: Currently 10-100TiB per share. Cost: $2/TiB/Month **
+- **No sensitive data is allowed**
+- **Accessed via shared drive and Globus**
+- **Data is replicated offsite for safety**
+
+Faculty PIs may request an allocation on ARK.  You will be asked for a quota, the netids of the users who should have access, and a charge account (COA).
+The share will be structured similar to project
+shares: a folder for each netid, and a shared folder.
+The share is not mounted on YCRC's clusters.  It is accessed via the Ark Globus endpoint (Yale CRC Ark).  For more information, see [Ark](/data/Ark).
 
 ## Google Drive via EliApps
 
