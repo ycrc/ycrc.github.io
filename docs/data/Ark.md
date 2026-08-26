@@ -69,7 +69,7 @@ Ark is available in two ways:
 
 ### What can I store on Ark?
 
-Ark is for low and moderate risk data only, as defined by [Yale's MSS](https://cybersecurity.yale.edu/data-classification). No high risk data may be stored on Ark. HIPAA and NIST 800-171 data are prohibited on Ark. All other data can be stored on Ark.
+No high risk data may be stored on Ark. HIPAA and NIST 800-171 data are prohibited on Ark. 
 
 ### What is Ark's Service Level Agreement (SLA)?
 
