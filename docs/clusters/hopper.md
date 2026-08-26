@@ -222,24 +222,7 @@ These keyboard shortcuts can be customized on a per-user basis by:
 
 ## Rate Structure
 
-Early access usage on Hopper is at no-cost. Computations and storage on Hopper will be subject to the following charges starting February 1st, 2026.
-
-Compute and storage charges are billed monthly, with the bills expected the first week of the following month. 
-To assist with cost estimates and budgeting, we provide a [Hopper Cost Calculator](https://docs.google.com/spreadsheets/d/1zoQq5uqMb37Nbf11cFdvRXk2Lm411R1zo2n8AEHRE_M).
-
-### Compute
-
-|  Type          | Subtype(s)     | Service Units  | Cost per Hour  |
-|----------------|----------------|------|-------|
-| Compute Hour\* |  -               | 1    |  $0.004 |
-| GPU Hour       | A40, L40s, A5000 | 122.5 | $0.490 |
-| GPU Hour       | H100            | 247.5 | $0.990 |
-| GPU Hour       | H200            | 372.5 | $1.490 |
-
-\* *Number of Service Units (SUs) per non-GPU compute job is the maximum of the CPU core count and the total RAM allocation/15GB*
-
-Usage is billed for actual runtime, not requested walltime of a job. 
-However, all compute resources (CPUs, memory, GPUs) allocated to a job are billed, regardless of whether a job makes use of those resources.
+We are pleased to announce that effective July 1, 2026, CPU and GPU computing on the Hopper cluster is available without Service Unit (SU) charges, making it easier for Yale researchers to access secure, high-performance computing resources.
 
 ### Additional Storage
 
