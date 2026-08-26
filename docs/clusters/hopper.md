@@ -224,6 +224,8 @@ These keyboard shortcuts can be customized on a per-user basis by:
 
 We are pleased to announce that effective July 1, 2026, CPU and GPU computing on the Hopper cluster is available without Service Unit (SU) charges, making it easier for Yale researchers to access secure, high-performance computing resources.
 
+In the coming months, YCRC will add [Priority Tier](/clusters-at-yale/job-scheduling/priority-tier) partitions to Hopper similar to those available on the Bouchet cluster. Priority Tier is a paid, opt-in, fast lane for computations on the YCRC clusters.
+
 ### Additional Storage
 
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
