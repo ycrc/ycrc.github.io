@@ -3285,7 +3285,7 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
 <h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
 <p>Load the shared module to configure your environment:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
+<div class="highlight"><pre><span></span><code>module load llms
 </code></pre></div>
 <p>This will:</p>
 <ul>
@@ -3297,18 +3297,18 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <div class="highlight"><pre><span></span><code>llms-list
 </code></pre></div>
 <p>To filter models by name:</p>
-<div class="highlight"><pre><span></span><code>llms-list<span class="w"> </span>llama
-llms-list<span class="w"> </span>qwen
+<div class="highlight"><pre><span></span><code>llms-list llama
+llms-list qwen
 </code></pre></div>
 <p>The output corresponds directly to Hugging Face repository IDs.</p>
 <h4 id="using-models-in-python">Using Models in Python</h4>
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
-<div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
+<div class="highlight"><pre><span></span><code>from transformers import AutoModelForCausalLM, AutoTokenizer
 
-<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="nv">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
 
-<span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
-<span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="nv">tokenizer</span> <span class="o">=</span> AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="nv">model</span> <span class="o">=</span> AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
 </code></pre></div>
 <h4 id="requesting-new-models">Requesting New Models</h4>
 <p>If a model is not available:</p>
@@ -3489,7 +3489,7 @@ Storage charges are based on requested allocation, not actual usage.
 </table>
 </div>
 <input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">gpu</label><div class="tabbed-content">
-<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=gtx1080ti:2</code> would request 2 GeForce GTX 1080Ti GPUs per node.</p>
+<p>Use the gpu partition for jobs that make use of GPUs. You must <a href="/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">request GPUs explicitly</a> with the <code>--gpus</code> option in order to use them. For example, <code>--gpus=h200:2</code> would request 2 H200 GPUs.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
 <div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=UNLIMITED
@@ -3551,34 +3551,14 @@ Storage charges are based on requested allocation, not actual usage.
 <td>cpugen:sapphirerapids, cpumodel:6542Y, gpumodel:h200, common:yes</td>
 </tr>
 <tr>
-<td>9</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:l40s, common:yes</td>
-</tr>
-<tr>
-<td>10</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:a40, common:yes</td>
-</tr>
-<tr>
-<td>15</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>h100</td>
-<td>4</td>
-<td>80</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:h100, common:yes</td>
+<td>6</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>b200</td>
+<td>8</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
 </tr>
 </tbody>
 </table>
@@ -3628,36 +3608,6 @@ Storage charges are based on requested allocation, not actual usage.
 <td>8</td>
 <td>140</td>
 <td>cpugen:sapphirerapids, cpumodel:6542Y, gpumodel:h200, common:yes</td>
-</tr>
-<tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:l40s, common:yes</td>
-</tr>
-<tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:a40, common:yes</td>
-</tr>
-<tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>h100</td>
-<td>4</td>
-<td>80</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:h100, common:yes</td>
 </tr>
 </tbody>
 </table>
