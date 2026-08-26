@@ -81,7 +81,7 @@
 
 === "gpu"
 
-    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=gtx1080ti:2` would request 2 GeForce GTX 1080Ti GPUs per node.
+    Use the gpu partition for jobs that make use of GPUs. You must [request GPUs explicitly](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus) with the `--gpus` option in order to use them. For example, `--gpus=h200:2` would request 2 H200 GPUs.
 
     **Request Defaults**
 
@@ -109,9 +109,7 @@
     |---|---|---|---|---|---|---|---|
     |9|cpugen:emeraldrapids|48|976|a5000|4|24|cpugen:emeraldrapids, cpumodel:6542Y, gpumodel:a5000, common:yes|
     |4|cpugen:sapphirerapids|48|1953|h200|8|140|cpugen:sapphirerapids, cpumodel:6542Y, gpumodel:h200, common:yes|
-    |9|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:l40s, common:yes|
-    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:a40, common:yes|
-    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:h100, common:yes|
+    |6|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
 
 === "gpu_devel"
 
@@ -135,9 +133,6 @@
     |---|---|---|---|---|---|---|---|
     |1|cpugen:emeraldrapids|48|976|a5000|4|24|cpugen:emeraldrapids, cpumodel:6542Y, gpumodel:a5000, common:yes|
     |1|cpugen:sapphirerapids|48|1953|h200|8|140|cpugen:sapphirerapids, cpumodel:6542Y, gpumodel:h200, common:yes|
-    |1|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:l40s, common:yes|
-    |1|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:a40, common:yes|
-    |1|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, gpumodel:h100, common:yes|
 
 === "bigmem"
 
