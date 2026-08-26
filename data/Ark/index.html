@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/Ark/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -2754,6 +2754,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#is-ark-available-now" class="md-nav__link">
+    Is Ark available now?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-is-arks-intended-use" class="md-nav__link">
     What is Ark's intended use?
   </a>
@@ -2856,15 +2863,17 @@
 <h2 id="overview">Overview</h2>
 <p>Ark is a nearline storage service provided by YCRC. It is intended for the safe storage of research data on the scale of 10s to 100s of terabytes. Faculty can request an allocation for their group at a cost. Ark is <strong>not</strong> designed for direct computation on YCRC's clusters — instead, data must be staged from Ark to a YCRC cluster using Globus. Ark is also accessible on your own computer via a network mount. Controlled access data (HIPAA, NIST 800-171) may not be stored on Ark.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-ark-available-now">Is Ark available now?</h3>
+<p>We are currently in an early adopter rollout, but expect to open the service more widely very soon.  Please contact us if you are interested so we can let you know when it is available generally.</p>
 <h3 id="what-is-arks-intended-use">What is Ark's intended use?</h3>
 <p>Ark is for data that is not currently in active use, but will be used again in the future. Shares can scale to 100s of terabytes.</p>
 <h3 id="how-much-does-ark-cost">How much does Ark cost?</h3>
 <p>Ark costs $2/TiB/month for allocated quota. You are charged for that quota whether or not you are using it. This charge covers two copies of your data.</p>
 <h3 id="how-will-i-be-charged-for-ark-storage">How will I be charged for Ark storage?</h3>
-<p>You will receive a monthly statement that details your allocated quota, current usage? and the associated charge.</p>
+<p>You will receive a monthly statement that details your allocated quota, current usage and the associated charge.</p>
 <h3 id="how-do-i-request-ark-space">How do I request Ark space?</h3>
 <p>Only PIs (faculty) can request space on Ark. Other members of the group can be given access to the space on request.</p>
-<p>Please fill out <code>&lt;website link&gt;</code>. You will be asked for the following information:</p>
+<p>To request Ark space, email ycrc@yale.edu. You will be asked for the following information:</p>
 <ul>
 <li>Valid COA for charging</li>
 <li>NetIDs of all group members who should have access</li>
@@ -2873,7 +2882,7 @@
 <h3 id="how-much-space-can-i-request">How much space can I request?</h3>
 <p>We ask that requests be at least 10 TiB. In addition, due to capacity limits, we are currently limiting shares to no more than 100 TiB. If you need more than 100 TiB, please contact us.</p>
 <h3 id="how-is-the-ark-share-organized">How is the Ark share organized?</h3>
-<p>Ark shares are laid out much like projects on the HPC clusters. A subdirectory is created for each share user. That directory is readable by all users of that share, but writable only by the specific user. In addition, a <code>_shared_</code> subdirectory is created that is readable and writable by all share users.</p>
+<p>Ark shares are laid out much like projects on the HPC clusters. A subdirectory is created for each share user. That directory is readable by all users of that share, but writable only by the specific user. In addition, a <em>shared</em> subdirectory is created that is readable and writable by all share users.</p>
 <p>The set of users that have access to a share is determined by the share owner (PI) , and is not related to or the necessarily the same as that PI's HPC group.</p>
 <h3 id="how-safe-are-my-data-on-ark">How safe are my data on Ark?</h3>
 <p>Your data are very safe. We maintain two copies — one at MGHPCC and one at West Campus — which protects against major system failure. In addition, Ark maintains a week of snapshots, which protects against inadvertent deletion.</p>
@@ -2883,7 +2892,7 @@
 <p>Ark is available in two ways:</p>
 <p><strong>Globus</strong></p>
 <ul>
-<li>Connect to the Ark Globus endpoint, and navigate to <code>&lt;sharename&gt;</code>. We will confirm your <code>&lt;sharename&gt;</code> with you after approval of your Ark storage request.</li>
+<li>Connect to the Ark Globus endpoint "Yale CRC Ark", and navigate to <code>&lt;sharename&gt;</code>. We will confirm your <code>&lt;sharename&gt;</code> with you after approval of your Ark storage request.</li>
 <li>From there you can stage data to Bouchet cluster storage (e.g. scratch) or transfer to any other Globus endpoint.</li>
 </ul>
 <p><strong>Mount your Ark storage on your own computer</strong></p>
@@ -2906,7 +2915,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2026</span>
       
     
   </small>
