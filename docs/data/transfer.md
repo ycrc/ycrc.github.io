@@ -55,6 +55,25 @@ scp [from] [to]
 
 The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).
 
+#### scp (Windows)
+
+If you have Linux installed on your Windows laptop (Windows Subsystem for Linux, i.e. WSL), you have access to the scp and rsync commands via the WSL command line. Even if you don't have WSL installed, Windows still provides the `scp` command in PowerShell; however, at least in Windows 11, you need to do a little extra work to successfully connect to YCRC clusters.
+
+There are two methods to get Powershell scp working. The first is to add an option to your scp command: `-o "MACs hmac-sha2-512"`
+
+For example:
+
+``` bash
+scp -o "MACs hmac-sha2-512" netid@bouchet.ycrc.yale.edu:~/file.txt C:\path\to\destination\
+```
+
+To avoid typing that option every time, you can also put it in your laptop's ssh config file. Add the following two lines to your file `C:\Users\YOUR_USERNAME\.ssh\config` (create the file if it doesn't exist already):
+
+``` bash
+Host *.ycrc.yale.edu bouchet
+    MACs hmac-sha2-512
+```
+
 #### Example: Transfer a File from Your Computer to a Cluster
 
 Using the example netid `abc123`, following is run on your computer's local terminal.
