@@ -1633,6 +1633,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scp-windows" class="md-nav__link">
+    scp (Windows)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
     Example: Transfer a File from Your Computer to a Cluster
   </a>
@@ -2988,6 +2995,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scp-windows" class="md-nav__link">
+    scp (Windows)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example-transfer-a-file-from-your-computer-to-a-cluster" class="md-nav__link">
     Example: Transfer a File from Your Computer to a Cluster
   </a>
@@ -3154,6 +3168,16 @@ Please see <a href="/data/globus">our Globus page</a> for Yale-specific document
 <div class="highlight"><pre><span></span><code>scp<span class="w"> </span><span class="o">[</span>from<span class="o">]</span><span class="w"> </span><span class="o">[</span>to<span class="o">]</span>
 </code></pre></div>
 <p>The from and to can each be a filename or a directory/folder on the computer you are typing the command on or a remote host (e.g. the transfer node).</p>
+<h4 id="scp-windows">scp (Windows)</h4>
+<p>If you have Linux installed on your Windows laptop (Windows Subsystem for Linux, i.e. WSL), you have access to the scp and rsync commands via the WSL command line. Even if you don't have WSL installed, Windows still provides the <code>scp</code> command in PowerShell; however, at least in Windows 11, you need to do a little extra work to successfully connect to YCRC clusters.</p>
+<p>There are two methods to get Powershell scp working. The first is to add an option to your scp command: <code>-o "MACs hmac-sha2-512"</code></p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;MACs hmac-sha2-512&quot;</span><span class="w"> </span>netid@bouchet.ycrc.yale.edu:~/file.txt<span class="w"> </span>C:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\d</span>estination<span class="se">\</span>
+</code></pre></div>
+<p>To avoid typing that option every time, you can also put it in your laptop's ssh config file. Add the following two lines to your file <code>C:\Users\YOUR_USERNAME\.ssh\config</code> (create the file if it doesn't exist already):</p>
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>*.ycrc.yale.edu<span class="w"> </span>bouchet
+<span class="w">    </span>MACs<span class="w"> </span>hmac-sha2-512
+</code></pre></div>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
 <div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
@@ -3229,7 +3253,7 @@ For any data that hosted outside of Yale, you will need to initiate the transfer
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2026</span>
       
     
   </small>
