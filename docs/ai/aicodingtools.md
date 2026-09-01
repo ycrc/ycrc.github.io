@@ -55,6 +55,73 @@ Although these potential hazards are serious, they represent worst-case scenario
 | Codex (OpenAI) | [https://developers.openai.com/codex/security](https://developers.openai.com/codex/security) |
 | Gemini CLI (Google) | [https://geminicli.com/docs/](https://geminicli.com/docs/). See pages for [Trusted Folders](https://geminicli.com/docs/cli/trusted-folders/), [Tools](https://geminicli.com/docs/tools/), and [Sandboxing](https://geminicli.com/docs/cli/sandbox/). |
 
+## Safe(er) Claude code on YCRC clusters
+
+> We are currently beta-testing a module that makes Claude safer to use on our clusters. If you are interested in testing this module, we would appreciate your feedback. To join the beta testing phase, please email us at research.computing@yale.edu.
+
+YCRC offers a module that mitigates many (but not all) of the risks above and ensures safer use of Claude on our clusters. The design philosophy is that you should not know you are using it. Claude should be able to perform any (safe) operation you want it to, but is prevented from performing any (unsafe) actions you would not want it to. 
+
+The module uses your existing Claude account and settings, so transitioning between your existing install and the module should be seamless. It provides access to common research computing tools, including modules, Conda environments, R, and the scheduler, SLURM, while restricting Claude’s access to sensitive or unrelated areas of the system, such as SSH credentials, other users’ files, and directories outside the intended working environment.
+
+Using the module is the recommended way to use Claude on YCRC systems and will help ensure increased safety for yourself and others. 
+
+
+### How the module reduces risks
+
+The module increases the safe use of Claude through several approaches.
+
+- Claude can only see your working folder, which prevents unintended data egress or file manipulation.
+- Every command is inspected for unsafe behavior. Unsafe commands are flagged or denied, while safe commands are run automatically. This puts an extra layer of scrutiny around each command. It also allows you to focus on potentially dangerous commands while ignoring safe ones.
+- On top of inspecting each command, additional permissions constrain potentially destructive actions. Some commands, like `rm`, will always ask for your permission before Claude runs them. Others, like `sudo` or `scancel`, are always denied. If you want to run denied commands (and have permission to do so), you can always run them in a terminal outside of claude.
+
+Together, these constraints reduce the risk of the potentially damaging actions described in the coding agent warning above.
+
+### Using the module
+
+To receive access to the module, join the beta test (see above).
+
+Once you have loaded the module, simply load Claude as you normally do.
+
+```bash
+salloc
+claude
+```
+
+You need to have a Claude account with Anthropic to use the module.
+
+If you have already used claude on the cluster, the module will see your existing authentication, sessions, and other settings. If you have not run claude yet, claude will ask you to authenticate to your account.
+
+The module has a few checks before it can start, designed to limit Claude's potential to take unsafe actions. When launching Claude, you should:
+
+- Start Claude on a compute node. Coding agents can use a surprising amount of resources and should not be run on the login node.
+- Start Claude in a non-hidden subdirectory in your home, project, pi storage, or scratch space. This prevents Claude from seeing folders such as `~/.ssh`, your other projects, or those of others in your group.
+
+### Tools and environment available to Claude
+
+Claude should have access to all the tools and environmental settings that you would normally have when using a terminal. Currently, the following tools are enabled.
+
+- Modules
+- Conda
+- R
+- Slurm
+
+If you want Claude to have access to other tools, please let us know, and we can make these available.
+
+The module attempts to scrub any environmental variables that contain sensitive information, such as API keys or security tokens.
+
+### How does the module work?
+
+The module uses several approaches to implement its safety measures, including external and internal techniques to the Claude executable. 
+
+- Before loading, a module launch script checks that Claude is starting in an appropriate folder and scrubs sensitive environment variables.
+- Claude runs within an Apptainer container. The container implements functionality that limits visibility to only your work folder and special directories required for tools such as conda or R to function.
+- The container has security policies embedded in `/etc/claude-code/managed-settings.json`. This is the settings file that enforces security policies for the claude executable, such as turning on auto-mode or denying certain commands.
+- Claude knows it is in a container, which sets important context for coding sessions. Claude's execution environment is documented in `/etc/claude-code/CLAUDE.md` within the container.
+
+### Final note
+
+Although the module significantly increases the safe use of Claude, no solution is perfect. The command inspector might misclassify a command; you might approve a destructive command; a bug in the claude executable or apptainer; or a misconfigured environment might lead to unintended consequences. Even when using this module, please keep in mind the potential dangers described in the warning above.
+
 
 ## Claude Science
 
