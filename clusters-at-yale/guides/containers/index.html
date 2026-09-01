@@ -3171,7 +3171,7 @@ From:<span class="w"> </span>nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 <p>The labels section allows you to define metadata for your container:</p>
 <div class="highlight"><pre><span></span><code>%labels
 <span class="w">    </span>Name
-<span class="w">    </span>Maintainer<span class="w"> </span><span class="s2">&quot;YCRC Support Team&quot;</span><span class="w"> </span>&lt;research.computing@yale.edu&gt;Version<span class="w"> </span>v99.9
+<span class="w">    </span>Maintainer<span class="w"> </span><span class="s2">"YCRC Support Team"</span><span class="w"> </span>&lt;research.computing@yale.edu&gt;Version<span class="w"> </span>v99.9
 <span class="w">    </span>Architecture<span class="w"> </span>x86_64
 <span class="w">    </span>URL<span class="w"> </span>https://research.computing.yale.edu/&lt;/research.computing@yale.edu&gt;
 </code></pre></div>
@@ -3185,7 +3185,7 @@ From:<span class="w"> </span>nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 <h3 id="post">%post</h3>
 <p>The post section is where you can run updates, installs, etc in your container to customize it.</p>
 <div class="highlight"><pre><span></span><code>%post
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Customizing Ubuntu&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Customizing Ubuntu"</span>
 <span class="w">    </span>apt-get<span class="w"> </span>update
 <span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>software-properties-common<span class="w"> </span>build-essential<span class="w"> </span>cmake
 <span class="w">    </span>add-apt-repository<span class="w"> </span>universe
@@ -3212,7 +3212,7 @@ From:<span class="w"> </span>nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 <p>The available Apptainer documentation may not be fully updated to reflect the name change from Singularity; as of now (April 2025) the documentation for Dockerfile conversion using spython still refers to Singularity Recipes rather than Apptainer definition files.</p>
 </div>
 <p>You can use <a href="/clusters-at-yale/guides/conda/">conda</a> to build an 'spython' conda environment and do the conversion as follows:</p>
-<div class="highlight"><pre><span></span><code># Build and activate a conda module for singularity python, &quot;spython&quot;
+<div class="highlight"><pre><span></span><code># Build and activate a conda module for singularity python, "spython"
 module load miniconda
 conda create --name spython conda-forge::spython
 conda activate spython

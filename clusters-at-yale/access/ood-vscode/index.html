@@ -3130,7 +3130,7 @@
 <span class="c1"># sbatch vscode_slurm.sh</span>
 
 <span class="c1"># After this script successfully starts running, use the last line of the</span>
-<span class="c1"># logfile &#39;vscode_slurm.txt&#39; (in the directory you submitted the job from)</span>
+<span class="c1"># logfile 'vscode_slurm.txt' (in the directory you submitted the job from)</span>
 <span class="c1"># to set up a connection from the cluster to your own VSCode app on a remote computer.</span>
 <span class="c1"># An example last line will look like:</span>
 
@@ -3201,8 +3201,8 @@ code<span class="w"> </span>tunnel
 <span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
 
 <span class="c1"># Print the hostname to the log file</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">"</span>
 
 <span class="c1"># Keep the job alive</span>
 <span class="c1"># VSCode will connect via SSH and start its server automatically</span>

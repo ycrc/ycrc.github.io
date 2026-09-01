@@ -3334,7 +3334,7 @@ conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </
 <h2 id="default-ycrc-channels-and-paths">Default YCRC Channels and Paths</h2>
 <p>On all clusters, we set the <code>CONDA_ENVS_PATH</code> and <code>CONDA_PKGS_DIRS</code> environment variables to <code>.conda/envs</code> and <code>.conda/pkgs</code> in your home directory. For some users, these locations may be symlinked to folders in your project and/or scratch directories where there is room for conda files (see note below).</p>
 <p>Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.'</p>
-<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;({name})&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">env_prompt</span><span class="p">:</span><span class="w"> </span><span class="s">'({name})'</span>
 <span class="nt">auto_activate_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="nt">channels</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
@@ -3360,7 +3360,7 @@ conda<span class="w"> </span>search<span class="w"> </span>numpy
 <p>With conda, a fairly common 'gotcha' to is to forget to activate your environment before running additional install commands, i.e. with <code>conda install</code> or <code>pip install</code>. This results in 'permission denied' errors on the YCRC systems. Please make sure you have both created and activated your environment before installing additional packages.</p>
 <h3 id="conda-version-doesnt-match-the-module-loaded">Conda version doesn't match the module loaded</h3>
 <p>If you have run <code>conda init</code> in the past, you may be locked to an old version of <code>conda</code>. You can run the following to fix this:</p>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">'/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p'</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h3 id="killed-during-creation">killed during creation</h3>
 <p>If your environment is failing to build and isn't sending a message or just saying: killed, you are likely on a login node. Please read above about creating an environment to properly request a compute node.</p>
@@ -3401,16 +3401,16 @@ To remove this hard-coded path, we need to remove the line in this print out rel
 conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--from-history<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>prefix<span class="w"> </span>&gt;<span class="w"> </span>test_export.yaml
 </code></pre></div></p>
 <p>This is a much smaller file, ~10 lines, and only lists the packages explicitly installed:</p>
-<div class="highlight"><pre><span></span><code>name: test
-channels:
-  - conda-forge
-  - defaults
-  - bioconda
-dependencies:
-  - scipy
-  - numpy=1.21
-  - notebook
-  - python=3.8
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="nt">channels</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioconda</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scipy</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numpy=1.21</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">notebook</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.8</span>
 </code></pre></div>
 <p>In this environment, the versions of python and numpy were pinned during installation, but scipy and notebook were left to get the most recent compatible version.</p>
 <h4 id="build-a-new-environment">Build a New Environment</h4>
@@ -3479,9 +3479,9 @@ After this, the environment is fully functional and can be activated just like a
 <li>
 <p>If conda pack fails reporting a missing file/folder:
     <div class="highlight"><pre><span></span><code>Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
-File<span class="w"> </span><span class="s2">&quot;/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">154</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>main
+File<span class="w"> </span><span class="s2">"/vast/palmer/apps/avx2/software/miniconda/24.7.1/lib/python3.12/site-packages/conda_pack/cli.py"</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">154</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>main
 <span class="w">  </span>...
-FileNotFoundError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">2</span><span class="o">]</span><span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory:<span class="w"> </span><span class="s1">&#39;/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files&#39;</span>
+FileNotFoundError:<span class="w"> </span><span class="o">[</span>Errno<span class="w"> </span><span class="m">2</span><span class="o">]</span><span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory:<span class="w"> </span><span class="s1">'/home/***NETID***/.conda/pkgs/jupyter_server-2.17.0-pyhcf101f3_0/info/files'</span>
 </code></pre></div>
     -&gt; try deleting the entire folder within pkgs, i.e.:
     <div class="highlight"><pre><span></span><code><span class="c1"># NOTE: Be sure to specify the entire problem package, not just the subfolder printed in the error message</span>

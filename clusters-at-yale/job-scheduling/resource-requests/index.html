@@ -3016,7 +3016,7 @@
 <div class="highlight"><pre><span></span><code>sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 <p>To submit your job to a number of GPU options (such as NVIDIA P100, V100 or A100), use a combination of the constraint flag (<code>-C</code>) and the <code>--gpus</code> flag (with just a number). For the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">constraint flag</a>, separate the different GPU type names with the pipe character (<code>|</code>). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.</p>
-<div class="highlight"><pre><span></span><code>sbatch -C &quot;p100|v100|a100&quot; --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
+<div class="highlight"><pre><span></span><code>sbatch -C "p100|v100|a100" --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

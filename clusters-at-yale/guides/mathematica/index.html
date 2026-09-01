@@ -2888,7 +2888,7 @@
 <div class="highlight"><pre><span></span><code>LaunchSlurmKernels[n]
 </code></pre></div>
 where <code>n</code> is the number of kernels you want to use. This command launches as many kernels as possible on the cluster's default partition (e.g. <code>day</code> partition on Grace) with default wall time and RAM for this partition. If you need to run on a different partition or with custom resources, use the command:
-<div class="highlight"><pre><span></span><code>LaunchSlurmKernels[n,&quot;SlurmOptions&quot;]
+<div class="highlight"><pre><span></span><code>LaunchSlurmKernels[n,"SlurmOptions"]
 </code></pre></div>
 where <code>SlurmOptions</code> specifies the <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#common-job-request-options">job request options for SLURM</a>. Here are some examples: <code>LaunchSlurmKernels[40,"-t 12:00:00"]</code> launches 40 kernels for 12 hours in the default partition; <code>LaunchSlurmKernels[30,"-p week -t 2-12:00:00"]</code> launches 30 kernels for 2 days and 12 hours in the week partition; and <code>LaunchSlurmKernels[100,"--mem 30G"]</code> launches 100 kernels with 30GB of RAM per kernel and default runtime in the default partition. If the SLURM options violate the restrictions on the partition, it will result in an error. The wall time for your parallel kernels should not exceed the remaining wall time of your main Mathematica session. Since the parallel kernels are child processes of your main session, they will be terminated when your session ends. </p>
 <p>You can also manually close the parallel kernels during your session with the following command:

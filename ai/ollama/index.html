@@ -3002,16 +3002,16 @@ due to a lack of vRAM.</p>
 <p>In this case, you can specify GPUs with more vRAM using the <code>--constraint</code> flag. In the example below, you could 
 specify rtx5000 or v100 GPUs, which have more vRAM &gt; 16GB.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
-salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">"rtx5000|v100"</span>
 
 <span class="c1">#####submission script</span>
-<span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
+<span class="c1">#SBATCH --constraint="rtx5000|v100"</span>
 </code></pre></div>
 <p>Within an interactive allocation, models can be run directly from a terminal like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --Constraint=GPUTYPES if needed)</span>
 salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span>
 
-<span class="c1">###load ollama module if it isn&#39;t loaded</span>
+<span class="c1">###load ollama module if it isn't loaded</span>
 module<span class="w"> </span>load<span class="w"> </span>ollama
 
 <span class="c1">####launch server to access models.</span>
@@ -3078,14 +3078,14 @@ Failing to use this block of code will cause your Notebook to be unable to find 
 
 <span class="c1">###starts ollama server</span>
 
-subprocess.run<span class="o">([</span><span class="s2">&quot;ollama&quot;</span>,<span class="w"> </span><span class="s2">&quot;serve&quot;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">check</span><span class="o">=</span>True<span class="o">)</span>
+subprocess.run<span class="o">([</span><span class="s2">"ollama"</span>,<span class="w"> </span><span class="s2">"serve"</span><span class="o">]</span>,<span class="w"> </span><span class="nv">check</span><span class="o">=</span>True<span class="o">)</span>
 <span class="c1">###collects host address for notebook</span>
-<span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>subprocess.check_output<span class="o">([</span><span class="s2">&quot;ollama&quot;</span>,<span class="w"> </span><span class="s2">&quot;host&quot;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">text</span><span class="o">=</span>True<span class="o">)</span>.strip<span class="o">()</span>
-print<span class="o">(</span><span class="s2">&quot;ollama host reports:&quot;</span>,<span class="w"> </span>host<span class="o">)</span>
+<span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>subprocess.check_output<span class="o">([</span><span class="s2">"ollama"</span>,<span class="w"> </span><span class="s2">"host"</span><span class="o">]</span>,<span class="w"> </span><span class="nv">text</span><span class="o">=</span>True<span class="o">)</span>.strip<span class="o">()</span>
+print<span class="o">(</span><span class="s2">"ollama host reports:"</span>,<span class="w"> </span>host<span class="o">)</span>
 <span class="c1">###jupyter notebook requires http to be in front of host, this line adds http to host</span>
-<span class="k">if</span><span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">&quot;http://&quot;</span><span class="o">)</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">&quot;https://&quot;</span><span class="o">)</span>:
-<span class="w">    </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://&quot;</span><span class="w"> </span>+<span class="w"> </span>host
-print<span class="o">(</span><span class="s2">&quot;ollama host for notebook:&quot;</span>,<span class="w"> </span>host<span class="o">)</span>
+<span class="k">if</span><span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">"http://"</span><span class="o">)</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span>host.startswith<span class="o">(</span><span class="s2">"https://"</span><span class="o">)</span>:
+<span class="w">    </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://"</span><span class="w"> </span>+<span class="w"> </span>host
+print<span class="o">(</span><span class="s2">"ollama host for notebook:"</span>,<span class="w"> </span>host<span class="o">)</span>
 
 <span class="c1">###imports client to save host address</span>
 from<span class="w"> </span>ollama<span class="w"> </span>import<span class="w"> </span>Client
@@ -3094,7 +3094,7 @@ from<span class="w"> </span>ollama<span class="w"> </span>import<span class="w">
 <ol>
 <li>Download desired model using this cell block:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>client.pull<span class="o">(</span><span class="s2">&quot;llama3.1&quot;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code>client.pull<span class="o">(</span><span class="s2">"llama3.1"</span><span class="o">)</span>
 <span class="c1">###can change llama3.1 to any desired model</span>
 </code></pre></div>
 <ol>
@@ -3102,19 +3102,19 @@ from<span class="w"> </span>ollama<span class="w"> </span>import<span class="w">
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1">###prompts model using saved host address</span>
 <span class="nv">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>client.generate<span class="o">(</span>
-<span class="w">    </span><span class="nv">model</span><span class="o">=</span><span class="s2">&quot;llama3.1&quot;</span>,
-<span class="w">    </span><span class="nv">prompt</span><span class="o">=</span><span class="s2">&quot;Design an experiment to test whether water is wet.&quot;</span>,
+<span class="w">    </span><span class="nv">model</span><span class="o">=</span><span class="s2">"llama3.1"</span>,
+<span class="w">    </span><span class="nv">prompt</span><span class="o">=</span><span class="s2">"Design an experiment to test whether water is wet."</span>,
 <span class="w">    </span><span class="c1">#options is not necessary, but provides the ability to modify response of model</span>
 <span class="w">    </span><span class="nv">options</span><span class="o">={</span>
-<span class="w">        </span><span class="s2">&quot;temperature&quot;</span>:10.0,
-<span class="w">        </span><span class="s2">&quot;num_ctx&quot;</span>:<span class="w"> </span><span class="m">4096</span>,
-<span class="w">        </span><span class="s2">&quot;top_p&quot;</span>:<span class="w"> </span><span class="m">0</span>.1,
-<span class="w">        </span><span class="s2">&quot;num_predict&quot;</span>:<span class="w"> </span><span class="m">10000</span>,
+<span class="w">        </span><span class="s2">"temperature"</span>:10.0,
+<span class="w">        </span><span class="s2">"num_ctx"</span>:<span class="w"> </span><span class="m">4096</span>,
+<span class="w">        </span><span class="s2">"top_p"</span>:<span class="w"> </span><span class="m">0</span>.1,
+<span class="w">        </span><span class="s2">"num_predict"</span>:<span class="w"> </span><span class="m">10000</span>,
 <span class="w">    </span><span class="o">}</span>,
 <span class="o">)</span>
 
 <span class="c1">#required to actually receive response</span>
-print<span class="o">(</span>resp<span class="o">[</span><span class="s2">&quot;response&quot;</span><span class="o">])</span>
+print<span class="o">(</span>resp<span class="o">[</span><span class="s2">"response"</span><span class="o">])</span>
 </code></pre></div>
 <h2 id="batch-usage">Batch usage</h2>
 <p>A typical batch workflow starts the Ollama server in the background, waits for initialization, and then submits 

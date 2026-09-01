@@ -1971,6 +1971,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#safeer-claude-code-on-ycrc-clusters" class="md-nav__link">
+    Safe(er) Claude code on YCRC clusters
+  </a>
+  
+    <nav class="md-nav" aria-label="Safe(er) Claude code on YCRC clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-module-reduces-risks" class="md-nav__link">
+    How the module reduces risks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-module" class="md-nav__link">
+    Using the module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-environment-available-to-claude" class="md-nav__link">
+    Tools and environment available to Claude
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-the-module-work" class="md-nav__link">
+    How does the module work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-note" class="md-nav__link">
+    Final note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#claude-science" class="md-nav__link">
     Claude Science
   </a>
@@ -2897,6 +2945,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#safeer-claude-code-on-ycrc-clusters" class="md-nav__link">
+    Safe(er) Claude code on YCRC clusters
+  </a>
+  
+    <nav class="md-nav" aria-label="Safe(er) Claude code on YCRC clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-module-reduces-risks" class="md-nav__link">
+    How the module reduces risks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-module" class="md-nav__link">
+    Using the module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-environment-available-to-claude" class="md-nav__link">
+    Tools and environment available to Claude
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-the-module-work" class="md-nav__link">
+    How does the module work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-note" class="md-nav__link">
+    Final note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#claude-science" class="md-nav__link">
     Claude Science
   </a>
@@ -2985,6 +3081,54 @@ install backdoors, or perform any other malicious activity you can imagine if a 
 </tr>
 </tbody>
 </table>
+<h2 id="safeer-claude-code-on-ycrc-clusters">Safe(er) Claude code on YCRC clusters</h2>
+<blockquote>
+<p>We are currently beta-testing a module that makes Claude safer to use on our clusters. If you are interested in testing this module, we would appreciate your feedback. To join the beta testing phase, please email us at research.computing@yale.edu.</p>
+</blockquote>
+<p>YCRC offers a module that mitigates many (but not all) of the risks above and ensures safer use of Claude on our clusters. The design philosophy is that you should not know you are using it. Claude should be able to perform any (safe) operation you want it to, but is prevented from performing any (unsafe) actions you would not want it to. </p>
+<p>The module uses your existing Claude account and settings, so transitioning between your existing install and the module should be seamless. It provides access to common research computing tools, including modules, Conda environments, R, and the scheduler, SLURM, while restricting Claude’s access to sensitive or unrelated areas of the system, such as SSH credentials, other users’ files, and directories outside the intended working environment.</p>
+<p>Using the module is the recommended way to use Claude on YCRC systems and will help ensure increased safety for yourself and others. </p>
+<h3 id="how-the-module-reduces-risks">How the module reduces risks</h3>
+<p>The module increases the safe use of Claude through several approaches.</p>
+<ul>
+<li>Claude can only see your working folder, which prevents unintended data egress or file manipulation.</li>
+<li>Every command is inspected for unsafe behavior. Unsafe commands are flagged or denied, while safe commands are run automatically. This puts an extra layer of scrutiny around each command. It also allows you to focus on potentially dangerous commands while ignoring safe ones.</li>
+<li>On top of inspecting each command, additional permissions constrain potentially destructive actions. Some commands, like <code>rm</code>, will always ask for your permission before Claude runs them. Others, like <code>sudo</code> or <code>scancel</code>, are always denied. If you want to run denied commands (and have permission to do so), you can always run them in a terminal outside of claude.</li>
+</ul>
+<p>Together, these constraints reduce the risk of the potentially damaging actions described in the coding agent warning above.</p>
+<h3 id="using-the-module">Using the module</h3>
+<p>To receive access to the module, join the beta test (see above).</p>
+<p>Once you have loaded the module, simply load Claude as you normally do.</p>
+<div class="highlight"><pre><span></span><code>salloc
+claude
+</code></pre></div>
+<p>You need to have a Claude account with Anthropic to use the module.</p>
+<p>If you have already used claude on the cluster, the module will see your existing authentication, sessions, and other settings. If you have not run claude yet, claude will ask you to authenticate to your account.</p>
+<p>The module has a few checks before it can start, designed to limit Claude's potential to take unsafe actions. When launching Claude, you should:</p>
+<ul>
+<li>Start Claude on a compute node. Coding agents can use a surprising amount of resources and should not be run on the login node.</li>
+<li>Start Claude in a non-hidden subdirectory in your home, project, pi storage, or scratch space. This prevents Claude from seeing folders such as <code>~/.ssh</code>, your other projects, or those of others in your group.</li>
+</ul>
+<h3 id="tools-and-environment-available-to-claude">Tools and environment available to Claude</h3>
+<p>Claude should have access to all the tools and environmental settings that you would normally have when using a terminal. Currently, the following tools are enabled.</p>
+<ul>
+<li>Modules</li>
+<li>Conda</li>
+<li>R</li>
+<li>Slurm</li>
+</ul>
+<p>If you want Claude to have access to other tools, please let us know, and we can make these available.</p>
+<p>The module attempts to scrub any environmental variables that contain sensitive information, such as API keys or security tokens.</p>
+<h3 id="how-does-the-module-work">How does the module work?</h3>
+<p>The module uses several approaches to implement its safety measures, including external and internal techniques to the Claude executable. </p>
+<ul>
+<li>Before loading, a module launch script checks that Claude is starting in an appropriate folder and scrubs sensitive environment variables.</li>
+<li>Claude runs within an Apptainer container. The container implements functionality that limits visibility to only your work folder and special directories required for tools such as conda or R to function.</li>
+<li>The container has security policies embedded in <code>/etc/claude-code/managed-settings.json</code>. This is the settings file that enforces security policies for the claude executable, such as turning on auto-mode or denying certain commands.</li>
+<li>Claude knows it is in a container, which sets important context for coding sessions. Claude's execution environment is documented in <code>/etc/claude-code/CLAUDE.md</code> within the container.</li>
+</ul>
+<h3 id="final-note">Final note</h3>
+<p>Although the module significantly increases the safe use of Claude, no solution is perfect. The command inspector might misclassify a command; you might approve a destructive command; a bug in the claude executable or apptainer; or a misconfigured environment might lead to unintended consequences. Even when using this module, please keep in mind the potential dangers described in the warning above.</p>
 <h2 id="claude-science">Claude Science</h2>
 <p><a href="https://www.anthropic.com/news/claude-science-ai-workbench">Claude Science</a> can be connected to the cluster by establishing a local tunnel to a compute node. The <a href="/clusters-at-yale/access/advanced-config/#ssh-tunneling-for-local-applications">SSH tunneling for local applications</a> page describes how to open a local tunnel.</p>
 <p>After you set up the tunnel, you can connect Claude Science to it. </p>
@@ -3000,7 +3144,7 @@ install backdoors, or perform any other malicious activity you can imagine if a 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2026</span>
       
     
   </small>

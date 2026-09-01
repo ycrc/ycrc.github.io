@@ -2826,7 +2826,7 @@
 #SBATCH --requeue        # mark this job eligible for requeueing
 
 # define a `trap` that catches the signal and requeues the job
-trap &quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue ${SLURM_JOBID}  &quot; 10
+trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10
 
 # run the main code, with the `&amp;` to “background” the task
 ./my_code.exe &amp;

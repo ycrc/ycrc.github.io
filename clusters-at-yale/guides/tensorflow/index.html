@@ -2783,10 +2783,10 @@ salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span 
 conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>tf_VERSION<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.*
 pip<span class="w"> </span>install<span class="w"> </span>tensorflow<span class="o">[</span>and-cuda<span class="o">]==</span><span class="m">2</span>.x.*<span class="w"> </span><span class="c1">###change x to reflect tensorflow version, i.e., 2.17.*</span>
 
-<span class="c1">#tensorflow can&#39;t find cuda libraries, need to tell it</span>
+<span class="c1">#tensorflow can't find cuda libraries, need to tell it</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;NVIDIA_DIR=$(dirname $(dirname $(python -c &quot;import nvidia.cudnn;print(nvidia.cudnn.__file__)&quot;)))&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;for dir in $NVIDIA_DIR/*; do     if [ -d &quot;$dir/lib&quot; ]; then         export LD_LIBRARY_PATH=&quot;$dir/lib:$LD_LIBRARY_PATH&quot;;     fi; done&#39;</span><span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'NVIDIA_DIR=$(dirname $(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)")))'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'for dir in $NVIDIA_DIR/*; do     if [ -d "$dir/lib" ]; then         export LD_LIBRARY_PATH="$dir/lib:$LD_LIBRARY_PATH";     fi; done'</span><span class="w"> </span>
 
 <span class="c1">####make changes permanent</span>
 conda<span class="w"> </span>deactivate<span class="w"> </span>
@@ -2808,8 +2808,8 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tenso
 
 <span class="c1"># Store system paths to cuda libraries for gpu communication</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;CUDNN_PATH=$(dirname $(python -c &quot;import nvidia.cudnn;print(nvidia.cudnn.__file__)&quot;))&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
 
 <span class="c1">#deactivate and reactivate environment to permanently keep cuda libraries</span>
 conda<span class="w"> </span>deactivate
@@ -2824,8 +2824,8 @@ pip<span class="w"> </span>install<span class="w"> </span>nvidia-cudnn-cu11<span
 
 <span class="c1"># Store system paths to cuda libraries for gpu communication</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;CUDNN_PATH=$(dirname $(python -c &quot;import nvidia.cudnn;print(nvidia.cudnn.__file__)&quot;))&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
 
 <span class="c1">#install tensorflow</span>
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.12.*
@@ -2842,7 +2842,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>tf-condacuda
 
 <span class="c1"># Store system paths to cuda libraries for gpu communication</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/'</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
 
 <span class="c1">#install tensorflow</span>
 pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.11.*
@@ -2862,7 +2862,7 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>YOUR_TF_ENVIRONMENT
 
 <span class="c1">#####run tensorflow validation test</span>
-python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"</span>
 </code></pre></div>
 <p>This should print out a line of text that lists the recognized GPU. If this fails, please reach out to YCRC support for further assistance.</p>
 <h1 id="additional-tensorflow-packages">Additional Tensorflow packages</h1>
@@ -2876,7 +2876,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d
 
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/env_vars.sh
 
 conda<span class="w"> </span>deactivate
 

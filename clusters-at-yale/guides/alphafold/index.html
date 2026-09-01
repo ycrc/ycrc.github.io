@@ -2850,7 +2850,7 @@ sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;fi
 <span class="c1">#SBATCH --partition=day</span>
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=1-00:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">## CPUs requested for each "task"; in simplest case the total number of used CPUs</span>
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem=80g</span>
@@ -2864,7 +2864,7 @@ module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2
 <span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w">   </span><span class="c1"># defaults to 4 if not set</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="c1"># defaults to 8 if not set</span>
 <span class="c1">## Choose name for output folder    </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">"MyOutputDir"</span>
 
 <span class="c1">## Remove old output folder and recreate for new run</span>
 rm<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
@@ -2881,14 +2881,14 @@ alphafold<span class="w"> </span>--output_dir<span class="o">=</span><span class
 #SBATCH --partition=gpu
 ## Maximum job time in Days-Hours:Minutes:Seconds
 #SBATCH --time=1-00:00:00
-## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
 #SBATCH --cpus-per-task=8
 ## Total memory; can also be expressed as --mem-per-cpu
 #SBATCH --mem=80g
 ## Must explicitly request GPU resources and number of GPUs
 #SBATCH --gpus=1
 ## Require use of certain GPUs with extra memory for AlphaFold
-#SBATCH --constraint &quot;a100|rtx5000|a5000|rtx3090&quot;
+#SBATCH --constraint "a100|rtx5000|a5000|rtx3090"
 
 ## Clear all loaded software modules, and load AlphaFold module
 module reset
@@ -2898,7 +2898,7 @@ module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
 export ALPHAFOLD_HHBLITS_N_CPU=${SLURM_CPUS_PER_TASK}   # defaults to 4 if not set
 export ALPHAFOLD_JACKHMMER_N_CPU=${SLURM_CPUS_PER_TASK} # defaults to 8 if not set
 ## Specify name for output folder that contains already-generated MSAs    
-export OUTDIR=&quot;MyOutputDir&quot;
+export OUTDIR="MyOutputDir"
 
 ## run AlphaFold
 alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
@@ -2928,7 +2928,7 @@ Once you have obtained your copy of the parameters, place the file in a "models"
 <span class="c1">#SBATCH --partition=day</span>
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=1-00:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">## CPUs requested for each "task"; in simplest case the total number of used CPUs</span>
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem-per-cpu=80g</span>
@@ -2937,20 +2937,20 @@ Once you have obtained your copy of the parameters, place the file in a "models"
 <span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
 module<span class="w"> </span>reset
 <span class="c1">## Edit to set desired AlphaFold module version;</span>
-<span class="c1">## search available versions via &quot;module avail AlphaFold/&quot;</span>
+<span class="c1">## search available versions via "module avail AlphaFold/"</span>
 module<span class="w"> </span>load<span class="w"> </span>AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
 
 <span class="c1"># Select full path to working directory</span>
 <span class="nv">RUNDIR</span><span class="o">=</span><span class="sb">`</span>readlink<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="sb">`</span>
 
 <span class="c1"># Edit to specify input folder name containing initial alphafold_input.json</span>
-<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">&quot;af_input&quot;</span>
+<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">"af_input"</span>
 
 <span class="c1"># Edit to specify filename of input JSON file</span>
-<span class="nv">INPUTFILE</span><span class="o">=</span><span class="s2">&quot;fold_input.json&quot;</span>
+<span class="nv">INPUTFILE</span><span class="o">=</span><span class="s2">"fold_input.json"</span>
 
 <span class="c1"># Edit to specify output folder name for MSA</span>
-<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">"af_msa"</span>
 
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUT</span><span class="si">}</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>
@@ -2973,19 +2973,19 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span
 <span class="c1">#SBATCH --partition=gpu</span>
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=4:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">## CPUs requested for each "task"; in simplest case the total number of used CPUs</span>
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem=80g</span>
 <span class="c1">## Must explicitly request GPU resources and number of GPUs</span>
 <span class="c1">#SBATCH --gpus=1</span>
-<span class="c1">#SBATCH --constraint &quot;a100-80g&quot;</span>
+<span class="c1">#SBATCH --constraint "a100-80g"</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
 
 <span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
 module<span class="w"> </span>rese
 <span class="c1">## Edit to set desired AlphaFold module version;</span>
-<span class="c1">## search available versions via &quot;module avail AlphaFold/&quot;</span>
+<span class="c1">## search available versions via "module avail AlphaFold/"</span>
 module<span class="w"> </span>load<span class="w"> </span>AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
 
 <span class="c1"># Select full path to current working directory</span>
@@ -2993,17 +2993,17 @@ module<span class="w"> </span>load<span class="w"> </span>AlphaFold/3.0.1-202511
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>
 
 <span class="c1"># Edit to specify name of folder containing output from prior MSA run</span>
-<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">"af_msa"</span>
 
 <span class="c1"># Edit to specify name of final output folder for models </span>
-<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;af_output&quot;</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"af_output"</span>
 
 <span class="c1"># Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json</span>
 <span class="c1"># This is usually based on the name: field from your initial input.</span>
-<span class="nv">MSA</span><span class="o">=</span><span class="s2">&quot;2PV7&quot;</span>
+<span class="nv">MSA</span><span class="o">=</span><span class="s2">"2PV7"</span>
 
 <span class="c1">#Edit to specify name of final output folder for models</span>
-<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output&quot;</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output"</span>
 
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">OUTPUT</span><span class="si">}</span>
 
@@ -3028,7 +3028,7 @@ a somewhat more complicated command for running the split version.</p>
 <span class="c1">#SBATCH --partition=day</span>
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=1-00:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">## CPUs requested for each "task"; in simplest case the total number of used CPUs</span>
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem-per-cpu=80g</span>
@@ -3043,11 +3043,11 @@ module<span class="w"> </span>load<span class="w"> </span>AlphaFold/3.0.1
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$RUNDIR</span>
 
 <span class="c1"># Edit to specify input folder name and filename for initial json</span>
-<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">&quot;af_input&quot;</span>
-<span class="nv">INPUTFILENAME</span><span class="o">=</span><span class="s2">&quot;alphafold_input.json&quot;</span>
+<span class="nv">INPUTFOLDER</span><span class="o">=</span><span class="s2">"af_input"</span>
+<span class="nv">INPUTFILENAME</span><span class="o">=</span><span class="s2">"alphafold_input.json"</span>
 
 <span class="c1"># Edit to specify output folder name for MSA</span>
-<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">"af_msa"</span>
 
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">INPUT</span><span class="si">}</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">MSAFOLDER</span><span class="si">}</span>
@@ -3075,7 +3075,7 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 <span class="c1">#SBATCH --partition=gpu</span>
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=4:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">## CPUs requested for each "task"; in simplest case the total number of used CPUs</span>
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem=80g</span>
@@ -3092,14 +3092,14 @@ module<span class="w"> </span>load<span class="w"> </span>AlphaFold/3.0.1
 <span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>
 
 <span class="c1"># Edit to specify name of folder containing output from prior MSA run</span>
-<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">&quot;af_msa&quot;</span>
+<span class="nv">MSAFOLDER</span><span class="o">=</span><span class="s2">"af_msa"</span>
 
 <span class="c1"># Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json</span>
 <span class="c1"># This is usually based on the name: field from your initial input.</span>
-<span class="nv">MSA</span><span class="o">=</span><span class="s2">&quot;MyPrefix&quot;</span>
+<span class="nv">MSA</span><span class="o">=</span><span class="s2">"MyPrefix"</span>
 
 <span class="c1">#Edit to specify name of final output folder for models</span>
-<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output&quot;</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">MSA</span><span class="si">}</span><span class="s2">_output"</span>
 
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">RUNDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">OUTPUT</span><span class="si">}</span>
 

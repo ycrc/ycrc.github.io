@@ -2938,11 +2938,11 @@ conda<span class="w"> </span>activate<span class="w"> </span>YOUR_ENV
 <span class="c1">#learning rate</span>
 <span class="nv">lr</span><span class="o">=</span>3e-5
 <span class="c1">#input folder</span>
-<span class="nv">inputdir</span><span class="o">=</span><span class="s2">&quot;/path/to/my/input&quot;</span>
+<span class="nv">inputdir</span><span class="o">=</span><span class="s2">"/path/to/my/input"</span>
 <span class="c1">#gradient accumalation steps</span>
 <span class="nv">gr</span><span class="o">=</span><span class="m">2</span>
 <span class="c1">#training script</span>
-<span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
+<span class="nv">script</span><span class="o">=</span><span class="s2">"/path/to/my/script.py"</span>
 
 torchrun<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nproc_per_node<span class="o">=</span><span class="nv">$SLURM_GPUS_ON_NODE</span><span class="w"> </span><span class="se">\</span>
@@ -2977,14 +2977,14 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>MY_PYTORCH_ENV
 
 <span class="c1">###tells job what node is the master node which is necessary for data communication between nodes</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="s2">"</span><span class="nv">$SLURM_NODELIST</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 <span class="c1">##stores master node as variable for use in the torchrun execution</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29500</span>
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;MASTER_ADDR=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Launching multi-node distributed training&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"MASTER_ADDR=</span><span class="si">${</span><span class="nv">MASTER_ADDR</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Launching multi-node distributed training"</span>
 
 <span class="c1">#batch size</span>
 <span class="nv">bs</span><span class="o">=</span><span class="m">16</span>
@@ -2993,11 +2993,11 @@ conda<span class="w"> </span>activate<span class="w"> </span>MY_PYTORCH_ENV
 <span class="c1">#learning rate</span>
 <span class="nv">lr</span><span class="o">=</span>3e-5
 <span class="c1">#input folder</span>
-<span class="nv">inputdir</span><span class="o">=</span><span class="s2">&quot;/path/to/my/input&quot;</span>
+<span class="nv">inputdir</span><span class="o">=</span><span class="s2">"/path/to/my/input"</span>
 <span class="c1">#gradient accumalation steps</span>
 <span class="nv">gr</span><span class="o">=</span><span class="m">2</span>
 <span class="c1">#training script</span>
-<span class="nv">script</span><span class="o">=</span><span class="s2">&quot;/path/to/my/script.py&quot;</span>
+<span class="nv">script</span><span class="o">=</span><span class="s2">"/path/to/my/script.py"</span>
 
 torchrun<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--nnodes<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>

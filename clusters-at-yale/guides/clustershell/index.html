@@ -2885,17 +2885,17 @@ pip<span class="w"> </span>install<span class="w"> </span>ClusterShell
 <p>The <a href="https://clustershell.readthedocs.io/en/latest/tools/nodeset.html#nodeset-tool"><code>nodeset</code></a> command uses <code>sinfo</code> underneath but has slightly different syntax. You can use it to ask about node states and nodes your job is running on. The nice difference is you can ask for folded (e.g. <code>c[01-02]n[12,15,18]</code>) or expanded (e.g. <code>c01n01 c01n02 ...</code>) node lists. The groups useful to you that we have configured are <code>@user</code>, <code>@job</code> and <code>@state</code>.</p>
 <h4 id="user-group">User group</h4>
 <p>List expanded node names where user abc123 has jobs running</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -u abc123 -o &quot;%N&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -u abc123 -o "%N"</span>
 nodeset<span class="w"> </span>-e<span class="w"> </span>@user:abc123
 </code></pre></div>
 <h4 id="job-group">Job group</h4>
 <p>List folded nodes where job 1234567 is running</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -j 1234567 -o &quot;%N&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># similar to squeue -h -j 1234567 -o "%N"</span>
 nodeset<span class="w"> </span>-f<span class="w"> </span>@job:1234567
 </code></pre></div>
 <h4 id="state-group">State group</h4>
 <p>List expanded node names that are idle according to slurm</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># similar to sinfo -t IDLE -o &quot;%N&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># similar to sinfo -t IDLE -o "%N"</span>
 nodeset<span class="w"> </span>-e<span class="w"> </span>@state:idle
 </code></pre></div>
 <h3 id="clush"><code>clush</code></h3>
@@ -2908,7 +2908,7 @@ nodeset<span class="w"> </span>-e<span class="w"> </span>@state:idle
 <p>Get a list of files in /tmp/abs on all nodes where job <code>654321</code> is running.</p>
 <div class="highlight"><pre><span></span><code>clush<span class="w"> </span>-bw<span class="w"> </span>@job:654321<span class="w"> </span>ls<span class="w"> </span>/tmp/abc123
 
-<span class="c1"># don&#39;t gather identical output</span>
+<span class="c1"># don't gather identical output</span>
 clush<span class="w"> </span>-w<span class="w"> </span>@job:654321<span class="w"> </span>ls<span class="w"> </span>/tmp/abc123
 </code></pre></div>
 <h4 id="cpu-usage">CPU usage</h4>

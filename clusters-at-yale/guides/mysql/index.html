@@ -2974,12 +2974,12 @@ Server version: 11.7.2-MariaDB MariaDB Server
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [(none)]&gt;
 </code></pre></div>
 Success!  The server is working!   You will now probably want to set a password for the server root account:
-<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;my-secret-pw&#39;;
+<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; ALTER USER 'root'@'%' IDENTIFIED BY 'my-secret-pw';
 Query OK, 0 rows affected (0.002 sec)
 
 MariaDB [(none)]&gt; FLUSH PRIVILEGES;
@@ -2997,7 +2997,7 @@ Server version: 11.7.2-MariaDB MariaDB Server
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [(none)]&gt; 
 </code></pre></div>
@@ -3005,7 +3005,7 @@ You can also specify the password on the command line (e.g., "-pmy-secret-pw").<
 <h3 id="step-6-add-a-database-user-and-permit-it-to-login-remotely">Step 6: Add a database user and permit it to login remotely</h3>
 <p>Next, in order to connect from outside the container, you need to add a user that is allowed to connect remotely and give that user permissions. This is one way to do that from the container.</p>
 <p>You should probably substitute your name for elmerfudd and a better password for mypasswd!</p>
-<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;elmerfudd&#39;@&#39;%&#39; IDENTIFIED BY &#39;mypasswd&#39; WITH GRANT OPTION;
+<div class="highlight"><pre><span></span><code>MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON *.* TO 'elmerfudd'@'%' IDENTIFIED BY 'mypasswd' WITH GRANT OPTION;
 Query OK, 0 rows affected (0.002 sec)
 
 MariaDB [(none)]&gt; FLUSH PRIVILEGES;
@@ -3042,7 +3042,7 @@ Query OK, 0 rows affected (0.11 sec)
 <p>For connections from outside the container, you can place the credentials for the account you are using into the file ${HOME}/.my.cnf
 <div class="highlight"><pre><span></span><code>[client]
 user=elmerfudd
-password=&#39;mypasswd&#39;
+password='mypasswd'
 </code></pre></div>
 Then any invocations of mysql / mariadb from outside the container to automatically connect with elmerfudd's username and password.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
@@ -3054,7 +3054,7 @@ port=3310
 [client]
 port=3310
 user=elmerfudd
-password=&#39;mypasswd&#39;
+password='mypasswd'
 </code></pre></div>
                 
                   

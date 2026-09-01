@@ -3004,7 +3004,7 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <h2 id="examples">Examples</h2>
 <h3 id="ex-1-rank">Ex 1: Rank</h3>
 <p>This is a simple example where each worker reports their <code>RANK</code> and the process ID running that particular task.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># instantize the communication world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -3012,12 +3012,12 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <span class="c1"># get the size of the communication world</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
 
-<span class="c1"># get this particular processes&#39; `rank` ID</span>
+<span class="c1"># get this particular processes' `rank` ID</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
 
 <span class="n">PID</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s1"> has PID: </span><span class="si">{</span><span class="n">PID</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s1"> has PID: </span><span class="si">{</span><span class="n">PID</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </code></pre></div>
 <p>We then execute this code (named <code>mpi_simple.py</code>) by running the following on the command line:</p>
 <div class="codehilite"><pre><span></span><code><span class="nx">mpirun</span><span class="w"> </span><span class="o">-</span><span class="nx">n</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="nx">python</span><span class="w"> </span><span class="nx">mpi_simple</span><span class="p">.</span><span class="nx">py</span>
@@ -3027,10 +3027,10 @@ Therefore, when requesting resources (either interactively or in batch-mode) the
 <p>Then we tell that to set up a <code>COMM_WORLD</code> with 4 workers.</p>
 <p>Finally we tell <code>mpirun</code> to run <code>python mpi_simple.py</code> on each of the four workers.</p>
 <p>Which outputs the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">rank</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">PID</span><span class="o">:</span><span class="w"> </span><span class="mi">89134</span>
-<span class="n">rank</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">PID</span><span class="o">:</span><span class="w"> </span><span class="mi">89135</span>
-<span class="n">rank</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">PID</span><span class="o">:</span><span class="w"> </span><span class="mi">89136</span>
-<span class="n">rank</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">PID</span><span class="o">:</span><span class="w"> </span><span class="mi">89137</span>
+<div class="codehilite"><pre><span></span><code>rank: 0 has PID: 89134
+rank: 1 has PID: 89135
+rank: 2 has PID: 89136
+rank: 3 has PID: 89137
 </code></pre></div>
 
 <h3 id="ex-2-point-to-point-communicators">Ex 2: Point to Point Communicators</h3>
@@ -3046,17 +3046,17 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <li><code>status</code> used to retrieve information about recv'd message</li>
 </ul>
 <p>We now we create a file (<code>mpi_comm.py</code>) that contains the following:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Hello, world&#39;</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">'Hello, world'</span>
     <span class="n">comm</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rank </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"rank </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <p>When we run this on the command line (<code>mpirun -n 4 python mpi_comm.py</code>) we get the following:</p>
 <div class="codehilite"><pre><span></span><code>rank 1: Hello, world
@@ -3066,7 +3066,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <h3 id="ex-3-broadcast">Ex 3: Broadcast</h3>
 <p>Now we will try a slightly more complicated example that involves sending messages and data between processes.
 <div class="highlight"><pre><span></span><code><span class="c1"># Import MPI</span>
-<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
 
 <span class="c1"># Define world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -3075,7 +3075,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 
 <span class="c1"># Create some data in the RANK_0 worker</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.72</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">],</span> <span class="s1">&#39;key2&#39;</span> <span class="p">:</span> <span class="p">(</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">)}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key1'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.72</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">],</span> <span class="s1">'key2'</span> <span class="p">:</span> <span class="p">(</span> <span class="s1">'abc'</span><span class="p">,</span> <span class="s1">'xyz'</span><span class="p">)}</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -3083,28 +3083,28 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <span class="n">data</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">bcast</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Append the RANK ID to the data</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'key1'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>
 
 <span class="c1"># Print the resulting data</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">, data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">, data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div></p>
 <p>We then execute this code (named <code>mpi_message.py</code>) by running the following on the command line:</p>
 <div class="codehilite"><pre><span></span><code>mpirun -n 4 python mpi_message.py
 </code></pre></div>
 
 <p>Which outputs the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Rank</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="n">data</span><span class="o">:</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;key1&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="mi">7</span><span class="o">,</span><span class="w"> </span><span class="mf">2.72</span><span class="o">,</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="o">),</span><span class="w"> </span><span class="mi">0</span><span class="o">],</span><span class="w"> </span><span class="s1">&#39;key2&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;abc&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">)}</span>
-<span class="n">Rank</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span><span class="w"> </span><span class="n">data</span><span class="o">:</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;key1&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="mi">7</span><span class="o">,</span><span class="w"> </span><span class="mf">2.72</span><span class="o">,</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="o">),</span><span class="w"> </span><span class="mi">2</span><span class="o">],</span><span class="w"> </span><span class="s1">&#39;key2&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;abc&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">)}</span>
-<span class="n">Rank</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="o">,</span><span class="w"> </span><span class="n">data</span><span class="o">:</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;key1&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="mi">7</span><span class="o">,</span><span class="w"> </span><span class="mf">2.72</span><span class="o">,</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="o">),</span><span class="w"> </span><span class="mi">3</span><span class="o">],</span><span class="w"> </span><span class="s1">&#39;key2&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;abc&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">)}</span>
-<span class="n">Rank</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="n">data</span><span class="o">:</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;key1&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="mi">7</span><span class="o">,</span><span class="w"> </span><span class="mf">2.72</span><span class="o">,</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="o">),</span><span class="w"> </span><span class="mi">1</span><span class="o">],</span><span class="w"> </span><span class="s1">&#39;key2&#39;</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;abc&#39;</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;xyz&#39;</span><span class="o">)}</span>
+<div class="codehilite"><pre><span></span><code>Rank: 0, data: {'key1': [7, 2.72, (2+3j), 0], 'key2': ('abc', 'xyz')}
+Rank: 2, data: {'key1': [7, 2.72, (2+3j), 2], 'key2': ('abc', 'xyz')}
+Rank: 3, data: {'key1': [7, 2.72, (2+3j), 3], 'key2': ('abc', 'xyz')}
+Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}
 </code></pre></div>
 
 <h3 id="ex-4-scatter-and-gather">Ex 4: Scatter and Gather</h3>
 <p>An effective way of distributing computationally intensive tasks is to <code>scatter</code> pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are <code>gathered</code> by <code>RANK_0</code>.</p>
 <p>This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returns to the main task with a <code>Gather</code> call.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
-<span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpi4py</span><span class="w"> </span><span class="kn">import</span> <span class="n">MPI</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># set up MPI world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -3118,7 +3118,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">numData</span><span class="p">)</span>
 
 <span class="c1"># initialize empty arrays to receive the partial data</span>
-<span class="n">partial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numData</span><span class="o">/</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">partial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numData</span><span class="o">/</span><span class="n">size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'d'</span><span class="p">)</span>
 
 <span class="c1"># send data to the other workers</span>
 <span class="n">comm</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">partial</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -3126,13 +3126,13 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <span class="c1"># prepare the reduced array to receive the processed data</span>
 <span class="n">reduced</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">reduced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+    <span class="n">reduced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'d'</span><span class="p">)</span>
 
 <span class="c1"># Average the partial arrays, and then gather them to RANK_0</span>
 <span class="n">comm</span><span class="o">.</span><span class="n">Gather</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">partial</span><span class="p">),</span> <span class="n">reduced</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Full Average:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reduced</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Full Average:'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reduced</span><span class="p">))</span>
 </code></pre></div>
 <p>This is executed on the command line:</p>
 <div class="codehilite"><pre><span></span><code>mpirun -n 4 python mpi/mpi_scatter.py

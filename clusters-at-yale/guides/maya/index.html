@@ -2863,7 +2863,7 @@ maya-batch /path/to/your_scene.mb
 </code></pre></div>
 <p><code>maya-batch</code> steps the scene through its full frame range and writes a per-frame CSV of keyframed animation values next to the scene file. Use <code>maya-batch --help</code> for the full option list (custom frame range, output directory, etc.).</p>
 <p>For arbitrary scripted work, you can also call the underlying <code>maya</code> or <code>mayapy</code> binaries directly:</p>
-<div class="highlight"><pre><span></span><code>maya -batch -file scene.mb -command &quot;python(\&quot;import my_module; my_module.run()\&quot;)&quot;
+<div class="highlight"><pre><span></span><code>maya -batch -file scene.mb -command "python(\"import my_module; my_module.run()\")"
 mayapy my_script.py
 </code></pre></div>
 <h2 id="parallel-mode">Parallel Mode</h2>

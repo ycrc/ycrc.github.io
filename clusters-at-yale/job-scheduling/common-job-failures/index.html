@@ -3071,7 +3071,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <h2 id="rate-limits">Rate Limits</h2>
 <p>We rate-limit job submissions to <strong>200 jobs per hour</strong> on each cluster. This limit helps even out load on the scheduler and encourages good practice. When you hit this limit, you will get an error when submitting new jobs that looks like this:</p>
 <div class="highlight"><pre><span></span><code>sbatch: error: Reached jobs per hour limit
-sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user&#39;s size and/or time limits)
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
 </code></pre></div>
 <p>You will then need to wait until your submission rate drops. </p>
 <h3 id="use-job-arrays">Use Job Arrays</h3>

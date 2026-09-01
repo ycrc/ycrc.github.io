@@ -3305,7 +3305,7 @@ llms-list<span class="w"> </span>qwen
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
 <div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
 
-<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"meta-llama/Llama-3.1-70B"</span>
 
 <span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
 <span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>

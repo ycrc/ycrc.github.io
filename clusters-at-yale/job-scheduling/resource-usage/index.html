@@ -2845,7 +2845,7 @@
 <div class="highlight"><pre><span></span><code><span class="o">[</span>netid@node<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>/usr/bin/time<span class="w"> </span>-v<span class="w"> </span>stress-ng<span class="w"> </span>--cpu<span class="w"> </span><span class="m">8</span><span class="w"> </span>--timeout<span class="w"> </span>10s
 stress-ng:<span class="w"> </span>info:<span class="w">  </span><span class="o">[</span><span class="m">32574</span><span class="o">]</span><span class="w"> </span>dispatching<span class="w"> </span>hogs:<span class="w"> </span><span class="m">8</span><span class="w"> </span>cpu
 stress-ng:<span class="w"> </span>info:<span class="w">  </span><span class="o">[</span><span class="m">32574</span><span class="o">]</span><span class="w"> </span>successful<span class="w"> </span>run<span class="w"> </span>completed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">10</span>.08s
-<span class="w">    </span>Command<span class="w"> </span>being<span class="w"> </span>timed:<span class="w"> </span><span class="s2">&quot;stress-ng --cpu 8 --timeout 10s&quot;</span>
+<span class="w">    </span>Command<span class="w"> </span>being<span class="w"> </span>timed:<span class="w"> </span><span class="s2">"stress-ng --cpu 8 --timeout 10s"</span>
 <span class="w">    </span>User<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">(</span>seconds<span class="o">)</span>:<span class="w"> </span><span class="m">80</span>.22
 <span class="w">    </span>System<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">(</span>seconds<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.04
 <span class="w">    </span>Percent<span class="w"> </span>of<span class="w"> </span>CPU<span class="w"> </span>this<span class="w"> </span>job<span class="w"> </span>got:<span class="w"> </span><span class="m">795</span>%
@@ -2958,7 +2958,7 @@ However, the requested runtime was for an hour, while the jobs only ran for six 
 These jobs could have been scheduled more quickly if a more accurate runtime was specified.</p>
 <h3 id="sacct"><code>sacct</code></h3>
 <p>You can also use the more flexible <a href="https://slurm.schedmd.com/sacct.html"><code>sacct</code></a> to get that info, along with other more advanced job queries. Unfortunately, the default output from <code>sacct</code> is not as useful. We recommend setting an environment variable to customize the output.</p>
-<div class="highlight"><pre><span></span><code>[netid@node ~]$ export SACCT_FORMAT=&quot;JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32&quot;
+<div class="highlight"><pre><span></span><code>[netid@node ~]$ export SACCT_FORMAT="JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32"
 [netid@node ~]$ sacct -j 21294645
                JobID    JobName      User  Partition        NodeList    Elapsed      State ExitCode     MaxRSS                        AllocTRES
 -------------------- ---------- --------- ---------- --------------- ---------- ---------- -------- ---------- --------------------------------

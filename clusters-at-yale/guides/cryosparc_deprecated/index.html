@@ -2932,7 +2932,7 @@ module<span class="w"> </span>load<span class="w"> </span>CUDA/12.0.0
 <span class="nb">export</span><span class="w"> </span><span class="nv">worker_path</span><span class="o">=</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_worker
 <span class="nb">export</span><span class="w"> </span><span class="nv">ssd_path</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
 mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">user_email</span><span class="o">=</span><span class="s2">&quot;Your email address&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">user_email</span><span class="o">=</span><span class="s2">"Your email address"</span>
 
 <span class="c1"># Run the installation script</span>
 <span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span>/cryosparc_master
@@ -2944,12 +2944,12 @@ mkdir<span class="w"> </span><span class="nv">$ssd_path</span>
 --initial_email<span class="w"> </span><span class="nv">$user_email</span><span class="w"> </span><span class="se">\</span>
 --initial_password<span class="w"> </span><span class="nv">$cryosparc_passwd</span><span class="w"> </span><span class="se">\</span>
 --initial_username<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
---initial_firstname<span class="w"> </span><span class="s2">&quot;Firstname&quot;</span><span class="w"> </span><span class="se">\</span>
---initial_lastname<span class="w"> </span><span class="s2">&quot;Lastname&quot;</span>
+--initial_firstname<span class="w"> </span><span class="s2">"Firstname"</span><span class="w"> </span><span class="se">\</span>
+--initial_lastname<span class="w"> </span><span class="s2">"Lastname"</span>
 </code></pre></div>
 <h3 id="4-add-the-cryosparc-commands-to-your-system-path">4. Add the cryosparc commands to your system PATH</h3>
-<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_master/bin:\$PATH"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="w">     </span><span class="nb">echo</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">install_path</span><span class="si">}</span><span class="s2">/cryosparc_worker/bin:\$PATH"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2986,18 +2986,18 @@ contains the compute node that CryoSPARC has been launched on.</p>
 <span class="c1">#SBATCH --mem=64G</span>
 <span class="c1">#SBATCH -N 1 -c 8</span>
 <span class="c1">#SBATCH --gpus=4</span>
-<span class="c1">#SBATCH --signal=B:10@60 # send the signal &#39;10&#39; at 60s before job finishes</span>
+<span class="c1">#SBATCH --signal=B:10@60 # send the signal '10' at 60s before job finishes</span>
 <span class="c1">#SBATCH --job-name=CryoSPARC-batch</span>
-<span class="c1">#SBATCH --output=&quot;cryosparc-%N-%j.out&quot;</span>
+<span class="c1">#SBATCH --output="cryosparc-%N-%j.out"</span>
 
 <span class="k">function</span><span class="w"> </span>cleanup<span class="o">()</span>
 <span class="o">{</span>
 <span class="w">    </span>date
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Shutting down CryoSPARC @ &quot;</span><span class="p">;</span><span class="w"> </span>date
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"Shutting down CryoSPARC @ "</span><span class="p">;</span><span class="w"> </span>date
 <span class="w">    </span>cryosparcm<span class="w"> </span>start
-<span class="w">    </span>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
+<span class="w">    </span>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">"remove_scheduler_target_node('</span><span class="nv">$worker_host</span><span class="s2">')"</span>
 <span class="w">    </span>cryosparcm<span class="w"> </span>stop
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Done"</span>
 <span class="o">}</span>
 
 <span class="c1"># Shut down CryoSPARC cleanly when timeout is imminent</span>
@@ -3009,9 +3009,9 @@ contains the compute node that CryoSPARC has been launched on.</p>
 mkdir<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 
-sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
+sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">'s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'</span><span class="s2">"</span><span class="nv">$master_host</span><span class="s2">"</span><span class="s1">'\"/g'</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
 
 <span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
 
@@ -3046,9 +3046,9 @@ sleep<span class="w"> </span>infinity<span class="w"> </span><span class="p">&am
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">master_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">worker_host</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">base_dir</span><span class="o">=</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>dirname<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>cryosparcm<span class="k">)</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span><span class="k">)</span>
 
-sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">&#39;s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\&quot;&#39;</span><span class="s2">&quot;</span><span class="nv">$master_host</span><span class="s2">&quot;</span><span class="s1">&#39;\&quot;/g&#39;</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
+sed<span class="w"> </span>-i.bak<span class="w"> </span><span class="s1">'s/export CRYOSPARC_MASTER_HOSTNAME.*$/export CRYOSPARC_MASTER_HOSTNAME=\"'</span><span class="s2">"</span><span class="nv">$master_host</span><span class="s2">"</span><span class="s1">'\"/g'</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
 
 <span class="nb">source</span><span class="w"> </span><span class="nv">$base_dir</span>/config.sh
 
@@ -3065,7 +3065,7 @@ cryosparcw<span class="w"> </span>connect<span class="w"> </span><span class="se
 <p>and then connect to https://localhost:39000 as above.</p>
 <p>Among other things, this will not perform the automatic cleanup of CryoSPARC lockfiles or of previous worker nodes,
 so you will want to manually run shutdown and worker removal when you are done with CryoSPARC:</p>
-<div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">&quot;remove_scheduler_target_node(&#39;</span><span class="nv">$worker_host</span><span class="s2">&#39;)&quot;</span>
+<div class="highlight"><pre><span></span><code>cryosparcm<span class="w"> </span>cli<span class="w"> </span><span class="s2">"remove_scheduler_target_node('</span><span class="nv">$worker_host</span><span class="s2">')"</span>
 cryosparcm<span class="w"> </span>stop
 </code></pre></div>
 <h2 id="running-on-multiple-nodes">Running on multiple nodes</h2>
