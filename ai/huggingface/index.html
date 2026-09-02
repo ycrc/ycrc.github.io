@@ -2959,10 +2959,10 @@ ycrc_conda_env.sh<span class="w"> </span>update
 <p>By default, Slurm assigns the lowest-memory GPU available in the selected partition. Many LLMs require more vRAM than the smallest available GPU.</p>
 <p>If a model requires more GPU memory, specify a GPU constraint explicitly.</p>
 <p>Interactive example of requesting a specific GPU:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">"rtx5000|v100"</span>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <p>Batch script example of requesting a specific GPU:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --constraint="rtx5000|v100"</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <h2 id="model-loading-and-precision">Model loading and precision</h2>
 <p>Automatic dtype selection during model loading is discouraged. Using automatic dtype selection can result in:</p>

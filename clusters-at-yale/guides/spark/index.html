@@ -2878,16 +2878,16 @@ spark-start
 <span class="c1"># Source spark-env.sh to get useful env variables.</span>
 <span class="nb">source</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"***** Spark cluster is running. Submit jobs to </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="s2">. *****"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;***** Spark cluster is running. Submit jobs to </span><span class="si">${</span><span class="nv">SPARK_MASTER_URL</span><span class="si">}</span><span class="s2">. *****&quot;</span>
 
 <span class="c1"># set up SSH tunnel for spark web-interface</span>
 <span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span>
 <span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s2">"."</span><span class="w"> </span><span class="s1">'{print $2}'</span><span class="k">)</span>
+<span class="nv">cluster</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s2">&quot;.&quot;</span><span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
 <span class="nv">web_port</span><span class="o">=</span><span class="m">8080</span>
 
 <span class="c1"># print tunneling instructions</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel:</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
 
@@ -2900,7 +2900,7 @@ spark-start
 
 <span class="s2">Use a Browser on your local machine to go to:</span>
 <span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span>
-<span class="s2">"</span>
+<span class="s2">&quot;</span>
 
 sleep<span class="w"> </span>infinity
 </code></pre></div>
@@ -2935,7 +2935,7 @@ spark-start
 <span class="nb">source</span><span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.spark-local/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>/spark/conf/spark-env.sh
 
 <span class="c1"># print tunneling instructions</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel:</span>
 <span class="s2">ssh -N -L </span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">node</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">web_port</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">user</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">cluster</span><span class="si">}</span><span class="s2">.ycrc.yale.edu</span>
 
@@ -2948,7 +2948,7 @@ spark-start
 
 <span class="s2">Use a Browser on your local machine to go to:</span>
 <span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2"> </span>
-<span class="s2">"</span>
+<span class="s2">&quot;</span>
 
 <span class="c1"># Customize the executor resources below to match resources requested above</span>
 <span class="c1"># with an allowance for spark driver overhead. Also change the path to your spark job.</span>

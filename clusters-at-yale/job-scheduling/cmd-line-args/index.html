@@ -2942,7 +2942,7 @@ In particular, we can use <code>os.getenv</code> to retrieve environment variabl
 The python script (<code>my_script.py</code>) is modified to retrieve this variable and analyze the given datafile:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"INPUT_DATA_FILE"</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;INPUT_DATA_FILE&quot;</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">file_cruncher</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 
@@ -2980,8 +2980,8 @@ Take a look at their documentation for examples of how to use <code>argparse</co
 <p>Just as with Python, R provides comparable utilities to access command-line arguments and environment variables.</p>
 <h3 id="environment-variables_1">Environment Variables</h3>
 <p>The <code>Sys.getenv</code> utility (<a href="https://rdocumentation.org/packages/base/versions/3.6.2/topics/Sys.getenv">docs page</a>) works nearly identically to the Python implementation.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">'HOSTNAME'</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">"grace2.grace.hpc.yale.internal"</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&#39;HOSTNAME&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;grace2.grace.hpc.yale.internal&quot;</span>
 </code></pre></div>
 <p>Just like Python, these values are always returned as <code>string</code> representations, so if the variable of interest is a number it will need to be cast into an integer using <code>as.numeric()</code>.</p>
 <h3 id="command-line-arguments_1">Command-line Arguments</h3>
@@ -2994,9 +2994,9 @@ Take a look at their documentation for examples of how to use <code>argparse</co
 </code></pre></div>
 <p>The <code>trailingOnly=TRUE</code> option will limit <code>args</code> to contain only those arguments which follow the script:</p>
 <div class="highlight"><pre><span></span><code>Rscript<span class="w"> </span>my_script.R<span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">"a"</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">"b"</span>
-<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">"c"</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;a&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;b&quot;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;c&quot;</span>
 </code></pre></div>
 <p>There is a more advanced and detailed package for managing command-line arguments called <code>optparse</code> (<a href="https://cran.r-project.org/web/packages/optparse/">docs page</a>).
 This can be used to create more featured scripts in a similar way to Python's <code>argparse</code>.</p>

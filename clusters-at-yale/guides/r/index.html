@@ -3024,11 +3024,11 @@ module<span class="w"> </span>load<span class="w"> </span>R/4.4.1-foss-2022b
 
 R
 <span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">"lattice"</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">"http://cran.r-project.org"</span><span class="o">)</span>
+&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>This will throw a warning like:</p>
-<div class="highlight"><pre><span></span><code>Warning<span class="w"> </span><span class="k">in</span><span class="w"> </span>install.packages<span class="o">(</span><span class="s2">"lattice"</span>,<span class="w"> </span><span class="nv">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://cran.r-project.org"</span><span class="o">)</span><span class="w"> </span>:
-<span class="w">  </span><span class="s1">'lib = "/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library"'</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>writable
+<div class="highlight"><pre><span></span><code>Warning<span class="w"> </span><span class="k">in</span><span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span><span class="w"> </span>:
+<span class="w">  </span><span class="s1">&#39;lib = &quot;/vast/palmer/apps/avx2/software/R/4.4.1-foss-2022b/lib64/R/library&quot;&#39;</span><span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>writable
 Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>a<span class="w"> </span>personal<span class="w"> </span>library<span class="w"> </span>instead?<span class="w"> </span><span class="o">(</span>yes/No/cancel<span class="o">)</span><span class="w"> </span>yes
 Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>personal<span class="w"> </span>library
 ‘/home/netID/R/4.4.1-foss-2022b’
@@ -3045,7 +3045,7 @@ to<span class="w"> </span>install<span class="w"> </span>packages<span class="w"
 &gt; .libPaths()
 
 # Add new default location to the standard defaults, e.g. project/my_R_libs
-&gt; .libPaths(c("/home/netID/project/my_R_libs/", .libPaths()))
+&gt; .libPaths(c(&quot;/home/netID/project/my_R_libs/&quot;, .libPaths()))
 </code></pre></div></p>
 <h2 id="run-r">Run R</h2>
 <p>We will kill R jobs on the login nodes that are using excessive resources.
@@ -3077,7 +3077,7 @@ Here you can select the desired version of R and RStudio and launch an interacti
 <p>On a cluster you may want to use R in parallel across multiple nodes.
 While there are a few different ways this can be achieved, we recommend using the R software module which already includes <code>Rmpi</code>, <code>parallel</code>, and <code>doMC</code>.</p>
 <p>To test it, we can create a simple R script named <code>ex1.R</code></p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">"Rmpi"</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rmpi&quot;</span><span class="p">)</span>
 
 <span class="n">n</span><span class="o">&lt;-</span><span class="nf">mpi.comm.size</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 <span class="n">me</span><span class="o">&lt;-</span><span class="nf">mpi.comm.rank</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
@@ -3085,7 +3085,7 @@ While there are a few different ways this can be achieved, we recommend using th
 <span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 <span class="n">val</span><span class="o">&lt;-</span><span class="m">777</span>
 <span class="nf">mpi.bcast</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">"me"</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">,</span><span class="w"> </span><span class="s">"val"</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;me&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;val&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
 <span class="nf">mpi.barrier</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
 
 <span class="nf">mpi.quit</span><span class="p">()</span>
@@ -3129,7 +3129,7 @@ module<span class="w"> </span>load<span class="w"> </span>miniconda
 <span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>my_r_env
 R
 <span class="c1"># in R</span>
-&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">"lattice"</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">"http://cran.r-project.org"</span><span class="o">)</span>
+&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;lattice&quot;</span>,<span class="w"> </span><span class="nv">repos</span><span class="o">=</span><span class="s2">&quot;http://cran.r-project.org&quot;</span><span class="o">)</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3140,15 +3140,15 @@ In general, it's best to use the module installation of R for anything which req
 <p>R has a strange bug that can cause it to crash on startup when you log on remotely to a YCRC cluster terminal.</p>
 <p>You will see the following messages printed out as it crashes:
 <div class="highlight"><pre><span></span><code>During startup - Warning message:
-Setting LC_CTYPE failed, using "C" 
+Setting LC_CTYPE failed, using &quot;C&quot; 
 
  *** caught segfault ***
-address (nil), cause 'memory not mapped'
+address (nil), cause &#39;memory not mapped&#39;
 </code></pre></div></p>
 <p>This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.</p>
 <p>To avoid this crash, connect to the YCRC cluster with your terminal as usual, but before running R type into the terminal the command:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">unset</span><span class="w"> </span>LC_CTYPE
-<span class="c1"># or alternatively: 'export LC_CTYPE=en_US.UTF-8' or 'export LC_ALL=en_US.UTF-8'</span>
+<span class="c1"># or alternatively: &#39;export LC_CTYPE=en_US.UTF-8&#39; or &#39;export LC_ALL=en_US.UTF-8&#39;</span>
 </code></pre></div>
                 
                   

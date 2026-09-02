@@ -2823,7 +2823,7 @@ Make sure that you have installed Jupyter in your conda environment. We recommen
 <span class="c1">#SBATCH --output jupyter-notebook-%J.log</span>
 
 <span class="c1"># get tunneling info</span>
-<span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="s2">""</span>
+<span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <span class="nv">port</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i8000-9999<span class="w"> </span>-n1<span class="k">)</span>
 <span class="nv">node</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span>
 <span class="nv">user</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
@@ -2831,7 +2831,7 @@ Make sure that you have installed Jupyter in your conda environment. We recommen
 <span class="nv">token</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$RANDOM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">30</span><span class="k">)</span>
 
 <span class="c1"># print tunneling instructions jupyter-log</span>
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">For more info and how to connect from windows,</span>
 <span class="s2">   see https://docs.ycrc.yale.edu/clusters-at-yale/guides/jupyter/</span>
 <span class="s2">MacOS or linux terminal command to create your ssh tunnel</span>
@@ -2845,7 +2845,7 @@ Make sure that you have installed Jupyter in your conda environment. We recommen
 <span class="s2">SSH port: 22</span>
 <span class="s2">Use a Browser on your local machine to go to:</span>
 <span class="s2">localhost:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/lab?token=</span><span class="si">${</span><span class="nv">token</span><span class="si">}</span><span class="s2">  (prefix w/ https:// if using password)</span>
-<span class="s2">"</span>
+<span class="s2">&quot;</span>
 
 <span class="c1"># load modules or conda environments here</span>
 <span class="c1"># module load miniconda; conda activate ENV_NAME</span>

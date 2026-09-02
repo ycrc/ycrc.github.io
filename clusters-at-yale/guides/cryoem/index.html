@@ -3034,7 +3034,7 @@
 <p>RELION reserves one worker (slurm task) for orchestrating an MPI-based job, which 
 they call the "master". This can lead to inefficient jobs where there are tasks that could be using a GPU but are stuck being the master process. You can request a better layout for your job with a <a href="https://slurm.schedmd.com/heterogeneous_jobs.html">heterogeneous job</a>, allocating CPUs on a cpu-only compute node for the task that will not use GPUs. Here is an example 3D refinement job submission script (replace <code>choose_a_version</code> with the version you want to use):</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=general --ntasks 1 -c2 --job-name=class3D_hetero_01 --mem=10G --output="class3D_hetero_01-%j.out"</span>
+<span class="c1">#SBATCH --partition=general --ntasks 1 -c2 --job-name=class3D_hetero_01 --mem=10G --output=&quot;class3D_hetero_01-%j.out&quot;</span>
 <span class="c1">#SBATCH hetjob</span>
 <span class="c1">#SBATCH --partition=gpu --ntasks 4 -c2 -N1 --mem-per-cpu=16G --gpus-per-task=1 </span>
 

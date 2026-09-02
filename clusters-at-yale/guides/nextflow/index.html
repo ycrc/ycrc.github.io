@@ -2888,15 +2888,15 @@ Nextflow is able to make effective use of slurm when running  on our clusters, u
 <p>First, to specify slurm as the executor, add the following executor default to the process specification in nextflow.config. </p>
 <div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span><span class="w"> </span>
 <span class="w">    </span>…
-<span class="w">   </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'slurm'</span>
+<span class="w">   </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
 <span class="w">    </span>…
 <span class="o">}</span>
 </code></pre></div>
 <p>You can add other slurm-related options, for example:</p>
 <div class="highlight"><pre><span></span><code>process<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'slurm'</span>
-<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'day'</span>
-<span class="w">    </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'200 GB'</span>
+<span class="w">    </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;day&#39;</span>
+<span class="w">    </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;200 GB&#39;</span>
 <span class="w">    </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
 <span class="w">    </span><span class="nv">Time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>4h
 <span class="o">}</span>
@@ -2909,7 +2909,7 @@ More information can be found on nextflow's <a href="https://www.nextflow.io/doc
 <div class="highlight"><pre><span></span><code>executor<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nv">$slurm</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="nv">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">50</span>
-<span class="w">        </span><span class="nv">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'190/60min'</span>
+<span class="w">        </span><span class="nv">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;190/60min&#39;</span>
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -2929,14 +2929,14 @@ More information can be found on nextflow's <a href="https://www.nextflow.io/doc
 The cleanest way to do this is to give those processes a specific ‘label’, e.g. process_local, and then set the executor for that label to be ‘local’.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>process<span class="w"> </span>Fastqc<span class="w"> </span><span class="o">{</span>
-<span class="w">   </span>label<span class="w"> </span><span class="s1">'process_local'</span>
+<span class="w">   </span>label<span class="w"> </span><span class="s1">&#39;process_local&#39;</span>
 <span class="w">   </span>…
 <span class="o">}</span>
 
 Process<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span>…
 <span class="w">     </span>withLabel:process_local<span class="w"> </span><span class="o">{</span>
-<span class="w">          </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'local'</span>
+<span class="w">          </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
 <span class="w">    </span>…
 <span class="o">}</span>
 </code></pre></div>
@@ -2944,7 +2944,7 @@ Process<span class="w"> </span><span class="o">{</span>
 <div class="highlight"><pre><span></span><code>Process<span class="w"> </span><span class="o">{</span>
 <span class="w">     </span>…
 <span class="w">     </span>withLabel:process_single<span class="w"> </span><span class="o">{</span>
-<span class="w">         </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'local'</span>
+<span class="w">         </span><span class="nv">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local&#39;</span>
 <span class="w">         </span><span class="nv">cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">         </span><span class="nv">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>maxMem<span class="o">(</span><span class="m">2</span>.GB<span class="w"> </span>*<span class="w"> </span>task.attempt<span class="o">)</span><span class="w"> </span><span class="o">}</span>
 <span class="w">     </span><span class="o">}</span>
@@ -2971,10 +2971,10 @@ Process<span class="w"> </span><span class="o">{</span>
 <li>
 <p>Create a <code>bouchet.config</code> next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of <code>&lt;group&gt;</code>.:
 <div class="highlight"><pre><span></span><code><span class="n">params</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">config_profile_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">'bouchet'</span>
-<span class="w">    </span><span class="n">config_profile_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Bouchet Cluster at Yale'</span>
-<span class="w">    </span><span class="n">config_profile_contact</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">'YCRC, research.computing@yale.edu'</span>
-<span class="w">    </span><span class="n">config_profile_url</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://docs.ycrc.yale.edu/clusters/bouchet/'</span>
+<span class="w">    </span><span class="n">config_profile_name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bouchet&#39;</span>
+<span class="w">    </span><span class="n">config_profile_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Bouchet Cluster at Yale&#39;</span>
+<span class="w">    </span><span class="n">config_profile_contact</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YCRC, research.computing@yale.edu&#39;</span>
+<span class="w">    </span><span class="n">config_profile_url</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://docs.ycrc.yale.edu/clusters/bouchet/&#39;</span>
 <span class="o">}</span>
 
 <span class="n">apptainer</span><span class="w"> </span><span class="o">{</span>
@@ -2983,20 +2983,20 @@ Process<span class="w"> </span><span class="o">{</span>
 <span class="o">}</span>
 
 <span class="c1">// Cache pulled images under group scratch so they survive between jobs.</span>
-<span class="c1">// Replace 'pi_&lt;group&gt;' with your own PI group (run `groups` to find it).</span>
+<span class="c1">// Replace &#39;pi_&lt;group&gt;&#39; with your own PI group (run `groups` to find it).</span>
 <span class="n">env</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">NXF_APPTAINER_CACHEDIR</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">"${System.getenv('HOME')}/scratch_pi_&lt;group&gt;/.apptainer"</span>
-<span class="w">    </span><span class="n">NXF_SINGULARITY_CACHEDIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"${System.getenv('HOME')}/scratch_pi_&lt;group&gt;/.singularity"</span>
+<span class="w">    </span><span class="n">NXF_APPTAINER_CACHEDIR</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${System.getenv(&#39;HOME&#39;)}/scratch_pi_&lt;group&gt;/.apptainer&quot;</span>
+<span class="w">    </span><span class="n">NXF_SINGULARITY_CACHEDIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${System.getenv(&#39;HOME&#39;)}/scratch_pi_&lt;group&gt;/.singularity&quot;</span>
 <span class="o">}</span>
 
 <span class="n">executor</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">'slurm'</span>
+<span class="w">    </span><span class="n">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
 <span class="w">    </span><span class="n">queueSize</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
-<span class="w">    </span><span class="n">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'190/60min'</span>
+<span class="w">    </span><span class="n">submitRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;190/60min&#39;</span>
 <span class="o">}</span>
 
 <span class="n">process</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="c1">// Single-node ceiling for the standard 'day'/'week' nodes.</span>
+<span class="w">    </span><span class="c1">// Single-node ceiling for the standard &#39;day&#39;/&#39;week&#39; nodes.</span>
 <span class="w">    </span><span class="n">resourceLimits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
 <span class="w">        </span><span class="nl">memory:</span><span class="w"> </span><span class="mi">983</span><span class="o">.</span><span class="na">GB</span><span class="o">,</span>
 <span class="w">        </span><span class="nl">cpus:</span><span class="w"> </span><span class="mi">64</span><span class="o">,</span>
@@ -3005,19 +3005,19 @@ Process<span class="w"> </span><span class="o">{</span>
 
 <span class="w">    </span><span class="c1">// Long jobs go to week (max 7d). Short jobs first try scavenge (preemptible);</span>
 <span class="w">    </span><span class="c1">// on retry #3+ fall back to the regular day partition.</span>
-<span class="w">    </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">24</span><span class="o">.</span><span class="na">h</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'week'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'scavenge'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'day'</span><span class="w"> </span><span class="o">}</span>
-<span class="w">    </span><span class="n">errorStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">exitStatus</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'finish'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'retry'</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">24</span><span class="o">.</span><span class="na">h</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;week&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;scavenge&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;day&#39;</span><span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="n">errorStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="o">.</span><span class="na">exitStatus</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;finish&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;retry&#39;</span><span class="w"> </span><span class="o">}</span>
 <span class="w">    </span><span class="n">maxRetries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">    </span><span class="n">scratch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'true'</span>
-<span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'slurm'</span>
+<span class="w">    </span><span class="n">scratch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;true&#39;</span>
+<span class="w">    </span><span class="n">executor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
 
-<span class="w">    </span><span class="c1">// GPU label: default to one rtx_5000_ada on the public 'gpu' partition.</span>
-<span class="w">    </span><span class="nl">withLabel:</span><span class="s1">'process_gpu'</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="n">queue</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">'gpu'</span>
+<span class="w">    </span><span class="c1">// GPU label: default to one rtx_5000_ada on the public &#39;gpu&#39; partition.</span>
+<span class="w">    </span><span class="nl">withLabel:</span><span class="s1">&#39;process_gpu&#39;</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">queue</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;gpu&#39;</span>
 <span class="w">        </span><span class="n">accelerator</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">        </span><span class="n">clusterOptions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s1">'--gpus=rtx_5000_ada:1'</span>
-<span class="w">        </span><span class="n">containerOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'singularity'</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'apptainer'</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'--nv'</span><span class="w"> </span><span class="o">:</span>
-<span class="w">                             </span><span class="o">(</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'docker'</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'--gpus all'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
+<span class="w">        </span><span class="n">clusterOptions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;--gpus=rtx_5000_ada:1&#39;</span>
+<span class="w">        </span><span class="n">containerOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;singularity&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;apptainer&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;--nv&#39;</span><span class="w"> </span><span class="o">:</span>
+<span class="w">                             </span><span class="o">(</span><span class="w"> </span><span class="n">workflow</span><span class="o">.</span><span class="na">containerEngine</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;docker&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;--gpus all&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="o">}</span>
 <span class="w">        </span><span class="n">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="o">.</span><span class="na">GB</span>
 <span class="w">        </span><span class="n">time</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="o">.</span><span class="na">h</span>
 <span class="w">    </span><span class="o">}</span>
@@ -3035,7 +3035,7 @@ Process<span class="w"> </span><span class="o">{</span>
 #SBATCH --time=1-0
 #SBATCH --mail-type=ALL
 
-# Replace 'pi_&lt;group&gt;' with your own PI group (run `groups` to find it).
+# Replace &#39;pi_&lt;group&gt;&#39; with your own PI group (run `groups` to find it).
 export NXF_APPTAINER_CACHEDIR=${HOME}/scratch_pi_&lt;group&gt;/.apptainer
 export NXF_SINGULARITY_CACHEDIR=${HOME}/scratch_pi_&lt;group&gt;/.singularity
 
@@ -3045,8 +3045,8 @@ module load Nextflow
 nextflow run nf-core/sarek \
         --max_cpus $SLURM_CPUS_PER_TASK \
         --max_memory 80.GB \
-        --input "sample_sheet.csv" \
-        --outdir "output_test" \
+        --input &quot;sample_sheet.csv&quot; \
+        --outdir &quot;output_test&quot; \
         --genome GRCm38 \
         --trim_fastq \
         --save_mapped \

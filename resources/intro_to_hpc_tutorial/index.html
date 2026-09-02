@@ -2869,19 +2869,19 @@ conda<span class="w"> </span>deactivate
 <p><img alt="file_browser_interface_showing_dropdown_options" class="medium" src="/img/intro_tutorial_textedit.jpg" /></p>
 <p>Once the text editor is open, paste this python example inside of the file:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="n">holder</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">holder</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">letter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">holder</span> <span class="o">=</span> <span class="n">holder</span> <span class="o">+</span> <span class="n">message</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">holder</span>
 
-<span class="n">message</span> <span class="o">=</span> <span class="s1">'gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy</span><span class="se">\</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy</span><span class="se">\</span>
 <span class="s1">Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf</span><span class="se">\</span>
-<span class="s1">o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC'</span>
+<span class="s1">o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC&#39;</span>
 
 <span class="n">cypher</span> <span class="o">=</span> <span class="n">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'/home/NETID/decoded_example.txt'</span><span class="p">,</span><span class="s1">'w+'</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">cypher</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
 </code></pre></div>
 <p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your homespace.</p>
