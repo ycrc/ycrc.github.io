@@ -23,6 +23,10 @@ The first step in gaining access to [one of our clusters](/clusters) is to reque
 Once you have an account, you can connect to the cluster either via our Web Portal or more traditional SSH access. If you want to access the clusters from outside Yale's network, you must use the [Yale VPN.](access/vpn)
 
 - [Log in to the Clusters ](access)
+- [Troubleshoot Login Checklist](troubleshoot)
+
+!!! note "Note"	
+    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your accounts is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
 
 ## Submit a Job
 

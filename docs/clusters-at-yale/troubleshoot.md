@@ -20,6 +20,8 @@ have gotten word that we created your account for the cluster.
 
 If none of the above solve your issue, please [contact us](/#get-help) with your netid and the cluster you are attempting to connect to.
 
+!!! note "Note"
+    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your accounts is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
 
 ## Common SSH Errors
 
