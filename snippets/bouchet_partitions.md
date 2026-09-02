@@ -17,10 +17,10 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`1-00:00:00`|
-    |Maximum CPUs per group|`2000`|
-    |Maximum memory per group|`30000G`|
-    |Maximum CPUs per user|`1000`|
-    |Maximum memory per user|`15000G`|
+    |Maximum CPUs per group|`2400`|
+    |Maximum memory per group|`24000G`|
+    |Maximum CPUs per user|`1500`|
+    |Maximum memory per user|`20000G`|
 
     **Available Compute Nodes**
 
@@ -28,9 +28,10 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |12|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
     |6|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
+    |12|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
     |92|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |70|cpugen:cascadelake|48|368|cpugen:cascadelake, cpumodel:8268, common:yes|
 
 === "devel"
 
@@ -117,8 +118,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
-    |Maximum GPUs per group|`24`|
-    |Maximum GPUs per user|`16`|
+    |Maximum GPUs per group|`32`|
+    |Maximum GPUs per user|`32`|
     |Maximum running jobs per group|`16`|
     |Maximum running jobs per user|`12`|
 
@@ -129,8 +130,9 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |9|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
     |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |9|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
+    |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
 
 === "gpu_rtx6000"
 
@@ -186,8 +188,8 @@
     |Limit|Value|
     |---|---|
     |Maximum job time limit|`2-00:00:00`|
-    |Maximum GPUs per group|`20`|
-    |Maximum GPUs per user|`16`|
+    |Maximum GPUs per group|`32`|
+    |Maximum GPUs per user|`32`|
     |Maximum running jobs per user|`12`|
 
     **Available Compute Nodes**
@@ -297,10 +299,11 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |1|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |1|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |1|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |1|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |3|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
+    |1|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
 
 === "bigmem"
 
@@ -391,9 +394,9 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
     |7|cpugen:turin|192|1487||||cpugen:turin, cpumodel:9655, common:yes|
+    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |26|cpugen:turin|128|2251||||cpugen:turin, cpumodel:9575f, common:yes|
     |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
@@ -401,12 +404,11 @@
     |96|cpugen:emeraldrapids|64|990||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
     |4|cpugen:emeraldrapids|64|4014||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
     |60|cpugen:emeraldrapids|64|487||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-    |1|cpugen:sapphirerapids|48|976|l40s|3|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
-    |9|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |1|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |2|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
-    |9|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
-    |13|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
+    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
+    |72|cpugen:cascadelake|48|368||||cpugen:cascadelake, cpumodel:8268, common:yes|
 
 === "scavenge_gpu"
 
@@ -436,17 +438,15 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
-    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
+    |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
     |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |1|cpugen:sapphirerapids|48|976|l40s|3|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
-    |9|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |1|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |2|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
-    |9|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
-    |13|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
+    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
 
 ### Private Partitions
 With few exceptions, jobs submitted to private partitions are not considered when calculating your group's [Fairshare](/clusters-at-yale/job-scheduling/fairshare/). Your group can purchase additional hardware for private use, which we will make available as a `pi_groupname` partition. These nodes are purchased by you, but supported and administered by us. After vendor support expires, we retire compute nodes. Compute nodes can range from $10K to upwards of $50K depending on your requirements. If you are interested in purchasing nodes for your group, please [contact us](/#get-help).
