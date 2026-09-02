@@ -28,7 +28,8 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
     |1|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
-    |5|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |4|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |2|cpugen:cascadelake|48|368|cpugen:cascadelake, cpumodel:8268, common:yes|
 
 === "education_gpu"
 
