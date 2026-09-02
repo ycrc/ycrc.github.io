@@ -57,13 +57,13 @@ Although these potential hazards are serious, they represent worst-case scenario
 
 ## Safe(er) Claude code on YCRC clusters
 
-> We are currently beta-testing a module that makes Claude safer to use on our clusters. If you are interested in testing this module, we would appreciate your feedback. To join the beta testing phase, please email us at research.computing@yale.edu.
+> We are currently beta-testing a module on Bouchet and Mccleary that makes Claude safer to use on our clusters. If you are interested in testing this module, we would appreciate your feedback. To join the beta testing phase, please email us at research.computing@yale.edu.
 
 YCRC offers a module that mitigates many (but not all) of the risks above and ensures safer use of Claude on our clusters. The design philosophy is that you should not know you are using it. Claude should be able to perform any (safe) operation you want it to, but is prevented from performing any (unsafe) actions you would not want it to. 
 
 The module uses your existing Claude account and settings, so transitioning between your existing install and the module should be seamless. It provides access to common research computing tools, including modules, Conda environments, R, and the scheduler, SLURM, while restricting Claude’s access to sensitive or unrelated areas of the system, such as SSH credentials, other users’ files, and directories outside the intended working environment.
 
-Using the module is the recommended way to use Claude on YCRC systems and will help ensure increased safety for yourself and others. 
+Once beta testing is complete, the module will be the recommended way to use Claude on Bouchet, Mccleary, and Grace. Using Claude through the module will increase safety for yourself and others. Commercial agents should not be used on Hopper or Milgram, since all data is sent to the commercial providor. We are developing local solutions for those systems.
 
 
 ### How the module reduces risks
