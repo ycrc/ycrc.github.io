@@ -25,7 +25,7 @@ You will receive a monthly statement that details your allocated quota, current 
 
 Only PIs (faculty) can request space on Ark. Other members of the group can be given access to the space on request.
 
-To request Ark space, email ycrc@yale.edu. You will be asked for the following information:
+To request Ark space, please fill out the [Ark Storage Request form](https://ppms.us/yale/req/?pf=49&project=true&form=220). You will be asked for the following information:
 
 - Valid COA for charging
 - NetIDs of all group members who should have access
