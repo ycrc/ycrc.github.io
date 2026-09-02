@@ -3935,19 +3935,19 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum CPUs per group</td>
-<td><code>2000</code></td>
+<td><code>2400</code></td>
 </tr>
 <tr>
 <td>Maximum memory per group</td>
-<td><code>30000G</code></td>
+<td><code>24000G</code></td>
 </tr>
 <tr>
 <td>Maximum CPUs per user</td>
-<td><code>1000</code></td>
+<td><code>1500</code></td>
 </tr>
 <tr>
 <td>Maximum memory per user</td>
-<td><code>15000G</code></td>
+<td><code>20000G</code></td>
 </tr>
 </tbody>
 </table>
@@ -3965,13 +3965,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </thead>
 <tbody>
 <tr>
-<td>12</td>
-<td>cpugen:turin</td>
-<td>128</td>
-<td>2251</td>
-<td>cpugen:turin, cpumodel:9575f, common:yes</td>
-</tr>
-<tr>
 <td>6</td>
 <td>cpugen:turin</td>
 <td>192</td>
@@ -3979,11 +3972,25 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:turin, cpumodel:9655, common:yes</td>
 </tr>
 <tr>
+<td>12</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>cpugen:turin, cpumodel:9575f, common:yes</td>
+</tr>
+<tr>
 <td>92</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
 <td>990</td>
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
+</tr>
+<tr>
+<td>70</td>
+<td>cpugen:cascadelake</td>
+<td>48</td>
+<td>368</td>
+<td>cpugen:cascadelake, cpumodel:8268, common:yes</td>
 </tr>
 </tbody>
 </table>
@@ -4139,11 +4146,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per group</td>
-<td><code>24</code></td>
+<td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>16</code></td>
+<td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum running jobs per group</td>
@@ -4186,20 +4193,30 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
+</tr>
+<tr>
+<td>9</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
 <td>a40</td>
 <td>4</td>
 <td>48</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
 </tr>
 <tr>
-<td>10</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
+<td>12</td>
+<td>cpugen:icelake</td>
+<td>32</td>
+<td>240</td>
+<td>a5000</td>
 <td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
+<td>24</td>
+<td>cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000</td>
 </tr>
 </tbody>
 </table>
@@ -4297,11 +4314,11 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tr>
 <tr>
 <td>Maximum GPUs per group</td>
-<td><code>20</code></td>
+<td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum GPUs per user</td>
-<td><code>16</code></td>
+<td><code>32</code></td>
 </tr>
 <tr>
 <td>Maximum running jobs per user</td>
@@ -4539,20 +4556,20 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
-<td>b200</td>
+<td>rtx_pro_6000_blackwell</td>
 <td>8</td>
-<td>193</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
+<td>96</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
 </tr>
 <tr>
 <td>1</td>
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
-<td>rtx_pro_6000_blackwell</td>
+<td>b200</td>
 <td>8</td>
-<td>96</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
 </tr>
 <tr>
 <td>1</td>
@@ -4573,6 +4590,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>32</td>
 <td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
+</tr>
+<tr>
+<td>1</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>a40</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
 </tr>
 </tbody>
 </table>
@@ -4734,16 +4761,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
-<td>b200</td>
-<td>8</td>
-<td>193</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
-</tr>
-<tr>
-<td>8</td>
-<td>cpugen:turin</td>
-<td>128</td>
-<td>2251</td>
 <td>rtx_pro_6000_blackwell</td>
 <td>8</td>
 <td>96</td>
@@ -4758,6 +4775,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td></td>
 <td></td>
 <td>cpugen:turin, cpumodel:9655, common:yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>b200</td>
+<td>8</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
 </tr>
 <tr>
 <td>26</td>
@@ -4830,47 +4857,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
 <tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
-<td>3</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
-</tr>
-<tr>
-<td>9</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
-</tr>
-<tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
-</tr>
-<tr>
-<td>2</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>h100</td>
-<td>4</td>
-<td>80</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
-</tr>
-<tr>
-<td>9</td>
+<td>10</td>
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
@@ -4880,7 +4867,17 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
 </tr>
 <tr>
-<td>13</td>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>a40</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
+</tr>
+<tr>
+<td>15</td>
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
@@ -4888,6 +4885,26 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>80</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
+</tr>
+<tr>
+<td>12</td>
+<td>cpugen:icelake</td>
+<td>32</td>
+<td>240</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000</td>
+</tr>
+<tr>
+<td>72</td>
+<td>cpugen:cascadelake</td>
+<td>48</td>
+<td>368</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cpugen:cascadelake, cpumodel:8268, common:yes</td>
 </tr>
 </tbody>
 </table>
@@ -4939,20 +4956,20 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
-<td>b200</td>
+<td>rtx_pro_6000_blackwell</td>
 <td>8</td>
-<td>193</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
+<td>96</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
 </tr>
 <tr>
 <td>8</td>
 <td>cpugen:turin</td>
 <td>128</td>
 <td>2251</td>
-<td>rtx_pro_6000_blackwell</td>
+<td>b200</td>
 <td>8</td>
-<td>96</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
 </tr>
 <tr>
 <td>10</td>
@@ -4985,47 +5002,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
 </tr>
 <tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
-<td>3</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
-</tr>
-<tr>
-<td>9</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
-</tr>
-<tr>
-<td>1</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>a40</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
-</tr>
-<tr>
-<td>2</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>h100</td>
-<td>4</td>
-<td>80</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
-</tr>
-<tr>
-<td>9</td>
+<td>10</td>
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
@@ -5035,7 +5012,17 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
 </tr>
 <tr>
-<td>13</td>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>a40</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
+</tr>
+<tr>
+<td>15</td>
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
@@ -5043,6 +5030,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>80</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
+</tr>
+<tr>
+<td>12</td>
+<td>cpugen:icelake</td>
+<td>32</td>
+<td>240</td>
+<td>a5000</td>
+<td>4</td>
+<td>24</td>
+<td>cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000</td>
 </tr>
 </tbody>
 </table>
