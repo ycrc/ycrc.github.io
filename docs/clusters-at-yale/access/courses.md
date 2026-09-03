@@ -28,16 +28,6 @@ Your course also has a course-specific web portal, based on [Open OnDemand](/clu
 courseid.ycrc.yale.edu
 ```
 
-Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. 
-
-!!! warning 
-    If you only have a course participant account, but try to log in through the cluster web portal URL, you will get an error in the browser:
-    ```
-    Error -- can't find user for cpsc424_test
-    Run 'nginx_stage --help' to see a full list of available command line options.
-    ```
-    Use the URL for your course web portal will resolve the problem.
-
 ### SSH Access
 
 To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
@@ -63,6 +53,10 @@ Compute resources for courses are available in the `education` or `education_gpu
 Course members are welcome to use the [public partitions of the cluster](https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions). However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
 See each tab below for more information about the available education partitions.
+
+!!! note "Note"
+    The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the `education` and `education_gpu` partitions is 6 hours. If your sessions needs to run longer than 6 hours, please have your instructor or TF contact us.
+
 
 --8<-- "snippets/education_partitions.md"
 
