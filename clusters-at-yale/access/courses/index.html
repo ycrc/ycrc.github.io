@@ -3048,15 +3048,6 @@
 <p>Your course also has a course-specific web portal, based on <a href="/clusters-at-yale/access/ood/">Open OnDemand</a>, accessible via the URL (replacing <code>courseid</code> with the id given to your course):</p>
 <div class="highlight"><pre><span></span><code>courseid.ycrc.yale.edu
 </code></pre></div>
-<p>Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. You will then authenticate using your standard NetID (without the courseid prefix) and password. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you only have a course participant account, but try to log in through the cluster web portal URL, you will get an error in the browser:
-<div class="highlight"><pre><span></span><code>Error -- can&#39;t find user for cpsc424_test
-Run &#39;nginx_stage --help&#39; to see a full list of available command line options.
-</code></pre></div>
-Use the URL for your course web portal will resolve the problem.</p>
-</div>
 <h3 id="ssh-access">SSH Access</h3>
 <p>To access your course account via terminal and <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/"><code>ssh</code> authentication</a>, connect to the cluster using your course account name. For example:</p>
 <div class="highlight"><pre><span></span><code>ssh courseid_netid@bouchet.ycrc.yale.edu
@@ -3069,6 +3060,10 @@ Use the URL for your course web portal will resolve the problem.</p>
 <p>Compute resources for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.</p>
 <p>Course members are welcome to use the <a href="https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions">public partitions of the cluster</a>. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
 <p>See each tab below for more information about the available education partitions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the <code>education</code> and <code>education_gpu</code> partitions is 6 hours. If your sessions needs to run longer than 6 hours, please have your instructor or TF contact us.</p>
+</div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">education</label><div class="tabbed-content">
 <p>Use the education partition for CPU-only jobs.</p>
 <p><strong>Request Defaults</strong></p>
@@ -3280,7 +3275,7 @@ Use the URL for your course web portal will resolve the problem.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2026</span>
       
     
   </small>
