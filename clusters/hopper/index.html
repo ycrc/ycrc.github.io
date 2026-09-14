@@ -2108,9 +2108,37 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          AI Coding Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          AI Coding Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../ai/aicodingtools/" class="md-nav__link">
-        AI Coding Tools
+        Overview
       </a>
     </li>
   
@@ -2123,8 +2151,43 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ai/local-coding-agents/" class="md-nav__link">
+        Local Coding Agents on Bouchet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/commercial-coding-agents/" class="md-nav__link">
+        Commercial Coding Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ai/clarity/" class="md-nav__link">
-        Using Closed-Source Models: API Keys and Clarity
+        Clarity Platform
       </a>
     </li>
   
@@ -3305,7 +3368,7 @@ llms-list<span class="w"> </span>qwen
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
 <div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
 
-<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"meta-llama/Llama-3.1-70B"</span>
 
 <span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
 <span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>

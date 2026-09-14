@@ -2038,9 +2038,37 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          AI Coding Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          AI Coding Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../ai/aicodingtools/" class="md-nav__link">
-        AI Coding Tools
+        Overview
       </a>
     </li>
   
@@ -2053,8 +2081,43 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../ai/local-coding-agents/" class="md-nav__link">
+        Local Coding Agents on Bouchet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/commercial-coding-agents/" class="md-nav__link">
+        Commercial Coding Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../ai/clarity/" class="md-nav__link">
-        Using Closed-Source Models: API Keys and Clarity
+        Clarity Platform
       </a>
     </li>
   
@@ -3071,7 +3134,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <h2 id="rate-limits">Rate Limits</h2>
 <p>We rate-limit job submissions to <strong>200 jobs per hour</strong> on each cluster. This limit helps even out load on the scheduler and encourages good practice. When you hit this limit, you will get an error when submitting new jobs that looks like this:</p>
 <div class="highlight"><pre><span></span><code>sbatch: error: Reached jobs per hour limit
-sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user&#39;s size and/or time limits)
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
 </code></pre></div>
 <p>You will then need to wait until your submission rate drops. </p>
 <h3 id="use-job-arrays">Use Job Arrays</h3>

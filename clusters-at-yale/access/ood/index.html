@@ -2027,9 +2027,37 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          AI Coding Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          AI Coding Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../ai/aicodingtools/" class="md-nav__link">
-        AI Coding Tools
+        Overview
       </a>
     </li>
   
@@ -2042,8 +2070,43 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../ai/local-coding-agents/" class="md-nav__link">
+        Local Coding Agents on Bouchet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/commercial-coding-agents/" class="md-nav__link">
+        Commercial Coding Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../ai/clarity/" class="md-nav__link">
-        Using Closed-Source Models: API Keys and Clarity
+        Clarity Platform
       </a>
     </li>
   
@@ -3131,7 +3194,7 @@ For more information on specific tools in the User Portal, check out the followi
 <h3 id="remote-desktop-or-matlab-mathematica-etc-cannot-be-started-properly">Remote Desktop (or MATLAB, Mathematica, etc) cannot be started properly</h3>
 <ol>
 <li>Make sure there is no initialization left by <code>conda init</code> in your <code>.bashrc</code>. Clean it with 
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p&#39;</span><span class="w"> </span>~/.bashrc
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i.bak<span class="w"> </span>-ne<span class="w"> </span><span class="s1">'/# &gt;&gt;&gt; conda init/,/# &lt;&lt;&lt; conda init/!p'</span><span class="w"> </span>~/.bashrc
 </code></pre></div></li>
 <li>Run <code>dbus-launch</code> and make sure you see the following output:
 <div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>dbus-launch

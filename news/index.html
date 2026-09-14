@@ -1890,9 +1890,37 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10">
+          AI Coding Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          AI Coding Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../ai/aicodingtools/" class="md-nav__link">
-        AI Coding Tools
+        Overview
       </a>
     </li>
   
@@ -1905,8 +1933,43 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai/local-coding-agents/" class="md-nav__link">
+        Local Coding Agents on Bouchet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/commercial-coding-agents/" class="md-nav__link">
+        Commercial Coding Agents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ai/clarity/" class="md-nav__link">
-        Using Closed-Source Models: API Keys and Clarity
+        Clarity Platform
       </a>
     </li>
   
@@ -5192,7 +5255,7 @@ apptainer build lolcow.sif lolcow.def
 #SBATCH --requeue        # mark this job eligible for requeueing
 
 # define a `trap` that catches the signal and requeues the job
-trap &quot;echo -n &#39;TIMEOUT @ &#39;; date; echo &#39;Resubmitting...&#39;; scontrol requeue ${SLURM_JOBID}  &quot; 10
+trap "echo -n 'TIMEOUT @ '; date; echo 'Resubmitting...'; scontrol requeue ${SLURM_JOBID}  " 10
 
 # run the main code, with the `&amp;` to “background” the task
 ./my_code.exe &amp;
