@@ -2,7 +2,13 @@
 
 YCRC provides **secure AI coding assistance for Bouchet using a locally hosted LLM with popular coding-agent interfaces**. Code and prompts sent to the model are processed locally without being sent to external AI providers.
 
-The `coding-agents` module provides four coding-agent interfaces backed by the same YCRC-hosted Qwen3.8-27B model. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.
+The `local-coding-agents` module provides four coding-agent interfaces backed by the same YCRC-hosted Qwen3.8-27B model. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.
+
+To use, be on a compute node and:
+
+```
+module load local-coding-agents
+```
 
 ## Choosing an agent
 
