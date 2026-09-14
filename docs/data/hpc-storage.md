@@ -123,12 +123,7 @@ The price covers all costs, including administration, power, cooling, networking
 Agreements for such storage will run through the end of the fiscal year and be renewabled in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.
 
-For long-term allocations, additional project-style storage spaces can be paid for as a 5 year alloation.
-This storage currently costs $280/TiB (minimum of 10 TiB, with exact pricing to be confirmed before a purchase is made). 
-YCRC commits to making the storage available for 5 years from the purchase date, after which the storage allocation will need to be renewed, or the allocation will expire and be removed (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
-
-Please note that data in paid storage allocation will not be backed up, so you should make arrangements for the safekeeping of critical files off the clusters. 
-
+After the culmination of a paid storage agreement (either for non-payment or migration to off-cluster storage) the allocation will be removed according to our policies (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
 Please [contact us](/#get-help) with your requirements and budget to start the agreement process.
 
 Paid storage allocation, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
