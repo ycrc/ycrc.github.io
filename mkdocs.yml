@@ -181,8 +181,11 @@ nav:
         - "Multi-GPU Submission Scripts": ai/miniconda-multigpu.md
         - "National AI Research Resource (NAIRR)": ai/nairr.md
         - "Common AI/ML python package Installation Procedures": ai/pythonpackages.md
-        - "AI Coding Tools": ai/aicodingtools.md
-        - "Using Closed-Source Models: API Keys and Clarity": ai/clarity.md
+        - "AI Coding Agents":
+            - "Overview": ai/aicodingtools.md
+            - "Local Coding Agents on Bouchet": ai/local-coding-agents.md
+            - "Commercial Coding Agents": ai/commercial-coding-agents.md
+        - "Clarity Platform": ai/clarity.md
 
     - Software & Tools:
         - "Overview": clusters-at-yale/guides/index.md

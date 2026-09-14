@@ -19,7 +19,7 @@ Covered workflows:
 - GPU monitoring using Jobstats
 - Multi-GPU usage on a single node
 - Yale-managed access to closed-source models via Clarity
-- Recommendations/Warnings on AI coding tools
+- Local and commercial AI coding-agent workflows and security guidance
 - vLLM and Flash Attention installation instructions
 - Resource recommendations
 - Free Resources for Massive Scale Workflows
@@ -61,8 +61,14 @@ Use the pages below based on your workflow and questions:
 - **I need access to closed-source models, but I want to make sure my data is secure(Claude, etc)**  
   See [Clarity API](clarity.md) for Yale-managed access and usage guidance.
 
-- **I want to use AI coding tools**  
-  See [AI Coding Tools on YCRC Systems](aicodingtools.md) for recommendations and data security concerns.
+- **I want to use an AI coding agent**  
+  See [AI Coding Agents](aicodingtools.md) to choose between YCRC-hosted local inference and commercial coding agents and to review coding-agent risks.
+
+- **I want my coding-agent prompts and code processing to stay local to YCRC**  
+  See [Local Coding Agents on Bouchet](local-coding-agents.md) for Pi, Copilot, Codex, and Claude interfaces backed by a YCRC-hosted model.
+
+- **I want to use a commercial coding model**  
+  See [Commercial Coding Agents](commercial-coding-agents.md) for data-classification guidance and information about YCRC's Claude-only sandbox beta and planned Claude Enterprise service.
 
 <!--
 - **I want a browser-based, chat-style interface**  
