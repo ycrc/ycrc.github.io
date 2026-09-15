@@ -7,7 +7,7 @@ Ark is a nearline storage service provided by YCRC. It is intended for the safe 
 ## Frequently Asked Questions
 
 ### Is Ark available now? ###
-We are currently in an early adopter rollout, but expect to open the service more widely very soon.  Please contact us if you are interested so we can let you know when it is available generally.
+Yes, Ark is available.  We are currently accepting requests of 10-100 TiB, in increments of 5 TiB.
 
 ### What is Ark's intended use?
 
