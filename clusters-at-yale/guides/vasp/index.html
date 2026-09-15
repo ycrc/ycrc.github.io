@@ -2978,7 +2978,7 @@
 </code></pre></div>
 <p>which would likely spread over 4 nodes using 10 cores each and spend less time in the queue.</p>
 <h2 id="grace-mpi-partition">Grace mpi partition</h2>
-<p>On Grace's <code>mpi</code> parttion, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
+<p>On Grace's <code>mpi</code> partition, since cores are assigned as whole 24-core nodes, <code>NCORE</code> should always be equal to 24 and then you can just request <code>ntasks</code> in multiples of 24.</p>
 <p>in your submission script:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --ntasks=48 # some multiple of 24</span>
 </code></pre></div>
@@ -3004,7 +3004,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
       
     
   </small>
