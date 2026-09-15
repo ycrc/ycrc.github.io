@@ -38,7 +38,7 @@ This works best for small numbers of relatively small files. You can also direct
 ### File Transfers with Globus
 
 You can use the Globus service to perform data transfers between your local machine and the clusters.
-Globus provides a robust and resumable way to transfer larger files or datasets as well as an easy to use interface for tranfers between your local machine and the clusters.
+Globus provides a robust and resumable way to transfer larger files or datasets as well as an easy to use interface for transfers between your local machine and the clusters.
 Please see [our Globus page](/data/globus) for Yale-specific documentation and [their official docs](https://docs.globus.org/how-to) to get started.
 
 ### Command-Line Transfer Tools
@@ -149,7 +149,7 @@ The rsync connection will use the forwarded key and you will not need to reauthe
 
 ## Transfer Data to Outside of Yale
 
-If the location you are transfering to supports Globus, that is the preferred tool for transferring large data off-site.
+If the location you are transferring to supports Globus, that is the preferred tool for transferring large data off-site.
 Please see [our Globus page](/data/globus) for more details.
 
 For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/data/staging) for additional information. 

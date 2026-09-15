@@ -104,7 +104,7 @@ It is possible to run Linux terminals and applications from within a Windows ins
 
 ## Matlab
 
-* [Mathworks Online Classses](https://matlabacademy.mathworks.com/)
+* [Mathworks Online Classes](https://matlabacademy.mathworks.com/)
 
 ## Singularity / Apptainer
 

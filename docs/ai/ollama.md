@@ -216,7 +216,7 @@ Key properties:
 
 ## Automatic port collision prevention
 
-Due to the shared nature of YCRC Computing Systems, issues arised where multiple people would use Ollama on the same
+Due to the shared nature of YCRC Computing Systems, issues arose where multiple people would use Ollama on the same
 GPU node, which would cause Ollama to error out and fail for any user on that node. The YCRC Ollama automatically 
 detects a free port and assigns to the user when they run Ollama serve. That port is then exported as OLLAMA_HOST.
 

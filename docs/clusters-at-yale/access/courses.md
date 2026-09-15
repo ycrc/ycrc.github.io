@@ -88,7 +88,7 @@ or if you need to request a GPU
 
 ### Web Portal
 
-In any of the app submission forms, select the correct paritition name into the "Partition" field.
+In any of the app submission forms, select the correct partition name into the "Partition" field.
 
 ## Cluster Maintenance
 

@@ -8,7 +8,7 @@ When we install software, we use pre-defined build environment modules called to
 
 ### Free Open Source Software (`foss`)
 
-The `foss` toolchains are versioned with a yearletter scheme, e.g. `foss/2020b` is the second `foss` toolchain composed in 2020. Software modules that were built with a sub-toolchain, e.g. `GCCcore`, are still safe to load with their parents as long as their versions match. The major difference between `foss` and `fosscuda` is that `fosscuda` includes CUDA and builds applications for GPUs by default. You shoould only use `fosscuda` modules on nodes with [GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). Below is a tree depicting which toolchains inherit each other.
+The `foss` toolchains are versioned with a yearletter scheme, e.g. `foss/2020b` is the second `foss` toolchain composed in 2020. Software modules that were built with a sub-toolchain, e.g. `GCCcore`, are still safe to load with their parents as long as their versions match. The major difference between `foss` and `fosscuda` is that `fosscuda` includes CUDA and builds applications for GPUs by default. You should only use `fosscuda` modules on nodes with [GPUs](/clusters-at-yale/job-scheduling/resource-requests/#request-gpus). Below is a tree depicting which toolchains inherit each other.
 
 ``` text
 foss: gompi + FFTW, OpenBLAS, ScaLAPACK

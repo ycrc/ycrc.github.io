@@ -152,7 +152,7 @@ For further information on running AlphaFold 2, see EMBL-EBI's
 
 ## AlphaFold 3
 
-AlphaFold 3 on the YCRC clusters is currrently a work in progress.  Note that one signficant change
+AlphaFold 3 on the YCRC clusters is currently a work in progress.  Note that one significant change
 is the model parameter [Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md).
 BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
 This requires registering with [Google](https://forms.gle/svvpY4u2jsHEwWYS6) and agreeing to the above terms of use.

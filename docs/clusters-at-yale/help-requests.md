@@ -14,7 +14,7 @@ If you are having trouble logging in to the cluster, please see our [Troubleshoo
 ## Information to Provide with Help Requests
 
 Whenever requesting assistance with HPC related issues, please provide the YCRC staff with the following information (where applicable) so we can investigate the problem you are encountering.
-To assist with providing this information, we have included instructions below on retreiving the information if you are working in the command line interface.
+To assist with providing this information, we have included instructions below on retrieving the information if you are working in the command line interface.
 
 * Your NetID
 * name of the cluster you are working on (e.g. Grace, Milgram or McCleary)

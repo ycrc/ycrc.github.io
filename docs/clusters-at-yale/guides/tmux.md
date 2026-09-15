@@ -12,7 +12,7 @@ tmux new -s myproject
 
 You should see a bar across the bottom of your terminal window now that gives you some information about your session. If you are disconnected or detached from this session, anything you were doing will still be there waiting when you reattach
 
-The most important shortcut to remember is <kbd>Ctrl</kbd>+<kbd>b</kbd> (hold the ctrl or control key, then type "b"). This is how you signal to `tmux` that the following keystroke is meant for it and not the session you are working in. For example: if you want to gracefully detach from your session, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd>, then <kbd>d</kbd> for detach. To reattach to our sample `tmux` session after detatching, type:
+The most important shortcut to remember is <kbd>Ctrl</kbd>+<kbd>b</kbd> (hold the ctrl or control key, then type "b"). This is how you signal to `tmux` that the following keystroke is meant for it and not the session you are working in. For example: if you want to gracefully detach from your session, you can type <kbd>Ctrl</kbd>+<kbd>b</kbd>, then <kbd>d</kbd> for detach. To reattach to our sample `tmux` session after detaching, type:
 
 ``` bash
 tmux attach -t myproject

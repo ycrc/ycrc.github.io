@@ -1,7 +1,7 @@
 # MPI Parallelism with Python
 
 !!!note
-    Before venturing into MPI-based parallelism, consider whether your work can be resturctured to make use of [dSQ](/clusters-at-yale/job-scheduling/dsq/) or more "embarrassingly parallel" workflows.
+    Before venturing into MPI-based parallelism, consider whether your work can be restructured to make use of [dSQ](/clusters-at-yale/job-scheduling/dsq/) or more "embarrassingly parallel" workflows.
     MPI can be thought of as a "last resort" for parallel programming.
 
 There are many computational problems that can be have increased performance by running pieces in parallel. 

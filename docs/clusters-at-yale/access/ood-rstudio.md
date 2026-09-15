@@ -7,7 +7,7 @@ Information on accessing the web portal is available on [Access the Web Portal](
 
 The RStudio Server app is available on our cluster [Web Portals](/clusters-at-yale/access/ood). 
 To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Rstudio from the Interactive Apps menu or the dashboard and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
-In the submission form, you can alos select between a number of R versions.
+In the submission form, you can also select between a number of R versions.
 
 ### Change User R Package Path
 To change the default path where packages installed by the user are stored, you need to add the following line of code in your `$HOME/.bashrc`:
@@ -77,7 +77,7 @@ Your R conda environments should now show up in the 'R version' drop-down menu.
 ## Run RStudio in Remote Desktop
 
 !!!warning
-    The following methods are depracated and no longer work as is; if you need alternative methods for running RStudio, please contact us by email ([research.computing@yale.edu](mailto:research.computing@yale.edu)) or online ([help.ycrc.yale.edu](https://help.ycrc.yale.edu))
+    The following methods are deprecated and no longer work as is; if you need alternative methods for running RStudio, please contact us by email ([research.computing@yale.edu](mailto:research.computing@yale.edu)) or online ([help.ycrc.yale.edu](https://help.ycrc.yale.edu))
 
 While we don't generally encourage our users to run a production R code in RStudio, there are cases that it could be beneficial. 
 For example, when a user needs to monitor the R code's progress continuously.

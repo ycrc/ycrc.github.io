@@ -1,7 +1,7 @@
 # Checkpoint Long-running Jobs
 
 When working with long-running jobs and work-flows, it becomes very important to establish checkpoints along the way.
-This will ensure that if your job is interrupted you will be able to restart it without having to go back to the begining of the job.
+This will ensure that if your job is interrupted you will be able to restart it without having to go back to the beginning of the job.
 
 DMTCP "Distributed Multithreaded Checkpointing" allows you to easily save the state of your running job and restart it from 
 that point.  This can be very useful if your job fails for any number of reasons: it exceeds the time limit, is preempted from scavenge, the compute node crashes, etc.
@@ -71,7 +71,7 @@ the directory.  Alternatively you can edit the script each time and explicitly n
 ## Restart a job that timed out or was preempted
 
 !!! note 
-Timeouts and preemptions are subtlely different.  Slurm will automatically requeue a job that
+Timeouts and preemptions are subtly different.  Slurm will automatically requeue a job that
 has been declared requeue-able (--requeue) and was preempted.  It will NOT automatically requeue a
 timed out job.  Jobs that time out require some additional signal handling.  The script requests
 signal 10 be sent to the script just before the job times out, and traps that signal and requests

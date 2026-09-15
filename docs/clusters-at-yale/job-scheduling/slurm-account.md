@@ -13,7 +13,7 @@ sacctmgr remove user where user=be59 and account=cryoem # remove user
 
 ``` bash
 sacctmgr show assoc user=be59 # show user associations
-sacctmgr show assoc account=cryoem # show assocations for account
+sacctmgr show assoc account=cryoem # show associations for account
 ```
 
 ## Submit Jobs

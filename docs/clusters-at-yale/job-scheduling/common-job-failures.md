@@ -43,11 +43,11 @@ Since the clusters are shared resources, we have [quotas in place](/data) to enf
 
 ### Archive Files
 
-You may find that some files or direcories for previous projects are no longer needed on the cluster. We recommend you [archive these](/data/archive/) to recover space.
+You may find that some files or directories for previous projects are no longer needed on the cluster. We recommend you [archive these](/data/archive/) to recover space.
 
 ### Delete Files
 
-If you are *_sure_* you no longer need some files or direcories, you can delete them. Unless files are in your home directory (not `project` or `scratch60`) they are not backed up and may be unrecoverable. Use the [`rm -rf`](https://thenextweb.com/media/2012/05/21/how-pixars-toy-story-2-was-deleted-twice-once-by-technology-and-again-for-its-own-good) command very carefully.
+If you are *_sure_* you no longer need some files or directories, you can delete them. Unless files are in your home directory (not `project` or `scratch60`) they are not backed up and may be unrecoverable. Use the [`rm -rf`](https://thenextweb.com/media/2012/05/21/how-pixars-toy-story-2-was-deleted-twice-once-by-technology-and-again-for-its-own-good) command very carefully.
 
 ### Buy More Space
 
@@ -88,7 +88,7 @@ GCCcore/7.3.0 exists but could not be loaded as requested.
 
 ### Match or Purge Your Toolchains
 
-Where possible, only use one toolchain at a time. When you want to use software from muliple toolchains run `module reset` between running new `module load` commands. If your work requires a version of software that is not installed, [contact us](/#get-help).
+Where possible, only use one toolchain at a time. When you want to use software from multiple toolchains run `module reset` between running new `module load` commands. If your work requires a version of software that is not installed, [contact us](/#get-help).
 
 ## Conda Environments
 

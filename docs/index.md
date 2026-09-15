@@ -1,5 +1,5 @@
 !!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
-    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. A reduced McCleary remains avaiable for YCGA-related work. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
+    The Bouchet HPC cluster is now available for all Yale researchers. Bouchet is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. A reduced McCleary remains available for YCGA-related work. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
 
 !!! warning "NIH Controlled-Access Data and Repositories"
     Effective January 25, 2025, new or renewed Data Use Certifications for NIH Controlled-Access Data and Repositories must adhere to the [NIH Security Best Practices for Users of Controlled-Access Data](https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf). This data can be now hosted and analyzed on YCRC's new NIST 800-171 compliant Hopper cluster. See the [Hopper documentation](/clusters/hopper) for information on requesting access.
@@ -59,7 +59,7 @@ some topics that will likely take longer than 15 minutes include:
 - code troubleshooting
 - miniconda environment creations
 
-If a Research Support Team Member considers the issue to require longer than the alloted 15 minutes, then you may be 
+If a Research Support Team Member considers the issue to require longer than the allotted 15 minutes, then you may be 
 requested to create a ticket describing the issue by emailing [research.computing@yale.edu](mailto:research.computing@yale.edu). At which point, you will be 
 assigned the appropriate team member to address your issue and receive a response within 24 hours.
 

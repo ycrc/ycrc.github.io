@@ -403,7 +403,7 @@ if len(pi_parts) > 0:
 if len(ycga_parts) > 0:
     print("### YCGA Partitions")
     print(
-        "The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other proejcts. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.\n"
+        "The following partitions are intended for projects related to the [Yale Center for Genome Analysis](http://ycga.yale.edu/). Please do not use these partitions for other projects. Access is granted on a group basis. If you need access to these partitions, please [contact us](/#get-help) to get approved and added.\n"
     )
     print('??? summary "YCGA Partitions (click to expand)"')
     for part in sorted(ycga_parts):

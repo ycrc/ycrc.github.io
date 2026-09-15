@@ -22,7 +22,7 @@ for research use.
 
 Git is a tool that tracks changes to a file (or set of files) through a series of snapshots called "commits" or "revisions". 
 These snapshots are stored in "repositories" which contain the history of all the changes to that file. 
-This helps prevent repetative naming or `project_final_final2_v3.txt` problems. 
+This helps prevent repetitive naming or `project_final_final2_v3.txt` problems. 
 It acts as a record of all the edits, along with the ability to compare the current version to previous commits. 
 
 ## How to create a `git` repository
@@ -133,7 +133,7 @@ Receiving objects: 100% (3/3), done.
 This creates a new directory (`my_new_repo`) where you can place all your code.
 
 
-After making any changes and commiting them to the local repository, you can "push" them to a remote repository:
+After making any changes and committing them to the local repository, you can "push" them to a remote repository:
 
 ```sh
 # commit to local repository

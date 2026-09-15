@@ -46,7 +46,7 @@ For things to work smoothly you will need to choose and stick with a prefix, or 
 !!! tip
     If you choose a project directory prefix, it will be easier to share your applications with lab mates or other cluster users. Just make sure to use the true path (the one returned by `mydirectories`).
 
-Once you've chosen a prefix you will want to add any directory with executables you want to run to your `PATH` environment variable, and any directores with libraries that your application(s) link to your `LD_LIBRARY_PATH` environment variable. Each of these tell your shell where to look when you call your application without specifying an absolute path to it. To set these variables permanently, add the following to the end of your `~/.bashrc` file:
+Once you've chosen a prefix you will want to add any directory with executables you want to run to your `PATH` environment variable, and any directories with libraries that your application(s) link to your `LD_LIBRARY_PATH` environment variable. Each of these tell your shell where to look when you call your application without specifying an absolute path to it. To set these variables permanently, add the following to the end of your `~/.bashrc` file:
 
 ``` bash
 # local installs

@@ -91,7 +91,7 @@ For more information on accessing this data as well as sequencing data retention
 
 ## Storage
 
-McCleary has access to a number of GPFS filesystems. `/vast/palmer` is McCleary's primary filesystem where Home and Scratch60 directories are located. Every group on McCleary also has access to a Project allocation on the Gibbs filesytem on `/gpfs/gibbs`. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
+McCleary has access to a number of GPFS filesystems. `/vast/palmer` is McCleary's primary filesystem where Home and Scratch60 directories are located. Every group on McCleary also has access to a Project allocation on the Gibbs filesystem on `/gpfs/gibbs`. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
 You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/palmer_scratch` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 

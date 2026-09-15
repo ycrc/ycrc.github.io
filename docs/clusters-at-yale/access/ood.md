@@ -57,7 +57,7 @@ You are able to customize favorite paths in the file browser. Use the scripts be
 When you run `ood_add_path` from a terminal command line, it will prompt you to add one path at a time, until you type `n` to discontinue. 
 `ood_remove_path` allows you to remove any of the paths added by you and `ood_list_path` will list all the paths added by you. 
 
-All the paths added will be shown in the pull-down menu for the file browser, as well as the left pane when the file browser is opened. After you have customized the path configuration from a terminal, go to the OOD dashbaord and click `</> Develop`->`Restart Web Server` on the top right corner navigation bar to make the change effective immediately.
+All the paths added will be shown in the pull-down menu for the file browser, as well as the left pane when the file browser is opened. After you have customized the path configuration from a terminal, go to the OOD dashboard and click `</> Develop`->`Restart Web Server` on the top right corner navigation bar to make the change effective immediately.
 
 ## Terminal
 

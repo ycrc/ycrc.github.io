@@ -80,7 +80,7 @@ COMSOL is not backwards compatible. If you have a project file from a newer vers
 
 Please note that some commonly used COMSOL features such as CAD Import Module, Material Library, and MatLab Link are not included in the license. 
 
-COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependancies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.
+COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependencies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.
 
 You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.
 

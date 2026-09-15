@@ -31,7 +31,7 @@ That is the probably the easiest way to connect.
 
 #### UCSC Hub
 
-To set up the UCSC Hub, follow their [directions](https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp) to set up the appropriate file heirarchy on
+To set up the UCSC Hub, follow their [directions](https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp) to set up the appropriate file hierarchy on
 your static website, using the transfer tool.
 
 ### Web-based Application

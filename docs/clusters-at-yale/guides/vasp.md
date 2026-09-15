@@ -61,7 +61,7 @@ which would likely spread over 4 nodes using 10 cores each and spend less time i
 
 ## Grace mpi partition
 
-On Grace's `mpi` parttion, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `ntasks` in multiples of 24.
+On Grace's `mpi` partition, since cores are assigned as whole 24-core nodes, `NCORE` should always be equal to 24 and then you can just request `ntasks` in multiples of 24.
 
 in your submission script:
 

@@ -2,7 +2,7 @@
 
 Isca is a framework used for idealized global circulation modelling.
 We recommend that you install it for yourself individually as the code expects to be able to modify its source code files.
-It is relatively straighforward to install into a conda environment as described below.
+It is relatively straightforward to install into a conda environment as described below.
 
 
 ## Install Isca

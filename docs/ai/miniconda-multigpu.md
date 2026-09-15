@@ -63,7 +63,7 @@ epoch=1
 lr=3e-5
 #input folder
 inputdir="/path/to/my/input"
-#gradient accumalation steps
+#gradient accumulation steps
 gr=2
 #training script
 script="/path/to/my/script.py"
@@ -126,7 +126,7 @@ epoch=1
 lr=3e-5
 #input folder
 inputdir="/path/to/my/input"
-#gradient accumalation steps
+#gradient accumulation steps
 gr=2
 #training script
 script="/path/to/my/script.py"
