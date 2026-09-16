@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/ai/local-coding-agents/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -3000,7 +3000,7 @@
 <h2 id="getting-started">Getting started</h2>
 <p>Coding agents must run on a compute node. First request an interactive allocation, then load the module:</p>
 <div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>coding-agents/1.0
+module load coding-agents/1.0
 </code></pre></div>
 <p>Start the agent you want to use:</p>
 <div class="highlight"><pre><span></span><code>pi
@@ -3014,8 +3014,8 @@ claude
 <h2 id="where-agents-can-run">Where agents can run</h2>
 <p>Start the agent in a <strong>non-hidden subdirectory</strong> of an allowed storage location, such as your home, project, scratch, or approved PI storage.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/my-analysis
-<span class="nb">cd</span><span class="w"> </span>~/my-analysis
+<div class="highlight"><pre><span></span><code>mkdir -p ~/my-analysis
+<span class="nb">cd</span> ~/my-analysis
 pi
 </code></pre></div>
 <p>The module will refuse to start from locations that do not meet its security requirements. Coding agents should not run on login nodes.</p>
@@ -3032,7 +3032,7 @@ pi
 </ul>
 <p>Each command run by a coding agent starts in a fresh shell. Environment changes such as <code>module load</code>, <code>conda activate</code>, <code>export</code>, and <code>cd</code> therefore do not persist into the agent's next command. The agents are provided with YCRC-specific instructions for handling these workflows correctly.</p>
 <p>For example, commands that depend on a module should load the module and run the program in the same shell command:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/&lt;version&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>Rscript<span class="w"> </span>analysis.R
+<div class="highlight"><pre><span></span><code>module load R/&lt;version&gt; <span class="o">&amp;&amp;</span> Rscript analysis.R
 </code></pre></div>
 <h2 id="security-and-privacy">Security and privacy</h2>
 <p>The local coding-agent environment is designed to give agents useful access to your research workflow without exposing everything your normal login account can access.</p>
