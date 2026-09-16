@@ -2,7 +2,7 @@
 
 ## Useful links:
 
-- [Intro to HPC Slides](https://docs.google.com/presentation/d/1UniGTW1qwJy6S9RbLyb8wQZYQyuPJYATZyRpc_Kjv74/edit?slide=id.g3fb518a559c_35_214#slide=id.g3fb518a559c_35_214)  
+- [Intro to HPC Slides](https://docs.google.com/presentation/d/1UniGTW1qwJy6S9RbLyb8wQZYQyuPJYATZyRpc_Kjv74/edit?slide=id.p#slide=id.p)
 
 - [Excercise Repo](https://github.com/ycrc/Intro-to-HPC/tree/main)
 
