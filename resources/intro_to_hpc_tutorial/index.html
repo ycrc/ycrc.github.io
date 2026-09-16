@@ -20,7 +20,7 @@
     
     
       
-        <title>Introduction to HPC Tutorials - Yale Center for Research Computing</title>
+        <title>Tutorial: Intro to HPC - Yale Center for Research Computing</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction-to-hpc-tutorials" class="md-skip">
+        <a href="#tutorial-intro-to-hpc" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Introduction to HPC Tutorials
+              Tutorial: Intro to HPC
             
           </span>
         </div>
@@ -2638,12 +2638,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Introduction to HPC Tutorials
+          Tutorial: Intro to HPC
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Introduction to HPC Tutorials
+        Tutorial: Intro to HPC
       </a>
       
         
@@ -2663,22 +2663,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-interactive-jobs" class="md-nav__link">
-    Part 1: Interactive Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-batch-jobs" class="md-nav__link">
-    Part 2: Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-interactive-apps-on-ood" class="md-nav__link">
-    Part 3: Interactive Apps on OOD
+  <a href="#useful-links" class="md-nav__link">
+    Useful links:
   </a>
   
 </li>
@@ -2866,22 +2852,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-interactive-jobs" class="md-nav__link">
-    Part 1: Interactive Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-batch-jobs" class="md-nav__link">
-    Part 2: Batch Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-interactive-apps-on-ood" class="md-nav__link">
-    Part 3: Interactive Apps on OOD
+  <a href="#useful-links" class="md-nav__link">
+    Useful links:
   </a>
   
 </li>
@@ -2903,90 +2875,19 @@
                   </a>
                 
                 
-                <h1 id="introduction-to-hpc-tutorials">Introduction to HPC Tutorials</h1>
-<p>To begin, access the cluster through <a href="/clusters-at-yale/access/ood">Open OnDemand</a> and open the shell window. This can be done by by going to the top navigation bar, clicking on the <strong>Clusters</strong> tab and selecting the <strong>Shell Access</strong> button.</p>
-<p><img alt="cluster_navigation_bar_showing_shell_dropdown_tab" class="medium" src="/img/intro_tutorial_navbar.jpg" /></p>
-<p>Once the new shell window is loaded, you will be able use this interface like your local command interface. Now that you're setup in a shell window, you can begin the first task like so:</p>
-<h2 id="part-1-interactive-jobs">Part 1: Interactive Jobs</h2>
-<p>Inside of the shell window, start an interactive job with the default resource requests. Once you are allocated space off the login node, load the Miniconda module and create a <a href="/clusters-at-yale/guides/conda">Conda environment</a> for this exercise. This can be done like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Ask for an interactive session</span>
-salloc
-
-<span class="c1"># Load the Miniconda module</span>
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-<span class="c1"># Create a test environment with Conda that contains the default Python version</span>
-conda<span class="w"> </span>create<span class="w"> </span>-yn<span class="w"> </span>tutorial_env<span class="w"> </span>python<span class="w"> </span>notebook
-
-<span class="c1"># Activate the new environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>tutorial_env
-
-<span class="c1"># Deactivate the new environment</span>
-conda<span class="w"> </span>deactivate
-
-<span class="c1"># Exit your interactive job to free the resources</span>
-<span class="nb">exit</span>
-</code></pre></div>
-<h2 id="part-2-batch-jobs">Part 2: Batch Jobs</h2>
-<p>Going off of the environment we created in <strong>part 1</strong>, navigate to the <strong>Files</strong> tab in OOD and select your <strong>project</strong> directory. Click the '+ New File' button and name the file <code>message_decode_tutorial.py</code>. Once the new file is created, open this file in the OOD text editor by going to the file, clicking the three-dot <strong>more</strong> button, and selecting <strong>edit</strong> in the dropdown menu like so:</p>
-<p><img alt="file_browser_interface_showing_dropdown_options" class="medium" src="/img/intro_tutorial_textedit.jpg" /></p>
-<p>Once the text editor is open, paste this python example inside of the file:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="n">holder</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">letter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">holder</span> <span class="o">=</span> <span class="n">holder</span> <span class="o">+</span> <span class="n">message</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">holder</span>
-
-<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;gT baZu lWp Kjv uXyeS nViU fdlH gJr KaIc tBpl Sy</span><span class="se">\</span>
-<span class="s1">Jox MtUl Qbm kGTp UdHe hdLJf Nu IcPRu XhBtDjf TsmPf</span><span class="se">\</span>
-<span class="s1">o DoKfw xP qyTcJ tUpYrv Pk ArBCf Wrtp JfRcX JqPdKLC&#39;</span>
-
-<span class="n">cypher</span> <span class="o">=</span> <span class="n">message_decode_tutorial</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/NETID/decoded_example.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cypher</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div>
-<p>This python function takes a given message and parses through it against the parameters of a cypher, which in our case writes every 10th letter. <strong>Make sure to replace the placeholder 'NETID' in the second to last line with your personal NetID.</strong> This will allow your output file to go into your homespace.</p>
-<p>From here, navigate back to your project directory and select the '+ New File' button, this time naming it <code>batch_tutorial.sh</code>. Using <a href="/clusters-at-yale/job-scheduling/#common-job-request-options">Slurm options</a> to define resource requests for this job, paste the following code inside of this file like you did the previous file:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">#SBATCH --job-name=message_decode_tutorial</span>
-<span class="c1">#SBATCH --time=1:00</span>
-<span class="c1">#SBATCH --mem-per-cpu=2MB</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
-
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>tutorial_env
-
-python<span class="w"> </span>message_decode_tutorial.py
-</code></pre></div>
-<p>Because the partition isn't specified for this job, it will run on the cluster's default partition. From there, you can go back to the shell window, navigate to your project directory and run the sbatch command to begin your batch job like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to the project directory</span>
-<span class="nb">cd</span><span class="w"> </span>project
-
-<span class="c1"># Use Slurm to start a batch job</span>
-sbatch<span class="w"> </span>batch_tutorial.sh
-</code></pre></div>
-<p>Once you receive an email saying the job is complete, navigate to your home-space through the shell window on Open OnDemand. Within this directory you will find a file called <code>decoded_example.txt</code>. To quickly see the file contents, use the <code>cat</code> command to print the file's contents on the standard output, revealing the decoded message like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to your homespace (replacing NETID with your netID)</span>
-<span class="nb">cd</span><span class="w"> </span>/home/NETID
-
-<span class="c1"># Print out the decoded message</span>
-cat<span class="w"> </span>decoded_example.txt
-</code></pre></div>
-<h2 id="part-3-interactive-apps-on-ood">Part 3: Interactive Apps on OOD</h2>
-<p>Now that you have completed both an interactive and batch job, try using Jupyter Notebooks on Open OnDemand for your work. This can be done in the shell window like so:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Purge any loaded modules</span>
-module<span class="w"> </span>reset
-
-<span class="c1"># Build your environment dropdown tab on OOD</span>
-ycrc_conda_env.sh<span class="w"> </span>update
-</code></pre></div>
-<p>Now that this is completed, return to the Open OnDemand homepage and select the <strong>Interactive Apps</strong> dropdown tab in the top navigation bar. From there you can select <strong>Jupyter</strong> and load the job submission request form. To select your resources, make sure to consult our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> as well as the specific cluster's partition information to ensure you're selecting the appropriate resources for your job's needs.</p>
-<p>Once the session is submitted and running, connect to the notebook and navigate to your working directory. From there you can either select the <strong>Upload</strong> button to upload an existing Jupyter notebook file or select the <strong>New</strong> button to create a new notebook.</p>
-<p>To help with this, make sure to look over the <a href="/clusters-at-yale/guides/jupyter/">YCRC Jupyter Notebook information</a> as well as <a href="https://jupyter-notebook.readthedocs.io/en/stable/ui_components.html">Jupyter's User Interface page</a>.</p>
+                <h1 id="tutorial-intro-to-hpc">Tutorial: Intro to HPC</h1>
+<h2 id="useful-links">Useful links:</h2>
+<ul>
+<li>
+<p><a href="https://docs.google.com/presentation/d/1UniGTW1qwJy6S9RbLyb8wQZYQyuPJYATZyRpc_Kjv74/edit?slide=id.p#slide=id.p">Intro to HPC Slides</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ycrc/Intro-to-HPC/tree/main">Excercise Repo</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/document/d/1dV4pMaT1_RFosVPodX9Tzb3ys7Hk7b3SVCGGUT0PK0U/edit?tab=t.0#heading=h.cfh7tpkcbs0v">Cheat Sheet</a></p>
+</li>
+</ul>
                 
                   
                     
@@ -2995,7 +2896,7 @@ ycrc_conda_env.sh<span class="w"> </span>update
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 16, 2026</span>
       
     
   </small>
