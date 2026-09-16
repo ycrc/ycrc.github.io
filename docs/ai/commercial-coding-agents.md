@@ -25,19 +25,15 @@ Do not assume that a commercial agent sends only the text you type into the prom
 
 Provider retention, logging, training, and privacy practices vary by service and account type. Use only data permitted for the specific commercial service you are using.
 
-## Claude sandbox beta
+## YCRC Claude module
 
-> YCRC is currently beta-testing a sandbox module for **Claude Code** on Bouchet and McCleary. If you are interested in testing the module, please email us at research.computing@yale.edu.
+YCRC has developed a module in anticipation of broader Claude Enterprise availability which is intended to provide a safer way to use Claude on our clusters.
 
-The current sandbox module supports **Claude Code only**. It is being developed in anticipation of broader Claude Enterprise availability and is intended to provide a safer way to use Claude on YCRC clusters.
+The module does not change where Claude performs inference: prompts and model context are still sent to Anthropic. Its purpose is to reduce what Claude can access and change on the cluster. It uses your existing Claude account and settings and provides access to common research-computing tools, including modules, Conda environments, R, and Slurm, while restricting Claude's access to sensitive or unrelated areas of the system.
 
-The sandbox does not change where Claude performs inference: prompts and model context are still sent to Anthropic. Its purpose is to reduce what Claude can access and change on the cluster.
+### Claude module controls
 
-The module uses your existing Claude account and settings. It provides access to common research-computing tools, including modules, Conda environments, R, and Slurm, while restricting Claude's access to sensitive or unrelated areas of the system.
-
-### Sandbox controls
-
-The general operational risks of coding agents are described on the [AI Coding Agents](aicodingtools.md#coding-agent-risks) page. The Claude sandbox adds cluster-specific controls around what Claude can see and do.
+The general operational risks of coding agents are described on the [AI Coding Agents](aicodingtools.md#coding-agent-risks) page. The Claude module adds cluster-specific controls around what Claude can see and do.
 
 - Claude can see the intended working directory and selected supporting directories required for supported tools, rather than unrestricted home and shared storage.
 - Commands are evaluated against configured safety policies. Some operations can run automatically, some require approval, and others are denied.
@@ -47,22 +43,22 @@ The general operational risks of coding agents are described on the [AI Coding A
 
 These controls limit Claude's cluster access, but they do not change the data classification of the commercial service itself.
 
-### Using the beta module
+### Using the Claude module
 
-To receive access to the module, join the beta test by contacting YCRC.
+To use the safe claude module, simply load it and start Claude. Run Claude on a compute node and start it from a non-hidden subdirectory in your home, project, PI, or scratch storage. The module will refuse to start in locations that do not meet its security requirements.
 
-Run Claude on a compute node and start it from a non-hidden subdirectory in your home, project, PI, or scratch storage. For example:
+For example:
 
 ```bash
 salloc
+ml claude
+cd ~/scratch/some-work-folder # Any non-hidden subdirectory of home, project, scratch, or pi storage
 claude
 ```
 
 You need a Claude account with Anthropic to use the current beta module.
 
 If you have already used Claude on the cluster, the module can use your existing authentication, sessions, and settings. If you have not used Claude before, it will ask you to authenticate.
-
-The module will refuse to start in locations that do not meet its security requirements.
 
 ### Tools and environment available to Claude
 
@@ -84,13 +80,13 @@ The module combines controls outside and inside the Claude executable:
 - Managed Claude settings enforce YCRC command and permission policies.
 - YCRC-specific instructions describe the execution environment and supported cluster workflows to Claude.
 
-The sandbox controls Claude's cluster environment. Separately, the commercial service's approved data classification determines what data may be sent to the model.
+The module controls Claude's cluster environment. Separately, the commercial service's approved data classification determines what data may be sent to the model.
 
 ## Claude Enterprise
 
 YCRC anticipates making Claude Enterprise available for coding-agent workflows. When available, the managed Claude Enterprise service will be approved for **low-risk and medium-risk data**.
 
-The existing sandbox work is intended to complement that service by limiting what the coding agent can access and change on YCRC systems. Data classification and sandboxing address different risks: Claude Enterprise determines what data may be sent to the provider, while the sandbox limits the agent's authority on the cluster.
+The Claude module is intended to complement that service by limiting what the coding agent can access and change on YCRC systems. Data classification and sandboxing address different risks: Claude Enterprise determines what data may be sent to the provider, while the sandbox limits the agent's authority on the cluster.
 
 Other commercial coding agents remain approved for **low-risk data only**.
 
