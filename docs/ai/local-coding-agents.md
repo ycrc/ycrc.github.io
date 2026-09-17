@@ -31,7 +31,7 @@ Coding agents must run on a compute node. First request an interactive allocatio
 
 ```bash
 salloc
-module load coding-agents/1.0
+module load local-coding-agents/1.0
 ```
 
 Start the agent you want to use:
