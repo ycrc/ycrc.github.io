@@ -19,7 +19,7 @@ Ark costs $2/TiB/month for allocated quota. You are charged for that quota wheth
 
 ### How will I be charged for Ark storage?
 
-You will receive a monthly statement that details your allocated quota, current usage and the associated charge.
+You will receive a monthly statement that details your allocated quota and the associated charge.
 
 ### How do I request Ark space?
 
