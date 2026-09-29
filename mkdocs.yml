@@ -16,15 +16,15 @@ theme:
                          #     e=e+s+o.id
                          #      ->
                          #     e=e+s+o.id+","
-                         #  within the function t.TokenSet.prototype.toString
+                         #  within the function t.TokenSet.prototype.toString:
+                         #     t.TokenSet.prototype.toString=function(){if(this._str)return this._str;for(var e=this.final?"1":"0",r=Object.keys(this.edges).sort(),n=r.length,i=0;i<n;i++){var s=r[i],o=this.edges[s];e=e+s+o.id}return e}
+                         #     t.TokenSet.prototype.toString=function(){if(this._str)return this._str;for(var e=this.final?"1":"0",r=Object.keys(this.edges).sort(),n=r.length,i=0;i<n;i++){var s=r[i],o=this.edges[s];e=e+s+o.id+","}return e}
                          #
                          #  This is done to a copy of the 'search.xxxxx.min.js' script, implemented as follows:
                          #
                          #     mkdir -p <...>/ycrc.github.io/theme/assets/javascripts/workers
                          #     cp <...>/miniconda3/envs/mkdocs/lib/python3.13/site-packages/material/assets/javascripts/workers/search.fcfe8b6d.min.js <...>/ycrc.github.io/theme/assets/javascripts/workers/
-                         #     t.TokenSet.prototype.toString=function(){if(this._str)return this._str;for(var e=this.final?"1":"0",r=Object.keys(this.edges).sort(),n=r.length,i=0;i<n;i++){var s=r[i],o=this.edges[s];e=e+s+o.id}return e}
-                         #     t.TokenSet.prototype.toString=function(){if(this._str)return this._str;for(var e=this.final?"1":"0",r=Object.keys(this.edges).sort(),n=r.length,i=0;i<n;i++){var s=r[i],o=this.edges[s];e=e+s+o.id+","}return e}
-                         
+                         #
                          #     python - <<'EOF'
                          #     import glob
                          #     [path] = glob.glob("theme/assets/javascripts/workers/search.*.min.js")
