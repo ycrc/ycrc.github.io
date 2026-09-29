@@ -2,7 +2,7 @@
 
 
 !!! info "New to HPC?"
-    Are you new to HPC clusters? Or used one before but new to Yale's systems? We encourage you to watch our [Introduction to HPC workshop](https://www.youtube.com/watch?v=SaiXaC0jRjE&t=2s).
+    Are you new to HPC clusters? Or used one before but new to Yale's systems? We encourage you to watch our [Introduction to HPC workshop](https://www.youtube.com/watch?v=Wvao_o1ACBQ).
 
 ## HPC Clusters
 
