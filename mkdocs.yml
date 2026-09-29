@@ -216,6 +216,7 @@ nav:
             - clusters-at-yale/guides/virtualgl.md
             - "XVFB": clusters-at-yale/guides/xvfb.md
         - Guides:
+            - "AlphaFold": clusters-at-yale/guides/alphafold.md
             - "Cryo-EM on McCleary": clusters-at-yale/guides/cryoem.md
             - "GitHub": clusters-at-yale/guides/github.md
             - clusters-at-yale/guides/github_pages.md
