@@ -2,14 +2,14 @@
 
 ## Request Cores and Nodes
 
-When [running jobs with Slurm](/clusters-at-yale/job-scheduling/), you must be explicit about requesting CPU cores and nodes. See our page on [monitoring usage](/clusters-at-yale/job-scheduling/resource-usage/) for tips on verifying your jobs are using the resources you expect. The three options `--nodes` or `-N`, `--ntasks` or `-n`, and `--cpus-per-task` or `-c` can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.
+When [running jobs with Slurm](/clusters-at-yale/job-scheduling/), you must be explicit about requesting CPU cores and nodes. See our page on [monitoring usage](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) for tips on verifying your jobs are using the resources you expect. The three options `--nodes` or `-N`, `--ntasks` or `-n`, and `--cpus-per-task` or `-c` can be a bit confusing at first but are necessary to understand for applications that use more than one CPU.
 
 !!! Tip
     If your application references threads or cores but makes no mention of MPI, only use `--cpus-per-task` to request CPUs. You cannot request more cores than there are on a single compute node where your job runs.
 
 ### Multi-thread, Multi-process, and MPI
 
-The majority of applications in the world were written to use one or more cores on a single computer.  Most can only use one core, and do not benefit from being given more cores. The best way to speed these applications up is to run many separate jobs at once, using [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq/) or [job arrays](https://slurm.schedmd.com/job_array.html). 
+The majority of applications in the world were written to use one or more cores on a single computer.  Most can only use one core, and do not benefit from being given more cores. The best way to speed these applications up is to run many separate jobs at once, using [job arrays](/clusters-at-yale/job-scheduling/dsq/). 
 
 If an application is able to use multiple cores, it usually achieves this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node. MPI translates what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, Slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using `--ntasks=4` (or `-n 4`) and `--cpus-per-task=4` (or `-c 4`) achieves the same job allocation by luck, but you should only use `--cpus-per-task` when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessible.
 
@@ -29,7 +29,7 @@ For the most predictable performance for hybrid applications, you will need to u
 
 ## Request Memory (RAM)
 
-Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and [you will get errors](/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory). Make sure you either request the right amount of memory per core on each node in your job with `--mem-per-cpu` or memory per node in your job with `--mem`. You can request more memory than you think you might need for an example job, then [make note of its actual usage](/clusters-at-yale/job-scheduling/resource-usage/) to better tune future requests for similar jobs.
+Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and [you will get errors](/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory). Make sure you either request the right amount of memory per core on each node in your job with `--mem-per-cpu` or memory per node in your job with `--mem`. You can request more memory than you think you might need for an example job, then [make note of its actual usage](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) to better tune future requests for similar jobs.
 
 ## Request GPUs
 
@@ -44,24 +44,23 @@ Some of our clusters have nodes that contain GPU co-processors. Please refer to 
 | `--mem-per-gpu`<sup>*</sup>|            |  Request system memory that scales per GPU. The `--mem`, `--mem-per-cpu` and `--mem-per-gpu` options are mutually exclusive |
 | `--constraint`           | `-C`       |  Request a selection of GPU types (separate types with `|`). This option requires the `--gpus` option for GPU selection.| 
 
-<sup>* The `--mem-per-gpu` flag does not currently work as intended, please do not use. Request memory using `--mem` or `--mem-per-cpu` in the meantime.</sup>
 
-In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - **the default GPU request for jobs is to not request any**. Some applications require double-precision capable GPUs. If yours does, see the next section for using "features" to request any node with compatible GPUs. The Slurm options `--mem`, `--mem-per-gpu` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. 
+In order for your job to be able to access gpus, you must submit your job to a partition that contains nodes with GPUs and request them - **the default GPU request for jobs is to not request any**. The Slurm options `--mem`, `--mem-per-gpu` and `--mem-per-cpu` do not request memory on GPUs, sometimes called vRAM. Instead you are allocated the GPU(s) requested and all attached GPU memory for your jobs. Memory accessible on GPUs is limited by their model, and is also listed on each cluster page. 
 
 ### Request Specific GPU Types
 
 If your job can only run on a subset of the GPU types available in the partition, you can request one or more specific types of GPUs. 
 
-To request a specific type of GPU, use `type:number` notation. For example, to request an NVIDIA P100.
+To request a specific type of GPU, use `type:number` notation. For example, to request an NVIDIA RTX 5000 Ada GPU:
 
 ``` text
-sbatch --cpus-per-gpu=2 --gpus=p100:1 --time=6:00:00 --partition gpu my_gpu_job.sh
+sbatch --cpus-per-gpu=2 --gpus=rtx_5000_ada:1 --time=6:00:00 --partition gpu my_gpu_job.sh
 ```
 
-To submit your job to a number of GPU options (such as NVIDIA P100, V100 or A100), use a combination of the constraint flag (`-C`) and the `--gpus` flag (with just a number). For the [constraint flag](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints), separate the different GPU type names with the pipe character (`|`). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.
+To submit your job to a number of GPU options (such as NVIDIA L40S, A40 or RTX 5000 Ada), use a combination of the constraint flag (`--constraint`) and the `--gpus` flag (with just a number). For the [constraint flag](/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints), separate the different GPU type features with the pipe character (`|`). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.
 
 ``` text
-sbatch -C "p100|v100|a100" --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
+sbatch --constraint="gpu:l40s|gpu:a40|gpu:rtx_5000_ada" --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
 ```
 
 
@@ -78,28 +77,17 @@ For more documentation on using GPUs on our clusters, please see [GPUs and CUDA]
 
 You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the `--constraint` flag.
 
-You can use the processor codename (e.g. `haswell`) or processor type (e.g. `E5-2660_v3`) to limit your job to specific node types. You can also specify an instruction set (e.g. `avx512`) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types. Multiple requirements ("AND") are separated by a comma (`,`) and multiple options ("OR") should be separated by the pipe character (`|`).
+You can use the processor codename feature (e.g. `cpugen:emeraldrapids`) or processor model number feature (e.g. `cpumodel:8268`) to limit your job to specific node types. See the individual cluster pages for the exact tags for the different node features. Multiple requirements ("AND") are separated by a comma (`,`) and multiple options ("OR") should be separated by the pipe character (`|`).
 
 ``` bash
 
-# run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)
-sbatch --constraint=haswell submit.sh
+# run on a node with an Intel Emerald Rapids codenamed CPU
+sbatch --constraint=cpugen:emeraldrapids submit.sh
 
-# only run on nodes with E5-2660 v4 CPUs
-sbatch --constraint=E5-2660_v4 submit.sh
+# only run on nodes with Intel Cascadelake 8268 CPUs
+sbatch --constraint=cpumodel:8268 submit.sh
 
 ```
-
-We also have keyword features to help you constrain your jobs to certain categories of nodes.  
-
-- `oldest`: the oldest generation of node on the cluster. Use this constraint when compiling code if you wish to ensure it can run on any standard node on the cluster.
-- `nogpu`: nodes without GPUs.
-- `standard`: nodes without GPUs or extra memory. Useful for protecting special nodes in a private partition for jobs that can use the extra capabilities.
-- `singleprecision`: nodes with single-precision only capable GPUs (e.g. GTX 1080s, RTX 2080s).
-- `doubleprecision`: nodes with double-precision capable GPUs (e.g. K80s, P100s and V100s).
-- GPU type (e.g. `v100`): nodes with a specific type of GPU. 
-- `bigtmp`: nodes with at least 1.5T of local storage in `/tmp`. Useful to ensure that your code will have sufficient space if it uses local storage (e.g. Gaussian's `$GAUSS_SCRDIR`).  
-
 
 !!!tip
     Use the command `scontrol show node <hostname>`, replacing `<hostname>` with the node's name you're interested in, to see more information about the node including its features.
