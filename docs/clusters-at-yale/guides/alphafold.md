@@ -1,14 +1,13 @@
 # AlphaFold
 
-[AlphaFold](https://github.com/google-deepmind/alphafold) is a machine learning system
+[AlphaFold](https://github.com/google-deepmind/alphafold3) is a machine learning system
 developed by Google DeepMind that predicts a protein’s 3D structure from its amino acid sequence.
 
 As of November 11, 2024, there are two versions of AlphaFold generally available:
-AlphaFold 2 and [AlphaFold 3](https://github.com/google-deepmind/alphafold3).
-Both versions are available as cluster modules, but are run somewhat differently.
+[AlphaFold 2](https://github.com/google-deepmind/alphafold2) and [AlphaFold 3](https://github.com/google-deepmind/alphafold3).
+Both versions are available as cluster modules, but are run somewhat differently. AlphaFold 3 is the version under the most current development, but version 2 remains available for existing workflows or result consistency.
 
-Note that given the duration and resources usually involved in running AlphaFold,
-it should be executed using [batch scripts](/clusters-at-yale/job-scheduling/#batch-jobs).
+Note that given the duration and resources usually involved in running AlphaFold, it should generally be executed using [batch scripts](/clusters-at-yale/job-scheduling/#batch-jobs) unless explicitly testing parameter
 
 Additionally, due to the [Idle Resources Policy](/clusters-at-yale/job-scheduling/job_defense/),
 AlphaFold jobs should be split into two parts.  The first stage of AlphaFold involves generating
@@ -16,9 +15,290 @@ Multiple Sequence Alignments (MSAs), which uses only CPUs.  These MSAs are then 
 for the model-building step, which uses GPUs. To avoid having your job flagged for idle GPUs,
 submit a job for the MSA calculation, and when that is complete, submit another job for modeling.
 
+## AlphaFold 3
+
+AlphaFold 3 on the YCRC clusters has one especially significant difference from AlphaFold 2:
+the model parameter [Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md).
+BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
+This requires registering with [Google](https://forms.gle/svvpY4u2jsHEwWYS6) and agreeing to the above terms of use.
+Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.
+
+You will need an input sequence file in JSON format:
+```
+{
+  "name": "Job name goes here",
+  "modelSeeds": [1, 2],  # At least one seed required.
+  "sequences": [
+    {"protein": {...}},
+    {"rna": {...}},
+    {"dna": {...}},
+    {"ligand": {...}}
+  ],
+  "bondedAtomPairs": [...],  # Optional.
+  "userCCD": "...",  # Optional, mutually exclusive with userCCDPath.
+  "userCCDPath": "...",  # Optional, mutually exclusive with userCCD.
+  "dialect": "alphafold3",  # Required.
+  "version": 4  # Required.
+}
+```
+See [AlphaFold 3 input documentation](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure) for details about the settings. An example of a simple protein 2-copy homomer  input is
+```
+{
+  "name": "2PV7",
+  "sequences": [
+    {
+      "protein": {
+        "id": ["A", "B"],
+        "sequence": "GMRESYANENQFGFKTINSDIHKIVIVGGYGKLGGLFARYLRASGYPISILDREDWAVAESILANADVVIVSVPINLTLETIERLKPYLTENMLLADLTSVKREPLAKMLEVHTGAVLGLHPMFGADIASMAKQVVVRCDGRFPERYEWLLEQIQIWGAKIYQTNATEHDHNMTYIQALRHFSTFANGLHLSKQPINLANLLALSSPIYRLELAMIGRLFAQDAELYADIIMDKSENLAVIETLKQTYDEALTFFENNDRQGFIDAFHKVRDWFGDYSEQFLKESRQLLQQANDLKQG"
+      }
+    }
+  ],
+  "modelSeeds": [1],
+  "dialect": "alphafold3",
+  "version": 1
+}
+```
+
+Note that AlphaFold 3 will only run on A100 or better GPUs with at least 80 GB of VRAM by default.
+
+In the event of memory problems on newer L40S cards with 48 GB, add the following environment variables to the relevant alphafold_model\.sh script before the command to run AlphaFold:
+```
+XLA_PYTHON_CLIENT_PREALLOCATE=false
+TF_FORCE_UNIFIED_MEMORY=true
+XLA_CLIENT_MEM_FRACTION=3.2
+```
+### Bouchet
+On Bouchet, opy the MSA batch script and model batch script templates below,
+and modify for your specific use case. Both stages can be submitted at the same time using a
+[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
+as follows:
+
+```sh
+# Submit the first stage:
+sbatch alphafold_msa.sh
+
+# Note the jobid that is reported by the above submission.
+# Then if you have set the correct input directories corresponding to the MSA outputs,
+# optionally submit the second stage by:
+sbatch --dependency=afterok:<first_stage_jobid> alphafold_model.sh
+# Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. 
+```
+
+alphafold_msa\.sh: 
+
+```sh
+#!/bin/bash
+#SBATCH --job-name=YourMSAJobNameHere
+## General-use partition for CPU-only step
+#SBATCH --partition=day
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=1-00:00:00
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem-per-cpu=80g
+#SBATCH --mail-type=ALL
+
+## Clear all loaded software modules, and load AlphaFold module
+module reset
+## Edit to set desired AlphaFold module version;
+## search available versions via "module avail AlphaFold/"
+module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
+
+# Select full path to working directory
+RUNDIR=`readlink -f ${PWD}`
+
+# Edit to specify input folder name containing initial alphafold_input.json
+INPUTFOLDER="af_input"
+
+# Edit to specify filename of input JSON file
+INPUTFILE="fold_input.json"
+
+# Edit to specify output folder name for MSA
+MSAFOLDER="af_msa"
+
+mkdir -p ${RUNDIR}/${INPUT}
+mkdir -p ${RUNDIR}/${MSAFOLDER}
+
+# run AlphaFold
+  alphafold \
+  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --json_path=${INPUTFOLDER}/${INPUTFILE} \
+  --model_dir=${RUNDIR}/models \
+  --db_dir=$DB_DIR \
+  --output_dir=$MSAFOLDER \
+  --norun_inference
+```
+
+alphafold_model\.sh:
+
+```sh
+#!/bin/bash
+#SBATCH --job-name=YourModelJobNameHere
+## General-use partition for accessing GPUs;
+## may optionally try gpu_devel, as GPU step often takes < 6 hours
+#SBATCH --partition=gpu
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=4:00:00
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem=80g
+## Must explicitly request GPU resources and number of GPUs
+#SBATCH --gpus=1
+#SBATCH --constraint "a100-80g"
+#SBATCH --mail-type=ALL
+
+## Clear all loaded software modules, and load AlphaFold module
+module rese
+## Edit to set desired AlphaFold module version;
+## search available versions via "module avail AlphaFold/"
+module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
+
+# Select full path to current working directory
+RUNDIR=`readlink -f ${PWD}`
+mkdir -p ${RUNDIR}
+
+# Edit to specify name of folder containing output from prior MSA run
+MSAFOLDER="af_msa"
+
+# Edit to specify name of final output folder for models 
+OUTPUT="af_output"
+
+# Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json
+# This is usually based on the name: field from your initial input.
+MSA="2PV7"
+
+#Edit to specify name of final output folder for models
+OUTPUT="${MSA}_output"
+
+mkdir -p ${RUNDIR}/${OUTPUT}
+
+# run alphafold
+alphafold \
+  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --json_path=${MSAFOLDER}/${MSA}/${MSA}_data.json \
+  --model_dir=models \
+  --db_dir=$ALPHAFOLD_DATA_DIR \
+  --output_dir=${MSA}_output \
+  --norun_data_pipeline
+```
+
+The database location has been set automatically.
+
+### McCleary
+On McCleary, AlphaFold is installed in a [container](/clusters-at-yale/guides/containers), which requires
+a somewhat more complicated command for running the split version.
+
+alphafold_msa\.sh (McCleary version):
+
+```sh
+#!/bin/bash
+#SBATCH --job-name=YourMSAJobNameHere
+## General-use partition for CPU-only step
+#SBATCH --partition=day
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=1-00:00:00
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem-per-cpu=80g
+#SBATCH --mail-type=ALL
+
+## Clear all loaded software modules, and load AlphaFold module
+module reset
+module load AlphaFold/3.0.1
+
+# Select full path to working directory
+RUNDIR=`readlink -f ${PWD}`
+cd $RUNDIR
+
+# Edit to specify input folder name and filename for initial json
+INPUTFOLDER="af_input"
+INPUTFILENAME="alphafold_input.json"
+
+# Edit to specify output folder name for MSA
+MSAFOLDER="af_msa"
+
+mkdir -p ${RUNDIR}/${INPUT}
+mkdir -p ${RUNDIR}/${MSAFOLDER}
+
+# run AlphaFold
+apptainer exec \
+  --bind $RUNDIR/${INPUTFOLDER}:/root/af_input \
+  --bind $RUNDIR/${MSAFOLDER}:/root/af_msa \
+  --bind $RUNDIR/models:/root/models \
+  --bind $ALPHAFOLD_DATA_DIR:/root/public_databases \
+  $EBROOTALPHAFOLD/AlphaFold.sif python /app/alphafold/run_alphafold.py \
+  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --json_path=/root/af_input/${INPUTFILENAME} \
+  --model_dir=/root/models \
+  --db_dir=/root/public_databases \
+  --output_dir=/root/af_msa \
+  --norun_inference
+```
+
+alphafold_model\.sh (McCleary version):
+
+```sh
+#!/bin/bash
+#SBATCH --job-name=YourModelJobNameHere
+## General-use partition for accessing GPUs;
+## may optionally try gpu_devel, as GPU step often takes < 6 hours
+#SBATCH --partition=gpu
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=4:00:00
+## CPUs requested for each "task"; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem=80g
+## Must explicitly request GPU resources and number of GPUs
+#SBATCH --gpus=1
+#SBATCH --mail-type=ALL
+
+## Clear all loaded software modules, and load AlphaFold module
+module reset
+module load AlphaFold/3.0.1
+
+# Select full path to current working directory
+RUNDIR=`readlink -f ${PWD}`
+cd ${RUNDIR}
+
+# Edit to specify name of folder containing output from prior MSA run
+MSAFOLDER="af_msa"
+
+# Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json
+# This is usually based on the name: field from your initial input.
+MSA="MyPrefix"
+
+#Edit to specify name of final output folder for models
+OUTPUT="${MSA}_output"
+
+mkdir -p ${RUNDIR}/${OUTPUT}
+
+# run alphafold
+apptainer exec --nv \
+  --bind $RUNDIR/${MSAFOLDER}/${MSA}:/root/af_msa \
+  --bind $RUNDIR/${OUTPUT}:/root/af_output \
+  --bind $RUNDIR/models:/root/models \
+  --bind $ALPHAFOLD_DATA_DIR:/root/public_databases \
+  $EBROOTALPHAFOLD/AlphaFold.sif python /app/alphafold/run_alphafold.py \
+  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
+  --json_path=/root/af_msa/${MSA}_data.json \
+  --model_dir=/root/models \
+  --db_dir=/root/public_databases \
+  --output_dir=/root/af_output \
+  --norun_data_pipeline
+```
+
+
 ## AlphaFold 2
 
-To run AlphaFold 2, you will need a sequence file in FASTA format for your macromolecule of interest.
+To run AlphaFold 2, note the differences from AlphaFold 3 in the command flags and sequence input. You will need a sequence file in FASTA format for your macromolecule of interest.
 
 Monomer:
 ```sh
@@ -51,7 +331,6 @@ Heteromer:
 <SEQUENCE B>
 ...
 ```
-
 Copy the MSA batch script and model batch script templates below,
 and modify for your specific use case. Both stages can be submitted at the same time using a
 [job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
@@ -147,235 +426,13 @@ e.g.,
 When submitting an AlphaFold job, take into consideration [runtime as a 
 function of sequence length](https://github.com/google-deepmind/alphafold?tab=readme-ov-file#alphafold-prediction-speed).
 
+In the event of memory problems, add the following environment variables to alphafold_model\.sh:
+```
+TF_FORCE_UNIFIED_MEMORY=1
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.5
+XLA_PYTHON_CLIENT_ALLOCATOR=platform
+```
+
 For further information on running AlphaFold 2, see EMBL-EBI's
 [online tutorial](https://www.ebi.ac.uk/training/online/courses/alphafold/).
 
-## AlphaFold 3
-
-AlphaFold 3 on the YCRC clusters is currently a work in progress.  Note that one significant change
-is the model parameter [Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md).
-BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
-This requires registering with [Google](https://forms.gle/svvpY4u2jsHEwWYS6) and agreeing to the above terms of use.
-Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.
-
-### Bouchet
-On Bouchet, AlphaFold 3 is launched in a manner similar to 2, but with some modifications to the flags.
-
-alphafold_msa.sh:
-
-```sh
-#!/bin/bash
-#SBATCH --job-name=YourMSAJobNameHere
-## General-use partition for CPU-only step
-#SBATCH --partition=day
-## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=1-00:00:00
-## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
-## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem-per-cpu=80g
-#SBATCH --mail-type=ALL
-
-## Clear all loaded software modules, and load AlphaFold module
-module reset
-## Edit to set desired AlphaFold module version;
-## search available versions via "module avail AlphaFold/"
-module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
-
-# Select full path to working directory
-RUNDIR=`readlink -f ${PWD}`
-
-# Edit to specify input folder name containing initial alphafold_input.json
-INPUTFOLDER="af_input"
-
-# Edit to specify filename of input JSON file
-INPUTFILE="fold_input.json"
-
-# Edit to specify output folder name for MSA
-MSAFOLDER="af_msa"
-
-mkdir -p ${RUNDIR}/${INPUT}
-mkdir -p ${RUNDIR}/${MSAFOLDER}
-
-# run AlphaFold
-  alphafold \
-  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --json_path=${INPUTFOLDER}/${INPUTFILE} \
-  --model_dir=${RUNDIR}/models \
-  --db_dir=$DB_DIR \
-  --output_dir=$MSAFOLDER \
-  --norun_inference
-```
-
-alphafold_model.sh:
-
-```sh
-#!/bin/bash
-#SBATCH --job-name=YourModelJobNameHere
-## General-use partition for accessing GPUs;
-## may optionally try gpu_devel, as GPU step often takes < 6 hours
-#SBATCH --partition=gpu
-## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=4:00:00
-## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
-## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem=80g
-## Must explicitly request GPU resources and number of GPUs
-#SBATCH --gpus=1
-#SBATCH --constraint "a100-80g"
-#SBATCH --mail-type=ALL
-
-## Clear all loaded software modules, and load AlphaFold module
-module rese
-## Edit to set desired AlphaFold module version;
-## search available versions via "module avail AlphaFold/"
-module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
-
-# Select full path to current working directory
-RUNDIR=`readlink -f ${PWD}`
-mkdir -p ${RUNDIR}
-
-# Edit to specify name of folder containing output from prior MSA run
-MSAFOLDER="af_msa"
-
-# Edit to specify name of final output folder for models 
-OUTPUT="af_output"
-
-# Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json
-# This is usually based on the name: field from your initial input.
-MSA="2PV7"
-
-#Edit to specify name of final output folder for models
-OUTPUT="${MSA}_output"
-
-mkdir -p ${RUNDIR}/${OUTPUT}
-
-# run alphafold
-alphafold \
-  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --json_path=${MSAFOLDER}/${MSA}/${MSA}_data.json \
-  --model_dir=models \
-  --db_dir=$ALPHAFOLD_DATA_DIR \
-  --output_dir=${MSA}_output \
-  --norun_data_pipeline
-```
-
-The database location has been set automatically.
-
-### McCleary
-On McCleary, AlphaFold is installed in a [container](/clusters-at-yale/guides/containers), which requires
-a somewhat more complicated command for running the split version.
-
-alphafold_msa.sh (McCleary version):
-
-```sh
-#!/bin/bash
-#SBATCH --job-name=YourMSAJobNameHere
-## General-use partition for CPU-only step
-#SBATCH --partition=day
-## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=1-00:00:00
-## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
-## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem-per-cpu=80g
-#SBATCH --mail-type=ALL
-
-## Clear all loaded software modules, and load AlphaFold module
-module reset
-module load AlphaFold/3.0.1
-
-# Select full path to working directory
-RUNDIR=`readlink -f ${PWD}`
-cd $RUNDIR
-
-# Edit to specify input folder name and filename for initial json
-INPUTFOLDER="af_input"
-INPUTFILENAME="alphafold_input.json"
-
-# Edit to specify output folder name for MSA
-MSAFOLDER="af_msa"
-
-mkdir -p ${RUNDIR}/${INPUT}
-mkdir -p ${RUNDIR}/${MSAFOLDER}
-
-# run AlphaFold
-apptainer exec \
-  --bind $RUNDIR/${INPUTFOLDER}:/root/af_input \
-  --bind $RUNDIR/${MSAFOLDER}:/root/af_msa \
-  --bind $RUNDIR/models:/root/models \
-  --bind $ALPHAFOLD_DATA_DIR:/root/public_databases \
-  $EBROOTALPHAFOLD/AlphaFold.sif python /app/alphafold/run_alphafold.py \
-  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --json_path=/root/af_input/${INPUTFILENAME} \
-  --model_dir=/root/models \
-  --db_dir=/root/public_databases \
-  --output_dir=/root/af_msa \
-  --norun_inference
-```
-
-alphafold_model.sh (McCleary version):
-
-```sh
-#!/bin/bash
-#SBATCH --job-name=YourModelJobNameHere
-## General-use partition for accessing GPUs;
-## may optionally try gpu_devel, as GPU step often takes < 6 hours
-#SBATCH --partition=gpu
-## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=4:00:00
-## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
-## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem=80g
-## Must explicitly request GPU resources and number of GPUs
-#SBATCH --gpus=1
-#SBATCH --mail-type=ALL
-
-## Clear all loaded software modules, and load AlphaFold module
-module reset
-module load AlphaFold/3.0.1
-
-# Select full path to current working directory
-RUNDIR=`readlink -f ${PWD}`
-cd ${RUNDIR}
-
-# Edit to specify name of folder containing output from prior MSA run
-MSAFOLDER="af_msa"
-
-# Enter prefix of output from previous MSA run; e.g., MyPrefix_data.json
-# This is usually based on the name: field from your initial input.
-MSA="MyPrefix"
-
-#Edit to specify name of final output folder for models
-OUTPUT="${MSA}_output"
-
-mkdir -p ${RUNDIR}/${OUTPUT}
-
-# run alphafold
-apptainer exec --nv \
-  --bind $RUNDIR/${MSAFOLDER}/${MSA}:/root/af_msa \
-  --bind $RUNDIR/${OUTPUT}:/root/af_output \
-  --bind $RUNDIR/models:/root/models \
-  --bind $ALPHAFOLD_DATA_DIR:/root/public_databases \
-  $EBROOTALPHAFOLD/AlphaFold.sif python /app/alphafold/run_alphafold.py \
-  --jackhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --nhmmer_n_cpu=$((SLURM_CPUS_PER_TASK)) \
-  --json_path=/root/af_msa/${MSA}_data.json \
-  --model_dir=/root/models \
-  --db_dir=/root/public_databases \
-  --output_dir=/root/af_output \
-  --norun_data_pipeline
-```
-
-See the [AlphaFold 3 documentation](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md) for details.
-
-Note that AlphaFold 3 will only run on A100 or better GPUs by default.
-To run on sequences up to 1280 on a V100 on McCleary, add to your 'alphafold' command the flag
-```sh
---flash_attention_implementation=xla
-```
