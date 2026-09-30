@@ -6,9 +6,9 @@ Submitting a job involves specifying a resource request then running one or more
 
 !!! info "Please be a good cluster citizen."
 
-    - Do not run heavy computation on login nodes (e.g. `grace1`, `login1.mccleary`). Doing so negatively impacts everyone's ability to interact with the cluster.
-    - Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on [Monitoring CPU and Memory Usage](/clusters-at-yale/job-scheduling/resource-usage) for how to measure job resource usage.
-    - If you plan to run many similar jobs, use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html) - we enforce limits on [job submission rates](/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits) on all clusters.
+    - Do not run heavy computation on login nodes (e.g. `login1.bouchet`, `login1.mccleary`). Doing so negatively impacts everyone's ability to interact with the cluster.
+    - Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on [Monitoring CPU and Memory Usage](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) for how to measure job resource usage.
+    - If you plan to run many similar jobs, use our [Job Arrays](/clusters-at-yale/job-scheduling/dsq) - we enforce limits on [job submission rates](/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits) on all clusters.
 
 If you find yourself wondering how best to schedule a job, please [contact us](/#get-help) for some help.
 
@@ -48,7 +48,7 @@ sacct -j 12345
 
 Check when a job is expected to run, and what resources it will be allocated:
 ``` text
-sacct -j 12345 --start
+squeue -j 12345 --start
 ```
 
 Check how efficiently a job ran, *e.g.* a job with ID 12345:
@@ -138,7 +138,7 @@ Save [this file](/_static/files/example_job.sh) as `example_job.sh`, then submit
 sbatch example_job.sh
 ```
 
-When the job finishes the output should be stored in a file called `slurm-jobid.out`, where `jobid` is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our [Dead Simple Queue](/clusters-at-yale/job-scheduling/dsq) tool or [job arrays](https://slurm.schedmd.com/job_array.html).
+When the job finishes the output should be stored in a file called `slurm-jobid.out`, where `jobid` is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use [Job Arrays](/clusters-at-yale/job-scheduling/dsq).
 
 ### Estimating Job Launch Time
 
