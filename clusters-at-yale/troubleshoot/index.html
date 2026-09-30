@@ -2438,7 +2438,7 @@
   
     <li class="md-nav__item">
       <a href="../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2949,10 +2949,10 @@
 have gotten word that we created your account for the cluster.</li>
 <li class="task-list-item"><input type="checkbox"/> Make sure that the cluster is online in the <a href="http://research.computing.yale.edu/system-status">System Status</a> page.</li>
 <li class="task-list-item"><input type="checkbox"/> Check the hostname for the cluster. See the <a href="/clusters">clusters page</a> for a list.</li>
-<li class="task-list-item"><input type="checkbox"/> Verify that your <a href="/clusters-at-yale/access/#what-are-ssh-keys">ssh keys</a> are setup correctly<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> Check for your public key in the <a href="https://sshkeys.ycrc.yale.edu/">ssh key uploader</a>. If you recently uploaded one, it will take a few minutes appear on the cluster. </li>
-<li class="task-list-item"><input type="checkbox"/> If you are using <a href="/clusters-at-yale/access/#macos-and-linux">macOS or Linux</a>, make sure your private key is in <code>~/.ssh</code>.</li>
-<li class="task-list-item"><input type="checkbox"/> If you are <a href="/clusters-at-yale/access/#windows">using Windows</a>, make sure you have pointed MobaXterm to your private ssh key (ends in .pem)</li>
+<li class="task-list-item"><input type="checkbox"/> Verify that your <a href="/clusters-at-yale/access/ssh/#what-are-ssh-keys">ssh keys</a> are setup correctly<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> Check for your public key in the <a href="https://sshkeys.ycrc.yale.edu/">ssh key uploader</a>. If you recently uploaded one, it will take a few minutes to appear on the cluster. </li>
+<li class="task-list-item"><input type="checkbox"/> If you are using <a href="/clusters-at-yale/access/ssh/#macos-and-linux">macOS or Linux</a>, make sure your private key is in <code>~/.ssh</code>.</li>
+<li class="task-list-item"><input type="checkbox"/> If you are <a href="/clusters-at-yale/access/ssh/#windows">using Windows</a>, make sure you have pointed MobaXterm to your private ssh key (ends in .pem)</li>
 <li class="task-list-item"><input type="checkbox"/> If you are asked for a passphrase when logging in, this is the ssh key passphrase you set when first creating your key pair. If you have forgotten this passphrase, you need to create a new key pair and upload a new public key.</li>
 </ul>
 </li>
@@ -2966,11 +2966,11 @@ have gotten word that we created your account for the cluster.</li>
 <p>If none of the above solve your issue, please <a href="/#get-help">contact us</a> with your netid and the cluster you are attempting to connect to.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your username starts with a course ID (e.g. <code>ydata1230_NetID</code>, <code>hpcllm_NetID</code>), your accounts is associated with a particular course or workshop. Please refer to our <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/">course</a> documentation on how to access your course account. </p>
+<p>If your username starts with a course ID (e.g. <code>ydata1230_NetID</code>, <code>hpcllm_NetID</code>), your account is associated with a particular course or workshop. Please refer to our <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/">course</a> documentation on how to access your course account. </p>
 </div>
 <h2 id="common-ssh-errors">Common SSH Errors</h2>
 <h4 id="permission-denied-publickey">Permission denied (publickey)</h4>
-<p>This message means that the clusters don't (yet) have they key you are using to authenticate. Make sure you have an account on the cluster you're connecting, that you have <a href="/clusters-at-yale/access/#what-are-ssh-keys">created an ssh key pair</a>, and uploaded the <a href="https://sshkeys.ycrc.yale.edu/">public key</a>. If you recently uploaded one, it will take a few minutes appear on the cluster.</p>
+<p>This message means that the clusters don't (yet) have the key you are using to authenticate. Make sure you have an account on the cluster you're connecting, that you have <a href="/clusters-at-yale/access/ssh/#what-are-ssh-keys">created an ssh key pair</a>, and uploaded the <a href="https://sshkeys.ycrc.yale.edu/">public key</a>. If you recently uploaded one, it will take a few minutes to appear on the cluster.</p>
 <h4 id="remote-host-identification-has-changed">REMOTE HOST IDENTIFICATION HAS CHANGED!</h4>
 <p>If you are seeing the following error:</p>
 <div class="highlight"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -2981,7 +2981,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Offending key in /home/user/.ssh/known_hosts:34
 ...
 </code></pre></div>
-<p>This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster (see <a href="/clusters/grace_rhel8">Grace August 2023 Maintenance</a>). It could also mean someone is trying to intercept your ssh session. Please <a href="/#get-help">contact us</a> if you receive this error outside of known system upgrades.</p>
+<p>This usually means that the keys that identify the cluster login nodes have changed. This can be the result of system upgrades on the cluster. It could also mean someone is trying to intercept your ssh session. Please <a href="/#get-help">contact us</a> if you receive this error outside of known system upgrades.</p>
 <p>If the host keys have indeed changed on the server you are connecting to, you can edit <code>~/.ssh/known_hosts</code> and remove the offending line. In the example above, you would need to delete line 34 in <code>~/.ssh/known_hosts</code> before you re-connect.</p>
                 
                   
@@ -2991,7 +2991,7 @@ Offending key in /home/user/.ssh/known_hosts:34
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

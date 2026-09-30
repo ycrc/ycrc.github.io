@@ -2480,7 +2480,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3035,13 +3035,13 @@
 <p>If an application is able to use multiple cores, it usually achieves this by either spawning threads and sharing memory (multi-threaded) or starting entire new processes (multi-process). Some applications are written to use the Message Passing Interface (MPI) standard to run across many compute nodes. This allows such applications to scale computation in a way not limited by the number of cores on a single node. MPI translates what Slurm calls tasks to separate workers or processes. Because each of these processes can communicate across compute nodes, Slurm does not constrain them to the same node by default. Though tasks can be distributed across nodes, Slurm will not split the CPUs allocated to individual tasks. For this reason a single task that has multiple CPUs allocated will always be on a single node. In some cases using <code>--ntasks=4</code> (or <code>-n 4</code>) and <code>--cpus-per-task=4</code> (or <code>-c 4</code>) achieves the same job allocation by luck, but you should only use <code>--cpus-per-task</code> when using non-MPI applications to guarantee that the CPUs you expect your program to use are all accessible.</p>
 <p>Some MPI programs are also multi-threaded, so each process can use multiple CPUs. Only these applications can use <code>--ntasks</code> <em>and</em> <code>--cpus-per-task</code> to run faster.</p>
 <h4 id="mpi-applications">MPI Applications</h4>
-<p>For more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
+<p>For more control over how Slurm lays out your job, you can add the <code>--nodes</code> and <code>--ntasks-per-node</code> flags. <code>--nodes</code> specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set <code>--nodes=1</code> (this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set <code>--ntasks-per-node=1</code>. Note that the following must be true:</p>
 <div class="highlight"><pre><span></span><code>ntasks-per-node * nodes &gt;= ntasks
 </code></pre></div>
 <h4 id="hybrid-mpiopenmp-applications">Hybrid (MPI+OpenMP) Applications</h4>
 <p>For the most predictable performance for hybrid applications, you will need to use all three of the <code>--ntasks</code>, <code>--cpus-per-task</code>, and <code>--nodes</code> flags, where <code>--ntasks</code> equals the number of MPI tasks, <code>--cpus-per-task</code> equals the number of <code>OMP_NUM_THREADS</code> and <code>--nodes</code> is the number of nodes required to fit <code>--ntasks * --cpus-per-task</code>.</p>
 <h2 id="request-memory-ram">Request Memory (RAM)</h2>
-<p>Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and <a href="/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory">you will get errors</a>. Make sure you either request the right amount of memory per core on each node in your job with <code>--mem-per-cpu</code> or memory per node in your job with <code>--mem</code>. You can request more memory than you think you might need for an example job, then <a href="/clusters-at-yale/job-scheduling/resource-usage/">make note of its actual usage</a> to better tune future requests for similar jobs.</p>
+<p>Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and <a href="/clusters-at-yale/job-scheduling/common-job-failures/#memory-limits">you will get errors</a>. Make sure you either request the right amount of memory per core on each node in your job with <code>--mem-per-cpu</code> or memory per node in your job with <code>--mem</code>. You can request more memory than you think you might need for an example job, then <a href="/clusters-at-yale/job-scheduling/resource-usage/">make note of its actual usage</a> to better tune future requests for similar jobs.</p>
 <h2 id="request-gpus">Request GPUs</h2>
 <p>Some of our clusters have nodes that contain GPU co-processors. Please refer to the <a href="/clusters">individual cluster pages</a> regarding node configurations that include GPUs. There are several <code>salloc</code>/<code>sbatch</code> options that allow you to request GPUs and specify your job layout relative to the GPUs requested.</p>
 <table>
@@ -3097,7 +3097,7 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:</p>
+<p>As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the <code>gpu_devel</code> partition to make sure they can make good use of multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:</p>
 <div class="highlight"><pre><span></span><code>salloc --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel
 </code></pre></div>
 </div>
@@ -3106,10 +3106,10 @@
 <p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
 <p>You can use the processor codename (e.g. <code>haswell</code>) or processor type (e.g. <code>E5-2660_v3</code>) to limit your job to specific node types. You can also specify an instruction set (e.g. <code>avx512</code>) to require that no matter what CPU your job runs on, it must understand at least these instructions. See the individual cluster pages for the exact tags for the different node types. Multiple requirements ("AND") are separated by a comma (<code>,</code>) and multiple options ("OR") should be separated by the pipe character (<code>|</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># run on a node with a haswell codenamed CPU (e.g. a E5-2660 v3)</span>
-sbatch<span class="w"> </span>--constraint<span class="o">=</span>haswell<span class="w"> </span>submit.sh
+sbatch --constraint<span class="o">=</span>haswell submit.sh
 
 <span class="c1"># only run on nodes with E5-2660 v4 CPUs</span>
-sbatch<span class="w"> </span>--constraint<span class="o">=</span>E5-2660_v4<span class="w"> </span>submit.sh
+sbatch --constraint<span class="o">=</span>E5-2660_v4 submit.sh
 </code></pre></div>
 <p>We also have keyword features to help you constrain your jobs to certain categories of nodes.  </p>
 <ul>
@@ -3133,7 +3133,7 @@ sbatch<span class="w"> </span>--constraint<span class="o">=</span>E5-2660_v4<spa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

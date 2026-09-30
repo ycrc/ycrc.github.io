@@ -2475,7 +2475,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3059,8 +3059,8 @@
 <p>To use the safe claude module, simply load it and start Claude. Run Claude on a compute node and start it from a non-hidden subdirectory in your home, project, PI, or scratch storage. The module will refuse to start in locations that do not meet its security requirements.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code>salloc
-ml<span class="w"> </span>claude
-<span class="nb">cd</span><span class="w"> </span>~/scratch/some-work-folder<span class="w"> </span><span class="c1"># Any non-hidden subdirectory of home, project, scratch, or pi storage</span>
+ml claude
+<span class="nb">cd</span> ~/scratch/some-work-folder <span class="c1"># Any non-hidden subdirectory of home, project, scratch, or pi storage</span>
 claude
 </code></pre></div>
 <p>You need a Claude account with Anthropic to use the current beta module.</p>

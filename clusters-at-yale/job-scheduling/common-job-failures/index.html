@@ -2527,7 +2527,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3120,12 +3120,12 @@
                 <h1 id="common-job-failures">Common Job Failures</h1>
 <p>Your jobs haven't failed, you have just found ways to run them that won't work. Here are some common error messages and steps to correct them.</p>
 <h2 id="memory-limits">Memory Limits</h2>
-<p>Jobs can fail due to an insufficient memory being requested. Depending on the job, this failure might present as a Slurm error:</p>
+<p>Jobs can fail due to insufficient memory being requested. Depending on the job, this failure might present as a Slurm error:</p>
 <div class="highlight"><pre><span></span><code>slurmstepd: error: Detected 1 oom-kill event(s).
 Some of your processes may have been killed by the cgroup out-of-memory handler.
 </code></pre></div>
 <p>This means Slurm detected the job hitting the maximum requested memory and then the job was killed.</p>
-<p>When process inside a job tries to access memory outside what was allocated to that job (more than what you requested) the operating system tells your program that address is invalid with the fault <code>Bus Error</code>. A similar fault you might be more familiar with is a <code>Segmentation Fault</code>, which usually results from a program incorrectly trying to access a valid memory address.</p>
+<p>When a process inside a job tries to access memory outside what was allocated to that job (more than what you requested) the operating system tells your program that address is invalid with the fault <code>Bus Error</code>. A similar fault you might be more familiar with is a <code>Segmentation Fault</code>, which usually results from a program incorrectly trying to access a valid memory address.</p>
 <p>These errors can be fixed in two ways.</p>
 <h3 id="request-more-memory">Request More Memory</h3>
 <p>The default is almost always <code>--mem-per-cpu=5G</code></p>
@@ -3133,7 +3133,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --mem-per-cpu=8G</span>
 </code></pre></div>
 <p>In an interactive job:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--mem-per-cpu<span class="o">=</span>8G
+<div class="highlight"><pre><span></span><code>salloc --mem-per-cpu<span class="o">=</span>8G
 </code></pre></div>
 <h3 id="use-less-memory">Use Less Memory</h3>
 <p>This method is usually a little more involved, and is easier if you can inspect the code you are using. Watching your <a href="/clusters-at-yale/job-scheduling/resource-usage">job's resource usage</a>, attending a workshop, or <a href="/#get-help">getting in touch</a> with us are good places to start.</p>
@@ -3144,7 +3144,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 <h3 id="delete-files">Delete Files</h3>
 <p>If you are <em><em>sure</em></em> you no longer need some files or directories, you can delete them. Unless files are in your home directory (not <code>project</code> or <code>scratch60</code>) they are not backed up and may be unrecoverable. Use the <a href="https://thenextweb.com/media/2012/05/21/how-pixars-toy-story-2-was-deleted-twice-once-by-technology-and-again-for-its-own-good"><code>rm -rf</code></a> command very carefully.</p>
 <h3 id="buy-more-space">Buy More Space</h3>
-<p>If you would like to purchase more than the default quotas, we can help you <a href="/data/#purchase-additional-storage">buy space on the clusters</a>.</p>
+<p>If you would like to purchase more than the default quotas, we can help you <a href="/data/hpc-storage/#request-additional-storage">buy space on the clusters</a>.</p>
 <h2 id="rate-limits">Rate Limits</h2>
 <p>We rate-limit job submissions to <strong>200 jobs per hour</strong> on each cluster. This limit helps even out load on the scheduler and encourages good practice. When you hit this limit, you will get an error when submitting new jobs that looks like this:</p>
 <div class="highlight"><pre><span></span><code>sbatch: error: Reached jobs per hour limit
@@ -3167,7 +3167,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 <h3 id="match-or-purge-your-toolchains">Match or Purge Your Toolchains</h3>
 <p>Where possible, only use one toolchain at a time. When you want to use software from multiple toolchains run <code>module reset</code> between running new <code>module load</code> commands. If your work requires a version of software that is not installed, <a href="/#get-help">contact us</a>.</p>
 <h2 id="conda-environments">Conda Environments</h2>
-<p><a href="/clusters-at-yale/guides/conda/">Conda environments</a> provide a nice way to manage <code>python</code> and <code>R</code> packages and modules. Conda acieves this by setting functions and environment variables that point to your environment files when you run <code>conda activate</code>. Unlike <a href="/applications/modules/">modules</a>, conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.</p>
+<p><a href="/clusters-at-yale/guides/conda/">Conda environments</a> provide a nice way to manage <code>python</code> and <code>R</code> packages and modules. Conda achieves this by setting functions and environment variables that point to your environment files when you run <code>conda activate</code>. Unlike <a href="/applications/modules/">modules</a>, conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.</p>
 <h3 id="load-conda-environments-right-before-use">Load Conda Environments Right Before Use</h3>
 <p>To make sure that your environment is set up properly for interactive use, wait until you are on the host you plan to use your environment on. Then run <code>conda activate my_env</code>.</p>
 <p>To make sure batch jobs function properly, only submit jobs without an environment loaded (<code>conda deactivate</code> before <code>sbatch</code>). Make sure you load miniconda and your environment in the body of your batch submission script.</p>
@@ -3179,7 +3179,7 @@ sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

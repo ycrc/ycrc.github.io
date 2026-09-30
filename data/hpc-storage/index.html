@@ -2499,7 +2499,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3081,7 +3081,7 @@
 <p>Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within <code>project</code>. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.</p>
 <h4 id="additional-paid-storage">Additional Paid Storage</h4>
 <p>Quota: varies</p>
-<p>Storage paid for for the dedicated use by a single group or collection of groups provides similar functionality as <code>project</code> storage and is also not backed up.
+<p>Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as <code>project</code> storage and is also not backed up.
 See <a href="#request-additional-storage">below</a> for details on requesting additional storage. </p>
 <p>Paid storage, if applicable, is assigned on one of our two storage systems:</p>
 <ul>
@@ -3091,7 +3091,7 @@ See <a href="#request-additional-storage">below</a> for details on requesting ad
 <p>Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.</p>
 <h3 id="scratch">Scratch</h3>
 <p>Quota: 10 TiB and 15,000,000 files per group</p>
-<p>scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. <strong>Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="#purchase-additional-storage">purchase storage</a> if you need additional longer term storage.</strong></p>
+<p>scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. <strong>Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="#request-additional-storage">purchase storage</a> if you need additional longer term storage.</strong></p>
 <p>You can access this space through a symlink, or shortcut, in your home directory called <code>project_pi_&lt;your_pi_netid&gt;</code> (on <a href="/clusters/bouchet">Bouchet</a>),  <code>palmer_scratch</code> (<a href="/clusters/mccleary">McCleary/Grace</a>), or <code>scratch60</code> (<a href="/clusters/milgram">Milgram</a>). See our <a href="/data/permissions">Sharing Data</a> documentation for instructions on sharing data in your scratch space with other users.</p>
 <h2 id="check-your-usage-and-quotas">Check Your Usage and Quotas</h2>
 <p>To inspect your current usage, run the command <code>getquota</code> from the <a href="/clusters-at-yale/access/ood/#terminal">terminal</a> command line.</p>
@@ -3128,12 +3128,12 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Notes</p>
-</div>
 <ol>
 <li>The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br></li>
 <li>Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  </li>
 <li>Purchased storage allocations will only appear in the <code>getquota</code> output for users who have data in that directory.</li>
 </ol>
+</div>
 <h2 id="for-more-detailed-storage-info">For More Detailed Storage Info</h2>
 <p>When you run out of disk space (or better, when you anticipate it will happen soon), you will need to find out which files/folders consume the most space. The YCRC provides module-based tools to help with this: a GUI app, <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://github.com/shundhammer/qdirstat&amp;ved=2ahUKEwinzbKU_b-RAxV0v4kEHRY2ALMQFnoECCAQAQ&amp;usg=AOvVaw3rROIC6Z1bIEq6vM8ODHmX">QDirstat</a>, and a command line tool, (<a href="https://github.com/Canop/broot">broot</a>). They provide similar functionality, but broot may be faster to run and less resource intensive.</p>
 <div class="admonition warning">
@@ -3144,7 +3144,7 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 <div class="highlight"><pre><span></span><code>module load QDirStat
 qdirstat
 </code></pre></div>
-<p>You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.</p>
+<p>You will get an interactive display that allows you to navigate through your folders and see how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.</p>
 <p>For broot, type the following into any terminal:
 <div class="highlight"><pre><span></span><code>module load broot
 broot -w
@@ -3156,12 +3156,12 @@ broot -w
 </div>
 <p>Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
 The price covers all costs, including administration, power, cooling, networking, etc.
-Agreements for such storage will run through the end of the fiscal year and be renewabled in June for the next year when appropriate.
+Agreements for such storage will run through the end of the fiscal year and be renewed in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.</p>
 <p>After the culmination of a paid storage agreement (either for non-payment or migration to off-cluster storage) the allocation will be removed according to our policies (see <a href="https://research.computing.yale.edu/computing-resources/hpc-policies">Storage Expiration Policy</a>).
 Please <a href="/#get-help">contact us</a> with your requirements and budget to start the agreement process.</p>
-<p>Paid storage allocation, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
-The file count limits for different size allocations are listed above. 
+<p>Paid storage allocations, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
+The file count limits for different size allocations are listed below. 
 If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.</p>
 <table>
 <thead>
@@ -3204,7 +3204,7 @@ Please see the <a href="/data/staging/">Staging Data</a> documentation for more 
 <h3 id="prevent-large-numbers-of-small-files">Prevent Large Numbers of Small Files</h3>
 <p>The parallel filesystems the clusters use perform poorly with very large numbers of small files.
 This is one reason we enforce file count quotas.
-If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+If you are running an application that unavoidably makes large numbers of files, do what you can to reduce file creation.
 Additionally you can reduce load on the filesystem by spreading the files across multiple subdirectories.
 Delete unneeded files between jobs and compress or <a href="/data/archive/">archive</a> collections of files.</p>
                 
@@ -3215,7 +3215,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

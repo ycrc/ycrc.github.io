@@ -2597,7 +2597,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3267,12 +3267,12 @@ Hopper is one of a number of secure computing environments, such as <a href="htt
 Support staff are available to assist researchers with identifying and accessing the most suitable compute resources for their research projects.</p>
 <h2 id="access-the-cluster">Access the Cluster</h2>
 <h3 id="projects">Projects</h3>
-<p>Unlikely other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
+<p>Unlike other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
 Projects are named <code>&lt;pi_netid&gt;_&lt;project_code&gt;</code>.
 A request for a specific project will need to be submitted by a PI and approved before user accounts can be created.</p>
-<p>Once a project is approved, the project's PI is responisible for the approval of additional user accounts.
+<p>Once a project is approved, the project's PI is responsible for the approval of additional user accounts.
 PIs are also required to conduct a quarterly review of user accounts on their projects.
-Failure to complete the review by the due date will result deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.</p>
+Failure to complete the review by the due date will result in deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.</p>
 <p>Projects will also be deactivated if their expiration date has elapsed (if applicable) or otherwise at the PI's discretion.</p>
 <p><a class="md-button" href="https://research.computing.yale.edu/secure-project-request">Request Hopper Project</a></p>
 <h3 id="accounts">Accounts</h3>
@@ -3312,16 +3312,16 @@ The VDI provides a virtual desktop with the standard YCRC cluster interfaces, su
 <p>To access the VDI, navigate to <code>hopper1.ycrc.yale.edu</code> in a web browser.</p>
 <p><a class="md-button" href="https://hopper1.ycrc.yale.edu">Hopper Login (VPN required)</a></p>
 <h3 id="security-restrictions">Security Restrictions</h3>
-<p>To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of addition restrictions beyond other YCRC systems.</p>
+<p>To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of additional restrictions beyond other YCRC systems.</p>
 <ul>
 <li>The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. (See below for tips on copy/paste <em>within</em> Hopper).</li>
 <li>Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).</li>
 <li>If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.</li>
-<li>You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.</li>
+<li>You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shops, transportation hubs or libraries is not allowed.</li>
 <li>Do not put sensitive data (e.g. patient information, personal identifiers) in directory names or job names, which might inadvertently expose this information.</li>
 </ul>
 <h2 id="report-an-issue">Report an Issue</h2>
-<p>If you run into an issue on Hopper and would think it would be helpful to take a picture of your session (e.g. to record an error message), click the "Report an Issue" icon on your VDI desktop.
+<p>If you run into an issue on Hopper and think it would be helpful to take a picture of your session (e.g. to record an error message), click the "Report an Issue" icon on your VDI desktop.
 This will place a capture of your screen in a folder where it can be reviewed by YCRC staff.
 Please notify YCRC staff in <a href="/">your help request</a> if you have recorded your issue in this way.</p>
 <h2 id="transfer-data">Transfer Data</h2>
@@ -3334,7 +3334,7 @@ For details on using Globus, please read our <a href="/data/globus">Globus docum
 The user then must submit a request to the YCRC to have the transfer approved and then the data will be transferred to the desired location on Hopper by YCRC staff.
 If your data is large (&gt;200G), please submit your request <em>prior</em> to uploading the data so we can facilitate the larger transfer.</p>
 <p>Downloading of low-risk files from the cluster is the same process, but in reverse.
-submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
+Submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.</p>
 <p><a class="md-button" href="https://research.computing.yale.edu/hopper-low-risk-transfer">Submit Low-Risk Transfer Request</a></p>
 <h3 id="all-other-data">All Other Data</h3>
@@ -3362,7 +3362,7 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
 <h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
 <p>Load the shared module to configure your environment:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
+<div class="highlight"><pre><span></span><code>module load llms
 </code></pre></div>
 <p>This will:</p>
 <ul>
@@ -3374,18 +3374,18 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <div class="highlight"><pre><span></span><code>llms-list
 </code></pre></div>
 <p>To filter models by name:</p>
-<div class="highlight"><pre><span></span><code>llms-list<span class="w"> </span>llama
-llms-list<span class="w"> </span>qwen
+<div class="highlight"><pre><span></span><code>llms-list llama
+llms-list qwen
 </code></pre></div>
 <p>The output corresponds directly to Hugging Face repository IDs.</p>
 <h4 id="using-models-in-python">Using Models in Python</h4>
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
-<div class="highlight"><pre><span></span><code>from<span class="w"> </span>transformers<span class="w"> </span>import<span class="w"> </span>AutoModelForCausalLM,<span class="w"> </span>AutoTokenizer
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
 
-<span class="nv">model_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
 
-<span class="nv">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoTokenizer.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
-<span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>AutoModelForCausalLM.from_pretrained<span class="o">(</span>model_id<span class="o">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="requesting-new-models">Requesting New Models</h4>
 <p>If a model is not available:</p>
@@ -3404,13 +3404,13 @@ Such projects will be clearly identified during the approval and onboarding proc
 <p>While the VDI will lock sessions after 20 minutes of idle time, jobs submitted to the scheduler and sessions in the Web Portal will continue to run until they either complete (in the case of batch jobs), reach the limit of the requested wall time or are terminated by the user.</p>
 <h2 id="copypaste">Copy/Paste</h2>
 <p>The VDI prevents copy/pasting to the host computer in order to prevent unrestricted, unmonitored transfer of data between Hopper and the host computer.
-This restrictions allows Hopper users to access the environment from their own personal machines rather than a secure computer.</p>
+This restriction allows Hopper users to access the environment from their own personal machines rather than a secure computer.</p>
 <p>There is the ability to copy/paste <em>within</em> Hopper using the Linux Terminal keyboard shortcuts (as well as right-clicking), Shift+Control+C and Shift+Control+V. 
 These keyboard shortcuts can be customized on a per-user basis by:</p>
 <ul>
 <li>Right-click in Terminal and click "Show Menubar"</li>
 <li>Select Edit &gt; Keyboard Shortcuts...</li>
-<li>Modified the desired keyboard shortcuts</li>
+<li>Modify the desired keyboard shortcuts</li>
 </ul>
 <h2 id="rate-structure">Rate Structure</h2>
 <p>We are pleased to announce that effective July 1, 2026, CPU and GPU computing on the Hopper cluster is available without Service Unit (SU) charges, making it easier for Yale researchers to access secure, high-performance computing resources.</p>
@@ -3418,8 +3418,7 @@ These keyboard shortcuts can be customized on a per-user basis by:</p>
 <h3 id="additional-storage">Additional Storage</h3>
 <p>Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
-This additional storage will be located at <code>/nfs/weston/pi/&lt;pi&gt;_&lt;projectcode&gt;</code>. 
-Storage charges are based on requested allocation, not actual usage.
+This additional storage will be located at <code>/nfs/weston/pi/&lt;pi&gt;_&lt;projectcode&gt;</code>.
 <a href="/#get-help">Contact us</a> to request additional storage allocations.</p>
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <p>See each tab below for more information about the available common use partitions.</p>
@@ -3735,11 +3734,11 @@ You have shortcuts in your home directory to each project's storage spaces that 
 You can also get a list of the absolute paths to your directories with the <code>mydirectories</code> command. 
 Top-level folder permissions are managed by YCRC and cannot be modified by users.
 Only users in a specific project will be able to access that project's storage spaces. </p>
-<p>See <a href="/clusters/hopper/#purchase-storage">Purchased Storage rates</a> above for details on purchasing storage.</p>
+<p>See <a href="/clusters/hopper/#additional-storage">Purchased Storage rates</a> above for details on purchasing storage.</p>
 <p>For information on data recovery, see the <a href="/data/backups">Backups and Snapshots</a> documentation.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Files stored in <code>scratch</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="/data/#purchase-additional-storage">purchase storage</a> if you need additional longer term storage.</p>
+<p>Files stored in <code>scratch</code> are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="/data/hpc-storage/#request-additional-storage">purchase storage</a> if you need additional longer term storage.</p>
 </div>
 <table>
 <thead>
@@ -3800,7 +3799,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

@@ -2439,7 +2439,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2949,13 +2949,13 @@
 <ul>
 <li>User data remains local to the cluster <a href="../clarity/">(Security concerns with non-local models)</a></li>
 <li>Researchers can control model versions and configurations</li>
-<li>YCRC GPUs are free of charge (Except the secure data cluster, <a href="../../clusters/hopper/">Hopper</a></li>
+<li>YCRC GPUs are free of charge (except the secure data cluster, <a href="../../clusters/hopper/">Hopper</a>)</li>
 <li>Models up to 1100 GB of aggregate GPU memory can be run on a single node (Bouchet Only)</li>
 </ul>
 <h2 id="gpu-availability-on-ycrc-resources">GPU availability on YCRC resources</h2>
 <p>Once an LLM workflow is configured, models can be run on any GPU partition:</p>
 <ul>
-<li>McCleary and Grace: <code>gpu_devel</code>, <code>gpu</code>, <code>gpu_scavenge</code></li>
+<li>McCleary and Grace: <code>gpu_devel</code>, <code>gpu</code>, <code>scavenge_gpu</code></li>
 <li>Milgram: <code>gpu</code>, <code>scavenge</code></li>
 <li>Bouchet: <code>gpu</code>, <code>gpu_h200</code>, <code>gpu_devel</code></li>
 <li>Hopper: <code>gpu</code>, <code>gpu_devel</code></li>
@@ -2993,7 +2993,7 @@
 <td>1120 GB</td>
 <td>32</td>
 <td>172</td>
-<td>HIPPA, PHI, PII Data Analysis</td>
+<td>HIPAA, PHI, PII Data Analysis</td>
 </tr>
 <tr>
 <td>Grace</td>
@@ -3083,7 +3083,7 @@
 </table>
 <p>Exact requirements are listed on the model's Hugging Face or Ollama page.</p>
 <p>Domain-specific models are often smaller and more efficient than general-purpose models and should be preferred when available.
-e.g., if seeking to performan analysis on Law or Medical data, you may find better success finding a model that was developed
+e.g., if seeking to perform analysis on Law or Medical data, you may find better success finding a model that was developed
 specifically for Law or Medical Documents.</p>
 <p>If vRAM requirements are uncertain, run the model on a larger GPU and inspect usage using <a href="../gpu-jobstats/">Jobstats</a>.</p>
 <h2 id="advanced-methods-overview-only">Advanced methods (overview only)</h2>
@@ -3126,7 +3126,7 @@ specifically for Law or Medical Documents.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

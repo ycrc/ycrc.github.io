@@ -2468,7 +2468,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3003,11 +3003,13 @@
 <p>The <a href="https://genome.ucsc.edu/">UCSC Genome Browser</a> is a web-based tool for visualizing genomic data.
 It supports the loading of custom track data, which are files containing genome-indexed data for visualization.
 To host your own custom track data for public use, you can create a UCSC Custom Track Hub. </p>
-<p>This requires a few steps:<br />
-1. Create a custom track hub directory on the cluster<br />
-2. Create a static website on Yale Spinup to host the files publicly<br />
-3. Upload the track hub files to the static website's storage (AWS S3)<br />
-4. Connect the track hub to the UCSC Genome Browser  </p>
+<p>This requires a few steps:</p>
+<ol>
+<li>Create a custom track hub directory on the cluster  </li>
+<li>Create a static website on Yale Spinup to host the files publicly  </li>
+<li>Upload the track hub files to the static website's storage (AWS S3)  </li>
+<li>Connect the track hub to the UCSC Genome Browser  </li>
+</ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Yale Spinup static sites are approved only for hosting of low-risk data.</p>
@@ -3064,9 +3066,11 @@ The test message on the website should read, "Hello, <code>&lt;your-site-name&gt
 For example, <code>http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&amp;hubUrl=https://test-ucsc-trackhub.yalepages.org/hub.txt</code> will show the tracks for the hg19 assembly.</li>
 </ol>
 <h2 id="5-updating-the-track-hub">5. Updating the track hub</h2>
-<p>If you make changes to the track hub files on the cluster, you must upload the changes to the static website's storage (AWS S3):<br />
-1. Run <code>module load awscli</code><br />
-2. Run <code>aws s3 sync &lt;path-to-track-hub-directory&gt; s3://&lt;your-site-url&gt;/</code> to upload the track hub files to the static website's storage.</p>
+<p>If you make changes to the track hub files on the cluster, you must upload the changes to the static website's storage (AWS S3):</p>
+<ol>
+<li>Run <code>module load awscli</code>  </li>
+<li>Run <code>aws s3 sync &lt;path-to-track-hub-directory&gt; s3://&lt;your-site-url&gt;/</code> to upload the track hub files to the static website's storage.</li>
+</ol>
 <p>You may need to wait a few minutes for the changes to propagate. </p>
 <h2 id="finished">Finished!</h2>
 <p>You should now be able to view your tracks in the UCSC Genome Browser.</p>
@@ -3079,7 +3083,7 @@ For example, <code>http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&amp;hubUrl=ht
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

@@ -2530,7 +2530,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3134,7 +3134,7 @@
 <p><strong><a href="#code-server">Code Server</a></strong> (Recommended): A web-based VSCode instance running on a compute node, accessed through your browser via Open OnDemand. This is the recommended method for most users as it provides a stable connection and requires no local configuration.</p>
 </li>
 <li>
-<p><strong><a href="#remote-tunnel-advanced-users">Remote Tunnel</a></strong>: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. <strong>Note: Not permitted on Milgram due to security requirements.</strong></p>
+<p><strong><a href="#remote-tunnel">Remote Tunnel</a></strong>: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. <strong>Note: Not permitted on Milgram due to security requirements.</strong></p>
 </li>
 <li>
 <p><strong><a href="#remote-ssh-via-compute-node-advanced-users">Remote SSH</a></strong>: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.</p>
@@ -3218,13 +3218,13 @@
 <span class="c1"># To grant access to the server, please log into https://github.com/login/device and use code XXXX-XXXX</span>
 <span class="c1">######################</span>
 
-module<span class="w"> </span>load<span class="w"> </span>VSCode
-code<span class="w"> </span>tunnel
+module load VSCode
+code tunnel
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can set a custom name for your tunnel by adding the <code>--name</code> option to the <code>code tunnel</code> command in the script. For example:
-<div class="highlight"><pre><span></span><code>code<span class="w"> </span>tunnel<span class="w"> </span>--name<span class="w"> </span>bouchet-vscode
+<div class="highlight"><pre><span></span><code>code tunnel --name bouchet-vscode
 </code></pre></div></p>
 </div>
 <h2 id="remote-ssh-via-compute-node-advanced-users">Remote SSH via Compute Node (Advanced Users)</h2>
@@ -3242,7 +3242,7 @@ code<span class="w"> </span>tunnel
 <ol>
 <li>
 <p><strong>Request a compute node interactively:</strong>
-   <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>10G
+   <div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --time<span class="o">=</span><span class="m">6</span>:00:00 --cpus-per-task<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>10G
 </code></pre></div></p>
 </li>
 <li>
@@ -3278,22 +3278,22 @@ code<span class="w"> </span>tunnel
 <span class="c1">#SBATCH --output=vscode_ssh-%J.log</span>
 
 <span class="c1"># Print the hostname to the log file</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;VSCode SSH session ready on node: </span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Full hostname: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># Keep the job alive</span>
 <span class="c1"># VSCode will connect via SSH and start its server automatically</span>
-sleep<span class="w"> </span>6h
+sleep 6h
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Submit the job:</strong>
-   <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>vscode_ssh.sh
+   <div class="highlight"><pre><span></span><code>sbatch vscode_ssh.sh
 </code></pre></div></p>
 </li>
 <li>
 <p><strong>Check the log file</strong> to get the compute node hostname:
-   <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
+   <div class="highlight"><pre><span></span><code>cat vscode_ssh-<span class="o">[</span>JOBID<span class="o">]</span>.log
 </code></pre></div></p>
 </li>
 <li>
@@ -3374,7 +3374,7 @@ Host grace-compute
 <p>VSCode will then connect through the login node to your compute node and automatically start the VSCode server</p>
 </li>
 </ol>
-<p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working** for that session using <code>scancel [JOBID]</code></p>
+<p>When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working for that session using <code>scancel [JOBID]</code>.</p>
                 
                   
                     
@@ -3383,7 +3383,7 @@ Host grace-compute
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

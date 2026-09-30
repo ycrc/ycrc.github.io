@@ -2454,7 +2454,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2972,17 +2972,17 @@
                 
                 
                 <h1 id="multi-factor-authentication">Multi-factor Authentication</h1>
-<p>To improve security, access to all cluster requires both a public key (or NetID credentials for the <a href="/clusters-at-yale/access/ood">Web Portal</a>) and multi-factor authentication (MFA).
+<p>To improve security, access to all clusters requires both a public key (or NetID credentials for the <a href="/clusters-at-yale/access/ood">Web Portal</a>) and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, follow these <a href="https://cybersecurity.yale.edu/mfa">instructions.</a></p>
-<p>You will need upload your <a href="https://sshkeys.ycrc.yale.edu/">ssh public key to our site</a>.
+<p>You will need to upload your <a href="https://sshkeys.ycrc.yale.edu/">ssh public key to our site</a>.
 For more info on how to use ssh, please see the <a href="/clusters-at-yale/access">SSH instructions</a>.</p>
 <p>Once you've set up Duo and your key is registered, you can log in to the cluster.
 Use ssh to connect to your cluster of choice, and you will be prompted to select a notification option.
 We recommend choosing Duo Push (option 1).
 If you chose this option you should receive a notification on your phone.
 We also recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication method for DUO.
-This will simplified the login process.
+This will simplify the login process.
 Once approved, you should be allowed to continue to log in.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2995,7 +2995,7 @@ For instructions on how to add additional phones go <a href="https://guide.duo.c
 <p>Some file transfer clients attempt new and sometimes multiple concurrent connections to transfer files for you.
 When this happens, you will be asked to Duo authenticate for each connection.</p>
 <h3 id="ssh-config-file">SSH Config File</h3>
-<p>On macOS and Linux-based systems setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
+<p>On macOS and Linux-based systems setting up a <a href="/clusters-at-yale/access/advanced-config">config file</a> lets you reuse your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
 An example config file is shown below which enables SSH multiplexing (<code>ControlMaster</code>) by caching connections in a directory (<code>ControlPath</code>) for a period of time (2h, <code>ControlPersist</code>). </p>
 <div class="highlight"><pre><span></span><code># If you use a ssh key that is named something other than id_rsa,
 # you can specify your private key like this:
@@ -3008,7 +3008,7 @@ Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
-    # Uncomment the two lines below
+    # Uncomment the three lines below
     #ControlMaster auto
     #ControlPath /tmp/%h_%p_%r
     #ControlPersist 2h
@@ -3032,7 +3032,7 @@ Under <code>Cyberduck &gt; Preferences &gt; Transfers &gt; General</code> change
 <h3 id="mobaxterm">MobaXTerm</h3>
 <p>MobaXTerm is able to cache MFA connections to reduce the frequency of push notifications.
 Under <code>Settings &gt; SSH &gt; Advanced SSH settings</code> set the ssh browser type to <code>scp (enhanced speed)</code> as seen here:</p>
-<p><a href="/img/mobaxterm_mfa.png">MobaXTerm SSH Settings</a></p>
+<p><img alt="MobaXTerm SSH Settings" src="/img/mobaxterm_mfa.png" /></p>
 <h3 id="winscp">WinSCP</h3>
 <p>Similarly, WinSCP can reuse existing SSH connections to reduce the frequency of push notifications. 
 Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and:</p>
@@ -3043,7 +3043,7 @@ Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and
 </ul>
 <h2 id="troubleshoot-mfa">Troubleshoot MFA</h2>
 <p>If you are having problems initially registering Duo, please contact the <a href="https://yale.service-now.com/it?id=get_help">Yale ITS Helpdesk</a>.</p>
-<p>If you have successfully used MFA connect to a cluster before, but cannot now, first please check the following:</p>
+<p>If you have successfully used MFA to connect to a cluster before, but cannot now, first please check the following:</p>
 <ul>
 <li>Test MFA using <a href="http://access.yale.edu">http://access.yale.edu</a></li>
 <li>Verify that your ssh client is using the correct login node</li>
@@ -3066,7 +3066,7 @@ Under <code>Options &gt; Preferences &gt; Background (under Transfer)</code> and
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

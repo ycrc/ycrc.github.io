@@ -2427,7 +2427,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2918,12 +2918,12 @@
                 
                 
                 <h1 id="changing-groups">Changing Groups</h1>
-<p>From time to time, YCRC users may enter collaborations with new PI's or switch groups entirely. In this case you may use the <a href="https://research.computing.yale.edu/group-change">YCRC Group Change Request Form</a> to adjust your group affiliations.</p>
-<p>When you switch groups or are added to a group, new storage will be become available to you in your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PI's.</p>
+<p>From time to time, YCRC users may enter collaborations with new PIs or switch groups entirely. In this case you may use the <a href="https://research.computing.yale.edu/group-change">YCRC Group Change Request Form</a> to adjust your group affiliations.</p>
+<p>When you switch groups or are added to a group, new storage will become available to you in your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PIs.</p>
 <h2 id="group-changes-on-older-clusters">Group Changes on Older Clusters</h2>
 <p>When you switch groups on (older) clusters other than Bouchet and Hopper, 
 your Home folder will need to be migrated. The technical reason for this is that on these older clusters,
-your account primary group changes when you switch PI's. In these cases, we will change the primary
+your account primary group changes when you switch PIs. In these cases, we will change the primary
 group of your cluster account to the new group and will move all the files stored in your old storage 
 space into the new storage space.</p>
 <p>After this migration, some local installations most likely will not be able to work properly after being moved.
@@ -2937,20 +2937,20 @@ originally installed in <code>/gpfs/gibbs/project/oldgrp/user123</code>,
 and we want to move it to the project directory of the new group. </p>
 <p>First, find the paths of the conda env stored in your old space that you want to rebuild in the new space.<br />
 Set two environment variables CONDA_ENVS_PATH and CONDA_PKGS_DIRS to the paths.
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
-<span class="nb">export</span><span class="w"> </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
-conda<span class="w"> </span>activate<span class="w"> </span>myenv
-conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>myenv.yml
-conda<span class="w"> </span>deactivate
+<div class="highlight"><pre><span></span><code>module load miniconda
+<span class="nb">export</span> <span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_envs
+<span class="nb">export</span> <span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span>/gpfs/gibbs/project/oldgrp/user123/conda_pkgs
+conda activate myenv
+conda env <span class="nb">export</span> &gt; myenv.yml
+conda deactivate
 </code></pre></div></p>
 <p>Now, start a new login session, submit an interactive job, and rebuild the conda env in your new storage space.
 When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to the right locations by the system, 
 so you don't have to set them explicitly. 
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>grace
+<div class="highlight"><pre><span></span><code>ssh grace
 salloc
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>myenv.yml
+module load miniconda
+conda env create -f myenv.yml
 </code></pre></div></p>
                 
                   
@@ -2960,7 +2960,7 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

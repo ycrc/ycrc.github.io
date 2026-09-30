@@ -2434,7 +2434,7 @@
   
     <li class="md-nav__item">
       <a href="../mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2936,7 +2936,7 @@
 <p>We strongly recommend using <a href="/clusters-at-yale/access/ood">Open OnDemand</a> to launch Mathematica. </p>
 <p>First, open OOD in a browser and navigate to the <code>Apps</code> button. Select <code>All Apps</code> from the drop-down menu and then select Mathematica from the list. Fill in your resource requests and launch your job. Once started, click <code>Launch Mathematica</code> and Mathematica will be opened in a new tab in the browser.</p>
 <h2 id="interactive-job">Interactive Job</h2>
-<p>Alternatively, you could start an interacgive session with X11 forwarding. </p>
+<p>Alternatively, you could start an interactive session with X11 forwarding. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The Mathematica program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive job (see below).</p>
@@ -2971,7 +2971,7 @@ where <code>SlurmOptions</code> specifies the <a href="https://docs.ycrc.yale.ed
 <p>You can also manually close the parallel kernels during your session with the following command:
 <div class="highlight"><pre><span></span><code>CloseKernels[]
 </code></pre></div>
-which will shut down all currently launched parallel kernels. If you need to terminate a specific kernel, you can use commands such as <code>CloseKernels[k]</code>, where k is the KernelID, or <code>CloseKernels[{k1,k2,...}]</code> to terminate a list of kernelIDs. You can use the command <code>ParallelKernels[]</code> to list all the KernelObjects and their KernekIDs. Each KernelObject looks like this:</p>
+which will shut down all currently launched parallel kernels. If you need to terminate a specific kernel, you can use commands such as <code>CloseKernels[k]</code>, where k is the KernelID, or <code>CloseKernels[{k1,k2,...}]</code> to terminate a list of kernelIDs. You can use the command <code>ParallelKernels[]</code> to list all the KernelObjects and their KernelIDs. Each KernelObject looks like this:</p>
 <p><img alt="file_browser" class="medium" src="/img/kernel_object.png" /></p>
 <p>When the process running your parallel kernel is terminated by SLURM due to exceeding its wall time, there may not be any indication of this in your main session. However, you will receive error messages when you try to run any Parallel commands. If this is the case, make sure to close the terminated kernels with <code>CloseKernels[]</code> command. </p>
 <p>You can add more parallel kernels to the already launched kernels by using the same command <code>LaunchSlurmKernels[n]</code>. The termination time of the newly added parallel kernels will be different from that of the existing kernels.    </p>
@@ -2985,7 +2985,7 @@ which will shut down all currently launched parallel kernels. If you need to ter
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

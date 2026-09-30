@@ -2487,7 +2487,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -3039,7 +3039,7 @@
                 
                 <h1 id="share-with-cluster-users">Share with Cluster Users</h1>
 <h2 id="home-directories">Home Directories</h2>
-<p><strong>Do not give your home directory group write permissions. This will break your ability to log into the cluster.</strong>  If you need to share files currently located in your home directory, either move it your project directory or <a href="/#get-help">contact us</a> for assistance finding an appropriate location.</p>
+<p><strong>Do not give your home directory group write permissions. This will break your ability to log into the cluster.</strong>  If you need to share files currently located in your home directory, either move them to your project directory or <a href="/#get-help">contact us</a> for assistance finding an appropriate location.</p>
 <h3 id="project-and-scratch60-links-in-home-directories"><code>project</code> and <code>scratch60</code> links in Home Directories</h3>
 <p>For convenience, we create a symlink, or shortcut, in every home directory called <code>project</code> and <code>palmer_scratch</code> (and <code>~/scratch60</code>on <a href="/clusters/milgram">Milgram</a>) that go to your respective <a href="/data/hpc-storage">storage spaces</a>. However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.</p>
 <p>You can run <code>mydirectories</code> or <code>readlink - f dirname</code> (replace <code>dirname</code> with the one you are interested in) to get the "true" paths, which is more readily accessible to other users.</p>
@@ -3061,10 +3061,10 @@ drwxr-x---    0 netid   group  4096 MM DD  YYYY netid
 <h3 id="shared-group-directories">Shared Group Directories</h3>
 <p>By default, cluster groups are created with a <code>shared</code> directory located under their <code>project</code> directory with the purpose of offering a centralized location for storing scripts and data across your research group. These directories are set with read-only permissions for the group (so no one accidentally modifies something) but read and write permissions for all group members can be set by our team. If your group would like to modify these permissions or have not received a <code>shared</code> directory, <a href="/#get-help">contact us</a> and our team can assist.</p>
 <h2 id="share-with-specific-users-or-other-groups">Share With Specific Users or Other Groups</h2>
-<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> (with its counterpart, <code>getfacl</code>) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch</code>, you need first share your <code>project</code> or <code>scratch</code>, and then share the sub-directory. Here are some simple scenarios.</p>
+<p>It can be very useful to create shared directories that can be read and written by multiple users, or all members of a group. The linux command <code>setfacl</code> (with its counterpart, <code>getfacl</code>) is useful for this, but can be complicated to use. We recommend that you create a shared directory somewhere in your <code>project</code> or <code>scratch</code> directories, rather than <code>home</code>. When sharing a sub-directory in your <code>project</code> or <code>scratch</code>, you need to first share your <code>project</code> or <code>scratch</code>, and then share the sub-directory. Here are some simple scenarios.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Bouchet cluster, <code>project</code> and <code>scratch</code> directories are configured with different permission settings than on other clusters. As a result, the methods described below for sharing a directory does not work on Bouchet. If you need to share a directory with specific users or other groups on Bouchet, please <a href="/#get-help">contact us</a> for assistance. </p>
+<p>On Bouchet cluster, <code>project</code> and <code>scratch</code> directories are configured with different permission settings than on other clusters. As a result, the methods described below for sharing a directory do not work on Bouchet. If you need to share a directory with specific users or other groups on Bouchet, please <a href="/#get-help">contact us</a> for assistance. </p>
 </div>
 <h3 id="share-a-directory-with-all-members-of-a-group">Share a Directory with All Members of a Group</h3>
 <p>To share a new directory called <code>shared</code> in your project directory with group <code>othergroup</code>:</p>
@@ -3106,7 +3106,7 @@ setfacl -R -d -m u:aa111:rwX shared
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

@@ -2434,7 +2434,7 @@
   
     <li class="md-nav__item">
       <a href="../mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2971,7 +2971,7 @@ export GFDL_DATA=$GIBBS_PROJECT/gfdl_data
 <div class="highlight"><pre><span></span><code>module reset
 </code></pre></div>
 <h2 id="select-an-experiment-and-update-the-flags">Select an Experiment and Update the Flags</h2>
-<p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>
+<p>We are using GCC version 10.x for this build, so <a href="https://github.com/wrf-model/WRF/issues/1250">a slight modification needs to be made to Isca for it to build</a>. Add the following line to the experiment script (e.g. <code>$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py</code>), after <code>cb</code> is defined (so about line 13 in that file).</p>
 <div class="highlight"><pre><span></span><code>cb.compile_flags.extend([&#39;-fallow-argument-mismatch&#39;, &#39;-fallow-invalid-boz&#39;])
 </code></pre></div>
 <h2 id="run-isca">Run Isca</h2>
@@ -2988,7 +2988,7 @@ conda activate isca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

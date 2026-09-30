@@ -2427,7 +2427,7 @@
   
     <li class="md-nav__item">
       <a href="../../guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2919,12 +2919,12 @@
                 
                 <h1 id="mpi-partition">MPI Partition</h1>
 <p>Grace and Bouchet have special common partitions called <code>mpi</code>. The <code>mpi</code> partitions are a bit different from other partitions on YCRC clusters-- jobs submitted to the partition are always allocated full nodes. 
-Each node in the <code>mpi</code> partition are identical. 
+Each node in the <code>mpi</code> partition is identical. 
 On Grace, these nodes are 24 core, 2x Skylake Gold 6136, 96GiB RAM (88GiB usable) nodes. 
 On Bouchet, these nodes are 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes.
 While these partitions are available to all Grace/Bouchet users, only certain types of jobs are allowed on them (similar to the restrictions on our GPU partitions).</p>
-<p>In addition the the common partition <code>mpi</code>, there is a <code>scavenge_mpi</code> partition. 
-This partition is has the same purpose and limitations as the regular <code>mpi</code> partition, but allows users to run a lower priority (e.g. subject to preemption if nodes are requested in the <code>mpi</code> partition ) without incurring cpu charges.</p>
+<p>In addition to the common partition <code>mpi</code>, there is a <code>scavenge_mpi</code> partition. 
+This partition has the same purpose and limitations as the regular <code>mpi</code> partition, but allows users to run lower priority jobs (e.g. subject to preemption if nodes are requested in the <code>mpi</code> partition) without incurring cpu charges.</p>
 <h2 id="appropriate-jobs">Appropriate Jobs</h2>
 <p>This partition is specifically designed to support jobs that use tightly-coupled MPI-enabled applications that will run across multiple nodes <em>and</em> are sensitive to sharing their nodes with other jobs. 
 Since every node on the <code>mpi</code> partition is identical, it can support workloads that are sensitive to hardware difference across a single job. </p>
@@ -2956,7 +2956,7 @@ If you have any questions, feel free to <a href="/#get-help">contact us</a>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2024</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

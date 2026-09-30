@@ -2440,7 +2440,7 @@
   
     <li class="md-nav__item">
       <a href="../../clusters-at-yale/guides/mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2947,18 +2947,18 @@
 <p>Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
 Since the <em>permanent</em> home of the data remains on off-cluster storage, you need to <a href="/data/transfer/">transfer</a> a working copy to the cluster temporarily. When your computation finishes, you would then remove the copy and transfer the results to a more permanent location.</p>
 <h2 id="temporary-storage">Temporary Storage</h2>
-<p>We recommend staging data into your <a href="/data/hpc-storage/#60-day-scratch">scratch</a> storage space on the cluster, as the <em>working</em> copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). </p>
+<p>We recommend staging data into your <a href="/data/hpc-storage/#scratch">scratch</a> storage space on the cluster, as the <em>working</em> copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). </p>
 <h2 id="interactive-transfers">Interactive Transfers</h2>
 <p>For interactive transfers, please see our <a href="/data/transfer/">Transfer Data</a> page for a more complete list of ways to move data efficiently to and from the clusters.  </p>
 <p>A sample workflow using <code>rsync</code> would be:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># connect to the transfer node from the login node</span>
-<span class="o">[</span>netID@cluster<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>ssh<span class="w"> </span>transfer
+<span class="o">[</span>netID@cluster ~<span class="o">]</span> ssh transfer
 <span class="c1"># copy data to temporary cluster storage</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span>netID@department_server:/path/to/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP netID@department_server:/path/to/data <span class="nv">$HOME</span>/palmer_scratch/
 <span class="c1"># process data on cluster</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sbatch<span class="w"> </span>data_processing.sh
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ sbatch data_processing.sh
 <span class="c1"># return results to permanent storage for safe-keeping</span>
-<span class="o">[</span>netID@transfer<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rsync<span class="w"> </span>-avP<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/output_data<span class="w"> </span>netID@department_server:/path/to/outputs/
+<span class="o">[</span>netID@transfer ~<span class="o">]</span>$ rsync -avP <span class="nv">$HOME</span>/palmer_scratch/output_data netID@department_server:/path/to/outputs/
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2976,7 +2976,7 @@ The process is somewhat simpler than the above example because we do not need to
 <span class="c1">#SBATCH --cpus-per-task=1</span>
 <span class="c1">#SBATCH --job-name=my_transfer</span>
 
-cp<span class="w"> </span>/SAY/standard/my_say_share/data<span class="w"> </span><span class="nv">$HOME</span>/palmer_scratch/
+cp /SAY/standard/my_say_share/data <span class="nv">$HOME</span>/palmer_scratch/
 </code></pre></div>
 <p>This will transfer <code>data</code> from the Storage@Yale share to <code>palmer_scratch</code> where it can be processed on any of the compute nodes.</p>
                 
@@ -2987,7 +2987,7 @@ cp<span class="w"> </span>/SAY/standard/my_say_share/data<span class="w"> </span
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

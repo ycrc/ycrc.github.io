@@ -2441,7 +2441,7 @@
   
     <li class="md-nav__item">
       <a href="../mysql/" class="md-nav__link">
-        Mysql
+        MySQL
       </a>
     </li>
   
@@ -2946,10 +2946,10 @@
                 
                 
                 <h1 id="comsol">COMSOL</h1>
-<p>YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run run models across multiple nodes or need to run COMSOL on your local machine, please <a href="/#get-help">contact us</a>.</p>
+<p>YCRC has COMSOL Multiphysics 5.2a available on Grace. It can be used to run basic physical and multiphysics models on one node utilizing multiple cores. If you need to run models across multiple nodes or need to run COMSOL on your local machine, please <a href="/#get-help">contact us</a>.</p>
 <h2 id="use-comsol">Use COMSOL</h2>
 <p>To use COMSOL on the cluster, load the COMSOL module by running <code>module load COMSOL/5.2a-classkit</code>. For more information on our modules, please see our <a href="/applications/modules">software modules</a> documentation. </p>
-<p>COMSOL has a resource intenstive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on the <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
+<p>COMSOL has a resource intensive GUI and, therefore, we strongly recommend using COMSOL in a Remote Desktop session on the <a href="/clusters-at-yale/access/ood/">Open OnDemand web portal</a>.</p>
 <p>To launch COMSOL in your Remote Desktop, open the terminal application in the session and enter the following commands:</p>
 <div class="highlight"><pre><span></span><code>module load COMSOL/5.2a-classkit
 comsol -np $SLURM_CPUS_ON_NODE &amp;
@@ -2967,9 +2967,9 @@ A parameter can be passed into the study like this:</p>
 Which will run three versions of the model sequentially for each of the three values of <code>L</code> enumerated.
 When combined with <a href="/clusters-at-yale/job-scheduling/dsq/">Slurm Job Arrays</a> many COMSOL jobs can be run in parallel.
 An example <code>dSQ</code> job-file would look like:</p>
-<p><div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_8.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">8</span><span class="o">[</span>cm<span class="o">]</span>
-module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_10.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">10</span><span class="o">[</span>cm<span class="o">]</span>
-module<span class="w"> </span>load<span class="w"> </span>COMSOL<span class="p">;</span><span class="w"> </span>comsol<span class="w"> </span>batch<span class="w"> </span>-inputfile<span class="w">  </span>mymodel.mph<span class="w"> </span>-outputfile<span class="w"> </span>out_12.mph<span class="w"> </span>-pname<span class="w"> </span>L<span class="w"> </span>-plist<span class="w"> </span><span class="m">12</span><span class="o">[</span>cm<span class="o">]</span>
+<p><div class="highlight"><pre><span></span><code>module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_8.mph -pname L -plist <span class="m">8</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_10.mph -pname L -plist <span class="m">10</span><span class="o">[</span>cm<span class="o">]</span>
+module load COMSOL<span class="p">;</span> comsol batch -inputfile  mymodel.mph -outputfile out_12.mph -pname L -plist <span class="m">12</span><span class="o">[</span>cm<span class="o">]</span>
 </code></pre></div>
 Which would run three versions of the study using different values of <code>L</code> and save their outputs in separate files.
 Be careful to provide a different output file for each line to avoid clashes between the separate jobs.</p>
@@ -3008,10 +3008,10 @@ Be careful to provide a different output file for each line to avoid clashes bet
 <p>COMSOL is not backwards compatible. If you have a project file from a newer version of COMSOL (e.g. 5.3), it will not open in 5.2a. However, in some circumstances, we can assist with porting the project file back to version 5.2a. If you have any questions about this, please <a href="/#get-help">contact us</a>.</p>
 <h2 id="limitations-of-available-license">Limitations of Available License</h2>
 <p>Please note that some commonly used COMSOL features such as CAD Import Module, Material Library, and MatLab Link are not included in the license. </p>
-<p>COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependencies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material form COMSOL library to your project file using a different license.</p>
+<p>COMSOL Material Library consists of about 2500 different materials with their physical properties. Many of them are included with temperature dependencies. Without this library you have to specify material parameters manually, however, you can save your new material for future use.  We can help in adding material from COMSOL library to your project file using a different license.</p>
 <p>You cannot import geometry designed by external CAD program like SolidWorks, Autocad, etc. Instead you have to design it inside COMSOL. However, we can help you to perform such import utilizing different license; we’ll save it in COMSOL project file and you would be able to open it with already imported geometry.</p>
 <p>More advanced users often use MatLab for automation of COMSOL models and extracting results data for mining them by external methods available in MatLab. Unfortunately, you cannot do this with the license available on the cluster. Please <a href="/#get-help">contact us</a> if you feel you need to utilize MatLab.</p>
-<p>Lastly, our license does not allow to use COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL on your local computer, please <a href="/#get-help">contact us</a> to use our more general license with very limited number of licensed seats.</p>
+<p>Lastly, our license does not allow using COMSOL for solving models based on Maxwell Equations (RF, Wave Optics), semiconductor models, particle tracing, ray optics, non-linear mechanics, and some other more advanced modules. To approach such models in COMSOL on your local computer, please <a href="/#get-help">contact us</a> to use our more general license with very limited number of licensed seats.</p>
                 
                   
                     
@@ -3020,7 +3020,7 @@ Be careful to provide a different output file for each line to avoid clashes bet
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>
