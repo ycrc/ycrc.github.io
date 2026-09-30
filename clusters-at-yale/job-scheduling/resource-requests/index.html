@@ -3105,10 +3105,10 @@
 <p>You may want to run programs that require specific hardware. To ensure your job runs on specific types of nodes, use the <code>--constraint</code> flag.</p>
 <p>You can use the processor codename feature (e.g. <code>cpugen:emeraldrapids</code>) or processor model number feature (e.g. <code>cpumodel:8268</code>) to limit your job to specific node types. See the individual cluster pages for the exact tags for the different node features. Multiple requirements ("AND") are separated by a comma (<code>,</code>) and multiple options ("OR") should be separated by the pipe character (<code>|</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># run on a node with an Intel Emerald Rapids codenamed CPU</span>
-sbatch --constraint<span class="o">=</span>cpugen:emeraldrapids submit.sh
+sbatch<span class="w"> </span>--constraint<span class="o">=</span>cpugen:emeraldrapids<span class="w"> </span>submit.sh
 
 <span class="c1"># only run on nodes with Intel Cascadelake 8268 CPUs</span>
-sbatch --constraint<span class="o">=</span>cpumodel:8268 submit.sh
+sbatch<span class="w"> </span>--constraint<span class="o">=</span>cpumodel:8268<span class="w"> </span>submit.sh
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

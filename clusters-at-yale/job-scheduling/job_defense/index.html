@@ -2912,7 +2912,7 @@ However, the growing number of GPUs has made this challenging to enforce uniform
 In accordance with our <a href="/clusters-at-yale/policies">Cluster Usage Policies</a>, we have now implemented automations that detect idle resources and manage notifications and cancellations. 
 This ensures that resources are not wasted and works to reduce wait times for pending jobs, thereby improving everyone's experience. </p>
 <h2 id="idle-gpu-jobs">Idle GPU jobs</h2>
-<p>This daemon currently is configured to look at jobs running in Bouchet's non-interactive GPU partitions (<code>gpu</code>, <code>gpu_h200</code>, <code>priority_gpu</code>, and <code>scavenge_gpu</code>). 
+<p>This daemon currently is configured to look at jobs running in all GPU partitions on Bouchet (e.g.,<code>gpu</code>, <code>gpu_h200</code>, <code>priority_gpu</code>, and <code>scavenge_gpu</code>). 
 We have two criteria:</p>
 <ol>
 <li>Jobs which never use the GPU at all</li>
