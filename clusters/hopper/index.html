@@ -3362,7 +3362,7 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <p>Rather than loading individual model modules, all approved models are accessible using standard Hugging Face workflows after loading the shared environment module.</p>
 <h4 id="loading-the-llm-environment">Loading the LLM Environment</h4>
 <p>Load the shared module to configure your environment:</p>
-<div class="highlight"><pre><span></span><code>module load llms
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>llms
 </code></pre></div>
 <p>This will:</p>
 <ul>
@@ -3374,15 +3374,15 @@ You will need to reauthenticate on Open OnDemand with your netid, password and D
 <div class="highlight"><pre><span></span><code>llms-list
 </code></pre></div>
 <p>To filter models by name:</p>
-<div class="highlight"><pre><span></span><code>llms-list llama
-llms-list qwen
+<div class="highlight"><pre><span></span><code>llms-list<span class="w"> </span>llama
+llms-list<span class="w"> </span>qwen
 </code></pre></div>
 <p>The output corresponds directly to Hugging Face repository IDs.</p>
 <h4 id="using-models-in-python">Using Models in Python</h4>
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
 
-<span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
+<span class="n">model_id</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-3.1-70B"</span>
 
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
