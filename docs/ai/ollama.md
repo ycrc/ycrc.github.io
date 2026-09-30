@@ -62,7 +62,7 @@ salloc --partition gpu_devel --constraint="rtx5000|v100"
 Within an interactive allocation, models can be run directly from a terminal like so:
 
 ```bash
-###request compute node with GPU (add --Constraint=GPUTYPES if needed)
+###request compute node with GPU (add --constraint=GPUTYPES if needed)
 salloc --partition=gpu_devel --cpus-per-task=1 --time=4:00:00 --mem=5G --gpus=1
 
 ###load ollama module if it isn't loaded

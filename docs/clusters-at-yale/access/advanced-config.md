@@ -19,7 +19,7 @@ Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
-    # Uncomment the two lines below
+    # Uncomment the three lines below
     #ControlMaster auto
     #ControlPath /tmp/%h_%p_%r
     #ControlPersist 2h
@@ -53,7 +53,7 @@ Or whatever your private key file is named.
 !!! note
     If you use homebrew your default OpenSSH may have changed. To add your key(s) to the system ssh agent, use the absolute path: `/usr/bin/ssh-add`
 
-Then and add the following to your `~/.ssh/config` file (create this file if it doesn't exist, or add these settings to the `Host *.ycrc.yale.edu ...` rule if it does).
+Then add the following to your `~/.ssh/config` file (create this file if it doesn't exist, or add these settings to the `Host *.ycrc.yale.edu ...` rule if it does).
 
 ```
 Host *.ycrc.yale.edu mccleary grace milgram misha
@@ -116,7 +116,7 @@ Host bouchet-tunnel
 Host bouchet-compute
    HostName localhost
    Port 2222
-   User YOUR_NET_ID
+   User YOUR_NETID
    UserKnownHostsFile ~/.ssh/known_hosts_bouchet-compute
    StrictHostKeyChecking accept-new
    IdentityFile PATH_TO_YOUR_SSH_KEY

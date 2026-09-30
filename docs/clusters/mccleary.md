@@ -10,7 +10,7 @@ McCleary is named for [Beatrix McCleary Hamburg](https://www.nytimes.com/2018/04
 - - -
 
 !!! tip "The Bouchet Cluster and Grace & McCleary Decommission"
-    McCleary is being downsized in 2026 and, for most use cases, has been replaced by the [Bouchet cluster](bouchet). New McCleary accounts are only approved for groups who use [YCGA](http://ycga.yale.edu/) resources, [CyroEM](https://cryoem.yale.edu/) resources and those with dedicated nodes. Research involving regulated sensitive data (e.g NIH Controlled Access Data or PHI) should be performed on the [Hopper](hopper) cluster. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
+    McCleary is being downsized in 2026 and, for most use cases, has been replaced by the [Bouchet cluster](bouchet). New McCleary accounts are only approved for groups who use [YCGA](http://ycga.yale.edu/) resources, [CryoEM](https://cryoem.yale.edu/) resources and those with dedicated nodes. Research involving regulated sensitive data (e.g NIH Controlled Access Data or PHI) should be performed on the [Hopper](hopper) cluster. Visit the [Grace & McCleary Decommission Documentation](/clusters/grace-mccleary-decommission) for more information.
 
 ## Access the Cluster
 
@@ -85,13 +85,13 @@ If you would like us to host a dataset or questions about what is currently avai
 
 ## YCGA Data
 
-Data associated with YCGA projects and sequenceers are located on the YCGA storage system, accessible at `/gpfs/ycga`.
+Data associated with YCGA projects and sequencers are located on the YCGA storage system, accessible at `/gpfs/ycga`.
 
 For more information on accessing this data as well as sequencing data retention polices, see the [YCGA Data documentation](/data/ycga-data).
 
 ## Storage
 
-McCleary has access to a number of GPFS filesystems. `/vast/palmer` is McCleary's primary filesystem where Home and Scratch60 directories are located. Every group on McCleary also has access to a Project allocation on the Gibbs filesystem on `/gpfs/gibbs`. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
+McCleary has access to a number of filesystems. `/vast/palmer` is McCleary's primary filesystem where Home and Scratch directories are located. Every group on McCleary also has access to a Project allocation on the Gibbs filesystem on `/gpfs/gibbs`. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
 You can check your current storage usage & limits by running the `getquota` command. Your `~/project` and `~/palmer_scratch` directories are shortcuts. Get a list of the absolute paths to your directories with the `mydirectories` command. If you want to share data in your Project or Scratch directory, see the [permissions](/data/permissions/) page.
 

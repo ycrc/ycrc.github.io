@@ -1,6 +1,6 @@
 # Parallel
 
-[GNU Parallel](https://www.gnu.org/software/parallel/) a simple but powerful way to run independent tasks in parallel.  Although it is possible to run on multiple nodes, it is simplest to run on multiple cpus of a single node, and that is what we will consider here.  Note that what is presented here just scratches the surface of what parallel can do.
+[GNU Parallel](https://www.gnu.org/software/parallel/) is a simple but powerful way to run independent tasks in parallel.  Although it is possible to run on multiple nodes, it is simplest to run on multiple cpus of a single node, and that is what we will consider here.  Note that what is presented here just scratches the surface of what parallel can do.
 
 ## Basic Examples
 

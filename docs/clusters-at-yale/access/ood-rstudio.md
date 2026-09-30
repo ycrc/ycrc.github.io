@@ -6,7 +6,7 @@ Information on accessing the web portal is available on [Access the Web Portal](
 ## RStudio Server
 
 The RStudio Server app is available on our cluster [Web Portals](/clusters-at-yale/access/ood). 
-To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Rstudio from the Interactive Apps menu or the dashboard and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
+To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose RStudio from the Interactive Apps menu or the dashboard and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
 In the submission form, you can also select between a number of R versions.
 
 ### Change User R Package Path
@@ -83,7 +83,7 @@ While we don't generally encourage our users to run a production R code in RStud
 For example, when a user needs to monitor the R code's progress continuously.
 
 RStudio Server is not user friendly for long-running R code.
-When your CAS session timeout, you won't be able to reconnect
+When your CAS session times out, you won't be able to reconnect
 while the code is running.
 You will need to wait until the code finishes before you can connect to the same session again. 
 

@@ -5,7 +5,7 @@ Allocated resources that are not used efficiently reduce available computing to 
 In particular, idle GPUs are particularly damaging due to their limited number, large demand, and high operating cost. 
 In the past, we have manually searched for jobs with idle resources and cancelled them to enable other researchers to use these GPUs. 
 However, the growing number of GPUs has made this challenging to enforce uniformly. 
-In accordance to our [Cluster Usage Policies](/clusters-at-yale/policies), we have now implemented automations that detect idle resources and manages notifications and cancellations. 
+In accordance with our [Cluster Usage Policies](/clusters-at-yale/policies), we have now implemented automations that detect idle resources and manage notifications and cancellations. 
 This ensures that resources are not wasted and works to reduce wait times for pending jobs, thereby improving everyone's experience. 
 
 ## Idle GPU jobs
@@ -24,5 +24,5 @@ For the second type of jobs, the warning is sent out after 1 hour of GPU idlenes
 
 ## Getting help
 
-If you have jobs that have been cancelled we encourage you to reach out to use at [research.computing@yale.edu](mailto:research.computing@yale.edu) so that we can assist in the debugging process. 
+If you have jobs that have been cancelled we encourage you to reach out to us at [research.computing@yale.edu](mailto:research.computing@yale.edu) so that we can assist in the debugging process. 
 

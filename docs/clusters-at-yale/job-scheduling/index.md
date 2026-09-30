@@ -96,7 +96,7 @@ salloc -t 2:00:00 --mem=8G
 This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type `exit` or <kbd>Ctrl</kbd>+<kbd>d</kbd> 
 
 !!! tip "Use `tmux` with Interactive Sessions"
-    Remote sessions are vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/guides/tmux) alleviate this. When using `tmux` with interactive jobs, please take extra care to stop jobs that are no longer needed.
+    Remote sessions are vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/guides/tmux) to alleviate this. When using `tmux` with interactive jobs, please take extra care to stop jobs that are no longer needed.
 
 ### Graphical applications
 

@@ -90,7 +90,7 @@ If you frequently require access to another group’s sequencing data, we recomm
 
 
 ### Accessing current data
-Sequencing data that is still within the retention period can be directly accessed in a variety of ways.  You can use the URL that YGCA provided you to do a direct download, either to your own storage on the cluster, or to your own computer.  This can be done using any standard http download tool: a browser, wget, curl, cyberduck, etc.  However, these files are typically very large, and making copies of them will consume your disk space.  It is usually better to make links to the files that YCGA maintains.  Below, we explain how to do that for each sequencer type.
+Sequencing data that is still within the retention period can be directly accessed in a variety of ways.  You can use the URL that YCGA provided you to do a direct download, either to your own storage on the cluster, or to your own computer.  This can be done using any standard http download tool: a browser, wget, curl, cyberduck, etc.  However, these files are typically very large, and making copies of them will consume your disk space.  It is usually better to make links to the files that YCGA maintains.  Below, we explain how to do that for each sequencer type.
 
 #### Illumina (not 10x) data:  
 We recommend that you use the ycgaFastq utility to make links to the fastq files.  ycgaFastq is part of the ycga-public module.  To make links, on any node on McCleary, do:
@@ -125,7 +125,7 @@ $ ycgaFastq ruddle_paths.txt
 ycgaFastq can be used in a variety of other ways to retrieve data.  For more information, see the [documentation](http://campuspress.yale.edu/knightlab/ruddle/ycgafastq) or contact us.
 
 #### 10x or Pacbio data
-We recommend that you use the URLFetch utility to make links to the fastq files.  ycgaFastq is part of the ycga-public module.  To make links, on any node on McCleary, do:
+We recommend that you use the URLFetch utility to make links to the fastq files.  URLFetch is part of the ycga-public module.  To make links, on any node on McCleary, do:
 
 ```bash
 module load ycga-public
@@ -212,7 +212,7 @@ sbatch job.script
 ```
 
 
-The restored fastq files will written to a directory like this: 
+The restored fastq files will be written to a directory like this: 
 ```bash
 161021_D00596R_0145_BCA1H7ANXX/Data/Intensities/BaseCalls/Unaligned/Project_Rdb9/...
 ```

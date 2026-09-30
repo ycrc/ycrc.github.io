@@ -13,7 +13,7 @@ Through Yale Google Apps for Education (EliApps), researchers have access to 5GB
     - **As of 7/1/24, all existing EliApps accounts will have a free quota of 5GB.**
     - **Quotas beyond 5GB will be available for $145/TB/yr**
 
-    Therefore, you should probably not consider Google Drive on EliApps for storage large amounts of data.  ITS suggested alternatives
+    Therefore, you should probably not consider Google Drive on EliApps for storing large amounts of data.  ITS suggested alternatives
     are Storage@Yale, Teams/SharePoint, or DropBox.
 
 If your Yale email account is already an EliApps account (Gmail), then you are all set. If your Yale email is in Microsoft Office365, send an email to the [ITS helpdesk](mailto:helpdesk@yale.edu) requesting a "no-email EliApps account". Once it is created you can login to Google Drive using your EliApps account name, which will be of the form `netid@yale.edu`. The Globus connector is configured to only allow data to be uploaded into EliApps Google Drive accounts.

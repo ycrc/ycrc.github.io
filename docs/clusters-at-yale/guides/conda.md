@@ -101,7 +101,7 @@ python analyses.py
 
 ### Conda Channels
 
-Community-lead collections of packages that you can install with `conda` are provided with `channels` (the sources to find packages). Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
+Community-led collections of packages that you can install with `conda` are provided with `channels` (the sources to find packages). Some labs will provide their own software using this method. A few popular examples are [Conda Forge](https://conda-forge.org/) and [Bioconda](https://bioconda.github.io/), which we set for you by default. See the [Conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html) for more info about managing channels.
 
 You can create a new environment called `brian2` (specified with the `-n` option) and install [Brian2](http://briansimulator.org/) into it with the following:
 
@@ -116,7 +116,7 @@ conda create -n brian2 brian2
 
 On all clusters, we set the `CONDA_ENVS_PATH` and `CONDA_PKGS_DIRS` environment variables to `.conda/envs` and `.conda/pkgs` in your home directory. For some users, these locations may be symlinked to folders in your project and/or scratch directories where there is room for conda files (see note below).
 
-Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.'
+Conda will install to and search in these directories for environments and cached packages. Note that conda only uses 'pkgs' as a cache directory, so it can be safely deleted anytime conda isn't actively building or updating a package.
 
 ``` yaml
 env_prompt: '({name})'
@@ -128,7 +128,7 @@ solver: libmamba
 ```
 
 !!! Note
-    On Bouchet and newer clusters, the YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations: conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems. By putting 'pkgs' in the scratch directory, we ensure that the cached conda files inside are discarded after 60 days, to minimize the filesystem burden.
+    On Bouchet and newer clusters, the YCRC miniconda module sets up symlinks for the envs and pkgs directories in your `.conda` folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations: conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems. By putting 'pkgs' in the scratch directory, we ensure that the cached conda files inside are discarded after 60 days, to minimize the filesystem burden.
 
 ### Find and Install Additional Packages
 
@@ -153,7 +153,7 @@ Without `gcc_linux-64`, the code will be compiled using the system compiler and 
 
 ### Permission Denied
 
-With conda, a fairly common 'gotcha' to is to forget to activate your environment before running additional install commands, i.e. with `conda install` or `pip install`. This results in 'permission denied' errors on the YCRC systems. Please make sure you have both created and activated your environment before installing additional packages.
+With conda, a fairly common 'gotcha' is to forget to activate your environment before running additional install commands, i.e. with `conda install` or `pip install`. This results in 'permission denied' errors on the YCRC systems. Please make sure you have both created and activated your environment before installing additional packages.
 
 ### Conda version doesn't match the module loaded
 
@@ -169,7 +169,7 @@ If your environment is failing to build and isn't sending a message or just sayi
 
 ### bash: conda: No such file or directory
 
-If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the `minconda` module and rerunning your `conda activate env_name` command.
+If you get the above error, it is likely that you don't have the necessary module file loaded. Try loading the `miniconda` module and rerunning your `conda activate env_name` command.
 
 ### Could not find environment
 
@@ -202,7 +202,7 @@ conda remove --name env_name --all
 There are two concepts for rebuilding conda environments:
 
 1. a copy of an existing environment, with identical versions of each package
-2. a fresh build following the same steps taken to creat the first environment (letting unspecified versions float)
+2. a fresh build following the same steps taken to create the first environment (letting unspecified versions float)
 
 This short doc will walk through recommended approaches to both styles of exporting and rebuilding a generic environment named `test` containing python, jupyter, numpy, and scipy.
 
@@ -312,7 +312,7 @@ After this, the environment is fully functional and can be activated just like a
 
 #### Conda-pack workarounds
 
-Conda pack seems be finicky on our YCRC clusters, but we have identified workarounds to resolve the errors reported so far, as below:
+Conda pack seems to be finicky on our YCRC clusters, but we have identified workarounds to resolve the errors reported so far, as below:
 
 1. If your `conda pack [...]` command fails with a 'deleted/overwritten' error:
     ```bash
@@ -324,7 +324,7 @@ Conda pack seems be finicky on our YCRC clusters, but we have identified workaro
     conda pack -n my_env --ignore-missing-files
     ```
 
-2. If your `conda pack [...]` command fails with an 'editable packages' error::
+2. If your `conda pack [...]` command fails with an 'editable packages' error:
     ```bash
     CondaPackError: Cannot pack an environment with editable packages [...]
     ```

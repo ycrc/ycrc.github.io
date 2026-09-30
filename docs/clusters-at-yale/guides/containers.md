@@ -18,7 +18,7 @@ Images are the file(s) you use to run your container. Apptainer images are singl
 ## Use a Pre-existing Container
 
 If someone has already built a container that suits your needs, you can use it directly. Apptainer images are single files that [can be transferred](/data/transfer) to the clusters. You can fetch images from container registries such as [Docker Hub](https://hub.docker.com/explore/) or [NVidia Container Registry](https://catalog.ngc.nvidia.com/containers).
-Some common resources for finding existing resources is dockerhub and singularity hub. Although, singularity hub is no longer maintained. Once on the website, you can search for containers by typing in the name of the program or library you are interested in obtaining. This will take you to a list of different containers that match the keyword in the search. From there, you can select a container and follow the instructions below to create the container on our clusters:
+Some common resources for finding existing containers are Docker Hub and Singularity Hub. Although, singularity hub is no longer maintained. Once on the website, you can search for containers by typing in the name of the program or library you are interested in obtaining. This will take you to a list of different containers that match the keyword in the search. From there, you can select a container and follow the instructions below to create the container on our clusters:
 
 ``` bash
 # Please note: the apptainer command is only available on compute nodes, not the login nodes
@@ -35,7 +35,7 @@ apptainer build bioconvert-latest.sif shub://biokit/bioconvert:latest
 !!!warning
     On the Yale clusters, **Apptainer is not installed on login nodes**. <br>Trying to run apptainer on the login nodes will give an error like '-bash: /bin/apptainer: Permission denied'
 
-Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to to your `~/.bashrc` file:
+Container images can take up a lot of disk space (dozens of gigabytes), so you may want to change the default location Apptainer uses to cache these files. To do this before getting started, you should add something like the example below to your `~/.bashrc` file:
 
 ``` bash
 # set APPTAINER_CACHEDIR if you want to pull files (which can get big) somewhere other than $HOME/.apptainer
@@ -191,7 +191,7 @@ apptainer build my_app.sif my_app.def
 
 ## Converting Dockerfiles
 
-If you have a Dockerfile that you would like use with Apptainer, you can [convert](https://singularityhub.github.io/singularity-cli/recipes) it to an Apptainer definition file using [Singularity Python](https://singularityhub.github.io/singularity-cli/) (spython).
+If you have a Dockerfile that you would like to use with Apptainer, you can [convert](https://singularityhub.github.io/singularity-cli/recipes) it to an Apptainer definition file using [Singularity Python](https://singularityhub.github.io/singularity-cli/) (spython).
 
 !!! info "Note"
     The available Apptainer documentation may not be fully updated to reflect the name change from Singularity; as of now (April 2025) the documentation for Dockerfile conversion using spython still refers to Singularity Recipes rather than Apptainer definition files.

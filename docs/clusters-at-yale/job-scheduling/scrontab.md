@@ -5,7 +5,7 @@ You can use `scrontab` to schedule recurring jobs. It uses a syntax similar to [
 !!! warning "`scrontab` vs `crontab`"
     If you are familiar with `crontab`, there are some important differences to note:
 
-    - The scheduled times for `scrontab` indicate when your job is *eligible* to start. They are not start times like a traditional Cron jobs.
+    - The scheduled times for `scrontab` indicate when your job is *eligible* to start. They are not start times like traditional Cron jobs.
     - Jobs managed with `scrontab` won't start if an earlier iteration of the same job is still running. Cron will happily run multiple copies of a job at the same time.
     - You have one scrontab file for the entire cluster, unlike crontabs which are stored locally on each computer.
 

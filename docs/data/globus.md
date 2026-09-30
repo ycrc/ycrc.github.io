@@ -52,7 +52,6 @@ Below we describe how to authenticate and transfer using Globus collections.
 We also recommend reviewing the [Official Globus Documentation](https://docs.globus.org/guides/tutorials/manage-files/transfer-files/).
 
 ### Authenticate
-You can also 
 
 1. In a browser, go to [app.globus.org](https://app.globus.org/).
 1. Use the pull-down menu to select Yale and click "Continue".
@@ -76,7 +75,7 @@ You can also
 #### Upload or Download Directly from Globus Web App
 
 From the [file manager interface](https://app.globus.org/file-manager) enter the name of the collection you would like to browse in the collection field (e.g. Yale CRC Hopper Low Risk).
-You will need to be on the Yale VPN is you are off campus or connecting to a secure cluster.
+You will need to be on the Yale VPN if you are off campus or connecting to a secure cluster.
 
 **Upload**
 
@@ -89,7 +88,7 @@ You will need to be on the Yale VPN is you are off campus or connecting to a sec
 1. Right-Click and select "Download"
 
 
-#### Set Up an Globus Collection on Your Computer
+#### Set Up a Globus Collection on Your Computer
 
 You can set up your own collection for transferring data to and from your own computer with [Globus Connect Personal](https://www.globus.org/globus-connect). 
 
@@ -123,7 +122,7 @@ To share large file collections within Yale and to external collaborators, you c
 
 ### Manage Your Collections
 
-To manage your collections, such as delete an collection, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Collection](https://app.globus.org/collections) on the Globus website.
+To manage your collections, such as delete a collection, rename it, or share it with additional people (be aware, they will be able to access your storage), go to [Manage Collection](https://app.globus.org/collections) on the Globus website.
 
 ---
 
@@ -154,7 +153,7 @@ The Globus connector is configured to only allow data to be uploaded into [EliAp
 1. After granting approval, you will be able to access your Google Drive via the Globus Collection "YCRC Globus Google Drive Collection". The default view is "/My Drive". To see "/Team Drives" and other Google Drive features use the "up one folder" arrow icon in the File Manager.
 
 !!! note 
-    There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. You see a "Collection Busy" error during this time.
+    There are "rate limits" to how much data and how many files you can transfer in any 24 hours period. If you have hit your rate limit, Globus should automatically resume the transfer during the next 24 hour period. You will see a "Collection Busy" error during this time.
 
     Google has a 400,000 file limit per [Shared Drive](/data/google-drive), so if you are archiving data to Google Drive, it is better to compress folders that contain lots of small files (e.g. using [tar](/resources/online-tutorials)) before transferring. 
 
@@ -171,6 +170,6 @@ We support creating Globus S3 collections. To request a Globus S3 Collection, pl
 !!! warning
     Please DO NOT send us the Amazon login credentials through an insecure method such as email or our ticketing system.
 
-After we have created your Globus S3 collection, you will be able to further self-serve you own access controls with the Globus portal.
+After we have created your Globus S3 collection, you will be able to further self-serve your own access controls with the Globus portal.
 
 

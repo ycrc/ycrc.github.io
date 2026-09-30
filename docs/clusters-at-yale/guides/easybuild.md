@@ -20,10 +20,10 @@ module load EasyBuild
 ```
 
 ## Configure EasyBuild
-Some of the important configurations settings are:
+Some of the important configuration settings are:
 
 * [Source path](https://docs.easybuild.io/configuration/#sourcepath): parent path of the directory for software source and install files
-* [Build path](https://docs.easybuild.io/configuration/#buildpath): parent path of the temporaty directory for building software packages
+* [Build path](https://docs.easybuild.io/configuration/#buildpath): parent path of the temporary directory for building software packages
 * [Software and module install path](https://docs.easybuild.io/configuration/#installpath): by default, software install path is `$HOME/.local/easybuild/software` and module install path is `$HOME/.local/easybuild/modules/all`. 
 
 You can look up the current configuration of EasyBuild with the following command:
@@ -65,7 +65,7 @@ sourcepath     (F) = /gpfs/gibbs/project/testuser/testuser/source
 ```
 
 ## Search for Easyconfig files
-To install software with EasyBuild, you need easyconfig files. Easyconfig files specify build parameters such as name, toolchain, sources, and dependencies. To searc for an existing easyconfig file for a specific softwar in the EasyBuild repository, you can use the `--search` or `-S` option:
+To install software with EasyBuild, you need easyconfig files. Easyconfig files specify build parameters such as name, toolchain, sources, and dependencies. To search for an existing easyconfig file for a specific software in the EasyBuild repository, you can use the `--search` or `-S` option:
 ```
 eb -S HPCG
 

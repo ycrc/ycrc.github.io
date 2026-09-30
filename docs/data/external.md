@@ -2,7 +2,7 @@
 
 ## Share data using Microsoft OneDrive
 Yale ITS's recommended way to send other people large files is by using Microsoft OneDrive.
-This straightforward to do using our [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop/) app:
+This is straightforward to do using our [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop/) app:
 
 1. Launch an instance of Remote Desktop, taking care to request enough time for all transfers to complete before the app terminates.
 2. Within Remote Desktop, open a Firefox web browser and navigate to the [Yale OneDrive Site](https://yaleedu-my.sharepoint.com), and sign in with your netID credentials.
@@ -27,7 +27,7 @@ ITS's spinup service makes creating a static website easy and inexpensive.
 Follow their [instructions on creating a static website](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/905969895/How+do+I+use+a+Spinup+static+website), giving it an appropriate website name.  Make sure to save the access key and secret key, since you'll need them to connect to the website.  The static website will incur a small charge per month of a few cents per GB stored or downloaded.
 
 Then use an [S3 transfer tool](https://yaleits.atlassian.net/wiki/spaces/spinup/pages/829292599/How+do+I+use+a+Spinup+S3+bucket) like Cyberduck, AWS CLI, or CrossFTP to connect to the website and transfer your files.  The spinup page for your static website provides a link to a Cyberduck config file. 
-That is the probably the easiest way to connect. 
+That is probably the easiest way to connect. 
 
 #### UCSC Hub
 
@@ -43,7 +43,7 @@ follow the spinup [instructions on requesting public access to a web server](htt
 
 ## Private Share Using Globus
 
-[Globus](/data/globus) can be used to shared data hosts on one of the clusters privately with a specific person or group of people.
+[Globus](/data/globus) can be used to share data hosted on one of the clusters privately with a specific person or group of people.
 
 1. From the [file manager interface](https://app.globus.org/file-manager) enter the name of the endpoint you would like to share from in the collection field (e.g. "Yale CRC Grace")
 1. Click the Share button on the right

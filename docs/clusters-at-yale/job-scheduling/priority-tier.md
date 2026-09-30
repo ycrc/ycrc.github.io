@@ -2,7 +2,7 @@
 
 ## Overview
 
-Effective December 1st 2024, the current YCRC CPU-Hour based service charges has been replaced with new Priority Tier service charges.
+Effective December 1st 2024, the current YCRC CPU-Hour based service charges have been replaced with new Priority Tier service charges.
 The YCRC has added a new Priority Tier of partitions that is an opt-in, fast lane for computational jobs. 
 All computation on the “standard” tier of partitions (e.g. day, week, mpi, gpu)  no longer incur charges.
 Private nodes and scavenge partitions continue to not incur charges.
@@ -19,7 +19,7 @@ Access to Priority Tier partitions is granted upon request through the Priority 
 During the Priority Tier onboarding process, the YCRC will require certain information before access can be granted.
 
 * Charging instructions (COA)
-* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitted a request to [research.computing@yale.edu](mailto:research.computing@yale.edu) (all group members should already have cluster accounts requested through the [Account Request Form](https://research.computing.yale.edu/support/hpc/account-request)).
+* A list of members in your group who should have access (and therefore the privileges to incur charges). Additional group members can be added to Priority Tier at any time by submitting a request to [research.computing@yale.edu](mailto:research.computing@yale.edu) (all group members should already have cluster accounts requested through the [Account Request Form](https://research.computing.yale.edu/support/hpc/account-request)).
 * We also strongly recommend providing an annual usage limit, beyond which no additional computation on Priority Tier will occur (computation in Standard Tier will still be available at no cost). Note this limit can be changed at any time upon request.
 
 ## How to Use Priority Tier Partitions
@@ -34,7 +34,7 @@ As of December 1st, 2024, we introduced Priority Tier partitions on [Grace](/clu
 | `priority_gpu`  | similar to `gpu`  | rtx_5000_ada, a40, l40s, <br> rtx_pro_6000_blackwell, <br> h100, h200, b200  | A100, A5000 GPU      | A100, A5000 GPU      |  N/A                     |
 | `priority_mpi`  | similar to `mpi`  | Intel Emerald Rapids Nodes      | Intel Skylake        |  N/A                  |  N/A                    |
 
-At launch all Priority Tier partitions has a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
+At launch all Priority Tier partitions have a 7-day maximum wall time limit. Interactive jobs are permitted on Priority Tier partitions. Priority Tier jobs are still bound by [YCRC policies and best practices](/clusters-at-yale/access/accounts/), so users are expected to use interactive jobs mindfully and terminate their session when they are pausing their work.
 
 The expectation for a job submitted to Priority Tier partition is not necessarily that it will run immediately (as one experiences in `devel` or jobs preempting `scavenge` jobs) but rather that it will start before any Standard Tier jobs, when resources are available and it reaches the top of the Priority Tier queue relative to other Priority Tier jobs.
 
@@ -57,7 +57,7 @@ Only `prio_` groups can access the Priority Tier partitions and they cannot be u
 
 ### `priority_gpu` Partitions
 
-To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, we strongly recommend being specific about the GPU model if any job submissions.
+To avoid unexpected costs due to the Service Unit differences between A100 GPUs and A5000 GPUs, we strongly recommend being specific about the GPU model in any job submissions.
 
 ```
 #SBATCH --gpus=a100:1
@@ -65,7 +65,7 @@ To avoid unexpected costs due to the Service Unit differences between A100 GPUs 
 
 ### Fairshare and Concurrent Utilization Limits
 
-All YCRC clusters are governed by a set of "fairness" control. 
+All YCRC clusters are governed by a set of "fairness" controls. 
 "Fairshare” is an algorithm that controls moment-to-moment priority of a job based on recent use of the cluster. 
 For example, jobs from heavy recent users/groups start at the end of the queue and work their way forward over time and jobs from new or low-usage users/groups start at the front of the queue. 
 CPU core hours, memory consumption and GPU hours all contribute at proportional levels to the usage incurred by running jobs. 

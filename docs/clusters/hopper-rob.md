@@ -82,7 +82,7 @@ The use of media without an identifiable owner is prohibited.
 
 The posting of any sensitive data or NHCE-related system information to social media sites or publicly accessible systems (e.g. departmental webpage, research project website) is prohibited. Such information includes, but is not limited to: CUI, ePHI, NHCE configurations/characteristics (e.g., IP addresses, OS and application names and/or versions, architecture descriptions), security-related NHCE information (e.g., descriptions or discussions of deployed controls), NHCE personnel information, and NHCE project information that is non-public.
 
-A NHCE user that has privileges to publish content on a publicly accessible system is required to review the publicly accessible system yearly for any sensitive data.
+An NHCE user that has privileges to publish content on a publicly accessible system is required to review the publicly accessible system yearly for any sensitive data.
 
 ## 11. Mobile Devices
 

@@ -12,7 +12,7 @@ The main steps are:
 
 Here is a template for submitting a jupyter-notebook server as a batch job. 
 You may need to edit some of the slurm options, including the time limit or the partition. 
-You will also need to either load a module that contains `jupyter-notebook`.
+You will also need to load a module that contains `jupyter-notebook`.
 
 !!! tip
     If you are using a Conda environment, please follow the instructions for launching a Jupyter session via [Open OnDemand](/clusters-at-yale/access/ood-jupyter).

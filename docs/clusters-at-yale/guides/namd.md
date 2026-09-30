@@ -1,6 +1,6 @@
 # NAMD
 
-[NAMD](https://www.ks.uiuc.edu/Research/namd/) is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. NAMD scales to hundreds of cores for typical simulations. NAMD uses the popular molecular graphics program [VMD](https://www.ks.uiuc.edu/Research/vmd/), for simulation setup and trajectory analysis, but is also file-compatible with AMBER, CHARMM, and X-PLOR.To see a full list of available versions of NAMD on the cluster, run:
+[NAMD](https://www.ks.uiuc.edu/Research/namd/) is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. NAMD scales to hundreds of cores for typical simulations. NAMD uses the popular molecular graphics program [VMD](https://www.ks.uiuc.edu/Research/vmd/), for simulation setup and trajectory analysis, but is also file-compatible with AMBER, CHARMM, and X-PLOR. To see a full list of available versions of NAMD on the cluster, run:
 
 ``` bash
 module avail namd/

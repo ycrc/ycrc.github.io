@@ -9,7 +9,7 @@ have gotten word that we created your account for the cluster.
 - [ ] Make sure that the cluster is online in the [System Status](http://research.computing.yale.edu/system-status) page.
 - [ ] Check the hostname for the cluster. See the [clusters page](/clusters) for a list.
 - [ ] Verify that your [ssh keys](/clusters-at-yale/access/ssh/#what-are-ssh-keys) are setup correctly
-    - [ ] Check for your public key in the [ssh key uploader](https://sshkeys.ycrc.yale.edu/). If you recently uploaded one, it will take a few minutes appear on the cluster. 
+    - [ ] Check for your public key in the [ssh key uploader](https://sshkeys.ycrc.yale.edu/). If you recently uploaded one, it will take a few minutes to appear on the cluster. 
     - [ ] If you are using [macOS or Linux](/clusters-at-yale/access/ssh/#macos-and-linux), make sure your private key is in `~/.ssh`.
     - [ ] If you are [using Windows](/clusters-at-yale/access/ssh/#windows), make sure you have pointed MobaXterm to your private ssh key (ends in .pem)
     - [ ] If you are asked for a passphrase when logging in, this is the ssh key passphrase you set when first creating your key pair. If you have forgotten this passphrase, you need to create a new key pair and upload a new public key.
@@ -21,13 +21,13 @@ have gotten word that we created your account for the cluster.
 If none of the above solve your issue, please [contact us](/#get-help) with your netid and the cluster you are attempting to connect to.
 
 !!! note "Note"
-    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your accounts is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
+    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your account is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
 
 ## Common SSH Errors
 
 #### Permission denied (publickey)
 
-This message means that the clusters don't (yet) have they key you are using to authenticate. Make sure you have an account on the cluster you're connecting, that you have [created an ssh key pair](/clusters-at-yale/access/ssh/#what-are-ssh-keys), and uploaded the [public key](https://sshkeys.ycrc.yale.edu/). If you recently uploaded one, it will take a few minutes appear on the cluster.
+This message means that the clusters don't (yet) have the key you are using to authenticate. Make sure you have an account on the cluster you're connecting, that you have [created an ssh key pair](/clusters-at-yale/access/ssh/#what-are-ssh-keys), and uploaded the [public key](https://sshkeys.ycrc.yale.edu/). If you recently uploaded one, it will take a few minutes to appear on the cluster.
 
 #### REMOTE HOST IDENTIFICATION HAS CHANGED!
 

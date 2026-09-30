@@ -252,7 +252,7 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 
 6. VSCode will then connect through the login node to your compute node and automatically start the VSCode server
 
-When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working** for that session using `scancel [JOBID]`
+When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working for that session using `scancel [JOBID]`.
 
 
 

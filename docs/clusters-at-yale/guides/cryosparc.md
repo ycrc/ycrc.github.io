@@ -44,7 +44,7 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
 After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will offer a convenient list of queuing options (you can also specify your own); it then submits a cryoSPARC 'master' batch job and prints instructions on how to connect to the cryoSPARC GUI.
 
 !!! note
-    Please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
+    Please **do not request GPUs**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
 
 ```
 ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
@@ -124,9 +124,9 @@ Unfortunately, information needed to diagnose cryoSPARC job failures in cluster 
 
 4. **Drilling down further** : Within the cryoSPARC interface, find the job location (located in a text box) and copy it by clicking on it. Then, in a terminal, navigate to this folder where you will find a number of useful files, including log files (i.e., `P1_J2_slurm.log`, `P1_J2_slurm.err`, `job.log`) and also a copy of the slurm submission script (`queue_sub_script.sh`). A useful debugging technique is to create a copy of queue_sub_script.sh outside the job folder, edit and manually submit it. If the target YCRC partition is busy, you can accelerate your diagnosis by giving the script 'lightweight' slurm parameters and specifying the gpu_devel partition. In this way you can quickly get the job started on slurm, allowing trivial errors to be quickly spotted.
 
-5. **Mismatch between cryoSPARC and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with cryoSPARC versions prior to 5.0.0. This can cause certain jobs (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryoSPARC to version >= 5.0.0
+5. **Mismatch between cryoSPARC and GPU/CUDA** Newer graphics cards being installed on the Bouchet cluster are incompatible with cryoSPARC versions prior to 5.0.0. This can cause certain (but not all) GPU-dependent jobs to crash. The solution is to upgrade your cryoSPARC to version >= 5.0.0
 
-6. **CryoSPARC installation bug**: One of our users experienced a issue where cryoSPARC GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way fix this problem by patching the cryoSPARC python libraries (a buggy CUDA version compatibility check).
+6. **CryoSPARC installation bug**: One of our users experienced an issue where cryoSPARC GPU jobs uniformly crashed on startup, failing with a cryptic Python error. We have found a way to fix this problem by patching the cryoSPARC python libraries (a buggy CUDA version compatibility check).
 
 ### General CryoSPARC issues
 

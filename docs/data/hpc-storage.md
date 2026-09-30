@@ -29,7 +29,7 @@ Project quotas are global to the whole project space, so if the group ownership 
 
 Quota: varies
 
-Storage paid for for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](#request-additional-storage) for details on requesting additional storage. 
 
 Paid storage, if applicable, is assigned on one of our two storage systems:
@@ -105,7 +105,7 @@ module load QDirStat
 qdirstat
 ```
 
-You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
+You will get an interactive display that allows you to navigate through your folders and see how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
 
 For broot, type the following into any terminal:
 ```
@@ -120,14 +120,14 @@ broot -w
 
 Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
 The price covers all costs, including administration, power, cooling, networking, etc.
-Agreements for such storage will run through the end of the fiscal year and be renewabled in June for the next year when appropriate.
+Agreements for such storage will run through the end of the fiscal year and be renewed in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.
 
 After the culmination of a paid storage agreement (either for non-payment or migration to off-cluster storage) the allocation will be removed according to our policies (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
 Please [contact us](/#get-help) with your requirements and budget to start the agreement process.
 
-Paid storage allocation, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
-The file count limits for different size allocations are listed above. 
+Paid storage allocations, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
+The file count limits for different size allocations are listed below. 
 If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.
 
 | Allocation Quota | File Count Limit |
@@ -155,7 +155,7 @@ Please see the [Staging Data](/data/staging/) documentation for more details and
 
 The parallel filesystems the clusters use perform poorly with very large numbers of small files.
 This is one reason we enforce file count quotas.
-If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+If you are running an application that unavoidably makes large numbers of files, do what you can to reduce file creation.
 Additionally you can reduce load on the filesystem by spreading the files across multiple subdirectories.
 Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
 

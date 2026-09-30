@@ -6,7 +6,7 @@ There is no R executable provided by default; you have to choose one of the foll
 
 ## The R Module
 
-We provide several versions of R as [software modules](/applications/modules). By default, these come loaded with a collection of the most common `CRAN` packages ([homepage](https://cran.r-project.org)), as well as `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)). This will include commonly used packages such as Seurat, so user's won't need to install many packages themselves.
+We provide several versions of R as [software modules](/applications/modules). By default, these come loaded with a collection of the most common `CRAN` packages ([homepage](https://cran.r-project.org)), as well as `bioconductor` bioinformatics packages ([homepage](https://www.bioconductor.org)). This will include commonly used packages such as Seurat, so users won't need to install many packages themselves.
 
 ### Find and Load R
 
@@ -62,11 +62,11 @@ We recommend you install packages in an [interactive job](/clusters-at-yale/job-
 If there is a missing library your package of interest needs, you should be able to load its module.
 If you cannot find a dependency or have trouble installing an R package, [please get in touch with us](/#web-and-email-support).
 
-To get started, request a compute node, load the R module and start R. Trying to install packages on the login node will often fail due to memory restraints:
+To get started, request a compute node, load the R module and start R. Trying to install packages on the login node will often fail due to memory constraints:
 
 ```bash
 ###request a compute node on the devel partition for 4 hours with 20 GB of RAM and 1 cpu
-salloc --partition=devel --mem=20G --cpus-per-task=1 --mem=20G
+salloc --partition=devel --mem=20G --cpus-per-task=1 --time=4:00:00
 
 module load R/4.4.1-foss-2022b
 
@@ -110,7 +110,7 @@ See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detaile
 ### Interactive Job
 
 To run R interactively, first launch an interactive job on a compute node.
-If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:
+If your R sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit your job with:
 
 ``` bash
 salloc --mem=10G -t 4:00:00
@@ -240,7 +240,7 @@ Setting LC_CTYPE failed, using "C"
 address (nil), cause 'memory not mapped'
 ```
 
-This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.
+This seems to be triggered by certain terminal programs (Terminus and some others) when you use them to connect to the YCRC. These programs seem to incorrectly set the LC_CTYPE shell variable (specifying the 'locale') to 'utf-8' or some other string that R does not recognize.
 
 To avoid this crash, connect to the YCRC cluster with your terminal as usual, but before running R type into the terminal the command:
 
