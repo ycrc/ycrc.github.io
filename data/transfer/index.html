@@ -3257,22 +3257,22 @@ Please see <a href="/data/globus">our Globus page</a> for Yale-specific document
 </code></pre></div>
 <h4 id="example-transfer-a-file-from-your-computer-to-a-cluster">Example: Transfer a File from Your Computer to a Cluster</h4>
 <p>Using the example netid <code>abc123</code>, following is run on your computer's local terminal.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>myfile.txt<span class="w"> </span>abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 </code></pre></div>
-<p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/abc123/test/</code> on Grace. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/home/xyz/myfile.txt<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+<p>In this example, <code>myfile.txt</code> is copied to the directory <code>/home/abc123/test/</code> on Bouchet. This example assumes that <code>myfile.txt</code> is in your current directory. You may also specify the full path of <code>myfile.txt</code>.</p>
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>/home/xyz/myfile.txt<span class="w"> </span>abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 </code></pre></div>
 <h4 id="example-transfer-a-directory-to-a-cluster">Example: Transfer a Directory to a Cluster</h4>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>mydirectory<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>mydirectory<span class="w"> </span>abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 </code></pre></div>
 <p>In this example, the contents of <code>mydirectory</code> are transferred. The <code>-r</code> indicates that the copy is recursive.</p>
 <h4 id="example-transfer-files-from-the-cluster-to-your-computer">Example: Transfer Files from the Cluster to Your Computer</h4>
 <p>Assuming you would like the files copied to your current directory:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>.
 </code></pre></div>
 <p>Note that <code>.</code> represents your current working directory.
 To specify the destination, simply replace the <code>.</code> with the full path:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>/path/myfolder
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/myfile.txt<span class="w"> </span>/path/myfolder
 </code></pre></div>
 <h2 id="transfer-data-between-clusters">Transfer Data Between Clusters</h2>
 <h3 id="globus-endpoints">Globus Endpoints</h3>

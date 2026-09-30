@@ -576,6 +576,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/data/dbgap-upload/</loc>
+         <lastmod>2026-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/data/external/</loc>
          <lastmod>2026-09-30</lastmod>
          <changefreq>daily</changefreq>

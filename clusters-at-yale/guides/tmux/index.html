@@ -2962,23 +2962,23 @@ tmux<span class="w"> </span>a
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Every cluster has two login nodes.  If you cannot find your tmux session, it might be running on the other node.  Check the hostname of your current login node (from either your command prompt or from running <code>hostname -s</code>), then use ssh to login to the other one.<br />
-For example, if you are logged in to grace1, use <code>ssh -Y grace2</code> to reach the other login node.</p>
+For example, if you are logged in to login1, use <code>ssh -Y login2</code> to reach the other login node.</p>
 </div>
 <h3 id="windows-and-panes">Windows and Panes</h3>
 <p><code>tmux</code> allows you to create, toggle between and manipulate panes and windows in your 
 session. A window is the whole screen that <code>tmux</code> displays to you. Panes are subdivisions in the current window, where each runs an independent terminal. Especially at first, you probably won't need more than one pane at a time. Multiple windows can be created and run off-screen. Here is an example where this may be useful.</p>
 <p>Say you just submitted an interactive job that is running on a compute node inside your <code>tmux</code> session.</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>analysis
+<div class="highlight"><pre><span></span><code><span class="o">[</span>ms725@login1.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>analysis
 <span class="c1"># I am in my tmux session now</span>
-<span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>salloc
-<span class="o">[</span>ms725@c14n02<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>./my_fancy_analysis.sh
+<span class="o">[</span>ms725@login1.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>salloc
+<span class="o">[</span>ms725@a1114u27n01.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>./my_fancy_analysis.sh
 </code></pre></div>
 <p>Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running <code>top</code> there. Split your window by typing:</p>
 <p><kbd>Ctrl</kbd>+<kbd>b</kbd> then <kbd>%</kbd></p>
 <p><code>ssh</code> into the compute node you are working on, then run top to watch your work as it runs all from the same window.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># I&#39;m in a new pane now.</span>
-<span class="o">[</span>ms725@grace1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>c14n02
-<span class="o">[</span>ms725@c14n02<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>top
+<span class="o">[</span>ms725@login1.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>a1114u27n01
+<span class="o">[</span>ms725@a1114u27n01.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>top
 </code></pre></div>
 <p>Your view will look something like this:</p>
 <p><img alt="tmux" src="/img/tmux-michael.png" /></p>
@@ -2991,7 +2991,7 @@ session. A window is the whole screen that <code>tmux</code> displays to you. Pa
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

@@ -3000,10 +3000,7 @@ Log in with your Yale email address, respond to the DUO request, and authorize t
 <p>The following examples show you how to set up rclone for a variety of different storage types.
 In the examples, we name our remote cloud storage as 'remote' in the configuration. 
 You can provide any name you want. </p>
-<blockquote>
-<p>Rclone no longer supports <strong>OneDrive</strong> or <strong>Sharepoint</strong> at Yale due to recent changes in Azure cloud security. <strong>Box</strong> is no longer supported since it was retired on March 31, 2026. Globus is now the recommended solution for file transfer.</p>
-</blockquote>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Google Drive</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Google Drive</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for Google Drive.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c03n06<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
 No<span class="w"> </span>remotes<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one
@@ -3118,7 +3115,179 @@ q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>con
 e/n/d/r/c/s/q&gt;<span class="w"> </span>q
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">S3</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OneDrive</label><div class="tabbed-content">
+<p>The example below is a screen dump when setting up <code>rclone</code> for Microsoft OneDrive.  This example was done inside a remote desktop in OOD, so rclone was able
+to start the browser to authenticate.  If you run this on a normal command line, you'll need to say 'N' at that step.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@r811u30n01.milgram<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
+<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:09:57<span class="w"> </span>NOTICE:<span class="w"> </span>Config<span class="w"> </span>file<span class="w"> </span><span class="s2">&quot;/home/rdb9/.config/rclone/rclone.conf&quot;</span><span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>using<span class="w"> </span>defaults
+No<span class="w"> </span>remotes<span class="w"> </span>found,<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one?
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+n/s/q&gt;<span class="w"> </span>n
+
+Enter<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>new<span class="w"> </span>remote.
+name&gt;<span class="w"> </span>yaleonedrive
+
+Option<span class="w"> </span>Storage.
+Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value.
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>fichier<span class="o">)</span>
+<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Akamai<span class="w"> </span>NetStorage
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>netstorage<span class="o">)</span>
+...
+<span class="m">30</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Blob<span class="w"> </span>Storage
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>azureblob<span class="o">)</span>
+<span class="m">31</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>OneDrive
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>onedrive<span class="o">)</span>
+<span class="m">32</span><span class="w"> </span>/<span class="w"> </span>OpenDrive
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>opendrive<span class="o">)</span>
+...
+Storage&gt;<span class="w"> </span><span class="m">31</span>
+
+Option<span class="w"> </span>client_id.
+OAuth<span class="w"> </span>Client<span class="w"> </span>Id.
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
+client_id&gt;<span class="w"> </span>
+
+Option<span class="w"> </span>client_secret.
+OAuth<span class="w"> </span>Client<span class="w"> </span>Secret.
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>empty.
+client_secret&gt;<span class="w"> </span>
+
+Option<span class="w"> </span>region.
+Choose<span class="w"> </span>national<span class="w"> </span>cloud<span class="w"> </span>region<span class="w"> </span><span class="k">for</span><span class="w"> </span>OneDrive.
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>string<span class="w"> </span>value.
+Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span>global<span class="o">)</span>.
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Global
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>global<span class="o">)</span>
+<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span><span class="k">for</span><span class="w"> </span>US<span class="w"> </span>Government
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>us<span class="o">)</span>
+<span class="w"> </span><span class="m">3</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Germany
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>de<span class="o">)</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Azure<span class="w"> </span>and<span class="w"> </span>Office<span class="w"> </span><span class="m">365</span><span class="w"> </span>operated<span class="w"> </span>by<span class="w"> </span>Vnet<span class="w"> </span>Group<span class="w"> </span><span class="k">in</span><span class="w"> </span>China
+<span class="w">   </span><span class="se">\ </span><span class="o">(</span>cn<span class="o">)</span>
+region&gt;<span class="w"> </span>
+
+Edit<span class="w"> </span>advanced<span class="w"> </span>config?
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+y/n&gt;<span class="w"> </span>
+
+Use<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>to<span class="w"> </span>automatically<span class="w"> </span>authenticate<span class="w"> </span>rclone<span class="w"> </span>with<span class="w"> </span>remote?
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>machine<span class="w"> </span>running<span class="w"> </span>rclone<span class="w"> </span>has<span class="w"> </span>a<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>use
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>running<span class="w"> </span>rclone<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span><span class="o">(</span>remote<span class="o">)</span><span class="w"> </span>machine<span class="w"> </span>without<span class="w"> </span>web<span class="w"> </span>browser<span class="w"> </span>access
+If<span class="w"> </span>not<span class="w"> </span>sure<span class="w"> </span>try<span class="w"> </span>Y.<span class="w"> </span>If<span class="w"> </span>Y<span class="w"> </span>failed,<span class="w"> </span>try<span class="w"> </span>N.
+
+y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+n<span class="o">)</span><span class="w"> </span>No
+y/n&gt;<span class="w"> </span>y
+
+<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>If<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>doesn<span class="err">&#39;</span>t<span class="w"> </span>open<span class="w"> </span>automatically<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>link:<span class="w"> </span>http://127.0.0.1:53682/auth?state<span class="o">=</span>Xt0h7NYaFt1F6ogeDRC0iQ
+<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>authorize<span class="w"> </span>rclone<span class="w"> </span><span class="k">for</span><span class="w"> </span>access
+<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:12:43<span class="w"> </span>NOTICE:<span class="w"> </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>code...
+<span class="m">2024</span>/08/06<span class="w"> </span><span class="m">11</span>:13:45<span class="w"> </span>NOTICE:<span class="w"> </span>Got<span class="w"> </span>code
+Option<span class="w"> </span>config_type.
+Type<span class="w"> </span>of<span class="w"> </span>connection
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>string<span class="w"> </span>value.
+
+<span class="o">[</span><span class="w"> </span>choose<span class="w"> </span>defaults<span class="w"> </span>from<span class="w"> </span>now<span class="w"> </span>on<span class="o">]</span>
+
+Keep<span class="w"> </span>this<span class="w"> </span><span class="s2">&quot;yaleonedrive&quot;</span><span class="w"> </span>remote?
+y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
+y/e/d&gt;<span class="w"> </span>
+
+Current<span class="w"> </span>remotes:
+
+Name<span class="w">                 </span><span class="nv">Type</span>
+<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
+yaleonedrive<span class="w">         </span>onedrive
+
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
+r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
+c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+e/n/d/r/c/s/q&gt;<span class="w"> </span>q
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Box</label><div class="tabbed-content">
+<p>The example below is a screen dump when setting up <code>rclone</code> for Yale Box.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>pl543@c14n07<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
+No<span class="w"> </span>remotes<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+n/s/q&gt;<span class="w"> </span>n
+name&gt;<span class="w"> </span>remote
+Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+<span class="w"> </span><span class="m">6</span><span class="w"> </span>/<span class="w"> </span>Box
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;box&quot;</span>
+<span class="o">[</span>...<span class="o">]</span>
+Storage&gt;<span class="w"> </span>box
+**<span class="w"> </span>See<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>box<span class="w"> </span>backend<span class="w"> </span>at:<span class="w"> </span>https://rclone.org/box/<span class="w"> </span>**
+
+Box<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Id.
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_id&gt;<span class="w"> </span>
+Box<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Secret
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+client_secret&gt;<span class="w"> </span>
+Edit<span class="w"> </span>advanced<span class="w"> </span>config?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No
+y/n&gt;<span class="w"> </span>n
+Remote<span class="w"> </span>config
+Use<span class="w"> </span>auto<span class="w"> </span>config?
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>sure
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>working<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>remote<span class="w"> </span>or<span class="w"> </span>headless<span class="w"> </span>machine
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No
+y/n&gt;<span class="w"> </span>y
+If<span class="w"> </span>your<span class="w"> </span>browser<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>open<span class="w"> </span>automatically<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>link:<span class="w"> </span>http://127.0.0.1:53682/auth
+Log<span class="w"> </span><span class="k">in</span><span class="w"> </span>and<span class="w"> </span>authorize<span class="w"> </span>rclone<span class="w"> </span><span class="k">for</span><span class="w"> </span>access
+Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>code...
+Got<span class="w"> </span>code
+--------------------
+<span class="o">[</span>remote<span class="o">]</span>
+<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>box
+<span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;PjIXHUZ34VQSmeUZ9r6bhc9ux44KMU0e&quot;</span>,<span class="s2">&quot;token_type&quot;</span>:<span class="s2">&quot;bearer&quot;</span>,<span class="s2">&quot;refresh_token&quot;</span>:<span class="s2">&quot;VumWPWP5Nd0M2C1GyfgfJL51zUeWPPVLc6VC6lBQduEPsQ9a6ibSor2dvHmyZ6B8&quot;</span>,<span class="s2">&quot;expiry&quot;</span>:<span class="s2">&quot;2019-10-21T11:00:36.839586736-04:00&quot;</span><span class="o">}</span>
+--------------------
+y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
+y/e/d&gt;<span class="w"> </span>y
+Current<span class="w"> </span>remotes:
+
+Name<span class="w">                 </span><span class="nv">Type</span>
+<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
+remote<span class="w">               </span>box
+
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
+r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
+c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+e/n/d/r/c/s/q&gt;<span class="w"> </span>q
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">S3</label><div class="tabbed-content">
 <p>The example below is a screen dump when setting up <code>rclone</code> for an S3 provider such as aws.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>rdb9@login1.mccleary<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
 Enter<span class="w"> </span>configuration<span class="w"> </span>password:
@@ -3265,7 +3434,7 @@ rclone copy filename remote:/path/to/
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2026</span>
       
     
   </small>

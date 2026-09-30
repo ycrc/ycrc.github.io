@@ -3004,7 +3004,7 @@ An example config file is shown below which enables SSH multiplexing (<code>Cont
 # Uncomment the ForwardX11 options line to enable X11 Forwarding by default (no -Y necessary)
 # On a Mac you still need xquartz installed
 
-Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
+Host *.ycrc.yale.edu bouchet milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
@@ -3013,7 +3013,7 @@ Host *.ycrc.yale.edu bouchet grace mccleary milgram misha
     #ControlPath /tmp/%h_%p_%r
     #ControlPersist 2h
 
-Host mccleary grace milgram misha
+Host bouchet milgram misha
     HostName %h.ycrc.yale.edu
 </code></pre></div>
 <div class="admonition tip">

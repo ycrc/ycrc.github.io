@@ -2977,16 +2977,25 @@ stress-ng:<span class="w"> </span>info:<span class="w">  </span><span class="o">
 <h3 id="seff"><code>seff</code></h3>
 <p>After the job completes, you can run <code>seff &lt;jobid&gt;</code> to get some useful information about your job, including the memory used and what percent of your allocated memory that amounts to.</p>
 <div class="highlight"><pre><span></span><code>[netid@node ~]$ seff 21294645
-Job ID: 21294645
-Cluster: mccleary
-User/Group: rdb9/support
-State: COMPLETED (exit code 0)
-Cores: 1
-CPU Utilized: 00:15:55
-CPU Efficiency: 17.04% of 01:33:23 core-walltime
-Job Wall-clock time: 01:33:23
-Memory Utilized: 446.20 MB
-Memory Efficiency: 8.71% of 5.00 GiB
+─────────────────────────────── Job Information ────────────────────────────────
+           Job ID:  21294645
+             Name:  my_job
+          Cluster:  bouchet
+     User / Group:  netid / group
+   Requested CPUs:  2 core(s) on 1 node(s)
+ Requested Memory:  4G
+   Requested Time:  08:00:00
+────────────────────────────────── Job Status ──────────────────────────────────
+
+  State       Count
+ ───────────────────
+  COMPLETED       1
+
+────── Finished Job Statistics (excludes pending, running, and cancelled) ──────
+      Jobs analyzed:  1
+ Avg CPU Efficiency:  1.4%
+   Avg Memory Usage:  3.65 GB
+        Avg Runtime:  3439s
 </code></pre></div>
 <h3 id="seff-array"><code>seff-array</code></h3>
 <p>For job arrays (see <a href="/clusters-at-yale/job-scheduling/dsq">here</a> for details) it is helpful to 
@@ -3052,7 +3061,7 @@ These jobs could have been scheduled more quickly if a more accurate runtime was
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>
