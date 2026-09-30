@@ -65,17 +65,17 @@ dmtcp_restart -i 300 *.dmtcp
 ```
 
 !!! note 
-We are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
-the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.
+    We are using wildcards to name the DMTCP file, which will obviously only work correctly if there is only one checkpoint file in
+    the directory.  Alternatively you can edit the script each time and explicitly name the correct checkpoint file.
 
 ## Restart a job that timed out or was preempted
 
 !!! note 
-Timeouts and preemptions are subtly different.  Slurm will automatically requeue a job that
-has been declared requeue-able (--requeue) and was preempted.  It will NOT automatically requeue a
-timed out job.  Jobs that time out require some additional signal handling.  The script requests
-signal 10 be sent to the script just before the job times out, and traps that signal and requests
-a requeue.  It is important to run the actual job in the background using & and wait.
+    Timeouts and preemptions are subtly different.  Slurm will automatically requeue a job that
+    has been declared requeue-able (--requeue) and was preempted.  It will NOT automatically requeue a
+    timed out job.  Jobs that time out require some additional signal handling.  The script requests
+    signal 10 be sent to the script just before the job times out, and traps that signal and requests
+    a requeue.  It is important to run the actual job in the background using & and wait.
 
 Here is an example job script that will start a job running, periodically checkpoint it, and
 automatically requeue the job if it is preempted or times out:

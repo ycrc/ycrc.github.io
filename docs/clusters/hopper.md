@@ -176,7 +176,7 @@ The output corresponds directly to Hugging Face repository IDs.
 
 Models can be loaded using standard Hugging Face APIs. No environment variables are required.
 
-```bash
+```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_id = "meta-llama/Llama-3.1-70B"

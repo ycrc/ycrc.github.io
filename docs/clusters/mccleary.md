@@ -60,7 +60,7 @@ We host datasets of general interest in a loosely organized directory tree in `/
 │   ├── blast
 │   ├── busco
 │   └── Pfam
-└── genomes
+├── genomes
     ├── 1000Genomes
     ├── 10xgenomics
     ├── Aedes_aegypti
@@ -75,7 +75,7 @@ We host datasets of general interest in a loosely organized directory tree in `/
     ├── Mus_musculus
     ├── Monodelphis_domestica
     ├── PhiX
-    └── Saccharomyces_cerevisiae
+    ├── Saccharomyces_cerevisiae
     └── tmp
 └── hisat2
     └── mouse

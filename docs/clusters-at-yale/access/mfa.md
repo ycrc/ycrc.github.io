@@ -72,7 +72,7 @@ When you connect type one of the following when prompted with a "Partial authent
 MobaXTerm is able to cache MFA connections to reduce the frequency of push notifications.
 Under `Settings > SSH > Advanced SSH settings` set the ssh browser type to `scp (enhanced speed)` as seen here:
 
-[MobaXTerm SSH Settings](/img/mobaxterm_mfa.png)
+![MobaXTerm SSH Settings](/img/mobaxterm_mfa.png)
 
 ### WinSCP
 

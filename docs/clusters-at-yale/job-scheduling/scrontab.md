@@ -83,9 +83,9 @@ This example submits a transfer script eligible to start every Wednesday at 8:00
 0 20 * * 3 ./rclone_commands.sh
 ```
 
-### Capture output from	each run in a separate file
+### Capture output from each run in a separate file
 
-Normally scrontab will clobber the output file from the	previous run on	each execution,	since
+Normally scrontab will clobber the output file from the previous run on each execution, since
 each execution uses the same jobid.  This can be avoided using a redirect to a date-stamped file.
 
 ```bash

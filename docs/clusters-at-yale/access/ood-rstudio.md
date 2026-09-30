@@ -30,7 +30,7 @@ In grDevices:::png("/tmp/RtmpcRxRaB/4v3450e3627g4432fa27f516348657267.png",  :
 To fix the problem, you need to configure your RStudio session to use `Cairo` for plotting. 
 You can do it in your code as follows: 
 
-```bash
+```r
 options(bitmapType='cairo')
 ```
 

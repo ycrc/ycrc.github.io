@@ -58,7 +58,7 @@ YCGA-produced sequence data is initially written to YCGA's main storage system, 
 below for instructions for retrieving archived data.
 
 !!! warning
-**As of March 31, 2026, the retention time for sequence data will be reduced to 6 months.**
+    **As of March 31, 2026, the retention time for sequence data will be reduced to 6 months.**
 
 All compression of sequence data is lossless.  Gzip (extension '.gz') is used for data stored on the primary storage.  Illumina sequence files archived prior to 2024 used Quip compression.  (extension '.qp'; see [below](#using-archived-data)).  More recent archived files are stored as Gzip files.
 Disaster recovery is provided by the archive copy.
@@ -69,9 +69,9 @@ YCGA will send you an email informing you that your data is ready, and will incl
 http://fcb.ycga.yale.edu:3010/_randomstring_/_sample_
 
 !!! tip
-For standard Illumina data (not 10X/singlecell or pacbio data) 
-you can browse to the YCGA-provided URL and open ruddle_paths.txt.  It contains the 
-true locations of the files.
+    For standard Illumina data (not 10X/singlecell or pacbio data) 
+    you can browse to the YCGA-provided URL and open ruddle_paths.txt.  It contains the 
+    true locations of the files.
 
 ### Brief overview of YCGA data delivery
 Data produced by YCGA’s instruments is written to specific folders on McCleary in /gpfs/ycga/sequencers.  That space is managed by YCGA and does not count against your disk quota.  You will usually receive a link to your data of this general form: http://fcb.ycga.yale.edu:3010/randomstring/sample
@@ -84,7 +84,7 @@ YCGA maintains this primary sequence data (typically fastq.gz files) on McCleary
 Effective October 1st, 2024, we tightened permissions and restricted access to fastq sequence data on the Yale McCleary cluster to the group that submitted the sample.  The change only impacts data in directories managed by YCGA; it does not impact sequencing data in your directories.  If you are unable to access data to which you believe you should have access, please contact YCRC support at research.support@yale.edu
 
 !!! tip
-To list all members of your groups, go to [http://ood-mccleary.ycrc.yale.edu](http://ood-mccleary.ycrc.yale.edu), navigate to the user portal, and click on My Groups.
+    To list all members of your groups, go to [http://ood-mccleary.ycrc.yale.edu](http://ood-mccleary.ycrc.yale.edu), navigate to the user portal, and click on My Groups.
 
 If you frequently require access to another group’s sequencing data, we recommend asking the group’s PI to add you to their group, giving you access to all of their sequencing data.  To do that, have the PI send an email to research.computing@yale.edu.
 

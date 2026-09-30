@@ -131,21 +131,3 @@ If you have a research account on one of our clusters and would like to transfer
 
 - **Can I use my course account for research or personal projects?**  
   No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

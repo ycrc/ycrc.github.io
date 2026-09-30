@@ -66,7 +66,7 @@ You can launch a traditional command-line interface on the cluster by selecting 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 
 !!! note "Important note"
-Cutting and pasting to the OOD Shell app may not always work with Google Chrome and perhaps other browsers. If you experience troubles with copy/paste functions, try switching to another browser.
+    Cutting and pasting to the OOD Shell app may not always work with Google Chrome and perhaps other browsers. If you experience troubles with copy/paste functions, try switching to another browser.
 
 ## Interactive Apps
 
