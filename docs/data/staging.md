@@ -5,7 +5,7 @@ Since the _permanent_ home of the data remains on off-cluster storage, you need 
 
 ## Temporary Storage
 
-We recommend staging data into your [scratch](/data/hpc-storage/#60-day-scratch) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
+We recommend staging data into your [scratch](/data/hpc-storage/#scratch) storage space on the cluster, as the _working_ copy of the data can then be removed manually or left to be deleted (which will happen automatically after 60-days). 
 
 ## Interactive Transfers
 For interactive transfers, please see our [Transfer Data](/data/transfer/) page for a more complete list of ways to move data efficiently to and from the clusters.  

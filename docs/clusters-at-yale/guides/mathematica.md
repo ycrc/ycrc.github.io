@@ -8,7 +8,7 @@ First, open OOD in a browser and navigate to the `Apps` button. Select `All Apps
 
 ## Interactive Job
 
-Alternatively, you could start an interacgive session with X11 forwarding. 
+Alternatively, you could start an interactive session with X11 forwarding. 
 
 !!!warning
     The Mathematica program is too large to fit on a login node. If you try to run it there, it will crash. Instead, launch it in an interactive job (see below).
@@ -67,7 +67,7 @@ You can also manually close the parallel kernels during your session with the fo
 ```
 CloseKernels[]
 ```
-which will shut down all currently launched parallel kernels. If you need to terminate a specific kernel, you can use commands such as `CloseKernels[k]`, where k is the KernelID, or `CloseKernels[{k1,k2,...}]` to terminate a list of kernelIDs. You can use the command `ParallelKernels[]` to list all the KernelObjects and their KernekIDs. Each KernelObject looks like this:
+which will shut down all currently launched parallel kernels. If you need to terminate a specific kernel, you can use commands such as `CloseKernels[k]`, where k is the KernelID, or `CloseKernels[{k1,k2,...}]` to terminate a list of kernelIDs. You can use the command `ParallelKernels[]` to list all the KernelObjects and their KernelIDs. Each KernelObject looks like this:
 
 ![file_browser](/img/kernel_object.png){: .medium}
 

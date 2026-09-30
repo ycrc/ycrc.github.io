@@ -26,7 +26,7 @@ Once you have an account, you can connect to the cluster either via our Web Port
 - [Troubleshoot Login Checklist](troubleshoot)
 
 !!! note "Note"	
-    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your accounts is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
+    If your username starts with a course ID (e.g. `ydata1230_NetID`, `hpcllm_NetID`), your account is associated with a particular course or workshop. Please refer to our [course](https://docs.ycrc.yale.edu/clusters-at-yale/access/courses/) documentation on how to access your course account. 
 
 ## Submit a Job
 
@@ -42,7 +42,7 @@ We use [software modules](/applications/modules) to make multiple versions of po
 
 ## Transfer Your Files
 
-There are a number of methods for transferring file between your computer and the cluster, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the **Upload** button and dragging and dropping your files into the upload window. 
+There are a number of methods for transferring files between your computer and the cluster, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the **Upload** button and dragging and dropping your files into the upload window. 
 
 - [Transfer data using the Web Portal](/clusters-at-yale/access/ood/#file-browser)
 - [Other ways to transfer data](/data/transfer) (for larger transfers)

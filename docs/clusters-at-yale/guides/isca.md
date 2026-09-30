@@ -53,7 +53,7 @@ module reset
 
 ## Select an Experiment and Update the Flags
 
-We are using GCC version 10.x for this build, so [a slight modification needs to made to Isca for it to build](https://github.com/wrf-model/WRF/issues/1250). Add the following line to the experiment script (e.g. `$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py`), after `cb` is defined (so about line 13 in that file).
+We are using GCC version 10.x for this build, so [a slight modification needs to be made to Isca for it to build](https://github.com/wrf-model/WRF/issues/1250). Add the following line to the experiment script (e.g. `$GFDL_BASE/exp/test_cases/held_suarez/held_suarez_test_case.py`), after `cb` is defined (so about line 13 in that file).
 
 
 ```

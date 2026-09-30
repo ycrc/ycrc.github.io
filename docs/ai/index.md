@@ -5,7 +5,7 @@ This section documents supported workflows for running large language models and
 This documentation builds on existing YCRC documentation, including:
 
 - Interactive and GUI interfaces: [Open OnDemand Remote Desktop](../clusters-at-yale/access/ood.md)
-- Resource Scheduling(Interactive and Batch): [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md)
+- Resource Scheduling (Interactive and Batch): [Slurm job scheduling](../clusters-at-yale/job-scheduling/index.md)
 - Available Programs on YCRC systems: [software modules](../applications/modules.md)
 - Resource Monitoring for Users: [Jobstats](../clusters-at-yale/job-scheduling/jobstats.md)
 
@@ -58,7 +58,7 @@ Use the pages below based on your workflow and questions:
 - **I need help installing AI/ML python packages like flash attention or others**  
   See [Common Package installation Methods](pythonpackages.md) for instructions
 
-- **I need access to closed-source models, but I want to make sure my data is secure(Claude, etc)**  
+- **I need access to closed-source models, but I want to make sure my data is secure (Claude, etc.)**  
   See [Clarity API](clarity.md) for Yale-managed access and usage guidance.
 
 - **I want to use an AI coding agent**  

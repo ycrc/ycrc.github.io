@@ -8,7 +8,7 @@ From the Web Portal, you are able to launch interactive apps such as Jupyter.
 
 To get started, connect to one of cluster [Web Portals](/clusters-at-yale/access/ood) and choose Jupyter from the Interactive Apps menu or the dashboard and then follow the instructions for [launching an interactive app](/clusters-at-yale/access/ood/#launch-an-interactive-app).
 
-You can use the `ycrc_default` environment or chose [one of your own](#set-up-an-environment) from the drop-down menu.
+You can use the `ycrc_default` environment or choose [one of your own](#set-up-an-environment) from the drop-down menu.
 After specifying the required resources (number of CPUs/GPUs, amount of RAM, etc.) and time limit, you can submit the job.
 When it launches you can open the standard Jupyter interface where you can start working with notebooks.
 
@@ -39,7 +39,7 @@ We recommend you use [miniconda](/clusters-at-yale/guides/conda) to manage your 
 You can create Conda environments from the [Web Portal terminal interface](/clusters-at-yale/access/ood#terminal) or from a terminal-based login to the clusters. **Be sure to include the 'notebook' package** in your environment; this is required for your environment to work with our Jupyter app.
 
 !!! warning
-    Please do not use the '--prefix' option when creating your own jupyter/conda environment for OOD; you must use '-n/--name'. This guarantees that your conda environment is located your home directory under '.conda/envs', which is required by our current OnDemand setup. (note, however, that this '.conda' folder, or 'envs' within it, **can** be a symlink pointing elsewhere)
+    Please do not use the '--prefix' option when creating your own jupyter/conda environment for OOD; you must use '-n/--name'. This guarantees that your conda environment is located in your home directory under '.conda/envs', which is required by our current OnDemand setup. (note, however, that this '.conda' folder, or 'envs' within it, **can** be a symlink pointing elsewhere)
 
 For example, if you want to create an environment with many commonly used scientific computing Python packages you would run:
 

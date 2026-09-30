@@ -1,6 +1,6 @@
 # Accounts & Best Practices
 
-The YCRC HPC Policies can found [here](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). All users are required to abide by the described policies.
+The YCRC HPC Policies can be found [here](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies). All users are required to abide by the described policies.
 
 ## User Responsibilities
 
@@ -12,7 +12,7 @@ The YCRC HPC Policies can found [here](https://research.computing.yale.edu/servi
 * Do not run large numbers of very short (less than a minute) jobs.
 * Terminate interactive or Open OnDemand session when no longer in use. Idle sessions may be canceled without warning.
 * Avoid workflows that generate numerous (thousands) of files as these put great stress on the shared filesystem.
-* Use of scratch for long term storage, (through artificial extension of file expiration or other means) is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+* Use of scratch for long term storage, (through artificial extension of file expiration or other means) is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/hpc-storage/#request-additional-storage) if you need additional longer term storage.
 * Any data covered by a DUA must be explicitly approved by the YCRC before it is stored on a cluster.
 * Each YCRC cluster undergoes regular scheduled maintenance twice a year, see [our maintenance schedule](/clusters/maintenance) for more details. Please plan accordingly.
 
@@ -43,9 +43,9 @@ You may request an account on a cluster using the [account request form](https:/
 
 ## Inactive Accounts and Account Deletion
 
-For security and communication purposes, you must have a valid email address associated with your account. Login privileges will be disable on a regular basis for any accounts without a valid email address. Therefore, if you are leaving Yale, but will continue to use the cluster on a ["Sponsored netid"](https://research.computing.yale.edu/services/collaboration-support), please [contact us](/#get-help) to update the email address associated with your account as soon as possible. If you find your login has been disabled, please contact us to provide a valid email address to have your login reinstated.
+For security and communication purposes, you must have a valid email address associated with your account. Login privileges will be disabled on a regular basis for any accounts without a valid email address. Therefore, if you are leaving Yale, but will continue to use the cluster on a ["Sponsored netid"](https://research.computing.yale.edu/services/collaboration-support), please [contact us](/#get-help) to update the email address associated with your account as soon as possible. If you find your login has been disabled, please contact us to provide a valid email address to have your login reinstated.
 
-Additionally, an annual account audit is performed on **November 1st** and any accounts associated with an inactive netids (regular and Sponsored netids) will be deactivated at that time. Note that Sponsored netids need to be renewed annually through the appropriate channels.
+Additionally, an annual account audit is performed on **November 1st** and any accounts associated with inactive netids (regular and Sponsored netids) will be deactivated at that time. Note that Sponsored netids need to be renewed annually through the appropriate channels.
 
 When an account is deactivated, logins and scheduler access are disabled, the home directory is archived for 5 years and all project data owned by the account is reassigned to the group's PI. The group's PI will receive a report once a year in November with a list of deactivated group members. 
 

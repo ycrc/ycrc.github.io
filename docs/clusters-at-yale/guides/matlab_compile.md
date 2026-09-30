@@ -1,4 +1,4 @@
-#Compile MATLAB program
+# Compile MATLAB program
 
 By compiling your MATLAB code into standalone executables, you eliminate the need to load the MATLAB module each time you run the code. This can be particularly beneficial on clusters where loading the MATLAB module involve loading all the installed packages and can be time-consuming. This can reduce the startup time and improve the overall performance of executing the code. If you choose to compile your MATLAB code into standalone executables, one disadvantage is that every time you make changes to your program, you will need to recompile it. Recompiling is necessary to ensure that any modifications or updates you’ve made to the code are incorporated into the executable. 
  

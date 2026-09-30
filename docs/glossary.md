@@ -14,11 +14,11 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Array Task ID** - a unique sequential number with an appended number that refers to an individual task within the set of submitted jobs
 
-**Channel** - Community-led collections of packages created by a group or lab installed with conda to allow for a homogenous environment across systems
+**Channel** - Community-led collections of packages created by a group or lab installed with conda to allow for a homogeneous environment across systems
 
 **CLI** - Command Line Interface processes commands to a computer program in the form of lines of text in a window
 
-**Cluster** - a set of computers, called nodes) networked together so nodes can perform the tasks facilitated by a scheduling software
+**Cluster** - a set of computers (called nodes) networked together so nodes can perform the tasks facilitated by a scheduling software
 
 **Command** - a specific order from a computer to execute a service with either an application or the operating system
 
@@ -48,7 +48,7 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **GPU** - Graphics Processing Units are specialized circuits designed to rapidly manipulate memory and create images in a frame buffer for a displayed output
 
-**GridFTP** - an extension of the Fire Transfer Protocol for grid computing that allows users to transfer and save data on a different account such as Google Drive or other off network memory
+**GridFTP** - an extension of the File Transfer Protocol for grid computing that allows users to transfer and save data on a different account such as Google Drive or other off network memory
 
 **Group** - a collection of users who can all be given the same permissions on a system
 
@@ -104,7 +104,7 @@ To help clarify the way we refer to certain terms in our user documentation, her
 
 **Queue** - a sequence of objects arranged according to priority waiting to be processed
 
-**RAM** - Random Access Memory, also known as "Memory" can be read and changed in any order and is typically used to to store working data
+**RAM** - Random Access Memory, also known as "Memory" can be read and changed in any order and is typically used to store working data
 
 **Reproducibility** - the ability to execute the same results across multiple systems by different individuals using the same data
 

@@ -43,7 +43,7 @@ The authors provide up-to-date hints about performance on their [Benchmarks](htt
 
 #### Module
 
-We have GPU-enabled versions of RELION available on YCRC clusters as [software modules](/applications/modules/). To check witch versions are available, run `module avail relion`. To see specific notes about a particular install, you can use `module help`, e.g. `module help RELION/4.0.0-fosscuda-2020b` . 
+We have GPU-enabled versions of RELION available on YCRC clusters as [software modules](/applications/modules/). To check which versions are available, run `module avail relion`. To see specific notes about a particular install, you can use `module help`, e.g. `module help RELION/4.0.0-fosscuda-2020b` . 
 
 #### Example Job Parameters
 
@@ -61,7 +61,7 @@ module load RELION/choose_a_version
 srun --pack-group=0,1 relion_refine_mpi --o hetero/refine3D/job0001 ... --dont_combine_weights_via_disc --j ${SLURM_CPUS_PER_TASK} --gpu
 ```
 
-This job submission request will result in RELION using a single task/worker on a general purpose CPU node, and efficiently find four GPUs even if they aren't all available on the same compute node. Each GPU node task/worker will have a dedicated GPU, two CPU cores, and 30GiB total memory. 
+This job submission request will result in RELION using a single task/worker on a general purpose CPU node, and efficiently find four GPUs even if they aren't all available on the same compute node. Each GPU node task/worker will have a dedicated GPU, two CPU cores, and 32GiB total memory. 
 
 ### EMAN2
 
@@ -88,4 +88,4 @@ We have a [whole separate page](/clusters-at-yale/guides/cryosparc/) about this 
 
 ### Other Software
 
-We have CCP4, Phenix and some other [software modules](/applications/modules.md) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).
+We have CCP4, Phenix and some other [software modules](/applications/modules) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).

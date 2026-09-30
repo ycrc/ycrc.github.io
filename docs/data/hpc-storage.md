@@ -29,7 +29,7 @@ Project quotas are global to the whole project space, so if the group ownership 
 
 Quota: varies
 
-Storage paid for for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
 See [below](#request-additional-storage) for details on requesting additional storage. 
 
 Paid storage, if applicable, is assigned on one of our two storage systems:
@@ -43,7 +43,7 @@ Unlike project space described above, all files in your purchased storage count 
 
 Quota: 10 TiB and 15,000,000 files per group
 
-scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#purchase-additional-storage) if you need additional longer term storage.**
+scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#request-additional-storage) if you need additional longer term storage.**
 
 You can access this space through a symlink, or shortcut, in your home directory called `project_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)),  `palmer_scratch` ([McCleary/Grace](/clusters/mccleary)), or `scratch60` ([Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
 
@@ -87,9 +87,9 @@ gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,
 ```
 
 !!! note "Notes"
-1. The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br>
-1. Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  
-1. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
+    1. The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br>
+    1. Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  
+    1. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
 
 ## For More Detailed Storage Info
 
@@ -105,7 +105,7 @@ module load QDirStat
 qdirstat
 ```
 
-You will get an interactive display that allows you to navigate through your folders and see which how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
+You will get an interactive display that allows you to navigate through your folders and see how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
 
 For broot, type the following into any terminal:
 ```
@@ -120,14 +120,14 @@ broot -w
 
 Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
 The price covers all costs, including administration, power, cooling, networking, etc.
-Agreements for such storage will run through the end of the fiscal year and be renewabled in June for the next year when appropriate.
+Agreements for such storage will run through the end of the fiscal year and be renewed in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.
 
 After the culmination of a paid storage agreement (either for non-payment or migration to off-cluster storage) the allocation will be removed according to our policies (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
 Please [contact us](/#get-help) with your requirements and budget to start the agreement process.
 
-Paid storage allocation, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
-The file count limits for different size allocations are listed above. 
+Paid storage allocations, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
+The file count limits for different size allocations are listed below. 
 If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.
 
 | Allocation Quota | File Count Limit |
@@ -155,7 +155,7 @@ Please see the [Staging Data](/data/staging/) documentation for more details and
 
 The parallel filesystems the clusters use perform poorly with very large numbers of small files.
 This is one reason we enforce file count quotas.
-If you are running an application that unavoidably make large numbers of files, do what you can to reduce file creation.
+If you are running an application that unavoidably makes large numbers of files, do what you can to reduce file creation.
 Additionally you can reduce load on the filesystem by spreading the files across multiple subdirectories.
 Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
 

@@ -1,8 +1,8 @@
-#Pytorch
+# Pytorch
 
 Pytorch is an open source Machine Learning (ML) framework based on the python programming language.
 
-#Pytorch module
+## Pytorch module
 
 Some pytorch versions are already available on the clusters at yale as modules and will not require any user modification to run successfully. You can search for these versions using the module avail command:
 
@@ -10,7 +10,7 @@ Some pytorch versions are already available on the clusters at yale as modules a
 module avail pytorch
 ```
 
-#Installing Pytorch in a miniconda environment
+## Installing Pytorch in a miniconda environment
 
 If you find that there is not a module available on the cluster for the version of pytorch you need, and/or you are using a complex miniconda environment as part of your workflow, then you may benefit from installing pytorch yourself inside a miniconda environment.
 
@@ -28,6 +28,6 @@ Then copy the Pip command to install pytorch into the conda environment you just
 
 If you choose to install pytorch into a new conda environment, you can follow the process outlined at this [site](https://docs.ycrc.yale.edu/clusters-at-yale/guides/conda/).
 
-#Installing older versions of pytorch
+## Installing older versions of pytorch
 
 To install older versions of pytorch, you can find instructions at this [site](https://pytorch.org/get-started/previous-versions).

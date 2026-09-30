@@ -44,7 +44,7 @@ module save
 
 ## Input Data
 
-To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. The YCRC staff are only people who can add to that directory. If your build fails due to missing inputdata, [contact us](/#get-help) with your `create_newcase` line and we will download that data for you.
+To reduce the amount of data duplication on the cluster, we keep one centralized repository of CESM input data. YCRC staff are the only people who can add to that directory. If your build fails due to missing inputdata, [contact us](/#get-help) with your `create_newcase` line and we will download that data for you.
 
 ## Run CESM
 
@@ -52,7 +52,7 @@ CESM needs to be rebuilt separately for each run. As a result, running CESM is m
 
 ### Create Your Case
 
-Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as `$CASE`  through out the rest of the guide.
+Each simulation is called a “case”. Loading a CESM module will put the create_newcase script in your path, so you can call it as follows. This will create a directory with your case name, that we will refer to as `$CASE`  throughout the rest of the guide.
 
 ``` bash
 create_newcase -case $CASE -compset=<compset> -res=<resolution> -mach=<machine>
@@ -122,7 +122,7 @@ This directory will contain all the outputs from your simulation as well as logs
 
 #### Common Build Issues
 
-Make sure you compile on an interactive node as described above. If you build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can helpful to run `module reset` before the `module load` to ensure a reproducible environment.
+Make sure you compile on an interactive node as described above. If your build fails, it will direct you to look in a bldlog file. If that log complains that it can’t find mpirun, NetCDF or another library or executable, make sure you have the correct CESM module loaded. It can be helpful to run `module reset` before the `module load` to ensure a reproducible environment.
 
 If you get an error saying `ERROR: Error gathering provenance information from manage_externals`, rerun the build using the suggested flag, e.g. `./case.build --skip-provenance-check`.  
 
@@ -169,7 +169,7 @@ If the last few lines of the slurm log direct you to look at `cpl.log.<some_numb
 cd ~/project/CESM/$CASE/run
 ```
 
-The pointer to the cpl file is often misleading as I have found the error is usually located in one of the other logs. Instead look in the `cesm.log.xxxxxx` file. Towards the end there may be an error or it may signify which component was running. Then look in the log corresponding to that component to track down the issue.
+The pointer to the cpl file is often misleading, as the error is usually located in one of the other logs. Instead look in the `cesm.log.xxxxxx` file. Towards the end there may be an error or it may signify which component was running. Then look in the log corresponding to that component to track down the issue.
 
 One shortcut to finding the relevant logs is to sort the log files by the time to see which ones were last updated:
 

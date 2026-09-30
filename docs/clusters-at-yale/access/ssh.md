@@ -113,7 +113,7 @@ To make a new connection to one of the clusters:
 * From the top menu select Sessions -> New Session.
 * Click the SSH icon in the top left.
 * Enter the cluster login node address (e.g. grace.ycrc.yale.edu) as the Remote Host.
-* Check "Specify Username" and Enter your netID as the the username.
+* Check "Specify Username" and Enter your netID as the username.
 * Click the "Advanced SSH Settings" tab and check the "Use private key box", then click the file icon / magnifying glass to choose where you saved your private key (id_rsa.ppk).
 * Click OK.
 

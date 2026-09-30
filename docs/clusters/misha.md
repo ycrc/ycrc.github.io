@@ -42,12 +42,12 @@ See each tab below for more information about the available common use partition
 
 `/gpfs/radev` is Misha's filesystem where home, project, and scratch directories are located. For more details on the different storage spaces, see our [Cluster Storage](/data/hpc-storage) documentation.
 
-You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only update once daily.
+You can check your current storage usage & limits by running the `getquota` command. Note that the per-user usage breakdown only updates once daily.
 
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/hpc-storage/#request-additional-storage) if you need additional longer term storage.
 
 |Partition  | Root Directory          | Storage                                 | File Count | Backups | Snapshots |
 |-----------|-------------------------|-----------------------------------------|------------|---------|-----------|

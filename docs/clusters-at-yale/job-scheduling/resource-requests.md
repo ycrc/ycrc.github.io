@@ -17,7 +17,7 @@ Some MPI programs are also multi-threaded, so each process can use multiple CPUs
 
 #### MPI Applications
 
-For more control over how Slurm lays out your job, you can add the `--nodes` and `--ntasks-per-node` flags. `--nodes` specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set `--nodes=1` (obviously this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set `--ntasks-per-node=1`. Note that the following must be true:
+For more control over how Slurm lays out your job, you can add the `--nodes` and `--ntasks-per-node` flags. `--nodes` specifies how many nodes to allocate to your job. Slurm will allocate your requested number of cores to a minimal number of nodes on the cluster, so it is likely if you request a small number of tasks that they will all be allocated on the same node. However, to ensure they are on the same node, set `--nodes=1` (this is contingent on the number of CPUs on your cluster's nodes and requesting too many may result in a job that will never run). Conversely, if you would like to ensure a specific layout, such as one task per node for memory, I/O or other reasons, you can also set `--ntasks-per-node=1`. Note that the following must be true:
 
 ``` text
 ntasks-per-node * nodes >= ntasks
@@ -30,6 +30,7 @@ For the most predictable performance for hybrid applications, you will need to u
 ## Request Memory (RAM)
 
 Slurm strictly enforces the memory your job can use. If you request 5GiB of memory for your job and the total used by all processes you launch hits that limit, some of your processes may die and [you will get errors](/clusters-at-yale/job-scheduling/common-job-failures/#running-out-of-memory). Make sure you either request the right amount of memory per core on each node in your job with `--mem-per-cpu` or memory per node in your job with `--mem`. You can request more memory than you think you might need for an example job, then [make note of its actual usage](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/) to better tune future requests for similar jobs.
+
 
 ## Request GPUs
 
@@ -65,7 +66,7 @@ sbatch --constraint="gpu:l40s|gpu:a40|gpu:rtx_5000_ada" --gpus=1 --time=6:00:00 
 
 
 !!! tip
-    As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can well utilize multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:
+    As with requesting multiple cores or multiple nodes, we strongly recommend that you test your jobs using the `gpu_devel` partition to make sure they can make good use of multiple GPUs before requesting them; allocating more GPUs does not speed up code that can only use one at a time. Here is an example interactive request that would allocate two GPUs and four CPUs for thirty minutes:
     
     ``` text
     salloc --cpus-per-gpu=2 --gpus=2 --time=30:00 --partition gpu_devel

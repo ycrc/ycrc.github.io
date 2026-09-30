@@ -2,7 +2,7 @@
 
 ## Software Modules
 
-The YCRC will install and manage commonly used software. These software are available as modules, which allow you to add or remove different combinations and versions of software to your environment as needed. See [our module guide](/applications/modules) for more info. You can run `module avail` to page through all available software once you log in.
+The YCRC will install and manage commonly used software. This software is available as modules, which allow you to add or remove different combinations and versions of software to your environment as needed. See [our module guide](/applications/modules) for more info. You can run `module avail` to page through all available software once you log in.
 
 ## Conda, Python & R
 
@@ -14,7 +14,7 @@ For all other software, we encourage users to attempt to install their own softw
 
 - [Make](/applications/compile/#autotools-configuremake)
 - [Cmake](/applications/compile/#cmake)
-- [Apptainer](/clusters-at-yale/guides/containers): create containers and port Docker containers to the clusters (formerly know as "Singularity")
+- [Apptainer](/clusters-at-yale/guides/containers): create containers and port Docker containers to the clusters (formerly known as "Singularity")
 
 If you run into issues with your software installations, [contact us](/#get-help).
 

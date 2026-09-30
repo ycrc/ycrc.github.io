@@ -1,4 +1,4 @@
-# Mysql
+# MySQL
 
 [MySQL](https://www.mysql.com) is a popular relational database. It has a community-developed free-to-use variant [MariaDB](https://mariadb.org) that is recommended for non-commercial use.  Because a database is usually thought of as a persistent service, it is not ordinarily run on HPC clusters, since
 allocations on an HPC cluster are temporary.  If you need a persistent mysql database server, we recommend either installing mysql on a server in your
@@ -127,7 +127,7 @@ module load MariaDB/11.7.0-GCC-13.3.0
 mysql -u elmerfudd -h 127.0.0.1 -p
 ```
 
-Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g.r205u23n02 ) instead of 127.0.0.1
+Now try connecting to that server from a different compute node by using the hostname of the node where the server is running (e.g. r205u23n02) instead of 127.0.0.1
 ```
 module load MariaDB/11.7.0-GCC-13.3.0
 mysql -u elmerfudd -h r205u23n02 -p

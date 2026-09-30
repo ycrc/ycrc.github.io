@@ -75,7 +75,7 @@ c
 ```
 The first element in `sys.argv` is the name of the script, and then all subsequent arguments follow.
 
-Secondly, there is the more fully-featured `argparse` package ([docs page](https://docs.python.org/3/library/argparse.html))which offers many advanced tools to manage command-line arguments.
+Secondly, there is the more fully-featured `argparse` package ([docs page](https://docs.python.org/3/library/argparse.html)) which offers many advanced tools to manage command-line arguments.
 Take a look at their documentation for examples of how to use `argparse`.
 
 ## R

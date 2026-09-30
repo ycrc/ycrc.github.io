@@ -39,7 +39,7 @@ We ask that requests be at least 10 TiB. In addition, due to capacity limits, we
 
 Ark shares are laid out much like projects on the HPC clusters. A subdirectory is created for each share user. That directory is readable by all users of that share, but writable only by the specific user. In addition, a _shared_ subdirectory is created that is readable and writable by all share users.
 
-The set of users that have access to a share is determined by the share owner (PI) , and is not related to or the necessarily the same as that PI's HPC group.
+The set of users that have access to a share is determined by the share owner (PI) , and is not related to or necessarily the same as that PI's HPC group.
 
 ### How safe are my data on Ark?
 

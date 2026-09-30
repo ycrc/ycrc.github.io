@@ -15,7 +15,7 @@ If you would like your job to be automatically added back to the queue if preemp
 #SBATCH --requeue
 ```
 
-Be aware that your job, when started from a requeue, will still re-run the entire original submission script. It will only resume progress if your program has the its own ability to checkpoint and restart from previous progress.
+Be aware that your job, when started from a requeue, will still re-run the entire original submission script. It will only resume progress if your program has its own ability to checkpoint and restart from previous progress.
 
 ### Track History of a Requeued Job
 
@@ -27,11 +27,11 @@ sacct -j <jobid> --duplicates
 
 ## Scavenge GPUs
 
-On Bouchet, Grace and McCleary, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those node than normal scavenge. In all other ways (e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Partition tables on the respective cluster pages.
+On Bouchet, Grace and McCleary, we also have a `scavenge_gpu` partition, that contains all scavenge-able GPU enabled nodes and has higher priority for those nodes than normal scavenge. In all other ways (e.g. preemption, time limit), `scavenge_gpu` behaves the same as the normal scavenge partition. You can see the full count of GPU nodes in the Partition tables on the respective cluster pages.
 
 ## Scavenge MPI Nodes
 
-On Grace, we have a `scavenge_mpi` partition, that contains all scavenge-able nodes similar to the `mpi` partition and has higher priority for those node than normal scavenge. `scavenge_mpi` is subject to the same preemption model as `scavenge` and the [same use case restrictions](/clusters-at-yale/job-scheduling/mpi/) as the regular `mpi` partition (multi-node, tightly couple parallel codes). You can see the full count of MPI nodes in the Partition tables on the respective cluster pages.
+On Grace, we have a `scavenge_mpi` partition, that contains all scavenge-able nodes similar to the `mpi` partition and has higher priority for those nodes than normal scavenge. `scavenge_mpi` is subject to the same preemption model as `scavenge` and the [same use case restrictions](/clusters-at-yale/job-scheduling/mpi/) as the regular `mpi` partition (multi-node, tightly coupled parallel codes). You can see the full count of MPI nodes in the Partition tables on the respective cluster pages.
 
 ## Research Available Nodes
 

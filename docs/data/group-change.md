@@ -1,14 +1,14 @@
 # Changing Groups
 
-From time to time, YCRC users may enter collaborations with new PI's or switch groups entirely. In this case you may use the [YCRC Group Change Request Form](https://research.computing.yale.edu/group-change) to adjust your group affiliations.
+From time to time, YCRC users may enter collaborations with new PIs or switch groups entirely. In this case you may use the [YCRC Group Change Request Form](https://research.computing.yale.edu/group-change) to adjust your group affiliations.
 
-When you switch groups or are added to a group, new storage will be become available to you in your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PI's.
+When you switch groups or are added to a group, new storage will become available to you in your new PI's Project and Scratch folders. On Bouchet and Hopper, your Home folder stays intact after switching PIs.
 
 ## Group Changes on Older Clusters
 
 When you switch groups on (older) clusters other than Bouchet and Hopper, 
 your Home folder will need to be migrated. The technical reason for this is that on these older clusters,
-your account primary group changes when you switch PI's. In these cases, we will change the primary
+your account primary group changes when you switch PIs. In these cases, we will change the primary
 group of your cluster account to the new group and will move all the files stored in your old storage 
 space into the new storage space.
 

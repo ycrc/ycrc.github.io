@@ -18,7 +18,7 @@ To monitor usage of members of your group, run the `sshare` command:
 sshare -a -A <group>
 ```
 
-Note: Resources used on private partitions do not count affect fairshare.
+Note: Resources used on private partitions do not affect fairshare.
 
 Similarly, resources used in the scavenge partition cost 10% of comparable resources in the other partitions.
 
