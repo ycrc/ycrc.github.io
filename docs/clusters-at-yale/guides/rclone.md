@@ -37,6 +37,8 @@ The following examples show you how to set up rclone for a variety of different 
 In the examples, we name our remote cloud storage as 'remote' in the configuration. 
 You can provide any name you want. 
 
+> Rclone no longer supports **OneDrive** or **Sharepoint** at Yale due to recent changes in Azure cloud security. **Box** is no longer supported since it was retired on March 31, 2026. Globus is now the recommended solution for file transfer.
+
 --8<-- "snippets/rclone_examples.md"
 
 !!! Tip
