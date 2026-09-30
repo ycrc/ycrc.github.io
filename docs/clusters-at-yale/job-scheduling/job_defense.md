@@ -10,7 +10,7 @@ This ensures that resources are not wasted and works to reduce wait times for pe
 
 ## Idle GPU jobs
 
-This daemon currently is configured to look at jobs running in Bouchet's non-interactive GPU partitions (`gpu`, `gpu_h200`, `priority_gpu`, and `scavenge_gpu`). 
+This daemon currently is configured to look at jobs running in all GPU partitions on Bouchet (e.g.,`gpu`, `gpu_h200`, `priority_gpu`, and `scavenge_gpu`). 
 We have two criteria:
 
 1. Jobs which never use the GPU at all
