@@ -20,7 +20,7 @@ By reviewing this RoB, you agree to adhere to both components.
 
 ## 2. Yale's Information Technology Appropriate Use Policy
 
-The University's IT Appropriate Use Policy may be found at: [https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy](docs/clusters/hopper-rob.md.
+The University's IT Appropriate Use Policy may be found at: [https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy](https://your.yale.edu/policies-procedures/policies/1607-information-technology-appropriate-use-policy).
 
 In addition to Yale's IT Appropriate Use Policy, the following rules must be agreed to and followed for a user to access the NHCE.
 
@@ -46,7 +46,7 @@ Users are responsible for protecting the confidentiality of data, including CUI 
 
 Suspected incidents are to be reported in a timely manner to the ISO via the [Report an Incident](https://cybersecurity.yale.edu/get-help/report/report-incident) webpage or by contacting [YU's Help Desk](https://yale.service-now.com/it?id=get_help). Alternatively, ePHI incidents are to be reported immediately to YU's HIPAA Security Officer Hotline (203-627-4665).
 
-Should users, system administrators, or system owners be unable to operate from their designated workplace (e.g., their office at YU), they must find alternate accommodations. Such accommodations will meet or exceed the security requirements of the designated workplace. ([YALE-MSS-4.1](https://cybersecurity.yale.edu/mss/4/1)]) This will entail a separate, lockable room where the user can work, along with the arrangement of display devices so as to prevent visibility from any window. The use of privacy screens or other visual restrictions may be employed as an alternate means to block display visibility. The user is not permitted to work in a public space, such as a coffee shop, restaurant, airport terminal, etc. Should the user be unable to find any suitable alternate accommodations, they must cease work and contact their supervisor or system owner for assistance.
+Should users, system administrators, or system owners be unable to operate from their designated workplace (e.g., their office at YU), they must find alternate accommodations. Such accommodations will meet or exceed the security requirements of the designated workplace. ([YALE-MSS-4.1](https://cybersecurity.yale.edu/mss/4/1)) This will entail a separate, lockable room where the user can work, along with the arrangement of display devices so as to prevent visibility from any window. The use of privacy screens or other visual restrictions may be employed as an alternate means to block display visibility. The user is not permitted to work in a public space, such as a coffee shop, restaurant, airport terminal, etc. Should the user be unable to find any suitable alternate accommodations, they must cease work and contact their supervisor or system owner for assistance.
 
 ## 7. Network Use
 
@@ -82,7 +82,7 @@ The use of media without an identifiable owner is prohibited.
 
 The posting of any sensitive data or NHCE-related system information to social media sites or publicly accessible systems (e.g. departmental webpage, research project website) is prohibited. Such information includes, but is not limited to: CUI, ePHI, NHCE configurations/characteristics (e.g., IP addresses, OS and application names and/or versions, architecture descriptions), security-related NHCE information (e.g., descriptions or discussions of deployed controls), NHCE personnel information, and NHCE project information that is non-public.
 
-A NHCE user that has privileges to publish content on a publicly accessible system is required to review the publicly accessible system yearly for any sensitive data.
+An NHCE user that has privileges to publish content on a publicly accessible system is required to review the publicly accessible system yearly for any sensitive data.
 
 ## 11. Mobile Devices
 

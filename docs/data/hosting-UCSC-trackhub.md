@@ -4,7 +4,8 @@ The [UCSC Genome Browser](https://genome.ucsc.edu/) is a web-based tool for visu
 It supports the loading of custom track data, which are files containing genome-indexed data for visualization.
 To host your own custom track data for public use, you can create a UCSC Custom Track Hub. 
 
-This requires a few steps:  
+This requires a few steps:
+
 1. Create a custom track hub directory on the cluster  
 2. Create a static website on Yale Spinup to host the files publicly  
 3. Upload the track hub files to the static website's storage (AWS S3)  
@@ -55,11 +56,11 @@ The test message on the website should read, "Hello, `<your-site-name>`.yalepage
 5. Close the key details window and copy the `DistributionId` from the "Storage Details" section of the page to a secure location.
 
 ### 3.2 Upload the track hub files
-5. In a cluster terminal session, run `module load awscli`
-6. Run `aws configure --profile <your-site-url>` and input the saved AccessKeyId and SecretAccessKey. Accept default values for region and output format.
-7. Run `export AWS_PROFILE=<your-site-url>` to set the configured profile for the current terminal session.
-8. Run `aws s3 sync <path-to-track-hub-directory> s3://<your-site-url>/` to upload the track hub files to the static website's storage.
-9. Run `aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths '/*'` to refresh the cache for the static website.
+1. In a cluster terminal session, run `module load awscli`
+2. Run `aws configure --profile <your-site-url>` and input the saved AccessKeyId and SecretAccessKey. Accept default values for region and output format.
+3. Run `export AWS_PROFILE=<your-site-url>` to set the configured profile for the current terminal session.
+4. Run `aws s3 sync <path-to-track-hub-directory> s3://<your-site-url>/` to upload the track hub files to the static website's storage.
+5. Run `aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths '/*'` to refresh the cache for the static website.
 
 
 ## 4. Connect the track hub to the UCSC Genome Browser
@@ -73,7 +74,8 @@ For example, `http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&hubUrl=https://tes
 
 ## 5. Updating the track hub
 
-If you make changes to the track hub files on the cluster, you must upload the changes to the static website's storage (AWS S3):  
+If you make changes to the track hub files on the cluster, you must upload the changes to the static website's storage (AWS S3):
+
 1. Run `module load awscli`  
 2. Run `aws s3 sync <path-to-track-hub-directory> s3://<your-site-url>/` to upload the track hub files to the static website's storage.
 

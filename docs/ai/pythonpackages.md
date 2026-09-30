@@ -1,6 +1,6 @@
-#Python Package Installation Procedures for AI/ML workflows
+# Python Package Installation Procedures for AI/ML workflows
 
-##Current Recipes Available
+## Current Recipes Available
 
 Some Python Packages for AI/ML workflows do not install easily into YCRC systems. Due to this, we have developed and published 
 installation recipes for commonly requested python packages. As of now, those packages include:
@@ -12,7 +12,7 @@ installation recipes for commonly requested python packages. As of now, those pa
 If you do not see a recipe for a package you need help with, please [contact us](https://docs.ycrc.yale.edu/#get-help) for
 help installing the package/program.
 
-##Common Error Associated with AI/ML Packages
+## Common Error Associated with AI/ML Packages
 
 If installing a python package/program for your AI/ML workflow and run into the error:
 
@@ -23,7 +23,7 @@ glibc 2.32+ not found
 Then please [contact us](https://docs.ycrc.yale.edu/#get-help) for help installing the package. This error is a result of the
 operating system available on YCRC Computing Systems and will require building the program/package from source.
 
-##Flash Attention
+## Flash Attention
 ```bash
 ###request a compute node on day for 24 hours with 200 GB of memory and 20 cpus
 salloc --partition=day --mem=200G --time=1- --cpus-per-task=20
@@ -59,7 +59,7 @@ export CMAKE_BUILD_PARALLEL_LEVEL=8
 python setup.py install
 ```
 
-##vllm
+## vllm
 
 Create initial environment (make sure to request a compute node with [miniconda](/clusters-at-yale/guides/conda/)
 salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00
@@ -89,7 +89,7 @@ cd vllm
 uv pip install -e . --no-build-isolation
 ```
 
-##esmfold
+## esmfold
 
 Create initial environment using [miniconda](/clusters-at-yale/guides/conda/) on a compute node
 

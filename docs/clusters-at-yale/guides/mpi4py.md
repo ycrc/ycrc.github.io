@@ -4,7 +4,7 @@
     Before venturing into MPI-based parallelism, consider whether your work can be restructured to make use of [dSQ](/clusters-at-yale/job-scheduling/dsq/) or more "embarrassingly parallel" workflows.
     MPI can be thought of as a "last resort" for parallel programming.
 
-There are many computational problems that can be have increased performance by running pieces in parallel. 
+There are many computational problems that can have increased performance by running pieces in parallel. 
 These often require communication between the different steps and need a way to send messages between processes.
 
 Examples of this include simulations of galaxy formation and electric field simulations, analysis of a single large dataset, or complex `search` or `sort` algorithms.
@@ -88,7 +88,7 @@ This is a simple example where each worker reports their `RANK` and the process 
 ```python
 from mpi4py import MPI
 
-# instantize the communication world
+# instantiate the communication world
 comm = MPI.COMM_WORLD
 
 # get the size of the communication world
@@ -131,7 +131,7 @@ The most basic communication operators are "`send`" and "`recv`". These can be a
 - `source` can be a rank or a wild-card (`MPI.ANY_SOURCE`)
 - `status` used to retrieve information about recv'd message
 
-We now we create a file (`mpi_comm.py`) that contains the following:
+We now create a file (`mpi_comm.py`) that contains the following:
 
 ```python
 from mpi4py import MPI
@@ -199,7 +199,7 @@ Which outputs the following:
 
 An effective way of distributing computationally intensive tasks is to `scatter` pieces of a large dataset to each task. The separate tasks perform some analysis on their chunk of data and then the results are `gathered` by `RANK_0`.
 
-This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returns to the main task with a `Gather` call.
+This example takes a large array of random numbers and splits it into pieces for each task. These smaller datasets are analyzed (taking an average in this example) and the results are returned to the main task with a `Gather` call.
 
 ```python
 
@@ -213,7 +213,7 @@ size = comm.Get_size() # new: gives number of ranks in comm
 rank = comm.Get_rank()
 
 # generate a large array of data on RANK_0
-numData = 100000000 # 100milion values each
+numData = 100000000 # 100 million values each
 data = None
 if rank == 0:
     data = np.random.normal(loc=10, scale=5, size=numData)

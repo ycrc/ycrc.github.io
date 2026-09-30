@@ -1,10 +1,10 @@
 # Multi-factor Authentication
 
-To improve security, access to all cluster requires both a public key (or NetID credentials for the [Web Portal](/clusters-at-yale/access/ood)) and multi-factor authentication (MFA).
+To improve security, access to all clusters requires both a public key (or NetID credentials for the [Web Portal](/clusters-at-yale/access/ood)) and multi-factor authentication (MFA).
 We use the same MFA (Duo) as is used elsewhere at Yale.
 To get set up with Duo, follow these [instructions.](https://cybersecurity.yale.edu/mfa)
 
-You will need upload your [ssh public key to our site](https://sshkeys.ycrc.yale.edu/).
+You will need to upload your [ssh public key to our site](https://sshkeys.ycrc.yale.edu/).
 For more info on how to use ssh, please see the [SSH instructions](/clusters-at-yale/access).
 
 Once you've set up Duo and your key is registered, you can log in to the cluster.
@@ -12,7 +12,7 @@ Use ssh to connect to your cluster of choice, and you will be prompted to select
 We recommend choosing Duo Push (option 1).
 If you chose this option you should receive a notification on your phone.
 We also recommend that you click "Remember me for 90 days" when you are prompted to choose an authentication method for DUO.
-This will simplified the login process.
+This will simplify the login process.
 Once approved, you should be allowed to continue to log in.
 
 !!!note
@@ -27,7 +27,7 @@ Some file transfer clients attempt new and sometimes multiple concurrent connect
 When this happens, you will be asked to Duo authenticate for each connection.
 
 ### SSH Config File
-On macOS and Linux-based systems setting up a [config file](/clusters-at-yale/access/advanced-config) lets you re-uses your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
+On macOS and Linux-based systems setting up a [config file](/clusters-at-yale/access/advanced-config) lets you reuse your authenticated sessions for command-line tools and tools that respect your ssh configuration. 
 An example config file is shown below which enables SSH multiplexing (`ControlMaster`) by caching connections in a directory (`ControlPath`) for a period of time (2h, `ControlPersist`). 
 
 ```
@@ -43,7 +43,7 @@ Host *.ycrc.yale.edu bouchet milgram misha
     User NETID
     #ForwardX11 yes
     # To re-use your connections with multi-factor authentication
-    # Uncomment the two lines below
+    # Uncomment the three lines below
     #ControlMaster auto
     #ControlPath /tmp/%h_%p_%r
     #ControlPersist 2h
@@ -72,7 +72,7 @@ When you connect type one of the following when prompted with a "Partial authent
 MobaXTerm is able to cache MFA connections to reduce the frequency of push notifications.
 Under `Settings > SSH > Advanced SSH settings` set the ssh browser type to `scp (enhanced speed)` as seen here:
 
-[MobaXTerm SSH Settings](/img/mobaxterm_mfa.png)
+![MobaXTerm SSH Settings](/img/mobaxterm_mfa.png)
 
 ### WinSCP
 
@@ -88,7 +88,7 @@ Under `Options > Preferences > Background (under Transfer)` and:
 
 If you are having problems initially registering Duo, please contact the [Yale ITS Helpdesk](https://yale.service-now.com/it?id=get_help).
 
-If you have successfully used MFA connect to a cluster before, but cannot now, first please check the following:
+If you have successfully used MFA to connect to a cluster before, but cannot now, first please check the following:
 
 * Test MFA using [http://access.yale.edu](http://access.yale.edu)
 * Verify that your ssh client is using the correct login node

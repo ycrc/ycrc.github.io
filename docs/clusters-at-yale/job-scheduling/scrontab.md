@@ -5,7 +5,7 @@ You can use `scrontab` to schedule recurring jobs. It uses a syntax similar to [
 !!! warning "`scrontab` vs `crontab`"
     If you are familiar with `crontab`, there are some important differences to note:
 
-    - The scheduled times for `scrontab` indicate when your job is *eligible* to start. They are not start times like a traditional Cron jobs.
+    - The scheduled times for `scrontab` indicate when your job is *eligible* to start. They are not start times like traditional Cron jobs.
     - Jobs managed with `scrontab` won't start if an earlier iteration of the same job is still running. Cron will happily run multiple copies of a job at the same time.
     - You have one scrontab file for the entire cluster, unlike crontabs which are stored locally on each computer.
 
@@ -83,9 +83,9 @@ This example submits a transfer script eligible to start every Wednesday at 8:00
 0 20 * * 3 ./rclone_commands.sh
 ```
 
-### Capture output from	each run in a separate file
+### Capture output from each run in a separate file
 
-Normally scrontab will clobber the output file from the	previous run on	each execution,	since
+Normally scrontab will clobber the output file from the previous run on each execution, since
 each execution uses the same jobid.  This can be avoided using a redirect to a date-stamped file.
 
 ```bash

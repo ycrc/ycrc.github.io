@@ -96,11 +96,11 @@ salloc -t 2:00:00 --mem=8G
 This will assign one CPU and 8GiB of RAM to you for two hours. You can run commands in this shell as needed. To exit, you can type `exit` or <kbd>Ctrl</kbd>+<kbd>d</kbd> 
 
 !!! tip "Use `tmux` with Interactive Sessions"
-    Remote sessions are vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/guides/tmux) alleviate this. When using `tmux` with interactive jobs, please take extra care to stop jobs that are no longer needed.
+    Remote sessions are vulnerable to being killed if you lose your network connection. We recommend using [`tmux`](/clusters-at-yale/guides/tmux) to alleviate this. When using `tmux` with interactive jobs, please take extra care to stop jobs that are no longer needed.
 
 ### Graphical applications
 
-Many graphical applications are well served with the [Open OnDemand Remote Desktop app](/clusters-at-yale/access/ood/#remote-desktop). If you would like to use X11 forwarding, first make sure it is [installed and configured](/clusters-at-yale/access/x11). Then, add the `--x11` flag to an interactive job request:
+Many graphical applications are well served with the [Open OnDemand Remote Desktop app](/clusters-at-yale/access/ood-remote-desktop). If you would like to use X11 forwarding, first make sure it is [installed and configured](/clusters-at-yale/access/x11). Then, add the `--x11` flag to an interactive job request:
 
 ``` bash
 salloc --x11

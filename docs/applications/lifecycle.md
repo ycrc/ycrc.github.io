@@ -9,7 +9,7 @@ To keep the YCRC cluster [software modules](/applications/modules) catalogs tidy
 - A software module has not been used much in the past year
 - We are ending support for the toolchain with which a module was built
 
-As we deprecate modules, every time you load a module that has been marked for removal a warning message will appear. The message state when the module will no appear in the module list. If you see such a message, we recommend you update your project to use a supported module as soon as possible or [contacting us](/#get-help) for help. 
+As we deprecate modules, every time you load a module that has been marked for removal a warning message will appear. The message states when the module will no longer appear in the module list. If you see such a message, we recommend you update your project to use a supported module as soon as possible or [contact us](/#get-help) for help. 
 
 ## Toolchain Support
 

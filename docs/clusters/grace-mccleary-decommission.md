@@ -8,7 +8,7 @@ The YCRC is in the process of transitioning from the Yale West Campus Data Cente
 
 During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.
 
-- [Phase 1](#phase-1) (**Complete**): Migration of workloads and data from research groups who do not use dedicated compute nodes, CyroEM resources or YCGA resources.
+- [Phase 1](#phase-1) (**Complete**): Migration of workloads and data from research groups who do not use dedicated compute nodes, CryoEM resources or YCGA resources.
 
 - Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.
 

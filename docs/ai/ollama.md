@@ -62,7 +62,7 @@ salloc --partition gpu_devel --constraint="rtx5000|v100"
 Within an interactive allocation, models can be run directly from a terminal like so:
 
 ```bash
-###request compute node with GPU (add --Constraint=GPUTYPES if needed)
+###request compute node with GPU (add --constraint=GPUTYPES if needed)
 salloc --partition=gpu_devel --cpus-per-task=1 --time=4:00:00 --mem=5G --gpus=1
 
 ###load ollama module if it isn't loaded
@@ -121,7 +121,7 @@ and won't work properly.
 3. Use this block of code prior to using Ollama to connect YCRC Computing Systems to Ollama server properly.
 Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.
 
-```bash
+```python
 import subprocess,ollama
 
 ###starts ollama server
@@ -142,14 +142,14 @@ client = Client(host=host)
 
 4. Download desired model using this cell block:
 
-```bash
+```python
 client.pull("llama3.1")
 ###can change llama3.1 to any desired model
 ```
 
 5. Use this formatting to prompt the model.
 
-```bash
+```python
 ###prompts model using saved host address
 resp = client.generate(
     model="llama3.1",
@@ -196,7 +196,7 @@ When GPUs are allocated, Ollama will use available GPUs on the node. If no usabl
 
 GPU usage must be validated using Jobstats.
 
-##Hands on Examples
+## Hands on Examples
 
 The YCRC hosts a github repository for hands-on examples from the Ollama on HPC workshop provided by YCRC. You can
 access the examples [here](exercises.md).

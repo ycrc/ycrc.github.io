@@ -15,13 +15,13 @@ Support staff are available to assist researchers with identifying and accessing
 
 ### Projects
 
-Unlikely other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
+Unlike other YCRC HPC systems, access to the system is granted on a per project basis, so a single PI may have multiple projects.
 Projects are named `<pi_netid>_<project_code>`.
 A request for a specific project will need to be submitted by a PI and approved before user accounts can be created.
 
-Once a project is approved, the project's PI is responisible for the approval of additional user accounts.
+Once a project is approved, the project's PI is responsible for the approval of additional user accounts.
 PIs are also required to conduct a quarterly review of user accounts on their projects.
-Failure to complete the review by the due date will result deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.
+Failure to complete the review by the due date will result in deactivation of the project (inability to submit jobs or access data for the project) until the review is complete.
 
 Projects will also be deactivated if their expiration date has elapsed (if applicable) or otherwise at the PI's discretion.
 
@@ -71,18 +71,18 @@ To access the VDI, navigate to `hopper1.ycrc.yale.edu` in a web browser.
 
 ### Security Restrictions
 
-To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of addition restrictions beyond other YCRC systems.
+To protect the security of the data on Hopper and to comply with NIST 800-171 and HIPAA regulations, Hopper has a number of additional restrictions beyond other YCRC systems.
 
 - The VDI prevents copy/pasting to the host computer, prevents file transfers (see below for how to transfer files) and enforces idle session timeouts. (See below for tips on copy/paste *within* Hopper).
 - Screenshots, screen recording and screen sharing (e.g. via Zoom) are strictly prohibited (see below for how to record and report issues).
 - If you know you will be away from your computer for more than 10 minutes, you must disconnect from the VDI. This can be easily done by simply closing the browser tab.
-- You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shopts, transportation hubs or libraries is not allowed.
+- You must access Hopper from a private location, such as your home or office. Access from public locations such as coffee shops, transportation hubs or libraries is not allowed.
 - Do not put sensitive data (e.g. patient information, personal identifiers) in directory names or job names, which might inadvertently expose this information.
 
 
 ## Report an Issue
 
-If you run into an issue on Hopper and would think it would be helpful to take a picture of your session (e.g. to record an error message), click the "Report an Issue" icon on your VDI desktop.
+If you run into an issue on Hopper and think it would be helpful to take a picture of your session (e.g. to record an error message), click the "Report an Issue" icon on your VDI desktop.
 This will place a capture of your screen in a folder where it can be reviewed by YCRC staff.
 Please notify YCRC staff in [your help request](/) if you have recorded your issue in this way.
 
@@ -100,7 +100,7 @@ The user then must submit a request to the YCRC to have the transfer approved an
 If your data is large (>200G), please submit your request _prior_ to uploading the data so we can facilitate the larger transfer.
 
 Downloading of low-risk files from the cluster is the same process, but in reverse.
-submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
+Submit a request to the YCRC to export your data, and once approved staff will transfer the data to a user-specific directory on the Globus server.
 Then you can retrieve your data using Globus at your convenience.
 
 [Submit Low-Risk Transfer Request](https://research.computing.yale.edu/hopper-low-risk-transfer){ .md-button }
@@ -176,7 +176,7 @@ The output corresponds directly to Hugging Face repository IDs.
 
 Models can be loaded using standard Hugging Face APIs. No environment variables are required.
 
-```bash
+```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_id = "meta-llama/Llama-3.1-70B"
@@ -210,14 +210,14 @@ While the VDI will lock sessions after 20 minutes of idle time, jobs submitted t
 ## Copy/Paste
 
 The VDI prevents copy/pasting to the host computer in order to prevent unrestricted, unmonitored transfer of data between Hopper and the host computer.
-This restrictions allows Hopper users to access the environment from their own personal machines rather than a secure computer.
+This restriction allows Hopper users to access the environment from their own personal machines rather than a secure computer.
 
 There is the ability to copy/paste *within* Hopper using the Linux Terminal keyboard shortcuts (as well as right-clicking), Shift+Control+C and Shift+Control+V. 
 These keyboard shortcuts can be customized on a per-user basis by:
 
 - Right-click in Terminal and click "Show Menubar"
 - Select Edit > Keyboard Shortcuts...
-- Modified the desired keyboard shortcuts
+- Modify the desired keyboard shortcuts
 
 
 ## Rate Structure
@@ -230,8 +230,7 @@ In the coming months, YCRC will add [Priority Tier](/clusters-at-yale/job-schedu
 
 Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
-This additional storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`. 
-Storage charges are based on requested allocation, not actual usage.
+This additional storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`.
 [Contact us](/#get-help) to request additional storage allocations.
 
 
@@ -253,12 +252,12 @@ You can also get a list of the absolute paths to your directories with the `mydi
 Top-level folder permissions are managed by YCRC and cannot be modified by users.
 Only users in a specific project will be able to access that project's storage spaces. 
 
-See [Purchased Storage rates](/clusters/hopper/#purchase-storage) above for details on purchasing storage.
+See [Purchased Storage rates](/clusters/hopper/#additional-storage) above for details on purchasing storage.
 
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/hpc-storage/#request-additional-storage) if you need additional longer term storage.
 
 |Fileset       | Root Directory                              | Storage          | File Count | Backups | Snapshots | Notes |
 |--------------|---------------------------------------------|------------------|------------|---------|-----------|-------|

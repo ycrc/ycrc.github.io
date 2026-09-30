@@ -1,13 +1,13 @@
 # MPI Partition
 
 Grace and Bouchet have special common partitions called `mpi`. The `mpi` partitions are a bit different from other partitions on YCRC clusters-- jobs submitted to the partition are always allocated full nodes. 
-Each node in the `mpi` partition are identical. 
+Each node in the `mpi` partition is identical. 
 On Grace, these nodes are 24 core, 2x Skylake Gold 6136, 96GiB RAM (88GiB usable) nodes. 
 On Bouchet, these nodes are 64 core, 2x Emerald Rapids Platinum 8562Y+, 500GiB RAM (487GiB usable) nodes.
 While these partitions are available to all Grace/Bouchet users, only certain types of jobs are allowed on them (similar to the restrictions on our GPU partitions).
 
-In addition the the common partition `mpi`, there is a `scavenge_mpi` partition. 
-This partition is has the same purpose and limitations as the regular `mpi` partition, but allows users to run a lower priority (e.g. subject to preemption if nodes are requested in the `mpi` partition ) without incurring cpu charges.
+In addition to the common partition `mpi`, there is a `scavenge_mpi` partition. 
+This partition has the same purpose and limitations as the regular `mpi` partition, but allows users to run lower priority jobs (e.g. subject to preemption if nodes are requested in the `mpi` partition) without incurring cpu charges.
 
 ## Appropriate Jobs
 

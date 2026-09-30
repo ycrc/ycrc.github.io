@@ -24,10 +24,10 @@ To assist with providing this information, we have included instructions below o
 	* the [software modules](/applications/modules/) you have loaded
 		* Run `module list` when you encounter the issue
 	* the commands you ran that resulted in the error or issue
-	* the name of the submission script your submitted to the scheduler with `sbatch` (if reporting an issue with a batch job)
+	* the name of the submission script you submitted to the scheduler with `sbatch` (if reporting an issue with a batch job)
 
 * the error message you received, and, if applicable, the path to the output file containing the error message
-	* if you are using the default Slurm output options, this will look `slurm-<your job id>.out`
+	* if you are using the default Slurm output options, this will look like `slurm-<your job id>.out`
 	* certain software may output additional information to other log files and, if applicable, include the paths to those files as well
 
 * job ids for your Slurm jobs
@@ -36,4 +36,4 @@ To assist with providing this information, we have included instructions below o
 
 If possible, please paste the output into the email or include in a text file as an attachment. Screenshots or pictures are very hard for us to work with.
 
-We look forwarding to assisting you!
+We look forward to assisting you!

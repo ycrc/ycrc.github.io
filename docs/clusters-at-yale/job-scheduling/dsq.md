@@ -1,13 +1,13 @@
 # Job Arrays 
 
 
-[Job arrays](https://slurm.schedmd.com/job_array.html) can be used to submit large batches of independent, homogenous jobs to a [Slurm](https://slurm.schedmd.com/)-based HPC cluster. Job arrays have several advantages over submitting your jobs individually in a loop:
+[Job arrays](https://slurm.schedmd.com/job_array.html) can be used to submit large batches of independent, homogeneous jobs to a [Slurm](https://slurm.schedmd.com/)-based HPC cluster. Job arrays have several advantages over submitting your jobs individually in a loop:
 
 * Your job array will grow during the run to use available resources, up to a limit you can set. Even if the cluster is busy, you probably get work done because each job from your array can be run independently.
 * Your job will only use the resources needed to complete remaining jobs. It will shrink as your jobs finish, giving you and your peers better access to compute resources.
 * If you run your array on a pre-emptable partition (scavenge on YCRC clusters), only individual jobs are preempted. Your whole array will continue. 
 
-Job arrays is _not_ recommended for situations where the initialization of the job takes most of its execution time and it is re-usable.
+Job arrays are _not_ recommended for situations where the initialization of the job takes most of its execution time and it is re-usable.
 These situations are much better handled by a worker-based job handler.
 
 ## Submit Job Arrays 
@@ -56,7 +56,7 @@ scancel 14567_[10-20]
 
 ### Monitor Job Array
 
-You can monitor the status of your jobs in Slurm by using `squeue -u <netid>` and `squeue -j <jobid>`. [`seff-array`](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-usage/#seff-array) can be used to look at statistics for how resources are used by each elements of the job array. 
+You can monitor the status of your jobs in Slurm by using `squeue -u <netid>` and `squeue -j <jobid>`. [`seff-array`](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-usage/#seff-array) can be used to look at statistics for how resources are used by each element of the job array. 
 
 ## Submit Job Arrays with dSQ
 
@@ -160,13 +160,13 @@ For details on managing your dSQ job (e.g., `scancel`, `squeue`), refer to the [
 
 ### dSQ Output
 
-dSQ creates a file named `job_jobid_status.tsv`, unless you suppress this output with `--supress-stats-file`. This file will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:
+dSQ creates a file named `job_jobid_status.tsv`, unless you suppress this output with `--suppress-stats-file`. This file will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:
 
 * Job_ID: the zero-based line number from your job file.
 * Exit_Code: exit code returned from your job (non-zero number generally indicates a failed job).
 * Hostname: The hostname of the compute node that this job ran on.
 * Time_Started: time started, formatted as year-month-day hour:minute:second.
-* Time_Ended: time started, formatted as year-month-day hour:minute:second.
+* Time_Ended: time ended, formatted as year-month-day hour:minute:second.
 * Time_Elapsed: in seconds.
 * Job: the line from your job file.
 
@@ -189,7 +189,7 @@ Asking for a simple report:
 dsqa -j 13233846
 ```
 
-Produces one
+Produces:
 
 ``` text
 State Summary for Array 13233846

@@ -4,7 +4,7 @@ How to get software you need up and running on the clusters.
 
 ## *caveat emptor*
 
-We recommend either use existing [software modules](/applications/modules), [Conda](/clusters-at-yale/guides/conda), [Apptainer](/clusters-at-yale/guides/containers), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
+We recommend using existing [software modules](/applications/modules), [Conda](/clusters-at-yale/guides/conda), [Apptainer](/clusters-at-yale/guides/containers), or pre-compiled software where available. However, there are cases where compiling applications is necessary or desired. This can be because the pre-compiled version isn't readily available/compatible or because compiling applications on the cluster will make an appreciable difference in performance. It is also the case that many R packages are compiled at install time.
 
 When compiling applications on the clusters, it is important to consider the ways in which you expect to run the application you are endeavoring to get working. If you want to be able to run jobs calling your application on any node on the cluster, you will need to target the oldest hardware available so that newer optimizations are not used that will fail on some nodes. On clusters containing both Intel and AMD nodes, you will also need to make sure that the compiled application uses an instruction set supported by both CPU architectures. If your application is already quite specialized (e.g. needs GPUs or brand-new CPU instructions), you will want to compile it natively for the subset of compute nodes on which your jobs will run. This decision is often a trade-off between faster individual jobs or jobs that can run on more nodes at once.
 
@@ -12,7 +12,7 @@ Each of the cluster pages (see the [HPC Resources](/clusters) page for a list) h
 
 ### Compiling for both Intel and AMD nodes
 
-To run your code on both Intel and AMD nodes, you need to compile it with a compiler flag that specifies a compatible instruction set. You can compile your code on either types of compute node.
+To run your code on both Intel and AMD nodes, you need to compile it with a compiler flag that specifies a compatible instruction set. You can compile your code on either type of compute node.
 
 Recommended compiler flag:
 
@@ -86,7 +86,7 @@ If your configure ran properly, `make install` should properly place your applic
 
 ## CMake
 
-[CMake](https://en.wikipedia.org/wiki/CMake) is a popular cross-platform build system. On a linux system, CMake will create a `Makefile` in a step analogous to `./configure`. It is common to create a build directory then run the `cmake` and `make` commands from there. Below is what installing to your `$MY_DIRECTORY` prefix might look like with CMake. CMake instructions also tend to link together the build process onto on line with `&&`, which tells your shell to only continue to the next command if the previous one exited without error.
+[CMake](https://en.wikipedia.org/wiki/CMake) is a popular cross-platform build system. On a linux system, CMake will create a `Makefile` in a step analogous to `./configure`. It is common to create a build directory then run the `cmake` and `make` commands from there. Below is what installing to your `$MY_PREFIX` prefix might look like with CMake. CMake instructions also tend to link together the build process onto one line with `&&`, which tells your shell to only continue to the next command if the previous one exited without error.
 
 ``` bash
 export MY_PREFIX=~/software

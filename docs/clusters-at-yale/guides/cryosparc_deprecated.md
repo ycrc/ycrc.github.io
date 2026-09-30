@@ -12,7 +12,7 @@ their website](https://cryosparc.com/download/). These instructions are somewhat
 
 ### 1. Set up Environment
 
-First, log onto a GPU compute node, either as an [interactive session](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#remote-desktop). Remember to request a non-zero number of GPUs, using a partition like 'gpu' ('gpu_devel' is fine for initial cryosparc installation).
+First, log onto a GPU compute node, either as an [interactive session](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/#interactive-jobs) or an [Open Ondemand Remote Desktop](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-remote-desktop). Remember to request a non-zero number of GPUs, using a partition like 'gpu' ('gpu_devel' is fine for initial cryosparc installation).
 
 Then choose a location for installing the software, such as under your project directory.
 

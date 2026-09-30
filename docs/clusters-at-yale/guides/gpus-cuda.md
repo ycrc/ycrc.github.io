@@ -32,7 +32,7 @@ Here we see that the node `gpu01` is running driver version 460.32.03 and is com
 
 ## Software
 
-###Cuda, cuDNN, tensorflow, and pytorch availability on cluster
+### Cuda, cuDNN, tensorflow, and pytorch availability on cluster
 
 We have built certain versions of CUDA, cuDNN, tensorflow, and pytorch on all the clusters YCRC maintains. If one of the versions of these modules aligns with the version needed for your research, then there may be no need to install these programs yourself. To list all the modules available for these programs:
 
@@ -54,7 +54,7 @@ Instructions for installing PyTorch on our clusters can be found [here](https://
 
 ## Compile `.c` or `.cpp` Files with CUDA code
 
-By default, `nvcc` expects that host code is in files with a `.c` or `.cpp` extension, and device code is in files with a `.cu` extension. When you mix device code in a `.c` or `.cpp` file with host code, the device code will not be recoganized by `nvcc` unless you add this flag: `-x cu`.  
+By default, `nvcc` expects that host code is in files with a `.c` or `.cpp` extension, and device code is in files with a `.cu` extension. When you mix device code in a `.c` or `.cpp` file with host code, the device code will not be recognized by `nvcc` unless you add this flag: `-x cu`.  
 
 ``` bash
 nvcc -x cu mycuda.cpp -o mycuda.exe

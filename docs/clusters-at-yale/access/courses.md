@@ -12,13 +12,13 @@ The YCRC Bouchet cluster can be made available for Yale courses with a suitable 
 
 ## Course ID
 
-Your course will be give a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names and web portal.
+Your course will be given a specific `courseid` based on the Yale course catalog number. This `courseid` will be used in the course account names and web portal.
 
 ## Course Accounts
 
 All members of a course, including the instructor and TFs will be given temporary course accounts. These accounts take the form of `courseid_netid`. Course accounts are distinct from any research accounts a course member may already have. As with all cluster access, you must be on the [VPN](/clusters-at-yale/access/vpn/) to access the web portal if you are off campus.
 
-All course-related accounts are subject to [the same policies and expectation as standard accounts](/clusters-at-yale/access/accounts/) and [Rules of Behavior](https://docs.ycrc.yale.edu/clusters/bouchet-rob/).
+All course-related accounts are subject to [the same policies and expectations as standard accounts](/clusters-at-yale/access/accounts/) and [Rules of Behavior](https://docs.ycrc.yale.edu/clusters/bouchet-rob/).
 
 ### Course-specific Web Portal
 
@@ -55,7 +55,7 @@ Course members are welcome to use the [public partitions of the cluster](https:/
 See each tab below for more information about the available education partitions.
 
 !!! note "Note"
-    The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the `education` and `education_gpu` partitions is 6 hours. If your sessions needs to run longer than 6 hours, please have your instructor or TF contact us.
+    The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the `education` and `education_gpu` partitions is 6 hours. If your session needs to run longer than 6 hours, please have your instructor or TF contact us.
 
 
 --8<-- "snippets/education_partitions.md"
@@ -131,21 +131,3 @@ If you have a research account on one of our clusters and would like to transfer
 
 - **Can I use my course account for research or personal projects?**  
   No. Course accounts are temporary and intended for coursework only. Students will not receive a reminder before their course accounts are removed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

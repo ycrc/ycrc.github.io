@@ -114,7 +114,7 @@ You may also try reducing queueSize to a value less than 100.  If you cannot fin
 
 Sarek can be run on our clusters with a minimum of setup:
 
-1. create a sample_sheet.csv file that lists the input genome files, e.g.:
+1. Create a sample_sheet.csv file that lists the input genome files, e.g.:
 ```
 patient,sample,lane,fastq_1,fastq_2
 1,5084,1,WES_01.13.25/tumor/data/5084_R1_001.fastq.gz,WES_01.13.25/tumor/data/5084_R2_001.fastq.gz
@@ -125,7 +125,7 @@ patient,sample,lane,fastq_1,fastq_2
 
 ```
 
-1. Create a `bouchet.config` next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of `<group>`.:
+2. Create a `bouchet.config` next to your batch script or in your home folder for future use.  The following is a set of options that are configured for use on Bouchet; be sure to enter your proper group name in place of `<group>`.:
 ```groovy
 params {
     config_profile_name        = 'bouchet'
@@ -181,7 +181,7 @@ process {
 }
 ```
 
-2. create a batch script sarek.sh:
+3. Create a batch script sarek.sh:
 ```
 #!/bin/bash
 
@@ -216,7 +216,7 @@ nextflow run nf-core/sarek \
 Nextflow will pull everything else automatically, including the pipeline and the apptainer image.  `bouchet.config` defines a default configuration that submits all tasks as Slurm jobs.  However, because this
 example has a relatively small number of input files, you should not hit the submission rate issue mentioned previously.
 
-3. submit
+4. Submit
 ```
 sbatch sarek.sh
 ```

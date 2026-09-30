@@ -2,9 +2,9 @@
 
 ![Edward Bouchet](/img/edward-bouchet.jpg){: .cluster-portrait}
 
-The Bouchet HPC cluster is shared-use resource for researchers at Yale. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
+The Bouchet HPC cluster is a shared-use resource for researchers at Yale. Bouchet is named for [Dr. Edward Bouchet](https://en.wikipedia.org/wiki/Edward_Bouchet) (1852-1918), the first self-identified African American to earn a doctorate from an American university, a PhD in physics at Yale University in 1876.
 
-Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. More information about the decommission of Grace and McCleary is available on the [Decommission Page](/clusters/grace-mccleary-decommission). We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu). 
+Bouchet is the successor to both Grace and McCleary, with the majority of HPC infrastructure refreshes and growth deployed at MGHPCC going forward. More information about the decommission of Grace and McCleary is available on the [Decommission Page](/clusters/grace-mccleary-decommission). We welcome any researchers to move their workloads to Bouchet at their convenience between now and then to take advantage of Bouchet’s newer, faster and more powerful computing resources. YCRC staff is available to assist (you can contact us at [research.computing@yale.edu](mailto:research.computing@yale.edu)).
 
 ---
 
@@ -51,11 +51,11 @@ If you want to share data in your Project or Scratch directory, see the [permiss
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch` are purged if they are older than 30 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch` are purged if they are older than 30 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/hpc-storage/#request-additional-storage) if you need additional longer term storage.
 
 |Partition       | Root Directory            | Storage                                 | File Count | Backups | Snapshots | Notes |
 |----------------|---------------------------|-----------------------------------------|------------|---------|-----------|-------|
 | home           | `/home`                   | 125GiB/user                             | 500,000    | Yes     | >=2 days  |       |
 | project        | `/nfs/roberts/project`    | 4TiB/group                              | 5,000,000  | Yes     | >=2 days  |       |
 | scratch        | `/nfs/roberts/scratch`    | 10TiB/group                             | 15,000,000 | No      | No        |       |
-| pi             | `/nfs/roberts/pi`         | varies                                  | vareis     | No      | >=2 days  |       |
+| pi             | `/nfs/roberts/pi`         | varies                                  | varies     | No      | >=2 days  |       |

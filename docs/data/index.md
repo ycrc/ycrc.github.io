@@ -1,6 +1,6 @@
 # Data Storage
 
-Below we highlight some data storage option at Yale that are appropriate for research data. For a more complete list of data storage options, see the [Storage Finder](https://storage-finder.yale.edu/).
+Below we highlight some data storage options at Yale that are appropriate for research data. For a more complete list of data storage options, see the [Storage Finder](https://storage-finder.yale.edu/).
 If you have questions about selecting an appropriate home for your data, [contact us](/#get-help) for assistance.
 
 ## HPC Cluster Storage
@@ -12,11 +12,11 @@ If you have questions about selecting an appropriate home for your data, [contac
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.
 Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/data/hpc-storage/) page.
 
-Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#purchase-additional-storage) for more information.
+Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#request-additional-storage) for more information.
 
 ## ARK Nearline Storage
 
-- **Capacity: Currently 10-100TiB per share. Cost: $2/TiB/Month **
+- **Capacity: Currently 10-100TiB per share. Cost: $2/TiB/Month**
 - **No sensitive data is allowed**
 - **Accessed via shared drive and Globus**
 - **Data is replicated offsite for safety**
@@ -37,7 +37,7 @@ The share is not mounted on YCRC's clusters.  It is accessed via the Ark Globus 
     - **As of 7/1/24, all existing EliApps accounts will have a free quota of 5GB.**
     - **Quotas beyond 5GB will be available for $145/TB/yr**
 
-    Therefore, you should probably not consider Google Drive on EliApps for storage large amounts of data.  ITS suggested alternatives
+    Therefore, you should probably not consider Google Drive on EliApps for storing large amounts of data.  ITS suggested alternatives
     are Storage@Yale, Teams/SharePoint, or DropBox.
 
 - **Capacity: 400,000 file count quota, 5TiB max file size. Cost: Free**
@@ -65,7 +65,7 @@ For pricing information, see the [ITS Data Rates](https://yale.service-now.com/i
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). 
 
-**Globus access** : To access S@Y on the clusters, use [Globus](/data/globus) with the 'Yale CRC McCleary' mount point (Path: '/SAY') and [stage the data](/data/staging) to [Project](/data/#project) or [Scratch60](/data/#60-day-scratch) before running jobs.
+**Globus access** : To access S@Y on the clusters, use [Globus](/data/globus) with the 'Yale CRC McCleary' mount point (Path: '/SAY') and [stage the data](/data/staging) to [Project](/data/hpc-storage/#project) or [Scratch](/data/hpc-storage/#scratch) before running jobs.
 
 If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 
@@ -76,7 +76,7 @@ If you elect to use archive tier storage, be cognizant of [its performance chara
 
 - **Capacity: 25 TB, 250 GB per file. Cost: Free**
 
-You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on The relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
+You can request a Team and 25TiB of underlying SharePoint storage space from [ITS Email And Collaboration Services](https://yale.service-now.com/it?id=support_article&sys_id=bbd672721b6a141029b375d4cc4bcbf4). For more information on the relationship between Teams, SharePoint, and OneDrive, see the official [Microsoft post on the subject](https://support.microsoft.com/en-us/office/collaborating-with-teams-sharepoint-and-onedrive-9ea6aa07-6e5e-4917-9267-d4d361da3dea).
 
 ## Dropbox at Yale
 

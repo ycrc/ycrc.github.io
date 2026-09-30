@@ -14,7 +14,7 @@ Hugging Face is appropriate for:
 - Retrieval Augmented Generation
 - Fine Tuning
 
-##Ollama vs Hugging Face
+## Ollama vs Hugging Face
 
 The YCRC supports all AI/ML workflows. However, we generally recommend [Ollama](ollama.md) because it is simpler to use
 as a beginner. Hugging Face provides significantly more flexibility in model development and control and is suitable

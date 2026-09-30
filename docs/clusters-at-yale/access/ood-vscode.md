@@ -12,7 +12,7 @@ There are several ways to use Visual Studio Code with the YCRC clusters, dependi
 
 - **[Code Server](#code-server)** (Recommended): A web-based VSCode instance running on a compute node, accessed through your browser via Open OnDemand. This is the recommended method for most users as it provides a stable connection and requires no local configuration.
 
-- **[Remote Tunnel](#remote-tunnel-advanced-users)**: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. **Note: Not permitted on Milgram due to security requirements.**
+- **[Remote Tunnel](#remote-tunnel)**: For advanced users who want to use their local VSCode installation. Uses GitHub authentication to tunnel to a compute node. **Note: Not permitted on Milgram due to security requirements.**
 
 - **[Remote SSH](#remote-ssh-via-compute-node-advanced-users)**: An alternative for users who want to use their local VSCode installation but cannot use the Remote Tunnel method. Requires SSH configuration and connecting through login nodes to compute nodes.
 
@@ -252,7 +252,7 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 
 6. VSCode will then connect through the login node to your compute node and automatically start the VSCode server
 
-When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working** for that session using `scancel [JOBID]`
+When VSCode connects, it will automatically install and start the VSCode server on the compute node. Your files, terminal, and all VSCode features will be running on the compute node. Remember to terminate your VSCode batch job when you are done working for that session using `scancel [JOBID]`.
 
 
 

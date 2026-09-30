@@ -4,7 +4,7 @@ Your jobs haven't failed, you have just found ways to run them that won't work. 
 
 ## Memory Limits
 
-Jobs can fail due to an insufficient memory being requested. Depending on the job, this failure might present as a Slurm error:
+Jobs can fail due to insufficient memory being requested. Depending on the job, this failure might present as a Slurm error:
 
 ```
 slurmstepd: error: Detected 1 oom-kill event(s).
@@ -13,7 +13,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 
 This means Slurm detected the job hitting the maximum requested memory and then the job was killed.
 
-When process inside a job tries to access memory outside what was allocated to that job (more than what you requested) the operating system tells your program that address is invalid with the fault `Bus Error`. A similar fault you might be more familiar with is a `Segmentation Fault`, which usually results from a program incorrectly trying to access a valid memory address.
+When a process inside a job tries to access memory outside what was allocated to that job (more than what you requested) the operating system tells your program that address is invalid with the fault `Bus Error`. A similar fault you might be more familiar with is a `Segmentation Fault`, which usually results from a program incorrectly trying to access a valid memory address.
 
 These errors can be fixed in two ways.
 
@@ -51,7 +51,7 @@ If you are *_sure_* you no longer need some files or directories, you can delete
 
 ### Buy More Space
 
-If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/data/#purchase-additional-storage).
+If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/data/hpc-storage/#request-additional-storage).
 
 ## Rate Limits
 
@@ -92,7 +92,7 @@ Where possible, only use one toolchain at a time. When you want to use software 
 
 ## Conda Environments
 
-[Conda environments](/clusters-at-yale/guides/conda/) provide a nice way to manage `python` and `R` packages and modules. Conda acieves this by setting functions and environment variables that point to your environment files when you run `conda activate`. Unlike [modules](/applications/modules/), conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.
+[Conda environments](/clusters-at-yale/guides/conda/) provide a nice way to manage `python` and `R` packages and modules. Conda achieves this by setting functions and environment variables that point to your environment files when you run `conda activate`. Unlike [modules](/applications/modules/), conda environments are not completely forwarded into a job; having a conda environment loaded when you submit a job doesn't forward it well into your job. You will likely see messages about missing packages and libraries you definitely installed into the environment you want to use in your job.
 
 ### Load Conda Environments Right Before Use
 

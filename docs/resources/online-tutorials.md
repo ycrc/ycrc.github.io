@@ -12,14 +12,14 @@ Note: You can learn more about most commands you come across by typing "man [com
 
 ### `awk` (text extraction/parsing)
 
-`awk` is a tool for parsing text and extracting certain section. It is particularly useful for extracting, and even reordering, columns out of tables in text files.
+`awk` is a tool for parsing text and extracting certain sections. It is particularly useful for extracting, and even reordering, columns out of tables in text files.
 
 * [Introduction to `awk` and examples of common usage](https://www.freecodecamp.org/news/the-linux-awk-command-linux-and-unix-usage-syntax-examples/)
 * [In-depth guide to `awk` and more advanced usage](https://linuxize.com/post/awk-command/#how-awk-works)
 
 ### `grep`
 
-Grep is tool for searching command line output or files for a certain string (phrase) or regular expression.
+Grep is a tool for searching command line output or files for a certain string (phrase) or regular expression.
 
 * [Introduction to `grep` and examples of common usage](https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/)
 * [In-depth guide to `grep` and more advanced usage](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
@@ -47,7 +47,7 @@ Grep is tool for searching command line output or files for a certain string (ph
 
 ### tar or tar.gz archive
 
-`.tar` or `t.ar.gz` are common archive (compressed file) formats. Software and data will frequently be distributed in one of these archive formats.
+`.tar` or `.tar.gz` are common archive (compressed file) formats. Software and data will frequently be distributed in one of these archive formats.
 The most common command for opening and extracting the contents of a `tar` archive is `tar xvf archive.tar` and, for a `tar.gz` archive, `tar xvzf archive.tar.gz` .
 See the following link(s) for more details on creating `tar` files and more advanced extraction options.
 

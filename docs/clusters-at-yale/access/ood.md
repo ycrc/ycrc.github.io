@@ -18,7 +18,7 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu](https://ood-milgram.ycrc.yale.edu)     | 
 
-\* *[Hopper Open OnDemand](/clusters/hopper/#open-ondeamnd) is only available from the Hopper VDI.*
+\* *[Hopper Open OnDemand](/clusters/hopper/#open-ondemand) is only available from the Hopper VDI.*
 
 ### Web Portal for Courses
 
@@ -26,12 +26,12 @@ Each [academic course](/clusters-at-yale/access/courses) on the YCRC clusters ha
 Course web portal URLs are <b>courseID.ycrc.yale.edu</b>, where 'courseID' is the unique abbreviation given to the course. 
 Course members must use the course URL to log in to course accounts on Open OnDemand--the normal cluster portals are not accessible to course accounts. 
 You will then authenticate using your standard NetID (without the courseid prefix) and password.
-Additional information about courses and the associate web portal can be found at [academic support](/clusters-at-yale/access/courses).
+Additional information about courses and the associated web portal can be found at [academic support](/clusters-at-yale/access/courses).
 
 ## The Dashboard
 
 On login you will see the OOD dashboard.
-Along the top are pull-down menus for various Apps, including a file browser, a terminal, a variet of interactive apps.
+Along the top are pull-down menus for various Apps, including a file browser, a terminal, and a variety of interactive apps.
 
 ![welcome](/img/ood_welcome.png){: .large}
 
@@ -66,11 +66,11 @@ You can launch a traditional command-line interface on the cluster by selecting 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 
 !!! note "Important note"
-Cutting and pasting to the OOD Shell app may not always work with Google Chrome and perhaps other browsers. If you experience troubles with copy/paste functions, try switching to another browser.
+    Cutting and pasting to the OOD Shell app may not always work with Google Chrome and perhaps other browsers. If you experience troubles with copy/paste functions, try switching to another browser.
 
 ## Interactive Apps
 
-We have deployed a selection of common graphical programs, such as Remote Desktop, Jupyter, RStudtio, and MATLAB, as Interactive Apps on the Web Portal.
+We have deployed a selection of common graphical programs, such as Remote Desktop, Jupyter, RStudio, and MATLAB, as Interactive Apps on the Web Portal.
 
 !!! warning
     You are limited to 4 interactive app instances (of any type) at one time. 
@@ -92,7 +92,7 @@ After you click on Launch Remote Desktop (for example), your interactive app wil
 
 ![starting](/img/ood_remote_starting.png){: .medium}
 
-For additional information on specific Interactive Apps, see the following documentation. A full list of available apps can viewed by selecting the "Interactive Apps" pull-down menu.
+For additional information on specific Interactive Apps, see the following documentation. A full list of available apps can be viewed by selecting the "Interactive Apps" pull-down menu.
 
 - [Remote Desktop](/clusters-at-yale/access/ood-remote-desktop)
 - [Jupyter](/clusters-at-yale/access/ood-jupyter)

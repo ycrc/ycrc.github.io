@@ -5,12 +5,12 @@
 Not every file created during a project needs to be archived. If you proactively reduce the number of extraneous files in your archive, you will both reduce storage costs and increase the usefulness of that data upon retrieval. Common files that can be deleted when archiving data include:
 
 * Compiled codes, such as `.o` or `.pyc` files. These files will likely not even work on the next system you may restore these data to and they can contribute significantly to your file count limit. Just keep the source code and clean installation instructions.
-* Some log files. Many log created by the system are not necessary to store indefinitely. Any Slurm logs from failed runs (prior to a successful run) or outputs from Matlab (e.g. `hs_error_pid*.log`, `java.log.*`) can often safely be ignored.
-* Crash files such are core dumps (e.g. `core.*`, `matlab_crash_dump.`).
+* Some log files. Many logs created by the system are not necessary to store indefinitely. Any Slurm logs from failed runs (prior to a successful run) or outputs from Matlab (e.g. `hs_error_pid*.log`, `java.log.*`) can often safely be ignored.
+* Crash files such as core dumps (e.g. `core.*`, `matlab_crash_dump.`).
 
 ## Compress Your Data
 
-Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that your compress, using zip or [tar](/resources/online-tutorials), portions of your data for ease of storage and retrieval.
+Most archive locations (S@Y Archive Tier, Google Drive) perform much better with a smaller number of larger files. In fact, Google Shared Drives have a file count limit of 400,000 files. Therefore, it is highly recommended that you compress, using zip or [tar](/resources/online-tutorials), portions of your data for ease of storage and retrieval.
 For example, to create a compressed archive of a directory you can do the following:
 
 ```sh
@@ -48,7 +48,7 @@ Either should work fine on the clusters.
 
 ## Tips for S@Y Archive Tier
 
-The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is subtantially lower than for the active-access S@Y tier.  For current pricing, see [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
+The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is substantially lower than for the active-access S@Y tier.  For current pricing, see [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
 To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.
 

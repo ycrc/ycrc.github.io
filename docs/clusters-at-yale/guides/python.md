@@ -7,7 +7,7 @@ We strongly recommend that you use one of the methods below to set up your own p
 
 ## The Python Module
 
-We provide a Python as a [software module](/applications/modules). 
+We provide Python as a [software module](/applications/modules). 
 We include frozen versions of many common packages used for scientific computing.
 
 ### Find and Load Python
@@ -65,7 +65,7 @@ See our [Slurm documentation](/clusters-at-yale/job-scheduling) for more detaile
 ### Interactive Job
 
 To run Python interactively, first launch an interactive job on a compute node. 
-If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit you job with:
+If your Python sessions will need up to 10 GiB of RAM and up to 4 hours, you would submit your job with:
 
 ``` bash
 salloc --mem=10G -t 4:00:00

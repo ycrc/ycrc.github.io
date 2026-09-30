@@ -22,7 +22,7 @@ Usage data are available through each cluster's Open OnDemand and as a command-l
 
 ## Open OnDemand Web-app
 
-The Open OnDemand User Portals host an interactive data dashboard that provide tables and visualization of Slurm utilization.
+The Open OnDemand User Portals host an interactive data dashboard that provides tables and visualization of Slurm utilization.
 
 | Cluster                        | OOD site                                                         |
 |--------------------------------|------------------------------------------------------------------|
@@ -39,7 +39,7 @@ An example of such a view is shown below.
 ![getusage](/img/ood-getusage.png)
 
 ## Command-line `getusage`
-These aggrigates are collected from all clusters and made accessible to researchers by running `getusage`:
+These aggregates are collected from all clusters and made accessible to researchers by running `getusage`:
 
 ```sh
 [testuser@login1.bouchet ~]$ getusage --help

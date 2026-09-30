@@ -32,7 +32,7 @@ This is useful for transferring data to or from locations other than your local 
 
 #### Web Transfers with Open OnDemand
 
-On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#File-Browser) portals to transfer files.
+On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#file-browser) portals to transfer files.
 This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
 
 ### File Transfers with Globus
@@ -47,7 +47,7 @@ Please see [our Globus page](/data/globus) for Yale-specific documentation and [
 
 Linux and macOS users can use [scp](https://linux.die.net/man/1/scp) or [rsync](http://linux.die.net/man/1/rsync). Use the hostname of the cluster transfer node (see above) to transfer files. These transfers must be initiated from your local machine.
 
-scp and sftp are both used from a Terminal window. The basic syntax of `scp` is
+scp and rsync are both used from a Terminal window. The basic syntax of `scp` is
 
 ``` bash
 scp [from] [to]
@@ -153,7 +153,7 @@ If the location you are transferring to supports Globus, that is the preferred t
 Please see [our Globus page](/data/globus) for more details.
 
 For data that is primarily hosted elsewhere and is only needed on the cluster temporarily, see our guide on [Staging Data](/data/staging) for additional information. 
-For any data that hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. 
+For any data that is hosted outside of Yale, you will need to initiate the transfer from the cluster's data transfer node as the clusters are not accessible without the VPN. 
 
 ### rsync
 
