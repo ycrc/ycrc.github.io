@@ -128,7 +128,7 @@ solver: libmamba
 ```
 
 !!! Note
-    On Bouchet and newer clusters, the YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#60-day-scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations: conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems. By putting 'pkgs' in the scratch directory, we ensure that the cached conda files inside are discarded after 60 days, to minimize the filesystem burden.
+    On Bouchet and newer clusters, the YCRC miniconda module sets up symlinks for the envs and pkgs directories in your.conda folder. These point to locations in your [project](/data/hpc-storage/#project) and [scratch](/data/hpc-storage/#scratch) directories, respectively (use `ls -l ~/.conda` to view the symlink locations). We do this to address technical limitations: conda environments may be quite large and they may also contain hundreds of thousands of files- both of these can prove quite taxing for HPC filesystems. By putting 'pkgs' in the scratch directory, we ensure that the cached conda files inside are discarded after 60 days, to minimize the filesystem burden.
 
 ### Find and Install Additional Packages
 

@@ -12,7 +12,7 @@ If you have questions about selecting an appropriate home for your data, [contac
 Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and 60-day Scratch.
 Each of these quotas limit both the amount in bytes and number of files you can store. Details can be found on our [Cluster Storage](/data/hpc-storage/) page.
 
-Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#purchase-additional-storage) for more information.
+Additional project-style storage allocations can be purchased. See [here](/data/hpc-storage/#request-additional-storage) for more information.
 
 ## ARK Nearline Storage
 
@@ -65,7 +65,7 @@ For pricing information, see the [ITS Data Rates](https://yale.service-now.com/i
 
 To request a share, press the “Request this Service” button in the right sidebar on the [Storage@Yale website](https://yale.service-now.com/it?id=service_offering&sys_id=f4688dcd6fbb31007ee2abcf9f3ee400). 
 
-**Globus access** : To access S@Y on the clusters, use [Globus](/data/globus) with the 'Yale CRC McCleary' mount point (Path: '/SAY') and [stage the data](/data/staging) to [Project](/data/#project) or [Scratch60](/data/#60-day-scratch) before running jobs.
+**Globus access** : To access S@Y on the clusters, use [Globus](/data/globus) with the 'Yale CRC McCleary' mount point (Path: '/SAY') and [stage the data](/data/staging) to [Project](/data/hpc-storage/#project) or [Scratch](/data/hpc-storage/#scratch) before running jobs.
 
 If you elect to use archive tier storage, be cognizant of [its performance characteristics](/data/archive).
 

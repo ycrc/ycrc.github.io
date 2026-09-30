@@ -24,7 +24,7 @@ We currently support collections for the following clusters.
 | Cluster                        | Globus Collections     |
 |--------------------------------|---------------------|
 | [Bouchet](/clusters/bouchet)       | `Yale CRC Bouchet HA`*        |
-| [Hopper Low Risk](/clusters/milgram)   | `Yale CRC Hopper Low Risk`  |
+| [Hopper Low Risk](/clusters/hopper)   | `Yale CRC Hopper Low Risk`  |
 | [Grace](/clusters/grace)       | `Yale CRC Grace`        |
 | [McCleary](/clusters/mccleary) | `Yale CRC McCleary` |
 | [Milgram](/clusters/milgram)   | `Yale CRC Milgram`  |

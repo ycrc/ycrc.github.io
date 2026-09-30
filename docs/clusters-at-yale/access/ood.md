@@ -18,7 +18,7 @@ Open OnDemand is available on each cluster using your NetID credentials (CAS log
 | [McCleary](/clusters/mccleary) | [ood-mccleary.ycrc.yale.edu](https://ood-mccleary.ycrc.yale.edu) |
 | [Milgram](/clusters/milgram)   | [ood-milgram.ycrc.yale.edu](https://ood-milgram.ycrc.yale.edu)     | 
 
-\* *[Hopper Open OnDemand](/clusters/hopper/#open-ondeamnd) is only available from the Hopper VDI.*
+\* *[Hopper Open OnDemand](/clusters/hopper/#open-ondemand) is only available from the Hopper VDI.*
 
 ### Web Portal for Courses
 

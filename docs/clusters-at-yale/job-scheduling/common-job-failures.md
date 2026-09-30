@@ -51,7 +51,7 @@ If you are *_sure_* you no longer need some files or directories, you can delete
 
 ### Buy More Space
 
-If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/data/#purchase-additional-storage).
+If you would like to purchase more than the default quotas, we can help you [buy space on the clusters](/data/hpc-storage/#request-additional-storage).
 
 ## Rate Limits
 

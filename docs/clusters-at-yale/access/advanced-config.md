@@ -89,7 +89,7 @@ ssh-add $env:USERPROFILE\.ssh\<your_keyfile>
 
 Note: These instructions work with recent versions of macOS. You may have to adjust them to work with other operating systems.
 
-SSH tunneling can allow local applications to connect to YCRC clusters. Connecting to the cluster requires two-factor authentication. Some applications, such as [VSCode](/clusters-at-yale/access/ood-vscode) or [Jupyter Notebooks](clusters-at-yale/guides/jupyter_ssh), can handle this form of authentication, but others, such as Claude Science, do not currently support it. For programs like these, you can establish the tunnel separately in the terminal and perform authentication there. Then, you can point the application to the authenticated tunnel. This is a general approach that also works with VSCode or Notebooks.
+SSH tunneling can allow local applications to connect to YCRC clusters. Connecting to the cluster requires two-factor authentication. Some applications, such as [VSCode](/clusters-at-yale/access/ood-vscode) or [Jupyter Notebooks](/clusters-at-yale/guides/jupyter_ssh), can handle this form of authentication, but others, such as Claude Science, do not currently support it. For programs like these, you can establish the tunnel separately in the terminal and perform authentication there. Then, you can point the application to the authenticated tunnel. This is a general approach that also works with VSCode or Notebooks.
 
 There are many different ways to set up a local tunnel using SSH. The approach outlined below has two main parts
 

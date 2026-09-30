@@ -32,7 +32,7 @@ This is useful for transferring data to or from locations other than your local 
 
 #### Web Transfers with Open OnDemand
 
-On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#File-Browser) portals to transfer files.
+On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#file-browser) portals to transfer files.
 This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
 
 ### File Transfers with Globus

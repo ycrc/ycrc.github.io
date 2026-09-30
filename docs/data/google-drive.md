@@ -28,7 +28,7 @@ Aside from these quota limits, there are also [limits for Google Shared Drives](
 Some are listed below.
 
 !!! warning
-     To keep file counts low (and for easier data retrieval) we *highly* recommended that you archive your data using zip or [tar](/resources/online-tutorials/#how-create-and-extract-a-tar-or-targz-archive).
+     To keep file counts low (and for easier data retrieval) we *highly* recommended that you archive your data using zip or [tar](/resources/online-tutorials/#tar-or-targz-archive).
 
 | Limit type                                | Limit   |
 |-------------------------------------------|---------|

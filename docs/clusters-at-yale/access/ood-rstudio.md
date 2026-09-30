@@ -1,7 +1,7 @@
 # RStudio
 
 A graphical RStudio is available through our cluster [Web Portals](/clusters-at-yale/access/ood).
-Information on accessing the web portal is available on [Access the Web Portal](/clusters-at-yale/access/ood)) documentation page.
+Information on accessing the web portal is available on [Access the Web Portal](/clusters-at-yale/access/ood) documentation page.
 
 ## RStudio Server
 

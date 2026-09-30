@@ -253,12 +253,12 @@ You can also get a list of the absolute paths to your directories with the `mydi
 Top-level folder permissions are managed by YCRC and cannot be modified by users.
 Only users in a specific project will be able to access that project's storage spaces. 
 
-See [Purchased Storage rates](/clusters/hopper/#purchase-storage) above for details on purchasing storage.
+See [Purchased Storage rates](/clusters/hopper/#additional-storage) above for details on purchasing storage.
 
 For information on data recovery, see the [Backups and Snapshots](/data/backups) documentation.
 
 !!! Warning
-    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/#purchase-additional-storage) if you need additional longer term storage.
+    Files stored in `scratch` are purged if they are older than 60 days. You will receive an email alert one week before they are deleted. Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](/data/hpc-storage/#request-additional-storage) if you need additional longer term storage.
 
 |Fileset       | Root Directory                              | Storage          | File Count | Backups | Snapshots | Notes |
 |--------------|---------------------------------------------|------------------|------------|---------|-----------|-------|

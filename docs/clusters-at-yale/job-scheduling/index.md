@@ -100,7 +100,7 @@ This will assign one CPU and 8GiB of RAM to you for two hours. You can run comma
 
 ### Graphical applications
 
-Many graphical applications are well served with the [Open OnDemand Remote Desktop app](/clusters-at-yale/access/ood/#remote-desktop). If you would like to use X11 forwarding, first make sure it is [installed and configured](/clusters-at-yale/access/x11). Then, add the `--x11` flag to an interactive job request:
+Many graphical applications are well served with the [Open OnDemand Remote Desktop app](/clusters-at-yale/access/ood-remote-desktop). If you would like to use X11 forwarding, first make sure it is [installed and configured](/clusters-at-yale/access/x11). Then, add the `--x11` flag to an interactive job request:
 
 ``` bash
 salloc --x11

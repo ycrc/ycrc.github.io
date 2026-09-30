@@ -12,7 +12,7 @@ SimpleQueue is a tool written here to streamline submission of a large number of
 
 _Note that version 3.0+ of SimpleQueue differs from earlier versions in important ways, in particular the meaning of -n. If you have been using an earlier version, please read the following carefully!_
 
-SimpleQueue is available as [a module](/cluster-at-yale/applications/modules) on our clusters. Run:
+SimpleQueue is available as [a module](/applications/modules) on our clusters. Run:
 
 ``` bash
 module avail simplequeue

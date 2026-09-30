@@ -88,4 +88,4 @@ We have a [whole separate page](/clusters-at-yale/guides/cryosparc/) about this 
 
 ### Other Software
 
-We have CCP4, Phenix and some other [software modules](/applications/modules.md) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).
+We have CCP4, Phenix and some other [software modules](/applications/modules) of interest installed. Run `module avail` and the software name to search for them. If you can't find one you need, please [contact us](/#get-help).
