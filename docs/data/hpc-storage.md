@@ -56,34 +56,26 @@ You may also view the results of getquota from the OnDemand [User Portal](/clust
 Here is an example output of `getquota`:
 
 ``` text
-This script shows information about your quotas on grace.
+This script shows information about your quotas on bouchet.
 If you plan to poll this sort of information extensively,
-please contact us for help at research.computing@yale.edu
+please contact us for help at ycrc@yale.edu
 
-## Usage Details for support (as of Jan 25 2023 12:00)
-Fileset                User  Usage (GiB) File Count   
----------------------- ----- ---------- -------------
-gibbs:project          ahs3         568       121,786
-gibbs:project          kln26        435       423,219
-gibbs:project          ms725        233       456,736
-gibbs:project          pl543        427     1,551,959
-gibbs:project          rdb9        1952     1,049,346
-gibbs:project          tl397        605     2,573,824
-----
-gibbs:pi_support       ahs3           0             1
-gibbs:pi_support       kln26       5886    14,514,143
-gibbs:pi_support       ms725      19651     2,692,158
-gibbs:pi_support       pl543        328       142,936
-gibbs:pi_support       rdb9        1047       165,553
-gibbs:pi_support       tl397        175       118,038
+Quota Summary for support group (oldest data as of Sep 30 2026 00:00)
+Fileset       Type   Usage (GiB)   Quota (GiB)     File Count     File Limit   Backup   Purged  
+────────────────────────────────────────────────────────────────────────────────────────────────
+project       GRP           2769          4096     11,473,192     12,000,000   Yes      No      
+scratch       GRP             86         10240        670,344     10,000,000   No       30 days 
+Ark:support   GRP            879          5120                                 No       No      
+!!! Warnings !!!
+Warning: project file count is at 96% of its file count limit.
 
-## Quota Summary for support (as of right now [*palmer stats are gathered once a day])
-Fileset                Type    Usage (GiB)  Quota (GiB) File Count    File Limit    Backup    Purged   
----------------------- ------- ------------ ----------- ------------- ------------- --------- ---------
-palmer:home.grace      USR               63         125       216,046       500,000 Yes       No        
-gibbs:project          GRP             3832       10240     3,350,198    10,000,000 No        No        
-palmer:scratch         GRP                0       10240           903    15,000,000 No        60 days        
-gibbs:pi_support       FILESET        27240       30720    17,647,694    22,000,000 No        No
+Personal Quota (oldest data as of Sep 30 2026 00:00)
+Fileset       Type   Usage (GiB)   Quota (GiB)     File Count     File Limit   Backup   Purged  
+────────────────────────────────────────────────────────────────────────────────────────────────
+home          USR             81           125        368,463        500,000   Yes      No      
+
+
+Tip: Use 'getquota -g <group>' to see full user details for a specific group.
 ```
 
 !!! note "Notes"

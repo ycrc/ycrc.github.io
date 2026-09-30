@@ -5,48 +5,50 @@ Available on all clusters, `jobstats` provides a report of the utilization of CP
 To generate the report simply run (replacing the ID number of the job in question):
 
 ```
-[ab123@grace ~]$ jobstats 123456789
+[ab123@login1.bouchet ~]$ jobstats 123456789
 ================================================================================
                               Slurm Job Statistics
 ================================================================================
          Job ID: 123456789
-  NetID/Account: ab123/group
+   User/Account: ab123/group
        Job Name: gpu_job
-          State: RUNNING
+          State: COMPLETED
           Nodes: 1
-      CPU Cores: 1
-     CPU Memory: 5GB
+      CPU Cores: 4
+     CPU Memory: 32GB (8GB per CPU-core)
            GPUs: 1
   QOS/Partition: normal/gpu
-        Cluster: grace
-     Start Time: Tue Nov 26, 2024 at 2:10 PM
-       Run Time: 20:09:56 (in progress)
-     Time Limit: 2-00:00:00
+        Cluster: bouchet
+     Start Time: Mon Aug 10, 2026 at 12:01 AM
+       Run Time: 00:04:57
+     Time Limit: 02:00:00
 
                               Overall Utilization
 ================================================================================
-  CPU utilization  [||||||||||||||||||||||||||||||||||||||||||||||100%]
-  CPU memory usage [                                                1%]
-  GPU utilization  [|||||||||||||||||||||||||||||||||||||||||||||||98%]
-  GPU memory usage [|                                               3%]
+  CPU utilization  [|||||||||||||                                  27%]
+  CPU memory usage [|                                               3%]
+  GPU utilization  [||||||||||||||||||||||||||||||||||||||         77%]
+  GPU memory usage [|||||||||||||||||||||||||||||||||              66%]
 
                               Detailed Utilization
 ================================================================================
   CPU utilization per node (CPU time used/run time)
-      r808u11n01: 20:07:01/20:09:56 (efficiency=99.8%)
+      a1128u14n01: 00:05:20/00:19:48 (efficiency=27.0%)
 
   CPU memory usage per node - used/allocated
-      r808u11n01: 32.4MB/5.0GB (32.4MB/5.0GB per core of 1)
+      a1128u14n01: 872.1MB/32GB (218.0MB/8GB per core of 4)
 
   GPU utilization per node
-      r808u11n01 (GPU 1): 98.3%
+      a1128u14n01 (GPU 3): 77%
 
   GPU memory usage per node - maximum used/total
-      r808u11n01 (GPU 1): 689.6MB/24.0GB (2.8%)
+      a1128u14n01 (GPU 3): 21.2GB/32GB (66.3%)
 
                                      Notes
 ================================================================================
-  * Have a nice day!
+  * To view a graphical report of this job's performance, see:
+      https://ood-bouchet.ycrc.yale.edu/pun/sys/ycrc_userportal/jobefficiency/123456789
+    Have a nice day!
 ```
 
 When viewed from our [User portal graphical interface](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood/#user-portal), these statistics are enhanced with plots of performance over time.

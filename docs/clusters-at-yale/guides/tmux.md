@@ -43,7 +43,7 @@ Make sure to:
 
 !!!warning
     Every cluster has two login nodes.  If you cannot find your tmux session, it might be running on the other node.  Check the hostname of your current login node (from either your command prompt or from running `hostname -s`), then use ssh to login to the other one.  
-    For example, if you are logged in to grace1, use `ssh -Y grace2` to reach the other login node.
+    For example, if you are logged in to login1, use `ssh -Y login2` to reach the other login node.
 
 
 ### Windows and Panes
@@ -54,10 +54,10 @@ session. A window is the whole screen that `tmux` displays to you. Panes are sub
 Say you just submitted an interactive job that is running on a compute node inside your `tmux` session.
 
 ``` bash
-[ms725@grace1 ~]$ tmux new -s analysis
+[ms725@login1.bouchet ~]$ tmux new -s analysis
 # I am in my tmux session now
-[ms725@grace1 ~]$ salloc
-[ms725@c14n02 ~]$ ./my_fancy_analysis.sh
+[ms725@login1.bouchet ~]$ salloc
+[ms725@a1114u27n01.bouchet ~]$ ./my_fancy_analysis.sh
 ```
 
 Now you can easily monitor its CPU and memory utilization without ever taking your eyes off of it by creating a new pane and running `top` there. Split your window by typing:
@@ -68,8 +68,8 @@ Now you can easily monitor its CPU and memory utilization without ever taking yo
 
 ``` bash
 # I'm in a new pane now.
-[ms725@grace1 ~]$ ssh c14n02
-[ms725@c14n02 ~]$ top
+[ms725@login1.bouchet ~]$ ssh a1114u27n01
+[ms725@a1114u27n01.bouchet ~]$ top
 ```
 
 Your view will look something like this:

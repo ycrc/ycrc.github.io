@@ -111,11 +111,11 @@ Variables can also be parameterized and passed in as command-line options so tha
 ### Jupyter cannot be started properly
 1.  If you are trying to launch `jupyter-notebook`, make sure it is available in your jupyter conda environment:
 ```bash
-(ycrc_default)[pl543@grace1 ~]$ which jupyter-notebook
-/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
+(ycrc_default)[pl543@login1.bouchet ~]$ which jupyter-notebook
+/nfs/roberts/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-notebook
 ```
 2.  If you are trying to launch `jupyter-lab`, make sure it is available in your jupyter conda environment:
 ```bash
-(ycrc_default)[pl543@grace1 ~]$ which jupyter-lab
-/gpfs/gibbs/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-lab
+(ycrc_default)[pl543@login1.bouchet ~]$ which jupyter-lab
+/nfs/roberts/project/support/pl543/conda_envs/ycrc_default/bin/jupyter-lab
 ```

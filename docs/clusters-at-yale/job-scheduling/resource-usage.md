@@ -92,16 +92,25 @@ After the job completes, you can run `seff <jobid>` to get some useful informati
 
 ```
 [netid@node ~]$ seff 21294645
-Job ID: 21294645
-Cluster: mccleary
-User/Group: rdb9/support
-State: COMPLETED (exit code 0)
-Cores: 1
-CPU Utilized: 00:15:55
-CPU Efficiency: 17.04% of 01:33:23 core-walltime
-Job Wall-clock time: 01:33:23
-Memory Utilized: 446.20 MB
-Memory Efficiency: 8.71% of 5.00 GiB
+─────────────────────────────── Job Information ────────────────────────────────
+           Job ID:  21294645
+             Name:  my_job
+          Cluster:  bouchet
+     User / Group:  netid / group
+   Requested CPUs:  2 core(s) on 1 node(s)
+ Requested Memory:  4G
+   Requested Time:  08:00:00
+────────────────────────────────── Job Status ──────────────────────────────────
+
+  State       Count
+ ───────────────────
+  COMPLETED       1
+
+────── Finished Job Statistics (excludes pending, running, and cancelled) ──────
+      Jobs analyzed:  1
+ Avg CPU Efficiency:  1.4%
+   Avg Memory Usage:  3.65 GB
+        Avg Runtime:  3439s
 ```
 
 ### `seff-array`

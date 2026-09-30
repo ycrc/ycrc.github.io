@@ -12,7 +12,7 @@ alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
 Then simply running `setupATLAS -h` will show all the options available:
 
 ```sh
-[testuser@login2.grace ~]$ setupATLAS -h
+[testuser@login2.bouchet ~]$ setupATLAS -h
 
 Usage: atlasLocalSetup.sh [options]
        or setupATLAS [options]

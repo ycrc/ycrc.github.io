@@ -48,22 +48,22 @@ This can be done using the `--dependency=singleton:<job_id>` flag that will wait
 
 ```sh
 
-[tl397@grace1 ~]$ squeue -u tl397
+[tl397@login1.bouchet ~]$ squeue -u tl397
              JOBID PARTITION     NAME     USER    ST      SUBMIT_TIME       NODELIST(REASON)
-          12345670       day   JobName    tl397   R    2020-05-27T11:54     c01n08
-          12345671       day   JobName    tl397   R    2020-05-27T11:54     c01n08
+          12345670       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
+          12345671       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
           ...
-          12345678       day   JobName    tl397   R    2020-05-27T11:54     c01n08
-          12345679       day   JobName    tl397   R    2020-05-27T11:54     c01n08
+          12345678       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
+          12345679       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
 
-[tl397@grace1 ~]$ sbatch --dependency=singleton --job-name=JobName cleanup.sh
-[tl397@grace1 ~]$ squeue -u tl397
+[tl397@login1.bouchet ~]$ sbatch --dependency=singleton --job-name=JobName cleanup.sh
+[tl397@login1.bouchet ~]$ squeue -u tl397
              JOBID PARTITION     NAME     USER    ST      SUBMIT_TIME       NODELIST(REASON)
-          12345670       day   JobName    tl397   R    2020-05-27T11:54     c01n08
-          12345671       day   JobName    tl397   R    2020-05-27T11:54     c01n08
+          12345670       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
+          12345671       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
           ...
-          12345678       day   JobName    tl397   R    2020-05-27T11:54     c01n08
-          12345679       day   JobName    tl397   R    2020-05-27T11:54     c01n08
+          12345678       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
+          12345679       day   JobName    tl397   R    2020-05-27T11:54     a1114u27n01
           12345680       day   JobName    tl397   R    2020-05-27T11:54     (Dependency)
 ```
 

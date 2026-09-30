@@ -28,12 +28,10 @@ If you have any questions about whether your workload is appropriate for the `mp
 
 ## Compilation
 
-The `devel` partitions on Grace and Bouchet each have a node that is identical to the `mpi` partition nodes. 
+The `devel` partition on Bouchet has a node that is identical to the `mpi` partition nodes. 
 If you choose to compile your code with advanced optimization flags specific to the new generation of compute nodes, you can request that node in the `devel` partition:
 
 ```
-# Grace 
---partition devel --constraint skylake 
 # Bouchet
 --partition devel --constraint cpugen:emeraldrapids
 ```

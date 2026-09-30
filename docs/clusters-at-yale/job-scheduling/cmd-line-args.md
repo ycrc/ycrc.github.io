@@ -88,7 +88,7 @@ The `Sys.getenv` utility ([docs page](https://rdocumentation.org/packages/base/v
 
 ```R
 > Sys.getenv('HOSTNAME')
-[1] "grace2.grace.hpc.yale.internal"
+[1] "login1.bouchet.ycrc.yale.edu"
 ```
 
 Just like Python, these values are always returned as `string` representations, so if the variable of interest is a number it will need to be cast into an integer using `as.numeric()`.
