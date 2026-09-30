@@ -79,19 +79,19 @@ Host *.ycrc.yale.edu bouchet
 Using the example netid `abc123`, following is run on your computer's local terminal.
 
 ``` bash
-scp myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+scp myfile.txt abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 ```
 
-In this example, `myfile.txt` is copied to the directory `/home/abc123/test/` on Grace. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
+In this example, `myfile.txt` is copied to the directory `/home/abc123/test/` on Bouchet. This example assumes that `myfile.txt` is in your current directory. You may also specify the full path of `myfile.txt`.
 
 ``` bash
-scp /home/xyz/myfile.txt abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+scp /home/xyz/myfile.txt abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 ```
 
 #### Example: Transfer a Directory to a Cluster
 
 ``` bash
-scp -r mydirectory abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/
+scp -r mydirectory abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/
 ```
 
 In this example, the contents of `mydirectory` are transferred. The `-r` indicates that the copy is recursive.
@@ -101,14 +101,14 @@ In this example, the contents of `mydirectory` are transferred. The `-r` indicat
 Assuming you would like the files copied to your current directory:
 
 ``` bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt .
+scp abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/myfile.txt .
 ```
 
 Note that `.` represents your current working directory.
 To specify the destination, simply replace the `.` with the full path:
 
 ``` bash
-scp abc123@transfer-grace.ycrc.yale.edu:/home/abc123/test/myfile.txt /path/myfolder
+scp abc123@transfer-bouchet.ycrc.yale.edu:/home/abc123/test/myfile.txt /path/myfolder
 ```
 
 ## Transfer Data Between Clusters

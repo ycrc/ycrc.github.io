@@ -42,58 +42,44 @@ An example of such a view is shown below.
 These aggregates are collected from all clusters and made accessible to researchers by running `getusage`:
 
 ```sh
-[testuser@login1.grace ~]$ getusage --help
+[testuser@login1.bouchet ~]$ getusage --help
 
  Usage: getusage [OPTIONS]
 
-╭─ Options ──────────────────────────────────────────────────────────────────╮
-│ --user       -u      TEXT  User name [default: Current user]               │
-│ --group      -g      TEXT  Slurm Account [default: Default Account]        │
-│ --cluster    -c      TEXT  Filter usage by cluster CLUSTER [default: All]  │
-│ --partition  -p            Break usage down by partition                   │
-│ --summary    -s            Only report monthly summary                     │
-│ --help                     Show this message and exit.                     │
-╰────────────────────────────────────────────────────────────────────────────╯
+ Query cluster SU usage for a user or Slurm account.
+
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --user     -u      TEXT     NetID to query. Defaults to $USER.               │
+│                             [default: None]                                  │
+│ --account  -A      TEXT     Slurm account to query. [default: None]          │
+│ --fy       -y      INTEGER  Fiscal year end (e.g. 26 for FY26 = Jul 2025–Jun │
+│                             2026). Defaults to current FY.                   │
+│                             [default: None]                                  │
+│ --cluster  -C      TEXT     Filter to a specific cluster. [default: None]    │
+│ --json                      Output raw data as JSON instead of a table (for  │
+│                             programmatic use).                               │
+│ --help                      Show this message and exit.                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
 !!! info "Multiple Accounts"
-    If you belong to multiple accounts, you can specify them with the `-g` flag. 
+    If you belong to multiple accounts, you can specify them with the `-A` flag. 
     By default, `getusage` displays information about your "default" Slurm Account.
-    If you wish to view your secondary account's usage (or for [priority tier](/clusters-at-yale/job-scheduling/priority-tier) accounts, specify them like: `getusage -g prio_account`
+    If you wish to view your secondary account's usage (or for [priority tier](/clusters-at-yale/job-scheduling/priority-tier) accounts, specify them like: `getusage -A prio_account`
 
 
 Running without any arguments produces a report for the full fiscal year (starting in July):
 
 ```sh
-[testuser@login1.grace ~]$ getusage
-Monthly usage (in su_hours) for testuser
-────────────────────────────────────────────────────────────────────────────────
-                                 Standard         PI
-               Cluster  User
-2024 July      grace    user1      456.19       0.00
-               mccleary user2       33.67       0.00
-2024 August    grace    user1      366.15       0.00
-               mccleary user2       46.40       0.00
-2024 September grace    user1      360.24       0.00
-                        user3        2.02       7.28
-                        user5        0.01       0.00
-               mccleary user2       39.35       0.00
-2024 October   grace    user3      544.93   5,659.68
-               mccleary user2        5.28       0.00
-2024 November  grace    user4      526.84      14.27
-                        user3    4,442.07     169.76
-               mccleary user2       32.54       0.00
-Monthly Summary
-Latest month is in-progress (data updated daily at midnight)
-────────────────────────────────────────────────────────────────────────────────
-                Standard            PI
-2024-07-31        489.87          0.00
-2024-08-31        412.55          0.00
-2024-09-30        401.62          7.28
-2024-10-31        550.22      5,659.68
-2024-11-30      5,001.44        184.03
+[testuser@login1.bouchet ~]$ getusage
 
-Total usage:          12,706.68 Service-Unit Hours
+testuser  |  FY27  |  SU Hours
+======================================================================
+  Account                  2026-07     2026-08     2026-09       Total
+  --------------------------------------------------------------------
+  support                  1,039.3       570.0       466.1     2,075.4
+  --------------------------------------------------------------------
+  Total                    1,039.3       570.0       466.1     2,075.4
 ```
 
 Please reach out to research.computing@yale.edu with any comments or suggestions about how we can improve `getusage`. 

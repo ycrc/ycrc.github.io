@@ -182,24 +182,24 @@ You need to configure SSH on your local machine to connect through the login nod
 Add the following to your `~/.ssh/config` file on your **local machine**:
 
 ```ssh-config
-# Connection to cluster login node (example for Grace cluster)
-Host grace
-    HostName grace.ycrc.yale.edu
+# Connection to cluster login node (example for Bouchet cluster)
+Host bouchet
+    HostName bouchet.ycrc.yale.edu
     User YOUR_NETID
     IdentityFile ~/.ssh/SSH_KEY_FILE
 
 # Connection to compute node via login node
-Host grace-compute
+Host bouchet-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
     IdentityFile ~/.ssh/SSH_KEY_FILE
-    ProxyJump grace
+    ProxyJump bouchet
 ```
 
 Replace:
 
 - `YOUR_NETID` with your Yale NetID  
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `a1114u27n01.mghpcc.ycrc.yale.edu`)  
 - `SSH_KEY_FILE` with the path to the SSH key file you created for the cluster (e.g., `~/.ssh/id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
@@ -210,24 +210,24 @@ Add the following to your SSH config file on your **local Windows machine**. The
 
 ```ssh-config
 # Connection to cluster login node
-Host grace
-    HostName grace.ycrc.yale.edu
+Host bouchet
+    HostName bouchet.ycrc.yale.edu
     User YOUR_NETID
     IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
 
 # Connection to compute node via login node
-Host grace-compute
+Host bouchet-compute
     HostName COMPUTE_NODE_NAME
     User YOUR_NETID
     IdentityFile C:\Users\YOUR_USERNAME\.ssh\SSH_KEY_FILE
-    ProxyJump grace
+    ProxyJump bouchet
 ```
 
 Replace:
 
 - `YOUR_USERNAME` with your Windows username  
 - `YOUR_NETID` with your Yale NetID  
-- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `r209u10n01.grace.ycrc.yale.edu`)  
+- `COMPUTE_NODE_NAME` with the full hostname from step 2 or 3 (e.g., `a1114u27n01.mghpcc.ycrc.yale.edu`)  
 - `SSH_KEY_FILE` with the name of your SSH key file (e.g., `id_rsa`)  
 
 Modify the `Host` and `HostName` as needed for the cluster you are using.
@@ -245,7 +245,7 @@ Modify the `Host` and `HostName` as needed for the cluster you are using.
 1. Open VSCode on your local machine
 2. Press `F1` or `Cmd/Ctrl+Shift+P` to open the Command Palette
 3. Type "Remote-SSH: Connect to Host" and select it
-4. Choose `grace-compute` (or whatever you named the host in your config)
+4. Choose `bouchet-compute` (or whatever you named the host in your config)
 5. At this point, at least on some machines (we have seen this on Windows but not on Apple laptops), VSCode may appear to get stuck with the message 'Setting up SSH Host bouchet-compute (details)' in the bottom of the window. This means you need to authenticate, but you will need to find the hidden prompt first.
 
     To do this, click on the blue highlighted 'details' to reveal a set of tabs at the bottom of the window, and click on the 'TERMINAL' tab. There you can respond to the Duo two-factor prompt to complete the connection.

@@ -41,7 +41,7 @@ Now, start a new login session, submit an interactive job, and rebuild the conda
 When a new session starts, CONDA_ENVS_PATH and CONDA_PKGS_DIRS will be set to the right locations by the system, 
 so you don't have to set them explicitly. 
 ```bash
-ssh grace
+ssh bouchet
 salloc
 module load miniconda
 conda env create -f myenv.yml

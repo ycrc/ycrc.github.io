@@ -124,6 +124,6 @@ sed -i.bak -ne '/# >>> conda init/,/# <<< conda init/!p' ~/.bashrc
 ```
 2. Run `dbus-launch` and make sure you see the following output:
 ```bash
-[pl543@grace1 ~]$ which dbus-launch
+[pl543@login1.bouchet ~]$ which dbus-launch
 /usr/bin/dbus-launch
 ```
