@@ -2510,13 +2510,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alphafold-2" class="md-nav__link">
-    AlphaFold 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#alphafold-3" class="md-nav__link">
     AlphaFold 3
   </a>
@@ -2540,6 +2533,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alphafold-2" class="md-nav__link">
+    AlphaFold 2
+  </a>
   
 </li>
       
@@ -2893,13 +2893,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alphafold-2" class="md-nav__link">
-    AlphaFold 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#alphafold-3" class="md-nav__link">
     AlphaFold 3
   </a>
@@ -2926,6 +2919,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alphafold-2" class="md-nav__link">
+    AlphaFold 2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2944,47 +2944,64 @@
                 
                 
                 <h1 id="alphafold">AlphaFold</h1>
-<p><a href="https://github.com/google-deepmind/alphafold">AlphaFold</a> is a machine learning system
+<p><a href="https://github.com/google-deepmind/alphafold3">AlphaFold</a> is a machine learning system
 developed by Google DeepMind that predicts a protein’s 3D structure from its amino acid sequence.</p>
 <p>As of November 11, 2024, there are two versions of AlphaFold generally available:
-AlphaFold 2 and <a href="https://github.com/google-deepmind/alphafold3">AlphaFold 3</a>.
-Both versions are available as cluster modules, but are run somewhat differently.</p>
-<p>Note that given the duration and resources usually involved in running AlphaFold,
-it should be executed using <a href="/clusters-at-yale/job-scheduling/#batch-jobs">batch scripts</a>.</p>
+<a href="https://github.com/google-deepmind/alphafold2">AlphaFold 2</a> and <a href="https://github.com/google-deepmind/alphafold3">AlphaFold 3</a>.
+Both versions are available as cluster modules, but are run somewhat differently. AlphaFold 3 is the version under the most current development, but version 2 remains available for existing workflows or result consistency.</p>
+<p>Note that given the duration and resources usually involved in running AlphaFold, it should generally be executed using <a href="/clusters-at-yale/job-scheduling/#batch-jobs">batch scripts</a> unless explicitly testing parameter</p>
 <p>Additionally, due to the <a href="/clusters-at-yale/job-scheduling/job_defense/">Idle Resources Policy</a>,
 AlphaFold jobs should be split into two parts.  The first stage of AlphaFold involves generating
 Multiple Sequence Alignments (MSAs), which uses only CPUs.  These MSAs are then used as input
 for the model-building step, which uses GPUs. To avoid having your job flagged for idle GPUs,
 submit a job for the MSA calculation, and when that is complete, submit another job for modeling.</p>
-<h2 id="alphafold-2">AlphaFold 2</h2>
-<p>To run AlphaFold 2, you will need a sequence file in FASTA format for your macromolecule of interest.</p>
-<p>Monomer:
-<div class="highlight"><pre><span></span><code>&gt;sequence_name
-&lt;SEQUENCE&gt;
+<h2 id="alphafold-3">AlphaFold 3</h2>
+<p>AlphaFold 3 on the YCRC clusters has one especially significant difference from AlphaFold 2:
+the model parameter <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md">Terms of Use</a>.
+BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
+This requires registering with <a href="https://forms.gle/svvpY4u2jsHEwWYS6">Google</a> and agreeing to the above terms of use.
+Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.</p>
+<p>You will need an input sequence file in JSON format:
+<div class="highlight"><pre><span></span><code>{
+  &quot;name&quot;: &quot;Job name goes here&quot;,
+  &quot;modelSeeds&quot;: [1, 2],  # At least one seed required.
+  &quot;sequences&quot;: [
+    {&quot;protein&quot;: {...}},
+    {&quot;rna&quot;: {...}},
+    {&quot;dna&quot;: {...}},
+    {&quot;ligand&quot;: {...}}
+  ],
+  &quot;bondedAtomPairs&quot;: [...],  # Optional.
+  &quot;userCCD&quot;: &quot;...&quot;,  # Optional, mutually exclusive with userCCDPath.
+  &quot;userCCDPath&quot;: &quot;...&quot;,  # Optional, mutually exclusive with userCCD.
+  &quot;dialect&quot;: &quot;alphafold3&quot;,  # Required.
+  &quot;version&quot;: 4  # Required.
+}
+</code></pre></div>
+See <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md#top-level-structure">AlphaFold 3 input documentation</a> for details about the settings. An example of a simple protein 2-copy homomer  input is
+<div class="highlight"><pre><span></span><code>{
+  &quot;name&quot;: &quot;2PV7&quot;,
+  &quot;sequences&quot;: [
+    {
+      &quot;protein&quot;: {
+        &quot;id&quot;: [&quot;A&quot;, &quot;B&quot;],
+        &quot;sequence&quot;: &quot;GMRESYANENQFGFKTINSDIHKIVIVGGYGKLGGLFARYLRASGYPISILDREDWAVAESILANADVVIVSVPINLTLETIERLKPYLTENMLLADLTSVKREPLAKMLEVHTGAVLGLHPMFGADIASMAKQVVVRCDGRFPERYEWLLEQIQIWGAKIYQTNATEHDHNMTYIQALRHFSTFANGLHLSKQPINLANLLALSSPIYRLELAMIGRLFAQDAELYADIIMDKSENLAVIETLKQTYDEALTFFENNDRQGFIDAFHKVRDWFGDYSEQFLKESRQLLQQANDLKQG&quot;
+      }
+    }
+  ],
+  &quot;modelSeeds&quot;: [1],
+  &quot;dialect&quot;: &quot;alphafold3&quot;,
+  &quot;version&quot;: 1
+}
 </code></pre></div></p>
-<p>Homomer:
-<div class="highlight"><pre><span></span><code>&gt;sequence_1
-&lt;SEQUENCE&gt;
-&gt;sequence_2
-&lt;SEQUENCE&gt;
-&gt;sequence_3
-&lt;SEQUENCE&gt;
-...
+<p>Note that AlphaFold 3 will only run on A100 or better GPUs with at least 80 GB of VRAM by default.</p>
+<p>In the event of memory problems on newer L40S cards with 48 GB, add the following environment variables to the relevant alphafold_model.sh script before the command to run AlphaFold:
+<div class="highlight"><pre><span></span><code>XLA_PYTHON_CLIENT_PREALLOCATE=false
+TF_FORCE_UNIFIED_MEMORY=true
+XLA_CLIENT_MEM_FRACTION=3.2
 </code></pre></div></p>
-<p>Heteromer:
-<div class="highlight"><pre><span></span><code>&gt;sequence_1
-&lt;SEQUENCE<span class="w"> </span>A&gt;
-&gt;sequence_2
-&lt;SEQUENCE<span class="w"> </span>A&gt;
-&gt;sequence_3
-&lt;SEQUENCE<span class="w"> </span>B&gt;
-&gt;sequence_4
-&lt;SEQUENCE<span class="w"> </span>B&gt;
-&gt;sequence_5
-&lt;SEQUENCE<span class="w"> </span>B&gt;
-...
-</code></pre></div></p>
-<p>Copy the MSA batch script and model batch script templates below,
+<h3 id="bouchet">Bouchet</h3>
+<p>On Bouchet, opy the MSA batch script and model batch script templates below,
 and modify for your specific use case. Both stages can be submitted at the same time using a
 <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>
 as follows:</p>
@@ -2997,85 +3014,7 @@ sbatch<span class="w"> </span>alphafold_msa.sh
 sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh
 <span class="c1"># Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. </span>
 </code></pre></div>
-<p>alphafold_msa.sh:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
-<span class="c1">## General-use partition for CPU-only step</span>
-<span class="c1">#SBATCH --partition=day</span>
-<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
-<span class="c1">#SBATCH --time=1-00:00:00</span>
-<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
-<span class="c1">#SBATCH --cpus-per-task=8</span>
-<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
-<span class="c1">#SBATCH --mem=80g</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
-
-<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
-
-<span class="c1">## Provide settings for running various components in parallel</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w">   </span><span class="c1"># defaults to 4 if not set</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="c1"># defaults to 8 if not set</span>
-<span class="c1">## Choose name for output folder    </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
-
-<span class="c1">## Remove old output folder and recreate for new run</span>
-rm<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
-
-<span class="c1">## run AlphaFold</span>
-alphafold<span class="w"> </span>--output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span><span class="w"> </span>--model_preset<span class="o">=</span>monomer<span class="w"> </span>--fasta_paths<span class="o">=</span>YourSequence.fasta<span class="w"> </span>--max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
---msas_only
-</code></pre></div>
-<p>alphafold_model.sh:</p>
-<div class="highlight"><pre><span></span><code>#!/bin/bash
-#SBATCH --job-name=YourModelJobNameHere
-## General-use partition for accessing GPUs
-#SBATCH --partition=gpu
-## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=1-00:00:00
-## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
-## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem=80g
-## Must explicitly request GPU resources and number of GPUs
-#SBATCH --gpus=1
-## Require use of certain GPUs with extra memory for AlphaFold
-#SBATCH --constraint &quot;a100|rtx5000|a5000|rtx3090&quot;
-
-## Clear all loaded software modules, and load AlphaFold module
-module reset
-module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
-
-## Provide settings for running various components in parallel
-export ALPHAFOLD_HHBLITS_N_CPU=${SLURM_CPUS_PER_TASK}   # defaults to 4 if not set
-export ALPHAFOLD_JACKHMMER_N_CPU=${SLURM_CPUS_PER_TASK} # defaults to 8 if not set
-## Specify name for output folder that contains already-generated MSAs    
-export OUTDIR=&quot;MyOutputDir&quot;
-
-## run AlphaFold
-alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
---use_precomputed_msas
-</code></pre></div>
-<p>For a multimer, use a multimer input file and "--model_preset=multimer".</p>
-<p>To run multiple sequences one after the other, specify the files as a comma-separated list;
-e.g.,</p>
-<div class="highlight"><pre><span></span><code>--fasta_paths<span class="o">=</span>YourSequence1.fasta,YourSequence2.fasta
-</code></pre></div>
-<p>When submitting an AlphaFold job, take into consideration <a href="https://github.com/google-deepmind/alphafold?tab=readme-ov-file#alphafold-prediction-speed">runtime as a 
-function of sequence length</a>.</p>
-<p>For further information on running AlphaFold 2, see EMBL-EBI's
-<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/">online tutorial</a>.</p>
-<h2 id="alphafold-3">AlphaFold 3</h2>
-<p>AlphaFold 3 on the YCRC clusters is currently a work in progress.  Note that one significant change
-is the model parameter <a href="https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md">Terms of Use</a>.
-BEFORE RUNNING, you must obtain your own copy of the parameters file (not all the datafiles).
-This requires registering with <a href="https://forms.gle/svvpY4u2jsHEwWYS6">Google</a> and agreeing to the above terms of use.
-Once you have obtained your copy of the parameters, place the file in a "models" folder in your working folder.</p>
-<h3 id="bouchet">Bouchet</h3>
-<p>On Bouchet, AlphaFold 3 is launched in a manner similar to 2, but with some modifications to the flags.</p>
-<p>alphafold_msa.sh:</p>
+<p>alphafold_msa.sh: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
 <span class="c1">## General-use partition for CPU-only step</span>
@@ -3272,11 +3211,122 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 <span class="w">  </span>--output_dir<span class="o">=</span>/root/af_output<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--norun_data_pipeline
 </code></pre></div>
-<p>See the <a href="https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md">AlphaFold 3 documentation</a> for details.</p>
-<p>Note that AlphaFold 3 will only run on A100 or better GPUs by default.
-To run on sequences up to 1280 on a V100 on McCleary, add to your 'alphafold' command the flag
-<div class="highlight"><pre><span></span><code>--flash_attention_implementation<span class="o">=</span>xla
+<h2 id="alphafold-2">AlphaFold 2</h2>
+<p>To run AlphaFold 2, note the differences from AlphaFold 3 in the command flags and sequence input. You will need a sequence file in FASTA format for your macromolecule of interest.</p>
+<p>Monomer:
+<div class="highlight"><pre><span></span><code>&gt;sequence_name
+&lt;SEQUENCE&gt;
 </code></pre></div></p>
+<p>Homomer:
+<div class="highlight"><pre><span></span><code>&gt;sequence_1
+&lt;SEQUENCE&gt;
+&gt;sequence_2
+&lt;SEQUENCE&gt;
+&gt;sequence_3
+&lt;SEQUENCE&gt;
+...
+</code></pre></div></p>
+<p>Heteromer:
+<div class="highlight"><pre><span></span><code>&gt;sequence_1
+&lt;SEQUENCE<span class="w"> </span>A&gt;
+&gt;sequence_2
+&lt;SEQUENCE<span class="w"> </span>A&gt;
+&gt;sequence_3
+&lt;SEQUENCE<span class="w"> </span>B&gt;
+&gt;sequence_4
+&lt;SEQUENCE<span class="w"> </span>B&gt;
+&gt;sequence_5
+&lt;SEQUENCE<span class="w"> </span>B&gt;
+...
+</code></pre></div>
+Copy the MSA batch script and model batch script templates below,
+and modify for your specific use case. Both stages can be submitted at the same time using a
+<a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>
+as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Submit the first stage:</span>
+sbatch<span class="w"> </span>alphafold_msa.sh
+
+<span class="c1"># Note the jobid that is reported by the above submission.</span>
+<span class="c1"># Then if you have set the correct input directories corresponding to the MSA outputs,</span>
+<span class="c1"># optionally submit the second stage by:</span>
+sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh
+<span class="c1"># Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. </span>
+</code></pre></div>
+<p>alphafold_msa.sh:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
+<span class="c1">## General-use partition for CPU-only step</span>
+<span class="c1">#SBATCH --partition=day</span>
+<span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
+<span class="c1">#SBATCH --time=1-00:00:00</span>
+<span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
+<span class="c1">#SBATCH --mem=80g</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1">## Clear all loaded software modules, and load AlphaFold module</span>
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
+
+<span class="c1">## Provide settings for running various components in parallel</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_HHBLITS_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w">   </span><span class="c1"># defaults to 4 if not set</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALPHAFOLD_JACKHMMER_N_CPU</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span><span class="w"> </span><span class="c1"># defaults to 8 if not set</span>
+<span class="c1">## Choose name for output folder    </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;MyOutputDir&quot;</span>
+
+<span class="c1">## Remove old output folder and recreate for new run</span>
+rm<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span>
+
+<span class="c1">## run AlphaFold</span>
+alphafold<span class="w"> </span>--output_dir<span class="o">=</span><span class="si">${</span><span class="nv">OUTDIR</span><span class="si">}</span><span class="w"> </span>--model_preset<span class="o">=</span>monomer<span class="w"> </span>--fasta_paths<span class="o">=</span>YourSequence.fasta<span class="w"> </span>--max_template_date<span class="o">=</span><span class="m">2024</span>-12-31
+--msas_only
+</code></pre></div>
+<p>alphafold_model.sh:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name=YourModelJobNameHere
+## General-use partition for accessing GPUs
+#SBATCH --partition=gpu
+## Maximum job time in Days-Hours:Minutes:Seconds
+#SBATCH --time=1-00:00:00
+## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs
+#SBATCH --cpus-per-task=8
+## Total memory; can also be expressed as --mem-per-cpu
+#SBATCH --mem=80g
+## Must explicitly request GPU resources and number of GPUs
+#SBATCH --gpus=1
+## Require use of certain GPUs with extra memory for AlphaFold
+#SBATCH --constraint &quot;a100|rtx5000|a5000|rtx3090&quot;
+
+## Clear all loaded software modules, and load AlphaFold module
+module reset
+module load AlphaFold/2.3.2-foss-2022b-CUDA-12.1.1
+
+## Provide settings for running various components in parallel
+export ALPHAFOLD_HHBLITS_N_CPU=${SLURM_CPUS_PER_TASK}   # defaults to 4 if not set
+export ALPHAFOLD_JACKHMMER_N_CPU=${SLURM_CPUS_PER_TASK} # defaults to 8 if not set
+## Specify name for output folder that contains already-generated MSAs    
+export OUTDIR=&quot;MyOutputDir&quot;
+
+## run AlphaFold
+alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
+--use_precomputed_msas
+</code></pre></div>
+<p>For a multimer, use a multimer input file and "--model_preset=multimer".</p>
+<p>To run multiple sequences one after the other, specify the files as a comma-separated list;
+e.g.,</p>
+<div class="highlight"><pre><span></span><code>--fasta_paths<span class="o">=</span>YourSequence1.fasta,YourSequence2.fasta
+</code></pre></div>
+<p>When submitting an AlphaFold job, take into consideration <a href="https://github.com/google-deepmind/alphafold?tab=readme-ov-file#alphafold-prediction-speed">runtime as a 
+function of sequence length</a>.</p>
+<p>In the event of memory problems, add the following environment variables to alphafold_model.sh:
+<div class="highlight"><pre><span></span><code>TF_FORCE_UNIFIED_MEMORY=1
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.5
+XLA_PYTHON_CLIENT_ALLOCATOR=platform
+</code></pre></div></p>
+<p>For further information on running AlphaFold 2, see EMBL-EBI's
+<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/">online tutorial</a>.</p>
                 
                   
                     
@@ -3285,7 +3335,7 @@ To run on sequences up to 1280 on a V100 on McCleary, add to your 'alphafold' co
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
       
     
   </small>

@@ -2989,9 +2989,9 @@
 <div class="admonition info">
 <p class="admonition-title">Please be a good cluster citizen.</p>
 <ul>
-<li>Do not run heavy computation on login nodes (e.g. <code>grace1</code>, <code>login1.mccleary</code>). Doing so negatively impacts everyone's ability to interact with the cluster.</li>
-<li>Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on <a href="/clusters-at-yale/job-scheduling/resource-usage">Monitoring CPU and Memory Usage</a> for how to measure job resource usage.</li>
-<li>If you plan to run many similar jobs, use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a> - we enforce limits on <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">job submission rates</a> on all clusters.</li>
+<li>Do not run heavy computation on login nodes (e.g. <code>login1.bouchet</code>, <code>login1.mccleary</code>). Doing so negatively impacts everyone's ability to interact with the cluster.</li>
+<li>Make resource requests for your jobs that reflect what they will use. Wasteful job allocations slow down everyone's work on the clusters. See our documentation on <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/jobstats/">Monitoring CPU and Memory Usage</a> for how to measure job resource usage.</li>
+<li>If you plan to run many similar jobs, use our <a href="/clusters-at-yale/job-scheduling/dsq">Job Arrays</a> - we enforce limits on <a href="/clusters-at-yale/job-scheduling/common-job-failures/#rate-limits">job submission rates</a> on all clusters.</li>
 </ul>
 </div>
 <p>If you find yourself wondering how best to schedule a job, please <a href="/#get-help">contact us</a> for some help.</p>
@@ -3014,7 +3014,7 @@
 <div class="highlight"><pre><span></span><code>sacct -j 12345
 </code></pre></div>
 <p>Check when a job is expected to run, and what resources it will be allocated:
-<div class="highlight"><pre><span></span><code>sacct -j 12345 --start
+<div class="highlight"><pre><span></span><code>squeue -j 12345 --start
 </code></pre></div></p>
 <p>Check how efficiently a job ran, <em>e.g.</em> a job with ID 12345:</p>
 <p><div class="highlight"><pre><span></span><code>jobstats 12345
@@ -3170,7 +3170,7 @@ matlab<span class="w"> </span>-batch<span class="w"> </span><span class="s2">&qu
 <p>Save <a href="/_static/files/example_job.sh">this file</a> as <code>example_job.sh</code>, then submit it with:</p>
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>example_job.sh
 </code></pre></div>
-<p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use our <a href="/clusters-at-yale/job-scheduling/dsq">Dead Simple Queue</a> tool or <a href="https://slurm.schedmd.com/job_array.html">job arrays</a>.</p>
+<p>When the job finishes the output should be stored in a file called <code>slurm-jobid.out</code>, where <code>jobid</code> is the submitted job's ID. If you find yourself writing loops to submit jobs, instead use <a href="/clusters-at-yale/job-scheduling/dsq">Job Arrays</a>.</p>
 <h3 id="estimating-job-launch-time">Estimating Job Launch Time</h3>
 <p>To estimate when your job should reach the top of the queue and begin running, you can use the <code>--test-only</code> flag with the <code>sbatch</code> command. This will print the Slurm scheduler's best estimate of when your job will start running given the resources requested.</p>
 <p>This can be a useful method to investigate the queue-time impacts of changing resource requests.</p>
