@@ -3990,7 +3990,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <h2 id="partitions-and-hardware">Partitions and Hardware</h2>
 <h3 id="public-partitions">Public Partitions</h3>
 <p>See each tab below for more information about the available common use partitions.</p>
-<div class="tabbed-set" data-tabs="2:13"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:14"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">day</label><div class="tabbed-content">
 <p>Use the day partition for most batch jobs. This is the default if you don't specify one with <code>--partition</code>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4063,7 +4063,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
 <tr>
-<td>70</td>
+<td>62</td>
 <td>cpugen:cascadelake</td>
 <td>48</td>
 <td>368</td>
@@ -4266,16 +4266,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
 </tr>
 <tr>
-<td>10</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
-<td>l40s</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
-</tr>
-<tr>
 <td>9</td>
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
@@ -4284,6 +4274,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>48</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40</td>
+</tr>
+<tr>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
 </tr>
 <tr>
 <td>12</td>
@@ -4791,7 +4791,64 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">scavenge</label><div class="tabbed-content">
+<input id="__tabbed_2_12" name="__tabbed_2" type="radio" /><label for="__tabbed_2_12">agent</label><div class="tabbed-content">
+<p>Use the agent partition for interactive coding-agent workflows that need to remain active substantially longer than a typical interactive session.</p>
+<p><strong>Request Defaults</strong></p>
+<p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
+<div class="highlight"><pre><span></span><code>--time=01:00:00 --nodes=1 --ntasks=1 --cpus-per-task=1 --mem-per-cpu=1024
+</code></pre></div>
+<p><strong>Job Limits</strong></p>
+<p>Jobs submitted to the agent partition are subject to the following limits:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum job time limit</td>
+<td><code>7-00:00:00</code></td>
+</tr>
+<tr>
+<td>Maximum running jobs per user</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>Maximum CPUs per job</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Maximum memory per job</td>
+<td><code>8G</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Compute Nodes</strong></p>
+<p>Requests for <code>--cpus-per-task</code> and <code>--mem</code> can't exceed what is available on a single compute node.</p>
+<table>
+<thead>
+<tr>
+<th>Count</th>
+<th>CPU Type</th>
+<th>CPUs/Node</th>
+<th>Memory/Node (GiB)</th>
+<th>Node Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>cpugen:cascadelake</td>
+<td>48</td>
+<td>368</td>
+<td>cpugen:cascadelake, cpumodel:8268, common:yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><label for="__tabbed_2_13">scavenge</label><div class="tabbed-content">
 <p>Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -4854,16 +4911,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:turin, cpumodel:9655, common:yes</td>
 </tr>
 <tr>
-<td>8</td>
-<td>cpugen:turin</td>
-<td>128</td>
-<td>2251</td>
-<td>b200</td>
-<td>8</td>
-<td>193</td>
-<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
-</tr>
-<tr>
 <td>26</td>
 <td>cpugen:turin</td>
 <td>128</td>
@@ -4872,6 +4919,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td></td>
 <td></td>
 <td>cpugen:turin, cpumodel:9575f, common:yes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cpugen:turin</td>
+<td>128</td>
+<td>2251</td>
+<td>b200</td>
+<td>8</td>
+<td>193</td>
+<td>cpugen:turin, cpumodel:9575f, gpu:b200, common:yes</td>
 </tr>
 <tr>
 <td>10</td>
@@ -4904,20 +4961,20 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada</td>
 </tr>
 <tr>
-<td>96</td>
+<td>4</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
-<td>990</td>
+<td>4014</td>
 <td></td>
 <td></td>
 <td></td>
 <td>cpugen:emeraldrapids, cpumodel:8562Y+, common:yes</td>
 </tr>
 <tr>
-<td>4</td>
+<td>96</td>
 <td>cpugen:emeraldrapids</td>
 <td>64</td>
-<td>4014</td>
+<td>990</td>
 <td></td>
 <td></td>
 <td></td>
@@ -4938,16 +4995,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
-<td>l40s</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
-</tr>
-<tr>
-<td>10</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
 <td>a40</td>
 <td>4</td>
 <td>48</td>
@@ -4962,6 +5009,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>80</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
+</tr>
+<tr>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
 </tr>
 <tr>
 <td>12</td>
@@ -4986,7 +5043,7 @@ These are made available to researchers via <a href="/applications/modules/">sof
 </tbody>
 </table>
 </div>
-<input id="__tabbed_2_13" name="__tabbed_2" type="radio" /><label for="__tabbed_2_13">scavenge_gpu</label><div class="tabbed-content">
+<input id="__tabbed_2_14" name="__tabbed_2" type="radio" /><label for="__tabbed_2_14">scavenge_gpu</label><div class="tabbed-content">
 <p>Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the <a href="/clusters-at-yale/job-scheduling/scavenge">Scavenge documentation</a>.</p>
 <p><strong>Request Defaults</strong></p>
 <p>Unless specified, your jobs will run with the following options to <code>salloc</code> and <code>sbatch</code> options for this partition.</p>
@@ -5083,16 +5140,6 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>cpugen:sapphirerapids</td>
 <td>48</td>
 <td>976</td>
-<td>l40s</td>
-<td>4</td>
-<td>48</td>
-<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
-</tr>
-<tr>
-<td>10</td>
-<td>cpugen:sapphirerapids</td>
-<td>48</td>
-<td>976</td>
 <td>a40</td>
 <td>4</td>
 <td>48</td>
@@ -5107,6 +5154,16 @@ These are made available to researchers via <a href="/applications/modules/">sof
 <td>4</td>
 <td>80</td>
 <td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100</td>
+</tr>
+<tr>
+<td>10</td>
+<td>cpugen:sapphirerapids</td>
+<td>48</td>
+<td>976</td>
+<td>l40s</td>
+<td>4</td>
+<td>48</td>
+<td>cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s</td>
 </tr>
 <tr>
 <td>12</td>
