@@ -52,6 +52,7 @@ commons = {
     "gpu_devel": "Use the gpu_devel partition to debug jobs that make use of GPUs, or to develop GPU-enabled code.",
     "bigmem": "Use the bigmem partition for jobs that have memory requirements other partitions can't handle.",
     "mpi": "Use the mpi partition for tightly-coupled parallel programs that make efficient use of multiple nodes. See our [MPI documentation](/clusters-at-yale/job-scheduling/mpi) if your workload fits this description.",
+    "agent": "Use the agent partition for interactive coding-agent workflows that need to remain active substantially longer than a typical interactive session.",
     "scavenge": "Use the scavenge partition to run preemptable jobs on more resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
     "scavenge_gpu": "Use the scavenge_gpu partition to run preemptable jobs on more GPU resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
     "scavenge_mpi": "Use the scavenge_mpi partition to run preemptable jobs on more MPI resources than normally allowed. For more information about scavenge, see the [Scavenge documentation](/clusters-at-yale/job-scheduling/scavenge).",
