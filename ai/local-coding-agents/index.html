@@ -1974,6 +1974,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extended-reasoning" class="md-nav__link">
+    Extended reasoning
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delegating-to-a-reasoning-agent" class="md-nav__link">
+    Delegating to a reasoning agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-agents-can-run" class="md-nav__link">
     Where agents can run
   </a>
@@ -2922,6 +2942,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extended-reasoning" class="md-nav__link">
+    Extended reasoning
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended reasoning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delegating-to-a-reasoning-agent" class="md-nav__link">
+    Delegating to a reasoning agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-agents-can-run" class="md-nav__link">
     Where agents can run
   </a>
@@ -3025,6 +3065,51 @@ codex
 claude
 </code></pre></div>
 <p>No account or API key with Anthropic, OpenAI, GitHub, or another commercial AI provider is required for these local agents.</p>
+<h2 id="extended-reasoning">Extended reasoning</h2>
+<p>The model can work through a problem step by step before answering. This is turned off by default: reasoning takes longer to produce a first response, and on short questions it can generate several times more output, which is usually the wrong trade for routine coding work.</p>
+<p>To turn it on for a session, set <code>YCRC_THINKING=1</code> when you start an agent:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>pi
+</code></pre></div>
+<p>It works the same way with the other interfaces:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>claude
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>codex
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>copilot
+</code></pre></div>
+<p>The agent prints a short confirmation at startup, and the model name shown in the interface gains a <code>-think</code> suffix. The setting applies only to that session; start the agent without <code>YCRC_THINKING</code> to go back to the default.</p>
+<p>Extended reasoning is worth trying when a task benefits from careful deliberation rather than speed, such as:</p>
+<ul>
+<li>Debugging behavior that has a non-obvious cause</li>
+<li>Reasoning about an algorithm, numerical method, or statistical approach</li>
+<li>Planning a multi-step refactor before making changes</li>
+<li>Checking work where a subtly wrong answer is costly</li>
+</ul>
+<p>For routine editing, file navigation, and short questions, the default is usually the better experience.</p>
+<h3 id="delegating-to-a-reasoning-agent">Delegating to a reasoning agent</h3>
+<p>With the Claude interface you do not have to choose once for the whole session. Claude can hand an individual sub-problem to a separate agent that uses extended reasoning, while the session itself stays on the faster default.</p>
+<p>Two managed agents are available:</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deep-reasoning</code></td>
+<td>Works a hard sub-problem through step by step and returns a reasoned conclusion</td>
+</tr>
+<tr>
+<td><code>quick-task</code></td>
+<td>Handles routine lookups without reasoning, useful inside a <code>YCRC_THINKING=1</code> session</td>
+</tr>
+</tbody>
+</table>
+<p>Claude selects them on its own when a task fits, or you can ask directly:</p>
+<div class="highlight"><pre><span></span><code>Use the deep-reasoning agent to work out why this job is being preempted.
+</code></pre></div>
+<p>This is usually a better trade than turning on reasoning for the whole session: you pay the slower, more deliberate path only for the parts that benefit from it, and routine editing stays fast.</p>
+<p>These agents are specific to the Claude interface. Pi, Codex, and Copilot do not support choosing a different model for a delegated task, so for those interfaces use <code>YCRC_THINKING=1</code> to enable reasoning for the whole session.</p>
 <h2 id="where-agents-can-run">Where agents can run</h2>
 <p>Start the agent in a <strong>non-hidden subdirectory</strong> of an allowed storage location, such as your home, project, scratch, or approved PI storage.</p>
 <p>For example:</p>
@@ -3074,7 +3159,7 @@ pi
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2026</span>
       
     
   </small>

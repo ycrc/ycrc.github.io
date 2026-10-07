@@ -3092,7 +3092,7 @@
 <div class="highlight"><pre><span></span><code>sbatch --cpus-per-gpu=2 --gpus=rtx_5000_ada:1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 <p>To submit your job to a number of GPU options (such as NVIDIA L40S, A40 or RTX 5000 Ada), use a combination of the constraint flag (<code>--constraint</code>) and the <code>--gpus</code> flag (with just a number). For the <a href="/clusters-at-yale/job-scheduling/resource-requests/#features-and-constraints">constraint flag</a>, separate the different GPU type features with the pipe character (<code>|</code>). Your job will then start on a node with any of those GPU types. This is not guaranteed to work as expected if you are requesting multiple nodes. GPU type names can be found in the partition tables on each respective cluster page.</p>
-<div class="highlight"><pre><span></span><code>sbatch --constraint=&quot;gpu:l40s|gpu:a40|gpu:rtx_5000_ada&quot; --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
+<div class="highlight"><pre><span></span><code>sbatch --constraint="gpu:l40s|gpu:a40|gpu:rtx_5000_ada" --gpus=1 --time=6:00:00 --partition gpu my_gpu_job.sh
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
