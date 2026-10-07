@@ -6,7 +6,7 @@ The `local-coding-agents` module provides four coding-agent interfaces backed by
 
 To use, be on a compute node and:
 
-```
+```bash
 module load local-coding-agents
 ```
 
@@ -52,58 +52,78 @@ No account or API key with Anthropic, OpenAI, GitHub, or another commercial AI p
 
 ## Extended reasoning
 
-The model can work through a problem step by step before answering. This is turned off by default: reasoning takes longer to produce a first response, and on short questions it can generate several times more output, which is usually the wrong trade for routine coding work.
+Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is disabled by default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.
 
-To turn it on for a session, set `YCRC_THINKING=1` when you start an agent:
+There are two ways to use it:
+
+1. **For an entire session:** start the interface with `YCRC_THINKING=1`.
+2. **For an individual task:** Claude and Pi can delegate that task to a separate reasoning agent.
+
+### Enable reasoning for a whole session
+
+Set `YCRC_THINKING=1` when starting an interface:
 
 ```bash
 YCRC_THINKING=1 pi
-```
-
-It works the same way with the other interfaces:
-
-```bash
 YCRC_THINKING=1 claude
 YCRC_THINKING=1 codex
 YCRC_THINKING=1 copilot
 ```
 
-The agent prints a short confirmation at startup, and the model name shown in the interface gains a `-think` suffix. The setting applies only to that session; start the agent without `YCRC_THINKING` to go back to the default.
+The interface prints a short confirmation at startup, and the displayed model name gains a `-think` suffix.
 
-Extended reasoning is worth trying when a task benefits from careful deliberation rather than speed, such as:
+The setting applies only to that session. Start the interface normally to return to the default behavior.
 
-- Debugging behavior that has a non-obvious cause
+Extended reasoning is most useful for tasks such as:
+
+- Debugging behavior with a non-obvious cause
 - Reasoning about an algorithm, numerical method, or statistical approach
-- Planning a multi-step refactor before making changes
-- Checking work where a subtly wrong answer is costly
+- Planning a complicated multi-step refactor
+- Checking work where a subtle mistake could be costly
 
-For routine editing, file navigation, and short questions, the default is usually the better experience.
+For routine editing, file navigation, simple commands, and short questions, the default mode is usually faster and more appropriate.
 
-### Delegating to a reasoning agent
+### Delegate an individual task
 
-With the Claude and Pi interfaces you do not have to choose once for the whole session. The agent can hand an individual sub-problem to a separate agent that uses extended reasoning, while the session itself stays on the faster default.
+Claude and Pi can use a different reasoning mode for an individual delegated task without changing the rest of the session.
 
 Two managed agents are available:
 
 | Agent | Purpose |
 | --- | --- |
-| `deep-reasoning` | Works a hard sub-problem through step by step and returns a reasoned conclusion |
-| `quick-task` | Handles routine lookups without reasoning, useful inside a `YCRC_THINKING=1` session |
+| `deep-reasoning` | Works through a difficult problem using extended reasoning |
+| `quick-task` | Handles simple work without extended reasoning |
 
-Ask for one directly:
+How you access them depends on the interface:
 
-```
+| Interface | How to use a managed agent |
+| --- | --- |
+| Claude | Ask for `deep-reasoning` or `quick-task` directly, or let Claude select one automatically when appropriate. |
+| Pi | Ask for `deep-reasoning` or `quick-task` explicitly. Pi does not select them automatically. |
+
+For example:
+
+```text
 Use the deep-reasoning agent to work out why this job is being preempted.
 ```
 
-The delegated task runs with its own context, separate from your session, and only its conclusion comes back. Claude may also select an agent on its own when a task fits its description; Pi needs to be asked.
+The delegated task runs in its own context and returns its conclusion to the main session.
 
-This is usually a better trade than turning on reasoning for the whole session: you pay the slower, more deliberate path only for the parts that benefit from it, and routine editing stays fast. It works in both directions, so a session started with `YCRC_THINKING=1` can hand routine lookups to `quick-task` and keep its own reasoning for the parts that need it.
+This works in either direction:
 
-Codex and Copilot cannot do this. Both can delegate work to a sub-agent, but neither can give that sub-agent a different model from the session that started it. For those two, use `YCRC_THINKING=1` to enable reasoning for the whole session.
+```text
+Normal session
+  └─ deep-reasoning → extended reasoning for one difficult task
+```
 
-!!! note "Pi's own reasoning options do not apply here"
-    Pi accepts `--thinking <level>` and a `model:<level>` suffix. Those are for providers that expose a reasoning-effort setting; they have no effect on the YCRC-hosted model and a session using them still runs without extended reasoning. Use `YCRC_THINKING=1`, or delegate to `deep-reasoning`, instead.
+or:
+
+```text
+YCRC_THINKING=1 session
+  └─ quick-task → normal reasoning mode for one routine task
+```
+
+This can be more efficient than enabling extended reasoning for an entire session when only part of the work benefits from it.
 
 ## Where agents can run
 
