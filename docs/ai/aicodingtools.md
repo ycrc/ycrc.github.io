@@ -11,7 +11,7 @@ Coding agents are AI-driven tools that can write code, inspect files, run comman
 | Coding-agent interfaces | Pi, Copilot, Codex, Claude | Commercial coding-agent tools |
 | YCRC sandbox | Yes | Claude only, currently in beta |
 | Data guidance | AI prompts and code processing remain local to YCRC | Limited by the approved data classification for the commercial service |
-| Best for | Keeping AI prompts and code processing local to YCRC | Workflows that specifically require a commercial model |
+| Best for | Everyday agentic coding on the cluster, with no account or API key required and your prompts and code never leaving YCRC | Workflows that specifically require a commercial model |
 
 ### Local coding agents
 

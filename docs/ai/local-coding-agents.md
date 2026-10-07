@@ -50,6 +50,56 @@ claude
 
 No account or API key with Anthropic, OpenAI, GitHub, or another commercial AI provider is required for these local agents.
 
+## Extended reasoning
+
+The model can work through a problem step by step before answering. This is turned off by default: reasoning takes longer to produce a first response, and on short questions it can generate several times more output, which is usually the wrong trade for routine coding work.
+
+To turn it on for a session, set `YCRC_THINKING=1` when you start an agent:
+
+```bash
+YCRC_THINKING=1 pi
+```
+
+It works the same way with the other interfaces:
+
+```bash
+YCRC_THINKING=1 claude
+YCRC_THINKING=1 codex
+YCRC_THINKING=1 copilot
+```
+
+The agent prints a short confirmation at startup, and the model name shown in the interface gains a `-think` suffix. The setting applies only to that session; start the agent without `YCRC_THINKING` to go back to the default.
+
+Extended reasoning is worth trying when a task benefits from careful deliberation rather than speed, such as:
+
+- Debugging behavior that has a non-obvious cause
+- Reasoning about an algorithm, numerical method, or statistical approach
+- Planning a multi-step refactor before making changes
+- Checking work where a subtly wrong answer is costly
+
+For routine editing, file navigation, and short questions, the default is usually the better experience.
+
+### Delegating to a reasoning agent
+
+With the Claude interface you do not have to choose once for the whole session. Claude can hand an individual sub-problem to a separate agent that uses extended reasoning, while the session itself stays on the faster default.
+
+Two managed agents are available:
+
+| Agent | Purpose |
+| --- | --- |
+| `deep-reasoning` | Works a hard sub-problem through step by step and returns a reasoned conclusion |
+| `quick-task` | Handles routine lookups without reasoning, useful inside a `YCRC_THINKING=1` session |
+
+Claude selects them on its own when a task fits, or you can ask directly:
+
+```
+Use the deep-reasoning agent to work out why this job is being preempted.
+```
+
+This is usually a better trade than turning on reasoning for the whole session: you pay the slower, more deliberate path only for the parts that benefit from it, and routine editing stays fast.
+
+These agents are specific to the Claude interface. Pi, Codex, and Copilot do not support choosing a different model for a delegated task, so for those interfaces use `YCRC_THINKING=1` to enable reasoning for the whole session.
+
 ## Where agents can run
 
 Start the agent in a **non-hidden subdirectory** of an allowed storage location, such as your home, project, scratch, or approved PI storage.
