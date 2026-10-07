@@ -81,7 +81,7 @@ For routine editing, file navigation, and short questions, the default is usuall
 
 ### Delegating to a reasoning agent
 
-With the Claude interface you do not have to choose once for the whole session. Claude can hand an individual sub-problem to a separate agent that uses extended reasoning, while the session itself stays on the faster default.
+With the Claude and Pi interfaces you do not have to choose once for the whole session. The agent can hand an individual sub-problem to a separate agent that uses extended reasoning, while the session itself stays on the faster default.
 
 Two managed agents are available:
 
@@ -90,15 +90,20 @@ Two managed agents are available:
 | `deep-reasoning` | Works a hard sub-problem through step by step and returns a reasoned conclusion |
 | `quick-task` | Handles routine lookups without reasoning, useful inside a `YCRC_THINKING=1` session |
 
-Claude selects them on its own when a task fits, or you can ask directly:
+Ask for one directly:
 
 ```
 Use the deep-reasoning agent to work out why this job is being preempted.
 ```
 
-This is usually a better trade than turning on reasoning for the whole session: you pay the slower, more deliberate path only for the parts that benefit from it, and routine editing stays fast.
+The delegated task runs with its own context, separate from your session, and only its conclusion comes back. Claude may also select an agent on its own when a task fits its description; Pi needs to be asked.
 
-These agents are specific to the Claude interface. Pi, Codex, and Copilot do not support choosing a different model for a delegated task, so for those interfaces use `YCRC_THINKING=1` to enable reasoning for the whole session.
+This is usually a better trade than turning on reasoning for the whole session: you pay the slower, more deliberate path only for the parts that benefit from it, and routine editing stays fast. It works in both directions, so a session started with `YCRC_THINKING=1` can hand routine lookups to `quick-task` and keep its own reasoning for the parts that need it.
+
+Codex and Copilot cannot do this. Both can delegate work to a sub-agent, but neither can give that sub-agent a different model from the session that started it. For those two, use `YCRC_THINKING=1` to enable reasoning for the whole session.
+
+!!! note "Pi's own reasoning options do not apply here"
+    Pi accepts `--thinking <level>` and a `model:<level>` suffix. Those are for providers that expose a reasoning-effort setting; they have no effect on the YCRC-hosted model and a session using them still runs without extended reasoning. Use `YCRC_THINKING=1`, or delegate to `deep-reasoning`, instead.
 
 ## Where agents can run
 
