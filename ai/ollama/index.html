@@ -3049,8 +3049,8 @@
 - <a href="../../clusters-at-yale/job-scheduling/jobstats/">Jobstats</a></p>
 <h2 id="loading-the-module">Loading the module</h2>
 <p>Ollama is provided as a YCRC module and must be loaded inside a Slurm allocation on a compute node.</p>
-<div class="highlight"><pre><span></span><code>module avail ollama
-module load ollama
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>ollama
+module<span class="w"> </span>load<span class="w"> </span>ollama
 </code></pre></div>
 <h2 id="intended-usage">Intended usage</h2>
 <p>Ollama is appropriate for:</p>
@@ -3079,27 +3079,27 @@ due to a lack of vRAM.</p>
 <p>In this case, you can specify GPUs with more vRAM using the <code>--constraint</code> flag. In the example below, you could 
 specify rtx5000 or v100 GPUs, which have more vRAM &gt; 16GB.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#####interactive</span>
-salloc --partition gpu_devel --constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
+salloc<span class="w"> </span>--partition<span class="w"> </span>gpu_devel<span class="w"> </span>--constraint<span class="o">=</span><span class="s2">&quot;rtx5000|v100&quot;</span>
 
 <span class="c1">#####submission script</span>
 <span class="c1">#SBATCH --constraint=&quot;rtx5000|v100&quot;</span>
 </code></pre></div>
 <p>Within an interactive allocation, models can be run directly from a terminal like so:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">###request compute node with GPU (add --constraint=GPUTYPES if needed)</span>
-salloc --partition<span class="o">=</span>gpu_devel --cpus-per-task<span class="o">=</span><span class="m">1</span> --time<span class="o">=</span><span class="m">4</span>:00:00 --mem<span class="o">=</span>5G --gpus<span class="o">=</span><span class="m">1</span>
+salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">4</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span>
 
 <span class="c1">###load ollama module if it isn&#39;t loaded</span>
-module load ollama
+module<span class="w"> </span>load<span class="w"> </span>ollama
 
 <span class="c1">####launch server to access models.</span>
-ollama serve
+ollama<span class="w"> </span>serve
 
 <span class="c1">#####hit enter to proceed for more input</span>
 <span class="c1">###run model of interest, replace llama3.2:3b with model of interest</span>
-ollama run llama3.2:3b
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.2:3b
 
 <span class="c1">###enter prompts</span>
-why is the sky blue?
+why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue?
 </code></pre></div>
 <h2 id="jupyter-notebooks-with-ollama">Jupyter Notebooks with Ollama</h2>
 <p>For Jupyter Notebooks, follow these steps:</p>
@@ -3108,21 +3108,21 @@ why is the sky blue?
 <p>Install Ollama in the conda environment using <strong>pip</strong>. The Miniconda package for Ollama installs the wrong program
 and won't work properly.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">### Be on a compute node or request a remote desktop session for compute resources or miniconda will be killed</span>
-salloc --cpus-per-task<span class="o">=</span><span class="m">4</span> --time<span class="o">=</span><span class="m">1</span>:00:00 --mem<span class="o">=</span>10G --partition<span class="o">=</span>devel <span class="c1">#4 cpus for 1 hour with 10 GB of memory on the devel partition</span>
+salloc<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span><span class="c1">#4 cpus for 1 hour with 10 GB of memory on the devel partition</span>
 
 <span class="c1">###load miniconda module to gain access to conda commands</span>
-module load miniconda
+module<span class="w"> </span>load<span class="w"> </span>miniconda
 
 <span class="c1">###create initial environment with jupyter compatibility</span>
-conda create --name my_ollama_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13 notebook <span class="c1">###can change python version to desired version and/or add other packages</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_ollama_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>notebook<span class="w"> </span><span class="c1">###can change python version to desired version and/or add other packages</span>
 
 <span class="c1">###install ollama python package using pip</span>
-conda activate my_ollama_env
+conda<span class="w"> </span>activate<span class="w"> </span>my_ollama_env
 
-pip install ollama
+pip<span class="w"> </span>install<span class="w"> </span>ollama
 
 <span class="c1">###load environment into jupyter notebook dropdown</span>
-ycrc_conda_env.sh update
+ycrc_conda_env.sh<span class="w"> </span>update
 </code></pre></div>
 </li>
 <li>
@@ -3151,7 +3151,7 @@ environment built for ollama.</p>
 Failing to use this block of code will cause your Notebook to be unable to find the running Ollama server.</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span><span class="o">,</span><span class="nn">ollama</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span><span class="o">,</span><span class="nn">ollama</span>
 
 <span class="c1">###starts ollama server</span>
 
@@ -3165,7 +3165,7 @@ Failing to use this block of code will cause your Notebook to be unable to find 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ollama host for notebook:&quot;</span><span class="p">,</span> <span class="n">host</span><span class="p">)</span>
 
 <span class="c1">###imports client to save host address</span>
-<span class="kn">from</span> <span class="nn">ollama</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">)</span>
 </code></pre></div>
 <ol>
@@ -3197,17 +3197,17 @@ Failing to use this block of code will cause your Notebook to be unable to find 
 <p>A typical batch workflow starts the Ollama server in the background, waits for initialization, and then submits 
 inference requests.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#######launch the ollama server, the &amp; tells it to run in the background, allowing the script to continue</span>
-module reset
-module load ollama
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>ollama
 
-ollama serve
+ollama<span class="w"> </span>serve
 
 <span class="c1">######make slurm wait 10 seconds before advancing in the script, this gives the necessary time to launch the LLM server</span>
 <span class="c1">######this time may need updating for larger models, llama 3.3:70b requires 60 seconds for example</span>
-sleep <span class="m">10</span>
+sleep<span class="w"> </span><span class="m">10</span>
 
 <span class="c1">######runs the LLM model 3.1 with the prompt, why is the sky blue and passes the response into a file called response.txt</span>
-ollama run llama3.1 why is the sky blue &gt; response.txt
+ollama<span class="w"> </span>run<span class="w"> </span>llama3.1<span class="w"> </span>why<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>sky<span class="w"> </span>blue<span class="w"> </span>&gt;<span class="w"> </span>response.txt
 </code></pre></div>
 <p>For Ollama, it is necessary to output the prompts response into a separate file because Slurm is unable to convert 
 some of the symbols that are outputted in the traditional .out file from a batch submission.</p>
@@ -3232,9 +3232,9 @@ access the examples <a href="../exercises/">here</a>.</p>
 GPU node, which would cause Ollama to error out and fail for any user on that node. The YCRC Ollama automatically 
 detects a free port and assigns to the user when they run Ollama serve. That port is then exported as OLLAMA_HOST.</p>
 <p>If a user wants to use a specific port, they can set the port value prior to ollama serve like so:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">OLLAMA_PORT</span><span class="o">=</span><span class="m">11434</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_PORT</span><span class="o">=</span><span class="m">11434</span>
 
-ollama serve
+ollama<span class="w"> </span>serve
 </code></pre></div>
 <p>If the requested port is already in use, a different free port will be selected automatically.</p>
 <h2 id="discovering-the-active-ollama-server">Discovering the active Ollama server</h2>

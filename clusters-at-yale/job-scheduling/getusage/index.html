@@ -2992,23 +2992,23 @@ The relative weights are derived from the approximate cost of these different re
 <p><img alt="getusage" src="/img/ood-getusage.png" /></p>
 <h2 id="command-line-getusage">Command-line <code>getusage</code></h2>
 <p>These aggregates are collected from all clusters and made accessible to researchers by running <code>getusage</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.bouchet ~<span class="o">]</span>$ getusage --help
+<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>getusage<span class="w"> </span>--help
 
- Usage: getusage <span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="w"> </span>Usage:<span class="w"> </span>getusage<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 
- Query cluster SU usage <span class="k">for</span> a user or Slurm account.
+<span class="w"> </span>Query<span class="w"> </span>cluster<span class="w"> </span>SU<span class="w"> </span>usage<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>user<span class="w"> </span>or<span class="w"> </span>Slurm<span class="w"> </span>account.
 
-╭─ Options ────────────────────────────────────────────────────────────────────╮
-│ --user     -u      TEXT     NetID to query. Defaults to <span class="nv">$USER</span>.               │
-│                             <span class="o">[</span>default: None<span class="o">]</span>                                  │
-│ --account  -A      TEXT     Slurm account to query. <span class="o">[</span>default: None<span class="o">]</span>          │
-│ --fy       -y      INTEGER  Fiscal year end <span class="o">(</span>e.g. <span class="m">26</span> <span class="k">for</span> <span class="nv">FY26</span> <span class="o">=</span> Jul <span class="m">2025</span>–Jun │
-│                             <span class="m">2026</span><span class="o">)</span>. Defaults to current FY.                   │
-│                             <span class="o">[</span>default: None<span class="o">]</span>                                  │
-│ --cluster  -C      TEXT     Filter to a specific cluster. <span class="o">[</span>default: None<span class="o">]</span>    │
-│ --json                      Output raw data as JSON instead of a table <span class="o">(</span><span class="k">for</span>  │
-│                             programmatic use<span class="o">)</span>.                               │
-│ --help                      Show this message and exit.                      │
+╭─<span class="w"> </span>Options<span class="w"> </span>────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--user<span class="w">     </span>-u<span class="w">      </span>TEXT<span class="w">     </span>NetID<span class="w"> </span>to<span class="w"> </span>query.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span><span class="nv">$USER</span>.<span class="w">               </span>│
+│<span class="w">                             </span><span class="o">[</span>default:<span class="w"> </span>None<span class="o">]</span><span class="w">                                  </span>│
+│<span class="w"> </span>--account<span class="w">  </span>-A<span class="w">      </span>TEXT<span class="w">     </span>Slurm<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>query.<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>None<span class="o">]</span><span class="w">          </span>│
+│<span class="w"> </span>--fy<span class="w">       </span>-y<span class="w">      </span>INTEGER<span class="w">  </span>Fiscal<span class="w"> </span>year<span class="w"> </span>end<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">FY26</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">2025</span>–Jun<span class="w"> </span>│
+│<span class="w">                             </span><span class="m">2026</span><span class="o">)</span>.<span class="w"> </span>Defaults<span class="w"> </span>to<span class="w"> </span>current<span class="w"> </span>FY.<span class="w">                   </span>│
+│<span class="w">                             </span><span class="o">[</span>default:<span class="w"> </span>None<span class="o">]</span><span class="w">                                  </span>│
+│<span class="w"> </span>--cluster<span class="w">  </span>-C<span class="w">      </span>TEXT<span class="w">     </span>Filter<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>cluster.<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>None<span class="o">]</span><span class="w">    </span>│
+│<span class="w"> </span>--json<span class="w">                      </span>Output<span class="w"> </span>raw<span class="w"> </span>data<span class="w"> </span>as<span class="w"> </span>JSON<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>table<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w">  </span>│
+│<span class="w">                             </span>programmatic<span class="w"> </span>use<span class="o">)</span>.<span class="w">                               </span>│
+│<span class="w"> </span>--help<span class="w">                      </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                      </span>│
 ╰──────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
 <div class="admonition info">
@@ -3018,15 +3018,15 @@ By default, <code>getusage</code> displays information about your "default" Slur
 If you wish to view your secondary account's usage (or for <a href="/clusters-at-yale/job-scheduling/priority-tier">priority tier</a> accounts, specify them like: <code>getusage -A prio_account</code></p>
 </div>
 <p>Running without any arguments produces a report for the full fiscal year (starting in July):</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.bouchet ~<span class="o">]</span>$ getusage
+<div class="highlight"><pre><span></span><code><span class="o">[</span>testuser@login1.bouchet<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>getusage
 
-testuser  <span class="p">|</span>  FY27  <span class="p">|</span>  SU <span class="nv">Hours</span>
+testuser<span class="w">  </span><span class="p">|</span><span class="w">  </span>FY27<span class="w">  </span><span class="p">|</span><span class="w">  </span>SU<span class="w"> </span><span class="nv">Hours</span>
 <span class="o">======================================================================</span>
-  Account                  <span class="m">2026</span>-07     <span class="m">2026</span>-08     <span class="m">2026</span>-09       Total
-  --------------------------------------------------------------------
-  support                  <span class="m">1</span>,039.3       <span class="m">570</span>.0       <span class="m">466</span>.1     <span class="m">2</span>,075.4
-  --------------------------------------------------------------------
-  Total                    <span class="m">1</span>,039.3       <span class="m">570</span>.0       <span class="m">466</span>.1     <span class="m">2</span>,075.4
+<span class="w">  </span>Account<span class="w">                  </span><span class="m">2026</span>-07<span class="w">     </span><span class="m">2026</span>-08<span class="w">     </span><span class="m">2026</span>-09<span class="w">       </span>Total
+<span class="w">  </span>--------------------------------------------------------------------
+<span class="w">  </span>support<span class="w">                  </span><span class="m">1</span>,039.3<span class="w">       </span><span class="m">570</span>.0<span class="w">       </span><span class="m">466</span>.1<span class="w">     </span><span class="m">2</span>,075.4
+<span class="w">  </span>--------------------------------------------------------------------
+<span class="w">  </span>Total<span class="w">                    </span><span class="m">1</span>,039.3<span class="w">       </span><span class="m">570</span>.0<span class="w">       </span><span class="m">466</span>.1<span class="w">     </span><span class="m">2</span>,075.4
 </code></pre></div>
 <p>Please reach out to research.computing@yale.edu with any comments or suggestions about how we can improve <code>getusage</code>. </p>
                 
