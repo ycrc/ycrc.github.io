@@ -51,13 +51,13 @@ The script will offer a convenient list of queuing options determining how long 
 
 !!! warning
     
+    - Please be sure to **request enough time** for your workflow to finish; once the supervisor script terminates, this will also terminate any running cryoSPARC jobs regardless of whether they finished or not!
+
     - Please **do not request GPU's** for the supervisor process- these are only used in batch jobs _spawned_ by this process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell `ycrc_launch_cryosparc.sh` to run on these by passing slurm options when it prompts you. Alternatively, you can pass these options to the script on the command line. For example:
     ```
     ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
     ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
     ```
-    - Please be sure to **request enough time** for your workflow to finish; once the supervisor script terminates, this will also terminate any running cryoSPARC jobs regardless of whether they finished or not!
-
 
 Thereafter, you may keep track of and manage your cryoSPARC supervisor process using the following SLURM commands:
 
