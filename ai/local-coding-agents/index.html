@@ -3031,7 +3031,7 @@
 <p>YCRC provides <strong>secure AI coding assistance for Bouchet using a locally hosted LLM with popular coding-agent interfaces</strong>. Code and prompts sent to the model are processed locally without being sent to external AI providers.</p>
 <p>The <code>local-coding-agents</code> module provides four coding-agent interfaces backed by the same YCRC-hosted Qwen3.8-27B model. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.</p>
 <p>To use, be on a compute node and:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
+<div class="highlight"><pre><span></span><code>module load local-coding-agents
 </code></pre></div>
 <h2 id="choosing-an-agent">Choosing an agent</h2>
 <p>All four interfaces use the same local model. They differ primarily in how they plan work, interact with tools, and present results.</p>
@@ -3068,7 +3068,7 @@
 <h2 id="getting-started">Getting started</h2>
 <p>Coding agents must run on a compute node. First request an interactive allocation, then load the module:</p>
 <div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>local-coding-agents/1.0
+module load local-coding-agents/1.0
 </code></pre></div>
 <p>Start the agent you want to use:</p>
 <div class="highlight"><pre><span></span><code>pi
@@ -3088,10 +3088,10 @@ claude
 </ol>
 <h3 id="enable-reasoning-for-a-whole-session">Enable reasoning for a whole session</h3>
 <p>Set <code>YCRC_THINKING=1</code> when starting an interface:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>pi
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>claude
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>codex
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>copilot
+<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> pi
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> claude
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> codex
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> copilot
 </code></pre></div>
 <p>The interface prints a short confirmation at startup, and the displayed model name gains a <code>-think</code> suffix.</p>
 <p>The setting applies only to that session. Start the interface normally to return to the default behavior.</p>
@@ -3159,8 +3159,8 @@ claude
 <h2 id="where-agents-can-run">Where agents can run</h2>
 <p>Start the agent in a <strong>non-hidden subdirectory</strong> of an allowed storage location, such as your home, project, scratch, or approved PI storage.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/my-analysis
-<span class="nb">cd</span><span class="w"> </span>~/my-analysis
+<div class="highlight"><pre><span></span><code>mkdir -p ~/my-analysis
+<span class="nb">cd</span> ~/my-analysis
 pi
 </code></pre></div>
 <p>The module will refuse to start from locations that do not meet its security requirements. Coding agents should not run on login nodes.</p>
@@ -3177,7 +3177,7 @@ pi
 </ul>
 <p>Each command run by a coding agent starts in a fresh shell. Environment changes such as <code>module load</code>, <code>conda activate</code>, <code>export</code>, and <code>cd</code> therefore do not persist into the agent's next command. The agents are provided with YCRC-specific instructions for handling these workflows correctly.</p>
 <p>For example, commands that depend on a module should load the module and run the program in the same shell command:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/&lt;version&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>Rscript<span class="w"> </span>analysis.R
+<div class="highlight"><pre><span></span><code>module load R/&lt;version&gt; <span class="o">&amp;&amp;</span> Rscript analysis.R
 </code></pre></div>
 <h2 id="security-and-privacy">Security and privacy</h2>
 <p>The local coding-agent environment is designed to give agents useful access to your research workflow without exposing everything your normal login account can access.</p>
