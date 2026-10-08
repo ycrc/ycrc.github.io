@@ -2942,11 +2942,15 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li>Please <strong>do not request GPU's</strong> for the supervisor process- these are only used in batch jobs <em>spawned</em> by this process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell <code>ycrc_launch_cryosparc.sh</code> to run on these by passing slurm options when it prompts you. Alternatively, you can pass these options to the script on the command line. For example:
+<li>
+<p>Please be sure to <strong>request enough time</strong> for your workflow to finish; once the supervisor script terminates, this will also terminate any running cryoSPARC jobs regardless of whether they finished or not!</p>
+</li>
+<li>
+<p>Please <strong>do not request GPU's</strong> for the supervisor process- these are only used in batch jobs <em>spawned</em> by this process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell <code>ycrc_launch_cryosparc.sh</code> to run on these by passing slurm options when it prompts you. Alternatively, you can pass these options to the script on the command line. For example:
 <div class="highlight"><pre><span></span><code>ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
 ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
-</code></pre></div></li>
-<li>Please be sure to <strong>request enough time</strong> for your workflow to finish; once the supervisor script terminates, this will also terminate any running cryoSPARC jobs regardless of whether they finished or not!</li>
+</code></pre></div></p>
+</li>
 </ul>
 </div>
 <p>Thereafter, you may keep track of and manage your cryoSPARC supervisor process using the following SLURM commands:</p>

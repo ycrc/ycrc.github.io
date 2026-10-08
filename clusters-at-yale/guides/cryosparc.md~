@@ -41,14 +41,33 @@ To operate cryoSPARC on a YCRC cluster, please use our installer script followin
     
 ## Launch CryoSPARC and connect to the GUI
 
-After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The script will offer a convenient list of queuing options (you can also specify your own); it then submits a cryoSPARC 'master' batch job and prints instructions on how to connect to the cryoSPARC GUI.
+After you run the above setup/install script, run our helper script `ycrc_launch_cryosparc.sh` (see below for specific instructions). The cryoSPARC helper script performs two functions:
 
-!!! note
-    Please **do not request GPU's**- these are only used in batch jobs _spawned_ by the main cryoSPARC process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell ycrc_launch_cryosparc to run on these by passing slurm options on the command line. For example:
+1. Launch cryoSPARC's supervisor process (`cryosparcm`) as a lightweight, independent job.
+   This step is skipped if a supervisor process is already running.
+2. Connect (or prints instructions on how to connect) to the cryoSPARC GUI through a web browser.
 
-```
-ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
-ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
+The script will offer a convenient list of queuing options determining how long the supervisor process will run for (you can also specify your own); it then submits this as a batch job and prints instructions on how to access the GUI.
+
+!!! warning
+    
+    - Please **do not request GPU's** for the supervisor process- these are only used in batch jobs _spawned_ by this process. However, if you have access to private partitions like pi_cryoem, pi_tomography, etc, you can tell `ycrc_launch_cryosparc.sh` to run on these by passing slurm options when it prompts you. Alternatively, you can pass these options to the script on the command line. For example:
+    ```
+    ycrc_launch_cryosparc.sh -p pi_tomography -t 4-00:00:00 -A tomography
+    ycrc_launch_cryosparc.sh -p pi_cryoem -t 4-00:00:00 -A cryoem
+    ```
+    - Please be sure to **request enough time** for your workflow to finish; once the supervisor script terminates, this will also terminate any running cryoSPARC jobs regardless of whether they finished or not!
+
+
+Thereafter, you may keep track of and manage your cryoSPARC supervisor process using the following SLURM commands:
+
+``` bash
+# Get the job ID of your cryoSPARC supervisor process- look for 'cryoSPAR' under the NAME column
+squeue --me
+
+# Cancel the supervisor process if you are finished, or to restart i.e. to obtain a longer runtime
+#  Substitute your JOBID below
+scancel JOBID
 ```
 
 Choose between the following two methods to connect to the cryoSPARC GUI:
@@ -67,14 +86,14 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
     - For more detailed connection info and instructions, use `ycrc_launch_cryosparc.sh -v`.
 
 ## Run CryoSPARC Jobs
-3. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to). YCRC has set up the following partitions for your use as cryoSPARC lanes: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
+1. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to). YCRC has set up the following partitions for your use as cryoSPARC lanes: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
-4. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
+2. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
 
     !!! note
         The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryoSPARC easier for users to manage.
 
-5. **Optionally specify a 'memory multiplier'** : When cryoSPARC submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to out-of-memory failures** that cause jobs to crash unexpectedly.
+3. **If needed, specify a 'memory multiplier'** : When cryoSPARC submits your job to slurm, it will try to guess the amount of memory required; however, for certain job types we have found that this guess can underestimate the memory requirements, **leading to out-of-memory failures** that cause jobs to crash unexpectedly.
 
     - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
 
@@ -84,7 +103,7 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
 
     - Job types where we have seen this problem include:  '2D Classification', '2D Template Matching', 'Local Refinement', 'Ab-Initio Reconstruction', and 'Micrograph Denoiser'.
 
-6. **Click 'Submit to lane'** : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryoSPARC GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command `squeue --me`).
+4. **Click 'Submit to lane'** : the YCRC slurm scheduler will assign your task to an available compute node. It will be helpful to monitor your job not only in the cryoSPARC GUI, but also using the YCRC slurm tools (i.e. 'User Portal' from the OOD Utilities menu, or the terminal command `squeue --me`).
 
     - Note, if you change your mind about job runtime after you submit to a lane, but before it starts running, you may use the following bash terminal command to adjust it, for example:
 
