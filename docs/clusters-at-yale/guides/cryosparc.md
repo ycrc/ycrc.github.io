@@ -62,7 +62,7 @@ The script will offer a convenient list of queuing options determining how long 
 Thereafter, you may keep track of and manage your cryoSPARC supervisor process using the following SLURM commands:
 
 ``` bash
-# Get the job ID of your cryoSPARC supervisor process- look for 'cryoSPAR' under the NAME column
+# Get the job ID, runtime, etc. for your cryoSPARC supervisor process- look for 'cryoSPAR' under the NAME column
 squeue --me
 
 # Cancel the supervisor process if you are finished, or to restart i.e. to obtain a longer runtime
