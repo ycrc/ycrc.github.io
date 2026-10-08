@@ -28,8 +28,8 @@
 
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|Node Features|
     |---|---|---|---|---|
-    |6|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
     |12|cpugen:turin|128|2251|cpugen:turin, cpumodel:9575f, common:yes|
+    |6|cpugen:turin|192|1487|cpugen:turin, cpumodel:9655, common:yes|
     |92|cpugen:emeraldrapids|64|990|cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
     |62|cpugen:cascadelake|48|368|cpugen:cascadelake, cpumodel:8268, common:yes|
 
@@ -130,8 +130,8 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |9|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |9|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
     |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |9|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
     |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
 
 === "gpu_rtx6000"
@@ -426,18 +426,18 @@
     |Count|CPU Type|CPUs/Node|Memory/Node (GiB)|GPU Type|GPUs/Node|vRAM/GPU (GB)|Node Features|
     |---|---|---|---|---|---|---|---|
     |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
-    |7|cpugen:turin|192|1487||||cpugen:turin, cpumodel:9655, common:yes|
     |26|cpugen:turin|128|2251||||cpugen:turin, cpumodel:9575f, common:yes|
+    |7|cpugen:turin|192|1487||||cpugen:turin, cpumodel:9655, common:yes|
     |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
-    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |4|cpugen:emeraldrapids|64|4014||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
     |96|cpugen:emeraldrapids|64|990||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
+    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
+    |4|cpugen:emeraldrapids|64|4014||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
     |60|cpugen:emeraldrapids|64|487||||cpugen:emeraldrapids, cpumodel:8562Y+, common:yes|
-    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
     |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
     |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
     |72|cpugen:cascadelake|48|368||||cpugen:cascadelake, cpumodel:8268, common:yes|
 
@@ -471,12 +471,12 @@
     |---|---|---|---|---|---|---|---|
     |8|cpugen:turin|128|2251|rtx_pro_6000_blackwell|8|96|cpugen:turin, cpumodel:9575f, gpu:rtx_pro_6000_blackwell, common:yes|
     |8|cpugen:turin|128|2251|b200|8|193|cpugen:turin, cpumodel:9575f, gpu:b200, common:yes|
-    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:emeraldrapids|48|1995|h200|8|141|cpugen:emeraldrapids, cpumodel:6542Y, gpu:h200, common:yes|
     |12|cpugen:emeraldrapids|48|479|rtx_5000_ada|4|32|cpugen:emeraldrapids, cpumodel:6542Y, common:yes, gpu:rtx_5000_ada|
-    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
-    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |10|cpugen:emeraldrapids|32|488|l40s|4|48|cpugen:emeraldrapids, cpumodel:6526Y, gpu:l40s, common:no|
     |10|cpugen:sapphirerapids|48|976|l40s|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:l40s|
+    |15|cpugen:sapphirerapids|48|976|h100|4|80|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:h100|
+    |10|cpugen:sapphirerapids|48|976|a40|4|48|cpugen:sapphirerapids, cpumodel:6442Y, common:yes, gpu:a40|
     |12|cpugen:icelake|32|240|a5000|4|24|cpugen:icelake, cpumodel:6326, common:yes, gpu:a5000|
 
 ### Private Partitions
