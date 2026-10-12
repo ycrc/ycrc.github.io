@@ -6,7 +6,7 @@ Coding agents are AI-driven tools that can write code, inspect files, run comman
 
 | | Local coding agents | Commercial coding agents |
 | --- | --- | --- |
-| AI model | YCRC-hosted Qwen3.8-27B | Models provided by commercial AI services |
+| AI model | YCRC-hosted Qwen3.8-Flash-Next | Models provided by commercial AI services |
 | Inference | Local to YCRC | External provider |
 | Coding-agent interfaces | Pi, Copilot, Codex, Claude | Commercial coding-agent tools |
 | YCRC sandbox | Yes | Claude only, currently in beta |
