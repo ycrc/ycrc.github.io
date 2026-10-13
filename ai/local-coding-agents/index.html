@@ -1971,6 +1971,26 @@
     Getting started
   </a>
   
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-the-agent-reports-that-the-model-does-not-exist" class="md-nav__link">
+    If the agent reports that the model does not exist
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busy-periods" class="md-nav__link">
+    Busy periods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2946,6 +2966,26 @@
     Getting started
   </a>
   
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-the-agent-reports-that-the-model-does-not-exist" class="md-nav__link">
+    If the agent reports that the model does not exist
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busy-periods" class="md-nav__link">
+    Busy periods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3029,7 +3069,7 @@
                 
                 <h1 id="local-coding-agents-on-bouchet">Local coding agents on Bouchet</h1>
 <p>YCRC provides <strong>secure AI coding assistance for Bouchet using a locally hosted LLM with popular coding-agent interfaces</strong>. Code and prompts sent to the model are processed locally without being sent to external AI providers.</p>
-<p>The <code>local-coding-agents</code> module provides four coding-agent interfaces backed by the same YCRC-hosted Qwen3.8-27B model. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.</p>
+<p>The <code>local-coding-agents</code> module provides four coding-agent interfaces backed by the same YCRC-hosted model, currently Qwen3.8-Flash-Next. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.</p>
 <p>To use, be on a compute node and:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
 </code></pre></div>
@@ -3068,7 +3108,7 @@
 <h2 id="getting-started">Getting started</h2>
 <p>Coding agents must run on a compute node. First request an interactive allocation, then load the module:</p>
 <div class="highlight"><pre><span></span><code>salloc
-module<span class="w"> </span>load<span class="w"> </span>local-coding-agents/1.0
+module<span class="w"> </span>load<span class="w"> </span>local-coding-agents/1.1
 </code></pre></div>
 <p>Start the agent you want to use:</p>
 <div class="highlight"><pre><span></span><code>pi
@@ -3079,8 +3119,14 @@ codex
 claude
 </code></pre></div>
 <p>No account or API key with Anthropic, OpenAI, GitHub, or another commercial AI provider is required for these local agents.</p>
+<p>Python, <code>pip</code>, and <code>pytest</code> are available inside the agent environment, so agents can run a project's tests directly (for example <code>python -m pytest</code>).</p>
+<h3 id="if-the-agent-reports-that-the-model-does-not-exist">If the agent reports that the model does not exist</h3>
+<p>YCRC occasionally updates the hosted model. A session that was started before an update may report that its model does not exist or is unavailable. Exit the agent and start it again (after <code>module load local-coding-agents</code> in a new shell); new sessions always use the current model.</p>
+<h3 id="busy-periods">Busy periods</h3>
+<p>The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.</p>
 <h2 id="extended-reasoning">Extended reasoning</h2>
-<p>Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is disabled by default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.</p>
+<p>By default the model reasons briefly before each answer. This keeps responses fast while helping it follow instructions reliably over long sessions.</p>
+<p>Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is not the default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.</p>
 <p>There are two ways to use it:</p>
 <ol>
 <li><strong>For an entire session:</strong> start the interface with <code>YCRC_THINKING=1</code>.</li>
@@ -3120,7 +3166,7 @@ claude
 </tr>
 <tr>
 <td><code>quick-task</code></td>
-<td>Handles simple work without extended reasoning</td>
+<td>Handles simple work with the default, brief reasoning</td>
 </tr>
 </tbody>
 </table>
@@ -3153,7 +3199,7 @@ claude
 </code></pre></div>
 <p>or:</p>
 <div class="highlight"><pre><span></span><code>YCRC_THINKING=1 session
-  └─ quick-task → normal reasoning mode for one routine task
+  └─ quick-task → default reasoning for one routine task
 </code></pre></div>
 <p>This can be more efficient than enabling extended reasoning for an entire session when only part of the work benefits from it.</p>
 <h2 id="where-agents-can-run">Where agents can run</h2>
@@ -3183,7 +3229,7 @@ pi
 <p>The local coding-agent environment is designed to give agents useful access to your research workflow without exposing everything your normal login account can access.</p>
 <p>Important protections include:</p>
 <ul>
-<li><strong>Local AI inference.</strong> Prompts and code sent to Qwen3.8-27B are processed by a YCRC-hosted model rather than a commercial AI provider.</li>
+<li><strong>Local AI inference.</strong> Prompts and code sent to the model are processed by a YCRC-hosted model rather than a commercial AI provider.</li>
 <li><strong>Restricted filesystem visibility.</strong> The agent sees its intended working area and selected directories required for supported tools rather than your unrestricted home and shared storage.</li>
 <li><strong>Credential protection.</strong> Sensitive locations such as SSH credentials are not made available to the agent, and the launcher removes inherited environment variables that may contain credentials or tokens.</li>
 <li><strong>Shared storage protection.</strong> The agent is restricted from browsing other users' project, scratch, or PI storage simply because your normal account may have group read access.</li>
@@ -3195,7 +3241,7 @@ pi
 <p>Within its allowed environment, a local coding agent can take many of the same actions you would take in a terminal, including changing files, running programs, installing user software, accessing the network, and interacting with Slurm. This autonomy is intentional.</p>
 <p>See <a href="../aicodingtools/#coding-agent-risks">AI Coding Agents</a> for the risks that apply to coding agents generally. The local module is designed to reduce the agent's access to sensitive or unrelated parts of the cluster, but you should still review important changes, use version control when appropriate, and maintain backups of important data.</p>
 <h2 id="local-agents-versus-commercial-agents">Local agents versus commercial agents</h2>
-<p>The local module does <strong>not</strong> use the commercial models associated with the Pi, Copilot, Codex, or Claude interfaces. Those programs are being used as coding-agent interfaces to YCRC's local Qwen3.8-27B model.</p>
+<p>The local module does <strong>not</strong> use the commercial models associated with the Pi, Copilot, Codex, or Claude interfaces. Those programs are being used as coding-agent interfaces to YCRC's locally hosted model.</p>
 <p>If you specifically need a commercial model, see <a href="../commercial-coding-agents/">Commercial Coding Agents</a> for information about YCRC's sandboxed commercial-agent beta and its different data-security considerations.</p>
                 
                   
@@ -3205,7 +3251,7 @@ pi
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2026</span>
       
     
   </small>
