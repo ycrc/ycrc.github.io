@@ -68,7 +68,7 @@ TF_FORCE_UNIFIED_MEMORY=true
 XLA_CLIENT_MEM_FRACTION=3.2
 ```
 ### Bouchet
-On Bouchet, opy the MSA batch script and model batch script templates below,
+On Bouchet, copy the MSA batch script and model batch script templates below,
 and modify for your specific use case. Both stages can be submitted at the same time using a
 [job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
 as follows:
