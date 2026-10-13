@@ -2987,7 +2987,12 @@ scancel<span class="w"> </span>JOBID
 <p><strong>Submit job</strong> : Once you start the cryoSPARC job submission process by clicking on <code>Submit job</code> in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to). YCRC has set up the following partitions for your use as cryoSPARC lanes: <code>cpu</code>, <code>gpu</code>, <code>gpu_devel</code> as well as <code>priority_cpu</code> and <code>priority_gpu</code> if you have purchased <a href="/clusters-at-yale/job-scheduling/priority-tier/">priority tier access</a>. </p>
 </li>
 <li>
-<p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled <code>Queue P*xxx* J*xxx*</code>). Click on the purple box beneath your selected compute lane, labeled <code>Cluster submission script variables</code>. The box will expand to reveal two additional options. Click on <code>Maximum runtime</code> and give your value in hours:minutes:seconds format (i.e. 1:00:00).</p>
+<p><strong>Specify the job runtime</strong> (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. <strong>Currently this option is hidden at the bottom of the submission pane</strong> (tab on the right-hand side of the window, titled <code>Queue P*xxx* J*xxx*</code>). Click on the purple box beneath your selected compute lane, labeled <code>Cluster submission script variables</code>. The box will expand to reveal two additional options.
+    <details>
+    <summary>Click here to see where this option is found in the submission pane</summary></p>
+<p><img alt="Image showing right-hand pane in the cryosparc GUI" src="/img/cryosparc_dialog_run_mem.png" />
+</details>
+Click on <code>Maximum runtime</code> and give your value in hours:minutes:seconds format (i.e. 1:00:00).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryoSPARC easier for users to manage.</p>
@@ -3000,7 +3005,11 @@ scancel<span class="w"> </span>JOBID
 <p>To diagnose, go to the OnDemand <a href="/clusters-at-yale/access/ood/#user-portal">User Portal</a>, click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.</p>
 </li>
 <li>
-<p>If this was the problem, set the <code>RAM multiplier</code> to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. <code>RAM multiplier</code> is found in the <code>Cluster submission script variables</code> purple expansion box along with <code>Maximum runtime</code> (described above).</p>
+<p>If this was the problem, set the <code>RAM multiplier</code> to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. <code>RAM multiplier</code> is found in the <code>Cluster submission script variables</code> purple expansion box along with <code>Maximum runtime</code> (described above).
+<details>
+<summary>Click here to see where this option is found in the submission pane</summary>
+<img alt="Image showing right-hand pane in the cryosparc GUI" src="/img/cryosparc_dialog_run_mem.png" />
+</details></p>
 </li>
 <li>
 <p>CryoSPARC may be particularly susceptible to this problem when analyzing very many particles (i.e. multiple millions) and/or large box sizes (i.e. dimensions of 768x768).</p>
@@ -3110,7 +3119,7 @@ cp<span class="w"> </span>-r<span class="w"> </span>.snapshot/&lt;good_snapshot&
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2026</span>
       
     
   </small>
