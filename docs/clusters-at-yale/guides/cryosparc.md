@@ -88,7 +88,13 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
 ## Run CryoSPARC Jobs
 1. **Submit job** : Once you start the cryoSPARC job submission process by clicking on `Submit job` in the job builder, the cryosparc GUI will prompt you to choose a slurm partition (labeled in cryoSPARC as a 'compute lane' that individual jobs will be submitted to). YCRC has set up the following partitions for your use as cryoSPARC lanes: `cpu`, `gpu`, `gpu_devel` as well as `priority_cpu` and `priority_gpu` if you have purchased [priority tier access](/clusters-at-yale/job-scheduling/priority-tier/). 
 
-2. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options. Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
+2. **Specify the job runtime** (important): after selecting the compute lane, you must explicitly give a suitable slurm runtime. **Currently this option is hidden at the bottom of the submission pane** (tab on the right-hand side of the window, titled `Queue P*xxx* J*xxx*`). Click on the purple box beneath your selected compute lane, labeled `Cluster submission script variables`. The box will expand to reveal two additional options.
+    <details>
+    <summary>Click here to see where this option is found in the submission pane</summary>
+
+    ![Image showing right-hand pane in the cryosparc GUI](/img/cryosparc_dialog_run_mem.png)
+    </details>
+Click on `Maximum runtime` and give your value in hours:minutes:seconds format (i.e. 1:00:00).
 
     !!! note
         The runtime should be generous, otherwise your job may be terminated prematurely; on the other hand, if you significantly overestimate the runtime, this may cause delays in when your job actually starts running. You may need to experiment to get a sense of what works best for your particular use cases. Please share any info you learn on this, so we can help make cryoSPARC easier for users to manage.
@@ -98,6 +104,10 @@ Choose between the following two methods to connect to the cryoSPARC GUI:
     - To diagnose, go to the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), click on 'Job Overview' on the left and then select an appropriate time period from the blue drop-down menu box at the top. Locate your job 'cryosparc_Pxx_Jxxx' from the list of jobs, and check for 'OUT_OF_MEMORY' under the 'State' column.
 
     - If this was the problem, set the `RAM multiplier` to a value larger than one; a value of 4 is quite conservative and should almost always work, while 2 may suffice for many cases. `RAM multiplier` is found in the `Cluster submission script variables` purple expansion box along with `Maximum runtime` (described above).
+    <details>
+    <summary>Click here to see where this option is found in the submission pane</summary>
+    ![Image showing right-hand pane in the cryosparc GUI](/img/cryosparc_dialog_run_mem.png)
+    </details>
 
     - CryoSPARC may be particularly susceptible to this problem when analyzing very many particles (i.e. multiple millions) and/or large box sizes (i.e. dimensions of 768x768).
 
