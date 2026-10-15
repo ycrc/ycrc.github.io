@@ -2,7 +2,7 @@
 
 YCRC provides **secure AI coding assistance for Bouchet using a locally hosted LLM with popular coding-agent interfaces**. Code and prompts sent to the model are processed locally without being sent to external AI providers.
 
-The `local-coding-agents` module provides four coding-agent interfaces backed by the same YCRC-hosted Qwen3.8-27B model. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.
+The `local-coding-agents` module provides four coding-agent interfaces backed by the same YCRC-hosted model, currently Qwen3.8-Flash-Next. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.
 
 To use, be on a compute node and:
 
@@ -31,7 +31,7 @@ Coding agents must run on a compute node. First request an interactive allocatio
 
 ```bash
 salloc
-module load local-coding-agents/1.0
+module load local-coding-agents/1.1
 ```
 
 Start the agent you want to use:
@@ -50,9 +50,21 @@ claude
 
 No account or API key with Anthropic, OpenAI, GitHub, or another commercial AI provider is required for these local agents.
 
+Python, `pip`, and `pytest` are available inside the agent environment, so agents can run a project's tests directly (for example `python -m pytest`).
+
+### If the agent reports that the model does not exist
+
+YCRC occasionally updates the hosted model. A session that was started before an update may report that its model does not exist or is unavailable. Exit the agent and start it again (after `module load local-coding-agents` in a new shell); new sessions always use the current model.
+
+### Busy periods
+
+The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.
+
 ## Extended reasoning
 
-Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is disabled by default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.
+By default the model reasons briefly before each answer. This keeps responses fast while helping it follow instructions reliably over long sessions.
+
+Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is not the default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.
 
 There are two ways to use it:
 
@@ -92,7 +104,7 @@ Two managed agents are available:
 | Agent | Purpose |
 | --- | --- |
 | `deep-reasoning` | Works through a difficult problem using extended reasoning |
-| `quick-task` | Handles simple work without extended reasoning |
+| `quick-task` | Handles simple work with the default, brief reasoning |
 
 How you access them depends on the interface:
 
@@ -120,7 +132,7 @@ or:
 
 ```text
 YCRC_THINKING=1 session
-  └─ quick-task → normal reasoning mode for one routine task
+  └─ quick-task → default reasoning for one routine task
 ```
 
 This can be more efficient than enabling extended reasoning for an entire session when only part of the work benefits from it.
@@ -166,7 +178,7 @@ The local coding-agent environment is designed to give agents useful access to y
 
 Important protections include:
 
-- **Local AI inference.** Prompts and code sent to Qwen3.8-27B are processed by a YCRC-hosted model rather than a commercial AI provider.
+- **Local AI inference.** Prompts and code sent to the model are processed by a YCRC-hosted model rather than a commercial AI provider.
 - **Restricted filesystem visibility.** The agent sees its intended working area and selected directories required for supported tools rather than your unrestricted home and shared storage.
 - **Credential protection.** Sensitive locations such as SSH credentials are not made available to the agent, and the launcher removes inherited environment variables that may contain credentials or tokens.
 - **Shared storage protection.** The agent is restricted from browsing other users' project, scratch, or PI storage simply because your normal account may have group read access.
@@ -183,6 +195,6 @@ See [AI Coding Agents](aicodingtools.md#coding-agent-risks) for the risks that a
 
 ## Local agents versus commercial agents
 
-The local module does **not** use the commercial models associated with the Pi, Copilot, Codex, or Claude interfaces. Those programs are being used as coding-agent interfaces to YCRC's local Qwen3.8-27B model.
+The local module does **not** use the commercial models associated with the Pi, Copilot, Codex, or Claude interfaces. Those programs are being used as coding-agent interfaces to YCRC's locally hosted model.
 
 If you specifically need a commercial model, see [Commercial Coding Agents](commercial-coding-agents.md) for information about YCRC's sandboxed commercial-agent beta and its different data-security considerations.
