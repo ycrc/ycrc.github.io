@@ -63,6 +63,6 @@ Below are visual representations of common issues with GPU workflows:
 
 ## Jobstats terminated my job!
 
-As of 2026, Jobstats will terminate jobs that aren't using GPUs effectively (<10% usage). This is to ensure that GPUs, a limited and competitive resource,
+As of 2026, Jobstats will terminate jobs that aren't using GPUs effectively (0% usage in 1-2hr of runtime). This is to ensure that GPUs, a limited and competitive resource,
  is available to researchers that will benefit from the computing power GPUs provide. 
 If you are having issues with Jobstats terminating your jobs, please [contact us](https://docs.ycrc.yale.edu/#get-help) and we will be happy to help.
