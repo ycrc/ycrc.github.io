@@ -28,6 +28,8 @@ Your course also has a course-specific web portal, based on [Open OnDemand](/clu
 courseid.ycrc.yale.edu
 ```
 
+Please authenticate using your standard NetID (without the courseid prefix) and password. 
+
 ### SSH Access
 
 To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
@@ -48,7 +50,7 @@ See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-stor
 
 ## Partitions for Courses
 
-Compute resources for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.
+Compute resources for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.  
 
 Course members are welcome to use the [public partitions of the cluster](https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions). However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
