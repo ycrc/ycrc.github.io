@@ -22,36 +22,24 @@ For this reason, AICR access is intentionally limited to projects whose computat
 
 ### Data Restrictions
 
-AICR is not approved for high-risk data. Research involving regulated or other high-risk data should use an approved Yale secure computing environment such as Hopper. If you are unsure whether your data is appropriate for AICR, contact YCRC Research Support before transferring data to the system.
+AICR is only approved for low-risk data. Research involving moderate, regulated or other high-risk data should use an approved Yale secure computing environment such as Hopper. If you are unsure whether your data is appropriate for AICR, contact YCRC Research Support before transferring data to the system.
 
-## Request AICR Early Access
+## Apply for Access
 
-AICR is currently in Early Access. During this period, YCRC is providing access to a limited number of projects while evaluating workloads and developing the longer-term allocation process.
+AICR access for Yale researchers is granted through a biannual internal Yale proposal process, with applications accepted in the Fall and Spring.
+Applications are screened by the YCRC for technical suitability and viability and then reviewed by a Yale faculty review panel.
+For approval, a submitted project must meet above stated guidelines, such as established workflows with demonstrated ability to effectively use large GPU allocations, have needs that exceed the resources readily available on other YCRC clusters and involving only low-risk data.
 
-Researchers requesting Early Access should:
+!!! info "Applications for AICR will open in Fall 2026"
 
-- have an established AI/ML workflow and experience running it on an HPC system such as Bouchet or a national HPC resource;
-- have demonstrated effective use of substantial multi-GPU resources and a need to scale to larger, particularly multi-node, GPU workloads; and
-- have computational requirements that cannot be effectively accommodated by the available GPU resources on Bouchet.
+    An announcement with details on the application requirements will be sent to all active YCRC users when applications are open.
 
-As part of the Early Access review, YCRC may consider a research group's existing GPU usage on Yale clusters, including the scale and frequency of GPU jobs, multi-GPU and multi-node usage, GPU utilization and scaling characteristics, and the amount of GPU capacity required simultaneously.
+<!-- [AICR Applications Due XXX ](.){ .md-button }-->
 
-Researchers do not need to meet a single GPU-count or utilization threshold. Requests are considered based on the overall computational requirements of the project and whether AICR is an appropriate resource for the workload.
+Approved projects are granted access for 12 months, at which point they must reapply to retain access.
+If a project is not renewed (either not accepted or not resubmitted), the team must remove their data with 30 days and will subsequently lose access to release resources for incoming projects.
 
-### PIs and User Accounts
-
-AICR access is granted for approved research workflows. PIs approve the workflows and the students or other researchers who will use AICR for the project; PI approval does not automatically create an AICR account for the PI. Accounts are created for the researchers who will directly log in and run the approved workloads.
-
-### How to Request Early Access
-
-If you believe your research meets the criteria above, contact [research.computing@yale.edu](mailto:research.computing@yale.edu) to request the AICR Early Access form.
-
-In your email, please briefly describe your anticipated GPU requirements and why your workload cannot be effectively accommodated on Bouchet or Hopper, as appropriate. YCRC Research Support will provide the Early Access request form when appropriate. For student or research-staff workflows, the PI will be asked to approve the workflow and the researchers who will receive access.
-
-!!! note
-    Early Access is not intended for developing or learning a new AI/ML workflow. Researchers who are new to AI on HPC should first develop and test their workflows using Bouchet or another appropriate HPC resource.
-
-Later in 2026, AICR access will transition to an internal Yale proposal process. Current Early Access users will also be expected to apply through that process to continue using AICR.
+---
 
 ## AICR User Documentation
 
@@ -59,15 +47,26 @@ This page contains Yale-specific information about using AICR. General documenta
 
 [AICR User Documentation](https://docs.aicr.ai){ .md-button }
 
-## Access the Cluster
+!!! question "Get Help"
+
+    Support for Yale researchers on AICR is provided by the YCRC. Users can contact us for assistance with AICR at [research.computing@yale.edu](mailto:research.computing@yale.edu) and other ways of [engaging with YCRC Research Support](/#get-help).
+
+### Access the Cluster
 
 Once your project has been approved for AICR access, you can connect using Open OnDemand or SSH.
 
-### Certificate-signed SSH Keys
+Your AICR username is your netid followed by `_yale`, for example: `abc123_yale`.
+
+#### AICR Open OnDemand
+
+You can access AICR's Open OnDemand Web Portal at [http://ood.aicr.ai](http://ood.aicr.ai).
+You will authenticate with your Yale netid and password (**not** your AICR username).
+
+#### Certificate-signed SSH Keys
 
 AICR uses certificate-signed SSH keys that are generated for you and put into your account. To get these keys you:
 
-- Log into [http://ood.aicr.ai](http://ood.aicr.ai) with your Yale netid and password (**not** your AICR username)
+- Login into AICR OOD (see above)
 - Open the File Browser and download the `aicr_keys.zip` file
 
 To install these keys follow these steps:
@@ -90,21 +89,15 @@ ssh-add id_ed25519_aicr
 ssh aicr_username@login.aicr.ai
 ```
 
-Your AICR username is your netid followed by `_yale`, for example: `abc123_yale`.
 
-## Get Help
-
-Support for Yale researchers on AICR is provided by the YCRC.
-Users can contact us for assistance with AICR at [research.computing@yale.edu](mailto:research.computing@yale.edu) and other ways of [engaging with YCRC Research Support](/#get-help).
-
-## Installed Applications
+### Installed Applications
 
 A large number of software and applications are installed on our clusters, including AICR.
-AICR software will be made available to researchers via [software modules](/applications/modules/).
+AICR software are made available to researchers via [software modules](/applications/modules/).
 
 If you need a specific application that is not present, let us know and we can install it for you.
 
-## Partitions and Hardware
+### Partitions and Hardware
 
 AICR initially contains 248 B200 GPUs and 152 RTX Pro 6000 Blackwell GPUs, grouped into [Slurm partitions](/clusters-at-yale/job-scheduling) meant to serve different purposes.
 AICR provides several partitions for different workload types, including:
@@ -123,9 +116,13 @@ The most notable differences are the default time-limit of 15 minutes and the de
 
 More information on AICR partitions and associated limits can be found in the [AICR Documentation](https://docs.aicr.ai/running-jobs/slurm-basics/#partitions).
 
-## Storage
+### Storage & Data
 
-AICR has access to an all-flash, NFS filesystem similar to the Roberts filesystem on Bouchet and the Palmer filesystem on Grace and McCleary.
+AICR mounts an all-flash, NFS filesystem similar to the Roberts filesystem on Bouchet and the Palmer filesystem on Grace and McCleary.
+
+Visit the [official AICR Documentation for transfer instructions](https://docs.aicr.ai/files/transferring-data/).
+
+#### Allocations
 
 Note: Scratch is a per user directory and quota, not a shared directory like other YCRC clusters.
 
@@ -139,4 +136,4 @@ We encourage you to back up all critical data to a secondary storage location.
 | work           | `/work/yale/<project>` | 1TiB/project* | 5,000,000 | No | 7 days | |
 | scratch        | `/scratch/<username>` | 10TiB/user | 15,000,000 | No | No | 30-day purge |
 
-\* Additional storage quota may be available upon request with appropriate justification.
+\* Additional storage quota may be available upon request to the YCRC with appropriate justification.
