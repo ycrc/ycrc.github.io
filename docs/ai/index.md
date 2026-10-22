@@ -21,7 +21,6 @@ Covered workflows:
 - Yale-managed access to closed-source models via Clarity
 - Local and commercial AI coding-agent workflows and security guidance
 - Fast batch inference and model serving with vLLM
-- Flash Attention installation instructions
 - Resource recommendations
 - Free Resources for Massive Scale Workflows
 
@@ -58,9 +57,6 @@ Use the pages below based on your workflow and questions:
 - **I need more GPUs than the H200s and other GPUs available on YCRC systems**
   See [National AI Research Resource](nairr.md) for information about national free resources (with an application submission) for AI-focused research or
   research using AI tools.
-
-- **I need help installing AI/ML python packages like flash attention or others**  
-  See [Common Package installation Methods](pythonpackages.md) for instructions
 
 - **I need access to closed-source models, but I want to make sure my data is secure (Claude, etc.)**  
   See [Clarity API](clarity.md) for Yale-managed access and usage guidance.

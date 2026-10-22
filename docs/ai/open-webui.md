@@ -3,55 +3,60 @@
 !!! warning "Beta"
     Open WebUI is currently in beta. Please report any issues to [research.computing@yale.edu](mailto:research.computing@yale.edu).
 
-Open WebUI is a **chat interface in your browser for the YCRC-hosted model**, available on Bouchet as an [Open OnDemand](../clusters-at-yale/access/ood.md) interactive app. Prompts, uploaded files, and anything the assistant reads on Bouchet are processed by the YCRC-hosted model, currently Qwen3.8-Flash-Next, rather than a commercial AI provider. No account or API key is required.
+Open WebUI provides a browser-based AI assistant on Bouchet. You can use it to ask questions about the cluster, inspect your jobs and files, analyze data with Python, and work with research documents. The default AI model is hosted by YCRC, so you can use these features **at no cost and without a commercial AI account or API key**.
 
-Beyond answering questions, the assistant is set up for work on Bouchet. It can:
+Open WebUI runs as an [Open OnDemand](../clusters-at-yale/access/ood.md) interactive app in your own Slurm session. With the YCRC-hosted model, prompts, uploaded files, and information retrieved from Bouchet are processed by YCRC rather than a commercial AI provider. You can also connect your own models or outside services; see [Use your own models](#use-your-own-models) for the data-sharing implications.
 
-- Answer questions about Bouchet using YCRC's own guidance on Slurm, storage, modules, Conda, GPUs, and more
-- Look up your jobs, job efficiency, storage quota, and partition status, and check a job script against the scheduler without submitting it
-- Read files in your home, project, and scratch directories
-- Run Python on Bouchet, including plots and analysis of your data
-- Read uploaded images, PDFs (including scanned documents), Word and Excel files, and scripts
-- Transcribe voice input
+The assistant can:
+
+- **Answer HPC questions** using YCRC guidance on Slurm, storage, software, GPUs, and more
+- **Inspect your work** by checking jobs, resource usage, storage quotas, available software, and your own files
+- **Analyze data** with Python, create plots, and save generated files in a designated output directory
+- **Work with documents** including PDFs, spreadsheets, scripts, and images
+- **Use your reference materials** through reusable knowledge bases and customized assistants
 
 ## Launch Open WebUI
 
 Choose **Open WebUI** from the **Interactive Apps** menu on the Bouchet web portal and follow the instructions for [launching an interactive app](../clusters-at-yale/access/ood.md#launch-an-interactive-app). When the session is running, click **Connect to Open WebUI**. You are signed in automatically as yourself.
 
-The form has the usual job settings plus two for running code:
+### Optional Python environment
 
-- **Python environment for code:** the environment the assistant uses to run Python. `Default (YCRC)` includes NumPy, pandas, SciPy, and Matplotlib. Your own Conda environments appear in the list once they have `ipykernel` installed:
+The **Python environment for code** setting determines which packages are available when the assistant runs Python. **Default (YCRC)** includes NumPy, pandas, SciPy, and Matplotlib. Select your own Conda environment if you want the assistant to use packages you've installed for your research.
 
-    ```bash
-    module load miniconda
-    conda install -n my_env ipykernel
-    ```
+Your Conda environments appear in the list when they have `ipykernel` installed. Install it from a compute-node session, replacing `my_env` with your environment's name:
 
-    Reload the launch page afterwards. If the environment you choose cannot run code, Open WebUI shows a banner explaining why and uses the default environment instead.
+```bash
+module load miniconda
+conda install -n my_env ipykernel
+```
 
-- **Additional modules:** modules to load before your Python environment starts, separated by spaces (for example `R` or `SAMtools`).
+Reload the launch page afterward. If the selected environment cannot run code, Open WebUI displays a banner explaining the problem and uses the default environment instead.
 
-Open WebUI doesn't need a GPU, so GPU partitions are not offered. Under **Check the box to view more options** you can set a Slurm account or add job options such as `--constraint=cpugen:turin`.
+Use **Additional modules** to load software modules for code the assistant runs, for example `R` or `SAMtools`. Separate multiple modules with spaces.
+
+Open WebUI itself does not need a GPU, so GPU partitions are not offered when launching it.
 
 !!! note "One session at a time"
-    You can run one Open WebUI session at a time, because all your sessions share the same chats and settings. To start a new one, delete the running session from **My Interactive Sessions** first. Closing the browser tab does not end the session.
+    You can run one Open WebUI session at a time. To start a new session, delete the existing one under **My Interactive Sessions**. Closing your browser tab does not end the Slurm job.
 
-Your chats, settings, and uploaded files are saved and available in every later session.
+Your chats, settings, and uploaded files remain available when you launch a later session.
 
-## Choose a model
+## Chat with the YCRC model
 
-Two versions of the YCRC-hosted model are available from the model menu at the top of the chat:
+### Choose a model
+
+Choose from the model menu at the top of the chat:
 
 | Model | Use for |
 | --- | --- |
-| Qwen3.8-Flash-Next | Most questions. Fast; reasons briefly before answering. |
-| Qwen3.8-Flash-Next-think | Difficult problems that benefit from extended reasoning. Slower. |
+| Qwen3.8-Flash-Next | Most questions; faster responses with brief reasoning |
+| Qwen3.8-Flash-Next-think | More difficult problems that benefit from extended reasoning; slower responses |
 
-YCRC occasionally updates the hosted model. The model menu always shows the current model, and existing chats continue with it.
+YCRC occasionally updates the hosted model. The model menu shows the current options, and existing chats continue using the updated model.
 
-## Ask about your work on Bouchet
+### Ask about your work on Bouchet
 
-The assistant can look up information about your own account. For example:
+The assistant can answer questions and use built-in Bouchet tools to inspect your account and available resources. For example:
 
 ```text
 What jobs do I have running right now?
@@ -64,114 +69,128 @@ Check this job script before I submit it: ...
 What columns are in ~/data/results.csv?
 ```
 
-These lookups are **read-only**: the assistant can't submit, cancel, or change jobs, and can't create, change, or delete your files. It only sees your own jobs, quota, and files, and it does not read credentials such as SSH keys. When you ask for a job script, it checks the script against the scheduler without submitting it and gives you the script to submit yourself.
+**The built-in Bouchet tools are read-only.** They can inspect your jobs, quotas, available software, and files you own, but cannot submit, cancel, or change jobs or modify files. The assistant does not read credentials such as SSH keys. If you ask it to prepare a job script, it can check the script against the scheduler without submitting it and give you the script to submit yourself.
 
-## Run code
+**Code Interpreter and user-installed extensions have different permissions.** See the sections below before using them.
 
-The **Code Interpreter** switch, in the integrations menu below the message box, lets the assistant write and run Python. It is on by default.
+### Voice input
+
+Click the microphone in the message box to dictate. Speech is transcribed on Bouchet, with support for many languages and accents. Recordings are not retained as voice files; the transcribed text is saved with the chat. The first transcription in a session may take longer.
+
+Use the speaker icon below a reply to hear it read aloud with your browser's built-in voices.
+
+## Analyze data with Python
+
+**Code Interpreter**, in the integrations menu below the message box, lets the assistant write and run Python. It is enabled by default.
 
 ![Tools, Skills, and Code Interpreter menu](/img/ood_open_webui_integrations.png){: .medium}
 
-Code runs on Bouchet, as you, in your session:
+Code runs as your user account in your Bouchet session:
 
-- It can **read** your files, so you can ask for analysis of your data directly.
-- It can **write only to `~/openwebui-outputs`**. Files the assistant creates (CSV files, figures, scripts) are saved there. When you ask for a file somewhere else, the assistant saves it in `~/openwebui-outputs` and gives you the command to copy it.
-- It uses the Python environment and modules you chose when launching. Packages can't be installed from a chat; install them in your own Conda environment and relaunch.
-- Plots appear in the chat:
+- **Input:** it can read files you can access, so you can analyze data directly from your directories.
+- **Output:** it can write only to `~/openwebui-outputs`. Generated CSV files, figures, and scripts are saved there. If you request another destination, the assistant can give you a command to copy the result yourself.
+- **Environment:** it uses the Python environment selected at launch. Packages cannot be installed through chat; install them in your Conda environment and relaunch.
+- **Plots:** figures can appear directly in the conversation.
 
 ![A plot in the chat](/img/ood_open_webui_plot.png){: .large}
 
-## Upload files
+Code Interpreter is intended for lightweight analysis, visualization, and exploratory Python tasks. It shares the resources of your Open WebUI session. Run larger or resource-intensive computations as separate Slurm jobs.
 
-Use the **+** button in the message box to attach files, a screenshot (**Capture**), a webpage, notes, knowledge bases, or earlier chats. You can also drag files into the chat or paste an image.
+## Upload files and use knowledge bases
+
+Use the **+** button in the message box to attach files, capture a screenshot (**Capture**), or add a webpage, notes, knowledge bases, or earlier chats. You can also drag files into the chat or paste an image.
 
 ![The + menu in the message box](/img/ood_open_webui_attach_menu.png){: .medium}
 
-Images (including phone photos), PDFs (including scanned documents), Word and Excel files, CSV files, and scripts can all be read. Large images take up a significant part of the model's working memory for the rest of that chat.
+The assistant can work with images, PDFs (including scanned documents), Word and Excel files, CSV files, and scripts. Large files or images can use substantial space in the model's conversation context, leaving less room for later messages.
 
 ### Knowledge bases
 
-A knowledge base is a collection of documents you can reuse across chats. Create one under **Workspace** > **Knowledge** and upload your documents. Then:
+A knowledge base is a reusable collection of documents. Create one under **Workspace** > **Knowledge** and upload your materials.
 
-- **For a few documents,** type `#` in the message box and choose the knowledge base. All of its documents are given to the model.
-- **For a larger collection,** name the knowledge base in your question (for example, "In my knowledge base 'Lab handbook', what is the procedure for ...?"), or create a custom model with the knowledge base attached (see [Customize the assistant](#customize-the-assistant)). The assistant then searches the documents and reads only the relevant ones. Attaching a large collection with `#` can exceed what the model can read at once.
+- **Small collections:** type `#` in a chat and select a knowledge base to include its documents directly. Use this when you want the assistant to consider the full collection.
+- **Larger collections:** attach the knowledge base to a [custom model](#customize-your-assistant) so the assistant can search for relevant material instead of including every document at once. You can also name a knowledge base in your question; the assistant can search your knowledge bases from any chat.
 
-The search matches words that appear in the documents, so it works best when your question uses the same terms as the documents.
+Including a large collection with `#` may exceed the model's context limit. For better search results, use specific terms, filenames, or phrases from the documents.
 
-## Voice input
+## Customize your assistant
 
-Click the microphone in the message box to dictate. Speech is transcribed on Bouchet, and many languages and accents are supported. Your recordings are not kept; only the transcribed text is saved in the chat. The first transcription in a session can take longer.
-
-To have a reply read aloud, use the speaker icon below it; this uses your browser's built-in voices.
-
-## Customize the assistant
-
-**Chat Controls** (the icon at the top right of a chat) apply to the current chat:
+**Chat Controls** (the icon at the top right of a chat) configure the current conversation:
 
 ![Chat Controls](/img/ood_open_webui_chat_controls.png){: .medium}
 
-- **System Prompt:** extra instructions for this chat, for example "Answer as a grant reviewer" or "Reply in Spanish".
-- **Advanced Params:** for example **Temperature** (lower values give more consistent answers) and **Seed** (repeatable answers). Leave **max_tokens** unset: it includes the model's reasoning, and a low value can produce an empty answer. Settings that only apply to other kinds of models, such as `min_p`, have no effect.
+- **System Prompt:** add instructions such as "Answer as a grant reviewer" or "Reply in Spanish."
+- **Advanced Params:** adjust settings such as temperature and output limits. Most users can leave these at their defaults. Avoid setting a low `max_tokens` value: it also covers reasoning tokens, so the model may run out before producing a visible answer.
 
-Other ways to customize Open WebUI:
+Other customization options include:
 
-- **Prompts** (**Workspace** > **Prompts**): save prompts you use often and insert them by typing `/`.
-- **Custom models** (**Workspace** > **Models**): create a named assistant on top of the YCRC model with its own instructions and knowledge bases. It keeps all of the Bouchet features described on this page.
-- **Memory** (**Settings** > **Personalization**): facts the assistant remembers across chats. You can view and delete them there.
-- **Settings:** theme, language, and many display options.
+- **Prompts** (**Workspace** > **Prompts**): save reusable prompts and insert them by typing `/`.
+- **Custom models** (**Workspace** > **Models**): create a named assistant based on the YCRC-hosted model, with its own instructions and attached knowledge bases.
+- **Memory** (**Settings** > **Personalization**): manage information the assistant remembers across chats.
+- **Settings:** change the theme, language, and other display preferences.
 
-Workspace **Tools** and **Functions** (in the Admin Panel) let you add custom Python code to Open WebUI, including add-ons shared online. This code runs as you with full access to your files and is not limited like the Code Interpreter, so **only install code you trust**.
+### Advanced: custom tools and functions
+
+**Tools** in Workspace and **Functions** in the Admin Panel let you add Python extensions, including code shared by others. Unlike the restricted Code Interpreter, these extensions can run as your account with broader access to your files. **Only install code you trust.** Do not assume they share the read-only limits of the built-in Bouchet tools.
 
 ## Use your own models
 
-You can add other model services under **Admin Panel** > **Settings** > **Connections**, using the service's address and your API key. Its models then appear in the model menu.
+You can connect other model services under **Admin Panel** > **Settings** > **Connections**, using the service address and an API key if the service requires one. Connected models appear in the model menu.
 
 ![Adding a connection](/img/ood_open_webui_add_connection.png){: .medium}
 
-This also works with a model you serve yourself in your own Bouchet job, for example with [Ollama](ollama.md) or [vLLM](vllm.md). Use the address of the node and port your server is running on.
+You can also connect a model you host in a separate Bouchet job using [Ollama](ollama.md) or [vLLM](vllm.md). Enter the address of the compute node and the port used by your model server.
 
 !!! warning "Services outside YCRC"
-    With a service outside YCRC, such as a commercial AI provider, your prompts and uploaded files are sent to that provider. Follow the [data classification guidance for commercial AI services](commercial-coding-agents.md) before sending research data.
+    When you use a model hosted outside YCRC, such as a commercial AI service, prompts and any attachments or tool results provided to that model are sent to the external service. Check the [data classification guidance for commercial AI services](commercial-coding-agents.md) before sharing research information.
 
-When a model from a service outside YCRC wants to look something up on Bouchet or run code, the chat pauses and asks you to **Allow** or **Deny** each step, because the results (for example, the contents of a file) would be sent to that provider. **Deny** answers without the data. To stop being asked in a chat, open the **+** menu, choose **Tool Permissions**, and select **Full access**. This applies to that chat only; new chats ask again. Models hosted by YCRC, and your own models running on Bouchet, never ask.
+### Tool permissions for external models
 
-## Your data
+When an external model requests information from a Bouchet tool or asks to run code, Open WebUI prompts you to **Allow** or **Deny** the action before sending its results to the external service. Denying access lets the conversation continue without that information.
 
-- Your chats, settings, and uploaded files are stored in your home directory (`~/.open-webui`). Only you can see them, and they are available in every session.
-- Files the assistant creates are saved in `~/openwebui-outputs`.
-- **Temporary Chat** (in the model menu) is not saved.
-- To share a chat, use **Download** in the chat's menu (as PDF, text, or JSON). Share links are turned off because they would stop working when your session ends.
-- To export all chats, or delete chats or uploaded files, use **Settings** > **Data Controls**.
+To disable individual approval prompts for a chat, open **+** > **Tool Permissions** > **Full access**. **Full access** allows the external model to use the available tools without asking each time and may transmit retrieved data or code results to that provider. Use it only when the model and the information it may access are appropriate for that service. The setting applies to the current chat; new chats ask again.
+
+These additional approval prompts are not used for the YCRC-hosted model or models you run on Bouchet. Connections added during a session may ask until you next launch Open WebUI.
+
+## Privacy and saved data
+
+- **Chats and uploads:** saved in your home directory at `~/.open-webui`, subject to your account's filesystem permissions. Regular chats, uploads, and settings persist across sessions.
+- **Generated files:** stored in `~/openwebui-outputs`.
+- **Temporary Chat:** does not appear in your saved chat history. This does not necessarily mean that no temporary processing files or system logs exist.
+- **Sharing:** use **Download** in a chat's menu to export it as PDF, text, or JSON. Share links are disabled because the links would stop working when your session ends.
+- **Managing data:** use **Settings** > **Data Controls** to export all chats or delete chats and uploaded files.
+
+Connecting to an external model changes where information sent to that model is processed; see [Use your own models](#use-your-own-models).
 
 ## Limits and good practice
 
-- **The model is shared by all users.** At busy times responses can be slower, and each user can have a limited number of requests in progress at a time.
-- **Check important facts.** The assistant can be wrong, including about policies and limits. Confirm anything important in these docs or with [YCRC](https://docs.ycrc.yale.edu/#get-help).
-- **Not available:** web search and image generation.
-- Some Admin Panel settings are managed by YCRC and are reset each time you launch, including the connection to the YCRC model, code execution, and the default skills and tools. Changes you make to your own connections, models, and preferences are kept.
+- **Shared model:** the YCRC-hosted model serves multiple users. Responses may be slower at busy times, and the number of requests each user can have in progress may be limited.
+- **Verify important answers:** AI-generated answers can be incorrect, including information about cluster policies and limits. Check the [YCRC documentation](https://docs.ycrc.yale.edu/) or [contact YCRC](https://docs.ycrc.yale.edu/#get-help) when accuracy matters.
+- **Unavailable features:** web search and image generation.
+- **Managed settings:** YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.
 
 ## Troubleshoot
 
 ### "You already have an Open WebUI session"
 
-Only one session can run at a time. Connect to the existing session from **My Interactive Sessions**, or delete it and launch again.
+Connect to the existing session from **My Interactive Sessions**, or delete it before launching another. Closing a browser tab does not stop the session. When a session ends, your saved chats and settings remain available for the next launch.
 
 ### "Open WebUI doesn't use GPUs"
 
-Open WebUI doesn't need a GPU, so GPU partitions and GPU options aren't available when launching it. If you want to use a model that needs a GPU, such as one you serve with [Ollama](ollama.md) or [vLLM](vllm.md), run it in a separate job on a GPU partition and connect it to Open WebUI as described in [Use your own models](#use-your-own-models).
+Open WebUI itself runs without a GPU. To use a model requiring a GPU, start [Ollama](ollama.md) or [vLLM](vllm.md) in a separate GPU job and connect it under [Use your own models](#use-your-own-models).
 
 ### A banner says your Python environment can't run code
 
-The environment you chose doesn't have `ipykernel`, or the modules couldn't be loaded. Code runs in the default environment until you fix it as the banner describes and relaunch.
+The selected environment may be missing `ipykernel`, or its required modules may not have loaded. Code Interpreter uses the default environment until you fix the issue and relaunch.
 
 ### "Your message didn't reach the model"
 
-Send the message again. This can happen if you send a message immediately after opening a chat.
+Try sending the message again. This can happen if you send a message immediately after opening a chat.
 
 ### "Lost connection"
 
-Open WebUI reconnects automatically within a few seconds. If it doesn't, reload the page.
+Open WebUI normally reconnects automatically. If it does not, reload the page. If your Slurm session has ended or reached its walltime, launch another session; your saved chats are still available.
 
 ### "This model's maximum context length is ..."
 
-The chat, together with its attachments, is longer than the model can read at once. Start a new chat, or for large knowledge bases use the approach described in [Knowledge bases](#knowledge-bases).
+The conversation and its attachments exceed the amount the model can process at once. Start a new chat, or use a searchable knowledge base instead of attaching a large collection directly.

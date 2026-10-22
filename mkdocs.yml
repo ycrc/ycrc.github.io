@@ -206,7 +206,6 @@ nav:
         - "vLLM": ai/vllm.md
         - "Multi-GPU Submission Scripts": ai/miniconda-multigpu.md
         - "National AI Research Resource (NAIRR)": ai/nairr.md
-        - "Common AI/ML python package Installation Procedures": ai/pythonpackages.md
         - "AI Coding Agents":
             - "Overview": ai/aicodingtools.md
             - "Local Coding Agents on Bouchet": ai/local-coding-agents.md
