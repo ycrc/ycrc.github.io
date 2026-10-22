@@ -215,7 +215,7 @@ vllm serve Qwen/Qwen3-8B \
 
 vLLM reads the API key from the `VLLM_API_KEY` environment variable and rejects requests without it. The server is ready when the log shows `Application startup complete`. Startup takes about two minutes for small models and 20 minutes or more for very large ones.
 
-`--host 0.0.0.0` makes the server reachable from other nodes, which Open WebUI and SSH tunnels through a login node need. If you only send requests from the same job, you can use `--host 127.0.0.1` instead.
+`--host 0.0.0.0` makes the server reachable from other nodes, which [Open WebUI](#connect-open-webui) needs. If you only send requests from the same job, you can use `--host 127.0.0.1` instead.
 
 ### Send Requests
 
@@ -293,16 +293,6 @@ kill $VLLM_PID
 ```
 
 Your script reads `VLLM_PORT` and `VLLM_API_KEY` from the environment as in the Python example above. Send requests concurrently (for example with a thread pool or `asyncio`) rather than one after another; vLLM processes many requests at once, so concurrent requests finish much faster.
-
-### Connect From Your Computer
-
-To use the server from a program on your own computer, open an SSH tunnel through the login node. Run this on your computer, replacing the node name, port, and netid with the values printed when the server started:
-
-```bash
-ssh -N -L 8000:a1128u05n01:24137 netid@bouchet.ycrc.yale.edu
-```
-
-While the tunnel is open, the server is available on your computer at `http://localhost:8000/v1`, with the same API key. The server must be started with `--host 0.0.0.0`.
 
 ### Connect Open WebUI
 

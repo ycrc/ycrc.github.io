@@ -17,7 +17,7 @@ The assistant can:
 
 ## Launch Open WebUI
 
-Choose **Open WebUI** from the **Interactive Apps** menu on the Bouchet web portal and follow the instructions for [launching an interactive app](../clusters-at-yale/access/ood.md#launch-an-interactive-app). When the session is running, click **Connect to Open WebUI**. You are signed in automatically as yourself.
+Choose **Open WebUI - LLM Chat Interface** from the **Interactive Apps** menu on the Bouchet web portal and follow the instructions for [launching an interactive app](../clusters-at-yale/access/ood.md#launch-an-interactive-app). When the session is running, click **Connect to Open WebUI**. You are signed in automatically as yourself.
 
 ### Optional Python environment
 
