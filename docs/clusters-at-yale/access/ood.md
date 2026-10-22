@@ -98,6 +98,7 @@ For additional information on specific Interactive Apps, see the following docum
 - [Jupyter](/clusters-at-yale/access/ood-jupyter)
 - [RStudio](/clusters-at-yale/access/ood-rstudio)
 - [VSCode](/clusters-at-yale/access/ood-vscode)
+- [Open WebUI](/ai/open-webui)
 
 ## User Portal
 

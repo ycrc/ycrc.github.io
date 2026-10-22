@@ -70,10 +70,8 @@ Use the pages below based on your workflow and questions:
 - **I want to use a commercial coding model**  
   See [Commercial Coding Agents](commercial-coding-agents.md) for data-classification guidance and information about YCRC's Claude-only sandbox beta and planned Claude Enterprise service.
 
-<!--
 - **I want a browser-based, chat-style interface**  
-  See [OpenWebUI on Remote Desktop](openwebui.md) for installing and launching OpenWebUI in an OOD session.
--->
+  See [Open WebUI on Bouchet](open-webui.md) for a chat interface to the YCRC-hosted model that can look up your jobs and files, run code, and read uploaded documents.
 
 
 <!-- - **Something is not behaving as expected**  
