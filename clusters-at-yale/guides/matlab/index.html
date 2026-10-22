@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters-at-yale/guides/matlab/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -3027,14 +3027,14 @@ matlab -nodisplay &lt; runscript.m
 
 module load MATLAB/2023b
 # assuming you have your_script.m in the current directory
-matlab -batch &quot;your_script&quot;
+matlab -batch "your_script"
 
 # if using MATLAB older than R2019a
 # matlab -nojvm -nodisplay -nosplash &lt; your_script.m
 </code></pre></div>
 <h2 id="using-more-than-12-cores-with-matlab">Using More than 12 Cores with MATLAB</h2>
 <p>In MATLAB, 12 workers is a poorly documented default limit (seemingly for historical reasons) when setting up the parallel environment. You can override it by explicitly setting up your parpool before calling parfor or other parallel functions.</p>
-<div class="highlight"><pre><span></span><code>parpool(feature(&#39;NumCores&#39;));
+<div class="highlight"><pre><span></span><code>parpool(feature('NumCores'));
 </code></pre></div>
                 
                   

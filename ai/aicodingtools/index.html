@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/ai/aicodingtools/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
     
     
       
@@ -1973,6 +1973,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-coding-agents-should-run" class="md-nav__link">
+    Where coding agents should run
+  </a>
+  
+    <nav class="md-nav" aria-label="Where coding agents should run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-partition" class="md-nav__link">
+    The agent partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coding-agent-risks" class="md-nav__link">
     Coding-agent risks
   </a>
@@ -2927,6 +2947,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-coding-agents-should-run" class="md-nav__link">
+    Where coding agents should run
+  </a>
+  
+    <nav class="md-nav" aria-label="Where coding agents should run">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-partition" class="md-nav__link">
+    The agent partition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coding-agent-risks" class="md-nav__link">
     Coding-agent risks
   </a>
@@ -3007,6 +3047,37 @@
 <h3 id="commercial-coding-agents">Commercial coding agents</h3>
 <p>Commercial coding agents use models hosted by external AI providers. Prompts, code, and other content provided to the model leave YCRC and are handled according to the provider and account terms.</p>
 <p>YCRC is currently beta-testing a <strong>Claude-only sandbox module</strong> that adds cluster-specific protections around Claude Code. See <a href="../commercial-coding-agents/">Commercial Coding Agents</a> for current data-classification guidance, the Claude sandbox beta, and the planned Claude Enterprise offering.</p>
+<h2 id="where-coding-agents-should-run">Where coding agents should run</h2>
+<p>Run coding agents on a compute node, never on a login node. YCRC's coding-agent modules refuse to start on a login node.</p>
+<h3 id="the-agent-partition">The agent partition</h3>
+<p>The <code>agent</code> partition is intended for running a coding-agent session itself. An agent spends most of its time waiting on the model and on you, so a session needs few resources but may need to run for a long time:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPUs and memory</td>
+<td>1 CPU and up to 8 GiB per session</td>
+</tr>
+<tr>
+<td>Sessions</td>
+<td>2 running at a time</td>
+</tr>
+<tr>
+<td>Walltime</td>
+<td>Up to 7 days (default 1 hour)</td>
+</tr>
+</tbody>
+</table>
+<p>Request the memory and time you need, since the defaults are small:</p>
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>agent<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>-t<span class="w"> </span><span class="m">8</span>:00:00
+</code></pre></div>
+<p>Then load a coding-agent module and start the agent.</p>
+<p>An agent session is for editing, inspecting files, and running small tests and commands. YCRC's coding agents are instructed to keep their own session light and to run larger work, such as big software or environment builds, analyses, and GPU work, as separate Slurm jobs on the appropriate partition, either by submitting the job or by preparing a batch script for you to submit. Those jobs run under your account and use your normal allocations. You can also ask the agent to run a particular step as a job.</p>
 <h2 id="coding-agent-risks">Coding-agent risks</h2>
 <p>Coding agents are more powerful than ordinary chat interfaces. An agent can inspect files, write code, run commands, and take actions using the permissions available to the user who launched it. These capabilities make coding agents useful, but they also introduce risks that should be understood before using them on shared research systems.</p>
 <p>Potential risks include:</p>
@@ -3053,7 +3124,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2026</span>
       
     
   </small>
