@@ -1839,6 +1839,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../vllm/" class="md-nav__link">
+        vLLM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../miniconda-multigpu/" class="md-nav__link">
         Multi-GPU Submission Scripts
       </a>
@@ -1886,18 +1900,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_10">
+        <label class="md-nav__link" for="__nav_4_11">
           AI Coding Agents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_10">
+        <label class="md-nav__title" for="__nav_4_11">
           <span class="md-nav__icon md-icon"></span>
           AI Coding Agents
         </label>
@@ -3193,7 +3207,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> <
 <p><strong>Additional modules:</strong> modules to load before your Python environment starts, separated by spaces (for example <code>R</code> or <code>SAMtools</code>).</p>
 </li>
 </ul>
-<p>Open WebUI does not use GPUs, so GPU partitions are not offered. Under <strong>Check the box to view more options</strong> you can set a Slurm account or add job options such as <code>--constraint=cpugen:turin</code>.</p>
+<p>Open WebUI doesn't need a GPU, so GPU partitions are not offered. Under <strong>Check the box to view more options</strong> you can set a Slurm account or add job options such as <code>--constraint=cpugen:turin</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">One session at a time</p>
 <p>You can run one Open WebUI session at a time, because all your sessions share the same chats and settings. To start a new one, delete the running session from <strong>My Interactive Sessions</strong> first. Closing the browser tab does not end the session.</p>
@@ -3275,7 +3289,7 @@ What columns are in ~/data/results.csv?
 <h2 id="use-your-own-models">Use your own models</h2>
 <p>You can add other model services under <strong>Admin Panel</strong> &gt; <strong>Settings</strong> &gt; <strong>Connections</strong>, using the service's address and your API key. Its models then appear in the model menu.</p>
 <p><img alt="Adding a connection" class="medium" src="/img/ood_open_webui_add_connection.png" /></p>
-<p>This also works with an <a href="../ollama/">Ollama</a> server you run in your own Bouchet job.</p>
+<p>This also works with a model you serve yourself in your own Bouchet job, for example with <a href="../ollama/">Ollama</a> or <a href="../vllm/">vLLM</a>. Use the address of the node and port your server is running on.</p>
 <div class="admonition warning">
 <p class="admonition-title">Services outside YCRC</p>
 <p>With a service outside YCRC, such as a commercial AI provider, your prompts and uploaded files are sent to that provider. Follow the <a href="../commercial-coding-agents/">data classification guidance for commercial AI services</a> before sending research data.</p>
@@ -3300,7 +3314,7 @@ What columns are in ~/data/results.csv?
 <h3 id="you-already-have-an-open-webui-session">"You already have an Open WebUI session"</h3>
 <p>Only one session can run at a time. Connect to the existing session from <strong>My Interactive Sessions</strong>, or delete it and launch again.</p>
 <h3 id="open-webui-doesnt-use-gpus">"Open WebUI doesn't use GPUs"</h3>
-<p>GPU partitions and GPU options in <strong>Additional job options</strong> are not available for Open WebUI. Choose a CPU partition and remove the GPU options.</p>
+<p>Open WebUI doesn't need a GPU, so GPU partitions and GPU options aren't available when launching it. If you want to use a model that needs a GPU, such as one you serve with <a href="../ollama/">Ollama</a> or <a href="../vllm/">vLLM</a>, run it in a separate job on a GPU partition and connect it to Open WebUI as described in <a href="#use-your-own-models">Use your own models</a>.</p>
 <h3 id="a-banner-says-your-python-environment-cant-run-code">A banner says your Python environment can't run code</h3>
 <p>The environment you chose doesn't have <code>ipykernel</code>, or the modules couldn't be loaded. Code runs in the default environment until you fix it as the banner describes and relaunch.</p>
 <h3 id="your-message-didnt-reach-the-model">"Your message didn't reach the model"</h3>

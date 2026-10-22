@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/ai/vllm/</loc>
+         <lastmod>2026-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/applications/</loc>
          <lastmod>2026-10-22</lastmod>
          <changefreq>daily</changefreq>

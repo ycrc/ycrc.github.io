@@ -1839,6 +1839,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../vllm/" class="md-nav__link">
+        vLLM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../miniconda-multigpu/" class="md-nav__link">
         Multi-GPU Submission Scripts
       </a>
@@ -1923,13 +1937,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vllm" class="md-nav__link">
-    vllm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#esmfold" class="md-nav__link">
     esmfold
   </a>
@@ -1956,18 +1963,18 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_10">
+        <label class="md-nav__link" for="__nav_4_11">
           AI Coding Agents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_10">
+        <label class="md-nav__title" for="__nav_4_11">
           <span class="md-nav__icon md-icon"></span>
           AI Coding Agents
         </label>
@@ -2927,13 +2934,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vllm" class="md-nav__link">
-    vllm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#esmfold" class="md-nav__link">
     esmfold
   </a>
@@ -2963,9 +2963,9 @@
 installation recipes for commonly requested python packages. As of now, those packages include:</p>
 <ul>
 <li><a href="#flash-attention">flash attention</a></li>
-<li><a href="#vllm">vllm</a></li>
 <li><a href="#esmfold">esmfold</a></li>
 </ul>
+<p>For vLLM, see <a href="../vllm/">vLLM</a>; it installs directly with <code>pip</code>.</p>
 <p>If you do not see a recipe for a package you need help with, please <a href="https://docs.ycrc.yale.edu/#get-help">contact us</a> for
 help installing the package/program.</p>
 <h2 id="common-error-associated-with-aiml-packages">Common Error Associated with AI/ML Packages</h2>
@@ -3007,31 +3007,6 @@ git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w
 
 <span class="c1">##install package</span>
 python<span class="w"> </span>setup.py<span class="w"> </span>install
-</code></pre></div>
-<h2 id="vllm">vllm</h2>
-<p>Create initial environment (make sure to request a compute node with <a href="/clusters-at-yale/guides/conda/">miniconda</a>
-salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>vllm<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12.*<span class="w"> </span>uv<span class="w"> </span>setuptools-scm<span class="w"> </span>cmake<span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="m">12</span><span class="w"> </span><span class="nv">gxx</span><span class="o">=</span><span class="m">12</span><span class="w"> </span>ninja<span class="w"> </span>packaging<span class="w"> </span>psutil
-
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-
-<span class="c1">###install torch</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">2</span>.10.0<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.25.0<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">2</span>.10.0<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu128
-
-<span class="c1">###install missing dependencies for vllm</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pybind11<span class="w"> </span><span class="s2">"setuptools&gt;=77.0.3,&lt;81.0.0"</span>
-
-<span class="c1">###load CUDA 12.8 module for cuda_home dependencies and cuda packages</span>
-ml<span class="w"> </span>CUDA/12.8
-
-<span class="c1">###download repository for vllm to install from source</span>
-git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>v0.19.1<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/vllm-project/vllm
-
-<span class="nb">cd</span><span class="w"> </span>vllm
-
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>--no-build-isolation
 </code></pre></div>
 <h2 id="esmfold">esmfold</h2>
 <p>Create initial environment using <a href="/clusters-at-yale/guides/conda/">miniconda</a> on a compute node</p>
@@ -3097,7 +3072,7 @@ pip<span class="w"> </span>install<span class="w"> </span>fair-esm
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2026</span>
       
     
   </small>
