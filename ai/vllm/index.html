@@ -1945,13 +1945,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#connect-from-your-computer" class="md-nav__link">
-    Connect From Your Computer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#connect-open-webui" class="md-nav__link">
     Connect Open WebUI
   </a>
@@ -3129,13 +3122,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#connect-from-your-computer" class="md-nav__link">
-    Connect From Your Computer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#connect-open-webui" class="md-nav__link">
     Connect Open WebUI
   </a>
@@ -3523,7 +3509,7 @@ vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span clas
 <span class="w">    </span>--max-model-len<span class="w"> </span><span class="m">16384</span>
 </code></pre></div>
 <p>vLLM reads the API key from the <code>VLLM_API_KEY</code> environment variable and rejects requests without it. The server is ready when the log shows <code>Application startup complete</code>. Startup takes about two minutes for small models and 20 minutes or more for very large ones.</p>
-<p><code>--host 0.0.0.0</code> makes the server reachable from other nodes, which Open WebUI and SSH tunnels through a login node need. If you only send requests from the same job, you can use <code>--host 127.0.0.1</code> instead.</p>
+<p><code>--host 0.0.0.0</code> makes the server reachable from other nodes, which <a href="#connect-open-webui">Open WebUI</a> needs. If you only send requests from the same job, you can use <code>--host 127.0.0.1</code> instead.</p>
 <h3 id="send-requests">Send Requests</h3>
 <p>From another terminal in the same job, or from a batch script, check that the server is up and send a request with <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">"</span>
@@ -3587,11 +3573,6 @@ python<span class="w"> </span>my_client_script.py
 <span class="nb">kill</span><span class="w"> </span><span class="nv">$VLLM_PID</span>
 </code></pre></div>
 <p>Your script reads <code>VLLM_PORT</code> and <code>VLLM_API_KEY</code> from the environment as in the Python example above. Send requests concurrently (for example with a thread pool or <code>asyncio</code>) rather than one after another; vLLM processes many requests at once, so concurrent requests finish much faster.</p>
-<h3 id="connect-from-your-computer">Connect From Your Computer</h3>
-<p>To use the server from a program on your own computer, open an SSH tunnel through the login node. Run this on your computer, replacing the node name, port, and netid with the values printed when the server started:</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">8000</span>:a1128u05n01:24137<span class="w"> </span>netid@bouchet.ycrc.yale.edu
-</code></pre></div>
-<p>While the tunnel is open, the server is available on your computer at <code>http://localhost:8000/v1</code>, with the same API key. The server must be started with <code>--host 0.0.0.0</code>.</p>
 <h3 id="connect-open-webui">Connect Open WebUI</h3>
 <p>To chat with your model in <a href="../open-webui/">Open WebUI</a>, start the server with <code>--host 0.0.0.0</code> and add it as a connection under <strong>Admin Panel</strong> &gt; <strong>Settings</strong> &gt; <strong>Connections</strong>, as described in <a href="../open-webui/#use-your-own-models">Use your own models</a>:</p>
 <ul>
