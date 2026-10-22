@@ -30,7 +30,7 @@ You can switch between interfaces without changing the underlying model or local
 Coding agents must run on a compute node. Start a session in the [agent partition](aicodingtools.md#the-agent-partition), then load the module:
 
 ```bash
-module load local-coding-agents/1.1
+module load local-coding-agents
 ```
 
 Start the agent you want to use:
