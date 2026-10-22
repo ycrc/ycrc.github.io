@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.ycrc.yale.edu/ai/open-webui/</loc>
+         <lastmod>2026-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.ycrc.yale.edu/ai/pythonpackages/</loc>
          <lastmod>2026-10-22</lastmod>
          <changefreq>daily</changefreq>
