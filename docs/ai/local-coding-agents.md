@@ -161,6 +161,8 @@ pi --bind /path/to/reference-data
 claude --bind /path/to/data1,/path/to/data2
 ```
 
+Your groups' `shared` directories (for example `/nfs/roberts/project/<group>/shared`) are available automatically, so they don't need `--bind`. When the agent starts, it prints a `Binding read-only:` line for each directory it can read this way.
+
 Bound directories are read-only: the agent can read them but writes its results to the directory you started it in.
 
 ## HPC tools and workflows
