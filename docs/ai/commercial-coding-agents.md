@@ -45,12 +45,11 @@ These controls limit Claude's cluster access, but they do not change the data cl
 
 ### Using the Claude module
 
-To use the safe claude module, simply load it and start Claude. Run Claude on a compute node and start it from a non-hidden subdirectory in your home, project, PI, or scratch storage. The module will refuse to start in locations that do not meet its security requirements.
+To use the safe claude module, simply load it and start Claude. Run Claude on a compute node, in a session in the [agent partition](aicodingtools.md#the-agent-partition), and start it from a non-hidden subdirectory in your home, project, PI, or scratch storage. The module will refuse to start in locations that do not meet its security requirements.
 
-For example:
+For example, in an agent-partition session:
 
 ```bash
-salloc
 ml claude
 cd ~/scratch/some-work-folder # Any non-hidden subdirectory of home, project, scratch, or pi storage
 claude

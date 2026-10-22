@@ -25,6 +25,30 @@ Commercial coding agents use models hosted by external AI providers. Prompts, co
 
 YCRC is currently beta-testing a **Claude-only sandbox module** that adds cluster-specific protections around Claude Code. See [Commercial Coding Agents](commercial-coding-agents.md) for current data-classification guidance, the Claude sandbox beta, and the planned Claude Enterprise offering.
 
+## Where coding agents should run
+
+Run coding agents on a compute node, never on a login node. YCRC's coding-agent modules refuse to start on a login node.
+
+### The agent partition
+
+The `agent` partition is intended for running a coding-agent session itself. An agent spends most of its time waiting on the model and on you, so a session needs few resources but may need to run for a long time:
+
+| | Limit |
+| --- | --- |
+| CPUs and memory | 1 CPU and up to 8 GiB per session |
+| Sessions | 2 running at a time |
+| Walltime | Up to 7 days (default 1 hour) |
+
+Request the memory and time you need, since the defaults are small:
+
+```bash
+salloc -p agent --mem=8G -t 8:00:00
+```
+
+Then load a coding-agent module and start the agent.
+
+An agent session is for editing, inspecting files, and running small tests and commands. YCRC's coding agents are instructed to keep their own session light and to run larger work, such as big software or environment builds, analyses, and GPU work, as separate Slurm jobs on the appropriate partition, either by submitting the job or by preparing a batch script for you to submit. Those jobs run under your account and use your normal allocations. You can also ask the agent to run a particular step as a job.
+
 ## Coding-agent risks
 
 Coding agents are more powerful than ordinary chat interfaces. An agent can inspect files, write code, run commands, and take actions using the permissions available to the user who launched it. These capabilities make coding agents useful, but they also introduce risks that should be understood before using them on shared research systems.

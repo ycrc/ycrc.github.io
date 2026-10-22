@@ -4,7 +4,7 @@ YCRC provides **secure AI coding assistance for Bouchet using a locally hosted L
 
 The `local-coding-agents` module provides four coding-agent interfaces backed by the same YCRC-hosted model, currently Qwen3.8-Flash-Next. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.
 
-To use, be on a compute node and:
+To use, start a session in the [agent partition](aicodingtools.md#the-agent-partition) and:
 
 ```bash
 module load local-coding-agents
@@ -27,10 +27,9 @@ You can switch between interfaces without changing the underlying model or local
 
 ## Getting started
 
-Coding agents must run on a compute node. First request an interactive allocation, then load the module:
+Coding agents must run on a compute node. Start a session in the [agent partition](aicodingtools.md#the-agent-partition), then load the module:
 
 ```bash
-salloc
 module load local-coding-agents/1.1
 ```
 
@@ -152,6 +151,17 @@ pi
 The module will refuse to start from locations that do not meet its security requirements. Coding agents should not run on login nodes.
 
 These restrictions limit the agent to the files and directories needed for your work and reduce unintended access to credentials, unrelated projects, and other users' data.
+
+### Reading other directories
+
+To let the agent read a directory outside the one you started it in, such as shared reference data, add `--bind` when starting it:
+
+```bash
+pi --bind /path/to/reference-data
+claude --bind /path/to/data1,/path/to/data2
+```
+
+Bound directories are read-only: the agent can read them but writes its results to the directory you started it in.
 
 ## HPC tools and workflows
 
