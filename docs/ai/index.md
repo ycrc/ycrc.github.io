@@ -20,7 +20,8 @@ Covered workflows:
 - Multi-GPU usage on a single node
 - Yale-managed access to closed-source models via Clarity
 - Local and commercial AI coding-agent workflows and security guidance
-- vLLM and Flash Attention installation instructions
+- Fast batch inference and model serving with vLLM
+- Flash Attention installation instructions
 - Resource recommendations
 - Free Resources for Massive Scale Workflows
 
@@ -47,6 +48,9 @@ Use the pages below based on your workflow and questions:
 
 - **I want to use Hugging Face**  
   See [Hugging Face](huggingface.md) for supported environment setup and AI workflows.
+
+- **I want to run many prompts quickly or serve a model with an OpenAI-compatible API**  
+  See [vLLM](vllm.md) for installation, batch inference, and serving a model in a Slurm job.
 
 - **I want to use multiple GPUs**  
   See [Multi-GPU Usage in Miniconda Environments](miniconda-multigpu.md) for instructions and common issues.

@@ -31,7 +31,7 @@ The form has the usual job settings plus two for running code:
 
 - **Additional modules:** modules to load before your Python environment starts, separated by spaces (for example `R` or `SAMtools`).
 
-Open WebUI does not use GPUs, so GPU partitions are not offered. Under **Check the box to view more options** you can set a Slurm account or add job options such as `--constraint=cpugen:turin`.
+Open WebUI doesn't need a GPU, so GPU partitions are not offered. Under **Check the box to view more options** you can set a Slurm account or add job options such as `--constraint=cpugen:turin`.
 
 !!! note "One session at a time"
     You can run one Open WebUI session at a time, because all your sessions share the same chats and settings. To start a new one, delete the running session from **My Interactive Sessions** first. Closing the browser tab does not end the session.
@@ -128,7 +128,7 @@ You can add other model services under **Admin Panel** > **Settings** > **Connec
 
 ![Adding a connection](/img/ood_open_webui_add_connection.png){: .medium}
 
-This also works with an [Ollama](ollama.md) server you run in your own Bouchet job.
+This also works with a model you serve yourself in your own Bouchet job, for example with [Ollama](ollama.md) or [vLLM](vllm.md). Use the address of the node and port your server is running on.
 
 !!! warning "Services outside YCRC"
     With a service outside YCRC, such as a commercial AI provider, your prompts and uploaded files are sent to that provider. Follow the [data classification guidance for commercial AI services](commercial-coding-agents.md) before sending research data.
@@ -158,7 +158,7 @@ Only one session can run at a time. Connect to the existing session from **My In
 
 ### "Open WebUI doesn't use GPUs"
 
-GPU partitions and GPU options in **Additional job options** are not available for Open WebUI. Choose a CPU partition and remove the GPU options.
+Open WebUI doesn't need a GPU, so GPU partitions and GPU options aren't available when launching it. If you want to use a model that needs a GPU, such as one you serve with [Ollama](ollama.md) or [vLLM](vllm.md), run it in a separate job on a GPU partition and connect it to Open WebUI as described in [Use your own models](#use-your-own-models).
 
 ### A banner says your Python environment can't run code
 

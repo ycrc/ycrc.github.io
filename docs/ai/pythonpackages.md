@@ -6,8 +6,9 @@ Some Python Packages for AI/ML workflows do not install easily into YCRC systems
 installation recipes for commonly requested python packages. As of now, those packages include:
 
 - [flash attention](#flash-attention)
-- [vllm](#vllm)
 - [esmfold](#esmfold)
+
+For vLLM, see [vLLM](vllm.md); it installs directly with `pip`.
 
 If you do not see a recipe for a package you need help with, please [contact us](https://docs.ycrc.yale.edu/#get-help) for
 help installing the package/program.
@@ -57,36 +58,6 @@ export CMAKE_BUILD_PARALLEL_LEVEL=8
 
 ##install package
 python setup.py install
-```
-
-## vllm
-
-Create initial environment (make sure to request a compute node with [miniconda](/clusters-at-yale/guides/conda/)
-salloc --partition=day --mem=130G --cpus-per-task=20 --time=2:00:00
-
-```bash
-
-module load miniconda
-
-conda create -n vllm python=3.12.* uv setuptools-scm cmake gcc=12 gxx=12 ninja packaging psutil
-
-conda activate vllm
-
-###install torch
-uv pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
-
-###install missing dependencies for vllm
-uv pip install pybind11 "setuptools>=77.0.3,<81.0.0"
-
-###load CUDA 12.8 module for cuda_home dependencies and cuda packages
-ml CUDA/12.8
-
-###download repository for vllm to install from source
-git clone --branch v0.19.1 --depth 1 https://github.com/vllm-project/vllm
-
-cd vllm
-
-uv pip install -e . --no-build-isolation
 ```
 
 ## esmfold

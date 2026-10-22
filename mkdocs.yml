@@ -203,6 +203,7 @@ nav:
         - "Ollama": ai/ollama.md
         - "Ollama Exercises": ai/exercises.md
         - "Hugging Face": ai/huggingface.md
+        - "vLLM": ai/vllm.md
         - "Multi-GPU Submission Scripts": ai/miniconda-multigpu.md
         - "National AI Research Resource (NAIRR)": ai/nairr.md
         - "Common AI/ML python package Installation Procedures": ai/pythonpackages.md
