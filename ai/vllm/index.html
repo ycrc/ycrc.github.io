@@ -2000,6 +2000,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#could-not-find-nvcc" class="md-nav__link">
+    "Could Not Find nvcc"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#home-directory-is-full" class="md-nav__link">
     Home Directory Is Full
   </a>
@@ -2095,38 +2102,24 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../pythonpackages/" class="md-nav__link">
-        Common AI/ML python package Installation Procedures
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11" type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_11">
+        <label class="md-nav__link" for="__nav_4_10">
           AI Coding Agents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="AI Coding Agents" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_11">
+        <label class="md-nav__title" for="__nav_4_10">
           <span class="md-nav__icon md-icon"></span>
           AI Coding Agents
         </label>
@@ -3191,6 +3184,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#could-not-find-nvcc" class="md-nav__link">
+    "Could Not Find nvcc"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#home-directory-is-full" class="md-nav__link">
     Home Directory Is Full
   </a>
@@ -3335,19 +3335,26 @@ conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"
 conda<span class="w"> </span>activate<span class="w"> </span>vllm
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>vllm
 </code></pre></div>
-<p>The installation is about 10G and includes its own copy of PyTorch and CUDA libraries. You don't need to load a CUDA module or install PyTorch separately.</p>
+<p>The installation is about 10G and includes its own copy of PyTorch and the CUDA libraries, so you don't need to install PyTorch separately.</p>
+<p>vLLM compiles some GPU kernels the first time it uses them, which requires the CUDA compiler. Every time you use vLLM, load the CUDA module <strong>after</strong> activating the environment:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>vllm
+module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
+</code></pre></div>
+<p>Without the CUDA module, vLLM fails when generating its first response with <code>Could not find nvcc</code>.</p>
 <p>To add packages for your own code, such as <code>openai</code> or <code>pandas</code>, install them into the same environment with <code>uv pip install</code>.</p>
 <h2 id="download-a-model">Download a Model</h2>
 <p>There is currently no shared copy of models on the cluster, so download the models you need into your own storage.</p>
-<p>Model weights are large (often tens to hundreds of gigabytes), and your home directory has a 125G quota. Store models in your project directory instead. Set <code>HF_HOME</code> so that Hugging Face downloads and caches go there, and add the line to your <code>~/.bashrc</code> so it applies to every job:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>~/project/huggingface
+<p>Model weights are large (often tens to hundreds of gigabytes), and your home directory has a 125G quota. Store models in your project directory instead; run <code>mydirectories</code> to find its path. Set <code>HF_HOME</code> so that Hugging Face downloads and caches go there, replacing the example path with your own, and add the line to your <code>~/.bashrc</code> so it applies to every job:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 </code></pre></div>
 <p>Download a model with the <code>hf</code> command, which is installed with vLLM:</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>vllm
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>activate<span class="w"> </span>vllm
 hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 </code></pre></div>
 <p>You can then refer to the model by its Hugging Face name (<code>Qwen/Qwen3-8B</code>) and vLLM finds it in <code>HF_HOME</code>. Alternatively, download to a specific directory with <code>--local-dir</code> and give vLLM that path:</p>
-<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span>--local-dir<span class="w"> </span>~/project/models/Qwen3-8B
+<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span>--local-dir<span class="w"> </span>/nfs/roberts/project/pi_abc123/netid/models/Qwen3-8B
 </code></pre></div>
 <p>Some models, such as Llama and Gemma, are <em>gated</em>: you must accept the license on the model's Hugging Face page and log in with an <a href="https://huggingface.co/settings/tokens">access token</a> before downloading:</p>
 <div class="highlight"><pre><span></span><code>hf<span class="w"> </span>auth<span class="w"> </span>login
@@ -3487,7 +3494,8 @@ hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 module<span class="w"> </span>reset
 module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>vllm
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>~/project/huggingface
+module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
 python<span class="w"> </span>batch_inference.py<span class="w"> </span>&gt;<span class="w"> </span>responses.txt
 </code></pre></div>
@@ -3501,7 +3509,8 @@ python<span class="w"> </span>batch_inference.py<span class="w"> </span>&gt;<spa
 module<span class="w"> </span>reset
 module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>vllm
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>~/project/huggingface
+module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">20000</span>-29999<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span>
@@ -3513,7 +3522,7 @@ vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span clas
 <span class="w">    </span>--port<span class="w"> </span><span class="nv">$VLLM_PORT</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-model-len<span class="w"> </span><span class="m">16384</span>
 </code></pre></div>
-<p>vLLM reads the API key from the <code>VLLM_API_KEY</code> environment variable and rejects requests without it. The server is ready when the log shows <code>Application startup complete</code>. Startup takes from one minute for small models to 20 minutes or more for very large ones.</p>
+<p>vLLM reads the API key from the <code>VLLM_API_KEY</code> environment variable and rejects requests without it. The server is ready when the log shows <code>Application startup complete</code>. Startup takes about two minutes for small models and 20 minutes or more for very large ones.</p>
 <p><code>--host 0.0.0.0</code> makes the server reachable from other nodes, which Open WebUI and SSH tunnels through a login node need. If you only send requests from the same job, you can use <code>--host 127.0.0.1</code> instead.</p>
 <h3 id="send-requests">Send Requests</h3>
 <p>From another terminal in the same job, or from a batch script, check that the server is up and send a request with <code>curl</code>:</p>
@@ -3553,7 +3562,8 @@ curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/
 module<span class="w"> </span>reset
 module<span class="w"> </span>load<span class="w"> </span>miniconda
 conda<span class="w"> </span>activate<span class="w"> </span>vllm
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>~/project/huggingface
+module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">20000</span>-29999<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span>
@@ -3621,7 +3631,7 @@ vllm<span class="w"> </span>serve<span class="w"> </span>meta-llama/Llama-3.3-70
 </tr>
 <tr>
 <td><code>--gpu-memory-utilization 0.9</code></td>
-<td>Fraction of each GPU's memory vLLM may use (default 0.9). vLLM reserves this memory at startup, so Jobstats shows high GPU memory use even when the server is idle.</td>
+<td>Fraction of each GPU's memory vLLM may use (default 0.92). vLLM reserves this memory at startup, so Jobstats shows high GPU memory use even when the server is idle.</td>
 </tr>
 <tr>
 <td><code>--tensor-parallel-size 4</code></td>
@@ -3682,6 +3692,8 @@ vllm<span class="w"> </span>serve<span class="w"> </span>meta-llama/Llama-3.3-70
 <li>Use an FP8 or 4-bit checkpoint of the model, or <code>--kv-cache-dtype fp8</code>.</li>
 <li>Lower <code>--max-num-seqs</code>.</li>
 </ol>
+<h3 id="could-not-find-nvcc">"Could Not Find nvcc"</h3>
+<p>vLLM needs the CUDA compiler to build some kernels. Run <code>module load CUDA/12.9.1</code> after <code>conda activate vllm</code>, as shown in <a href="#install-vllm">Install vLLM</a>.</p>
 <h3 id="home-directory-is-full">Home Directory Is Full</h3>
 <p>vLLM and its libraries cache compiled kernels under <code>~/.cache</code> (for example <code>~/.cache/vllm</code> and <code>~/.cache/flashinfer</code>), and Hugging Face downloads to <code>~/.cache/huggingface</code> unless <code>HF_HOME</code> is set. Check your usage with <code>getquota</code> and <code>du -sh ~/.cache/*</code>. Set <code>HF_HOME</code> as described in <a href="#download-a-model">Download a Model</a> and move existing downloads to your project directory.</p>
 <h3 id="startup-is-slow">Startup Is Slow</h3>
