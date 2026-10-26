@@ -20,7 +20,7 @@
     
     
       
-        <title>Scripting with the YCRC-Hosted Model - Yale Center for Research Computing</title>
+        <title>Hosted LLM API - Yale Center for Research Computing</title>
       
     
     
@@ -137,7 +137,7 @@
             </span>
           <span class="md-header__topic md-ellipsis">
             
-              Scripting with the YCRC-Hosted Model
+              Hosted LLM API
             
           </span>
         </div>
@@ -1982,12 +1982,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Scripting with the YCRC-Hosted Model
+          Hosted LLM API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Scripting with the YCRC-Hosted Model
+        Hosted LLM API
       </a>
       
         
@@ -3354,7 +3354,7 @@
 </tr>
 </tbody>
 </table>
-<p><code>ycrc-local</code> always refers to the model YCRC currently hosts, so your scripts keep working when YCRC updates the model. To find out which model is being served, list the models with <code>curl $OPENAI_BASE_URL/models -H "Authorization: Bearer $OPENAI_API_KEY"</code>. The model can read up to 262,144 tokens per request, including its answer.</p>
+<p><code>ycrc-local</code> always refers to the model YCRC currently hosts, so your scripts do not need a new model name when YCRC updates the service. To find out which model is being served, list the models with <code>curl $OPENAI_BASE_URL/models -H "Authorization: Bearer $OPENAI_API_KEY"</code>. The model can read up to 262,144 tokens per request, including its answer.</p>
 <p><strong>Turn reasoning off for simple, high-volume tasks.</strong> For classification, extraction, and similar short-answer tasks, reasoning adds time without improving results. Set <code>reasoning_effort="none"</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
@@ -3365,10 +3365,10 @@
 <p>In YCRC testing, this made a sentiment-classification job about eight times faster with the same accuracy.</p>
 <p>When reasoning is on, the model's reasoning is returned separately in <code>response.choices[0].message.reasoning</code>, and the answer in <code>content</code> may begin with blank lines; use <code>.strip()</code>. Reasoning also counts toward <code>max_tokens</code>: if you set a small <code>max_tokens</code> with reasoning on, <code>content</code> can be empty because the limit was reached during reasoning.</p>
 <h2 id="process-many-items">Process many items</h2>
-<p>Send requests <strong>concurrently</strong> rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file, writes the results as it goes, and can be stopped and restarted without redoing finished items:</p>
+<p>Send requests <strong>concurrently</strong> rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file and saves each completed result as it arrives. If interrupted, restarting skips saved items; requests that finished but were not yet written may run again:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># label.py: python label.py abstracts.txt labels.jsonl</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># retry automatically if the server is busy</span>
@@ -3394,7 +3394,9 @@
 <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">done</span><span class="p">]</span>
 
 <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+    <span class="n">futures</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
         <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">out</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </code></pre></div>
@@ -3412,7 +3414,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>myenv
 
 python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span class="w"> </span>labels.jsonl
 </code></pre></div>
-<p>With reasoning off and 8 concurrent requests, YCRC testing labeled about 30 short items per second, so 10,000 items take roughly 5 to 15 minutes, depending on how busy the server is and how long the items are.</p>
+<p>Results are saved in completion order, not necessarily input order; use the <code>id</code> field to match them to input lines. With reasoning off and 8 concurrent requests, YCRC testing labeled about 30 short items per second, so 10,000 items take roughly 5 to 15 minutes, depending on how busy the server is and how long the items are.</p>
 <h2 id="useful-features">Useful features</h2>
 <h3 id="structured-output">Structured output</h3>
 <p>To get output your code can parse reliably, constrain it to a JSON schema. The OpenAI package can fill in a <a href="https://docs.pydantic.dev/">Pydantic</a> model directly:</p>
@@ -3434,12 +3436,12 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p>You can also restrict the answer to a fixed list of choices with <code>extra_body={"structured_outputs": {"choice": [...]}}</code> (as in the example above) or to a regular expression with <code>extra_body={"structured_outputs": {"regex": "..."}}</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Name the allowed answers in your prompt</p>
-<p>A constraint controls only the format of the answer; it does not tell the model what the choices mean. If you ask "Is this abstract about climate adaptation?" but allow only <code>relevant</code> or <code>not relevant</code>, the model's natural answer ("Yes") is not allowed, and its forced choice can be wrong for every item. In YCRC testing, that prompt labeled every abstract <code>not relevant</code>, while adding "Answer 'relevant' or 'not relevant'" to the same prompt labeled all of them correctly. Likewise, describe the fields you want in a JSON schema. Always check a sample of results.</p>
+<p>A constraint controls only the format of the answer; it does not tell the model what the choices mean. If you ask "Is this abstract about climate adaptation?" but allow only <code>relevant</code> or <code>not relevant</code>, the model's natural answer ("Yes") is not allowed, and its forced choice can be wrong for every item. In YCRC testing, that prompt labeled every abstract <code>not relevant</code>, while adding "Answer 'relevant' or 'not relevant'" to the same prompt labeled all of them correctly. Likewise, describe the fields you want in a JSON schema. A valid format does not guarantee correct extracted values or classifications. Always check a sample of results.</p>
 </div>
 <h3 id="confidence-scores">Confidence scores</h3>
-<p>Set <code>logprobs=True</code> and <code>top_logprobs=5</code> (up to 20) to get the probability of each generated token and its most likely alternatives. For a single-word label, this gives a confidence score for the model's choice. Probability can be split between spellings of the same answer (in YCRC testing, <code>negative</code> 0.48 and <code>Negative</code> 0.38), so add these together, and turn reasoning off so the first token is the answer.</p>
+<p>Set <code>logprobs=True</code> and <code>top_logprobs=5</code> (up to 20) to get the probability of each generated token and its most likely alternatives. For a single-token label, these probabilities can help compare candidate answers, but they are <strong>not necessarily calibrated confidence scores</strong>. Probability can be split between different spellings of the same answer (in YCRC testing, <code>negative</code> 0.48 and <code>Negative</code> 0.38); account for such alternatives when interpreting results. Turn reasoning off so the first generated token is the answer, and validate any confidence-based decisions against labeled examples.</p>
 <h3 id="reproducible-results">Reproducible results</h3>
-<p>Set <code>seed</code> to get the same output for the same request, including with <code>temperature</code> above 0. Record the model name returned in <code>response.model</code> with your results; a different model, after a YCRC update, will give different outputs.</p>
+<p>Set <code>seed</code> to improve reproducibility when repeating a request with the same parameters, including when <code>temperature</code> is above 0. Identical results are not guaranteed, especially if the underlying model or serving configuration changes. Record the model name returned in <code>response.model</code> alongside your results, since <code>ycrc-local</code> can point to a different model after a YCRC update.</p>
 <h3 id="images">Images</h3>
 <p>Send images as base64 data URLs, or as <code>https://</code> addresses the server can download. The model reads charts, figures, and text in images well:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
@@ -3454,7 +3456,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="video">Video</h3>
-<p>Send video the same way, with a <code>video_url</code> part. The model can describe what happens and when, including approximate times:</p>
+<p>Send video the same way, with a <code>video_url</code> part. The model can describe what happens and when, including estimated event times that should be checked against the original video:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
 <span class="n">video</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"trial.mp4"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
@@ -3466,7 +3468,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
     <span class="p">]}],</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with <a href="../../applications/modules/">FFmpeg</a> (<code>module load FFmpeg</code>, then <code>ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4</code>), which kept timing accurate while using 30% fewer tokens. Lowering the frame rate also saves tokens but makes the model's timestamps wrong. Video is available through the OpenAI-format API only.</p>
+<p>Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with <a href="../../applications/modules/">FFmpeg</a> (<code>module load FFmpeg</code>, then <code>ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4</code>), which preserved useful timing estimates while using 30% fewer tokens in that test. Lowering the frame rate also saves tokens but can make event timing less reliable. Video is available through the OpenAI-format API only.</p>
 <h3 id="pdfs-and-other-documents">PDFs and other documents</h3>
 <p>The server does not read PDF files directly. Extract the text in your script first, for example with <a href="https://pymupdf.readthedocs.io/">PyMuPDF</a> (<code>pip install pymupdf</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pymupdf</span>
