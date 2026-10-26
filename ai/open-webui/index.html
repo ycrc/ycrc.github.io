@@ -3287,8 +3287,8 @@
 <h3 id="optional-python-environment">Optional Python environment</h3>
 <p>The <strong>Python environment for code</strong> setting determines which packages are available when the assistant runs Python. <strong>Default (YCRC)</strong> includes NumPy, pandas, SciPy, and Matplotlib. Select your own Conda environment if you want the assistant to use packages you've installed for your research.</p>
 <p>Your Conda environments appear in the list when they have <code>ipykernel</code> installed. Install it from a compute-node session, replacing <code>my_env</code> with your environment's name:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>my_env<span class="w"> </span>ipykernel
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda install -n my_env ipykernel
 </code></pre></div>
 <p>Reload the launch page afterward. If the selected environment cannot run code, Open WebUI displays a banner explaining the problem and uses the default environment instead.</p>
 <p>Use <strong>Additional modules</strong> to load software modules for code the assistant runs, for example <code>R</code> or <code>SAMtools</code>. Separate multiple modules with spaces.</p>

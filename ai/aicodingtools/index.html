@@ -3088,7 +3088,7 @@
 </tbody>
 </table>
 <p>Request the memory and time you need, since the defaults are small:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>-p<span class="w"> </span>agent<span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>-t<span class="w"> </span><span class="m">8</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc -p agent --mem<span class="o">=</span>8G -t <span class="m">8</span>:00:00
 </code></pre></div>
 <p>Then load a coding-agent module and start the agent.</p>
 <p>An agent session is for editing, inspecting files, and running small tests and commands. YCRC's coding agents are instructed to keep their own session light and to run larger work, such as big software or environment builds, analyses, and GPU work, as separate Slurm jobs on the appropriate partition, either by submitting the job or by preparing a batch script for you to submit. Those jobs run under your account and use your normal allocations. You can also ask the agent to run a particular step as a job.</p>
