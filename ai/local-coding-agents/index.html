@@ -2048,6 +2048,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#running-an-agent-in-a-batch-job" class="md-nav__link">
+    Running an agent in a batch job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-and-privacy" class="md-nav__link">
     Security and privacy
   </a>
@@ -2106,6 +2113,20 @@
     <li class="md-nav__item">
       <a href="../open-webui/" class="md-nav__link">
         Open WebUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosted-model-api/" class="md-nav__link">
+        Scripting with the YCRC-Hosted Model
       </a>
     </li>
   
@@ -3070,6 +3091,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#running-an-agent-in-a-batch-job" class="md-nav__link">
+    Running an agent in a batch job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-and-privacy" class="md-nav__link">
     Security and privacy
   </a>
@@ -3111,7 +3139,7 @@
 <p>YCRC provides <strong>secure AI coding assistance for Bouchet using a locally hosted LLM with popular coding-agent interfaces</strong>. Code and prompts sent to the model are processed locally without being sent to external AI providers.</p>
 <p>The <code>local-coding-agents</code> module provides four coding-agent interfaces backed by the same YCRC-hosted model, currently Qwen3.8-Flash-Next. The agents run within a YCRC-configured security boundary while retaining access to common HPC development workflows.</p>
 <p>To use, start a session in the <a href="../aicodingtools/#the-agent-partition">agent partition</a> and:</p>
-<div class="highlight"><pre><span></span><code>module load local-coding-agents
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
 </code></pre></div>
 <h2 id="choosing-an-agent">Choosing an agent</h2>
 <p>All four interfaces use the same local model. They differ primarily in how they plan work, interact with tools, and present results.</p>
@@ -3147,7 +3175,7 @@
 <p>You can switch between interfaces without changing the underlying model or local-inference architecture.</p>
 <h2 id="getting-started">Getting started</h2>
 <p>Coding agents must run on a compute node. Start a session in the <a href="../aicodingtools/#the-agent-partition">agent partition</a>, then load the module:</p>
-<div class="highlight"><pre><span></span><code>module load local-coding-agents
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
 </code></pre></div>
 <p>Start the agent you want to use:</p>
 <div class="highlight"><pre><span></span><code>pi
@@ -3162,7 +3190,7 @@ claude
 <h3 id="if-the-agent-reports-that-the-model-does-not-exist">If the agent reports that the model does not exist</h3>
 <p>YCRC occasionally updates the hosted model. A session that was started before an update may report that its model does not exist or is unavailable. Exit the agent and start it again (after <code>module load local-coding-agents</code> in a new shell); new sessions always use the current model.</p>
 <h3 id="busy-periods">Busy periods</h3>
-<p>The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.</p>
+<p>The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. Your own scripts that <a href="../hosted-model-api/">call the model directly</a> share this allowance, but can use at most three quarters of it, so a running batch job does not stall your agent sessions. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.</p>
 <h2 id="extended-reasoning">Extended reasoning</h2>
 <p>By default the model reasons briefly before each answer. This keeps responses fast while helping it follow instructions reliably over long sessions.</p>
 <p>Extended reasoning gives the model more opportunity to work through difficult problems before answering. It is not the default because it increases response time and can generate substantially more output, which is usually unnecessary for routine coding work.</p>
@@ -3173,10 +3201,10 @@ claude
 </ol>
 <h3 id="enable-reasoning-for-a-whole-session">Enable reasoning for a whole session</h3>
 <p>Set <code>YCRC_THINKING=1</code> when starting an interface:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> pi
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> claude
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> codex
-<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span> copilot
+<div class="highlight"><pre><span></span><code><span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>pi
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>claude
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>codex
+<span class="nv">YCRC_THINKING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>copilot
 </code></pre></div>
 <p>The interface prints a short confirmation at startup, and the displayed model name gains a <code>-think</code> suffix.</p>
 <p>The setting applies only to that session. Start the interface normally to return to the default behavior.</p>
@@ -3244,16 +3272,16 @@ claude
 <h2 id="where-agents-can-run">Where agents can run</h2>
 <p>Start the agent in a <strong>non-hidden subdirectory</strong> of an allowed storage location, such as your home, project, scratch, or approved PI storage.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code>mkdir -p ~/my-analysis
-<span class="nb">cd</span> ~/my-analysis
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/my-analysis
+<span class="nb">cd</span><span class="w"> </span>~/my-analysis
 pi
 </code></pre></div>
 <p>The module will refuse to start from locations that do not meet its security requirements. Coding agents should not run on login nodes.</p>
 <p>These restrictions limit the agent to the files and directories needed for your work and reduce unintended access to credentials, unrelated projects, and other users' data.</p>
 <h3 id="reading-other-directories">Reading other directories</h3>
 <p>To let the agent read a directory outside the one you started it in, such as shared reference data, add <code>--bind</code> when starting it:</p>
-<div class="highlight"><pre><span></span><code>pi --bind /path/to/reference-data
-claude --bind /path/to/data1,/path/to/data2
+<div class="highlight"><pre><span></span><code>pi<span class="w"> </span>--bind<span class="w"> </span>/path/to/reference-data
+claude<span class="w"> </span>--bind<span class="w"> </span>/path/to/data1,/path/to/data2
 </code></pre></div>
 <p>Your groups' <code>shared</code> directories (for example <code>/nfs/roberts/project/&lt;group&gt;/shared</code>) are available automatically, so they don't need <code>--bind</code>. When the agent starts, it prints a <code>Binding read-only:</code> line for each directory it can read this way.</p>
 <p>Bound directories are read-only: the agent can read them but writes its results to the directory you started it in.</p>
@@ -3265,12 +3293,60 @@ claude --bind /path/to/data1,/path/to/data2
 <li>Conda environments</li>
 <li>R and user-installed R packages</li>
 <li>Git and common command-line development tools</li>
-<li>Internet access from Bouchet when needed for normal development workflows</li>
+<li>Internet access, for example to install packages or clone repositories</li>
 </ul>
 <p>Each command run by a coding agent starts in a fresh shell. Environment changes such as <code>module load</code>, <code>conda activate</code>, <code>export</code>, and <code>cd</code> therefore do not persist into the agent's next command. The agents are provided with YCRC-specific instructions for handling these workflows correctly.</p>
 <p>For example, commands that depend on a module should load the module and run the program in the same shell command:</p>
-<div class="highlight"><pre><span></span><code>module load R/&lt;version&gt; <span class="o">&amp;&amp;</span> Rscript analysis.R
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>R/&lt;version&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>Rscript<span class="w"> </span>analysis.R
 </code></pre></div>
+<h2 id="running-an-agent-in-a-batch-job">Running an agent in a batch job</h2>
+<p>Each agent can also run a single task without interaction and exit, so you can run it from a batch job or a shell script:</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Non-interactive command</th>
+<th>Machine-readable output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td><code>claude -p "task"</code></td>
+<td><code>--output-format json</code></td>
+</tr>
+<tr>
+<td>Pi</td>
+<td><code>pi -p "task"</code></td>
+<td><code>--mode json</code></td>
+</tr>
+<tr>
+<td>Codex</td>
+<td><code>codex exec "task"</code></td>
+<td><code>--json</code></td>
+</tr>
+<tr>
+<td>Copilot</td>
+<td><code>copilot -p "task"</code></td>
+<td><code>--output-format json</code> (one JSON object per line)</td>
+</tr>
+</tbody>
+</table>
+<p>Run batch agents in the <code>agent</code> partition, starting from the same kind of directory as an interactive session. Batch jobs count toward the partition's limit of 2 running sessions:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=agent-task</span>
+<span class="c1">#SBATCH --partition=agent</span>
+<span class="c1">#SBATCH --mem=8G</span>
+<span class="c1">#SBATCH --time=2:00:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
+<span class="nb">cd</span><span class="w"> </span>~/my-analysis
+
+claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">"Run analysis.py on data.csv, fix any errors, and summarize the results in results.md"</span>
+</code></pre></div>
+<p>In non-interactive mode the agent cannot ask you for approval. Actions that YCRC's policy would normally ask you about are refused, and the agent continues without them. Review what it changed when the job finishes.</p>
+<p>Claude's JSON output includes a <code>total_cost_usd</code> field. It is Claude Code's estimate at commercial prices; using the YCRC-hosted model costs nothing.</p>
+<p>Starting an agent takes a few seconds, so running an agent once per item is slow for large datasets. To process many items with the model, call it from your own code instead; see <a href="../hosted-model-api/">Scripting with the YCRC-hosted model</a>.</p>
 <h2 id="security-and-privacy">Security and privacy</h2>
 <p>The local coding-agent environment is designed to give agents useful access to your research workflow without exposing everything your normal login account can access.</p>
 <p>Important protections include:</p>
@@ -3297,7 +3373,7 @@ claude --bind /path/to/data1,/path/to/data2
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
       
     
   </small>

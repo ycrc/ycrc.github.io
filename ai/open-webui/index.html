@@ -2197,6 +2197,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../hosted-model-api/" class="md-nav__link">
+        Scripting with the YCRC-Hosted Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../clarity/" class="md-nav__link">
         Clarity Platform
       </a>
@@ -3281,14 +3295,15 @@
 <li><strong>Analyze data</strong> with Python, create plots, and save generated files in a designated output directory</li>
 <li><strong>Work with documents</strong> including PDFs, spreadsheets, scripts, and images</li>
 <li><strong>Use your reference materials</strong> through reusable knowledge bases and customized assistants</li>
+<li><strong>Read webpages</strong> you link to, such as GitHub repositories and documentation</li>
 </ul>
 <h2 id="launch-open-webui">Launch Open WebUI</h2>
 <p>Choose <strong>Open WebUI - LLM Chat Interface</strong> from the <strong>Interactive Apps</strong> menu on the Bouchet web portal and follow the instructions for <a href="../../clusters-at-yale/access/ood/#launch-an-interactive-app">launching an interactive app</a>. When the session is running, click <strong>Connect to Open WebUI</strong>. You are signed in automatically as yourself.</p>
 <h3 id="optional-python-environment">Optional Python environment</h3>
 <p>The <strong>Python environment for code</strong> setting determines which packages are available when the assistant runs Python. <strong>Default (YCRC)</strong> includes NumPy, pandas, SciPy, and Matplotlib. Select your own Conda environment if you want the assistant to use packages you've installed for your research.</p>
 <p>Your Conda environments appear in the list when they have <code>ipykernel</code> installed. Install it from a compute-node session, replacing <code>my_env</code> with your environment's name:</p>
-<div class="highlight"><pre><span></span><code>module load miniconda
-conda install -n my_env ipykernel
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
+conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>my_env<span class="w"> </span>ipykernel
 </code></pre></div>
 <p>Reload the launch page afterward. If the selected environment cannot run code, Open WebUI displays a banner explaining the problem and uses the default environment instead.</p>
 <p>Use <strong>Additional modules</strong> to load software modules for code the assistant runs, for example <code>R</code> or <code>SAMtools</code>. Separate multiple modules with spaces.</p>
@@ -3325,12 +3340,14 @@ conda install -n my_env ipykernel
 <div class="highlight"><pre><span></span><code>What jobs do I have running right now?
 Did any of my jobs fail or time out in the last 7 days?
 How efficiently did job 12345678 use its CPUs and memory?
+Plot the GPU utilization of job 12345678 over time.
 How much of my home and project quota am I using?
 Which GPU partitions have idle GPUs right now?
 Is GROMACS installed? Which versions, and how do I load one?
 Check this job script before I submit it: ...
 What columns are in ~/data/results.csv?
 </code></pre></div>
+<p>When you ask about a job's performance, the assistant includes a graph of its usage over time for jobs from the last 14 days; for older jobs it reports the overall summary.</p>
 <p><strong>The built-in Bouchet tools are read-only.</strong> They can inspect your jobs, quotas, available software, and files you own, but cannot submit, cancel, or change jobs or modify files. The assistant does not read credentials such as SSH keys. If you ask it to prepare a job script, it can check the script against the scheduler without submitting it and give you the script to submit yourself.</p>
 <p><strong>Code Interpreter and user-installed extensions have different permissions.</strong> See the sections below before using them.</p>
 <h3 id="voice-input">Voice input</h3>
@@ -3400,8 +3417,9 @@ What columns are in ~/data/results.csv?
 <ul>
 <li><strong>Shared model:</strong> the YCRC-hosted model serves multiple users. Responses may be slower at busy times, and the number of requests each user can have in progress may be limited.</li>
 <li><strong>Verify important answers:</strong> AI-generated answers can be incorrect, including information about cluster policies and limits. Check the <a href="https://docs.ycrc.yale.edu/">YCRC documentation</a> or <a href="https://docs.ycrc.yale.edu/#get-help">contact YCRC</a> when accuracy matters.</li>
-<li><strong>Unavailable features:</strong> web search and image generation.</li>
+<li><strong>Unavailable features:</strong> web search and image generation. The assistant can read a public webpage you give it the address of (for example, a GitHub repository or a documentation page), but it can't search the web.</li>
 <li><strong>Managed settings:</strong> YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.</li>
+<li><strong>Calling the model from code:</strong> to use the YCRC-hosted model from your own scripts or batch jobs, see <a href="../hosted-model-api/">Scripting with the YCRC-hosted model</a>.</li>
 </ul>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="you-already-have-an-open-webui-session">"You already have an Open WebUI session"</h3>
@@ -3424,7 +3442,7 @@ What columns are in ~/data/results.csv?
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
       
     
   </small>
