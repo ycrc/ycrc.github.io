@@ -2,7 +2,7 @@
 
 [Clarity](https://ai.yale.edu/yales-ai-tools-and-resources/clarity-platform) is Yale's centrally managed generative AI platform. It provides a web-based chat interface to models from providers including OpenAI, Anthropic, and Google.
 
-For YCRC users, Clarity is most useful when you need capabilities that are not provided by YCRC's locally hosted models, or when your data requires a Yale-approved service with a higher data classification. For workflows that need to operate directly on files, software, or jobs on a cluster, see the YCRC documentation for [AI coding agents](aicodingtools.md) and [Local LLMs](resources.md).
+For YCRC users, Clarity is most useful when you need capabilities that are not provided by YCRC's locally hosted models, or when your data requires a Yale-approved service with a higher data classification. For workflows that need to operate directly on files, software, or jobs on a cluster, see the YCRC documentation for [AI coding agents](aicodingtools.md) and [Local LLMs](resources.md). To call a model from scripts while keeping your data at YCRC, see [Scripting with the YCRC-hosted model](hosted-model-api.md).
 
 ## When Clarity may be useful
 

@@ -16,6 +16,7 @@ Covered workflows:
 
 - Open-source inference using Hugging Face and Ollama
 - Interactive usage via OpenWebUI, Terminals, and Jupyter Lab
+- Calling the YCRC-hosted model from your own scripts and batch jobs
 - GPU monitoring using Jobstats
 - Multi-GPU usage on a single node
 - Yale-managed access to closed-source models via Clarity
@@ -47,6 +48,9 @@ Use the pages below based on your workflow and questions:
 
 - **I want to use Hugging Face**  
   See [Hugging Face](huggingface.md) for supported environment setup and AI workflows.
+
+- **I want to call an LLM from my own scripts or batch jobs, without setting up a model or requesting GPUs**  
+  See [Scripting with the YCRC-hosted model](hosted-model-api.md) for using the YCRC-hosted model with the OpenAI or Anthropic Python packages.
 
 - **I want to run many prompts quickly or serve a model with an OpenAI-compatible API**  
   See [vLLM](vllm.md) for installation, batch inference, and serving a model in a Slurm job.

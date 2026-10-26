@@ -168,6 +168,7 @@ Connecting to an external model changes where information sent to that model is 
 - **Verify important answers:** AI-generated answers can be incorrect, including information about cluster policies and limits. Check the [YCRC documentation](https://docs.ycrc.yale.edu/) or [contact YCRC](https://docs.ycrc.yale.edu/#get-help) when accuracy matters.
 - **Unavailable features:** web search and image generation.
 - **Managed settings:** YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.
+- **Calling the model from code:** to use the YCRC-hosted model from your own scripts or batch jobs, see [Scripting with the YCRC-hosted model](hosted-model-api.md).
 
 ## Troubleshoot
 

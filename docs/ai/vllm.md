@@ -13,6 +13,9 @@ This page assumes familiarity with:
 
 The examples on this page are for Bouchet.
 
+!!! tip "You may not need to run vLLM yourself"
+    YCRC hosts a model on Bouchet that your scripts can call through the same OpenAI-compatible API, with no GPUs, installation, or model download. See [Scripting with the YCRC-hosted model](hosted-model-api.md). Run vLLM yourself when you need a different or fine-tuned model, features the hosted model does not offer (such as embeddings), or the full throughput of your own GPUs.
+
 ## Intended Usage
 
 vLLM is appropriate for:
@@ -68,7 +71,7 @@ To add packages for your own code, such as `openai` or `pandas`, install them in
 
 ## Download a Model
 
-There is currently no shared copy of models on the cluster, so download the models you need into your own storage.
+To run a model yourself with vLLM, download it into your own storage. (The [YCRC-hosted model](hosted-model-api.md) is not available for loading into your own jobs.)
 
 Model weights are large (often tens to hundreds of gigabytes), and your home directory has a 125G quota. Store models in your project directory instead; run `mydirectories` to find its path. Set `HF_HOME` so that Hugging Face downloads and caches go there, replacing the example path with your own, and add the line to your `~/.bashrc` so it applies to every job:
 

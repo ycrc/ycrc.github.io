@@ -57,7 +57,7 @@ YCRC occasionally updates the hosted model. A session that was started before an
 
 ### Busy periods
 
-The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.
+The model is shared by all users. When several people are using it at once, each user can have a limited number of requests in progress at a time; additional requests from the same user wait their turn, which can make a session with many parallel subagents slower. Your own scripts that [call the model directly](hosted-model-api.md) share this allowance, but can use at most three quarters of it, so a running batch job does not stall your agent sessions. In rare cases of very heavy use, a request may be refused with a "too many concurrent requests" message; the agents retry automatically.
 
 ## Extended reasoning
 
@@ -174,7 +174,7 @@ The local agents are configured to work with common Bouchet workflows, including
 - Conda environments
 - R and user-installed R packages
 - Git and common command-line development tools
-- Internet access from Bouchet when needed for normal development workflows
+- Internet access, for example to install packages or clone repositories
 
 Each command run by a coding agent starts in a fresh shell. Environment changes such as `module load`, `conda activate`, `export`, and `cd` therefore do not persist into the agent's next command. The agents are provided with YCRC-specific instructions for handling these workflows correctly.
 
@@ -183,6 +183,38 @@ For example, commands that depend on a module should load the module and run the
 ```bash
 module load R/<version> && Rscript analysis.R
 ```
+
+## Running an agent in a batch job
+
+Each agent can also run a single task without interaction and exit, so you can run it from a batch job or a shell script:
+
+| Agent | Non-interactive command | Machine-readable output |
+| --- | --- | --- |
+| Claude | `claude -p "task"` | `--output-format json` |
+| Pi | `pi -p "task"` | `--mode json` |
+| Codex | `codex exec "task"` | `--json` |
+| Copilot | `copilot -p "task"` | `--output-format json` (one JSON object per line) |
+
+Run batch agents in the `agent` partition, starting from the same kind of directory as an interactive session. Batch jobs count toward the partition's limit of 2 running sessions:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=agent-task
+#SBATCH --partition=agent
+#SBATCH --mem=8G
+#SBATCH --time=2:00:00
+
+module load local-coding-agents
+cd ~/my-analysis
+
+claude -p "Run analysis.py on data.csv, fix any errors, and summarize the results in results.md"
+```
+
+In non-interactive mode the agent cannot ask you for approval. Actions that YCRC's policy would normally ask you about are refused, and the agent continues without them. Review what it changed when the job finishes.
+
+Claude's JSON output includes a `total_cost_usd` field. It is Claude Code's estimate at commercial prices; using the YCRC-hosted model costs nothing.
+
+Starting an agent takes a few seconds, so running an agent once per item is slow for large datasets. To process many items with the model, call it from your own code instead; see [Scripting with the YCRC-hosted model](hosted-model-api.md).
 
 ## Security and privacy
 

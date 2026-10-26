@@ -60,6 +60,8 @@ This approach reduces queue time and avoids failed jobs.
 
 ## Choosing a local LLM
 
+Before choosing and sizing a model of your own, check whether the [YCRC-hosted model](hosted-model-api.md) meets your needs. Your scripts can call it without requesting GPUs, and it is also available through [Open WebUI](open-webui.md) and [Local Coding Agents](local-coding-agents.md).
+
 Models are available through:
 
 - [Ollama](https://ollama.com/library)
