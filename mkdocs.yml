@@ -211,7 +211,7 @@ nav:
             - "Local Coding Agents on Bouchet": ai/local-coding-agents.md
             - "Commercial Coding Agents": ai/commercial-coding-agents.md
         - "Open WebUI": ai/open-webui.md
-        - "Scripting with the YCRC-Hosted Model": ai/hosted-model-api.md
+        - "Hosted LLM API": ai/hosted-model-api.md
         - "Clarity Platform": ai/clarity.md
 
     - Software & Tools:
