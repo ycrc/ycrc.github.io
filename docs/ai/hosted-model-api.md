@@ -24,14 +24,13 @@ Requests must come from inside a Slurm job on a Bouchet compute node, not a logi
 salloc --partition=devel --cpus-per-task=1 --mem=4G --time=2:00:00
 ```
 
-Point your client at the YCRC server and use your NetID followed by `.api` as the API key:
+Load the `ycrc-llm` module, which points the OpenAI and Anthropic packages, `curl`, and other OpenAI-compatible tools at the YCRC server:
 
 ```bash
-export OPENAI_BASE_URL=http://a1127u31n01.mghpcc.ycrc.yale.edu:8008/v1
-export OPENAI_API_KEY=$(id -un).api
+module load ycrc-llm
 ```
 
-The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Use your own NetID only.
+The module sets `OPENAI_BASE_URL` and `ANTHROPIC_BASE_URL` to the YCRC server, and `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` to your NetID followed by `.api`. The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Unloading the module restores any values you had set before. To configure a tool by hand instead, run `module show ycrc-llm` to see the values.
 
 Test the connection with `curl`:
 
@@ -55,7 +54,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content.strip())
 ```
 
-To use the `anthropic` package instead, set `ANTHROPIC_BASE_URL=http://a1127u31n01.mghpcc.ycrc.yale.edu:8008` (without `/v1`) and `ANTHROPIC_API_KEY=$(id -un).api`, and use the same model names.
+The `anthropic` package works the same way, reading `ANTHROPIC_BASE_URL` and `ANTHROPIC_API_KEY` from the module; use the same model names.
 
 ## Models and reasoning
 
@@ -129,11 +128,8 @@ Run it as a batch job. The job needs only one CPU, since the work happens on YCR
 #SBATCH --time=6:00:00
 
 module reset
-module load miniconda
+module load miniconda ycrc-llm
 conda activate myenv
-
-export OPENAI_BASE_URL=http://a1127u31n01.mghpcc.ycrc.yale.edu:8008/v1
-export OPENAI_API_KEY=$(id -un).api
 
 python label.py abstracts.txt labels.jsonl
 ```
@@ -263,7 +259,7 @@ If you use a coding agent to write a script that calls the model, ask it to use 
 
 ### "No API key was sent" or "The API key is not in the form &lt;netid&gt;.&lt;label&gt;"
 
-Set `OPENAI_API_KEY=$(id -un).api` (or `ANTHROPIC_API_KEY` for the Anthropic package) in the same shell or job script that runs your code.
+Run `module load ycrc-llm` in the same shell or job script that runs your code. If you set the variables yourself, the key is your NetID followed by `.api`, for example `OPENAI_API_KEY=$(id -un).api` (or `ANTHROPIC_API_KEY` for the Anthropic package).
 
 ### "The key must start with your own NetID"
 
