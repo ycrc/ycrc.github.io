@@ -3314,11 +3314,10 @@
 <p>Requests must come from inside a Slurm job on a Bouchet compute node, not a login node. The model runs on YCRC's server, so your job needs no GPU and very little CPU or memory:</p>
 <div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>4G<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00
 </code></pre></div>
-<p>Point your client at the YCRC server and use your NetID followed by <code>.api</code> as the API key:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_BASE_URL</span><span class="o">=</span>http://a1127u31n01.mghpcc.ycrc.yale.edu:8008/v1
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-un<span class="k">)</span>.api
+<p>Load the <code>ycrc-llm</code> module, which points the OpenAI and Anthropic packages, <code>curl</code>, and other OpenAI-compatible tools at the YCRC server:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycrc-llm
 </code></pre></div>
-<p>The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Use your own NetID only.</p>
+<p>The module sets <code>OPENAI_BASE_URL</code> and <code>ANTHROPIC_BASE_URL</code> to the YCRC server, and <code>OPENAI_API_KEY</code> and <code>ANTHROPIC_API_KEY</code> to your NetID followed by <code>.api</code>. The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Unloading the module restores any values you had set before. To configure a tool by hand instead, run <code>module show ycrc-llm</code> to see the values.</p>
 <p>Test the connection with <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="nv">$OPENAI_BASE_URL</span>/chat/completions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
@@ -3335,7 +3334,7 @@
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </code></pre></div>
-<p>To use the <code>anthropic</code> package instead, set <code>ANTHROPIC_BASE_URL=http://a1127u31n01.mghpcc.ycrc.yale.edu:8008</code> (without <code>/v1</code>) and <code>ANTHROPIC_API_KEY=$(id -un).api</code>, and use the same model names.</p>
+<p>The <code>anthropic</code> package works the same way, reading <code>ANTHROPIC_BASE_URL</code> and <code>ANTHROPIC_API_KEY</code> from the module; use the same model names.</p>
 <h2 id="models-and-reasoning">Models and reasoning</h2>
 <table>
 <thead>
@@ -3408,11 +3407,8 @@
 <span class="c1">#SBATCH --time=6:00:00</span>
 
 module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>miniconda
+module<span class="w"> </span>load<span class="w"> </span>miniconda<span class="w"> </span>ycrc-llm
 conda<span class="w"> </span>activate<span class="w"> </span>myenv
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_BASE_URL</span><span class="o">=</span>http://a1127u31n01.mghpcc.ycrc.yale.edu:8008/v1
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-un<span class="k">)</span>.api
 
 python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span class="w"> </span>labels.jsonl
 </code></pre></div>
@@ -3497,13 +3493,12 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p><strong>Not available:</strong> embeddings, reranking, audio input, direct PDF input, the OpenAI Batch and Files APIs, and the <code>min_p</code> and <code>logit_bias</code> sampling options. If your work needs these, <a href="https://docs.ycrc.yale.edu/#get-help">contact YCRC</a>; for embeddings in the meantime, you can run a small embedding model yourself with <a href="../huggingface/">Hugging Face</a> or <a href="../vllm/">vLLM</a>.</p>
 <h2 id="privacy-and-usage-records">Privacy and usage records</h2>
 <p>Requests are processed on YCRC's server and are not sent to a commercial AI provider. YCRC does not store prompts or responses. For each request, YCRC records your NetID, how you accessed the model (here, <code>api</code>), and the number of tokens processed, to manage capacity and report usage.</p>
-<p>Send only data you are permitted to process on Bouchet. Data that must stay on <a href="../../clusters/hopper/">Hopper</a>, such as protected health information, must not be sent to this service.</p>
 <h2 id="coding-agents">Coding agents</h2>
 <p>The <code>.api</code> key is for your own scripts. Coding agents such as Claude Code, Codex, Copilot, Pi, and similar tools are supported through <a href="../local-coding-agents/">Local Coding Agents</a>, which run them in a sandbox that protects your files and credentials. Requests that come from a coding agent using the <code>.api</code> key are refused with a message pointing to the module. If a script of yours is refused this way by mistake, please <a href="https://docs.ycrc.yale.edu/#get-help">let us know</a>.</p>
 <p>If you use a coding agent to write a script that calls the model, ask it to use the settings in <a href="#quick-start">Quick start</a>.</p>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="no-api-key-was-sent-or-the-api-key-is-not-in-the-form-netidlabel">"No API key was sent" or "The API key is not in the form &lt;netid&gt;.&lt;label&gt;"</h3>
-<p>Set <code>OPENAI_API_KEY=$(id -un).api</code> (or <code>ANTHROPIC_API_KEY</code> for the Anthropic package) in the same shell or job script that runs your code.</p>
+<p>Run <code>module load ycrc-llm</code> in the same shell or job script that runs your code. If you set the variables yourself, the key is your NetID followed by <code>.api</code>, for example <code>OPENAI_API_KEY=$(id -un).api</code> (or <code>ANTHROPIC_API_KEY</code> for the Anthropic package).</p>
 <h3 id="the-key-must-start-with-your-own-netid">"The key must start with your own NetID"</h3>
 <p>The part of the key before the dot must be your NetID. Check the value with <code>echo $OPENAI_API_KEY</code>.</p>
 <h3 id="is-not-a-recognised-label-in-the-key">"... is not a recognised label in the key"</h3>
