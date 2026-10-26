@@ -63,7 +63,7 @@ The `anthropic` package works the same way, reading `ANTHROPIC_BASE_URL` and `AN
 | `ycrc-local` | Reasons briefly before answering. A good default for most tasks. |
 | `ycrc-local-think` | Extended reasoning. Slower and produces more output; use it for difficult problems such as multi-step calculations or statistics. |
 
-`ycrc-local` always refers to the model YCRC currently hosts, so your scripts keep working when YCRC updates the model. To find out which model is being served, list the models with `curl $OPENAI_BASE_URL/models -H "Authorization: Bearer $OPENAI_API_KEY"`. The model can read up to 262,144 tokens per request, including its answer.
+`ycrc-local` always refers to the model YCRC currently hosts, so your scripts do not need a new model name when YCRC updates the service. To find out which model is being served, list the models with `curl $OPENAI_BASE_URL/models -H "Authorization: Bearer $OPENAI_API_KEY"`. The model can read up to 262,144 tokens per request, including its answer.
 
 **Turn reasoning off for simple, high-volume tasks.** For classification, extraction, and similar short-answer tasks, reasoning adds time without improving results. Set `reasoning_effort="none"`:
 
@@ -81,12 +81,12 @@ When reasoning is on, the model's reasoning is returned separately in `response.
 
 ## Process many items
 
-Send requests **concurrently** rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file, writes the results as it goes, and can be stopped and restarted without redoing finished items:
+Send requests **concurrently** rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file and saves each completed result as it arrives. If interrupted, restarting skips saved items; requests that finished but were not yet written may run again:
 
 ```python
 # label.py: python label.py abstracts.txt labels.jsonl
 import json, os, sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from openai import OpenAI
 
 client = OpenAI(max_retries=10)   # retry automatically if the server is busy
@@ -112,7 +112,9 @@ if os.path.exists(outfile):
 items = [(i, t) for i, t in enumerate(open(infile).read().splitlines()) if i not in done]
 
 with ThreadPoolExecutor(max_workers=8) as pool, open(outfile, "a") as out:
-    for result in pool.map(label, items):
+    futures = [pool.submit(label, item) for item in items]
+    for future in as_completed(futures):
+        result = future.result()
         out.write(json.dumps(result) + "\n")
         out.flush()
 ```
@@ -134,7 +136,7 @@ conda activate myenv
 python label.py abstracts.txt labels.jsonl
 ```
 
-With reasoning off and 8 concurrent requests, YCRC testing labeled about 30 short items per second, so 10,000 items take roughly 5 to 15 minutes, depending on how busy the server is and how long the items are.
+Results are saved in completion order, not necessarily input order; use the `id` field to match them to input lines. With reasoning off and 8 concurrent requests, YCRC testing labeled about 30 short items per second, so 10,000 items take roughly 5 to 15 minutes, depending on how busy the server is and how long the items are.
 
 ## Useful features
 
@@ -162,15 +164,15 @@ study = response.choices[0].message.parsed
 You can also restrict the answer to a fixed list of choices with `extra_body={"structured_outputs": {"choice": [...]}}` (as in the example above) or to a regular expression with `extra_body={"structured_outputs": {"regex": "..."}}`.
 
 !!! warning "Name the allowed answers in your prompt"
-    A constraint controls only the format of the answer; it does not tell the model what the choices mean. If you ask "Is this abstract about climate adaptation?" but allow only `relevant` or `not relevant`, the model's natural answer ("Yes") is not allowed, and its forced choice can be wrong for every item. In YCRC testing, that prompt labeled every abstract `not relevant`, while adding "Answer 'relevant' or 'not relevant'" to the same prompt labeled all of them correctly. Likewise, describe the fields you want in a JSON schema. Always check a sample of results.
+    A constraint controls only the format of the answer; it does not tell the model what the choices mean. If you ask "Is this abstract about climate adaptation?" but allow only `relevant` or `not relevant`, the model's natural answer ("Yes") is not allowed, and its forced choice can be wrong for every item. In YCRC testing, that prompt labeled every abstract `not relevant`, while adding "Answer 'relevant' or 'not relevant'" to the same prompt labeled all of them correctly. Likewise, describe the fields you want in a JSON schema. A valid format does not guarantee correct extracted values or classifications. Always check a sample of results.
 
 ### Confidence scores
 
-Set `logprobs=True` and `top_logprobs=5` (up to 20) to get the probability of each generated token and its most likely alternatives. For a single-word label, this gives a confidence score for the model's choice. Probability can be split between spellings of the same answer (in YCRC testing, `negative` 0.48 and `Negative` 0.38), so add these together, and turn reasoning off so the first token is the answer.
+Set `logprobs=True` and `top_logprobs=5` (up to 20) to get the probability of each generated token and its most likely alternatives. For a single-token label, these probabilities can help compare candidate answers, but they are **not necessarily calibrated confidence scores**. Probability can be split between different spellings of the same answer (in YCRC testing, `negative` 0.48 and `Negative` 0.38); account for such alternatives when interpreting results. Turn reasoning off so the first generated token is the answer, and validate any confidence-based decisions against labeled examples.
 
 ### Reproducible results
 
-Set `seed` to get the same output for the same request, including with `temperature` above 0. Record the model name returned in `response.model` with your results; a different model, after a YCRC update, will give different outputs.
+Set `seed` to improve reproducibility when repeating a request with the same parameters, including when `temperature` is above 0. Identical results are not guaranteed, especially if the underlying model or serving configuration changes. Record the model name returned in `response.model` alongside your results, since `ycrc-local` can point to a different model after a YCRC update.
 
 ### Images
 
@@ -191,7 +193,7 @@ response = client.chat.completions.create(
 
 ### Video
 
-Send video the same way, with a `video_url` part. The model can describe what happens and when, including approximate times:
+Send video the same way, with a `video_url` part. The model can describe what happens and when, including estimated event times that should be checked against the original video:
 
 ```python
 import base64
@@ -206,7 +208,7 @@ response = client.chat.completions.create(
 )
 ```
 
-Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with [FFmpeg](../applications/modules.md) (`module load FFmpeg`, then `ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4`), which kept timing accurate while using 30% fewer tokens. Lowering the frame rate also saves tokens but makes the model's timestamps wrong. Video is available through the OpenAI-format API only.
+Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with [FFmpeg](../applications/modules.md) (`module load FFmpeg`, then `ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4`), which preserved useful timing estimates while using 30% fewer tokens in that test. Lowering the frame rate also saves tokens but can make event timing less reliable. Video is available through the OpenAI-format API only.
 
 ### PDFs and other documents
 
@@ -246,8 +248,6 @@ Good practice:
 ## Privacy and usage records
 
 Requests are processed on YCRC's server and are not sent to a commercial AI provider. YCRC does not store prompts or responses. For each request, YCRC records your NetID, how you accessed the model (here, `api`), and the number of tokens processed, to manage capacity and report usage.
-
-Send only data you are permitted to process on Bouchet. Data that must stay on [Hopper](../clusters/hopper.md), such as protected health information, must not be sent to this service.
 
 ## Coding agents
 

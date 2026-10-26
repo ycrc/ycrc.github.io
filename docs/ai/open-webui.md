@@ -14,6 +14,7 @@ The assistant can:
 - **Analyze data** with Python, create plots, and save generated files in a designated output directory
 - **Work with documents** including PDFs, spreadsheets, scripts, and images
 - **Use your reference materials** through reusable knowledge bases and customized assistants
+- **Read webpages** you link to, such as GitHub repositories and documentation
 
 ## Launch Open WebUI
 
@@ -62,12 +63,15 @@ The assistant can answer questions and use built-in Bouchet tools to inspect you
 What jobs do I have running right now?
 Did any of my jobs fail or time out in the last 7 days?
 How efficiently did job 12345678 use its CPUs and memory?
+Plot the GPU utilization of job 12345678 over time.
 How much of my home and project quota am I using?
 Which GPU partitions have idle GPUs right now?
 Is GROMACS installed? Which versions, and how do I load one?
 Check this job script before I submit it: ...
 What columns are in ~/data/results.csv?
 ```
+
+When you ask about a job's performance, the assistant includes a graph of its usage over time for jobs from the last 14 days; for older jobs it reports the overall summary.
 
 **The built-in Bouchet tools are read-only.** They can inspect your jobs, quotas, available software, and files you own, but cannot submit, cancel, or change jobs or modify files. The assistant does not read credentials such as SSH keys. If you ask it to prepare a job script, it can check the script against the scheduler without submitting it and give you the script to submit yourself.
 
@@ -166,7 +170,7 @@ Connecting to an external model changes where information sent to that model is 
 
 - **Shared model:** the YCRC-hosted model serves multiple users. Responses may be slower at busy times, and the number of requests each user can have in progress may be limited.
 - **Verify important answers:** AI-generated answers can be incorrect, including information about cluster policies and limits. Check the [YCRC documentation](https://docs.ycrc.yale.edu/) or [contact YCRC](https://docs.ycrc.yale.edu/#get-help) when accuracy matters.
-- **Unavailable features:** web search and image generation.
+- **Unavailable features:** web search and image generation. The assistant can read a public webpage you give it the address of (for example, a GitHub repository or a documentation page), but it can't search the web.
 - **Managed settings:** YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.
 - **Calling the model from code:** to use the YCRC-hosted model from your own scripts or batch jobs, see [Scripting with the YCRC-hosted model](hosted-model-api.md).
 
