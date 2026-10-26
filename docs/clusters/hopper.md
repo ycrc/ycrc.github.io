@@ -228,7 +228,7 @@ In the coming months, YCRC will add [Priority Tier](/clusters-at-yale/job-schedu
 
 ### Additional Storage
 
-Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.15 per TiB per month.
+Additional work-style storage beyond the no-cost allocation described below can be provided at a rate of $5.30 per TiB per month.
 Storage charges are based on requested allocation, not actual usage.
 This additional storage will be located at `/nfs/weston/pi/<pi>_<projectcode>`.
 [Contact us](/#get-help) to request additional storage allocations.
