@@ -61,7 +61,7 @@ All the paths added will be shown in the pull-down menu for the file browser, as
 
 ## Terminal
 
-You can launch a traditional command-line interface on the cluster by selecting `Clusters` -> `Shell Access` in the top navigation bar.
+You can launch a traditional command-line interface on the cluster with the shell access button in the top navigation bar (on Bouchet, `Bouchet Shell Access`), which opens a terminal directly.
 
 This is a convenient way to access the clusters when you don't have access to an ssh client or do not have your ssh keys.
 
