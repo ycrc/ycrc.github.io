@@ -3379,8 +3379,11 @@ If you are unclear if your workflow qualifies as software, please contact your a
 <h3 id="r-and-python-packages">R and Python Packages</h3>
 <p>We have set up a monitored proxy to PyPI and CRAN to allow you to install your own 
 Python and R packages using the standard methods (i.e. <code>pip</code>, <code>install.packages</code>). 
-From the <code>hopper1</code> login node (where you go when you connect via the ThinLinc VDI), you can 
-use conda with the default Conda repo (not conda-forge or bioconductor) and <code>pip</code> to create your own environments.</p>
+From the <code>hopper1</code> or <code>hopper2</code> login nodes (where you go when you connect via the ThinLinc VDI), you can 
+use conda with the default Conda repo (not conda-forge or bioconductor) and <code>pip</code> to create your own environments.<br />
+- Because Conda does not pass through our proxy, it is only available on the login nodes.<br />
+- Because pip/CRAN pass through our proxy, these repositories are also available on the compute nodes. </p>
+<p>Once an environment is built and packages are installed, the environment is accessible from all nodes. </p>
 <h3 id="open-ondemand">Open OnDemand</h3>
 <p>To access the <a href="/clusters-at-yale/access/ood/">Open OnDemand Web Portal</a> on Hopper, open Firefox (available on the top menu bar) within the ThinLinc VDI and
 navigate to <code>ood-hopper.ycrc.yale.edu</code>.
@@ -3410,7 +3413,7 @@ llms-list<span class="w"> </span>qwen
 <p>Models can be loaded using standard Hugging Face APIs. No environment variables are required.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
 
-<span class="n">model_id</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-3.1-70B"</span>
+<span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-3.1-70B&quot;</span>
 
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
@@ -3827,7 +3830,7 @@ Only users in a specific project will be able to access that project's storage s
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2026</span>
       
     
   </small>

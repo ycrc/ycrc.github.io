@@ -3342,7 +3342,7 @@ claude<span class="w"> </span>--bind<span class="w"> </span>/path/to/data1,/path
 module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
 <span class="nb">cd</span><span class="w"> </span>~/my-analysis
 
-claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">"Run analysis.py on data.csv, fix any errors, and summarize the results in results.md"</span>
+claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Run analysis.py on data.csv, fix any errors, and summarize the results in results.md&quot;</span>
 </code></pre></div>
 <p>In non-interactive mode the agent cannot ask you for approval. Actions that YCRC's policy would normally ask you about are refused, and the agent continues without them. Review what it changed when the job finishes.</p>
 <p>Claude's JSON output includes a <code>total_cost_usd</code> field. It is Claude Code's estimate at commercial prices; using the YCRC-hosted model costs nothing.</p>

@@ -3469,20 +3469,20 @@ hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 <p>Save the following as <code>batch_inference.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">vllm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
 
-<span class="n">llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"Qwen/Qwen3-8B"</span><span class="p">,</span> <span class="n">max_model_len</span><span class="o">=</span><span class="mi">16384</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen3-8B&quot;</span><span class="p">,</span> <span class="n">max_model_len</span><span class="o">=</span><span class="mi">16384</span><span class="p">)</span>
 <span class="n">params</span> <span class="o">=</span> <span class="n">SamplingParams</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
 
 <span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">"Summarize the causes of the French Revolution in three sentences."</span><span class="p">,</span>
-    <span class="s2">"Explain what a p-value is to a first-year student."</span><span class="p">,</span>
-    <span class="s2">"List three common sources of error in a titration experiment."</span><span class="p">,</span>
+    <span class="s2">&quot;Summarize the causes of the French Revolution in three sentences.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Explain what a p-value is to a first-year student.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;List three common sources of error in a titration experiment.&quot;</span><span class="p">,</span>
 <span class="p">]</span>
-<span class="n">conversations</span> <span class="o">=</span> <span class="p">[[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">p</span><span class="p">}]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">]</span>
+<span class="n">conversations</span> <span class="o">=</span> <span class="p">[[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">}]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">]</span>
 
 <span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="n">conversations</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">outputs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"PROMPT:"</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"RESPONSE:"</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PROMPT:&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RESPONSE:&quot;</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 <p><code>llm.chat</code> applies the model's chat template to each conversation. Use <code>llm.generate</code> instead for raw text completion without a chat template.</p>
@@ -3518,7 +3518,7 @@ module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">20000</span>-29999<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Server: http://</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">:</span><span class="nv">$VLLM_PORT</span><span class="s2">/v1  API key: </span><span class="nv">$VLLM_API_KEY</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Server: http://</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">:</span><span class="nv">$VLLM_PORT</span><span class="s2">/v1  API key: </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
 
 vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--served-model-name<span class="w"> </span>qwen3-8b<span class="w"> </span><span class="se">\</span>
@@ -3530,12 +3530,12 @@ vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span clas
 <p><code>--host 0.0.0.0</code> makes the server reachable from other nodes, which <a href="#connect-open-webui">Open WebUI</a> needs. If you only send requests from the same job, you can use <code>--host 127.0.0.1</code> instead.</p>
 <h3 id="send-requests">Send Requests</h3>
 <p>From another terminal in the same job, or from a batch script, check that the server is up and send a request with <code>curl</code>:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
 
 curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">'{"model": "qwen3-8b", "messages": [{"role": "user", "content": "Why is the sky blue?"}]}'</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;qwen3-8b&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
 </code></pre></div>
 <p>To attach a second terminal to a running interactive job, run <code>srun --jobid=12345678 --overlap --pty bash</code> on a login node, replacing <code>12345678</code> with your job ID.</p>
 <p>From Python, use the <code>openai</code> package (<code>uv pip install openai</code>):</p>
@@ -3543,12 +3543,12 @@ curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/
 <span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">"http://localhost:</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'VLLM_PORT'</span><span class="p">]</span><span class="si">}</span><span class="s2">/v1"</span><span class="p">,</span>
-    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"VLLM_API_KEY"</span><span class="p">],</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;VLLM_PORT&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;VLLM_API_KEY&quot;</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">"qwen3-8b"</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Why is the sky blue?"</span><span class="p">}],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen3-8b&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Why is the sky blue?&quot;</span><span class="p">}],</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div>
@@ -3580,7 +3580,7 @@ vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span clas
 <span class="c1"># Wait for the server to start, and stop if it fails</span>
 <span class="k">until</span><span class="w"> </span>curl<span class="w"> </span>-sf<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/health<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-0<span class="w"> </span><span class="nv">$VLLM_PID</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"vLLM server failed to start; see vllm-server-</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">.log"</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;vLLM server failed to start; see vllm-server-</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">.log&quot;</span>
 <span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="w">    </span>sleep<span class="w"> </span><span class="m">10</span>
