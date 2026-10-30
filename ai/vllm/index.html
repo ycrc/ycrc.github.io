@@ -3332,36 +3332,36 @@
 <p>If you are new to LLMs, start with Ollama. Move to vLLM when you need to process large numbers of prompts or want more control over how a model is served.</p>
 <h2 id="install-vllm">Install vLLM</h2>
 <p>vLLM installs from PyPI into a Conda environment. Create the environment on a compute node:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>16G<span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --cpus-per-task<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>16G --time<span class="o">=</span><span class="m">1</span>:00:00
 
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>vllm<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>uv
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>vllm
+module load miniconda
+conda create --name vllm <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12 uv
+conda activate vllm
+uv pip install vllm
 </code></pre></div>
 <p>The installation is about 10G and includes its own copy of PyTorch and the CUDA libraries, so you don't need to install PyTorch separately.</p>
 <p>vLLM compiles some GPU kernels the first time it uses them, which requires the CUDA compiler. Every time you use vLLM, load the CUDA module <strong>after</strong> activating the environment:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda activate vllm
+module load CUDA/12.9.1
 </code></pre></div>
 <p>Without the CUDA module, vLLM fails when generating its first response with <code>Could not find nvcc</code>.</p>
 <p>To add packages for your own code, such as <code>openai</code> or <code>pandas</code>, install them into the same environment with <code>uv pip install</code>.</p>
 <h2 id="download-a-model">Download a Model</h2>
 <p>To run a model yourself with vLLM, download it into your own storage. (The <a href="../hosted-model-api/">YCRC-hosted model</a> is not available for loading into your own jobs.)</p>
 <p>Model weights are large (often tens to hundreds of gigabytes), and your home directory has a 125G quota. Store models in your project directory instead; run <code>mydirectories</code> to find its path. Set <code>HF_HOME</code> so that Hugging Face downloads and caches go there, replacing the example path with your own, and add the line to your <code>~/.bashrc</code> so it applies to every job:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 </code></pre></div>
 <p>Download a model with the <code>hf</code> command, which is installed with vLLM:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
+<div class="highlight"><pre><span></span><code>module load miniconda
+conda activate vllm
+hf download Qwen/Qwen3-8B
 </code></pre></div>
 <p>You can then refer to the model by its Hugging Face name (<code>Qwen/Qwen3-8B</code>) and vLLM finds it in <code>HF_HOME</code>. Alternatively, download to a specific directory with <code>--local-dir</code> and give vLLM that path:</p>
-<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span>--local-dir<span class="w"> </span>/nfs/roberts/project/pi_abc123/netid/models/Qwen3-8B
+<div class="highlight"><pre><span></span><code>hf download Qwen/Qwen3-8B --local-dir /nfs/roberts/project/pi_abc123/netid/models/Qwen3-8B
 </code></pre></div>
 <p>Some models, such as Llama and Gemma, are <em>gated</em>: you must accept the license on the model's Hugging Face page and log in with an <a href="https://huggingface.co/settings/tokens">access token</a> before downloading:</p>
-<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>auth<span class="w"> </span>login
+<div class="highlight"><pre><span></span><code>hf auth login
 </code></pre></div>
 <p>Download models in an interactive job or a batch job on the <code>day</code> partition, not on a login node. Large downloads can take an hour or more.</p>
 <h2 id="choose-gpus">Choose GPUs</h2>
@@ -3461,13 +3461,13 @@ hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 </table>
 <p>FP8 checkpoints load on A5000 and A40 GPUs but run more slowly there, because those GPUs have no FP8 hardware. See the <a href="../../clusters/bouchet/">Bouchet partition list</a> for node counts and limits, and <a href="../resources/">LLMs and GPU Availability</a> for general guidance.</p>
 <p>Request a specific GPU type with <code>--gpus</code>:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span>rtx_5000_ada:1<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">8</span><span class="w"> </span>--mem<span class="o">=</span>64G<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>gpu_devel --gpus<span class="o">=</span>rtx_5000_ada:1 --cpus-per-task<span class="o">=</span><span class="m">8</span> --mem<span class="o">=</span>64G --time<span class="o">=</span><span class="m">2</span>:00:00
 </code></pre></div>
 <p>Request at least as much CPU memory (<code>--mem</code>) as the size of the model weights. vLLM reads the weights into CPU memory while loading them onto the GPUs.</p>
 <h2 id="run-offline-batch-inference">Run Offline Batch Inference</h2>
 <p>For a fixed set of prompts, use vLLM directly from Python. vLLM schedules all prompts together and keeps the GPU busy, which is much faster than sending prompts one at a time.</p>
 <p>Save the following as <code>batch_inference.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">vllm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">vllm</span> <span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen3-8B&quot;</span><span class="p">,</span> <span class="n">max_model_len</span><span class="o">=</span><span class="mi">16384</span><span class="p">)</span>
 <span class="n">params</span> <span class="o">=</span> <span class="n">SamplingParams</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
@@ -3495,52 +3495,52 @@ hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 <span class="c1">#SBATCH --mem=64G</span>
 <span class="c1">#SBATCH --time=4:00:00</span>
 
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
+module reset
+module load miniconda
+conda activate vllm
+module load CUDA/12.9.1
+<span class="nb">export</span> <span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
-python<span class="w"> </span>batch_inference.py<span class="w"> </span>&gt;<span class="w"> </span>responses.txt
+python batch_inference.py &gt; responses.txt
 </code></pre></div>
 <p>For real workloads, read prompts from a file and write results to a CSV or JSON Lines file, and pass all prompts to a single <code>llm.chat</code> call rather than calling it in a loop.</p>
 <h2 id="serve-an-openai-compatible-api">Serve an OpenAI-Compatible API</h2>
 <p><code>vllm serve</code> starts a server that implements the OpenAI chat completions API. Use it when your code already uses the OpenAI API, when you want to connect Open WebUI or another tool, or when you want to send requests from several programs.</p>
 <h3 id="start-the-server">Start the Server</h3>
 <p>Compute nodes are shared, so other users on the same node can reach any port your server opens. Always protect your server with an API key, and pick a random port to avoid colliding with other users:</p>
-<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>gpu_devel<span class="w"> </span>--gpus<span class="o">=</span>rtx_5000_ada:1<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">8</span><span class="w"> </span>--mem<span class="o">=</span>64G<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>gpu_devel --gpus<span class="o">=</span>rtx_5000_ada:1 --cpus-per-task<span class="o">=</span><span class="m">8</span> --mem<span class="o">=</span>64G --time<span class="o">=</span><span class="m">2</span>:00:00
 
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
+module reset
+module load miniconda
+conda activate vllm
+module load CUDA/12.9.1
+<span class="nb">export</span> <span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">20000</span>-29999<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Server: http://</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">:</span><span class="nv">$VLLM_PORT</span><span class="s2">/v1  API key: </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
+<span class="nb">export</span> <span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf -i <span class="m">20000</span>-29999 -n <span class="m">1</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl rand -hex <span class="m">16</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;Server: http://</span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">:</span><span class="nv">$VLLM_PORT</span><span class="s2">/v1  API key: </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
 
-vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--served-model-name<span class="w"> </span>qwen3-8b<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--port<span class="w"> </span><span class="nv">$VLLM_PORT</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--max-model-len<span class="w"> </span><span class="m">16384</span>
+vllm serve Qwen/Qwen3-8B <span class="se">\</span>
+    --served-model-name qwen3-8b <span class="se">\</span>
+    --host <span class="m">0</span>.0.0.0 <span class="se">\</span>
+    --port <span class="nv">$VLLM_PORT</span> <span class="se">\</span>
+    --max-model-len <span class="m">16384</span>
 </code></pre></div>
 <p>vLLM reads the API key from the <code>VLLM_API_KEY</code> environment variable and rejects requests without it. The server is ready when the log shows <code>Application startup complete</code>. Startup takes about two minutes for small models and 20 minutes or more for very large ones.</p>
 <p><code>--host 0.0.0.0</code> makes the server reachable from other nodes, which <a href="#connect-open-webui">Open WebUI</a> needs. If you only send requests from the same job, you can use <code>--host 127.0.0.1</code> instead.</p>
 <h3 id="send-requests">Send Requests</h3>
 <p>From another terminal in the same job, or from a batch script, check that the server is up and send a request with <code>curl</code>:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/models<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code>curl http://localhost:<span class="nv">$VLLM_PORT</span>/v1/models -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span>
 
-curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;qwen3-8b&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
+curl http://localhost:<span class="nv">$VLLM_PORT</span>/v1/chat/completions <span class="se">\</span>
+    -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$VLLM_API_KEY</span><span class="s2">&quot;</span> <span class="se">\</span>
+    -d <span class="s1">&#39;{&quot;model&quot;: &quot;qwen3-8b&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
 </code></pre></div>
 <p>To attach a second terminal to a running interactive job, run <code>srun --jobid=12345678 --overlap --pty bash</code> on a login node, replacing <code>12345678</code> with your job ID.</p>
 <p>From Python, use the <code>openai</code> package (<code>uv pip install openai</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
     <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;VLLM_PORT&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span>
@@ -3563,32 +3563,32 @@ curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/
 <span class="c1">#SBATCH --mem=64G</span>
 <span class="c1">#SBATCH --time=4:00:00</span>
 
-module<span class="w"> </span>reset
-module<span class="w"> </span>load<span class="w"> </span>miniconda
-conda<span class="w"> </span>activate<span class="w"> </span>vllm
-module<span class="w"> </span>load<span class="w"> </span>CUDA/12.9.1
-<span class="nb">export</span><span class="w"> </span><span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
+module reset
+module load miniconda
+conda activate vllm
+module load CUDA/12.9.1
+<span class="nb">export</span> <span class="nv">HF_HOME</span><span class="o">=</span>/nfs/roberts/project/pi_abc123/netid/huggingface
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">20000</span>-29999<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">16</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">VLLM_PORT</span><span class="o">=</span><span class="k">$(</span>shuf -i <span class="m">20000</span>-29999 -n <span class="m">1</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">VLLM_API_KEY</span><span class="o">=</span><span class="k">$(</span>openssl rand -hex <span class="m">16</span><span class="k">)</span>
 
-vllm<span class="w"> </span>serve<span class="w"> </span>Qwen/Qwen3-8B<span class="w"> </span>--served-model-name<span class="w"> </span>qwen3-8b<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="nv">$VLLM_PORT</span><span class="w"> </span>--max-model-len<span class="w"> </span><span class="m">16384</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>&gt;<span class="w"> </span>vllm-server-<span class="nv">$SLURM_JOB_ID</span>.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+vllm serve Qwen/Qwen3-8B --served-model-name qwen3-8b <span class="se">\</span>
+    --host <span class="m">127</span>.0.0.1 --port <span class="nv">$VLLM_PORT</span> --max-model-len <span class="m">16384</span> <span class="se">\</span>
+    &gt; vllm-server-<span class="nv">$SLURM_JOB_ID</span>.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 <span class="nv">VLLM_PID</span><span class="o">=</span><span class="nv">$!</span>
 
 <span class="c1"># Wait for the server to start, and stop if it fails</span>
-<span class="k">until</span><span class="w"> </span>curl<span class="w"> </span>-sf<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/health<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-0<span class="w"> </span><span class="nv">$VLLM_PID</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;vLLM server failed to start; see vllm-server-</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">.log&quot;</span>
-<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<span class="w">    </span><span class="k">fi</span>
-<span class="w">    </span>sleep<span class="w"> </span><span class="m">10</span>
+<span class="k">until</span> curl -sf http://localhost:<span class="nv">$VLLM_PORT</span>/health &gt; /dev/null<span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> ! <span class="nb">kill</span> -0 <span class="nv">$VLLM_PID</span> <span class="m">2</span>&gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;vLLM server failed to start; see vllm-server-</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">.log&quot;</span>
+        <span class="nb">exit</span> <span class="m">1</span>
+    <span class="k">fi</span>
+    sleep <span class="m">10</span>
 <span class="k">done</span>
 
-python<span class="w"> </span>my_client_script.py
+python my_client_script.py
 
-<span class="nb">kill</span><span class="w"> </span><span class="nv">$VLLM_PID</span>
+<span class="nb">kill</span> <span class="nv">$VLLM_PID</span>
 </code></pre></div>
 <p>Your script reads <code>VLLM_PORT</code> and <code>VLLM_API_KEY</code> from the environment as in the Python example above. Send requests concurrently (for example with a thread pool or <code>asyncio</code>) rather than one after another; vLLM processes many requests at once, so concurrent requests finish much faster.</p>
 <h3 id="connect-open-webui">Connect Open WebUI</h3>
@@ -3610,7 +3610,7 @@ python<span class="w"> </span>my_client_script.py
 <span class="c1">#SBATCH --cpus-per-task=16</span>
 <span class="c1">#SBATCH --mem=200G</span>
 
-vllm<span class="w"> </span>serve<span class="w"> </span>meta-llama/Llama-3.3-70B-Instruct<span class="w"> </span>--tensor-parallel-size<span class="w"> </span><span class="m">4</span><span class="w"> </span>--max-model-len<span class="w"> </span><span class="m">32768</span>
+vllm serve meta-llama/Llama-3.3-70B-Instruct --tensor-parallel-size <span class="m">4</span> --max-model-len <span class="m">32768</span>
 </code></pre></div>
 <p>In offline Python, pass the same settings to <code>LLM</code>, for example <code>LLM(model=..., tensor_parallel_size=4)</code>.</p>
 <p>Tensor parallelism sizes must evenly divide the model's number of attention heads; 1, 2, 4, and 8 work for most models. After the job starts, confirm with <a href="../gpu-jobstats/">Jobstats</a> that every requested GPU is in use.</p>
