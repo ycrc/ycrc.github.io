@@ -81,6 +81,7 @@ include as much detail as possible about your request and we'll find the right p
 |[Rob Bjornson, Ph.D.](https://research.computing.yale.edu/profile/robert-bjornson-phd) | [McCleary](/clusters/mccleary)/[Hopper](/clusters/hopper) | Life Sciences, Bioinformatics, Python, R  |
 |[Sam Friedman](https://research.computing.yale.edu/profile/sam-friedman)|[McCleary](/clusters/mccleary)/[Hopper](/clusters/hopper) | Life Sciences, Bioinformatics, Python, R, Snakemake, Nextflow |
 |[Tom Langford, Ph.D.](https://research.computing.yale.edu/profile/thomas-langford-phd) | [Bouchet](/clusters/bouchet)/[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Physics, EPS dept, Python, MPI |
+|[Jennie Li, Ph.D.](https://research.computing.yale.edu/profile/jiaoyan-jennie-li-phd) | [Bouchet](/clusters/bouchet) | AI/ML, Materials Science |
 |[Aya Nawano, Ph.D.](https://research.computing.yale.edu/profile/aya-nawano-phd) | [Bouchet](/clusters/bouchet)/[Grace](/clusters/grace)/[Milgram](/clusters/milgram) | Molecular Dynamics, Matlab, C/C++, MPI |
 |[Kaylea Nelson, Ph.D.](https://research.computing.yale.edu/profile/kaylea-nelson-phd) | [Bouchet](/clusters/bouchet)/[Grace](/clusters/grace)/[Milgram](/clusters/milgram)| Astronomy, MPI, Python  |
 |[Mike Rothberg, Ph.D.](https://research.computing.yale.edu/profile/michael-rothberg-phd) | [Bouchet](/clusters/bouchet)/[Grace](/clusters/grace)/[McCleary](/clusters/mccleary) | AI/ML, Computational Chemistry, Python |
@@ -88,7 +89,6 @@ include as much detail as possible about your request and we'll find the right p
 |[Chuck Sindelar, Ph.D.](https://research.computing.yale.edu/profile/chuck-sindelar-phd) | [Bouchet](/clusters/bouchet)/[McCleary](/clusters/mccleary) | Life Sciences, Cryo-EM/Structural Biology, Python, MPI, C/C++, Matlab |
 |[Michael Strickler, Ph.D.](https://research.computing.yale.edu/profile/michael-strickler-phd) | [Bouchet](/clusters/bouchet)/[McCleary](/clusters/mccleary) | Life Sciences, Structural Biology, Open OnDemand |
 |[Ping Luo](https://wti.yale.edu/profile/ping-luo)|[Misha](/clusters/misha)/[Milgram](/clusters/milgram)| Wu Tsai Institute, Psychology Dept |
-|[Misha Guy, Ph.D.](https://research.computing.yale.edu/profile/misha-guy-phd)| | [SRSC Software](https://research.computing.yale.edu/science-research-software-core) and Mathematica (email at mikhael.guy@yale.edu for appointment) |
 
 
 ### Q&A Platform
