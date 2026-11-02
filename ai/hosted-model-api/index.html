@@ -3312,17 +3312,17 @@
 </table>
 <h2 id="quick-start">Quick start</h2>
 <p>Requests must come from inside a Slurm job on a Bouchet compute node, not a login node. The model runs on YCRC's server, so your job needs no GPU and very little CPU or memory:</p>
-<div class="highlight"><pre><span></span><code>salloc --partition<span class="o">=</span>devel --cpus-per-task<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>4G --time<span class="o">=</span><span class="m">2</span>:00:00
+<div class="highlight"><pre><span></span><code>salloc<span class="w"> </span>--partition<span class="o">=</span>devel<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span>4G<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00
 </code></pre></div>
 <p>Load the <code>ycrc-llm</code> module, which points the OpenAI and Anthropic packages, <code>curl</code>, and other OpenAI-compatible tools at the YCRC server:</p>
-<div class="highlight"><pre><span></span><code>module load ycrc-llm
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ycrc-llm
 </code></pre></div>
 <p>The module sets <code>OPENAI_BASE_URL</code> and <code>ANTHROPIC_BASE_URL</code> to the YCRC server, and <code>OPENAI_API_KEY</code> and <code>ANTHROPIC_API_KEY</code> to your NetID followed by <code>.api</code>. The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Unloading the module restores any values you had set before. To configure a tool by hand instead, run <code>module show ycrc-llm</code> to see the values.</p>
 <p>Test the connection with <code>curl</code>:</p>
-<div class="highlight"><pre><span></span><code>curl <span class="nv">$OPENAI_BASE_URL</span>/chat/completions <span class="se">\</span>
-    -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
-    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span> <span class="se">\</span>
-    -d <span class="s1">&#39;{&quot;model&quot;: &quot;ycrc-local&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="nv">$OPENAI_BASE_URL</span>/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;ycrc-local&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
 </code></pre></div>
 <p>From Python, install the <code>openai</code> package in a <a href="../../clusters-at-yale/guides/conda/">Conda environment</a> (<code>pip install openai</code>). The package reads <code>OPENAI_BASE_URL</code> and <code>OPENAI_API_KEY</code> from the environment:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
@@ -3408,11 +3408,11 @@
 <span class="c1">#SBATCH --mem=4G</span>
 <span class="c1">#SBATCH --time=6:00:00</span>
 
-module reset
-module load miniconda ycrc-llm
-conda activate myenv
+module<span class="w"> </span>reset
+module<span class="w"> </span>load<span class="w"> </span>miniconda<span class="w"> </span>ycrc-llm
+conda<span class="w"> </span>activate<span class="w"> </span>myenv
 
-python label.py abstracts.txt labels.jsonl
+python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span class="w"> </span>labels.jsonl
 </code></pre></div>
 <p>Results are saved in completion order, not necessarily input order; use the <code>id</code> field to match them to input lines. With reasoning off and 8 concurrent requests, YCRC testing labeled about 30 short items per second, so 10,000 items take roughly 5 to 15 minutes, depending on how busy the server is and how long the items are.</p>
 <h2 id="useful-features">Useful features</h2>
