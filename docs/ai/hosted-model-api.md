@@ -14,7 +14,8 @@ This page assumes familiarity with [Slurm job scheduling](../clusters-at-yale/jo
 | Chat with a model in the browser, or ask about my jobs and files | [Open WebUI](open-webui.md) |
 | Have an AI agent write and run code on the cluster | [Local Coding Agents](local-coding-agents.md) |
 | Use a different or fine-tuned model, or run very large offline batches on my own GPUs | [vLLM](vllm.md), [Ollama](ollama.md), or [Hugging Face](huggingface.md) |
-| Use a commercial model, or process data classified above what Bouchet allows | [Clarity](clarity.md) |
+| Use a commercial model | [Clarity](clarity.md) |
+| Process data classified above what Bouchet allows | [Hopper](../clusters/hopper.md) or [Clarity](clarity.md) |
 
 ## Quick start
 
@@ -257,7 +258,7 @@ The YCRC-hosted model is provided for your own research on Bouchet, whether thro
 - **Do not offer the model to others.** Do not use it as the model behind a service for other people, such as a chatbot, Slack or messaging bot, website, or shared API endpoint, including as a fallback for another provider. Do not make it reachable from outside Bouchet, for example through an SSH tunnel or proxy.
 - **Run coding agents through the module.** Coding agents must use [Local Coding Agents](local-coding-agents.md), which runs them in a sandbox. Do not run them with the `.api` key.
 - **Do not work around the service's controls.** Do not change, rename, or remove tools, User-Agent strings, headers, or prompts, or route requests another way, to get past a check, a refusal, or a usage limit. If you think a request was refused by mistake, [contact YCRC](https://docs.ycrc.yale.edu/#get-help) instead.
-- **Only send data Bouchet is approved for.** For data classified above what Bouchet allows, use a Yale-approved service such as [Clarity](clarity.md).
+- **Only send data Bouchet is approved for.** For data classified above what Bouchet allows, use the [Hopper](../clusters/hopper.md) cluster or [Clarity](clarity.md).
 
 Violations can result in loss of access to the hosted model or suspension of your YCRC account. If you are unsure whether a use is allowed, [ask us](https://docs.ycrc.yale.edu/#get-help) before you start.
 
