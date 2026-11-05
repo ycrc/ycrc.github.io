@@ -231,6 +231,8 @@ Important protections include:
 
 The security boundary is implemented independently of the language model. The model is not relied upon to remember which parts of the cluster it should or should not access.
 
+Use of the YCRC-hosted model is subject to its [acceptable use rules](hosted-model-api.md#acceptable-use).
+
 ## Using coding agents safely
 
 Within its allowed environment, a local coding agent can take many of the same actions you would take in a terminal, including changing files, running programs, installing user software, accessing the network, and interacting with Slurm. This autonomy is intentional.

@@ -173,6 +173,7 @@ Connecting to an external model changes where information sent to that model is 
 - **Unavailable features:** web search and image generation. The assistant can read a public webpage you give it the address of (for example, a GitHub repository or a documentation page), but it can't search the web.
 - **Managed settings:** YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.
 - **Calling the model from code:** to use the YCRC-hosted model from your own scripts or batch jobs, see [Scripting with the YCRC-hosted model](hosted-model-api.md).
+- **Acceptable use:** use of the YCRC-hosted model is subject to its [acceptable use rules](hosted-model-api.md#acceptable-use).
 
 ## Troubleshoot
 

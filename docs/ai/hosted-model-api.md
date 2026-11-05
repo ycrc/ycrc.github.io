@@ -249,6 +249,18 @@ Good practice:
 
 Requests are processed on YCRC's server and are not sent to a commercial AI provider. YCRC does not store prompts or responses. For each request, YCRC records your NetID, how you accessed the model (here, `api`), and the number of tokens processed, to manage capacity and report usage.
 
+## Acceptable use
+
+The YCRC-hosted model is provided for your own research on Bouchet, whether through scripts, [Local Coding Agents](local-coding-agents.md), or [Open WebUI](open-webui.md). The [Bouchet Rules of the Road](../clusters/bouchet-rob.md), the [YCRC HPC Policies](https://research.computing.yale.edu/computing-resources/hpc-policies), and Yale's [IT Appropriate Use Policy (Policy 1607)](https://your.yale.edu/policies-procedures/1607-information-technology-appropriate-use-policy) apply to all use of the model. In addition:
+
+- **Use it yourself, on Bouchet.** Send requests from your own Slurm jobs, with your own NetID in the key. Do not share your key or use someone else's NetID.
+- **Do not offer the model to others.** Do not use it as the model behind a service for other people, such as a chatbot, Slack or messaging bot, website, or shared API endpoint, including as a fallback for another provider. Do not make it reachable from outside Bouchet, for example through an SSH tunnel or proxy.
+- **Run coding agents through the module.** Coding agents must use [Local Coding Agents](local-coding-agents.md), which runs them in a sandbox. Do not run them with the `.api` key.
+- **Do not work around the service's controls.** Do not change, rename, or remove tools, User-Agent strings, headers, or prompts, or route requests another way, to get past a check, a refusal, or a usage limit. If you think a request was refused by mistake, [contact YCRC](https://docs.ycrc.yale.edu/#get-help) instead.
+- **Only send data Bouchet is approved for.** For data classified above what Bouchet allows, use a Yale-approved service such as [Clarity](clarity.md).
+
+Violations can result in loss of access to the hosted model or suspension of your YCRC account. If you are unsure whether a use is allowed, [ask us](https://docs.ycrc.yale.edu/#get-help) before you start.
+
 ## Coding agents
 
 The `.api` key is for your own scripts. Coding agents such as Claude Code, Codex, Copilot, Pi, and similar tools are supported through [Local Coding Agents](local-coding-agents.md), which run them in a sandbox that protects your files and credentials. Requests that come from a coding agent using the `.api` key are refused with a message pointing to the module. If a script of yours is refused this way by mistake, please [let us know](https://docs.ycrc.yale.edu/#get-help).
@@ -275,7 +287,7 @@ Run your code inside a Slurm job (`salloc` or `sbatch`) on a compute node, not o
 
 ### "This request looks like it comes from a coding agent"
 
-Use [Local Coding Agents](local-coding-agents.md) for coding agents. If your own script was refused, [let us know](https://docs.ycrc.yale.edu/#get-help).
+Use [Local Coding Agents](local-coding-agents.md) for coding agents. If your own script was refused, [let us know](https://docs.ycrc.yale.edu/#get-help) rather than changing the request to get past the check; see [Acceptable use](#acceptable-use).
 
 ### "Too many concurrent requests"
 
