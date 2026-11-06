@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/globus/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -3272,24 +3272,24 @@ We also recommend reviewing the <a href="https://docs.globus.org/guides/tutorial
 </ol>
 <h3 id="command-line-transfers-using-globus-cli">Command line transfers using Globus CLI</h3>
 <p>We provide a <a href="https://docs.globus.org/cli">Globus CLI</a> module on our clusters. You can use this to access your Globus collections from interactive login nodes, batch jobs, etc. Below is a brief example:</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Globus-CLI
+<div class="highlight"><pre><span></span><code>module load Globus-CLI
 
 <span class="c1"># Authenticate with your netid below:</span>
-globus<span class="w"> </span>login
+globus login
 
 <span class="c1"># Find your collection ID:</span>
-globus<span class="w"> </span>endpoint<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;yale grace crc&quot;</span><span class="w"> </span>--filter-scope<span class="w"> </span>all
+globus endpoint search <span class="s2">&quot;yale grace crc&quot;</span> --filter-scope all
 
 <span class="c1"># Set a bash convenience variable:</span>
 <span class="nv">COLL</span><span class="o">=</span>e4abd994-feed-4cc6-8c4c-75abff2309de
 
 <span class="c1"># Authentication command:</span>
-globus<span class="w"> </span>session<span class="w"> </span>consent<span class="w"> </span><span class="s1">&#39;urn:globus:auth:scope:</span>
+globus session consent <span class="s1">&#39;urn:globus:auth:scope:</span>
 <span class="s1">transfer.api.globus.org:all[*</span>
 <span class="s1">https://auth.globus.org/scopes/a2dcf728-163e-11e7-bb8b-22000b9a448b/data_access]&#39;</span>
 
 <span class="c1"># Directory listing</span>
-globus<span class="w"> </span>ls<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COLL</span><span class="s2">:/&quot;</span>
+globus ls <span class="s2">&quot;</span><span class="nv">$COLL</span><span class="s2">:/&quot;</span>
 </code></pre></div>
 <h3 id="transfer-files-tofrom-your-computer">Transfer Files to/from Your Computer</h3>
 <h4 id="upload-or-download-directly-from-globus-web-app">Upload or Download Directly from Globus Web App</h4>
