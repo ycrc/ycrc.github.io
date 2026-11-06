@@ -33,7 +33,7 @@ This is useful for transferring data to or from locations other than your local 
 #### Web Transfers with Open OnDemand
 
 On each cluster, you can use their respective [Open OnDemand](/clusters-at-yale/access/ood/#file-browser) portals to transfer files.
-This works best for small numbers of relatively small files. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
+This works best for small numbers of relatively small files. Maximum upload file size is 10 GB, although sizes greater than ~1-2 GB may still be problematic depending on choice of web browser, etc. You can also directly edit scripts through this interface, alleviating the need to transfer scripts to your computer to edit.
 
 ### File Transfers with Globus
 

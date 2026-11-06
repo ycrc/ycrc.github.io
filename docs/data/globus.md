@@ -104,6 +104,8 @@ You will need to be on the Yale VPN if you are off campus or connecting to a sec
 
 **Upload**
 
+Please note, upload file sizes greater than ~1 GB may not work well or at all.
+
 1. In the main pane, navigate to the destination for your files
 1. To Upload, select "Upload" in the sidebar and browse to the file or folder you would like to upload
 
