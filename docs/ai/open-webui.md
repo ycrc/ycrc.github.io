@@ -169,6 +169,7 @@ Connecting to an external model changes where information sent to that model is 
 ## Limits and good practice
 
 - **Shared model:** the YCRC-hosted model serves multiple users. Responses may be slower at busy times, and the number of requests each user can have in progress may be limited.
+- **Long chats:** when a chat becomes very long, Open WebUI replaces its older part with a summary and shows **Compacting context** while it does so. Your full chat history stays visible, but the assistant works from the summary and the most recent messages, so it may miss details from early in the conversation. Repeat important details, or start a new chat for a new topic.
 - **Verify important answers:** AI-generated answers can be incorrect, including information about cluster policies and limits. Check the [YCRC documentation](https://docs.ycrc.yale.edu/) or [contact YCRC](https://docs.ycrc.yale.edu/#get-help) when accuracy matters.
 - **Unavailable features:** web search and image generation. The assistant can read a public webpage you give it the address of (for example, a GitHub repository or a documentation page), but it can't search the web.
 - **Managed settings:** YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.
@@ -199,4 +200,4 @@ Open WebUI normally reconnects automatically. If it does not, reload the page. I
 
 ### "This model's maximum context length is ..."
 
-The conversation and its attachments exceed the amount the model can process at once. Start a new chat, or use a searchable knowledge base instead of attaching a large collection directly.
+The conversation and its attachments exceed the amount the model can process at once. Long chats are normally summarized automatically before they reach this limit (see [Limits and good practice](#limits-and-good-practice)), so this error usually means a single message or its attachments are too large, or the chat reached the limit before it could be summarized. Start a new chat, attach a smaller file or excerpt, or use a searchable knowledge base instead of attaching a large collection directly.
