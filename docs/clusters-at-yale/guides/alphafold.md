@@ -151,7 +151,7 @@ alphafold_model\.sh:
 #SBATCH --mail-type=ALL
 
 ## Clear all loaded software modules, and load AlphaFold module
-module rese
+module reset
 ## Edit to set desired AlphaFold module version;
 ## search available versions via "module avail AlphaFold/"
 module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0

@@ -70,6 +70,31 @@ We also recommend reviewing the [Official Globus Documentation](https://docs.glo
 1. *[Optional]* To complete a partial transfer, you can click the "apply sync level" checkbox in the "Transfer & Timer Options" (located between the Start buttons). For most transfers "L2" is an appropriate option. Then Globus will resume the transfer where it left off instead of recopying already copied files.
 1. Click the Start button above the left-hand pane.
 
+### Command line transfers using Globus CLI
+
+We provide a [Globus CLI](https://docs.globus.org/cli) module on our clusters. You can use this to access your Globus collections from interactive login nodes, batch jobs, etc. Below is a brief example:
+
+```bash
+module load Globus-CLI
+
+# Authenticate with your netid below:
+globus login
+
+# Find your collection ID:
+globus endpoint search "yale grace crc" --filter-scope all
+
+# Set a bash convenience variable:
+COLL=e4abd994-feed-4cc6-8c4c-75abff2309de
+
+# Authentication command:
+globus session consent 'urn:globus:auth:scope:
+transfer.api.globus.org:all[*
+https://auth.globus.org/scopes/a2dcf728-163e-11e7-bb8b-22000b9a448b/data_access]'
+
+# Directory listing
+globus ls "$COLL:/"
+```
+
 ### Transfer Files to/from Your Computer
 
 #### Upload or Download Directly from Globus Web App
@@ -78,6 +103,8 @@ From the [file manager interface](https://app.globus.org/file-manager) enter the
 You will need to be on the Yale VPN if you are off campus or connecting to a secure cluster.
 
 **Upload**
+
+Please note, upload file sizes greater than ~1 GB may not work well or at all.
 
 1. In the main pane, navigate to the destination for your files
 1. To Upload, select "Upload" in the sidebar and browse to the file or folder you would like to upload

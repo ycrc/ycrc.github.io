@@ -127,8 +127,13 @@ To request software be installed on Hopper, contact us at [research.computing@ya
 
 We have set up a monitored proxy to PyPI and CRAN to allow you to install your own 
 Python and R packages using the standard methods (i.e. `pip`, `install.packages`). 
-From the `hopper1` login node (where you go when you connect via the ThinLinc VDI), you can 
-use conda with the default Conda repo (not conda-forge or bioconductor) and `pip` to create your own environments.
+From the `hopper1` or `hopper2` login nodes (where you go when you connect via the ThinLinc VDI), you can 
+use conda with the default Conda repo (not conda-forge or bioconductor) and `pip` to create your own environments.  
+- Because Conda does not pass through our proxy, it is only available on the login nodes.  
+- Because pip/CRAN pass through our proxy, these repositories are also available on the compute nodes. 
+
+Once an environment is built and packages are installed, the environment is accessible from all nodes. 
+
 
 ### Open OnDemand
 
