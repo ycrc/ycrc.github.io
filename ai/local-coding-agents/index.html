@@ -3342,7 +3342,7 @@ claude<span class="w"> </span>--bind<span class="w"> </span>/path/to/data1,/path
 module<span class="w"> </span>load<span class="w"> </span>local-coding-agents
 <span class="nb">cd</span><span class="w"> </span>~/my-analysis
 
-claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Run analysis.py on data.csv, fix any errors, and summarize the results in results.md&quot;</span>
+claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">"Run analysis.py on data.csv, fix any errors, and summarize the results in results.md"</span>
 </code></pre></div>
 <p>In non-interactive mode the agent cannot ask you for approval. Actions that YCRC's policy would normally ask you about are refused, and the agent continues without them. Review what it changed when the job finishes.</p>
 <p>Claude's JSON output includes a <code>total_cost_usd</code> field. It is Claude Code's estimate at commercial prices; using the YCRC-hosted model costs nothing.</p>
@@ -3359,6 +3359,7 @@ claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;R
 <li><strong>YCRC-specific policies.</strong> The agents receive centrally managed instructions describing Bouchet storage, Slurm, GPU, module, Conda, and R policies.</li>
 </ul>
 <p>The security boundary is implemented independently of the language model. The model is not relied upon to remember which parts of the cluster it should or should not access.</p>
+<p>Use of the YCRC-hosted model is subject to its <a href="../hosted-model-api/#acceptable-use">acceptable use rules</a>.</p>
 <h2 id="using-coding-agents-safely">Using coding agents safely</h2>
 <p>Within its allowed environment, a local coding agent can take many of the same actions you would take in a terminal, including changing files, running programs, installing user software, accessing the network, and interacting with Slurm. This autonomy is intentional.</p>
 <p>See <a href="../aicodingtools/#coding-agent-risks">AI Coding Agents</a> for the risks that apply to coding agents generally. The local module is designed to reduce the agent's access to sensitive or unrelated parts of the cluster, but you should still review important changes, use version control when appropriate, and maintain backups of important data.</p>
@@ -3373,7 +3374,7 @@ claude<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;R
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2026</span>
       
     
   </small>

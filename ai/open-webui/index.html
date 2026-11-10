@@ -3416,10 +3416,12 @@ What columns are in ~/data/results.csv?
 <h2 id="limits-and-good-practice">Limits and good practice</h2>
 <ul>
 <li><strong>Shared model:</strong> the YCRC-hosted model serves multiple users. Responses may be slower at busy times, and the number of requests each user can have in progress may be limited.</li>
+<li><strong>Long chats:</strong> when a chat becomes very long, Open WebUI replaces its older part with a summary and shows <strong>Compacting context</strong> while it does so. Your full chat history stays visible, but the assistant works from the summary and the most recent messages, so it may miss details from early in the conversation. Repeat important details, or start a new chat for a new topic.</li>
 <li><strong>Verify important answers:</strong> AI-generated answers can be incorrect, including information about cluster policies and limits. Check the <a href="https://docs.ycrc.yale.edu/">YCRC documentation</a> or <a href="https://docs.ycrc.yale.edu/#get-help">contact YCRC</a> when accuracy matters.</li>
 <li><strong>Unavailable features:</strong> web search and image generation. The assistant can read a public webpage you give it the address of (for example, a GitHub repository or a documentation page), but it can't search the web.</li>
 <li><strong>Managed settings:</strong> YCRC resets certain Admin Panel settings when Open WebUI launches, including the YCRC model connection, code execution, and built-in skills and tools. Your own connections, custom models, and preferences are retained.</li>
 <li><strong>Calling the model from code:</strong> to use the YCRC-hosted model from your own scripts or batch jobs, see <a href="../hosted-model-api/">Scripting with the YCRC-hosted model</a>.</li>
+<li><strong>Acceptable use:</strong> use of the YCRC-hosted model is subject to its <a href="../hosted-model-api/#acceptable-use">acceptable use rules</a>.</li>
 </ul>
 <h2 id="troubleshoot">Troubleshoot</h2>
 <h3 id="you-already-have-an-open-webui-session">"You already have an Open WebUI session"</h3>
@@ -3433,7 +3435,7 @@ What columns are in ~/data/results.csv?
 <h3 id="lost-connection">"Lost connection"</h3>
 <p>Open WebUI normally reconnects automatically. If it does not, reload the page. If your Slurm session has ended or reached its walltime, launch another session; your saved chats are still available.</p>
 <h3 id="this-models-maximum-context-length-is">"This model's maximum context length is ..."</h3>
-<p>The conversation and its attachments exceed the amount the model can process at once. Start a new chat, or use a searchable knowledge base instead of attaching a large collection directly.</p>
+<p>The conversation and its attachments exceed the amount the model can process at once. Long chats are normally summarized automatically before they reach this limit (see <a href="#limits-and-good-practice">Limits and good practice</a>), so this error usually means a single message or its attachments are too large, or the chat reached the limit before it could be summarized. Start a new chat, attach a smaller file or excerpt, or use a searchable knowledge base instead of attaching a large collection directly.</p>
                 
                   
                     
@@ -3442,7 +3444,7 @@ What columns are in ~/data/results.csv?
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2026</span>
       
     
   </small>

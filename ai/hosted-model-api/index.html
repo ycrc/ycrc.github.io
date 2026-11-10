@@ -1992,6 +1992,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#acceptable-use" class="md-nav__link">
+    Acceptable use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coding-agents" class="md-nav__link">
     Coding agents
   </a>
@@ -3176,6 +3183,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#acceptable-use" class="md-nav__link">
+    Acceptable use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coding-agents" class="md-nav__link">
     Coding agents
   </a>
@@ -3305,8 +3319,12 @@
 <td><a href="../vllm/">vLLM</a>, <a href="../ollama/">Ollama</a>, or <a href="../huggingface/">Hugging Face</a></td>
 </tr>
 <tr>
-<td>Use a commercial model, or process data classified above what Bouchet allows</td>
+<td>Use a commercial model</td>
 <td><a href="../clarity/">Clarity</a></td>
+</tr>
+<tr>
+<td>Process data classified above what Bouchet allows</td>
+<td><a href="../../clusters/hopper/">Hopper</a> or <a href="../clarity/">Clarity</a></td>
 </tr>
 </tbody>
 </table>
@@ -3320,17 +3338,17 @@
 <p>The module sets <code>OPENAI_BASE_URL</code> and <code>ANTHROPIC_BASE_URL</code> to the YCRC server, and <code>OPENAI_API_KEY</code> and <code>ANTHROPIC_API_KEY</code> to your NetID followed by <code>.api</code>. The key identifies you for fair sharing and usage reporting; it is not a password and does not need to be kept secret. Unloading the module restores any values you had set before. To configure a tool by hand instead, run <code>module show ycrc-llm</code> to see the values.</p>
 <p>Test the connection with <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="nv">$OPENAI_BASE_URL</span>/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;ycrc-local&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">'{"model": "ycrc-local", "messages": [{"role": "user", "content": "Why is the sky blue?"}]}'</span>
 </code></pre></div>
 <p>From Python, install the <code>openai</code> package in a <a href="../../clusters-at-yale/guides/conda/">Conda environment</a> (<code>pip install openai</code>). The package reads <code>OPENAI_BASE_URL</code> and <code>OPENAI_API_KEY</code> from the environment:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Why is the sky blue?&quot;</span><span class="p">}],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Why is the sky blue?"</span><span class="p">}],</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </code></pre></div>
@@ -3357,9 +3375,9 @@
 <p><code>ycrc-local</code> always refers to the model YCRC currently hosts, so your scripts do not need a new model name when YCRC updates the service. To find out which model is being served, list the models with <code>curl $OPENAI_BASE_URL/models -H "Authorization: Bearer $OPENAI_API_KEY"</code>. The model can read up to 262,144 tokens per request, including its answer.</p>
 <p><strong>Turn reasoning off for simple, high-volume tasks.</strong> For classification, extraction, and similar short-answer tasks, reasoning adds time without improving results. Set <code>reasoning_effort="none"</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Is this abstract about cancer? Answer yes or no.</span><span class="se">\n\n</span><span class="s2">...&quot;</span><span class="p">}],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Is this abstract about cancer? Answer yes or no.</span><span class="se">\n\n</span><span class="s2">..."</span><span class="p">}],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>In YCRC testing, this made a sentiment-classification job about eight times faster with the same accuracy.</p>
@@ -3367,37 +3385,37 @@
 <h2 id="process-many-items">Process many items</h2>
 <p>Send requests <strong>concurrently</strong> rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file and saves each completed result as it arrives. If interrupted, restarting skips saved items; requests that finished but were not yet written may run again:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># label.py: python label.py abstracts.txt labels.jsonl</span>
-<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
-<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># retry automatically if the server is busy</span>
-<span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;relevant&quot;</span><span class="p">,</span> <span class="s2">&quot;not relevant&quot;</span><span class="p">]</span>
+<span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"relevant"</span><span class="p">,</span> <span class="s2">"not relevant"</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="n">i</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">item</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-        <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Is this abstract about climate adaptation? Answer &quot;</span>
-                              <span class="sa">f</span><span class="s2">&quot;&#39;relevant&#39; or &#39;not relevant&#39;.</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}],</span>
-        <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;structured_outputs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;choice&quot;</span><span class="p">:</span> <span class="n">LABELS</span><span class="p">}},</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+        <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
+                   <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Is this abstract about climate adaptation? Answer "</span>
+                              <span class="sa">f</span><span class="s2">"'relevant' or 'not relevant'.</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">}],</span>
+        <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span><span class="s2">"structured_outputs"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"choice"</span><span class="p">:</span> <span class="n">LABELS</span><span class="p">}},</span>
         <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
 
 <span class="n">infile</span><span class="p">,</span> <span class="n">outfile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">done</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outfile</span><span class="p">):</span>
-    <span class="n">done</span> <span class="o">=</span> <span class="p">{</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">)}</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="p">{</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">)}</span>
 <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">done</span><span class="p">]</span>
 
-<span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
     <span class="n">futures</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">out</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </code></pre></div>
 <p>Run it as a batch job. The job needs only one CPU, since the work happens on YCRC's server:</p>
@@ -3418,17 +3436,17 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <h2 id="useful-features">Useful features</h2>
 <h3 id="structured-output">Structured output</h3>
 <p>To get output your code can parse reliably, constrain it to a JSON schema. The OpenAI package can fill in a <a href="https://docs.pydantic.dev/">Pydantic</a> model directly:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
 
-<span class="k">class</span> <span class="nc">Study</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Study</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">species</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">sample_size</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">randomized</span><span class="p">:</span> <span class="nb">bool</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Extract the study details:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">abstract</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">reasoning_effort</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Extract the study details:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">abstract</span><span class="si">}</span><span class="s2">"</span><span class="p">}],</span>
     <span class="n">response_format</span><span class="o">=</span><span class="n">Study</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">study</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">parsed</span>
@@ -3444,39 +3462,39 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p>Set <code>seed</code> to improve reproducibility when repeating a request with the same parameters, including when <code>temperature</code> is above 0. Identical results are not guaranteed, especially if the underlying model or serving configuration changes. Record the model name returned in <code>response.model</code> alongside your results, since <code>ycrc-local</code> can point to a different model after a YCRC update.</p>
 <h3 id="images">Images</h3>
 <p>Send images as base64 data URLs, or as <code>https://</code> addresses the server can download. The model reads charts, figures, and text in images well:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;figure.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"figure.png"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image_url&quot;</span><span class="p">,</span> <span class="s2">&quot;image_url&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;data:image/png;base64,</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}},</span>
-        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;What value does each bar show?&quot;</span><span class="p">},</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"image_url"</span><span class="p">,</span> <span class="s2">"image_url"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"url"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"data:image/png;base64,</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s2">"</span><span class="p">}},</span>
+        <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"What value does each bar show?"</span><span class="p">},</span>
     <span class="p">]}],</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="video">Video</h3>
 <p>Send video the same way, with a <code>video_url</code> part. The model can describe what happens and when, including estimated event times that should be checked against the original video:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 
-<span class="n">video</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;trial.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="n">video</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"trial.mp4"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;video_url&quot;</span><span class="p">,</span> <span class="s2">&quot;video_url&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;data:video/mp4;base64,</span><span class="si">{</span><span class="n">video</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}},</span>
-        <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;List each event in this video with the time it starts.&quot;</span><span class="p">},</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"video_url"</span><span class="p">,</span> <span class="s2">"video_url"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"url"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"data:video/mp4;base64,</span><span class="si">{</span><span class="n">video</span><span class="si">}</span><span class="s2">"</span><span class="p">}},</span>
+        <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"text"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"List each event in this video with the time it starts."</span><span class="p">},</span>
     <span class="p">]}],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with <a href="../../applications/modules/">FFmpeg</a> (<code>module load FFmpeg</code>, then <code>ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4</code>), which preserved useful timing estimates while using 30% fewer tokens in that test. Lowering the frame rate also saves tokens but can make event timing less reliable. Video is available through the OpenAI-format API only.</p>
 <h3 id="pdfs-and-other-documents">PDFs and other documents</h3>
 <p>The server does not read PDF files directly. Extract the text in your script first, for example with <a href="https://pymupdf.readthedocs.io/">PyMuPDF</a> (<code>pip install pymupdf</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pymupdf</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pymupdf</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">pymupdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;paper.pdf&quot;</span><span class="p">))</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">pymupdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"paper.pdf"</span><span class="p">))</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
-    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Summarize the methods section:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}],</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">"ycrc-local"</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Summarize the methods section:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">}],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>For scanned PDFs, or pages where layout and figures matter, render each page as an image (<code>page.get_pixmap(dpi=150).tobytes("png")</code>) and send the pages as images.</p>
@@ -3495,6 +3513,16 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p><strong>Not available:</strong> embeddings, reranking, audio input, direct PDF input, the OpenAI Batch and Files APIs, and the <code>min_p</code> and <code>logit_bias</code> sampling options. If your work needs these, <a href="https://docs.ycrc.yale.edu/#get-help">contact YCRC</a>; for embeddings in the meantime, you can run a small embedding model yourself with <a href="../huggingface/">Hugging Face</a> or <a href="../vllm/">vLLM</a>.</p>
 <h2 id="privacy-and-usage-records">Privacy and usage records</h2>
 <p>Requests are processed on YCRC's server and are not sent to a commercial AI provider. YCRC does not store prompts or responses. For each request, YCRC records your NetID, how you accessed the model (here, <code>api</code>), and the number of tokens processed, to manage capacity and report usage.</p>
+<h2 id="acceptable-use">Acceptable use</h2>
+<p>The YCRC-hosted model is provided for your own research on Bouchet, whether through scripts, <a href="../local-coding-agents/">Local Coding Agents</a>, or <a href="../open-webui/">Open WebUI</a>. The <a href="../../clusters/bouchet-rob/">Bouchet Rules of the Road</a>, the <a href="https://research.computing.yale.edu/computing-resources/hpc-policies">YCRC HPC Policies</a>, and Yale's <a href="https://your.yale.edu/policies-procedures/1607-information-technology-appropriate-use-policy">IT Appropriate Use Policy (Policy 1607)</a> apply to all use of the model. In addition:</p>
+<ul>
+<li><strong>Use it yourself, on Bouchet.</strong> Send requests from your own Slurm jobs, with your own NetID in the key. Do not share your key or use someone else's NetID.</li>
+<li><strong>Do not offer the model to others.</strong> Do not use it as the model behind a service for other people, such as a chatbot, Slack or messaging bot, website, or shared API endpoint, including as a fallback for another provider. Do not make it reachable from outside Bouchet, for example through an SSH tunnel or proxy.</li>
+<li><strong>Run coding agents through the module.</strong> Coding agents must use <a href="../local-coding-agents/">Local Coding Agents</a>, which runs them in a sandbox. Do not run them with the <code>.api</code> key.</li>
+<li><strong>Do not work around the service's controls.</strong> Do not change, rename, or remove tools, User-Agent strings, headers, or prompts, or route requests another way, to get past a check, a refusal, or a usage limit. If you think a request was refused by mistake, <a href="https://docs.ycrc.yale.edu/#get-help">contact YCRC</a> instead.</li>
+<li><strong>Only send data Bouchet is approved for.</strong> For data classified above what Bouchet allows, use the <a href="../../clusters/hopper/">Hopper</a> cluster or <a href="../clarity/">Clarity</a>.</li>
+</ul>
+<p>Violations can result in loss of access to the hosted model or suspension of your YCRC account. If you are unsure whether a use is allowed, <a href="https://docs.ycrc.yale.edu/#get-help">ask us</a> before you start.</p>
 <h2 id="coding-agents">Coding agents</h2>
 <p>The <code>.api</code> key is for your own scripts. Coding agents such as Claude Code, Codex, Copilot, Pi, and similar tools are supported through <a href="../local-coding-agents/">Local Coding Agents</a>, which run them in a sandbox that protects your files and credentials. Requests that come from a coding agent using the <code>.api</code> key are refused with a message pointing to the module. If a script of yours is refused this way by mistake, please <a href="https://docs.ycrc.yale.edu/#get-help">let us know</a>.</p>
 <p>If you use a coding agent to write a script that calls the model, ask it to use the settings in <a href="#quick-start">Quick start</a>.</p>
@@ -3508,7 +3536,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <h3 id="has-no-running-slurm-job-on">"... has no running Slurm job on ..."</h3>
 <p>Run your code inside a Slurm job (<code>salloc</code> or <code>sbatch</code>) on a compute node, not on a login node.</p>
 <h3 id="this-request-looks-like-it-comes-from-a-coding-agent">"This request looks like it comes from a coding agent"</h3>
-<p>Use <a href="../local-coding-agents/">Local Coding Agents</a> for coding agents. If your own script was refused, <a href="https://docs.ycrc.yale.edu/#get-help">let us know</a>.</p>
+<p>Use <a href="../local-coding-agents/">Local Coding Agents</a> for coding agents. If your own script was refused, <a href="https://docs.ycrc.yale.edu/#get-help">let us know</a> rather than changing the request to get past the check; see <a href="#acceptable-use">Acceptable use</a>.</p>
 <h3 id="too-many-concurrent-requests">"Too many concurrent requests"</h3>
 <p>Your requests waited longer than the server allows. Reduce the number of concurrent requests, and retry refused requests after a short delay.</p>
 <h3 id="the-model-does-not-exist">"The model ... does not exist"</h3>
@@ -3525,7 +3553,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2026</span>
       
     
   </small>

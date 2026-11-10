@@ -3278,18 +3278,18 @@ We also recommend reviewing the <a href="https://docs.globus.org/guides/tutorial
 globus<span class="w"> </span>login
 
 <span class="c1"># Find your collection ID:</span>
-globus<span class="w"> </span>endpoint<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;yale grace crc&quot;</span><span class="w"> </span>--filter-scope<span class="w"> </span>all
+globus<span class="w"> </span>endpoint<span class="w"> </span>search<span class="w"> </span><span class="s2">"yale grace crc"</span><span class="w"> </span>--filter-scope<span class="w"> </span>all
 
 <span class="c1"># Set a bash convenience variable:</span>
 <span class="nv">COLL</span><span class="o">=</span>e4abd994-feed-4cc6-8c4c-75abff2309de
 
 <span class="c1"># Authentication command:</span>
-globus<span class="w"> </span>session<span class="w"> </span>consent<span class="w"> </span><span class="s1">&#39;urn:globus:auth:scope:</span>
+globus<span class="w"> </span>session<span class="w"> </span>consent<span class="w"> </span><span class="s1">'urn:globus:auth:scope:</span>
 <span class="s1">transfer.api.globus.org:all[*</span>
-<span class="s1">https://auth.globus.org/scopes/a2dcf728-163e-11e7-bb8b-22000b9a448b/data_access]&#39;</span>
+<span class="s1">https://auth.globus.org/scopes/a2dcf728-163e-11e7-bb8b-22000b9a448b/data_access]'</span>
 
 <span class="c1"># Directory listing</span>
-globus<span class="w"> </span>ls<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COLL</span><span class="s2">:/&quot;</span>
+globus<span class="w"> </span>ls<span class="w"> </span><span class="s2">"</span><span class="nv">$COLL</span><span class="s2">:/"</span>
 </code></pre></div>
 <h3 id="transfer-files-tofrom-your-computer">Transfer Files to/from Your Computer</h3>
 <h4 id="upload-or-download-directly-from-globus-web-app">Upload or Download Directly from Globus Web App</h4>
