@@ -378,7 +378,6 @@ mkdir -p ${OUTDIR}
 
 ## run AlphaFold
 alphafold --output_dir=${OUTDIR} --model_preset=monomer --fasta_paths=YourSequence.fasta --max_template_date=2024-12-31
---msas_only
 ```
 
 alphafold_model.sh:
