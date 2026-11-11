@@ -3467,7 +3467,7 @@ hf<span class="w"> </span>download<span class="w"> </span>Qwen/Qwen3-8B
 <h2 id="run-offline-batch-inference">Run Offline Batch Inference</h2>
 <p>For a fixed set of prompts, use vLLM directly from Python. vLLM schedules all prompts together and keeps the GPU busy, which is much faster than sending prompts one at a time.</p>
 <p>Save the following as <code>batch_inference.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">vllm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">vllm</span> <span class="kn">import</span> <span class="n">LLM</span><span class="p">,</span> <span class="n">SamplingParams</span>
 
 <span class="n">llm</span> <span class="o">=</span> <span class="n">LLM</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen3-8B&quot;</span><span class="p">,</span> <span class="n">max_model_len</span><span class="o">=</span><span class="mi">16384</span><span class="p">)</span>
 <span class="n">params</span> <span class="o">=</span> <span class="n">SamplingParams</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
@@ -3539,8 +3539,8 @@ curl<span class="w"> </span>http://localhost:<span class="nv">$VLLM_PORT</span>/
 </code></pre></div>
 <p>To attach a second terminal to a running interactive job, run <code>srun --jobid=12345678 --overlap --pty bash</code> on a login node, replacing <code>12345678</code> with your job ID.</p>
 <p>From Python, use the <code>openai</code> package (<code>uv pip install openai</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
     <span class="n">base_url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;VLLM_PORT&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/v1&quot;</span><span class="p">,</span>

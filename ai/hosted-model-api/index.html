@@ -3343,7 +3343,7 @@
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;ycrc-local&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Why is the sky blue?&quot;}]}&#39;</span>
 </code></pre></div>
 <p>From Python, install the <code>openai</code> package in a <a href="../../clusters-at-yale/guides/conda/">Conda environment</a> (<code>pip install openai</code>). The package reads <code>OPENAI_BASE_URL</code> and <code>OPENAI_API_KEY</code> from the environment:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -3385,14 +3385,14 @@
 <h2 id="process-many-items">Process many items</h2>
 <p>Send requests <strong>concurrently</strong> rather than one after another. The server processes many requests at once, so a few parallel requests finish several times faster. This example labels every line of a text file and saves each completed result as it arrives. If interrupted, restarting skips saved items; requests that finished but were not yet written may run again:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># label.py: python label.py abstracts.txt labels.jsonl</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># retry automatically if the server is busy</span>
 <span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;relevant&quot;</span><span class="p">,</span> <span class="s2">&quot;not relevant&quot;</span><span class="p">]</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="n">i</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">item</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
         <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ycrc-local&quot;</span><span class="p">,</span>
@@ -3436,9 +3436,9 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <h2 id="useful-features">Useful features</h2>
 <h3 id="structured-output">Structured output</h3>
 <p>To get output your code can parse reliably, constrain it to a JSON schema. The OpenAI package can fill in a <a href="https://docs.pydantic.dev/">Pydantic</a> model directly:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Study</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Study</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">species</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">sample_size</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">randomized</span><span class="p">:</span> <span class="nb">bool</span>
@@ -3462,7 +3462,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p>Set <code>seed</code> to improve reproducibility when repeating a request with the same parameters, including when <code>temperature</code> is above 0. Identical results are not guaranteed, especially if the underlying model or serving configuration changes. Record the model name returned in <code>response.model</code> alongside your results, since <code>ycrc-local</code> can point to a different model after a YCRC update.</p>
 <h3 id="images">Images</h3>
 <p>Send images as base64 data URLs, or as <code>https://</code> addresses the server can download. The model reads charts, figures, and text in images well:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 
 <span class="n">image</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;figure.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -3475,7 +3475,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 </code></pre></div>
 <h3 id="video">Video</h3>
 <p>Send video the same way, with a <code>video_url</code> part. The model can describe what happens and when, including estimated event times that should be checked against the original video:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 
 <span class="n">video</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;trial.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -3489,7 +3489,7 @@ python<span class="w"> </span>label.py<span class="w"> </span>abstracts.txt<span
 <p>Video uses many tokens: in YCRC testing, two minutes of 640x360 video used about 12,000. To fit longer videos, reduce the resolution with <a href="../../applications/modules/">FFmpeg</a> (<code>module load FFmpeg</code>, then <code>ffmpeg -i in.mp4 -vf scale=320:-2 out.mp4</code>), which preserved useful timing estimates while using 30% fewer tokens in that test. Lowering the frame rate also saves tokens but can make event timing less reliable. Video is available through the OpenAI-format API only.</p>
 <h3 id="pdfs-and-other-documents">PDFs and other documents</h3>
 <p>The server does not read PDF files directly. Extract the text in your script first, for example with <a href="https://pymupdf.readthedocs.io/">PyMuPDF</a> (<code>pip install pymupdf</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pymupdf</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pymupdf</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">pymupdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;paper.pdf&quot;</span><span class="p">))</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>

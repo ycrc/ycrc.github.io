@@ -3105,7 +3105,40 @@
 <h3 id="project">Project</h3>
 <p>Quota: 4 TiB and 5,000,000 files per group</p>
 <p>Project storage is shared among all members of a specific group. Project storage is <strong>not backed up</strong>, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project. </p>
-<p>You can access this space through a symlink, or shortcut, in your home directory called <code>project</code>. See our <a href="/data/permissions">Sharing Data</a> documentation for instructions on sharing data in your project space with other users.</p>
+<p>You can access this space through a symlink, or shortcut, in your home directory called <code>project_pi_&lt;your_pi_netid&gt;</code> (on <a href="/clusters/bouchet">Bouchet</a>) or  <code>project</code> (<a href="/clusters/mccleary">McCleary/Grace</a>, <a href="/clusters/milgram">Milgram</a>). See our <a href="/data/permissions">Sharing Data</a> documentation for instructions on sharing data in your project space with other users.</p>
+<p>Within your group project folder you will find your personal folder called <code>&lt;your_netid&gt;</code>, and also a <code>shared</code> folder for data/etc. shared between multiple group members.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that on the older clusters McCleary/Grace/Milgram the above symlink points to your personal project storage, rather than the enclosing folder belonging to your group.</p>
+</div>
+<p>Group project folder locations:
+<div class="highlight"><pre><span></span><code><span class="c1"># Bouchet:</span>
+/nfs/roberts/project/project_pi_&lt;your_pi_netid&gt;
+
+<span class="c1"># Mccleary/Grace:</span>
+/gpfs/gibbs/project/&lt;your_pi_group_name&gt;
+
+<span class="c1"># Milgram:</span>
+/gpfs/milgram/project/&lt;your_pi_group_name&gt;
+</code></pre></div></p>
+<p>Home directory symlinks point to these locations as shown below:
+<div class="highlight"><pre><span></span><code><span class="c1"># New link style (to group storage location):</span>
+
+<span class="c1"># Bouchet:</span>
+
+/home/&lt;your_netid&gt;/project_pi_&lt;your_pi_netid&gt;<span class="w"> </span>-&gt;
+<span class="w">    </span>/nfs/roberts/project/project_pi_&lt;your_pi_netid&gt;
+
+<span class="c1"># Old link style (to user storage location):</span>
+
+<span class="c1"># Mccleary/Grace:</span>
+/home/&lt;your_netid&gt;/project<span class="w"> </span>-&gt;
+<span class="w">    </span>/gpfs/gibbs/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+
+<span class="c1"># Milgram:</span>
+/home/&lt;your_netid&gt;/project<span class="w"> </span>-&gt;
+<span class="w">    </span>/gpfs/milgram/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+</code></pre></div></p>
 <p>Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within <code>project</code>. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.</p>
 <h4 id="additional-paid-storage">Additional Paid Storage</h4>
 <p>Quota: varies</p>
@@ -3120,7 +3153,39 @@ See <a href="#request-additional-storage">below</a> for details on requesting ad
 <h3 id="scratch">Scratch</h3>
 <p>Quota: 10 TiB and 15,000,000 files per group</p>
 <p>scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. <strong>Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please <a href="#request-additional-storage">purchase storage</a> if you need additional longer term storage.</strong></p>
-<p>You can access this space through a symlink, or shortcut, in your home directory called <code>project_pi_&lt;your_pi_netid&gt;</code> (on <a href="/clusters/bouchet">Bouchet</a>),  <code>palmer_scratch</code> (<a href="/clusters/mccleary">McCleary/Grace</a>), or <code>scratch60</code> (<a href="/clusters/milgram">Milgram</a>). See our <a href="/data/permissions">Sharing Data</a> documentation for instructions on sharing data in your scratch space with other users.</p>
+<p>You can access this space through a symlink, or shortcut, in your home directory called <code>scratch_pi_&lt;your_pi_netid&gt;</code> (on <a href="/clusters/bouchet">Bouchet</a>),  <code>palmer_scratch</code> (<a href="/clusters/mccleary">McCleary/Grace</a>), or <code>scratch60</code> (<a href="/clusters/milgram">Milgram</a>). See our <a href="/data/permissions">Sharing Data</a> documentation for instructions on sharing data in your scratch space with other users.</p>
+<p>Within your group scratch folder you will find your personal folder called <code>&lt;your_netid&gt;</code>, and also a <code>shared</code> folder for data/etc. shared between multiple group members.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that on the older clusters McCleary/Grace/Milgram the above symlink points to your personal scratch storage, rather than the enclosing folder belonging to your group.</p>
+</div>
+<p>Group scratch folder locations:
+<div class="highlight"><pre><span></span><code><span class="c1"># Bouchet:</span>
+/nfs/roberts/scratch/scratch_pi_&lt;your_pi_netid&gt;
+
+<span class="c1"># Mccleary/Grace:</span>
+/vast/palmer/scratch/&lt;your_pi_group_name&gt;
+
+<span class="c1"># Milgram:</span>
+/gpfs/milgram/scratch60/&lt;your_pi_group_name&gt;
+</code></pre></div></p>
+<p>Home directory symlinks point to these locations as shown below:
+<div class="highlight"><pre><span></span><code><span class="c1"># New link style (to group storage location):</span>
+
+<span class="c1"># Bouchet:</span>
+/home/&lt;your_netid&gt;/scratch_pi_&lt;your_pi_netid&gt;<span class="w"> </span>-&gt;
+<span class="w">    </span>/nfs/roberts/scratch/scratch_pi_&lt;your_pi_netid&gt;
+
+<span class="c1"># Old link style (to user storage location):</span>
+
+<span class="c1"># Mccleary/Grace:</span>
+/home/&lt;your_netid&gt;/palmer_scratch<span class="w"> </span>-&gt;
+<span class="w">    </span>/vast/palmer/scratch/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+
+<span class="c1"># Milgram:</span>
+/home/&lt;your_netid&gt;/scratch60<span class="w"> </span>-&gt;
+<span class="w">    </span>/gpfs/milgram/scratch60/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+</code></pre></div></p>
 <h2 id="check-your-usage-and-quotas">Check Your Usage and Quotas</h2>
 <p>To inspect your current usage, run the command <code>getquota</code> from the <a href="/clusters-at-yale/access/ood/#terminal">terminal</a> command line.</p>
 <p>You may also view the results of getquota from the OnDemand <a href="/clusters-at-yale/access/ood/#user-portal">User Portal</a>, found in the <code>Utilities</code> OOD menu; see the table <code>File System Quota</code> near the top of the resulting webpage.</p>
@@ -3235,7 +3300,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2026</span>
       
     
   </small>

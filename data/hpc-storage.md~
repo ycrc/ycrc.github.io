@@ -1,0 +1,205 @@
+# HPC Storage
+
+Along with access to the compute clusters we provide each research group with cluster storage space for research data. The storage is separated into three quotas: Home, Project, and Scratch. Each of these quotas limit both the amount in bytes and number of files you can store. Hitting your quota stops you from being able to write data, and can cause [jobs to fail](/clusters-at-yale/job-scheduling/common-job-failures/#disk-quotas). You can monitor your storage usage by running the [getquota](#check-your-usage-and-quotas) command on a cluster. No sensitive data can be stored on any cluster storage, except for [Hopper](/clusters/hopper/).
+
+!!! warning "Backups"
+    The _only_ storage backed up on every cluster is Home. We do provide local snapshots, covering at least the last 2 days, on Home and Project directories (see below for details). Please see our [HPC Policies](https://research.computing.yale.edu/services/high-performance-computing/hpc-policies#Backups) page for additional information about backups.
+
+## Storage Spaces
+
+For an overview of which filesystems are mounted on each cluster, see the [HPC Resources](/clusters/#storage) documentation.
+
+### Home
+
+Quota: 125 GiB and 500,000 files per person
+
+Your home directory is where your sessions begin by default. Its intended use is for storing scripts, notes, final products (e.g. figures), etc.  Its path is `/home/netid` (where `netid` is your Yale netid) on every cluster. Home storage is backed up daily. If you would like to restore files, please [contact us](/#get-help) with your netid and the list of files/directories you would like restored.
+
+### Project
+
+Quota: 4 TiB and 5,000,000 files per group
+
+Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project. 
+
+You can access this space through a symlink, or shortcut, in your home directory called `project_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)) or  `project` ([McCleary/Grace](/clusters/mccleary), [Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your project space with other users.
+
+Please note that this symlink points not to your personal project storage, but to the enclosing folder belonging to your group; this differs from the links provided on older clusters.
+
+Project folder locations:
+```bash
+# Bouchet:
+/nfs/roberts/project/project_pi_<your_pi_netid>
+
+# Mccleary/Grace/Milgram:
+/gpfs/gibbs/project/<your_pi_group_name>
+
+# Predefined project subfolders:
+<your_netid>  # For your data
+shared        # For data shared across the grop
+```
+
+Home directory symlinks point to these project locations as shown below:
+```bash
+# Bouchet:
+/home/<your_netid>/project_pi_<your_pi_netid> ->
+    /nfs/roberts/project/project_pi_<your_pi_netid>
+
+# Mccleary/Grace/Milgram:
+/home/<your_netid>/project ->
+    /gpfs/gibbs/project/<your_pi_group_name>/<your_netid>
+```
+
+Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within `project`. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.
+
+#### Additional Paid Storage
+
+Quota: varies
+
+Storage purchased for the dedicated use by a single group or collection of groups provides similar functionality as `project` storage and is also not backed up.
+See [below](#request-additional-storage) for details on requesting additional storage. 
+
+Paid storage, if applicable, is assigned on one of our two storage systems:
+
+* on the Gibbs filesystem in a `/gpfs/gibbs/pi/` directory under the group's name
+* on the Palmer filesystem in a `/vast/palmer/pi/` directory under the group's name  
+
+Unlike project space described above, all files in your purchased storage count towards your quotas, regardless of file ownership.
+
+### Scratch
+
+Quota: 10 TiB and 15,000,000 files per group
+
+scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#request-additional-storage) if you need additional longer term storage.**
+
+You can access this space through a symlink, or shortcut, in your home directory called `scratch_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)),  `palmer_scratch` ([McCleary/Grace](/clusters/mccleary)), or `scratch60` ([Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
+
+Please note that this symlink points not to your personal project storage, but to the enclosing folder belonging to your group; this differs from the links provided on older clusters.
+
+Scratch folder locations:
+```bash
+# Bouchet:
+/nfs/roberts/scratch/project_pi_<your_pi_netid>
+
+# Mccleary/Grace/Milgram:
+/vast/palmer/scratch/<your_pi_group_name>
+
+# Predefined scratch subfolders:
+<your_netid>  # For your data
+shared        # For data shared across the grop
+```
+
+Home directory symlinks point to these project locations as shown below:
+```bash
+# Bouchet:
+/home/<your_netid>/scratch_pi_<your_pi_netid> ->
+    /nfs/roberts/scratch/scratch_pi_<your_pi_netid>
+
+# Mccleary/Grace/Milgram:
+/home/<your_netid>/palmer_scratch ->
+    /vast/palmer/scratch/<your_pi_group_name>/<your_netid>
+```
+
+## Check Your Usage and Quotas
+
+To inspect your current usage, run the command `getquota` from the [terminal](/clusters-at-yale/access/ood/#terminal) command line.
+
+You may also view the results of getquota from the OnDemand [User Portal](/clusters-at-yale/access/ood/#user-portal), found in the `Utilities` OOD menu; see the table `File System Quota` near the top of the resulting webpage.
+
+Here is an example output of `getquota`:
+
+``` text
+This script shows information about your quotas on bouchet.
+If you plan to poll this sort of information extensively,
+please contact us for help at ycrc@yale.edu
+
+Quota Summary for support group (oldest data as of Sep 30 2026 00:00)
+Fileset       Type   Usage (GiB)   Quota (GiB)     File Count     File Limit   Backup   Purged  
+────────────────────────────────────────────────────────────────────────────────────────────────
+project       GRP           2769          4096     11,473,192     12,000,000   Yes      No      
+scratch       GRP             86         10240        670,344     10,000,000   No       30 days 
+Ark:support   GRP            879          5120                                 No       No      
+!!! Warnings !!!
+Warning: project file count is at 96% of its file count limit.
+
+Personal Quota (oldest data as of Sep 30 2026 00:00)
+Fileset       Type   Usage (GiB)   Quota (GiB)     File Count     File Limit   Backup   Purged  
+────────────────────────────────────────────────────────────────────────────────────────────────
+home          USR             81           125        368,463        500,000   Yes      No      
+
+
+Tip: Use 'getquota -g <group>' to see full user details for a specific group.
+```
+
+!!! note "Notes"
+    1. The per-user breakdown is only generated periodically. However, summaries at the bottom for gibbs (i.e., project and pi directories) are close to real-time.<br>
+    1. Per-user breakdowns for 'project' are based on file ownership accumulated over the entire group, not just on the contents of individuals' project directories. So, for example, if your project directory contains many large files owned by another user, the results of 'du -sh ~/project/' may differ significantly from the results of getquota for you and/or them.<br>  
+    1. Purchased storage allocations will only appear in the `getquota` output for users who have data in that directory.
+
+## For More Detailed Storage Info
+
+When you run out of disk space (or better, when you anticipate it will happen soon), you will need to find out which files/folders consume the most space. The YCRC provides module-based tools to help with this: a GUI app, [QDirstat](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/shundhammer/qdirstat&ved=2ahUKEwinzbKU_b-RAxV0v4kEHRY2ALMQFnoECCAQAQ&usg=AOvVaw3rROIC6Z1bIEq6vM8ODHmX), and a command line tool, ([broot](https://github.com/Canop/broot)). They provide similar functionality, but broot may be faster to run and less resource intensive.
+
+!!! warning "Use with Caution"
+    The `qdirstat` and `broot` programs are intended to be used only very infrequently or for small collections of files, because they can put a heavy load on the cluster storage systems when there are many files to be tallied. If you are dealing with a very large collection of files, please contact us at research.computing@yale.edu. We have specialized tools that minimize the filesystem load for these types of problems.
+
+For QDirStat, start our [Remote Desktop OOD app](/clusters-at-yale/access/ood-remote-desktop/), launch a terminal window, and type:
+
+```
+module load QDirStat
+qdirstat
+```
+
+You will get an interactive display that allows you to navigate through your folders and see how much storage is consumed by each one. Depending on how many files are being searched, it may take a minute or two for QDirStat to show the full statistics.
+
+For broot, type the following into any terminal:
+```
+module load broot
+broot -w
+```
+
+## Request Additional Storage
+
+!!! warning "Pause on Additional Storage Allocations"
+    We are currently unable to accept any new or increased paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please [visit our documentation](/data/staging/) or reach out to us for assistance on staging data from other storage locations.
+
+Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
+The price covers all costs, including administration, power, cooling, networking, etc.
+Agreements for such storage will run through the end of the fiscal year and be renewed in June for the next year when appropriate.
+Storage charges are based on requested allocation, not actual usage.
+
+After the culmination of a paid storage agreement (either for non-payment or migration to off-cluster storage) the allocation will be removed according to our policies (see [Storage Expiration Policy](https://research.computing.yale.edu/computing-resources/hpc-policies)).
+Please [contact us](/#get-help) with your requirements and budget to start the agreement process.
+
+Paid storage allocations, as with all storage allocations, are subject to corresponding file count limit to preserve the health of the shared storage system. 
+The file count limits for different size allocations are listed below. 
+If you need additional files beyond your limit, contact us to discuss as increases may be granted on a case-by-case basis and at the YCRC's discretion.
+
+| Allocation Quota | File Count Limit |
+|------------------|------------------|
+| < 50 TiB         | 10 million       |
+| 50-99 TiB        | 20 million       |
+| 100-499 TiB      | 40 million       |
+| 500-999 TiB      | 50 million       |
+| >= 1 PiB         | 75 million       |
+
+
+
+## HPC Storage Best Practices
+
+### Stage Data
+
+Large datasets are often stored off-cluster on departmental servers, Storage@Yale, in cloud storage, etc.
+If these data are too large to fit in your current quotas and you do not plan on purchasing more storage (see above), you must 'stage' your data.
+Since the _permanent_ copy of the data remains on off-cluster storage, you can [transfer](/data/transfer/) a working copy to `palmer_scratch`, for example.
+Both Grace and McCleary have dedicated `transfer` partitions where you can submit long-running transfer jobs.
+When your computation finishes you can remove the copy and transmit or copy results to a permanent location.
+Please see the [Staging Data](/data/staging/) documentation for more details and examples.
+
+### Prevent Large Numbers of Small Files
+
+The parallel filesystems the clusters use perform poorly with very large numbers of small files.
+This is one reason we enforce file count quotas.
+If you are running an application that unavoidably makes large numbers of files, do what you can to reduce file creation.
+Additionally you can reduce load on the filesystem by spreading the files across multiple subdirectories.
+Delete unneeded files between jobs and compress or [archive](/data/archive/) collections of files.
+

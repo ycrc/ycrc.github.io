@@ -3030,17 +3030,19 @@ XLA_CLIENT_MEM_FRACTION=3.2
 </code></pre></div></p>
 <h3 id="bouchet">Bouchet</h3>
 <p>On Bouchet, copy the MSA batch script and model batch script templates below,
-and modify for your specific use case. Both stages can be submitted at the same time using a
-<a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>
-as follows:</p>
+modify for your specific use case, and submit as follows. Below, we describe two methods
+to submit the second script: either by waiting to submit until the first script finishes, or
+simultaneously with the first script using a 
+<a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Submit the first stage:</span>
 sbatch<span class="w"> </span>alphafold_msa.sh
 
-<span class="c1"># Note the jobid that is reported by the above submission.</span>
-<span class="c1"># Then if you have set the correct input directories corresponding to the MSA outputs,</span>
-<span class="c1"># optionally submit the second stage by:</span>
+<span class="c1"># After the above job completes, submit alphafold_model.sh:</span>
+sbatch<span class="w"> </span>alphafold_model.sh
+
+<span class="c1"># Alternately, you can automate the second submission immediately after you do the first submission.</span>
+<span class="c1">#  Do this by using the jobid that is reported by the alphafold_msa.sh submission:</span>
 sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh
-<span class="c1"># Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. </span>
 </code></pre></div>
 <p>alphafold_msa.sh: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -3089,13 +3091,25 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span
 <p>alphafold_model.sh:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=YourModelJobNameHere</span>
-<span class="c1">## General-use partition for accessing GPUs;</span>
-<span class="c1">## may optionally try gpu_devel, as GPU step often takes &lt; 6 hours</span>
-<span class="c1">#SBATCH --partition=gpu</span>
+
+<span class="c1">## Default partition: gpu_devel is suitable for small proteins with low VRAM needs and &lt; 6 hour runtimes</span>
+<span class="c1">#SBATCH --partition=gpu_devel</span>
+
+<span class="c1">## For special GPU needs such as extra VRAM, please see the</span>
+<span class="c1">##  corresponding hardware specs for various gpu partitions available on</span>
+<span class="c1">##  your cluster via links at the following page:</span>
+<span class="c1">##  https://docs.ycrc.yale.edu/clusters</span>
+<span class="c1">## For small proteins that need more gpu runtime, try this:</span>
+<span class="c1">## #SBATCH --partition=gpu</span>
+<span class="c1">## For intermediate sized proteins (VRAM 80-96GB) try this:</span>
+<span class="c1">## #SBATCH --partition=gpu_h100,gpu_rtx6000</span>
+<span class="c1">## For larger proteins (VRAM 141-193GB) try this:</span>
+<span class="c1">## #SBATCH --partition=gpu_b200,gpu_h200</span>
+
 <span class="c1">## Maximum job time in Days-Hours:Minutes:Seconds</span>
 <span class="c1">#SBATCH --time=4:00:00</span>
 <span class="c1">## CPUs requested for each &quot;task&quot;; in simplest case the total number of used CPUs</span>
-<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
 <span class="c1">## Total memory; can also be expressed as --mem-per-cpu</span>
 <span class="c1">#SBATCH --mem=80g</span>
 <span class="c1">## Must explicitly request GPU resources and number of GPUs</span>
@@ -3141,7 +3155,8 @@ alphafold<span class="w"> </span><span class="se">\</span>
 <p>The database location has been set automatically.</p>
 <h3 id="mccleary">McCleary</h3>
 <p>On McCleary, AlphaFold is installed in a <a href="/clusters-at-yale/guides/containers">container</a>, which requires
-a somewhat more complicated command for running the split version.</p>
+a somewhat more complicated script command for running the split version. Once your scripts are prepared,
+submit them with sbatch the same was as described for Bouchet, above.</p>
 <p>alphafold_msa.sh (McCleary version):</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
@@ -3268,19 +3283,23 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 ...
 </code></pre></div>
 Copy the MSA batch script and model batch script templates below,
-and modify for your specific use case. Both stages can be submitted at the same time using a
-<a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>
-as follows:</p>
+modify for your specific use case, and submit as follows. Below, we describe two methods
+to submit the second script: either by waiting to submit until the first script finishes, or
+simultaneously with the first script using a 
+<a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/">job dependency</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Submit the first stage:</span>
 sbatch<span class="w"> </span>alphafold_msa.sh
 
-<span class="c1"># Note the jobid that is reported by the above submission.</span>
-<span class="c1"># Then if you have set the correct input directories corresponding to the MSA outputs,</span>
-<span class="c1"># optionally submit the second stage by:</span>
-sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterok:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh
-<span class="c1"># Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. </span>
+<span class="c1"># After the above job completes, submit alphafold_model.sh:</span>
+sbatch<span class="w"> </span>alphafold_model.sh
+
+<span class="c1"># Alternately, you can automate the second submission immediately after you do the first submission.</span>
+<span class="c1">#  Do this by using the jobid that is reported by the alphafold_msa.sh submission.</span>
+<span class="c1">#  Note also the use of &#39;afterany&#39; rather than &#39;afterok&#39;, allowing alphafold_msa.sh to</span>
+<span class="c1">#   &#39;successfully crash&#39;:</span>
+sbatch<span class="w"> </span>--dependency<span class="o">=</span>afterany:&lt;first_stage_jobid&gt;<span class="w"> </span>alphafold_model.sh
 </code></pre></div>
-<p>alphafold_msa.sh:</p>
+<p>alphafold_msa.sh (note, due to the lack of a GPU, this will exit ungracefully --i.e., crash-- after creating the needed msa files; while obnoxious, this is harmless):</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=YourMSAJobNameHere</span>
 <span class="c1">## General-use partition for CPU-only step</span>
@@ -3362,7 +3381,7 @@ XLA_PYTHON_CLIENT_ALLOCATOR=platform
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2026</span>
       
     
   </small>
