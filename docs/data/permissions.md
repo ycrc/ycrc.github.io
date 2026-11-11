@@ -6,7 +6,7 @@
 
 ### `project` and `scratch60` links in Home Directories
 
-For convenience, we create a symlink, or shortcut, in every home directory called `project` and `palmer_scratch` (and `~/scratch60`on [Milgram](/clusters/milgram)) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
+For convenience, we create a symlink, or shortcut, in every home directory called `project_pi_<your_pi_netid>` and `scratch_pi_<your_pi_netid>` (or `project`, `palmer_scratch`/`scratch60` on other clusters) that go to your respective [storage spaces](/data/hpc-storage). However, if another user attempts to access any data via your symlink, they will receive errors related to permissions for your home space.
 
 You can run `mydirectories` or `readlink - f dirname` (replace `dirname` with the one you are interested in) to get the "true" paths, which is more readily accessible to other users.
 

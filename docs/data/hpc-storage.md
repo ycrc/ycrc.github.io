@@ -21,7 +21,44 @@ Quota: 4 TiB and 5,000,000 files per group
 
 Project storage is shared among all members of a specific group. Project storage is **not backed up**, so we strongly recommend that you have a second copy somewhere off-cluster of any valuable data you have stored in project. 
 
-You can access this space through a symlink, or shortcut, in your home directory called `project`. See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your project space with other users.
+You can access this space through a symlink, or shortcut, in your home directory called `project_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)) or  `project` ([McCleary/Grace](/clusters/mccleary), [Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your project space with other users.
+
+Within your group project folder you will find your personal folder called `<your_netid>`, and also a `shared` folder for data/etc. shared between multiple group members.
+
+!!! note
+    Please note that on the older clusters McCleary/Grace/Milgram the above symlink points to your personal project storage, rather than the enclosing folder belonging to your group.
+
+Group project folder locations:
+```bash
+# Bouchet:
+/nfs/roberts/project/project_pi_<your_pi_netid>
+
+# Mccleary/Grace:
+/gpfs/gibbs/project/<your_pi_group_name>
+
+# Milgram:
+/gpfs/milgram/project/<your_pi_group_name>
+```
+
+Home directory symlinks point to these locations as shown below:
+```bash
+# New link style (to group storage location):
+
+# Bouchet:
+
+/home/<your_netid>/project_pi_<your_pi_netid> ->
+    /nfs/roberts/project/project_pi_<your_pi_netid>
+
+# Old link style (to user storage location):
+
+# Mccleary/Grace:
+/home/<your_netid>/project ->
+    /gpfs/gibbs/project/<your_pi_group_name>/<your_netid>
+
+# Milgram:
+/home/<your_netid>/project ->
+    /gpfs/milgram/project/<your_pi_group_name>/<your_netid>
+```
 
 Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within `project`. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.
 
@@ -45,7 +82,43 @@ Quota: 10 TiB and 15,000,000 files per group
 
 scratch is intended to be used for storing temporary data. On Bouchet, any file in scratch older than 30 days will automatically be deleted. On McCleary, Grace or Milgram, any file in this space older than 60 days will automatically be deleted. We send out a weekly warning about files we expect to delete the following week. Like project, scratch quota is shared by your entire research group. If we begin to run low on storage, you may be asked to delete files younger than the timelimit. **Artificial extension of scratch file expiration is forbidden without explicit approval from the YCRC. Please [purchase storage](#request-additional-storage) if you need additional longer term storage.**
 
-You can access this space through a symlink, or shortcut, in your home directory called `project_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)),  `palmer_scratch` ([McCleary/Grace](/clusters/mccleary)), or `scratch60` ([Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
+You can access this space through a symlink, or shortcut, in your home directory called `scratch_pi_<your_pi_netid>` (on [Bouchet](/clusters/bouchet)),  `palmer_scratch` ([McCleary/Grace](/clusters/mccleary)), or `scratch60` ([Milgram](/clusters/milgram)). See our [Sharing Data](/data/permissions) documentation for instructions on sharing data in your scratch space with other users.
+
+Within your group scratch folder you will find your personal folder called `<your_netid>`, and also a `shared` folder for data/etc. shared between multiple group members.
+
+!!! note
+    Please note that on the older clusters McCleary/Grace/Milgram the above symlink points to your personal scratch storage, rather than the enclosing folder belonging to your group.
+
+Group scratch folder locations:
+```bash
+# Bouchet:
+/nfs/roberts/scratch/scratch_pi_<your_pi_netid>
+
+# Mccleary/Grace:
+/vast/palmer/scratch/<your_pi_group_name>
+
+# Milgram:
+/gpfs/milgram/scratch60/<your_pi_group_name>
+```
+
+Home directory symlinks point to these locations as shown below:
+```bash
+# New link style (to group storage location):
+
+# Bouchet:
+/home/<your_netid>/scratch_pi_<your_pi_netid> ->
+    /nfs/roberts/scratch/scratch_pi_<your_pi_netid>
+
+# Old link style (to user storage location):
+
+# Mccleary/Grace:
+/home/<your_netid>/palmer_scratch ->
+    /vast/palmer/scratch/<your_pi_group_name>/<your_netid>
+
+# Milgram:
+/home/<your_netid>/scratch60 ->
+    /gpfs/milgram/scratch60/<your_pi_group_name>/<your_netid>
+```
 
 ## Check Your Usage and Quotas
 

@@ -69,19 +69,21 @@ XLA_CLIENT_MEM_FRACTION=3.2
 ```
 ### Bouchet
 On Bouchet, copy the MSA batch script and model batch script templates below,
-and modify for your specific use case. Both stages can be submitted at the same time using a
-[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
-as follows:
+modify for your specific use case, and submit as follows. Below, we describe two methods
+to submit the second script: either by waiting to submit until the first script finishes, or
+simultaneously with the first script using a 
+[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/):
 
 ```sh
 # Submit the first stage:
 sbatch alphafold_msa.sh
 
-# Note the jobid that is reported by the above submission.
-# Then if you have set the correct input directories corresponding to the MSA outputs,
-# optionally submit the second stage by:
+# After the above job completes, submit alphafold_model.sh:
+sbatch alphafold_model.sh
+
+# Alternately, you can automate the second submission immediately after you do the first submission.
+#  Do this by using the jobid that is reported by the alphafold_msa.sh submission:
 sbatch --dependency=afterok:<first_stage_jobid> alphafold_model.sh
-# Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. 
 ```
 
 alphafold_msa\.sh: 
@@ -136,13 +138,25 @@ alphafold_model\.sh:
 ```sh
 #!/bin/bash
 #SBATCH --job-name=YourModelJobNameHere
-## General-use partition for accessing GPUs;
-## may optionally try gpu_devel, as GPU step often takes < 6 hours
-#SBATCH --partition=gpu
+
+## Default partition: gpu_devel is suitable for small proteins with low VRAM needs and < 6 hour runtimes
+#SBATCH --partition=gpu_devel
+
+## For special GPU needs such as extra VRAM, please see the
+##  corresponding hardware specs for various gpu partitions available on
+##  your cluster via links at the following page:
+##  https://docs.ycrc.yale.edu/clusters
+## For small proteins that need more gpu runtime, try this:
+## #SBATCH --partition=gpu
+## For intermediate sized proteins (VRAM 80-96GB) try this:
+## #SBATCH --partition=gpu_h100,gpu_rtx6000
+## For larger proteins (VRAM 141-193GB) try this:
+## #SBATCH --partition=gpu_b200,gpu_h200
+
 ## Maximum job time in Days-Hours:Minutes:Seconds
 #SBATCH --time=4:00:00
 ## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=4
 ## Total memory; can also be expressed as --mem-per-cpu
 #SBATCH --mem=80g
 ## Must explicitly request GPU resources and number of GPUs
@@ -190,7 +204,8 @@ The database location has been set automatically.
 
 ### McCleary
 On McCleary, AlphaFold is installed in a [container](/clusters-at-yale/guides/containers), which requires
-a somewhat more complicated command for running the split version.
+a somewhat more complicated script command for running the split version. Once your scripts are prepared,
+submit them with sbatch the same was as described for Bouchet, above.
 
 alphafold_msa\.sh (McCleary version):
 
@@ -332,22 +347,26 @@ Heteromer:
 ...
 ```
 Copy the MSA batch script and model batch script templates below,
-and modify for your specific use case. Both stages can be submitted at the same time using a
-[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/)
-as follows:
+modify for your specific use case, and submit as follows. Below, we describe two methods
+to submit the second script: either by waiting to submit until the first script finishes, or
+simultaneously with the first script using a 
+[job dependency](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dependency/):
 
 ```sh
 # Submit the first stage:
 sbatch alphafold_msa.sh
 
-# Note the jobid that is reported by the above submission.
-# Then if you have set the correct input directories corresponding to the MSA outputs,
-# optionally submit the second stage by:
-sbatch --dependency=afterok:<first_stage_jobid> alphafold_model.sh
-# Note that you can also submit alphafold_model.sh in the normal way after alphafold_msa.sh completes. 
+# After the above job completes, submit alphafold_model.sh:
+sbatch alphafold_model.sh
+
+# Alternately, you can automate the second submission immediately after you do the first submission.
+#  Do this by using the jobid that is reported by the alphafold_msa.sh submission.
+#  Note also the use of 'afterany' rather than 'afterok', allowing alphafold_msa.sh to
+#   'successfully crash':
+sbatch --dependency=afterany:<first_stage_jobid> alphafold_model.sh
 ```
 
-alphafold_msa.sh:
+alphafold_msa.sh (note, due to the lack of a GPU, this will exit ungracefully --i.e., crash-- after creating the needed msa files; while obnoxious, this is harmless):
 
 ```sh
 #!/bin/bash
