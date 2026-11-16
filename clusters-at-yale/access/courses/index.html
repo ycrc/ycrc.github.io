@@ -1115,6 +1115,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#interactive-jobs" class="md-nav__link">
     Interactive Jobs
   </a>
@@ -3059,6 +3066,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#interactive-jobs" class="md-nav__link">
     Interactive Jobs
   </a>
@@ -3154,6 +3168,10 @@
 <div class="highlight"><pre><span></span><code>courseid.ycrc.yale.edu
 </code></pre></div>
 <p>Please authenticate using your standard NetID (without the courseid prefix) and password. </p>
+<div class="admonition info">
+<p class="admonition-title">New to HPC?</p>
+<p>Are you new to HPC clusters? Or used one before but new to Yale's systems? We encourage you to watch our <a href="https://www.youtube.com/watch?v=Wvao_o1ACBQ">Introduction to HPC workshop</a>.</p>
+</div>
 <h3 id="ssh-access">SSH Access</h3>
 <p>To access your course account via terminal and <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/"><code>ssh</code> authentication</a>, connect to the cluster using your course account name. For example:</p>
 <div class="highlight"><pre><span></span><code>ssh courseid_netid@bouchet.ycrc.yale.edu
@@ -3164,8 +3182,8 @@
 <p>See our <a href="https://docs.ycrc.yale.edu/data/hpc-storage/">cluster storage documentation</a> for details about the different classifications of storage.</p>
 <h2 id="partitions-for-courses">Partitions for Courses</h2>
 <p>Compute resources for courses are available in the <code>education</code> or <code>education_gpu</code> partitions. You can request these nodes for your jobs using the <code>-p partition_name</code> flag. See our <a href="/clusters-at-yale/job-scheduling/">Slurm documentation</a> for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.  </p>
-<p>Course members are welcome to use the <a href="https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions">public partitions of the cluster</a>. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
-<p>See each tab below for more information about the available education partitions.</p>
+<p>Please use the <code>education</code> and <code>education_gpu</code> partitions whenever you can. If you need resources they can't provide, course members may also use the <a href="https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions">public partitions of the cluster</a>. However, we request that students <a href="/clusters-at-yale/access/accounts/">be respectful</a> in their usage as not to disrupt ongoing research work.</p>
+<h3 id="hardware">Hardware</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the <code>education</code> and <code>education_gpu</code> partitions is 6 hours. If your session needs to run longer than 6 hours, please have your instructor or TF contact us.</p>
@@ -3339,6 +3357,10 @@
   Make sure you are using your course-specific URL, such as <code>coursename.ycrc.yale.edu</code>. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.</p>
 </li>
 <li>
+<p>**My Jupyter Kernel keeps restarting or shutting down
+  Your session most likely ran out of memory (RAM). Try increasing <code>Memory per CPU core in GiB</code> before launching your session.</p>
+</li>
+<li>
 <p><strong>My session is running, but I’m unable to load the RStudio interface</strong> <br />
   Please try the troubleshooting steps <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/#troubleshoot-rstudio-server-app-does-not-respond">here</a>. If this does not resolve the issue, please <a href="/#get-help">contact us</a> for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.</p>
 </li>
@@ -3367,7 +3389,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 16, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2026</span>
       
     
   </small>
