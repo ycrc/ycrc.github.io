@@ -30,6 +30,9 @@ courseid.ycrc.yale.edu
 
 Please authenticate using your standard NetID (without the courseid prefix) and password. 
 
+!!! info "New to HPC?"
+    Are you new to HPC clusters? Or used one before but new to Yale's systems? We encourage you to watch our [Introduction to HPC workshop](https://www.youtube.com/watch?v=Wvao_o1ACBQ).
+
 ### SSH Access
 
 To access your course account via terminal and [`ssh` authentication](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/), connect to the cluster using your course account name. For example:
@@ -52,9 +55,9 @@ See our [cluster storage documentation](https://docs.ycrc.yale.edu/data/hpc-stor
 
 Compute resources for courses are available in the `education` or `education_gpu` partitions. You can request these nodes for your jobs using the `-p partition_name` flag. See our [Slurm documentation](/clusters-at-yale/job-scheduling/) for more information on submitting jobs. Note you will be sharing these partitions with other courses. If your jobs need to exceed the restrictions of the partitions, please have your instructor or TF contact us.  
 
-Course members are welcome to use the [public partitions of the cluster](https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions). However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
+Please use the `education` and `education_gpu` partitions whenever you can. If you need resources they can't provide, course members may also use the [public partitions of the cluster](https://docs.ycrc.yale.edu/clusters/bouchet/#public-partitions). However, we request that students [be respectful](/clusters-at-yale/access/accounts/) in their usage as not to disrupt ongoing research work.
 
-See each tab below for more information about the available education partitions.
+### Hardware
 
 !!! note "Note"
     The maximum time limit for Open OnDemand sessions (Jupyter, RStudio) in the `education` and `education_gpu` partitions is 6 hours. If your session needs to run longer than 6 hours, please have your instructor or TF contact us.
@@ -118,6 +121,9 @@ If you have a research account on one of our clusters and would like to transfer
 
 - **I’m getting `Error – failed to map user (NetID)`**  
   Make sure you are using your course-specific URL, such as `coursename.ycrc.yale.edu`. If you still get this error, it usually means that you have not been added to the course account. Please contact your instructor or TA and ask them to reach out to us so we can add you to the course.
+
+- **My Jupyter Kernel keeps restarting or shutting down
+  Your session most likely ran out of memory (RAM). Try increasing `Memory per CPU core in GiB` before launching your session.
 
 - **My session is running, but I’m unable to load the RStudio interface**   
   Please try the troubleshooting steps [here](https://docs.ycrc.yale.edu/clusters-at-yale/access/ood-rstudio/#troubleshoot-rstudio-server-app-does-not-respond). If this does not resolve the issue, please [contact us](/#get-help) for assistance. We respond during business hours, Monday through Friday, 9 a.m.–5 p.m.
