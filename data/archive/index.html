@@ -1702,8 +1702,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips-for-sy-archive-tier" class="md-nav__link">
-    Tips for S@Y Archive Tier
+  <a href="#storing-and-accessing-data-on-the-sy-archive-tier" class="md-nav__link">
+    Storing and Accessing Data on the S@Y Archive Tier
   </a>
   
 </li>
@@ -2943,8 +2943,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips-for-sy-archive-tier" class="md-nav__link">
-    Tips for S@Y Archive Tier
+  <a href="#storing-and-accessing-data-on-the-sy-archive-tier" class="md-nav__link">
+    Storing and Accessing Data on the S@Y Archive Tier
   </a>
   
 </li>
@@ -3003,31 +3003,50 @@ There is an alternative syntax that is more legible:</p>
 <p><div class="highlight"><pre><span></span><code>tar<span class="w"> </span>--extract<span class="w"> </span>--file<span class="o">=</span>archive-2021-04-26.tar.gz<span class="w"> </span>file.txt
 </code></pre></div>
 Either should work fine on the clusters.</p>
-<h2 id="tips-for-sy-archive-tier">Tips for S@Y Archive Tier</h2>
-<p>The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is substantially lower than for the active-access S@Y tier.  For current pricing, see <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
-<p>To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.</p>
+<h2 id="storing-and-accessing-data-on-the-sy-archive-tier">Storing and Accessing Data on the S@Y Archive Tier</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Just as for the <a href="/data/#storage-yale">S@Y Active Tier</a>, <a href="/data/globus">Globus</a> is used to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY'). Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.</p>
+<ul>
+<li>S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.</li>
+<li>Please note that direct access from the cluster is only authorized for Low and Moderate risk data.</li>
+</ul>
+</div>
+<p>The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is substantially lower than for the active-access S@Y tier.  For current pricing, see <a href="https://yale.service-now.com/it?id=rates_charges&amp;service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&amp;service_offering=f4688dcd6fbb31007ee2abcf9f3ee400">ITS Data Rates</a>.</p>
+<p>Use <a href="/data/globus">Globus</a> to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY').</p>
+<p>This works much the same as for the <a href="/data/#storage-yale">S@Y Active Tier</a>. However, when you write files to the archive, you are actually copying to a large hard disk-based cache. Writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. </p>
+<p>To use S@Y (Archive) effectively, <strong>please review carefully the following notes</strong> on how it works and some best practices:</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not move or rename files and folders that are already in the archive</p>
+<ul>
+<li>This will not work with either Globus or any other method (such as the Linux 'mv' command, i.e. within the /SAY folder on the transfer node)</li>
+<li>The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them.</li>
+<li>If you accidentally <strong>do</strong> try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system.</li>
+<li>If you encounter this or any related issue while working with S@Y archives, <strong>please contact us ASAP</strong> at <a href="mailto:research.support@yale.edu">research.support@yale.edu</a> !</li>
+</ul>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do <strong>not</strong> use Globus to move or rename files and folders that are already in the archive; <strong>neither should you try this</strong> with the Linux 'mv' command (i.e. within the /SAY folder on the transfer node) <strong>or any other method</strong>. The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them. If you accidentally <strong>do</strong> try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system. If you encounter this or any related issue while working with S@Y archives, <strong>please contact us ASAP</strong> at <a href="mailto:research.support@yale.edu">research.support@yale.edu</a> !</p>
-</div>
-<p>When you write files to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</p>
-<p>However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.</p>
-</div>
-<p>Some key takeaways:</p>
+<p class="admonition-title">Do NOT write huge numbers of small files</p>
 <ul>
+<li>They will be difficult or impossible to restore in large numbers.</li>
+<li>Groups of many small files should be first <strong>compressed into a single file</strong> with tar or zip (see <a href="#compress-your-data">above</a>), before storing to the archive.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Similarly, do NOT run many parallel operations (like rsyncs) on the archive</p>
+<ul>
+<li>This may overload the system.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Other key takeaways</p>
+<ul>
+<li>A copy to the archive will appear to complete relatively quickly, but at this point it will NOT yet in be the cloud. In the background, the system will flush files to the cloud and delete them from the cache as it does so.</li>
+<li>If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.</li>
+<li>Once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.</li>
 <li>Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is in the cloud, since metadata is kept in the disk cache.</li>
 <li>Operations that actually read the file (cp, wc -l, tar, etc) will require recovering the entire file to disk cache first, and can take several minutes or longer depending on how busy the system is.</li>
-<li>If many files will need to be recovered together, it is much better to store them as a single file first with tar or zip, then write that file to the archive.</li>
-<li>Please do NOT write huge numbers of small files. They will be difficult or impossible to restore in large numbers.</li>
-<li>Please do NOT do repetitive operations like rsyncs to the archive, since they overload the system.</li>
 </ul>
+</div>
 <h2 id="sy-backup-tier">S@Y Backup Tier</h2>
 <p>Yale ITS offers dedicated offsite "S3"-style object storage for data backup and archive to the cloud.  Clients are responsible for the data transfers and recovery via the S3 protocol, such as by using <a href="/data/transfer/#rclone">RClone</a>.</p>
 <p>The Backup Tier is authorized for Low, Moderate, and High Risk data.</p>
@@ -3041,7 +3060,7 @@ Either should work fine on the clusters.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2026</span>
       
     
   </small>
