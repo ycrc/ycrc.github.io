@@ -46,32 +46,39 @@ tar --extract --file=archive-2021-04-26.tar.gz file.txt
 ```
 Either should work fine on the clusters.
 
-## Tips for S@Y Archive Tier
+## Storing and Accessing Data on the S@Y Archive Tier
+
+!!!note
+    * S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.
+    * Please note that direct access from the cluster is only authorized for Low and Moderate risk data.
 
 The archive tier of Storage@Yale is a cloud-based system. It provides an archive location for long-term data, featuring professional systems management, security, and protection from data loss via redundant, enterprise-grade hardware.  Data is dual-written to two locations.  The cost per TB is substantially lower than for the active-access S@Y tier.  For current pricing, see [ITS Data Rates](https://yale.service-now.com/it?id=rates_charges&service_group=e0502b7a1b3d3704f61dfeeccd4bcbab&service_offering=f4688dcd6fbb31007ee2abcf9f3ee400).
 
-To use S@Y (Archive) effectively, you need to be aware of how it works and follow some best practices.
+Use [Globus](/data/globus) to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY').
 
-!!!note
-    Just as for the [S@Y Active Tier](/data/#storage-yale), [Globus](/data/globus) is used to transfer cluster data to and from S@Y archive storage ('Yale CRC McCleary' mount point and path: '/SAY'). Please also note that direct access from the cluster is only authorized for Low and Moderate risk data.
+This works much the same as for the [S@Y Active Tier](/data/#storage-yale). However, when you write files to the archive, you are actually copying to a large hard disk-based cache. Writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. 
 
-!!!warning
-    Do **not** use Globus to move or rename files and folders that are already in the archive; **neither should you try this** with the Linux 'mv' command (i.e. within the /SAY folder on the transfer node) **or any other method**. The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them. If you accidentally **do** try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system. If you encounter this or any related issue while working with S@Y archives, **please contact us ASAP** at [research.support@yale.edu](mailto:research.support@yale.edu) !
-    
-When you write files to the archive, you are actually copying to a large hard disk-based cache, so writes are normally fast. Your copy will appear to complete as soon as the file is in the disk cache. It is NOT yet in the cloud. In the background, the system will flush files to the cloud and delete them from the cache. If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
+To use S@Y (Archive) effectively, **please review carefully the following notes** on how it works and some best practices:
 
-However, once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.
+!!!warning "Do not move or rename files and folders that are already in the archive"
+    * This will not work with either Globus or any other method (such as the Linux 'mv' command, i.e. within the /SAY folder on the transfer node)
+    * The only operations that work successfully inside the S@Y archive are adding files to the archive and removing them.
+    * If you accidentally **do** try to move a file/folder, it will fail and will potentially introduce faulty information in the S@Y indexing system.
+    * If you encounter this or any related issue while working with S@Y archives, **please contact us ASAP** at [research.support@yale.edu](mailto:research.support@yale.edu) !
 
-!!!note
-     S@Y Archive has a single-filesize limit of 5 TB, so plan your data compressions accordingly.
+!!!warning "Do NOT write huge numbers of small files"
+    * They will be difficult or impossible to restore in large numbers.
+    * Groups of many small files should be first **compressed into a single file** with tar or zip (see [above](#compress-your-data)), before storing to the archive.
 
-Some key takeaways:
+!!!warning "Similarly, do NOT run many parallel operations (like rsyncs) on the archive"
+    * This may overload the system.
 
-* Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is in the cloud, since metadata is kept in the disk cache.
-* Operations that actually read the file (cp, wc -l, tar, etc) will require recovering the entire file to disk cache first, and can take several minutes or longer depending on how busy the system is.
-* If many files will need to be recovered together, it is much better to store them as a single file first with tar or zip, then write that file to the archive.
-* Please do NOT write huge numbers of small files. They will be difficult or impossible to restore in large numbers.
-* Please do NOT do repetitive operations like rsyncs to the archive, since they overload the system.
+!!!note "Other key takeaways"
+    * A copy to the archive will appear to complete relatively quickly, but at this point it will NOT yet in be the cloud. In the background, the system will flush files to the cloud and delete them from the cache as it does so.
+    * If you read a file very soon after you write it, it is probably still in the cache, and your read will be quick.
+    * Once some time has elapsed and the file has been moved to the cloud, read speed will be somewhat slower.
+    * Operations that only read the metadata of files will be fast (ls, find, etc) even if the file is in the cloud, since metadata is kept in the disk cache.
+    * Operations that actually read the file (cp, wc -l, tar, etc) will require recovering the entire file to disk cache first, and can take several minutes or longer depending on how busy the system is.
 
 ## S@Y Backup Tier
 
