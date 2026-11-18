@@ -198,6 +198,6 @@ Try sending the message again. This can happen if you send a message immediately
 
 Open WebUI normally reconnects automatically. If it does not, reload the page. If your Slurm session has ended or reached its walltime, launch another session; your saved chats are still available.
 
-### "This model's maximum context length is ..."
+### "This chat is too long for the model"
 
-The conversation and its attachments exceed the amount the model can process at once. Long chats are normally summarized automatically before they reach this limit (see [Limits and good practice](#limits-and-good-practice)), so this error usually means a single message or its attachments are too large, or the chat reached the limit before it could be summarized. Start a new chat, attach a smaller file or excerpt, or use a searchable knowledge base instead of attaching a large collection directly.
+The conversation and its attachments exceed the amount the model can process at once. Open WebUI summarizes long chats automatically, and leaves out earlier tool output when needed (it notes when it does), so this message usually means a single message or attachment is too large. Start a new chat, attach a smaller file or excerpt, or use a searchable knowledge base instead of attaching a large collection directly.
