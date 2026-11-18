@@ -29,11 +29,11 @@ To request Ark space, please fill out the [Ark Storage Request form](https://ppm
 
 - Valid COA for charging
 - NetIDs of all group members who should have access
-- The requested quota — we are currently limiting quotas to 10-100 TiB until we have more capacity
+- The requested quota — we are currently limiting quotas to 10-250 TiB until we have more capacity
 
 ### How much space can I request?
 
-We ask that requests be at least 10 TiB. In addition, due to capacity limits, we are currently limiting shares to no more than 100 TiB. If you need more than 100 TiB, please contact us.
+We ask that requests be at least 10 TiB. In addition, due to capacity limits, we are currently limiting shares to no more than 250 TiB. If you need more than 250 TiB, please contact us.
 
 ### How is the Ark share organized?
 
