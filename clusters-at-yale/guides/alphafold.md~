@@ -90,34 +90,46 @@ alphafold_msa\.sh:
 
 ```sh
 #!/bin/bash
+
+####################
+####################
+# Modify the below assignments/directives for your specific job
+ 
+# Edit the below line to name your job:
 #SBATCH --job-name=YourMSAJobNameHere
+
+# If needed, modify the below SBATCH directives (these defaults will work in most cases):
 ## General-use partition for CPU-only step
-#SBATCH --partition=day
+#SBATCH --partition=devel
 ## Maximum job time in Days-Hours:Minutes:Seconds
-#SBATCH --time=1-00:00:00
+#SBATCH --time=2:00:00
 ## CPUs requested for each "task"; in simplest case the total number of used CPUs
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=4
 ## Total memory; can also be expressed as --mem-per-cpu
-#SBATCH --mem-per-cpu=80g
+#SBATCH --mem=32G
 #SBATCH --mail-type=ALL
+
+# You need to define the AF3 protein sequence(s) and constraints in an input JSON file
+#  Give the path to it here:
+INPUTFILE="fold_input.json"
+
+# Edit to specify input folder name containing initial alphafold_input.json
+INPUTFOLDER="af3_input"
+
+# Edit to specify output folder name for this (MSA) step:
+MSAFOLDER="af3_msa"
+####################
+####################
 
 ## Clear all loaded software modules, and load AlphaFold module
 module reset
-## Edit to set desired AlphaFold module version;
+
+## Edit the following line to adjust the AlphaFold module version;
 ## search available versions via "module avail AlphaFold/"
 module load AlphaFold/3.0.1-20251125-foss-2024a-CUDA-12.8.0
 
 # Select full path to working directory
 RUNDIR=`readlink -f ${PWD}`
-
-# Edit to specify input folder name containing initial alphafold_input.json
-INPUTFOLDER="af_input"
-
-# Edit to specify filename of input JSON file
-INPUTFILE="fold_input.json"
-
-# Edit to specify output folder name for MSA
-MSAFOLDER="af_msa"
 
 mkdir -p ${RUNDIR}/${INPUT}
 mkdir -p ${RUNDIR}/${MSAFOLDER}
