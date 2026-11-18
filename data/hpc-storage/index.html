@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/data/hpc-storage/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -3126,18 +3126,18 @@
 
 <span class="c1"># Bouchet:</span>
 
-/home/&lt;your_netid&gt;/project_pi_&lt;your_pi_netid&gt;<span class="w"> </span>-&gt;
-<span class="w">    </span>/nfs/roberts/project/project_pi_&lt;your_pi_netid&gt;
+/home/&lt;your_netid&gt;/project_pi_&lt;your_pi_netid&gt; -&gt;
+    /nfs/roberts/project/project_pi_&lt;your_pi_netid&gt;
 
 <span class="c1"># Old link style (to user storage location):</span>
 
 <span class="c1"># Mccleary/Grace:</span>
-/home/&lt;your_netid&gt;/project<span class="w"> </span>-&gt;
-<span class="w">    </span>/gpfs/gibbs/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+/home/&lt;your_netid&gt;/project -&gt;
+    /gpfs/gibbs/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
 
 <span class="c1"># Milgram:</span>
-/home/&lt;your_netid&gt;/project<span class="w"> </span>-&gt;
-<span class="w">    </span>/gpfs/milgram/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+/home/&lt;your_netid&gt;/project -&gt;
+    /gpfs/milgram/project/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
 </code></pre></div></p>
 <p>Project quotas are global to the whole project space, so if the group ownership on a file is your group, it will count towards your quota, regardless of its location within <code>project</code>. This can occasionally create confusion for users who belong to multiple groups and they need to be mindful of which files are owned by which of their group affiliations to ensure proper accounting.</p>
 <h4 id="additional-paid-storage">Additional Paid Storage</h4>
@@ -3173,18 +3173,18 @@ See <a href="#request-additional-storage">below</a> for details on requesting ad
 <div class="highlight"><pre><span></span><code><span class="c1"># New link style (to group storage location):</span>
 
 <span class="c1"># Bouchet:</span>
-/home/&lt;your_netid&gt;/scratch_pi_&lt;your_pi_netid&gt;<span class="w"> </span>-&gt;
-<span class="w">    </span>/nfs/roberts/scratch/scratch_pi_&lt;your_pi_netid&gt;
+/home/&lt;your_netid&gt;/scratch_pi_&lt;your_pi_netid&gt; -&gt;
+    /nfs/roberts/scratch/scratch_pi_&lt;your_pi_netid&gt;
 
 <span class="c1"># Old link style (to user storage location):</span>
 
 <span class="c1"># Mccleary/Grace:</span>
-/home/&lt;your_netid&gt;/palmer_scratch<span class="w"> </span>-&gt;
-<span class="w">    </span>/vast/palmer/scratch/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+/home/&lt;your_netid&gt;/palmer_scratch -&gt;
+    /vast/palmer/scratch/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
 
 <span class="c1"># Milgram:</span>
-/home/&lt;your_netid&gt;/scratch60<span class="w"> </span>-&gt;
-<span class="w">    </span>/gpfs/milgram/scratch60/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
+/home/&lt;your_netid&gt;/scratch60 -&gt;
+    /gpfs/milgram/scratch60/&lt;your_pi_group_name&gt;/&lt;your_netid&gt;
 </code></pre></div></p>
 <h2 id="check-your-usage-and-quotas">Check Your Usage and Quotas</h2>
 <p>To inspect your current usage, run the command <code>getquota</code> from the <a href="/clusters-at-yale/access/ood/#terminal">terminal</a> command line.</p>
@@ -3235,11 +3235,7 @@ qdirstat
 broot -w
 </code></pre></div></p>
 <h2 id="request-additional-storage">Request Additional Storage</h2>
-<div class="admonition warning">
-<p class="admonition-title">Pause on Additional Storage Allocations</p>
-<p>We are currently unable to accept any new or increased paid storage allocations on Bouchet, Grace or McCleary at this time. We hope additional capacity for new or increased paid storage allocations will be available in the second half of 2026. We apologize for any inconvenience. Please <a href="/data/staging/">visit our documentation</a> or reach out to us for assistance on staging data from other storage locations.</p>
-</div>
-<p>Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.15 per TiB per month. 
+<p>Additional project-style storage can be provided on one of our shared filesystems at a rate of $5.30 per TiB per month. 
 The price covers all costs, including administration, power, cooling, networking, etc.
 Agreements for such storage will run through the end of the fiscal year and be renewed in June for the next year when appropriate.
 Storage charges are based on requested allocation, not actual usage.</p>
@@ -3300,7 +3296,7 @@ Delete unneeded files between jobs and compress or <a href="/data/archive/">arch
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2026</span>
       
     
   </small>
