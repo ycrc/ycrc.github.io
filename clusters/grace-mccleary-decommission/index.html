@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ycrc.yale.edu/clusters/grace-mccleary-decommission/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -623,6 +623,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-am-i-impacted" class="md-nav__link">
+    How Am I Impacted?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decemeber-7th-air-cooled-node-migration" class="md-nav__link">
+    Decemeber 7th Air-Cooled Node Migration
+  </a>
+  
+    <nav class="md-nav" aria-label="Decemeber 7th Air-Cooled Node Migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-commons" class="md-nav__link">
+    Changes to Commons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-dedicated-partitions" class="md-nav__link">
+    Changes to Dedicated Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#phased-decommission-migration" class="md-nav__link">
     Phased Decommission &amp; Migration
   </a>
@@ -630,22 +664,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    Phase 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#groups-that-use-ycga-resources" class="md-nav__link">
     Groups that use YCGA resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#groups-that-use-dedicated-partitions" class="md-nav__link">
-    Groups that use dedicated partitions
   </a>
   
 </li>
@@ -2943,6 +2963,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-am-i-impacted" class="md-nav__link">
+    How Am I Impacted?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decemeber-7th-air-cooled-node-migration" class="md-nav__link">
+    Decemeber 7th Air-Cooled Node Migration
+  </a>
+  
+    <nav class="md-nav" aria-label="Decemeber 7th Air-Cooled Node Migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-commons" class="md-nav__link">
+    Changes to Commons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-dedicated-partitions" class="md-nav__link">
+    Changes to Dedicated Partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#phased-decommission-migration" class="md-nav__link">
     Phased Decommission &amp; Migration
   </a>
@@ -2950,22 +3004,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-1" class="md-nav__link">
-    Phase 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#groups-that-use-ycga-resources" class="md-nav__link">
     Groups that use YCGA resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#groups-that-use-dedicated-partitions" class="md-nav__link">
-    Groups that use dedicated partitions
   </a>
   
 </li>
@@ -3004,11 +3044,33 @@
                 <h1 id="grace-and-mccleary-decommission">Grace and McCleary Decommission</h1>
 <h2 id="data-center-migration">Data Center Migration</h2>
 <p>The YCRC is in the process of transitioning from the Yale West Campus Data Center to the <a href="https://news.yale.edu/2025/02/26/yale-grows-capacity-high-performance-computing-ai-related-research">MGHPCC data center</a>. The <a href="../bouchet/">Bouchet</a> cluster, Yale's first cluster hosted at MGHPCC, is the successor to both Grace and McCleary, with HPC infrastructure refreshes and growth deployed at MGHPCC going forward. In 2026, we are decommissioning Grace and McCleary and all non-YCGA data and workloads will be moved to Bouchet.</p>
+<h2 id="how-am-i-impacted">How Am I Impacted?</h2>
+<p>To provide an individual picture of impacts of the next two phases of the migration, we have created a <code>mymigration</code> utility that can be run on Grace and McCleary to clarify your specific migration timeline and impacts.</p>
+<h2 id="decemeber-7th-air-cooled-node-migration">Decemeber 7th Air-Cooled Node Migration</h2>
+<p>Per our recent communication, the vast majority of air-cooled compute nodes from Grace and McCleary will be decommissioned or migrated as additional capacity to Bouchet, depending on age.</p>
+<h3 id="changes-to-commons">Changes to Commons</h3>
+<p>Additional 4TB <code>bigmem</code> and A5000 GPU commons nodes will be added will be removed from Grace and McCleary and added to Bouchet. All other commons nodes will be retired due to age.</p>
+<ul>
+<li>8 4 TB <code>bigmem</code> nodes</li>
+<li>13 McCleary A5000 GPU nodes from <code>gpu</code> and <code>gpu_devel</code></li>
+</ul>
+<p>After December 7th, both clusters will have the following commons nodes until the final migration in February. In Feburary these nodes and partitions will be removed from Grace and McCleary and added as additional commons capacity on Bouchet.</p>
+<ul>
+<li><code>devel</code> will be updated with 2 <code>icelake</code> generation nodes</li>
+<li><code>day</code> and <code>week</code> will remain with an aggregate 82 nodes (Grace) and 38 nodes (McCleary)</li>
+<li><code>gpu_devel</code> will contain 1 4xA100 nodes</li>
+<li><code>gpu</code> will contain 3 4xA100 nodes</li>
+<li><code>bigmem</code> will no longer be present. Jobs requiring large amounts of RAM should be run in <code>day</code>, <code>ycga_bigmem</code> or moved to Bouchet as appropriate.</li>
+</ul>
+<h3 id="changes-to-dedicated-partitions">Changes to Dedicated Partitions</h3>
+<p>PIs of dedicated partitions have been individually contacted to confirm the future status of their nodes.</p>
+<p><strong>Non-YCGA users who use dedicated nodes</strong> will lose access to Grace, which will be shut down permanently, and/or McCleary. This winter we will reach out about moving data and workflows to Bouchet.</p>
+<p>To provide an individual picture of impacts of the next two phases of the migration, we have created a <code>mymigration</code> utility that can be run on Grace and McCleary to clarify your specific migration timeline and impacts.</p>
 <h2 id="phased-decommission-migration">Phased Decommission &amp; Migration</h2>
 <p>During this phased migration, we will be fully decommissioning Grace as a standalone cluster and the McCleary cluster will be downsized to support exclusively YCGA-affiliated workloads. Newer nodes from Grace and McCleary and some of the attached storage will be moved to MGHPCC and added to Bouchet as additional capacity. The migration will happen in three phases, described below.</p>
 <ul>
 <li>
-<p><a href="#phase-1">Phase 1</a> (<strong>Complete</strong>): Migration of workloads and data from research groups who do not use dedicated compute nodes, CryoEM resources or YCGA resources.</p>
+<p><a href="#phase-1">Phase 1</a> (<strong>Complete</strong>): Migration of workloads and data from research groups who do not use dedicated compute nodes, CryoEM resources or YCGA resources. <strong>As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.</strong></p>
 </li>
 <li>
 <p>Phase 2 (late 2026, early 2027): Migration of non-YCGA workloads and non-YCGA data from YCGA-affiliated research groups from McCleary. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.</p>
@@ -3018,16 +3080,11 @@
 </li>
 </ul>
 <p><img alt="When Will I Move Flow Chart" class="cluster-diagram" src="/img/when_will_i_move.png" /></p>
+<p>To provide an individual picture of impacts of the next two phases of the migration, we have created a <code>mymigration</code> utility that can be run on Grace and McCleary to clarify your specific migration timeline and impacts.</p>
 <p>If you are in Phase 2 or 3, more detailed information will be provided later this year when the hardware migration dates are finalized.</p>
-<h2 id="phase-1">Phase 1</h2>
-<p>Research groups who do not use dedicated compute nodes or YCGA resources were moved off of Grace and McCleary in Phase 1.
-As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.</p>
 <h2 id="groups-that-use-ycga-resources">Groups that use YCGA resources</h2>
 <p>YCGA users, whether or not you use additional dedicated nodes, will retain access to McCleary for the rest of its lifetime for YCGA-related workloads (likely another couple years). This winter we will reach out to YCGA users about moving non-YCGA data and workflows to Bouchet, but there is no action required at this time.</p>
 <p>When you do move your data, you will be responsible for identifying the non-YCGA data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account but we will be available to assist with that process.</p>
-<h2 id="groups-that-use-dedicated-partitions">Groups that use dedicated partitions</h2>
-<p>All non-YCGA hardware will either be moved to Bouchet or decommissioned, depending on age. All dedicated partitions on Grace and McCleary (other than YCGA) will be decommissioned during the data center migration this winter. Only nodes still under warranty as of January 1st, 2027 will be deployed into dedicated partitions at MGHPCC onto the Bouchet cluster. We have contacted each partition’s PI to confirm the future status of their dedicated partitions.</p>
-<p><strong>Non-YCGA users who use dedicated nodes</strong> will lose access to Grace, which will be shut down permanently, and/or McCleary. Later this fall we will reach out about moving data and workflows to Bouchet but there is nothing to do at this time.</p>
 <h2 id="what-about-my-existing-data-on-grace-or-mccleary">What about My Existing Data on Grace or McCleary?</h2>
 <p><strong>All (non-YCGA) data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.</strong> You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. </p>
 <div class="admonition warning">
