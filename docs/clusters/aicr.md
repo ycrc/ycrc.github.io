@@ -30,11 +30,7 @@ AICR access for Yale researchers is granted through a biannual internal Yale pro
 Applications are screened by the YCRC for technical suitability and viability and then reviewed by a Yale faculty review panel.
 For approval, a submitted project must meet above stated guidelines, such as established workflows with demonstrated ability to effectively use large GPU allocations, have needs that exceed the resources readily available on other YCRC clusters and involving only low-risk data.
 
-!!! info "Applications for AICR will open in Fall 2026"
-
-    An announcement with details on the application requirements will be sent to all active YCRC users when applications are open.
-
-<!-- [AICR Proposals Due Dec 10, 2026 ](aicr-proposal){ .md-button }-->
+[AICR Proposals Due Dec 10, 2026 ](/clusters/aicr-proposal){ .md-button }
 
 Approved projects are granted access for 12 months, at which point they must reapply to retain access.
 If a project is not renewed (either not accepted or not resubmitted), the team must remove their data within 30 days, at which point all remaining data will be deleted from access and project team members AICR access will be deactivated to release resources for incoming projects.

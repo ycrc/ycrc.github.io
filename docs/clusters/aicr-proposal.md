@@ -70,6 +70,6 @@ A CV and a list of references are optional. If included, submit them separately 
 AICR Project Proposals should be submitted to Yale InfoReady Platform.
 Click the "Apply for AICR" button below to access the Platform and Submission Forms.
 
-<!-- [Apply to AICR (Due Dec 10, 2026)](aicr-proposal){ .md-button }-->
+[Apply to AICR (Due Dec 10, 2026)](https://yale.infoready4.com/#freeformCompetitionDetail/2020181){ .md-button }
 
 If you have any questions about AICR or the proposal process, contact the YCRC at [research.computing@yale.edu](mailto:research.computing@yale.edu)
