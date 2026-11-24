@@ -671,13 +671,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#groups-that-use-ycga-resources" class="md-nav__link">
-    Groups that use YCGA resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#what-about-my-existing-data-on-grace-or-mccleary" class="md-nav__link">
     What about My Existing Data on Grace or McCleary?
   </a>
@@ -3031,13 +3024,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#groups-that-use-ycga-resources" class="md-nav__link">
-    Groups that use YCGA resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#what-about-my-existing-data-on-grace-or-mccleary" class="md-nav__link">
     What about My Existing Data on Grace or McCleary?
   </a>
@@ -3093,13 +3079,8 @@
 <h2 id="phase-1-complete"><a href="#phase-1">Phase 1</a> (<strong>Complete</strong>)</h2>
 <p>Migration of workloads and data from research groups who do not use dedicated compute nodes, CryoEM resources or YCGA resources. <strong>As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.</strong></p>
 <h2 id="december-7th-air-cooled-node-decommission-and-migration">December 7th Air-Cooled Node Decommission and Migration</h2>
-<p>The vast majority of air-cooled compute nodes from Grace and McCleary will be decommissioned or migrated as additional capacity to Bouchet, depending on age.</p>
+<p>The vast majority of air-cooled compute nodes from Grace and McCleary will be decommissioned or migrated as additional capacity to Bouchet, depending on age. We expect the migrated capacity to be available on Bouchet by winter break.</p>
 <h3 id="changes-to-commons-partitions">Changes to Commons Partitions</h3>
-<p>Additional 4TB <code>bigmem</code> and A5000 GPU commons nodes will be removed from Grace and McCleary and added to Bouchet. All other commons nodes will be retired due to age.</p>
-<ul>
-<li>8 4 TB <code>bigmem</code> nodes</li>
-<li>13 McCleary A5000 GPU nodes from <code>gpu</code> and <code>gpu_devel</code></li>
-</ul>
 <p>After December 7th, both clusters will have the following commons nodes until the final migration in February.</p>
 <ul>
 <li><code>devel</code> will be updated with 2 <code>icelake</code> generation nodes</li>
@@ -3112,12 +3093,9 @@
 <p>PIs of dedicated partitions have been individually contacted to confirm the future status of their nodes.</p>
 <h2 id="february-2027-migration-grace-decommission">February 2027 Migration &amp; Grace Decommission</h2>
 <p>In February (exact date TBD), the remaining nodes from Grace and remaining non-<code>ycga</code> nodes on McCleary will be added as additional capacity to Bouchet. Grace will be fully decommissioned at this time.  McCleary will remain as a YCGA-only cluster for the remaining lifetime of YCGA-owned hardware (at least late 2027).</p>
-<p><strong>YCGA Users.</strong> By Feburary YCGA users should move any non-YCGA workloads and non-YCGA data to Bouchet. YCGA data and workloads will remain on McCleary for the remaining lifetime of the YCGA-owned hardware.</p>
-<p><strong>Non-YCGA Users.</strong> Grace will be shut down and access will be deactivate for any users. Access to McCleary for non-YCGA users will be deactivated. Storage will remain available via Globus for a short time for data transfer.</p>
+<p><strong>YCGA Users.</strong> All YCGA users will retain access to McCleary for the rest of its lifetime for YCGA-related workloads (likely another couple years). In early 2027, we will reach out to YCGA users about moving non-YCGA data and workflows to Bouchet, but there is no action required at this time.</p>
+<p><strong>Non-YCGA Users.</strong> Grace will be shut down and access will be deactivated for all users. Access to McCleary for non-YCGA users will be deactivated. Storage will remain available via Globus for a short time for data transfer.</p>
 <p>To provide an individual picture of impacts of the next two phases of the migration, we have created a <code>mymigration</code> utility that can be run on Grace and McCleary to clarify your specific migration timeline and impacts.</p>
-<h2 id="groups-that-use-ycga-resources">Groups that use YCGA resources</h2>
-<p>All YCGA users will retain access to McCleary for the rest of its lifetime for YCGA-related workloads (likely another couple years). In early 2027, we will reach out to YCGA users about moving non-YCGA data and workflows to Bouchet, but there is no action required at this time.</p>
-<p>When you do move your data, you will be responsible for identifying the non-YCGA data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account but we will be available to assist with that process.</p>
 <h2 id="what-about-my-existing-data-on-grace-or-mccleary">What about My Existing Data on Grace or McCleary?</h2>
 <p><strong>All non-YCGA data on Grace and McCleary (that you want to keep) will need to be transferred off the clusters.</strong> You are responsible for identifying the data you would like to keep from your home, project, and scratch and transferring it either to non-HPC storage or to a Bouchet account. </p>
 <div class="admonition warning">
