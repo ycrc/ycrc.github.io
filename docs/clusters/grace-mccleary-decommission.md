@@ -16,13 +16,13 @@ During this phased migration, we will be fully decommissioning Grace as a standa
 
 Migration of workloads and data from research groups who do not use dedicated compute nodes, CryoEM resources or YCGA resources. **As of June 1st, users in Phase 1 no longer have access to Grace and McCleary.**
 
-## December 10th Air-Cooled Node Decommission and Migration
+## December 9th Air-Cooled Node Decommission and Migration
 
 The vast majority of air-cooled compute nodes from Grace and McCleary will be decommissioned or migrated as additional capacity to Bouchet, depending on age. We expect the migrated capacity to be available on Bouchet by winter break.
 
 ### Changes to Commons Partitions
 
-After December 10th, both clusters will have the following commons nodes until the final migration in February.
+After December 9th, both clusters will have the following commons nodes until the final migration in February.
 
 - `devel` will be updated with 2 `icelake` generation nodes
 - `day` and `week` will remain with an aggregate 82 nodes (Grace) and 38 nodes (McCleary)
